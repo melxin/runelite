@@ -8,6 +8,10 @@ import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.Getter;
 
+import javax.swing.*;
+
+import static net.runelite.client.RuneLite.CACHE_DIR;
+
 public class OpenOSRS
 {
 	public static final File OPENOSRS_DIR = new File(System.getProperty("user.home"), ".runelite");
@@ -52,5 +56,15 @@ public class OpenOSRS
 
 	public static void preload()
 	{
+		if (!CACHE_DIR.exists())
+		{
+			JOptionPane.showMessageDialog(null,
+					"Please first run RuneLite on this device before using OpenOSRS!",
+					"Error loading cache",
+					JOptionPane.ERROR_MESSAGE
+			);
+
+			System.exit(0);
+		}
 	}
 }
