@@ -26,11 +26,13 @@ package net.runelite.api.coords;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Predicate;
 import lombok.Getter;
 import net.runelite.api.Client;
 import net.runelite.api.CollisionData;
 import net.runelite.api.CollisionDataFlag;
+import net.runelite.api.Locatable;
 import net.runelite.api.Point;
 import net.runelite.api.Tile;
 import net.runelite.api.Constants;
@@ -743,5 +745,31 @@ public class WorldArea
 		}
 
 		return list;
+	}
+
+	public boolean contains(Locatable locatable)
+	{
+		return contains(locatable.getWorldLocation());
+	}
+
+	public WorldPoint getCenter()
+	{
+		return new WorldPoint(x + (width / 2), y + (height / 2), plane);
+	}
+
+	public WorldArea offset(int offset)
+	{
+		return new WorldArea(x - offset, y - offset, width + (2 * offset), height + (2 * offset), plane);
+	}
+
+	public int distanceTo(Locatable locatable)
+	{
+		return distanceTo(locatable.getWorldLocation());
+	}
+
+	public WorldPoint getRandom()
+	{
+		return new WorldPoint(ThreadLocalRandom.current().nextInt(x, x + width),
+				ThreadLocalRandom.current().nextInt(y, y + height), plane);
 	}
 }
