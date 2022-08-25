@@ -18,7 +18,7 @@ open class FernflowerTask: DefaultTask() {
 
     @Input
     @Optional
-    var inputJar: String? = null
+    var inputJar: String? = "/home/t7emon/Documents/runescape/runelite/deobfuscator/build/libs/updated-${project.version}.jar"
 
     @Input
     @Optional
