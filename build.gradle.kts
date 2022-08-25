@@ -29,8 +29,9 @@ buildscript {
     repositories {
         mavenLocal()
         gradlePluginPortal()
-        maven(url = "https://raw.githubusercontent.com/open-osrs/hosting/master")
         maven(url = "https://repo.runelite.net")
+        maven(url = "https://raw.githubusercontent.com/open-osrs/hosting/master")
+        maven(url = "https://raw.githubusercontent.com/melxin/hosting/master")
     }
     dependencies {
         classpath("org.ajoberstar.grgit:grgit-core:4.1.0")
@@ -103,7 +104,7 @@ subprojects {
     }
 
     apply<JavaLibraryPlugin>()
-    //apply<MavenPublishPlugin>()
+    apply<MavenPublishPlugin>()
 
     project.extra["gitCommit"] = localGitCommit
     project.extra["rootPath"] = rootDir.toString().replace("\\", "/")
