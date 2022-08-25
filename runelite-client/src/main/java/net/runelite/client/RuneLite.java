@@ -103,7 +103,7 @@ import org.slf4j.LoggerFactory;
 @Slf4j
 public class RuneLite
 {
-	public static final String OPENOSRS = ".openosrs";
+	public static final String OPENOSRS = ".runelite";
 	public static final File RUNELITE_DIR = new File(System.getProperty("user.home"), OPENOSRS);
 	public static final File CACHE_DIR = new File(RUNELITE_DIR, "cache");
 	public static final File PLUGINS_DIR = new File(RUNELITE_DIR, "plugin-hub");

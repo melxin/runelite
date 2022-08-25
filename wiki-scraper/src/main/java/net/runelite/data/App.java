@@ -68,7 +68,7 @@ public class App
 
 	private static Store cacheStore() throws IOException
 	{
-		Path path = Paths.get(System.getProperty("user.home"), ".openosrs" + File.separator + "jagexcache" + File.separator + "oldschool" + File.separator + "LIVE");
+		Path path = Paths.get(System.getProperty("user.home"), ".runelite" + File.separator + "jagexcache" + File.separator + "oldschool" + File.separator + "LIVE");
 		final File jagexcache = new File(String.valueOf(path));
 
 		if (!Files.exists(path))
