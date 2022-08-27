@@ -3,15 +3,17 @@ package com.openosrs.client;
 import com.google.common.base.Strings;
 import java.io.File;
 import java.io.IOException;
+import java.security.Policy;
 import java.util.Properties;
 import java.util.UUID;
 import lombok.AccessLevel;
 import lombok.Getter;
-
+import lombok.extern.slf4j.Slf4j;
 import javax.swing.*;
 
 import static net.runelite.client.RuneLite.CACHE_DIR;
 
+@Slf4j
 public class OpenOSRS
 {
 	public static final File OPENOSRS_DIR = new File(System.getProperty("user.home"), ".runelite");
@@ -56,6 +58,13 @@ public class OpenOSRS
 
 	public static void preload()
 	{
+		String securityPolicyFile = OpenOSRS.class.getClassLoader().getResource("security.policy").getFile();
+		System.setProperty("java.security.policy", securityPolicyFile);
+		Policy.getPolicy().refresh();
+		System.setSecurityManager(new SecurityManager());
+		log.warn("Security manager is enabled");
+		log.warn("Security policy file: {}", securityPolicyFile);
+
 		if (!CACHE_DIR.exists())
 		{
 			JOptionPane.showMessageDialog(null,
