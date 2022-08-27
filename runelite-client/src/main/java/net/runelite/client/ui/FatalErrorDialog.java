@@ -71,7 +71,7 @@ public class FatalErrorDialog extends JDialog
 
 		try
 		{
-			BufferedImage logo = ImageUtil.loadImageResource(FatalErrorDialog.class, "openosrs_transparent.png");
+			BufferedImage logo = ImageUtil.loadImageResource(FatalErrorDialog.class, "runelite_transparent.png");
 			setIconImage(logo);
 
 			JLabel runelite = new JLabel();

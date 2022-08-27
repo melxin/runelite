@@ -36,6 +36,7 @@ import net.runelite.client.ui.ClientUI;
 import net.runelite.client.ui.ColorScheme;
 import com.openosrs.client.ui.components.InfoPanel;
 import com.openosrs.client.ui.components.MessagePanel;
+import net.runelite.client.util.ImageUtil;
 
 @Slf4j
 public class OpenOSRSSplashScreen extends JFrame
@@ -48,12 +49,12 @@ public class OpenOSRSSplashScreen extends JFrame
 
 	private OpenOSRSSplashScreen()
 	{
-		this.setTitle("OpenOSRS");
+		this.setTitle("RuneLite");
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setSize(FRAME_SIZE);
 		this.setLayout(new BorderLayout());
 		this.setUndecorated(true);
-		this.setIconImage(ClientUI.ICON);
+		this.setIconImage(ImageUtil.loadImageResource(ClientUI.class, "/runelite.png"));
 
 		final JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());

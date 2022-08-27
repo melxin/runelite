@@ -68,9 +68,9 @@ public class SplashScreen extends JFrame implements ActionListener
 
 	private SplashScreen()
 	{
-		BufferedImage logo = ImageUtil.loadImageResource(SplashScreen.class, "openosrs_transparent.png");
+		BufferedImage logo = ImageUtil.loadImageResource(SplashScreen.class, "runelite_transparent.png");
 
-		setTitle("OpenOSRS Launcher");
+		setTitle("RuneLite Launcher");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setUndecorated(true);

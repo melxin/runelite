@@ -121,7 +121,7 @@ public class ClientUI
 	private static final String CONFIG_CLIENT_SIDEBAR_CLOSED = "clientSidebarClosed";
 	private static final String CONFIG_OPACITY = "enableOpacity";
 	private static final String CONFIG_OPACITY_AMOUNT = "opacityPercentage";
-	public static final BufferedImage ICON = ImageUtil.loadImageResource(ClientUI.class, "/openosrs.png");
+	public static final BufferedImage ICON = ImageUtil.loadImageResource(ClientUI.class, "/runelite.png");
 
 	@Getter
 	private TrayIcon trayIcon;
