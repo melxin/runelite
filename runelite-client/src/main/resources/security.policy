@@ -5,11 +5,11 @@
 
 grant {
     //permission java.security.AllPermission;
-    //permission java.util.PropertyPermission "*", "read";
-    //permission java.security.BasicPermission;
 
     // Socket
-    permission java.net.SocketPermission "*", "accept, connect, listen, resolve";
+    //permission java.net.SocketPermission "*", "accept, connect, listen, resolve";
+    permission java.net.SocketPermission "*:80", "connect,resolve";
+    permission java.net.SocketPermission "*:443", "connect,resolve";
 
     // Net
     permission java.net.NetPermission "getProxySelector";
@@ -25,7 +25,7 @@ grant {
     //permission java.lang.RuntimePermission "getenv.PLUGIN_DEVELOPMENT_PATH";
     //permission java.lang.RuntimePermission "accessClassInPackage.sun.*";
 
-    // Other Runetime settings
+    // Other Runtime settings
     //permission java.lang.RuntimePermission "setContextClassLoader";
     //permission java.lang.RuntimePermission "getProtectionDomain";
 
@@ -52,16 +52,18 @@ grant {
 
     // Awt
     permission java.awt.AWTPermission "accessClipboard";
-    permission java.awt.AWTPermission "setWindowAlwaysOnTop";
     permission java.awt.AWTPermission "accessSystemTray";
+    permission java.awt.AWTPermission "setWindowAlwaysOnTop";
 
     // System properties
     permission java.util.PropertyPermission "user.home", "read,write";
     permission java.util.PropertyPermission "user.name", "read";
+    //permission java.util.PropertyPermission "java.home", "read";
     //permission java.util.PropertyPermission "java.version", "read";
     //permission java.util.PropertyPermission "java.vendor", "read";
     //permission java.util.PropertyPermission "java.vendor.url", "read";
     //permission java.util.PropertyPermission "java.class.version", "read";
+    permission java.util.PropertyPermission "java.class.path", "read";
     //permission java.util.PropertyPermission "os.name", "read";
     //permission java.util.PropertyPermission "os.version", "read";
     //permission java.util.PropertyPermission "os.arch", "read";
@@ -77,8 +79,8 @@ grant {
     //permission java.util.PropertyPermission "java.vm.version", "read";
     //permission java.util.PropertyPermission "java.vm.vendor", "read";
     //permission java.util.PropertyPermission "java.vm.name", "read";
+    permission java.util.PropertyPermission "java.io.tmpdir", "read,write";
     permission java.util.PropertyPermission "socksProxyHost", "read";
-    permission java.util.PropertyPermission "java.class.path", "read";
 
     // Runelite properties
     permission java.util.PropertyPermission "runelite.insecure-skip-tls-verification", "read";
@@ -95,7 +97,7 @@ grant {
     // Jagex properties
     permission java.util.PropertyPermission "jagex.disableBouncyCastle", "read,write";
 
-    // Other properties
+    // Injector/Other properties
     permission java.util.PropertyPermission "pf4j.pluginsConfigDir", "read";
 
     permission java.util.PropertyPermission "rx3.scheduler.use-nanotime", "read";
@@ -111,6 +113,7 @@ grant {
 
     permission java.util.PropertyPermission "jgoodies.popupDropShadowEnabled", "read,write";
     permission java.util.PropertyPermission "sun.awt.noerasebackground", "read,write";
+    permission java.util.PropertyPermission "jna.boot.library.path", "read";
 
     // File
     //permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
@@ -124,4 +127,8 @@ grant {
     permission java.io.FilePermission "${user.home}${/}.runelite${/}jagex_cl_oldschool_LIVE.dat", "read,write,delete";
     permission java.io.FilePermission "${user.home}${/}.runelite${/}plugin-hub${/}-", "read,write,delete";
     permission java.io.FilePermission "${user.home}${/}.openosrs${/}-", "read,write,delete";
+};
+
+grant codeBase "file:../lib/-" {
+         permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete,execute";
 };

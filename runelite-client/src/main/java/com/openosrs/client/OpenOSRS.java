@@ -61,7 +61,7 @@ public class OpenOSRS
 	public static void preload()
 	{
 		InputStream securityPolicyIn = OpenOSRS.class.getClassLoader().getResourceAsStream("security.policy");
-		File securityPolicyFile = new File("/tmp/security.policy");
+		File securityPolicyFile = new File(System.getProperty("java.io.tmpdir"), "security.policy");
 
 		try
 		{
