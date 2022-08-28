@@ -16,6 +16,8 @@ grant {
 
     // Runtime
     permission java.lang.RuntimePermission "*";
+    //permission java.lang.management.ManagementPermission "monitor";
+
     //permission java.lang.RuntimePermission "getClassLoader";
     //permission java.lang.RuntimePermission "accessDeclaredMembers";
     //permission java.lang.RuntimePermission "createClassLoader";
