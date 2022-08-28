@@ -113,6 +113,7 @@ grant {
     // File
     //permission java.io.FilePermission "<<ALL FILES>>", "read,write,delete";
 
+    permission java.io.FilePermission "<<ALL FILES>>", "execute";
     permission java.io.FilePermission "/-", "read";
     permission java.io.FilePermission "${user.home}${/}.runelite${/}-", "read";
     permission java.io.FilePermission "${user.home}${/}.runelite${/}cache${/}-", "read,write,delete";
