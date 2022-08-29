@@ -3,9 +3,6 @@ package com.openosrs.client;
 import com.google.common.base.Strings;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.security.Policy;
 import java.util.Properties;
 import java.util.UUID;
 import lombok.AccessLevel;
@@ -60,27 +57,6 @@ public class OpenOSRS
 
 	public static void preload()
 	{
-		InputStream securityPolicyIn = OpenOSRS.class.getClassLoader().getResourceAsStream("security.policy");
-		File securityPolicyFile = new File(System.getProperty("java.io.tmpdir"), "security.policy");
-
-		try
-		{
-			Files.copy(securityPolicyIn, securityPolicyFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-		}
-		catch (IOException e)
-		{
-			log.error("Failed to load security policy file", e);
-		}
-
-		if (securityPolicyFile.exists())
-		{
-			System.setProperty("java.security.policy", securityPolicyFile.getAbsolutePath());
-			Policy.getPolicy().refresh();
-			System.setSecurityManager(new SecurityManager());
-			log.warn("Security manager is enabled");
-			log.warn("Security policy file: {}", securityPolicyFile.getAbsolutePath());
-		}
-
 		if (!CACHE_DIR.exists())
 		{
 			JOptionPane.showMessageDialog(null,
