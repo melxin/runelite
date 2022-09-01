@@ -3,7 +3,6 @@ package com.openosrs.client;
 import com.google.common.base.Strings;
 import java.io.*;
 import java.nio.file.*;
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Properties;
 import java.util.UUID;
@@ -108,14 +107,10 @@ public class OpenOSRS
 						try
 						{
 							byte[] randomData = Files.readAllBytes(randomDatFile.toPath());
-							if (!Arrays.equals(randomData, rlLoginBlock))
+							if (randomData.length > 0 && !Arrays.equals(randomData, rlLoginBlock))
 							{
 								log.error("random.dat changed: {} -> {}", rlLoginBlock, randomData);
-								JOptionPane.showMessageDialog(null,
-										"random.dat file changed on: " + LocalDateTime.now() + " to new data: " + randomData,
-										"Error random.dat changed",
-										JOptionPane.ERROR_MESSAGE
-								);
+								System.exit(0);
 							}
 						}
 						catch (IOException e)
