@@ -55,4 +55,7 @@ public interface RSSpritePixels extends SpritePixels
 	@Import("yOffset")
 	@Override
 	void setOffsetY(int offsetY);
+
+	@Import("drawRotatedMaskedCenteredAround")
+	void drawRotatedMaskedCenteredAround(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6, int paramInt7, int paramInt8, int[] paramArrayOfint1, int[] paramArrayOfint2);
 }

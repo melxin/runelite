@@ -24,6 +24,7 @@
  */
 package net.runelite.mixins;
 
+import java.awt.Point;
 import java.awt.event.MouseWheelEvent;
 import net.runelite.api.mixins.Copy;
 import net.runelite.api.mixins.Mixin;
@@ -31,6 +32,7 @@ import net.runelite.api.mixins.Replace;
 import net.runelite.api.mixins.Shadow;
 import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSMouseWheelHandler;
+import net.runelite.rs.api.RSSpritePixels;
 
 @Mixin(RSMouseWheelHandler.class)
 public abstract class RSMouseWheelHandlerMixin implements RSMouseWheelHandler
@@ -47,6 +49,22 @@ public abstract class RSMouseWheelHandlerMixin implements RSMouseWheelHandler
 		if (!event.isConsumed())
 		{
 			mouseWheelMoved(event);
+		}
+
+		// Minimap
+		if (client.getMouseWheelRotation() != 0)
+		{
+			RSSpritePixels spritePixels = client.getMinimapSprite();
+			Point mouseWheelPoint = event.getPoint();
+			double mouseWheelX = mouseWheelPoint.getX();
+			double mouseWheelY = mouseWheelPoint.getY();
+			int spritePixelsX = spritePixels.getWidth();
+			int spritePixelsY = spritePixels.getHeight();
+			client.getLogger().info("Mouse: {} | sp: {} | {}", mouseWheelPoint, spritePixelsX, spritePixelsY);
+			if (mouseWheelX >= spritePixelsX && mouseWheelY <= spritePixelsY)
+			{
+				client.setMinimapZoom(true);
+			}
 		}
 	}
 }

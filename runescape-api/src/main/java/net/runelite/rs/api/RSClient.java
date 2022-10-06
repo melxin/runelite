@@ -1675,4 +1675,52 @@ public interface RSClient extends RSGameEngine, Client
 
 	@Import("getDbRowType")
 	RSDbRowType getDbRowType(int var0);
+
+	@Import("mouseWheelRotation")
+	int getMouseWheelRotation();
+
+	@Import("minimapState")
+	int getMinimapState();
+
+	@Import("Rasterizer2D_replace")
+	void replacePixels(int[] paramArrayOfint, int paramInt1, int paramInt2);
+
+	@Import("Rasterizer3D_setClipFromRasterizer2D")
+	void rasterizer3DsetClipFromRasterizer2D();
+
+	//@Import("Rasterizer3D_idk")
+	//void setRasterizer3DIdk(boolean paramBoolean);
+
+	//@Import("SceneTileModel_idk1")
+	//int[] getSceneTileModel_idk1();
+
+	//@Import("SceneTileModel_idk2")
+	//int[] getSceneTileModel_idk2();
+
+	//@Import("Rasterizer3D_idk1")
+	//void Rasterizer3D_idk1(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6, int paramInt7);
+
+	@Import("Rasterizer2D_drawLine")
+	void Rasterizer2D_drawLine(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5);
+
+	@Import("Rasterizer2D_setClip")
+	void Rasterizer2D_setClip(int paramInt1, int paramInt2, int paramInt3, int paramInt4);
+
+	@Import("mapIconCount")
+	int getMapIconCount();
+
+	@Import("mapIconXs")
+	int[] getMapIconXs();
+
+	@Import("mapIconYs")
+	int[] getMapIconYs();
+
+	@Import("drawSpriteOnMinimap")
+	void drawSpriteOnMinimap(int paramInt1, int paramInt2, int paramInt3, int paramInt4, SpritePixels paramSpritePixels, RSSpriteMask paramRSSpriteMask);
+
+	@Import("worldToMinimap")
+	void worldToMinimap(int paramInt1, int paramInt2, int paramInt3, int paramInt4, SpritePixels paramSpritePixels, RSSpriteMask paramRSSpriteMask);
+
+	@Import("mapMarkerSprites")
+	SpritePixels[] getMapMarkerSprites();
 }

@@ -616,4 +616,7 @@ public interface RSWidget extends Widget
 	RSWidget setLineHeight(int height);
 
 	void broadcastHidden(boolean hidden);
+
+	@Import("getSpriteMask")
+	RSSpriteMask getSpriteMask(boolean var0);
 }
