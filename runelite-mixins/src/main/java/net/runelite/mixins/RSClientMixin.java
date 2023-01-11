@@ -3401,5 +3401,12 @@ public abstract class RSClientMixin implements RSClient
 	{
 		return this.getKeyHandler().getPressedKeys();
 	}
+
+	@Inject
+	@Override
+	public net.runelite.api.RenderOverview getRenderOverview()
+	{
+		return client.getWorldMap();
+	}
 }
 
