@@ -130,6 +130,10 @@ public interface RSModel extends RSRenderable, Model
 	@Override
 	int getRadius();
 
+	@Import("diameter")
+	@Override
+	int getDiameter();
+
 	@Import("aabb")
 	@Override
 	HashMap<Integer, AABB> getAABBMap();
