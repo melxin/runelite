@@ -112,7 +112,7 @@ LABEL69:
    if_icmple              RETURN                    ; Return if the weapon isn't supposed to have a spec
    jump                   CONTINUE                  ; Idk why I'm doing it like this but it's the jagex way
    RETURN:
-      return
+         return
    CONTINUE:
    iload                  3
    iload                  1
@@ -152,11 +152,11 @@ LABEL93:
    sstore                 0
    iload                  4
    switch
+      22731: LABEL118
+      22734: LABEL118
       22737: LABEL118
       22740: LABEL118
       22743: LABEL118
-      22731: LABEL118
-      22734: LABEL118
    jump                   LABEL126
 LABEL118:
    iconst                 111
@@ -171,7 +171,7 @@ LABEL126:
    get_varbit             5712
    iconst                 0
    if_icmpeq              LABEL130
-   jump                   LABEL192
+   jump                   LABEL226
 LABEL130:
    iload                  4
    iconst                 11235
@@ -222,6 +222,43 @@ LABEL167:
    join_string            3
    sstore                 0
 LABEL176:
+   iload                  4
+   iconst                 27853
+   if_icmpeq              LABEL180
+   jump                   LABEL210
+LABEL180:
+   iconst                 94
+   iconst                 13
+   inv_getobj
+   iconst                 11212
+   if_icmpeq              LABEL201
+   iconst                 94
+   iconst                 13
+   inv_getobj
+   iconst                 11227
+   if_icmpeq              LABEL201
+   iconst                 94
+   iconst                 13
+   inv_getobj
+   iconst                 11228
+   if_icmpeq              LABEL201
+   iconst                 94
+   iconst                 13
+   inv_getobj
+   iconst                 11229
+   if_icmpeq              LABEL201
+   jump                   LABEL210
+LABEL201:
+   sconst                 "Descent of Dragons: Deal a double attack with dragon arrows that inflicts up to 50% more damage (minimum damage of 10 per hit). ("
+   iload                  4
+   invoke                 3648
+   iconst                 10
+   div
+   tostring
+   sconst                 "%)"
+   join_string            3
+   sstore                 0
+LABEL210:
    iconst                 526
    iconst                 -2147483645
    iconst                 -1
@@ -237,11 +274,11 @@ LABEL176:
    sconst                 "I"
    iconst                 38862883
    if_setonmouseleave
-   jump                   LABEL196
-LABEL192:
+   jump                   LABEL230
+LABEL226:
    iconst                 -1
    sconst                 ""
    iconst                 38862883
    if_setonmouserepeat
-LABEL196:
-   return                
+LABEL230:
+   return
