@@ -29,7 +29,6 @@ import java.util.Date
 
 plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("com.openosrs.scriptassembler")
     java
     kotlin("jvm") version "1.6.21"
     id("org.jetbrains.kotlin.plugin.lombok") version "1.6.21"
@@ -180,22 +179,12 @@ tasks {
         archiveClassifier.set("shaded")
     }
 
-    assembleScripts {
-        val inp = "${projectDir}/src/main/scripts"
-        val out = "${buildDir}/scripts/runelite"
-
-        inputs.dir(inp)
-        outputs.dir(out)
-
-        input.set(file(inp))
-        output.set(file(out))
-    }
-
     processResources {
-        dependsOn("assembleScripts")
-        dependsOn(":injected-client:inject")
+        dependsOn(":runelite-script-assembler-plugin:assembleMojo")
 
         from("${buildDir}/scripts")
+
+        dependsOn(":injected-client:inject")
 
         from("${project(":injected-client").buildDir}/libs")
         from("${project(":injected-client").buildDir}/resources/main")
