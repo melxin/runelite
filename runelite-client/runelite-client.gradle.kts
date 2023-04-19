@@ -152,6 +152,10 @@ tasks {
         finalizedBy("shadowJar")
     }
 
+    compileJava {
+        // dependsOn("packInjectedClient")
+    }
+
     processResources {
         val tokens = mapOf(
                 "project.version" to ProjectVersions.rlVersion,
@@ -169,6 +173,16 @@ tasks {
         }
     }
 
+    register<Copy>("packInjectedClient") {
+        dependsOn(":injector:inject")
+
+        from("build/injected/")
+        include("**/injected-client.oprs")
+        into("${buildDir}/resources/main")
+
+        outputs.upToDateWhen { false }
+    }
+
     jar {
         manifest {
             attributes(mutableMapOf("Main-Class" to "net.runelite.client.RuneLite"))
@@ -184,10 +198,9 @@ tasks {
 
         from("${buildDir}/scripts")
 
-        dependsOn(":injected-client:inject")
+        dependsOn(":injector:inject")
 
-        from("${project(":injected-client").buildDir}/libs")
-        from("${project(":injected-client").buildDir}/resources/main")
+        from("build/injected")
     }
 
     withType<BootstrapTask> {
