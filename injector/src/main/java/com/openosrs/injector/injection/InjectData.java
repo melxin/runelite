@@ -121,7 +121,11 @@ public abstract class InjectData
 
 		Type type = deobField.getObfuscatedType();
 
-		return obC.findField(name, type);
+		Field f = obC.findField(name, type);
+
+		if (f == null)
+			throw new RuntimeException("couldn't find static field " + deobField.getClassFile() + "/" + deobField.getName());
+		return f;
 	}
 
 	/**

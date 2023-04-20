@@ -135,6 +135,7 @@ public class ScriptVM extends AbstractInjector
 		ALoad localInstructionLoad = null;
 
 		MethodContext methodContext = pcontext.get();
+
 		for (InstructionContext instrCtx : methodContext.getInstructionContexts())
 		{
 			Instruction instr = instrCtx.getInstruction();
@@ -211,7 +212,7 @@ public class ScriptVM extends AbstractInjector
 							.map(InstructionContext::getInstruction)
 							.filter(i -> i instanceof IStore)
 							.findFirst()
-							.orElse(null);
+							.orElseThrow(null);
 						if (istore != null)
 						{
 							currentOpcodeStore = istore;

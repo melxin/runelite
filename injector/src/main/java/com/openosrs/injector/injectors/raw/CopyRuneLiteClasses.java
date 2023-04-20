@@ -57,6 +57,7 @@ public class CopyRuneLiteClasses extends AbstractInjector
 	{
 		for (String className : RUNELITE_OBJECTS)
 		{
+			//System.out.println(className);
 			shadowFields.clear();
 
 			ClassFile runeliteObjectVanilla = inject.vanilla.findClass(className);
