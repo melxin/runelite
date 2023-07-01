@@ -261,11 +261,11 @@ public class SlayerPluginTest
 			});
 
 		VarbitChanged varbitChanged = new VarbitChanged();
-		varbitChanged.setVarpId(VarPlayer.SLAYER_TASK_SIZE.getId());
+		varbitChanged.setVarpId(VarPlayer.SLAYER_TASK_SIZE);
 		slayerPlugin.onVarbitChanged(varbitChanged);
 
 		varbitChanged = new VarbitChanged();
-		varbitChanged.setVarpId(VarPlayer.SLAYER_TASK_CREATURE.getId());
+		varbitChanged.setVarpId(VarPlayer.SLAYER_TASK_CREATURE);
 		slayerPlugin.onVarbitChanged(varbitChanged);
 
 		slayerPlugin.onGameTick(new GameTick());
@@ -338,11 +338,11 @@ public class SlayerPluginTest
 		when(client.getVarpValue(VarPlayer.SLAYER_TASK_CREATURE)).thenReturn(0);
 
 		VarbitChanged taskSizeChanged = new VarbitChanged();
-		taskSizeChanged.setVarpId(VarPlayer.SLAYER_TASK_SIZE.getId());
+		taskSizeChanged.setVarpId(VarPlayer.SLAYER_TASK_SIZE);
 		slayerPlugin.onVarbitChanged(taskSizeChanged);
 
 		VarbitChanged taskCreatureChanged = new VarbitChanged();
-		taskCreatureChanged.setVarpId(VarPlayer.SLAYER_TASK_CREATURE.getId());
+		taskCreatureChanged.setVarpId(VarPlayer.SLAYER_TASK_CREATURE);
 		slayerPlugin.onVarbitChanged(taskCreatureChanged);
 
 		when(client.getVarpValue(VarPlayer.SLAYER_TASK_SIZE)).thenReturn(42);
