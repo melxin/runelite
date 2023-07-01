@@ -24,18 +24,23 @@
  */
 package net.runelite.client.plugins.devtools;
 
+import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Multimap;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
+import net.runelite.api.IndexDataBase;
 import net.runelite.api.VarClientInt;
 import net.runelite.api.VarClientStr;
 import net.runelite.api.VarPlayer;
+import net.runelite.api.VarbitComposition;
 import net.runelite.api.Varbits;
 import net.runelite.api.events.VarClientIntChanged;
 import net.runelite.api.events.VarClientStrChanged;
 import net.runelite.api.events.VarbitChanged;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.ui.ColorScheme;
@@ -93,12 +98,14 @@ public class VarInspector extends DevToolsFrame
 	private static final Map<Integer, String> VARBIT_NAMES;
 	private static final Map<Integer, String> VARCINT_NAMES;
 	private static final Map<Integer, String> VARCSTR_NAMES;
+	private static final Map<Integer, String> VARP_NAMES;
 
 	static
 	{
 		ImmutableMap.Builder<Integer, String> varbits = new ImmutableMap.Builder<>();
 		ImmutableMap.Builder<Integer, String> varcint = new ImmutableMap.Builder<>();
 		ImmutableMap.Builder<Integer, String> varcstr = new ImmutableMap.Builder<>();
+		ImmutableMap.Builder<Integer, String> varp = new ImmutableMap.Builder<>();
 
 		try
 		{
@@ -116,6 +123,11 @@ public class VarInspector extends DevToolsFrame
 			{
 				varcstr.put(f.getInt(null), f.getName());
 			}
+
+			for (Field f : VarPlayer.class.getDeclaredFields())
+			{
+				varp.put(f.getInt(null), f.getName());
+			}
 		}
 		catch (IllegalAccessException ex)
 		{
@@ -125,10 +137,14 @@ public class VarInspector extends DevToolsFrame
 		VARBIT_NAMES = varbits.build();
 		VARCINT_NAMES = varcint.build();
 		VARCSTR_NAMES = varcstr.build();
+		VARP_NAMES = varp.build();
 	}
 
 	@Inject
 	private Client client;
+
+	@Inject
+	private ClientThread clientThread;
 
 	@Inject
 	private EventBus eventBus;
@@ -139,8 +155,8 @@ public class VarInspector extends DevToolsFrame
 
 	private int[] oldVarps = null;
 	private int[] oldVarps2 = null;
-	private int numVarbits = 10000;
 
+	private Multimap<Integer, Integer> varbits;
 	private Map<Integer, Object> varcs = null;
 
 	private JFrame frame;
@@ -180,7 +196,7 @@ public class VarInspector extends DevToolsFrame
 			tracker.add(new JLabel(String.format("%s %s changed: %s -> %s", type.getName(), name, old, neew)));
 
 			// Cull very old stuff
-			for (; tracker.getComponentCount() > MAX_LOG_ENTRIES; )
+			while (tracker.getComponentCount() > MAX_LOG_ENTRIES)
 			{
 				tracker.remove(0);
 			}
@@ -190,55 +206,43 @@ public class VarInspector extends DevToolsFrame
 	}
 
 	@Subscribe
-	private void onVarbitChanged(VarbitChanged ev)
+	private void onVarbitChanged(VarbitChanged varbitChanged)
 	{
+		int index = varbitChanged.getIndex();
 		int[] varps = client.getVarps();
 
 		// Check varbits
-		for (int i = 0; i < numVarbits; i++)
+		for (int i : varbits.get(index))
 		{
-			try
+			int old = client.getVarbitValue(oldVarps, i);
+			int neew = client.getVarbitValue(varps, i);
+			if (old != neew)
 			{
-				int old = client.getVarbitValue(oldVarps, i);
-				int neew = client.getVarbitValue(varps, i);
-				if (old != neew)
-				{
-					// Set the varbit so it doesn't show in the varp changes
-					// However, some varbits share common bits, so we only do it in oldVarps2
-					// Example: 4101 collides with 4104-4129
-					client.setVarbitValue(oldVarps2, i, neew);
+				// Set the varbit so it doesn't show in the varp changes
+				// However, some varbits share common bits, so we only do it in oldVarps2
+				// Example: 4101 collides with 4104-4129
+				client.setVarbitValue(oldVarps2, i, neew);
 
-					final String name = VARBIT_NAMES.getOrDefault(i, Integer.toString(i));
-					addVarLog(VarType.VARBIT, name, old, neew);
-				}
-			}
-			catch (IndexOutOfBoundsException e)
-			{
-				// We don't know what the last varbit is, so we just hit the end, then set it for future iterations
-				log.debug("Hit OOB at varbit {}", i);
-				numVarbits = i;
-				break;
+				final String name = VARBIT_NAMES.getOrDefault(i, Integer.toString(i));
+				addVarLog(VarType.VARBIT, name, old, neew);
 			}
 		}
 
 		// Check varps
-		for (int i = 0; i < varps.length; i++)
+		int old = oldVarps2[index];
+		int neew = varps[index];
+		if (old != neew)
 		{
-			int old = oldVarps2[i];
-			int neew = varps[i];
-			if (old != neew)
+			String name = VARP_NAMES.get(index);
+			if (name != null)
 			{
-				String name = String.format("%d", i);
-				for (VarPlayer varp : VarPlayer.values())
-				{
-					if (varp.getId() == i)
-					{
-						name = String.format("%s(%d)", varp.name(), i);
-						break;
-					}
-				}
-				addVarLog(VarType.VARP, name, old, neew);
+				name += "(" + index + ")";
 			}
+			else
+			{
+				name = Integer.toString(index);
+			}
+			addVarLog(VarType.VARP, name, old, neew);
 		}
 
 		System.arraycopy(client.getVarps(), 0, oldVarps, 0, oldVarps.length);
@@ -384,6 +388,22 @@ public class VarInspector extends DevToolsFrame
 		System.arraycopy(client.getVarps(), 0, oldVarps, 0, oldVarps.length);
 		System.arraycopy(client.getVarps(), 0, oldVarps2, 0, oldVarps2.length);
 		varcs = new HashMap<>(client.getVarcMap());
+		varbits = HashMultimap.create();
+
+		clientThread.invoke(() ->
+		{
+			// Build varp index -> varbit id map
+			IndexDataBase indexVarbits = client.getIndexConfig();
+			final int[] varbitIds = indexVarbits.getFileIds(VARBITS_ARCHIVE_ID);
+			for (int id : varbitIds)
+			{
+				VarbitComposition varbit = client.getVarbit(id);
+				if (varbit != null)
+				{
+					varbits.put(varbit.getIndex(), id);
+				}
+			}
+		});
 
 		eventBus.register(this);
 
@@ -397,5 +417,7 @@ public class VarInspector extends DevToolsFrame
 		tracker.removeAll();
 		eventBus.unregister(this);
 		frame.setVisible(false);
+		varcs = null;
+		varbits = null;
 	}
 }
