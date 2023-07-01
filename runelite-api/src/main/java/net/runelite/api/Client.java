@@ -873,24 +873,6 @@ public interface Client extends OAuthApi, GameEngine
 	Map<Integer, Object> getVarcMap();
 
 	/**
-	 * Gets the value corresponding to the passed player variable.
-	 *
-	 * @param varPlayer the player variable
-	 * @return the value
-	 * @see Client#getVarpValue(VarPlayer)
-	 */
-	@Deprecated
-	int getVar(VarPlayer varPlayer);
-
-	/**
-	 * Gets the value corresponding to the passed player variable.
-	 *
-	 * @param varPlayer the player variable
-	 * @return the value
-	 */
-	int getVarpValue(VarPlayer varPlayer);
-
-	/**
 	 * Gets a value corresponding to the passed varbit.
 	 *
 	 * @param varbit the varbit id
@@ -995,16 +977,6 @@ public interface Client extends OAuthApi, GameEngine
 	 * @see Varbits
 	 */
 	int getVarbitValue(int[] varps, @Varbit int varbitId);
-
-	/**
-	 * Gets the value of a given VarPlayer.
-	 *
-	 * @param varps  passed varps
-	 * @param varpId the VarpPlayer id
-	 * @return the value
-	 * @see VarPlayer#getId()
-	 */
-	int getVarpValue(int[] varps, int varpId);
 
 	/**
 	 * Sets the value of a given variable.

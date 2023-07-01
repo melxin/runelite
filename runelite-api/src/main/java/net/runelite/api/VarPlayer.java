@@ -39,7 +39,6 @@ public final class VarPlayer
 	public static final int CANNON_AMMO = 3;
 	public static final int ATTACK_STYLE = 43;
 	public static final int QUEST_POINTS = 101;
-	public static final int IS_POISONED = 102;
 	/**
 	 * Seems to start at 50(10 splash) and goes down by 1 every 30 seconds
 	 */
