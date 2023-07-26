@@ -43,6 +43,8 @@ import net.runelite.api.clan.ClanID;
 import net.runelite.api.clan.ClanSettings;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
+import net.runelite.api.events.NpcChanged;
+import net.runelite.api.events.NpcSpawned;
 import net.runelite.api.events.PlayerChanged;
 import net.runelite.api.dbtable.DBRowConfig;
 import net.runelite.api.hooks.Callbacks;
@@ -2480,4 +2482,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * @param zoom
 	 */
 	void setMinimapZoom(double zoom);
+
+	List<NpcSpawned> spawnedNpcs();
+	List<NpcChanged> changedNpcs();
 }

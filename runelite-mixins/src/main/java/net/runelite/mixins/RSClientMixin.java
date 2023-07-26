@@ -110,6 +110,7 @@ import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.events.MenuOpened;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.MenuShouldLeftClick;
+import net.runelite.api.events.NpcChanged;
 import net.runelite.api.events.NpcSpawned;
 import net.runelite.api.events.PlayerDespawned;
 import net.runelite.api.events.PlayerMenuOptionsChanged;
@@ -2087,10 +2088,43 @@ public abstract class RSClientMixin implements RSClient
 	}*/
 
 	@Inject
+	private static final List<NpcSpawned> spawnedNpcs = new ArrayList<>();
+
+	@Inject
+	private static final List<NpcChanged> changedNpcs = new ArrayList<>();
+
+	@Inject
+	@Override
+	public List<NpcSpawned> spawnedNpcs()
+	{
+		return spawnedNpcs;
+	}
+
+	@Inject
+	@Override
+	public List<NpcChanged> changedNpcs()
+	{
+		return changedNpcs;
+	}
+
+	@Inject
 	@MethodHook("updateNpcs")
 	public static void updateNpcs(boolean var0, RSPacketBuffer var1)
 	{
 		client.getCallbacks().updateNpcs();
+
+		for (NpcSpawned npcSpawned : spawnedNpcs)
+		{
+			client.getCallbacks().post(npcSpawned);
+		}
+		spawnedNpcs.clear();
+
+		for (NpcChanged npcChanged : changedNpcs)
+		{
+			client.getCallbacks().post(npcChanged);
+		}
+		changedNpcs.clear();
+
 		syncMusicVolume();
 	}
 
