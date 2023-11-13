@@ -84,6 +84,8 @@ public class UpdateMappings
 
 		new ScriptOpcodesTransformer().transform(group2);
 		new GraphicsObjectTransformer().transform(group2);
+
+		new RuneLiteClassCopy().copy(group1, group2);
 	}
 
 	public void save(File out) throws IOException
