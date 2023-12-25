@@ -127,34 +127,77 @@ public class MissingMappingChecker implements Runnable
 			return;
 		}
 
+		Type lastNamedType = null;
+		Type lastTargetType = null;
+
+		Type nextNamedType = null;
+		Type nextTargetType = null;
+
 		List<Field> namedFields = namedCF.getFields().stream().filter(f -> f.getAnnotations().containsKey(DeobAnnotations.EXPORT) && !mapping.getMap().containsKey(f)).collect(Collectors.toList());
 		List<Field> targetFields = targetCF.getFields().stream().filter(f -> !f.getAnnotations().containsKey(DeobAnnotations.EXPORT) && !mapping.getMap().containsValue(f)).collect(Collectors.toList());
-		for (int i = 0; i < Math.min(namedFields.size(), targetFields.size()); i++)
+		for (int i = 0; i < namedFields.size(); i++)
 		{
 			Field namedField = namedFields.get(i);
-			Field targetField = targetFields.get(i);
-			if (namedField.getType().equals(targetField.getType()) || namedField.getType().equals(new Type("L" + namedField.getClassFile().getName() + ";")) && targetField.getType().equals(new Type("L" + targetField.getClassFile().getName() + ";")))
+			for (int j = 0; j < targetFields.size(); j++)
 			{
-				if (namedField.getAccessFlags() == targetField.getAccessFlags())
+				Field targetField = targetFields.get(j);
+				if (namedField.getType().equals(targetField.getType()) || namedField.getType().equals(new Type("L" + namedField.getClassFile().getName() + ";")) && targetField.getType().equals(new Type("L" + targetField.getClassFile().getName() + ";")))
 				{
-					mapping.map(null, namedField, targetField);
-					logger.info("Mapped missing field: {} to: {}", namedField, targetField);
+					if (namedField.getAccessFlags() == targetField.getAccessFlags())
+					{
+						if (lastNamedType != null && lastTargetType != null && !lastNamedType.equals(lastTargetType))
+						{
+							continue;
+						}
+
+						if (nextNamedType != null && nextTargetType != null && !nextNamedType.equals(nextTargetType))
+						{
+							continue;
+						}
+
+						if (mapping.getMap().containsValue(targetField))
+						{
+							continue;
+						}
+
+						mapping.map(null, namedField, targetField);
+						logger.info("Mapped missing field: {} to: {}", namedField, targetField);
+					}
 				}
+				lastTargetType = targetField.getType();
+				nextTargetType = j + 1 < targetFields.size() ? targetFields.get(j + 1).getType() : null;
 			}
+			lastNamedType = namedField.getType();
+			nextNamedType = i + 1 < namedFields.size() ? namedFields.get(i + 1).getType() : null;
 		}
 
 		List<Method> namedMethods = namedCF.getMethods().stream().filter(m -> m.getAnnotations().containsKey(DeobAnnotations.EXPORT) && !m.getName().equals("<clinit>") && !m.getName().equals("<init>") && !mapping.getMap().containsKey(m)).collect(Collectors.toList());
 		List<Method> targetMethods = targetCF.getMethods().stream().filter(m -> !m.getAnnotations().containsKey(DeobAnnotations.EXPORT) && !m.getName().equals("<clinit>") && !m.getName().equals("<init>") && !mapping.getMap().containsValue(m)).collect(Collectors.toList());
-		for (int i = 0; i < Math.min(namedMethods.size(), targetMethods.size()); i++)
+		for (int i = 0; i < namedMethods.size(); i++)
 		{
 			Method namedMethod = namedMethods.get(i);
-			Method targetMethod = targetMethods.get(i);
-			if (namedMethod.getDescriptor().equals(targetMethod.getDescriptor()) || namedMethod.getDescriptor().toString().replace(namedMethod.getClassFile().getName(), targetMethod.getClassFile().getName()).equals(targetMethod.getDescriptor().toString()))
+			String namedMethodWithClass = namedMethod.getDescriptor().toString().contains("L") ? namedMethod.getDescriptor().toString().substring(namedMethod.getDescriptor().toString().lastIndexOf("L"), namedMethod.getDescriptor().toString().lastIndexOf(";") + 1) : null;
+
+			for (int j = 0; j < targetMethods.size(); j++)
 			{
-				if (namedMethod.getAccessFlags() == targetMethod.getAccessFlags() && namedMethod.getParameters().equals(targetMethod.getParameters()))
+				Method targetMethod = targetMethods.get(j);
+				String targetMethodWithClass = targetMethod.getDescriptor().toString().contains("Lclass") ? targetMethod.getDescriptor().toString().substring(targetMethod.getDescriptor().toString().lastIndexOf("L"), targetMethod.getDescriptor().toString().lastIndexOf(";") + 1) : null;
+
+				if (namedMethod.getDescriptor().equals(targetMethod.getDescriptor())
+					|| namedMethod.getDescriptor().toString().replace(namedMethod.getClassFile().getName(), targetMethod.getClassFile().getName()).equals(targetMethod.getDescriptor().toString())
+					|| namedMethodWithClass != null && targetMethodWithClass != null && namedMethod.getDescriptor().toString().replace(namedMethodWithClass, targetMethodWithClass).equals(targetMethod.getDescriptor().toString()))
 				{
-					mapping.map(null, namedMethod, targetMethod);
-					logger.info("Mapped missing method: {} to: {}", namedMethod, targetMethod);
+					if (namedMethod.getAccessFlags() == targetMethod.getAccessFlags() && namedMethod.getParameters().equals(targetMethod.getParameters()))
+					{
+						if (mapping.getMap().containsValue(targetMethod))
+						{
+							continue;
+						}
+
+						mapping.map(null, namedMethod, targetMethod);
+						logger.info("Mapped missing method: {} to: {}", namedMethod, targetMethod);
+						break;
+					}
 				}
 			}
 		}
