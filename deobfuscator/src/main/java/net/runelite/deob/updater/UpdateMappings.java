@@ -41,6 +41,7 @@ import net.runelite.deob.deobfuscators.transformers.ClassToPackageTransformer;
 import net.runelite.deob.deobfuscators.transformers.GraphicsObjectTransformer;
 import net.runelite.deob.deobfuscators.transformers.JSONSyntheticTransformer;
 import net.runelite.deob.deobfuscators.mapping.MissingMappingChecker;
+import net.runelite.deob.deobfuscators.transformers.ObfuscatedGetterValueCorrectionTransformer;
 import net.runelite.deob.deobfuscators.transformers.ScriptOpcodesTransformer;
 import net.runelite.deob.deobfuscators.transformers.BadEnumConstructorTransformer;
 import net.runelite.deob.util.JarUtil;
@@ -65,6 +66,7 @@ public class UpdateMappings
 		mapper.run();
 		ParallelExecutorMapping mapping = mapper.getMapping();
 
+		new ObfuscatedGetterValueCorrectionTransformer(mapping).transform(group2);
 		new BufferRenameTransformer(mapping).transform(group2);
 		new MissingMappingChecker(mapping, group1, group2).run();
 
