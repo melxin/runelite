@@ -2,6 +2,7 @@ package net.runelite.deob.deobfuscators.transformers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,7 +13,9 @@ import net.runelite.asm.ClassFile;
 import net.runelite.asm.ClassGroup;
 import net.runelite.asm.Field;
 import net.runelite.asm.Method;
+import net.runelite.asm.Type;
 import net.runelite.asm.attributes.code.Instruction;
+import net.runelite.asm.attributes.code.instruction.types.FieldInstruction;
 import net.runelite.asm.attributes.code.instruction.types.GetFieldInstruction;
 import net.runelite.asm.attributes.code.instructions.GetField;
 import net.runelite.asm.attributes.code.instructions.GetStatic;
@@ -64,50 +67,46 @@ public class ObfuscatedGetterValueCorrectionTransformer implements Transformer
 					Instruction in = ins.get(i);
 
 					Instruction shouldBeLDC = null;
-					Instruction shouldBeIMUL = null;
 
-					if (in instanceof GetField)
+					if (in instanceof GetFieldInstruction)
 					{
+						if (((GetFieldInstruction) in).getMyField() == null)
+						{
+							continue;
+						}
+
+						if (!((GetFieldInstruction) in).getMyField().getType().equals(Type.INT) && !((GetFieldInstruction) in).getMyField().getType().equals(Type.LONG))
+						{
+							continue;
+						}
+
 						try
 						{
-							shouldBeLDC = ins.get(i + 1) instanceof LDC ? ins.get(i + 1) : null;
-							shouldBeIMUL = ins.get(i + 1) instanceof LDC && ins.get(i + 2) instanceof IMul ? ins.get(i + 2) : null;
-						}
-						catch (IndexOutOfBoundsException e)
-						{
-							try
+							if (i + 1 < ins.size() && shouldBeLDC == null)
 							{
-								shouldBeLDC = ins.get(i - 2) instanceof LDC ? ins.get(i - 2) : null;
-								shouldBeIMUL = ins.get(i + 1) instanceof IMul ? ins.get(i + 1) : null;
+								shouldBeLDC = ins.get(i + 1) instanceof LDC ? ins.get(i + 1) : null;
 							}
-							catch (IndexOutOfBoundsException ex)
-							{
-								continue;
-							}
-						}
-					}
-					else if (in instanceof GetStatic)
-					{
-						try
-						{
-							shouldBeLDC = ins.get(i + 1) instanceof LDC ? ins.get(i + 1) : null;
-							shouldBeIMUL = ins.get(i + 1) instanceof LDC && ins.get(i + 2) instanceof IMul ? ins.get(i + 2) : null;
-						}
-						catch (IndexOutOfBoundsException e)
-						{
-							try
+							else if (i >= 1 && shouldBeLDC == null)
 							{
 								shouldBeLDC = ins.get(i - 1) instanceof LDC ? ins.get(i - 1) : null;
-								shouldBeIMUL = ins.get(i + 1) instanceof IMul ? ins.get(i + 1) : null;
 							}
-							catch (IndexOutOfBoundsException ex)
+							else if (i + 2 < ins.size() && shouldBeLDC == null)
 							{
-								continue;
+								shouldBeLDC = ins.get(i + 2) instanceof LDC ? ins.get(i + 2) : null;
 							}
+							else if (i >= 2 && shouldBeLDC == null)
+							{
+								shouldBeLDC = ins.get(i - 2) instanceof LDC ? ins.get(i - 2) : null;
+							}
+						}
+						catch (IndexOutOfBoundsException e)
+						{
+							logger.info("", e);
+							continue;
 						}
 					}
 
-					if (shouldBeLDC instanceof LDC && ((LDC) shouldBeLDC).getConstant() instanceof Number && shouldBeIMUL instanceof IMul)
+					if (shouldBeLDC != null && shouldBeLDC instanceof LDC && ((LDC) shouldBeLDC).getConstant() instanceof Number)
 					{
 						Number vanillaValue = (Number) ((LDC) shouldBeLDC).getConstant();
 						if (vanillaValue.byteValue() == 1)
@@ -162,17 +161,37 @@ public class ObfuscatedGetterValueCorrectionTransformer implements Transformer
 						}
 					}
 
-					if (obfuscatedGetterValue.intValue() < predictedValue.intValue())
+					/*if (obfuscatedGetterValue.intValue() < predictedValue.intValue())
 					{
 						continue;
-					}
-					if (predictedValue != null && !obfuscatedGetterValue.toString().equals(predictedValue.toString()))
+					}*/
+					if (!values.contains(obfuscatedGetterValue))
 					{
-						logger.info("found incorrect obfget: {} != {} for field: {} ({}.{}) mapped: {}", obfuscatedGetterValue, predictedValue, f, obfuscatedClassName, obfuscatedFieldName, mappedField);
+						logger.info("found incorrect obfget: {} != {} for field: {} ({}.{}) mapped: {}", obfuscatedGetterValue, values.get(0), f, obfuscatedClassName, obfuscatedFieldName, mappedField);
+						/*if (predictedValue instanceof Long)
+						{
+							obfuscatedGetter.setElement("longValue", predictedValue);
+						}
+						else if (predictedValue instanceof Integer)
+						{
+							obfuscatedGetter.setElement("intValue", predictedValue);
+						}*/
+						//logger.info("inversed: {}", modInverse((Integer) obfuscatedGetterValue.intValue()));
 					}
 					//logger.info("found values: {} for field: {}", values, obfuscatedFieldName);
 				}
 			}
 		}
+	}
+
+	public int modInverse(int val)
+	{
+		return modInverse(BigInteger.valueOf(val), 32).intValue();
+	}
+
+	private BigInteger modInverse(BigInteger val, int bits)
+	{
+		BigInteger shift = BigInteger.ONE.shiftLeft(bits);
+		return val.modInverse(shift);
 	}
 }
