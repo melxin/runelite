@@ -127,7 +127,14 @@ public class OverlayManager
 	@Subscribe
 	public void onPluginChanged(final PluginChanged event)
 	{
-		overlays.forEach(this::loadOverlay);
+		synchronized (this)
+		{
+			overlays.forEach((o) ->
+			{
+				loadOverlay(o);
+				o.revalidate();
+			});
+		}
 		rebuildOverlayLayers();
 	}
 
