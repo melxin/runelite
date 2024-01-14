@@ -33,6 +33,7 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ScheduledExecutorService;
 import javax.inject.Inject;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
@@ -53,6 +54,7 @@ import net.runelite.client.game.ItemManager;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.input.MouseManager;
 import static net.runelite.client.plugins.grandexchange.GrandExchangePlugin.findFuzzyIndices;
+import net.runelite.client.ui.ClientToolbar;
 import net.runelite.http.api.ge.GrandExchangeTrade;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -119,6 +121,14 @@ public class GrandExchangePluginTest
 	@Mock
 	@Bind
 	private RuneLiteConfig runeLiteConfig;
+
+	@Mock
+	@Bind
+	private ScheduledExecutorService scheduledExecutorService;
+
+	@Mock
+	@Bind
+	private ClientToolbar clientToolbar;
 
 	@Inject
 	private Gson gson;

@@ -303,6 +303,7 @@ class PluginListPanel extends PluginPanel
 	{
 		ConfigPanel panel = configPanelProvider.get();
 		panel.init(plugin);
+		muxer.pushState(this);
 		muxer.pushState(panel);
 	}
 

@@ -33,4 +33,6 @@ object ProjectVersions {
     const val cacheversion = 165
 
     const val lombokVersion = "1.18.30"
+
+    const val flatLafVersion = "3.2.5-rl1"
 }
