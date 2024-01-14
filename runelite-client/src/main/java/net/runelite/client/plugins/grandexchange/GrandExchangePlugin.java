@@ -133,10 +133,8 @@ public class GrandExchangePlugin extends Plugin
 
 	private static final Color FUZZY_HIGHLIGHT_COLOR = new Color(0x800000);
 
-	@Getter(AccessLevel.PACKAGE)
 	private NavigationButton button;
 
-	@Getter(AccessLevel.PACKAGE)
 	@Setter(AccessLevel.PACKAGE)
 	private GrandExchangePanel panel;
 
@@ -318,6 +316,16 @@ public class GrandExchangePlugin extends Plugin
 		machineUuid = null;
 		lastAccount = -1L;
 		tradeSeq = 0;
+	}
+
+	void search(final String itemName)
+	{
+		SwingUtilities.invokeLater(() ->
+		{
+			panel.showSearch();
+			clientToolbar.openPanel(button);
+			panel.getSearchPanel().priceLookup(itemName);
+		});
 	}
 
 	@Subscribe
