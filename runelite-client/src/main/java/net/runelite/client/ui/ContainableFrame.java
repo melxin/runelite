@@ -28,54 +28,27 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Insets;
 import java.awt.Rectangle;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
+import java.awt.geom.AffineTransform;
 import javax.swing.JFrame;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import net.runelite.client.util.OSType;
 
 @Slf4j
 public class ContainableFrame extends JFrame
 {
 	public enum Mode
 	{
-		ALWAYS,
 		RESIZING,
 		NEVER;
 	}
 
 	private static final int SCREEN_EDGE_CLOSE_DISTANCE = 40;
 
+	@Setter
 	private Mode containedInScreen;
 	private boolean rightSideSuction;
 	private boolean boundsOpSet;
-	private int oldX;
-	private int oldY;
-
-	public ContainableFrame()
-	{
-		addComponentListener(new ComponentAdapter()
-		{
-			@Override
-			public void componentMoved(ComponentEvent e)
-			{
-				if (containedInScreen == Mode.ALWAYS)
-				{
-					applyChange(getX(), getY(), getWidth(), getHeight(), oldX, oldY, true);
-				}
-			}
-		});
-	}
-
-	public void setContainedInScreen(Mode value)
-	{
-		this.containedInScreen = value;
-
-		if (this.containedInScreen == Mode.ALWAYS)
-		{
-			// Reposition the frame if it is intersecting with the bounds
-			reshape(getX(), getY(), getWidth(), getHeight());
-		}
-	}
 
 	@Override
 	@SuppressWarnings("deprecation")
@@ -103,7 +76,7 @@ public class ContainableFrame extends JFrame
 			return;
 		}
 
-		applyChange(x, y, width, height, getX(), getY(), this.containedInScreen == Mode.ALWAYS);
+		applyChange(x, y, width, height, getX(), getY(), false);
 	}
 
 	@Override
@@ -191,8 +164,6 @@ public class ContainableFrame extends JFrame
 		finally
 		{
 			boundsOpSet = false;
-			this.oldX = getX();
-			this.oldY = getY();
 		}
 	}
 
@@ -209,7 +180,17 @@ public class ContainableFrame extends JFrame
 	 */
 	public void revalidateMinimumSize()
 	{
-		setMinimumSize(getLayout().minimumLayoutSize(this));
+		Dimension minSize = getLayout().minimumLayoutSize(this);
+		if (OSType.getOSType() == OSType.Windows)
+		{
+			// JDK-8221452 - Window.setMinimumSize does not respect DPI scaling
+			AffineTransform transform = getGraphicsConfiguration().getDefaultTransform();
+			int scaledX = (int) Math.round(minSize.width * transform.getScaleX());
+			int scaledY = (int) Math.round(minSize.height * transform.getScaleY());
+			minSize = new Dimension(scaledX, scaledY);
+		}
+
+		setMinimumSize(minSize);
 	}
 
 	private boolean isFullScreen()

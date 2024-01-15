@@ -801,6 +801,7 @@ class ConfigPanel extends PluginPanel
 		if (cid.getItem().secret())
 		{
 			textField = new JPasswordField();
+			textField.setFont(FontManager.getDefaultFont());
 		}
 		else
 		{
