@@ -487,7 +487,22 @@ class ConfigPanel extends PluginPanel
 			}
 			else if (cid.getType() == String.class)
 			{
-				item.add(createTextField(cd, cid), BorderLayout.SOUTH);
+				JTextComponent textField = createTextField(cd, cid);
+
+				if (cid.getItem().parse())
+				{
+					JLabel parsingLabel = createParseLabel(cid, textField);
+
+					item.add(configEntryName, BorderLayout.NORTH);
+					item.add(textField, BorderLayout.CENTER);
+
+					parseLabel(cid.getItem(), parsingLabel, textField.getText());
+					item.add(parsingLabel, BorderLayout.SOUTH);
+				}
+				else
+				{
+					item.add(textField, BorderLayout.SOUTH);
+				}
 			}
 			else if (cid.getType() == Color.class)
 			{
@@ -848,6 +863,8 @@ class ConfigPanel extends PluginPanel
 			cid.getItem().keyName(), parameterizedType);
 
 		JPanel enumsetLayout = new JPanel(new GridLayout(0, 2));
+		enumsetLayout.setPreferredSize(new Dimension(PANEL_WIDTH, type.getEnumConstants().length * 10));
+
 		List<ToggleButton> toggleButtons = new ArrayList<>();
 
 		Set<?> selectedItems = new HashSet(Objects.requireNonNullElse(set, Collections.emptySet()));
@@ -855,6 +872,7 @@ class ConfigPanel extends PluginPanel
 		for (Object obj : type.getEnumConstants())
 		{
 			ToggleButton toggleButton = new ToggleButton(obj);
+			toggleButton.setHorizontalAlignment(SwingConstants.LEFT);
 			toggleButton.setBackground(ColorScheme.DARK_GRAY_COLOR);
 			toggleButton.setSelected(selectedItems.contains(obj));
 			toggleButtons.add(toggleButton);
@@ -879,6 +897,8 @@ class ConfigPanel extends PluginPanel
 		}
 
 		JPanel enumsetLayout = new JPanel(new GridLayout(0, 2));
+		enumsetLayout.setPreferredSize(new Dimension(PANEL_WIDTH, enumType.getEnumConstants().length * 10));
+
 		List<ToggleButton> toggleButtons = new ArrayList<>();
 
 		for (Object obj : enumType.getEnumConstants())
@@ -886,6 +906,7 @@ class ConfigPanel extends PluginPanel
 			String option = Text.titleCase((Enum<?>) obj);
 
 			ToggleButton toggleButton = new ToggleButton(option);
+			toggleButton.setHorizontalAlignment(SwingConstants.LEFT);
 			toggleButton.setBackground(ColorScheme.DARK_GRAY_COLOR);
 			toggleButton.setSelected(enumSet.contains(obj));
 			toggleButtons.add(toggleButton);
