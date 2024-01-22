@@ -177,8 +177,8 @@ public class WorldPoint
 	public static WorldPoint fromLocal(Scene scene, int x, int y, int plane)
 	{
 		return new WorldPoint(
-			(x >>> Perspective.LOCAL_COORD_BITS) + scene.getBaseX(),
-			(y >>> Perspective.LOCAL_COORD_BITS) + scene.getBaseY(),
+			(x >> Perspective.LOCAL_COORD_BITS) + scene.getBaseX(),
+			(y >> Perspective.LOCAL_COORD_BITS) + scene.getBaseY(),
 			plane
 		);
 	}
@@ -195,8 +195,8 @@ public class WorldPoint
 	public static WorldPoint fromLocal(Client client, int x, int y, int plane)
 	{
 		return new WorldPoint(
-			(x >>> Perspective.LOCAL_COORD_BITS) + client.getBaseX(),
-			(y >>> Perspective.LOCAL_COORD_BITS) + client.getBaseY(),
+			(x >> Perspective.LOCAL_COORD_BITS) + client.getBaseX(),
+			(y >> Perspective.LOCAL_COORD_BITS) + client.getBaseY(),
 			plane
 		);
 	}
