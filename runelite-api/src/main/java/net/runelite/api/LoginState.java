@@ -1,0 +1,54 @@
+package net.runelite.api;
+
+public interface LoginState
+{
+	LoginState SHUTDOWN_PREVIOUS_CONNECTION();
+
+	LoginState INIT_MOUSEHANDLER_SOCKET();
+
+	LoginState WRITE_INITIAL_LOGIN_PACKET();
+
+	LoginState READ_LOGIN_STATUS();
+
+	LoginState READ_RANDOM_VERIFICATION_NUMBER();
+
+	LoginState READ_CLIENT_INFO_STATUS();
+
+	LoginState READ_DIGEST_PARSER_PACKET_SIZE();
+
+	LoginState SUBMIT_DIGEST_PARSER_TASK();
+
+	LoginState WRITE_DIGEST_PARSER_RESULT();
+
+	LoginState READ_STATE_11_PACKET_SIZE();
+
+	LoginState READ_PROFILE_TRANSFER_TIME();
+
+	LoginState PROFILE_TRANSFER();
+
+	LoginState READ_ACCOUNT_INFO_PACKET_SIZE();
+
+	LoginState READ_ACCOUNT_INFO();
+
+	LoginState UPDATE_PLAYER_AND_LOAD_REGIONS();
+
+	LoginState REFRESHING_TOKEN();
+
+	LoginState TOKEN_RESPONSE();
+
+	LoginState SET_SERVER_PROTOCOL();
+
+	LoginState UNMAPPED();
+
+	LoginState UNMAPPED_11();
+
+	LoginState UNMAPPED_17();
+
+	LoginState UNMAPPED_18();
+
+	LoginState UNMAPPED_19();
+
+	LoginState UNMAPPED_20();
+
+	LoginState UNMAPPED_21();
+}
