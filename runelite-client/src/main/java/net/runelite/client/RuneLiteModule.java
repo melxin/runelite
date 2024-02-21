@@ -73,7 +73,7 @@ public class RuneLiteModule extends AbstractModule
 {
 	private final OkHttpClient okHttpClient;
 	private final Supplier<Applet> clientLoader;
-	private final Supplier<RuntimeConfig> configSupplier;
+	private final RuntimeConfigLoader configLoader;
 	private final boolean developerMode;
 	private final boolean safeMode;
 	private final boolean enableTelemetry;
@@ -87,7 +87,7 @@ public class RuneLiteModule extends AbstractModule
 		Properties properties = RuneLiteProperties.getProperties();
 		Map<Object, Object> props = new HashMap<>(properties);
 
-		RuntimeConfig runtimeConfig = configSupplier.get();
+		RuntimeConfig runtimeConfig = configLoader.get();
 		if (runtimeConfig != null && runtimeConfig.getProps() != null)
 		{
 			props.putAll(runtimeConfig.getProps());
@@ -130,6 +130,7 @@ public class RuneLiteModule extends AbstractModule
 		bind(File.class).annotatedWith(Names.named("runeLiteDir")).toInstance(RuneLite.RUNELITE_DIR);
 		bind(ScheduledExecutorService.class).toInstance(new ExecutorServiceExceptionLogger(Executors.newSingleThreadScheduledExecutor()));
 		bind(OkHttpClient.class).toInstance(okHttpClient);
+		bind(RuntimeConfigLoader.class).toInstance(configLoader);
 		bind(MenuManager.class);
 		bind(ChatMessageManager.class);
 		bind(ItemManager.class);
@@ -167,7 +168,7 @@ public class RuneLiteModule extends AbstractModule
 	@Singleton
 	RuntimeConfig provideRuntimeConfig()
 	{
-		return configSupplier.get();
+		return configLoader.get();
 	}
 
 	@Provides
