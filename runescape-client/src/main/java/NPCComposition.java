@@ -750,7 +750,8 @@ public class NPCComposition extends DualNode {
 		descriptor = "(I)V",
 		garbageValue = "1209928476"
 	)
-	static void method3708() {
+	@Export("createRandomDatFile")
+	static void createRandomDatFile() {
 		try {
 			File var0 = new File(class334.userHomeDirectory, "random.dat");
 			int var2;

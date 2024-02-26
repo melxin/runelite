@@ -234,7 +234,7 @@ public class class30 {
 			throw new RuntimeException("");
 		} else {
 			FileSystem.FileSystem_hasPermissions = true;
-			NPCComposition.method3708();
+			NPCComposition.createRandomDatFile();
 			JagexCache.JagexCache_dat2File = new BufferedFile(new AccessFile(ClanSettings.getFile("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
 			JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(ClanSettings.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
 			class173.JagexCache_idxFiles = new BufferedFile[class33.field169];

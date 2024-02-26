@@ -3,6 +3,7 @@ import java.awt.image.PixelGrabber;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
@@ -48,7 +49,8 @@ public class Sound {
 		descriptor = "([BI)Lvd;",
 		garbageValue = "1978049322"
 	)
-	public static final SpritePixels method3920(byte[] var0) {
+	@Export("readSpritePixelsFromBytes")
+	public static final SpritePixels readSpritePixelsFromBytes(byte[] var0) {
 		BufferedImage var1 = null;
 
 		try {
