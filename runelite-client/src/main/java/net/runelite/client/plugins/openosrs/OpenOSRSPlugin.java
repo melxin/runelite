@@ -26,6 +26,8 @@
  */
 package net.runelite.client.plugins.openosrs;
 
+import java.awt.Rectangle;
+import java.awt.event.MouseWheelEvent;
 import java.awt.image.BufferedImage;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
@@ -36,6 +38,8 @@ import net.runelite.api.Client;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ConfigChanged;
+import net.runelite.client.input.MouseManager;
+import net.runelite.client.input.MouseWheelListener;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.plugins.openosrs.externals.ExternalPluginManagerPanel;
@@ -65,9 +69,37 @@ public class OpenOSRSPlugin extends Plugin
 
 	private NavigationButton navButton;
 
+	@Inject
+	private MouseManager mouseManager;
+	private MouseWheelListener menuScrollHandler = new MouseWheelListener()
+	{
+		@Override
+		public MouseWheelEvent mouseWheelMoved(MouseWheelEvent event)
+		{
+			if (client.isMenuOpen())
+			{
+				Rectangle menuBounds = new Rectangle(client.getMenuX(), client.getMenuY(), client.getMenuWidth(), client.getMenuHeight());
+				Rectangle submenuBounds = new Rectangle(client.getSubmenuX(), client.getSubmenuY(), client.getSubmenuWidth(), client.getSubmenuHeight());
+				if (submenuBounds.contains(event.getX(), event.getY()))
+				{
+					client.setSubmenuScroll(Math.max(0, client.getSubmenuScroll() + event.getWheelRotation()));
+					event.consume();
+				}
+				else if (menuBounds.contains(event.getX(), event.getY()))
+				{
+					client.setMenuScroll(Math.max(0, client.getMenuScroll() + event.getWheelRotation()));
+					event.consume();
+				}
+			}
+			return event;
+		}
+	};
+
 	@Override
 	protected void startUp()
 	{
+		mouseManager.registerMouseWheelListener(0, menuScrollHandler);
+
 		if (client == null)
 		{
 			return;
@@ -89,6 +121,8 @@ public class OpenOSRSPlugin extends Plugin
 	@Override
 	protected void shutDown()
 	{
+		mouseManager.unregisterMouseWheelListener(menuScrollHandler);
+
 		if (navButton != null)
 		{
 			clientToolbar.removeNavigation(navButton);
