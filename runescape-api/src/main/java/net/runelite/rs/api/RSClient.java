@@ -103,6 +103,9 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("MouseHandler_y")
 	void setMouseHandlerY(int mouseHandlerY);
 
+	@Import("mouseWheelRotation")
+	int getMouseWheelRotation();
+
 	@Import("indexCheck")
 	RSIndexCheck getIndexCheck();
 
@@ -1119,6 +1122,18 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("menuWidth")
 	int getMenuWidth();
 
+	@Import("menuX")
+	void setMenuX(int x);
+
+	@Import("menuY")
+	void setMenuY(int y);
+
+	@Import("menuHeight")
+	void setMenuHeight(int h);
+
+	@Import("menuWidth")
+	void setMenuWidth(int w);
+
 	@Import("fontBold12")
 	RSFont getFontBold12();
 
@@ -1228,6 +1243,9 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("insertMenuItem")
 	@Override
 	void insertMenuItem(String action, String target, int opcode, int identifier, int argument1, int argument2, int argument3, boolean forceLeftClick);
+
+	@Import("invalidateWidgetsUnder")
+	void invalidateWidgetsUnder(int var0, int var1, int var2, int var3);
 
 	@Import("selectedSpellWidget")
 	@Override
