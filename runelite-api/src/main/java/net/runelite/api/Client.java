@@ -2522,4 +2522,6 @@ public interface Client extends OAuthApi, GameEngine
 	void setMinimapZoom(double zoom);
 
 	Rasterizer getRasterizer();
+
+	void checkResize();
 }
