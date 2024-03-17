@@ -2,7 +2,6 @@ package net.runelite.deob.deobfuscators.transformers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,12 +14,11 @@ import net.runelite.asm.Field;
 import net.runelite.asm.Method;
 import net.runelite.asm.Type;
 import net.runelite.asm.attributes.code.Instruction;
-import net.runelite.asm.attributes.code.instruction.types.FieldInstruction;
 import net.runelite.asm.attributes.code.instruction.types.GetFieldInstruction;
-import net.runelite.asm.attributes.code.instructions.GetField;
-import net.runelite.asm.attributes.code.instructions.GetStatic;
+import net.runelite.asm.attributes.code.instructions.ALoad;
 import net.runelite.asm.attributes.code.instructions.IMul;
 import net.runelite.asm.attributes.code.instructions.LDC;
+import net.runelite.asm.attributes.code.instructions.LMul;
 import net.runelite.deob.DeobAnnotations;
 import net.runelite.deob.DeobProperties;
 import net.runelite.deob.Transformer;
@@ -66,7 +64,10 @@ public class ObfuscatedGetterValueCorrectionTransformer implements Transformer
 				{
 					Instruction in = ins.get(i);
 
+					Instruction shouldBeAload = null;
 					Instruction shouldBeLDC = null;
+					Instruction shouldBeMul = null;
+					Instruction shouldBeOther = null;
 
 					if (in instanceof GetFieldInstruction)
 					{
@@ -82,21 +83,12 @@ public class ObfuscatedGetterValueCorrectionTransformer implements Transformer
 
 						try
 						{
-							if (i + 1 < ins.size() && shouldBeLDC == null)
+							if (i + 3 < ins.size())
 							{
+								shouldBeAload = ins.get(i - 1) instanceof ALoad ? ins.get(i - 1) : null;
 								shouldBeLDC = ins.get(i + 1) instanceof LDC ? ins.get(i + 1) : null;
-							}
-							else if (i >= 1 && shouldBeLDC == null)
-							{
-								shouldBeLDC = ins.get(i - 1) instanceof LDC ? ins.get(i - 1) : null;
-							}
-							else if (i + 2 < ins.size() && shouldBeLDC == null)
-							{
-								shouldBeLDC = ins.get(i + 2) instanceof LDC ? ins.get(i + 2) : null;
-							}
-							else if (i >= 2 && shouldBeLDC == null)
-							{
-								shouldBeLDC = ins.get(i - 2) instanceof LDC ? ins.get(i - 2) : null;
+								shouldBeMul = ins.get(i + 2) instanceof IMul ? ins.get(i + 2) : ins.get(i + 2) instanceof LMul ? ins.get(i + 2) : null;
+								//shouldBeOther = ins.get(i + 3) instanceof GetStatic ? ins.get(i + 3) : ins.get(i + 3) instanceof NewArray ? ins.get(i + 3) : ins.get(i + 3) instanceof IStore ? ins.get(i + 3) : null;
 							}
 						}
 						catch (IndexOutOfBoundsException e)
@@ -106,7 +98,7 @@ public class ObfuscatedGetterValueCorrectionTransformer implements Transformer
 						}
 					}
 
-					if (shouldBeLDC != null && shouldBeLDC instanceof LDC && ((LDC) shouldBeLDC).getConstant() instanceof Number)
+					if (shouldBeAload != null && shouldBeLDC != null && shouldBeLDC instanceof LDC && ((LDC) shouldBeLDC).getConstant() instanceof Number && shouldBeMul != null)
 					{
 						Number vanillaValue = (Number) ((LDC) shouldBeLDC).getConstant();
 						if (vanillaValue.byteValue() == 1)
@@ -167,7 +159,8 @@ public class ObfuscatedGetterValueCorrectionTransformer implements Transformer
 					}*/
 					if (!values.contains(obfuscatedGetterValue))
 					{
-						logger.info("found incorrect obfget: {} != {} for field: {} ({}.{}) mapped: {}", obfuscatedGetterValue, values.get(0), f, obfuscatedClassName, obfuscatedFieldName, mappedField);
+						logger.info("found incorrect obfget: {} != {} for field: {} ({}.{}) mapped: {}", obfuscatedGetterValue, predictedValue, f, obfuscatedClassName, obfuscatedFieldName, mappedField);
+						//logger.info("Current val: {} Found vals: {} for field: {} | {} | {} | {}", obfuscatedGetterValue, values.toString(), f, obfuscatedClassName, obfuscatedFieldName, mappedField);
 						/*if (predictedValue instanceof Long)
 						{
 							obfuscatedGetter.setElement("longValue", predictedValue);
@@ -182,16 +175,5 @@ public class ObfuscatedGetterValueCorrectionTransformer implements Transformer
 				}
 			}
 		}
-	}
-
-	public int modInverse(int val)
-	{
-		return modInverse(BigInteger.valueOf(val), 32).intValue();
-	}
-
-	private BigInteger modInverse(BigInteger val, int bits)
-	{
-		BigInteger shift = BigInteger.ONE.shiftLeft(bits);
-		return val.modInverse(shift);
 	}
 }
