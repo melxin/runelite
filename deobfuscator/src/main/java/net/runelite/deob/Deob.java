@@ -55,6 +55,7 @@ import net.runelite.deob.deobfuscators.transformers.GetPathTransformer;
 import net.runelite.deob.deobfuscators.transformers.OpcodesTransformer;
 import net.runelite.deob.deobfuscators.transformers.ReflectionTransformer;
 import net.runelite.deob.deobfuscators.transformers.VariableExprFixer;
+import net.runelite.deob.deobfuscators.transformers.VariableExprFixer2;
 import net.runelite.deob.util.JarUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -116,7 +117,8 @@ public class Deob
 
 		run(group, new UnusedClass());
 
-		new VariableExprFixer().transform(group);
+		//new VariableExprFixer().transform(group);
+		new VariableExprFixer2().transform(group);
 
 		runMath(group);
 
