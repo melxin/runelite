@@ -46,6 +46,8 @@ import net.runelite.asm.attributes.code.instructions.DAStore;
 import net.runelite.asm.attributes.code.instructions.DAdd;
 import net.runelite.asm.attributes.code.instructions.DCmpG;
 import net.runelite.asm.attributes.code.instructions.DCmpL;
+import net.runelite.asm.attributes.code.instructions.DConst_0;
+import net.runelite.asm.attributes.code.instructions.DConst_1;
 import net.runelite.asm.attributes.code.instructions.DDiv;
 import net.runelite.asm.attributes.code.instructions.DLoad;
 import net.runelite.asm.attributes.code.instructions.DMul;
@@ -67,6 +69,9 @@ import net.runelite.asm.attributes.code.instructions.FAStore;
 import net.runelite.asm.attributes.code.instructions.FAdd;
 import net.runelite.asm.attributes.code.instructions.FCmpG;
 import net.runelite.asm.attributes.code.instructions.FCmpL;
+import net.runelite.asm.attributes.code.instructions.FConst_0;
+import net.runelite.asm.attributes.code.instructions.FConst_1;
+import net.runelite.asm.attributes.code.instructions.FConst_2;
 import net.runelite.asm.attributes.code.instructions.FDiv;
 import net.runelite.asm.attributes.code.instructions.FLoad;
 import net.runelite.asm.attributes.code.instructions.FMul;
@@ -90,6 +95,11 @@ import net.runelite.asm.attributes.code.instructions.IAdd;
 import net.runelite.asm.attributes.code.instructions.IAnd;
 import net.runelite.asm.attributes.code.instructions.IConst_0;
 import net.runelite.asm.attributes.code.instructions.IConst_1;
+import net.runelite.asm.attributes.code.instructions.IConst_2;
+import net.runelite.asm.attributes.code.instructions.IConst_3;
+import net.runelite.asm.attributes.code.instructions.IConst_4;
+import net.runelite.asm.attributes.code.instructions.IConst_5;
+import net.runelite.asm.attributes.code.instructions.IConst_M1;
 import net.runelite.asm.attributes.code.instructions.IDiv;
 import net.runelite.asm.attributes.code.instructions.IInc;
 import net.runelite.asm.attributes.code.instructions.ILoad;
@@ -133,6 +143,8 @@ import net.runelite.asm.attributes.code.instructions.LAStore;
 import net.runelite.asm.attributes.code.instructions.LAdd;
 import net.runelite.asm.attributes.code.instructions.LAnd;
 import net.runelite.asm.attributes.code.instructions.LCmp;
+import net.runelite.asm.attributes.code.instructions.LConst_0;
+import net.runelite.asm.attributes.code.instructions.LConst_1;
 import net.runelite.asm.attributes.code.instructions.LDC;
 import net.runelite.asm.attributes.code.instructions.LDiv;
 import net.runelite.asm.attributes.code.instructions.LLoad;
@@ -169,8 +181,20 @@ public enum InstructionType
 {
 	NOP(0x00, "nop", NOP.class),
 	ACONST_NULL(0x01, "aconst_null", AConstNull.class),
+	ICONST_M1(0x02, "iconst_m1", IConst_M1.class),
 	ICONST_0(0x03, "iconst_0", IConst_0.class),
 	ICONST_1(0x04, "iconst_1", IConst_1.class),
+	ICONST_2(0x05, "iconst_2", IConst_2.class),
+	ICONST_3(0x06, "iconst_3", IConst_3.class),
+	ICONST_4(0x07, "iconst_4", IConst_4.class),
+	ICONST_5(0x08, "iconst_5", IConst_5.class),
+	LCONST_0(0x09, "lconst_0", LConst_0.class),
+	LCONST_1(0x0A, "lconst_1", LConst_1.class),
+	FCONST_0(0x0B, "fconst_0", FConst_0.class),
+	FCONST_1(0x0C, "fconst_1", FConst_1.class),
+	FCONST_2(0x0D, "fconst_2", FConst_2.class),
+	DCONST_0(0x0E, "dconst_0", DConst_0.class),
+	DCONST_1(0x0F, "dconst_1", DConst_1.class),
 	BIPUSH(0x10, "bipush", BiPush.class),
 	SIPUSH(0x11, "sipush", SiPush.class),
 	LDC(-1, "ldc", LDC.class),
