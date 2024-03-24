@@ -25,11 +25,12 @@
 
 package net.runelite.cache.definitions.loaders;
 
-import java.util.HashMap;
 import net.runelite.cache.definitions.ItemDefinition;
 import net.runelite.cache.io.InputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
 
 public class ItemLoader
 {
@@ -39,7 +40,7 @@ public class ItemLoader
 	{
 		ItemDefinition def = new ItemDefinition(id);
 		InputStream is = new InputStream(b);
-		
+
 		while (true)
 		{
 			int opcode = is.readUnsignedByte();
