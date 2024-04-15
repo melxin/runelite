@@ -38,6 +38,19 @@ public interface TileItem extends Renderable
 	int getQuantity();
 
 	/**
+	 * Get the time, in server ticks, when the item despawns, relative to the spawn time.
+	 * @return
+	 */
+	int getDespawnTime();
+
+	/**
+	 * Get the time, in server ticks, when the item becomes visible to other players, relative
+	 * to the spawn time.
+	 * @return
+	 */
+	int getVisibleTime();
+
+	/**
 	 * @return the tile this item is on
 	 */
 	Tile getTile();
