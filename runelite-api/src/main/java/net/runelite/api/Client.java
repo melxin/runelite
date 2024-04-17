@@ -2553,4 +2553,6 @@ public interface Client extends OAuthApi, GameEngine
 	Rasterizer getRasterizer();
 
 	void checkResize();
+
+	void menuAction(int p0, int p1, MenuAction action, int id, int itemId, String option, String target);
 }
