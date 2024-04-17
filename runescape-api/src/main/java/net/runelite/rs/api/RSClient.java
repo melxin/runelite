@@ -779,6 +779,12 @@ public interface RSClient extends RSGameEngine, Client
 	@Override
 	String[] getStringStack();
 
+	@Import("Interpreter_arrayLengths")
+	int[] getArraySizes();
+
+	@Import("Interpreter_arrays")
+	int[][] getArrays();
+
 	@Import("friendSystem")
 	RSFriendSystem getFriendManager();
 
