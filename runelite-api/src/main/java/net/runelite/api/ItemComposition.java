@@ -1,3 +1,27 @@
+/*
+ * Copyright (c) 2016-2017, Adam <Adam@sigterm.info>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 package net.runelite.api;
 
 import javax.annotation.Nullable;
@@ -83,6 +107,7 @@ public interface ItemComposition extends ParamHolder
 	 * @return the general store value of the item
 	 *
 	 * @see Constants#HIGH_ALCHEMY_MULTIPLIER
+	 * @see ItemComposition#getHaPrice()
 	 */
 	int getPrice();
 
@@ -220,6 +245,42 @@ public interface ItemComposition extends ParamHolder
 	void setTextureToReplaceWith(short[] textureToReplaceWith);
 
 	/**
+	 * Get the model zoom for 2d item sprites used in the inventory.
+	 * @return
+	 */
+	int getModelZoom();
+
+	/**
+	 * Set the model zoom for 2d item sprites used in the inventory.
+	 * @param zoom
+	 */
+	void setModelZoom(int zoom);
+
+	/**
+	 * Get the offsetX for 2d item sprites used in the inventory.
+	 * @return
+	 */
+	int getOffsetX();
+
+	/**
+	 * Set the offsetX for 2d item sprites used in the inventory.
+	 * @param offsetX
+	 */
+	void setOffsetX(int offsetX);
+
+	/**
+	 * Get the offsetY for 2d item sprites used in the inventory.
+	 * @return
+	 */
+	int getOffsetY();
+
+	/**
+	 * Set the offsetY for 2d item sprites used in the inventory.
+	 * @param offsetY
+	 */
+	void setOffsetY(int offsetY);
+
+	/**
 	 * Get the x angle for 2d item sprites used in the inventory.
 	 * @see net.runelite.api.coords.Angle
 	 * @return
@@ -265,8 +326,20 @@ public interface ItemComposition extends ParamHolder
 	int getAmbient();
 
 	/**
+	 * Set the ambient light value
+	 * @param ambient
+	 */
+	void setAmbient(int ambient);
+
+	/**
 	 * Get the contrast light value
 	 * @return
 	 */
 	int getContrast();
+
+	/**
+	 * Set the contrast light value
+	 * @param contrast
+	 */
+	void setContrast(int contrast);
 }
