@@ -45,7 +45,7 @@ void main() {
   }
 
   uint ssboOffset = localId;
-  vert thisA, thisB, thisC;
+  ivec4 thisA, thisB, thisC;
 
   // Grab triangle vertices from the correct buffer
   if (flags < 0) {
@@ -59,17 +59,13 @@ void main() {
   }
 
   uint myOffset = localId;
-  vec3 pos = vec3(minfo.x, minfo.y, minfo.z);
-  ivec4 texPos = ivec4(0, pos);
-
-  vec3 vertA = thisA.pos + pos;
-  vec3 vertB = thisB.pos + pos;
-  vec3 vertC = thisC.pos + pos;
+  ivec4 pos = ivec4(minfo.x, minfo.y, minfo.z, 0);
+  ivec4 texPos = pos.wxyz;
 
   // position vertices in scene and write to out buffer
-  vout[outOffset + myOffset * 3] = vert(vertA, thisA.ahsl);
-  vout[outOffset + myOffset * 3 + 1] = vert(vertB, thisB.ahsl);
-  vout[outOffset + myOffset * 3 + 2] = vert(vertC, thisC.ahsl);
+  vout[outOffset + myOffset * 3] = pos + thisA;
+  vout[outOffset + myOffset * 3 + 1] = pos + thisB;
+  vout[outOffset + myOffset * 3 + 2] = pos + thisC;
 
   if (toffset < 0) {
     uvout[outOffset + myOffset * 3] = vec4(0);

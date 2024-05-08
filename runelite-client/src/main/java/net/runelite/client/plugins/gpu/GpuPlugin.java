@@ -645,15 +645,11 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 
 		GL43C.glEnableVertexAttribArray(0);
 		GL43C.glBindBuffer(GL43C.GL_ARRAY_BUFFER, tmpOutBuffer.glBufferId);
-		GL43C.glVertexAttribPointer(0, 3, GL43C.GL_FLOAT, false, 16, 0);
+		GL43C.glVertexAttribIPointer(0, 4, GL43C.GL_INT, 0, 0);
 
 		GL43C.glEnableVertexAttribArray(1);
-		GL43C.glBindBuffer(GL43C.GL_ARRAY_BUFFER, tmpOutBuffer.glBufferId);
-		GL43C.glVertexAttribIPointer(1, 1, GL43C.GL_INT, 16, 12);
-
-		GL43C.glEnableVertexAttribArray(2);
 		GL43C.glBindBuffer(GL43C.GL_ARRAY_BUFFER, tmpOutUvBuffer.glBufferId);
-		GL43C.glVertexAttribPointer(2, 4, GL43C.GL_FLOAT, false, 0, 0);
+		GL43C.glVertexAttribPointer(1, 4, GL43C.GL_FLOAT, false, 0, 0);
 
 		// Create temp VAO
 		vaoTemp = GL43C.glGenVertexArrays();
@@ -661,15 +657,11 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 
 		GL43C.glEnableVertexAttribArray(0);
 		GL43C.glBindBuffer(GL43C.GL_ARRAY_BUFFER, tmpVertexBuffer.glBufferId);
-		GL43C.glVertexAttribPointer(0, 3, GL43C.GL_FLOAT, false, 16, 0);
+		GL43C.glVertexAttribIPointer(0, 4, GL43C.GL_INT, 0, 0);
 
 		GL43C.glEnableVertexAttribArray(1);
-		GL43C.glBindBuffer(GL43C.GL_ARRAY_BUFFER, tmpVertexBuffer.glBufferId);
-		GL43C.glVertexAttribIPointer(1, 1, GL43C.GL_INT, 16, 12);
-
-		GL43C.glEnableVertexAttribArray(2);
 		GL43C.glBindBuffer(GL43C.GL_ARRAY_BUFFER, tmpUvBuffer.glBufferId);
-		GL43C.glVertexAttribPointer(2, 4, GL43C.GL_FLOAT, false, 0, 0);
+		GL43C.glVertexAttribPointer(1, 4, GL43C.GL_FLOAT, false, 0, 0);
 
 		// Create UI VAO
 		vaoUiHandle = GL43C.glGenVertexArrays();
@@ -788,7 +780,18 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 	{
 		initGlBuffer(uniformBuffer);
 
-		updateBuffer(uniformBuffer, GL43C.GL_UNIFORM_BUFFER, 8 * Integer.BYTES, GL43C.GL_DYNAMIC_DRAW, CL12.CL_MEM_READ_ONLY);
+		IntBuffer uniformBuf = GpuIntBuffer.allocateDirect(8 + 2048 * 4);
+		uniformBuf.put(new int[8]); // uniform block
+		final int[] pad = new int[2];
+		for (int i = 0; i < 2048; i++)
+		{
+			uniformBuf.put(Perspective.SINE[i]);
+			uniformBuf.put(Perspective.COSINE[i]);
+			uniformBuf.put(pad); // ivec2 alignment in std140 is 16 bytes
+		}
+		uniformBuf.flip();
+
+		updateBuffer(uniformBuffer, GL43C.GL_UNIFORM_BUFFER, uniformBuf, GL43C.GL_DYNAMIC_DRAW, CL12.CL_MEM_READ_ONLY);
 		GL43C.glBindBuffer(GL43C.GL_UNIFORM_BUFFER, 0);
 	}
 
@@ -862,7 +865,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		// viewport buffer.
 		targetBufferOffset = 0;
 
-		// UBO.
+		// UBO. Only the first 32 bytes get modified here, the rest is the constant sin/cos table.
 		// We can reuse the vertex buffer since it isn't used yet.
 		vertexBuffer.clear();
 		vertexBuffer.ensureCapacity(32);
@@ -878,7 +881,8 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 			.put(cameraZ);
 		uniformBuf.flip();
 
-		updateBuffer(uniformBuffer, GL43C.GL_UNIFORM_BUFFER, uniformBuf, GL43C.GL_DYNAMIC_DRAW, CL12.CL_MEM_READ_ONLY);
+		GL43C.glBindBuffer(GL43C.GL_UNIFORM_BUFFER, uniformBuffer.glBufferId);
+		GL43C.glBufferSubData(GL43C.GL_UNIFORM_BUFFER, 0, uniformBuf);
 		GL43C.glBindBuffer(GL43C.GL_UNIFORM_BUFFER, 0);
 
 		GL43C.glBindBufferBase(GL43C.GL_UNIFORM_BUFFER, 0, uniformBuffer.glBufferId);
