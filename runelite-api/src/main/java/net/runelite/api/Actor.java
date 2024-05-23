@@ -40,6 +40,12 @@ import net.runelite.api.coords.WorldPoint;
 public interface Actor extends Renderable, Locatable
 {
 	/**
+	 * Get the {@link WorldView} this actor belongs to
+	 * @return
+	 */
+	WorldView getWorldView();
+
+	/**
 	 * Gets the combat level of the actor.
 	 *
 	 * @return the combat level
