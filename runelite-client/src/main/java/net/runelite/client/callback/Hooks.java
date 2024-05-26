@@ -529,6 +529,12 @@ public class Hooks implements Callbacks
 	}
 
 	@Override
+	public void serverTick()
+	{
+		shouldProcessGameTick = true;
+	}
+
+	@Override
 	public void updateNpcs()
 	{
 		if (ignoreNextNpcUpdate)

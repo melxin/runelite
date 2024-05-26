@@ -116,7 +116,7 @@ public abstract class RSTileMixin implements RSTile
 	@Override
 	public LocalPoint getLocalLocation()
 	{
-		return LocalPoint.fromScene(getX(), getY());
+		return LocalPoint.fromScene(getX(), getY(), client.getTopLevelWorldView().getScene());
 	}
 
 	@Inject
@@ -640,7 +640,7 @@ public abstract class RSTileMixin implements RSTile
 		int x = getX();
 		int y = getY();
 		int z = client.getPlane();
-		RSNodeDeque[][][] groundItemDeque = client.getGroundItemDeque();
+		RSNodeDeque[][][] groundItemDeque = client.getWorldView().getGroundItems();
 
 		RSNodeDeque oldQueue = lastGroundItems[z][x][y];
 		RSNodeDeque newQueue = groundItemDeque[z][x][y];
