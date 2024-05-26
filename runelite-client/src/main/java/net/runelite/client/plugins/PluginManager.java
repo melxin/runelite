@@ -157,7 +157,7 @@ public class PluginManager
 				}
 				catch (PluginInstantiationException e)
 				{
-					log.warn("Error during starting/stopping plugin {}", plugin.getClass().getSimpleName(), e);
+					log.error("Error during starting/stopping plugin {}", plugin.getClass().getSimpleName(), e);
 				}
 			}
 		});
@@ -197,7 +197,7 @@ public class PluginManager
 		}
 		catch (Throwable e)
 		{
-			log.warn("Unable to get plugin config", e);
+			log.error("Unable to get plugin config", e);
 		}
 		return null;
 	}
@@ -263,7 +263,7 @@ public class PluginManager
 		}
 		catch (Throwable ex)
 		{
-			log.warn("Unable to reset plugin configuration", ex);
+			log.error("Unable to reset plugin configuration", ex);
 		}
 	}
 
@@ -283,7 +283,7 @@ public class PluginManager
 					}
 					catch (PluginInstantiationException ex)
 					{
-						log.warn("Unable to start plugin {}", plugin.getClass().getSimpleName(), ex);
+						log.error("Unable to start plugin {}", plugin.getClass().getSimpleName(), ex);
 						plugins.remove(plugin);
 					}
 				});
@@ -369,14 +369,14 @@ public class PluginManager
 			{
 				if (clazz.getSuperclass() == Plugin.class)
 				{
-					log.warn("Class {} is a plugin, but has no plugin descriptor", clazz);
+					log.error("Class {} is a plugin, but has no plugin descriptor", clazz);
 				}
 				continue;
 			}
 
 			if (clazz.getSuperclass() != Plugin.class)
 			{
-				log.warn("Class {} has plugin descriptor, but is not a plugin", clazz);
+				log.error("Class {} has plugin descriptor, but is not a plugin", clazz);
 				continue;
 			}
 
@@ -436,7 +436,7 @@ public class PluginManager
 			}
 			catch (PluginInstantiationException ex)
 			{
-				log.warn("Error instantiating plugin!", ex);
+				log.error("Error instantiating plugin!", ex);
 			}
 
 			loaded++;
