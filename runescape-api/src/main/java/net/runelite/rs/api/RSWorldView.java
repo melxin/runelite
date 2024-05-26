@@ -73,11 +73,11 @@ public interface RSWorldView extends WorldView
 	byte[][][] getTileSettings();
 
 	@Import("sizeX")
-	//@Override
+	@Override
 	int getSizeX();
 
 	@Import("sizeY")
-	//@Override
+	@Override
 	int getSizeY();
 
 	@Import("baseX")
@@ -89,10 +89,10 @@ public interface RSWorldView extends WorldView
 	int getBaseY();
 
 	@Import("isInInstance")
-	//@Override
+	@Override
 	boolean isInstance();
 
 	@Import("instanceChunkTemplates")
-	//@Override
+	@Override
 	int[][][] getInstanceTemplateChunks();
 }
