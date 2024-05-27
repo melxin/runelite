@@ -45,6 +45,8 @@ public interface Actor extends Renderable, Locatable
 	 */
 	WorldView getWorldView();
 
+	void setWorldView(WorldView worldView);
+
 	/**
 	 * Gets the combat level of the actor.
 	 *
