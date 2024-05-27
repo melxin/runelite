@@ -79,4 +79,10 @@ public interface RSPlayer extends RSActor, Player
 
 	@Import("actions")
 	String[] getActions();
+
+	@Import("worldView")
+	RSWorldView getWorldView();
+
+	@Import("worldView")
+	void setWorldView(RSWorldView worldView);
 }
