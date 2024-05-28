@@ -219,6 +219,9 @@ public interface RSScene extends Scene
 	@Import("checkClick")
 	boolean isCheckClick();
 
+	@Import("checkClick")
+	void setCheckClick(boolean checkClick);
+
 	@Import("Scene_offsetOccluder")
 	int getOffsetOccluder();
 
