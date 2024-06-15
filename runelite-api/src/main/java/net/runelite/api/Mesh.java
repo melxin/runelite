@@ -48,9 +48,9 @@ public interface Mesh<T extends Mesh<T>>
 	List<Triangle> getTriangles();
 
 	int getVerticesCount();
-	int[] getVerticesX();
-	int[] getVerticesY();
-	int[] getVerticesZ();
+	float[] getVerticesX();
+	float[] getVerticesY();
+	float[] getVerticesZ();
 
 	int getFaceCount();
 	int[] getFaceIndices1();

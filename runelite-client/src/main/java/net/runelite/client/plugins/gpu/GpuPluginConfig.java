@@ -45,7 +45,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "drawDistance",
 		name = "Draw Distance",
-		description = "Draw distance. Requires compute shaders to be enabled.",
+		description = "Draw distance.",
 		position = 1
 	)
 	default int drawDistance()
@@ -103,7 +103,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "useComputeShaders",
 		name = "Compute Shaders",
-		description = "Offloads face sorting to GPU, enabling extended draw distance. Requires plugin restart.",
+		description = "Offloads face sorting to GPU. Requires plugin restart.",
 		warning = "This feature requires OpenGL 4.3 to use. Please check that your GPU supports this.\nRestart the plugin for changes to take effect.",
 		position = 6
 	)
@@ -191,5 +191,16 @@ public interface GpuPluginConfig extends Config
 	default int fpsTarget()
 	{
 		return 60;
+	}
+
+	@ConfigItem(
+		keyName = "removeVertexSnapping",
+		name = "Remove vertex snapping",
+		description = "Removes vertex snapping from most animations",
+		position = 13
+	)
+	default boolean removeVertexSnapping()
+	{
+		return true;
 	}
 }

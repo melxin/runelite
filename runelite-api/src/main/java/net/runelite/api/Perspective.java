@@ -157,7 +157,7 @@ public class Perspective
 	 * uses a slightly more precise projection that can cause features like model outlines being noticeably
 	 * off otherwise.
 	 */
-	public static void modelToCanvas(Client client, int end, int x3dCenter, int y3dCenter, int z3dCenter, int rotate, int[] x3d, int[] y3d, int[] z3d, int[] x2d, int[] y2d)
+	public static void modelToCanvas(Client client, int end, int x3dCenter, int y3dCenter, int z3dCenter, int rotate, float[] x3d, float[] y3d, float[] z3d, int[] x2d, int[] y2d)
 	{
 		if (client.isGpu())
 		{
@@ -169,7 +169,7 @@ public class Perspective
 		}
 	}
 
-	private static void modelToCanvasGpu(Client client, int end, int x3dCenter, int y3dCenter, int z3dCenter, int rotate, int[] x3d, int[] y3d, int[] z3d, int[] x2d, int[] y2d)
+	private static void modelToCanvasGpu(Client client, int end, int x3dCenter, int y3dCenter, int z3dCenter, int rotate, float[] x3d, float[] y3d, float[] z3d, int[] x2d, int[] y2d)
 	{
 		final int
 			cameraPitch = client.getCameraPitch(),
@@ -234,7 +234,7 @@ public class Perspective
 		}
 	}
 
-	private static void modelToCanvasCpu(Client client, int end, int x3dCenter, int y3dCenter, int z3dCenter, int rotate, int[] x3d, int[] y3d, int[] z3d, int[] x2d, int[] y2d)
+	private static void modelToCanvasCpu(Client client, int end, int x3dCenter, int y3dCenter, int z3dCenter, int rotate, float[] x3d, float[] y3d, float[] z3d, int[] x2d, int[] y2d)
 	{
 		final int
 			cameraPitch = client.getCameraPitch(),
@@ -260,9 +260,9 @@ public class Perspective
 
 		for (int i = 0; i < end; i++)
 		{
-			int x = x3d[i];
-			int y = y3d[i];
-			int z = z3d[i];
+			int x = (int) x3d[i];
+			int y = (int) y3d[i];
+			int z = (int) z3d[i];
 
 			if (rotate != 0)
 			{
@@ -796,15 +796,15 @@ public class Perspective
 		y1 -= ey;
 		z1 -= ez;
 
-		int[] xa = new int[]{
+		float[] xa = new float[]{
 			x1, x2, x1, x2,
 			x1, x2, x1, x2
 		};
-		int[] ya = new int[]{
+		float[] ya = new float[]{
 			y1, y1, y2, y2,
 			y1, y1, y2, y2
 		};
-		int[] za = new int[]{
+		float[] za = new float[]{
 			z1, z1, z1, z1,
 			z2, z2, z2, z2
 		};
