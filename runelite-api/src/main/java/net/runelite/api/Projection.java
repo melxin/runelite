@@ -26,5 +26,5 @@ package net.runelite.api;
 
 public interface Projection
 {
-	float[] project(float x, float y, float z);
+	float[] project(int x, int y, int z);
 }

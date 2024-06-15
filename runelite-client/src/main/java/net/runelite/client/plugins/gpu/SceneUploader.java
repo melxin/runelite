@@ -408,9 +408,9 @@ class SceneUploader
 		vertexBuffer.ensureCapacity(triangleCount * 12);
 		uvBuffer.ensureCapacity(triangleCount * 12);
 
-		final float[] vertexX = model.getVerticesX();
-		final float[] vertexY = model.getVerticesY();
-		final float[] vertexZ = model.getVerticesZ();
+		final int[] vertexX = model.getVerticesX();
+		final int[] vertexY = model.getVerticesY();
+		final int[] vertexZ = model.getVerticesZ();
 
 		final int[] indices1 = model.getFaceIndices1();
 		final int[] indices2 = model.getFaceIndices2();
@@ -529,9 +529,9 @@ class SceneUploader
 	private static float[] modelCanvasX;
 	private static float[] modelCanvasY;
 
-	private static float[] modelLocalX;
-	private static float[] modelLocalY;
-	private static float[] modelLocalZ;
+	private static int[] modelLocalX;
+	private static int[] modelLocalY;
+	private static int[] modelLocalZ;
 
 	private static int[] numOfPriority;
 	private static int[] eq10;
@@ -551,9 +551,9 @@ class SceneUploader
 		modelCanvasX = new float[MAX_VERTEX_COUNT];
 		modelCanvasY = new float[MAX_VERTEX_COUNT];
 
-		modelLocalX = new float[MAX_VERTEX_COUNT];
-		modelLocalY = new float[MAX_VERTEX_COUNT];
-		modelLocalZ = new float[MAX_VERTEX_COUNT];
+		modelLocalX = new int[MAX_VERTEX_COUNT];
+		modelLocalY = new int[MAX_VERTEX_COUNT];
+		modelLocalZ = new int[MAX_VERTEX_COUNT];
 
 		numOfPriority = new int[12];
 		eq10 = new int[2000];
@@ -585,9 +585,9 @@ class SceneUploader
 	int pushSortedModel(Projection proj, Model model, int orientation, int x, int y, int z, GpuIntBuffer vertexBuffer, GpuFloatBuffer uvBuffer)
 	{
 		final int vertexCount = model.getVerticesCount();
-		final float[] verticesX = model.getVerticesX();
-		final float[] verticesY = model.getVerticesY();
-		final float[] verticesZ = model.getVerticesZ();
+		final int[] verticesX = model.getVerticesX();
+		final int[] verticesY = model.getVerticesY();
+		final int[] verticesZ = model.getVerticesZ();
 
 		final int faceCount = model.getFaceCount();
 		final int[] indices1 = model.getFaceIndices1();
@@ -601,12 +601,12 @@ class SceneUploader
 		final int centerY = client.getCenterY();
 		final int zoom = client.get3dZoom();
 
-		float orientSine = 0;
-		float orientCosine = 0;
+		int orientSine = 0;
+		int orientCosine = 0;
 		if (orientation != 0)
 		{
-			orientSine = Perspective.SINE[orientation] / 65536f;
-			orientCosine = Perspective.COSINE[orientation] / 65536f;
+			orientSine = Perspective.SINE[orientation];
+			orientCosine = Perspective.COSINE[orientation];
 		}
 
 		float[] p = proj.project(x, y, z);
@@ -614,15 +614,15 @@ class SceneUploader
 
 		for (int v = 0; v < vertexCount; ++v)
 		{
-			float vertexX = verticesX[v];
-			float vertexY = verticesY[v];
-			float vertexZ = verticesZ[v];
+			int vertexX = verticesX[v];
+			int vertexY = verticesY[v];
+			int vertexZ = verticesZ[v];
 
 			if (orientation != 0)
 			{
-				float x0 = vertexX;
-				vertexX = vertexZ * orientSine + x0 * orientCosine;
-				vertexZ = vertexZ * orientCosine - x0 * orientSine;
+				int i = vertexZ * orientSine + vertexX * orientCosine >> 16;
+				vertexZ = vertexZ * orientCosine - vertexX * orientSine >> 16;
+				vertexX = i;
 			}
 
 			// move to local position
