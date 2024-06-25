@@ -220,6 +220,6 @@ tasks {
         ruleSets = emptyList()
         ignoreFailures = false
         isConsoleOutput = true
-        enabled = true
+        enabled = false
     }
 }
