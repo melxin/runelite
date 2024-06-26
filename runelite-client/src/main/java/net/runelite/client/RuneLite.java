@@ -218,7 +218,7 @@ public class RuneLite
 			.withRequiredArg()
 			.ofType(ClientUpdateCheckMode.class)
 			.defaultsTo(ClientUpdateCheckMode.AUTO)
-			.withValuesConvertedBy(new EnumConverter<ClientUpdateCheckMode>(ClientUpdateCheckMode.class)
+			.withValuesConvertedBy(new EnumConverter<>(ClientUpdateCheckMode.class)
 			{
 				@Override
 				public ClientUpdateCheckMode convert(String v)

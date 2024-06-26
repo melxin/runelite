@@ -124,27 +124,33 @@ public class ConfigClient
 			@Override
 			public void onResponse(Call call, Response response)
 			{
-				if (response.code() != 200)
+				try (response)
 				{
-					String body = "bad response";
-					try
+					if (response.code() != 200)
 					{
-						body = response.body().string();
-					}
-					catch (IOException ignored)
-					{
-					}
+						String body = "bad response";
+						try
+						{
+							body = response.body().string();
+						}
+						catch (IOException ignored)
+						{
+						}
 
-					log.warn("failed to synchronize some of {}/{} configuration values: {}",
-						patch.getEdit().size(), patch.getUnset().size(), body);
+						log.warn("failed to synchronize some of {}/{} configuration values: {}",
+							patch.getEdit().size(), patch.getUnset().size(), body);
+						future.complete(null);
+					}
+					else
+					{
+						log.debug("Synchronized {}/{} configuration values",
+							patch.getEdit().size(), patch.getUnset().size());
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					log.debug("Synchronized {}/{} configuration values",
-						patch.getEdit().size(), patch.getUnset().size());
+					future.completeExceptionally(ex);
 				}
-				response.close();
-				future.complete(null);
 			}
 		});
 
