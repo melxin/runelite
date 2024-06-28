@@ -43,6 +43,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.IntPredicate;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import net.runelite.api.Animation;
@@ -209,16 +210,7 @@ public abstract class RSClientMixin implements RSClient
 	private static int tickCount;
 
 	@Inject
-	private static boolean interpolatePlayerAnimations;
-
-	@Inject
-	private static boolean interpolateNpcAnimations;
-
-	@Inject
-	private static boolean interpolateObjectAnimations;
-
-	@Inject
-	private static boolean interpolateWidgetAnimations;
+	private static IntPredicate animationInterpolationFilter;
 
 	@Inject
 	private static int itemPressedDurationBuffer;
@@ -553,58 +545,16 @@ public abstract class RSClientMixin implements RSClient
 
 	@Inject
 	@Override
-	public boolean isInterpolatePlayerAnimations()
+	public IntPredicate getAnimationInterpolationFilter()
 	{
-		return interpolatePlayerAnimations;
+		return animationInterpolationFilter;
 	}
 
 	@Inject
 	@Override
-	public void setInterpolatePlayerAnimations(boolean interpolate)
+	public void setAnimationInterpolationFilter(IntPredicate filter)
 	{
-		interpolatePlayerAnimations = interpolate;
-	}
-
-	@Inject
-	@Override
-	public boolean isInterpolateNpcAnimations()
-	{
-		return interpolateNpcAnimations;
-	}
-
-	@Inject
-	@Override
-	public void setInterpolateNpcAnimations(boolean interpolate)
-	{
-		interpolateNpcAnimations = interpolate;
-	}
-
-	@Inject
-	@Override
-	public boolean isInterpolateObjectAnimations()
-	{
-		return interpolateObjectAnimations;
-	}
-
-	@Inject
-	@Override
-	public void setInterpolateObjectAnimations(boolean interpolate)
-	{
-		interpolateObjectAnimations = interpolate;
-	}
-
-	@Inject
-	@Override
-	public boolean isInterpolateWidgetAnimations()
-	{
-		return interpolateWidgetAnimations;
-	}
-
-	@Inject
-	@Override
-	public void setInterpolateWidgetAnimations(boolean interpolate)
-	{
-		interpolateWidgetAnimations = interpolate;
+		animationInterpolationFilter = filter;
 	}
 
 	@Inject
