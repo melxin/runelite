@@ -1083,6 +1083,9 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("archive4")
 	RSArchive getIndexCache4();
 
+	@Import("soundEffectsArchive")
+	RSArchive getSoundEffectsIndexCache();
+
 	@Import("decimator")
 	RSDecimator getSoundEffectResampler();
 
