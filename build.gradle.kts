@@ -34,7 +34,7 @@ buildscript {
         maven(url = "https://repo.runelite.net")
     }
     dependencies {
-        classpath("org.ajoberstar.grgit:grgit-core:4.1.0")
+        classpath("org.ajoberstar.grgit:grgit-core:5.2.2")
         classpath("com.openosrs:script-assembler-plugin:1.0.2")
         classpath("com.openosrs:injector-plugin:2.0.12")
         classpath("com.openosrs:interface-parser-plugin:1.0.3")
@@ -42,7 +42,7 @@ buildscript {
 }
 
 plugins {
-    id("org.ajoberstar.grgit") version "4.1.0"
+    id("org.ajoberstar.grgit") version "5.2.2"
 
     application
 }
