@@ -637,6 +637,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * Create a new menu entry
 	 * @return the newly created menu entry
 	 */
+	@Deprecated
 	MenuEntry createMenuEntry(String option, String target, int identifier, int opcode, int param1, int param2, int itemId, boolean forceLeftClick);
 
 	/**
@@ -653,6 +654,7 @@ public interface Client extends OAuthApi, GameEngine
 	/**
 	 * @return amount of menu entries the client has (same as client.getMenuEntries().size())
 	 */
+	@Deprecated
 	int getMenuOptionCount();
 
 	/**
@@ -672,6 +674,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * Set the amount of menu entries the client has.
 	 * If you decrement this count, it's the same as removing the last one
 	 */
+	@Deprecated
 	void setMenuOptionCount(int count);
 
 	/**
