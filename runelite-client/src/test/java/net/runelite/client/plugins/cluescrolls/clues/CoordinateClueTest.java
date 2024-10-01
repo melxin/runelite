@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Tomas Slusny <slusnucky@gmail.com>
+ * Copyright (c) 2019, Adam <Adam@sigterm.info>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,62 +22,35 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.grounditems;
+package net.runelite.client.plugins.cluescrolls.clues;
 
-import java.awt.Color;
-import java.time.Duration;
-import java.time.Instant;
-import javax.annotation.Nullable;
-import lombok.Builder;
-import lombok.Data;
-import static net.runelite.api.TileItem.OWNERSHIP_GROUP;
-import static net.runelite.api.TileItem.OWNERSHIP_NONE;
-import static net.runelite.api.TileItem.OWNERSHIP_OTHER;
-import static net.runelite.api.TileItem.OWNERSHIP_SELF;
+import java.util.Map;
 import net.runelite.api.coords.WorldPoint;
-import org.intellij.lang.annotations.MagicConstant;
+import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
-@Data
-@Builder
-class GroundItem
+public class CoordinateClueTest
 {
-	private int id;
-	private int itemId;
-	private String name;
-	private int quantity;
-	private WorldPoint location;
-	private int height;
-	private int haPrice;
-	private int gePrice;
-	private int offset;
-	private boolean tradeable;
-	@MagicConstant(intValues = {OWNERSHIP_NONE, OWNERSHIP_SELF, OWNERSHIP_OTHER, OWNERSHIP_GROUP})
-	private int ownership;
-	private boolean isPrivate;
-	@Nullable
-	private Instant spawnTime;
-	private boolean stackable;
-	private Duration despawnTime;
-	private Duration visibleTime;
-
-	// cached values derived from config
-	boolean highlighted;
-	boolean hidden;
-	Color color;
-
-	int getHaPrice()
+	@Test
+	public void testDuplicateCoordinates()
 	{
-		return haPrice * quantity;
+		// If this doesn't throw then the clues map doesn't have duplicate keys
+		new CoordinateClue("test", new WorldPoint(0, 0, 0), null);
 	}
 
-	int getGePrice()
+	@Test
+	public void testIsleOfSoulsNpcs()
 	{
-		return gePrice * quantity;
-	}
+		for (Map.Entry<WorldPoint, CoordinateClue.CoordinateClueInfo> clueEntry : CoordinateClue.CLUES.entrySet())
+		{
+			final CoordinateClue.CoordinateClueInfo clueInfo = clueEntry.getValue();
+			final Enemy enemy = clueInfo.getEnemy();
+			if (!(enemy == Enemy.ARMADYLEAN_GUARD || enemy == Enemy.BANDOSIAN_GUARD))
+			{
+				continue;
+			}
 
-	void reset()
-	{
-		highlighted = hidden = false;
-		color = null;
+			assertTrue("Armadylean guard-only and Bandosian guard-only clues only occur on the Isle of Souls; the following entry must be corrected:\n" + clueEntry, clueInfo.getDirections().contains("Isle of Souls"));
+		}
 	}
 }

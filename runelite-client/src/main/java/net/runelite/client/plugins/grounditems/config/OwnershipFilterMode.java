@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2018, Tomas Slusny <slusnucky@gmail.com>
- * Copyright (c) 2018, Ron Young <https://github.com/raiyni>
+ * Copyright (c) 2024, Moshe Ben-Zacharia <https://github.com/MosheBenZacharia>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,24 +22,24 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.banktags.tabs;
+package net.runelite.client.plugins.grounditems.config;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import net.runelite.client.game.SpriteOverride;
 
+@Getter
 @RequiredArgsConstructor
-public enum TabSprites implements SpriteOverride
+public enum OwnershipFilterMode
 {
-	TAB_BACKGROUND(-201, "tag-tab.png"),
-	TAB_BACKGROUND_ACTIVE(-202, "tag-tab-active.png"),
-	UP_ARROW(-203, "up-arrow.png"),
-	DOWN_ARROW(-204, "down-arrow.png"),
-	NEW_TAB(-205, "new-tab.png");
+	ALL("All"),
+	TAKEABLE("Takeable"),
+	DROPS("Drops");
 
-	@Getter
-	private final int spriteId;
+	private final String name;
 
-	@Getter
-	private final String fileName;
+	@Override
+	public String toString()
+	{
+		return name;
+	}
 }
