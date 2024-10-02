@@ -36,6 +36,7 @@ import net.runelite.api.Tile;
 import net.runelite.api.WallObject;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
+import net.runelite.api.events.PreMapLoad;
 import net.runelite.api.hooks.DrawCallbacks;
 import net.runelite.api.mixins.Copy;
 import net.runelite.api.mixins.FieldHook;
@@ -1128,6 +1129,13 @@ public abstract class RSSceneMixin implements RSScene
 
 	@Inject
 	@Override
+	public int[][][] getRoofs()
+	{
+		return rl$tiles;
+	}
+
+	@Inject
+	@Override
 	public void setRoofRemovalMode(int roofRemovalMode)
 	{
 		rl$roofRemovalMode = roofRemovalMode;
@@ -1142,7 +1150,7 @@ public abstract class RSSceneMixin implements RSScene
 
 	@Inject
 	@Override
-	public void generateHouses()
+	public void buildRoofs()
 	{
 		rl$tiles = new int[4][104][104];
 		final Tile[][][] tiles = getTiles();
@@ -1464,5 +1472,12 @@ public abstract class RSSceneMixin implements RSScene
 		{
 			this.setOffsetOccluder(90);
 		}*/
+	}
+
+	@MethodHook(value = "loadRegion", end = true)
+	@Inject
+	public static final void loadRegion()
+	{
+		client.getCallbacks().post(new PreMapLoad(client.getWorldView(), client.getWorldView().getScene()));
 	}
 }
