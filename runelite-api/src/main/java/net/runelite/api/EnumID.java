@@ -112,4 +112,10 @@ public final class EnumID
 	 * val: enum potion
 	 */
 	public static final int POTIONSTORE_POTIONS = 4826;
+
+	/**
+	 * key: int id
+	 * val: enum potion
+	 */
+	public static final int POTIONSTORE_UNFINISHED_POTIONS = 4829;
 }
