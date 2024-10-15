@@ -61,12 +61,12 @@ public class IfICmpEq extends If
 		return false;
 	}
 
-	static boolean isZero(StackContext s)
+	public static boolean isZero(StackContext s)
 	{
 		return is(s, 0);
 	}
 
-	static boolean isOne(StackContext s)
+	public static boolean isOne(StackContext s)
 	{
 		return is(s, 1);
 	}
