@@ -37,6 +37,7 @@ import net.runelite.deob.deobfuscators.mapping.AnnotationMapper;
 import net.runelite.deob.deobfuscators.mapping.Mapper;
 import net.runelite.deob.deobfuscators.mapping.ParallelExecutorMapping;
 import net.runelite.deob.deobfuscators.mapping.packets.ClientPacketRenamer;
+import net.runelite.deob.deobfuscators.mapping.packets.ClientPacketUpdater;
 import net.runelite.deob.deobfuscators.mapping.packets.ModWeathPacketsParser;
 import net.runelite.deob.deobfuscators.transformers.BufferRenameTransformer;
 import net.runelite.deob.deobfuscators.transformers.ClassToPackageTransformer;
@@ -95,6 +96,7 @@ public class UpdateMappings
 
 		new ModWeathPacketsParser(mapping, group1, group2).run();
 		new ClientPacketRenamer(group1, group2, mapping).run();
+		new ClientPacketUpdater(group1, group2);
 
 		new ScriptOpcodesTransformer().transform(group2);
 		new GraphicsObjectTransformer().transform(group2);

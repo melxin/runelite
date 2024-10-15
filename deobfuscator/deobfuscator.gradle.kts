@@ -56,6 +56,8 @@ dependencies {
 
     testImplementation(group = "junit", name = "junit", version = "4.12")
     testImplementation(group = "org.mockito", name = "mockito-core", version = "3.1.0")
+
+    implementation(group = "com.github.javaparser", name = "javaparser-core", version = "3.26.2")
 }
 
 tasks {
