@@ -106,6 +106,9 @@ public interface RSScene extends Scene
 	@Import("baseY")
 	void setBaseY(int y);
 
+	@Import("processWalkClick")
+	void processWalkClick();
+
 	@Import("viewportWalking")
 	void setViewportWalking(boolean viewportWalking);
 

@@ -436,7 +436,8 @@ public abstract class RSSceneMixin implements RSScene
 							{
 								client.setEntitiesAtMouseCount(0);
 							}
-							this.setCheckClick(false);
+							//this.setCheckClick(false);
+							this.processWalkClick();
 							client.getCallbacks().drawScene();
 
 							if (client.getDrawCallbacks() != null)
@@ -521,7 +522,8 @@ public abstract class RSSceneMixin implements RSScene
 		{
 			client.setEntitiesAtMouseCount(0);
 		}
-		this.setCheckClick(false);
+		//this.setCheckClick(false);
+		this.processWalkClick();
 		client.getCallbacks().drawScene();
 		if (client.getDrawCallbacks() != null)
 		{
