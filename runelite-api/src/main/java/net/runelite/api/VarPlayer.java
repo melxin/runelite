@@ -202,6 +202,9 @@ public enum VarPlayer
 	 */
 	HP_HUD_NPC_ID(1683),
 
+	CLOG_LOGGED(2943),
+	CLOG_TOTAL(2944),
+
 	/**
 	 * Colors for chat messages
 	 */
