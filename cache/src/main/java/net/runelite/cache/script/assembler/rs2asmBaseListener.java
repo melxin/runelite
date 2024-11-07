@@ -459,6 +459,26 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
+	public void enterOperand_symbol(rs2asmParser.Operand_symbolContext ctx)
+	{
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override
+	public void exitOperand_symbol(rs2asmParser.Operand_symbolContext ctx)
+	{
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override
 	public void enterSwitch_lookup(rs2asmParser.Switch_lookupContext ctx)
 	{
 	}

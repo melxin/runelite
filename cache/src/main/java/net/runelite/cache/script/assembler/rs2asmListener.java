@@ -318,6 +318,20 @@ public interface rs2asmListener extends ParseTreeListener
 	void exitOperand_label(rs2asmParser.Operand_labelContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link rs2asmParser#operand_symbol}.
+	 *
+	 * @param ctx the parse tree
+	 */
+	void enterOperand_symbol(rs2asmParser.Operand_symbolContext ctx);
+
+	/**
+	 * Exit a parse tree produced by {@link rs2asmParser#operand_symbol}.
+	 *
+	 * @param ctx the parse tree
+	 */
+	void exitOperand_symbol(rs2asmParser.Operand_symbolContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link rs2asmParser#switch_lookup}.
 	 *
 	 * @param ctx the parse tree
