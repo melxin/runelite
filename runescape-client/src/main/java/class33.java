@@ -59,7 +59,7 @@ public class class33 {
 		garbageValue = "-1693530572"
 	)
 	static final void method463(String var0) {
-		PacketBufferNode var1 = Message.getPacketBufferNode(ClientPacket.field3394, Client.packetWriter.isaacCipher);
+		PacketBufferNode var1 = Message.getPacketBufferNode(ClientPacket.FRIEND_ADDUSER, Client.packetWriter.isaacCipher);
 		var1.packetBuffer.writeByte(class164.stringCp1252NullTerminatedByteSize(var0));
 		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
 		Client.packetWriter.addNode(var1);

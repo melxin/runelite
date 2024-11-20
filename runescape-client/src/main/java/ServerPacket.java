@@ -401,7 +401,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
 	)
-	public static final ServerPacket field3520;
+	public static final ServerPacket NPC_INFO_LARGE_VIEWPORT_2;
 	@ObfuscatedName("dg")
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
@@ -686,7 +686,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
 	)
-	public static final ServerPacket field3511;
+	public static final ServerPacket NPC_INFO_SMALL_VIEWPORT_1;
 	@ObfuscatedName("fj")
 	@ObfuscatedGetter(
 		intValue = 1745306065
@@ -779,7 +779,7 @@ public class ServerPacket {
 		MAP_ANIM = new ServerPacket(75, 6);
 		IF_SETOBJECT = new ServerPacket(76, 10);
 		UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER = new ServerPacket(77, -1);
-		field3520 = new ServerPacket(78, -2);
+		NPC_INFO_LARGE_VIEWPORT_2 = new ServerPacket(78, -2);
 		field3462 = new ServerPacket(79, 1);
 		RESET_ANIMS = new ServerPacket(80, 0);
 		MIDI_JINGLE = new ServerPacket(81, 5);
@@ -836,7 +836,7 @@ public class ServerPacket {
 		OBJ_RESET_CUSTOMIZATION = new ServerPacket(132, 7);
 		field3550 = new ServerPacket(133, -2);
 		field3576 = new ServerPacket(134, 2);
-		field3511 = new ServerPacket(135, -2);
+		NPC_INFO_SMALL_VIEWPORT_1 = new ServerPacket(135, -2);
 	}
 
 	ServerPacket(int var1, int var2) {

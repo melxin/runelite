@@ -3662,7 +3662,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 																		}
 
 																		if (indexCheck.isValidIndexInRange(13)) {
-																			packetWriter.addNode(Message.getPacketBufferNode(ClientPacket.field3387, packetWriter.isaacCipher));
+																			packetWriter.addNode(Message.getPacketBufferNode(ClientPacket.FREECAM_EXIT, packetWriter.isaacCipher));
 																			oculusOrbState = 0;
 																		}
 																	}
@@ -4817,7 +4817,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3520 == var1.serverPacket) {
+				if (ServerPacket.NPC_INFO_LARGE_VIEWPORT_2 == var1.serverPacket) {
 					GraphicsObject.updateNpcs(Projection.worldView, false, var3);
 					var1.serverPacket = null;
 					return true;
@@ -5060,7 +5060,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3511 == var1.serverPacket) {
+				if (ServerPacket.NPC_INFO_SMALL_VIEWPORT_1 == var1.serverPacket) {
 					GraphicsObject.updateNpcs(Projection.worldView, true, var3);
 					var1.serverPacket = null;
 					return true;

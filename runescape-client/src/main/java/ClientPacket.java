@@ -356,7 +356,7 @@ public class ClientPacket implements class321 {
 	@ObfuscatedSignature(
 		descriptor = "Lmj;"
 	)
-	public static final ClientPacket field3387;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("cm")
 	@ObfuscatedSignature(
 		descriptor = "Lmj;"
@@ -401,7 +401,7 @@ public class ClientPacket implements class321 {
 	@ObfuscatedSignature(
 		descriptor = "Lmj;"
 	)
-	public static final ClientPacket field3394;
+	public static final ClientPacket FRIEND_ADDUSER;
 	@ObfuscatedName("dg")
 	@ObfuscatedSignature(
 		descriptor = "Lmj;"
@@ -590,7 +590,7 @@ public class ClientPacket implements class321 {
 		DETECT_MODIFIED_CLIENT = new ClientPacket(66, 4);
 		field3371 = new ClientPacket(67, -1);
 		UPDATE_PLAYER_MODEL = new ClientPacket(68, 26);
-		field3387 = new ClientPacket(69, 0);
+		FREECAM_EXIT = new ClientPacket(69, 0);
 		WIDGET_TYPE = new ClientPacket(70, 4);
 		IF_SUBOP = new ClientPacket(71, 10);
 		MOVE_GAMECLICK = new ClientPacket(72, -1);
@@ -599,7 +599,7 @@ public class ClientPacket implements class321 {
 		EVENT_KEYBOARD = new ClientPacket(75, -2);
 		IF_BUTTON9 = new ClientPacket(76, 8);
 		OPPLAYER7 = new ClientPacket(77, 3);
-		field3394 = new ClientPacket(78, -1);
+		FRIEND_ADDUSER = new ClientPacket(78, -1);
 		NO_TIMEOUT = new ClientPacket(79, 0);
 		OPOBJ5 = new ClientPacket(80, 7);
 		OPLOCT = new ClientPacket(81, 15);
