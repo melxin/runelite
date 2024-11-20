@@ -531,6 +531,6 @@ public abstract class RSModelMixin implements RSModel
 	public AABB getAABB(int orientation)
 	{
 		calculateExtreme(orientation);
-		return getAABBMap().get(orientation);
+		return getRSAABB(orientation);
 	}
 }

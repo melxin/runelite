@@ -29,6 +29,9 @@ import net.runelite.mapping.Import;
 
 public interface RSAABB extends AABB
 {
+	@Import("orientation")
+	int getOrientation();
+
 	@Import("xMid")
 	int getCenterX();
 

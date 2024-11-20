@@ -17,37 +17,44 @@ public class AABB {
 	@ObfuscatedGetter(
 		intValue = 1764701235
 	)
-	final int field2753;
+	@Export("orientation")
+	final int orientation;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
 		intValue = 1457712909
 	)
-	int field2748;
+	@Export("xMid")
+	int xMid;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
 		intValue = 565410795
 	)
-	int field2750;
+	@Export("yMid")
+	int yMid;
 	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
 		intValue = -841799799
 	)
-	int field2745;
+	@Export("zMid")
+	int zMid;
 	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
 		intValue = -252446047
 	)
-	int field2746;
+	@Export("xMidOffset")
+	int xMidOffset;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = -297231209
 	)
-	int field2747;
+	@Export("yMidOffset")
+	int yMidOffset;
 	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
 		intValue = -1584322801
 	)
-	int field2744;
+	@Export("zMidOffset")
+	int zMidOffset;
 	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "Ljk;"
@@ -56,13 +63,13 @@ public class AABB {
 	AABB aabb;
 
 	AABB(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-		this.field2753 = var1;
-		this.field2748 = var2;
-		this.field2750 = var3;
-		this.field2745 = var4;
-		this.field2746 = var5;
-		this.field2747 = var6;
-		this.field2744 = var7;
+		this.orientation = var1;
+		this.xMid = var2;
+		this.yMid = var3;
+		this.zMid = var4;
+		this.xMidOffset = var5;
+		this.yMidOffset = var6;
+		this.zMidOffset = var7;
 	}
 
 	@ObfuscatedName("ab")

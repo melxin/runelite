@@ -25,7 +25,6 @@
 package net.runelite.rs.api;
 
 import java.awt.Shape;
-import java.util.HashMap;
 import net.runelite.api.AABB;
 import net.runelite.api.Model;
 import net.runelite.mapping.Import;
@@ -134,8 +133,8 @@ public interface RSModel extends RSRenderable, Model
 	@Override
 	int getDiameter();
 
-	@Import("aabb")
-	HashMap<Integer, AABB> getAABBMap();
+	@Import("getAABB")
+	AABB getRSAABB(int orientation);
 
 	@Import("faceTextures")
 	@Override
