@@ -2,10 +2,10 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("mu")
+@ObfuscatedName("mr")
 @Implements("DirectWrapper")
 public class DirectWrapper extends Wrapper {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("obj")
 	Object obj;
 
@@ -14,7 +14,7 @@ public class DirectWrapper extends Wrapper {
 		this.obj = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("get")
 	Object get() {
 		return this.obj;

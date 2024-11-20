@@ -8,9 +8,9 @@ public interface OAuthApi {
 
 	boolean isOnLoginScreen();
 
-	void setClient(int var1);
-
 	long getAccountHash();
+
+	void setClient(int var1);
 
 	void setOtlTokenRequester(OtlTokenRequester var1);
 }

@@ -4,33 +4,33 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("up")
+@ObfuscatedName("un")
 @Implements("IterableNodeHashTableIterator")
 public class IterableNodeHashTableIterator implements Iterator {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lum;"
+		descriptor = "Lug;"
 	)
 	@Export("hashTable")
 	IterableNodeHashTable hashTable;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Ltw;"
+		descriptor = "Ltz;"
 	)
 	@Export("head")
 	Node head;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@Export("index")
 	int index;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ltw;"
+		descriptor = "Ltz;"
 	)
 	@Export("last")
 	Node last;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lum;)V"
+		descriptor = "(Lug;)V"
 	)
 	public IterableNodeHashTableIterator(IterableNodeHashTable var1) {
 		this.last = null;
@@ -38,7 +38,7 @@ public class IterableNodeHashTableIterator implements Iterator {
 		this.start();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("start")
 	void start() {
 		this.head = this.hashTable.buckets[0].previous;
@@ -48,9 +48,9 @@ public class IterableNodeHashTableIterator implements Iterator {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "()Ltw;"
+		descriptor = "()Ltz;"
 	)
-	public Node method9745() {
+	public Node method9758() {
 		this.start();
 		return (Node)this.next();
 	}
@@ -77,6 +77,11 @@ public class IterableNodeHashTableIterator implements Iterator {
 		}
 	}
 
+	public void remove() {
+		this.last.remove();
+		this.last = null;
+	}
+
 	public boolean hasNext() {
 		if (this.hashTable.buckets[this.index - 1] != this.head) {
 			return true;
@@ -91,15 +96,6 @@ public class IterableNodeHashTableIterator implements Iterator {
 			}
 
 			return false;
-		}
-	}
-
-	public void remove() {
-		if (this.last == null) {
-			throw new IllegalStateException();
-		} else {
-			this.last.remove();
-			this.last = null;
 		}
 	}
 }

@@ -1,118 +1,110 @@
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ii")
+@ObfuscatedName("ih")
 public class class213 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	static final class213 field2335;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	static final class213 field2329;
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	static final class213 field2342;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	public static final class213 field2338;
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Lih;"
 	)
 	static final class213 field2331;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Lih;"
 	)
-	public static final class213 field2333;
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	static final class213 field2328;
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	static final class213 field2337;
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	static final class213 field2336;
+	static final class213 field2326;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Lih;"
 	)
-	static final class213 field2334;
-	@ObfuscatedName("au")
+	static final class213 field2325;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	static final class213 field2339;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Lih;"
 	)
 	public static final class213 field2330;
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Lih;"
 	)
-	static final class213 field2340;
+	static final class213 field2323;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lih;"
+	)
+	public static final class213 field2328;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lih;"
+	)
+	static final class213 field2329;
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lih;"
+	)
+	static final class213 field2335;
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Lih;"
+	)
+	static final class213 field2337;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lih;"
+	)
+	static final class213 field2327;
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Lih;"
 	)
-	static final class213 field2341;
-	@ObfuscatedName("bu")
+	static final class213 field2333;
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lvq;"
+		descriptor = "Lih;"
 	)
-	@Export("rasterProvider")
-	public static AbstractRasterProvider rasterProvider;
-	@ObfuscatedName("be")
+	public static final class213 field2334;
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lqg;"
+		descriptor = "Lih;"
 	)
-	static Bounds field2344;
-	@ObfuscatedName("wz")
-	static Iterator field2345;
-	@ObfuscatedName("ab")
+	static final class213 field2324;
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Lih;"
+	)
+	static final class213 field2336;
+	@ObfuscatedName("fv")
+	@ObfuscatedSignature(
+		descriptor = "Loa;"
+	)
+	@Export("archive13")
+	static Archive archive13;
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = 536798107
+		intValue = 749902341
 	)
-	public final int field2332;
+	public final int field2338;
 
 	static {
-		field2335 = new class213(0);
-		field2329 = new class213(1);
-		field2342 = new class213(2);
-		field2338 = new class213(3);
-		field2331 = new class213(4);
-		field2333 = new class213(5);
-		field2328 = new class213(6);
-		field2337 = new class213(7);
-		field2336 = new class213(8);
-		field2334 = new class213(9);
-		field2339 = new class213(10);
-		field2330 = new class213(11);
-		field2340 = new class213(12);
-		field2341 = new class213(13);
+		field2331 = new class213(0);
+		field2326 = new class213(1);
+		field2325 = new class213(2);
+		field2330 = new class213(3);
+		field2323 = new class213(4);
+		field2328 = new class213(5);
+		field2329 = new class213(6);
+		field2335 = new class213(7);
+		field2337 = new class213(8);
+		field2327 = new class213(9);
+		field2333 = new class213(10);
+		field2334 = new class213(11);
+		field2324 = new class213(12);
+		field2336 = new class213(13);
 	}
 
 	class213(int var1) {
-		this.field2332 = var1;
+		this.field2338 = var1;
 	}
 }

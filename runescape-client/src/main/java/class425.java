@@ -1,34 +1,57 @@
-import net.runelite.mapping.ObfuscatedGetter;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qw")
+@ObfuscatedName("qp")
 public class class425 {
-	@ObfuscatedName("at")
-	@ObfuscatedGetter(
-		intValue = 2088257007
-	)
-	static int field4765;
-
-	@ObfuscatedName("bc")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(ILng;IIIII[FB)Lng;",
-		garbageValue = "-25"
+		descriptor = "Lia;"
 	)
-	static Widget method8165(int var0, Widget var1, int var2, int var3, int var4, int var5, int var6, float[] var7) {
-		Widget var8 = new Widget();
-		var8.type = var0;
-		var8.parentId = var1.id;
-		var8.childIndex = var2;
-		var8.isIf3 = true;
-		var8.xAlignment = var3;
-		var8.yAlignment = var4;
-		var8.widthAlignment = var5;
-		var8.heightAlignment = var6;
-		var8.rawX = (int)((float)var1.width * var7[0]);
-		var8.rawY = (int)((float)(var1.height) * var7[1]);
-		var8.rawWidth = (int)(var7[2] * (float)var1.width);
-		var8.rawHeight = (int)(var7[3] * (float)(var1.height));
-		return var8;
+	@Export("clock")
+	static Clock clock;
+
+	@ObfuscatedName("nj")
+	@ObfuscatedSignature(
+		descriptor = "(Lnp;B)V",
+		garbageValue = "1"
+	)
+	static final void method8096(Widget var0) {
+		int var1 = var0.contentType;
+		if (var1 == 324) {
+			if (Client.field624 == -1) {
+				Client.field624 = var0.spriteId2;
+				Client.field794 = var0.spriteId;
+			}
+
+			if (Client.playerAppearance.gender == 1) {
+				var0.spriteId2 = Client.field624;
+			} else {
+				var0.spriteId2 = Client.field794;
+			}
+
+		} else if (var1 == 325) {
+			if (Client.field624 == -1) {
+				Client.field624 = var0.spriteId2;
+				Client.field794 = var0.spriteId;
+			}
+
+			if (Client.playerAppearance.gender == 1) {
+				var0.spriteId2 = Client.field794;
+			} else {
+				var0.spriteId2 = Client.field624;
+			}
+
+		} else if (var1 == 327) {
+			var0.modelAngleX = 150;
+			var0.modelAngleY = (int)(Math.sin((double)Client.cycle / 40.0D) * 256.0D) & 2047;
+			var0.modelType = 5;
+			var0.modelId = 0;
+		} else if (var1 == 328) {
+			var0.modelAngleX = 150;
+			var0.modelAngleY = (int)(Math.sin((double)Client.cycle / 40.0D) * 256.0D) & 2047;
+			var0.modelType = 5;
+			var0.modelId = 1;
+		}
 	}
 }

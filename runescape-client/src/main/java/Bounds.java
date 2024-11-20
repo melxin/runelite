@@ -4,30 +4,47 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qg")
+@ObfuscatedName("qw")
 @Implements("Bounds")
 public class Bounds {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1212502861
+		intValue = -1297403821
+	)
+	static int field4747;
+	@ObfuscatedName("cx")
+	@ObfuscatedGetter(
+		intValue = -473662445
+	)
+	@Export("otpMedium")
+	static int otpMedium;
+	@ObfuscatedName("wo")
+	@ObfuscatedGetter(
+		intValue = -1683139463
+	)
+	@Export("foundItemIdCount")
+	static int foundItemIdCount;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = 522181415
 	)
 	@Export("lowX")
 	public int lowX;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 860789119
+		intValue = 815856049
 	)
 	@Export("lowY")
 	public int lowY;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1187820279
+		intValue = -1247655169
 	)
 	@Export("highX")
 	public int highX;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -615213727
+		intValue = 338190707
 	)
 	@Export("highY")
 	public int highY;
@@ -41,10 +58,10 @@ public class Bounds {
 		this(0, 0, var1, var2);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "-1829870155"
+		garbageValue = "-1971543018"
 	)
 	@Export("setLow")
 	public void setLow(int var1, int var2) {
@@ -55,7 +72,7 @@ public class Bounds {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "2115315498"
+		garbageValue = "-398831621"
 	)
 	@Export("setHigh")
 	public void setHigh(int var1, int var2) {
@@ -63,31 +80,31 @@ public class Bounds {
 		this.highY = var2;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(III)Z",
-		garbageValue = "-88156479"
+		garbageValue = "-802421415"
 	)
-	public boolean method8142(int var1, int var2) {
+	public boolean method8069(int var1, int var2) {
 		return var1 >= this.lowX && var1 < this.highX + this.lowX && var2 >= this.lowY && var2 < this.lowY + this.highY;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lqg;Lqg;I)V",
-		garbageValue = "298921472"
+		descriptor = "(Lqw;Lqw;I)V",
+		garbageValue = "2079400311"
 	)
-	public void method8154(Bounds var1, Bounds var2) {
-		this.method8145(var1, var2);
-		this.method8146(var1, var2);
+	public void method8093(Bounds var1, Bounds var2) {
+		this.method8084(var1, var2);
+		this.method8072(var1, var2);
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lqg;Lqg;S)V",
-		garbageValue = "-28856"
+		descriptor = "(Lqw;Lqw;B)V",
+		garbageValue = "55"
 	)
-	void method8145(Bounds var1, Bounds var2) {
+	void method8084(Bounds var1, Bounds var2) {
 		var2.lowX = this.lowX;
 		var2.highX = this.highX;
 		if (this.lowX < var1.lowX) {
@@ -95,8 +112,8 @@ public class Bounds {
 			var2.lowX = var1.lowX;
 		}
 
-		if (var2.method8143() > var1.method8143()) {
-			var2.highX -= var2.method8143() - var1.method8143();
+		if (var2.method8073() > var1.method8073()) {
+			var2.highX -= var2.method8073() - var1.method8073();
 		}
 
 		if (var2.highX < 0) {
@@ -105,12 +122,12 @@ public class Bounds {
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lqg;Lqg;I)V",
-		garbageValue = "-1164237492"
+		descriptor = "(Lqw;Lqw;I)V",
+		garbageValue = "-2001420446"
 	)
-	void method8146(Bounds var1, Bounds var2) {
+	void method8072(Bounds var1, Bounds var2) {
 		var2.lowY = this.lowY;
 		var2.highY = this.highY;
 		if (this.lowY < var1.lowY) {
@@ -118,8 +135,8 @@ public class Bounds {
 			var2.lowY = var1.lowY;
 		}
 
-		if (var2.method8147() > var1.method8147()) {
-			var2.highY -= var2.method8147() - var1.method8147();
+		if (var2.method8074() > var1.method8074()) {
+			var2.highY -= var2.method8074() - var1.method8074();
 		}
 
 		if (var2.highY < 0) {
@@ -128,104 +145,25 @@ public class Bounds {
 
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "-117"
+		garbageValue = "0"
 	)
-	int method8143() {
-		return this.lowX + this.highX;
+	int method8073() {
+		return this.highX + this.lowX;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "76"
+		garbageValue = "93"
 	)
-	int method8147() {
-		return this.highY + this.lowY;
+	int method8074() {
+		return this.lowY + this.highY;
 	}
 
 	public String toString() {
 		return null;
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lip;",
-		garbageValue = "649869579"
-	)
-	@Export("ItemDefinition_get")
-	public static ItemComposition ItemDefinition_get(int var0) {
-		ItemComposition var1 = (ItemComposition)ItemComposition.ItemDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = ItemComposition.ItemDefinition_archive.takeFile(10, var0);
-			var1 = new ItemComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.post();
-			if (var1.noteTemplate != -1) {
-				var1.genCert(ItemDefinition_get(var1.noteTemplate), ItemDefinition_get(var1.note));
-			}
-
-			if (var1.notedId != -1) {
-				var1.genBought(ItemDefinition_get(var1.notedId), ItemDefinition_get(var1.unnotedId));
-			}
-
-			if (var1.placeholderTemplate != -1) {
-				var1.genPlaceholder(ItemDefinition_get(var1.placeholderTemplate), ItemDefinition_get(var1.placeholder));
-			}
-
-			if (!HttpAuthenticationHeader.ItemDefinition_inMembersWorld && var1.isMembersOnly) {
-				if (var1.noteTemplate == -1 && var1.notedId == -1 && var1.placeholderTemplate == -1) {
-					var1.name = var1.name + " (Members)";
-				}
-
-				var1.examine = "Login to a members' server to use this object.";
-				var1.isTradable = false;
-
-				int var3;
-				for (var3 = 0; var3 < var1.groundActions.length; ++var3) {
-					var1.groundActions[var3] = null;
-				}
-
-				for (var3 = 0; var3 < var1.inventoryActions.length; ++var3) {
-					if (var3 != 4) {
-						if (var1.field2257 != null) {
-							var1.field2257[var3] = null;
-						}
-
-						var1.inventoryActions[var3] = null;
-					}
-				}
-
-				var1.shiftClickIndex = -2;
-				var1.team = 0;
-				if (var1.params != null) {
-					boolean var6 = false;
-
-					for (Node var4 = var1.params.first(); var4 != null; var4 = var1.params.next()) {
-						ParamComposition var5 = WorldMapID.getParamDefinition((int)var4.key);
-						if (var5.autoDisable) {
-							var4.remove();
-						} else {
-							var6 = true;
-						}
-					}
-
-					if (!var6) {
-						var1.params = null;
-					}
-				}
-			}
-
-			ItemComposition.ItemDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
 	}
 }

@@ -6,29 +6,29 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lq")
+@ObfuscatedName("lu")
 @Implements("WorldMapAreaData")
 public class WorldMapAreaData extends WorldMapArea {
-	@ObfuscatedName("af")
-	HashSet field3274;
 	@ObfuscatedName("ar")
-	HashSet field3272;
-	@ObfuscatedName("ab")
+	HashSet field3273;
+	@ObfuscatedName("as")
+	HashSet field3275;
+	@ObfuscatedName("az")
 	@Export("iconList")
 	List iconList;
 
 	WorldMapAreaData() {
 	}
 
-	@ObfuscatedName("ct")
+	@ObfuscatedName("cj")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;Lvl;IZB)V",
-		garbageValue = "82"
+		descriptor = "(Lvj;Lvj;IZI)V",
+		garbageValue = "-1768177788"
 	)
-	void method6389(Buffer var1, Buffer var2, int var3, boolean var4) {
-		this.method5924(var1, var3);
+	void method6326(Buffer var1, Buffer var2, int var3, boolean var4) {
+		this.method5839(var1, var3);
 		int var5 = var2.readUnsignedShort();
-		this.field3274 = new HashSet(var5);
+		this.field3273 = new HashSet(var5);
 
 		int var6;
 		for (var6 = 0; var6 < var5; ++var6) {
@@ -40,11 +40,11 @@ public class WorldMapAreaData extends WorldMapArea {
 				continue;
 			}
 
-			this.field3274.add(var7);
+			this.field3273.add(var7);
 		}
 
 		var6 = var2.readUnsignedShort();
-		this.field3272 = new HashSet(var6);
+		this.field3275 = new HashSet(var6);
 
 		for (int var10 = 0; var10 < var6; ++var10) {
 			WorldMapData_1 var8 = new WorldMapData_1();
@@ -55,16 +55,16 @@ public class WorldMapAreaData extends WorldMapArea {
 				continue;
 			}
 
-			this.field3272.add(var8);
+			this.field3275.add(var8);
 		}
 
 		this.initIconsList(var2, var4);
 	}
 
-	@ObfuscatedName("cc")
+	@ObfuscatedName("cu")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;ZB)V",
-		garbageValue = "90"
+		descriptor = "(Lvj;ZI)V",
+		garbageValue = "1806818645"
 	)
 	@Export("initIconsList")
 	void initIconsList(Buffer var1, boolean var2) {
@@ -80,5 +80,44 @@ public class WorldMapAreaData extends WorldMapArea {
 			}
 		}
 
+	}
+
+	@ObfuscatedName("cn")
+	@ObfuscatedSignature(
+		descriptor = "(Luy;B)Ljava/lang/Object;",
+		garbageValue = "76"
+	)
+	static Object method6331(class544 var0) {
+		if (var0 == null) {
+			throw new IllegalStateException("popValueOfType() failure - null baseVarType");
+		} else {
+			switch(var0.field5394) {
+			case 0:
+				return Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
+			case 2:
+				return Interpreter.Interpreter_stringStack[--Interpreter.Interpreter_stringStackSize];
+			default:
+				throw new IllegalStateException("popValueOfType() failure - unsupported type");
+			}
+		}
+	}
+
+	@ObfuscatedName("hn")
+	@ObfuscatedSignature(
+		descriptor = "(B)I",
+		garbageValue = "62"
+	)
+	static int method6330() {
+		if (Client.archiveLoaders != null && Client.archiveLoadersDone < Client.archiveLoaders.size()) {
+			int var0 = 0;
+
+			for (int var1 = 0; var1 <= Client.archiveLoadersDone; ++var1) {
+				var0 += ((ArchiveLoader)Client.archiveLoaders.get(var1)).loadedCount;
+			}
+
+			return var0 * 10000 / Client.field549;
+		} else {
+			return 10000;
+		}
 	}
 }

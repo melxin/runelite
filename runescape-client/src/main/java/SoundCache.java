@@ -3,52 +3,47 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ba")
+@ObfuscatedName("bn")
 @Implements("SoundCache")
 public class SoundCache {
-	@ObfuscatedName("az")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lgw;"
-	)
-	static ClanChannel field294;
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lpi;"
 	)
 	@Export("soundEffectIndex")
 	AbstractArchive soundEffectIndex;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lpi;"
 	)
-	AbstractArchive field293;
-	@ObfuscatedName("ak")
+	AbstractArchive field307;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lud;"
+		descriptor = "Luw;"
 	)
-	NodeHashTable field290;
+	NodeHashTable field308;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;)V"
+		descriptor = "(Lpi;Lpi;)V"
 	)
 	public SoundCache(AbstractArchive var1, AbstractArchive var2) {
 		new NodeHashTable(256);
-		this.field290 = new NodeHashTable(256);
+		this.field308 = new NodeHashTable(256);
 		this.soundEffectIndex = var1;
-		this.field293 = var2;
+		this.field307 = var2;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II[II)Lbt;",
-		garbageValue = "-1000053259"
+		descriptor = "(II[II)Lbi;",
+		garbageValue = "-1223941102"
 	)
 	@Export("getSoundEffect0")
 	RawSound getSoundEffect0(int var1, int var2, int[] var3) {
-		long var4 = this.method870(var1, var2, false);
-		class53 var6 = (class53)this.field290.get(var4);
+		long var4 = this.method839(var1, var2, false);
+		class53 var6 = (class53)this.field308.get(var4);
 		if (var6 != null) {
-			return var6.method1123();
+			return var6.method1060();
 		} else if (var3 != null && var3[0] <= 0) {
 			return null;
 		} else {
@@ -57,7 +52,7 @@ public class SoundCache {
 				return null;
 			} else {
 				RawSound var8 = var7.toRawSound();
-				this.field290.put(new class53(var8), var4);
+				this.field308.put(new class53(var8), var4);
 				if (var3 != null) {
 					var3[0] -= var8.samples.length;
 				}
@@ -69,30 +64,30 @@ public class SoundCache {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lcb;",
-		garbageValue = "-2052314623"
+		descriptor = "(IIB)Lct;",
+		garbageValue = "-12"
 	)
-	class53 method864(int var1, int var2) {
-		long var3 = this.method870(var1, var2, true);
-		class53 var5 = (class53)this.field290.get(var3);
+	class53 method836(int var1, int var2) {
+		long var3 = this.method839(var1, var2, true);
+		class53 var5 = (class53)this.field308.get(var3);
 		if (var5 != null) {
 			return var5;
 		} else {
-			VorbisSample var6 = VorbisSample.readMusicSample(this.field293, var1, var2);
+			VorbisSample var6 = VorbisSample.readMusicSample(this.field307, var1, var2);
 			if (var6 == null) {
 				return new class53();
 			} else {
 				class53 var7 = new class53(var6);
-				this.field290.put(var7, var3);
+				this.field308.put(var7, var3);
 				return var7;
 			}
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I[IB)Lbt;",
-		garbageValue = "1"
+		descriptor = "(I[IB)Lbi;",
+		garbageValue = "106"
 	)
 	@Export("getSoundEffect")
 	RawSound getSoundEffect(int var1, int[] var2) {
@@ -105,61 +100,51 @@ public class SoundCache {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lcb;",
-		garbageValue = "-1"
+		descriptor = "(IB)Lct;",
+		garbageValue = "-123"
 	)
-	public class53 method865(int var1) {
-		if (this.field293.getGroupCount() == 1) {
-			return this.method864(0, var1);
-		} else if (this.field293.getGroupFileCount(var1) == 1) {
-			return this.method864(var1, 0);
+	public class53 method841(int var1) {
+		if (this.field307.getGroupCount() == 1) {
+			return this.method836(0, var1);
+		} else if (this.field307.getGroupFileCount(var1) == 1) {
+			return this.method836(var1, 0);
 		} else {
 			throw new RuntimeException();
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lbt;",
-		garbageValue = "108"
+		descriptor = "(IB)Lbi;",
+		garbageValue = "-84"
 	)
-	public RawSound method869(int var1) {
+	public RawSound method855(int var1) {
 		return this.getSoundEffect(var1, (int[])null);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(IIZI)J",
-		garbageValue = "-353311999"
+		garbageValue = "1745451376"
 	)
-	long method870(int var1, int var2, boolean var3) {
+	long method839(int var1, int var2, boolean var3) {
 		int var4 = var2 ^ (var1 << 4 & 65535 | var1 >> 12);
 		var4 |= var1 << 16;
 		return var3 ? (long)var4 ^ 4294967296L : (long)var4;
 	}
 
-	@ObfuscatedName("mo")
+	@ObfuscatedName("ok")
 	@ObfuscatedSignature(
-		descriptor = "([Lng;Lng;ZB)V",
-		garbageValue = "29"
+		descriptor = "(IB)V",
+		garbageValue = "-127"
 	)
-	@Export("revalidateWidgetScroll")
-	static void revalidateWidgetScroll(Widget[] var0, Widget var1, boolean var2) {
-		int var3 = var1.scrollWidth != 0 ? var1.scrollWidth : var1.width;
-		int var4 = var1.scrollHeight != 0 ? var1.scrollHeight : var1.height;
-		class163.resizeInterface(var0, var1.id, var3, var4, var2);
-		if (var1.children != null) {
-			class163.resizeInterface(var1.children, var1.id, var3, var4, var2);
-		}
-
-		InterfaceParent var5 = (InterfaceParent)Client.interfaceParents.get((long)var1.id);
-		if (var5 != null) {
-			class271.method5725(var5.group, var3, var4, var2);
-		}
-
-		if (var1.contentType == 1337) {
+	static void method844(int var0) {
+		for (IntegerNode var1 = (IntegerNode)Client.widgetFlags.first(); var1 != null; var1 = (IntegerNode)Client.widgetFlags.next()) {
+			if ((var1.key >> 48 & 65535L) == (long)var0) {
+				var1.remove();
+			}
 		}
 
 	}

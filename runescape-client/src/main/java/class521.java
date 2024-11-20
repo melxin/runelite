@@ -1,30 +1,30 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uw")
+@ObfuscatedName("ua")
 public abstract class class521 extends class522 {
 	class521(int var1, int var2) {
 		super(var1, var2);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1457830566"
+		descriptor = "(B)I",
+		garbageValue = "32"
 	)
-	public abstract int vmethod9495();
+	public abstract int vmethod9494();
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "72"
+		descriptor = "(I)I",
+		garbageValue = "10274157"
 	)
-	public abstract int vmethod9498();
+	public abstract int vmethod9492();
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2006354984"
+		garbageValue = "-800032356"
 	)
-	public abstract int vmethod9496();
+	public abstract int vmethod9493();
 }

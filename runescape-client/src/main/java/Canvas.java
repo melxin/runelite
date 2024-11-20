@@ -5,10 +5,12 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("al")
+@ObfuscatedName("aq")
 @Implements("Canvas")
 public final class Canvas extends java.awt.Canvas {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("jz")
+	static int[] field109;
+	@ObfuscatedName("ab")
 	@Export("component")
 	Component component;
 
@@ -24,93 +26,70 @@ public final class Canvas extends java.awt.Canvas {
 		this.component.paint(var1);
 	}
 
-	@ObfuscatedName("aw")
-	static final void method323(long var0) {
-		try {
-			Thread.sleep(var0);
-		} catch (InterruptedException var3) {
-		}
-
-	}
-
-	@ObfuscatedName("aw")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Lfv;FB)F",
-		garbageValue = "105"
+		descriptor = "(IIIII)Lql;",
+		garbageValue = "-1248393266"
 	)
-	static float method331(class137 var0, float var1) {
-		if (var0 == null) {
-			return 0.0F;
+	public static final class426 method308(int var0, int var1, int var2, int var3) {
+		float var4 = 1.0E-5F;
+		class426 var5 = PlayerCompositionColorTextureOverride.method3722((float)var1, (float)var2, (float)var3);
+		class426 var6 = PlayerCompositionColorTextureOverride.method3722(0.0F, (float)var0, 0.0F);
+		class426 var7 = PlayerCompositionColorTextureOverride.method3722(0.0F, 1.0F, 0.0F);
+		class426 var9 = ViewportMouse.field2895;
+		float var8 = var7.method8114(var9);
+		if (Math.abs(var8) < 1.0E-5F) {
+			return null;
 		} else {
-			float var2;
-			if (var0.field1598 == var1) {
-				var2 = 0.0F;
-			} else if (var0.field1611 == var1) {
-				var2 = 1.0F;
+			class426 var11 = GameEngine.method639(var5, var6);
+			float var12 = var7.method8114(var11);
+			float var13 = -var12 / var8;
+			if (var13 < 0.0F) {
+				return null;
 			} else {
-				var2 = (var1 - var0.field1598) / (var0.field1611 - var0.field1598);
+				var5.method8136();
+				var6.method8136();
+				var7.method8136();
+				var11.method8136();
+				class426 var15 = class31.method438(ViewportMouse.field2895, var13);
+				class426 var16 = RouteStrategy.method5650(var5);
+				var16.method8108(var15);
+				return var16;
 			}
-
-			float var3;
-			if (var0.field1597) {
-				var3 = var2;
-			} else {
-				float[] var4 = new float[]{var0.field1600 - var2, var0.field1601, var0.field1592, var0.field1603};
-				float[] var5 = new float[5];
-				int var6 = IntProjection.method4899(var4, 3, 0.0F, true, 1.0F, true, var5);
-				if (var6 == 1) {
-					var3 = var5[0];
-				} else {
-					var3 = 0.0F;
-				}
-			}
-
-			return (var3 * (var0.field1606 + var0.field1594 * var3) + var0.field1607) * var3 + var0.field1604;
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("bp")
 	@ObfuscatedSignature(
-		descriptor = "(FI)I",
-		garbageValue = "-851094662"
+		descriptor = "(B)V",
+		garbageValue = "87"
 	)
-	public static int method330(float var0) {
-		return (int)(2048.0D * ((double)var0 / 6.283185307179586D)) & 2047;
-	}
+	protected static final void method310() {
+		class425.clock.mark();
 
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "1960178698"
-	)
-	static final void method327(String var0) {
-		PacketBufferNode var1 = class113.getPacketBufferNode(ClientPacket.FRIEND_ADDUSER, Client.packetWriter.isaacCipher);
-		var1.packetBuffer.writeByte(World.stringCp1252NullTerminatedByteSize(var0));
-		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
-		Client.packetWriter.addNode(var1);
-	}
-
-	@ObfuscatedName("cq")
-	@ObfuscatedSignature(
-		descriptor = "(ILda;ZI)I",
-		garbageValue = "574635590"
-	)
-	static int method328(int var0, Script var1, boolean var2) {
-		return 2;
-	}
-
-	@ObfuscatedName("nl")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "550854616"
-	)
-	@Export("Clan_joinChat")
-	static final void Clan_joinChat(String var0) {
-		if (!var0.equals("")) {
-			PacketBufferNode var1 = class113.getPacketBufferNode(ClientPacket.field3409, Client.packetWriter.isaacCipher);
-			var1.packetBuffer.writeByte(World.stringCp1252NullTerminatedByteSize(var0));
-			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
-			Client.packetWriter.addNode(var1);
+		int var0;
+		for (var0 = 0; var0 < 32; ++var0) {
+			GameEngine.graphicsTickTimes[var0] = 0L;
 		}
+
+		for (var0 = 0; var0 < 32; ++var0) {
+			GameEngine.clientTickTimes[var0] = 0L;
+		}
+
+		GameEngine.gameCyclesToDo = 0;
+	}
+
+	@ObfuscatedName("lg")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIB)V",
+		garbageValue = "-10"
+	)
+	public static final void method311(int var0, int var1, int var2, int var3) {
+		for (int var4 = 0; var4 < Client.rootWidgetCount; ++var4) {
+			if (Client.rootWidgetWidths[var4] + Client.rootWidgetXs[var4] > var0 && Client.rootWidgetXs[var4] < var0 + var2 && Client.rootWidgetYs[var4] + Client.rootWidgetHeights[var4] > var1 && Client.rootWidgetYs[var4] < var3 + var1) {
+				Client.validRootWidgets[var4] = true;
+			}
+		}
+
 	}
 }

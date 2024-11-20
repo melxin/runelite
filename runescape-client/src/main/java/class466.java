@@ -2,54 +2,54 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rw")
+@ObfuscatedName("rh")
 public final class class466 implements Comparable {
-	@ObfuscatedName("ap")
-	Object field4970;
+	@ObfuscatedName("ab")
+	Object field4969;
 	@ObfuscatedName("aw")
-	Object field4971;
-	@ObfuscatedName("ak")
+	Object field4967;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		longValue = -7023941384732440211L
+		longValue = 3323132709681120067L
 	)
-	long field4974;
-	@ObfuscatedName("aj")
+	long field4968;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		longValue = -1350957852148844265L
+		longValue = 8352754032266256715L
 	)
-	long field4973;
+	long field4970;
 
 	class466(Object var1, Object var2) {
-		this.field4970 = var1;
-		this.field4971 = var2;
+		this.field4969 = var1;
+		this.field4967 = var2;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lrw;I)I",
-		garbageValue = "1460852809"
+		descriptor = "(Lrh;I)I",
+		garbageValue = "518719793"
 	)
-	int method8912(class466 var1) {
-		if (this.field4973 < var1.field4973) {
+	int method8898(class466 var1) {
+		if (this.field4970 < var1.field4970) {
 			return -1;
 		} else {
-			return this.field4973 > var1.field4973 ? 1 : 0;
+			return this.field4970 > var1.field4970 ? 1 : 0;
 		}
 	}
 
 	public boolean equals(Object var1) {
 		if (var1 instanceof class466) {
-			return this.field4971.equals(((class466)var1).field4971);
+			return this.field4967.equals(((class466)var1).field4967);
 		} else {
 			throw new IllegalArgumentException();
 		}
 	}
 
 	public int hashCode() {
-		return this.field4971.hashCode();
+		return this.field4967.hashCode();
 	}
 
 	public int compareTo(Object var1) {
-		return this.method8912((class466)var1);
+		return this.method8898((class466)var1);
 	}
 }

@@ -1,21 +1,35 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pl")
+@ObfuscatedName("py")
 public class class397 {
-	@ObfuscatedName("aw")
-	public static boolean method7768(long var0) {
-		return 0L != var0 && !class197.method4056(var0);
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(Lvj;II)Ljava/lang/String;",
+		garbageValue = "1910468617"
+	)
+	static String method7712(Buffer var0, int var1) {
+		try {
+			int var2 = var0.readUShortSmart();
+			if (var2 > var1) {
+				var2 = var1;
+			}
+
+			byte[] var3 = new byte[var2];
+			var0.offset += class364.huffman.decompress(var0.array, var0.offset, var3, 0, var2);
+			String var4 = ScriptEvent.decodeStringCp1252(var3, 0, var2);
+			return var4;
+		} catch (Exception var6) {
+			return "Cabbage";
+		}
 	}
 
-	@ObfuscatedName("ke")
+	@ObfuscatedName("pq")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)V",
-		garbageValue = "402983014"
+		descriptor = "(B)V",
+		garbageValue = "1"
 	)
-	@Export("updateItemPile")
-	static final void updateItemPile(int var0, int var1, int var2) {
-		class224.updateItemPile2(class344.worldView, var0, var1, var2);
+	static void method7713() {
+		SecureUrlRequester.clientPreferences.updateEULA(Client.field788);
 	}
 }

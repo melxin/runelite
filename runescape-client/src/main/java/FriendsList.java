@@ -1,44 +1,47 @@
+import java.util.concurrent.ThreadPoolExecutor;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ss")
+@ObfuscatedName("sg")
 @Implements("FriendsList")
 public class FriendsList extends UserList {
-	@ObfuscatedName("ak")
+	@ObfuscatedName("av")
+	static ThreadPoolExecutor field4979;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lur;"
+		descriptor = "Luk;"
 	)
 	@Export("loginType")
 	final LoginType loginType;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 2130331289
+		intValue = 864407083
 	)
-	int field4987;
-	@ObfuscatedName("ai")
+	int field4981;
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lpy;"
+		descriptor = "Lpd;"
 	)
 	@Export("friendLoginUpdates")
 	public LinkDeque friendLoginUpdates;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lur;)V"
+		descriptor = "(Luk;)V"
 	)
 	public FriendsList(LoginType var1) {
 		super(400);
-		this.field4987 = 1;
+		this.field4981 = 1;
 		this.friendLoginUpdates = new LinkDeque();
 		this.loginType = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lse;",
-		garbageValue = "-807171089"
+		descriptor = "(B)Lsv;",
+		garbageValue = "-27"
 	)
 	@Export("newInstance")
 	User newInstance() {
@@ -47,18 +50,18 @@ public class FriendsList extends UserList {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lse;",
-		garbageValue = "1608525822"
+		descriptor = "(II)[Lsv;",
+		garbageValue = "1120116714"
 	)
 	@Export("newTypedArray")
 	User[] newTypedArray(int var1) {
 		return new Friend[var1];
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lwx;ZI)Z",
-		garbageValue = "-1752429364"
+		descriptor = "(Lwo;ZB)Z",
+		garbageValue = "38"
 	)
 	@Export("isFriended")
 	public boolean isFriended(Username var1, boolean var2) {
@@ -70,10 +73,10 @@ public class FriendsList extends UserList {
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;IB)V",
-		garbageValue = "54"
+		descriptor = "(Lvj;II)V",
+		garbageValue = "713792668"
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
@@ -137,17 +140,17 @@ public class FriendsList extends UserList {
 					}
 
 					if (var6 != var11.world) {
-						var11.int2 = ++this.field4987 - 1;
+						var11.int2 = ++this.field4981 - 1;
 						if (var11.world == -1 && var6 == 0) {
-							var11.int2 = -(var11.int2 * -1821959387) * -1071937363;
+							var11.int2 = -(var11.int2 * -1982347119) * 1614084209;
 						}
 
 						var11.world = var6;
 					}
 
 					var11.rank = var7;
-					var11.field4999 = var9;
-					var11.field4997 = var10;
+					var11.field4997 = var9;
+					var11.field4996 = var10;
 					continue;
 				}
 
@@ -156,6 +159,21 @@ public class FriendsList extends UserList {
 
 			this.sort();
 			return;
+		}
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(Lpi;Ljava/lang/String;Ljava/lang/String;B)[Lvr;",
+		garbageValue = "-114"
+	)
+	public static SpritePixels[] method8935(AbstractArchive var0, String var1, String var2) {
+		if (!var0.isValidFileName(var1, var2)) {
+			return null;
+		} else {
+			int var3 = var0.getGroupId(var1);
+			int var4 = var0.getFileId(var3, var2);
+			return class550.method10027(var0, var3, var4);
 		}
 	}
 }

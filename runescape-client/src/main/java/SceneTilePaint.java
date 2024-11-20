@@ -2,47 +2,46 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jp")
+@ObfuscatedName("je")
 @Implements("SceneTilePaint")
 public final class SceneTilePaint {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 101319007
+		intValue = 1670433163
 	)
 	@Export("swColor")
 	int swColor;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -299037217
+		intValue = 1605189343
 	)
 	@Export("seColor")
 	int seColor;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1442215975
+		intValue = 863023123
 	)
 	@Export("neColor")
 	int neColor;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -180116541
+		intValue = 642262955
 	)
 	@Export("nwColor")
 	int nwColor;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 860316531
+		intValue = 1109237081
 	)
 	@Export("texture")
 	int texture;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@Export("isFlat")
 	boolean isFlat;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1197868651
+		intValue = 1214465059
 	)
 	@Export("rgb")
 	int rgb;
@@ -56,16 +55,5 @@ public final class SceneTilePaint {
 		this.texture = var5;
 		this.rgb = var6;
 		this.isFlat = var7;
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-1"
-	)
-	static final void method5490() {
-		Object var10000 = null;
-		String var0 = "Your ignore list is full. Max of 100 for free users, and 400 for members";
-		class430.addGameMessage(30, "", var0);
 	}
 }

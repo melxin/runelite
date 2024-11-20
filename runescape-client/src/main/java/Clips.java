@@ -3,51 +3,51 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ky")
+@ObfuscatedName("kg")
 @Implements("Clips")
 public class Clips {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("clipping")
 	boolean clipping;
 	@ObfuscatedName("aw")
 	@Export("rasterGouraudLowRes")
 	public boolean rasterGouraudLowRes;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@Export("currentFaceAlpha")
 	int currentFaceAlpha;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@Export("zoom")
 	public int zoom;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lkn;"
+		descriptor = "Lkw;"
 	)
 	@Export("Rasterizer3D_textureLoader")
 	public TextureLoader Rasterizer3D_textureLoader;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("al")
 	@Export("clipMidX")
 	int clipMidX;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ar")
 	@Export("clipMidY")
 	int clipMidY;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("as")
 	@Export("clipX")
 	int clipX;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("az")
 	@Export("clipY")
 	int clipY;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ak")
 	@Export("clipNegativeMidX")
 	int clipNegativeMidX;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ap")
 	@Export("clipCenterX")
 	int clipCenterX;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@Export("clipNegativeMidY")
 	int clipNegativeMidY;
-	@ObfuscatedName("ac")
-	int field2931;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ad")
+	int field2937;
+	@ObfuscatedName("ay")
 	@Export("Rasterizer3D_rowOffsets")
 	int[] Rasterizer3D_rowOffsets;
 
@@ -59,7 +59,7 @@ public class Clips {
 		this.Rasterizer3D_rowOffsets = new int[1024];
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("setClipBounds")
 	void setClipBounds() {
 		this.clipMidX = this.clipX / 2;
@@ -67,7 +67,7 @@ public class Clips {
 		this.clipNegativeMidX = -this.clipMidX;
 		this.clipCenterX = this.clipX - this.clipMidX;
 		this.clipNegativeMidY = -this.clipMidY;
-		this.field2931 = this.clipY - this.clipMidY;
+		this.field2937 = this.clipY - this.clipMidY;
 	}
 
 	@ObfuscatedName("aw")
@@ -78,10 +78,10 @@ public class Clips {
 		this.clipNegativeMidX = -this.clipMidX;
 		this.clipCenterX = this.clipX - this.clipMidX;
 		this.clipNegativeMidY = -this.clipMidY;
-		this.field2931 = this.clipY - this.clipMidY;
+		this.field2937 = this.clipY - this.clipMidY;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@Export("setClipping")
 	void setClipping(int var1, int var2, int var3) {
 		this.clipping = var1 < 0 || var1 > this.clipX || var2 < 0 || var2 > this.clipX || var3 < 0 || var3 > this.clipX;

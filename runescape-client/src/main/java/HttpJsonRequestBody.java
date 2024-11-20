@@ -1,7 +1,6 @@
 import java.io.UnsupportedEncodingException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import org.json.JSONArray;
@@ -11,12 +10,6 @@ import org.json.JSONObject;
 @ObfuscatedName("ts")
 @Implements("HttpJsonRequestBody")
 public class HttpJsonRequestBody implements HttpPayload {
-	@ObfuscatedName("ak")
-	@ObfuscatedGetter(
-		intValue = -1120652913
-	)
-	@Export("RunException_revision")
-	public static int RunException_revision;
 	@ObfuscatedName("aw")
 	@Export("body")
 	@ObfuscatedSignature(
@@ -39,10 +32,10 @@ public class HttpJsonRequestBody implements HttpPayload {
 		this.setBodyFromString(var1);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltz;",
-		garbageValue = "1116588540"
+		descriptor = "(I)Lto;",
+		garbageValue = "1892648748"
 	)
 	@Export("getContentType")
 	public HttpContentType getContentType() {
@@ -51,8 +44,8 @@ public class HttpJsonRequestBody implements HttpPayload {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "60"
+		descriptor = "(I)[B",
+		garbageValue = "-1854248554"
 	)
 	@Export("toBytes")
 	public byte[] toBytes() throws UnsupportedEncodingException {
@@ -61,8 +54,8 @@ public class HttpJsonRequestBody implements HttpPayload {
 
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "([BB)V",
-		garbageValue = "32"
+		descriptor = "([BI)V",
+		garbageValue = "-1594123659"
 	)
 	@Export("bodyFromBytes")
 	void bodyFromBytes(byte[] var1) throws UnsupportedEncodingException {
@@ -73,7 +66,7 @@ public class HttpJsonRequestBody implements HttpPayload {
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-65962554"
+		garbageValue = "-694184509"
 	)
 	@Export("setBodyFromString")
 	void setBodyFromString(String var1) throws UnsupportedEncodingException {
@@ -95,10 +88,10 @@ public class HttpJsonRequestBody implements HttpPayload {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)Lorg/json/JSONObject;",
-		garbageValue = "1253705820"
+		garbageValue = "-1896752970"
 	)
 	@Export("getBody")
 	public JSONObject getBody() {

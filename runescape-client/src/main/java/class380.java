@@ -1,33 +1,36 @@
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("oj")
+@ObfuscatedName("od")
 public class class380 {
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -1472918485
+		intValue = -852845319
 	)
-	static final int field4154;
-	@ObfuscatedName("ak")
+	static final int field4143;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -420067937
+		intValue = 766484571
 	)
-	static final int field4153;
-	@ObfuscatedName("ad")
+	static final int field4156;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -557615757
+		intValue = -1736569723
 	)
-	static final int field4158;
+	static final int field4142;
 
 	static {
-		short var0 = 2048;
-		field4154 = var0;
-		var0 = 2048;
-		field4153 = var0;
-		int var1 = field4154;
-		Coord.method6852(field4153);
-		var0 = 6400;
-		field4158 = var0;
-		var1 = field4158;
+		field4143 = Coord.method6819(256);
+		field4156 = Coord.method6819(256);
+		Coord.method6822(field4143);
+		Coord.method6822(field4156);
+		Coord.method6819(100);
+		Coord.method6819(200);
+		Coord.method6819(1);
+		Coord.method6819(1);
+		field4142 = Coord.method6823(100);
+		int var0 = field4142;
+		Coord.method6819(1);
+		Coord.method6819(1);
 	}
 }

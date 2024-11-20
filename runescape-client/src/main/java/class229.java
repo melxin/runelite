@@ -11,47 +11,44 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@ObfuscatedName("ib")
+@ObfuscatedName("il")
 public class class229 {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lib;"
+		descriptor = "Lil;"
 	)
-	static final class229 field2460;
-	@ObfuscatedName("mk")
-	@ObfuscatedGetter(
-		intValue = 718657319
-	)
-	static int field2458;
+	static final class229 field2466;
+	@ObfuscatedName("ai")
+	static int[] field2468;
 	@ObfuscatedName("aw")
-	Map field2457;
-	@ObfuscatedName("ak")
+	Map field2470;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1343084049
+		intValue = -142927011
 	)
-	int field2459;
+	int field2465;
 
 	static {
-		field2460 = new class229();
+		field2466 = new class229();
 	}
 
 	class229() {
-		this.field2457 = new HashMap();
-		this.field2459 = 0;
+		this.field2470 = new HashMap();
+		this.field2465 = 0;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONObject;ILex;I)V",
-		garbageValue = "-2121827703"
+		descriptor = "(Lorg/json/JSONObject;ILel;S)V",
+		garbageValue = "-8201"
 	)
-	void method4628(JSONObject var1, int var2, UrlRequester var3) {
-		this.field2457.clear();
+	void method4530(JSONObject var1, int var2, UrlRequester var3) {
+		this.field2470.clear();
 
 		JSONObject var4;
 		try {
 			var4 = var1;
-			this.field2459 = var2;
+			this.field2465 = var2;
 			var1.getLong("lastfullsyncat");
 			var1.getLong("lastcardupdatedat");
 		} catch (Exception var7) {
@@ -59,17 +56,17 @@ public class class229 {
 		}
 
 		try {
-			this.method4642(var4.getJSONArray("crmcomponents"), this.field2459, var3);
+			this.method4531(var4.getJSONArray("crmcomponents"), this.field2465, var3);
 		} catch (Exception var6) {
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONArray;ILex;I)V",
-		garbageValue = "-1270313536"
+		descriptor = "(Lorg/json/JSONArray;ILel;I)V",
+		garbageValue = "-1072035027"
 	)
-	void method4642(JSONArray var1, int var2, UrlRequester var3) throws JSONException {
+	void method4531(JSONArray var1, int var2, UrlRequester var3) throws JSONException {
 		if (var1 != null) {
 			for (int var4 = 0; var4 < var1.length(); ++var4) {
 				JSONObject var5 = var1.getJSONObject(var4);
@@ -79,39 +76,39 @@ public class class229 {
 						class227 var7 = new class227();
 
 						try {
-							var7.method4594(var5, var2, var3);
+							var7.method4486(var5, var2, var3);
 						} catch (Exception var9) {
 						}
 
-						if (!var7.field2441.isEmpty()) {
+						if (!var7.field2445.isEmpty()) {
 							String var8 = var5.getString("location");
-							this.field2457.put(var8, var7);
+							this.field2470.put(var8, var7);
 						}
 					}
 				}
 			}
 
-			this.field2457 = this.method4630();
-			class77.method2338();
+			this.field2470 = this.method4532();
+			class59.method1150();
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(S)Ljava/util/Map;",
-		garbageValue = "179"
+		descriptor = "(B)Ljava/util/Map;",
+		garbageValue = "62"
 	)
-	Map method4630() {
+	Map method4532() {
 		HashMap var1 = new HashMap();
 		ArrayList var2 = new ArrayList();
-		var2.addAll(this.field2457.entrySet());
+		var2.addAll(this.field2470.entrySet());
 		boolean var3 = false;
 
 		while (!var3) {
 			var3 = true;
 
 			for (int var7 = 0; var7 < var2.size() - 1; ++var7) {
-				if (((class227)((Entry)var2.get(var7)).getValue()).method4590() > ((class227)((Entry)var2.get(var7 + 1)).getValue()).method4590()) {
+				if (((class227)((Entry)var2.get(var7)).getValue()).method4484() > ((class227)((Entry)var2.get(var7 + 1)).getValue()).method4484()) {
 					Entry var4 = (Entry)var2.get(var7);
 					var2.set(var7, var2.get(var7 + 1));
 					var2.set(var7 + 1, var4);
@@ -130,86 +127,60 @@ public class class229 {
 		return var1;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)Lik;",
-		garbageValue = "0"
+		descriptor = "(Ljava/lang/String;I)Lid;",
+		garbageValue = "-1125790881"
 	)
-	class227 method4644(String var1) {
-		return (class227)this.field2457.get(var1);
+	class227 method4533(String var1) {
+		return (class227)this.field2470.get(var1);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("lv")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;I)I",
-		garbageValue = "-493309570"
+		descriptor = "(IIIII)V",
+		garbageValue = "2072270632"
 	)
-	static int method4631(AbstractArchive var0, AbstractArchive var1) {
-		int var2 = 0;
-		String[] var3 = Login.field958;
-
-		int var4;
-		String var5;
-		for (var4 = 0; var4 < var3.length; ++var4) {
-			var5 = var3[var4];
-			if (var0.tryLoadFileByNames(var5, "")) {
-				++var2;
-			}
+	static void method4534(int var0, int var1, int var2, int var3) {
+		Widget var4 = class379.widgetDefinition.getWidgetChild(var0, var1);
+		if (var4 != null && var4.onTargetEnter != null) {
+			ScriptEvent var5 = new ScriptEvent();
+			var5.widget = var4;
+			var5.args = var4.onTargetEnter;
+			WorldMapEvent.runScriptEvent(var5);
 		}
 
-		var3 = Login.field959;
-
-		for (var4 = 0; var4 < var3.length; ++var4) {
-			var5 = var3[var4];
-			if (var1.tryLoadFileByNames(var5, "")) {
-				++var2;
-			}
-		}
-
-		var3 = Login.field960;
-
-		for (var4 = 0; var4 < var3.length; ++var4) {
-			var5 = var3[var4];
-			if (var1.getGroupId(var5) != -1 && var1.tryLoadFileByNames(var5, "")) {
-				++var2;
-			}
-		}
-
-		return var2;
+		Client.selectedSpellItemId = var3;
+		Client.isSpellSelected = true;
+		Clock.selectedSpellWidget = var0;
+		Client.selectedSpellChildIndex = var1;
+		class202.selectedSpellFlags = var2;
+		class178.invalidateWidget(var4);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("on")
 	@ObfuscatedSignature(
-		descriptor = "(ILdy;I)Ldn;",
-		garbageValue = "-1928971736"
+		descriptor = "(IIIILvr;Lna;B)V",
+		garbageValue = "62"
 	)
-	public static WorldView method4627(int var0, WorldViewManager var1) {
-		Iterator var2 = var1.iterator();
-
-		WorldView var3;
-		do {
-			if (!var2.hasNext()) {
-				return var1.method2670();
-			}
-
-			var3 = (WorldView)var2.next();
-		} while(var3.players[var0] == null || var3.id == -1);
-
-		return var3;
-	}
-
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1195419660"
-	)
-	@Export("Messages_getLastChatID")
-	static int Messages_getLastChatID(int var0) {
-		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
-		if (var1 == null) {
-			return -1;
+	@Export("worldToMinimap")
+	static final void worldToMinimap(int var0, int var1, int var2, int var3, SpritePixels var4, SpriteMask var5) {
+		int var6 = var3 * var3 + var2 * var2;
+		if (var6 > 4225 && var6 < 90000) {
+			int var7 = Client.camAngleY & 2047;
+			int var8 = Rasterizer3D.Rasterizer3D_sine[var7];
+			int var9 = Rasterizer3D.Rasterizer3D_cosine[var7];
+			int var10 = var3 * var8 + var9 * var2 >> 16;
+			int var11 = var3 * var9 - var8 * var2 >> 16;
+			double var12 = Math.atan2((double)var10, (double)var11);
+			int var14 = var5.width / 2 - 25;
+			int var15 = (int)(Math.sin(var12) * (double)var14);
+			int var16 = (int)(Math.cos(var12) * (double)var14);
+			byte var17 = 20;
+			class162.redHintArrowSprite.method10626(var15 + (var0 + var5.width / 2 - var17 / 2), var5.height / 2 + var1 - var17 / 2 - var16 - 10, var17, var17, 15, 15, var12, 256);
 		} else {
-			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count;
+			class167.drawSpriteOnMinimap(var0, var1, var2, var3, var4, var5);
 		}
+
 	}
 }

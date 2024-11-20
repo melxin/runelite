@@ -3,41 +3,45 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("la")
+@ObfuscatedName("lb")
 public abstract class class309 implements class311 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Lvy;"
+	)
+	static IndexedSprite field3285;
+	@ObfuscatedName("fh")
+	@ObfuscatedSignature(
+		descriptor = "Loa;"
+	)
+	@Export("archive9")
+	static Archive archive9;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1445047783
+		intValue = 280580751
 	)
 	protected int field3286;
 
 	@ObfuscatedSignature(
-		descriptor = "(Loy;Lpn;I)V"
+		descriptor = "(Loc;Lpw;I)V"
 	)
 	protected class309(StudioGame var1, Language var2, int var3) {
 		this.field3286 = var3;
 	}
 
-	@ObfuscatedName("ae")
-	@Export("Entity_unpackID")
-	public static int Entity_unpackID(long var0) {
-		return (int)(var0 >>> 17 & 4294967295L);
-	}
-
-	@ObfuscatedName("am")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)I",
-		garbageValue = "242602398"
+		descriptor = "(I)Lqs;",
+		garbageValue = "390545817"
 	)
-	@Export("hashString")
-	public static int hashString(CharSequence var0) {
-		int var1 = var0.length();
-		int var2 = 0;
-
-		for (int var3 = 0; var3 < var1; ++var3) {
-			var2 = (var2 << 5) - var2 + PcmPlayer.charToByteCp1252(var0.charAt(var3));
+	public static class427 method6386() {
+		synchronized(class427.field4768) {
+			if (class427.field4769 == 0) {
+				return new class427();
+			} else {
+				class427.field4768[--class427.field4769].method8180();
+				return class427.field4768[class427.field4769];
+			}
 		}
-
-		return var2;
 	}
 }

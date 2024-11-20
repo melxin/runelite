@@ -3,241 +3,218 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fl")
+@ObfuscatedName("fo")
 public class class138 implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lfl;"
+		descriptor = "Lfo;"
 	)
-	static final class138 field1625;
+	static final class138 field1600;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lfl;"
+		descriptor = "Lfo;"
 	)
-	static final class138 field1616;
-	@ObfuscatedName("ak")
+	static final class138 field1597;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lfl;"
+		descriptor = "Lfo;"
 	)
-	static final class138 field1620;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lfl;"
-	)
-	static final class138 field1618;
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lfl;"
-	)
-	static final class138 field1619;
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lfl;"
-	)
-	static final class138 field1617;
-	@ObfuscatedName("as")
-	@ObfuscatedGetter(
-		intValue = -1923800361
-	)
-	final int field1621;
+	static final class138 field1596;
 	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = 555624833
+	@ObfuscatedSignature(
+		descriptor = "Lfo;"
 	)
-	final int field1622;
-	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = 1212886699
+	static final class138 field1599;
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lfo;"
 	)
-	final int field1623;
+	static final class138 field1598;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lfo;"
+	)
+	static final class138 field1601;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = -639947423
+	)
+	final int field1602;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -2103685619
+	)
+	final int field1603;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -742645839
+	)
+	final int field1604;
 
 	static {
-		field1625 = new class138(0, 0, (String)null, 0);
-		field1616 = new class138(1, 1, (String)null, 9);
-		field1620 = new class138(2, 2, (String)null, 3);
-		field1618 = new class138(3, 3, (String)null, 6);
-		field1619 = new class138(4, 4, (String)null, 1);
-		field1617 = new class138(5, 5, (String)null, 3);
+		field1600 = new class138(0, 0, (String)null, 0);
+		field1597 = new class138(1, 1, (String)null, 9);
+		field1596 = new class138(2, 2, (String)null, 3);
+		field1599 = new class138(3, 3, (String)null, 6);
+		field1598 = new class138(4, 4, (String)null, 1);
+		field1601 = new class138(5, 5, (String)null, 3);
 	}
 
 	class138(int var1, int var2, String var3, int var4) {
-		this.field1621 = var1;
-		this.field1622 = var2;
-		this.field1623 = var4;
+		this.field1602 = var1;
+		this.field1603 = var2;
+		this.field1604 = var4;
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1837624059"
+		garbageValue = "1071289392"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1622;
+		return this.field1603;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "2"
+		descriptor = "(I)I",
+		garbageValue = "957031193"
 	)
-	int method3473() {
-		return this.field1623;
+	int method3362() {
+		return this.field1604;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(IIILir;IB)V",
-		garbageValue = "-12"
+		descriptor = "(IIIIIZI)Lvr;",
+		garbageValue = "833665266"
 	)
-	@Export("createObjectSound")
-	static void createObjectSound(int var0, int var1, int var2, ObjectComposition var3, int var4) {
-		ObjectSound var5 = new ObjectSound();
-		var5.plane = var0;
-		var5.x = var1 * 128;
-		var5.y = var2 * 16384;
-		int var6 = var3.sizeX;
-		int var7 = var3.sizeY;
-		if (var4 == 1 || var4 == 3) {
-			var6 = var3.sizeY;
-			var7 = var3.sizeX;
+	@Export("getItemSprite")
+	public static final SpritePixels getItemSprite(int var0, int var1, int var2, int var3, int var4, boolean var5) {
+		if (var1 == -1) {
+			var4 = 0;
+		} else if (var4 == 2 && var1 != 1) {
+			var4 = 1;
 		}
 
-		var5.maxX = (var6 + var1) * 128;
-		var5.maxY = (var7 + var2) * 16384;
-		var5.soundEffectId = var3.ambientSoundId;
-		var5.field832 = var3.int7 * 16384;
-		var5.field839 = Math.max(var3.int8 * 16384 - 128, 0);
-		var5.field842 = var3.int5;
-		var5.field841 = var3.int6;
-		var5.soundEffectIds = var3.soundEffectIds;
-		if (var3.transforms != null) {
-			var5.obj = var3;
-			var5.set();
-		}
-
-		ObjectSound.objectSounds.addFirst(var5);
-		if (var5.soundEffectIds != null) {
-			var5.field845 = var5.field842 + (int)(Math.random() * (double)(var5.field841 - var5.field842));
-		}
-
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1740569943"
-	)
-	@Export("clearItemContainer")
-	static void clearItemContainer(int var0) {
-		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var1 != null) {
-			for (int var2 = 0; var2 < var1.ids.length; ++var2) {
-				var1.ids[var2] = -1;
-				var1.quantities[var2] = 0;
-			}
-
-		}
-	}
-
-	@ObfuscatedName("hb")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "65"
-	)
-	static final void method3480(int var0, int var1) {
-		if (var0 < 128) {
-			var0 = 128;
-		} else if (var0 > 383) {
-			var0 = 383;
-		}
-
-		if (class323.cameraPitch < var0) {
-			class323.cameraPitch = (var0 - class323.cameraPitch) * class364.field4043 / 1000 + class323.cameraPitch + class150.field1701;
-			if (class323.cameraPitch > var0) {
-				class323.cameraPitch = var0;
-			}
-		} else if (class323.cameraPitch > var0) {
-			class323.cameraPitch -= (class323.cameraPitch - var0) * class364.field4043 / 1000 + class150.field1701;
-			if (class323.cameraPitch < var0) {
-				class323.cameraPitch = var0;
+		long var6 = ((long)var3 << 42) + ((long)var2 << 38) + ((long)var1 << 16) + (long)var0 + ((long)var4 << 40);
+		SpritePixels var8;
+		if (!var5) {
+			var8 = (SpritePixels)ItemComposition.ItemDefinition_cachedSprites.get(var6);
+			if (var8 != null) {
+				return var8;
 			}
 		}
 
-		var1 &= 2047;
-		int var2 = var1 - class390.cameraYaw;
-		if (var2 > 1024) {
-			var2 -= 2048;
-		} else if (var2 < -1024) {
-			var2 += 2048;
+		ItemComposition var9 = WorldEntityCoord.ItemDefinition_get(var0);
+		if (var1 > 1 && var9.countobj != null) {
+			int var10 = -1;
+
+			for (int var11 = 0; var11 < 10; ++var11) {
+				if (var1 >= var9.countco[var11] && var9.countco[var11] != 0) {
+					var10 = var9.countobj[var11];
+				}
+			}
+
+			if (var10 != -1) {
+				var9 = WorldEntityCoord.ItemDefinition_get(var10);
+			}
 		}
 
-		if (var2 > 0) {
-			class390.cameraYaw = var2 * class364.field4043 / 1000 + class390.cameraYaw + class150.field1701;
-			class390.cameraYaw &= 2047;
-		} else if (var2 < 0) {
-			class390.cameraYaw -= class150.field1701 + -var2 * class364.field4043 / 1000;
-			class390.cameraYaw &= 2047;
-		}
+		Model var22 = var9.getModel(1);
+		if (var22 == null) {
+			return null;
+		} else {
+			SpritePixels var23 = null;
+			if (var9.noteTemplate != -1) {
+				var23 = getItemSprite(var9.note, 10, 1, 0, 0, true);
+				if (var23 == null) {
+					return null;
+				}
+			} else if (var9.notedId != -1) {
+				var23 = getItemSprite(var9.unnotedId, var1, var2, var3, 0, false);
+				if (var23 == null) {
+					return null;
+				}
+			} else if (var9.placeholderTemplate != -1) {
+				var23 = getItemSprite(var9.placeholder, var1, 0, 0, 0, false);
+				if (var23 == null) {
+					return null;
+				}
+			}
 
-		int var3 = var1 - class390.cameraYaw;
-		if (var3 > 1024) {
-			var3 -= 2048;
-		} else if (var3 < -1024) {
-			var3 += 2048;
-		}
+			int[] var12 = Rasterizer2D.Rasterizer2D_pixels;
+			int var13 = Rasterizer2D.Rasterizer2D_width;
+			int var14 = Rasterizer2D.Rasterizer2D_height;
+			float[] var15 = Rasterizer2D.Rasterizer2D_brightness;
+			int[] var16 = new int[4];
+			Rasterizer2D.Rasterizer2D_getClipArray(var16);
+			var8 = new SpritePixels(36, 32);
+			Rasterizer3D.method4770(var8.pixels, 36, 32, (float[])null);
+			Rasterizer2D.Rasterizer2D_clear();
+			Rasterizer3D.resetRasterClipping();
+			Rasterizer3D.setCustomClipBounds(16, 16);
+			Rasterizer3D.clips.rasterGouraudLowRes = false;
+			if (var9.placeholderTemplate != -1) {
+				var23.drawTransBgAt(0, 0);
+			}
 
-		if (var3 < 0 && var2 > 0 || var3 > 0 && var2 < 0) {
-			class390.cameraYaw = var1;
-		}
+			int var17 = var9.zoom2d;
+			if (var5) {
+				var17 = (int)(1.5D * (double)var17);
+			} else if (var2 == 2) {
+				var17 = (int)(1.04D * (double)var17);
+			}
 
-	}
+			int var18 = var17 * Rasterizer3D.Rasterizer3D_sine[var9.xan2d] >> 16;
+			int var19 = var17 * Rasterizer3D.Rasterizer3D_cosine[var9.xan2d] >> 16;
+			var22.calculateBoundsCylinder();
+			var22.drawFrustum(0, var9.yan2d, var9.zan2d, var9.xan2d, var9.offsetX2d, var22.height / 2 + var18 + var9.offsetY2d, var19 + var9.offsetY2d);
+			if (var9.notedId != -1) {
+				var23.drawTransBgAt(0, 0);
+			}
 
-	@ObfuscatedName("lw")
-	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;I)V",
-		garbageValue = "-1614763585"
-	)
-	static void method3482(int var0, String var1) {
-		int var2 = Client.playerUpdateManager.playerCount;
-		int[] var3 = Client.playerUpdateManager.playerIndices;
-		boolean var4 = false;
-		Username var5 = new Username(var1, WorldMapScaleHandler.loginType);
+			if (var2 >= 1) {
+				var8.outline(1);
+			}
 
-		for (int var6 = 0; var6 < var2; ++var6) {
-			Player var7 = SpriteMask.localPlayer.worldView.players[var3[var6]];
-			if (var7 != null && var7 != SpriteMask.localPlayer && var7.username != null && var7.username.equals(var5)) {
-				PacketBufferNode var8;
-				if (var0 == 1) {
-					var8 = class113.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
-					var8.packetBuffer.writeShortAdd(var3[var6]);
-					var8.packetBuffer.writeByteSub(0);
-					Client.packetWriter.addNode(var8);
-				} else if (var0 == 4) {
-					var8 = class113.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
-					var8.packetBuffer.writeByteSub(0);
-					var8.packetBuffer.writeShortAdd(var3[var6]);
-					Client.packetWriter.addNode(var8);
-				} else if (var0 == 6) {
-					var8 = class113.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
-					var8.packetBuffer.writeShort(var3[var6]);
-					var8.packetBuffer.writeByteAdd(0);
-					Client.packetWriter.addNode(var8);
-				} else if (var0 == 7) {
-					var8 = class113.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
-					var8.packetBuffer.writeShortLE(var3[var6]);
-					var8.packetBuffer.writeByteSub(0);
-					Client.packetWriter.addNode(var8);
+			if (var2 >= 2) {
+				var8.outline(16777215);
+			}
+
+			if (var3 != 0) {
+				var8.shadow(var3);
+			}
+
+			Rasterizer3D.method4770(var8.pixels, 36, 32, (float[])null);
+			if (var9.noteTemplate != -1) {
+				var23.drawTransBgAt(0, 0);
+			}
+
+			if (var4 == 1 || var4 == 2 && var9.isStackable == 1) {
+				Font var20 = ItemContainer.ItemDefinition_fontPlain11;
+				String var21;
+				if (var1 < 100000) {
+					var21 = "<col=ffff00>" + var1 + "</col>";
+				} else if (var1 < 10000000) {
+					var21 = "<col=ffffff>" + var1 / 1000 + "K" + "</col>";
+				} else {
+					var21 = "<col=00ff80>" + var1 / 1000000 + "M" + "</col>";
 				}
 
-				var4 = true;
-				break;
+				var20.draw(var21, 0, 9, 16776960, 1);
 			}
-		}
 
-		if (!var4) {
-			class430.addGameMessage(4, "", "Unable to find " + var1);
-		}
+			if (!var5) {
+				ItemComposition.ItemDefinition_cachedSprites.put(var8, var6);
+			}
 
+			Rasterizer3D.method4770(var12, var13, var14, var15);
+			Rasterizer2D.Rasterizer2D_setClipArray(var16);
+			Rasterizer3D.resetRasterClipping();
+			Rasterizer3D.clips.rasterGouraudLowRes = true;
+			return var8;
+		}
 	}
 }

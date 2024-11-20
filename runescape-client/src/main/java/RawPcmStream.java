@@ -3,107 +3,107 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bf")
+@ObfuscatedName("be")
 @Implements("RawPcmStream")
 public class RawPcmStream extends PcmStream {
-	@ObfuscatedName("ap")
-	int field314;
+	@ObfuscatedName("ab")
+	int field328;
 	@ObfuscatedName("aw")
-	int field311;
-	@ObfuscatedName("ak")
-	int field312;
-	@ObfuscatedName("aj")
-	int field323;
-	@ObfuscatedName("ai")
-	int field322;
-	@ObfuscatedName("ay")
-	int field315;
-	@ObfuscatedName("as")
-	int field316;
+	int field327;
+	@ObfuscatedName("at")
+	int field336;
 	@ObfuscatedName("ae")
+	int field329;
+	@ObfuscatedName("ao")
+	int field330;
+	@ObfuscatedName("ac")
+	int field331;
+	@ObfuscatedName("aj")
+	int field332;
+	@ObfuscatedName("av")
 	@Export("numLoops")
 	int numLoops;
-	@ObfuscatedName("am")
+	@ObfuscatedName("au")
 	@Export("start")
 	int start;
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@Export("end")
 	int end;
-	@ObfuscatedName("au")
-	boolean field319;
-	@ObfuscatedName("an")
-	int field310;
-	@ObfuscatedName("ao")
-	int field317;
 	@ObfuscatedName("af")
-	int field321;
+	boolean field338;
+	@ObfuscatedName("ai")
+	int field337;
+	@ObfuscatedName("al")
+	int field335;
 	@ObfuscatedName("ar")
-	int field324;
+	int field339;
+	@ObfuscatedName("as")
+	int field340;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lbt;III)V"
+		descriptor = "(Lbi;III)V"
 	)
 	RawPcmStream(RawSound var1, int var2, int var3, int var4) {
 		super.sound = var1;
 		this.start = var1.start;
 		this.end = var1.end;
-		this.field319 = var1.field240;
-		this.field311 = var2;
-		this.field312 = var3;
-		this.field323 = var4;
-		this.field314 = 0;
-		this.method902();
+		this.field338 = var1.field256;
+		this.field327 = var2;
+		this.field336 = var3;
+		this.field329 = var4;
+		this.field328 = 0;
+		this.method873();
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lbt;II)V"
+		descriptor = "(Lbi;II)V"
 	)
 	RawPcmStream(RawSound var1, int var2, int var3) {
 		super.sound = var1;
 		this.start = var1.start;
 		this.end = var1.end;
-		this.field319 = var1.field240;
-		this.field311 = var2;
-		this.field312 = var3;
-		this.field323 = 8192;
-		this.field314 = 0;
-		this.method902();
+		this.field338 = var1.field256;
+		this.field327 = var2;
+		this.field336 = var3;
+		this.field329 = 8192;
+		this.field328 = 0;
+		this.method873();
 	}
 
-	@ObfuscatedName("ai")
-	void method902() {
-		this.field322 = this.field312;
-		this.field315 = method1026(this.field312, this.field323);
-		this.field316 = method898(this.field312, this.field323);
+	@ObfuscatedName("ao")
+	void method873() {
+		this.field330 = this.field336;
+		this.field331 = method985(this.field336, this.field329);
+		this.field332 = method868(this.field336, this.field329);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "()Lbg;"
+		descriptor = "()Lby;"
 	)
 	@Export("firstSubStream")
 	protected PcmStream firstSubStream() {
 		return null;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "()Lbg;"
+		descriptor = "()Lby;"
 	)
 	@Export("nextSubStream")
 	protected PcmStream nextSubStream() {
 		return null;
 	}
 
-	@ObfuscatedName("ae")
-	protected int vmethod6791() {
-		return this.field312 == 0 && this.field310 == 0 ? 0 : 1;
+	@ObfuscatedName("av")
+	protected int vmethod6753() {
+		return this.field336 == 0 && this.field337 == 0 ? 0 : 1;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("au")
 	@Export("fill")
 	public synchronized void fill(int[] var1, int var2, int var3) {
-		if (this.field312 == 0 && this.field310 == 0) {
+		if (this.field336 == 0 && this.field337 == 0) {
 			this.skip(var3);
 		} else {
 			RawSound var4 = (RawSound)super.sound;
@@ -117,163 +117,163 @@ public class RawPcmStream extends PcmStream {
 
 			int var9 = var2;
 			var3 += var2;
-			if (this.field314 < 0) {
-				if (this.field311 <= 0) {
-					this.method911();
+			if (this.field328 < 0) {
+				if (this.field327 <= 0) {
+					this.method882();
 					this.remove();
 					return;
 				}
 
-				this.field314 = 0;
+				this.field328 = 0;
 			}
 
-			if (this.field314 >= var7) {
-				if (this.field311 >= 0) {
-					this.method911();
+			if (this.field328 >= var7) {
+				if (this.field327 >= 0) {
+					this.method882();
 					this.remove();
 					return;
 				}
 
-				this.field314 = var7 - 1;
+				this.field328 = var7 - 1;
 			}
 
 			if (this.numLoops < 0) {
-				if (this.field319) {
-					if (this.field311 < 0) {
-						var9 = this.method1030(var1, var2, var5, var3, var4.samples[this.start]);
-						if (this.field314 >= var5) {
+				if (this.field338) {
+					if (this.field327 < 0) {
+						var9 = this.method867(var1, var2, var5, var3, var4.samples[this.start]);
+						if (this.field328 >= var5) {
 							return;
 						}
 
-						this.field314 = var5 + var5 - 1 - this.field314;
-						this.field311 = -this.field311;
+						this.field328 = var5 + var5 - 1 - this.field328;
+						this.field327 = -this.field327;
 					}
 
 					while (true) {
-						var9 = this.method929(var1, var9, var6, var3, var4.samples[this.end - 1]);
-						if (this.field314 < var6) {
+						var9 = this.method909(var1, var9, var6, var3, var4.samples[this.end - 1]);
+						if (this.field328 < var6) {
 							return;
 						}
 
-						this.field314 = var6 + var6 - 1 - this.field314;
-						this.field311 = -this.field311;
-						var9 = this.method1030(var1, var9, var5, var3, var4.samples[this.start]);
-						if (this.field314 >= var5) {
+						this.field328 = var6 + var6 - 1 - this.field328;
+						this.field327 = -this.field327;
+						var9 = this.method867(var1, var9, var5, var3, var4.samples[this.start]);
+						if (this.field328 >= var5) {
 							return;
 						}
 
-						this.field314 = var5 + var5 - 1 - this.field314;
-						this.field311 = -this.field311;
+						this.field328 = var5 + var5 - 1 - this.field328;
+						this.field327 = -this.field327;
 					}
-				} else if (this.field311 < 0) {
+				} else if (this.field327 < 0) {
 					while (true) {
-						var9 = this.method1030(var1, var9, var5, var3, var4.samples[this.end - 1]);
-						if (this.field314 >= var5) {
+						var9 = this.method867(var1, var9, var5, var3, var4.samples[this.end - 1]);
+						if (this.field328 >= var5) {
 							return;
 						}
 
-						this.field314 = var6 - 1 - (var6 - 1 - this.field314) % var8;
+						this.field328 = var6 - 1 - (var6 - 1 - this.field328) % var8;
 					}
 				} else {
 					while (true) {
-						var9 = this.method929(var1, var9, var6, var3, var4.samples[this.start]);
-						if (this.field314 < var6) {
+						var9 = this.method909(var1, var9, var6, var3, var4.samples[this.start]);
+						if (this.field328 < var6) {
 							return;
 						}
 
-						this.field314 = var5 + (this.field314 - var5) % var8;
+						this.field328 = var5 + (this.field328 - var5) % var8;
 					}
 				}
 			} else {
 				if (this.numLoops > 0) {
-					if (this.field319) {
+					if (this.field338) {
 						label127: {
-							if (this.field311 < 0) {
-								var9 = this.method1030(var1, var2, var5, var3, var4.samples[this.start]);
-								if (this.field314 >= var5) {
+							if (this.field327 < 0) {
+								var9 = this.method867(var1, var2, var5, var3, var4.samples[this.start]);
+								if (this.field328 >= var5) {
 									return;
 								}
 
-								this.field314 = var5 + var5 - 1 - this.field314;
-								this.field311 = -this.field311;
+								this.field328 = var5 + var5 - 1 - this.field328;
+								this.field327 = -this.field327;
 								if (--this.numLoops == 0) {
 									break label127;
 								}
 							}
 
 							do {
-								var9 = this.method929(var1, var9, var6, var3, var4.samples[this.end - 1]);
-								if (this.field314 < var6) {
+								var9 = this.method909(var1, var9, var6, var3, var4.samples[this.end - 1]);
+								if (this.field328 < var6) {
 									return;
 								}
 
-								this.field314 = var6 + var6 - 1 - this.field314;
-								this.field311 = -this.field311;
+								this.field328 = var6 + var6 - 1 - this.field328;
+								this.field327 = -this.field327;
 								if (--this.numLoops == 0) {
 									break;
 								}
 
-								var9 = this.method1030(var1, var9, var5, var3, var4.samples[this.start]);
-								if (this.field314 >= var5) {
+								var9 = this.method867(var1, var9, var5, var3, var4.samples[this.start]);
+								if (this.field328 >= var5) {
 									return;
 								}
 
-								this.field314 = var5 + var5 - 1 - this.field314;
-								this.field311 = -this.field311;
+								this.field328 = var5 + var5 - 1 - this.field328;
+								this.field327 = -this.field327;
 							} while(--this.numLoops != 0);
 						}
 					} else {
 						int var10;
-						if (this.field311 < 0) {
+						if (this.field327 < 0) {
 							while (true) {
-								var9 = this.method1030(var1, var9, var5, var3, var4.samples[this.end - 1]);
-								if (this.field314 >= var5) {
+								var9 = this.method867(var1, var9, var5, var3, var4.samples[this.end - 1]);
+								if (this.field328 >= var5) {
 									return;
 								}
 
-								var10 = (var6 - 1 - this.field314) / var8;
+								var10 = (var6 - 1 - this.field328) / var8;
 								if (var10 >= this.numLoops) {
-									this.field314 += var8 * this.numLoops;
+									this.field328 += var8 * this.numLoops;
 									this.numLoops = 0;
 									break;
 								}
 
-								this.field314 += var8 * var10;
+								this.field328 += var8 * var10;
 								this.numLoops -= var10;
 							}
 						} else {
 							while (true) {
-								var9 = this.method929(var1, var9, var6, var3, var4.samples[this.start]);
-								if (this.field314 < var6) {
+								var9 = this.method909(var1, var9, var6, var3, var4.samples[this.start]);
+								if (this.field328 < var6) {
 									return;
 								}
 
-								var10 = (this.field314 - var5) / var8;
+								var10 = (this.field328 - var5) / var8;
 								if (var10 >= this.numLoops) {
-									this.field314 -= var8 * this.numLoops;
+									this.field328 -= var8 * this.numLoops;
 									this.numLoops = 0;
 									break;
 								}
 
-								this.field314 -= var8 * var10;
+								this.field328 -= var8 * var10;
 								this.numLoops -= var10;
 							}
 						}
 					}
 				}
 
-				if (this.field311 < 0) {
-					this.method1030(var1, var9, 0, var3, 0);
-					if (this.field314 < 0) {
-						this.field314 = -1;
-						this.method911();
+				if (this.field327 < 0) {
+					this.method867(var1, var9, 0, var3, 0);
+					if (this.field328 < 0) {
+						this.field328 = -1;
+						this.method882();
 						this.remove();
 					}
 				} else {
-					this.method929(var1, var9, var7, var3, 0);
-					if (this.field314 >= var7) {
-						this.field314 = var7;
-						this.method911();
+					this.method909(var1, var9, var7, var3, 0);
+					if (this.field328 >= var7) {
+						this.field328 = var7;
+						this.method882();
 						this.remove();
 					}
 				}
@@ -282,33 +282,33 @@ public class RawPcmStream extends PcmStream {
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@Export("setNumLoops")
 	public synchronized void setNumLoops(int var1) {
 		this.numLoops = var1;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("af")
 	@Export("skip")
 	public synchronized void skip(int var1) {
-		if (this.field310 > 0) {
-			if (var1 >= this.field310) {
-				if (this.field312 == Integer.MIN_VALUE) {
-					this.field312 = 0;
-					this.field316 = 0;
-					this.field315 = 0;
-					this.field322 = 0;
+		if (this.field337 > 0) {
+			if (var1 >= this.field337) {
+				if (this.field336 == Integer.MIN_VALUE) {
+					this.field336 = 0;
+					this.field332 = 0;
+					this.field331 = 0;
+					this.field330 = 0;
 					this.remove();
-					var1 = this.field310;
+					var1 = this.field337;
 				}
 
-				this.field310 = 0;
-				this.method902();
+				this.field337 = 0;
+				this.method873();
 			} else {
-				this.field322 += this.field317 * var1;
-				this.field315 += this.field321 * var1;
-				this.field316 += this.field324 * var1;
-				this.field310 -= var1;
+				this.field330 += this.field335 * var1;
+				this.field331 += this.field339 * var1;
+				this.field332 += this.field340 * var1;
+				this.field337 -= var1;
 			}
 		}
 
@@ -321,130 +321,130 @@ public class RawPcmStream extends PcmStream {
 			this.numLoops = 0;
 		}
 
-		if (this.field314 < 0) {
-			if (this.field311 <= 0) {
-				this.method911();
+		if (this.field328 < 0) {
+			if (this.field327 <= 0) {
+				this.method882();
 				this.remove();
 				return;
 			}
 
-			this.field314 = 0;
+			this.field328 = 0;
 		}
 
-		if (this.field314 >= var5) {
-			if (this.field311 >= 0) {
-				this.method911();
+		if (this.field328 >= var5) {
+			if (this.field327 >= 0) {
+				this.method882();
 				this.remove();
 				return;
 			}
 
-			this.field314 = var5 - 1;
+			this.field328 = var5 - 1;
 		}
 
-		this.field314 += this.field311 * var1;
+		this.field328 += this.field327 * var1;
 		if (this.numLoops < 0) {
-			if (!this.field319) {
-				if (this.field311 < 0) {
-					if (this.field314 >= var3) {
+			if (!this.field338) {
+				if (this.field327 < 0) {
+					if (this.field328 >= var3) {
 						return;
 					}
 
-					this.field314 = var4 - 1 - (var4 - 1 - this.field314) % var6;
+					this.field328 = var4 - 1 - (var4 - 1 - this.field328) % var6;
 				} else {
-					if (this.field314 < var4) {
+					if (this.field328 < var4) {
 						return;
 					}
 
-					this.field314 = var3 + (this.field314 - var3) % var6;
+					this.field328 = var3 + (this.field328 - var3) % var6;
 				}
 
 			} else {
-				if (this.field311 < 0) {
-					if (this.field314 >= var3) {
+				if (this.field327 < 0) {
+					if (this.field328 >= var3) {
 						return;
 					}
 
-					this.field314 = var3 + var3 - 1 - this.field314;
-					this.field311 = -this.field311;
+					this.field328 = var3 + var3 - 1 - this.field328;
+					this.field327 = -this.field327;
 				}
 
-				while (this.field314 >= var4) {
-					this.field314 = var4 + var4 - 1 - this.field314;
-					this.field311 = -this.field311;
-					if (this.field314 >= var3) {
+				while (this.field328 >= var4) {
+					this.field328 = var4 + var4 - 1 - this.field328;
+					this.field327 = -this.field327;
+					if (this.field328 >= var3) {
 						return;
 					}
 
-					this.field314 = var3 + var3 - 1 - this.field314;
-					this.field311 = -this.field311;
+					this.field328 = var3 + var3 - 1 - this.field328;
+					this.field327 = -this.field327;
 				}
 
 			}
 		} else {
 			if (this.numLoops > 0) {
-				if (this.field319) {
+				if (this.field338) {
 					label129: {
-						if (this.field311 < 0) {
-							if (this.field314 >= var3) {
+						if (this.field327 < 0) {
+							if (this.field328 >= var3) {
 								return;
 							}
 
-							this.field314 = var3 + var3 - 1 - this.field314;
-							this.field311 = -this.field311;
+							this.field328 = var3 + var3 - 1 - this.field328;
+							this.field327 = -this.field327;
 							if (--this.numLoops == 0) {
 								break label129;
 							}
 						}
 
 						do {
-							if (this.field314 < var4) {
+							if (this.field328 < var4) {
 								return;
 							}
 
-							this.field314 = var4 + var4 - 1 - this.field314;
-							this.field311 = -this.field311;
+							this.field328 = var4 + var4 - 1 - this.field328;
+							this.field327 = -this.field327;
 							if (--this.numLoops == 0) {
 								break;
 							}
 
-							if (this.field314 >= var3) {
+							if (this.field328 >= var3) {
 								return;
 							}
 
-							this.field314 = var3 + var3 - 1 - this.field314;
-							this.field311 = -this.field311;
+							this.field328 = var3 + var3 - 1 - this.field328;
+							this.field327 = -this.field327;
 						} while(--this.numLoops != 0);
 					}
 				} else {
 					label161: {
 						int var7;
-						if (this.field311 < 0) {
-							if (this.field314 >= var3) {
+						if (this.field327 < 0) {
+							if (this.field328 >= var3) {
 								return;
 							}
 
-							var7 = (var4 - 1 - this.field314) / var6;
+							var7 = (var4 - 1 - this.field328) / var6;
 							if (var7 >= this.numLoops) {
-								this.field314 += var6 * this.numLoops;
+								this.field328 += var6 * this.numLoops;
 								this.numLoops = 0;
 								break label161;
 							}
 
-							this.field314 += var6 * var7;
+							this.field328 += var6 * var7;
 							this.numLoops -= var7;
 						} else {
-							if (this.field314 < var4) {
+							if (this.field328 < var4) {
 								return;
 							}
 
-							var7 = (this.field314 - var3) / var6;
+							var7 = (this.field328 - var3) / var6;
 							if (var7 >= this.numLoops) {
-								this.field314 -= var6 * this.numLoops;
+								this.field328 -= var6 * this.numLoops;
 								this.numLoops = 0;
 								break label161;
 							}
 
-							this.field314 -= var6 * var7;
+							this.field328 -= var6 * var7;
 							this.numLoops -= var7;
 						}
 
@@ -453,51 +453,51 @@ public class RawPcmStream extends PcmStream {
 				}
 			}
 
-			if (this.field311 < 0) {
-				if (this.field314 < 0) {
-					this.field314 = -1;
-					this.method911();
+			if (this.field327 < 0) {
+				if (this.field328 < 0) {
+					this.field328 = -1;
+					this.method882();
 					this.remove();
 				}
-			} else if (this.field314 >= var5) {
-				this.field314 = var5;
-				this.method911();
+			} else if (this.field328 >= var5) {
+				this.field328 = var5;
+				this.method882();
 				this.remove();
 			}
 
 		}
 	}
 
-	@ObfuscatedName("an")
-	public synchronized void method904(int var1) {
-		this.method906(var1 << 6, this.method908());
+	@ObfuscatedName("ai")
+	public synchronized void method875(int var1) {
+		this.method1008(var1 << 6, this.method898());
 	}
 
-	@ObfuscatedName("ao")
-	synchronized void method905(int var1) {
-		this.method906(var1, this.method908());
-	}
-
-	@ObfuscatedName("af")
-	synchronized void method906(int var1, int var2) {
-		this.field312 = var1;
-		this.field323 = var2;
-		this.field310 = 0;
-		this.method902();
+	@ObfuscatedName("al")
+	synchronized void method876(int var1) {
+		this.method1008(var1, this.method898());
 	}
 
 	@ObfuscatedName("ar")
-	public synchronized int method1028() {
-		return this.field312 == Integer.MIN_VALUE ? 0 : this.field312;
+	synchronized void method1008(int var1, int var2) {
+		this.field336 = var1;
+		this.field329 = var2;
+		this.field337 = 0;
+		this.method873();
 	}
 
-	@ObfuscatedName("ab")
-	public synchronized int method908() {
-		return this.field323 < 0 ? -1 : this.field323;
+	@ObfuscatedName("as")
+	public synchronized int method878() {
+		return this.field336 == Integer.MIN_VALUE ? 0 : this.field336;
 	}
 
 	@ObfuscatedName("az")
-	public synchronized void method915(int var1) {
+	public synchronized int method898() {
+		return this.field329 < 0 ? -1 : this.field329;
+	}
+
+	@ObfuscatedName("ak")
+	public synchronized void method967(int var1) {
 		int var2 = ((RawSound)super.sound).samples.length << 8;
 		if (var1 < -1) {
 			var1 = -1;
@@ -507,254 +507,254 @@ public class RawPcmStream extends PcmStream {
 			var1 = var2;
 		}
 
-		this.field314 = var1;
+		this.field328 = var1;
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(Z)V",
 		garbageValue = "1"
 	)
-	public synchronized void method1049() {
-		this.field311 = (this.field311 ^ this.field311 >> 31) + (this.field311 >>> 31);
-		this.field311 = -this.field311;
+	public synchronized void method941() {
+		this.field327 = (this.field327 ^ this.field327 >> 31) + (this.field327 >>> 31);
+		this.field327 = -this.field327;
 	}
 
-	@ObfuscatedName("ad")
-	void method911() {
-		if (this.field310 != 0) {
-			if (this.field312 == Integer.MIN_VALUE) {
-				this.field312 = 0;
+	@ObfuscatedName("ah")
+	void method882() {
+		if (this.field337 != 0) {
+			if (this.field336 == Integer.MIN_VALUE) {
+				this.field336 = 0;
 			}
 
-			this.field310 = 0;
-			this.method902();
+			this.field337 = 0;
+			this.method873();
 		}
 
 	}
 
-	@ObfuscatedName("ac")
-	public synchronized void method912(int var1, int var2) {
-		this.method913(var1, var2, this.method908());
+	@ObfuscatedName("ad")
+	public synchronized void method872(int var1, int var2) {
+		this.method884(var1, var2, this.method898());
 	}
 
-	@ObfuscatedName("av")
-	public synchronized void method913(int var1, int var2, int var3) {
+	@ObfuscatedName("ay")
+	public synchronized void method884(int var1, int var2, int var3) {
 		if (var1 == 0) {
-			this.method906(var2, var3);
+			this.method1008(var2, var3);
 		} else {
-			int var4 = method1026(var2, var3);
-			int var5 = method898(var2, var3);
-			if (var4 == this.field315 && var5 == this.field316) {
-				this.field310 = 0;
+			int var4 = method985(var2, var3);
+			int var5 = method868(var2, var3);
+			if (var4 == this.field331 && var5 == this.field332) {
+				this.field337 = 0;
 			} else {
-				int var6 = var2 - this.field322;
-				if (this.field322 - var2 > var6) {
-					var6 = this.field322 - var2;
+				int var6 = var2 - this.field330;
+				if (this.field330 - var2 > var6) {
+					var6 = this.field330 - var2;
 				}
 
-				if (var4 - this.field315 > var6) {
-					var6 = var4 - this.field315;
+				if (var4 - this.field331 > var6) {
+					var6 = var4 - this.field331;
 				}
 
-				if (this.field315 - var4 > var6) {
-					var6 = this.field315 - var4;
+				if (this.field331 - var4 > var6) {
+					var6 = this.field331 - var4;
 				}
 
-				if (var5 - this.field316 > var6) {
-					var6 = var5 - this.field316;
+				if (var5 - this.field332 > var6) {
+					var6 = var5 - this.field332;
 				}
 
-				if (this.field316 - var5 > var6) {
-					var6 = this.field316 - var5;
+				if (this.field332 - var5 > var6) {
+					var6 = this.field332 - var5;
 				}
 
 				if (var1 > var6) {
 					var1 = var6;
 				}
 
-				this.field310 = var1;
-				this.field312 = var2;
-				this.field323 = var3;
-				this.field317 = (var2 - this.field322) / var1;
-				this.field321 = (var4 - this.field315) / var1;
-				this.field324 = (var5 - this.field316) / var1;
+				this.field337 = var1;
+				this.field336 = var2;
+				this.field329 = var3;
+				this.field335 = (var2 - this.field330) / var1;
+				this.field339 = (var4 - this.field331) / var1;
+				this.field340 = (var5 - this.field332) / var1;
 			}
 		}
 	}
 
 	@ObfuscatedName("ax")
-	public synchronized void method1040(int var1) {
+	public synchronized void method885(int var1) {
 		if (var1 == 0) {
-			this.method905(0);
+			this.method876(0);
 			this.remove();
-		} else if (this.field315 == 0 && this.field316 == 0) {
-			this.field310 = 0;
-			this.field312 = 0;
-			this.field322 = 0;
+		} else if (this.field331 == 0 && this.field332 == 0) {
+			this.field337 = 0;
+			this.field336 = 0;
+			this.field330 = 0;
 			this.remove();
 		} else {
-			int var2 = -this.field322;
-			if (this.field322 > var2) {
-				var2 = this.field322;
+			int var2 = -this.field330;
+			if (this.field330 > var2) {
+				var2 = this.field330;
 			}
 
-			if (-this.field315 > var2) {
-				var2 = -this.field315;
+			if (-this.field331 > var2) {
+				var2 = -this.field331;
 			}
 
-			if (this.field315 > var2) {
-				var2 = this.field315;
+			if (this.field331 > var2) {
+				var2 = this.field331;
 			}
 
-			if (-this.field316 > var2) {
-				var2 = -this.field316;
+			if (-this.field332 > var2) {
+				var2 = -this.field332;
 			}
 
-			if (this.field316 > var2) {
-				var2 = this.field316;
+			if (this.field332 > var2) {
+				var2 = this.field332;
 			}
 
 			if (var1 > var2) {
 				var1 = var2;
 			}
 
-			this.field310 = var1;
-			this.field312 = Integer.MIN_VALUE;
-			this.field317 = -this.field322 / var1;
-			this.field321 = -this.field315 / var1;
-			this.field324 = -this.field316 / var1;
+			this.field337 = var1;
+			this.field336 = Integer.MIN_VALUE;
+			this.field335 = -this.field330 / var1;
+			this.field339 = -this.field331 / var1;
+			this.field340 = -this.field332 / var1;
 		}
+	}
+
+	@ObfuscatedName("aa")
+	public synchronized void method886(int var1) {
+		if (this.field327 < 0) {
+			this.field327 = -var1;
+		} else {
+			this.field327 = var1;
+		}
+
 	}
 
 	@ObfuscatedName("aq")
-	public synchronized void method1022(int var1) {
-		if (this.field311 < 0) {
-			this.field311 = -var1;
-		} else {
-			this.field311 = var1;
-		}
-
+	public synchronized int method887() {
+		return this.field327 < 0 ? -this.field327 : this.field327;
 	}
 
-	@ObfuscatedName("al")
-	public synchronized int method1000() {
-		return this.field311 < 0 ? -this.field311 : this.field311;
+	@ObfuscatedName("am")
+	public boolean method953() {
+		return this.field328 < 0 || this.field328 >= ((RawSound)super.sound).samples.length << 8;
 	}
 
-	@ObfuscatedName("bb")
-	public boolean method917() {
-		return this.field314 < 0 || this.field314 >= ((RawSound)super.sound).samples.length << 8;
+	@ObfuscatedName("ag")
+	public boolean method889() {
+		return this.field337 != 0;
 	}
 
-	@ObfuscatedName("bq")
-	public boolean method918() {
-		return this.field310 != 0;
-	}
-
-	@ObfuscatedName("bp")
-	int method929(int[] var1, int var2, int var3, int var4, int var5) {
+	@ObfuscatedName("bw")
+	int method909(int[] var1, int var2, int var3, int var4, int var5) {
 		while (true) {
-			if (this.field310 > 0) {
-				int var6 = var2 + this.field310;
+			if (this.field337 > 0) {
+				int var6 = var2 + this.field337;
 				if (var6 > var4) {
 					var6 = var4;
 				}
 
-				this.field310 += var2;
-				if (this.field311 == 256 && (this.field314 & 255) == 0) {
-					if (class550.PcmPlayer_stereo) {
-						var2 = method999(0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field315, this.field316, this.field321, this.field324, 0, var6, var3, this);
+				this.field337 += var2;
+				if (this.field327 == 256 && (this.field328 & 255) == 0) {
+					if (ItemContainer.PcmPlayer_stereo) {
+						var2 = method907(0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field331, this.field332, this.field339, this.field340, 0, var6, var3, this);
 					} else {
-						var2 = method935(((RawSound)super.sound).samples, var1, this.field314, var2, this.field322, this.field317, 0, var6, var3, this);
+						var2 = method881(((RawSound)super.sound).samples, var1, this.field328, var2, this.field330, this.field335, 0, var6, var3, this);
 					}
-				} else if (class550.PcmPlayer_stereo) {
-					var2 = method1029(0, 0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field315, this.field316, this.field321, this.field324, 0, var6, var3, this, this.field311, var5);
+				} else if (ItemContainer.PcmPlayer_stereo) {
+					var2 = method1000(0, 0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field331, this.field332, this.field339, this.field340, 0, var6, var3, this, this.field327, var5);
 				} else {
-					var2 = method939(0, 0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field322, this.field317, 0, var6, var3, this, this.field311, var5);
+					var2 = method956(0, 0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field330, this.field335, 0, var6, var3, this, this.field327, var5);
 				}
 
-				this.field310 -= var2;
-				if (this.field310 != 0) {
+				this.field337 -= var2;
+				if (this.field337 != 0) {
 					return var2;
 				}
 
-				if (!this.method926()) {
+				if (!this.method897()) {
 					continue;
 				}
 
 				return var4;
 			}
 
-			if (this.field311 == 256 && (this.field314 & 255) == 0) {
-				if (class550.PcmPlayer_stereo) {
-					return method924(0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field315, this.field316, 0, var4, var3, this);
+			if (this.field327 == 256 && (this.field328 & 255) == 0) {
+				if (ItemContainer.PcmPlayer_stereo) {
+					return method880(0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field331, this.field332, 0, var4, var3, this);
 				}
 
-				return method927(((RawSound)super.sound).samples, var1, this.field314, var2, this.field322, 0, var4, var3, this);
+				return method934(((RawSound)super.sound).samples, var1, this.field328, var2, this.field330, 0, var4, var3, this);
 			}
 
-			if (class550.PcmPlayer_stereo) {
-				return method932(0, 0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field315, this.field316, 0, var4, var3, this, this.field311, var5);
+			if (ItemContainer.PcmPlayer_stereo) {
+				return method919(0, 0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field331, this.field332, 0, var4, var3, this, this.field327, var5);
 			}
 
-			return method969(0, 0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field322, 0, var4, var3, this, this.field311, var5);
+			return method1002(0, 0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field330, 0, var4, var3, this, this.field327, var5);
 		}
 	}
 
-	@ObfuscatedName("by")
-	int method1030(int[] var1, int var2, int var3, int var4, int var5) {
+	@ObfuscatedName("bl")
+	int method867(int[] var1, int var2, int var3, int var4, int var5) {
 		while (true) {
-			if (this.field310 > 0) {
-				int var6 = var2 + this.field310;
+			if (this.field337 > 0) {
+				int var6 = var2 + this.field337;
 				if (var6 > var4) {
 					var6 = var4;
 				}
 
-				this.field310 += var2;
-				if (this.field311 == -256 && (this.field314 & 255) == 0) {
-					if (class550.PcmPlayer_stereo) {
-						var2 = method938(0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field315, this.field316, this.field321, this.field324, 0, var6, var3, this);
+				this.field337 += var2;
+				if (this.field327 == -256 && (this.field328 & 255) == 0) {
+					if (ItemContainer.PcmPlayer_stereo) {
+						var2 = method1004(0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field331, this.field332, this.field339, this.field340, 0, var6, var3, this);
 					} else {
-						var2 = method937(((RawSound)super.sound).samples, var1, this.field314, var2, this.field322, this.field317, 0, var6, var3, this);
+						var2 = method908(((RawSound)super.sound).samples, var1, this.field328, var2, this.field330, this.field335, 0, var6, var3, this);
 					}
-				} else if (class550.PcmPlayer_stereo) {
-					var2 = method942(0, 0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field315, this.field316, this.field321, this.field324, 0, var6, var3, this, this.field311, var5);
+				} else if (ItemContainer.PcmPlayer_stereo) {
+					var2 = method976(0, 0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field331, this.field332, this.field339, this.field340, 0, var6, var3, this, this.field327, var5);
 				} else {
-					var2 = method941(0, 0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field322, this.field317, 0, var6, var3, this, this.field311, var5);
+					var2 = method877(0, 0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field330, this.field335, 0, var6, var3, this, this.field327, var5);
 				}
 
-				this.field310 -= var2;
-				if (this.field310 != 0) {
+				this.field337 -= var2;
+				if (this.field337 != 0) {
 					return var2;
 				}
 
-				if (!this.method926()) {
+				if (!this.method897()) {
 					continue;
 				}
 
 				return var4;
 			}
 
-			if (this.field311 == -256 && (this.field314 & 255) == 0) {
-				if (class550.PcmPlayer_stereo) {
-					return method930(0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field315, this.field316, 0, var4, var3, this);
+			if (this.field327 == -256 && (this.field328 & 255) == 0) {
+				if (ItemContainer.PcmPlayer_stereo) {
+					return method901(0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field331, this.field332, 0, var4, var3, this);
 				}
 
-				return method1042(((RawSound)super.sound).samples, var1, this.field314, var2, this.field322, 0, var4, var3, this);
+				return method900(((RawSound)super.sound).samples, var1, this.field328, var2, this.field330, 0, var4, var3, this);
 			}
 
-			if (class550.PcmPlayer_stereo) {
-				return method949(0, 0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field315, this.field316, 0, var4, var3, this, this.field311, var5);
+			if (ItemContainer.PcmPlayer_stereo) {
+				return method905(0, 0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field331, this.field332, 0, var4, var3, this, this.field327, var5);
 			}
 
-			return method933(0, 0, ((RawSound)super.sound).samples, var1, this.field314, var2, this.field322, 0, var4, var3, this, this.field311, var5);
+			return method994(0, 0, ((RawSound)super.sound).samples, var1, this.field328, var2, this.field330, 0, var4, var3, this, this.field327, var5);
 		}
 	}
 
-	@ObfuscatedName("br")
-	boolean method926() {
-		int var1 = this.field312;
+	@ObfuscatedName("bi")
+	boolean method897() {
+		int var1 = this.field336;
 		int var2;
 		int var3;
 		if (var1 == Integer.MIN_VALUE) {
@@ -762,71 +762,71 @@ public class RawPcmStream extends PcmStream {
 			var2 = 0;
 			var1 = 0;
 		} else {
-			var2 = method1026(var1, this.field323);
-			var3 = method898(var1, this.field323);
+			var2 = method985(var1, this.field329);
+			var3 = method868(var1, this.field329);
 		}
 
-		if (var1 == this.field322 && var2 == this.field315 && var3 == this.field316) {
-			if (this.field312 == Integer.MIN_VALUE) {
-				this.field312 = 0;
-				this.field316 = 0;
-				this.field315 = 0;
-				this.field322 = 0;
+		if (var1 == this.field330 && var2 == this.field331 && var3 == this.field332) {
+			if (this.field336 == Integer.MIN_VALUE) {
+				this.field336 = 0;
+				this.field332 = 0;
+				this.field331 = 0;
+				this.field330 = 0;
 				this.remove();
 				return true;
 			} else {
-				this.method902();
+				this.method873();
 				return false;
 			}
 		} else {
-			if (this.field322 < var1) {
-				this.field317 = 1;
-				this.field310 = var1 - this.field322;
-			} else if (this.field322 > var1) {
-				this.field317 = -1;
-				this.field310 = this.field322 - var1;
+			if (this.field330 < var1) {
+				this.field335 = 1;
+				this.field337 = var1 - this.field330;
+			} else if (this.field330 > var1) {
+				this.field335 = -1;
+				this.field337 = this.field330 - var1;
 			} else {
-				this.field317 = 0;
+				this.field335 = 0;
 			}
 
-			if (this.field315 < var2) {
-				this.field321 = 1;
-				if (this.field310 == 0 || this.field310 > var2 - this.field315) {
-					this.field310 = var2 - this.field315;
+			if (this.field331 < var2) {
+				this.field339 = 1;
+				if (this.field337 == 0 || this.field337 > var2 - this.field331) {
+					this.field337 = var2 - this.field331;
 				}
-			} else if (this.field315 > var2) {
-				this.field321 = -1;
-				if (this.field310 == 0 || this.field310 > this.field315 - var2) {
-					this.field310 = this.field315 - var2;
+			} else if (this.field331 > var2) {
+				this.field339 = -1;
+				if (this.field337 == 0 || this.field337 > this.field331 - var2) {
+					this.field337 = this.field331 - var2;
 				}
 			} else {
-				this.field321 = 0;
+				this.field339 = 0;
 			}
 
-			if (this.field316 < var3) {
-				this.field324 = 1;
-				if (this.field310 == 0 || this.field310 > var3 - this.field316) {
-					this.field310 = var3 - this.field316;
+			if (this.field332 < var3) {
+				this.field340 = 1;
+				if (this.field337 == 0 || this.field337 > var3 - this.field332) {
+					this.field337 = var3 - this.field332;
 				}
-			} else if (this.field316 > var3) {
-				this.field324 = -1;
-				if (this.field310 == 0 || this.field310 > this.field316 - var3) {
-					this.field310 = this.field316 - var3;
+			} else if (this.field332 > var3) {
+				this.field340 = -1;
+				if (this.field337 == 0 || this.field337 > this.field332 - var3) {
+					this.field337 = this.field332 - var3;
 				}
 			} else {
-				this.field324 = 0;
+				this.field340 = 0;
 			}
 
 			return false;
 		}
 	}
 
-	@ObfuscatedName("bt")
-	int vmethod1061() {
-		int var1 = this.field322 * 3 >> 6;
+	@ObfuscatedName("be")
+	int vmethod1032() {
+		int var1 = this.field330 * 3 >> 6;
 		var1 = (var1 ^ var1 >> 31) + (var1 >>> 31);
 		if (this.numLoops == 0) {
-			var1 -= var1 * this.field314 / (((RawSound)super.sound).samples.length << 8);
+			var1 -= var1 * this.field328 / (((RawSound)super.sound).samples.length << 8);
 		} else if (this.numLoops >= 0) {
 			var1 -= var1 * this.start / ((RawSound)super.sound).samples.length;
 		}
@@ -834,38 +834,38 @@ public class RawPcmStream extends PcmStream {
 		return var1 > 255 ? 255 : var1;
 	}
 
-	@ObfuscatedName("ap")
-	static int method1026(int var0, int var1) {
+	@ObfuscatedName("ab")
+	static int method985(int var0, int var1) {
 		return var1 < 0 ? var0 : (int)((double)var0 * Math.sqrt((double)(16384 - var1) * 1.220703125E-4D) + 0.5D);
 	}
 
 	@ObfuscatedName("aw")
-	static int method898(int var0, int var1) {
+	static int method868(int var0, int var1) {
 		return var1 < 0 ? -var0 : (int)((double)var0 * Math.sqrt((double)var1 * 1.220703125E-4D) + 0.5D);
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lbt;II)Lbf;"
+		descriptor = "(Lbi;II)Lbe;"
 	)
 	@Export("createRawPcmStream")
 	public static RawPcmStream createRawPcmStream(RawSound var0, int var1, int var2) {
-		return var0.samples != null && var0.samples.length != 0 ? new RawPcmStream(var0, (int)((long)var0.sampleRate * 256L * (long)var1 / (long)(ArchiveLoader.field1059 * 664191268)), var2 << 6) : null;
+		return var0.samples != null && var0.samples.length != 0 ? new RawPcmStream(var0, (int)((long)var0.sampleRate * 256L * (long)var1 / (long)(DbTableType.field5406 * 863174208)), var2 << 6) : null;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lbt;III)Lbf;"
+		descriptor = "(Lbi;III)Lbe;"
 	)
-	public static RawPcmStream method901(RawSound var0, int var1, int var2, int var3) {
+	public static RawPcmStream method913(RawSound var0, int var1, int var2, int var3) {
 		return var0.samples != null && var0.samples.length != 0 ? new RawPcmStream(var0, var1, var2, var3) : null;
 	}
 
-	@ObfuscatedName("bn")
+	@ObfuscatedName("bz")
 	@ObfuscatedSignature(
-		descriptor = "([B[IIIIIIILbf;)I"
+		descriptor = "([B[IIIIIIILbe;)I"
 	)
-	static int method927(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, RawPcmStream var8) {
+	static int method934(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, RawPcmStream var8) {
 		var2 >>= 8;
 		var7 >>= 8;
 		var4 <<= 2;
@@ -888,15 +888,15 @@ public class RawPcmStream extends PcmStream {
 			var10001 = var3++;
 		}
 
-		var8.field314 = var2 << 8;
+		var8.field328 = var2 << 8;
 		return var3;
 	}
 
-	@ObfuscatedName("bu")
+	@ObfuscatedName("bn")
 	@ObfuscatedSignature(
-		descriptor = "(I[B[IIIIIIIILbf;)I"
+		descriptor = "(I[B[IIIIIIIILbe;)I"
 	)
-	static int method924(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, RawPcmStream var10) {
+	static int method880(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, RawPcmStream var10) {
 		var3 >>= 8;
 		var9 >>= 8;
 		var5 <<= 2;
@@ -939,15 +939,15 @@ public class RawPcmStream extends PcmStream {
 			var10001 = var4++;
 		}
 
-		var10.field314 = var3 << 8;
+		var10.field328 = var3 << 8;
 		return var4 >> 1;
 	}
 
-	@ObfuscatedName("bs")
+	@ObfuscatedName("bd")
 	@ObfuscatedSignature(
-		descriptor = "([B[IIIIIIILbf;)I"
+		descriptor = "([B[IIIIIIILbe;)I"
 	)
-	static int method1042(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, RawPcmStream var8) {
+	static int method900(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, RawPcmStream var8) {
 		var2 >>= 8;
 		var7 >>= 8;
 		var4 <<= 2;
@@ -970,15 +970,15 @@ public class RawPcmStream extends PcmStream {
 			var10001 = var3++;
 		}
 
-		var8.field314 = var2 << 8;
+		var8.field328 = var2 << 8;
 		return var3;
 	}
 
-	@ObfuscatedName("bm")
+	@ObfuscatedName("bf")
 	@ObfuscatedSignature(
-		descriptor = "(I[B[IIIIIIIILbf;)I"
+		descriptor = "(I[B[IIIIIIIILbe;)I"
 	)
-	static int method930(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, RawPcmStream var10) {
+	static int method901(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, RawPcmStream var10) {
 		var3 >>= 8;
 		var9 >>= 8;
 		var5 <<= 2;
@@ -1021,15 +1021,15 @@ public class RawPcmStream extends PcmStream {
 			var10001 = var4++;
 		}
 
-		var10.field314 = var3 << 8;
+		var10.field328 = var3 << 8;
 		return var4 >> 1;
 	}
 
-	@ObfuscatedName("bo")
+	@ObfuscatedName("by")
 	@ObfuscatedSignature(
-		descriptor = "(II[B[IIIIIIILbf;II)I"
+		descriptor = "(II[B[IIIIIIILbe;II)I"
 	)
-	static int method969(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, RawPcmStream var10, int var11, int var12) {
+	static int method1002(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, RawPcmStream var10, int var11, int var12) {
 		if (var11 == 0 || (var7 = var5 + (var11 + (var9 - var4) - 257) / var11) > var8) {
 			var7 = var8;
 		}
@@ -1054,15 +1054,15 @@ public class RawPcmStream extends PcmStream {
 			var3[var10001] += ((var13 << 8) + (var1 - var13) * (var4 & 255)) * var6 >> 6;
 		}
 
-		var10.field314 = var4;
+		var10.field328 = var4;
 		return var5;
 	}
 
-	@ObfuscatedName("bd")
+	@ObfuscatedName("bs")
 	@ObfuscatedSignature(
-		descriptor = "(II[B[IIIIIIIILbf;II)I"
+		descriptor = "(II[B[IIIIIIIILbe;II)I"
 	)
-	static int method932(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, RawPcmStream var11, int var12, int var13) {
+	static int method919(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, RawPcmStream var11, int var12, int var13) {
 		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 257) / var12) > var9) {
 			var8 = var9;
 		}
@@ -1096,15 +1096,15 @@ public class RawPcmStream extends PcmStream {
 			var3[var10001] += var0 * var7 >> 6;
 		}
 
-		var11.field314 = var4;
+		var11.field328 = var4;
 		return var5 >> 1;
 	}
 
-	@ObfuscatedName("ba")
+	@ObfuscatedName("bc")
 	@ObfuscatedSignature(
-		descriptor = "(II[B[IIIIIIILbf;II)I"
+		descriptor = "(II[B[IIIIIIILbe;II)I"
 	)
-	static int method933(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, RawPcmStream var10, int var11, int var12) {
+	static int method994(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, RawPcmStream var10, int var11, int var12) {
 		if (var11 == 0 || (var7 = var5 + (var11 + (var9 + 256 - var4)) / var11) > var8) {
 			var7 = var8;
 		}
@@ -1129,15 +1129,15 @@ public class RawPcmStream extends PcmStream {
 			var3[var10001] += ((var0 << 8) + (var2[var4 >> 8] - var0) * (var4 & 255)) * var6 >> 6;
 		}
 
-		var10.field314 = var4;
+		var10.field328 = var4;
 		return var5;
 	}
 
-	@ObfuscatedName("bw")
+	@ObfuscatedName("cc")
 	@ObfuscatedSignature(
-		descriptor = "(II[B[IIIIIIIILbf;II)I"
+		descriptor = "(II[B[IIIIIIIILbe;II)I"
 	)
-	static int method949(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, RawPcmStream var11, int var12, int var13) {
+	static int method905(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, RawPcmStream var11, int var12, int var13) {
 		if (var12 == 0 || (var8 = var5 + (var10 + 256 - var4 + var12) / var12) > var9) {
 			var8 = var9;
 		}
@@ -1169,15 +1169,15 @@ public class RawPcmStream extends PcmStream {
 			var3[var10001] += var0 * var7 >> 6;
 		}
 
-		var11.field314 = var4;
+		var11.field328 = var4;
 		return var5 >> 1;
 	}
 
-	@ObfuscatedName("bi")
+	@ObfuscatedName("ct")
 	@ObfuscatedSignature(
-		descriptor = "([B[IIIIIIIILbf;)I"
+		descriptor = "([B[IIIIIIIILbe;)I"
 	)
-	static int method935(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, RawPcmStream var9) {
+	static int method881(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, RawPcmStream var9) {
 		var2 >>= 8;
 		var8 >>= 8;
 		var4 <<= 2;
@@ -1186,8 +1186,8 @@ public class RawPcmStream extends PcmStream {
 			var6 = var7;
 		}
 
-		var9.field315 += var9.field321 * (var6 - var3);
-		var9.field316 += var9.field324 * (var6 - var3);
+		var9.field331 += var9.field339 * (var6 - var3);
+		var9.field332 += var9.field340 * (var6 - var3);
 
 		int var10001;
 		for (var6 -= 3; var3 < var6; var4 += var5) {
@@ -1209,16 +1209,16 @@ public class RawPcmStream extends PcmStream {
 			var1[var10001] += var0[var2++] * var4;
 		}
 
-		var9.field322 = var4 >> 2;
-		var9.field314 = var2 << 8;
+		var9.field330 = var4 >> 2;
+		var9.field328 = var2 << 8;
 		return var3;
 	}
 
-	@ObfuscatedName("bf")
+	@ObfuscatedName("cy")
 	@ObfuscatedSignature(
-		descriptor = "(I[B[IIIIIIIIIILbf;)I"
+		descriptor = "(I[B[IIIIIIIIIILbe;)I"
 	)
-	static int method999(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, RawPcmStream var12) {
+	static int method907(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, RawPcmStream var12) {
 		var3 >>= 8;
 		var11 >>= 8;
 		var5 <<= 2;
@@ -1229,7 +1229,7 @@ public class RawPcmStream extends PcmStream {
 			var9 = var10;
 		}
 
-		var12.field322 += var12.field317 * (var9 - var4);
+		var12.field330 += var12.field335 * (var9 - var4);
 		var4 <<= 1;
 		var9 <<= 1;
 
@@ -1274,17 +1274,17 @@ public class RawPcmStream extends PcmStream {
 			var2[var10001] += var13 * var6;
 		}
 
-		var12.field315 = var5 >> 2;
-		var12.field316 = var6 >> 2;
-		var12.field314 = var3 << 8;
+		var12.field331 = var5 >> 2;
+		var12.field332 = var6 >> 2;
+		var12.field328 = var3 << 8;
 		return var4 >> 1;
 	}
 
-	@ObfuscatedName("bg")
+	@ObfuscatedName("cv")
 	@ObfuscatedSignature(
-		descriptor = "([B[IIIIIIIILbf;)I"
+		descriptor = "([B[IIIIIIIILbe;)I"
 	)
-	static int method937(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, RawPcmStream var9) {
+	static int method908(byte[] var0, int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, RawPcmStream var9) {
 		var2 >>= 8;
 		var8 >>= 8;
 		var4 <<= 2;
@@ -1293,8 +1293,8 @@ public class RawPcmStream extends PcmStream {
 			var6 = var7;
 		}
 
-		var9.field315 += var9.field321 * (var6 - var3);
-		var9.field316 += var9.field324 * (var6 - var3);
+		var9.field331 += var9.field339 * (var6 - var3);
+		var9.field332 += var9.field340 * (var6 - var3);
 
 		int var10001;
 		for (var6 -= 3; var3 < var6; var4 += var5) {
@@ -1316,16 +1316,16 @@ public class RawPcmStream extends PcmStream {
 			var1[var10001] += var0[var2--] * var4;
 		}
 
-		var9.field322 = var4 >> 2;
-		var9.field314 = var2 << 8;
+		var9.field330 = var4 >> 2;
+		var9.field328 = var2 << 8;
 		return var3;
 	}
 
-	@ObfuscatedName("bl")
+	@ObfuscatedName("cq")
 	@ObfuscatedSignature(
-		descriptor = "(I[B[IIIIIIIIIILbf;)I"
+		descriptor = "(I[B[IIIIIIIIIILbe;)I"
 	)
-	static int method938(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, RawPcmStream var12) {
+	static int method1004(int var0, byte[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, RawPcmStream var12) {
 		var3 >>= 8;
 		var11 >>= 8;
 		var5 <<= 2;
@@ -1336,7 +1336,7 @@ public class RawPcmStream extends PcmStream {
 			var9 = var10;
 		}
 
-		var12.field322 += var12.field317 * (var9 - var4);
+		var12.field330 += var12.field335 * (var9 - var4);
 		var4 <<= 1;
 		var9 <<= 1;
 
@@ -1381,19 +1381,19 @@ public class RawPcmStream extends PcmStream {
 			var2[var10001] += var13 * var6;
 		}
 
-		var12.field315 = var5 >> 2;
-		var12.field316 = var6 >> 2;
-		var12.field314 = var3 << 8;
+		var12.field331 = var5 >> 2;
+		var12.field332 = var6 >> 2;
+		var12.field328 = var3 << 8;
 		return var4 >> 1;
 	}
 
-	@ObfuscatedName("be")
+	@ObfuscatedName("cn")
 	@ObfuscatedSignature(
-		descriptor = "(II[B[IIIIIIIILbf;II)I"
+		descriptor = "(II[B[IIIIIIIILbe;II)I"
 	)
-	static int method939(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, RawPcmStream var11, int var12, int var13) {
-		var11.field315 -= var11.field321 * var5;
-		var11.field316 -= var11.field324 * var5;
+	static int method956(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, RawPcmStream var11, int var12, int var13) {
+		var11.field331 -= var11.field339 * var5;
+		var11.field332 -= var11.field340 * var5;
 		if (var12 == 0 || (var8 = var5 + (var10 - var4 + var12 - 257) / var12) > var9) {
 			var8 = var9;
 		}
@@ -1420,19 +1420,19 @@ public class RawPcmStream extends PcmStream {
 			var6 += var7;
 		}
 
-		var11.field315 += var11.field321 * var5;
-		var11.field316 += var11.field324 * var5;
-		var11.field322 = var6;
-		var11.field314 = var4;
+		var11.field331 += var11.field339 * var5;
+		var11.field332 += var11.field340 * var5;
+		var11.field330 = var6;
+		var11.field328 = var4;
 		return var5;
 	}
 
-	@ObfuscatedName("cq")
+	@ObfuscatedName("ck")
 	@ObfuscatedSignature(
-		descriptor = "(II[B[IIIIIIIIIILbf;II)I"
+		descriptor = "(II[B[IIIIIIIIIILbe;II)I"
 	)
-	static int method1029(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, RawPcmStream var13, int var14, int var15) {
-		var13.field322 -= var5 * var13.field317;
+	static int method1000(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, RawPcmStream var13, int var14, int var15) {
+		var13.field330 -= var5 * var13.field335;
 		if (var14 == 0 || (var10 = var5 + (var12 - var4 + var14 - 257) / var14) > var11) {
 			var10 = var11;
 		}
@@ -1471,20 +1471,20 @@ public class RawPcmStream extends PcmStream {
 		}
 
 		var5 >>= 1;
-		var13.field322 += var13.field317 * var5;
-		var13.field315 = var6;
-		var13.field316 = var7;
-		var13.field314 = var4;
+		var13.field330 += var13.field335 * var5;
+		var13.field331 = var6;
+		var13.field332 = var7;
+		var13.field328 = var4;
 		return var5;
 	}
 
-	@ObfuscatedName("cb")
+	@ObfuscatedName("cs")
 	@ObfuscatedSignature(
-		descriptor = "(II[B[IIIIIIIILbf;II)I"
+		descriptor = "(II[B[IIIIIIIILbe;II)I"
 	)
-	static int method941(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, RawPcmStream var11, int var12, int var13) {
-		var11.field315 -= var11.field321 * var5;
-		var11.field316 -= var11.field324 * var5;
+	static int method877(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, RawPcmStream var11, int var12, int var13) {
+		var11.field331 -= var11.field339 * var5;
+		var11.field332 -= var11.field340 * var5;
 		if (var12 == 0 || (var8 = var5 + (var10 + 256 - var4 + var12) / var12) > var9) {
 			var8 = var9;
 		}
@@ -1511,19 +1511,19 @@ public class RawPcmStream extends PcmStream {
 			var6 += var7;
 		}
 
-		var11.field315 += var11.field321 * var5;
-		var11.field316 += var11.field324 * var5;
-		var11.field322 = var6;
-		var11.field314 = var4;
+		var11.field331 += var11.field339 * var5;
+		var11.field332 += var11.field340 * var5;
+		var11.field330 = var6;
+		var11.field328 = var4;
 		return var5;
 	}
 
-	@ObfuscatedName("cd")
+	@ObfuscatedName("co")
 	@ObfuscatedSignature(
-		descriptor = "(II[B[IIIIIIIIIILbf;II)I"
+		descriptor = "(II[B[IIIIIIIIIILbe;II)I"
 	)
-	static int method942(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, RawPcmStream var13, int var14, int var15) {
-		var13.field322 -= var5 * var13.field317;
+	static int method976(int var0, int var1, byte[] var2, int[] var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, RawPcmStream var13, int var14, int var15) {
+		var13.field330 -= var5 * var13.field335;
 		if (var14 == 0 || (var10 = var5 + (var12 + 256 - var4 + var14) / var14) > var11) {
 			var10 = var11;
 		}
@@ -1560,10 +1560,10 @@ public class RawPcmStream extends PcmStream {
 		}
 
 		var5 >>= 1;
-		var13.field322 += var13.field317 * var5;
-		var13.field315 = var6;
-		var13.field316 = var7;
-		var13.field314 = var4;
+		var13.field330 += var13.field335 * var5;
+		var13.field331 = var6;
+		var13.field332 = var7;
+		var13.field328 = var4;
 		return var5;
 	}
 }

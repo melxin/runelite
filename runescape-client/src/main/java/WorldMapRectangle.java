@@ -4,43 +4,75 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ls")
+@ObfuscatedName("ll")
 @Implements("WorldMapRectangle")
 public final class WorldMapRectangle {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1460416259
+		intValue = -1326387697
 	)
 	@Export("width")
 	int width;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1775400951
+		intValue = 342543617
 	)
 	@Export("height")
 	int height;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 527392937
+		intValue = -1400348293
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -63485769
+		intValue = -1783174675
 	)
 	@Export("y")
 	int y;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Llu;"
+		descriptor = "Llf;"
 	)
 	final WorldMapRenderer this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Llu;)V"
+		descriptor = "(Llf;)V"
 	)
 	WorldMapRectangle(WorldMapRenderer var1) {
 		this.this$0 = var1;
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(II)J",
+		garbageValue = "1761770547"
+	)
+	public static long method6229(int var0) {
+		return ViewportMouse.ViewportMouse_entityTags[var0];
+	}
+
+	@ObfuscatedName("ba")
+	@ObfuscatedSignature(
+		descriptor = "(Lir;B)Z",
+		garbageValue = "-38"
+	)
+	static boolean method6230(ObjectComposition var0) {
+		if (var0.transforms != null) {
+			int[] var1 = var0.transforms;
+
+			for (int var2 = 0; var2 < var1.length; ++var2) {
+				int var3 = var1[var2];
+				ObjectComposition var4 = HttpMethod.getObjectDefinition(var3);
+				if (var4.mapIconId != -1) {
+					return true;
+				}
+			}
+		} else if (var0.mapIconId != -1) {
+			return true;
+		}
+
+		return false;
 	}
 }

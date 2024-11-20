@@ -2,56 +2,56 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ug")
+@ObfuscatedName("ud")
 public abstract class class522 {
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -474494705
+		intValue = -1868245591
 	)
-	int field5229;
-	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = 1529757277
-	)
-	int field5233;
-	@ObfuscatedName("at")
-	double field5231;
+	int field5238;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -345540663
+		intValue = -1611138843
 	)
-	int field5232;
+	int field5237;
+	@ObfuscatedName("an")
+	double field5239;
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		intValue = 1912537713
+	)
+	int field5240;
 
 	class522(int var1, int var2) {
-		this.field5229 = 0;
-		this.field5233 = 0;
-		this.field5231 = 0.0D;
-		this.field5232 = 0;
-		this.field5229 = var1;
-		this.field5233 = 0;
-		this.field5232 = var2 >= 0 && var2 <= 27 ? var2 : 0;
-		this.field5231 = class163.method3740(this.field5233, this.field5229, this.field5232);
+		this.field5238 = 0;
+		this.field5237 = 0;
+		this.field5239 = 0.0D;
+		this.field5240 = 0;
+		this.field5238 = var1;
+		this.field5237 = 0;
+		this.field5240 = var2 >= 0 && var2 <= 27 ? var2 : 0;
+		this.field5239 = ApproximateRouteStrategy.method1203(this.field5237, this.field5238, this.field5240);
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "591801956"
+		descriptor = "(B)V",
+		garbageValue = "-113"
 	)
 	public void method9503() {
-		if (this.field5233 < this.field5229) {
-			++this.field5233;
-			this.field5231 = class163.method3740(this.field5233, this.field5229, this.field5232);
+		if (this.field5237 < this.field5238) {
+			++this.field5237;
+			this.field5239 = ApproximateRouteStrategy.method1203(this.field5237, this.field5238, this.field5240);
 		}
 
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
 		descriptor = "(I)D",
-		garbageValue = "-1373898259"
+		garbageValue = "45140215"
 	)
-	double method9504() {
-		return this.field5231;
+	double method9502() {
+		return this.field5239;
 	}
 }

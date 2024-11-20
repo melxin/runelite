@@ -4,64 +4,70 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ff")
+@ObfuscatedName("fy")
 @Implements("LoginPacket")
 public class LoginPacket extends class150 {
-	@ObfuscatedName("aj")
-	@Export("Interpreter_intLocals")
-	static int[] Interpreter_intLocals;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		longValue = 7772991231255048331L
+		longValue = -7797161101180981703L
 	)
-	long field1695;
+	long field1669;
 	@ObfuscatedName("aw")
-	String field1692;
+	String field1672;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lfd;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lfd;)V"
 	)
 	LoginPacket(class153 var1) {
 		this.this$0 = var1;
-		this.field1695 = -1L;
-		this.field1692 = null;
+		this.field1669 = -1L;
+		this.field1672 = null;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "-1813719027"
+		descriptor = "(Lvj;B)V",
+		garbageValue = "-83"
 	)
-	void vmethod3822(Buffer var1) {
+	void vmethod3694(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
 			--var1.offset;
-			this.field1695 = var1.readLong();
+			this.field1669 = var1.readLong();
 		}
 
-		this.field1692 = var1.readStringCp1252NullTerminatedOrNull();
+		this.field1672 = var1.readStringCp1252NullTerminatedOrNull();
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lgy;I)V",
-		garbageValue = "-2079483058"
+		descriptor = "(Lgv;I)V",
+		garbageValue = "2002935935"
 	)
-	void vmethod3821(ClanSettings var1) {
-		var1.method3659(this.field1695, this.field1692, 0);
+	void vmethod3695(ClanSettings var1) {
+		var1.method3540(this.field1669, this.field1672, 0);
 	}
 
-	@ObfuscatedName("ic")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1625323105"
+		descriptor = "(II)Z",
+		garbageValue = "-317497481"
 	)
-	@Export("getWindowedMode")
-	static int getWindowedMode() {
-		return Client.isResizable ? 2 : 1;
+	@Export("isWorldMapEvent")
+	public static boolean isWorldMapEvent(int var0) {
+		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
+	}
+
+	@ObfuscatedName("pi")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "-206110438"
+	)
+	static void method3448(int var0) {
+		Client.oculusOrbState = var0;
 	}
 }

@@ -1,83 +1,76 @@
 import java.util.Iterator;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ue")
+@ObfuscatedName("uz")
 public class class539 extends class497 implements class311 {
-	@ObfuscatedName("kn")
-	@ObfuscatedSignature(
-		descriptor = "[Lvv;"
-	)
-	@Export("headIconPrayerSprites")
-	static SpritePixels[] headIconPrayerSprites;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lpi;"
 	)
-	final AbstractArchive field5372;
-	@ObfuscatedName("ak")
+	final AbstractArchive field5384;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lml;"
+		descriptor = "Lmq;"
 	)
-	final DemotingHashTable field5370;
-	@ObfuscatedName("aj")
+	final DemotingHashTable field5382;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1498689019
+		intValue = 1601683009
 	)
-	final int field5368;
+	final int field5383;
 
 	@ObfuscatedSignature(
-		descriptor = "(Loy;ILpn;Lpe;)V"
+		descriptor = "(Loc;ILpw;Lpi;)V"
 	)
 	public class539(StudioGame var1, int var2, Language var3, AbstractArchive var4) {
 		super(var1, var3, var4 != null ? var4.getGroupFileCount(var2) : 0);
-		this.field5370 = new DemotingHashTable(64);
-		this.field5372 = var4;
-		this.field5368 = var2;
+		this.field5382 = new DemotingHashTable(64);
+		this.field5384 = var4;
+		this.field5383 = var2;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Ltv;",
-		garbageValue = "-3"
+		descriptor = "(IB)Ltt;",
+		garbageValue = "64"
 	)
-	protected class499 vmethod9897(int var1) {
-		synchronized(this.field5370) {
-			class498 var2 = (class498)this.field5370.get((long)var1);
+	protected class499 vmethod9904(int var1) {
+		synchronized(this.field5382) {
+			class498 var2 = (class498)this.field5382.get((long)var1);
 			if (var2 == null) {
-				var2 = this.method9888(var1);
-				this.field5370.method6450(var2, (long)var1);
+				var2 = this.method9906(var1);
+				this.field5382.method6397(var2, (long)var1);
 			}
 
 			return var2;
 		}
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ltq;",
-		garbageValue = "1841583720"
+		descriptor = "(II)Ltr;",
+		garbageValue = "-409525690"
 	)
-	class498 method9888(int var1) {
-		byte[] var2 = this.field5372.takeFile(this.field5368, var1);
+	class498 method9906(int var1) {
+		byte[] var2 = this.field5384.takeFile(this.field5383, var1);
 		class498 var3 = new class498(var1);
 		if (var2 != null) {
-			var3.method9346(new Buffer(var2));
+			var3.method9349(new Buffer(var2));
 		}
 
 		return var3;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1503556707"
+		descriptor = "(B)V",
+		garbageValue = "-40"
 	)
-	public void method9889() {
-		synchronized(this.field5370) {
-			this.field5370.clear();
+	public void method9910() {
+		synchronized(this.field5382) {
+			this.field5382.clear();
 		}
 	}
 

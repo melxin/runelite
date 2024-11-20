@@ -2,55 +2,44 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cl")
+@ObfuscatedName("cs")
 public class class59 {
-	@ObfuscatedName("ea")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lor;"
+		descriptor = "Lbz;"
 	)
-	@Export("archive2")
-	static Archive archive2;
-	@ObfuscatedName("qi")
-	@ObfuscatedSignature(
-		descriptor = "Lue;"
-	)
-	static class539 field406;
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lbs;"
-	)
-	VorbisFloor field403;
+	VorbisFloor field418;
 	@ObfuscatedName("aw")
-	boolean field401;
-	@ObfuscatedName("ak")
-	int[] field404;
-	@ObfuscatedName("aj")
-	int[] field402;
-	@ObfuscatedName("ai")
-	boolean[] field400;
+	boolean field420;
+	@ObfuscatedName("at")
+	int[] field422;
+	@ObfuscatedName("ae")
+	int[] field421;
+	@ObfuscatedName("ao")
+	boolean[] field425;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lbs;Z[I[I[Z)V"
+		descriptor = "(Lbz;Z[I[I[Z)V"
 	)
 	class59(VorbisFloor var1, boolean var2, int[] var3, int[] var4, boolean[] var5) {
-		this.field403 = var1;
-		this.field401 = var2;
-		this.field404 = var3;
-		this.field402 = var4;
-		this.field400 = var5;
+		this.field418 = var1;
+		this.field420 = var2;
+		this.field422 = var3;
+		this.field421 = var4;
+		this.field425 = var5;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "([FII)V",
-		garbageValue = "-636837515"
+		garbageValue = "1760129429"
 	)
-	void method1191(float[] var1, int var2) {
-		int var3 = this.field403.field247.length;
-		VorbisFloor var10000 = this.field403;
-		int var4 = VorbisFloor.field251[this.field403.multiplier - 1];
-		boolean[] var5 = this.field400;
-		this.field400[1] = true;
+	void method1141(float[] var1, int var2) {
+		int var3 = this.field418.field263.length;
+		VorbisFloor var10000 = this.field418;
+		int var4 = VorbisFloor.field262[this.field418.multiplier - 1];
+		boolean[] var5 = this.field425;
+		this.field425[1] = true;
 		var5[0] = true;
 
 		int var6;
@@ -59,37 +48,37 @@ public class class59 {
 		int var9;
 		int var10;
 		for (var6 = 2; var6 < var3; ++var6) {
-			var7 = this.field403.method764(this.field404, var6);
-			var8 = this.field403.method761(this.field404, var6);
-			var9 = this.field403.method769(this.field404[var7], this.field402[var7], this.field404[var8], this.field402[var8], this.field404[var6]);
-			var10 = this.field402[var6];
+			var7 = this.field418.method752(this.field422, var6);
+			var8 = this.field418.method754(this.field422, var6);
+			var9 = this.field418.method751(this.field422[var7], this.field421[var7], this.field422[var8], this.field421[var8], this.field422[var6]);
+			var10 = this.field421[var6];
 			int var11 = var4 - var9;
 			int var13 = (var11 < var9 ? var11 : var9) << 1;
 			if (var10 != 0) {
-				boolean[] var14 = this.field400;
-				this.field400[var8] = true;
+				boolean[] var14 = this.field425;
+				this.field425[var8] = true;
 				var14[var7] = true;
-				this.field400[var6] = true;
+				this.field425[var6] = true;
 				if (var10 >= var13) {
-					this.field402[var6] = var11 > var9 ? var9 + (var10 - var9) : var11 + (var9 - var10) - 1;
+					this.field421[var6] = var11 > var9 ? var9 + (var10 - var9) : var11 + (var9 - var10) - 1;
 				} else {
-					this.field402[var6] = (var10 & 1) != 0 ? var9 - (var10 + 1) / 2 : var10 / 2 + var9;
+					this.field421[var6] = (var10 & 1) != 0 ? var9 - (var10 + 1) / 2 : var10 / 2 + var9;
 				}
 			} else {
-				this.field400[var6] = false;
-				this.field402[var6] = var9;
+				this.field425[var6] = false;
+				this.field421[var6] = var9;
 			}
 		}
 
 		this.VarbisFloor_sort(0, var3 - 1);
 		var6 = 0;
-		var7 = this.field403.multiplier * this.field402[0];
+		var7 = this.field418.multiplier * this.field421[0];
 
 		for (var8 = 1; var8 < var3; ++var8) {
-			if (this.field400[var8]) {
-				var9 = this.field404[var8];
-				var10 = this.field403.multiplier * this.field402[var8];
-				this.field403.method763(var6, var7, var9, var10, var1, var2);
+			if (this.field425[var8]) {
+				var9 = this.field422[var8];
+				var10 = this.field418.multiplier * this.field421[var8];
+				this.field418.method758(var6, var7, var9, var10, var1, var2);
 				if (var9 >= var2) {
 					return;
 				}
@@ -99,7 +88,7 @@ public class class59 {
 			}
 		}
 
-		var10000 = this.field403;
+		var10000 = this.field418;
 		float var16 = VorbisFloor.VorbisFloor_decibelStatics[var7];
 
 		for (var9 = var6; var9 < var2; ++var9) {
@@ -110,44 +99,68 @@ public class class59 {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-347110081"
+		descriptor = "(B)Z",
+		garbageValue = "-26"
 	)
-	boolean method1190() {
-		return this.field401;
+	boolean method1142() {
+		return this.field420;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-785867388"
+		descriptor = "(IIB)V",
+		garbageValue = "2"
 	)
 	@Export("VarbisFloor_sort")
 	void VarbisFloor_sort(int var1, int var2) {
 		if (var1 < var2) {
 			int var3 = var1;
-			int var4 = this.field404[var1];
-			int var5 = this.field402[var1];
-			boolean var6 = this.field400[var1];
+			int var4 = this.field422[var1];
+			int var5 = this.field421[var1];
+			boolean var6 = this.field425[var1];
 
 			for (int var7 = var1 + 1; var7 <= var2; ++var7) {
-				int var8 = this.field404[var7];
+				int var8 = this.field422[var7];
 				if (var8 < var4) {
-					this.field404[var3] = var8;
-					this.field402[var3] = this.field402[var7];
-					this.field400[var3] = this.field400[var7];
+					this.field422[var3] = var8;
+					this.field421[var3] = this.field421[var7];
+					this.field425[var3] = this.field425[var7];
 					++var3;
-					this.field404[var7] = this.field404[var3];
-					this.field402[var7] = this.field402[var3];
-					this.field400[var7] = this.field400[var3];
+					this.field422[var7] = this.field422[var3];
+					this.field421[var7] = this.field421[var3];
+					this.field425[var7] = this.field425[var3];
 				}
 			}
 
-			this.field404[var3] = var4;
-			this.field402[var3] = var5;
-			this.field400[var3] = var6;
+			this.field422[var3] = var4;
+			this.field421[var3] = var5;
+			this.field425[var3] = var6;
 			this.VarbisFloor_sort(var1, var3 - 1);
 			this.VarbisFloor_sort(var3 + 1, var2);
 		}
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(I)J",
+		garbageValue = "-1578109638"
+	)
+	public static final synchronized long method1150() {
+		long var0 = System.currentTimeMillis();
+		if (var0 < class543.field5388) {
+			class329.field3603 += class543.field5388 - var0;
+		}
+
+		class543.field5388 = var0;
+		return var0 + class329.field3603;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(B)I",
+		garbageValue = "-62"
+	)
+	public static int method1144() {
+		return ViewportMouse.ViewportMouse_entityCount;
 	}
 }

@@ -7,19 +7,23 @@ import net.runelite.mapping.ObfuscatedSignature;
 import org.bouncycastle.crypto.tls.DefaultTlsClient;
 import org.bouncycastle.crypto.tls.TlsAuthentication;
 
-@ObfuscatedName("af")
+@ObfuscatedName("ar")
 class class13 extends DefaultTlsClient {
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lao;"
+		descriptor = "Lal;"
 	)
 	final SecureRandomSSLSocket this$1;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lao;)V"
+		descriptor = "(Lal;)V"
 	)
 	class13(SecureRandomSSLSocket var1) {
 		this.this$1 = var1;
+	}
+
+	public TlsAuthentication getAuthentication() throws IOException {
+		return new class11(this);
 	}
 
 	public Hashtable getClientExtensions() throws IOException {
@@ -38,9 +42,5 @@ class class13 extends DefaultTlsClient {
 		var4.close();
 		var1.put(0, var3.toByteArray());
 		return var1;
-	}
-
-	public TlsAuthentication getAuthentication() throws IOException {
-		return new class11(this);
 	}
 }

@@ -4,101 +4,58 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("is")
+@ObfuscatedName("iu")
 @Implements("ItemLayer")
 public final class ItemLayer {
-	@ObfuscatedName("jz")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1361011875
-	)
-	static int field2480;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = 1971597997
+		intValue = 897215101
 	)
 	@Export("z")
 	int z;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 83642561
+		intValue = 2117928659
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1187824885
+		intValue = 1163562385
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ljv;"
+		descriptor = "Lji;"
 	)
 	@Export("first")
 	Renderable first;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Ljv;"
+		descriptor = "Lji;"
 	)
 	@Export("second")
 	Renderable second;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Ljv;"
+		descriptor = "Lji;"
 	)
 	@Export("third")
 	Renderable third;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		longValue = -7408577255103144717L
+		longValue = -1379009837610365539L
 	)
 	@Export("tag")
 	long tag;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 1986226129
+		intValue = -560526403
 	)
 	@Export("height")
 	int height;
 
 	ItemLayer() {
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "193155358"
-	)
-	public static boolean method4678() {
-		boolean var0 = false;
-		boolean var1 = false;
-		if (!class333.field3623.isEmpty()) {
-			SongTask var2 = (SongTask)class333.field3623.get(0);
-			if (var2 == null) {
-				class333.field3623.remove(0);
-			} else if (var2.vmethod8740()) {
-				if (var2.method8721()) {
-					System.out.println("Error in midimanager.service: " + var2.method8723());
-					var0 = true;
-				} else {
-					if (var2.method8724() != null) {
-						class333.field3623.add(1, var2.method8724());
-					}
-
-					var1 = var2.method8732();
-				}
-
-				class333.field3623.remove(0);
-			} else {
-				var1 = var2.method8732();
-			}
-		}
-
-		if (var0) {
-			class333.field3623.clear();
-			Actor.method2730();
-		}
-
-		return var1;
 	}
 }

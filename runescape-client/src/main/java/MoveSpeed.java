@@ -3,81 +3,66 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kk")
+@ObfuscatedName("kq")
 @Implements("MoveSpeed")
 public enum MoveSpeed implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lkk;"
+		descriptor = "Lkq;"
 	)
-	field3052((byte)-1, 0.0F),
+	field3074((byte)-1, 0.0F),
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lkk;"
+		descriptor = "Lkq;"
 	)
-	field3046((byte)0, 0.5F),
-	@ObfuscatedName("ak")
+	field3066((byte)0, 0.5F),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lkk;"
+		descriptor = "Lkq;"
 	)
-	field3048((byte)1, 1.0F),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lkk;"
-	)
-	field3057((byte)2, 2.0F),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lkk;"
-	)
-	field3050((byte)3, 1.5F),
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lkk;"
-	)
-	field3051((byte)4, 2.5F),
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lkk;"
-	)
-	field3049((byte)5, 3.0F),
+	field3067((byte)1, 1.0F),
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lkk;"
+		descriptor = "Lkq;"
 	)
-	field3053((byte)6, 3.5F),
-	@ObfuscatedName("am")
+	field3073((byte)2, 2.0F),
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lkk;"
+		descriptor = "Lkq;"
 	)
-	field3047((byte)7, 4.0F);
-
+	field3069((byte)3, 1.5F),
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lkq;"
+	)
+	field3070((byte)4, 2.5F),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lkq;"
+	)
+	field3071((byte)5, 3.0F),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lkq;"
+	)
+	field3068((byte)6, 3.5F),
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "[Lkk;"
+		descriptor = "Lkq;"
 	)
-	static MoveSpeed[] field3056;
-	@ObfuscatedName("jj")
-	@Export("regions")
-	static int[] regions;
-	@ObfuscatedName("at")
+	field3072((byte)7, 4.0F);
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "[Lkq;"
+	)
+	static MoveSpeed[] field3065 = WorldEntityCoord.method5731();
+	@ObfuscatedName("an")
 	@Export("id")
 	final byte id;
 
 	static {
-		MoveSpeed[] var0 = new MoveSpeed[]{field3057, field3046, field3051, field3049, field3052, field3053, field3047, field3048, field3050};
-		field3056 = var0;
-		StringBuilder var4 = new StringBuilder();
-		MoveSpeed[] var1 = field3056;
-
-		for (int var2 = 0; var2 < var1.length; ++var2) {
-			MoveSpeed var3 = var1[var2];
-			var4.append(var3.id);
-			var4.append(", ");
-		}
-
-		String var5 = var4.toString();
-		var5.substring(0, var5.length() - 2);
+		ViewportMouse.method5417();
 	}
 
 	@ObfuscatedSignature(
@@ -91,39 +76,55 @@ public enum MoveSpeed implements Enum {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1837624059"
+		garbageValue = "1071289392"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-39824382"
+		descriptor = "(IIII)I",
+		garbageValue = "1718564347"
 	)
-	@Export("isWorldMapEvent")
-	public static boolean isWorldMapEvent(int var0) {
-		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
+	static final int method5741(int var0, int var1, int var2) {
+		if (var2 > 179) {
+			var1 /= 2;
+		}
+
+		if (var2 > 192) {
+			var1 /= 2;
+		}
+
+		if (var2 > 217) {
+			var1 /= 2;
+		}
+
+		if (var2 > 243) {
+			var1 /= 2;
+		}
+
+		int var3 = (var1 / 32 << 7) + (var0 / 4 << 10) + var2 / 2;
+		return var3;
 	}
 
-	@ObfuscatedName("lb")
+	@ObfuscatedName("ib")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;IIIIIII)V",
-		garbageValue = "1706507986"
+		descriptor = "(IIII)V",
+		garbageValue = "855651123"
 	)
-	static final void method5809(int var0, String var1, String var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-		if (!Client.isMenuOpen) {
-			if (Decimator.method1168(var8, var3)) {
-				if (var0 >= 0 && var0 < Client.menu.subMenus.length) {
-					if (Client.menu.subMenus[var0] == null) {
-						Client.menu.subMenus[var0] = new Menu(false);
-					}
-
-					Client.menu.subMenus[var0].insertMenuItem(var1, var2, var3, var4, var5, var6, var7, false, var8);
-				}
-			}
+	@Export("queueSoundEffect")
+	static void queueSoundEffect(int var0, int var1, int var2) {
+		if (SecureUrlRequester.clientPreferences.getSoundEffectsVolume() != 0 && var1 != 0 && Client.soundEffectCount < 50) {
+			Client.soundEffectIds[Client.soundEffectCount] = var0;
+			Client.queuedSoundEffectLoops[Client.soundEffectCount] = var1;
+			Client.queuedSoundEffectDelays[Client.soundEffectCount] = var2;
+			Client.soundEffects[Client.soundEffectCount] = null;
+			Client.soundLocations[Client.soundEffectCount] = 0;
+			Client.field763[Client.soundEffectCount] = 0;
+			++Client.soundEffectCount;
 		}
+
 	}
 }

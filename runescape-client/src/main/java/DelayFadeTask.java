@@ -1,63 +1,42 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ry")
+@ObfuscatedName("ro")
 @Implements("DelayFadeTask")
 public class DelayFadeTask extends SongTask {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		longValue = 1009254925672959185L
+		longValue = 6750607552988642917L
 	)
-	long field4874;
+	long field4865;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1520981465
+		intValue = -241210825
 	)
-	int field4875;
+	int field4866;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lra;I)V"
+		descriptor = "(Lrg;I)V"
 	)
 	public DelayFadeTask(SongTask var1, int var2) {
 		super(var1);
-		this.field4875 = var2;
-		super.field4881 = "DelayFadeTask";
+		this.field4866 = var2;
+		super.field4876 = "DelayFadeTask";
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "343486624"
+		descriptor = "(B)Z",
+		garbageValue = "-1"
 	)
-	public boolean vmethod8740() {
-		if (this.field4874 < (long)this.field4875) {
-			++this.field4874;
+	public boolean vmethod8722() {
+		if (this.field4865 < (long)this.field4866) {
+			++this.field4865;
 			return false;
 		} else {
 			return true;
 		}
-	}
-
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(CLpn;S)I",
-		garbageValue = "30349"
-	)
-	@Export("lowercaseChar")
-	static int lowercaseChar(char var0, Language var1) {
-		int var2 = var0 << 4;
-		if (Character.isUpperCase(var0) || Character.isTitleCase(var0)) {
-			var0 = Character.toLowerCase(var0);
-			var2 = (var0 << 4) + 1;
-		}
-
-		if (var0 == 241 && var1 == Language.Language_ES) {
-			var2 = 1762;
-		}
-
-		return var2;
 	}
 }

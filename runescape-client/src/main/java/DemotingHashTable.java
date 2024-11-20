@@ -3,30 +3,30 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ml")
+@ObfuscatedName("mq")
 @Implements("DemotingHashTable")
 public final class DemotingHashTable {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("capacity")
 	int capacity;
 	@ObfuscatedName("aw")
 	@Export("remaining")
 	int remaining;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lum;"
+		descriptor = "Lug;"
 	)
 	@Export("hashTable")
 	IterableNodeHashTable hashTable;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lpf;"
+		descriptor = "Lpm;"
 	)
 	@Export("queue")
 	IterableDualNodeQueue queue;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lmg;"
+		descriptor = "Lmk;"
 	)
 	class312 field3292;
 
@@ -46,7 +46,7 @@ public final class DemotingHashTable {
 		this(var1, var1);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("get")
 	public Object get(long var1) {
 		Wrapper var3 = (Wrapper)this.hashTable.get(var1);
@@ -84,9 +84,9 @@ public final class DemotingHashTable {
 		this.removeWrapper(var3);
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lmf;)V"
+		descriptor = "(Lms;)V"
 	)
 	@Export("removeWrapper")
 	void removeWrapper(Wrapper var1) {
@@ -98,12 +98,12 @@ public final class DemotingHashTable {
 
 	}
 
-	@ObfuscatedName("aj")
-	public void method6450(Object var1, long var2) {
+	@ObfuscatedName("ae")
+	public void method6397(Object var1, long var2) {
 		this.put(var1, var2, 1);
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@Export("put")
 	public void put(Object var1, long var2, int var4) {
 		if (var4 > this.capacity) {
@@ -123,7 +123,7 @@ public final class DemotingHashTable {
 
 				this.removeWrapper(var5);
 				if (this.field3292 != null) {
-					this.field3292.method6444(var5.get());
+					this.field3292.method6389(var5.get());
 				}
 			}
 
@@ -134,7 +134,7 @@ public final class DemotingHashTable {
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@Export("demote")
 	public void demote(int var1) {
 		for (Wrapper var2 = (Wrapper)this.queue.last(); var2 != null; var2 = (Wrapper)this.queue.previous()) {
@@ -155,7 +155,7 @@ public final class DemotingHashTable {
 
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@Export("clear")
 	public void clear() {
 		this.queue.clear();

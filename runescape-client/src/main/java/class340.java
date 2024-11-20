@@ -4,20 +4,18 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nf")
+@ObfuscatedName("nm")
 class class340 implements Callable {
-	@ObfuscatedName("af")
-	public static short[][] field3707;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmo;"
 	)
 	final MidiPcmStream this$0;
 	// $FF: synthetic field
 	final AtomicBoolean val$cancelled;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lmn;Ljava/util/concurrent/atomic/AtomicBoolean;)V"
+		descriptor = "(Lmo;Ljava/util/concurrent/atomic/AtomicBoolean;)V"
 	)
 	class340(MidiPcmStream var1, AtomicBoolean var2) {
 		this.this$0 = var1;
@@ -37,7 +35,7 @@ class class340 implements Callable {
 				var2 = (class337)var1.remove();
 			}
 
-			var2.field3690.method1105();
+			var2.field3687.method1059();
 		}
 	}
 }

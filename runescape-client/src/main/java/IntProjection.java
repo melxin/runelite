@@ -4,73 +4,73 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jq")
+@ObfuscatedName("jz")
 @Implements("IntProjection")
 public class IntProjection extends Projection {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 280474237
+		intValue = -1962663199
 	)
 	@Export("cameraX")
 	int cameraX;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -1972146501
+		intValue = 1002569507
 	)
 	@Export("cameraY")
 	int cameraY;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1360372297
+		intValue = 633492853
 	)
 	@Export("cameraZ")
 	int cameraZ;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 919856549
+		intValue = 1529937537
 	)
 	@Export("cameraPitch")
 	int cameraPitch;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 2105978325
+		intValue = -1949089315
 	)
 	@Export("cameraYaw")
 	int cameraYaw;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1550738849
+		intValue = -629026203
 	)
 	@Export("pitchSin")
 	int pitchSin;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1902355461
+		intValue = 931895999
 	)
 	@Export("pitchCos")
 	int pitchCos;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 1762594603
+		intValue = 448821199
 	)
 	@Export("yawSin")
 	int yawSin;
-	@ObfuscatedName("am")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1012244489
+		intValue = 1458615833
 	)
 	@Export("yawCos")
 	int yawCos;
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -74775619
+		intValue = 2004858683
 	)
-	int field2606;
-	@ObfuscatedName("au")
+	int field2612;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1650200083
+		intValue = -486018923
 	)
-	int field2600;
+	int field2613;
 
 	IntProjection(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
 		this.cameraX = var1;
@@ -82,23 +82,23 @@ public class IntProjection extends Projection {
 		this.pitchCos = Rasterizer3D.Rasterizer3D_cosine[var4];
 		this.yawSin = Rasterizer3D.Rasterizer3D_sine[var5];
 		this.yawCos = Rasterizer3D.Rasterizer3D_cosine[var5];
-		this.field2606 = var6;
-		this.field2600 = var7;
+		this.field2612 = var6;
+		this.field2613 = var7;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ljv;IIIIJ)V"
+		descriptor = "(Lji;IIIIJ)V"
 	)
 	@Export("draw")
 	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
-		var1.vmethod5375(var2, this.cameraPitch, this.cameraYaw, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field2606, this.field2600, false);
+		var1.vmethod5270(var2, this.cameraPitch, this.cameraYaw, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field2612, this.field2613, false);
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lji;Ljp;IIII)V",
-		garbageValue = "1119299330"
+		descriptor = "(Ljp;Lje;IIIB)V",
+		garbageValue = "36"
 	)
 	@Export("drawTileUnderlay")
 	void drawTileUnderlay(Scene var1, SceneTilePaint var2, int var3, int var4, int var5) {
@@ -114,7 +114,7 @@ public class IntProjection extends Projection {
 		int var15 = var1.tileHeights[var3][var4 + 1][var5] - this.cameraY;
 		int var16 = var1.tileHeights[var3][var4 + 1][var5 + 1] - this.cameraY;
 		int var17 = var1.tileHeights[var3][var4][var5 + 1] - this.cameraY;
-		int var18 = var7 * this.yawCos + var9 * this.yawSin >> 16;
+		int var18 = var9 * this.yawSin + var7 * this.yawCos >> 16;
 		var9 = var9 * this.yawCos - var7 * this.yawSin >> 16;
 		var7 = var18;
 		var18 = var14 * this.pitchCos - var9 * this.pitchSin >> 16;
@@ -125,21 +125,21 @@ public class IntProjection extends Projection {
 			var8 = var8 * this.yawCos - var11 * this.yawSin >> 16;
 			var11 = var18;
 			var18 = var15 * this.pitchCos - var8 * this.pitchSin >> 16;
-			var8 = var15 * this.pitchSin + var8 * this.pitchCos >> 16;
+			var8 = var8 * this.pitchCos + var15 * this.pitchSin >> 16;
 			var15 = var18;
 			if (var8 >= 50) {
 				var18 = var10 * this.yawCos + var13 * this.yawSin >> 16;
 				var13 = var13 * this.yawCos - var10 * this.yawSin >> 16;
 				var10 = var18;
 				var18 = var16 * this.pitchCos - var13 * this.pitchSin >> 16;
-				var13 = var16 * this.pitchSin + var13 * this.pitchCos >> 16;
+				var13 = var13 * this.pitchCos + var16 * this.pitchSin >> 16;
 				var16 = var18;
 				if (var13 >= 50) {
 					var18 = var6 * this.yawCos + var12 * this.yawSin >> 16;
 					var12 = var12 * this.yawCos - var6 * this.yawSin >> 16;
 					var6 = var18;
 					var18 = var17 * this.pitchCos - var12 * this.pitchSin >> 16;
-					var12 = var12 * this.pitchCos + var17 * this.pitchSin >> 16;
+					var12 = var17 * this.pitchSin + var12 * this.pitchCos >> 16;
 					if (var12 >= 50) {
 						this.drawSceneTilePaint(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var18, var9, var8, var13, var12);
 					}
@@ -148,10 +148,10 @@ public class IntProjection extends Projection {
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lji;Ljs;IIB)V",
-		garbageValue = "81"
+		descriptor = "(Ljp;Ljq;III)V",
+		garbageValue = "-1019162740"
 	)
 	@Export("drawTileOverlay")
 	void drawTileOverlay(Scene var1, SceneTileModel var2, int var3, int var4) {
@@ -178,242 +178,46 @@ public class IntProjection extends Projection {
 
 			SceneTileModel.verticesX[var6] = Rasterizer3D.getClipMidX() + var7 * Rasterizer3D.get3dZoom() / var9;
 			SceneTileModel.verticesY[var6] = Rasterizer3D.getClipMidY() + var10 * Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.verticesZ[var6] = class197.method4057(var9);
+			SceneTileModel.verticesZ[var6] = Decimator.method1117(var9);
 		}
 
 		this.drawSceneTileModel(var1, var2, var3, var4);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "([FIFZFZ[FI)I",
-		garbageValue = "1350563286"
+		descriptor = "(III)I",
+		garbageValue = "-1171963393"
 	)
-	public static int method4899(float[] var0, int var1, float var2, boolean var3, float var4, boolean var5, float[] var6) {
-		float var7 = 0.0F;
-
-		for (int var8 = 0; var8 < var1 + 1; ++var8) {
-			var7 += Math.abs(var0[var8]);
+	public static int method4794(int var0, int var1) {
+		int var2;
+		for (var2 = 0; var1 > 0; --var1) {
+			var2 = var2 << 1 | var0 & 1;
+			var0 >>>= 1;
 		}
 
-		float var44 = (Math.abs(var2) + Math.abs(var4)) * (float)(var1 + 1) * class133.field1547;
-		if (var7 <= var44) {
-			return -1;
-		} else {
-			float[] var9 = new float[var1 + 1];
-
-			int var10;
-			for (var10 = 0; var10 < var1 + 1; ++var10) {
-				var9[var10] = 1.0F / var7 * var0[var10];
-			}
-
-			while (Math.abs(var9[var1]) < var44) {
-				--var1;
-			}
-
-			var10 = 0;
-			if (var1 == 0) {
-				return var10;
-			} else if (var1 == 1) {
-				var6[0] = -var9[0] / var9[1];
-				boolean var42 = var3 ? var2 < var6[0] + var44 : var2 < var6[0] - var44;
-				boolean var43 = var5 ? var4 > var6[0] - var44 : var4 > var44 + var6[0];
-				var10 = var42 && var43 ? 1 : 0;
-				if (var10 > 0) {
-					if (var3 && var6[0] < var2) {
-						var6[0] = var2;
-					} else if (var5 && var6[0] > var4) {
-						var6[0] = var4;
-					}
-				}
-
-				return var10;
-			} else {
-				class430 var11 = new class430(var9, var1);
-				float[] var12 = new float[var1 + 1];
-
-				for (int var13 = 1; var13 <= var1; ++var13) {
-					var12[var13 - 1] = (float)var13 * var9[var13];
-				}
-
-				float[] var41 = new float[var1 + 1];
-				int var14 = method4899(var12, var1 - 1, var2, false, var4, false, var41);
-				if (var14 == -1) {
-					return 0;
-				} else {
-					boolean var15 = false;
-					float var17 = 0.0F;
-					float var18 = 0.0F;
-					float var19 = 0.0F;
-
-					for (int var20 = 0; var20 <= var14; ++var20) {
-						if (var10 > var1) {
-							return var10;
-						}
-
-						float var16;
-						if (var20 == 0) {
-							var16 = var2;
-							var18 = InterfaceParent.method2561(var9, var1, var2);
-							if (Math.abs(var18) <= var44 && var3) {
-								var6[var10++] = var2;
-							}
-						} else {
-							var16 = var19;
-							var18 = var17;
-						}
-
-						if (var14 == var20) {
-							var19 = var4;
-							var15 = false;
-						} else {
-							var19 = var41[var20];
-						}
-
-						var17 = InterfaceParent.method2561(var9, var1, var19);
-						if (var15) {
-							var15 = false;
-						} else if (Math.abs(var17) < var44) {
-							if (var20 != var14 || var5) {
-								var6[var10++] = var19;
-								var15 = true;
-							}
-						} else if (var18 < 0.0F && var17 > 0.0F || var18 > 0.0F && var17 < 0.0F) {
-							int var22 = var10++;
-							float var24 = var16;
-							float var25 = var19;
-							float var26 = InterfaceParent.method2561(var11.field4801, var11.field4800, var16);
-							float var23;
-							if (Math.abs(var26) < class133.field1547) {
-								var23 = var16;
-							} else {
-								float var27 = InterfaceParent.method2561(var11.field4801, var11.field4800, var19);
-								if (Math.abs(var27) < class133.field1547) {
-									var23 = var19;
-								} else {
-									float var28 = 0.0F;
-									float var29 = 0.0F;
-									float var30 = 0.0F;
-									float var35 = 0.0F;
-									boolean var36 = true;
-									boolean var37 = false;
-
-									do {
-										var37 = false;
-										if (var36) {
-											var28 = var24;
-											var35 = var26;
-											var29 = var25 - var24;
-											var30 = var29;
-											var36 = false;
-										}
-
-										if (Math.abs(var35) < Math.abs(var27)) {
-											var24 = var25;
-											var25 = var28;
-											var28 = var24;
-											var26 = var27;
-											var27 = var35;
-											var35 = var26;
-										}
-
-										float var38 = class133.field1552 * Math.abs(var25) + 0.0F;
-										float var39 = 0.5F * (var28 - var25);
-										boolean var40 = Math.abs(var39) > var38 && var27 != 0.0F;
-										if (var40) {
-											if (Math.abs(var30) >= var38 && Math.abs(var26) > Math.abs(var27)) {
-												float var34 = var27 / var26;
-												float var31;
-												float var32;
-												if (var28 == var24) {
-													var31 = 2.0F * var39 * var34;
-													var32 = 1.0F - var34;
-												} else {
-													var32 = var26 / var35;
-													float var33 = var27 / var35;
-													var31 = var34 * ((var32 - var33) * var32 * var39 * 2.0F - (var33 - 1.0F) * (var25 - var24));
-													var32 = (var33 - 1.0F) * (var32 - 1.0F) * (var34 - 1.0F);
-												}
-
-												if ((double)var31 > 0.0D) {
-													var32 = -var32;
-												} else {
-													var31 = -var31;
-												}
-
-												var34 = var30;
-												var30 = var29;
-												if (2.0F * var31 < var32 * 3.0F * var39 - Math.abs(var32 * var38) && var31 < Math.abs(0.5F * var34 * var32)) {
-													var29 = var31 / var32;
-												} else {
-													var29 = var39;
-													var30 = var39;
-												}
-											} else {
-												var29 = var39;
-												var30 = var39;
-											}
-
-											var24 = var25;
-											var26 = var27;
-											if (Math.abs(var29) > var38) {
-												var25 += var29;
-											} else if ((double)var39 > 0.0D) {
-												var25 += var38;
-											} else {
-												var25 -= var38;
-											}
-
-											var27 = InterfaceParent.method2561(var11.field4801, var11.field4800, var25);
-											if ((double)(var27 * (var35 / Math.abs(var35))) > 0.0D) {
-												var36 = true;
-												var37 = true;
-											} else {
-												var37 = true;
-											}
-										}
-									} while(var37);
-
-									var23 = var25;
-								}
-							}
-
-							var6[var22] = var23;
-							if (var10 > 1 && var6[var10 - 2] >= var6[var10 - 1] - var44) {
-								var6[var10 - 2] = (var6[var10 - 1] + var6[var10 - 2]) * 0.5F;
-								--var10;
-							}
-						}
-					}
-
-					return var10;
-				}
-			}
-		}
+		return var2;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("bu")
 	@ObfuscatedSignature(
-		descriptor = "([FI)V",
-		garbageValue = "-410409798"
+		descriptor = "(ILnp;IIIII[FS)Lnp;",
+		garbageValue = "9858"
 	)
-	static void method4900(float[] var0) {
-		var0[1] = 1.0F - var0[1];
-		if (var0[0] < 0.0F) {
-			var0[0] = 0.0F;
-		}
-
-		if (var0[1] < 0.0F) {
-			var0[1] = 0.0F;
-		}
-
-		if (var0[0] > 1.0F || var0[1] > 1.0F) {
-			float var1 = var0[0] * (var0[1] + (var0[0] - 2.0F)) + var0[1] * (var0[1] - 2.0F) + 1.0F;
-			if (var1 + class133.field1547 > 0.0F) {
-				HttpRequestTask.method282(var0);
-			}
-		}
-
-		var0[1] = 1.0F - var0[1];
+	static Widget method4802(int var0, Widget var1, int var2, int var3, int var4, int var5, int var6, float[] var7) {
+		Widget var8 = new Widget();
+		var8.type = var0;
+		var8.parentId = var1.id;
+		var8.childIndex = var2;
+		var8.isIf3 = true;
+		var8.xAlignment = var3;
+		var8.yAlignment = var4;
+		var8.widthAlignment = var5;
+		var8.heightAlignment = var6;
+		var8.rawX = (int)(var7[0] * (float)(var1.width * 1063514007));
+		var8.rawY = (int)((float)(var1.height * 1899982693) * var7[1]);
+		var8.rawWidth = (int)(var7[2] * (float)(var1.width * 1063514007));
+		var8.rawHeight = (int)((float)(var1.height * 1899982693) * var7[3]);
+		return var8;
 	}
 }

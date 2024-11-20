@@ -4,21 +4,21 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tg")
+@ObfuscatedName("tc")
 @Implements("HttpPayload")
 public interface HttpPayload {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltz;",
-		garbageValue = "1116588540"
+		descriptor = "(I)Lto;",
+		garbageValue = "1892648748"
 	)
 	@Export("getContentType")
 	HttpContentType getContentType();
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "60"
+		descriptor = "(I)[B",
+		garbageValue = "-1854248554"
 	)
 	@Export("toBytes")
 	byte[] toBytes() throws UnsupportedEncodingException;

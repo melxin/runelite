@@ -6,40 +6,40 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sn")
+@ObfuscatedName("ss")
 @Implements("BufferedSink")
 public class BufferedSink implements Runnable {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("thread")
 	Thread thread;
 	@ObfuscatedName("aw")
 	@Export("outputStream")
 	OutputStream outputStream;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -755573005
+		intValue = -653855255
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@Export("buffer")
 	byte[] buffer;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -1422109407
+		intValue = -968444105
 	)
 	@Export("position")
 	int position;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1953641395
+		intValue = 878349373
 	)
 	@Export("limit")
 	int limit;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@Export("exception")
 	IOException exception;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@Export("closed")
 	boolean closed;
 
@@ -54,10 +54,10 @@ public class BufferedSink implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "121"
+		descriptor = "(I)Z",
+		garbageValue = "762283147"
 	)
 	@Export("isClosed")
 	boolean isClosed() {
@@ -82,7 +82,7 @@ public class BufferedSink implements Runnable {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "([BIII)V",
-		garbageValue = "-768318470"
+		garbageValue = "-1040982006"
 	)
 	@Export("write")
 	void write(byte[] var1, int var2, int var3) throws IOException {
@@ -119,10 +119,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-82129405"
+		garbageValue = "2123697975"
 	)
 	@Export("close")
 	void close() {

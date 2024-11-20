@@ -1,85 +1,42 @@
 import java.math.BigInteger;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ck")
+@ObfuscatedName("cf")
 public class class77 {
-	@ObfuscatedName("ap")
-	static final BigInteger field920;
+	@ObfuscatedName("ab")
+	static final BigInteger field922;
 	@ObfuscatedName("aw")
-	static final BigInteger field924;
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lvc;"
-	)
-	static IndexedSprite field919;
-	@ObfuscatedName("wo")
-	@ObfuscatedSignature(
-		descriptor = "Lpo;"
-	)
-	public static class402 field922;
+	static final BigInteger field921;
 
 	static {
-		field920 = new BigInteger("10001", 16);
-		field924 = new BigInteger("90599d6e45ad3596822d15845d898c97425da5d7400c7ce14b136fe6b57818302e12ca8cb9957a9659faf3ae0c156cefc2d598c8ca7b5a5ed99fdd22e82613468184f0d0b633e4543bd258f4606cefd89cb1c5115b25967803a2d96cf543f830b5199e2f820cf71181f1c9aa70aa86ddbe1e030514df8ed320c14927e6747b39", 16);
+		field922 = new BigInteger("10001", 16);
+		field921 = new BigInteger("9829f2207847825aba94b679f0b2273bbe751ef6b2fb2d228ff668f0747ba9d3ae32ba9435bbfb321f963058f721b4ef92bb5eae1cc0d5eb34d6b4f5f8a82a04468126347c988e5c5f8ce927b6dccdf8a4135cf9bc8730b3aa7c73995b0ad0f3f03022a85d17c921d1fca339ab4603dbafb5726d88a0ca9b282226c9bc2c7fe7", 16);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("kg")
 	@ObfuscatedSignature(
-		descriptor = "(I)J",
-		garbageValue = "-1684308193"
+		descriptor = "(Ldm;IIIB)I",
+		garbageValue = "68"
 	)
-	public static final synchronized long method2338() {
-		long var0 = System.currentTimeMillis();
-		if (var0 < class329.field3604) {
-			class329.field3602 += class329.field3604 - var0;
-		}
-
-		class329.field3604 = var0;
-		return var0 + class329.field3602;
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(III)Z",
-		garbageValue = "-453868509"
-	)
-	static boolean method2339(int var0, int var1) {
-		return var0 != 4 || var1 < 8;
-	}
-
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-760693873"
-	)
-	static void method2340() {
-		Huffman.otp.trim();
-		if (Huffman.otp.length() != 6) {
-			class132.setLoginResponseString("", "Please enter a 6-digit PIN.", "");
-		} else {
-			class333.otpMedium = Integer.parseInt(Huffman.otp);
-			Huffman.otp = "";
-			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.TOKEN_REMEMBER : AuthenticationScheme.TOKEN;
-			class132.setLoginResponseString("", "Connecting to server...", "");
-			BuddyRankComparator.updateGameState(20);
-		}
-	}
-
-	@ObfuscatedName("nm")
-	@ObfuscatedSignature(
-		descriptor = "(Lng;IIIB)V",
-		garbageValue = "-98"
-	)
-	static final void method2341(Widget var0, int var1, int var2, int var3) {
-		SpriteMask var4 = var0.method7328(class416.widgetDefinition, false);
-		if (var4 != null) {
-			if (Client.minimapState < 3) {
-				HttpMethod.compass.drawRotatedMaskedCenteredAround(var1, var2, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var4.xStarts, var4.xWidths);
-			} else {
-				Rasterizer2D.Rasterizer2D_fillMaskedRectangle(var1, var2, 0, var4.xStarts, var4.xWidths);
+	@Export("getTileHeight")
+	static final int getTileHeight(WorldView var0, int var1, int var2, int var3) {
+		int var4 = var1 >> 7;
+		int var5 = var2 >> 7;
+		if (var4 >= 0 && var5 >= 0 && var4 < var0.tileSettings[0].length && var5 < var0.tileSettings[0][0].length) {
+			int var6 = var3;
+			if (var3 < 3 && (var0.tileSettings[1][var4][var5] & 2) == 2) {
+				var6 = var3 + 1;
 			}
 
+			int var7 = var1 & 127;
+			int var8 = var2 & 127;
+			int var9 = var0.tileHeights[var6][var4][var5] * (128 - var7) + var7 * var0.tileHeights[var6][var4 + 1][var5] >> 7;
+			int var10 = var7 * var0.tileHeights[var6][var4 + 1][var5 + 1] + var0.tileHeights[var6][var4][var5 + 1] * (128 - var7) >> 7;
+			return var9 * (128 - var8) + var10 * var8 >> 7;
+		} else {
+			return 0;
 		}
 	}
 }

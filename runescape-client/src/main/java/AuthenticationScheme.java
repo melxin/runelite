@@ -4,54 +4,50 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fu")
+@ObfuscatedName("fg")
 @Implements("AuthenticationScheme")
 public enum AuthenticationScheme implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lfu;"
+		descriptor = "Lfg;"
 	)
 	@Export("USERNAME_PASSWORD_REMEMBER")
 	USERNAME_PASSWORD_REMEMBER(1, 0),
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lfu;"
+		descriptor = "Lfg;"
 	)
 	@Export("TOKEN_REMEMBER")
-	TOKEN_REMEMBER(2, 1),
-	@ObfuscatedName("ak")
+	TOKEN_REMEMBER(4, 1),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lfu;"
+		descriptor = "Lfg;"
 	)
 	@Export("USERNAME_PASSWORD")
-	USERNAME_PASSWORD(3, 2),
-	@ObfuscatedName("aj")
+	USERNAME_PASSWORD(0, 2),
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lfu;"
+		descriptor = "Lfg;"
 	)
 	@Export("TOKEN")
-	TOKEN(4, 3),
-	@ObfuscatedName("ai")
+	TOKEN(2, 3),
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lfu;"
+		descriptor = "Lfg;"
 	)
-	field1531(0, 4);
+	field1517(3, 4);
 
-	@ObfuscatedName("ve")
-	@ObfuscatedSignature(
-		descriptor = "Lta;"
-	)
-	@Export("platformInfo")
-	static PlatformInfo platformInfo;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("jh")
+	static int[][] field1523;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -2021800197
+		intValue = -1520029109
 	)
 	@Export("schemeId")
 	public final int schemeId;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -2048248869
+		intValue = 1607210699
 	)
 	@Export("packetId")
 	final int packetId;
@@ -64,41 +60,20 @@ public enum AuthenticationScheme implements Enum {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1837624059"
+		garbageValue = "1071289392"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.packetId;
 	}
 
-	@ObfuscatedName("aj")
-	public static int method3355(long var0) {
-		return (int)(var0 >>> 0 & 127L);
-	}
-
-	@ObfuscatedName("af")
+	@ObfuscatedName("lr")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "4"
+		descriptor = "(Ldm;III)V",
+		garbageValue = "-1472125526"
 	)
-	public static int method3356(int var0) {
-		class145 var2 = (class145)SequenceDefinition.SequenceDefinition_cachedModel.get((long)var0);
-		class145 var1;
-		if (var2 != null) {
-			var1 = var2;
-		} else {
-			var2 = WorldMapSection1.method6334(class219.SequenceDefinition_animationsArchive, class219.SequenceDefinition_skeletonsArchive, var0, false);
-			if (var2 != null) {
-				SequenceDefinition.SequenceDefinition_cachedModel.put(var2, (long)var0);
-			}
-
-			var1 = var2;
-		}
-
-		if (var1 == null) {
-			return 2;
-		} else {
-			return var1.method3508() ? 0 : 1;
-		}
+	@Export("updateItemPile3")
+	static final void updateItemPile3(WorldView var0, int var1, int var2) {
+		class92.updateItemPile2(var0, var0.plane, var1, var2);
 	}
 }

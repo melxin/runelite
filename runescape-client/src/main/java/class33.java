@@ -2,79 +2,66 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 @ObfuscatedName("bp")
 public class class33 {
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lvc;"
-	)
-	@Export("options_buttons_0Sprite")
-	static IndexedSprite options_buttons_0Sprite;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ay")
+	@Export("osNameLowercase")
+	public static String osNameLowercase;
+	@ObfuscatedName("gy")
 	@ObfuscatedGetter(
-		intValue = 1937071875
+		intValue = -855077085
 	)
-	int field150;
-	@ObfuscatedName("ae")
+	static int field166;
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1882105617
+		intValue = 1995266585
 	)
-	int field152;
+	int field164;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -915202069
+	)
+	int field160;
 
 	class33(int var1, int var2) {
-		this.field150 = var1;
-		this.field152 = var2;
+		this.field164 = var1;
+		this.field160 = var2;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lbx;I)Z",
-		garbageValue = "-1989448184"
+		descriptor = "(Lbt;I)Z",
+		garbageValue = "-1647636092"
 	)
-	boolean method488(class29 var1) {
+	boolean method458(class29 var1) {
 		if (var1 == null) {
 			return false;
 		} else {
-			switch(this.field150) {
+			switch(this.field164) {
 			case 1:
-				return var1.vmethod5644(this.field152);
+				return var1.vmethod5567(this.field160);
 			case 2:
-				return var1.vmethod5668(this.field152);
+				return var1.vmethod5568(this.field160);
 			case 3:
-				return var1.vmethod5646((char)this.field152);
+				return var1.vmethod5573((char)this.field160);
 			case 4:
-				return var1.vmethod5681(this.field152 == 1);
+				return var1.vmethod5571(this.field160 == 1);
 			default:
 				return false;
 			}
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;B)[F",
-		garbageValue = "10"
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "-1693530572"
 	)
-	static float[] method491(JSONObject var0, String var1) throws JSONException {
-		float[] var2 = new float[4];
-
-		try {
-			JSONArray var3 = var0.getJSONArray(var1);
-			var2[0] = (float)var3.optDouble(0, 0.0D);
-			var2[1] = (float)var3.optDouble(1, 0.0D);
-			var2[2] = (float)var3.optDouble(2, 1.0D);
-			var2[3] = (float)var3.optDouble(3, 1.0D);
-		} catch (JSONException var4) {
-			var2[0] = 0.0F;
-			var2[1] = 0.0F;
-			var2[2] = 1.0F;
-			var2[3] = 1.0F;
-		}
-
-		return var2;
+	static final void method463(String var0) {
+		PacketBufferNode var1 = Message.getPacketBufferNode(ClientPacket.field3394, Client.packetWriter.isaacCipher);
+		var1.packetBuffer.writeByte(class164.stringCp1252NullTerminatedByteSize(var0));
+		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
+		Client.packetWriter.addNode(var1);
 	}
 }

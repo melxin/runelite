@@ -7,22 +7,22 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pt")
+@ObfuscatedName("pf")
 @Implements("GrandExchangeEvents")
 public class GrandExchangeEvents {
 	@ObfuscatedName("aw")
 	@Export("GrandExchangeEvents_ageComparator")
 	public static Comparator GrandExchangeEvents_ageComparator;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@Export("GrandExchangeEvents_priceComparator")
 	public static Comparator GrandExchangeEvents_priceComparator;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@Export("GrandExchangeEvents_nameComparator")
 	public static Comparator GrandExchangeEvents_nameComparator;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@Export("GrandExchangeEvents_quantityComparator")
 	public static Comparator GrandExchangeEvents_quantityComparator;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("events")
 	public final List events;
 
@@ -35,7 +35,7 @@ public class GrandExchangeEvents {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;Z)V",
+		descriptor = "(Lvj;Z)V",
 		garbageValue = "1"
 	)
 	public GrandExchangeEvents(Buffer var1, boolean var2) {
@@ -57,10 +57,10 @@ public class GrandExchangeEvents {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/util/Comparator;ZI)V",
-		garbageValue = "899463891"
+		garbageValue = "-1854560902"
 	)
 	@Export("sort")
 	public void sort(Comparator var1, boolean var2) {
@@ -70,5 +70,10 @@ public class GrandExchangeEvents {
 			Collections.sort(this.events, Collections.reverseOrder(var1));
 		}
 
+	}
+
+	@ObfuscatedName("af")
+	static final void method7682(long var0) {
+		ViewportMouse.ViewportMouse_entityTags[++ViewportMouse.ViewportMouse_entityCount - 1] = var0;
 	}
 }

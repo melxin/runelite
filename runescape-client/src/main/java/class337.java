@@ -2,44 +2,33 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mx")
+@ObfuscatedName("mi")
 public class class337 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1650939479
+		intValue = 546362975
 	)
-	int field3691;
+	int field3688;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lcb;"
+		descriptor = "Lct;"
 	)
-	class53 field3690;
+	class53 field3687;
 
 	@ObfuscatedSignature(
-		descriptor = "(ILcb;)V"
+		descriptor = "(ILct;)V"
 	)
 	class337(int var1, class53 var2) {
-		this.field3691 = var1;
-		this.field3690 = var2;
+		this.field3688 = var1;
+		this.field3687 = var2;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("jw")
 	@ObfuscatedSignature(
-		descriptor = "(II)F",
-		garbageValue = "-2067790797"
+		descriptor = "(B)Z",
+		garbageValue = "18"
 	)
-	public static float method6771(int var0) {
-		var0 &= 2047;
-		return (float)((double)((float)var0 / 2048.0F) * 6.283185307179586D);
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-960317598"
-	)
-	public static boolean method6770() {
-		ReflectionCheck var0 = (ReflectionCheck)class36.reflectionChecks.last();
-		return var0 != null;
+	static boolean method6733() {
+		return (Client.drawPlayerNames & 8) != 0;
 	}
 }

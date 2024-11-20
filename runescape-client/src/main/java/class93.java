@@ -2,154 +2,146 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("db")
+@ObfuscatedName("de")
 public enum class93 implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Ldb;"
+		descriptor = "Lde;"
 	)
-	field1133(0, -1),
+	field1120(0, -1),
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Ldb;"
+		descriptor = "Lde;"
 	)
-	field1126(1, 2),
-	@ObfuscatedName("ak")
+	field1118(1, 2),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Ldb;"
+		descriptor = "Lde;"
 	)
-	field1127(2, 3),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1128(3, 4),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1129(4, 5),
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1130(5, 6);
-
-	@ObfuscatedName("ga")
-	@ObfuscatedGetter(
-		intValue = 1291780503
-	)
-	static int field1125;
-	@ObfuscatedName("as")
-	@ObfuscatedGetter(
-		intValue = -730926097
-	)
-	final int field1131;
+	field1116(2, 3),
 	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = -1478851745
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
 	)
-	final int field1132;
+	field1119(3, 4),
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
+	)
+	field1117(4, 5),
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
+	)
+	field1114(5, 6);
+
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = 786206301
+	)
+	final int field1115;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -167373089
+	)
+	final int field1121;
 
 	class93(int var3, int var4) {
-		this.field1131 = var3;
-		this.field1132 = var4;
+		this.field1115 = var3;
+		this.field1121 = var4;
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1837624059"
+		garbageValue = "1071289392"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1132;
+		return this.field1121;
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "42"
+		descriptor = "(CI)Z",
+		garbageValue = "964327481"
 	)
-	static void method2587() {
-		Tiles.Tiles_underlays = null;
-		Tiles.Tiles_overlays = null;
-		Tiles.Tiles_shapes = null;
-		Tiles.field1037 = null;
-		class543.field5378 = null;
-		Tiles.Tiles_underlays2 = null;
-		Tiles.field1039 = null;
-		Tiles.Tiles_hue = null;
-		Tiles.Tiles_saturation = null;
-		SpriteBufferProperties.Tiles_lightness = null;
-		MenuAction.Tiles_hueMultiplier = null;
-		Tiles.field1042 = null;
-	}
+	public static boolean method2514(char var0) {
+		if (var0 >= ' ' && var0 < 127 || var0 > 127 && var0 < 160 || var0 > 160 && var0 <= 255) {
+			return true;
+		} else {
+			if (var0 != 0) {
+				char[] var1 = class417.cp1252AsciiExtension;
 
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "2"
-	)
-	@Export("Widget_unpackTargetMask")
-	public static int Widget_unpackTargetMask(int var0) {
-		return var0 >> 11 & 63;
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(Lvl;II)V",
-		garbageValue = "133159266"
-	)
-	public static void method2592(Buffer var0, int var1) {
-		if (JagexCache.JagexCache_randomDat != null) {
-			try {
-				JagexCache.JagexCache_randomDat.seek(0L);
-				JagexCache.JagexCache_randomDat.write(var0.array, var1, 24);
-			} catch (Exception var3) {
+				for (int var2 = 0; var2 < var1.length; ++var2) {
+					char var3 = var1[var2];
+					if (var0 == var3) {
+						return true;
+					}
+				}
 			}
+
+			return false;
 		}
-
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-18647"
+		descriptor = "(ILdt;ZI)I",
+		garbageValue = "88156859"
 	)
-	public static void method2591() {
-		ParamComposition.ParamDefinition_cached.clear();
-	}
+	static int method2518(int var0, Script var1, boolean var2) {
+		Widget var3;
+		if (var0 == ScriptOpcodes.IF_GETINVOBJECT) {
+			var3 = class379.widgetDefinition.method6875(Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize]);
+			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.itemId;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETINVCOUNT) {
+			var3 = class379.widgetDefinition.method6875(Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize]);
+			if (var3.itemId != -1) {
+				Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.itemQuantity;
+			} else {
+				Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = 0;
+			}
 
-	@ObfuscatedName("cf")
-	@ObfuscatedSignature(
-		descriptor = "(II)Ljava/lang/Object;",
-		garbageValue = "1309787356"
-	)
-	static Object method2593(int var0) {
-		return class173.method3818((class544)class177.findEnumerated(class544.method9937(), var0));
-	}
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_HASSUB) {
+			int var5 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
+			InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var5);
+			if (var4 != null) {
+				Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = 1;
+			} else {
+				Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = 0;
+			}
 
-	@ObfuscatedName("lg")
-	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "-710649007"
-	)
-	static void method2596(int var0, int var1, int var2, int var3) {
-		Widget var4 = class416.widgetDefinition.getWidgetChild(var0, var1);
-		if (var4 != null && var4.onTargetEnter != null) {
-			ScriptEvent var5 = new ScriptEvent();
-			var5.widget = var4;
-			var5.args = var4.onTargetEnter;
-			Ignored.runScriptEvent(var5);
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETTOP) {
+			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = Client.rootInterface;
+			return 1;
+		} else if (var0 == 2707) {
+			var3 = class379.widgetDefinition.method6875(Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize]);
+			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.method7331() ? 1 : 0;
+			return 1;
+		} else if (var0 == 2708) {
+			var3 = class379.widgetDefinition.method6875(Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize]);
+			return Actor.method2694(var3);
+		} else if (var0 == 2709) {
+			var3 = class379.widgetDefinition.method6875(Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize]);
+			return AbstractWorldMapData.method6228(var3);
+		} else {
+			return 2;
 		}
+	}
 
-		Client.selectedSpellItemId = var3;
-		Client.isSpellSelected = true;
-		class483.selectedSpellWidget = var0;
-		Client.selectedSpellChildIndex = var1;
-		class373.selectedSpellFlags = var2;
-		class110.invalidateWidget(var4);
+	@ObfuscatedName("jr")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-1891065138"
+	)
+	@Export("getWindowedMode")
+	static int getWindowedMode() {
+		return Client.isResizable ? 2 : 1;
 	}
 }

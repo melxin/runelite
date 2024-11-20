@@ -4,12 +4,12 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jv")
+@ObfuscatedName("ji")
 @Implements("Renderable")
 public abstract class Renderable extends DualNode {
-	@ObfuscatedName("ez")
+	@ObfuscatedName("ey")
 	@ObfuscatedGetter(
-		intValue = -274986519
+		intValue = -1098732439
 	)
 	@Export("height")
 	public int height;
@@ -18,18 +18,18 @@ public abstract class Renderable extends DualNode {
 		this.height = 1000;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljy;",
-		garbageValue = "1885718735"
+		descriptor = "(I)Ljt;",
+		garbageValue = "-1562991930"
 	)
 	@Export("getModel")
 	protected Model getModel() {
 		return null;
 	}
 
-	@ObfuscatedName("el")
-	void vmethod5375(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, long var10, int var12, int var13, boolean var14) {
+	@ObfuscatedName("eo")
+	void vmethod5270(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, long var10, int var12, int var13, boolean var14) {
 		Model var15 = this.getModel();
 		if (var15 != null) {
 			this.height = var15.height;
@@ -42,9 +42,9 @@ public abstract class Renderable extends DualNode {
 
 	}
 
-	@ObfuscatedName("jp")
+	@ObfuscatedName("je")
 	@ObfuscatedSignature(
-		descriptor = "(ILqs;IIIJ)V"
+		descriptor = "(ILqb;IIIJ)V"
 	)
 	@Export("draw")
 	void draw(int var1, TransformationMatrix var2, int var3, int var4, int var5, long var6) {
@@ -56,35 +56,19 @@ public abstract class Renderable extends DualNode {
 
 	}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(IIIII)I",
-		garbageValue = "2070749713"
-	)
-	static final int method5259(int var0, int var1, int var2, int var3) {
-		return var0 * var2 + var3 * var1 >> 16;
+	@ObfuscatedName("ao")
+	public static int method5155(long var0) {
+		return (int)(var0 >>> 0 & 127L);
 	}
 
-	@ObfuscatedName("bq")
+	@ObfuscatedName("om")
 	@ObfuscatedSignature(
-		descriptor = "(Lir;B)Z",
-		garbageValue = "58"
+		descriptor = "(Lnp;I)I",
+		garbageValue = "102479626"
 	)
-	static boolean method5253(ObjectComposition var0) {
-		if (var0.transforms != null) {
-			int[] var1 = var0.transforms;
-
-			for (int var2 = 0; var2 < var1.length; ++var2) {
-				int var3 = var1[var2];
-				ObjectComposition var4 = UrlRequest.getObjectDefinition(var3);
-				if (var4.mapIconId != -1) {
-					return true;
-				}
-			}
-		} else if (var0.mapIconId != -1) {
-			return true;
-		}
-
-		return false;
+	@Export("getWidgetFlags")
+	static int getWidgetFlags(Widget var0) {
+		IntegerNode var1 = (IntegerNode)Client.widgetFlags.get(((long)var0.id << 32) + (long)var0.childIndex);
+		return var1 != null ? var1.integer : var0.flags;
 	}
 }

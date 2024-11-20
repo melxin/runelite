@@ -1,132 +1,135 @@
+import java.security.SecureRandom;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dn")
+@ObfuscatedName("dm")
 @Implements("WorldView")
 public class WorldView extends Node {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ha")
+	static SecureRandom field1335;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1948824391
+		intValue = -775726855
 	)
 	@Export("id")
-	public int id;
+	int id;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lji;"
+		descriptor = "Ljp;"
 	)
 	@Export("scene")
 	public Scene scene;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "[Lko;"
+		descriptor = "[Lka;"
 	)
 	@Export("collisionMaps")
 	CollisionMap[] collisionMaps;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 86027145
+		intValue = 1779737937
 	)
 	@Export("plane")
 	public int plane;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1587254913
+		intValue = -942555843
 	)
 	@Export("sizeX")
 	public int sizeX;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1000264093
+		intValue = 379101543
 	)
 	@Export("sizeY")
 	public int sizeY;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -2014668603
+		intValue = -369730497
 	)
 	@Export("baseX")
 	int baseX;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 1601580509
+		intValue = 94507959
 	)
 	@Export("baseY")
 	int baseY;
-	@ObfuscatedName("am")
+	@ObfuscatedName("au")
 	@Export("tileLastDrawnActor")
 	int[][] tileLastDrawnActor;
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@Export("tileHeights")
 	int[][][] tileHeights;
-	@ObfuscatedName("au")
+	@ObfuscatedName("af")
 	@Export("tileSettings")
 	byte[][][] tileSettings;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "[Ldv;"
+		descriptor = "[Ldy;"
 	)
 	@Export("players")
-	public Player[] players;
-	@ObfuscatedName("ao")
+	Player[] players;
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "[Lev;"
+		descriptor = "[Lec;"
 	)
 	@Export("npcs")
-	public NPC[] npcs;
-	@ObfuscatedName("af")
+	NPC[] npcs;
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 2099244795
+		intValue = 1031812205
 	)
 	@Export("npcCount")
 	int npcCount;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("as")
 	@Export("npcIndices")
 	int[] npcIndices;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "[Lso;"
+		descriptor = "[Lsh;"
 	)
 	@Export("worldEntities")
 	WorldEntity[] worldEntities;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = -1234749921
+		intValue = -1454815503
 	)
 	@Export("worldEntityCount")
 	int worldEntityCount;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ap")
 	@Export("worldEntityIndices")
 	int[] worldEntityIndices;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "[[[Lpu;"
+		descriptor = "[[[Lph;"
 	)
 	@Export("groundItems")
 	NodeDeque[][][] groundItems;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lph;"
 	)
 	@Export("pendingSpawns")
 	NodeDeque pendingSpawns;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lph;"
 	)
 	@Export("projectiles")
 	NodeDeque projectiles;
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lph;"
 	)
 	@Export("graphicsObjects")
 	NodeDeque graphicsObjects;
 
 	@ObfuscatedSignature(
-		descriptor = "(IIIILim;)V"
+		descriptor = "(IIIILit;)V"
 	)
 	WorldView(int var1, int var2, int var3, int var4, class232 var5) {
 		this.collisionMaps = new CollisionMap[4];
@@ -153,12 +156,12 @@ public class WorldView extends Node {
 		this.scene = new Scene(var1, 4, var2, var3, var4, var5, this.tileHeights);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-8454"
+		descriptor = "(I)V",
+		garbageValue = "-380276630"
 	)
-	void method2943() {
+	void method2869() {
 		this.npcCount = 0;
 		this.worldEntityCount = 0;
 
@@ -198,9 +201,9 @@ public class WorldView extends Node {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1096311601"
+		garbageValue = "-2087759733"
 	)
-	void method2944() {
+	void method2868() {
 		int var1;
 		for (var1 = 0; var1 < 2048; ++var1) {
 			this.players[var1] = null;
@@ -216,170 +219,51 @@ public class WorldView extends Node {
 
 	}
 
-	@ObfuscatedName("bk")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(ILda;ZS)I",
-		garbageValue = "-25639"
+		descriptor = "(II)Z",
+		garbageValue = "-480191763"
 	)
-	static int method2948(int var0, Script var1, boolean var2) {
-		return 2;
+	public static boolean method2874(int var0) {
+		return var0 >= WorldMapDecorationType.field4050.id && var0 <= WorldMapDecorationType.field4051.id || var0 == WorldMapDecorationType.field4052.id;
 	}
 
-	@ObfuscatedName("ho")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "56"
+		descriptor = "([Ljava/lang/CharSequence;IIB)Ljava/lang/String;",
+		garbageValue = "68"
 	)
-	@Export("clear")
-	static final void clear() {
-		class188.field2007.clear();
-		AABB.method5246();
-		HealthBarUpdate.method2774();
-		class452.method8782();
-		DbTableType.DBTableType_cache.clear();
-		EnumComposition.EnumDefinition_cached.clear();
-		ItemComposition.method4318();
-		Sound.method3629();
-		HealthBarDefinition.HealthBarDefinition_cached.clear();
-		HealthBarDefinition.HealthBarDefinition_cachedSprites.clear();
-		class111.method3078();
-		class178.field1913.clear();
-		KitDefinition.KitDefinition_cached.clear();
-		InvDefinition.InvDefinition_cached.clear();
-		ChatChannel.method2468();
-		WorldMapElement.HitSplatDefinition_cached.clear();
-		WorldMapSectionType.method6255();
-		class163.method3738();
-		ItemComposition.ItemDefinition_cached.clear();
-		ItemComposition.ItemDefinition_cachedModels.clear();
-		ItemComposition.ItemDefinition_cachedSprites.clear();
-		class93.method2591();
-		SequenceDefinition.SequenceDefinition_cached.clear();
-		SequenceDefinition.SequenceDefinition_cachedFrames.clear();
-		SequenceDefinition.SequenceDefinition_cachedModel.clear();
-		SpotAnimationDefinition.SpotAnimationDefinition_cached.clear();
-		SpotAnimationDefinition.SpotAnimationDefinition_cachedModels.clear();
-		class254.method5318();
-		ReflectionCheck.method696();
-		if (AsyncHttpResponse.field66 != null) {
-			AsyncHttpResponse.field66.method9889();
-		}
+	public static String method2870(CharSequence[] var0, int var1, int var2) {
+		if (var2 == 0) {
+			return "";
+		} else if (var2 == 1) {
+			CharSequence var10 = var0[var1];
+			return var10 == null ? "null" : var10.toString();
+		} else {
+			int var3 = var2 + var1;
+			int var4 = 0;
 
-		if (class59.field406 != null) {
-			class59.field406.method9889();
-		}
+			for (int var5 = var1; var5 < var3; ++var5) {
+				CharSequence var9 = var0[var5];
+				if (var9 == null) {
+					var4 += 4;
+				} else {
+					var4 += var9.length();
+				}
+			}
 
-		class195.field2100.clear();
-		class188.method3965();
-		VarcInt.VarcInt_cached.clear();
-		class145.method3530();
-		class177.field1842.clear();
-		class180.field1851.clear();
-		WorldMapElement.method3900();
-		AABB.method5245();
-		UserComparator3.method3311();
-		Client.DBTableIndex_cache.clear();
-		Client.archive11.clear();
-		PlayerComposition.PlayerAppearance_cachedModels.clear();
-		PlayerComposition.field3828.clearFiles();
-		PlayerComposition.field3829 = 0;
-		if (class416.widgetDefinition != null) {
-			class416.widgetDefinition.method6898();
-		}
+			StringBuilder var8 = new StringBuilder(var4);
 
-		if (Rasterizer3D.clips.Rasterizer3D_textureLoader != null) {
-			((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).clear();
-		}
+			for (int var6 = var1; var6 < var3; ++var6) {
+				CharSequence var7 = var0[var6];
+				if (var7 == null) {
+					var8.append("null");
+				} else {
+					var8.append(var7);
+				}
+			}
 
-		RestClientThreadFactory.method202();
-		Client.field789.clearFiles();
-		if (FileSystem.field2400 != null) {
-			FileSystem.field2400.clearFiles();
+			return var8.toString();
 		}
-
-		if (class171.field1849 != null) {
-			class171.field1849.clearFiles();
-		}
-
-		if (class1.archive10 != null) {
-			class1.archive10.clearFiles();
-		}
-
-		if (class1.archive12 != null) {
-			class1.archive12.clearFiles();
-		}
-
-		if (class59.archive2 != null) {
-			class59.archive2.clearFiles();
-		}
-
-		if (class160.field1759 != null) {
-			class160.field1759.clearFiles();
-		}
-
-		if (class195.field2054 != null) {
-			class195.field2054.clearFiles();
-		}
-
-		if (Login.archive13 != null) {
-			Login.archive13.clearFiles();
-		}
-
-		if (WorldMapRegion.archive4 != null) {
-			WorldMapRegion.archive4.clearFiles();
-		}
-
-		if (Language.field4701 != null) {
-			Language.field4701.clearFiles();
-		}
-
-		if (ObjectComposition.soundEffectsArchive != null) {
-			ObjectComposition.soundEffectsArchive.clearFiles();
-		}
-
-		if (PlayerComposition.field3818 != null) {
-			PlayerComposition.field3818.clearFiles();
-		}
-
-		if (EnumComposition.archive9 != null) {
-			EnumComposition.archive9.clearFiles();
-		}
-
-		if (MouseHandler.archive6 != null) {
-			MouseHandler.archive6.clearFiles();
-		}
-
-		if (class156.field1737 != null) {
-			class156.field1737.clearFiles();
-		}
-
-		if (class319.field3306 != null) {
-			class319.field3306.clearFiles();
-		}
-
-		if (class450.archive8 != null) {
-			class450.archive8.clearFiles();
-		}
-
-		if (ModeWhere.field4720 != null) {
-			ModeWhere.field4720.clearFiles();
-		}
-
-		if (class142.field1656 != null) {
-			class142.field1656.clearFiles();
-		}
-
-		if (Clock.field2468 != null) {
-			Clock.field2468.clearFiles();
-		}
-
-		if (Sound.field1746 != null) {
-			Sound.field1746.clearFiles();
-		}
-
-		if (UrlRequester.field1491 != null) {
-			UrlRequester.field1491.clearFiles();
-		}
-
 	}
 }

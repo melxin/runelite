@@ -1,29 +1,32 @@
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.Reflection;
 
-@ObfuscatedName("kw")
+@ObfuscatedName("ki")
 @Implements("WorldMapData_0")
 public class WorldMapData_0 extends AbstractWorldMapData {
 	WorldMapData_0() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;B)V",
-		garbageValue = "101"
+		descriptor = "(Lvj;I)V",
+		garbageValue = "-1762754826"
 	)
 	@Export("init")
 	void init(Buffer var1) {
 		int var2 = var1.readUnsignedByte();
-		if (var2 != WorldMapID.field3244.value) {
+		if (var2 != WorldMapID.field3248.value) {
 			throw new IllegalStateException("");
 		} else {
 			super.minPlane = var1.readUnsignedByte();
 			super.planes = var1.readUnsignedByte();
-			super.regionXLow = var1.readUnsignedShort() * 4096;
-			super.regionYLow = var1.readUnsignedShort() * 64;
+			super.regionXLow = var1.readUnsignedShort() * 64;
+			super.regionYLow = var1.readUnsignedShort() * 4096;
 			super.regionX = var1.readUnsignedShort();
 			super.regionY = var1.readUnsignedShort();
 			super.groupId = var1.readNullableLargeSmart();
@@ -33,19 +36,19 @@ public class WorldMapData_0 extends AbstractWorldMapData {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "506593636"
+		descriptor = "(Lvj;B)V",
+		garbageValue = "84"
 	)
 	@Export("readGeography")
 	void readGeography(Buffer var1) {
 		super.planes = Math.min(super.planes, 4);
 		super.floorUnderlayIds = new short[1][64][64];
 		super.floorOverlayIds = new short[super.planes][64][64];
-		super.field3210 = new byte[super.planes][64][64];
 		super.field3211 = new byte[super.planes][64][64];
+		super.field3220 = new byte[super.planes][64][64];
 		super.decorations = new WorldMapDecoration[super.planes][64][64][];
 		int var2 = var1.readUnsignedByte();
-		if (var2 != class298.field3238.value) {
+		if (var2 != class298.field3240.value) {
 			throw new IllegalStateException("");
 		} else {
 			int var3 = var1.readUnsignedByte();
@@ -68,7 +71,7 @@ public class WorldMapData_0 extends AbstractWorldMapData {
 			return false;
 		} else {
 			WorldMapData_0 var2 = (WorldMapData_0)var1;
-			return super.regionX == var2.regionX && var2.regionY == super.regionY;
+			return var2.regionX == super.regionX && var2.regionY == super.regionY;
 		}
 	}
 
@@ -76,169 +79,131 @@ public class WorldMapData_0 extends AbstractWorldMapData {
 		return super.regionX | super.regionY << 8;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lfv;FZI)F",
-		garbageValue = "-142044248"
+		descriptor = "(Lvj;II)V",
+		garbageValue = "1254028651"
 	)
-	static float method5869(class137 var0, float var1, boolean var2) {
-		float var3 = 0.0F;
-		if (var0 != null && var0.method3452() != 0) {
-			float var4 = (float)var0.field1596[0].field1538;
-			float var5 = (float)var0.field1596[var0.method3452() - 1].field1538;
-			float var6 = var5 - var4;
-			if (var6 == 0.0F) {
-				return var0.field1596[0].field1541;
-			} else {
-				float var7 = 0.0F;
-				if (var1 > var5) {
-					var7 = (var1 - var5) / var6;
-				} else {
-					var7 = (var1 - var4) / var6;
-				}
+	@Export("readReflectionCheck")
+	public static void readReflectionCheck(Buffer var0, int var1) {
+		ReflectionCheck var2 = new ReflectionCheck();
+		var2.size = var0.readUnsignedByte();
+		var2.id = var0.readInt();
+		var2.operations = new int[var2.size];
+		var2.creationErrors = new int[var2.size];
+		var2.fields = new Field[var2.size];
+		var2.intReplaceValues = new int[var2.size];
+		var2.methods = new Method[var2.size];
+		var2.arguments = new byte[var2.size][][];
 
-				float var8 = (float)((int)var7);
-				float var9 = Math.abs(var7 - var8);
-				float var10 = var6 * var9;
-				var8 = Math.abs(1.0F + var8);
-				float var11 = var8 / 2.0F;
-				float var12 = (float)((int)var11);
-				var9 = var11 - var12;
-				float var13;
-				float var14;
-				if (var2) {
-					if (var0.field1605 == class135.field1580) {
-						if (0.0F != var9) {
-							var10 += var4;
-						} else {
-							var10 = var5 - var10;
+		for (int var3 = 0; var3 < var2.size; ++var3) {
+			try {
+				int var4 = var0.readUnsignedByte();
+				String var5;
+				String var6;
+				int var7;
+				if (var4 != 0 && var4 != 1 && var4 != 2) {
+					if (var4 == 3 || var4 == 4) {
+						var5 = var0.readStringCp1252NullTerminated();
+						var6 = var0.readStringCp1252NullTerminated();
+						var7 = var0.readUnsignedByte();
+						String[] var8 = new String[var7];
+
+						for (int var9 = 0; var9 < var7; ++var9) {
+							var8[var9] = var0.readStringCp1252NullTerminated();
 						}
-					} else if (var0.field1605 != class135.field1583 && var0.field1605 != class135.field1579) {
-						if (var0.field1605 == class135.field1577) {
-							var10 = var4 - var1;
-							var13 = var0.field1596[0].field1542;
-							var14 = var0.field1596[0].field1540;
-							var3 = var0.field1596[0].field1541;
-							if (0.0F != var13) {
-								var3 -= var14 * var10 / var13;
+
+						String var20 = var0.readStringCp1252NullTerminated();
+						byte[][] var10 = new byte[var7][];
+						int var12;
+						if (var4 == 3) {
+							for (int var11 = 0; var11 < var7; ++var11) {
+								var12 = var0.readInt();
+								var10[var11] = new byte[var12];
+								var0.readBytes(var10[var11], 0, var12);
 							}
-
-							return var3;
-						}
-					} else {
-						var10 = var5 - var10;
-					}
-				} else if (var0.field1595 == class135.field1580) {
-					if (0.0F != var9) {
-						var10 = var5 - var10;
-					} else {
-						var10 += var4;
-					}
-				} else if (var0.field1595 != class135.field1583 && var0.field1595 != class135.field1579) {
-					if (var0.field1595 == class135.field1577) {
-						var10 = var1 - var5;
-						var13 = var0.field1596[var0.method3452() - 1].field1543;
-						var14 = var0.field1596[var0.method3452() - 1].field1537;
-						var3 = var0.field1596[var0.method3452() - 1].field1541;
-						if (0.0F != var13) {
-							var3 += var10 * var14 / var13;
 						}
 
-						return var3;
+						var2.operations[var3] = var4;
+						Class[] var21 = new Class[var7];
+
+						for (var12 = 0; var12 < var7; ++var12) {
+							var21[var12] = LoginState.loadClassFromDescriptor(var8[var12]);
+						}
+
+						Class var22 = LoginState.loadClassFromDescriptor(var20);
+						if (LoginState.loadClassFromDescriptor(var5).getClassLoader() == null) {
+							throw new SecurityException();
+						}
+
+						Method[] var13 = LoginState.loadClassFromDescriptor(var5).getDeclaredMethods();
+						Method[] var14 = var13;
+
+						for (int var15 = 0; var15 < var14.length; ++var15) {
+							Method var16 = var14[var15];
+							if (Reflection.getMethodName(var16).equals(var6)) {
+								Class[] var17 = Reflection.getParameterTypes(var16);
+								if (var17.length == var21.length) {
+									boolean var18 = true;
+
+									for (int var19 = 0; var19 < var21.length; ++var19) {
+										if (var17[var19] != var21[var19]) {
+											var18 = false;
+											break;
+										}
+									}
+
+									if (var18 && var22 == var16.getReturnType()) {
+										var2.methods[var3] = var16;
+									}
+								}
+							}
+						}
+
+						var2.arguments[var3] = var10;
 					}
 				} else {
-					var10 += var4;
-				}
+					var5 = var0.readStringCp1252NullTerminated();
+					var6 = var0.readStringCp1252NullTerminated();
+					var7 = 0;
+					if (var4 == 1) {
+						var7 = var0.readInt();
+					}
 
-				var3 = Occluder.method5268(var0, var10);
-				float var15;
-				if (var2 && var0.field1605 == class135.field1579) {
-					var15 = var0.field1596[var0.method3452() - 1].field1541 - var0.field1596[0].field1541;
-					var3 -= var8 * var15;
-				} else if (!var2 && var0.field1595 == class135.field1579) {
-					var15 = var0.field1596[var0.method3452() - 1].field1541 - var0.field1596[0].field1541;
-					var3 += var8 * var15;
-				}
+					var2.operations[var3] = var4;
+					var2.intReplaceValues[var3] = var7;
+					if (LoginState.loadClassFromDescriptor(var5).getClassLoader() == null) {
+						throw new SecurityException();
+					}
 
-				return var3;
+					var2.fields[var3] = Reflection.findField(LoginState.loadClassFromDescriptor(var5), var6);
+				}
+			} catch (ClassNotFoundException var24) {
+				var2.creationErrors[var3] = -1;
+			} catch (SecurityException var25) {
+				var2.creationErrors[var3] = -2;
+			} catch (NullPointerException var26) {
+				var2.creationErrors[var3] = -3;
+			} catch (Exception var27) {
+				var2.creationErrors[var3] = -4;
+			} catch (Throwable var28) {
+				var2.creationErrors[var3] = -5;
 			}
-		} else {
-			return var3;
 		}
+
+		class36.reflectionChecks.addFirst(var2);
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)V",
-		garbageValue = "-86"
+		descriptor = "(II)J",
+		garbageValue = "2142250023"
 	)
-	static void method5862(int var0, int var1, int var2, int var3) {
-		for (ObjectSound var4 = (ObjectSound)ObjectSound.objectSounds.last(); var4 != null; var4 = (ObjectSound)ObjectSound.objectSounds.previous()) {
-			if (var4.soundEffectId != -1 || var4.soundEffectIds != null) {
-				int var5 = 0;
-				if (var1 > var4.maxX * 16384) {
-					var5 += var1 - var4.maxX * 16384;
-				} else if (var1 < var4.x * 16384) {
-					var5 += var4.x * 16384 - var1;
-				}
-
-				if (var2 > var4.maxY * 128) {
-					var5 += var2 - var4.maxY * 128;
-				} else if (var2 < var4.y * 128) {
-					var5 += var4.y * 128 - var2;
-				}
-
-				var5 = Math.max(var5 - 64, 0);
-				if (var5 < var4.field832 && TaskHandler.clientPreferences.getAreaSoundEffectsVolume() != 0 && var0 == var4.plane) {
-					float var6 = var4.field839 < var4.field832 ? Math.min(Math.max((float)(var4.field832 - var5) / (float)(var4.field832 - var4.field839), 0.0F), 1.0F) : 1.0F;
-					int var7 = (int)(var6 * (float)TaskHandler.clientPreferences.getAreaSoundEffectsVolume());
-					if (var4.stream1 == null) {
-						if (var4.soundEffectId >= 0) {
-							SoundEffect var8 = SoundEffect.readSoundEffect(ObjectComposition.soundEffectsArchive, var4.soundEffectId, 0);
-							if (var8 != null) {
-								RawSound var9 = var8.toRawSound().resample(class333.decimator);
-								RawPcmStream var10 = RawPcmStream.createRawPcmStream(var9, 100, var7);
-								var10.setNumLoops(-1);
-								Widget.pcmStreamMixer.addSubStream(var10);
-								var4.stream1 = var10;
-							}
-						}
-					} else {
-						var4.stream1.method904(var7);
-					}
-
-					if (var4.stream2 == null) {
-						if (var4.soundEffectIds != null && (var4.field845 -= var3) <= 0) {
-							int var12 = (int)(Math.random() * (double)var4.soundEffectIds.length);
-							SoundEffect var13 = SoundEffect.readSoundEffect(ObjectComposition.soundEffectsArchive, var4.soundEffectIds[var12], 0);
-							if (var13 != null) {
-								RawSound var14 = var13.toRawSound().resample(class333.decimator);
-								RawPcmStream var11 = RawPcmStream.createRawPcmStream(var14, 100, var7);
-								var11.setNumLoops(0);
-								Widget.pcmStreamMixer.addSubStream(var11);
-								var4.stream2 = var11;
-								var4.field845 = var4.field842 + (int)(Math.random() * (double)(var4.field841 - var4.field842));
-							}
-						}
-					} else {
-						var4.stream2.method904(var7);
-						if (!var4.stream2.hasNext()) {
-							var4.stream2 = null;
-						}
-					}
-				} else {
-					if (var4.stream1 != null) {
-						Widget.pcmStreamMixer.removeSubStream(var4.stream1);
-						var4.stream1 = null;
-					}
-
-					if (var4.stream2 != null) {
-						Widget.pcmStreamMixer.removeSubStream(var4.stream2);
-						var4.stream2 = null;
-					}
-				}
-			}
+	public static long method5775(int var0) {
+		if (var0 > 63) {
+			throw new class431("Cannot generate max unsigned value for more than 63 bits as this is greater than the boundaries of a java long. Value provided: %d", new Object[]{var0});
+		} else {
+			return (long)Math.pow(2.0D, (double)var0) - 1L;
 		}
-
 	}
 }

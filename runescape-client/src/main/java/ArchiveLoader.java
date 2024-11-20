@@ -1,35 +1,39 @@
+import java.awt.Desktop;
+import java.awt.Desktop.Action;
+import java.io.DataInputStream;
+import java.net.URI;
+import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("du")
+@ObfuscatedName("dz")
 @Implements("ArchiveLoader")
 public class ArchiveLoader {
-	@ObfuscatedName("ai")
-	public static int field1059;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lor;"
+		descriptor = "Loa;"
 	)
 	@Export("archive")
 	final Archive archive;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1661845531
+		intValue = 1502918293
 	)
 	@Export("groupCount")
 	final int groupCount;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -2015281063
+		intValue = 1394304617
 	)
 	@Export("loadedCount")
 	int loadedCount;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lor;Ljava/lang/String;)V"
+		descriptor = "(Loa;Ljava/lang/String;)V"
 	)
 	ArchiveLoader(Archive var1, String var2) {
 		this.loadedCount = 0;
@@ -37,17 +41,17 @@ public class ArchiveLoader {
 		this.groupCount = var1.getGroupCount();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1007637567"
+		garbageValue = "1648787028"
 	)
 	@Export("isLoaded")
 	boolean isLoaded() {
 		this.loadedCount = 0;
 
 		for (int var1 = 0; var1 < this.groupCount; ++var1) {
-			if (!this.archive.method7591(var1) || this.archive.method7575(var1)) {
+			if (!this.archive.method7522(var1) || this.archive.method7521(var1)) {
 				++this.loadedCount;
 			}
 		}
@@ -55,50 +59,113 @@ public class ArchiveLoader {
 		return this.loadedCount >= this.groupCount;
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ljy;IIIIIIIII)Z",
-		garbageValue = "151326930"
+		descriptor = "(Ljava/lang/String;Ljava/lang/Throwable;I)V",
+		garbageValue = "2056515976"
 	)
-	static final boolean method2533(Model var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-		boolean var9 = ViewportMouse.ViewportMouse_isInViewport;
-		if (!var9) {
-			return false;
+	@Export("RunException_sendStackTrace")
+	public static void RunException_sendStackTrace(String var0, Throwable var1) {
+		if (var1 != null) {
+			var1.printStackTrace();
 		} else {
-			UrlRequester.method3224(var5, var6, var7, var8);
-			AABB var10 = (AABB)var0.aabb.get(var1);
-			int var11 = var2 + var10.xMid;
-			int var12 = var3 + var10.yMid;
-			int var13 = var4 + var10.zMid;
-			int var14 = var10.xMidOffset;
-			int var15 = var10.yMidOffset;
-			int var16 = var10.zMidOffset;
-			int var17 = ViewportMouse.field2892 - var11;
-			int var18 = ViewportMouse.field2898 - var12;
-			int var19 = ViewportMouse.field2890 - var13;
-			if (Math.abs(var17) > var14 + ViewportMouse.field2896) {
-				return false;
-			} else if (Math.abs(var18) > var15 + class177.field1883) {
-				return false;
-			} else if (Math.abs(var19) > var16 + FontName.field5315) {
-				return false;
-			} else if (Math.abs(var19 * FaceNormal.field2750 - var18 * class425.field4765) > var16 * class177.field1883 + var15 * FontName.field5315) {
-				return false;
-			} else if (Math.abs(var17 * class425.field4765 - var19 * ViewportMouse.field2894) > var14 * FontName.field5315 + var16 * ViewportMouse.field2896) {
-				return false;
-			} else {
-				return Math.abs(var18 * ViewportMouse.field2894 - var17 * FaceNormal.field2750) <= var14 * class177.field1883 + var15 * ViewportMouse.field2896;
+			try {
+				String var2 = "";
+				if (var1 != null) {
+					var2 = WorldMapSection1.method6273(var1);
+				}
+
+				if (var0 != null) {
+					if (var1 != null) {
+						var2 = var2 + " | ";
+					}
+
+					var2 = var2 + var0;
+				}
+
+				System.out.println("Error: " + var2);
+				var2 = var2.replace(':', '.');
+				var2 = var2.replace('@', '_');
+				var2 = var2.replace('&', '_');
+				var2 = var2.replace('#', '_');
+				if (RunException.RunException_applet == null) {
+					return;
+				}
+
+				URL var3 = new URL(RunException.RunException_applet.getCodeBase(), "clienterror.ws?cv=" + RunException.RunException_revision + "&cs=" + RunException.field5642 + "&u=" + RunException.field5640 + "&v1=" + TaskHandler.javaVendor + "&v2=" + TaskHandler.javaVersion + "&ct=" + RunException.field5645 + "&e=" + var2);
+				DataInputStream var4 = new DataInputStream(var3.openStream());
+				var4.read();
+				var4.close();
+			} catch (Exception var5) {
 			}
+
 		}
 	}
 
-	@ObfuscatedName("oj")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1294396496"
+		descriptor = "(Ljava/lang/String;ZLjava/lang/String;ZI)V",
+		garbageValue = "-1702318177"
 	)
-	static void method2534() {
-		Client.packetWriter.addNode(class113.getPacketBufferNode(ClientPacket.FREECAM_EXIT, Client.packetWriter.isaacCipher));
-		Client.oculusOrbState = 0;
+	static void method2442(String var0, boolean var1, String var2, boolean var3) {
+		if (var1) {
+			if (!var3 && Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
+				try {
+					Desktop.getDesktop().browse(new URI(var0));
+					return;
+				} catch (Exception var5) {
+				}
+			}
+
+			if (class31.field156.startsWith("win") && !var3) {
+				SecureUrlRequester.method3185(var0, 0, "openjs");
+				return;
+			}
+
+			if (class31.field156.startsWith("mac")) {
+				SecureUrlRequester.method3185(var0, 1, var2);
+				return;
+			}
+
+			SecureUrlRequester.method3185(var0, 2, "openjs");
+		} else {
+			SecureUrlRequester.method3185(var0, 3, "openjs");
+		}
+
+	}
+
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "(ILdt;ZB)I",
+		garbageValue = "-88"
+	)
+	static int method2443(int var0, Script var1, boolean var2) {
+		Widget var3 = class379.widgetDefinition.method6875(Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize]);
+		if (var0 == ScriptOpcodes.IF_GETTARGETMASK) {
+			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = class202.Widget_unpackTargetMask(Renderable.getWidgetFlags(var3));
+			return 1;
+		} else if (var0 != ScriptOpcodes.IF_GETOP) {
+			if (var0 == ScriptOpcodes.IF_GETOPBASE) {
+				if (var3.dataText == null) {
+					Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = "";
+				} else {
+					Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = var3.dataText;
+				}
+
+				return 1;
+			} else {
+				return 2;
+			}
+		} else {
+			int var4 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
+			--var4;
+			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
+				Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = var3.actions[var4];
+			} else {
+				Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = "";
+			}
+
+			return 1;
+		}
 	}
 }

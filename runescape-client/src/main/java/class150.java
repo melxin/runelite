@@ -3,66 +3,117 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fq")
+@ObfuscatedName("fc")
 public abstract class class150 extends Node {
-	@ObfuscatedName("ez")
-	@Export("mouseCam")
-	static boolean mouseCam;
-	@ObfuscatedName("uy")
+	@ObfuscatedName("gw")
 	@ObfuscatedGetter(
-		intValue = 107343017
+		intValue = 1968038185
 	)
-	static int field1701;
+	@Export("worldPort")
+	static int worldPort;
 
 	class150() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "-1813719027"
+		descriptor = "(Lvj;B)V",
+		garbageValue = "-83"
 	)
-	abstract void vmethod3822(Buffer var1);
+	abstract void vmethod3694(Buffer var1);
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lgy;I)V",
-		garbageValue = "-2079483058"
+		descriptor = "(Lgv;I)V",
+		garbageValue = "2002935935"
 	)
-	abstract void vmethod3821(ClanSettings var1);
+	abstract void vmethod3695(ClanSettings var1);
 
-	@ObfuscatedName("jx")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ldn;IIIIII)V",
-		garbageValue = "229971609"
+		descriptor = "(IIIIIII)I",
+		garbageValue = "2096244621"
 	)
-	@Export("worldToScreen")
-	static void worldToScreen(WorldView var0, int var1, int var2, int var3, int var4, int var5) {
-		if (var1 >= 128 && 13056 >= var1 && var2 >= 128 && 13056 >= var2) {
-			int var6 = ScriptFrame.getTileHeight(var0, var3, var4, var0.plane) - var5;
-			var1 -= AsyncHttpResponse.cameraX;
-			var6 -= FloorOverlayDefinition.cameraY;
-			var2 -= PlayerType.cameraZ;
-			int var7 = Rasterizer3D.Rasterizer3D_sine[class323.cameraPitch];
-			int var8 = Rasterizer3D.Rasterizer3D_cosine[class323.cameraPitch];
-			int var9 = Rasterizer3D.Rasterizer3D_sine[class390.cameraYaw];
-			int var10 = Rasterizer3D.Rasterizer3D_cosine[class390.cameraYaw];
-			int var11 = var9 * var2 + var10 * var1 >> 16;
-			var2 = var10 * var2 - var9 * var1 >> 16;
-			var1 = var11;
-			var11 = var8 * var6 - var7 * var2 >> 16;
-			var2 = var8 * var2 + var6 * var7 >> 16;
-			if (var2 >= 50) {
-				Client.viewportTempX = Client.viewportWidth / 2 + Client.viewportZoom * var1 / var2;
-				Client.viewportTempY = Client.viewportHeight / 2 + var11 * Client.viewportZoom / var2;
-			} else {
-				Client.viewportTempX = -1;
-				Client.viewportTempY = -1;
+	public static int method3459(int var0, int var1, int var2, int var3, int var4, int var5) {
+		if ((var5 & 1) == 1) {
+			int var6 = var3;
+			var3 = var4;
+			var4 = var6;
+		}
+
+		var2 &= 3;
+		if (var2 == 0) {
+			return var0;
+		} else if (var2 == 1) {
+			return var1;
+		} else {
+			return var2 == 2 ? 7 - var0 - (var3 - 1) : 7 - var1 - (var4 - 1);
+		}
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "86045249"
+	)
+	public static int method3462(int var0) {
+		class145 var2 = (class145)SequenceDefinition.SequenceDefinition_cachedModel.get((long)var0);
+		class145 var1;
+		if (var2 != null) {
+			var1 = var2;
+		} else {
+			var2 = WorldMapID.method6239(SequenceDefinition.SequenceDefinition_animationsArchive, SequenceDefinition.SequenceDefinition_skeletonsArchive, var0, false);
+			if (var2 != null) {
+				SequenceDefinition.SequenceDefinition_cachedModel.put(var2, (long)var0);
 			}
 
-		} else {
-			Client.viewportTempX = -1;
-			Client.viewportTempY = -1;
+			var1 = var2;
 		}
+
+		if (var1 == null) {
+			return 2;
+		} else {
+			return var1.method3404() ? 0 : 1;
+		}
+	}
+
+	@ObfuscatedName("hb")
+	@ObfuscatedSignature(
+		descriptor = "(I)J",
+		garbageValue = "-769430053"
+	)
+	@Export("getUserId")
+	static long getUserId() {
+		return Client.userId;
+	}
+
+	@ObfuscatedName("jb")
+	@ObfuscatedSignature(
+		descriptor = "(Ldy;III)V",
+		garbageValue = "-503631143"
+	)
+	@Export("performPlayerAnimation")
+	static void performPlayerAnimation(Player var0, int var1, int var2) {
+		if (var0.sequence == var1 && var1 != -1) {
+			int var3 = HealthBarDefinition.SequenceDefinition_get(var1).restartMode;
+			if (var3 == 1) {
+				var0.sequenceFrame = 0;
+				var0.sequenceFrameCycle = 0;
+				var0.sequenceDelay = var2;
+				var0.field1195 = 0;
+			}
+
+			if (var3 == 2) {
+				var0.field1195 = 0;
+			}
+		} else if (var1 == -1 || var0.sequence == -1 || HealthBarDefinition.SequenceDefinition_get(var1).field2319 >= HealthBarDefinition.SequenceDefinition_get(var0.sequence).field2319) {
+			var0.sequence = var1;
+			var0.sequenceFrame = 0;
+			var0.sequenceFrameCycle = 0;
+			var0.sequenceDelay = var2;
+			var0.field1195 = 0;
+			var0.field1270 = var0.pathLength;
+		}
+
 	}
 }

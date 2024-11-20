@@ -3,54 +3,55 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("da")
+@ObfuscatedName("dt")
 @Implements("Script")
 public class Script extends DualNode {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lme;"
 	)
 	@Export("Script_cached")
 	static EvictingDualNodeHashTable Script_cached;
 	@ObfuscatedName("aw")
-	String field1002;
-	@ObfuscatedName("ak")
+	String field1016;
+	@ObfuscatedName("at")
 	@Export("opcodes")
 	int[] opcodes;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@Export("intOperands")
 	int[] intOperands;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@Export("stringOperands")
 	String[] stringOperands;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1180786261
+		intValue = -2051475341
 	)
 	@Export("localIntCount")
 	int localIntCount;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 184594585
+		intValue = 1143957423
 	)
 	@Export("localStringCount")
 	int localStringCount;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 256793603
+		intValue = -145116321
 	)
 	@Export("intArgumentCount")
 	int intArgumentCount;
-	@ObfuscatedName("am")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 9671493
+		intValue = 1337332303
 	)
 	@Export("stringArgumentCount")
 	int stringArgumentCount;
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "[Lum;"
+		descriptor = "[Lug;"
 	)
 	@Export("switches")
 	IterableNodeHashTable[] switches;
@@ -62,57 +63,65 @@ public class Script extends DualNode {
 	Script() {
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(IS)[Lum;",
-		garbageValue = "17760"
+		descriptor = "(II)[Lug;",
+		garbageValue = "-1320134833"
 	)
 	@Export("newIterableNodeHashTable")
 	IterableNodeHashTable[] newIterableNodeHashTable(int var1) {
 		return new IterableNodeHashTable[var1];
 	}
 
-	@ObfuscatedName("ak")
-	@Export("base37DecodeLong")
-	public static String base37DecodeLong(long var0) {
-		if (var0 > 0L && var0 < 6582952005840035281L) {
-			if (var0 % 37L == 0L) {
-				return null;
-			} else {
-				int var2 = 0;
-
-				for (long var3 = var0; 0L != var3; var3 /= 37L) {
-					++var2;
-				}
-
-				StringBuilder var5;
-				char var8;
-				for (var5 = new StringBuilder(var2); var0 != 0L; var5.append(var8)) {
-					long var6 = var0;
-					var0 /= 37L;
-					var8 = class421.base37Table[(int)(var6 - var0 * 37L)];
-					if (var8 == '_') {
-						int var9 = var5.length() - 1;
-						var5.setCharAt(var9, Character.toUpperCase(var5.charAt(var9)));
-						var8 = 160;
-					}
-				}
-
-				var5.reverse();
-				var5.setCharAt(0, Character.toUpperCase(var5.charAt(0)));
-				return var5.toString();
-			}
-		} else {
-			return null;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "1497539764"
+	)
+	static void method2357(int var0) {
+		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+		if (var1 != null) {
+			var1.remove();
 		}
 	}
 
-	@ObfuscatedName("or")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "1984554171"
+		descriptor = "(ILdt;ZI)I",
+		garbageValue = "1431074721"
 	)
-	static void method2454(boolean var0) {
-		Client.leftClickOpensMenu = var0;
+	static int method2369(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? RestClientThreadFactory.scriptDotWidget : WorldMapCacheName.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETINVOBJECT) {
+			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.itemId;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETINVCOUNT) {
+			if (var3.itemId != -1) {
+				Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.itemQuantity;
+			} else {
+				Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = 0;
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETID) {
+			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.childIndex;
+			return 1;
+		} else if (var0 == 1707) {
+			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.method7331() ? 1 : 0;
+			return 1;
+		} else if (var0 == 1708) {
+			return Actor.method2694(var3);
+		} else {
+			return var0 == 1709 ? AbstractWorldMapData.method6228(var3) : 2;
+		}
+	}
+
+	@ObfuscatedName("po")
+	@ObfuscatedSignature(
+		descriptor = "(I)Z",
+		garbageValue = "-403465315"
+	)
+	static boolean method2367() {
+		return SecureUrlRequester.clientPreferences.getEULA() >= Client.field788;
 	}
 }

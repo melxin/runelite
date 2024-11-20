@@ -1,39 +1,64 @@
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("wk")
+@ObfuscatedName("vw")
 @Implements("SpriteBufferProperties")
 public class SpriteBufferProperties {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1934102439
+		intValue = 4130311
 	)
 	@Export("SpriteBuffer_spriteCount")
-	public static int SpriteBuffer_spriteCount;
+	static int SpriteBuffer_spriteCount;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -1147402861
+		intValue = 1828698817
 	)
 	@Export("SpriteBuffer_spriteWidth")
-	public static int SpriteBuffer_spriteWidth;
-	@ObfuscatedName("ak")
-	@ObfuscatedGetter(
-		intValue = -201283629
-	)
-	@Export("SpriteBuffer_spriteHeight")
-	public static int SpriteBuffer_spriteHeight;
-	@ObfuscatedName("aj")
-	@Export("SpriteBuffer_xOffsets")
-	public static int[] SpriteBuffer_xOffsets;
-	@ObfuscatedName("as")
-	@Export("SpriteBuffer_spriteHeights")
-	public static int[] SpriteBuffer_spriteHeights;
+	static int SpriteBuffer_spriteWidth;
 	@ObfuscatedName("ae")
-	@Export("SpriteBuffer_spritePalette")
-	public static int[] SpriteBuffer_spritePalette;
-	@ObfuscatedName("at")
-	@Export("Tiles_lightness")
-	static int[] Tiles_lightness;
+	@Export("SpriteBuffer_xOffsets")
+	static int[] SpriteBuffer_xOffsets;
+	@ObfuscatedName("ac")
+	@Export("SpriteBuffer_spriteWidths")
+	static int[] SpriteBuffer_spriteWidths;
+	@ObfuscatedName("au")
+	@Export("SpriteBuffer_pixels")
+	static byte[][] SpriteBuffer_pixels;
+
+	@ObfuscatedName("op")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "1947836790"
+	)
+	static final void method10708() {
+		Iterator var0 = Client.worldViewManager.iterator();
+
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
+
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				Player var3 = var1.players[Client.playerUpdateManager.playerIndices[var2]];
+				if (var3 != null) {
+					var3.clearIsFriend();
+				}
+			}
+		}
+
+		var0 = Messages.Messages_hashTable.iterator();
+
+		while (var0.hasNext()) {
+			Message var4 = (Message)var0.next();
+			var4.clearIsFromFriend();
+		}
+
+		if (class178.friendsChat != null) {
+			class178.friendsChat.clearFriends();
+		}
+
+	}
 }

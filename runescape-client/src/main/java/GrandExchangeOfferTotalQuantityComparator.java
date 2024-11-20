@@ -4,25 +4,19 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pw")
+@ObfuscatedName("pj")
 @Implements("GrandExchangeOfferTotalQuantityComparator")
 final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
-	@ObfuscatedName("aw")
+	@ObfuscatedName("vw")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lpl;"
 	)
-	@Export("KitDefinition_modelsArchive")
-	public static AbstractArchive KitDefinition_modelsArchive;
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "Lpe;"
-	)
-	public static AbstractArchive field4643;
+	static JagNetThread field4633;
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lpv;Lpv;B)I",
-		garbageValue = "-48"
+		descriptor = "(Lpk;Lpk;I)I",
+		garbageValue = "-1959098789"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
@@ -35,15 +29,5 @@ final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
 
 	public boolean equals(Object var1) {
 		return super.equals(var1);
-	}
-
-	@ObfuscatedName("kl")
-	@ObfuscatedSignature(
-		descriptor = "(Ldn;IIB)V",
-		garbageValue = "-114"
-	)
-	@Export("updateItemPile3")
-	static final void updateItemPile3(WorldView var0, int var1, int var2) {
-		class224.updateItemPile2(var0, var0.plane, var1, var2);
 	}
 }

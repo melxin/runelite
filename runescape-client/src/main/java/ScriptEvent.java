@@ -4,72 +4,72 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dt")
+@ObfuscatedName("dw")
 @Implements("ScriptEvent")
 public class ScriptEvent extends Node {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("args")
 	Object[] args;
 	@ObfuscatedName("aw")
-	boolean field1098;
-	@ObfuscatedName("ak")
+	boolean field1083;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lng;"
+		descriptor = "Lnp;"
 	)
 	@Export("widget")
 	Widget widget;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -186229437
+		intValue = 134496555
 	)
 	@Export("mouseX")
 	int mouseX;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 933764735
+		intValue = -1267852601
 	)
 	@Export("mouseY")
 	int mouseY;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -999128729
+		intValue = -1344300465
 	)
 	@Export("opIndex")
 	int opIndex;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1680545291
+		intValue = -790679833
 	)
-	int field1103;
-	@ObfuscatedName("ae")
+	int field1092;
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lng;"
+		descriptor = "Lnp;"
 	)
 	@Export("dragTarget")
 	Widget dragTarget;
-	@ObfuscatedName("am")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -170949425
+		intValue = 1436251743
 	)
 	@Export("keyTyped")
 	int keyTyped;
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1050168463
+		intValue = 1895655617
 	)
 	@Export("keyPressed")
 	int keyPressed;
-	@ObfuscatedName("au")
+	@ObfuscatedName("af")
 	@Export("targetName")
 	String targetName;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 181598379
+		intValue = 728932453
 	)
-	int field1108;
-	@ObfuscatedName("ao")
+	int field1094;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -983047605
+		intValue = -918988159
 	)
 	@Export("type")
 	int type;
@@ -78,10 +78,10 @@ public class ScriptEvent extends Node {
 		this.type = 76;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "([Ljava/lang/Object;I)V",
-		garbageValue = "1334767346"
+		garbageValue = "-1392355154"
 	)
 	@Export("setArgs")
 	public void setArgs(Object[] var1) {
@@ -90,39 +90,68 @@ public class ScriptEvent extends Node {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(IS)V",
-		garbageValue = "156"
+		descriptor = "(IB)V",
+		garbageValue = "62"
 	)
 	@Export("setType")
 	public void setType(int var1) {
 		this.type = var1;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lng;I)V",
-		garbageValue = "336945340"
+		descriptor = "(Lnp;I)V",
+		garbageValue = "118453991"
 	)
-	public void method2565(Widget var1) {
+	public void method2493(Widget var1) {
 		this.widget = var1;
 	}
 
-	@ObfuscatedName("hq")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "864244170"
+		descriptor = "([Lpr;II)Lpr;",
+		garbageValue = "-1231068373"
 	)
-	@Export("forceDisconnect")
-	static final void forceDisconnect(int var0) {
-		class389.logOut();
-		switch(var0) {
-		case 1:
-			class6.updateLoginIndex(24);
-			class132.setLoginResponseString("", "You were disconnected from the server.", "");
-			break;
-		case 2:
-			ReflectionCheck.method698();
+	@Export("findEnumerated")
+	public static Enum findEnumerated(Enum[] var0, int var1) {
+		Enum[] var2 = var0;
+
+		for (int var3 = 0; var3 < var2.length; ++var3) {
+			Enum var4 = var2[var3];
+			if (var1 == var4.rsOrdinal()) {
+				return var4;
+			}
 		}
 
+		return null;
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "([BIII)Ljava/lang/String;",
+		garbageValue = "1682660351"
+	)
+	@Export("decodeStringCp1252")
+	public static String decodeStringCp1252(byte[] var0, int var1, int var2) {
+		char[] var3 = new char[var2];
+		int var4 = 0;
+
+		for (int var5 = 0; var5 < var2; ++var5) {
+			int var6 = var0[var5 + var1] & 255;
+			if (var6 != 0) {
+				if (var6 >= 128 && var6 < 160) {
+					char var7 = class417.cp1252AsciiExtension[var6 - 128];
+					if (var7 == 0) {
+						var7 = '?';
+					}
+
+					var6 = var7;
+				}
+
+				var3[var4++] = (char)var6;
+			}
+		}
+
+		return new String(var3, 0, var4);
 	}
 }

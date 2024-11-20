@@ -1,194 +1,117 @@
+import java.lang.management.GarbageCollectorMXBean;
 import java.net.MalformedURLException;
 import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nd")
+@ObfuscatedName("nx")
 public class class356 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("bd")
+	@Export("garbageCollector")
+	static GarbageCollectorMXBean garbageCollector;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lei;"
+		descriptor = "Lem;"
 	)
-	UrlRequest field3807;
+	UrlRequest field3793;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lvv;"
+		descriptor = "Lvr;"
 	)
-	SpritePixels field3804;
+	SpritePixels field3794;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lex;)V"
+		descriptor = "(Ljava/lang/String;Lel;)V"
 	)
 	class356(String var1, UrlRequester var2) {
 		try {
-			this.field3807 = var2.request(new URL(var1));
+			this.field3793 = var2.request(new URL(var1));
 		} catch (MalformedURLException var4) {
-			this.field3807 = null;
+			this.field3793 = null;
 		}
 
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lei;)V"
+		descriptor = "(Lem;)V"
 	)
 	class356(UrlRequest var1) {
-		this.field3807 = var1;
+		this.field3793 = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lvv;",
-		garbageValue = "246420416"
+		descriptor = "(I)Lvr;",
+		garbageValue = "142746837"
 	)
-	SpritePixels method6920() {
-		if (this.field3804 == null && this.field3807 != null && this.field3807.isDone()) {
-			if (this.field3807.getResponse() != null) {
-				this.field3804 = ClanMate.readSpritePixelsFromBytes(this.field3807.getResponse());
+	SpritePixels method6892() {
+		if (this.field3794 == null && this.field3793 != null && this.field3793.isDone()) {
+			if (this.field3793.getResponse() != null) {
+				this.field3794 = World.readSpritePixelsFromBytes(this.field3793.getResponse());
 			}
 
-			this.field3807 = null;
+			this.field3793 = null;
 		}
 
-		return this.field3804;
+		return this.field3794;
 	}
 
-	@ObfuscatedName("no")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1599864392"
+		descriptor = "([BIII)Ljava/lang/String;",
+		garbageValue = "-1985153851"
 	)
-	@Export("changeGameOptions")
-	static final void changeGameOptions(int var0) {
-		PacketWriter.method3202();
-		DevicePcmPlayerProvider.method320();
-		int var1 = ReflectionCheck.VarpDefinition_get(var0).type;
-		if (var1 != 0) {
-			int var2 = Varps.Varps_main[var0];
-			if (var1 == 1) {
-				if (var2 == 1) {
-					FriendSystem.method2071(0.9D);
-				}
+	public static String method6891(byte[] var0, int var1, int var2) {
+		char[] var3 = new char[var2];
+		int var4 = 0;
+		int var5 = var1;
 
-				if (var2 == 2) {
-					FriendSystem.method2071(0.8D);
-				}
-
-				if (var2 == 3) {
-					FriendSystem.method2071(0.7D);
-				}
-
-				if (var2 == 4) {
-					FriendSystem.method2071(0.6D);
-				}
-			}
-
-			if (var1 == 3) {
-				if (var2 == 0) {
-					class437.setMusicVolume(255);
-				}
-
-				if (var2 == 1) {
-					class437.setMusicVolume(192);
-				}
-
-				if (var2 == 2) {
-					class437.setMusicVolume(128);
-				}
-
-				if (var2 == 3) {
-					class437.setMusicVolume(64);
-				}
-
-				if (var2 == 4) {
-					class437.setMusicVolume(0);
-				}
-			}
-
-			if (var1 == 4) {
-				if (var2 == 0) {
-					PlayerComposition.method7003(127);
-				}
-
-				if (var2 == 1) {
-					PlayerComposition.method7003(96);
-				}
-
-				if (var2 == 2) {
-					PlayerComposition.method7003(64);
-				}
-
-				if (var2 == 3) {
-					PlayerComposition.method7003(32);
-				}
-
-				if (var2 == 4) {
-					PlayerComposition.method7003(0);
-				}
-			}
-
-			if (var1 == 5) {
-				Client.leftClickOpensMenu = var2 == 1;
-			}
-
-			if (var1 == 6) {
-				Client.chatEffects = var2;
-			}
-
-			if (var1 == 9) {
-			}
-
-			if (var1 == 10) {
-				if (var2 == 0) {
-					class182.method3869(127);
-				}
-
-				if (var2 == 1) {
-					class182.method3869(96);
-				}
-
-				if (var2 == 2) {
-					class182.method3869(64);
-				}
-
-				if (var2 == 3) {
-					class182.method3869(32);
-				}
-
-				if (var2 == 4) {
-					class182.method3869(0);
-				}
-			}
-
-			if (var1 == 17) {
-				Client.followerIndex = var2 & 65535;
-			}
-
-			AttackOption[] var3;
-			if (var1 == 18) {
-				var3 = new AttackOption[]{AttackOption.AttackOption_hidden, AttackOption.AttackOption_alwaysRightClick, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.field1396, AttackOption.field1395};
-				Client.playerAttackOption = (AttackOption)class177.findEnumerated(var3, var2);
-				if (Client.playerAttackOption == null) {
-					Client.playerAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
-				}
-			}
-
-			if (var1 == 19) {
-				if (var2 == -1) {
-					Client.combatTargetPlayerIndex = -1;
+		int var8;
+		for (int var6 = var2 + var1; var5 < var6; var3[var4++] = (char)var8) {
+			int var7 = var0[var5++] & 255;
+			if (var7 < 128) {
+				if (var7 == 0) {
+					var8 = 65533;
 				} else {
-					Client.combatTargetPlayerIndex = var2 & 2047;
+					var8 = var7;
 				}
-			}
-
-			if (var1 == 22) {
-				var3 = new AttackOption[]{AttackOption.AttackOption_hidden, AttackOption.AttackOption_alwaysRightClick, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.field1396, AttackOption.field1395};
-				Client.npcAttackOption = (AttackOption)class177.findEnumerated(var3, var2);
-				if (Client.npcAttackOption == null) {
-					Client.npcAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
+			} else if (var7 < 192) {
+				var8 = 65533;
+			} else if (var7 < 224) {
+				if (var5 < var6 && (var0[var5] & 192) == 128) {
+					var8 = (var7 & 31) << 6 | var0[var5++] & 63;
+					if (var8 < 128) {
+						var8 = 65533;
+					}
+				} else {
+					var8 = 65533;
 				}
+			} else if (var7 < 240) {
+				if (var5 + 1 < var6 && (var0[var5] & 192) == 128 && (var0[var5 + 1] & 192) == 128) {
+					var8 = (var7 & 15) << 12 | (var0[var5++] & 63) << 6 | var0[var5++] & 63;
+					if (var8 < 2048) {
+						var8 = 65533;
+					}
+				} else {
+					var8 = 65533;
+				}
+			} else if (var7 < 248) {
+				if (var5 + 2 < var6 && (var0[var5] & 192) == 128 && (var0[var5 + 1] & 192) == 128 && (var0[var5 + 2] & 192) == 128) {
+					var8 = (var7 & 7) << 18 | (var0[var5++] & 63) << 12 | (var0[var5++] & 63) << 6 | var0[var5++] & 63;
+					if (var8 >= 65536 && var8 <= 1114111) {
+						var8 = 65533;
+					} else {
+						var8 = 65533;
+					}
+				} else {
+					var8 = 65533;
+				}
+			} else {
+				var8 = 65533;
 			}
-
 		}
+
+		return new String(var3, 0, var4);
 	}
 }

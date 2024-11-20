@@ -1,12 +1,12 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tu")
+@ObfuscatedName("tq")
 public interface class517 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lta;",
-		garbageValue = "-1456357206"
+		descriptor = "(B)Ltv;",
+		garbageValue = "-100"
 	)
 	PlatformInfo get();
 }

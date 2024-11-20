@@ -6,90 +6,90 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lw")
+@ObfuscatedName("lm")
 @Implements("WorldMapSection0")
 public class WorldMapSection0 implements WorldMapSection {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -432555287
+		intValue = -703588259
 	)
 	@Export("oldZ")
 	int oldZ;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -1265509527
+		intValue = -916090713
 	)
 	@Export("newZ")
 	int newZ;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 561382393
+		intValue = -1810763207
 	)
 	@Export("oldX")
 	int oldX;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 453232819
+		intValue = 1492174717
 	)
 	@Export("oldY")
 	int oldY;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1699514911
+		intValue = -662666185
 	)
 	@Export("newX")
 	int newX;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 800659713
+		intValue = 653999619
 	)
 	@Export("newY")
 	int newY;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -460910995
+		intValue = -1173344349
 	)
 	@Export("oldChunkXLow")
 	int oldChunkXLow;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 466620029
+		intValue = -2006105319
 	)
 	@Export("oldChunkYLow")
 	int oldChunkYLow;
-	@ObfuscatedName("am")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 978049819
+		intValue = 1067030143
 	)
 	@Export("oldChunkXHigh")
 	int oldChunkXHigh;
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1895387971
+		intValue = -611703967
 	)
 	@Export("oldChunkYHigh")
 	int oldChunkYHigh;
-	@ObfuscatedName("au")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1591019951
+		intValue = -1119785035
 	)
 	@Export("newChunkXLow")
 	int newChunkXLow;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -136889867
+		intValue = 911250173
 	)
 	@Export("newChunkYLow")
 	int newChunkYLow;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -1593670785
+		intValue = 1652061521
 	)
 	@Export("newChunkXHigh")
 	int newChunkXHigh;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -180249501
+		intValue = 903674161
 	)
 	@Export("newChunkYHigh")
 	int newChunkYHigh;
@@ -97,10 +97,10 @@ public class WorldMapSection0 implements WorldMapSection {
 	WorldMapSection0() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lkp;I)V",
-		garbageValue = "-1801855578"
+		descriptor = "(Lkt;I)V",
+		garbageValue = "-1753900965"
 	)
 	@Export("expandBounds")
 	public void expandBounds(WorldMapArea var1) {
@@ -124,32 +124,32 @@ public class WorldMapSection0 implements WorldMapSection {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)Z",
-		garbageValue = "-1302944886"
+		descriptor = "(IIIB)Z",
+		garbageValue = "58"
 	)
 	@Export("containsCoord")
 	public boolean containsCoord(int var1, int var2, int var3) {
-		if (var1 >= this.oldZ && var1 < this.oldZ + this.newZ) {
+		if (var1 >= this.oldZ && var1 < this.newZ + this.oldZ) {
 			return var2 >= (this.oldX << 6) + (this.oldChunkXLow << 3) && var2 <= (this.oldX << 6) + (this.oldChunkXHigh << 3) + 7 && var3 >= (this.oldY << 6) + (this.oldChunkYLow << 3) && var3 <= (this.oldY << 6) + (this.oldChunkYHigh << 3) + 7;
 		} else {
 			return false;
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "-75"
+		descriptor = "(III)Z",
+		garbageValue = "719649251"
 	)
 	@Export("containsPosition")
 	public boolean containsPosition(int var1, int var2) {
 		return var1 >= (this.newX << 6) + (this.newChunkXLow << 3) && var1 <= (this.newX << 6) + (this.newChunkXHigh << 3) + 7 && var2 >= (this.newY << 6) + (this.newChunkYLow << 3) && var2 <= (this.newY << 6) + (this.newChunkYHigh << 3) + 7;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)[I",
-		garbageValue = "114"
+		descriptor = "(IIII)[I",
+		garbageValue = "-439069343"
 	)
 	@Export("getBorderTileLengths")
 	public int[] getBorderTileLengths(int var1, int var2, int var3) {
@@ -161,10 +161,10 @@ public class WorldMapSection0 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lnn;",
-		garbageValue = "-246633808"
+		descriptor = "(IIS)Lny;",
+		garbageValue = "-17070"
 	)
 	@Export("coord")
 	public Coord coord(int var1, int var2) {
@@ -177,10 +177,10 @@ public class WorldMapSection0 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "2108862730"
+		descriptor = "(Lvj;I)V",
+		garbageValue = "2089662585"
 	)
 	@Export("read")
 	public void read(Buffer var1) {
@@ -201,92 +201,106 @@ public class WorldMapSection0 implements WorldMapSection {
 		this.postRead();
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1587677171"
+		descriptor = "(B)V",
+		garbageValue = "-128"
 	)
 	@Export("postRead")
 	void postRead() {
 	}
 
-	@ObfuscatedName("cl")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lng;I)V",
-		garbageValue = "-1334786950"
+		descriptor = "(Lpi;II)V",
+		garbageValue = "-2062931049"
 	)
-	static void method6243(Widget var0) {
-		var0.method7324();
-		var0.method7304().method7067(new class110(var0));
-		var0.method7304().method7055(new class111(var0));
-	}
+	public static void method6185(AbstractArchive var0, int var1) {
+		if (!class333.field3626.isEmpty()) {
+			ArrayList var2 = new ArrayList();
+			Iterator var3 = class333.field3626.iterator();
 
-	@ObfuscatedName("hi")
-	@ObfuscatedSignature(
-		descriptor = "(Liu;IIIZB)V",
-		garbageValue = "1"
-	)
-	static void method6223(SequenceDefinition var0, int var1, int var2, int var3, boolean var4) {
-		if (Client.soundEffectCount < 50) {
-			if (var0.field2310 != null && var0.field2310.containsKey(var1)) {
-				ArrayList var5 = (ArrayList)var0.field2310.get(var1);
-				if (!var5.isEmpty()) {
-					int var6 = 0;
-					int var8;
-					if (var5.size() > 1) {
-						int var7 = 1 + (int)(Math.random() * 100.0D);
-						var8 = 0;
-
-						for (Iterator var9 = var5.iterator(); var9.hasNext(); ++var6) {
-							class208 var10 = (class208)var9.next();
-							int var11 = var8;
-							var8 += var10.field2166;
-							if (var11 <= var7 && var7 < var8) {
-								break;
-							}
-						}
-
-						if (var6 >= var5.size()) {
-							return;
-						}
-					}
-
-					class208 var15 = (class208)var5.get(var6);
-					var8 = var15.field2165 & 31;
-					if ((var8 <= 0 || TaskHandler.clientPreferences.getAreaSoundEffectsVolume() != 0) && (var8 != 0 || TaskHandler.clientPreferences.getSoundEffectsVolume() != 0)) {
-						if (var15 != null) {
-							if (var15.field2165 == 0) {
-								if (!var4) {
-									return;
-								}
-
-								Client.soundLocations[Client.soundEffectCount] = 0;
-							} else {
-								int var13 = (var2 - 64) / 128;
-								int var14 = (var3 - 64) / 128;
-								Client.soundLocations[Client.soundEffectCount] = (var14 << 8) + (var13 << 16) + var15.field2165;
-							}
-
-							Client.soundEffectIds[Client.soundEffectCount] = var15.field2171;
-							Client.queuedSoundEffectLoops[Client.soundEffectCount] = var15.field2167;
-							Client.queuedSoundEffectDelays[Client.soundEffectCount] = 0;
-							Client.soundEffects[Client.soundEffectCount] = null;
-							Client.field573[Client.soundEffectCount] = var15.field2169;
-							++Client.soundEffectCount;
-						}
-
-					}
-				}
+			while (var3.hasNext()) {
+				MusicSong var4 = (MusicSong)var3.next();
+				var4.field3743 = false;
+				var4.field3741 = false;
+				var4.field3742 = false;
+				var4.field3735 = false;
+				var4.musicTrackArchive = var0;
+				var4.musicTrackVolume = var1;
+				var4.field3739 = 0.0F;
+				var2.add(var4);
 			}
+
+			UrlRequester.method3175(var2, class333.musicPlayerStatus, class333.field3630, class333.field3622, class333.field3632, false);
 		}
 	}
 
-	@ObfuscatedName("jm")
+	@ObfuscatedName("ko")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "2108574366"
+		descriptor = "(IIIIIB)V",
+		garbageValue = "18"
 	)
-	static final void method6229(int var0, int var1, int var2, int var3) {
-		AbstractUserComparator.method9037();
+	static void method6174(int var0, int var1, int var2, int var3, int var4) {
+		NodeDeque var5 = Projection.worldView.groundItems[var0][var1][var2];
+		if (var5 != null) {
+			for (TileItem var6 = (TileItem)var5.last(); var6 != null; var6 = (TileItem)var5.previous()) {
+				if ((var3 & 32767) == var6.id) {
+					var6.setFlag(var4);
+					break;
+				}
+			}
+		}
+
+	}
+
+	@ObfuscatedName("lp")
+	@ObfuscatedSignature(
+		descriptor = "(Lwv;I)V",
+		garbageValue = "-1673792766"
+	)
+	static final void method6160(Menu var0) {
+		boolean var1 = false;
+
+		while (!var1) {
+			var1 = true;
+
+			for (int var2 = 0; var2 < var0.menuOptionsCount - 1; ++var2) {
+				if (var0.menuOpcodes[var2] < 1000 && var0.menuOpcodes[var2 + 1] > 1000) {
+					String var3 = var0.menuTargets[var2];
+					var0.menuTargets[var2] = var0.menuTargets[var2 + 1];
+					var0.menuTargets[var2 + 1] = var3;
+					String var4 = var0.menuActions[var2];
+					var0.menuActions[var2] = var0.menuActions[var2 + 1];
+					var0.menuActions[var2 + 1] = var4;
+					Menu var5 = var0.subMenus[var2];
+					var0.subMenus[var2] = var0.subMenus[var2 + 1];
+					var0.subMenus[var2 + 1] = var5;
+					int var6 = var0.menuOpcodes[var2];
+					var0.menuOpcodes[var2] = var0.menuOpcodes[var2 + 1];
+					var0.menuOpcodes[var2 + 1] = var6;
+					var6 = var0.menuArguments1[var2];
+					var0.menuArguments1[var2] = var0.menuArguments1[var2 + 1];
+					var0.menuArguments1[var2 + 1] = var6;
+					var6 = var0.menuArguments2[var2];
+					var0.menuArguments2[var2] = var0.menuArguments2[var2 + 1];
+					var0.menuArguments2[var2 + 1] = var6;
+					var6 = var0.menuIdentifiers[var2];
+					var0.menuIdentifiers[var2] = var0.menuIdentifiers[var2 + 1];
+					var0.menuIdentifiers[var2 + 1] = var6;
+					var6 = var0.menuItemIds[var2];
+					var0.menuItemIds[var2] = var0.menuItemIds[var2 + 1];
+					var0.menuItemIds[var2 + 1] = var6;
+					var6 = var0.menuWorldViewIds[var2];
+					var0.menuWorldViewIds[var2] = var0.menuWorldViewIds[var2 + 1];
+					var0.menuWorldViewIds[var2 + 1] = var6;
+					boolean var7 = var0.menuShiftClick[var2];
+					var0.menuShiftClick[var2] = var0.menuShiftClick[var2 + 1];
+					var0.menuShiftClick[var2 + 1] = var7;
+					var1 = false;
+				}
+			}
+		}
+
 	}
 }

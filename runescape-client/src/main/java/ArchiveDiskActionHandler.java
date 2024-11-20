@@ -7,36 +7,31 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("ol")
 @Implements("ArchiveDiskActionHandler")
 public class ArchiveDiskActionHandler implements Runnable {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lph;"
 	)
 	@Export("ArchiveDiskActionHandler_requestQueue")
-	public static final NodeDeque ArchiveDiskActionHandler_requestQueue;
+	static final NodeDeque ArchiveDiskActionHandler_requestQueue;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lph;"
 	)
 	@Export("ArchiveDiskActionHandler_responseQueue")
-	public static NodeDeque ArchiveDiskActionHandler_responseQueue;
-	@ObfuscatedName("ak")
+	static NodeDeque ArchiveDiskActionHandler_responseQueue;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -411214707
+		intValue = 1781915429
 	)
-	static int field4534;
-	@ObfuscatedName("aj")
-	static final Object field4535;
-	@ObfuscatedName("ai")
-	@Export("ArchiveDiskActionHandler_thread")
-	static Thread ArchiveDiskActionHandler_thread;
-	@ObfuscatedName("au")
-	public static short[] field4539;
+	static int field4525;
+	@ObfuscatedName("ae")
+	static final Object field4526;
 
 	static {
 		ArchiveDiskActionHandler_requestQueue = new NodeDeque();
 		ArchiveDiskActionHandler_responseQueue = new NodeDeque();
-		field4534 = 0;
-		field4535 = new Object();
+		field4525 = 0;
+		field4526 = new Object();
 	}
 
 	ArchiveDiskActionHandler() {
@@ -63,73 +58,88 @@ public class ArchiveDiskActionHandler implements Runnable {
 						}
 					}
 
-					synchronized(field4535) {
-						if (field4534 <= 1) {
-							field4534 = 0;
-							field4535.notifyAll();
+					synchronized(field4526) {
+						if (field4525 <= 1) {
+							field4525 = 0;
+							field4526.notifyAll();
 							return;
 						}
 
-						field4534 = 600;
+						field4525 = 600;
 					}
 				} else {
-					World.method2001(100L);
-					synchronized(field4535) {
-						if (field4534 <= 1) {
-							field4534 = 0;
-							field4535.notifyAll();
+					class188.method3857(100L);
+					synchronized(field4526) {
+						if (field4525 <= 1) {
+							field4525 = 0;
+							field4526.notifyAll();
 							return;
 						}
 
-						--field4534;
+						--field4525;
 					}
 				}
 			}
 		} catch (Exception var13) {
-			HttpHeaders.RunException_sendStackTrace((String)null, var13);
+			ArchiveLoader.RunException_sendStackTrace((String)null, var13);
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Ljava/lang/String;Ljava/lang/String;I)[Lvc;",
-		garbageValue = "-927101622"
+		descriptor = "(IIIZIZI)V",
+		garbageValue = "-874772167"
 	)
-	@Export("getFont")
-	public static IndexedSprite[] getFont(AbstractArchive var0, String var1, String var2) {
-		if (!var0.isValidFileName(var1, var2)) {
-			return null;
-		} else {
-			int var3 = var0.getGroupId(var1);
-			int var4 = var0.getFileId(var3, var2);
-			IndexedSprite[] var5;
-			if (!class53.method1110(var0, var3, var4)) {
-				var5 = null;
-			} else {
-				IndexedSprite[] var7 = new IndexedSprite[SpriteBufferProperties.SpriteBuffer_spriteCount];
+	@Export("doWorldSorting")
+	static void doWorldSorting(int var0, int var1, int var2, boolean var3, int var4, boolean var5) {
+		if (var0 < var1) {
+			int var6 = (var0 + var1) / 2;
+			int var7 = var0;
+			World var8 = class142.World_worlds[var6];
+			class142.World_worlds[var6] = class142.World_worlds[var1];
+			class142.World_worlds[var1] = var8;
 
-				for (int var8 = 0; var8 < SpriteBufferProperties.SpriteBuffer_spriteCount; ++var8) {
-					IndexedSprite var9 = var7[var8] = new IndexedSprite();
-					var9.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
-					var9.height = SpriteBufferProperties.SpriteBuffer_spriteHeight;
-					var9.xOffset = SpriteBufferProperties.SpriteBuffer_xOffsets[var8];
-					var9.yOffset = class497.SpriteBuffer_yOffsets[var8];
-					var9.subWidth = class7.SpriteBuffer_spriteWidths[var8];
-					var9.subHeight = SpriteBufferProperties.SpriteBuffer_spriteHeights[var8];
-					var9.palette = SpriteBufferProperties.SpriteBuffer_spritePalette;
-					var9.pixels = class280.SpriteBuffer_pixels[var8];
+			for (int var9 = var0; var9 < var1; ++var9) {
+				if (class230.method4564(class142.World_worlds[var9], var8, var2, var3, var4, var5) <= 0) {
+					World var10 = class142.World_worlds[var9];
+					class142.World_worlds[var9] = class142.World_worlds[var7];
+					class142.World_worlds[var7++] = var10;
 				}
-
-				SpriteBufferProperties.SpriteBuffer_xOffsets = null;
-				class497.SpriteBuffer_yOffsets = null;
-				class7.SpriteBuffer_spriteWidths = null;
-				SpriteBufferProperties.SpriteBuffer_spriteHeights = null;
-				SpriteBufferProperties.SpriteBuffer_spritePalette = null;
-				class280.SpriteBuffer_pixels = null;
-				var5 = var7;
 			}
 
-			return var5;
+			class142.World_worlds[var1] = class142.World_worlds[var7];
+			class142.World_worlds[var7] = var8;
+			doWorldSorting(var0, var7 - 1, var2, var3, var4, var5);
+			doWorldSorting(var7 + 1, var1, var2, var3, var4, var5);
 		}
+
+	}
+
+	@ObfuscatedName("ob")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;ZB)Ljava/lang/String;",
+		garbageValue = "1"
+	)
+	static String method7510(String var0, boolean var1) {
+		String var2 = var1 ? "https://" : "http://";
+		if (Client.gameBuild == 1) {
+			var0 = var0 + "-wtrc";
+		} else if (Client.gameBuild == 2) {
+			var0 = var0 + "-wtqa";
+		} else if (Client.gameBuild == 3) {
+			var0 = var0 + "-wtwip";
+		} else if (Client.gameBuild == 5) {
+			var0 = var0 + "-wti";
+		} else if (Client.gameBuild == 4) {
+			var0 = "local";
+		}
+
+		String var3 = "";
+		if (class141.field1630 != null) {
+			var3 = "/p=" + class141.field1630;
+		}
+
+		String var4 = "runescape.com";
+		return var2 + var0 + "." + var4 + "/l=" + class276.clientLanguage + "/a=" + FriendsChat.field4989 + var3 + "/";
 	}
 }

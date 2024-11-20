@@ -1,24 +1,33 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fj")
+@ObfuscatedName("fa")
 public class class133 {
-	@ObfuscatedName("aj")
-	public static final float field1547;
-	@ObfuscatedName("ai")
-	public static final float field1552;
-	@ObfuscatedName("ig")
-	@ObfuscatedGetter(
-		intValue = -1683062733
-	)
-	static int field1546;
-	@ObfuscatedName("jg")
-	@Export("xteaKeys")
-	static int[][] xteaKeys;
+	@ObfuscatedName("ae")
+	public static final float field1535;
+	@ObfuscatedName("ao")
+	public static final float field1532;
 
 	static {
-		field1547 = Math.ulp(1.0F);
-		field1552 = field1547 * 2.0F;
+		field1535 = Math.ulp(1.0F);
+		field1532 = 2.0F * field1535;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Lpi;I)V",
+		garbageValue = "762272001"
+	)
+	public static void method3282(AbstractArchive var0) {
+		ParamComposition.ParamDefinition_archive = var0;
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1096972590"
+	)
+	public static void method3283() {
+		VarcInt.VarcInt_cached.clear();
 	}
 }

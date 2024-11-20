@@ -1,18 +1,23 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ee")
+@ObfuscatedName("ea")
 @Implements("UserComparator10")
 public class UserComparator10 extends AbstractUserComparator {
-	@ObfuscatedName("uu")
-	@ObfuscatedGetter(
-		intValue = -1065479945
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Lvr;"
 	)
-	static int field1521;
-	@ObfuscatedName("ap")
+	@Export("leftTitleSprite")
+	static SpritePixels leftTitleSprite;
+	@ObfuscatedName("ft")
+	@ObfuscatedSignature(
+		descriptor = "Loa;"
+	)
+	static Archive field1505;
+	@ObfuscatedName("ab")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -20,10 +25,10 @@ public class UserComparator10 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lsv;Lsv;I)I",
-		garbageValue = "-1983961875"
+		descriptor = "(Lsi;Lsi;I)I",
+		garbageValue = "-1701400289"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -38,46 +43,34 @@ public class UserComparator10 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(FFFFLfv;I)V",
-		garbageValue = "663536347"
+		descriptor = "(Lcu;I)V",
+		garbageValue = "-108661919"
 	)
-	static void method3328(float var0, float var1, float var2, float var3, class137 var4) {
-		float var5 = var1 - var0;
-		float var6 = var2 - var1;
-		float var7 = var3 - var2;
-		float var8 = var6 - var5;
-		var4.field1594 = var7 - var6 - var8;
-		var4.field1606 = var8 + var8 + var8;
-		var4.field1607 = var5 + var5 + var5;
-		var4.field1604 = var0;
-	}
-
-	@ObfuscatedName("kc")
-	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "1923335530"
-	)
-	static final void method3329(int var0, int var1) {
-		if (Client.menu.menuOptionsCount >= 2 || Client.isItemSelected != 0 || Client.isSpellSelected) {
-			if (Client.showMouseOverText) {
-				int var2 = MusicPatchPcmStream.method6792();
-				String var3;
-				if (Client.isItemSelected == 1 && Client.menu.menuOptionsCount < 2) {
-					var3 = "Use" + " " + Client.field659 + " " + "->";
-				} else if (Client.isSpellSelected && Client.menu.menuOptionsCount < 2) {
-					var3 = Client.selectedSpellActionName + " " + Client.selectedSpellName + " " + "->";
-				} else {
-					var3 = Client.menu.method10757(var2);
-				}
-
-				if (Client.menu.menuOptionsCount > 2) {
-					var3 = var3 + class204.colorStartTag(16777215) + " " + '/' + " " + (Client.menu.menuOptionsCount - 2) + " more options";
-				}
-
-				Calendar.fontBold12.drawRandomAlphaAndSpacing(var3, var0 + 4, var1 + 15, 16777215, 0, Client.cycle / 1000);
+	@Export("changeWorld")
+	static void changeWorld(World var0) {
+		if (var0.isMembersOnly() != Client.isMembersWorld) {
+			Client.isMembersWorld = var0.isMembersOnly();
+			boolean var1 = var0.isMembersOnly();
+			if (var1 != ItemComposition.ItemDefinition_inMembersWorld) {
+				ItemComposition.ItemDefinition_cached.clear();
+				ItemComposition.ItemDefinition_cachedModels.clear();
+				ItemComposition.ItemDefinition_cachedSprites.clear();
+				ItemComposition.ItemDefinition_inMembersWorld = var1;
 			}
 		}
+
+		if (var0.properties != Client.worldProperties) {
+			Frames.method5162(AttackOption.archive8, var0.properties);
+		}
+
+		class172.worldHost = var0.host;
+		Client.worldId = var0.id;
+		Client.worldProperties = var0.properties;
+		class47.field323 = var0.field822;
+		class150.worldPort = Client.gameBuild == 0 ? 43594 : var0.id + 40000;
+		InvDefinition.js5Port = Client.gameBuild == 0 ? 443 : var0.id + 50000;
+		class372.currentPort = class150.worldPort;
 	}
 }

@@ -2,45 +2,49 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nl")
+@ObfuscatedName("ns")
 public class class362 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhj;",
-		garbageValue = "-1814734298"
+		descriptor = "(II)Lvf;",
+		garbageValue = "1729000884"
 	)
-	@Export("SpotAnimationDefinition_get")
-	public static SpotAnimationDefinition SpotAnimationDefinition_get(int var0) {
-		SpotAnimationDefinition var1 = (SpotAnimationDefinition)SpotAnimationDefinition.SpotAnimationDefinition_cached.get((long)var0);
+	@Export("getDbRowType")
+	public static DbRowType getDbRowType(int var0) {
+		DbRowType var1 = (DbRowType)DbRowType.DBRowType_cache.get((long)var0);
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = SpotAnimationDefinition.SpotAnimationDefinition_archive.takeFile(13, var0);
-			var1 = new SpotAnimationDefinition();
-			var1.id = var0;
+			byte[] var2 = DbRowType.field5415.takeFile(38, var0);
+			var1 = new DbRowType();
 			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+				var1.method10002(new Buffer(var2));
 			}
 
-			SpotAnimationDefinition.SpotAnimationDefinition_cached.put(var1, (long)var0);
+			var1.method10005();
+			DbRowType.DBRowType_cache.put(var1, (long)var0);
 			return var1;
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("os")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "73"
+		descriptor = "(III)V",
+		garbageValue = "-838618155"
 	)
-	static void method7457() {
-		if (Login.Login_username == null || Login.Login_username.length() <= 0) {
-			if (TaskHandler.clientPreferences.getRememberedUsername() != null) {
-				Login.Login_username = TaskHandler.clientPreferences.getRememberedUsername();
-				Client.Login_isUsernameRemembered = true;
-			} else {
-				Client.Login_isUsernameRemembered = false;
+	static final void method7400(int var0, int var1) {
+		if (Client.currentClanChannels[var0] != null) {
+			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3676()) {
+				ClanChannelMember var2 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
+				if (var2.rank == -1) {
+					PacketBufferNode var3 = Message.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_ADD_BANNED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
+					var3.packetBuffer.writeByte(3 + class164.stringCp1252NullTerminatedByteSize(var2.username.getName()));
+					var3.packetBuffer.writeByte(var0);
+					var3.packetBuffer.writeShort(var1);
+					var3.packetBuffer.writeStringCp1252NullTerminated(var2.username.getName());
+					Client.packetWriter.addNode(var3);
+				}
 			}
-
 		}
 	}
 }

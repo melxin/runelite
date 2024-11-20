@@ -2,61 +2,59 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qt")
+@ObfuscatedName("ql")
 public class class426 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lqt;"
+		descriptor = "Lql;"
 	)
-	public static final class426 field4767;
+	public static final class426 field4761;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lqt;"
+		descriptor = "Lql;"
 	)
-	public static final class426 field4773;
-	@ObfuscatedName("ak")
+	public static final class426 field4760;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "[Lqt;"
+		descriptor = "[Lql;"
 	)
-	public static class426[] field4768;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = -306951475
-	)
-	static int field4769;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = 937612641
-	)
-	public static int field4770;
-	@ObfuscatedName("ay")
-	public float field4771;
-	@ObfuscatedName("as")
-	float field4772;
+	static class426[] field4765;
 	@ObfuscatedName("ae")
+	@ObfuscatedGetter(
+		intValue = 451668497
+	)
+	static int field4767;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = 1022055261
+	)
+	static int field4762;
+	@ObfuscatedName("ac")
+	public float field4764;
+	@ObfuscatedName("aj")
+	float field4763;
+	@ObfuscatedName("av")
 	public float field4766;
 
 	static {
 		new class426(0.0F, 0.0F, 0.0F);
 		new class426(1.0F, 1.0F, 1.0F);
 		new class426(1.0F, 0.0F, 0.0F);
-		field4767 = new class426(0.0F, 1.0F, 0.0F);
+		field4761 = new class426(0.0F, 1.0F, 0.0F);
 		new class426(0.0F, 0.0F, 1.0F);
 		new class426(1.0F, 0.0F, 0.0F);
 		new class426(-1.0F, 0.0F, 0.0F);
 		new class426(0.0F, 0.0F, 1.0F);
-		field4773 = new class426(0.0F, 0.0F, -1.0F);
+		field4760 = new class426(0.0F, 0.0F, -1.0F);
 		new class426(0.0F, 1.0F, 0.0F);
 		new class426(0.0F, -1.0F, 0.0F);
-		field4768 = new class426[0];
-		field4769 = 100;
-		field4768 = new class426[100];
-		field4770 = 0;
+		field4765 = new class426[0];
+		AsyncRestClient.method168(100);
 	}
 
 	public class426(float var1, float var2, float var3) {
-		this.field4771 = var1;
-		this.field4772 = var2;
+		this.field4764 = var1;
+		this.field4763 = var2;
 		this.field4766 = var3;
 	}
 
@@ -64,158 +62,141 @@ public class class426 {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lqt;)V"
+		descriptor = "(Lql;)V"
 	)
-	public class426(class426 var1) {
-		this.field4771 = var1.field4771;
-		this.field4772 = var1.field4772;
+	class426(class426 var1) {
+		this.field4764 = var1.field4764;
+		this.field4763 = var1.field4763;
 		this.field4766 = var1.field4766;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "16711680"
+		garbageValue = "-224519009"
 	)
-	public void method8168() {
-		synchronized(field4768) {
-			if (field4770 < field4769 - 1) {
-				field4768[++field4770 - 1] = this;
+	public void method8136() {
+		synchronized(field4765) {
+			if (field4762 < field4767 - 1) {
+				field4765[++field4762 - 1] = this;
 			}
 
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(FFFI)V",
-		garbageValue = "-1603121434"
+		garbageValue = "-260561048"
 	)
-	public void method8200(float var1, float var2, float var3) {
-		this.field4771 = var1;
-		this.field4772 = var2;
+	public void method8103(float var1, float var2, float var3) {
+		this.field4764 = var1;
+		this.field4763 = var2;
 		this.field4766 = var3;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lqt;I)V",
-		garbageValue = "-980308502"
+		descriptor = "(Lql;S)V",
+		garbageValue = "454"
 	)
-	public void method8169(class426 var1) {
-		this.method8200(var1.field4771, var1.field4772, var1.field4766);
+	void method8104(class426 var1) {
+		this.method8103(var1.field4764, var1.field4763, var1.field4766);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1421845236"
+		descriptor = "(B)V",
+		garbageValue = "0"
 	)
-	final void method8202() {
+	final void method8159() {
 		this.field4766 = 0.0F;
-		this.field4772 = 0.0F;
-		this.field4771 = 0.0F;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(Lqt;B)Z",
-		garbageValue = "-66"
-	)
-	boolean method8171(class426 var1) {
-		return this.field4771 == var1.field4771 && var1.field4772 == this.field4772 && this.field4766 == var1.field4766;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1066170556"
-	)
-	public final void method8172() {
-		float var1 = 1.0F / this.method8186();
-		this.field4771 *= var1;
-		this.field4772 *= var1;
-		this.field4766 *= var1;
-	}
-
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "(Lqt;I)V",
-		garbageValue = "-1203805015"
-	)
-	final void method8173(class426 var1) {
-		this.field4771 += var1.field4771;
-		this.field4772 += var1.field4772;
-		this.field4766 += var1.field4766;
+		this.field4763 = 0.0F;
+		this.field4764 = 0.0F;
 	}
 
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lqt;B)V",
-		garbageValue = "1"
+		descriptor = "(Lql;I)Z",
+		garbageValue = "1645147965"
 	)
-	public final void method8196(class426 var1) {
-		this.field4771 -= var1.field4771;
-		this.field4772 -= var1.field4772;
-		this.field4766 -= var1.field4766;
+	boolean method8106(class426 var1) {
+		return this.field4764 == var1.field4764 && this.field4763 == var1.field4763 && this.field4766 == var1.field4766;
 	}
 
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lqt;I)F",
-		garbageValue = "-1837312681"
+		descriptor = "(I)V",
+		garbageValue = "-227328486"
 	)
-	public final float method8176(class426 var1) {
-		return var1.field4766 * this.field4766 + this.field4771 * var1.field4771 + var1.field4772 * this.field4772;
+	public final void method8107() {
+		float var1 = 1.0F / this.method8112();
+		this.field4764 *= var1;
+		this.field4763 *= var1;
+		this.field4766 *= var1;
 	}
 
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lqt;B)V",
-		garbageValue = "61"
+		descriptor = "(Lql;B)V",
+		garbageValue = "14"
 	)
-	public final void method8175(class426 var1) {
-		this.method8200(var1.field4766 * this.field4772 - var1.field4772 * this.field4766, var1.field4771 * this.field4766 - var1.field4766 * this.field4771, this.field4771 * var1.field4772 - var1.field4771 * this.field4772);
+	public final void method8108(class426 var1) {
+		this.field4764 += var1.field4764;
+		this.field4763 += var1.field4763;
+		this.field4766 += var1.field4766;
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(Lql;I)V",
+		garbageValue = "2020772863"
+	)
+	final void method8109(class426 var1) {
+		this.field4764 -= var1.field4764;
+		this.field4763 -= var1.field4763;
+		this.field4766 -= var1.field4766;
 	}
 
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(S)F",
-		garbageValue = "-10964"
+		descriptor = "(Lql;I)F",
+		garbageValue = "440618851"
 	)
-	final float method8186() {
-		return (float)Math.sqrt((double)(this.field4766 * this.field4766 + this.field4772 * this.field4772 + this.field4771 * this.field4771));
+	public final float method8114(class426 var1) {
+		return this.field4766 * var1.field4766 + var1.field4763 * this.field4763 + var1.field4764 * this.field4764;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(Lql;B)V",
+		garbageValue = "0"
+	)
+	public final void method8152(class426 var1) {
+		this.method8103(this.field4763 * var1.field4766 - var1.field4763 * this.field4766, this.field4766 * var1.field4764 - this.field4764 * var1.field4766, var1.field4763 * this.field4764 - var1.field4764 * this.field4763);
+	}
+
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(I)F",
+		garbageValue = "957174769"
+	)
+	final float method8112() {
+		return (float)Math.sqrt((double)(this.field4763 * this.field4763 + this.field4764 * this.field4764 + this.field4766 * this.field4766));
+	}
+
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "(FI)V",
-		garbageValue = "-1096645015"
+		garbageValue = "-734486630"
 	)
-	final void method8177(float var1) {
-		this.field4771 *= var1;
-		this.field4772 *= var1;
+	final void method8113(float var1) {
+		this.field4764 *= var1;
+		this.field4763 *= var1;
 		this.field4766 *= var1;
 	}
 
 	public String toString() {
-		return this.field4771 + ", " + this.field4772 + ", " + this.field4766;
-	}
-
-	@ObfuscatedName("jt")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "22"
-	)
-	static int method8219(int var0, int var1) {
-		int var2 = var1 - 334;
-		if (var2 < 0) {
-			var2 = 0;
-		} else if (var2 > 100) {
-			var2 = 100;
-		}
-
-		int var3 = (Client.zoomWidth - Client.zoomHeight) * var2 / 100 + Client.zoomHeight;
-		return var0 * var3 / 256;
+		return this.field4764 + ", " + this.field4763 + ", " + this.field4766;
 	}
 }

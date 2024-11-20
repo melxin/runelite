@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ld")
+@ObfuscatedName("lw")
 @Implements("WorldMapSprite")
 public final class WorldMapSprite {
 	@ObfuscatedName("aw")
@@ -18,26 +20,40 @@ public final class WorldMapSprite {
 		this.tileColors = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-1358712718"
+		descriptor = "(IIS)I",
+		garbageValue = "1612"
 	)
 	@Export("getTileColor")
 	final int getTileColor(int var1, int var2) {
 		return this.tileColors[var1 + var2 * 64];
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIFFFB)F",
-		garbageValue = "-80"
+		descriptor = "(III)V",
+		garbageValue = "-1218883081"
 	)
-	public static float method6290(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10) {
-		float var11 = (float)((var6 - var7) * (var2 - var4) + (var5 - var7) * (var4 - var3));
-		float var12 = (float)((var1 - var7) * (var4 - var3) + (var6 - var7) * (var0 - var4)) / var11;
-		float var13 = (float)((var7 - var5) * (var0 - var4) + (var1 - var7) * (var2 - var4)) / var11;
-		float var14 = 1.0F - var12 - var13;
-		return var14 * var10 + var12 * var8 + var9 * var13;
+	public static void method6235(int var0, int var1) {
+		StructComposition.method4069(var0, var1, 0, 0);
+		class333.field3626.clear();
+		class333.field3627.clear();
+		if (class333.musicSongs.isEmpty() || var0 == 0 && var1 == 0) {
+			class136.method3325();
+		} else {
+			class333.field3627.add(new DelayFadeTask((SongTask)null, class333.musicPlayerStatus));
+			class333.field3627.add(new FadeOutTask((SongTask)null, 0, false, class333.field3630));
+			ArrayList var3 = new ArrayList();
+			Iterator var4 = class333.musicSongs.iterator();
+
+			while (var4.hasNext()) {
+				MusicSong var5 = (MusicSong)var4.next();
+				var3.add(var5);
+			}
+
+			class333.field3627.add(new class443((SongTask)null, var3));
+		}
+
 	}
 }

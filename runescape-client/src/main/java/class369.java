@@ -3,65 +3,57 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("od")
+@ObfuscatedName("oe")
 public enum class369 implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lod;"
+		descriptor = "Loe;"
 	)
-	field4058(0),
+	field4039(0),
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lod;"
+		descriptor = "Loe;"
 	)
-	field4061(1),
-	@ObfuscatedName("ak")
+	field4046(1),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lod;"
+		descriptor = "Loe;"
 	)
-	field4056(2),
-	@ObfuscatedName("aj")
+	field4041(2),
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lod;"
+		descriptor = "Loe;"
 	)
-	field4059(3),
-	@ObfuscatedName("ai")
+	field4042(3),
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lod;"
+		descriptor = "Loe;"
 	)
-	field4060(4);
+	field4047(4);
 
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -447414025
+	@ObfuscatedName("ks")
+	@ObfuscatedSignature(
+		descriptor = "[Lvr;"
 	)
-	final int field4057;
+	@Export("headIconHintSprites")
+	static SpritePixels[] headIconHintSprites;
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = -1774613483
+	)
+	final int field4044;
 
 	class369(int var3) {
-		this.field4057 = var3;
+		this.field4044 = var3;
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1837624059"
+		garbageValue = "1071289392"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field4057;
-	}
-
-	@ObfuscatedName("nd")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-3"
-	)
-	@Export("FriendSystem_invalidateIgnoreds")
-	static final void FriendSystem_invalidateIgnoreds() {
-		ScriptFrame.method1223();
-		if (PendingSpawn.friendsChat != null) {
-			PendingSpawn.friendsChat.invalidateIgnoreds();
-		}
-
+		return this.field4044;
 	}
 }

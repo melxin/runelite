@@ -1,56 +1,48 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("hp")
+@ObfuscatedName("hx")
 public class class202 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lhp;"
+		descriptor = "Lhx;"
 	)
-	static final class202 field2111;
+	static final class202 field2093;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lhp;"
+		descriptor = "Lhx;"
 	)
-	static final class202 field2108;
-	@ObfuscatedName("ak")
+	static final class202 field2092;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lhp;"
+		descriptor = "Lhx;"
 	)
-	static final class202 field2110;
-	@ObfuscatedName("aj")
+	static final class202 field2094;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lhp;"
+		descriptor = "Lhx;"
 	)
-	static final class202 field2114;
-	@ObfuscatedName("ai")
+	static final class202 field2095;
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lhp;"
+		descriptor = "Lhx;"
 	)
-	static final class202 field2112;
-	@ObfuscatedName("ag")
-	static String[] field2113;
-	@ObfuscatedName("ew")
-	@ObfuscatedSignature(
-		descriptor = "Liz;"
+	static final class202 field2096;
+	@ObfuscatedName("om")
+	@ObfuscatedGetter(
+		intValue = 1677013351
 	)
-	@Export("js5SocketTask")
-	static Task js5SocketTask;
-	@ObfuscatedName("mw")
-	@ObfuscatedSignature(
-		descriptor = "Ljk;"
-	)
-	@Export("textureProvider")
-	static TextureProvider textureProvider;
+	@Export("selectedSpellFlags")
+	static int selectedSpellFlags;
 
 	static {
-		field2111 = new class202(0);
-		field2108 = new class202(1);
-		field2110 = new class202(2);
-		field2114 = new class202(3);
-		field2112 = new class202(4);
+		field2093 = new class202(0);
+		field2092 = new class202(1);
+		field2094 = new class202(2);
+		field2095 = new class202(3);
+		field2096 = new class202(4);
 	}
 
 	@ObfuscatedSignature(
@@ -60,85 +52,85 @@ public class class202 {
 	class202(int var1) {
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIS)I",
-		garbageValue = "-5843"
+		descriptor = "(IB)Lhu;",
+		garbageValue = "-104"
 	)
-	static final int method4111(int var0, int var1) {
-		if (var0 == -2) {
-			return 12345678;
-		} else if (var0 == -1) {
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
-			}
-
+	public static VarbitComposition method4010(int var0) {
+		VarbitComposition var1 = (VarbitComposition)VarbitComposition.VarbitDefinition_cached.get((long)var0);
+		if (var1 != null) {
 			return var1;
 		} else {
-			var1 = (var0 & 127) * var1 / 128;
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
+			byte[] var2 = VarbitComposition.VarbitDefinition_archive.takeFile(14, var0);
+			var1 = new VarbitComposition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
 			}
 
-			return (var0 & 65408) + var1;
+			VarbitComposition.VarbitDefinition_cached.put(var1, (long)var0);
+			return var1;
 		}
 	}
 
-	@ObfuscatedName("bn")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(ILda;ZB)I",
-		garbageValue = "-106"
+		descriptor = "(Lpi;Lpi;ZLqu;I)V",
+		garbageValue = "-388457935"
 	)
-	static int method4110(int var0, Script var1, boolean var2) {
-		int var3;
-		if (var0 == ScriptOpcodes.CAM_FORCEANGLE) {
-			class96.Interpreter_intStackSize -= 2;
-			var3 = Interpreter.Interpreter_intStack[class96.Interpreter_intStackSize];
-			int var4 = Interpreter.Interpreter_intStack[class96.Interpreter_intStackSize + 1];
-			if (!Client.isCameraLocked) {
-				Client.camAngleX = var3;
-				Client.camAngleY = var4;
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_XA) {
-			Interpreter.Interpreter_intStack[++class96.Interpreter_intStackSize - 1] = Client.camAngleX;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_YA) {
-			Interpreter.Interpreter_intStack[++class96.Interpreter_intStackSize - 1] = Client.camAngleY;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_SETFOLLOWHEIGHT) {
-			var3 = Interpreter.Interpreter_intStack[--class96.Interpreter_intStackSize];
-			if (var3 < 0) {
-				var3 = 0;
-			}
-
-			Client.camFollowHeight = var3;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETFOLLOWHEIGHT) {
-			Interpreter.Interpreter_intStack[++class96.Interpreter_intStackSize - 1] = Client.camFollowHeight;
-			return 1;
-		} else {
-			return 2;
-		}
+	public static void method4012(AbstractArchive var0, AbstractArchive var1, boolean var2, Font var3) {
+		class374.ItemDefinition_archive = var0;
+		ItemComposition.ItemDefinition_modelArchive = var1;
+		ItemComposition.ItemDefinition_inMembersWorld = var2;
+		class31.ItemDefinition_fileCount = class374.ItemDefinition_archive.getGroupFileCount(10);
+		ItemContainer.ItemDefinition_fontPlain11 = var3;
 	}
 
-	@ObfuscatedName("km")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ldn;IIIII)Ldo;",
-		garbageValue = "1181991581"
+		descriptor = "(IB)I",
+		garbageValue = "54"
 	)
-	static final PendingSpawn method4112(WorldView var0, int var1, int var2, int var3, int var4) {
-		for (PendingSpawn var5 = (PendingSpawn)var0.pendingSpawns.last(); var5 != null; var5 = (PendingSpawn)var0.pendingSpawns.previous()) {
-			if (var5.plane == var1 && var2 == var5.x && var3 == var5.y && var4 == var5.type) {
-				return var5;
-			}
+	@Export("Widget_unpackTargetMask")
+	public static int Widget_unpackTargetMask(int var0) {
+		return var0 >> 11 & 63;
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(IIILir;IB)V",
+		garbageValue = "111"
+	)
+	@Export("createObjectSound")
+	static void createObjectSound(int var0, int var1, int var2, ObjectComposition var3, int var4) {
+		ObjectSound var5 = new ObjectSound();
+		var5.plane = var0;
+		var5.x = var1 * 128;
+		var5.y = var2 * 128;
+		int var6 = var3.sizeX;
+		int var7 = var3.sizeY;
+		if (var4 == 1 || var4 == 3) {
+			var6 = var3.sizeY;
+			var7 = var3.sizeX;
 		}
 
-		return null;
+		var5.maxX = (var6 + var1) * 128;
+		var5.maxY = (var7 + var2) * 128;
+		var5.soundEffectId = var3.ambientSoundId;
+		var5.field851 = var3.int7 * 128;
+		var5.field847 = Math.max(var3.int8 * 16384 - 128, 0);
+		var5.field846 = var3.int5;
+		var5.field850 = var3.int6;
+		var5.soundEffectIds = var3.soundEffectIds;
+		if (var3.transforms != null) {
+			var5.obj = var3;
+			var5.set();
+		}
+
+		ObjectSound.objectSounds.addFirst(var5);
+		if (var5.soundEffectIds != null) {
+			var5.field840 = var5.field846 + (int)(Math.random() * (double)(var5.field850 - var5.field846));
+		}
+
 	}
 }

@@ -7,25 +7,25 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("vf")
 @Implements("DbRowType")
 public class DbRowType extends DualNode {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lpi;"
 	)
-	static AbstractArchive field5405;
+	static AbstractArchive field5415;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lme;"
 	)
 	@Export("DBRowType_cache")
 	static EvictingDualNodeHashTable DBRowType_cache;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@Export("columnTypes")
 	Object[][] columnTypes;
-	@ObfuscatedName("aj")
-	int[][] field5404;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ae")
+	int[][] field5414;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 283339225
+		intValue = -1899141421
 	)
 	@Export("tableId")
 	public int tableId;
@@ -38,43 +38,43 @@ public class DbRowType extends DualNode {
 		this.tableId = -1;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "-570741067"
+		descriptor = "(Lvj;I)V",
+		garbageValue = "-1095657975"
 	)
-	void method9985(Buffer var1) {
+	void method10002(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
 				return;
 			}
 
-			this.method9992(var1, var2);
+			this.method10004(var1, var2);
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(II)[Ljava/lang/Object;",
-		garbageValue = "1354106963"
+		garbageValue = "293265911"
 	)
 	@Export("getColumnType")
 	public Object[] getColumnType(int var1) {
 		return this.columnTypes == null ? null : this.columnTypes[var1];
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;IB)V",
-		garbageValue = "0"
+		descriptor = "(Lvj;II)V",
+		garbageValue = "629701006"
 	)
-	void method9992(Buffer var1, int var2) {
+	void method10004(Buffer var1, int var2) {
 		if (var2 == 3) {
 			int var3 = var1.readUnsignedByte();
 			if (this.columnTypes == null) {
 				this.columnTypes = new Object[var3][];
-				this.field5404 = new int[var3][];
+				this.field5414 = new int[var3][];
 			}
 
 			for (int var4 = var1.readUnsignedByte(); var4 != 255; var4 = var1.readUnsignedByte()) {
@@ -85,8 +85,8 @@ public class DbRowType extends DualNode {
 					var6[var7] = var1.readUShortSmart();
 				}
 
-				this.columnTypes[var4] = class30.method460(var1, var6);
-				this.field5404[var4] = var6;
+				this.columnTypes[var4] = LoginScreenAnimation.method2740(var1, var6);
+				this.field5414[var4] = var6;
 			}
 		} else if (var2 == 4) {
 			this.tableId = var1.packBytesToInt();
@@ -94,11 +94,11 @@ public class DbRowType extends DualNode {
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-2121548173"
+		descriptor = "(B)V",
+		garbageValue = "32"
 	)
-	void method10001() {
+	void method10005() {
 	}
 }

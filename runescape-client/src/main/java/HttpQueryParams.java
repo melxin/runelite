@@ -7,12 +7,16 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("te")
+@ObfuscatedName("tf")
 @Implements("HttpQueryParams")
 public class HttpQueryParams implements HttpPayload {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("jn")
+	@ObfuscatedSignature(
+		descriptor = "Ldm;"
+	)
+	static WorldView field5137;
+	@ObfuscatedName("ab")
 	@Export("queryParameters")
 	final Map queryParameters;
 
@@ -20,10 +24,10 @@ public class HttpQueryParams implements HttpPayload {
 		this.queryParameters = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltz;",
-		garbageValue = "1116588540"
+		descriptor = "(I)Lto;",
+		garbageValue = "1892648748"
 	)
 	@Export("getContentType")
 	public HttpContentType getContentType() {
@@ -32,8 +36,8 @@ public class HttpQueryParams implements HttpPayload {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "60"
+		descriptor = "(I)[B",
+		garbageValue = "-1854248554"
 	)
 	@Export("toBytes")
 	public byte[] toBytes() throws UnsupportedEncodingException {
@@ -42,8 +46,8 @@ public class HttpQueryParams implements HttpPayload {
 
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1915596610"
+		descriptor = "(B)Ljava/lang/String;",
+		garbageValue = "11"
 	)
 	@Export("encode")
 	public String encode() throws UnsupportedEncodingException {
@@ -66,84 +70,13 @@ public class HttpQueryParams implements HttpPayload {
 		}
 	}
 
-	@ObfuscatedName("bj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(ILda;ZI)I",
-		garbageValue = "1526142023"
+		descriptor = "(Lpi;Lpi;I)V",
+		garbageValue = "-64756694"
 	)
-	static int method9406(int var0, Script var1, boolean var2) {
-		int var3;
-		int var6;
-		int var9;
-		if (var0 == ScriptOpcodes.ENUM_STRING) {
-			class96.Interpreter_intStackSize -= 2;
-			var3 = Interpreter.Interpreter_intStack[class96.Interpreter_intStackSize];
-			var9 = Interpreter.Interpreter_intStack[class96.Interpreter_intStackSize + 1];
-			EnumComposition var10 = ObjectComposition.getEnum(var3);
-			if (var10.outputType != 's') {
-			}
-
-			for (var6 = 0; var6 < var10.outputCount; ++var6) {
-				if (var9 == var10.keys[var6]) {
-					Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = var10.strVals[var6];
-					var10 = null;
-					break;
-				}
-			}
-
-			if (var10 != null) {
-				Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = var10.defaultStr;
-			}
-
-			return 1;
-		} else if (var0 != ScriptOpcodes.ENUM) {
-			if (var0 == ScriptOpcodes.ENUM_GETOUTPUTCOUNT) {
-				var3 = Interpreter.Interpreter_intStack[--class96.Interpreter_intStackSize];
-				EnumComposition var4 = ObjectComposition.getEnum(var3);
-				Interpreter.Interpreter_intStack[++class96.Interpreter_intStackSize - 1] = var4.size();
-				return 1;
-			} else {
-				return 2;
-			}
-		} else {
-			class96.Interpreter_intStackSize -= 4;
-			var3 = Interpreter.Interpreter_intStack[class96.Interpreter_intStackSize];
-			var9 = Interpreter.Interpreter_intStack[class96.Interpreter_intStackSize + 1];
-			int var5 = Interpreter.Interpreter_intStack[class96.Interpreter_intStackSize + 2];
-			var6 = Interpreter.Interpreter_intStack[class96.Interpreter_intStackSize + 3];
-			EnumComposition var7 = ObjectComposition.getEnum(var5);
-			if (var3 == var7.inputType && var9 == var7.outputType) {
-				for (int var8 = 0; var8 < var7.outputCount; ++var8) {
-					if (var6 == var7.keys[var8]) {
-						if (var9 == 115) {
-							Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = var7.strVals[var8];
-						} else {
-							Interpreter.Interpreter_intStack[++class96.Interpreter_intStackSize - 1] = var7.intVals[var8];
-						}
-
-						var7 = null;
-						break;
-					}
-				}
-
-				if (var7 != null) {
-					if (var9 == 115) {
-						Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = var7.defaultStr;
-					} else {
-						Interpreter.Interpreter_intStack[++class96.Interpreter_intStackSize - 1] = var7.defaultInt;
-					}
-				}
-
-				return 1;
-			} else {
-				if (var9 == 115) {
-					Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = "null";
-				} else {
-					Interpreter.Interpreter_intStack[++class96.Interpreter_intStackSize - 1] = 0;
-				}
-
-				return 1;
-			}
-		}
+	public static void method9395(AbstractArchive var0, AbstractArchive var1) {
+		SpotAnimationDefinition.SpotAnimationDefinition_archive = var0;
+		class36.SpotAnimationDefinition_modelArchive = var1;
 	}
 }

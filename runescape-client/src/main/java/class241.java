@@ -2,46 +2,46 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jx")
+@ObfuscatedName("js")
 public class class241 {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "[Lfw;"
+		descriptor = "[Lfe;"
 	)
-	class134[] field2608;
-	@ObfuscatedName("ak")
+	class134[] field2615;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 861196603
+		intValue = 780019395
 	)
-	int field2610;
+	int field2616;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V"
+		descriptor = "(Lvj;I)V"
 	)
 	class241(Buffer var1, int var2) {
-		this.field2608 = new class134[var2];
-		this.field2610 = var1.readUnsignedByte();
+		this.field2615 = new class134[var2];
+		this.field2616 = var1.readUnsignedByte();
 
-		for (int var3 = 0; var3 < this.field2608.length; ++var3) {
-			class134 var4 = new class134(this.field2610, var1, false);
-			this.field2608[var3] = var4;
+		for (int var3 = 0; var3 < this.field2615.length; ++var3) {
+			class134 var4 = new class134(this.field2616, var1, false);
+			this.field2615[var3] = var4;
 		}
 
-		this.method4902();
+		this.method4810();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "374756753"
+		descriptor = "(B)V",
+		garbageValue = "24"
 	)
-	void method4902() {
-		class134[] var1 = this.field2608;
+	void method4810() {
+		class134[] var1 = this.field2615;
 
 		for (int var2 = 0; var2 < var1.length; ++var2) {
 			class134 var3 = var1[var2];
-			if (var3.field1569 >= 0) {
-				var3.field1574 = this.field2608[var3.field1569];
+			if (var3.field1544 >= 0) {
+				var3.field1541 = this.field2615[var3.field1544];
 			}
 		}
 
@@ -50,75 +50,57 @@ public class class241 {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1298895339"
+		garbageValue = "2060169951"
 	)
-	public int method4903() {
-		return this.field2608.length;
+	public int method4808() {
+		return this.field2615.length;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lfw;",
-		garbageValue = "-335772549"
+		descriptor = "(II)Lfe;",
+		garbageValue = "-1616526404"
 	)
-	class134 method4904(int var1) {
-		return var1 >= this.method4903() ? null : this.field2608[var1];
+	class134 method4809(int var1) {
+		return var1 >= this.method4808() ? null : this.field2615[var1];
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lfw;",
-		garbageValue = "1631585712"
+		descriptor = "(B)[Lfe;",
+		garbageValue = "48"
 	)
-	class134[] method4905() {
-		return this.field2608;
+	class134[] method4811() {
+		return this.field2615;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lfr;IB)V",
-		garbageValue = "91"
+		descriptor = "(Lfz;IB)V",
+		garbageValue = "71"
 	)
-	void method4909(class145 var1, int var2) {
-		this.method4907(var1, var2, (boolean[])null, false);
+	void method4815(class145 var1, int var2) {
+		this.method4818(var1, var2, (boolean[])null, false);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lfr;I[ZZI)V",
-		garbageValue = "-1490826237"
+		descriptor = "(Lfz;I[ZZI)V",
+		garbageValue = "942478868"
 	)
-	void method4907(class145 var1, int var2, boolean[] var3, boolean var4) {
-		int var5 = var1.method3511();
+	void method4818(class145 var1, int var2, boolean[] var3, boolean var4) {
+		int var5 = var1.method3405();
 		int var6 = 0;
-		class134[] var7 = this.method4905();
+		class134[] var7 = this.method4811();
 
 		for (int var8 = 0; var8 < var7.length; ++var8) {
 			class134 var9 = var7[var8];
 			if (var3 == null || var4 == var3[var6]) {
-				var1.method3513(var2, var9, var6, var5);
+				var1.method3424(var2, var9, var6, var5);
 			}
 
 			++var6;
 		}
 
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(I[BLsl;I)V",
-		garbageValue = "-1880017708"
-	)
-	static void method4920(int var0, byte[] var1, ArchiveDisk var2) {
-		ArchiveDiskAction var3 = new ArchiveDiskAction();
-		var3.type = 0;
-		var3.key = (long)var0;
-		var3.data = var1;
-		var3.archiveDisk = var2;
-		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.addFirst(var3);
-		}
-
-		WorldMapScaleHandler.method6437();
 	}
 }

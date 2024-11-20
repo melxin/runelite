@@ -1,46 +1,32 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uk")
+@ObfuscatedName("ux")
 final class class545 implements class540 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Object;Lvl;B)V",
-		garbageValue = "-55"
+		descriptor = "(Ljava/lang/Object;Lvj;I)V",
+		garbageValue = "1774358962"
 	)
-	public void vmethod9951(Object var1, Buffer var2) {
-		this.method9952((String)var1, var2);
+	public void vmethod9971(Object var1, Buffer var2) {
+		this.method9970((String)var1, var2);
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;S)Ljava/lang/Object;",
-		garbageValue = "-9735"
+		descriptor = "(Lvj;I)Ljava/lang/Object;",
+		garbageValue = "59393473"
 	)
-	public Object vmethod9953(Buffer var1) {
+	public Object vmethod9969(Buffer var1) {
 		return var1.readStringCp1252NullTerminated();
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lvl;I)V",
-		garbageValue = "149271358"
+		descriptor = "(Ljava/lang/String;Lvj;I)V",
+		garbageValue = "220990662"
 	)
-	void method9952(String var1, Buffer var2) {
+	void method9970(String var1, Buffer var2) {
 		var2.writeStringCp1252NullTerminated(var1);
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "-23"
-	)
-	static int method9958(int var0) {
-		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
-		if (var1 == null) {
-			return -1;
-		} else {
-			return var1.nextDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.nextDual).count;
-		}
 	}
 }

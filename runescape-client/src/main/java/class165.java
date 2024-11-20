@@ -1,199 +1,93 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gv")
+@ObfuscatedName("go")
 public class class165 extends class150 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		longValue = -5149943919065830407L
+		longValue = 3917242285270840869L
 	)
-	long field1808;
+	long field1781;
 	@ObfuscatedName("aw")
-	String field1814;
-	@ObfuscatedName("ak")
+	String field1780;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 944662403
+		intValue = 381237429
 	)
-	int field1809;
+	int field1782;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lfd;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lfd;)V"
 	)
 	class165(class153 var1) {
 		this.this$0 = var1;
-		this.field1808 = -1L;
-		this.field1814 = null;
-		this.field1809 = 0;
+		this.field1781 = -1L;
+		this.field1780 = null;
+		this.field1782 = 0;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "-1813719027"
+		descriptor = "(Lvj;B)V",
+		garbageValue = "-83"
 	)
-	void vmethod3822(Buffer var1) {
+	void vmethod3694(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
 			--var1.offset;
-			this.field1808 = var1.readLong();
+			this.field1781 = var1.readLong();
 		}
 
-		this.field1814 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1809 = var1.readUnsignedShort();
+		this.field1780 = var1.readStringCp1252NullTerminatedOrNull();
+		this.field1782 = var1.readUnsignedShort();
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lgy;I)V",
-		garbageValue = "-2079483058"
+		descriptor = "(Lgv;I)V",
+		garbageValue = "2002935935"
 	)
-	void vmethod3821(ClanSettings var1) {
-		var1.method3659(this.field1808, this.field1814, this.field1809);
+	void vmethod3695(ClanSettings var1) {
+		var1.method3540(this.field1781, this.field1780, this.field1782);
 	}
 
-	@ObfuscatedName("bh")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "40"
+		descriptor = "(I[IIB)V",
+		garbageValue = "119"
 	)
-	static void method3755(String var0) {
-		Login.displayName = class458.method8815(var0);
-	}
+	static void method3631(int var0, int[] var1, int var2) {
+		for (int var3 = 0; var3 < class419.KitDefinition_fileCount; ++var3) {
+			KitDefinition var5 = (KitDefinition)KitDefinition.KitDefinition_cached.get((long)var3);
+			KitDefinition var4;
+			if (var5 != null) {
+				var4 = var5;
+			} else if (KitDefinition.KitDefinition_archive == null) {
+				var4 = null;
+			} else {
+				byte[] var6 = KitDefinition.KitDefinition_archive.takeFile(3, var3);
+				var5 = new KitDefinition();
+				if (var6 != null) {
+					var5.decode(new Buffer(var6));
+				}
 
-	@ObfuscatedName("ko")
-	@ObfuscatedSignature(
-		descriptor = "(Ldn;IIIIIIIII)V",
-		garbageValue = "1500868973"
-	)
-	@Export("addPendingSpawnToScene")
-	static final void addPendingSpawnToScene(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-		Scene var9 = var0.scene;
-		if (var3 >= 1 && var4 >= 1 && var3 <= var0.sizeX - 1 && var4 <= var0.sizeY - 1) {
-			if (Client.isLowDetail && var0.plane != var1) {
-				return;
+				KitDefinition.KitDefinition_cached.put(var5, (long)var3);
+				var4 = var5;
 			}
 
-			long var10 = 0L;
-			boolean var12 = true;
-			boolean var13 = false;
-			boolean var14 = false;
-			if (var2 == 0) {
-				var10 = var9.getBoundaryObjectTag(var1, var3, var4);
-			}
-
-			if (var2 == 1) {
-				var10 = var9.getWallDecorationTag(var1, var3, var4);
-			}
-
-			if (var2 == 2) {
-				var10 = var9.getGameObjectTag(var1, var3, var4);
-			}
-
-			if (var2 == 3) {
-				var10 = var9.getFloorDecorationTag(var1, var3, var4);
-			}
-
-			int var15;
-			ObjectComposition var16;
-			if (0L != var10) {
-				var15 = var9.getObjectFlags(var1, var3, var4, var10);
-				int var27 = class309.Entity_unpackID(var10);
-				int var28 = var15 & 31;
-				int var29 = var15 >> 6 & 3;
-				var16 = UrlRequest.getObjectDefinition(var27);
-				if (var16 != null && var16.hasSound()) {
-					int var19 = var16.sizeX;
-					int var20 = var16.sizeY;
-					if (var29 == 1 || var29 == 3) {
-						var19 = var16.sizeY;
-						var20 = var16.sizeX;
-					}
-
-					int var21 = (var3 + var19) * 128;
-					int var22 = (var20 + var4) * 128;
-					int var17 = var3 * 128;
-					int var18 = var4 * 128;
-					int var23 = var16.ambientSoundId;
-					int var24 = var16.int7 * 16384;
-					int var25 = var16.int8 * 16384;
-					if (var16.transforms != null) {
-						ObjectComposition var26 = var16.transform();
-						if (var26 != null) {
-							var23 = var26.ambientSoundId;
-							var24 = var26.int7 * 16384;
-							var25 = var26.int8 * 16384;
-						}
-					}
-
-					Object var10000 = null;
-
-					for (ObjectSound var30 = (ObjectSound)ObjectSound.objectSounds.last(); var30 != null; var30 = (ObjectSound)ObjectSound.objectSounds.previous()) {
-						if (var30.plane == var1 && var17 == var30.x * 16384 && var18 == var30.y * 128 && var21 == var30.maxX * 16384 && var22 == var30.maxY * 128 && var23 == var30.soundEffectId && var24 == var30.field832 && var25 == var30.field839) {
-							if (var30.stream1 != null) {
-								Widget.pcmStreamMixer.removeSubStream(var30.stream1);
-								var30.stream1 = null;
-							}
-
-							if (var30.stream2 != null) {
-								Widget.pcmStreamMixer.removeSubStream(var30.stream2);
-								var30.stream2 = null;
-							}
-
-							var30.remove();
-							break;
-						}
-
-						var10000 = null;
-					}
+			if (var4 != null && !var4.nonSelectable && var4.method3811(var2, var0)) {
+				if (class198.field2055 == null) {
+					class198.method3968();
 				}
 
-				if (var2 == 0) {
-					var9.removeBoundaryObject(var1, var3, var4);
-					if (var16.interactType != 0) {
-						var0.collisionMaps[var1].method5716(var3, var4, var28, var29, var16.boolean1);
-					}
-				}
-
-				if (var2 == 1) {
-					var9.removeWallDecoration(var1, var3, var4);
-				}
-
-				if (var2 == 2) {
-					var9.removeGameObject(var1, var3, var4);
-					if (var3 + var16.sizeX > var0.sizeX - 1 || var4 + var16.sizeX > var0.sizeY - 1 || var3 + var16.sizeY > var0.sizeX - 1 || var4 + var16.sizeY > var0.sizeY - 1) {
-						return;
-					}
-
-					if (var16.interactType != 0) {
-						var0.collisionMaps[var1].setFlagOffNonSquare(var3, var4, var16.sizeX, var16.sizeY, var29, var16.boolean1);
-					}
-				}
-
-				if (var2 == 3) {
-					var9.removeFloorDecoration(var1, var3, var4);
-					if (var16.interactType == 1) {
-						var0.collisionMaps[var1].method5718(var3, var4);
-					}
-				}
-			}
-
-			if (var5 >= 0) {
-				var15 = var1;
-				if (var1 < 3 && (var0.tileSettings[1][var3][var4] & 2) == 2) {
-					var15 = var1 + 1;
-				}
-
-				MouseHandler.method665(var0, var1, var15, var3, var4, var5, var6, var7, var8, var0.collisionMaps[var1]);
-				var16 = UrlRequest.getObjectDefinition(var5);
-				if (var16 != null && var16.hasSound()) {
-					class138.createObjectSound(var15, var3, var4, var16, var6);
-				}
+				int var7 = class198.field2055[var2];
+				var1[var7] = var3 + 256;
+				break;
 			}
 		}
 

@@ -2,56 +2,52 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gi")
+@ObfuscatedName("gm")
 public class class174 extends class150 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("iz")
 	@ObfuscatedGetter(
-		intValue = -847201743
+		intValue = 576972339
 	)
-	int field1866;
+	static int field1826;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = -454105821
+	)
+	int field1827;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		longValue = -4679908001659957035L
+		longValue = 207816209040186409L
 	)
-	long field1862;
+	long field1825;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lfd;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lfd;)V"
 	)
 	class174(class153 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "-1813719027"
+		descriptor = "(Lvj;B)V",
+		garbageValue = "-83"
 	)
-	void vmethod3822(Buffer var1) {
-		this.field1866 = var1.readInt();
-		this.field1862 = var1.readLong();
+	void vmethod3694(Buffer var1) {
+		this.field1827 = var1.readInt();
+		this.field1825 = var1.readLong();
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lgy;I)V",
-		garbageValue = "-2079483058"
+		descriptor = "(Lgv;I)V",
+		garbageValue = "2002935935"
 	)
-	void vmethod3821(ClanSettings var1) {
-		var1.method3670(this.field1866, this.field1862);
-	}
-
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(ZZI)Lvc;",
-		garbageValue = "-1311335863"
-	)
-	static IndexedSprite method3827(boolean var0, boolean var1) {
-		return var0 ? (var1 ? IntHashTable.field5625 : UserList.options_buttons_2Sprite) : (var1 ? class77.field919 : class33.options_buttons_0Sprite);
+	void vmethod3695(ClanSettings var1) {
+		var1.method3573(this.field1827, this.field1825);
 	}
 }

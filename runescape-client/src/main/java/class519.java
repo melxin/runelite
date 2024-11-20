@@ -2,82 +2,82 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ti")
+@ObfuscatedName("tk")
 public class class519 extends class521 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1818958291
+		intValue = -1666443707
 	)
-	int field5222;
+	int field5231;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -1456569865
+		intValue = -802615541
 	)
-	int field5220;
-	@ObfuscatedName("ak")
+	int field5228;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 532918097
+		intValue = 119084891
 	)
-	int field5221;
-	@ObfuscatedName("aj")
+	int field5230;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -8743521
+		intValue = -1358754681
 	)
-	int field5219;
-	@ObfuscatedName("ai")
+	int field5233;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1355704699
+		intValue = 1219576313
 	)
-	int field5223;
-	@ObfuscatedName("ay")
+	int field5232;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1902395061
+		intValue = -1945318389
 	)
-	int field5224;
+	int field5229;
 
 	public class519(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		super(var7, var8);
-		this.field5222 = 0;
-		this.field5220 = 0;
-		this.field5221 = 0;
-		this.field5219 = 0;
-		this.field5223 = 0;
-		this.field5224 = 0;
-		this.field5222 = var1;
-		this.field5220 = var2;
-		this.field5221 = var3;
-		this.field5219 = var4;
-		this.field5223 = var5;
-		this.field5224 = var6;
+		this.field5231 = 0;
+		this.field5228 = 0;
+		this.field5230 = 0;
+		this.field5233 = 0;
+		this.field5232 = 0;
+		this.field5229 = 0;
+		this.field5231 = var1;
+		this.field5228 = var2;
+		this.field5230 = var3;
+		this.field5233 = var4;
+		this.field5232 = var5;
+		this.field5229 = var6;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1457830566"
+		descriptor = "(B)I",
+		garbageValue = "32"
 	)
-	public int vmethod9495() {
-		double var1 = this.method9504();
-		return (int)Math.round((double)this.field5222 + (double)(this.field5219 - this.field5222) * var1);
+	public int vmethod9494() {
+		double var1 = this.method9502();
+		return (int)Math.round((double)(this.field5233 - this.field5231) * var1 + (double)this.field5231);
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "72"
+		descriptor = "(I)I",
+		garbageValue = "10274157"
 	)
-	public int vmethod9498() {
-		double var1 = this.method9504();
-		return (int)Math.round((double)this.field5220 + (double)(this.field5223 - this.field5220) * var1);
+	public int vmethod9492() {
+		double var1 = this.method9502();
+		return (int)Math.round((double)this.field5228 + var1 * (double)(this.field5232 - this.field5228));
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2006354984"
+		garbageValue = "-800032356"
 	)
-	public int vmethod9496() {
-		double var1 = this.method9504();
-		return (int)Math.round((double)this.field5221 + (double)(this.field5224 - this.field5221) * var1);
+	public int vmethod9493() {
+		double var1 = this.method9502();
+		return (int)Math.round((double)this.field5230 + (double)(this.field5229 - this.field5230) * var1);
 	}
 }

@@ -4,30 +4,36 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ke")
+@ObfuscatedName("kz")
 @Implements("RouteStrategy")
 public abstract class RouteStrategy {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ix")
 	@ObfuscatedGetter(
-		intValue = -362162455
+		intValue = 54249359
+	)
+	@Export("Players_count")
+	static int Players_count;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = 449153759
 	)
 	@Export("approxDestinationX")
 	public int approxDestinationX;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -1731708745
+		intValue = 610650211
 	)
 	@Export("approxDestinationY")
 	public int approxDestinationY;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 220941055
+		intValue = -1034135405
 	)
 	@Export("approxDestinationSizeX")
 	public int approxDestinationSizeX;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -558872821
+		intValue = 930450957
 	)
 	@Export("approxDestinationSizeY")
 	public int approxDestinationSizeY;
@@ -35,46 +41,62 @@ public abstract class RouteStrategy {
 	protected RouteStrategy() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIILko;I)Z",
-		garbageValue = "1947951630"
+		descriptor = "(IIILka;B)Z",
+		garbageValue = "-43"
 	)
 	@Export("hasArrived")
 	protected abstract boolean hasArrived(int var1, int var2, int var3, CollisionMap var4);
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lur;B)I",
+		descriptor = "(B)V",
 		garbageValue = "0"
 	)
-	static final int method5726(LoginType var0) {
-		if (var0 == null) {
-			return 12;
-		} else {
-			switch(var0.field5337) {
-			case 7:
-				return 20;
-			default:
-				return 12;
+	public static void method5649() {
+		class197.field2022.clear();
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(Lql;I)Lql;",
+		garbageValue = "1004011643"
+	)
+	public static class426 method5650(class426 var0) {
+		synchronized(class426.field4765) {
+			if (class426.field4762 == 0) {
+				return new class426(var0);
+			} else {
+				class426.field4765[--class426.field4762].method8104(var0);
+				return class426.field4765[class426.field4762];
 			}
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("me")
 	@ObfuscatedSignature(
-		descriptor = "([BZI)Ljava/lang/Object;",
-		garbageValue = "-732909265"
+		descriptor = "(ILsh;Ldm;I)I",
+		garbageValue = "2042462091"
 	)
-	public static Object method5729(byte[] var0, boolean var1) {
-		if (var0 == null) {
-			return null;
-		} else if (var0.length > 136) {
-			DirectByteArrayCopier var2 = new DirectByteArrayCopier();
-			var2.set(var0);
-			return var2;
+	static int method5646(int var0, WorldEntity var1, WorldView var2) {
+		int var3 = -1;
+		if (var0 == class31.field153) {
+			var3 = var2.plane;
+		} else if (class31.field153 == -1) {
+			var3 = var1.field5028;
 		} else {
-			return var0;
+			WorldEntity var4 = HttpRequest.topLevelWorldView.worldEntities[class31.field153];
+			WorldView var5 = var4.worldView;
+			if (var5.plane == var4.field5028) {
+				if (var0 == -1) {
+					var3 = HttpRequest.topLevelWorldView.worldEntities[class31.field153].getPlane();
+				} else {
+					var3 = var1.field5028;
+				}
+			}
 		}
+
+		return var3;
 	}
 }

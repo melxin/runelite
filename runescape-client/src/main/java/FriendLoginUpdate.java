@@ -4,47 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("su")
+@ObfuscatedName("sp")
 @Implements("FriendLoginUpdate")
 public class FriendLoginUpdate extends Link {
-	@ObfuscatedName("ps")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1974293395
+		intValue = -1337791449
 	)
-	static int field5002;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = 366560499
-	)
-	public int field5000;
+	public int field5001;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lwx;"
+		descriptor = "Lwo;"
 	)
 	@Export("username")
 	public Username username;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@Export("world")
 	public short world;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwx;I)V"
+		descriptor = "(Lwo;I)V"
 	)
 	FriendLoginUpdate(Username var1, int var2) {
-		this.field5000 = (int)(class77.method2338() / 1000L);
+		this.field5001 = (int)(class59.method1150() / 1000L);
 		this.username = var1;
 		this.world = (short)var2;
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(IIS)I",
-		garbageValue = "22234"
-	)
-	static final int method8997(int var0, int var1) {
-		int var2 = SecureUrlRequester.method3235(var0 - 1, var1 - 1) + SecureUrlRequester.method3235(1 + var0, var1 - 1) + SecureUrlRequester.method3235(var0 - 1, 1 + var1) + SecureUrlRequester.method3235(1 + var0, 1 + var1);
-		int var3 = SecureUrlRequester.method3235(var0 - 1, var1) + SecureUrlRequester.method3235(var0 + 1, var1) + SecureUrlRequester.method3235(var0, var1 - 1) + SecureUrlRequester.method3235(var0, 1 + var1);
-		int var4 = SecureUrlRequester.method3235(var0, var1);
-		return var2 / 16 + var3 / 8 + var4 / 4;
 	}
 }

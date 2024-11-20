@@ -1,58 +1,46 @@
-import java.io.File;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fk")
+@ObfuscatedName("fs")
 public class class151 extends class150 {
-	@ObfuscatedName("aj")
-	static File field1708;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 225519357
+		intValue = -653171623
 	)
-	int field1705;
+	int field1682;
 	@ObfuscatedName("aw")
-	boolean field1707;
+	boolean field1683;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lfd;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lfd;)V"
 	)
 	class151(class153 var1) {
 		this.this$0 = var1;
-		this.field1705 = -1;
+		this.field1682 = -1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "-1813719027"
+		descriptor = "(Lvj;B)V",
+		garbageValue = "-83"
 	)
-	void vmethod3822(Buffer var1) {
-		this.field1705 = var1.readUnsignedShort();
-		this.field1707 = var1.readUnsignedByte() == 1;
+	void vmethod3694(Buffer var1) {
+		this.field1682 = var1.readUnsignedShort();
+		this.field1683 = var1.readUnsignedByte() == 1;
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lgy;I)V",
-		garbageValue = "-2079483058"
+		descriptor = "(Lgv;I)V",
+		garbageValue = "2002935935"
 	)
-	void vmethod3821(ClanSettings var1) {
-		var1.method3666(this.field1705, this.field1707);
-	}
-
-	@ObfuscatedName("ne")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1697292236"
-	)
-	static final void method3583() {
-		Client.field586 = Client.cycleCntr;
+	void vmethod3695(ClanSettings var1) {
+		var1.method3547(this.field1682, this.field1683);
 	}
 }

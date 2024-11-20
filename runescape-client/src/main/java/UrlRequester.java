@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import net.runelite.mapping.Export;
@@ -11,26 +13,21 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ex")
+@ObfuscatedName("el")
 @Implements("UrlRequester")
 public abstract class UrlRequester implements Runnable {
-	@ObfuscatedName("fg")
-	@ObfuscatedSignature(
-		descriptor = "Lor;"
-	)
-	static Archive field1491;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("requestThread")
 	final Thread requestThread;
 	@ObfuscatedName("aw")
 	@Export("isClosed")
 	volatile boolean isClosed;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@Export("requests")
 	Queue requests;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1512141121
+		intValue = 444848075
 	)
 	@Export("clientRevision")
 	int clientRevision;
@@ -43,21 +40,21 @@ public abstract class UrlRequester implements Runnable {
 		this.clientRevision = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lei;I)V",
-		garbageValue = "1770877701"
+		descriptor = "(Lem;I)V",
+		garbageValue = "-1770364499"
 	)
 	@Export("openConnection")
 	abstract void openConnection(UrlRequest var1) throws IOException;
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;I)I",
-		garbageValue = "-18096714"
+		descriptor = "(Ljava/net/URLConnection;B)I",
+		garbageValue = "-1"
 	)
-	int method3225(URLConnection var1) {
-		int var2 = UrlRequest.field1497;
+	int method3156(URLConnection var1) {
+		int var2 = UrlRequest.field1482;
 		if (var1 != null) {
 			try {
 				if (var1 instanceof HttpURLConnection) {
@@ -70,10 +67,10 @@ public abstract class UrlRequester implements Runnable {
 		return var2;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;B)V",
-		garbageValue = "65"
+		descriptor = "(Ljava/net/URLConnection;I)V",
+		garbageValue = "-1586944327"
 	)
 	@Export("setDefaultRequestProperties")
 	void setDefaultRequestProperties(URLConnection var1) {
@@ -84,12 +81,12 @@ public abstract class UrlRequester implements Runnable {
 		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.clientRevision);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;Lei;B)V",
-		garbageValue = "-98"
+		descriptor = "(Ljava/net/URLConnection;Lem;I)V",
+		garbageValue = "-1661714496"
 	)
-	void method3210(URLConnection var1, UrlRequest var2) {
+	void method3158(URLConnection var1, UrlRequest var2) {
 		DataInputStream var3 = null;
 
 		try {
@@ -101,39 +98,38 @@ public abstract class UrlRequester implements Runnable {
 				var3.readFully(var4);
 			} else {
 				var4 = new byte[0];
-				byte[] var6 = FadeOutTask.ByteArrayPool_getArrayBool(5000, false);
-				byte[] var7 = var6;
+				byte[] var6 = class326.method6472(5000);
 
-				for (int var8 = var3.read(var6); var8 > -1; var8 = var3.read(var7)) {
-					byte[] var9 = new byte[var4.length + var8];
-					System.arraycopy(var4, 0, var9, 0, var4.length);
-					System.arraycopy(var7, 0, var9, var4.length, var8);
-					var4 = var9;
+				for (int var7 = var3.read(var6); var7 > -1; var7 = var3.read(var6)) {
+					byte[] var8 = new byte[var4.length + var7];
+					System.arraycopy(var4, 0, var8, 0, var4.length);
+					System.arraycopy(var6, 0, var8, var4.length, var7);
+					var4 = var8;
 				}
 
-				ArchiveDiskAction.ByteArrayPool_release(var7);
+				class180.ByteArrayPool_release(var6);
 			}
 
 			var2.response0 = var4;
-		} catch (IOException var15) {
+		} catch (IOException var14) {
 			var2.response0 = null;
 		} finally {
-			var2.field1496 = this.method3225(var1);
+			var2.field1485 = this.method3156(var1);
 		}
 
 		if (var3 != null) {
 			try {
 				var3.close();
-			} catch (IOException var14) {
+			} catch (IOException var13) {
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;S)Lei;",
-		garbageValue = "326"
+		descriptor = "(Ljava/net/URL;B)Lem;",
+		garbageValue = "-44"
 	)
 	@Export("request")
 	public UrlRequest request(URL var1) {
@@ -145,10 +141,10 @@ public abstract class UrlRequester implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "1"
+		garbageValue = "-61"
 	)
 	@Export("close")
 	public void close() {
@@ -182,102 +178,170 @@ public abstract class UrlRequester implements Runnable {
 
 				this.openConnection(var1);
 			} catch (Exception var7) {
-				HttpHeaders.RunException_sendStackTrace((String)null, var7);
+				ArchiveLoader.RunException_sendStackTrace((String)null, var7);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;III)[Lvv;",
-		garbageValue = "806885260"
+		descriptor = "(Ljava/util/ArrayList;IIIIZI)V",
+		garbageValue = "1514522332"
 	)
-	public static SpritePixels[] method3231(AbstractArchive var0, int var1, int var2) {
-		if (!class53.method1110(var0, var1, var2)) {
-			return null;
-		} else {
-			SpritePixels[] var4 = new SpritePixels[SpriteBufferProperties.SpriteBuffer_spriteCount];
+	public static void method3175(ArrayList var0, int var1, int var2, int var3, int var4, boolean var5) {
+		if (!var0.isEmpty()) {
+			class333.field3624.clear();
+			class333.field3627.clear();
+			MusicSong var7;
+			if (var5) {
+				class136.method3325();
+			} else {
+				for (int var6 = 0; var6 < class333.musicSongs.size(); ++var6) {
+					var7 = (MusicSong)class333.musicSongs.get(var6);
+					if (var7 == null) {
+						class333.musicSongs.remove(var6);
+						--var6;
+					} else if (var7.field3735) {
+						if (var7.midiPcmStream.field3667 > 0) {
+							--var7.midiPcmStream.field3667;
+						}
 
-			for (int var5 = 0; var5 < SpriteBufferProperties.SpriteBuffer_spriteCount; ++var5) {
-				SpritePixels var6 = var4[var5] = new SpritePixels();
-				var6.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
-				var6.height = SpriteBufferProperties.SpriteBuffer_spriteHeight;
-				var6.xOffset = SpriteBufferProperties.SpriteBuffer_xOffsets[var5];
-				var6.yOffset = class497.SpriteBuffer_yOffsets[var5];
-				var6.subWidth = class7.SpriteBuffer_spriteWidths[var5];
-				var6.subHeight = SpriteBufferProperties.SpriteBuffer_spriteHeights[var5];
-				int var7 = var6.subHeight * var6.subWidth;
-				byte[] var8 = class280.SpriteBuffer_pixels[var5];
-				var6.pixels = new int[var7];
-
-				for (int var9 = 0; var9 < var7; ++var9) {
-					var6.pixels[var9] = SpriteBufferProperties.SpriteBuffer_spritePalette[var8[var9] & 255];
+						var7.midiPcmStream.clear();
+						var7.midiPcmStream.method6594();
+						var7.midiPcmStream.setPcmStreamVolume(0);
+						class333.musicSongs.remove(var6);
+						--var6;
+					} else {
+						var7.field3735 = true;
+					}
 				}
 			}
 
-			SpriteBufferProperties.SpriteBuffer_xOffsets = null;
-			class497.SpriteBuffer_yOffsets = null;
-			class7.SpriteBuffer_spriteWidths = null;
-			SpriteBufferProperties.SpriteBuffer_spriteHeights = null;
-			SpriteBufferProperties.SpriteBuffer_spritePalette = null;
-			class280.SpriteBuffer_pixels = null;
-			return var4;
+			if (!var5) {
+				class333.field3626.clear();
+			}
+
+			Iterator var12 = var0.iterator();
+
+			while (var12.hasNext()) {
+				var7 = (MusicSong)var12.next();
+				if (var7.musicTrackGroupId != -1 && var7.musicTrackFileId != -1) {
+					if (!var5) {
+						class333.field3626.add(var7);
+					}
+
+					class333.field3624.add(var7);
+				}
+			}
+
+			if (!class333.field3624.isEmpty()) {
+				StructComposition.method4069(var1, var2, var3, var4);
+				class333.field3627.add(new AddRequestTask((SongTask)null));
+				class333.field3627.add(new class450((SongTask)null, class333.field3631, class333.field3623, class333.field3625));
+				ArrayList var14 = new ArrayList();
+				var14.add(new class445(new FadeInTask((SongTask)null, 0, true, class333.field3632)));
+				if (!class333.musicSongs.isEmpty()) {
+					ArrayList var13 = new ArrayList();
+					var13.add(new DelayFadeTask(new ConcurrentMidiTask((SongTask)null, var14), class333.field3622));
+					ArrayList var9 = new ArrayList();
+					Iterator var10 = class333.musicSongs.iterator();
+
+					while (var10.hasNext()) {
+						MusicSong var11 = (MusicSong)var10.next();
+						var9.add(var11);
+					}
+
+					var13.add(new DelayFadeTask(new FadeOutTask(new class443((SongTask)null, var9), 0, false, class333.field3630), class333.musicPlayerStatus));
+					class333.field3627.add(new ConcurrentMidiTask((SongTask)null, var13));
+				} else {
+					class333.field3627.add(new DelayFadeTask((SongTask)null, class333.field3622));
+					class333.field3627.add(new ConcurrentMidiTask((SongTask)null, var14));
+				}
+
+			}
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ny")
 	@ObfuscatedSignature(
-		descriptor = "(B)[Las;",
-		garbageValue = "1"
+		descriptor = "([Lnp;IB)V",
+		garbageValue = "-68"
 	)
-	public static class6[] method3230() {
-		return new class6[]{class6.field11};
-	}
+	@Export("drawModelComponents")
+	static final void drawModelComponents(Widget[] var0, int var1) {
+		for (int var2 = 0; var2 < var0.length; ++var2) {
+			Widget var3 = var0[var2];
+			if (var3 != null && var3.parentId == var1 && (!var3.isIf3 || !UserComparator3.isComponentHidden(var3))) {
+				int var5;
+				if (var3.type == 0) {
+					if (!var3.isIf3 && UserComparator3.isComponentHidden(var3) && var3 != PcmPlayer.mousedOverWidgetIf1) {
+						continue;
+					}
 
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1839611801"
-	)
-	public static int method3229(int var0) {
-		return var0 >> 17 & 7;
-	}
+					drawModelComponents(var0, var3.id);
+					if (var3.children != null) {
+						drawModelComponents(var3.children, var3.id);
+					}
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIB)V",
-		garbageValue = "-55"
-	)
-	static final void method3224(int var0, int var1, int var2, int var3) {
-		if (!ViewportMouse.ViewportMouse_false0) {
-			byte var8 = 50;
-			int var9 = AbstractRasterizer.method4952();
-			int var10 = (ViewportMouse.ViewportMouse_x - Rasterizer3D.getClipMidX()) * var8 / Rasterizer3D.get3dZoom();
-			int var11 = (ViewportMouse.ViewportMouse_y - Rasterizer3D.getClipMidY()) * var8 / Rasterizer3D.get3dZoom();
-			int var12 = (ViewportMouse.ViewportMouse_x - Rasterizer3D.getClipMidX()) * var9 / Rasterizer3D.get3dZoom();
-			int var13 = (ViewportMouse.ViewportMouse_y - Rasterizer3D.getClipMidY()) * var9 / Rasterizer3D.get3dZoom();
-			int var14 = class166.method3759(var11, var8, var1, var0);
-			int var15 = var1 * var8 - var0 * var11 >> 16;
-			var11 = var14;
-			var14 = class166.method3759(var13, var9, var1, var0);
-			int var16 = var1 * var9 - var13 * var0 >> 16;
-			int var17 = var3 * var10 - var2 * var15 >> 16;
-			int var18 = var10 * var2 + var3 * var15 >> 16;
-			int var19 = var12 * var3 - var16 * var2 >> 16;
-			int var20 = var16 * var3 + var12 * var2 >> 16;
-			ViewportMouse.field2892 = (var19 + var17) / 2;
-			ViewportMouse.field2898 = (var14 + var11) / 2;
-			ViewportMouse.field2890 = (var20 + var18) / 2;
-			ViewportMouse.field2894 = (var19 - var17) / 2;
-			FaceNormal.field2750 = (var14 - var11) / 2;
-			class425.field4765 = (var20 - var18) / 2;
-			ViewportMouse.field2896 = Math.abs(ViewportMouse.field2894);
-			class177.field1883 = Math.abs(FaceNormal.field2750);
-			FontName.field5315 = Math.abs(class425.field4765);
-			ViewportMouse.field2897.method8200((float)(var19 - var17), (float)(var14 - var11), (float)(var20 - var18));
-			ViewportMouse.field2897.method8172();
-			ViewportMouse.ViewportMouse_false0 = true;
+					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
+					if (var4 != null) {
+						var5 = var4.group;
+						if (class379.widgetDefinition.loadInterface(var5)) {
+							drawModelComponents(class379.widgetDefinition.Widget_interfaceComponents[var5], -1);
+						}
+					}
+				}
+
+				if (var3.type == 6) {
+					if (var3.sequenceId != -1 || var3.sequenceId2 != -1) {
+						boolean var8 = Tile.runCs1(var3);
+						if (var8) {
+							var5 = var3.sequenceId2;
+						} else {
+							var5 = var3.sequenceId;
+						}
+
+						if (var5 != -1) {
+							SequenceDefinition var6 = HealthBarDefinition.SequenceDefinition_get(var5);
+							if (!var6.isCachedModelIdSet()) {
+								for (var3.modelFrameCycle += Client.graphicsCycle; var3.modelFrameCycle > var6.frameLengths[var3.modelFrame]; class178.invalidateWidget(var3)) {
+									var3.modelFrameCycle -= var6.frameLengths[var3.modelFrame];
+									++var3.modelFrame;
+									if (var3.modelFrame >= var6.frameIds.length) {
+										var3.modelFrame -= var6.frameCount;
+										if (var3.modelFrame < 0 || var3.modelFrame >= var6.frameIds.length) {
+											var3.modelFrame = 0;
+										}
+									}
+								}
+							} else {
+								var3.modelFrame += Client.graphicsCycle;
+								int var7 = var6.method4269();
+								if (var3.modelFrame >= var7) {
+									var3.modelFrame -= var6.frameCount;
+									if (var3.modelFrame < 0 || var3.modelFrame >= var7) {
+										var3.modelFrame = 0;
+									}
+								}
+
+								class178.invalidateWidget(var3);
+							}
+						}
+					}
+
+					if (var3.field3918 != 0 && !var3.isIf3) {
+						int var9 = var3.field3918 >> 16;
+						var5 = var3.field3918 << 16 >> 16;
+						var9 *= Client.graphicsCycle;
+						var5 *= Client.graphicsCycle;
+						var3.modelAngleX = var9 + var3.modelAngleX & 2047;
+						var3.modelAngleY = var5 + var3.modelAngleY & 2047;
+						class178.invalidateWidget(var3);
+					}
+				}
+			}
 		}
+
 	}
 }

@@ -4,35 +4,41 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hm")
+@ObfuscatedName("ha")
 @Implements("VerticalAlignment")
 public enum VerticalAlignment implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lhm;"
+		descriptor = "Lha;"
 	)
-	field2058(0, 0),
+	field2044(1, 0),
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lhm;"
+		descriptor = "Lha;"
 	)
 	@Export("VerticalAlignment_centered")
-	VerticalAlignment_centered(1, 1),
-	@ObfuscatedName("ak")
+	VerticalAlignment_centered(0, 1),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lhm;"
+		descriptor = "Lha;"
 	)
-	field2060(2, 2);
+	field2043(2, 2);
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("tl")
+	@ObfuscatedSignature(
+		descriptor = "Lvr;"
+	)
+	@Export("sceneMinimapSprite")
+	static SpritePixels sceneMinimapSprite;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -375458665
+		intValue = 94294007
 	)
 	@Export("value")
 	public final int value;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -774760143
+		intValue = 802501761
 	)
 	@Export("id")
 	final int id;
@@ -45,10 +51,45 @@ public enum VerticalAlignment implements Enum {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1837624059"
+		garbageValue = "1071289392"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(Lnp;I[B[BI)V",
+		garbageValue = "1255806932"
+	)
+	@Export("Widget_setKey")
+	static final void Widget_setKey(Widget var0, int var1, byte[] var2, byte[] var3) {
+		if (var0.field3941 == null) {
+			if (var2 == null) {
+				return;
+			}
+
+			var0.field3941 = new byte[11][];
+			var0.field3942 = new byte[11][];
+			var0.field3943 = new int[11];
+			var0.field3944 = new int[11];
+		}
+
+		var0.field3941[var1] = var2;
+		if (var2 != null) {
+			var0.field3940 = true;
+		} else {
+			var0.field3940 = false;
+
+			for (int var4 = 0; var4 < var0.field3941.length; ++var4) {
+				if (var0.field3941[var4] != null) {
+					var0.field3940 = true;
+					break;
+				}
+			}
+		}
+
+		var0.field3942[var1] = var3;
 	}
 }

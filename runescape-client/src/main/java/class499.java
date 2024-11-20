@@ -1,84 +1,112 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tv")
+@ObfuscatedName("tt")
 public abstract class class499 implements class308 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lui;"
+		descriptor = "Luy;"
 	)
-	class544 field5126;
+	class544 field5127;
 
 	class499(int var1) {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;II)V",
-		garbageValue = "-1750278900"
+		descriptor = "(Lvj;IB)V",
+		garbageValue = "36"
 	)
-	abstract void vmethod9347(Buffer var1, int var2);
+	abstract void vmethod9344(Buffer var1, int var2);
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "534052529"
+		descriptor = "(Lvj;I)V",
+		garbageValue = "-2026242031"
 	)
-	public void method9346(Buffer var1) {
+	public void method9349(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
 				return;
 			}
 
-			class495 var3 = (class495)class177.findEnumerated(class429.method8337(), var2);
+			class495 var3 = (class495)ScriptEvent.findEnumerated(UserComparator5.method3226(), var2);
 			if (var3 != null) {
 				switch(var3.field5120) {
 				case 0:
-					int var5 = var1.readUnsignedByte();
-					this.field5126 = JagexCache.method4512(var5);
-					if (this.field5126 != null) {
+					int var4 = var1.readUnsignedByte();
+					this.field5127 = TextureProvider.method5186(var4);
+					if (this.field5127 != null) {
 						break;
 					}
 
-					throw new IllegalStateException("Unknown ScriptVarType ID in VarType.decode: " + var5);
+					throw new IllegalStateException("Unknown ScriptVarType ID in VarType.decode: " + var4);
 				case 1:
-					class383[] var4 = new class383[]{class383.field4495, class383.field4493, class383.field4496, class383.field4494};
-					class177.findEnumerated(var4, var1.readUnsignedByte());
+					var1.readStringCp1252NullCircumfixed();
 					break;
 				case 2:
+					ScriptEvent.findEnumerated(class6.method48(), var1.readUnsignedByte());
+					break;
 				default:
 					throw new IllegalStateException("Unrecognised VarTypeEncodingKey - " + var3);
-				case 3:
-					var1.readStringCp1252NullCircumfixed();
 				}
 			} else {
-				this.vmethod9347(var1, var2);
+				this.vmethod9344(var1, var2);
 			}
 		}
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1935826085"
+		garbageValue = "638491425"
 	)
-	boolean method9355() {
-		return this.field5126 != null;
+	boolean method9346() {
+		return this.field5127 != null;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/Object;",
-		garbageValue = "-1606353224"
+		garbageValue = "-152545867"
 	)
-	Object method9348() {
-		if (this.field5126 == class544.field5385) {
+	Object method9347() {
+		if (this.field5127 == class544.field5392) {
 			return 0;
-		} else if (this.field5126 == class544.field5380) {
+		} else if (this.field5127 == class544.field5391) {
 			return -1L;
 		} else {
-			return this.field5126 == class544.field5381 ? "" : null;
+			return this.field5127 == class544.field5399 ? "" : null;
 		}
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "762089502"
+	)
+	@Export("focusPasswordWhenUsernameFilled")
+	static void focusPasswordWhenUsernameFilled() {
+		if (Client.Login_isUsernameRemembered && Login.Login_username != null && Login.Login_username.length() > 0) {
+			Login.currentLoginField = 1;
+		} else {
+			Login.currentLoginField = 0;
+		}
+
+	}
+
+	@ObfuscatedName("iu")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "1340400621"
+	)
+	static void method9354() {
+		if (class158.worldMap != null) {
+			class158.worldMap.method9735(HttpRequest.topLevelWorldView.plane, (HttpResponse.entity.getX() >> 7) + HttpRequest.topLevelWorldView.baseX, (HttpResponse.entity.getY() >> 7) + HttpRequest.topLevelWorldView.baseY, false);
+			class158.worldMap.loadCache();
+		}
+
 	}
 }

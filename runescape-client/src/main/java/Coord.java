@@ -4,30 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nn")
+@ObfuscatedName("ny")
 @Implements("Coord")
 public class Coord {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 117039165
+		intValue = -954068989
 	)
 	@Export("plane")
 	public int plane;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1601399073
+		intValue = 177892159
 	)
 	@Export("x")
 	public int x;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1982010185
+		intValue = -1098615431
 	)
 	@Export("y")
 	public int y;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lnn;)V"
+		descriptor = "(Lny;)V"
 	)
 	public Coord(Coord var1) {
 		this.plane = var1.plane;
@@ -56,12 +56,12 @@ public class Coord {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "54"
+		descriptor = "(II)V",
+		garbageValue = "1969102048"
 	)
-	public void method6842(int var1) {
+	public void method6811(int var1) {
 		if (var1 == -1) {
 			this.plane = -1;
 		} else {
@@ -75,28 +75,28 @@ public class Coord {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1667386076"
+		garbageValue = "-995056173"
 	)
 	@Export("packed")
 	public int packed() {
-		return method6849(this.plane, this.x, this.y);
+		return method6812(this.plane, this.x, this.y);
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2043487038"
+		garbageValue = "-304054772"
 	)
-	public int method6848() {
-		return method6849(this.plane, this.x >> 13, this.y >> 13);
+	public int method6816() {
+		return method6812(this.plane, this.x >> 13, this.y >> 13);
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(IIIB)V",
-		garbageValue = "-57"
+		garbageValue = "38"
 	)
-	public void method6881(int var1, int var2, int var3) {
+	public void method6817(int var1, int var2, int var3) {
 		int var4 = var1 >> 14 & 255;
 		int var5 = var1 & 255;
 		this.plane = var1 >> 28;
@@ -104,10 +104,10 @@ public class Coord {
 		this.y = var3 + (var5 << 13);
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lnn;I)Z",
-		garbageValue = "-1806576163"
+		descriptor = "(Lny;I)Z",
+		garbageValue = "312297903"
 	)
 	@Export("equalsCoord")
 	boolean equalsCoord(Coord var1) {
@@ -120,14 +120,22 @@ public class Coord {
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "2133081217"
+		garbageValue = "1278757739"
 	)
 	@Export("toString")
 	String toString(String var1) {
 		return this.plane + var1 + (this.x >> 6) + var1 + (this.y >> 6) + var1 + (this.x & 63) + var1 + (this.y & 63);
+	}
+
+	public String toString() {
+		return this.toString(",");
+	}
+
+	public int hashCode() {
+		return this.packed();
 	}
 
 	public boolean equals(Object var1) {
@@ -138,74 +146,84 @@ public class Coord {
 		}
 	}
 
-	public int hashCode() {
-		return this.packed();
-	}
-
-	public String toString() {
-		return this.toString(",");
-	}
-
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "-274710312"
+		descriptor = "(IIIB)I",
+		garbageValue = "62"
 	)
-	public static int method6849(int var0, int var1, int var2) {
+	public static int method6812(int var0, int var1, int var2) {
 		return var0 << 28 | var1 << 14 | var2;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "-739043109"
+		garbageValue = "-1546963530"
 	)
-	public static int method6862(int var0) {
+	public static int method6813(int var0) {
 		return var0 >> 28;
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "87"
-	)
-	public static int method6845(int var0) {
-		return var0 >> 14 & 16383;
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1197838969"
-	)
-	public static int method6882(int var0) {
-		return var0 & 16383;
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "49"
-	)
-	public static int method6852(int var0) {
-		return var0 << 3;
-	}
-
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-910235717"
-	)
-	public static int method6853(int var0) {
-		return var0 << 7;
 	}
 
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "398338174"
+		garbageValue = "-860377"
 	)
-	public static int method6854(int var0) {
+	public static int method6814(int var0) {
+		return var0 >> 14 & 16383;
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "923055916"
+	)
+	public static int method6815(int var0) {
+		return var0 & 16383;
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "-6"
+	)
+	public static int method6822(int var0) {
+		return var0 << 3;
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "-73"
+	)
+	public static int method6823(int var0) {
+		return var0 << 6;
+	}
+
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "1321423993"
+	)
+	public static int method6819(int var0) {
+		return var0 << 3;
+	}
+
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "29"
+	)
+	public static int method6825(int var0) {
+		return var0 << 7;
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "-769362130"
+	)
+	public static int method6843(int var0) {
 		return (var0 << 7) + 64;
 	}
 }

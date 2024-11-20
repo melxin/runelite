@@ -1,25 +1,20 @@
-import java.awt.image.BufferedImage;
-import java.awt.image.PixelGrabber;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sp")
+@ObfuscatedName("sc")
 @Implements("ClanMate")
 public class ClanMate extends Buddy {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lsg;"
+		descriptor = "Lsx;"
 	)
 	@Export("friend")
 	TriBool friend;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lsg;"
+		descriptor = "Lsx;"
 	)
 	@Export("ignored")
 	TriBool ignored;
@@ -29,20 +24,20 @@ public class ClanMate extends Buddy {
 		this.ignored = TriBool.TriBool_unknown;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "110"
+		garbageValue = "-94"
 	)
 	@Export("clearIsFriend")
 	void clearIsFriend() {
 		this.friend = TriBool.TriBool_unknown;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-27"
+		descriptor = "(I)Z",
+		garbageValue = "1507466054"
 	)
 	@Export("isFriend")
 	public final boolean isFriend() {
@@ -53,30 +48,30 @@ public class ClanMate extends Buddy {
 		return this.friend == TriBool.TriBool_true;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1139223647"
+		descriptor = "(S)V",
+		garbageValue = "26155"
 	)
 	@Export("fillIsFriend")
 	void fillIsFriend() {
-		this.friend = ItemContainer.friendSystem.friendsList.contains(super.username) ? TriBool.TriBool_true : TriBool.TriBool_false;
+		this.friend = InterfaceParent.friendSystem.friendsList.contains(super.username) ? TriBool.TriBool_true : TriBool.TriBool_false;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-2029625737"
+		garbageValue = "-1830251602"
 	)
 	@Export("clearIsIgnored")
 	void clearIsIgnored() {
 		this.ignored = TriBool.TriBool_unknown;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "3"
+		descriptor = "(I)Z",
+		garbageValue = "-2128501399"
 	)
 	@Export("isIgnored")
 	public final boolean isIgnored() {
@@ -87,66 +82,13 @@ public class ClanMate extends Buddy {
 		return this.ignored == TriBool.TriBool_true;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "465355241"
+		descriptor = "(B)V",
+		garbageValue = "-61"
 	)
 	@Export("fillIsIgnored")
 	void fillIsIgnored() {
-		this.ignored = ItemContainer.friendSystem.ignoreList.contains(super.username) ? TriBool.TriBool_true : TriBool.TriBool_false;
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "([BB)Lvv;",
-		garbageValue = "86"
-	)
-	@Export("readSpritePixelsFromBytes")
-	public static final SpritePixels readSpritePixelsFromBytes(byte[] var0) {
-		BufferedImage var1 = null;
-
-		try {
-			Class var2 = ImageIO.class;
-			synchronized(ImageIO.class) {
-				var1 = ImageIO.read(new ByteArrayInputStream(var0));
-			}
-
-			if (var1 != null) {
-				int var6 = var1.getWidth();
-				int var7 = var1.getHeight();
-				int[] var4 = new int[var6 * var7];
-				PixelGrabber var5 = new PixelGrabber(var1, 0, 0, var6, var7, var4, 0, var6);
-				var5.grabPixels();
-				return new SpritePixels(var4, var6, var7);
-			}
-		} catch (IOException var9) {
-		} catch (InterruptedException var10) {
-		}
-
-		return new SpritePixels(0, 0);
-	}
-
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "([BB)[I",
-		garbageValue = "-34"
-	)
-	public static int[] method9018(byte[] var0) {
-		if (var0 != null && var0.length != 0 && var0.length <= 8) {
-			int[] var1 = new int[var0.length];
-
-			for (int var2 = 0; var2 < var0.length; ++var2) {
-				if (var0[var2] < 0 || var0[var2] >= class581.field5630.length) {
-					return null;
-				}
-
-				var1[var2] = class581.field5630[var0[var2]];
-			}
-
-			return var1;
-		} else {
-			return null;
-		}
+		this.ignored = InterfaceParent.friendSystem.ignoreList.contains(super.username) ? TriBool.TriBool_true : TriBool.TriBool_false;
 	}
 }

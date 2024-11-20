@@ -3,149 +3,178 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ef")
+@ObfuscatedName("eo")
 public class class113 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lef;"
+		descriptor = "Leo;"
 	)
-	static final class113 field1441;
+	static final class113 field1436;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lef;"
+		descriptor = "Leo;"
 	)
-	static final class113 field1439;
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1442;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1438;
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1444;
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1452;
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1451;
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1435;
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1443;
+	static final class113 field1419;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lef;"
+		descriptor = "Leo;"
 	)
-	static final class113 field1437;
-	@ObfuscatedName("au")
+	static final class113 field1420;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lef;"
+		descriptor = "Leo;"
 	)
-	static final class113 field1445;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1446;
+	static final class113 field1421;
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lef;"
+		descriptor = "Leo;"
 	)
-	static final class113 field1447;
+	static final class113 field1422;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
+	)
+	static final class113 field1423;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
+	)
+	static final class113 field1428;
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
+	)
+	static final class113 field1425;
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
+	)
+	static final class113 field1426;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
+	)
+	static final class113 field1427;
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lef;"
+		descriptor = "Leo;"
+	)
+	static final class113 field1430;
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
+	)
+	static final class113 field1418;
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
+	)
+	static final class113 field1429;
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
 	)
 	@Export("field1390")
 	static final class113 field1390;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lef;"
+		descriptor = "Leo;"
 	)
-	static final class113 field1449;
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lef;"
-	)
-	static final class113 field1450;
+	static final class113 field1424;
 	@ObfuscatedName("az")
-	@ObfuscatedGetter(
-		intValue = 2109334875
+	@ObfuscatedSignature(
+		descriptor = "Leo;"
 	)
-	int field1440;
+	static final class113 field1433;
+	@ObfuscatedName("ev")
+	@ObfuscatedSignature(
+		descriptor = "Lsw;"
+	)
+	@Export("js5Socket")
+	static AbstractSocket js5Socket;
+	@ObfuscatedName("ke")
+	@ObfuscatedSignature(
+		descriptor = "[Lvr;"
+	)
+	static SpritePixels[] field1435;
+	@ObfuscatedName("ak")
+	@ObfuscatedGetter(
+		intValue = 860939573
+	)
+	int field1434;
 
 	static {
-		field1441 = new class113(0);
-		field1439 = new class113(1);
-		field1442 = new class113(2);
-		field1438 = new class113(3);
-		field1444 = new class113(4);
-		field1452 = new class113(5);
-		field1451 = new class113(6);
-		field1435 = new class113(7);
-		field1443 = new class113(8);
-		field1437 = new class113(9);
-		field1445 = new class113(10);
-		field1446 = new class113(11);
-		field1447 = new class113(12);
+		field1436 = new class113(0);
+		field1419 = new class113(1);
+		field1420 = new class113(2);
+		field1421 = new class113(3);
+		field1422 = new class113(4);
+		field1423 = new class113(5);
+		field1428 = new class113(6);
+		field1425 = new class113(7);
+		field1426 = new class113(8);
+		field1427 = new class113(9);
+		field1430 = new class113(10);
+		field1418 = new class113(11);
+		field1429 = new class113(12);
 		field1390 = new class113(13);
-		field1449 = new class113(14);
-		field1450 = new class113(15);
+		field1424 = new class113(14);
+		field1433 = new class113(15);
 	}
 
 	class113(int var1) {
-		this.field1440 = var1;
+		this.field1434 = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lmm;Lwh;B)Lme;",
-		garbageValue = "23"
+		descriptor = "(IIIII)V",
+		garbageValue = "2034895920"
 	)
-	@Export("getPacketBufferNode")
-	public static PacketBufferNode getPacketBufferNode(ClientPacket var0, IsaacCipher var1) {
-		PacketBufferNode var2;
-		if (PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0) {
-			var2 = new PacketBufferNode();
-		} else {
-			var2 = PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
+	static final void method3069(int var0, int var1, int var2, int var3) {
+		if (!ViewportMouse.ViewportMouse_false0) {
+			byte var8 = 50;
+			int var9 = AbstractRasterizer.method4835();
+			int var10 = (ViewportMouse.ViewportMouse_x - Rasterizer3D.getClipMidX()) * var8 / Rasterizer3D.get3dZoom();
+			int var11 = (ViewportMouse.ViewportMouse_y - Rasterizer3D.getClipMidY()) * var8 / Rasterizer3D.get3dZoom();
+			int var12 = (ViewportMouse.ViewportMouse_x - Rasterizer3D.getClipMidX()) * var9 / Rasterizer3D.get3dZoom();
+			int var13 = (ViewportMouse.ViewportMouse_y - Rasterizer3D.getClipMidY()) * var9 / Rasterizer3D.get3dZoom();
+			int var15 = var0 * var8 + var11 * var1 >> 16;
+			int var17 = WorldMapRenderer.method6085(var11, var8, var1, var0);
+			int var14 = class191.method3888(var13, var9, var1, var0);
+			int var16 = var9 * var1 - var0 * var13 >> 16;
+			var13 = var14;
+			var14 = Interpreter.method2104(var10, var17, var3, var2);
+			var17 = class180.method3752(var10, var17, var3, var2);
+			var10 = var14;
+			var14 = Interpreter.method2104(var12, var16, var3, var2);
+			var9 = class180.method3752(var12, var16, var3, var2);
+			class107.field1369 = (var14 + var10) / 2;
+			Bounds.field4747 = (var15 + var13) / 2;
+			class180.field1867 = (var17 + var9) / 2;
+			class162.field1770 = (var14 - var10) / 2;
+			class289.field3175 = (var13 - var15) / 2;
+			class1.field5 = (var9 - var17) / 2;
+			GrandExchangeOfferNameComparator.field4636 = Math.abs(class162.field1770);
+			Client.field815 = Math.abs(class289.field3175);
+			class146.field1657 = Math.abs(class1.field5);
+			ViewportMouse.field2895.method8103((float)(var14 - var10), (float)(var13 - var15), (float)(var9 - var17));
+			ViewportMouse.field2895.method8107();
+			ViewportMouse.ViewportMouse_false0 = true;
 		}
+	}
 
-		var2.clientPacket = var0;
-		var2.clientPacketLength = var0.length;
-		if (var2.clientPacketLength == -1) {
-			var2.packetBuffer = new PacketBuffer(260);
-		} else if (var2.clientPacketLength == -2) {
-			var2.packetBuffer = new PacketBuffer(10000);
-		} else if (var2.clientPacketLength <= 18) {
-			var2.packetBuffer = new PacketBuffer(20);
-		} else if (var2.clientPacketLength <= 98) {
-			var2.packetBuffer = new PacketBuffer(100);
-		} else {
-			var2.packetBuffer = new PacketBuffer(260);
-		}
-
-		var2.packetBuffer.setIsaacCipher(var1);
-		var2.packetBuffer.writeByteIsaac(var2.clientPacket.id);
-		var2.index = 0;
-		return var2;
+	@ObfuscatedName("cq")
+	@ObfuscatedSignature(
+		descriptor = "(ILny;ZI)V",
+		garbageValue = "-637882470"
+	)
+	static void method3068(int var0, Coord var1, boolean var2) {
+		WorldMapArea var3 = class403.getWorldMap().getMapArea(var0);
+		int var4 = AsyncHttpResponse.localPlayer.plane;
+		int var5 = (AsyncHttpResponse.localPlayer.x >> 7) + HttpRequest.topLevelWorldView.baseX;
+		int var6 = (AsyncHttpResponse.localPlayer.y >> 7) + HttpRequest.topLevelWorldView.baseY;
+		Coord var7 = new Coord(var4, var5, var6);
+		class403.getWorldMap().method9566(var3, var7, var1, var2);
 	}
 }

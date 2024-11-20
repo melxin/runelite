@@ -10,84 +10,84 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("au")
+@ObfuscatedName("af")
 @Implements("HttpRequest")
 public class HttpRequest {
-	@ObfuscatedName("pz")
+	@ObfuscatedName("jx")
 	@ObfuscatedSignature(
-		descriptor = "[Lng;"
+		descriptor = "Ldm;"
 	)
-	static Widget[] field40;
-	@ObfuscatedName("ap")
+	@Export("topLevelWorldView")
+	static WorldView topLevelWorldView;
+	@ObfuscatedName("uu")
+	@ObfuscatedGetter(
+		intValue = -2147020221
+	)
+	static int field55;
+	@ObfuscatedName("ab")
 	@Export("connection")
 	final HttpsURLConnection connection;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lrl;"
+		descriptor = "Lrs;"
 	)
 	@Export("httpHeaders")
 	final HttpHeaders httpHeaders;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lat;"
+		descriptor = "Lan;"
 	)
-	final HttpMethod field39;
-	@ObfuscatedName("aj")
+	final HttpMethod field48;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ltg;"
+		descriptor = "Ltc;"
 	)
 	@Export("httpPayload")
 	HttpPayload httpPayload;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@Export("requestInitialized")
 	boolean requestInitialized;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@Export("followRedirects")
 	boolean followRedirects;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 398957973
+		intValue = -2004216947
 	)
 	@Export("connectionTimeout")
 	int connectionTimeout;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;Lat;Lrl;Z)V"
+		descriptor = "(Ljava/net/URL;Lan;Lrs;Z)V"
 	)
 	public HttpRequest(URL var1, HttpMethod var2, HttpHeaders var3, boolean var4) throws IOException {
 		this.requestInitialized = false;
 		this.followRedirects = false;
 		this.connectionTimeout = 300000;
-		if (!var2.method70()) {
+		if (!var2.method72()) {
 			throw new UnsupportedEncodingException("Unsupported request method used " + var2.getName());
 		} else {
 			this.connection = (HttpsURLConnection)var1.openConnection();
 			if (!var4) {
-				HttpsURLConnection var5 = this.connection;
-				if (SecureRandomSSLSocketFactory.INSTANCE == null) {
-					SecureRandomSSLSocketFactory.INSTANCE = new SecureRandomSSLSocketFactory();
-				}
-
-				SecureRandomSSLSocketFactory var6 = SecureRandomSSLSocketFactory.INSTANCE;
-				var5.setSSLSocketFactory(var6);
+				this.connection.setSSLSocketFactory(SecureRandomSSLSocketFactory.method177());
 			}
 
-			this.field39 = var2;
+			this.field48 = var2;
 			this.httpHeaders = var3 != null ? var3 : new HttpHeaders();
 		}
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;Lat;Z)V"
+		descriptor = "(Ljava/net/URL;Lan;Z)V"
 	)
 	public HttpRequest(URL var1, HttpMethod var2, boolean var3) throws IOException {
 		this(var1, var2, new HttpHeaders(), var3);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lrl;",
-		garbageValue = "447299414"
+		descriptor = "(I)Lrs;",
+		garbageValue = "1798902451"
 	)
 	@Export("getHeaders")
 	public HttpHeaders getHeaders() {
@@ -96,8 +96,8 @@ public class HttpRequest {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ltg;B)V",
-		garbageValue = "-38"
+		descriptor = "(Ltc;I)V",
+		garbageValue = "-2084836358"
 	)
 	@Export("setPayload")
 	public void setPayload(HttpPayload var1) {
@@ -117,17 +117,17 @@ public class HttpRequest {
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "769257561"
+		garbageValue = "361609094"
 	)
 	@Export("initializeRequest")
 	void initializeRequest() throws ProtocolException {
 		if (!this.requestInitialized) {
-			this.connection.setRequestMethod(this.field39.getName());
+			this.connection.setRequestMethod(this.field48.getName());
 			this.httpHeaders.setRequestProperties(this.connection);
-			if (this.field39.method77() && this.httpPayload != null) {
+			if (this.field48.method83() && this.httpPayload != null) {
 				this.connection.setDoOutput(true);
 				ByteArrayOutputStream var1 = new ByteArrayOutputStream();
 
@@ -152,10 +152,10 @@ public class HttpRequest {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "2007396320"
+		garbageValue = "-656681044"
 	)
 	@Export("connect")
 	boolean connect() throws IOException {
@@ -167,10 +167,10 @@ public class HttpRequest {
 		return this.connection.getResponseCode() == -1;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lav;",
-		garbageValue = "35"
+		descriptor = "(I)Lay;",
+		garbageValue = "-1720724415"
 	)
 	@Export("getResponse")
 	HttpResponse getResponse() {
@@ -194,5 +194,108 @@ public class HttpRequest {
 		}
 
 		return var3;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "([BZB)Ljava/lang/Object;",
+		garbageValue = "-14"
+	)
+	public static Object method106(byte[] var0, boolean var1) {
+		if (var0 == null) {
+			return null;
+		} else if (var0.length > 136) {
+			DirectByteArrayCopier var2 = new DirectByteArrayCopier();
+			var2.set(var0);
+			return var2;
+		} else {
+			return var0;
+		}
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/CharSequence;IZI)Z",
+		garbageValue = "-1599665584"
+	)
+	static boolean method105(CharSequence var0, int var1, boolean var2) {
+		if (var1 >= 2 && var1 <= 36) {
+			boolean var3 = false;
+			boolean var4 = false;
+			int var5 = 0;
+			int var6 = var0.length();
+
+			for (int var7 = 0; var7 < var6; ++var7) {
+				char var8 = var0.charAt(var7);
+				if (var7 == 0) {
+					if (var8 == '-') {
+						var3 = true;
+						continue;
+					}
+
+					if (var8 == '+') {
+						continue;
+					}
+				}
+
+				int var10;
+				if (var8 >= '0' && var8 <= '9') {
+					var10 = var8 - '0';
+				} else if (var8 >= 'A' && var8 <= 'Z') {
+					var10 = var8 - '7';
+				} else {
+					if (var8 < 'a' || var8 > 'z') {
+						return false;
+					}
+
+					var10 = var8 - 'W';
+				}
+
+				if (var10 >= var1) {
+					return false;
+				}
+
+				if (var3) {
+					var10 = -var10;
+				}
+
+				int var9 = var5 * var1 + var10;
+				if (var9 / var1 != var5) {
+					return false;
+				}
+
+				var5 = var9;
+				var4 = true;
+			}
+
+			return var4;
+		} else {
+			throw new IllegalArgumentException("" + var1);
+		}
+	}
+
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIII)Z",
+		garbageValue = "719269097"
+	)
+	static final boolean method104(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+		int var7 = ViewportMouse.ViewportMouse_y + var6;
+		if (var7 < var0 && var7 < var1 && var7 < var2) {
+			return false;
+		} else {
+			var7 = ViewportMouse.ViewportMouse_y - var6;
+			if (var7 > var0 && var7 > var1 && var7 > var2) {
+				return false;
+			} else {
+				var7 = ViewportMouse.ViewportMouse_x + var6;
+				if (var7 < var3 && var7 < var4 && var7 < var5) {
+					return false;
+				} else {
+					var7 = ViewportMouse.ViewportMouse_x - var6;
+					return var7 <= var3 || var7 <= var4 || var7 <= var5;
+				}
+			}
+		}
 	}
 }

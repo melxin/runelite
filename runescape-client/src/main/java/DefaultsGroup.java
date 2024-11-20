@@ -4,29 +4,29 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sa")
+@ObfuscatedName("sk")
 @Implements("DefaultsGroup")
 public class DefaultsGroup {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lsa;"
+		descriptor = "Lsk;"
 	)
 	static final DefaultsGroup field5098;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lsa;"
+		descriptor = "Lsk;"
 	)
-	static final DefaultsGroup field5096;
-	@ObfuscatedName("ak")
+	static final DefaultsGroup field5097;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1891273653
+		intValue = 543269131
 	)
 	@Export("group")
 	final int group;
 
 	static {
 		field5098 = new DefaultsGroup(1);
-		field5096 = new DefaultsGroup(3);
+		field5097 = new DefaultsGroup(3);
 	}
 
 	DefaultsGroup(int var1) {

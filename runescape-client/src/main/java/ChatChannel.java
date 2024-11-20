@@ -4,18 +4,18 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dh")
+@ObfuscatedName("dr")
 @Implements("ChatChannel")
 public class ChatChannel {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "[Lce;"
+		descriptor = "[Lcd;"
 	)
 	@Export("messages")
 	Message[] messages;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1084954157
+		intValue = 1026361993
 	)
 	@Export("count")
 	int count;
@@ -24,10 +24,10 @@ public class ChatChannel {
 		this.messages = new Message[100];
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Lce;",
-		garbageValue = "-1875669482"
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;B)Lcd;",
+		garbageValue = "41"
 	)
 	@Export("addMessage")
 	Message addMessage(int var1, String var2, String var3, String var4) {
@@ -57,91 +57,21 @@ public class ChatChannel {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lce;",
-		garbageValue = "-1"
+		descriptor = "(II)Lcd;",
+		garbageValue = "1923336036"
 	)
 	@Export("getMessage")
 	Message getMessage(int var1) {
 		return var1 >= 0 && var1 < this.count ? this.messages[var1] : null;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1891302194"
+		garbageValue = "331471141"
 	)
 	@Export("size")
 	int size() {
 		return this.count;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "([BIIB)Z",
-		garbageValue = "-16"
-	)
-	static final boolean method2472(byte[] var0, int var1, int var2) {
-		boolean var3 = true;
-		Buffer var4 = new Buffer(var0);
-		int var5 = -1;
-
-		label69:
-		while (true) {
-			int var6 = var4.readIncrSmallSmart();
-			if (var6 == 0) {
-				return var3;
-			}
-
-			var5 += var6;
-			int var7 = 0;
-			boolean var8 = false;
-
-			while (true) {
-				int var9;
-				while (!var8) {
-					var9 = var4.readUShortSmart();
-					if (var9 == 0) {
-						continue label69;
-					}
-
-					var7 += var9 - 1;
-					int var10 = var7 & 63;
-					int var11 = var7 >> 6 & 63;
-					int var12 = var4.readUnsignedByte() >> 2;
-					int var13 = var11 + var1;
-					int var14 = var10 + var2;
-					if (var13 > 0 && var14 > 0 && var13 < 103 && var14 < 103) {
-						ObjectComposition var15 = UrlRequest.getObjectDefinition(var5);
-						if (var12 != 22 || !Client.isLowDetail || var15.int1 != 0 || var15.interactType == 1 || var15.boolean2) {
-							if (!var15.needsModelFiles()) {
-								++Client.field571;
-								var3 = false;
-							}
-
-							var8 = true;
-						}
-					}
-				}
-
-				var9 = var4.readUShortSmart();
-				if (var9 == 0) {
-					break;
-				}
-
-				var4.readUnsignedByte();
-			}
-		}
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "958245222"
-	)
-	public static void method2468() {
-		ObjectComposition.ObjectDefinition_cached.clear();
-		ObjectComposition.ObjectDefinition_cachedModelData.clear();
-		ObjectComposition.ObjectDefinition_cachedEntities.clear();
-		ObjectComposition.ObjectDefinition_cachedModels.clear();
 	}
 }

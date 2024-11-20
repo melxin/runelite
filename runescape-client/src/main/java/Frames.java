@@ -3,20 +3,21 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ja")
+@ObfuscatedName("jv")
 @Implements("Frames")
 public class Frames extends DualNode {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "[Ljg;"
+		descriptor = "[Lja;"
 	)
 	@Export("frames")
 	Animation[] frames;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;IZ)V"
+		descriptor = "(Lpi;Lpi;IZ)V",
+		garbageValue = "0"
 	)
-	Frames(AbstractArchive var1, AbstractArchive var2, int var3, boolean var4) {
+	public Frames(AbstractArchive var1, AbstractArchive var2, int var3, boolean var4) {
 		NodeDeque var5 = new NodeDeque();
 		int var6 = var1.getGroupFileCount(var3);
 		this.frames = new Animation[var6];
@@ -35,13 +36,7 @@ public class Frames extends DualNode {
 			}
 
 			if (var10 == null) {
-				byte[] var13;
-				if (var4) {
-					var13 = var2.getFile(0, var11);
-				} else {
-					var13 = var2.getFile(var11, 0);
-				}
-
+				byte[] var13 = var2.getFile(var11, 0);
 				var10 = new Skeleton(var11, var13);
 				var5.addFirst(var10);
 			}
@@ -51,27 +46,46 @@ public class Frames extends DualNode {
 
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "-366797285"
+		garbageValue = "-1859345343"
 	)
 	@Export("hasAlphaTransform")
 	public boolean hasAlphaTransform(int var1) {
 		return this.frames[var1].hasAlphaTransform;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-1967620124"
+		descriptor = "(IB)I",
+		garbageValue = "-24"
 	)
-	public static boolean method5267(int var0) {
-		if (class333.field3628.isEmpty()) {
-			return false;
+	@Export("getVarbit")
+	public static int getVarbit(int var0) {
+		VarbitComposition var1 = class202.method4010(var0);
+		int var2 = var1.baseVar;
+		int var3 = var1.startBit;
+		int var4 = var1.endBit;
+		int var5 = Varps.Varps_masks[var4 - var3];
+		return Varps.Varps_main[var2] >> var3 & var5;
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(Lpi;II)V",
+		garbageValue = "-724466955"
+	)
+	static void method5162(AbstractArchive var0, int var1) {
+		if ((var1 & class552.field5424.rsOrdinal()) != 0) {
+			HttpResponse.logoSprite = Fonts.SpriteBuffer_getIndexedSpriteByName(var0, "logo_deadman_mode", "");
+		} else if ((var1 & class552.field5454.rsOrdinal()) != 0) {
+			HttpResponse.logoSprite = Fonts.SpriteBuffer_getIndexedSpriteByName(var0, "logo_seasonal_mode", "");
+		} else if ((var1 & class552.field5432.rsOrdinal()) != 0) {
+			HttpResponse.logoSprite = Fonts.SpriteBuffer_getIndexedSpriteByName(var0, "logo_speedrunning", "");
 		} else {
-			MusicSong var1 = (MusicSong)class333.field3628.get(0);
-			return var1 != null && var0 == var1.musicTrackGroupId;
+			HttpResponse.logoSprite = Fonts.SpriteBuffer_getIndexedSpriteByName(var0, "logo", "");
 		}
+
 	}
 }

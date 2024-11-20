@@ -8,93 +8,93 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import org.json.JSONObject;
 
-@ObfuscatedName("ic")
+@ObfuscatedName("ix")
 public class class216 {
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lit;"
-	)
-	class225 field2355;
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lik;"
-	)
-	class227 field2356;
 	@ObfuscatedName("an")
-	int field2350;
-	@ObfuscatedName("ao")
-	String field2358;
+	@ObfuscatedSignature(
+		descriptor = "Lip;"
+	)
+	class225 field2347;
 	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lid;"
+	)
+	class227 field2351;
+	@ObfuscatedName("ai")
+	int field2352;
+	@ObfuscatedName("al")
 	String field2359;
 	@ObfuscatedName("ar")
-	String field2354;
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lei;"
-	)
-	UrlRequest field2360;
+	String field2350;
+	@ObfuscatedName("as")
+	String field2353;
 	@ObfuscatedName("az")
-	@ObfuscatedGetter(
-		intValue = -659724977
+	@ObfuscatedSignature(
+		descriptor = "Lem;"
 	)
-	int field2362;
+	UrlRequest field2356;
+	@ObfuscatedName("ak")
+	@ObfuscatedGetter(
+		intValue = 272310243
+	)
+	int field2357;
 
 	public class216() {
-		this.field2350 = 148077623;
-		this.field2362 = 0;
+		this.field2352 = -261922735;
+		this.field2357 = 0;
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lic;)V"
+		descriptor = "(Lix;)V"
 	)
 	public class216(class216 var1) {
-		this.field2350 = 148077623;
-		this.field2362 = 0;
+		this.field2352 = -261922735;
+		this.field2357 = 0;
 		if (var1 != null) {
-			this.field2355 = var1.field2355;
-			this.field2356 = var1.field2356;
-			this.field2350 = var1.field2350;
-			this.field2358 = var1.field2358;
+			this.field2347 = var1.field2347;
+			this.field2351 = var1.field2351;
+			this.field2352 = var1.field2352;
 			this.field2359 = var1.field2359;
-			this.field2354 = var1.field2354;
-			this.field2360 = null;
-			this.field2362 = var1.field2362;
+			this.field2350 = var1.field2350;
+			this.field2353 = var1.field2353;
+			this.field2356 = null;
+			this.field2357 = var1.field2357;
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lit;",
-		garbageValue = "2106454159"
+		descriptor = "(I)Lip;",
+		garbageValue = "1989756788"
 	)
-	public class225 method4471() {
-		return this.field2355;
+	public class225 method4366() {
+		return this.field2347;
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;Lex;I)Z",
-		garbageValue = "135497712"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Lel;I)Z",
+		garbageValue = "332352349"
 	)
-	public boolean method4426(String var1, String var2, UrlRequester var3) {
+	public boolean method4342(String var1, String var2, UrlRequester var3) {
 		if (var1 != null && !var1.isEmpty()) {
 			if (var3 == null) {
 				return false;
 			} else {
-				this.method4428();
+				this.method4333();
 
 				try {
-					this.field2358 = var1;
-					this.field2360 = var3.request(new URL(this.field2358));
-					this.field2350 = 0;
+					this.field2359 = var1;
+					this.field2356 = var3.request(new URL(this.field2359));
+					this.field2352 = 0;
 				} catch (MalformedURLException var5) {
-					this.method4428();
-					this.field2350 = -592310492;
+					this.method4333();
+					this.field2352 = 1047690940;
 					return false;
 				}
 
 				if (!var2.isEmpty()) {
-					this.field2354 = var2;
+					this.field2353 = var2;
 				}
 
 				return true;
@@ -104,29 +104,29 @@ public class class216 {
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
-		garbageValue = "2061018491"
+		garbageValue = "2010217327"
 	)
-	public void method4427(String var1, String var2, String var3) {
-		this.field2355 = class417.method8077();
-		this.field2359 = var1;
-		this.field2355.method4563(this.field2359, var2, var3);
+	public void method4330(String var1, String var2, String var3) {
+		this.field2347 = Actor.method2671();
+		this.field2350 = var1;
+		this.field2347.method4474(this.field2350, var2, var3);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lex;B)V",
-		garbageValue = "-40"
+		descriptor = "(Lel;I)V",
+		garbageValue = "-118566408"
 	)
-	public void method4439(UrlRequester var1) {
-		switch(this.field2350 * -1016658311) {
+	public void method4356(UrlRequester var1) {
+		switch(this.field2352 * 458102607) {
 		case 0:
-			this.method4440(var1);
+			this.method4332(var1);
 			break;
 		case 1:
-			this.method4478();
+			this.method4346();
 			break;
 		default:
 			return;
@@ -134,116 +134,116 @@ public class class216 {
 
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "404998728"
+		descriptor = "(B)I",
+		garbageValue = "15"
 	)
-	public int method4429() {
-		return this.field2350 * -1016658311;
+	public int method4335() {
+		return this.field2352 * 458102607;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "96"
+		descriptor = "(I)Z",
+		garbageValue = "-2005295412"
 	)
-	public boolean method4430() {
-		return this.field2356 != null;
+	public boolean method4336() {
+		return this.field2351 != null;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)I",
-		garbageValue = "-126"
+		descriptor = "(Ljava/lang/String;S)I",
+		garbageValue = "-24177"
 	)
-	public int method4431(String var1) {
-		return this.field2356.field2442.containsKey(var1) ? (Integer)this.field2356.field2442.get(var1) : -1;
+	public int method4337(String var1) {
+		return this.field2351.field2447.containsKey(var1) ? (Integer)this.field2351.field2447.get(var1) : -1;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "-1914319099"
+		garbageValue = "-1638714395"
 	)
-	public String method4432(String var1) {
-		return (String)((String)(this.field2356.field2444.containsKey(var1) ? this.field2356.field2444.get(var1) : null));
-	}
-
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/util/ArrayList;",
-		garbageValue = "1328020706"
-	)
-	public ArrayList method4434() {
-		return this.field2356.field2439;
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/util/ArrayList;",
-		garbageValue = "-1594532376"
-	)
-	public ArrayList method4462() {
-		return this.field2356.field2440;
+	public String method4338(String var1) {
+		return (String)((String)(this.field2351.field2448.containsKey(var1) ? this.field2351.field2448.get(var1) : null));
 	}
 
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/util/ArrayList;",
-		garbageValue = "7"
+		descriptor = "(I)Ljava/util/ArrayList;",
+		garbageValue = "-1186730757"
 	)
-	public ArrayList method4472() {
-		return this.field2356.field2436;
+	public ArrayList method4339() {
+		return this.field2351.field2443;
 	}
 
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-57"
+		descriptor = "(I)Ljava/util/ArrayList;",
+		garbageValue = "130553331"
 	)
-	public String method4480() {
-		return this.field2356.field2441;
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(B)[F",
-		garbageValue = "-82"
-	)
-	public float[] method4481() {
-		return this.field2356.field2443;
+	public ArrayList method4340() {
+		return this.field2351.field2444;
 	}
 
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "1092555771"
+		descriptor = "(I)Ljava/util/ArrayList;",
+		garbageValue = "1930146813"
 	)
-	public String method4424() {
-		return this.field2356.method4591();
+	public ArrayList method4381() {
+		return this.field2351.field2442;
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "-1532383156"
+	)
+	public String method4382() {
+		return this.field2351.field2445;
+	}
+
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(I)[F",
+		garbageValue = "-1954339188"
+	)
+	public float[] method4364() {
+		return this.field2351.field2446;
 	}
 
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "26121"
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "712176299"
 	)
-	void method4428() {
-		this.field2360 = null;
+	public String method4343() {
+		return this.field2351.method4522();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Lex;I)V",
-		garbageValue = "-923157843"
+		descriptor = "(I)V",
+		garbageValue = "1662107614"
 	)
-	void method4440(UrlRequester var1) {
-		if (this.field2360 != null && this.field2360.isDone()) {
-			byte[] var2 = this.field2360.getResponse();
+	void method4333() {
+		this.field2356 = null;
+	}
+
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(Lel;I)V",
+		garbageValue = "-1268349001"
+	)
+	void method4332(UrlRequester var1) {
+		if (this.field2356 != null && this.field2356.isDone()) {
+			byte[] var2 = this.field2356.getResponse();
 			if (var2 == null) {
-				this.method4428();
-				this.field2350 = -592310492;
+				this.method4333();
+				this.field2352 = 1047690940;
 			} else {
 				try {
 					HttpJsonRequestBody var3 = new HttpJsonRequestBody(var2);
@@ -253,113 +253,121 @@ public class class216 {
 					}
 
 					try {
-						this.field2362 = var4.getInt("version");
-					} catch (Exception var6) {
-						this.method4428();
-						this.field2350 = -888465738;
+						this.field2357 = var4.getInt("version");
+					} catch (Exception var7) {
+						this.method4333();
+						this.field2352 = 1571536410;
 						return;
 					}
 
-					if (this.field2362 < 2) {
-						if (!this.field2356.method4594(var4, this.field2362, var1)) {
-							this.field2350 = -888465738;
+					if (this.field2357 < 2) {
+						if (!this.field2351.method4486(var4, this.field2357, var1)) {
+							this.field2352 = 1571536410;
 						}
-					} else if (this.field2362 == 2) {
-						class229 var5 = HttpResponse.method292();
-						var5.method4628(var4, this.field2362, var1);
-						this.field2356 = var5.method4644(this.field2354);
-						if (this.field2356 != null) {
-							this.method4478();
-							this.field2350 = -148077623;
+					} else if (this.field2357 == 2) {
+						class229 var5 = class229.field2466;
+						var5.method4530(var4, this.field2357, var1);
+						this.field2351 = var5.method4533(this.field2353);
+						if (this.field2351 != null) {
+							this.method4346();
+							this.field2352 = 261922735;
 						} else {
-							this.field2350 = -1036543361;
+							this.field2352 = 1833459145;
 						}
 					}
-				} catch (UnsupportedEncodingException var7) {
-					this.method4428();
-					this.field2350 = -888465738;
+				} catch (UnsupportedEncodingException var8) {
+					this.method4333();
+					this.field2352 = 1571536410;
 					return;
 				}
 
-				if (this.field2356 != null) {
-					this.field2350 = (this.field2356.field2439.size() > 0 ? 1 : 2) * -148077623;
+				if (this.field2351 != null) {
+					this.field2352 = (this.field2351.field2443.size() > 0 ? 1 : 2) * 261922735;
 				}
 
-				this.field2360 = null;
+				this.field2356 = null;
 			}
 		}
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "-107"
+		garbageValue = "50"
 	)
-	void method4478() {
-		Iterator var1 = this.field2356.field2439.iterator();
+	void method4346() {
+		Iterator var1 = this.field2351.field2443.iterator();
 
 		class217 var2;
 		do {
 			if (!var1.hasNext()) {
-				var1 = this.field2356.field2439.iterator();
+				var1 = this.field2351.field2443.iterator();
 
 				while (var1.hasNext()) {
 					var2 = (class217)var1.next();
-					if (var2.field2364 != null) {
-						byte[] var3 = var2.field2364.getResponse();
+					if (var2.field2361 != null) {
+						byte[] var3 = var2.field2361.getResponse();
 						if (var3 != null && var3.length > 0) {
-							this.field2350 = -296155246;
+							this.field2352 = 523845470;
 							return;
 						}
 					}
 				}
 
-				this.method4428();
-				this.field2350 = -740388115;
+				this.method4333();
+				this.field2352 = 1309613675;
 				return;
 			}
 
 			var2 = (class217)var1.next();
-		} while(var2.field2364 == null || var2.field2364.isDone());
+		} while(var2.field2361 == null || var2.field2361.isDone());
 
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lex;I)Z",
-		garbageValue = "-887985300"
+		descriptor = "(Ljava/lang/String;Lel;B)Z",
+		garbageValue = "2"
 	)
-	public boolean method4442(String var1, UrlRequester var2) {
+	public boolean method4344(String var1, UrlRequester var2) {
 		try {
 			JSONObject var3 = (new HttpJsonRequestBody(var1.getBytes())).getBody();
 
 			try {
-				this.field2362 = var3.getInt("version");
+				this.field2357 = var3.getInt("version");
 			} catch (Exception var5) {
-				this.method4428();
-				this.field2350 = -888465738;
+				this.method4333();
+				this.field2352 = 1571536410;
 				return false;
 			}
 
-			if (!this.field2356.method4594(var3, this.field2362, var2)) {
-				this.field2350 = -888465738;
+			if (!this.field2351.method4486(var3, this.field2357, var2)) {
+				this.field2352 = 1571536410;
 			}
 
-			this.field2350 = (this.field2356.field2439.size() > 0 ? 1 : 2) * -148077623;
+			this.field2352 = (this.field2351.field2443.size() > 0 ? 1 : 2) * 261922735;
 		} catch (UnsupportedEncodingException var6) {
-			this.field2350 = -888465738;
+			this.field2352 = 1571536410;
 		}
 
-		return this.field2350 * -1016658311 < 3;
+		return this.field2352 * 458102607 < 3;
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)I",
-		garbageValue = "951099002"
+		descriptor = "(S)[Loc;",
+		garbageValue = "5727"
 	)
-	static final int method4477(int var0, int var1, int var2, int var3) {
-		int var4 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var2 * 1024 / var3] >> 1;
-		return ((65536 - var4) * var0 >> 16) + (var4 * var1 >> 16);
+	public static StudioGame[] method4384() {
+		return new StudioGame[]{StudioGame.game3, StudioGame.oldscape, StudioGame.stellardawn, StudioGame.game5, StudioGame.runescape, StudioGame.game4};
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "1555276061"
+	)
+	static final void method4331() {
+		HttpRequestTask.method269("Your friend list is full. Max of 200 for free users, and 400 for members");
 	}
 }

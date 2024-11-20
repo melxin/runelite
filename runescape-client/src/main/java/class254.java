@@ -1,29 +1,45 @@
-import java.util.ArrayList;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jn")
+@ObfuscatedName("jy")
 public class class254 {
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "0"
+		descriptor = "(II)Lho;",
+		garbageValue = "-2020315960"
 	)
-	public static void method5318() {
-		StructComposition.StructDefinition_cached.clear();
+	public static FloorUnderlayDefinition method5238(int var0) {
+		FloorUnderlayDefinition var1 = (FloorUnderlayDefinition)FloorUnderlayDefinition.FloorUnderlayDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = FloorUnderlayDefinition.FloorUnderlayDefinition_archive.takeFile(1, var0);
+			var1 = new FloorUnderlayDefinition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2), var0);
+			}
+
+			var1.postDecode();
+			FloorUnderlayDefinition.FloorUnderlayDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/ArrayList;IIIIS)V",
-		garbageValue = "-29759"
+		descriptor = "(Lpi;II)Lvy;",
+		garbageValue = "67253210"
 	)
-	public static void method5316(ArrayList var0, int var1, int var2, int var3, int var4) {
-		class333.field3628.clear();
-		class333.field3628.addAll(var0);
-		class333.musicPlayerStatus = var1;
-		class333.field3631 = var2;
-		class333.field3632 = var3;
-		class333.field3633 = var4;
+	public static IndexedSprite method5239(AbstractArchive var0, int var1) {
+		byte[] var3 = var0.takeFileFlat(var1);
+		boolean var2;
+		if (var3 == null) {
+			var2 = false;
+		} else {
+			class95.SpriteBuffer_decode(var3);
+			var2 = true;
+		}
+
+		return !var2 ? null : SecureRandomCallable.method2433();
 	}
 }

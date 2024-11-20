@@ -1,3 +1,4 @@
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,43 +11,62 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("av")
+@ObfuscatedName("ay")
 @Implements("HttpResponse")
 public class HttpResponse {
-	@ObfuscatedName("ad")
-	@Export("ByteArrayPool_altSizeArrayCounts")
-	public static int[] ByteArrayPool_altSizeArrayCounts;
-	@ObfuscatedName("uq")
-	@ObfuscatedGetter(
-		intValue = -307852697
+	@ObfuscatedName("ao")
+	@Export("SpriteBuffer_yOffsets")
+	static int[] SpriteBuffer_yOffsets;
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lvy;"
 	)
-	static int field82;
-	@ObfuscatedName("ap")
+	@Export("logoSprite")
+	static IndexedSprite logoSprite;
+	@ObfuscatedName("bp")
+	static Image field100;
+	@ObfuscatedName("gh")
 	@ObfuscatedGetter(
-		intValue = 188403421
+		intValue = 2121157151
+	)
+	static int field98;
+	@ObfuscatedName("ka")
+	@ObfuscatedSignature(
+		descriptor = "[Lvy;"
+	)
+	static IndexedSprite[] field101;
+	@ObfuscatedName("mi")
+	@ObfuscatedSignature(
+		descriptor = "Lcw;"
+	)
+	@Export("entity")
+	static Entity entity;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = -1074900177
 	)
 	@Export("responseCode")
 	final int responseCode;
 	@ObfuscatedName("aw")
 	@Export("headerFields")
 	final String headerFields;
-	@ObfuscatedName("ak")
-	final Map field77;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("at")
+	final Map field96;
+	@ObfuscatedName("ae")
 	@Export("responseBody")
 	final String responseBody;
 
 	HttpResponse(String var1) {
 		this.responseCode = 400;
 		this.headerFields = var1;
-		this.field77 = null;
+		this.field96 = null;
 		this.responseBody = "";
 	}
 
 	HttpResponse(HttpURLConnection var1) throws IOException {
 		this.responseCode = var1.getResponseCode();
 		this.headerFields = var1.getResponseMessage();
-		this.field77 = var1.getHeaderFields();
+		this.field96 = var1.getHeaderFields();
 		StringBuilder var2 = new StringBuilder();
 		InputStream var3 = this.responseCode >= 300 ? var1.getErrorStream() : var1.getInputStream();
 		if (var3 != null) {
@@ -64,10 +84,10 @@ public class HttpResponse {
 		this.responseBody = var2.toString();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1472219441"
+		descriptor = "(B)I",
+		garbageValue = "11"
 	)
 	@Export("getResponseCode")
 	public int getResponseCode() {
@@ -77,144 +97,60 @@ public class HttpResponse {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "2128644438"
+		garbageValue = "2094002613"
 	)
-	public String method293() {
+	public String method273() {
 		return this.headerFields;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/util/Map;",
-		garbageValue = "-646471881"
+		descriptor = "(S)Ljava/util/Map;",
+		garbageValue = "8625"
 	)
 	@Export("getHeaderFields")
 	public Map getHeaderFields() {
-		return this.field77;
+		return this.field96;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-25"
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "-1413368716"
 	)
 	@Export("getResponseBody")
 	public String getResponseBody() {
 		return this.responseBody;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lib;",
-		garbageValue = "-1351450781"
+		descriptor = "(III)I",
+		garbageValue = "-369730497"
 	)
-	static class229 method292() {
-		return class229.field2460;
+	static final int method284(int var0, int var1) {
+		int var2 = var0 + var1 * 57;
+		var2 ^= var2 << 13;
+		int var3 = var2 * (var2 * var2 * 15731 + 789221) + 1376312589 & Integer.MAX_VALUE;
+		return var3 >> 19 & 255;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("bz")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Lpn;II)Lme;",
-		garbageValue = "1831877112"
+		descriptor = "(II)I",
+		garbageValue = "-2055035174"
 	)
-	public static PacketBufferNode method305(int var0, String var1, Language var2, int var3) {
-		PacketBufferNode var4 = class113.getPacketBufferNode(ClientPacket.field3392, Client.packetWriter.isaacCipher);
-		var4.packetBuffer.writeByte(0);
-		int var5 = var4.packetBuffer.offset;
-		var4.packetBuffer.writeByte(var0);
-		String var6 = var1.toLowerCase();
-		int var7 = 0;
-		byte[] var8 = null;
-		if (var6.startsWith("yellow:")) {
-			var7 = 0;
-			var1 = var1.substring("yellow:".length());
-		} else if (var6.startsWith("red:")) {
-			var7 = 1;
-			var1 = var1.substring("red:".length());
-		} else if (var6.startsWith("green:")) {
-			var7 = 2;
-			var1 = var1.substring("green:".length());
-		} else if (var6.startsWith("cyan:")) {
-			var7 = 3;
-			var1 = var1.substring("cyan:".length());
-		} else if (var6.startsWith("purple:")) {
-			var7 = 4;
-			var1 = var1.substring("purple:".length());
-		} else if (var6.startsWith("white:")) {
-			var7 = 5;
-			var1 = var1.substring("white:".length());
-		} else if (var6.startsWith("flash1:")) {
-			var7 = 6;
-			var1 = var1.substring("flash1:".length());
-		} else if (var6.startsWith("flash2:")) {
-			var7 = 7;
-			var1 = var1.substring("flash2:".length());
-		} else if (var6.startsWith("flash3:")) {
-			var7 = 8;
-			var1 = var1.substring("flash3:".length());
-		} else if (var6.startsWith("glow1:")) {
-			var7 = 9;
-			var1 = var1.substring("glow1:".length());
-		} else if (var6.startsWith("glow2:")) {
-			var7 = 10;
-			var1 = var1.substring("glow2:".length());
-		} else if (var6.startsWith("glow3:")) {
-			var7 = 11;
-			var1 = var1.substring("glow3:".length());
-		} else if (var6.startsWith("rainbow:")) {
-			var7 = 12;
-			var1 = var1.substring("rainbow:".length());
-		} else if (var6.startsWith("pattern")) {
-			var8 = IgnoreList.method8937(var6);
-			if (var8 != null) {
-				var7 = var8.length + 12;
-				var1 = var1.substring("pattern".length() + var8.length + 1);
-			}
-		}
-
-		var6 = var1.toLowerCase();
-		byte var9 = 0;
-		if (var6.startsWith("wave:")) {
-			var9 = 1;
-			var1 = var1.substring("wave:".length());
-		} else if (var6.startsWith("wave2:")) {
-			var9 = 2;
-			var1 = var1.substring("wave2:".length());
-		} else if (var6.startsWith("shake:")) {
-			var9 = 3;
-			var1 = var1.substring("shake:".length());
-		} else if (var6.startsWith("scroll:")) {
-			var9 = 4;
-			var1 = var1.substring("scroll:".length());
-		} else if (var6.startsWith("slide:")) {
-			var9 = 5;
-			var1 = var1.substring("slide:".length());
-		}
-
-		var4.packetBuffer.writeByte(var7);
-		var4.packetBuffer.writeByte(var9);
-		if (var8 != null) {
-			for (int var10 = 0; var10 < var8.length; ++var10) {
-				var4.packetBuffer.writeByte(var8[var10]);
-			}
-		}
-
-		class217.method4484(var4.packetBuffer, var1);
-		if (var0 == class369.field4059.rsOrdinal()) {
-			var4.packetBuffer.writeByte(var3);
-		}
-
-		var4.packetBuffer.writeLengthByte(var4.packetBuffer.offset - var5);
-		return var4;
+	static int method270(int var0) {
+		return (int)((Math.log((double)var0) / Interpreter.field864 - 7.0D) * 256.0D);
 	}
 
-	@ObfuscatedName("nf")
+	@ObfuscatedName("ol")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "840911891"
+		descriptor = "(Lvj;II)V",
+		garbageValue = "1808396095"
 	)
-	static final int method296() {
-		float var0 = 200.0F * ((float)TaskHandler.clientPreferences.getBrightness() - 0.5F);
-		return 100 - Math.round(var0);
+	static void method283(Buffer var0, int var1) {
+		class27.method377(var0.array, var1);
+		class92.method2511(var0, var1);
 	}
 }

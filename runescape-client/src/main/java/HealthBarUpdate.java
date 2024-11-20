@@ -1,35 +1,39 @@
-import java.io.File;
-import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("de")
+@ObfuscatedName("ds")
 @Implements("HealthBarUpdate")
 public class HealthBarUpdate extends Node {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("dk")
+	@ObfuscatedSignature(
+		descriptor = "[Lvr;"
+	)
+	@Export("worldSelectBackSprites")
+	static SpritePixels[] worldSelectBackSprites;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 383832337
+		intValue = -1281878903
 	)
 	@Export("cycle")
 	int cycle;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -592519003
+		intValue = 746230633
 	)
 	@Export("health")
 	int health;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -147271595
+		intValue = 468089283
 	)
 	@Export("health2")
 	int health2;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 631943229
+		intValue = -1266051079
 	)
 	@Export("cycleOffset")
 	int cycleOffset;
@@ -41,10 +45,10 @@ public class HealthBarUpdate extends Node {
 		this.cycleOffset = var4;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "371888269"
+		descriptor = "(IIIIB)V",
+		garbageValue = "14"
 	)
 	@Export("set")
 	void set(int var1, int var2, int var3, int var4) {
@@ -54,47 +58,16 @@ public class HealthBarUpdate extends Node {
 		this.cycleOffset = var4;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "96"
+		descriptor = "(I)Lmc;",
+		garbageValue = "-1292475441"
 	)
-	public static void method2774() {
-		class179.field1915.clear();
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/io/File;Ljava/io/File;I)V",
-		garbageValue = "-1837779746"
-	)
-	static void method2776(File var0, File var1) {
-		try {
-			AccessFile var2 = new AccessFile(class151.field1708, "rw", 10000L);
-			Buffer var3 = new Buffer(500);
-			var3.writeByte(3);
-			var3.writeByte(var1 != null ? 1 : 0);
-			var3.writeCESU8(var0.getPath());
-			if (var1 != null) {
-				var3.writeCESU8("");
-			}
-
-			var2.write(var3.array, 0, var3.offset);
-			var2.close();
-		} catch (IOException var4) {
-			var4.printStackTrace();
-		}
-
-	}
-
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1730691614"
-	)
-	static final void method2777() {
-		Object var10000 = null;
-		String var0 = "You can't add yourself to your own ignore list";
-		class430.addGameMessage(30, "", var0);
+	public static PacketBufferNode method2700() {
+		PacketBufferNode var0 = Interpreter.method2155();
+		var0.clientPacket = null;
+		var0.clientPacketLength = 0;
+		var0.packetBuffer = new PacketBuffer(5000);
+		return var0;
 	}
 }

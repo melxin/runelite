@@ -1,61 +1,37 @@
-import java.awt.FontMetrics;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ek")
+@ObfuscatedName("eh")
 final class class110 implements class351 {
-	@ObfuscatedName("bx")
-	@Export("loginScreenFontMetrics")
-	static FontMetrics loginScreenFontMetrics;
+	@ObfuscatedName("ae")
+	@Export("Tiles_shapes")
+	static byte[][][] Tiles_shapes;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lng;"
+		descriptor = "Lnp;"
 	)
 	final Widget val$item;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lng;)V"
+		descriptor = "(Lnp;)V"
 	)
 	class110(Widget var1) {
 		this.val$item = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-3346"
+		descriptor = "(I)V",
+		garbageValue = "2093040062"
 	)
-	public void vmethod6889() {
-		if (this.val$item.method7287().field3811 != null) {
+	public void vmethod6864() {
+		if (this.val$item.method7281().field3799 != null) {
 			ScriptEvent var1 = new ScriptEvent();
-			var1.method2565(this.val$item);
-			var1.setArgs(this.val$item.method7287().field3811);
-			Archive.method7599().addFirst(var1);
+			var1.method2493(this.val$item);
+			var1.setArgs(this.val$item.method7281().field3799);
+			MenuAction.method2256().addFirst(var1);
 		}
 
-	}
-
-	@ObfuscatedName("mp")
-	@ObfuscatedSignature(
-		descriptor = "(Lng;I)V",
-		garbageValue = "1809135205"
-	)
-	@Export("invalidateWidget")
-	public static void invalidateWidget(Widget var0) {
-		if (var0 != null && var0.cycle == Client.field590) {
-			Client.validRootWidgets[var0.rootIndex] = true;
-		}
-
-	}
-
-	@ObfuscatedName("oc")
-	@ObfuscatedSignature(
-		descriptor = "(Lvl;IB)V",
-		garbageValue = "-35"
-	)
-	static void method3072(Buffer var0, int var1) {
-		class154.method3607(var0.array, var1);
-		class93.method2592(var0, var1);
 	}
 }

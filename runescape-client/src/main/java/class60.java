@@ -1,52 +1,58 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("cp")
+@ObfuscatedName("co")
 public class class60 {
-	@ObfuscatedName("ap")
-	byte[] field411;
+	@ObfuscatedName("kv")
+	@ObfuscatedSignature(
+		descriptor = "[Lvr;"
+	)
+	@Export("headIconPkSprites")
+	static SpritePixels[] headIconPkSprites;
+	@ObfuscatedName("ab")
+	byte[] field429;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1635093337
+		intValue = 238692693
 	)
-	int field409;
-	@ObfuscatedName("ak")
+	int field427;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1830272323
+		intValue = 332551393
 	)
-	int field413;
+	int field428;
 
 	class60() {
-		this.field411 = null;
-		this.field409 = 0;
-		this.field413 = 0;
+		this.field429 = null;
+		this.field427 = 0;
+		this.field428 = 0;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(IB)I",
-		garbageValue = "15"
+		garbageValue = "-43"
 	)
-	int method1206(int var1) {
+	int method1152(int var1) {
 		int var2 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = 0; var1 >= 8 - this.field413; var1 -= var4) {
-			var4 = 8 - this.field413;
+		for (var3 = 0; var1 >= 8 - this.field428; var1 -= var4) {
+			var4 = 8 - this.field428;
 			int var5 = (1 << var4) - 1;
-			var2 += (this.field411[this.field409] >> this.field413 & var5) << var3;
-			this.field413 = 0;
-			++this.field409;
+			var2 += (this.field429[this.field427] >> this.field428 & var5) << var3;
+			this.field428 = 0;
+			++this.field427;
 			var3 += var4;
 		}
 
 		if (var1 > 0) {
 			var4 = (1 << var1) - 1;
-			var2 += (this.field411[this.field409] >> this.field413 & var4) << var3;
-			this.field413 += var1;
+			var2 += (this.field429[this.field427] >> this.field428 & var4) << var3;
+			this.field428 += var1;
 		}
 
 		return var2;
@@ -55,59 +61,50 @@ public class class60 {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-257091693"
+		garbageValue = "-1573770014"
 	)
-	int method1196() {
-		int var1 = this.field411[this.field409] >> this.field413 & 1;
-		++this.field413;
-		this.field409 += this.field413 >> 3;
-		this.field413 &= 7;
+	int method1153() {
+		int var1 = this.field429[this.field427] >> this.field428 & 1;
+		++this.field428;
+		this.field427 += this.field428 >> 3;
+		this.field428 &= 7;
 		return var1;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "([BII)V",
-		garbageValue = "191564857"
+		descriptor = "([BIB)V",
+		garbageValue = "-42"
 	)
-	void method1208(byte[] var1, int var2) {
-		this.field411 = var1;
-		this.field409 = var2;
-		this.field413 = 0;
+	void method1157(byte[] var1, int var2) {
+		this.field429 = var1;
+		this.field427 = var2;
+		this.field428 = 0;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("nl")
 	@ObfuscatedSignature(
-		descriptor = "(ILda;ZS)I",
-		garbageValue = "-9067"
+		descriptor = "(Ldo;ZI)V",
+		garbageValue = "-480018524"
 	)
-	static int method1198(int var0, Script var1, boolean var2) {
-		Widget var3 = var2 ? UserComparator2.scriptDotWidget : HttpRequestTask.scriptActiveWidget;
-		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
-			Interpreter.Interpreter_intStack[++class96.Interpreter_intStackSize - 1] = class93.Widget_unpackTargetMask(class171.getWidgetFlags(var3));
-			return 1;
-		} else if (var0 != ScriptOpcodes.CC_GETOP) {
-			if (var0 == ScriptOpcodes.CC_GETOPBASE) {
-				if (var3.dataText == null) {
-					Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = "";
-				} else {
-					Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = var3.dataText;
-				}
-
-				return 1;
-			} else {
-				return 2;
-			}
-		} else {
-			int var4 = Interpreter.Interpreter_intStack[--class96.Interpreter_intStackSize];
-			--var4;
-			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
-				Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = var3.actions[var4];
-			} else {
-				Interpreter.Interpreter_stringStack[++class208.Interpreter_stringStackSize - 1] = "";
-			}
-
-			return 1;
+	@Export("closeInterface")
+	static final void closeInterface(InterfaceParent var0, boolean var1) {
+		int var2 = var0.group;
+		int var3 = (int)var0.key;
+		var0.remove();
+		if (var1) {
+			class379.widgetDefinition.method6872(var2);
 		}
+
+		SoundCache.method844(var2);
+		Widget var4 = class379.widgetDefinition.method6875(var3);
+		if (var4 != null) {
+			class178.invalidateWidget(var4);
+		}
+
+		if (Client.rootInterface != -1) {
+			World.runIntfCloseListeners(Client.rootInterface, 1);
+		}
+
 	}
 }

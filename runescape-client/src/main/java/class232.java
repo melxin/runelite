@@ -1,32 +1,32 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("im")
+@ObfuscatedName("it")
 public class class232 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Lit;"
 	)
-	public static final class232 field2470;
+	public static final class232 field2479;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Lit;"
 	)
-	public static final class232 field2471;
+	public static final class232 field2480;
 
 	static {
-		field2470 = new class232();
-		field2471 = new class232();
+		field2479 = new class232();
+		field2480 = new class232();
 	}
 
 	class232() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "()[Lim;"
+		descriptor = "()[Lit;"
 	)
-	public static class232[] method4676() {
-		return new class232[]{field2470, field2471};
+	public static class232[] method4580() {
+		return new class232[]{field2479, field2480};
 	}
 }

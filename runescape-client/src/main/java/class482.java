@@ -1,29 +1,40 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sy")
+@ObfuscatedName("st")
 public abstract class class482 {
+	@ObfuscatedName("go")
+	@Export("accessToken")
+	static String accessToken;
+	@ObfuscatedName("oh")
+	@ObfuscatedSignature(
+		descriptor = "Lcx;"
+	)
+	@Export("tempMenuAction")
+	static MenuAction tempMenuAction;
+
 	class482() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lkt;Lsb;II)V",
-		garbageValue = "1324696839"
+		descriptor = "(Lkj;Lsl;IB)V",
+		garbageValue = "0"
 	)
-	abstract void vmethod9203(WorldEntityCoord var1, class481 var2, int var3);
+	abstract void vmethod9208(WorldEntityCoord var1, class481 var2, int var3);
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lkt;IIB)Z",
-		garbageValue = "30"
+		descriptor = "(Lkj;III)Z",
+		garbageValue = "1905256684"
 	)
-	abstract boolean vmethod9202(WorldEntityCoord var1, int var2, int var3);
+	abstract boolean vmethod9214(WorldEntityCoord var1, int var2, int var3);
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "-23944715"
+		garbageValue = "-680568556"
 	)
-	abstract void vmethod9204(int var1, int var2);
+	abstract void vmethod9206(int var1, int var2);
 }

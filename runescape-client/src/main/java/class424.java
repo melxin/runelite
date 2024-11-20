@@ -1,13 +1,19 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qv")
+@ObfuscatedName("qz")
 public class class424 {
-	@ObfuscatedName("kh")
+	@ObfuscatedName("dd")
 	@ObfuscatedSignature(
-		descriptor = "Lvv;"
+		descriptor = "[Lvy;"
 	)
-	@Export("redHintArrowSprite")
-	static SpritePixels redHintArrowSprite;
+	@Export("worldSelectFlagSprites")
+	static IndexedSprite[] worldSelectFlagSprites;
+	@ObfuscatedName("oy")
+	@ObfuscatedGetter(
+		intValue = 190767655
+	)
+	static int field4755;
 }

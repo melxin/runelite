@@ -3,81 +3,105 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ra")
+@ObfuscatedName("rg")
 @Implements("SongTask")
 public abstract class SongTask {
-	@ObfuscatedName("ak")
+	@ObfuscatedName("or")
 	@ObfuscatedSignature(
-		descriptor = "Lra;"
+		descriptor = "Lnp;"
+	)
+	static Widget field4882;
+	@ObfuscatedName("tz")
+	@ObfuscatedSignature(
+		descriptor = "Lcn;"
+	)
+	@Export("decimator")
+	static Decimator decimator;
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lrg;"
 	)
 	@Export("songTask")
 	SongTask songTask;
+	@ObfuscatedName("ae")
+	String field4880;
+	@ObfuscatedName("ao")
+	String field4876;
+	@ObfuscatedName("ac")
+	boolean field4878;
 	@ObfuscatedName("aj")
-	String field4883;
-	@ObfuscatedName("ai")
-	String field4881;
-	@ObfuscatedName("ay")
-	boolean field4884;
-	@ObfuscatedName("as")
-	boolean field4885;
+	boolean field4879;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lra;)V"
+		descriptor = "(Lrg;)V"
 	)
 	SongTask(SongTask var1) {
 		this.songTask = var1;
 	}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "343486624"
-	)
-	public abstract boolean vmethod8740();
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1816225167"
-	)
-	public boolean method8721() {
-		return this.field4884;
-	}
-
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(B)Z",
-		garbageValue = "51"
+		garbageValue = "-1"
 	)
-	public boolean method8732() {
-		return this.field4885;
+	public abstract boolean vmethod8722();
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "-113"
+	)
+	public boolean method8714() {
+		return this.field4878;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-561476633"
+		descriptor = "(I)Z",
+		garbageValue = "2089730111"
 	)
-	public String method8723() {
-		return "Error in task: " + this.field4881 + ", Error message: " + this.field4883;
+	public boolean method8699() {
+		return this.field4879;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lra;",
-		garbageValue = "1364477332"
+		descriptor = "(B)Ljava/lang/String;",
+		garbageValue = "-30"
 	)
-	public SongTask method8724() {
-		return this.songTask;
+	public String method8700() {
+		return "Error in task: " + this.field4876 + ", Error message: " + this.field4880;
 	}
 
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "634133961"
+		descriptor = "(I)Lrg;",
+		garbageValue = "337303127"
 	)
-	void method8725(String var1) {
-		this.field4884 = true;
-		this.field4883 = var1;
+	public SongTask method8715() {
+		return this.songTask;
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "-1461848317"
+	)
+	void method8702(String var1) {
+		this.field4878 = true;
+		this.field4880 = var1;
+	}
+
+	@ObfuscatedName("lh")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Z",
+		garbageValue = "-53"
+	)
+	static final boolean method8716(int var0) {
+		if (var0 >= 2000) {
+			var0 -= 2000;
+		}
+
+		return var0 == 1007;
 	}
 }

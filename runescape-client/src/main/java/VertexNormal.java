@@ -4,30 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("je")
+@ObfuscatedName("jf")
 @Implements("VertexNormal")
 public class VertexNormal {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -700579153
+		intValue = -2134179721
 	)
 	@Export("x")
 	int x;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 991975417
+		intValue = 2073571793
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -703612283
+		intValue = -1702880519
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 52686273
+		intValue = 1628575481
 	)
 	@Export("magnitude")
 	int magnitude;
@@ -36,7 +36,7 @@ public class VertexNormal {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lje;)V"
+		descriptor = "(Ljf;)V"
 	)
 	VertexNormal(VertexNormal var1) {
 		this.x = var1.x;
@@ -45,12 +45,12 @@ public class VertexNormal {
 		this.magnitude = var1.magnitude;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-1501189999"
+		descriptor = "(IS)I",
+		garbageValue = "-7219"
 	)
-	static final boolean method5489(char var0) {
-		return var0 == 160 || var0 == ' ' || var0 == '_' || var0 == '-';
+	public static int method5429(int var0) {
+		return var0 != 0 && var0 != 1 ? -1 : 0;
 	}
 }

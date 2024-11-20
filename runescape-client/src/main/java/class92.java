@@ -1,187 +1,141 @@
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ds")
+@ObfuscatedName("dn")
 public enum class92 implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lds;"
+		descriptor = "Ldn;"
 	)
-	field1124(0, -1),
+	field1108(0, -1),
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lds;"
+		descriptor = "Ldn;"
 	)
-	field1117(1, 1),
-	@ObfuscatedName("ak")
+	field1106(1, 1),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lds;"
+		descriptor = "Ldn;"
 	)
-	field1119(2, 7),
-	@ObfuscatedName("aj")
+	field1105(2, 7),
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lds;"
+		descriptor = "Ldn;"
 	)
-	field1120(3, 8),
-	@ObfuscatedName("ai")
+	field1107(3, 8),
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lds;"
+		descriptor = "Ldn;"
 	)
-	field1121(4, 9);
+	field1109(4, 9);
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1504516419
+		intValue = -207271665
 	)
-	final int field1122;
-	@ObfuscatedName("as")
+	final int field1110;
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -902041791
+		intValue = 1030165311
 	)
-	final int field1123;
+	final int field1111;
 
 	class92(int var3, int var4) {
-		this.field1122 = var3;
-		this.field1123 = var4;
+		this.field1110 = var3;
+		this.field1111 = var4;
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1837624059"
+		garbageValue = "1071289392"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1123;
+		return this.field1111;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;IB)Z",
-		garbageValue = "14"
+		descriptor = "(Lvj;II)V",
+		garbageValue = "-491381211"
 	)
-	static boolean method2584(String var0, int var1) {
-		return AsyncHttpResponse.method277(var0, var1, "openjs");
+	public static void method2511(Buffer var0, int var1) {
+		if (JagexCache.JagexCache_randomDat != null) {
+			try {
+				JagexCache.JagexCache_randomDat.seek(0L);
+				JagexCache.JagexCache_randomDat.write(var0.array, var1, 24);
+			} catch (Exception var3) {
+			}
+		}
+
 	}
 
-	@ObfuscatedName("ik")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ldn;B)V",
-		garbageValue = "35"
+		descriptor = "(I)Lia;",
+		garbageValue = "-1435331392"
 	)
-	static final void method2577(WorldView var0) {
-		for (Projectile var1 = (Projectile)var0.projectiles.last(); var1 != null; var1 = (Projectile)var0.projectiles.previous()) {
-			if (var0.plane == var1.plane && Client.cycle <= var1.cycleEnd) {
-				if (Client.cycle >= var1.cycleStart) {
-					NPC var2;
-					int var3;
-					Player var4;
-					if (!var1.isMoving && var1.field978 != 0) {
-						if (var1.field978 > 0) {
-							var2 = class344.worldView.npcs[var1.field978 - 1];
-							if (var2 != null && 0 <= var2.x && var2.x < 13312 && 0 <= var2.y && var2.y < 13312) {
-								var1.sourceX = var2.x;
-								var1.sourceY = var2.y;
-								var1.setDestination(var1.field971, var1.field972, var1.field973, Client.cycle);
-							}
-						} else {
-							var3 = -var1.field978 - 1;
-							if (var3 == Client.localPlayerIndex) {
-								var4 = SpriteMask.localPlayer;
-							} else {
-								var4 = class344.worldView.players[var3];
-							}
+	public static Clock method2513() {
+		try {
+			return new NanoClock();
+		} catch (Throwable var1) {
+			return new MilliClock();
+		}
+	}
 
-							if (var4 != null && 0 <= var4.x && var4.x < 13312 && 0 <= var4.y && var4.y < 13312) {
-								var1.sourceX = var4.x;
-								var1.sourceY = var4.y;
-								var1.setDestination(var1.field971, var1.field972, var1.field973, Client.cycle);
-							}
-						}
-					}
+	@ObfuscatedName("ly")
+	@ObfuscatedSignature(
+		descriptor = "(Ldm;IIIB)V",
+		garbageValue = "0"
+	)
+	@Export("updateItemPile2")
+	static final void updateItemPile2(WorldView var0, int var1, int var2, int var3) {
+		NodeDeque var4 = var0.groundItems[var1][var2][var3];
+		if (var4 == null) {
+			var0.scene.removeGroundItemPile(var1, var2, var3);
+		} else {
+			long var5 = -99999999L;
+			TileItem var7 = null;
 
-					if (var1.targetIndex > 0) {
-						var2 = var0.npcs[var1.targetIndex - 1];
-						if (var2 != null && 0 <= var2.x && var2.x < 13312 && 0 <= var2.y && var2.y < 13312) {
-							var1.setDestination(var2.x, var2.y, ScriptFrame.getTileHeight(var0, var2.x, var2.y, var1.plane) - var1.endHeight, Client.cycle);
-						}
-					}
-
-					if (var1.targetIndex < 0) {
-						var3 = -var1.targetIndex - 1;
-						if (var3 == Client.localPlayerIndex) {
-							var4 = SpriteMask.localPlayer;
-						} else {
-							var4 = var0.players[var3];
-						}
-
-						if (var4 != null && 0 <= var4.x && var4.x < 13312 && 0 <= var4.y && var4.y < 13312) {
-							var1.setDestination(var4.x, var4.y, ScriptFrame.getTileHeight(var0, var4.x, var4.y, var1.plane) - var1.endHeight, Client.cycle);
-						}
-					}
-
-					var1.advance(Client.graphicsCycle);
-					var0.scene.drawEntity(var0.plane, (int)var1.x, (int)var1.y, (int)var1.z, 60, var1, var1.yaw, -1L, false);
+			TileItem var8;
+			for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
+				ItemComposition var9 = WorldEntityCoord.ItemDefinition_get(var8.id);
+				long var13 = (long)var9.price;
+				if (var9.isStackable == 1) {
+					var13 *= var8.quantity < Integer.MAX_VALUE ? (long)(var8.quantity + 1) : (long)var8.quantity;
 				}
+
+				if (var13 > var5) {
+					var5 = var13;
+					var7 = var8;
+				}
+			}
+
+			if (var7 == null) {
+				var0.scene.removeGroundItemPile(var1, var2, var3);
 			} else {
-				var1.remove();
-			}
-		}
+				var4.addLast(var7);
+				TileItem var15 = null;
+				TileItem var10 = null;
 
-	}
+				for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
+					if (var7.id != var8.id) {
+						if (var15 == null) {
+							var15 = var8;
+						}
 
-	@ObfuscatedName("je")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIII)V",
-		garbageValue = "1601399073"
-	)
-	static void method2581(int var0, int var1, int var2, int var3, int var4, int var5) {
-		NodeDeque var6 = class344.worldView.groundItems[var0][var1][var2];
-		if (var6 != null) {
-			for (TileItem var7 = (TileItem)var6.last(); var7 != null; var7 = (TileItem)var6.previous()) {
-				if ((var3 & 32767) == var7.id && var4 == var7.quantity) {
-					var7.quantity = var5;
-					break;
+						if (var15.id != var8.id && var10 == null) {
+							var10 = var8;
+						}
+					}
 				}
-			}
 
-			class397.updateItemPile(var0, var1, var2);
-		}
-
-	}
-
-	@ObfuscatedName("nc")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1536549515"
-	)
-	static final void method2582() {
-		Iterator var0 = Client.worldViewManager.iterator();
-
-		while (var0.hasNext()) {
-			WorldView var1 = (WorldView)var0.next();
-
-			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
-				Player var3 = var1.players[Client.playerUpdateManager.playerIndices[var2]];
-				if (var3 != null) {
-					var3.clearIsFriend();
-				}
+				long var11 = WorldMapScaleHandler.calculateTag(var2, var3, 3, false, 0, var0.id);
+				var0.scene.newGroundItemPile(var1, var2, var3, class77.getTileHeight(var0, Coord.method6843(var2), Coord.method6843(var3), var1), var7, var11, var15, var10);
 			}
 		}
-
-		var0 = Messages.Messages_hashTable.iterator();
-
-		while (var0.hasNext()) {
-			Message var4 = (Message)var0.next();
-			var4.clearIsFromFriend();
-		}
-
-		if (PendingSpawn.friendsChat != null) {
-			PendingSpawn.friendsChat.clearFriends();
-		}
-
 	}
 }

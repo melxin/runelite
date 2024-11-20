@@ -1,65 +1,69 @@
-import java.awt.Desktop;
-import java.awt.Desktop.Action;
-import java.net.URI;
 import java.util.Comparator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pc")
+@ObfuscatedName("pq")
 @Implements("GrandExchangeOfferAgeComparator")
 final class GrandExchangeOfferAgeComparator implements Comparator {
-	@ObfuscatedName("un")
-	@ObfuscatedGetter(
-		intValue = -1987291449
-	)
-	static int field4651;
-
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lpv;Lpv;I)I",
-		garbageValue = "-410808225"
+		descriptor = "(Lpk;Lpk;I)I",
+		garbageValue = "-833306069"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
-		return var1.age < var2.age ? -1 : (var2.age == var1.age ? 0 : 1);
-	}
-
-	public int compare(Object var1, Object var2) {
-		return this.compare_bridged((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
+		return var1.age < var2.age ? -1 : (var1.age == var2.age ? 0 : 1);
 	}
 
 	public boolean equals(Object var1) {
 		return super.equals(var1);
 	}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZZB)V",
-		garbageValue = "126"
-	)
-	@Export("openURL")
-	public static void openURL(String var0, boolean var1, boolean var2) {
-		if (var1) {
-			if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
-				try {
-					Desktop.getDesktop().browse(new URI(var0));
-					return;
-				} catch (Exception var4) {
-				}
-			}
+	public int compare(Object var1, Object var2) {
+		return this.compare_bridged((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
+	}
 
-			if (class31.field134.startsWith("win")) {
-				class92.method2584(var0, 0);
-			} else if (class31.field134.startsWith("mac")) {
-				AsyncHttpResponse.method277(var0, 1, "openjs");
-			} else {
-				class92.method2584(var0, 2);
-			}
-		} else {
-			class92.method2584(var0, 3);
+	@ObfuscatedName("hh")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1930770900"
+	)
+	static void method7711() {
+		HealthBarDefinition.compass = null;
+		class162.redHintArrowSprite = null;
+		class160.mapSceneSprites = null;
+		class60.headIconPkSprites = null;
+		class230.headIconPrayerSprites = null;
+		class369.headIconHintSprites = null;
+		SpriteMask.mapDotSprites = null;
+		class381.crossSprites = null;
+		class113.field1435 = null;
+		class36.scrollBarSprites = null;
+		HttpResponse.field101 = null;
+	}
+
+	@ObfuscatedName("mg")
+	@ObfuscatedSignature(
+		descriptor = "([Lnp;Lnp;ZI)V",
+		garbageValue = "21935086"
+	)
+	@Export("revalidateWidgetScroll")
+	static void revalidateWidgetScroll(Widget[] var0, Widget var1, boolean var2) {
+		int var3 = var1.scrollWidth != 0 ? var1.scrollWidth : var1.width * 1063514007;
+		int var4 = var1.scrollHeight != 0 ? var1.scrollHeight : var1.height * 1899982693;
+		Tile.resizeInterface(var0, var1.id, var3, var4, var2);
+		if (var1.children != null) {
+			Tile.resizeInterface(var1.children, var1.id, var3, var4, var2);
+		}
+
+		InterfaceParent var5 = (InterfaceParent)Client.interfaceParents.get((long)var1.id);
+		if (var5 != null) {
+			Message.method1201(var5.group, var3, var4, var2);
+		}
+
+		if (var1.contentType == 1337) {
 		}
 
 	}

@@ -1,13 +1,13 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ot")
+@ObfuscatedName("ok")
 public class class378 {
-	@ObfuscatedName("iz")
-	@ObfuscatedGetter(
-		intValue = -1974961809
+	@ObfuscatedName("sj")
+	@ObfuscatedSignature(
+		descriptor = "Lgv;"
 	)
-	@Export("Players_count")
-	static int Players_count;
+	@Export("guestClanSettings")
+	static ClanSettings guestClanSettings;
 }

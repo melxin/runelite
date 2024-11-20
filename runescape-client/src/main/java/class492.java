@@ -3,38 +3,37 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sx")
+@ObfuscatedName("sm")
 public enum class492 implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lsx;"
+		descriptor = "Lsm;"
 	)
-	field5091(0, 0),
+	field5095(0, 0),
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lsx;"
+		descriptor = "Lsm;"
 	)
-	field5089(1, 1),
-	@ObfuscatedName("ak")
+	field5090(1, 1),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lsx;"
+		descriptor = "Lsm;"
 	)
-	field5094(2, 2);
+	field5091(2, 2);
 
-	@ObfuscatedName("dm")
-	@ObfuscatedSignature(
-		descriptor = "Lvc;"
-	)
-	@Export("worldSelectRightSprite")
-	static IndexedSprite worldSelectRightSprite;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("jt")
 	@ObfuscatedGetter(
-		intValue = -1553482921
+		intValue = 1114271039
+	)
+	static int field5089;
+	@ObfuscatedName("ae")
+	@ObfuscatedGetter(
+		intValue = -1929680873
 	)
 	final int field5092;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1474716795
+		intValue = 517868397
 	)
 	final int field5093;
 
@@ -46,10 +45,19 @@ public enum class492 implements Enum {
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1837624059"
+		garbageValue = "1071289392"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.field5093;
+	}
+
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "(CI)Z",
+		garbageValue = "1452060905"
+	)
+	public static final boolean method9312(char var0) {
+		return var0 == 160 || var0 == ' ' || var0 == '_' || var0 == '-';
 	}
 }

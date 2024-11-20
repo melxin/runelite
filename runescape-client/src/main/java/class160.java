@@ -3,70 +3,62 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gd")
+@ObfuscatedName("gb")
 public class class160 extends class150 {
-	@ObfuscatedName("fe")
+	@ObfuscatedName("en")
+	@Export("mouseCam")
+	static boolean mouseCam;
+	@ObfuscatedName("kk")
 	@ObfuscatedSignature(
-		descriptor = "Lor;"
+		descriptor = "[Lvy;"
 	)
-	static Archive field1759;
-	@ObfuscatedName("ap")
+	@Export("mapSceneSprites")
+	static IndexedSprite[] mapSceneSprites;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1824652429
+		intValue = -980335487
 	)
-	int field1762;
+	int field1734;
 	@ObfuscatedName("aw")
-	String field1758;
+	String field1731;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lfd;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lfd;)V"
 	)
 	class160(class153 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;I)V",
-		garbageValue = "-1813719027"
+		descriptor = "(Lvj;B)V",
+		garbageValue = "-83"
 	)
-	void vmethod3822(Buffer var1) {
-		this.field1762 = var1.readInt();
-		this.field1758 = var1.readStringCp1252NullTerminated();
+	void vmethod3694(Buffer var1) {
+		this.field1734 = var1.readInt();
+		this.field1731 = var1.readStringCp1252NullTerminated();
 	}
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lgy;I)V",
-		garbageValue = "-2079483058"
+		descriptor = "(Lgv;I)V",
+		garbageValue = "2002935935"
 	)
-	void vmethod3821(ClanSettings var1) {
-		var1.method3658(this.field1762, this.field1758);
+	void vmethod3695(ClanSettings var1) {
+		var1.method3549(this.field1734, this.field1731);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;Lpe;I)V",
-		garbageValue = "-789872343"
+		descriptor = "(Lpi;B)V",
+		garbageValue = "112"
 	)
-	public static void method3651(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2) {
-		HitSplatDefinition.HitSplatDefinition_archive = var0;
-		HitSplatDefinition.field2143 = var1;
-		HitSplatDefinition.HitSplatDefinition_fontsArchive = var2;
-	}
-
-	@ObfuscatedName("fz")
-	@ObfuscatedSignature(
-		descriptor = "(B)Luc;",
-		garbageValue = "-7"
-	)
-	@Export("getWorldMap")
-	static WorldMap getWorldMap() {
-		return LoginState.worldMap;
+	public static void method3529(AbstractArchive var0) {
+		FloorOverlayDefinition.FloorOverlayDefinition_archive = var0;
 	}
 }

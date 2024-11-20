@@ -3,59 +3,59 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ih")
+@ObfuscatedName("ii")
 public class class208 {
 	@ObfuscatedName("au")
+	@Export("Tiles_saturation")
+	static int[] Tiles_saturation;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -114988147
+		intValue = -959237623
 	)
-	@Export("Interpreter_stringStackSize")
-	static int Interpreter_stringStackSize;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = -1433508117
-	)
-	public int field2171;
+	public int field2155;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 2126449793
+		intValue = 1749115075
 	)
-	public int field2166;
-	@ObfuscatedName("ak")
+	public int field2154;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 889749475
+		intValue = 72267647
 	)
-	public int field2167;
-	@ObfuscatedName("aj")
+	public int field2160;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -990836461
+		intValue = -247808571
 	)
-	public int field2165;
-	@ObfuscatedName("ai")
+	public int field2156;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1484326055
+		intValue = -1533784309
 	)
-	public int field2169;
+	public int field2157;
 
 	class208(int var1, int var2, int var3, int var4, int var5) {
-		this.field2171 = 0;
-		this.field2166 = 1;
-		this.field2167 = 0;
-		this.field2165 = 0;
-		this.field2169 = 0;
-		this.field2171 = var1;
-		this.field2166 = var2;
-		this.field2167 = var3;
-		this.field2165 = var4;
-		this.field2169 = var5;
+		this.field2155 = 0;
+		this.field2154 = 1;
+		this.field2160 = 0;
+		this.field2156 = 0;
+		this.field2157 = 0;
+		this.field2155 = var1;
+		this.field2154 = var2;
+		this.field2160 = var3;
+		this.field2156 = var4;
+		this.field2157 = var5;
 	}
 
-	@ObfuscatedName("go")
+	@ObfuscatedName("jo")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1483745131"
+		descriptor = "(B)V",
+		garbageValue = "6"
 	)
-	static int method4212(int var0) {
-		return var0 * 3 + 600;
+	static void method4104() {
+		if (AsyncHttpResponse.localPlayer.x >> 7 == Client.destinationX && AsyncHttpResponse.localPlayer.y >> 7 == Client.destinationY) {
+			Client.destinationX = 0;
+		}
+
 	}
 }

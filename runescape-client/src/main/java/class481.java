@@ -2,20 +2,20 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sb")
+@ObfuscatedName("sl")
 public class class481 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lkt;"
+		descriptor = "Lkj;"
 	)
-	final WorldEntityCoord field5040;
+	final WorldEntityCoord field5038;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -257060097
+		intValue = 561310859
 	)
-	int field5041;
+	int field5037;
 
 	class481() {
-		this.field5040 = new WorldEntityCoord();
+		this.field5038 = new WorldEntityCoord();
 	}
 }

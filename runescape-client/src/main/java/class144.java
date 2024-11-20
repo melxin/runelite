@@ -1,24 +1,31 @@
 import java.util.concurrent.Callable;
+import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("fb")
 class class144 implements Callable {
+	@ObfuscatedName("ue")
+	@ObfuscatedGetter(
+		intValue = 1572276865
+	)
+	static int field1638;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfr;"
+		descriptor = "Lfz;"
 	)
 	final class145 this$0;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lvl;"
+		descriptor = "Lvj;"
 	)
 	final Buffer val$p;
 	// $FF: synthetic field
 	final int val$version;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfr;Lvl;I)V"
+		descriptor = "(Lfz;Lvj;I)V"
 	)
 	class144(class145 var1, Buffer var2, int var3) {
 		this.this$0 = var1;
@@ -27,33 +34,22 @@ class class144 implements Callable {
 	}
 
 	public Object call() {
-		this.this$0.method3509(this.val$p, this.val$version);
+		this.this$0.method3403(this.val$p, this.val$version);
 		return null;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ha")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;ZLqi;I)V",
-		garbageValue = "1720170461"
+		descriptor = "(IZZZZB)Loa;",
+		garbageValue = "12"
 	)
-	public static void method3506(AbstractArchive var0, AbstractArchive var1, boolean var2, Font var3) {
-		ItemComposition.ItemDefinition_archive = var0;
-		TransformationMatrix.ItemDefinition_modelArchive = var1;
-		HttpAuthenticationHeader.ItemDefinition_inMembersWorld = var2;
-		ItemComposition.ItemDefinition_fileCount = ItemComposition.ItemDefinition_archive.getGroupFileCount(10);
-		class190.ItemDefinition_fontPlain11 = var3;
-	}
+	@Export("newArchive")
+	static Archive newArchive(int var0, boolean var1, boolean var2, boolean var3, boolean var4) {
+		ArchiveDisk var5 = null;
+		if (JagexCache.JagexCache_dat2File != null) {
+			var5 = new ArchiveDisk(var0, JagexCache.JagexCache_dat2File, UserComparator7.JagexCache_idxFiles[var0], 1000000);
+		}
 
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;II)V",
-		garbageValue = "1809402905"
-	)
-	static final void method3502(String var0, int var1) {
-		PacketBufferNode var2 = class113.getPacketBufferNode(ClientPacket.field3388, Client.packetWriter.isaacCipher);
-		var2.packetBuffer.writeByte(World.stringCp1252NullTerminatedByteSize(var0) + 1);
-		var2.packetBuffer.writeByteSub(var1);
-		var2.packetBuffer.writeStringCp1252NullTerminated(var0);
-		Client.packetWriter.addNode(var2);
+		return new Archive(var5, class346.masterDisk, GrandExchangeOfferTotalQuantityComparator.field4633, var0, var1, var2, var3, var4, false);
 	}
 }

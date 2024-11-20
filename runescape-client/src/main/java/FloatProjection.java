@@ -1,16 +1,16 @@
+import java.io.IOException;
+import java.net.Socket;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jc")
+@ObfuscatedName("jg")
 @Implements("FloatProjection")
 public class FloatProjection extends Projection {
-	@ObfuscatedName("jl")
-	static int[] field2733;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lqs;"
+		descriptor = "Lqb;"
 	)
 	@Export("transformationMatrix")
 	TransformationMatrix transformationMatrix;
@@ -19,16 +19,16 @@ public class FloatProjection extends Projection {
 	float[] projection;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lqs;)V"
+		descriptor = "(Lqb;)V"
 	)
 	FloatProjection(TransformationMatrix var1) {
 		this.projection = new float[3];
 		this.transformationMatrix = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ljv;IIIIJ)V"
+		descriptor = "(Lji;IIIIJ)V"
 	)
 	@Export("draw")
 	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
@@ -37,8 +37,8 @@ public class FloatProjection extends Projection {
 
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lji;Ljp;IIII)V",
-		garbageValue = "1119299330"
+		descriptor = "(Ljp;Lje;IIIB)V",
+		garbageValue = "36"
 	)
 	@Export("drawTileUnderlay")
 	void drawTileUnderlay(Scene var1, SceneTilePaint var2, int var3, int var4, int var5) {
@@ -73,10 +73,10 @@ public class FloatProjection extends Projection {
 		this.drawSceneTilePaint(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var17, var9, var8, var13, var12);
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lji;Ljs;IIB)V",
-		garbageValue = "81"
+		descriptor = "(Ljp;Ljq;III)V",
+		garbageValue = "-1019162740"
 	)
 	@Export("drawTileOverlay")
 	void drawTileOverlay(Scene var1, SceneTileModel var2, int var3, int var4) {
@@ -99,9 +99,51 @@ public class FloatProjection extends Projection {
 			var9 |= 1;
 			SceneTileModel.verticesX[var6] = Rasterizer3D.getClipMidX() + var7 * Rasterizer3D.get3dZoom() / var9;
 			SceneTileModel.verticesY[var6] = Rasterizer3D.getClipMidY() + var8 * Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.verticesZ[var6] = class197.method4057(var9);
+			SceneTileModel.verticesZ[var6] = Decimator.method1117(var9);
 		}
 
 		this.drawSceneTileModel(var1, var2, var3, var4);
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/net/Socket;IIB)Lsw;",
+		garbageValue = "-62"
+	)
+	public static AbstractSocket method5138(Socket var0, int var1, int var2) throws IOException {
+		return new BufferedNetSocket(var0, var1, var2);
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIIIFFFI)F",
+		garbageValue = "-1451259994"
+	)
+	public static float method5136(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10) {
+		float var11 = (float)((var6 - var7) * (var2 - var4) + (var5 - var7) * (var4 - var3));
+		float var12 = (float)((var1 - var7) * (var4 - var3) + (var6 - var7) * (var0 - var4)) / var11;
+		float var13 = (float)((var7 - var5) * (var0 - var4) + (var1 - var7) * (var2 - var4)) / var11;
+		float var14 = 1.0F - var12 - var13;
+		return var8 * var12 + var13 * var9 + var14 * var10;
+	}
+
+	@ObfuscatedName("oc")
+	@ObfuscatedSignature(
+		descriptor = "(IIZI)V",
+		garbageValue = "-2051825902"
+	)
+	static final void method5137(int var0, int var1, boolean var2) {
+		if (Client.currentClanChannels[var0] != null) {
+			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3676()) {
+				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
+				PacketBufferNode var4 = Message.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
+				var4.packetBuffer.writeByte(4 + class164.stringCp1252NullTerminatedByteSize(var3.username.getName()));
+				var4.packetBuffer.writeByte(var0);
+				var4.packetBuffer.writeShort(var1);
+				var4.packetBuffer.writeBoolean(var2);
+				var4.packetBuffer.writeStringCp1252NullTerminated(var3.username.getName());
+				Client.packetWriter.addNode(var4);
+			}
+		}
 	}
 }

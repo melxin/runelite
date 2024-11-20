@@ -1,92 +1,71 @@
+import java.io.File;
 import java.util.Hashtable;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("if")
+@ObfuscatedName("io")
 @Implements("FileSystem")
 public class FileSystem {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@Export("FileSystem_hasPermissions")
 	static boolean FileSystem_hasPermissions;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("aw")
+	@Export("FileSystem_cacheDir")
+	static File FileSystem_cacheDir;
+	@ObfuscatedName("at")
 	@Export("FileSystem_cacheFiles")
 	static Hashtable FileSystem_cacheFiles;
-	@ObfuscatedName("eo")
-	@ObfuscatedSignature(
-		descriptor = "Lor;"
-	)
-	static Archive field2400;
 
 	static {
 		FileSystem_hasPermissions = false;
 		FileSystem_cacheFiles = new Hashtable(16);
 	}
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "-742753003"
-	)
-	public static String method4540(String var0) {
-		int var1 = var0.length();
-		char[] var2 = new char[var1];
-		byte var3 = 2;
-
-		for (int var4 = 0; var4 < var1; ++var4) {
-			char var5 = var0.charAt(var4);
-			if (var3 == 0) {
-				var5 = Character.toLowerCase(var5);
-			} else if (var3 == 2 || Character.isUpperCase(var5)) {
-				var5 = class1.method13(var5);
-			}
-
-			if (Character.isLetter(var5)) {
-				var3 = 0;
-			} else if (var5 != '.' && var5 != '?' && var5 != '!') {
-				if (Character.isSpaceChar(var5)) {
-					if (var3 != 2) {
-						var3 = 1;
-					}
-				} else {
-					var3 = 1;
-				}
-			} else {
-				var3 = 2;
-			}
-
-			var2[var4] = var5;
-		}
-
-		return new String(var2);
-	}
-
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lvl;B)Lih;",
-		garbageValue = "69"
+		descriptor = "(II)Lgr;",
+		garbageValue = "1932131867"
 	)
-	static class208 method4535(Buffer var0) {
-		if (var0 != null) {
-			boolean var1 = false;
-			int var2 = -1;
-			boolean var3 = false;
-			boolean var4 = false;
-			boolean var5 = false;
-			int var6 = var0.readUnsignedShort();
-			if (class555.field5457 >= 226) {
-				var2 = var0.readUnsignedByte();
+	@Export("VarpDefinition_get")
+	public static VarpDefinition VarpDefinition_get(int var0) {
+		VarpDefinition var1 = (VarpDefinition)VarpDefinition.VarpDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = VarpDefinition.VarpDefinition_archive.takeFile(16, var0);
+			var1 = new VarpDefinition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
 			}
 
-			int var7 = var0.readUnsignedByte();
-			int var8 = var0.readUnsignedByte();
-			int var9 = var0.readUnsignedByte();
-			if (var6 >= 1 && var7 >= 1 && var8 >= 0 && var9 >= 0) {
-				return new class208(var6, var2, var7, var8, var9);
-			}
+			VarpDefinition.VarpDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/CharSequence;B)Ljava/lang/String;",
+		garbageValue = "11"
+	)
+	public static String method4429(CharSequence var0) {
+		String var1 = GrandExchangeOffer.base37DecodeLong(class201.method4009(var0));
+		if (var1 == null) {
+			var1 = "";
 		}
 
-		return null;
+		return var1;
+	}
+
+	@ObfuscatedName("ga")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "80"
+	)
+	static final void method4426() {
+		Scene.Scene_isLowDetail = false;
+		Client.isLowDetail = false;
 	}
 }
