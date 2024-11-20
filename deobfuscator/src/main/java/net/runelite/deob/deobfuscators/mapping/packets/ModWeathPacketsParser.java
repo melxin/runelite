@@ -66,7 +66,6 @@ public class ModWeathPacketsParser implements Runnable
 		"IF_SETMODEL,field3453,11",
 		"RUNCLIENTSCRIPT,field3454,12",
 		"IF_SET_TEXT,field3455,13",
-		"MESSAGE_PRIVATE,field3445,15",
 		"CAM_LOOKAT_EASED_COORD,field3458,16",
 		"UPDATE_SITE_SETTINGS,field3515,17",
 		"CAM_TARGET,field3460,18",

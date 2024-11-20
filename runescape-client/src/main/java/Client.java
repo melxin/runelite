@@ -6018,7 +6018,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.MESSAGE_PRIVATE == var1.serverPacket) {
+				if (ServerPacket.field3458 == var1.serverPacket) {
 					var47 = var3.readStringCp1252NullTerminated();
 					var27 = (long)var3.readUnsignedShort();
 					var29 = (long)var3.readMedium();

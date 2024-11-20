@@ -191,7 +191,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
 	)
-	public static final ServerPacket MESSAGE_PRIVATE;
+	public static final ServerPacket field3458;
 	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
@@ -716,7 +716,7 @@ public class ServerPacket {
 		RUNCLIENTSCRIPT = new ServerPacket(12, -2);
 		IF_SET_TEXT = new ServerPacket(13, -2);
 		field3456 = new ServerPacket(14, 1);
-		MESSAGE_PRIVATE = new ServerPacket(15, -1);
+		field3458 = new ServerPacket(15, -1);
 		CAM_LOOKAT_EASED_COORD = new ServerPacket(16, 7);
 		UPDATE_SITE_SETTINGS = new ServerPacket(17, -1);
 		CAM_TARGET = new ServerPacket(18, 5);
