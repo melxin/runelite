@@ -15,7 +15,7 @@ public final class BoundaryObject {
 	int z;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1245037632
+		intValue = -248981743
 	)
 	@Export("x")
 	int x;

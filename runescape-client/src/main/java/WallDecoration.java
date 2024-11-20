@@ -15,7 +15,7 @@ public final class WallDecoration {
 	int z;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1525014976
+		intValue = 1902876551
 	)
 	@Export("x")
 	int x;

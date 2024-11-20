@@ -67,6 +67,9 @@ public class Menu {
 	@Export("menuWidth")
 	int menuWidth;
 	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = -806997879
+	)
 	@Export("menuHeight")
 	int menuHeight;
 	@ObfuscatedName("ak")
