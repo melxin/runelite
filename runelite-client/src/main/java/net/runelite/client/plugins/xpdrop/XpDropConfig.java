@@ -53,7 +53,7 @@ public interface XpDropConfig extends Config
 
 	@ConfigItem(
 		keyName = "standardColor",
-		name = "Standard Color",
+		name = "Standard color",
 		description = "XP drop color when no prayer is active",
 		position = 1
 	)
@@ -61,7 +61,7 @@ public interface XpDropConfig extends Config
 
 	@ConfigItem(
 		keyName = "meleePrayerColor",
-		name = "Melee Prayer Color",
+		name = "Melee prayer color",
 		description = "XP drop color when a melee prayer is active",
 		position = 2
 	)
@@ -72,7 +72,7 @@ public interface XpDropConfig extends Config
 
 	@ConfigItem(
 		keyName = "rangePrayerColor",
-		name = "Range Prayer Color",
+		name = "Range prayer color",
 		description = "XP drop color when a range prayer is active",
 		position = 3
 	)
@@ -83,7 +83,7 @@ public interface XpDropConfig extends Config
 
 	@ConfigItem(
 		keyName = "magePrayerColor",
-		name = "Mage Prayer Color",
+		name = "Mage prayer color",
 		description = "XP drop color when a mage prayer is active",
 		position = 4
 	)
@@ -94,7 +94,7 @@ public interface XpDropConfig extends Config
 
 	@ConfigItem(
 		keyName = "fakeXpDropDelay",
-		name = "Fake Xp Drop delay",
+		name = "Fake XP drop delay",
 		description = "Configures how many ticks should pass between fake XP drops, 0 to disable",
 		position = 5
 	)
