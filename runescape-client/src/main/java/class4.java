@@ -84,7 +84,7 @@ public final class class4 {
 			return 1;
 		} else if (var0 == ScriptOpcodes.VIEWPORT_GETEFFECTIVESIZE) {
 			if (Client.viewportWidget != null) {
-				WorldMapID.setViewportShape(0, 0, Client.viewportWidget.width * 1063514007, Client.viewportWidget.height * 1899982693, false);
+				WorldMapID.setViewportShape(0, 0, Client.viewportWidget.width, Client.viewportWidget.height, false);
 				Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = Client.viewportWidth;
 				Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = Client.viewportHeight;
 			} else {

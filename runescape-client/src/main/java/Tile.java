@@ -190,16 +190,16 @@ public final class Tile extends Node {
 			if (var6 != null && var6.parentId == var1) {
 				AbstractWorldMapIcon.alignWidgetSize(var6, var2, var3, var4);
 				LoginScreenAnimation.alignWidgetPosition(var6, var2, var3);
-				if (var6.scrollX > var6.scrollWidth - var6.width * 1063514007) {
-					var6.scrollX = var6.scrollWidth - var6.width * 1063514007;
+				if (var6.scrollX > var6.scrollWidth - var6.width) {
+					var6.scrollX = var6.scrollWidth - var6.width;
 				}
 
 				if (var6.scrollX < 0) {
 					var6.scrollX = 0;
 				}
 
-				if (var6.scrollY > var6.scrollHeight - var6.height * 1899982693) {
-					var6.scrollY = var6.scrollHeight - var6.height * 1899982693;
+				if (var6.scrollY > var6.scrollHeight - var6.height) {
+					var6.scrollY = var6.scrollHeight - var6.height;
 				}
 
 				if (var6.scrollY < 0) {

@@ -46,8 +46,8 @@ public class class330 {
 				if (var8 == -1) {
 					Client.rootWidgetXs[Client.rootWidgetCount] = var10.x + var6;
 					Client.rootWidgetYs[Client.rootWidgetCount] = var7 + var10.y;
-					Client.rootWidgetWidths[Client.rootWidgetCount] = var10.width * 1063514007;
-					Client.rootWidgetHeights[Client.rootWidgetCount] = var10.height * 1899982693;
+					Client.rootWidgetWidths[Client.rootWidgetCount] = var10.width;
+					Client.rootWidgetHeights[Client.rootWidgetCount] = var10.height;
 					var11 = ++Client.rootWidgetCount - 1;
 				} else {
 					var11 = var8;
@@ -82,16 +82,16 @@ public class class330 {
 								var15 = Client.field795;
 							}
 
-							if (var10.width * 1063514007 + var15 > Client.clickedWidgetParent.width * 1063514007 + Client.field795) {
-								var15 = Client.clickedWidgetParent.width * 1063514007 + Client.field795 - var10.width * 1063514007;
+							if (var10.width + var15 > Client.clickedWidgetParent.width + Client.field795) {
+								var15 = Client.clickedWidgetParent.width + Client.field795 - var10.width;
 							}
 
 							if (var16 < Client.field683) {
 								var16 = Client.field683;
 							}
 
-							if (var16 + var10.height * 1899982693 > Client.clickedWidgetParent.height * 1899982693 + Client.field683) {
-								var16 = Client.clickedWidgetParent.height * 1899982693 + Client.field683 - var10.height * 1899982693;
+							if (var16 + var10.height > Client.clickedWidgetParent.height + Client.field683) {
+								var16 = Client.clickedWidgetParent.height + Client.field683 - var10.height;
 							}
 
 							var12 = var15;
@@ -112,8 +112,8 @@ public class class330 {
 					if (var10.type == 9) {
 						var19 = var12;
 						var20 = var13;
-						var21 = var12 + var10.width * 1063514007;
-						var22 = var13 + var10.height * 1899982693;
+						var21 = var12 + var10.width;
+						var22 = var13 + var10.height;
 						if (var21 < var12) {
 							var19 = var21;
 							var21 = var12;
@@ -131,8 +131,8 @@ public class class330 {
 						var17 = var21 < var4 ? var21 : var4;
 						var18 = var22 < var5 ? var22 : var5;
 					} else {
-						var19 = var12 + var10.width * 1063514007;
-						var20 = var13 + var10.height * 1899982693;
+						var19 = var12 + var10.width;
+						var20 = var13 + var10.height;
 						var15 = var12 > var2 ? var12 : var2;
 						var16 = var13 > var3 ? var13 : var3;
 						var17 = var19 < var4 ? var19 : var4;
@@ -144,7 +144,7 @@ public class class330 {
 							if (var10.contentType == 1336) {
 								if (SecureUrlRequester.clientPreferences.isDisplayingFps()) {
 									var13 += 15;
-									class1.fontPlain12.drawRightAligned("Fps:" + GameEngine.fps, var10.width * 1063514007 + var12, var13, 16776960, -1);
+									class1.fontPlain12.drawRightAligned("Fps:" + GameEngine.fps, var10.width  + var12, var13, 16776960, -1);
 									var13 += 15;
 									Runtime var41 = Runtime.getRuntime();
 									var20 = (int)((var41.totalMemory() - var41.freeMemory()) / 1024L);
@@ -153,7 +153,7 @@ public class class330 {
 										var21 = 16711680;
 									}
 
-									class1.fontPlain12.drawRightAligned("Mem:" + var20 + "k", var12 + var10.width * 1063514007, var13, var21, -1);
+									class1.fontPlain12.drawRightAligned("Mem:" + var20 + "k", var12 + var10.width, var13, var21, -1);
 									var13 += 15;
 								}
 								continue;
@@ -162,7 +162,7 @@ public class class330 {
 							if (var10.contentType == 1337) {
 								Client.viewportX = var12;
 								Client.viewportY = var13;
-								Occluder.drawEntities(var12, var13, var10.width * 1063514007, var10.height * 1899982693);
+								Occluder.drawEntities(var12, var13, var10.width, var10.height);
 								Client.validRootWidgets[var10.rootIndex] = true;
 								Rasterizer2D.Rasterizer2D_setClip(var2, var3, var4, var5);
 								continue;
@@ -181,11 +181,11 @@ public class class330 {
 							}
 
 							if (var10.contentType == 1400) {
-								class158.worldMap.draw(var12, var13, var10.width * 1063514007, var10.height * 1899982693, Client.cycle, SecureUrlRequester.clientPreferences.getBrightness());
+								class158.worldMap.draw(var12, var13, var10.width, var10.height, Client.cycle, SecureUrlRequester.clientPreferences.getBrightness());
 							}
 
 							if (var10.contentType == 1401) {
-								class158.worldMap.drawOverview(var12, var13, var10.width * 1063514007, var10.height * 1899982693);
+								class158.worldMap.drawOverview(var12, var13, var10.width, var10.height);
 							}
 
 							if (var10.contentType == 1402) {
@@ -199,8 +199,8 @@ public class class330 {
 							}
 
 							if (!var10.isIf3) {
-								if (var10.scrollY > var10.scrollHeight - var10.height * 1899982693) {
-									var10.scrollY = var10.scrollHeight - var10.height * 1899982693;
+								if (var10.scrollY > var10.scrollHeight - var10.height) {
+									var10.scrollY = var10.scrollHeight - var10.height;
 								}
 
 								if (var10.scrollY < 0) {
@@ -234,8 +234,8 @@ public class class330 {
 						}
 
 						if (Client.isResizable || Client.field693[var11] || Client.gameDrawingMode > 1) {
-							if (var10.type == 0 && !var10.isIf3 && var10.scrollHeight > var10.height * 1899982693) {
-								class139.drawScrollBar(var10.width * 1063514007 + var12, var13, var10.scrollY, var10.height * 1899982693, var10.scrollHeight);
+							if (var10.type == 0 && !var10.isIf3 && var10.scrollHeight > var10.height) {
+								class139.drawScrollBar(var10.width + var12, var13, var10.scrollY, var10.height, var10.scrollHeight);
 							}
 
 							if (var10.type != 1) {
@@ -255,22 +255,22 @@ public class class330 {
 									if (var10.fill) {
 										switch(var10.fillMode.field5554) {
 										case 1:
-											Rasterizer2D.Rasterizer2D_fillRectangleGradient(var12, var13, var10.width * 1063514007, var10.height * 1899982693, var10.color, var10.color2);
+											Rasterizer2D.Rasterizer2D_fillRectangleGradient(var12, var13, var10.width, var10.height, var10.color, var10.color2);
 											break;
 										case 2:
-											Rasterizer2D.Rasterizer2D_fillRectangleGradientAlpha(var12, var13, var10.width * 1063514007, var10.height * 1899982693, var10.color, var10.color2, 255 - (var10.transparencyTop & 255), 255 - (var10.transparencyBot & 255));
+											Rasterizer2D.Rasterizer2D_fillRectangleGradientAlpha(var12, var13, var10.width, var10.height, var10.color, var10.color2, 255 - (var10.transparencyTop & 255), 255 - (var10.transparencyBot & 255));
 											break;
 										default:
 											if (var14 == 0) {
-												Rasterizer2D.Rasterizer2D_fillRectangle(var12, var13, var10.width * 1063514007, var10.height * 1899982693, var19);
+												Rasterizer2D.Rasterizer2D_fillRectangle(var12, var13, var10.width, var10.height, var19);
 											} else {
-												Rasterizer2D.Rasterizer2D_fillRectangleAlpha(var12, var13, var10.width * 1063514007, var10.height * 1899982693, var19, 256 - (var14 & 255));
+												Rasterizer2D.Rasterizer2D_fillRectangleAlpha(var12, var13, var10.width, var10.height, var19, 256 - (var14 & 255));
 											}
 										}
 									} else if (var14 == 0) {
-										Rasterizer2D.Rasterizer2D_drawRectangle(var12, var13, var10.width * 1063514007, var10.height * 1899982693, var19);
+										Rasterizer2D.Rasterizer2D_drawRectangle(var12, var13, var10.width, var10.height, var19);
 									} else {
-										Rasterizer2D.Rasterizer2D_drawRectangleAlpha(var12, var13, var10.width * 1063514007, var10.height * 1899982693, var19, 256 - (var14 & 255));
+										Rasterizer2D.Rasterizer2D_drawRectangleAlpha(var12, var13, var10.width, var10.height, var19, 256 - (var14 & 255));
 									}
 								} else if (var10.type == 4) {
 									Font var40 = var10.getFont(class379.widgetDefinition);
@@ -317,7 +317,7 @@ public class class330 {
 											var42 = Login.method2331(var42, var10);
 										}
 
-										var40.drawWidgetText(var42, var12, var13, var10.width * 1063514007, var10.height * 1899982693, var20, var10.textShadowed ? 0 : -1, class508.method9415(var10.transparencyTop), var10.textXAlignment, var10.textYAlignment, var10.textLineHeight);
+										var40.drawWidgetText(var42, var12, var13, var10.width, var10.height, var20, var10.textShadowed ? 0 : -1, class508.method9415(var10.transparencyTop), var10.textXAlignment, var10.textYAlignment, var10.textLineHeight);
 									}
 								} else {
 									int var23;
@@ -347,20 +347,20 @@ public class class330 {
 												var20 = var38.width;
 												var21 = var38.height;
 												if (!var10.spriteTiling) {
-													var22 = var10.width * 1056534528 / var20;
+													var22 = var10.width / var20;
 													if (var10.spriteAngle != 0) {
-														var38.method10597(var12 + var10.width * 1063514007 / 2, var13 + var10.height * 1899982693 / 2, var10.spriteAngle, var22);
+														var38.method10597(var12 + var10.width / 2, var13 + var10.height / 2, var10.spriteAngle, var22);
 													} else if (var14 != 0) {
-														var38.drawTransScaledAt(var12, var13, var10.width * 1063514007, var10.height * 1899982693, 256 - (var14 & 255));
-													} else if (var10.width * 1063514007 == var20 && var21 == var10.height * 1899982693) {
+														var38.drawTransScaledAt(var12, var13, var10.width, var10.height, 256 - (var14 & 255));
+													} else if (var10.width == var20 && var21 == var10.height) {
 														var38.drawTransBgAt(var12, var13);
 													} else {
-														var38.drawScaledAt(var12, var13, var10.width * 1063514007, var10.height * 1899982693);
+														var38.drawScaledAt(var12, var13, var10.width, var10.height);
 													}
 												} else {
-													Rasterizer2D.Rasterizer2D_expandClip(var12, var13, var12 + var10.width * 1063514007, var13 + var10.height * 1899982693);
-													var22 = (var10.width * 1063514007 + (var20 - 1)) / var20;
-													var23 = (var21 - 1 + var10.height * 1899982693) / var21;
+													Rasterizer2D.Rasterizer2D_expandClip(var12, var13, var12 + var10.width, var13 + var10.height);
+													var22 = (var10.width + (var20 - 1)) / var20;
+													var23 = (var21 - 1 + var10.height) / var21;
 
 													for (var24 = 0; var24 < var22; ++var24) {
 														for (var25 = 0; var25 < var23; ++var25) {
@@ -447,7 +447,7 @@ public class class330 {
 												}
 											}
 
-											Rasterizer3D.setCustomClipBounds(var10.width * 1063514007 / 2 + var12, var10.height * 1899982693 / 2 + var13);
+											Rasterizer3D.setCustomClipBounds(var10.width / 2 + var12, var10.height / 2 + var13);
 											var23 = Rasterizer3D.Rasterizer3D_sine[var10.modelAngleX] * var10.modelZoom >> 16;
 											var24 = Rasterizer3D.Rasterizer3D_cosine[var10.modelAngleX] * var10.modelZoom >> 16;
 											if (var39 != null) {
@@ -491,8 +491,8 @@ public class class330 {
 
 												var19 += 6;
 												var20 += 7;
-												var24 = var12 + var10.width * 1063514007 - 5 - var19;
-												var25 = var13 + var10.height * 1899982693 + 5;
+												var24 = var12 + var10.width - 5 - var19;
+												var25 = var13 + var10.height + 5;
 												if (var24 < var12 + 5) {
 													var24 = var12 + 5;
 												}
@@ -527,14 +527,14 @@ public class class330 {
 											if (var10.type == 9) {
 												if (var10.field3895) {
 													var19 = var12;
-													var20 = var13 + var10.height * 1899982693;
-													var21 = var10.width * 1063514007 + var12;
+													var20 = var13 + var10.height;
+													var21 = var10.width + var12;
 													var22 = var13;
 												} else {
 													var19 = var12;
 													var20 = var13;
-													var21 = var10.width * 1063514007 + var12;
-													var22 = var13 + var10.height * 1899982693;
+													var21 = var10.width + var12;
+													var22 = var13 + var10.height;
 												}
 
 												if (var10.lineWid == 1) {
@@ -548,7 +548,7 @@ public class class330 {
 												if (var37 != null && var32 != null && var37.method7035()) {
 													var29 = var10.getFont(class379.widgetDefinition);
 													if (var29 != null) {
-														Client.field715.method10722(var12, var13, var10.width * 1063514007, var10.height * 1899982693, var37.method7179(), var37.method7037(), var37.method7033(), var37.method7104(), var37.method7032());
+														Client.field715.method10722(var12, var13, var10.width, var10.height, var37.method7179(), var37.method7037(), var37.method7033(), var37.method7104(), var37.method7032());
 														var22 = var10.textShadowed ? var10.spriteShadow : -1;
 														if (!var37.method7030() && var37.method7216().method8380()) {
 															Client.field715.method10723(var32.field3787, var22, var32.field3786, var32.field3785);

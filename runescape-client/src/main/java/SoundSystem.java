@@ -67,8 +67,8 @@ public class SoundSystem implements Runnable {
 				}
 			} else {
 				var3.scrollX = var23;
-				if (var3.scrollX > var3.scrollWidth - var3.width * 1063514007) {
-					var3.scrollX = var3.scrollWidth - var3.width * 1063514007;
+				if (var3.scrollX > var3.scrollWidth - var3.width) {
+					var3.scrollX = var3.scrollWidth - var3.width;
 				}
 
 				if (var3.scrollX < 0) {
@@ -76,8 +76,8 @@ public class SoundSystem implements Runnable {
 				}
 
 				var3.scrollY = var16;
-				if (var3.scrollY > var3.scrollHeight - var3.height * 1899982693) {
-					var3.scrollY = var3.scrollHeight - var3.height * 1899982693;
+				if (var3.scrollY > var3.scrollHeight - var3.height) {
+					var3.scrollY = var3.scrollHeight - var3.height;
 				}
 
 				if (var3.scrollY < 0) {

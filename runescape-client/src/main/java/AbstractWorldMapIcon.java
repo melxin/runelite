@@ -174,30 +174,30 @@ public abstract class AbstractWorldMapIcon {
 	)
 	@Export("alignWidgetSize")
 	static void alignWidgetSize(Widget var0, int var1, int var2, boolean var3) {
-		int var4 = var0.width * 1063514007;
-		int var5 = var0.height * 1899982693;
+		int var4 = var0.width;
+		int var5 = var0.height;
 		if (var0.widthAlignment == 0) {
-			var0.width = var0.rawWidth * 524124199;
+			var0.width = var0.rawWidth;
 		} else if (var0.widthAlignment == 1) {
-			var0.width = (var1 - var0.rawWidth) * 524124199;
+			var0.width = (var1 - var0.rawWidth);
 		} else if (var0.widthAlignment == 2) {
-			var0.width = (var0.rawWidth * var1 >> 14) * 524124199;
+			var0.width = (var0.rawWidth * var1 >> 14);
 		}
 
 		if (var0.heightAlignment == 0) {
-			var0.height = var0.rawHeight * -957666707;
+			var0.height = var0.rawHeight;
 		} else if (var0.heightAlignment == 1) {
-			var0.height = (var2 - var0.rawHeight) * -957666707;
+			var0.height = (var2 - var0.rawHeight);
 		} else if (var0.heightAlignment == 2) {
-			var0.height = (var2 * var0.rawHeight >> 14) * -957666707;
+			var0.height = (var2 * var0.rawHeight >> 14);
 		}
 
 		if (var0.widthAlignment == 4) {
-			var0.width = var0.height * var0.field3878 * 1899982693 / var0.field3879 * 524124199;
+			var0.width = var0.height * var0.field3878 / var0.field3879;
 		}
 
 		if (var0.heightAlignment == 4) {
-			var0.height = var0.width * var0.field3879 * 1063514007 / var0.field3878 * -957666707;
+			var0.height = var0.width * var0.field3879 / var0.field3878;
 		}
 
 		if (var0.contentType == 1337) {
@@ -205,10 +205,10 @@ public abstract class AbstractWorldMapIcon {
 		}
 
 		if (var0.type == 12) {
-			var0.method7284().method6984(var0.width * 1063514007, var0.height * 1899982693);
+			var0.method7284().method6984(var0.width, var0.height);
 		}
 
-		if (var3 && var0.onResize != null && (var0.width * 1063514007 != var4 || var5 != var0.height * 1899982693)) {
+		if (var3 && var0.onResize != null && (var0.width != var4 || var5 != var0.height)) {
 			ScriptEvent var6 = new ScriptEvent();
 			var6.widget = var0;
 			var6.args = var0.onResize;

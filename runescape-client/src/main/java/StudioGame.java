@@ -163,8 +163,8 @@ public enum StudioGame implements Enum {
 				if (var9.type == 9) {
 					var16 = var26;
 					var17 = var11;
-					var18 = var9.width * 1063514007 + var26;
-					int var19 = var11 + var9.height * 1899982693;
+					var18 = var9.width + var26;
+					int var19 = var11 + var9.height;
 					if (var18 < var26) {
 						var16 = var18;
 						var18 = var26;
@@ -182,8 +182,8 @@ public enum StudioGame implements Enum {
 					var14 = var18 < var4 ? var18 : var4;
 					var15 = var19 < var5 ? var19 : var5;
 				} else {
-					var16 = var26 + var9.width * 1063514007;
-					var17 = var11 + var9.height * 1899982693;
+					var16 = var26 + var9.width;
+					var17 = var11 + var9.height;
 					var12 = var26 > var2 ? var26 : var2;
 					var13 = var11 > var3 ? var11 : var3;
 					var14 = var16 < var4 ? var16 : var4;
@@ -263,12 +263,12 @@ public enum StudioGame implements Enum {
 						class507.checkIfMinimapClicked(var9, var26, var11);
 					} else {
 						if (var9.contentType == 1400) {
-							class158.worldMap.onCycle(MouseHandler.MouseHandler_x, MouseHandler.MouseHandler_y, var35, var26, var11, var9.width * 1063514007, var9.height * 1899982693);
+							class158.worldMap.onCycle(MouseHandler.MouseHandler_x, MouseHandler.MouseHandler_y, var35, var26, var11, var9.width, var9.height);
 						}
 
 						if (!Client.isMenuOpen && var35) {
 							if (var9.contentType == 1400) {
-								class158.worldMap.addElementMenuOptions(var26, var11, var9.width * 1063514007, var9.height * 1899982693, var17, var18);
+								class158.worldMap.addElementMenuOptions(var26, var11, var9.width, var9.height, var17, var18);
 							} else {
 								class431.Widget_addToMenu(var9);
 							}
@@ -687,8 +687,8 @@ public enum StudioGame implements Enum {
 								SongTask.field4882 = var9;
 							}
 
-							if (var9.scrollHeight > var9.height * 1899982693) {
-								class421.method8050(var9, var9.width * 1063514007 + var26, var11, var9.height * 1899982693, var9.scrollHeight, MouseHandler.MouseHandler_x, MouseHandler.MouseHandler_y);
+							if (var9.scrollHeight > var9.height) {
+								class421.method8050(var9, var9.width + var26, var11, var9.height, var9.scrollHeight, MouseHandler.MouseHandler_x, MouseHandler.MouseHandler_y);
 							}
 						}
 

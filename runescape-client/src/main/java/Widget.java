@@ -1934,10 +1934,10 @@ public class Widget extends Node {
 		if (this.type == 11 && this.field3967 != null && this.method7331()) {
 			var1 -= var3;
 			var2 -= var4;
-			int var5 = (int)(this.field3967.method4364()[0] * (float)(this.width * 1063514007));
-			int var6 = (int)(this.field3967.method4364()[1] * (float)(this.height * 1899982693));
-			int var7 = var5 + (int)(this.field3967.method4364()[2] * (float)(this.width * 1063514007));
-			int var8 = var6 + (int)(this.field3967.method4364()[3] * (float)(1899982693 * this.height));
+			int var5 = (int)(this.field3967.method4364()[0] * (float)(this.width));
+			int var6 = (int)(this.field3967.method4364()[1] * (float)(this.height));
+			int var7 = var5 + (int)(this.field3967.method4364()[2] * (float)(this.width));
+			int var8 = var6 + (int)(this.field3967.method4364()[3] * (float)(this.height));
 			return var1 >= var5 && var2 >= var6 && var1 < var7 && var2 < var8;
 		} else {
 			return false;

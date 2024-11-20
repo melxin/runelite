@@ -5694,8 +5694,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var5 = var3.readUnsignedIntLE();
 					var24 = class379.widgetDefinition.method6875(var5);
 					if (var24 != null && var24.type == 0) {
-						if (var21 > var24.scrollHeight - var24.height * 1899982693) {
-							var21 = var24.scrollHeight - var24.height * 1899982693;
+						if (var21 > var24.scrollHeight - var24.height) {
+							var21 = var24.scrollHeight - var24.height;
 						}
 
 						if (var21 < 0) {
@@ -6306,8 +6306,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 			var3 = class329.canvasWidth;
 			var4 = class535.canvasHeight;
 		} else {
-			var3 = var2.width * 1063514007;
-			var4 = var2.height * 1899982693;
+			var3 = var2.width;
+			var4 = var2.height;
 		}
 
 		AbstractWorldMapIcon.alignWidgetSize(var1, var3, var4, false);
@@ -6331,16 +6331,16 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				var1 = field795;
 			}
 
-			if (clickedWidget.width * 1063514007 + var1 > clickedWidgetParent.width * 1063514007 + field795) {
-				var1 = clickedWidgetParent.width * 1063514007 + field795 - clickedWidget.width * 1063514007;
+			if (clickedWidget.width + var1 > clickedWidgetParent.width + field795) {
+				var1 = clickedWidgetParent.width + field795 - clickedWidget.width;
 			}
 
 			if (var2 < field683) {
 				var2 = field683;
 			}
 
-			if (var2 + clickedWidget.height * 1899982693 > clickedWidgetParent.height * 1899982693 + field683) {
-				var2 = clickedWidgetParent.height * 1899982693 + field683 - clickedWidget.height * 1899982693;
+			if (var2 + clickedWidget.height > clickedWidgetParent.height + field683) {
+				var2 = clickedWidgetParent.height + field683 - clickedWidget.height;
 			}
 
 			int var3 = var1 - field694;

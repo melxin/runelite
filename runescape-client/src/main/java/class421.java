@@ -251,7 +251,7 @@ public final class class421 {
 		}
 
 		if (Client.mouseWheelRotation != 0) {
-			var7 = var0.width * 1063514007;
+			var7 = var0.width;
 			if (var5 >= var1 - var7 && var6 >= var2 && var5 < var1 + 16 && var6 <= var3 + var2) {
 				var0.scrollY += Client.mouseWheelRotation * 45;
 				class178.invalidateWidget(var0);
