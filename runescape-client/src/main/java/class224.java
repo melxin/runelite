@@ -70,7 +70,7 @@ public class class224 extends class230 {
 				int var16;
 				for (var8 = 0; var8 < Client.mapIconCount; ++var8) {
 					var16 = Client.mapIconXs[var8] * 4 + 2 - HttpResponse.entity.getX() / 32;
-					var10 = Client.field752[var8] * 4 + 2 - HttpResponse.entity.getY() / 32;
+					var10 = Client.mapIconYs[var8] * 4 + 2 - HttpResponse.entity.getY() / 32;
 					class167.drawSpriteOnMinimap(var1, var2, var16, var10, Client.mapIcons[var8], var4);
 				}
 

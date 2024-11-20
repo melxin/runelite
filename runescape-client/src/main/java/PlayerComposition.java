@@ -372,7 +372,7 @@ public class PlayerComposition {
 				for (int var10 = 0; var10 < 12; ++var10) {
 					var11 = var7[var10];
 					if (this.method6917(var11)) {
-						KitDefinition var18 = this.method6911(var11);
+						KitDefinition var18 = this.KitDefinition_get(var11);
 						if (var18 != null && !var18.ready()) {
 							var9 = true;
 						}
@@ -404,7 +404,7 @@ public class PlayerComposition {
 					for (int var12 = 0; var12 < 12; ++var12) {
 						var13 = var7[var12];
 						if (this.method6917(var13)) {
-							KitDefinition var14 = this.method6911(var13);
+							KitDefinition var14 = this.KitDefinition_get(var13);
 							ModelData var15 = null;
 							if (var14 != null) {
 								var15 = var14.getModelData();
@@ -474,7 +474,7 @@ public class PlayerComposition {
 			for (int var2 = 0; var2 < 12; ++var2) {
 				var3 = this.equipment[var2];
 				if (this.method6917(var3)) {
-					KitDefinition var9 = this.method6911(var3);
+					KitDefinition var9 = this.KitDefinition_get(var3);
 					if (var9 != null && !var9.method3813()) {
 						var1 = true;
 					}
@@ -499,7 +499,7 @@ public class PlayerComposition {
 					var5 = this.equipment[var4];
 					ModelData var7;
 					if (this.method6917(var5)) {
-						KitDefinition var6 = this.method6911(var5);
+						KitDefinition var6 = this.KitDefinition_get(var5);
 						var7 = null;
 						if (var6 != null) {
 							var7 = var6.getKitDefinitionModels();
@@ -667,7 +667,8 @@ public class PlayerComposition {
 		descriptor = "(II)Lhv;",
 		garbageValue = "-253195904"
 	)
-	KitDefinition method6911(int var1) {
+	@Export("KitDefinition_get")
+	KitDefinition KitDefinition_get(int var1) {
 		int var3 = var1 - 256;
 		KitDefinition var4 = (KitDefinition)KitDefinition.KitDefinition_cached.get((long)var3);
 		KitDefinition var2;

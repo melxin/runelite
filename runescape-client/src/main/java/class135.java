@@ -174,7 +174,7 @@ public enum class135 implements Enum {
 			Client.grandExchangeOffers[var0] = new GrandExchangeOffer();
 		}
 
-		class246.grandExchangeEvents = null;
+		AABB.grandExchangeEvents = null;
 		Client.viewportOffsetX = 0;
 		Client.viewportOffsetY = 0;
 		Client.viewportWidth = 0;

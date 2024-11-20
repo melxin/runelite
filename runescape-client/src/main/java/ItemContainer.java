@@ -156,10 +156,10 @@ public class ItemContainer extends Node {
 						var4.method5695(var18.method9141());
 						byte var9 = var1.readByte();
 						if (var9 != 0) {
-							int var19 = class246.method5139(var1, var9, 0);
-							int var20 = class246.method5139(var1, var9, 2);
-							int var21 = class246.method5139(var1, var9, 4);
-							var13 = class246.method5139(var1, var9, 6);
+							int var19 = AABB.method5139(var1, var9, 0);
+							int var20 = AABB.method5139(var1, var9, 2);
+							int var21 = AABB.method5139(var1, var9, 4);
+							var13 = AABB.method5139(var1, var9, 6);
 							var4.method5689(var19, var20, var21, var13);
 						}
 
@@ -190,10 +190,10 @@ public class ItemContainer extends Node {
 				byte var23 = var1.readByte();
 				int var14;
 				if (var23 != 0) {
-					var14 = class246.method5139(var1, var23, 0);
-					int var15 = class246.method5139(var1, var23, 2);
-					int var16 = class246.method5139(var1, var23, 4);
-					int var17 = class246.method5139(var1, var23, 6);
+					var14 = AABB.method5139(var1, var23, 0);
+					int var15 = AABB.method5139(var1, var23, 2);
+					int var16 = AABB.method5139(var1, var23, 4);
+					int var17 = AABB.method5139(var1, var23, 6);
 					var12.method5689(var14, var15, var16, var17);
 				}
 

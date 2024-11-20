@@ -31,7 +31,8 @@ public class Messages {
 	@Export("Messages_count")
 	static int Messages_count;
 	@ObfuscatedName("gr")
-	static String field1445;
+	@Export("authServiceBaseUrl")
+	static String authServiceBaseUrl;
 
 	static {
 		Messages_channels = new HashMap();

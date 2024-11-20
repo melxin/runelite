@@ -243,7 +243,7 @@ public class SoundSystem implements Runnable {
 					return 1;
 				} else if (var0 == 1125) {
 					var23 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
-					class568 var22 = (class568)ScriptEvent.findEnumerated(AddRequestTask.FillMode_values(), var23);
+					FillMode var22 = (FillMode)ScriptEvent.findEnumerated(AddRequestTask.FillMode_values(), var23);
 					if (var22 != null) {
 						var3.fillMode = var22;
 						class178.invalidateWidget(var3);

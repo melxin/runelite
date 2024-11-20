@@ -2109,7 +2109,7 @@ public abstract class RSClientMixin implements RSClient
 
 	@Inject
 	@MethodHook("updateNpcs")
-	public static void updateNpcs(RSWorldView wv, boolean var0, RSPacketBuffer var1, int var2)
+	public static void updateNpcs(RSWorldView wv, boolean var0, RSPacketBuffer var1)
 	{
 		client.getCallbacks().updateNpcs();
 		syncMusicVolume();

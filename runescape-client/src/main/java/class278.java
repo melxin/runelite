@@ -82,7 +82,8 @@ public class class278 implements Comparator {
 		descriptor = "(Ljava/util/ArrayList;IIIIB)V",
 		garbageValue = "-21"
 	)
-	static void method5769(ArrayList var0, int var1, int var2, int var3, int var4) {
+	@Export("playSong")
+	static void playSong(ArrayList var0, int var1, int var2, int var3, int var4) {
 		if (!var0.isEmpty()) {
 			int var5 = (Integer)var0.get(0);
 			if (var5 == -1 && !Client.playingJingle) {

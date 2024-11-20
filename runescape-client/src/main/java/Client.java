@@ -207,17 +207,20 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedGetter(
 		intValue = -1451522308
 	)
-	static int field538;
+	@Export("hintArrowHeight")
+	static int hintArrowHeight;
 	@ObfuscatedName("ec")
 	@ObfuscatedGetter(
 		intValue = -1235262400
 	)
-	static int field539;
+	@Export("hintArrowSubX")
+	static int hintArrowSubX;
 	@ObfuscatedName("ey")
 	@ObfuscatedGetter(
 		intValue = 61055453
 	)
-	static int field808;
+	@Export("hintArrowSubY")
+	static int hintArrowSubY;
 	@ObfuscatedName("ej")
 	@ObfuscatedSignature(
 		descriptor = "Lej;"
@@ -285,7 +288,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@Export("BASIC_AUTH_DESKTOP_OSRS")
 	static final String BASIC_AUTH_DESKTOP_OSRS;
 	@ObfuscatedName("gf")
-	static final String field564;
+	@Export("BASIC_AUTH_DESKTOP_RUNELITE")
+	static final String BASIC_AUTH_DESKTOP_RUNELITE;
 	@ObfuscatedName("hw")
 	@Export("Login_isUsernameRemembered")
 	static boolean Login_isUsernameRemembered;
@@ -307,7 +311,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@Export("npcCount")
 	static int npcCount;
 	@ObfuscatedName("hb")
-	static int[] field779;
+	@Export("npcIndices")
+	static int[] npcIndices;
 	@ObfuscatedName("ik")
 	@ObfuscatedSignature(
 		descriptor = "Lei;"
@@ -439,22 +444,26 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedGetter(
 		intValue = -1739828503
 	)
-	static int field600;
+	@Export("camAngleDY")
+	static int camAngleDY;
 	@ObfuscatedName("la")
 	@ObfuscatedGetter(
 		intValue = -1130448623
 	)
-	static int field654;
+	@Export("camAngleDX")
+	static int camAngleDX;
 	@ObfuscatedName("lr")
 	@ObfuscatedGetter(
 		intValue = 77214933
 	)
-	static int field734;
+	@Export("mouseCamClickedX")
+	static int mouseCamClickedX;
 	@ObfuscatedName("lq")
 	@ObfuscatedGetter(
 		intValue = -1918475449
 	)
-	static int field603;
+	@Export("mouseCamClickedY")
+	static int mouseCamClickedY;
 	@ObfuscatedName("ly")
 	@ObfuscatedGetter(
 		intValue = 1433197037
@@ -498,15 +507,15 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedGetter(
 		intValue = -374746263
 	)
-	static int field611;
+	@Export("revision")
+	static int revision;
 	@ObfuscatedName("lh")
 	static boolean field612;
 	@ObfuscatedName("ld")
 	@ObfuscatedGetter(
 		intValue = 1248802357
 	)
-	@Export("hintArrowHeight")
-	static int hintArrowHeight;
+	static int field613;
 	@ObfuscatedName("lj")
 	static boolean field524;
 	@ObfuscatedName("lu")
@@ -650,8 +659,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	)
 	static int field645;
 	@ObfuscatedName("na")
-	@Export("npcIndices")
-	static int[] npcIndices;
+	static int[] field647;
 	@ObfuscatedName("ny")
 	@Export("playerMenuOpcodes")
 	static final int[] playerMenuOpcodes;
@@ -913,8 +921,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedGetter(
 		intValue = -284238635
 	)
-	@Export("camAngleDY")
-	static int camAngleDY;
+	static int field705;
 	@ObfuscatedName("qp")
 	@ObfuscatedGetter(
 		intValue = -1403607109
@@ -1049,8 +1056,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedGetter(
 		intValue = 1824896173
 	)
-	@Export("revision")
-	public static int revision;
+	public static int field689;
 	@ObfuscatedName("rh")
 	static int[] field723;
 	@ObfuscatedName("rp")
@@ -1128,7 +1134,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@Export("mapIconXs")
 	static int[] mapIconXs;
 	@ObfuscatedName("se")
-	static int[] field752;
+	@Export("mapIconYs")
+	static int[] mapIconYs;
 	@ObfuscatedName("sm")
 	@ObfuscatedSignature(
 		descriptor = "[Lvr;"
@@ -1428,9 +1435,9 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		hintArrowPlayerIndex = 0;
 		hintArrowX = 0;
 		hintArrowY = 0;
-		field538 = 0;
-		field539 = 0;
-		field808 = 0;
+		hintArrowHeight = 0;
+		hintArrowSubX = 0;
+		hintArrowSubY = 0;
 		playerAttackOption = AttackOption.AttackOption_hidden;
 		npcAttackOption = AttackOption.AttackOption_hidden;
 		z = false;
@@ -1448,13 +1455,13 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		BASIC_AUTH_DESKTOP_OSRS = var0;
 		var1 = class228.method4528("com_jagex_auth_desktop_runelite:public");
 		var0 = class344.method6790(var1, 0, var1.length);
-		field564 = var0;
+		BASIC_AUTH_DESKTOP_RUNELITE = var0;
 		Login_isUsernameRemembered = false;
 		secureRandomFuture = new SecureRandomFuture();
 		field762 = new int[4];
 		randomDatData = null;
 		npcCount = 0;
-		field779 = new int[250];
+		npcIndices = new int[250];
 		packetWriter = new PacketWriter();
 		logoutTimer = 0;
 		hadNetworkError = false;
@@ -1481,10 +1488,10 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		alternativeScrollbarWidth = 0;
 		camAngleX = 128;
 		camAngleY = 0;
-		field600 = 0;
-		field654 = 0;
-		field734 = 0;
-		field603 = 0;
+		camAngleDY = 0;
+		camAngleDX = 0;
+		mouseCamClickedX = 0;
+		mouseCamClickedY = 0;
 		oculusOrbState = 0;
 		camFollowHeight = 50;
 		field610 = 0;
@@ -1492,9 +1499,9 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		field608 = 0;
 		oculusOrbNormalSpeed = 12;
 		oculusOrbSlowedSpeed = 6;
-		field611 = 0;
+		revision = 0;
 		field612 = false;
-		hintArrowHeight = 0;
+		field613 = 0;
 		field524 = false;
 		field678 = 0;
 		overheadTextCount = 0;
@@ -1527,7 +1534,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		renderSelf = true;
 		drawPlayerNames = 0;
 		field645 = 0;
-		npcIndices = new int[1000];
+		field647 = new int[1000];
 		playerMenuOpcodes = new int[]{44, 45, 46, 47, 48, 49, 50, 51};
 		playerMenuActions = new String[8];
 		playerOptionsPriorities = new boolean[8];
@@ -1586,7 +1593,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		changedSkills = new int[32];
 		changedSkillsCount = 0;
 		field704 = new int[32];
-		camAngleDY = 0;
+		field705 = 0;
 		chatCycle = 0;
 		field707 = 0;
 		field708 = 0;
@@ -1615,7 +1622,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		field731 = 0L;
 		isResizable = true;
 		field688 = 600;
-		revision = field688 / GameEngine.cycleDurationMillis;
+		field689 = field688 / GameEngine.cycleDurationMillis;
 		field723 = new int[]{16776960, 16711680, 65280, 65535, 16711935, 16777215};
 		publicChatMode = 0;
 		tradeChatMode = 0;
@@ -1633,7 +1640,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		field700 = -1;
 		mapIconCount = 0;
 		mapIconXs = new int[1000];
-		field752 = new int[1000];
+		mapIconYs = new int[1000];
 		mapIcons = new SpritePixels[1000];
 		destinationX = 0;
 		destinationY = 0;
@@ -2033,15 +2040,15 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		var2.put("grant_type", "refresh_token");
 		var2.put("scope", "gamesso.token.create");
 		var2.put("refresh_token", var1);
-		URL var3 = new URL(Messages.field1445 + "shield/oauth/token" + (new HttpQueryParams(var2)).encode());
+		URL var3 = new URL(Messages.authServiceBaseUrl + "shield/oauth/token" + (new HttpQueryParams(var2)).encode());
 		HttpHeaders var4 = new HttpHeaders();
 		if (this.isRuneLite()) {
-			var4.basicAuthentication(field564);
+			var4.basicAuthentication(BASIC_AUTH_DESKTOP_RUNELITE);
 		} else {
 			var4.basicAuthentication(BASIC_AUTH_DESKTOP_OSRS);
 		}
 
-		var4.header("Host", (new URL(Messages.field1445)).getHost());
+		var4.header("Host", (new URL(Messages.authServiceBaseUrl)).getHost());
 		var4.accept(HttpContentType.APPLICATION_JSON);
 		HttpMethod var5 = HttpMethod.POST;
 		RefreshAccessTokenRequester var6 = this.refreshAccessTokenRequester;
@@ -2060,7 +2067,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	)
 	@Export("requestOtlToken")
 	void requestOtlToken(String var1) throws IOException {
-		URL var2 = new URL(Messages.field1445 + "public/v1/games/YCfdbvr2pM1zUYMxJRexZY/play");
+		URL var2 = new URL(Messages.authServiceBaseUrl + "public/v1/games/YCfdbvr2pM1zUYMxJRexZY/play");
 		HttpHeaders var3 = new HttpHeaders();
 		var3.bearerToken(var1);
 		HttpMethod var4 = HttpMethod.GET;
@@ -2080,7 +2087,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	)
 	@Export("authenticate")
 	void authenticate(String var1, String var2) throws IOException, JSONException {
-		URL var3 = new URL(AsyncRestClient.field61 + "game-session/v1/tokens");
+		URL var3 = new URL(AsyncRestClient.gameSessionServiceBaseUrl + "game-session/v1/tokens");
 		HttpRequest var4 = new HttpRequest(var3, HttpMethod.POST, this.https);
 		var4.getHeaders().bearerToken(var1);
 		var4.getHeaders().accept(HttpContentType.APPLICATION_JSON);
@@ -2573,7 +2580,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				var31.packetBuffer.writeByte((isResizable ? 1 : 0) << 1 | (isLowDetail ? 1 : 0));
 				var31.packetBuffer.writeShort(class329.canvasWidth);
 				var31.packetBuffer.writeShort(class535.canvasHeight);
-				Huffman.method7403(var31.packetBuffer);
+				Huffman.randomDatData2(var31.packetBuffer);
 				var31.packetBuffer.writeStringCp1252NullTerminated(class141.field1630);
 				var31.packetBuffer.writeInt(FriendsChat.field4989);
 				var31.packetBuffer.writeByte(0);
@@ -3107,16 +3114,16 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					packetWriter.addNode(var1);
 				}
 
-				if (hintArrowHeight > 0) {
-					--hintArrowHeight;
+				if (field613 > 0) {
+					--field613;
 				}
 
 				if (indexCheck.isValidIndexInRange(96) || indexCheck.isValidIndexInRange(97) || indexCheck.isValidIndexInRange(98) || indexCheck.isValidIndexInRange(99)) {
 					field524 = true;
 				}
 
-				if (field524 && hintArrowHeight <= 0) {
-					hintArrowHeight = 20;
+				if (field524 && field613 <= 0) {
+					field613 = 20;
 					field524 = false;
 					var1 = Message.getPacketBufferNode(ClientPacket.EVENT_CAMERA_POSITION, packetWriter.isaacCipher);
 					var1.packetBuffer.writeShortAddLE(camAngleY);
@@ -3224,7 +3231,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 								if (var11 >= 0 && Tiles.WorldMapElement_get(var11).field1894) {
 									mapIcons[mapIconCount] = Tiles.WorldMapElement_get(var11).getSpriteBool(false);
 									mapIconXs[mapIconCount] = var6;
-									field752[mapIconCount] = var7;
+									mapIconYs[mapIconCount] = var7;
 									++mapIconCount;
 								}
 							}
@@ -3661,35 +3668,35 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 																	}
 
 																	if (MouseHandler.MouseHandler_currentButton == 4 && class160.mouseCam) {
-																		var5 = MouseHandler.MouseHandler_y - field603;
-																		field654 = var5 * 2;
-																		field603 = var5 != -1 && var5 != 1 ? (MouseHandler.MouseHandler_y + field603) / 2 : MouseHandler.MouseHandler_y;
-																		var6 = field734 - MouseHandler.MouseHandler_x;
-																		field600 = var6 * 2;
-																		field734 = var6 != -1 && var6 != 1 ? (MouseHandler.MouseHandler_x + field734) / 2 : MouseHandler.MouseHandler_x;
+																		var5 = MouseHandler.MouseHandler_y - mouseCamClickedY;
+																		camAngleDX = var5 * 2;
+																		mouseCamClickedY = var5 != -1 && var5 != 1 ? (MouseHandler.MouseHandler_y + mouseCamClickedY) / 2 : MouseHandler.MouseHandler_y;
+																		var6 = mouseCamClickedX - MouseHandler.MouseHandler_x;
+																		camAngleDY = var6 * 2;
+																		mouseCamClickedX = var6 != -1 && var6 != 1 ? (MouseHandler.MouseHandler_x + mouseCamClickedX) / 2 : MouseHandler.MouseHandler_x;
 																	} else {
 																		if (indexCheck.isValidIndexInRange(96)) {
-																			field600 += (-24 - field600) / 2;
+																			camAngleDY += (-24 - camAngleDY) / 2;
 																		} else if (indexCheck.isValidIndexInRange(97)) {
-																			field600 += (24 - field600) / 2;
+																			camAngleDY += (24 - camAngleDY) / 2;
 																		} else {
-																			field600 /= 2;
+																			camAngleDY /= 2;
 																		}
 
 																		if (indexCheck.isValidIndexInRange(98)) {
-																			field654 += (12 - field654) / 2;
+																			camAngleDX += (12 - camAngleDX) / 2;
 																		} else if (indexCheck.isValidIndexInRange(99)) {
-																			field654 += (-12 - field654) / 2;
+																			camAngleDX += (-12 - camAngleDX) / 2;
 																		} else {
-																			field654 /= 2;
+																			camAngleDX /= 2;
 																		}
 
-																		field603 = MouseHandler.MouseHandler_y;
-																		field734 = MouseHandler.MouseHandler_x;
+																		mouseCamClickedY = MouseHandler.MouseHandler_y;
+																		mouseCamClickedX = MouseHandler.MouseHandler_x;
 																	}
 
-																	camAngleY = field600 / 2 + camAngleY & 2047;
-																	camAngleX += field654 / 2;
+																	camAngleY = camAngleDY / 2 + camAngleY & 2047;
+																	camAngleX += camAngleDX / 2;
 																	if (camAngleX < 128) {
 																		camAngleX = 128;
 																	}
@@ -4141,8 +4148,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 
 				if (ServerPacket.OCULUS_SYNC == var1.serverPacket) {
 					var21 = var3.readInt();
-					if (var21 != field611) {
-						field611 = var21;
+					if (var21 != revision) {
+						revision = var21;
 						class27.method382();
 					}
 
@@ -4618,7 +4625,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 
 					ArrayList var91 = new ArrayList();
 					var91.add(var21);
-					class278.method5769(var91, var5, var26, var7, var37);
+					class278.playSong(var91, var5, var26, var7, var37);
 					var1.serverPacket = null;
 					return true;
 				}
@@ -4811,7 +4818,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				}
 
 				if (ServerPacket.field3520 == var1.serverPacket) {
-					GraphicsObject.method2252(Projection.worldView, false, var3);
+					GraphicsObject.updateNpcs(Projection.worldView, false, var3);
 					var1.serverPacket = null;
 					return true;
 				}
@@ -5054,7 +5061,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				}
 
 				if (ServerPacket.field3511 == var1.serverPacket) {
-					GraphicsObject.method2252(Projection.worldView, true, var3);
+					GraphicsObject.updateNpcs(Projection.worldView, true, var3);
 					var1.serverPacket = null;
 					return true;
 				}
@@ -5384,9 +5391,9 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var86 = var3.readUnsignedByte() == 1;
 					if (var86) {
 						class27.field130 = class59.method1150() - var3.readLong();
-						class246.grandExchangeEvents = new GrandExchangeEvents(var3, true);
+						AABB.grandExchangeEvents = new GrandExchangeEvents(var3, true);
 					} else {
-						class246.grandExchangeEvents = null;
+						AABB.grandExchangeEvents = null;
 					}
 
 					field712 = cycleCntr;
@@ -5555,7 +5562,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					ArrayList var53 = new ArrayList();
 					var53.add(var21);
 					var53.add(var5);
-					class278.method5769(var53, var26, var7, var37, var38);
+					class278.playSong(var53, var26, var7, var37, var38);
 					var1.serverPacket = null;
 					return true;
 				}
@@ -5773,7 +5780,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 
 					class565 var49 = FloorUnderlayDefinition.field2075.method9328(var3);
 					class155.field1711.field5124.vmethod9822(var49.field5535, var49.field5536);
-					field704[++camAngleDY - 1 & 31] = var49.field5535;
+					field704[++field705 - 1 & 31] = var49.field5535;
 					var1.serverPacket = null;
 					return true;
 				}
@@ -6145,34 +6152,34 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 
 					if (hintArrowType >= 2 && hintArrowType <= 6) {
 						if (hintArrowType == 2) {
-							field539 = 4096;
-							field808 = 64;
+							hintArrowSubX = 4096;
+							hintArrowSubY = 64;
 						}
 
 						if (hintArrowType == 3) {
-							field539 = 0;
-							field808 = 64;
+							hintArrowSubX = 0;
+							hintArrowSubY = 64;
 						}
 
 						if (hintArrowType == 4) {
-							field539 = 8192;
-							field808 = 64;
+							hintArrowSubX = 8192;
+							hintArrowSubY = 64;
 						}
 
 						if (hintArrowType == 5) {
-							field539 = 4096;
-							field808 = 0;
+							hintArrowSubX = 4096;
+							hintArrowSubY = 0;
 						}
 
 						if (hintArrowType == 6) {
-							field539 = 4096;
-							field808 = 128;
+							hintArrowSubX = 4096;
+							hintArrowSubY = 128;
 						}
 
 						hintArrowType = 2;
 						hintArrowX = var3.readUnsignedShort();
 						hintArrowY = var3.readUnsignedShort();
-						field538 = var3.readUnsignedByte() * 4;
+						hintArrowHeight = var3.readUnsignedByte() * 4;
 					}
 
 					if (hintArrowType == 10) {
@@ -6533,7 +6540,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 							}
 							break;
 						case 11:
-							Messages.field1445 = var2;
+							Messages.authServiceBaseUrl = var2;
 							break;
 						case 12:
 							worldId = Integer.parseInt(var2);
@@ -6559,7 +6566,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 							field788 = Integer.parseInt(var2);
 							break;
 						case 22:
-							AsyncRestClient.field61 = var2;
+							AsyncRestClient.gameSessionServiceBaseUrl = var2;
 							break;
 						case 25:
 							int var8 = var2.indexOf(".");

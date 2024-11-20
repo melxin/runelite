@@ -196,7 +196,8 @@ public class Model extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "Ljk;"
 	)
-	class246 field2874;
+	@Export("aabb")
+	AABB aabb;
 	@ObfuscatedName("cg")
 	@Export("overrideHue")
 	public byte overrideHue;
@@ -612,7 +613,7 @@ public class Model extends Renderable {
 	@ObfuscatedName("av")
 	@Export("calculateBoundingBox")
 	void calculateBoundingBox(int var1) {
-		class246 var2 = this.method5249(var1);
+		AABB var2 = this.method5249(var1);
 		if (var2 == null) {
 			int var3 = 0;
 			int var4 = 0;
@@ -654,7 +655,7 @@ public class Model extends Renderable {
 				}
 			}
 
-			var2 = new class246(var1, (var6 + var3) / 2, (var7 + var4) / 2, (var8 + var5) / 2, (var6 - var3 + 1) / 2, (var7 - var4 + 1) / 2, (var8 - var5 + 1) / 2);
+			var2 = new AABB(var1, (var6 + var3) / 2, (var7 + var4) / 2, (var8 + var5) / 2, (var6 - var3 + 1) / 2, (var7 - var4 + 1) / 2, (var8 - var5 + 1) / 2);
 			boolean var18 = true;
 			if (var2.field2746 < 32) {
 				var2.field2746 = 32;
@@ -670,8 +671,8 @@ public class Model extends Renderable {
 				var2.field2744 += 8;
 			}
 
-			var2.field2749 = this.field2874;
-			this.field2874 = var2;
+			var2.aabb = this.aabb;
+			this.aabb = var2;
 		}
 	}
 
@@ -679,8 +680,8 @@ public class Model extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljk;"
 	)
-	class246 method5249(int var1) {
-		for (class246 var2 = this.field2874; var2 != null; var2 = var2.field2749) {
+	AABB method5249(int var1) {
+		for (AABB var2 = this.aabb; var2 != null; var2 = var2.aabb) {
 			if (var2.field2753 == var1) {
 				return var2;
 			}
@@ -754,7 +755,7 @@ public class Model extends Renderable {
 	@Export("resetBounds")
 	public void resetBounds() {
 		this.boundsType = 0;
-		this.field2874 = null;
+		this.aabb = null;
 	}
 
 	@ObfuscatedName("ap")
@@ -1386,7 +1387,7 @@ public class Model extends Renderable {
 										var37 = false;
 									} else {
 										class113.method3069(var2, var3, var4, var5);
-										class246 var40 = this.method5249(var1);
+										AABB var40 = this.method5249(var1);
 										var41 = var40.field2748 + var6;
 										var42 = var7 + var40.field2750;
 										var43 = var8 + var40.field2745;

@@ -12,7 +12,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("AsyncRestClient")
 public class AsyncRestClient {
 	@ObfuscatedName("hy")
-	static String field61;
+	@Export("gameSessionServiceBaseUrl")
+	static String gameSessionServiceBaseUrl;
 	@ObfuscatedName("jb")
 	@Export("regions")
 	static int[] regions;

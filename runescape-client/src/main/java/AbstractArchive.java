@@ -60,7 +60,8 @@ public abstract class AbstractArchive {
 	@Export("fileIds")
 	int[][] fileIds;
 	@ObfuscatedName("ba")
-	int[][] field4587;
+	@Export("fileNameHashes")
+	int[][] fileNameHashes;
 	@ObfuscatedName("bp")
 	@ObfuscatedSignature(
 		descriptor = "[Lws;"
@@ -253,21 +254,21 @@ public abstract class AbstractArchive {
 				}
 
 				if (var5) {
-					this.field4587 = new int[var10 + 1][];
+					this.fileNameHashes = new int[var10 + 1][];
 					this.fileNameHashTables = new IntHashTable[var10 + 1];
 
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
 						var12 = this.groupIds[var11];
 						var13 = this.fileCounts[var12];
-						this.field4587[var12] = new int[this.files[var12].length];
-						Arrays.fill(this.field4587[var12], -1);
+						this.fileNameHashes[var12] = new int[this.files[var12].length];
+						Arrays.fill(this.fileNameHashes[var12], -1);
 
 						for (var14 = 0; var14 < var13; ++var14) {
 							var15 = this.fileIds[var12] != null ? this.fileIds[var12][var14] : var14;
-							this.field4587[var12][var15] = var2.readInt();
+							this.fileNameHashes[var12][var15] = var2.readInt();
 						}
 
-						this.fileNameHashTables[var12] = new IntHashTable(this.field4587[var12]);
+						this.fileNameHashTables[var12] = new IntHashTable(this.fileNameHashes[var12]);
 					}
 				}
 

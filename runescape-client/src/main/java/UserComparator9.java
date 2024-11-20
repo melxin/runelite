@@ -45,7 +45,7 @@ public class UserComparator9 extends AbstractUserComparator {
 	)
 	public static void method3238(int var0, int var1, int var2, boolean var3) {
 		PacketBufferNode var4 = Message.getPacketBufferNode(ClientPacket.field3411, Client.packetWriter.isaacCipher);
-		var4.packetBuffer.writeIntME(var3 ? Client.field611 : 0);
+		var4.packetBuffer.writeIntME(var3 ? Client.revision : 0);
 		var4.packetBuffer.writeShortAddLE(var0);
 		var4.packetBuffer.writeShortAddLE(var1);
 		var4.packetBuffer.writeByteNeg(var2);

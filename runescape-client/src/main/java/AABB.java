@@ -1,10 +1,12 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("jk")
-public class class246 {
+@Implements("AABB")
+public class AABB {
 	@ObfuscatedName("vq")
 	@ObfuscatedSignature(
 		descriptor = "Lpf;"
@@ -50,9 +52,10 @@ public class class246 {
 	@ObfuscatedSignature(
 		descriptor = "Ljk;"
 	)
-	class246 field2749;
+	@Export("aabb")
+	AABB aabb;
 
-	class246(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+	AABB(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
 		this.field2753 = var1;
 		this.field2748 = var2;
 		this.field2750 = var3;

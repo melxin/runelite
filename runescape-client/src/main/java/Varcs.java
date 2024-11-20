@@ -71,8 +71,8 @@ public class Varcs {
 		descriptor = "(ILjava/lang/String;I)V",
 		garbageValue = "-417842580"
 	)
-	@Export("setStringOld")
-	void setStringOld(int var1, String var2) {
+	@Export("setString")
+	void setString(int var1, String var2) {
 		this.map.put(var1, var2);
 	}
 
@@ -81,8 +81,8 @@ public class Varcs {
 		descriptor = "(II)Ljava/lang/String;",
 		garbageValue = "2104673766"
 	)
-	@Export("getStringOld")
-	String getStringOld(int var1) {
+	@Export("getString")
+	String getString(int var1) {
 		Object var2 = this.map.get(var1);
 		return var2 instanceof String ? (String)var2 : "";
 	}

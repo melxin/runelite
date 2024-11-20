@@ -457,7 +457,8 @@ public class Huffman {
 		descriptor = "(Lvj;B)V",
 		garbageValue = "7"
 	)
-	static void method7403(Buffer var0) {
+	@Export("randomDatData2")
+	static void randomDatData2(Buffer var0) {
 		if (Client.randomDatData != null) {
 			var0.writeBytes(Client.randomDatData, 0, Client.randomDatData.length);
 		} else {

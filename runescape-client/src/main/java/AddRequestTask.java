@@ -75,7 +75,7 @@ public class AddRequestTask extends SongTask {
 		garbageValue = "-26"
 	)
 	@Export("FillMode_values")
-	public static class568[] FillMode_values() {
-		return new class568[]{class568.SOLID, class568.field5550, class568.field5551};
+	public static FillMode[] FillMode_values() {
+		return new FillMode[]{FillMode.SOLID, FillMode.field5550, FillMode.field5551};
 	}
 }

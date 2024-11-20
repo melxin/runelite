@@ -37,7 +37,7 @@ public class class483 extends class482 {
 	int field5046;
 
 	static {
-		field5043 = Client.revision + 3;
+		field5043 = Client.field689 + 3;
 	}
 
 	class483() {

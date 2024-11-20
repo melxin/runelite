@@ -237,10 +237,10 @@ public final class WallDecoration {
 									}
 
 									ScriptFrame var39 = Interpreter.Interpreter_frames[--Interpreter.Interpreter_frameDepth];
-									var1 = var39.field460;
+									var1 = var39.script;
 									var6 = var1.opcodes;
 									var7 = var1.intOperands;
-									var5 = var39.field458;
+									var5 = var39.pc;
 									Interpreter.Interpreter_intLocals = var39.intLocals;
 									class379.Interpreter_stringLocals = var39.stringLocals;
 								} else if (var32 == 25) {
@@ -318,10 +318,10 @@ public final class WallDecoration {
 
 											Interpreter.Interpreter_arrays[var13][var14] = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 1];
 										} else if (var32 == 49) {
-											String var21 = HttpRequestTask.varcs.getStringOld(var7[var5]);
+											String var21 = HttpRequestTask.varcs.getString(var7[var5]);
 											Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = var21;
 										} else if (var32 == 50) {
-											HttpRequestTask.varcs.setStringOld(var7[var5], Interpreter.Interpreter_stringStack[--Interpreter.Interpreter_stringStackSize]);
+											HttpRequestTask.varcs.setString(var7[var5], Interpreter.Interpreter_stringStack[--Interpreter.Interpreter_stringStackSize]);
 										} else if (var32 == 60) {
 											IterableNodeHashTable var36 = var1.switches[var7[var5]];
 											IntegerNode var37 = (IntegerNode)var36.get((long)Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize]);
@@ -371,8 +371,8 @@ public final class WallDecoration {
 										PrivateChatMode.Interpreter_intStackSize -= var35.intArgumentCount;
 										Interpreter.Interpreter_stringStackSize -= var35.stringArgumentCount;
 										ScriptFrame var22 = new ScriptFrame();
-										var22.field460 = var1;
-										var22.field458 = var5;
+										var22.script = var1;
+										var22.pc = var5;
 										var22.intLocals = Interpreter.Interpreter_intLocals;
 										var22.stringLocals = class379.Interpreter_stringLocals;
 										Interpreter.Interpreter_frames[++Interpreter.Interpreter_frameDepth - 1] = var22;
@@ -391,12 +391,12 @@ public final class WallDecoration {
 							var26.append("").append(var1.key).append(" ");
 
 							for (var13 = Interpreter.Interpreter_frameDepth - 1; var13 >= 0; --var13) {
-								var26.append("").append(Interpreter.Interpreter_frames[var13].field460.key).append(" ");
+								var26.append("").append(Interpreter.Interpreter_frames[var13].script.key).append(" ");
 							}
 						}
 
 						var26.append("").append(var8);
-						ArchiveLoader.RunException_sendStackTrace(var26.toString(), var30);
+						//ArchiveLoader.RunException_sendStackTrace(var26.toString(), var30);
 						var29 = false;
 						break label929;
 					}

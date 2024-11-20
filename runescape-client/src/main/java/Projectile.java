@@ -334,7 +334,7 @@ public final class Projectile extends Renderable {
 				var7 = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 4];
 				ArrayList var15 = new ArrayList();
 				var15.add(var3);
-				class278.method5769(var15, var4, var5, var6, var7);
+				class278.playSong(var15, var4, var5, var6, var7);
 				return 1;
 			} else if (var0 == ScriptOpcodes.SOUND_JINGLE) {
 				PrivateChatMode.Interpreter_intStackSize -= 2;
@@ -387,7 +387,7 @@ public final class Projectile extends Renderable {
 								ArrayList var9 = new ArrayList();
 								var9.add(var3);
 								var9.add(var4);
-								class278.method5769(var9, var5, var6, var7, var8);
+								class278.playSong(var9, var5, var6, var7, var8);
 								return 1;
 							} else if (var0 == 3222) {
 								PrivateChatMode.Interpreter_intStackSize -= 4;

@@ -698,7 +698,7 @@ public class HealthBarConfig extends Node {
 
 														var88.writeLong(var45.nextLong());
 														var88.writeLongMedium(var45.nextLong());
-														Huffman.method7403(var88);
+														Huffman.randomDatData2(var88);
 														var88.writeLong(var45.nextLong());
 														var88.encryptRsa(class75.field901, class75.field906);
 														var22 = class164.stringCp1252NullTerminatedByteSize(var17);
@@ -876,7 +876,7 @@ public class HealthBarConfig extends Node {
 
 																var52.writeLong(var47.nextLong());
 																var52.writeLongMedium(var47.nextLong());
-																Huffman.method7403(var52);
+																Huffman.randomDatData2(var52);
 																var52.writeLong(var47.nextLong());
 																var52.encryptRsa(class75.field901, class75.field906);
 																var53 = class164.stringCp1252NullTerminatedByteSize(var46);

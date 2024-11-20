@@ -514,9 +514,9 @@ public final class Occluder {
 
 		WorldView var35 = HttpRequest.topLevelWorldView;
 		if (Client.hintArrowType == 2) {
-			int var29 = Client.field539 * 64 + (Client.hintArrowX - var35.baseX << 7);
-			int var30 = (Client.hintArrowY - var35.baseY << 7) + Client.field808 * 4096;
-			class228.worldToScreen(var35, var29, var30, var29, var30, Client.field538 * 2);
+			int var29 = Client.hintArrowSubX * 64 + (Client.hintArrowX - var35.baseX << 7);
+			int var30 = (Client.hintArrowY - var35.baseY << 7) + Client.hintArrowSubY * 4096;
+			class228.worldToScreen(var35, var29, var30, var29, var30, Client.hintArrowHeight * 2);
 			if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
 				class369.headIconHintSprites[0].drawTransBgAt(var0 + Client.viewportTempX - 12, Client.viewportTempY + var1 - 28);
 			}

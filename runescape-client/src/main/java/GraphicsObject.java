@@ -182,7 +182,8 @@ public class GraphicsObject extends Renderable {
 		descriptor = "(Ldm;ZLvg;I)V",
 		garbageValue = "1008801193"
 	)
-	static final void method2252(WorldView var0, boolean var1, PacketBuffer var2) {
+	@Export("updateNpcs")
+	static final void updateNpcs(WorldView var0, boolean var1, PacketBuffer var2) {
 		Client.field645 = 0;
 		Client.npcCount = 0;
 		var2.importIndex();
@@ -190,7 +191,7 @@ public class GraphicsObject extends Renderable {
 		int var4;
 		if (var3 < var0.npcCount) {
 			for (var4 = var3; var4 < var0.npcCount; ++var4) {
-				Client.npcIndices[++Client.field645 - 1] = var0.npcIndices[var4];
+				Client.field647[++Client.field645 - 1] = var0.npcIndices[var4];
 			}
 		}
 
@@ -216,7 +217,7 @@ public class GraphicsObject extends Renderable {
 					if (var16 == 0) {
 						var0.npcIndices[++var0.npcCount - 1] = var5;
 						var21.npcCycle = Client.cycle;
-						Client.field779[++Client.npcCount - 1] = var5;
+						Client.npcIndices[++Client.npcCount - 1] = var5;
 					} else if (var16 == 1) {
 						var0.npcIndices[++var0.npcCount - 1] = var5;
 						var21.npcCycle = Client.cycle;
@@ -224,7 +225,7 @@ public class GraphicsObject extends Renderable {
 						var21.method2921(var17, MoveSpeed.field3067);
 						var10 = var2.readBits(1);
 						if (var10 == 1) {
-							Client.field779[++Client.npcCount - 1] = var5;
+							Client.npcIndices[++Client.npcCount - 1] = var5;
 						}
 					} else if (var16 == 2) {
 						var0.npcIndices[++var0.npcCount - 1] = var5;
@@ -241,10 +242,10 @@ public class GraphicsObject extends Renderable {
 
 						var17 = var2.readBits(1);
 						if (var17 == 1) {
-							Client.field779[++Client.npcCount - 1] = var5;
+							Client.npcIndices[++Client.npcCount - 1] = var5;
 						}
 					} else if (var16 == 3) {
-						Client.npcIndices[++Client.field645 - 1] = var5;
+						Client.field647[++Client.field645 - 1] = var5;
 					}
 				}
 			}
@@ -309,7 +310,7 @@ public class GraphicsObject extends Renderable {
 
 				var13 = var2.readBits(1);
 				if (var13 == 1) {
-					Client.field779[++Client.npcCount - 1] = var5;
+					Client.npcIndices[++Client.npcCount - 1] = var5;
 				}
 
 				var14 = Client.defaultRotations[var2.readBits(3)];
@@ -328,7 +329,7 @@ public class GraphicsObject extends Renderable {
 			var2.exportIndex();
 
 			for (var3 = 0; var3 < Client.npcCount; ++var3) {
-				var4 = Client.field779[var3];
+				var4 = Client.npcIndices[var3];
 				NPC var15 = var0.npcs[var4];
 				var6 = var2.readUnsignedByte();
 				if ((var6 & 2) != 0) {
@@ -650,7 +651,7 @@ public class GraphicsObject extends Renderable {
 			}
 
 			for (var3 = 0; var3 < Client.field645; ++var3) {
-				var4 = Client.npcIndices[var3];
+				var4 = Client.field647[var3];
 				if (var0.npcs[var4].npcCycle != Client.cycle) {
 					var0.npcs[var4].definition = null;
 					var0.npcs[var4] = null;

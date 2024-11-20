@@ -194,7 +194,7 @@ public class Widget extends Node {
 		descriptor = "Lva;"
 	)
 	@Export("fillMode")
-	public class568 fillMode;
+	public FillMode fillMode;
 	@ObfuscatedName("cs")
 	@ObfuscatedGetter(
 		intValue = 1550474463
@@ -711,7 +711,7 @@ public class Widget extends Node {
 		this.mouseOverColor = 0;
 		this.mouseOverColor2 = 0;
 		this.fill = false;
-		this.fillMode = class568.SOLID;
+		this.fillMode = FillMode.SOLID;
 		this.transparencyTop = 0;
 		this.transparencyBot = 0;
 		this.lineWid = 1;
@@ -811,7 +811,7 @@ public class Widget extends Node {
 		this.mouseOverColor = 0;
 		this.mouseOverColor2 = 0;
 		this.fill = false;
-		this.fillMode = class568.SOLID;
+		this.fillMode = FillMode.SOLID;
 		this.transparencyTop = 0;
 		this.transparencyBot = 0;
 		this.lineWid = 1;
