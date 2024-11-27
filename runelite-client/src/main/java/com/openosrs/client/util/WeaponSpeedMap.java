@@ -1,4 +1,4 @@
-package net.runelite.client.util;
+package com.openosrs.client.util;
 
 import java.util.HashMap;
 import net.runelite.api.ItemID;
@@ -453,11 +453,11 @@ public class WeaponSpeedMap
 		SpeedMap.put(ItemID.TORAGS_HAMMERS_50, 5);
 		SpeedMap.put(ItemID.TORAGS_HAMMERS_75, 5);
 		SpeedMap.put(ItemID.TRAINING_SWORD, 4);
-		SpeedMap.put(ItemID.TRAILBLAZER_AXE, 5);
+		SpeedMap.put(ItemID.ECHO_AXE, 5);
 		SpeedMap.put(ItemID.TRAILBLAZER_BANNER, 5);
 		SpeedMap.put(ItemID.TRAILBLAZER_CANE, 5);
-		SpeedMap.put(ItemID.TRAILBLAZER_HARPOON, 5);
-		SpeedMap.put(ItemID.TRAILBLAZER_PICKAXE, 5);
+		SpeedMap.put(ItemID.ECHO_HARPOON, 5);
+		SpeedMap.put(ItemID.ECHO_PICKAXE, 5);
 		SpeedMap.put(ItemID.TROLLWEISS, 5);
 		SpeedMap.put(ItemID.TWISTED_BANNER, 5);
 		SpeedMap.put(ItemID.TZHAARKETEM, 5);

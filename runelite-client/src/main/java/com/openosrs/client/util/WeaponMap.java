@@ -485,15 +485,15 @@ public class WeaponMap
 		StyleMap.put(ItemID.TORAGS_HAMMERS_75, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAINING_SWORD, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_ADAMANT_TROPHY, WeaponStyle.MELEE);
-		StyleMap.put(ItemID.TRAILBLAZER_AXE, WeaponStyle.MELEE);
+		StyleMap.put(ItemID.ECHO_AXE, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_BANNER, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_BRONZE_TROPHY, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_CANE, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_DRAGON_TROPHY, WeaponStyle.MELEE);
-		StyleMap.put(ItemID.TRAILBLAZER_HARPOON, WeaponStyle.MELEE);
+		StyleMap.put(ItemID.ECHO_HARPOON, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_IRON_TROPHY, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_MITHRIL_TROPHY, WeaponStyle.MELEE);
-		StyleMap.put(ItemID.TRAILBLAZER_PICKAXE, WeaponStyle.MELEE);
+		StyleMap.put(ItemID.ECHO_PICKAXE, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_RUNE_TROPHY, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TRAILBLAZER_STEEL_TROPHY, WeaponStyle.MELEE);
 		StyleMap.put(ItemID.TROLLWEISS, WeaponStyle.MELEE);
