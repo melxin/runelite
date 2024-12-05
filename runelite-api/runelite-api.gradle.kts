@@ -44,6 +44,8 @@ dependencies {
 
     testImplementation(group = "junit", name = "junit", version = "4.12")
 
+    testAnnotationProcessor(group = "org.projectlombok", name = "lombok", version = ProjectVersions.lombokVersion)
+    testCompileOnly(group = "org.projectlombok", name = "lombok", version = ProjectVersions.lombokVersion)
 }
 
     tasks {
