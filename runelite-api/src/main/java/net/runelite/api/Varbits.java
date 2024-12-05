@@ -504,6 +504,11 @@ public final class Varbits
 	public static final int QUEST_THE_HAND_IN_THE_SAND = 1527;
 
 	/**
+	 * Dragon slayer 2 quest status
+	 */
+	public static final int QUEST_DS2 = 6104;
+
+	/**
 	 * 0 = Sir Bedivere
 	 * 1 = Sir Pelleas
 	 * 2 = Sir Tristram

@@ -56,7 +56,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "smoothBanding",
 		name = "Remove color banding",
-		description = "Smooths out the color banding that is present in the CPU renderer",
+		description = "Smooths out the color banding that is present in the CPU renderer.",
 		position = 2
 	)
 	default boolean smoothBanding()
@@ -67,7 +67,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "antiAliasingMode",
 		name = "Anti aliasing",
-		description = "Configures the anti-aliasing mode",
+		description = "Configures the anti-aliasing mode.",
 		position = 3
 	)
 	default AntiAliasingMode antiAliasingMode()
@@ -78,7 +78,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "uiScalingMode",
 		name = "UI scaling mode",
-		description = "Sampling function to use for the UI in stretched mode",
+		description = "Sampling function to use for the UI in stretched mode.",
 		position = 4
 	)
 	default UIScalingMode uiScalingMode()
@@ -92,7 +92,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "fogDepth",
 		name = "Fog depth",
-		description = "Distance from the scene edge the fog starts",
+		description = "Distance from the scene edge the fog starts.",
 		position = 5
 	)
 	default int fogDepth()
@@ -130,7 +130,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "colorBlindMode",
 		name = "Colorblindness correction",
-		description = "Adjusts colors to account for colorblindness",
+		description = "Adjusts colors to account for colorblindness.",
 		position = 8
 	)
 	default ColorBlindMode colorBlindMode()
@@ -141,7 +141,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "brightTextures",
 		name = "Bright textures",
-		description = "Use old texture lighting method which results in brighter game textures",
+		description = "Use old texture lighting method which results in brighter game textures.",
 		position = 9
 	)
 	default boolean brightTextures()
@@ -152,7 +152,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "unlockFps",
 		name = "Unlock FPS",
-		description = "Removes the 50 FPS cap for camera movement",
+		description = "Removes the 50 FPS cap for camera movement.",
 		position = 10
 	)
 	default boolean unlockFps()
@@ -170,7 +170,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "vsyncMode",
 		name = "Vsync mode",
-		description = "Method to synchronize frame rate with refresh rate",
+		description = "Method to synchronize frame rate with refresh rate.",
 		position = 11
 	)
 	default SyncMode syncMode()
@@ -181,7 +181,7 @@ public interface GpuPluginConfig extends Config
 	@ConfigItem(
 		keyName = "fpsTarget",
 		name = "FPS target",
-		description = "Target FPS when unlock FPS is enabled and Vsync mode is OFF",
+		description = "Target FPS when 'Unlock FPS' is enabled and 'Vsync mode' is off.",
 		position = 12
 	)
 	@Range(
