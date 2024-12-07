@@ -122,4 +122,11 @@ public abstract class RSDynamicObjectMixin implements RSDynamicObject
 			);
 		}
 	}
+
+	@Inject
+	@Override
+	public RSModel getModelZbuf()
+	{
+		return this.getModel();
+	}
 }
