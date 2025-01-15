@@ -16,7 +16,7 @@ public class ClientPacket implements class321 {
 	@ObfuscatedSignature(
 		descriptor = "Lmm;"
 	)
-	public static final ClientPacket field3365;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "Lmm;"
@@ -81,7 +81,7 @@ public class ClientPacket implements class321 {
 	@ObfuscatedSignature(
 		descriptor = "Lmm;"
 	)
-	public static final ClientPacket field3346;
+	public static final ClientPacket FRIEND_ADDUSER;
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "Lmm;"
@@ -528,7 +528,7 @@ public class ClientPacket implements class321 {
 
 	static {
 		OPNPCU = new ClientPacket(0, 11);
-		field3365 = new ClientPacket(1, 0);
+		FREECAM_EXIT = new ClientPacket(1, 0);
 		OPOBJ3 = new ClientPacket(2, 7);
 		LOGIN_TIMINGS = new ClientPacket(3, -1);
 		MOUSE_MOVE = new ClientPacket(4, -1);
@@ -541,7 +541,7 @@ public class ClientPacket implements class321 {
 		IF_BUTTON9 = new ClientPacket(11, 8);
 		REFLECTION_CHECK_REPLY = new ClientPacket(12, -1);
 		IF_BUTTON8 = new ClientPacket(13, 8);
-		field3346 = new ClientPacket(14, -1);
+		FRIEND_ADDUSER = new ClientPacket(14, -1);
 		IF_BUTTON6 = new ClientPacket(15, 8);
 		CHAT_SETFILTER = new ClientPacket(16, 3);
 		OPLOCE = new ClientPacket(17, 2);

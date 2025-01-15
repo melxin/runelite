@@ -25,7 +25,7 @@ public class class378 {
 		garbageValue = "175783721"
 	)
 	static final void method7636(String var0) {
-		PacketBufferNode var1 = ScriptEvent.getPacketBufferNode(ClientPacket.field3346, Client.packetWriter.isaacCipher);
+		PacketBufferNode var1 = ScriptEvent.getPacketBufferNode(ClientPacket.FRIEND_ADDUSER, Client.packetWriter.isaacCipher);
 		var1.packetBuffer.writeByte(MouseRecorder.stringCp1252NullTerminatedByteSize(var0));
 		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
 		Client.packetWriter.addNode(var1);

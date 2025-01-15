@@ -136,7 +136,7 @@ public class class380 {
 		garbageValue = "1128240649"
 	)
 	static void method7644() {
-		Client.packetWriter.addNode(ScriptEvent.getPacketBufferNode(ClientPacket.field3365, Client.packetWriter.isaacCipher));
+		Client.packetWriter.addNode(ScriptEvent.getPacketBufferNode(ClientPacket.FREECAM_EXIT, Client.packetWriter.isaacCipher));
 		Client.oculusOrbState = 0;
 	}
 }
