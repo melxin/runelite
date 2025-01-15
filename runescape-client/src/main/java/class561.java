@@ -3,79 +3,121 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vc")
+@ObfuscatedName("vx")
 public class class561 implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lvc;"
+		descriptor = "Lvx;"
 	)
-	public static final class561 field5523;
-	@ObfuscatedName("aw")
+	public static final class561 field5530;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lvc;"
+		descriptor = "Lvx;"
 	)
-	public static final class561 field5529;
-	@ObfuscatedName("at")
+	public static final class561 field5525;
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lvc;"
-	)
-	static final class561 field5525;
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lvc;"
+		descriptor = "Lvx;"
 	)
 	static final class561 field5526;
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lvc;"
+		descriptor = "Lvx;"
 	)
 	static final class561 field5527;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lvc;"
+		descriptor = "Lvx;"
 	)
-	static final class561 field5528;
-	@ObfuscatedName("aj")
+	static final class561 field5524;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lvx;"
+	)
+	static final class561 field5529;
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = -51509853
+		intValue = -42420991
 	)
-	final int field5524;
-	@ObfuscatedName("av")
+	static int field5532;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1600028359
+		intValue = 994383499
 	)
-	final int field5530;
+	final int field5528;
+	@ObfuscatedName("ax")
+	@ObfuscatedGetter(
+		intValue = -2080132907
+	)
+	final int field5531;
 
 	static {
-		field5523 = new class561(3, 0);
-		field5529 = new class561(1, 2);
-		field5525 = new class561(5, 5);
-		field5526 = new class561(4, 6);
-		field5527 = new class561(0, 7);
-		field5528 = new class561(2, 8);
+		field5530 = new class561(3, 0);
+		field5525 = new class561(0, 2);
+		field5526 = new class561(1, 5);
+		field5527 = new class561(2, 6);
+		field5524 = new class561(4, 7);
+		field5529 = new class561(5, 8);
 	}
 
 	class561(int var1, int var2) {
-		this.field5524 = var1;
-		this.field5530 = var2;
+		this.field5528 = var1;
+		this.field5531 = var2;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "2112067926"
+		garbageValue = "328272051"
 	)
-	public boolean method10412() {
-		return this == field5529;
+	public boolean method10576() {
+		return this == field5525;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1071289392"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field5530;
+		return this.field5531;
+	}
+
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;B)Ljava/lang/String;",
+		garbageValue = "-106"
+	)
+	public static String method10574(String var0) {
+		StringBuilder var1 = new StringBuilder(var0.length());
+		int var2 = 0;
+		int var3 = -1;
+
+		for (int var4 = 0; var4 < var0.length(); ++var4) {
+			char var5 = var0.charAt(var4);
+			if (var5 == '<') {
+				var1.append(var0.substring(var2, var4));
+				var3 = var4;
+			} else if (var5 == '>' && var3 != -1) {
+				String var6 = var0.substring(var3 + 1, var4);
+				var3 = -1;
+				if (var6.equals("lt")) {
+					var1.append("<");
+				} else if (var6.equals("gt")) {
+					var1.append(">");
+				} else if (var6.equals("br")) {
+					var1.append("\n");
+				}
+
+				var2 = var4 + 1;
+			}
+		}
+
+		if (var2 < var0.length()) {
+			var1.append(var0.substring(var2, var0.length()));
+		}
+
+		return var1.toString();
 	}
 }

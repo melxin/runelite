@@ -4,110 +4,121 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("da")
+@ObfuscatedName("du")
 @Implements("PendingSpawn")
 public final class PendingSpawn extends Node {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1423598727
+		intValue = -1826074693
 	)
 	@Export("plane")
 	int plane;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -514825559
+		intValue = -1092815759
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -1049010619
+		intValue = -1338651515
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1650497557
+		intValue = 826749675
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 1689167601
+		intValue = -394823857
 	)
 	@Export("objectId")
 	int objectId;
-	@ObfuscatedName("ac")
-	@ObfuscatedGetter(
-		intValue = 1153141933
-	)
-	int field1184;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = 1431760373
-	)
-	int field1185;
-	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		intValue = 915934251
-	)
-	int field1191;
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = -344500513
-	)
-	int field1187;
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1894077093
+		intValue = 256387703
 	)
-	int field1182;
-	@ObfuscatedName("af")
+	int field1184;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -539529437
+		intValue = 747731375
+	)
+	int field1179;
+	@ObfuscatedName("ax")
+	@ObfuscatedGetter(
+		intValue = 1755676369
+	)
+	int field1192;
+	@ObfuscatedName("at")
+	@ObfuscatedGetter(
+		intValue = 1335351009
+	)
+	int field1185;
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = 1025770941
+	)
+	int field1194;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -1300377589
 	)
 	int field1189;
-	@ObfuscatedName("al")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1945698097
+		intValue = -1299297955
 	)
-	int field1186;
-	@ObfuscatedName("ar")
+	int field1191;
+	@ObfuscatedName("af")
+	String[] field1193;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -1363012079
+		intValue = -2013521187
 	)
 	@Export("delay")
 	int delay;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 217571631
+		intValue = 1548016443
 	)
 	@Export("hitpoints")
 	int hitpoints;
 
 	PendingSpawn() {
-		this.field1186 = 31;
+		this.field1191 = 31;
 		this.delay = 0;
 		this.hitpoints = -1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "1107990270"
+		garbageValue = "-605399033"
 	)
-	void method2632(int var1) {
-		this.field1186 = var1;
+	void method2754(int var1) {
+		this.field1191 = var1;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "-97"
+		descriptor = "([Ljava/lang/String;I)V",
+		garbageValue = "-2023751041"
 	)
-	boolean method2633(int var1) {
+	void method2757(String[] var1) {
+		this.field1193 = var1;
+	}
+
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "-294999815"
+	)
+	boolean method2756(int var1) {
 		if (var1 >= 0 && var1 <= 4) {
-			return (this.field1186 & 1 << var1) != 0;
+			return (this.field1191 & 1 << var1) != 0;
 		} else {
 			return true;
 		}
@@ -115,39 +126,49 @@ public final class PendingSpawn extends Node {
 
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "([I[IIII)V",
-		garbageValue = "567551072"
+		descriptor = "(II)Z",
+		garbageValue = "1765665857"
 	)
-	public static void method2635(int[] var0, int[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			int var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			int var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
-			int var8 = var6 == Integer.MAX_VALUE ? 0 : 1;
+	boolean method2753(int var1) {
+		return this.field1193 != null && var1 >= 0 && var1 < this.field1193.length && this.field1193[var1] != null;
+	}
 
-			for (int var9 = var2; var9 < var3; ++var9) {
-				if (var0[var9] < (var9 & var8) + var6) {
-					int var10 = var0[var9];
-					var0[var9] = var0[var5];
-					var0[var5] = var10;
-					int var11 = var1[var9];
-					var1[var9] = var1[var5];
-					var1[var5++] = var11;
-				}
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(II)Ljava/lang/String;",
+		garbageValue = "-1743349630"
+	)
+	String method2766(int var1) {
+		return this.field1193 != null && var1 >= 0 && var1 < this.field1193.length ? this.field1193[var1] : null;
+	}
+
+	@ObfuscatedName("bs")
+	@ObfuscatedSignature(
+		descriptor = "(ILdm;ZI)I",
+		garbageValue = "2111659122"
+	)
+	static int method2755(int var0, Script var1, boolean var2) {
+		if (var0 == 6754) {
+			int var5 = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize];
+			NPCComposition var6 = FadeOutTask.getNpcDefinition(var5);
+			Interpreter.Interpreter_stringStack[++HealthBarConfig.Interpreter_stringStackSize - 1] = var6 != null ? var6.name : "";
+			return 1;
+		} else {
+			NPCComposition var3;
+			if (var0 == 6764) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var3 = FadeOutTask.getNpcDefinition(Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize]);
+				int var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.method5330(var4);
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.method5309(var4);
+				return 1;
+			} else if (var0 == 6765) {
+				var3 = FadeOutTask.getNpcDefinition(Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize]);
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3 != null ? var3.combatLevel : 0;
+				return 1;
+			} else {
+				return 2;
 			}
-
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			method2635(var0, var1, var2, var5 - 1);
-			method2635(var0, var1, var5 + 1, var3);
 		}
-
 	}
 }

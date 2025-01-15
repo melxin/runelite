@@ -3,55 +3,48 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gt")
+@ObfuscatedName("gp")
 public class class164 extends class150 {
-	@ObfuscatedName("ju")
-	@Export("regionLandArchives")
-	static byte[][] regionLandArchives;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = 1651897213
+	@ObfuscatedName("dt")
+	@ObfuscatedSignature(
+		descriptor = "Lvi;"
 	)
-	int field1779;
+	@Export("worldSelectLeftSprite")
+	static IndexedSprite worldSelectLeftSprite;
+	@ObfuscatedName("ay")
+	@ObfuscatedGetter(
+		intValue = -133326581
+	)
+	int field1776;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfd;"
+		descriptor = "Lfv;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfd;)V"
+		descriptor = "(Lfv;)V"
 	)
 	class164(class153 var1) {
 		this.this$0 = var1;
-		this.field1779 = -1;
+		this.field1776 = -1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;B)V",
-		garbageValue = "-83"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "-1355269794"
 	)
-	void vmethod3694(Buffer var1) {
-		this.field1779 = var1.readUnsignedShort();
+	void vmethod3879(Buffer var1) {
+		this.field1776 = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lgv;I)V",
-		garbageValue = "2002935935"
+		descriptor = "(Lgq;B)V",
+		garbageValue = "0"
 	)
-	void vmethod3695(ClanSettings var1) {
-		var1.method3544(this.field1779);
-	}
-
-	@ObfuscatedName("bs")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)I",
-		garbageValue = "-61"
-	)
-	@Export("stringCp1252NullTerminatedByteSize")
-	public static int stringCp1252NullTerminatedByteSize(String var0) {
-		return var0.length() + 1;
+	void vmethod3882(ClanSettings var1) {
+		var1.method3694(this.field1776);
 	}
 }

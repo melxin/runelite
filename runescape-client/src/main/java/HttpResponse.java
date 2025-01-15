@@ -1,5 +1,5 @@
-import java.awt.Image;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -11,62 +11,46 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ay")
+@ObfuscatedName("ai")
 @Implements("HttpResponse")
 public class HttpResponse {
-	@ObfuscatedName("ao")
-	@Export("SpriteBuffer_yOffsets")
-	static int[] SpriteBuffer_yOffsets;
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lvy;"
-	)
-	@Export("logoSprite")
-	static IndexedSprite logoSprite;
-	@ObfuscatedName("bp")
-	static Image field100;
-	@ObfuscatedName("gh")
+	@ObfuscatedName("jx")
+	@Export("regionLandArchives")
+	static byte[][] regionLandArchives;
+	@ObfuscatedName("se")
+	static boolean field91;
+	@ObfuscatedName("wb")
 	@ObfuscatedGetter(
-		intValue = 2121157151
+		intValue = -1716801803
 	)
-	static int field98;
-	@ObfuscatedName("ka")
-	@ObfuscatedSignature(
-		descriptor = "[Lvy;"
-	)
-	static IndexedSprite[] field101;
-	@ObfuscatedName("mi")
-	@ObfuscatedSignature(
-		descriptor = "Lcw;"
-	)
-	@Export("entity")
-	static Entity entity;
-	@ObfuscatedName("ab")
+	@Export("foundItemIdCount")
+	static int foundItemIdCount;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -1074900177
+		intValue = 1914974289
 	)
 	@Export("responseCode")
 	final int responseCode;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@Export("headerFields")
 	final String headerFields;
-	@ObfuscatedName("at")
-	final Map field96;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("az")
+	final Map field90;
+	@ObfuscatedName("ao")
 	@Export("responseBody")
 	final String responseBody;
 
 	HttpResponse(String var1) {
 		this.responseCode = 400;
 		this.headerFields = var1;
-		this.field96 = null;
+		this.field90 = null;
 		this.responseBody = "";
 	}
 
 	HttpResponse(HttpURLConnection var1) throws IOException {
 		this.responseCode = var1.getResponseCode();
 		this.headerFields = var1.getResponseMessage();
-		this.field96 = var1.getHeaderFields();
+		this.field90 = var1.getHeaderFields();
 		StringBuilder var2 = new StringBuilder();
 		InputStream var3 = this.responseCode >= 300 ? var1.getErrorStream() : var1.getInputStream();
 		if (var3 != null) {
@@ -84,73 +68,75 @@ public class HttpResponse {
 		this.responseBody = var2.toString();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "11"
+		descriptor = "(S)I",
+		garbageValue = "-16593"
 	)
 	@Export("getResponseCode")
 	public int getResponseCode() {
 		return this.responseCode;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "2094002613"
+		garbageValue = "-1561646912"
 	)
-	public String method273() {
+	public String method301() {
 		return this.headerFields;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(S)Ljava/util/Map;",
-		garbageValue = "8625"
+		descriptor = "(I)Ljava/util/Map;",
+		garbageValue = "1862700448"
 	)
 	@Export("getHeaderFields")
 	public Map getHeaderFields() {
-		return this.field96;
+		return this.field90;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1413368716"
+		garbageValue = "1539511432"
 	)
 	@Export("getResponseBody")
 	public String getResponseBody() {
 		return this.responseBody;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-369730497"
+		descriptor = "(Ljava/io/File;B)V",
+		garbageValue = "-38"
 	)
-	static final int method284(int var0, int var1) {
-		int var2 = var0 + var1 * 57;
-		var2 ^= var2 << 13;
-		int var3 = var2 * (var2 * var2 * 15731 + 789221) + 1376312589 & Integer.MAX_VALUE;
-		return var3 >> 19 & 255;
+	static void method308(File var0) {
+		FileSystem.FileSystem_cacheDir = var0;
+		if (!FileSystem.FileSystem_cacheDir.exists()) {
+			throw new RuntimeException("");
+		} else {
+			FileSystem.FileSystem_hasPermissions = true;
+		}
 	}
 
-	@ObfuscatedName("bz")
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(II)F",
+		garbageValue = "1253392583"
+	)
+	static final float method298(int var0) {
+		float var1 = 10075.0F - (float)var0;
+		return (var1 * 1.0075567F - 75.56675F) / var1;
+	}
+
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "-2055035174"
+		garbageValue = "643864803"
 	)
-	static int method270(int var0) {
-		return (int)((Math.log((double)var0) / Interpreter.field864 - 7.0D) * 256.0D);
-	}
-
-	@ObfuscatedName("ol")
-	@ObfuscatedSignature(
-		descriptor = "(Lvj;II)V",
-		garbageValue = "1808396095"
-	)
-	static void method283(Buffer var0, int var1) {
-		class27.method377(var0.array, var1);
-		class92.method2511(var0, var1);
+	public static int method307(int var0) {
+		return class360.Entity_unpackID(ViewportMouse.ViewportMouse_entityTags[var0]);
 	}
 }

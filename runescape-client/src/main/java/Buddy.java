@@ -4,24 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("si")
+@ObfuscatedName("su")
 @Implements("Buddy")
 public class Buddy extends User {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ko")
 	@ObfuscatedGetter(
-		intValue = -393183661
+		intValue = 130611919
+	)
+	@Export("cameraX")
+	static int cameraX;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = -609922555
 	)
 	@Export("world")
 	public int world;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1614084209
+		intValue = -1806970475
 	)
 	@Export("int2")
 	public int int2;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -607423937
+		intValue = 364975233
 	)
 	@Export("rank")
 	public int rank;
@@ -30,10 +36,10 @@ public class Buddy extends User {
 		this.world = -1;
 	}
 
-	@ObfuscatedName("bn")
+	@ObfuscatedName("bp")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "1979575164"
+		garbageValue = "391643508"
 	)
 	@Export("set")
 	void set(int var1, int var2) {
@@ -41,33 +47,23 @@ public class Buddy extends User {
 		this.int2 = var2;
 	}
 
-	@ObfuscatedName("bd")
+	@ObfuscatedName("bg")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1147534510"
+		descriptor = "(B)I",
+		garbageValue = "29"
 	)
 	@Export("getWorld")
 	public int getWorld() {
 		return this.world;
 	}
 
-	@ObfuscatedName("bf")
+	@ObfuscatedName("bc")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-905150932"
+		descriptor = "(B)Z",
+		garbageValue = "11"
 	)
 	@Export("hasWorld")
 	public boolean hasWorld() {
 		return this.world > 0;
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(IIIII)I",
-		garbageValue = "753967636"
-	)
-	static final int method9124(int var0, int var1, int var2, int var3) {
-		int var4 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var2 * 1024 / var3] >> 1;
-		return ((65536 - var4) * var0 >> 16) + (var4 * var1 >> 16);
 	}
 }

@@ -1,74 +1,67 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fl")
+@ObfuscatedName("fy")
 public class class155 extends class150 {
-	@ObfuscatedName("qj")
+	@ObfuscatedName("kl")
 	@ObfuscatedSignature(
-		descriptor = "Ltd;"
+		descriptor = "[Lvi;"
 	)
-	static class496 field1711;
-	@ObfuscatedName("ab")
+	@Export("mapSceneSprites")
+	static IndexedSprite[] mapSceneSprites;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -38860949
+		intValue = -1315825767
 	)
-	int field1708;
-	@ObfuscatedName("aw")
+	int field1703;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 665389735
+		intValue = -1080477081
 	)
-	int field1707;
-	@ObfuscatedName("at")
+	int field1705;
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -418972997
+		intValue = 131804473
 	)
-	int field1706;
-	@ObfuscatedName("ae")
+	int field1704;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 695939607
+		intValue = -321006807
 	)
-	int field1709;
+	int field1702;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfd;"
+		descriptor = "Lfv;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfd;)V"
+		descriptor = "(Lfv;)V"
 	)
 	class155(class153 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;B)V",
-		garbageValue = "-83"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "-1355269794"
 	)
-	void vmethod3694(Buffer var1) {
-		this.field1708 = var1.readInt();
-		this.field1709 = var1.readInt();
-		this.field1707 = var1.readUnsignedByte();
-		this.field1706 = var1.readUnsignedByte();
+	void vmethod3879(Buffer var1) {
+		this.field1703 = var1.readInt();
+		this.field1702 = var1.readInt();
+		this.field1705 = var1.readUnsignedByte();
+		this.field1704 = var1.readUnsignedByte();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lgv;I)V",
-		garbageValue = "2002935935"
+		descriptor = "(Lgq;B)V",
+		garbageValue = "0"
 	)
-	void vmethod3695(ClanSettings var1) {
-		var1.method3560(this.field1708, this.field1709, this.field1707, this.field1706);
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-973356497"
-	)
-	static final int method3495() {
-		return ViewportMouse.ViewportMouse_x;
+	void vmethod3882(ClanSettings var1) {
+		var1.method3731(this.field1703, this.field1702, this.field1705, this.field1704);
 	}
 }

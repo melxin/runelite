@@ -4,70 +4,79 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fy")
+@ObfuscatedName("fk")
 @Implements("LoginPacket")
 public class LoginPacket extends class150 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ad")
+	@Export("Interpreter_stringLocals")
+	static String[] Interpreter_stringLocals;
+	@ObfuscatedName("mz")
 	@ObfuscatedGetter(
-		longValue = -7797161101180981703L
+		intValue = 851312265
 	)
-	long field1669;
-	@ObfuscatedName("aw")
+	static int field1676;
+	@ObfuscatedName("ay")
+	@ObfuscatedGetter(
+		longValue = -7198038692640291871L
+	)
+	long field1673;
+	@ObfuscatedName("ah")
 	String field1672;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfd;"
+		descriptor = "Lfv;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfd;)V"
+		descriptor = "(Lfv;)V"
 	)
 	LoginPacket(class153 var1) {
 		this.this$0 = var1;
-		this.field1669 = -1L;
+		this.field1673 = -1L;
 		this.field1672 = null;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;B)V",
-		garbageValue = "-83"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "-1355269794"
 	)
-	void vmethod3694(Buffer var1) {
+	void vmethod3879(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
 			--var1.offset;
-			this.field1669 = var1.readLong();
+			this.field1673 = var1.readLong();
 		}
 
 		this.field1672 = var1.readStringCp1252NullTerminatedOrNull();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lgv;I)V",
-		garbageValue = "2002935935"
+		descriptor = "(Lgq;B)V",
+		garbageValue = "0"
 	)
-	void vmethod3695(ClanSettings var1) {
-		var1.method3540(this.field1669, this.field1672, 0);
+	void vmethod3882(ClanSettings var1) {
+		var1.method3691(this.field1673, this.field1672, 0);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-317497481"
+		descriptor = "(IB)I",
+		garbageValue = "37"
 	)
-	@Export("isWorldMapEvent")
-	public static boolean isWorldMapEvent(int var0) {
-		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
+	public static int method3577(int var0) {
+		long var2 = ViewportMouse.ViewportMouse_entityTags[var0];
+		int var1 = (int)(var2 >>> 7 & 127L);
+		return var1;
 	}
 
-	@ObfuscatedName("pi")
+	@ObfuscatedName("bc")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-206110438"
+		descriptor = "(IB)I",
+		garbageValue = "98"
 	)
-	static void method3448(int var0) {
-		Client.oculusOrbState = var0;
+	static int method3575(int var0) {
+		return (int)Math.pow(2.0D, (double)(7.0F + (float)var0 / 256.0F));
 	}
 }

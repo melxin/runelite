@@ -5,50 +5,50 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("tl")
 public enum class495 implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "Ltl;"
 	)
-	field5121(0, 1),
-	@ObfuscatedName("aw")
+	field5119(2, 1),
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "Ltl;"
 	)
-	field5117(2, 2),
-	@ObfuscatedName("at")
+	field5125(0, 2),
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "Ltl;"
 	)
-	field5119(3, 3),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Ltl;"
-	)
-	field5118(1, 10);
-
+	field5121(3, 3),
 	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = 1610172327
+	@ObfuscatedSignature(
+		descriptor = "Ltl;"
 	)
-	final int field5120;
-	@ObfuscatedName("ac")
+	field5122(1, 10);
+
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -1461422635
+		intValue = 1090014637
 	)
-	final int field5116;
+	final int field5123;
+	@ObfuscatedName("an")
+	@ObfuscatedGetter(
+		intValue = 1936807073
+	)
+	final int field5124;
 
 	class495(int var3, int var4) {
-		this.field5120 = var3;
-		this.field5116 = var4;
+		this.field5123 = var3;
+		this.field5124 = var4;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1071289392"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field5116;
+		return this.field5124;
 	}
 }

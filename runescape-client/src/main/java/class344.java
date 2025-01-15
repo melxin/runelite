@@ -1,216 +1,431 @@
 import java.util.Comparator;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("nr")
+@ObfuscatedName("nt")
 public class class344 implements Comparator {
 	class344() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lmi;Lmi;B)I",
-		garbageValue = "113"
+		descriptor = "(Lmj;Lmj;S)I",
+		garbageValue = "2602"
 	)
-	int method6784(class337 var1, class337 var2) {
-		return var1.field3688 - var2.field3688;
+	int method6935(class337 var1, class337 var2) {
+		return var1.field3689 - var2.field3689;
+	}
+
+	public int compare(Object var1, Object var2) {
+		return this.method6935((class337)var1, (class337)var2);
 	}
 
 	public boolean equals(Object var1) {
 		return super.equals(var1);
 	}
 
-	public int compare(Object var1, Object var2) {
-		return this.method6784((class337)var1, (class337)var2);
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "([BI)Lld;",
+		garbageValue = "-185429957"
+	)
+	static WorldMapSprite method6934(byte[] var0) {
+		return var0 == null ? new WorldMapSprite() : new WorldMapSprite(GrandExchangeOfferNameComparator.readSpritePixelsFromBytes(var0).pixels);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lfm;FB)F",
-		garbageValue = "4"
+		descriptor = "(Lvy;Ljava/lang/String;I)I",
+		garbageValue = "2132988122"
 	)
-	static float method6792(class137 var0, float var1) {
-		if (var0 != null && var0.method3335() != 0) {
-			if (var1 < (float)var0.field1574[0].field1525) {
-				return var0.field1572 == class135.field1559 ? var0.field1574[0].field1528 : class154.method3485(var0, var1, true);
-			} else if (var1 > (float)var0.field1574[var0.method3335() - 1].field1525) {
-				return var0.field1573 == class135.field1559 ? var0.field1574[var0.method3335() - 1].field1528 : class154.method3485(var0, var1, false);
-			} else if (var0.field1589) {
-				return var0.field1574[0].field1528;
+	public static int method6942(Buffer var0, String var1) {
+		int var2 = var0.offset;
+		int var4 = var1.length();
+		byte[] var5 = new byte[var4];
+
+		for (int var6 = 0; var6 < var4; ++var6) {
+			char var7 = var1.charAt(var6);
+			if (var7 > 0 && var7 < 128 || var7 >= 160 && var7 <= 255) {
+				var5[var6] = (byte)var7;
+			} else if (var7 == 8364) {
+				var5[var6] = -128;
+			} else if (var7 == 8218) {
+				var5[var6] = -126;
+			} else if (var7 == 402) {
+				var5[var6] = -125;
+			} else if (var7 == 8222) {
+				var5[var6] = -124;
+			} else if (var7 == 8230) {
+				var5[var6] = -123;
+			} else if (var7 == 8224) {
+				var5[var6] = -122;
+			} else if (var7 == 8225) {
+				var5[var6] = -121;
+			} else if (var7 == 710) {
+				var5[var6] = -120;
+			} else if (var7 == 8240) {
+				var5[var6] = -119;
+			} else if (var7 == 352) {
+				var5[var6] = -118;
+			} else if (var7 == 8249) {
+				var5[var6] = -117;
+			} else if (var7 == 338) {
+				var5[var6] = -116;
+			} else if (var7 == 381) {
+				var5[var6] = -114;
+			} else if (var7 == 8216) {
+				var5[var6] = -111;
+			} else if (var7 == 8217) {
+				var5[var6] = -110;
+			} else if (var7 == 8220) {
+				var5[var6] = -109;
+			} else if (var7 == 8221) {
+				var5[var6] = -108;
+			} else if (var7 == 8226) {
+				var5[var6] = -107;
+			} else if (var7 == 8211) {
+				var5[var6] = -106;
+			} else if (var7 == 8212) {
+				var5[var6] = -105;
+			} else if (var7 == 732) {
+				var5[var6] = -104;
+			} else if (var7 == 8482) {
+				var5[var6] = -103;
+			} else if (var7 == 353) {
+				var5[var6] = -102;
+			} else if (var7 == 8250) {
+				var5[var6] = -101;
+			} else if (var7 == 339) {
+				var5[var6] = -100;
+			} else if (var7 == 382) {
+				var5[var6] = -98;
+			} else if (var7 == 376) {
+				var5[var6] = -97;
 			} else {
-				class132 var2 = var0.method3326(var1);
-				boolean var3 = false;
-				boolean var4 = false;
-				if (var2 == null) {
-					return 0.0F;
-				} else {
-					if (0.0F == var2.field1524 && var2.field1529 == 0.0F) {
-						var3 = true;
-					} else if (var2.field1524 == Float.MAX_VALUE && var2.field1529 == Float.MAX_VALUE) {
-						var4 = true;
-					} else if (var2.field1530 != null) {
-						if (var0.field1586) {
-							float var5 = (float)var2.field1525;
-							float var9 = var2.field1528;
-							float var6 = 0.33333334F * var2.field1524 + var5;
-							float var10 = 0.33333334F * var2.field1529 + var9;
-							float var8 = (float)var2.field1530.field1525;
-							float var12 = var2.field1530.field1528;
-							float var7 = var8 - 0.33333334F * var2.field1530.field1526;
-							float var11 = var12 - 0.33333334F * var2.field1530.field1527;
-							float var14;
-							float var15;
-							float var16;
-							float var17;
-							float var18;
-							float var19;
-							if (var0.field1571) {
-								var15 = var10;
-								var16 = var11;
-								if (var0 != null) {
-									var17 = var8 - var5;
-									if (0.0F != var17) {
-										var18 = var6 - var5;
-										var19 = var7 - var5;
-										float[] var29 = new float[]{var18 / var17, var19 / var17};
-										var0.field1570 = 0.33333334F == var29[0] && 0.6666667F == var29[1];
-										float var21 = var29[0];
-										float var22 = var29[1];
-										if (var29[0] < 0.0F) {
-											var29[0] = 0.0F;
-										}
+				var5[var6] = 63;
+			}
+		}
 
-										if (var29[1] > 1.0F) {
-											var29[1] = 1.0F;
-										}
+		var0.writeSmartByteShort(var5.length);
+		var0.offset += class364.huffman.compress(var5, 0, var5.length, var0.array, var0.offset);
+		return var0.offset - var2;
+	}
 
-										float var23;
-										if (var29[0] > 1.0F || var29[1] < -1.0F) {
-											var29[1] = 1.0F - var29[1];
-											if (var29[0] < 0.0F) {
-												var29[0] = 0.0F;
-											}
-
-											if (var29[1] < 0.0F) {
-												var29[1] = 0.0F;
-											}
-
-											if (var29[0] > 1.0F || var29[1] > 1.0F) {
-												var23 = 1.0F + var29[0] * (var29[0] - 2.0F + var29[1]) + (var29[1] - 2.0F) * var29[1];
-												if (var23 + class133.field1535 > 0.0F) {
-													class146.method3435(var29);
-												}
-											}
-
-											var29[1] = 1.0F - var29[1];
-										}
-
-										if (var29[0] != var21) {
-											float var10000 = var5 + var29[0] * var17;
-											if (0.0F != var21) {
-												var15 = (var10 - var9) * var29[0] / var21 + var9;
-											}
-										}
-
-										if (var29[1] != var22) {
-											var14 = var17 * var29[1] + var5;
-											if (var22 != 1.0F) {
-												var16 = var12 - (1.0F - var29[1]) * (var12 - var11) / (1.0F - var22);
-											}
-										}
-
-										var0.field1576 = var5;
-										var0.field1578 = var8;
-										var23 = var29[0];
-										float var24 = var29[1];
-										float var25 = var23 - 0.0F;
-										float var26 = var24 - var23;
-										float var27 = 1.0F - var24;
-										float var28 = var26 - var25;
-										var0.field1588 = var27 - var26 - var28;
-										var0.field1580 = var28 + var28 + var28;
-										var0.field1579 = var25 + var25 + var25;
-										var0.field1587 = 0.0F;
-										var25 = var15 - var9;
-										var26 = var16 - var15;
-										var27 = var12 - var16;
-										var28 = var26 - var25;
-										var0.field1585 = var27 - var26 - var28;
-										var0.field1584 = var28 + var28 + var28;
-										var0.field1583 = var25 + var25 + var25;
-										var0.field1582 = var9;
-									}
-								}
-							} else if (var0 != null) {
-								var0.field1576 = var5;
-								float var13 = var8 - var5;
-								var14 = var12 - var9;
-								var15 = var6 - var5;
-								var16 = 0.0F;
-								var17 = 0.0F;
-								if (var15 != 0.0F) {
-									var16 = (var10 - var9) / var15;
-								}
-
-								var15 = var8 - var7;
-								if (var15 != 0.0F) {
-									var17 = (var12 - var11) / var15;
-								}
-
-								var18 = 1.0F / (var13 * var13);
-								var19 = var16 * var13;
-								float var20 = var13 * var17;
-								var0.field1587 = var18 * (var20 + var19 - var14 - var14) / var13;
-								var0.field1579 = var18 * (var14 + var14 + var14 - var19 - var19 - var20);
-								var0.field1580 = var16;
-								var0.field1588 = var9;
-							}
-
-							var0.field1586 = false;
-						}
-					} else {
-						var3 = true;
-					}
-
-					if (var3) {
-						return var2.field1528;
-					} else if (var4) {
-						return (float)var2.field1525 != var1 && var2.field1530 != null ? var2.field1530.field1528 : var2.field1528;
-					} else {
-						return var0.field1571 ? GameEngine.method637(var0, var1) : AbstractByteArrayCopier.method7435(var0, var1);
-					}
-				}
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(IIII)D",
+		garbageValue = "791398229"
+	)
+	static double method6945(int var0, int var1, int var2) {
+		double var3 = var1 > 0 ? (double)Math.max(0.0F, Math.min(1.0F, (float)var0 / (float)var1)) : 1.0D;
+		if (var3 > 0.0D && var3 < 1.0D) {
+			double var5;
+			double var7;
+			switch(var2) {
+			case 0:
+				return var3;
+			case 1:
+				return 1.0D - Math.cos(var3 * 3.141592653589793D / 2.0D);
+			case 2:
+				return Math.sin(3.141592653589793D * var3 / 2.0D);
+			case 3:
+				return -(Math.cos(3.141592653589793D * var3) - 1.0D) / 2.0D;
+			case 4:
+				return var3 * var3;
+			case 5:
+				return 1.0D - (1.0D - var3) * (1.0D - var3);
+			case 6:
+				return var3 < 0.5D ? var3 * 2.0D * var3 : 1.0D - Math.pow(-2.0D * var3 + 2.0D, 2.0D) / 2.0D;
+			case 7:
+				return var3 * var3 * var3;
+			case 8:
+				return 1.0D - Math.pow(1.0D - var3, 3.0D);
+			case 9:
+				return var3 < 0.5D ? var3 * 4.0D * var3 * var3 : 1.0D - Math.pow(var3 * -2.0D + 2.0D, 3.0D) / 2.0D;
+			case 10:
+				return var3 * var3 * var3 * var3;
+			case 11:
+				return 1.0D - Math.pow(1.0D - var3, 4.0D);
+			case 12:
+				return var3 < 0.5D ? var3 * var3 * 8.0D * var3 * var3 : 1.0D - Math.pow(2.0D + var3 * -2.0D, 4.0D) / 2.0D;
+			case 13:
+				return var3 * var3 * var3 * var3 * var3;
+			case 14:
+				return 1.0D - Math.pow(1.0D - var3, 5.0D);
+			case 15:
+				return var3 < 0.5D ? var3 * 8.0D * var3 * var3 * var3 * var3 : 1.0D - Math.pow(2.0D + -2.0D * var3, 5.0D) / 2.0D;
+			case 16:
+				return Math.pow(2.0D, var3 * 10.0D - 10.0D);
+			case 17:
+				return 1.0D - Math.pow(2.0D, -10.0D * var3);
+			case 18:
+				return var3 < 0.5D ? Math.pow(2.0D, 10.0D + 20.0D * var3) / 2.0D : (2.0D - Math.pow(2.0D, -20.0D * var3 + 10.0D)) / 2.0D;
+			case 19:
+				return 1.0D - Math.sqrt(1.0D - Math.pow(var3, 2.0D));
+			case 20:
+				return Math.sqrt(1.0D - Math.pow(var3 - 1.0D, 2.0D));
+			case 21:
+				return var3 < 0.5D ? (1.0D - Math.sqrt(1.0D - Math.pow(var3 * 2.0D, 2.0D))) / 2.0D : (Math.sqrt(1.0D - Math.pow(var3 * -2.0D + 2.0D, 2.0D)) + 1.0D) / 2.0D;
+			case 22:
+				var5 = 1.70158D;
+				var7 = 2.70158D;
+				return var3 * 2.70158D * var3 * var3 - var3 * 1.70158D * var3;
+			case 23:
+				var5 = 1.70158D;
+				var7 = 2.70158D;
+				return 1.0D + 2.70158D * Math.pow(var3 - 1.0D, 3.0D) + 1.70158D * Math.pow(var3 - 1.0D, 2.0D);
+			case 24:
+				var5 = 1.70158D;
+				var7 = 2.5949095D;
+				return var3 < 0.5D ? Math.pow(2.0D * var3, 2.0D) * (var3 * 7.189819D - 2.5949095D) / 2.0D : (Math.pow(2.0D * var3 - 2.0D, 2.0D) * ((var3 * 2.0D - 2.0D) * 3.5949095D + 2.5949095D) + 2.0D) / 2.0D;
+			case 25:
+				var5 = 2.0943951023931953D;
+				return -Math.pow(2.0D, var3 * 10.0D - 10.0D) * Math.sin(2.0943951023931953D * (10.0D * var3 - 10.75D));
+			case 26:
+				var5 = 2.0943951023931953D;
+				return Math.pow(2.0D, -10.0D * var3) * Math.sin((10.0D * var3 - 0.75D) * 2.0943951023931953D) + 1.0D;
+			case 27:
+				var5 = 1.3962634015954636D;
+				var7 = Math.sin((20.0D * var3 - 11.125D) * 1.3962634015954636D);
+				return var3 < 0.5D ? -(Math.pow(2.0D, var3 * 20.0D - 10.0D) * var7) / 2.0D : Math.pow(2.0D, -20.0D * var3 + 10.0D) * var7 / 2.0D + 1.0D;
+			default:
+				return var3;
 			}
 		} else {
-			return 0.0F;
+			return var3 <= 0.0D ? 0.0D : 1.0D;
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("bz")
 	@ObfuscatedSignature(
-		descriptor = "([BIIB)Ljava/lang/String;",
-		garbageValue = "-1"
+		descriptor = "(ILdm;ZI)I",
+		garbageValue = "-140887058"
 	)
-	public static String method6790(byte[] var0, int var1, int var2) {
-		StringBuilder var3 = new StringBuilder();
-
-		for (int var4 = var1; var4 < var2 + var1; var4 += 3) {
-			int var5 = var0[var4] & 255;
-			var3.append(class418.field4728[var5 >>> 2]);
-			if (var4 < var2 - 1) {
-				int var6 = var0[var4 + 1] & 255;
-				var3.append(class418.field4728[(var5 & 3) << 4 | var6 >>> 4]);
-				if (var4 < var2 - 2) {
-					int var7 = var0[var4 + 2] & 255;
-					var3.append(class418.field4728[(var6 & 15) << 2 | var7 >>> 6]).append(class418.field4728[var7 & 63]);
+	static int method6944(int var0, Script var1, boolean var2) {
+		int var4;
+		int var9;
+		if (var0 == ScriptOpcodes.ADD) {
+			ScriptFrame.Interpreter_intStackSize -= 2;
+			var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var4 + var9;
+			return 1;
+		} else if (var0 == ScriptOpcodes.SUB) {
+			ScriptFrame.Interpreter_intStackSize -= 2;
+			var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 - var4;
+			return 1;
+		} else if (var0 == ScriptOpcodes.MULTIPLY) {
+			ScriptFrame.Interpreter_intStackSize -= 2;
+			var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 * var4;
+			return 1;
+		} else if (var0 == ScriptOpcodes.DIV) {
+			ScriptFrame.Interpreter_intStackSize -= 2;
+			var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 / var4;
+			return 1;
+		} else if (var0 == ScriptOpcodes.RANDOM) {
+			var9 = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (int)(Math.random() * (double)var9);
+			return 1;
+		} else if (var0 == ScriptOpcodes.RANDOMINC) {
+			var9 = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (int)(Math.random() * (double)(var9 + 1));
+			return 1;
+		} else {
+			int var5;
+			int var6;
+			int var7;
+			if (var0 == ScriptOpcodes.INTERPOLATE) {
+				ScriptFrame.Interpreter_intStackSize -= 5;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
+				var6 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 3];
+				var7 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 4];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 + (var7 - var5) * (var4 - var9) / (var6 - var5);
+				return 1;
+			} else if (var0 == ScriptOpcodes.ADDPERCENT) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 + var4 * var9 / 100;
+				return 1;
+			} else if (var0 == ScriptOpcodes.SETBIT) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 | 1 << var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.CLEARBIT) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 & -1 - (1 << var4);
+				return 1;
+			} else if (var0 == ScriptOpcodes.TESTBIT) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (var9 & 1 << var4) != 0 ? 1 : 0;
+				return 1;
+			} else if (var0 == ScriptOpcodes.MOD) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 % var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.POW) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				if (var9 == 0) {
+					Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = 0;
 				} else {
-					var3.append(class418.field4728[(var6 & 15) << 2]).append("=");
+					Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (int)Math.pow((double)var9, (double)var4);
 				}
+
+				return 1;
+			} else if (var0 == ScriptOpcodes.INVPOW) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				if (var9 == 0) {
+					Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = 0;
+					return 1;
+				} else {
+					switch(var4) {
+					case 0:
+						Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Integer.MAX_VALUE;
+						break;
+					case 1:
+						Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9;
+						break;
+					case 2:
+						Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (int)Math.sqrt((double)var9);
+						break;
+					case 3:
+						Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (int)Math.cbrt((double)var9);
+						break;
+					case 4:
+						Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (int)Math.sqrt(Math.sqrt((double)var9));
+						break;
+					default:
+						Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (int)Math.pow((double)var9, 1.0D / (double)var4);
+					}
+
+					return 1;
+				}
+			} else if (var0 == ScriptOpcodes.AND) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 & var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.OR) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 | var4;
+				return 1;
+			} else if (var0 == 4016) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 < var4 ? var9 : var4;
+				return 1;
+			} else if (var0 == 4017) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 > var4 ? var9 : var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.SCALE) {
+				ScriptFrame.Interpreter_intStackSize -= 3;
+				long var10 = (long)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				long var12 = (long)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				long var14 = (long)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = (int)(var14 * var10 / var12);
+				return 1;
+			} else if (var0 == ScriptOpcodes.BITCOUNT) {
+				var9 = BoundaryObject.method4809(Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize]);
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9;
+				return 1;
+			} else if (var0 == ScriptOpcodes.TOGGLEBIT) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 ^ 1 << var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.SETBIT_RANGE) {
+				ScriptFrame.Interpreter_intStackSize -= 3;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = class458.method8966(var9, var4, var5);
+				return 1;
+			} else if (var0 == ScriptOpcodes.CLEARBIT_RANGE) {
+				ScriptFrame.Interpreter_intStackSize -= 3;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = FaceNormal.method4463(var9, var4, var5);
+				return 1;
+			} else if (var0 == ScriptOpcodes.GETBIT_RANGE) {
+				ScriptFrame.Interpreter_intStackSize -= 3;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
+				var6 = 31 - var5;
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 << var6 >>> var4 + var6;
+				return 1;
+			} else if (var0 == 4030) {
+				ScriptFrame.Interpreter_intStackSize -= 4;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
+				var6 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 3];
+				var9 = FaceNormal.method4463(var9, var5, var6);
+				var7 = ItemComposition.method5643(var6 - var5 + 1);
+				if (var4 > var7) {
+					var4 = var7;
+				}
+
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var9 | var4 << var5;
+				return 1;
+			} else if (var0 == 4032) {
+				Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize - 1] = WorldMapData_1.method6279(Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize - 1]);
+				return 1;
+			} else if (var0 == 4033) {
+				Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize - 1] = HttpRequest.method100(Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize - 1]);
+				return 1;
+			} else if (var0 == 4034) {
+				ScriptFrame.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
+				var5 = class251.method5360(var9, var4);
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var5;
+				return 1;
+			} else if (var0 == 4035) {
+				Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize - 1] = Math.abs(Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize - 1]);
+				return 1;
+			} else if (var0 == 4036) {
+				String var3 = Interpreter.Interpreter_stringStack[--HealthBarConfig.Interpreter_stringStackSize];
+				var4 = -1;
+				if (class426.isNumber(var3)) {
+					var4 = class278.method5972(var3);
+				}
+
+				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var4;
+				return 1;
 			} else {
-				var3.append(class418.field4728[(var5 & 3) << 4]).append("==");
+				return 2;
 			}
 		}
-
-		return var3.toString();
 	}
 }

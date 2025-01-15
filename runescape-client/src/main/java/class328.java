@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TimeZone;
 import net.runelite.mapping.Export;
@@ -6,49 +5,106 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mz")
+@ObfuscatedName("mq")
 public final class class328 {
+	@ObfuscatedName("az")
+	static final HashMap field3601;
 	@ObfuscatedName("at")
-	static final HashMap field3598;
-	@ObfuscatedName("kb")
 	@ObfuscatedGetter(
-		intValue = 512496917
+		intValue = 656922949
 	)
-	@Export("cameraZ")
-	static int cameraZ;
-	@ObfuscatedName("uj")
-	@ObfuscatedGetter(
-		intValue = 1175273517
+	public static int field3605;
+	@ObfuscatedName("tk")
+	@ObfuscatedSignature(
+		descriptor = "Lbq;"
 	)
-	static int field3599;
+	@Export("pcmPlayer1")
+	static PcmPlayer pcmPlayer1;
+	@ObfuscatedName("vq")
+	@ObfuscatedSignature(
+		descriptor = "Lpl;"
+	)
+	@Export("grandExchangeEvents")
+	static GrandExchangeEvents grandExchangeEvents;
 
 	static {
-		field3598 = new HashMap();
-		TimeZone var0;
-		synchronized(field3598) {
-			TimeZone var2 = (TimeZone)field3598.get("Europe/London");
-			if (var2 == null) {
-				var2 = TimeZone.getTimeZone("Europe/London");
-				field3598.put("Europe/London", var2);
-			}
-
-			var0 = var2;
-		}
-
-		java.util.Calendar.getInstance(var0);
+		field3601 = new HashMap();
+		java.util.Calendar.getInstance(method6644("Europe/London"));
 	}
 
-	@ObfuscatedName("im")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-1744438761"
+		descriptor = "(Ljava/lang/String;I)Ljava/util/TimeZone;",
+		garbageValue = "1996536510"
 	)
-	static void method6475(int var0, int var1) {
-		if (SecureUrlRequester.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
-			ArrayList var2 = new ArrayList();
-			var2.add(new MusicSong(class419.field4733, var0, 0, SecureUrlRequester.clientPreferences.getMusicVolume(), false));
-			UrlRequester.method3175(var2, 0, 0, 0, 0, true);
-			Client.playingJingle = true;
+	static TimeZone method6644(String var0) {
+		synchronized(field3601) {
+			TimeZone var2 = (TimeZone)field3601.get(var0);
+			if (var2 == null) {
+				var2 = TimeZone.getTimeZone(var0);
+				field3601.put(var0, var2);
+			}
+
+			return var2;
+		}
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lct;",
+		garbageValue = "-61851399"
+	)
+	@Export("Messages_getMessage")
+	static Message Messages_getMessage(int var0) {
+		return (Message)Messages.Messages_hashTable.get((long)var0);
+	}
+
+	@ObfuscatedName("ig")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;ZI)V",
+		garbageValue = "-571040366"
+	)
+	@Export("drawLoadingMessage")
+	static final void drawLoadingMessage(String var0, boolean var1) {
+		if (Client.showLoadingMessages) {
+			byte var2 = 4;
+			int var3 = var2 + 6;
+			int var4 = var2 + 6;
+			int var5 = HealthBarUpdate.fontPlain12.lineWidth(var0, 250);
+			int var6 = HealthBarUpdate.fontPlain12.lineCount(var0, 250) * 13;
+			Rasterizer2D.Rasterizer2D_fillRectangle(var3 - var2, var4 - var2, var2 + var2 + var5, var2 + var6 + var2, 0);
+			Rasterizer2D.Rasterizer2D_drawRectangle(var3 - var2, var4 - var2, var2 + var2 + var5, var6 + var2 + var2, 16777215);
+			HealthBarUpdate.fontPlain12.drawLines(var0, var3, var4, var5, var6, 16777215, -1, 1, 1, 0);
+			int var7 = var3 - var2;
+			int var8 = var4 - var2;
+			int var9 = var2 + var5 + var2;
+			int var10 = var2 + var6 + var2;
+
+			for (int var11 = 0; var11 < Client.rootWidgetCount; ++var11) {
+				if (Client.rootWidgetWidths[var11] + Client.rootWidgetXs[var11] > var7 && Client.rootWidgetXs[var11] < var7 + var9 && Client.rootWidgetHeights[var11] + Client.rootWidgetYs[var11] > var8 && Client.rootWidgetYs[var11] < var8 + var10) {
+					Client.validRootWidgets[var11] = true;
+				}
+			}
+
+			if (var1) {
+				class6.rasterProvider.drawFull(0, 0);
+			} else {
+				FadeOutTask.method8847(var3, var4, var5, var6);
+			}
+
+		}
+	}
+
+	@ObfuscatedName("nl")
+	@ObfuscatedSignature(
+		descriptor = "(S)V",
+		garbageValue = "-5805"
+	)
+	@Export("FriendSystem_invalidateIgnoreds")
+	static final void FriendSystem_invalidateIgnoreds() {
+		HttpContentType.method9544();
+		if (WorldMapLabelSize.friendsChat != null) {
+			WorldMapLabelSize.friendsChat.invalidateIgnoreds();
 		}
 
 	}

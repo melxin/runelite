@@ -1,62 +1,50 @@
 import java.util.Iterator;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rf")
+@ObfuscatedName("rw")
 public class class450 extends SongTask {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lgc;"
+		descriptor = "Lpq;"
 	)
-	static ClanChannel field4885;
-	@ObfuscatedName("fo")
+	AbstractArchive field4875;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Loa;"
+		descriptor = "Lpq;"
 	)
-	@Export("archive12")
-	static Archive archive12;
-	@ObfuscatedName("ab")
+	AbstractArchive field4874;
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpq;"
 	)
-	AbstractArchive field4886;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lpi;"
-	)
-	AbstractArchive field4888;
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lpi;"
-	)
-	AbstractArchive field4887;
+	AbstractArchive field4873;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lrg;Lpi;Lpi;Lpi;)V"
+		descriptor = "(Lrh;Lpq;Lpq;Lpq;)V"
 	)
 	public class450(SongTask var1, AbstractArchive var2, AbstractArchive var3, AbstractArchive var4) {
 		super(var1);
-		this.field4886 = var2;
-		this.field4888 = var3;
-		this.field4887 = var4;
-		super.field4876 = "LoadSongTask";
+		this.field4875 = var2;
+		this.field4874 = var3;
+		this.field4873 = var4;
+		super.field4868 = "LoadSongTask";
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-1"
+		descriptor = "(I)Z",
+		garbageValue = "1892560666"
 	)
-	public boolean vmethod8722() {
+	public boolean vmethod8883() {
 		int var1 = 0;
 		Iterator var2 = class333.musicSongs.iterator();
 
 		while (true) {
 			while (var2.hasNext()) {
 				MusicSong var3 = (MusicSong)var2.next();
-				if (var3 != null && var3.midiPcmStream.field3667 > 1 && var3.midiPcmStream.method6677()) {
-					this.method8702("Attempted to load patches of already loading midiplayer!");
+				if (var3 != null && var3.midiPcmStream.field3668 > 1 && var3.midiPcmStream.method6749()) {
+					this.method8861("Attempted to load patches of already loading midiplayer!");
 					return true;
 				}
 
@@ -71,20 +59,20 @@ public class class450 extends SongTask {
 							}
 
 							if (var3.field3746 == null) {
-								var3.field3746 = new SoundCache(this.field4887, this.field4888);
+								var3.field3746 = new SoundCache(this.field4873, this.field4874);
 							}
 
-							if (var3.midiPcmStream.updateExternalPlayer(var3.field3747, this.field4886, var3.field3746)) {
+							if (var3.midiPcmStream.updateExternalPlayer(var3.field3747, this.field4875, var3.field3746)) {
 								++var1;
 								var3.field3741 = true;
-								var3.midiPcmStream.method6557();
+								var3.midiPcmStream.method6712();
 							}
 						} else {
 							++var1;
 						}
 					} catch (Exception var5) {
-						ArchiveLoader.RunException_sendStackTrace((String)null, var5);
-						this.method8702(var5.getMessage());
+						class255.RunException_sendStackTrace((String)null, var5);
+						this.method8861(var5.getMessage());
 						return true;
 					}
 				} else {
@@ -98,5 +86,41 @@ public class class450 extends SongTask {
 
 			return false;
 		}
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "([FIFI)F",
+		garbageValue = "889884528"
+	)
+	static float method8887(float[] var0, int var1, float var2) {
+		float var3 = var0[var1];
+
+		for (int var4 = var1 - 1; var4 >= 0; --var4) {
+			var3 = var0[var4] + var2 * var3;
+		}
+
+		return var3;
+	}
+
+	@ObfuscatedName("ng")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1840217495"
+	)
+	static final void method8884() {
+		Iterator var0 = Client.worldViewManager.iterator();
+
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
+
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				Player var3 = GameEngine.topLevelWorldView.players[Client.playerUpdateManager.playerIndices[var2]];
+				if (var3 != null) {
+					var3.method2662();
+				}
+			}
+		}
+
 	}
 }

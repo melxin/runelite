@@ -5,16 +5,16 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("io")
+@ObfuscatedName("id")
 @Implements("FileSystem")
 public class FileSystem {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("FileSystem_hasPermissions")
 	static boolean FileSystem_hasPermissions;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@Export("FileSystem_cacheDir")
 	static File FileSystem_cacheDir;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@Export("FileSystem_cacheFiles")
 	static Hashtable FileSystem_cacheFiles;
 
@@ -23,49 +23,19 @@ public class FileSystem {
 		FileSystem_cacheFiles = new Hashtable(16);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("bj")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lgr;",
-		garbageValue = "1932131867"
+		descriptor = "(ILdm;ZB)I",
+		garbageValue = "74"
 	)
-	@Export("VarpDefinition_get")
-	public static VarpDefinition VarpDefinition_get(int var0) {
-		VarpDefinition var1 = (VarpDefinition)VarpDefinition.VarpDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	static int method4954(int var0, Script var1, boolean var2) {
+		if (var0 == 6809) {
+			int var3 = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize];
+			ObjectComposition var4 = class142.getObjectDefinition(var3);
+			Interpreter.Interpreter_stringStack[++HealthBarConfig.Interpreter_stringStackSize - 1] = var4 != null ? var4.name : "";
+			return 1;
 		} else {
-			byte[] var2 = VarpDefinition.VarpDefinition_archive.takeFile(16, var0);
-			var1 = new VarpDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			VarpDefinition.VarpDefinition_cached.put(var1, (long)var0);
-			return var1;
+			return 2;
 		}
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;B)Ljava/lang/String;",
-		garbageValue = "11"
-	)
-	public static String method4429(CharSequence var0) {
-		String var1 = GrandExchangeOffer.base37DecodeLong(class201.method4009(var0));
-		if (var1 == null) {
-			var1 = "";
-		}
-
-		return var1;
-	}
-
-	@ObfuscatedName("ga")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "80"
-	)
-	static final void method4426() {
-		Scene.Scene_isLowDetail = false;
-		Client.isLowDetail = false;
 	}
 }

@@ -3,79 +3,79 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cc")
+@ObfuscatedName("cb")
 @Implements("VorbisCodebook")
 public class VorbisCodebook {
-	@ObfuscatedName("ab")
-	int field349;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ay")
+	int field333;
+	@ObfuscatedName("ah")
 	@Export("entries")
 	int entries;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@Export("lengthMap")
 	int[] lengthMap;
-	@ObfuscatedName("ae")
-	int[] field352;
 	@ObfuscatedName("ao")
-	float[][] field353;
-	@ObfuscatedName("ac")
+	int[] field334;
+	@ObfuscatedName("ad")
+	float[][] field335;
+	@ObfuscatedName("an")
 	@Export("keys")
 	int[] keys;
 
 	VorbisCodebook() {
-		class60 var1 = VorbisSample.field370;
-		var1.method1152(24);
-		this.field349 = var1.method1152(16);
-		this.entries = var1.method1152(24);
+		class60 var1 = VorbisSample.field347;
+		var1.method1205(24);
+		this.field333 = var1.method1205(16);
+		this.entries = var1.method1205(24);
 		this.lengthMap = new int[this.entries];
-		boolean var2 = var1.method1153() != 0;
+		boolean var2 = var1.method1207() != 0;
 		int var3;
 		int var4;
 		int var6;
 		if (var2) {
 			var3 = 0;
 
-			for (var4 = var1.method1152(5) + 1; var3 < this.entries; ++var4) {
-				int var5 = var1.method1152(class204.iLog(this.entries - var3));
+			for (var4 = var1.method1205(5) + 1; var3 < this.entries; ++var4) {
+				int var5 = var1.method1205(class320.iLog(this.entries - var3));
 
 				for (var6 = 0; var6 < var5; ++var6) {
 					this.lengthMap[var3++] = var4;
 				}
 			}
 		} else {
-			boolean var15 = var1.method1153() != 0;
+			boolean var15 = var1.method1207() != 0;
 
 			for (var4 = 0; var4 < this.entries; ++var4) {
-				if (var15 && var1.method1153() == 0) {
+				if (var15 && var1.method1207() == 0) {
 					this.lengthMap[var4] = 0;
 				} else {
-					this.lengthMap[var4] = var1.method1152(5) + 1;
+					this.lengthMap[var4] = var1.method1205(5) + 1;
 				}
 			}
 		}
 
-		this.method1040();
-		var3 = var1.method1152(4);
+		this.method1115();
+		var3 = var1.method1205(4);
 		if (var3 > 0) {
-			float var16 = VorbisSample.float32Unpack(var1.method1152(32));
-			float var17 = VorbisSample.float32Unpack(var1.method1152(32));
-			var6 = var1.method1152(4) + 1;
-			boolean var7 = var1.method1153() != 0;
+			float var16 = VorbisSample.float32Unpack(var1.method1205(32));
+			float var17 = VorbisSample.float32Unpack(var1.method1205(32));
+			var6 = var1.method1205(4) + 1;
+			boolean var7 = var1.method1207() != 0;
 			int var8;
 			if (var3 == 1) {
-				var8 = mapType1QuantValues(this.entries, this.field349);
+				var8 = mapType1QuantValues(this.entries, this.field333);
 			} else {
-				var8 = this.entries * this.field349;
+				var8 = this.entries * this.field333;
 			}
 
-			this.field352 = new int[var8];
+			this.field334 = new int[var8];
 
 			int var9;
 			for (var9 = 0; var9 < var8; ++var9) {
-				this.field352[var9] = var1.method1152(var6);
+				this.field334[var9] = var1.method1205(var6);
 			}
 
-			this.field353 = new float[this.entries][this.field349];
+			this.field335 = new float[this.entries][this.field333];
 			float var10;
 			int var11;
 			int var12;
@@ -84,10 +84,10 @@ public class VorbisCodebook {
 					var10 = 0.0F;
 					var11 = 1;
 
-					for (var12 = 0; var12 < this.field349; ++var12) {
+					for (var12 = 0; var12 < this.field333; ++var12) {
 						int var13 = var9 / var11 % var8;
-						float var14 = (float)this.field352[var13] * var17 + var16 + var10;
-						this.field353[var9][var12] = var14;
+						float var14 = (float)this.field334[var13] * var17 + var16 + var10;
+						this.field335[var9][var12] = var14;
 						if (var7) {
 							var10 = var14;
 						}
@@ -98,11 +98,11 @@ public class VorbisCodebook {
 			} else {
 				for (var9 = 0; var9 < this.entries; ++var9) {
 					var10 = 0.0F;
-					var11 = var9 * this.field349;
+					var11 = var9 * this.field333;
 
-					for (var12 = 0; var12 < this.field349; ++var12) {
-						float var18 = (float)this.field352[var11] * var17 + var16 + var10;
-						this.field353[var9][var12] = var18;
+					for (var12 = 0; var12 < this.field333; ++var12) {
+						float var18 = (float)this.field334[var11] * var17 + var16 + var10;
+						this.field335[var9][var12] = var18;
 						if (var7) {
 							var10 = var18;
 						}
@@ -115,8 +115,8 @@ public class VorbisCodebook {
 
 	}
 
-	@ObfuscatedName("aw")
-	void method1040() {
+	@ObfuscatedName("ah")
+	void method1115() {
 		int[] var1 = new int[this.entries];
 		int[] var2 = new int[33];
 
@@ -209,56 +209,33 @@ public class VorbisCodebook {
 
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(Lco;)I"
+		descriptor = "(Lcy;)I"
 	)
-	int method1041(class60 var1) {
+	int method1110(class60 var1) {
 		int var2;
-		for (var2 = 0; this.keys[var2] >= 0; var2 = var1.method1153() != 0 ? this.keys[var2] : var2 + 1) {
+		for (var2 = 0; this.keys[var2] >= 0; var2 = var1.method1207() != 0 ? this.keys[var2] : var2 + 1) {
 		}
 
 		return ~this.keys[var2];
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lco;)[F"
+		descriptor = "(Lcy;)[F"
 	)
-	float[] method1042(class60 var1) {
-		return this.field353[this.method1041(var1)];
+	float[] method1111(class60 var1) {
+		return this.field335[this.method1110(var1)];
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("mapType1QuantValues")
 	static int mapType1QuantValues(int var0, int var1) {
-		int var2 = (int)Math.pow((double)var0, 1.0D / (double)var1) + 1;
-
-		while (true) {
-			int var4 = var2;
-			int var5 = var1;
-
-			int var6;
-			for (var6 = 1; var5 > 1; var5 >>= 1) {
-				if ((var5 & 1) != 0) {
-					var6 *= var4;
-				}
-
-				var4 *= var4;
-			}
-
-			int var3;
-			if (var5 == 1) {
-				var3 = var4 * var6;
-			} else {
-				var3 = var6;
-			}
-
-			if (var3 <= var0) {
-				return var2;
-			}
-
-			--var2;
+		int var2;
+		for (var2 = (int)Math.pow((double)var0, 1.0D / (double)var1) + 1; class95.method2708(var2, var1) > var0; --var2) {
 		}
+
+		return var2;
 	}
 }

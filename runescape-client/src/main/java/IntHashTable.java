@@ -3,10 +3,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ws")
+@ObfuscatedName("wt")
 @Implements("IntHashTable")
 public class IntHashTable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("array")
 	int[] array;
 
@@ -32,10 +32,10 @@ public class IntHashTable {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "1"
+		descriptor = "(II)I",
+		garbageValue = "2141418339"
 	)
 	@Export("get")
 	public int get(int var1) {
@@ -53,53 +53,6 @@ public class IntHashTable {
 			}
 
 			var3 = var3 + 1 & var2;
-		}
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)[B",
-		garbageValue = "-1897966647"
-	)
-	static byte[] method10781(String var0) {
-		boolean var1 = true;
-		boolean var2 = true;
-		int var3 = "pattern".length();
-		int var4 = 0;
-		byte[] var5 = new byte[8];
-
-		while (true) {
-			int var6 = var3 + var4;
-			if (var6 >= var0.length()) {
-				return null;
-			}
-
-			char var7 = var0.charAt(var6);
-			if (var7 == ':') {
-				if (var4 == 0) {
-					return null;
-				}
-
-				byte[] var8 = new byte[var4];
-				System.arraycopy(var5, 0, var8, 0, var4);
-				return var8;
-			}
-
-			if (var5.length == var4) {
-				return null;
-			}
-
-			if (var7 >= '0' && var7 <= '9') {
-				var7 = (char)(var7 - '0');
-			} else {
-				if (var7 < 'a' || var7 > 'z') {
-					return null;
-				}
-
-				var7 = (char)(var7 - 'W');
-			}
-
-			var5[var4++] = (byte)var7;
 		}
 	}
 }

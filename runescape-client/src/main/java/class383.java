@@ -3,110 +3,57 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ob")
+@ObfuscatedName("oz")
 public enum class383 implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lob;"
+		descriptor = "Loz;"
 	)
 	field4488(-1),
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lob;"
+		descriptor = "Loz;"
 	)
-	field4485(0),
-	@ObfuscatedName("at")
+	field4486(0),
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lob;"
+		descriptor = "Loz;"
 	)
-	field4486(1),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lob;"
-	)
-	field4484(2);
-
-	@ObfuscatedName("ph")
-	@ObfuscatedGetter(
-		intValue = 360228785
-	)
-	@Export("widgetDragDuration")
-	static int widgetDragDuration;
+	field4487(1),
 	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = -1405415693
+	@ObfuscatedSignature(
+		descriptor = "Loz;"
 	)
-	final int field4487;
+	field4485(2);
+
+	@ObfuscatedName("cg")
+	@ObfuscatedSignature(
+		descriptor = "Luo;"
+	)
+	@Export("loginType")
+	static LoginType loginType;
+	@ObfuscatedName("ug")
+	@ObfuscatedGetter(
+		intValue = -286042239
+	)
+	static int field4491;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = 1596427081
+	)
+	final int field4492;
 
 	class383(int var3) {
-		this.field4487 = var3;
+		this.field4492 = var3;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1071289392"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field4487;
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "118"
-	)
-	public static void method7487() {
-		ByteArrayPool.field4911.clear();
-		ByteArrayPool.field4911.add(100);
-		ByteArrayPool.field4911.add(5000);
-		ByteArrayPool.field4911.add(10000);
-		ByteArrayPool.field4911.add(30000);
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "1841404921"
-	)
-	public static String method7486(String var0) {
-		int var1 = var0.length();
-		char[] var2 = new char[var1];
-		byte var3 = 2;
-
-		for (int var4 = 0; var4 < var1; ++var4) {
-			char var5 = var0.charAt(var4);
-			if (var3 == 0) {
-				var5 = Character.toLowerCase(var5);
-			} else if (var3 == 2 || Character.isUpperCase(var5)) {
-				char var6;
-				if (var5 != 181 && var5 != 402) {
-					var6 = Character.toTitleCase(var5);
-				} else {
-					var6 = var5;
-				}
-
-				var5 = var6;
-			}
-
-			if (Character.isLetter(var5)) {
-				var3 = 0;
-			} else if (var5 != '.' && var5 != '?' && var5 != '!') {
-				if (Character.isSpaceChar(var5)) {
-					if (var3 != 2) {
-						var3 = 1;
-					}
-				} else {
-					var3 = 1;
-				}
-			} else {
-				var3 = 2;
-			}
-
-			var2[var4] = var5;
-		}
-
-		return new String(var2);
+		return this.field4492;
 	}
 }

@@ -3,21 +3,21 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sf")
+@ObfuscatedName("sk")
 @Implements("Friend")
 public class Friend extends Buddy {
-	@ObfuscatedName("ab")
-	boolean field4997;
-	@ObfuscatedName("aw")
-	boolean field4996;
+	@ObfuscatedName("ay")
+	boolean field4990;
+	@ObfuscatedName("ah")
+	boolean field4991;
 
 	Friend() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lsf;B)I",
-		garbageValue = "1"
+		descriptor = "(Lsk;S)I",
+		garbageValue = "-18687"
 	)
 	@Export("compareToFriend")
 	int compareToFriend(Friend var1) {
@@ -29,23 +29,23 @@ public class Friend extends Buddy {
 			return -1;
 		} else if (var1.world != 0 && super.world == 0) {
 			return 1;
-		} else if (this.field4997 && !var1.field4997) {
+		} else if (this.field4990 && !var1.field4990) {
 			return -1;
-		} else if (!this.field4997 && var1.field4997) {
+		} else if (!this.field4990 && var1.field4990) {
 			return 1;
-		} else if (this.field4996 && !var1.field4996) {
+		} else if (this.field4991 && !var1.field4991) {
 			return -1;
-		} else if (!this.field4996 && var1.field4996) {
+		} else if (!this.field4991 && var1.field4991) {
 			return 1;
 		} else {
 			return super.world != 0 ? super.int2 - var1.int2 : var1.int2 - super.int2;
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lsv;I)I",
-		garbageValue = "-1712642331"
+		descriptor = "(Lso;I)I",
+		garbageValue = "1212702091"
 	)
 	@Export("compareTo_user")
 	public int compareTo_user(User var1) {
@@ -54,5 +54,15 @@ public class Friend extends Buddy {
 
 	public int compareTo(Object var1) {
 		return this.compareToFriend((Friend)var1);
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(Ldf;I)V",
+		garbageValue = "-236997524"
+	)
+	@Export("runScriptEvent")
+	public static void runScriptEvent(ScriptEvent var0) {
+		class150.runScript(var0, 500000, 475000);
 	}
 }

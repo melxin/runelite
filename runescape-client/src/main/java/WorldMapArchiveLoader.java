@@ -4,30 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uo")
+@ObfuscatedName("ui")
 @Implements("WorldMapArchiveLoader")
 public class WorldMapArchiveLoader {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@Export("cacheName")
 	String cacheName;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpq;"
 	)
 	@Export("archive")
 	AbstractArchive archive;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1050297095
+		intValue = 1318039913
 	)
 	@Export("percentLoaded")
 	int percentLoaded;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@Export("loaded")
 	boolean loaded;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpi;)V"
+		descriptor = "(Lpq;)V"
 	)
 	WorldMapArchiveLoader(AbstractArchive var1) {
 		this.percentLoaded = 0;
@@ -35,10 +35,10 @@ public class WorldMapArchiveLoader {
 		this.archive = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "-4"
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "-536495632"
 	)
 	@Export("reset")
 	void reset(String var1) {
@@ -52,10 +52,10 @@ public class WorldMapArchiveLoader {
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "120"
+		descriptor = "(I)I",
+		garbageValue = "-1237303035"
 	)
 	@Export("load")
 	int load() {
@@ -64,7 +64,7 @@ public class WorldMapArchiveLoader {
 			this.loaded = true;
 		} else {
 			if (this.percentLoaded < 33) {
-				if (!this.archive.tryLoadFileByNames(WorldMapCacheName.field3271.name, this.cacheName)) {
+				if (!this.archive.tryLoadFileByNames(WorldMapCacheName.field3269.name, this.cacheName)) {
 					return this.percentLoaded;
 				}
 
@@ -92,20 +92,20 @@ public class WorldMapArchiveLoader {
 		return this.percentLoaded;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-176567443"
+		garbageValue = "-915181834"
 	)
 	@Export("isLoaded")
 	boolean isLoaded() {
 		return this.loaded;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1795393421"
+		garbageValue = "-923373061"
 	)
 	@Export("getPercentLoaded")
 	int getPercentLoaded() {

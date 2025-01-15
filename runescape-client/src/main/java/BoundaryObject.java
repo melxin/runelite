@@ -4,60 +4,60 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kv")
+@ObfuscatedName("ha")
 @Implements("BoundaryObject")
 public final class BoundaryObject {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -807677907
+		intValue = 1837012129
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -248981743
+		intValue = -1884426115
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -494237031
+		intValue = 506114547
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1919341087
+		intValue = -1738243283
 	)
 	@Export("orientationA")
 	int orientationA;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -340268377
+		intValue = 1084924095
 	)
 	@Export("orientationB")
 	int orientationB;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lji;"
+		descriptor = "Lhs;"
 	)
 	@Export("renderable1")
 	public Renderable renderable1;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lji;"
+		descriptor = "Lhs;"
 	)
 	@Export("renderable2")
 	public Renderable renderable2;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		longValue = -2820727198451891697L
+		longValue = -4333333370256334569L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("au")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 657470305
+		intValue = 1069251799
 	)
 	@Export("flags")
 	int flags;
@@ -65,5 +65,19 @@ public final class BoundaryObject {
 	BoundaryObject() {
 		this.tag = 0L;
 		this.flags = 0;
+	}
+
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "-57"
+	)
+	public static int method4809(int var0) {
+		var0 = (var0 & 1431655765) + (var0 >>> 1 & 1431655765);
+		var0 = (var0 >>> 2 & 858993459) + (var0 & 858993459);
+		var0 = var0 + (var0 >>> 4) & 252645135;
+		var0 += var0 >>> 8;
+		var0 += var0 >>> 16;
+		return var0 & 255;
 	}
 }

@@ -6,38 +6,44 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ep")
+@ObfuscatedName("er")
 @Implements("Messages")
 public class Messages {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("Messages_channels")
 	static final Map Messages_channels;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lug;"
+		descriptor = "Lue;"
 	)
 	@Export("Messages_hashTable")
 	static final IterableNodeHashTable Messages_hashTable;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lpm;"
+		descriptor = "Lpz;"
 	)
 	@Export("Messages_queue")
 	static final IterableDualNodeQueue Messages_queue;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1994601205
+		intValue = 1013388835
 	)
 	@Export("Messages_count")
 	static int Messages_count;
-	@ObfuscatedName("gr")
-	@Export("authServiceBaseUrl")
-	static String authServiceBaseUrl;
 
 	static {
 		Messages_channels = new HashMap();
 		Messages_hashTable = new IterableNodeHashTable(1024);
 		Messages_queue = new IterableDualNodeQueue();
 		Messages_count = 0;
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(B)[Loe;",
+		garbageValue = "-2"
+	)
+	static GameBuild[] method3241() {
+		return new GameBuild[]{GameBuild.WIP, GameBuild.RC, GameBuild.BUILDLIVE, GameBuild.LIVE};
 	}
 }

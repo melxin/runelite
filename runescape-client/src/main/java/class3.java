@@ -1,11 +1,11 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ae")
+@ObfuscatedName("ao")
 public interface class3 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;)Lvj;"
+		descriptor = "(Lvy;)Lvy;"
 	)
-	Buffer vmethod13(Buffer var1);
+	Buffer vmethod12(Buffer var1);
 }

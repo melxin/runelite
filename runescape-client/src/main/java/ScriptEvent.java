@@ -1,75 +1,76 @@
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dw")
+@ObfuscatedName("df")
 @Implements("ScriptEvent")
 public class ScriptEvent extends Node {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("args")
 	Object[] args;
-	@ObfuscatedName("aw")
-	boolean field1083;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ah")
+	boolean field1075;
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lnp;"
+		descriptor = "Lna;"
 	)
 	@Export("widget")
 	Widget widget;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 134496555
+		intValue = -1190012531
 	)
 	@Export("mouseX")
 	int mouseX;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -1267852601
+		intValue = 1402240027
 	)
 	@Export("mouseY")
 	int mouseY;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1344300465
+		intValue = 904758891
 	)
 	@Export("opIndex")
 	int opIndex;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -790679833
+		intValue = -1860502355
 	)
-	int field1092;
-	@ObfuscatedName("av")
+	int field1081;
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lnp;"
+		descriptor = "Lna;"
 	)
 	@Export("dragTarget")
 	Widget dragTarget;
-	@ObfuscatedName("au")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1436251743
+		intValue = -1432134479
 	)
 	@Export("keyTyped")
 	int keyTyped;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1895655617
+		intValue = 1241265743
 	)
 	@Export("keyPressed")
 	int keyPressed;
-	@ObfuscatedName("af")
+	@ObfuscatedName("au")
 	@Export("targetName")
 	String targetName;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 728932453
+		intValue = -1852724295
 	)
-	int field1094;
-	@ObfuscatedName("al")
+	int field1080;
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -918988159
+		intValue = -212291339
 	)
 	@Export("type")
 	int type;
@@ -78,80 +79,85 @@ public class ScriptEvent extends Node {
 		this.type = 76;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "([Ljava/lang/Object;I)V",
-		garbageValue = "-1392355154"
+		garbageValue = "1177676751"
 	)
 	@Export("setArgs")
 	public void setArgs(Object[] var1) {
 		this.args = var1;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "62"
+		descriptor = "(II)V",
+		garbageValue = "1971710567"
 	)
 	@Export("setType")
 	public void setType(int var1) {
 		this.type = var1;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(Lnp;I)V",
-		garbageValue = "118453991"
+		descriptor = "(Lna;S)V",
+		garbageValue = "-4216"
 	)
-	public void method2493(Widget var1) {
+	public void method2628(Widget var1) {
 		this.widget = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "([Lpr;II)Lpr;",
-		garbageValue = "-1231068373"
+		descriptor = "(Lmm;Lwr;B)Lmb;",
+		garbageValue = "18"
 	)
-	@Export("findEnumerated")
-	public static Enum findEnumerated(Enum[] var0, int var1) {
-		Enum[] var2 = var0;
-
-		for (int var3 = 0; var3 < var2.length; ++var3) {
-			Enum var4 = var2[var3];
-			if (var1 == var4.rsOrdinal()) {
-				return var4;
-			}
+	@Export("getPacketBufferNode")
+	public static PacketBufferNode getPacketBufferNode(ClientPacket var0, IsaacCipher var1) {
+		PacketBufferNode var2 = HttpRequestTask.method288();
+		var2.clientPacket = var0;
+		var2.clientPacketLength = var0.length;
+		if (var2.clientPacketLength == -1) {
+			var2.packetBuffer = new PacketBuffer(260);
+		} else if (var2.clientPacketLength == -2) {
+			var2.packetBuffer = new PacketBuffer(10000);
+		} else if (var2.clientPacketLength <= 18) {
+			var2.packetBuffer = new PacketBuffer(20);
+		} else if (var2.clientPacketLength <= 98) {
+			var2.packetBuffer = new PacketBuffer(100);
+		} else {
+			var2.packetBuffer = new PacketBuffer(260);
 		}
 
-		return null;
+		var2.packetBuffer.setIsaacCipher(var1);
+		var2.packetBuffer.writeByteIsaac(var2.clientPacket.id);
+		var2.index = 0;
+		return var2;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)Ljava/lang/String;",
-		garbageValue = "1682660351"
+		descriptor = "(II)V",
+		garbageValue = "-1400630297"
 	)
-	@Export("decodeStringCp1252")
-	public static String decodeStringCp1252(byte[] var0, int var1, int var2) {
-		char[] var3 = new char[var2];
-		int var4 = 0;
+	public static void method2622(int var0) {
+		if (!class333.musicSongs.isEmpty()) {
+			Iterator var1 = class333.musicSongs.iterator();
 
-		for (int var5 = 0; var5 < var2; ++var5) {
-			int var6 = var0[var5 + var1] & 255;
-			if (var6 != 0) {
-				if (var6 >= 128 && var6 < 160) {
-					char var7 = class417.cp1252AsciiExtension[var6 - 128];
-					if (var7 == 0) {
-						var7 = '?';
-					}
-
-					var6 = var7;
+			while (var1.hasNext()) {
+				MusicSong var2 = (MusicSong)var1.next();
+				if (var2 != null) {
+					var2.musicTrackVolume = var0;
 				}
+			}
 
-				var3[var4++] = (char)var6;
+			MusicSong var3 = (MusicSong)class333.musicSongs.get(0);
+			if (var3 != null && var3.midiPcmStream != null && var3.midiPcmStream.isReady() && !var3.field3745) {
+				var3.midiPcmStream.setPcmStreamVolume(var0);
+				var3.field3739 = (float)var0;
 			}
 		}
 
-		return new String(var3, 0, var4);
 	}
 }

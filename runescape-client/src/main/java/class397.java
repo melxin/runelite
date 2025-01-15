@@ -1,35 +1,43 @@
+import java.util.Iterator;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("py")
+@ObfuscatedName("pp")
 public class class397 {
-	@ObfuscatedName("at")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;II)Ljava/lang/String;",
-		garbageValue = "1910468617"
+		descriptor = "(Lna;IIIS)V",
+		garbageValue = "30618"
 	)
-	static String method7712(Buffer var0, int var1) {
-		try {
-			int var2 = var0.readUShortSmart();
-			if (var2 > var1) {
-				var2 = var1;
-			}
-
-			byte[] var3 = new byte[var2];
-			var0.offset += class364.huffman.decompress(var0.array, var0.offset, var3, 0, var2);
-			String var4 = ScriptEvent.decodeStringCp1252(var3, 0, var2);
-			return var4;
-		} catch (Exception var6) {
-			return "Cabbage";
+	@Export("Widget_setKeyRate")
+	static final void Widget_setKeyRate(Widget var0, int var1, int var2, int var3) {
+		if (var0.field3964 == null) {
+			throw new RuntimeException();
+		} else {
+			var0.field3964[var1] = var2;
+			var0.field3864[var1] = var3;
 		}
 	}
 
-	@ObfuscatedName("pq")
+	@ObfuscatedName("nc")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "1"
+		descriptor = "(I)V",
+		garbageValue = "-1383475643"
 	)
-	static void method7713() {
-		SecureUrlRequester.clientPreferences.updateEULA(Client.field788);
+	static final void method7892() {
+		Iterator var0 = Client.worldViewManager.iterator();
+
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
+
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				Player var3 = GameEngine.topLevelWorldView.players[Client.playerUpdateManager.playerIndices[var2]];
+				if (var3 != null) {
+					var3.clearIsInFriendsChat();
+				}
+			}
+		}
+
 	}
 }

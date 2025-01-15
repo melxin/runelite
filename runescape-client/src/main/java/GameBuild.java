@@ -4,42 +4,42 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oo")
+@ObfuscatedName("oe")
 @Implements("GameBuild")
 public class GameBuild {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Loo;"
+		descriptor = "Loe;"
 	)
 	@Export("LIVE")
 	static final GameBuild LIVE;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Loo;"
+		descriptor = "Loe;"
 	)
 	@Export("BUILDLIVE")
 	static final GameBuild BUILDLIVE;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Loo;"
+		descriptor = "Loe;"
 	)
 	@Export("RC")
 	static final GameBuild RC;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Loo;"
+		descriptor = "Loe;"
 	)
 	@Export("WIP")
 	static final GameBuild WIP;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@Export("name")
 	public final String name;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -318133067
+		intValue = 185232069
 	)
 	@Export("buildId")
-	public final int buildId;
+	final int buildId;
 
 	static {
 		LIVE = new GameBuild("LIVE", 0);
@@ -53,65 +53,94 @@ public class GameBuild {
 		this.buildId = var2;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-109"
+		descriptor = "(III)I",
+		garbageValue = "-1767959900"
 	)
-	public static void method7465() {
-		synchronized(ArchiveDiskActionHandler.field4526) {
-			if (ArchiveDiskActionHandler.field4525 != 0) {
-				ArchiveDiskActionHandler.field4525 = 1;
-
-				try {
-					ArchiveDiskActionHandler.field4526.wait();
-				} catch (InterruptedException var5) {
-				}
-			}
-		}
-
-		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.clear();
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.clear();
+	@Export("ItemContainer_getCount")
+	static int ItemContainer_getCount(int var0, int var1) {
+		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+		if (var2 == null) {
+			return 0;
+		} else {
+			return var1 >= 0 && var1 < var2.quantities.length ? var2.quantities[var1] : 0;
 		}
 	}
 
-	@ObfuscatedName("jg")
+	@ObfuscatedName("mz")
 	@ObfuscatedSignature(
-		descriptor = "(Ldm;IZI)V",
-		garbageValue = "-1068540955"
+		descriptor = "([Lna;II)V",
+		garbageValue = "-1975296094"
 	)
-	@Export("addPlayerToScene")
-	static void addPlayerToScene(WorldView var0, int var1, boolean var2) {
-		Player var3 = var0.players[var1];
-		if (var3 != null && var3.isVisible() && !var3.isHidden) {
-			int var4 = var3.plane;
-			var3.isUnanimated = false;
-			if ((Client.isLowDetail && Client.playerUpdateManager.playerCount > 50 || Client.playerUpdateManager.playerCount > 200) && var2 && var3.movementSequence == var3.idleSequence) {
-				var3.isUnanimated = true;
-			}
-
-			int var5 = var3.x >> 7;
-			int var6 = var3.y >> 7;
-			if (0 <= var5 && var5 < 104 && 0 <= var6 && var6 < 104) {
-				long var7 = WorldMapScaleHandler.calculateTag(0, 0, 0, false, var3.index, var0.id);
-				if (var3.model0 != null && Client.cycle >= var3.animationCycleStart && Client.cycle < var3.animationCycleEnd) {
-					var3.isUnanimated = false;
-					var3.tileHeight = class77.getTileHeight(var0, var3.x, var3.y, var4);
-					var3.playerCycle = Client.cycle;
-					var0.scene.addNullableObject(var4, var3.x, var3.y, var3.tileHeight, 60, var3, var3.rotation, var7, var3.minX, var3.minY, var3.maxX, var3.maxY);
-				} else {
-					if ((var3.x & 127) == 64 && (var3.y & 127) == 64) {
-						if (var0.tileLastDrawnActor[var5][var6] == Client.viewportDrawCount) {
-							return;
-						}
-
-						var0.tileLastDrawnActor[var5][var6] = Client.viewportDrawCount;
+	@Export("drawModelComponents")
+	static final void drawModelComponents(Widget[] var0, int var1) {
+		for (int var2 = 0; var2 < var0.length; ++var2) {
+			Widget var3 = var0[var2];
+			if (var3 != null && var3.parentId == var1 && (!var3.isIf3 || !class163.isComponentHidden(var3))) {
+				if (var3.type == 0) {
+					if (!var3.isIf3 && class163.isComponentHidden(var3) && var3 != class424.mousedOverWidgetIf1) {
+						continue;
 					}
 
-					var3.tileHeight = class77.getTileHeight(var0, var3.x, var3.y, var4);
-					var3.playerCycle = Client.cycle;
-					var0.scene.drawEntity(var4, var3.x, var3.y, var3.tileHeight, 60, var3, var3.rotation, var7, var3.isWalking);
+					drawModelComponents(var0, var3.id);
+					if (var3.children != null) {
+						drawModelComponents(var3.children, var3.id);
+					}
+
+					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
+					if (var4 != null) {
+						HttpMethod.method83(var4.group);
+					}
+				}
+
+				if (var3.type == 6) {
+					int var5;
+					if (var3.sequenceId != -1 || var3.sequenceId2 != -1) {
+						boolean var8 = class268.runCs1(var3);
+						if (var8) {
+							var5 = var3.sequenceId2;
+						} else {
+							var5 = var3.sequenceId;
+						}
+
+						if (var5 != -1) {
+							SequenceDefinition var6 = class33.SequenceDefinition_get(var5);
+							if (!var6.isCachedModelIdSet()) {
+								for (var3.modelFrameCycle += Client.graphicsCycle; var3.modelFrameCycle > var6.frameLengths[var3.modelFrame]; UserComparator8.invalidateWidget(var3)) {
+									var3.modelFrameCycle -= var6.frameLengths[var3.modelFrame];
+									++var3.modelFrame;
+									if (var3.modelFrame >= var6.frameIds.length) {
+										var3.modelFrame -= var6.frameCount;
+										if (var3.modelFrame < 0 || var3.modelFrame >= var6.frameIds.length) {
+											var3.modelFrame = 0;
+										}
+									}
+								}
+							} else {
+								var3.modelFrame += Client.graphicsCycle;
+								int var7 = var6.getMayaAnimFrame();
+								if (var3.modelFrame >= var7) {
+									var3.modelFrame -= var6.frameCount;
+									if (var3.modelFrame < 0 || var3.modelFrame >= var7) {
+										var3.modelFrame = 0;
+									}
+								}
+
+								UserComparator8.invalidateWidget(var3);
+							}
+						}
+					}
+
+					if (var3.field3928 != 0 && !var3.isIf3) {
+						int var9 = var3.field3928 >> 16;
+						var5 = var3.field3928 << 16 >> 16;
+						var9 *= Client.graphicsCycle;
+						var5 *= Client.graphicsCycle;
+						var3.modelAngleX = var9 + var3.modelAngleX & 2047;
+						var3.modelAngleY = var5 + var3.modelAngleY & 2047;
+						UserComparator8.invalidateWidget(var3);
+					}
 				}
 			}
 		}

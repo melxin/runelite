@@ -1,91 +1,69 @@
-import java.util.concurrent.ThreadFactory;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ff")
-final class class142 implements ThreadFactory {
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "[Lcu;"
-	)
-	@Export("World_worlds")
-	static World[] World_worlds;
-
-	public Thread newThread(Runnable var1) {
-		return new Thread(var1, "OSRS Maya Anim Load");
-	}
-
+@ObfuscatedName("fq")
+public class class142 {
 	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(III)Lcd;",
-		garbageValue = "1579108442"
+	@ObfuscatedGetter(
+		intValue = 1869948611
 	)
-	@Export("Messages_getByChannelAndID")
-	static Message Messages_getByChannelAndID(int var0, int var1) {
-		ChatChannel var2 = (ChatChannel)Messages.Messages_channels.get(var0);
-		return var2.getMessage(var1);
+	static int field1631;
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lfe;",
+		garbageValue = "121870175"
+	)
+	static class145 method3513(int var0) {
+		class145[] var1 = new class145[]{class145.field1652, class145.field1658, class145.field1649, class145.field1650, class145.field1651, class145.field1647, class145.field1648, class145.field1653, class145.field1655};
+		class145 var2 = (class145)StructComposition.findEnumerated(var1, var0);
+		if (var2 == null) {
+			var2 = class145.field1655;
+		}
+
+		return var2;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(ILdt;ZB)I",
-		garbageValue = "101"
+		descriptor = "(II)Lkl;",
+		garbageValue = "1781059216"
 	)
-	static int method3396(int var0, Script var1, boolean var2) {
-		int var3 = -1;
-		Widget var4;
-		if (var0 >= 2000) {
-			var0 -= 1000;
-			var3 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
-			var4 = class379.widgetDefinition.method6875(var3);
+	@Export("getObjectDefinition")
+	public static ObjectComposition getObjectDefinition(int var0) {
+		ObjectComposition var1 = (ObjectComposition)ObjectComposition.ObjectDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
 		} else {
-			var4 = var2 ? RestClientThreadFactory.scriptDotWidget : WorldMapCacheName.scriptActiveWidget;
+			byte[] var2 = ObjectComposition.ObjectDefinition_archive.takeFile(6, var0);
+			var1 = new ObjectComposition();
+			var1.id = var0;
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
+
+			var1.postDecode();
+			if (var1.isSolid) {
+				var1.interactType = 0;
+				var1.boolean1 = false;
+			}
+
+			ObjectComposition.ObjectDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
+	}
+
+	@ObfuscatedName("ot")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "0"
+	)
+	static void method3514() {
+		if (Client.oculusOrbState == 1) {
+			Client.field602 = true;
 		}
 
-		if (var0 == ScriptOpcodes.CC_SETPOSITION) {
-			PrivateChatMode.Interpreter_intStackSize -= 4;
-			var4.rawX = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize];
-			var4.rawY = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 1];
-			var4.xAlignment = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 2];
-			var4.yAlignment = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 3];
-			class178.invalidateWidget(var4);
-			NpcOverrides.client.alignWidget(var4);
-			if (var3 != -1 && var4.type == 0) {
-				GrandExchangeOfferAgeComparator.revalidateWidgetScroll(class379.widgetDefinition.Widget_interfaceComponents[var3 >> 16], var4, false);
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_SETSIZE) {
-			PrivateChatMode.Interpreter_intStackSize -= 4;
-			var4.rawWidth = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize];
-			var4.rawHeight = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 1];
-			var4.widthAlignment = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 2];
-			var4.heightAlignment = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 3];
-			class178.invalidateWidget(var4);
-			NpcOverrides.client.alignWidget(var4);
-			if (var3 != -1 && var4.type == 0) {
-				GrandExchangeOfferAgeComparator.revalidateWidgetScroll(class379.widgetDefinition.Widget_interfaceComponents[var3 >> 16], var4, false);
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_SETHIDE) {
-			boolean var5 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize] == 1;
-			if (var5 != var4.isHidden) {
-				var4.isHidden = var5;
-				class178.invalidateWidget(var4);
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_SETNOCLICKTHROUGH) {
-			var4.noClickThrough = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize] == 1;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_SETNOSCROLLTHROUGH) {
-			var4.noScrollThrough = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize] == 1;
-			return 1;
-		} else {
-			return 2;
-		}
 	}
 }

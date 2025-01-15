@@ -6,40 +6,40 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ss")
+@ObfuscatedName("sv")
 @Implements("BufferedSink")
 public class BufferedSink implements Runnable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@Export("outputStream")
 	OutputStream outputStream;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -653855255
+		intValue = 1411750849
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@Export("buffer")
 	byte[] buffer;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -968444105
+		intValue = 1591863287
 	)
 	@Export("position")
 	int position;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 878349373
+		intValue = 2081628013
 	)
 	@Export("limit")
 	int limit;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@Export("exception")
 	IOException exception;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@Export("closed")
 	boolean closed;
 
@@ -54,10 +54,10 @@ public class BufferedSink implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "762283147"
+		garbageValue = "-1522866853"
 	)
 	@Export("isClosed")
 	boolean isClosed() {
@@ -79,10 +79,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "([BIII)V",
-		garbageValue = "-1040982006"
+		garbageValue = "1044363336"
 	)
 	@Export("write")
 	void write(byte[] var1, int var2, int var3) throws IOException {
@@ -119,10 +119,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "2123697975"
+		descriptor = "(B)V",
+		garbageValue = "105"
 	)
 	@Export("close")
 	void close() {

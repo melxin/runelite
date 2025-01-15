@@ -4,27 +4,27 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ue")
+@ObfuscatedName("us")
 @Implements("Fonts")
 public class Fonts {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpq;"
 	)
 	@Export("spritesArchive")
 	AbstractArchive spritesArchive;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpq;"
 	)
 	@Export("fontsArchive")
 	AbstractArchive fontsArchive;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@Export("map")
 	HashMap map;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpi;Lpi;)V"
+		descriptor = "(Lpq;Lpq;)V"
 	)
 	public Fonts(AbstractArchive var1, AbstractArchive var2) {
 		this.spritesArchive = var1;
@@ -32,10 +32,10 @@ public class Fonts {
 		this.map = new HashMap();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "([Lub;B)Ljava/util/HashMap;",
-		garbageValue = "-94"
+		descriptor = "([Lun;I)Ljava/util/HashMap;",
+		garbageValue = "-455222829"
 	)
 	@Export("createMap")
 	public HashMap createMap(FontName[] var1) {
@@ -56,7 +56,29 @@ public class Fonts {
 				} else {
 					int var10 = var7.getGroupId(var9);
 					int var11 = var7.getFileId(var10, "");
-					var6 = class166.method3637(var7, var8, var10, var11);
+					Font var12;
+					if (!WorldMapSprite.method6397(var7, var10, var11)) {
+						var12 = null;
+					} else {
+						byte[] var14 = var8.takeFile(var10, var11);
+						Font var13;
+						if (var14 == null) {
+							var13 = null;
+						} else {
+							Font var15 = new Font(var14, class241.SpriteBuffer_xOffsets, SpriteBufferProperties.SpriteBuffer_yOffsets, SpriteBufferProperties.SpriteBuffer_spriteWidths, class403.SpriteBuffer_spriteHeights, KeyHandler.SpriteBuffer_spritePalette, class240.SpriteBuffer_pixels);
+							class241.SpriteBuffer_xOffsets = null;
+							SpriteBufferProperties.SpriteBuffer_yOffsets = null;
+							SpriteBufferProperties.SpriteBuffer_spriteWidths = null;
+							class403.SpriteBuffer_spriteHeights = null;
+							KeyHandler.SpriteBuffer_spritePalette = null;
+							class240.SpriteBuffer_pixels = null;
+							var13 = var15;
+						}
+
+						var12 = var13;
+					}
+
+					var6 = var12;
 				}
 
 				if (var6 != null) {
@@ -67,42 +89,5 @@ public class Fonts {
 		}
 
 		return var2;
-	}
-
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(Lpi;Ljava/lang/String;Ljava/lang/String;B)Lvy;",
-		garbageValue = "-123"
-	)
-	@Export("SpriteBuffer_getIndexedSpriteByName")
-	public static IndexedSprite SpriteBuffer_getIndexedSpriteByName(AbstractArchive var0, String var1, String var2) {
-		if (!var0.isValidFileName(var1, var2)) {
-			return null;
-		} else {
-			int var3 = var0.getGroupId(var1);
-			int var4 = var0.getFileId(var3, var2);
-			IndexedSprite var5;
-			if (!class326.method6471(var0, var3, var4)) {
-				var5 = null;
-			} else {
-				var5 = SecureRandomCallable.method2433();
-			}
-
-			return var5;
-		}
-	}
-
-	@ObfuscatedName("ov")
-	@ObfuscatedSignature(
-		descriptor = "(Lnp;I)Ljava/lang/String;",
-		garbageValue = "49324"
-	)
-	@Export("Widget_getSpellActionName")
-	static String Widget_getSpellActionName(Widget var0) {
-		if (class202.Widget_unpackTargetMask(Renderable.getWidgetFlags(var0)) == 0) {
-			return null;
-		} else {
-			return var0.spellActionName != null && var0.spellActionName.trim().length() != 0 ? var0.spellActionName : null;
-		}
 	}
 }

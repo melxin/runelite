@@ -1,209 +1,130 @@
 import java.applet.Applet;
+import java.io.File;
+import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bb")
+@ObfuscatedName("bd")
 public class class31 {
-	@ObfuscatedName("ab")
-	static Applet field151;
-	@ObfuscatedName("aw")
-	static String field156;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ay")
+	static Applet field138;
+	@ObfuscatedName("ah")
+	static String field137;
+	@ObfuscatedName("kz")
 	@ObfuscatedGetter(
-		intValue = -1829325037
+		intValue = -2011348113
 	)
-	@Export("ItemDefinition_fileCount")
-	public static int ItemDefinition_fileCount;
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lbc;"
-	)
-	@Export("pcmPlayerProvider")
-	static class51 pcmPlayerProvider;
-	@ObfuscatedName("mv")
-	@ObfuscatedGetter(
-		intValue = 1751453837
-	)
-	static int field153;
+	@Export("cameraZ")
+	static int cameraZ;
 
 	static {
-		field151 = null;
-		field156 = "";
+		field138 = null;
+		field137 = "";
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Ldt;",
-		garbageValue = "110"
+		descriptor = "(IIB)I",
+		garbageValue = "98"
 	)
-	@Export("getScript")
-	static Script getScript(int var0, int var1) {
-		Script var2 = (Script)Script.Script_cached.get((long)(var0 << 16));
-		if (var2 != null) {
-			return var2;
+	static int method496(int var0, int var1) {
+		FloorOverlayDefinition var3 = (FloorOverlayDefinition)FloorOverlayDefinition.FloorOverlayDefinition_cached.get((long)var0);
+		FloorOverlayDefinition var2;
+		if (var3 != null) {
+			var2 = var3;
 		} else {
-			String var3 = String.valueOf(var0);
-			int var4 = class450.archive12.getGroupId(var3);
-			if (var4 == -1) {
-				return null;
-			} else {
-				byte[] var5 = class450.archive12.takeFileFlat(var4);
-				if (var5 != null) {
-					if (var5.length <= 1) {
-						return null;
-					}
-
-					var2 = class153.newScript(var5);
-					if (var2 != null) {
-						Script.Script_cached.put(var2, (long)(var0 << 16));
-						return var2;
-					}
-				}
-
-				return null;
+			byte[] var4 = FloorOverlayDefinition.FloorOverlayDefinition_archive.takeFile(4, var0);
+			var3 = new FloorOverlayDefinition();
+			if (var4 != null) {
+				var3.decode(new Buffer(var4), var0);
 			}
+
+			var3.postDecode();
+			FloorOverlayDefinition.FloorOverlayDefinition_cached.put(var3, (long)var0);
+			var2 = var3;
 		}
-	}
 
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(IZB)Ljava/lang/String;",
-		garbageValue = "-22"
-	)
-	@Export("intToString")
-	public static String intToString(int var0, boolean var1) {
-		if (var1 && var0 >= 0) {
-			int var3 = var0;
-			String var2;
-			if (var1 && var0 >= 0) {
-				int var4 = 2;
-
-				for (int var5 = var0 / 10; var5 != 0; ++var4) {
-					var5 /= 10;
-				}
-
-				char[] var6 = new char[var4];
-				var6[0] = '+';
-
-				for (int var7 = var4 - 1; var7 > 0; --var7) {
-					int var8 = var3;
-					var3 /= 10;
-					int var9 = var8 - var3 * 10;
-					if (var9 >= 10) {
-						var6[var7] = (char)(var9 + 87);
-					} else {
-						var6[var7] = (char)(var9 + 48);
-					}
-				}
-
-				var2 = new String(var6);
-			} else {
-				var2 = Integer.toString(var0, 10);
-			}
-
-			return var2;
+		if (var2 == null) {
+			return var1;
 		} else {
-			return Integer.toString(var0);
-		}
-	}
-
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1666863263"
-	)
-	public static void method439() {
-		EnumComposition.EnumDefinition_cached.clear();
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(Lql;FS)Lql;",
-		garbageValue = "-6694"
-	)
-	public static final class426 method438(class426 var0, float var1) {
-		class426 var2 = RouteStrategy.method5650(var0);
-		var2.method8113(var1);
-		return var2;
-	}
-
-	@ObfuscatedName("hp")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "5"
-	)
-	@Export("updateGameState")
-	static void updateGameState(int var0) {
-		if (var0 != Client.gameState) {
-			if (Client.gameState == 30) {
-				Client.field816.method5556();
-			}
-
-			if (Client.gameState == 0) {
-				NpcOverrides.client.method499();
-			}
-
-			if (var0 == 20 || var0 == 40 || var0 == 45 || var0 == 50) {
-				ViewportMouse.updateLoginState(LoginState.SHUTDOWN_PREVIOUS_CONNECTION);
-				Client.field548 = 0;
-				Client.field696 = 0;
-				Client.timer.method8801(var0);
-				if (var0 != 20) {
-					Client.authenticationScheme = SecureUrlRequester.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
-				}
-			}
-
-			if (var0 != 20 && var0 != 40 && class228.field2462 != null) {
-				class228.field2462.close();
-				class228.field2462 = null;
-			}
-
-			if (Client.gameState == 25) {
-				Client.field583 = 0;
-				Client.field777 = 0;
-				Client.field598 = 1;
-				Client.field581 = 0;
-				Client.field625 = 1;
-			}
-
-			int var1;
-			if (var0 != 5 && var0 != 10) {
-				if (var0 == 20) {
-					var1 = Client.gameState == 11 ? 4 : 0;
-					class53.method1070(class419.archive10, AttackOption.archive8, class268.field2990, false, var1);
-				} else if (var0 == 11) {
-					class53.method1070(class419.archive10, AttackOption.archive8, class268.field2990, false, 4);
-				} else if (var0 == 50) {
-					class106.setLoginResponseString("", "Updating date of birth...", "");
-					class53.method1070(class419.archive10, AttackOption.archive8, class268.field2990, false, 7);
-				} else if (var0 != 0 && Login.clearLoginScreen) {
-					GrandExchangeOfferNameComparator.titleboxSprite = null;
-					Login.titlebuttonSprite = null;
-					Login.runesSprite = null;
-					UserComparator10.leftTitleSprite = null;
-					UserComparator7.rightTitleSprite = null;
-					HttpResponse.logoSprite = null;
-					Login.title_muteSprite = null;
-					class227.options_buttons_0Sprite = null;
-					Login.options_buttons_2Sprite = null;
-					HealthBarUpdate.worldSelectBackSprites = null;
-					class424.worldSelectFlagSprites = null;
-					HttpMethod.worldSelectArrows = null;
-					class182.worldSelectStars = null;
-					class318.field3307 = null;
-					class96.loginScreenRunesAnimation.method2703();
-					WorldMapSprite.method6235(0, 100);
-					class27.method396().method7669(true);
-					Login.clearLoginScreen = false;
-				}
+			int var5;
+			int var6;
+			if (var2.secondaryRgb >= 0) {
+				var6 = class166.method3805(var2.secondaryHue, var2.secondarySaturation, var2.secondaryLightness);
+				var5 = ClanSettings.method3688(var6, 96);
+				return Rasterizer3D.Rasterizer3D_colorPalette[var5] | -16777216;
+			} else if (var2.texture >= 0) {
+				var6 = ClanSettings.method3688(Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.texture), 96);
+				return Rasterizer3D.Rasterizer3D_colorPalette[var6] | -16777216;
+			} else if (var2.primaryRgb == 16711935) {
+				return var1;
 			} else {
-				var1 = Script.method2367() ? 0 : 12;
-				class53.method1070(class419.archive10, AttackOption.archive8, class268.field2990, true, var1);
+				var6 = class166.method3805(var2.hue, var2.saturation, var2.lightness);
+				var5 = ClanSettings.method3688(var6, 96);
+				return Rasterizer3D.Rasterizer3D_colorPalette[var5] | -16777216;
 			}
-
-			Client.gameState = var0;
 		}
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Ljm;",
+		garbageValue = "-70"
+	)
+	@Export("WorldMapElement_get")
+	public static WorldMapElement WorldMapElement_get(int var0) {
+		return var0 >= 0 && var0 < WorldMapElement.WorldMapElement_cached.length && WorldMapElement.WorldMapElement_cached[var0] != null ? WorldMapElement.WorldMapElement_cached[var0] : new WorldMapElement(var0);
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;ZB)Luv;",
+		garbageValue = "-12"
+	)
+	@Export("getPreferencesFile")
+	public static AccessFile getPreferencesFile(String var0, String var1, boolean var2) {
+		File var3 = new File(JagexCache.cacheDir, "preferences" + var0 + ".dat");
+		if (var3.exists()) {
+			try {
+				AccessFile var10 = new AccessFile(var3, "rw", 10000L);
+				return var10;
+			} catch (IOException var9) {
+			}
+		}
+
+		String var4 = "";
+		if (class73.cacheGamebuild == 33) {
+			var4 = "_rc";
+		} else if (class73.cacheGamebuild == 34) {
+			var4 = "_wip";
+		}
+
+		File var5 = new File(HttpContentType.userHomeDirectory, "jagex_" + var1 + "_preferences" + var0 + var4 + ".dat");
+		AccessFile var6;
+		if (!var2 && var5.exists()) {
+			try {
+				var6 = new AccessFile(var5, "rw", 10000L);
+				return var6;
+			} catch (IOException var8) {
+			}
+		}
+
+		try {
+			var6 = new AccessFile(var3, "rw", 10000L);
+			return var6;
+		} catch (IOException var7) {
+			throw new RuntimeException();
+		}
+	}
+
+	@ObfuscatedName("bo")
+	@ObfuscatedSignature(
+		descriptor = "(ILdm;ZI)I",
+		garbageValue = "-2143778245"
+	)
+	static int method494(int var0, Script var1, boolean var2) {
+		return 2;
 	}
 }

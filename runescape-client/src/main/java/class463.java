@@ -2,23 +2,23 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rw")
+@ObfuscatedName("rq")
 public class class463 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lrw;"
+		descriptor = "Lrq;"
 	)
 	public static final class463 field4954;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lrw;"
+		descriptor = "Lrq;"
 	)
 	static final class463 field4953;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -920609519
+		intValue = -2066207141
 	)
-	final int field4955;
+	final int field4952;
 
 	static {
 		field4954 = new class463(0);
@@ -26,6 +26,25 @@ public class class463 {
 	}
 
 	class463(int var1) {
-		this.field4955 = var1;
+		this.field4952 = var1;
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lwk;",
+		garbageValue = "1773166265"
+	)
+	public static PrivateChatMode method9025(int var0) {
+		PrivateChatMode[] var1 = new PrivateChatMode[]{PrivateChatMode.field5632, PrivateChatMode.field5631, PrivateChatMode.field5630};
+		PrivateChatMode[] var2 = var1;
+
+		for (int var3 = 0; var3 < var2.length; ++var3) {
+			PrivateChatMode var4 = var2[var3];
+			if (var0 == var4.field5629) {
+				return var4;
+			}
+		}
+
+		return null;
 	}
 }

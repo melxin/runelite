@@ -1,116 +1,94 @@
+import java.net.URL;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kp")
+@ObfuscatedName("kw")
 public class class280 {
-	@ObfuscatedName("at")
+	@ObfuscatedName("id")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;II[BIB)I",
-		garbageValue = "2"
+		descriptor = "Lez;"
 	)
-	@Export("encodeStringCp1252")
-	public static int encodeStringCp1252(CharSequence var0, int var1, int var2, byte[] var3, int var4) {
-		int var5 = var2 - var1;
+	@Export("urlRequester")
+	static UrlRequester urlRequester;
+	@ObfuscatedName("ua")
+	@ObfuscatedGetter(
+		intValue = 225791087
+	)
+	static int field3067;
 
-		for (int var6 = 0; var6 < var5; ++var6) {
-			char var7 = var0.charAt(var6 + var1);
-			if (var7 > 0 && var7 < 128 || var7 >= 160 && var7 <= 255) {
-				var3[var6 + var4] = (byte)var7;
-			} else if (var7 == 8364) {
-				var3[var6 + var4] = -128;
-			} else if (var7 == 8218) {
-				var3[var6 + var4] = -126;
-			} else if (var7 == 402) {
-				var3[var6 + var4] = -125;
-			} else if (var7 == 8222) {
-				var3[var6 + var4] = -124;
-			} else if (var7 == 8230) {
-				var3[var6 + var4] = -123;
-			} else if (var7 == 8224) {
-				var3[var6 + var4] = -122;
-			} else if (var7 == 8225) {
-				var3[var6 + var4] = -121;
-			} else if (var7 == 710) {
-				var3[var6 + var4] = -120;
-			} else if (var7 == 8240) {
-				var3[var6 + var4] = -119;
-			} else if (var7 == 352) {
-				var3[var6 + var4] = -118;
-			} else if (var7 == 8249) {
-				var3[var6 + var4] = -117;
-			} else if (var7 == 338) {
-				var3[var6 + var4] = -116;
-			} else if (var7 == 381) {
-				var3[var6 + var4] = -114;
-			} else if (var7 == 8216) {
-				var3[var6 + var4] = -111;
-			} else if (var7 == 8217) {
-				var3[var6 + var4] = -110;
-			} else if (var7 == 8220) {
-				var3[var6 + var4] = -109;
-			} else if (var7 == 8221) {
-				var3[var6 + var4] = -108;
-			} else if (var7 == 8226) {
-				var3[var6 + var4] = -107;
-			} else if (var7 == 8211) {
-				var3[var6 + var4] = -106;
-			} else if (var7 == 8212) {
-				var3[var6 + var4] = -105;
-			} else if (var7 == 732) {
-				var3[var6 + var4] = -104;
-			} else if (var7 == 8482) {
-				var3[var6 + var4] = -103;
-			} else if (var7 == 353) {
-				var3[var6 + var4] = -102;
-			} else if (var7 == 8250) {
-				var3[var6 + var4] = -101;
-			} else if (var7 == 339) {
-				var3[var6 + var4] = -100;
-			} else if (var7 == 382) {
-				var3[var6 + var4] = -98;
-			} else if (var7 == 376) {
-				var3[var6 + var4] = -97;
-			} else {
-				var3[var6 + var4] = 63;
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(I)Z",
+		garbageValue = "1327755477"
+	)
+	@Export("loadWorlds")
+	static boolean loadWorlds() {
+		try {
+			if (class149.World_request == null) {
+				class149.World_request = urlRequester.request(new URL(class28.field121));
+			} else if (class149.World_request.isDone()) {
+				byte[] var0 = class149.World_request.getResponse();
+				Buffer var1 = new Buffer(var0);
+				var1.readInt();
+				World.World_count = var1.readUnsignedShort();
+				World.World_worlds = new World[World.World_count];
+
+				World var3;
+				for (int var2 = 0; var2 < World.World_count; var3.index = var2++) {
+					var3 = World.World_worlds[var2] = new World();
+					var3.id = var1.readUnsignedShort();
+					var3.properties = var1.readInt();
+					var3.host = var1.readStringCp1252NullTerminated();
+					var3.activity = var1.readStringCp1252NullTerminated();
+					var3.location = var1.readUnsignedByte();
+					var3.population = var1.readShort();
+				}
+
+				class159.sortWorlds(World.World_worlds, 0, World.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
+				class149.World_request = null;
+				return true;
 			}
+		} catch (Exception var4) {
+			var4.printStackTrace();
+			class149.World_request = null;
 		}
 
-		return var5;
+		return false;
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-1267421818"
+		descriptor = "(Ldz;IIIII)V",
+		garbageValue = "-1976368708"
 	)
-	@Export("isCharPrintable")
-	public static boolean isCharPrintable(char var0) {
-		if (var0 >= ' ' && var0 <= '~') {
-			return true;
-		} else if (var0 >= 160 && var0 <= 255) {
-			return true;
-		} else {
-			return var0 == 8364 || var0 == 338 || var0 == 8212 || var0 == 339 || var0 == 376;
-		}
-	}
+	static final void method5989(WorldView var0, int var1, int var2, int var3, int var4) {
+		int[][][] var5 = var0.tileHeights;
+		int var6 = var0.sizeX - 1;
+		int var7 = var0.sizeY - 1;
 
-	@ObfuscatedName("ht")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1356287247"
-	)
-	@Export("forceDisconnect")
-	static final void forceDisconnect(int var0) {
-		GrandExchangeOfferOwnWorldComparator.logOut();
-		switch(var0) {
-		case 1:
-			class329.updateLoginIndex(24);
-			class106.setLoginResponseString("", "You were disconnected from the server.", "");
-			break;
-		case 2:
-			class329.updateLoginIndex(24);
-			class106.setLoginResponseString("The game servers are currently being updated.", "Please wait a few minutes and try again.", "");
+		for (int var8 = var2; var8 <= var2 + var4; ++var8) {
+			for (int var9 = var1; var9 <= var3 + var1; ++var9) {
+				if (var9 >= 0 && var9 < var5[0].length - 1 && var8 >= 0 && var8 < var5[0][0].length - 1) {
+					Tiles.Tiles_underlays2[0][var9][var8] = 127;
+					if (var9 == var1 && var9 > 0) {
+						var5[0][var9][var8] = var5[0][var9 - 1][var8];
+					}
+
+					if (var9 == var3 + var1 && var9 < var6) {
+						var5[0][var9][var8] = var5[0][var9 + 1][var8];
+					}
+
+					if (var8 == var2 && var8 > 0) {
+						var5[0][var9][var8] = var5[0][var9][var8 - 1];
+					}
+
+					if (var2 + var4 == var8 && var8 < var7) {
+						var5[0][var9][var8] = var5[0][var9][var8 + 1];
+					}
+				}
+			}
 		}
 
 	}

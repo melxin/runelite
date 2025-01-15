@@ -1,48 +1,42 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fd")
+@ObfuscatedName("fv")
 public class class153 {
-	@ObfuscatedName("tv")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -84777741
+		longValue = 8826564680902898909L
 	)
-	static int field1700;
-	@ObfuscatedName("ab")
+	long field1692;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		longValue = -3976112273295813203L
+		intValue = 246819445
 	)
-	long field1696;
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = -1898780395
-	)
-	public int field1697;
-	@ObfuscatedName("at")
+	public int field1695;
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lpc;"
+		descriptor = "Lps;"
 	)
-	IterableNodeDeque field1693;
+	IterableNodeDeque field1691;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;)V"
+		descriptor = "(Lvy;)V"
 	)
 	public class153(Buffer var1) {
-		this.field1697 = -1;
-		this.field1693 = new IterableNodeDeque();
-		this.method3477(var1);
+		this.field1695 = -1;
+		this.field1691 = new IterableNodeDeque();
+		this.method3613(var1);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;B)V",
-		garbageValue = "1"
+		descriptor = "(Lvy;B)V",
+		garbageValue = "69"
 	)
-	void method3477(Buffer var1) {
-		this.field1696 = var1.readLong();
-		this.field1697 = var1.readInt();
+	void method3613(Buffer var1) {
+		this.field1692 = var1.readLong();
+		this.field1695 = var1.readInt();
 
 		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
 			Object var3;
@@ -82,108 +76,66 @@ public class class153 {
 				var3 = new class169(this);
 			}
 
-			((class150)var3).vmethod3694(var1);
-			this.field1693.addFirst((Node)var3);
+			((class150)var3).vmethod3879(var1);
+			this.field1691.addFirst((Node)var3);
 		}
 
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lgv;B)V",
-		garbageValue = "88"
+		descriptor = "(Lgq;B)V",
+		garbageValue = "-28"
 	)
-	public void method3481(ClanSettings var1) {
-		if (var1.field1740 == this.field1696 && this.field1697 == var1.field1741) {
-			for (class150 var2 = (class150)this.field1693.last(); var2 != null; var2 = (class150)this.field1693.previous()) {
-				var2.vmethod3695(var1);
+	public void method3612(ClanSettings var1) {
+		if (var1.field1759 == this.field1692 && this.field1695 == var1.field1738) {
+			for (class150 var2 = (class150)this.field1691.last(); var2 != null; var2 = (class150)this.field1691.previous()) {
+				var2.vmethod3882(var1);
 			}
 
-			++var1.field1741;
+			++var1.field1738;
 		} else {
 			throw new RuntimeException("");
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ljava/lang/String;",
-		garbageValue = "1580013774"
+		descriptor = "(I)V",
+		garbageValue = "-1157377129"
 	)
-	static String method3479(int var0) {
-		return "<img=" + var0 + ">";
+	public static void method3618() {
+		class235.field1864.clear();
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "([BS)Ldt;",
-		garbageValue = "-2875"
+		descriptor = "(I)Z",
+		garbageValue = "-1814785539"
 	)
-	@Export("newScript")
-	static Script newScript(byte[] var0) {
-		Script var1 = new Script();
-		Buffer var2 = new Buffer(var0);
-		var2.offset = var2.array.length - 2;
-		int var3 = var2.readUnsignedShort();
-		int var4 = var2.array.length - 2 - var3 - 12;
-		var2.offset = var4;
-		int var5 = var2.readInt();
-		var1.localIntCount = var2.readUnsignedShort();
-		var1.localStringCount = var2.readUnsignedShort();
-		var1.intArgumentCount = var2.readUnsignedShort();
-		var1.stringArgumentCount = var2.readUnsignedShort();
-		int var6 = var2.readUnsignedByte();
-		int var7;
-		int var8;
-		if (var6 > 0) {
-			var1.switches = var1.newIterableNodeHashTable(var6);
-
-			for (var7 = 0; var7 < var6; ++var7) {
-				var8 = var2.readUnsignedShort();
-				IterableNodeHashTable var9 = new IterableNodeHashTable(var8 > 0 ? ServerPacket.method6470(var8) : 1);
-				var1.switches[var7] = var9;
-
-				while (var8-- > 0) {
-					int var10 = var2.readInt();
-					int var11 = var2.readInt();
-					var9.put(new IntegerNode(var11), (long)var10);
-				}
-			}
-		}
-
-		var2.offset = 0;
-		var1.field1016 = var2.readStringCp1252NullTerminatedOrNull();
-		var1.opcodes = new int[var5];
-		var1.intOperands = new int[var5];
-		var1.stringOperands = new String[var5];
-
-		for (var7 = 0; var2.offset < var4; var1.opcodes[var7++] = var8) {
-			var8 = var2.readUnsignedShort();
-			if (var8 == 3) {
-				var1.stringOperands[var7] = var2.readStringCp1252NullTerminated();
-			} else if (var8 < 100 && var8 != 21 && var8 != 38 && var8 != 39) {
-				var1.intOperands[var7] = var2.readInt();
-			} else {
-				var1.intOperands[var7] = var2.readUnsignedByte();
-			}
-		}
-
-		return var1;
+	public static boolean method3620() {
+		return !class333.field3626.isEmpty();
 	}
 
-	@ObfuscatedName("bi")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "([BIIB)I",
-		garbageValue = "-54"
+		descriptor = "(B)V",
+		garbageValue = "-44"
 	)
-	static int method3484(byte[] var0, int var1, int var2) {
-		int var3 = -1;
+	public static void method3619() {
+		class333.field3626.clear();
+	}
 
-		for (int var4 = var1; var4 < var2; ++var4) {
-			var3 = var3 >>> 8 ^ Buffer.field5470[(var3 ^ var0[var4]) & 255];
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;I)I",
+		garbageValue = "-1352185577"
+	)
+	static int method3617(String var0) {
+		if (var0.equals("centre")) {
+			return 1;
+		} else {
+			return !var0.equals("bottom") && !var0.equals("right") ? 0 : 2;
 		}
-
-		var3 = ~var3;
-		return var3;
 	}
 }

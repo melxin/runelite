@@ -1,19 +1,16 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qz")
+@ObfuscatedName("qb")
 public class class424 {
-	@ObfuscatedName("dd")
+	@ObfuscatedName("on")
 	@ObfuscatedSignature(
-		descriptor = "[Lvy;"
+		descriptor = "Lna;"
 	)
-	@Export("worldSelectFlagSprites")
-	static IndexedSprite[] worldSelectFlagSprites;
-	@ObfuscatedName("oy")
-	@ObfuscatedGetter(
-		intValue = 190767655
-	)
-	static int field4755;
+	@Export("mousedOverWidgetIf1")
+	static Widget mousedOverWidgetIf1;
+	@ObfuscatedName("sp")
+	@Export("ClanChat_inClanChat")
+	static boolean ClanChat_inClanChat;
 }

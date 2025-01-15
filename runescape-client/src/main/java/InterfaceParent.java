@@ -4,31 +4,35 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("do")
+@ObfuscatedName("dt")
 @Implements("InterfaceParent")
 public class InterfaceParent extends Node {
-	@ObfuscatedName("vo")
-	@ObfuscatedSignature(
-		descriptor = "Lcm;"
-	)
-	@Export("friendSystem")
-	public static FriendSystem friendSystem;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -2095853159
+		intValue = 812877491
 	)
 	@Export("group")
 	int group;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -207588877
+		intValue = 661452433
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("at")
-	boolean field1074;
+	@ObfuscatedName("az")
+	boolean field1071;
 
 	InterfaceParent() {
-		this.field1074 = false;
+		this.field1071 = false;
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(Lpq;Lpq;I)V",
+		garbageValue = "-1285017470"
+	)
+	public static void method2618(AbstractArchive var0, AbstractArchive var1) {
+		HealthBarDefinition.HealthBarDefinition_archive = var0;
+		HealthBarDefinition.field2572 = var1;
 	}
 }

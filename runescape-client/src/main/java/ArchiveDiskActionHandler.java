@@ -4,34 +4,37 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ol")
+@ObfuscatedName("oc")
 @Implements("ArchiveDiskActionHandler")
 public class ArchiveDiskActionHandler implements Runnable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lpm;"
 	)
 	@Export("ArchiveDiskActionHandler_requestQueue")
 	static final NodeDeque ArchiveDiskActionHandler_requestQueue;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lpm;"
 	)
 	@Export("ArchiveDiskActionHandler_responseQueue")
 	static NodeDeque ArchiveDiskActionHandler_responseQueue;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = 1781915429
+		intValue = -900251729
 	)
-	static int field4525;
-	@ObfuscatedName("ae")
-	static final Object field4526;
+	static int field4526;
+	@ObfuscatedName("ao")
+	static final Object field4530;
+	@ObfuscatedName("ad")
+	@Export("ArchiveDiskActionHandler_thread")
+	static Thread ArchiveDiskActionHandler_thread;
 
 	static {
 		ArchiveDiskActionHandler_requestQueue = new NodeDeque();
 		ArchiveDiskActionHandler_responseQueue = new NodeDeque();
-		field4525 = 0;
-		field4526 = new Object();
+		field4526 = 0;
+		field4530 = new Object();
 	}
 
 	ArchiveDiskActionHandler() {
@@ -58,88 +61,91 @@ public class ArchiveDiskActionHandler implements Runnable {
 						}
 					}
 
-					synchronized(field4526) {
-						if (field4525 <= 1) {
-							field4525 = 0;
-							field4526.notifyAll();
+					synchronized(field4530) {
+						if (field4526 <= 1) {
+							field4526 = 0;
+							field4530.notifyAll();
 							return;
 						}
 
-						field4525 = 600;
+						field4526 = 600;
 					}
 				} else {
-					class188.method3857(100L);
-					synchronized(field4526) {
-						if (field4525 <= 1) {
-							field4525 = 0;
-							field4526.notifyAll();
+					class174.method3881(100L);
+					synchronized(field4530) {
+						if (field4526 <= 1) {
+							field4526 = 0;
+							field4530.notifyAll();
 							return;
 						}
 
-						--field4525;
+						--field4526;
 					}
 				}
 			}
 		} catch (Exception var13) {
-			ArchiveLoader.RunException_sendStackTrace((String)null, var13);
+			class255.RunException_sendStackTrace((String)null, var13);
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IIIZIZI)V",
-		garbageValue = "-874772167"
+		descriptor = "([Ljava/lang/CharSequence;III)Ljava/lang/String;",
+		garbageValue = "-1902639880"
 	)
-	@Export("doWorldSorting")
-	static void doWorldSorting(int var0, int var1, int var2, boolean var3, int var4, boolean var5) {
-		if (var0 < var1) {
-			int var6 = (var0 + var1) / 2;
-			int var7 = var0;
-			World var8 = class142.World_worlds[var6];
-			class142.World_worlds[var6] = class142.World_worlds[var1];
-			class142.World_worlds[var1] = var8;
+	public static String method7668(CharSequence[] var0, int var1, int var2) {
+		if (var2 == 0) {
+			return "";
+		} else if (var2 == 1) {
+			CharSequence var10 = var0[var1];
+			return var10 == null ? "null" : var10.toString();
+		} else {
+			int var3 = var2 + var1;
+			int var4 = 0;
 
-			for (int var9 = var0; var9 < var1; ++var9) {
-				if (class230.method4564(class142.World_worlds[var9], var8, var2, var3, var4, var5) <= 0) {
-					World var10 = class142.World_worlds[var9];
-					class142.World_worlds[var9] = class142.World_worlds[var7];
-					class142.World_worlds[var7++] = var10;
+			for (int var5 = var1; var5 < var3; ++var5) {
+				CharSequence var9 = var0[var5];
+				if (var9 == null) {
+					var4 += 4;
+				} else {
+					var4 += var9.length();
 				}
 			}
 
-			class142.World_worlds[var1] = class142.World_worlds[var7];
-			class142.World_worlds[var7] = var8;
-			doWorldSorting(var0, var7 - 1, var2, var3, var4, var5);
-			doWorldSorting(var7 + 1, var1, var2, var3, var4, var5);
-		}
+			StringBuilder var8 = new StringBuilder(var4);
 
+			for (int var6 = var1; var6 < var3; ++var6) {
+				CharSequence var7 = var0[var6];
+				if (var7 == null) {
+					var8.append("null");
+				} else {
+					var8.append(var7);
+				}
+			}
+
+			return var8.toString();
+		}
 	}
 
-	@ObfuscatedName("ob")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZB)Ljava/lang/String;",
-		garbageValue = "1"
+		descriptor = "(II)Lvh;",
+		garbageValue = "-1558697005"
 	)
-	static String method7510(String var0, boolean var1) {
-		String var2 = var1 ? "https://" : "http://";
-		if (Client.gameBuild == 1) {
-			var0 = var0 + "-wtrc";
-		} else if (Client.gameBuild == 2) {
-			var0 = var0 + "-wtqa";
-		} else if (Client.gameBuild == 3) {
-			var0 = var0 + "-wtwip";
-		} else if (Client.gameBuild == 5) {
-			var0 = var0 + "-wti";
-		} else if (Client.gameBuild == 4) {
-			var0 = "local";
-		}
+	public static DbTableType method7671(int var0) {
+		DbTableType var1 = (DbTableType)DbTableType.DBTableType_cache.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = DbTableType.field5408.takeFile(39, var0);
+			var1 = new DbTableType();
+			if (var2 != null) {
+				var1.method10151(new Buffer(var2));
+			}
 
-		String var3 = "";
-		if (class141.field1630 != null) {
-			var3 = "/p=" + class141.field1630;
+			var1.method10159();
+			DbTableType.DBTableType_cache.put(var1, (long)var0);
+			return var1;
 		}
-
-		String var4 = "runescape.com";
-		return var2 + var0 + "." + var4 + "/l=" + class276.clientLanguage + "/a=" + FriendsChat.field4989 + var3 + "/";
 	}
 }

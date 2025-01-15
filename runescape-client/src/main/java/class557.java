@@ -1,24 +1,26 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vi")
+@ObfuscatedName("vn")
 public class class557 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("as")
+	static int[] field5476;
+	@ObfuscatedName("ay")
 	int[] field5474;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	short[] field5475;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lhw;)V"
+		descriptor = "(Ljz;)V"
 	)
 	public class557(NPCComposition var1) {
 		this.field5474 = new int[8];
 		this.field5475 = new short[8];
 		int var2 = 0;
-		if (var1.method3940()) {
-			var2 = var1.method3911().length;
-			System.arraycopy(var1.method3911(), 0, this.field5474, 0, var2);
-			System.arraycopy(var1.method3913(), 0, this.field5475, 0, var2);
+		if (var1.method5306()) {
+			var2 = var1.method5338().length;
+			System.arraycopy(var1.method5338(), 0, this.field5474, 0, var2);
+			System.arraycopy(var1.method5308(), 0, this.field5475, 0, var2);
 		}
 
 		for (int var3 = var2; var3 < 8; ++var3) {
@@ -28,40 +30,40 @@ public class class557 {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)[I",
-		garbageValue = "-918743814"
+		garbageValue = "2094086716"
 	)
-	public int[] method10375() {
+	public int[] method10527() {
 		return this.field5474;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)[S",
-		garbageValue = "1277210973"
+		descriptor = "(B)[S",
+		garbageValue = "47"
 	)
-	public short[] method10373() {
+	public short[] method10528() {
 		return this.field5475;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(IISB)V",
-		garbageValue = "19"
+		descriptor = "(IISI)V",
+		garbageValue = "-1698545184"
 	)
-	public void method10374(int var1, int var2, short var3) {
+	public void method10531(int var1, int var2, short var3) {
 		this.field5474[var1] = var2;
 		this.field5475[var1] = var3;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "([I[SI)V",
-		garbageValue = "-1254862484"
+		garbageValue = "-1619580615"
 	)
-	public void method10376(int[] var1, short[] var2) {
+	public void method10530(int[] var1, short[] var2) {
 		this.field5474 = var1;
 		this.field5475 = var2;
 	}

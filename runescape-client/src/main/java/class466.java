@@ -1,39 +1,52 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rh")
+@ObfuscatedName("rs")
 public final class class466 implements Comparable {
-	@ObfuscatedName("ab")
-	Object field4969;
-	@ObfuscatedName("aw")
-	Object field4967;
-	@ObfuscatedName("at")
-	@ObfuscatedGetter(
-		longValue = 3323132709681120067L
-	)
-	long field4968;
 	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		longValue = 8352754032266256715L
+	@ObfuscatedSignature(
+		descriptor = "Lpq;"
 	)
-	long field4970;
+	@Export("SequenceDefinition_skeletonsArchive")
+	static AbstractArchive SequenceDefinition_skeletonsArchive;
+	@ObfuscatedName("ee")
+	@ObfuscatedSignature(
+		descriptor = "Liq;"
+	)
+	@Export("js5SocketTask")
+	static Task js5SocketTask;
+	@ObfuscatedName("ay")
+	Object field4970;
+	@ObfuscatedName("ah")
+	Object field4967;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		longValue = 7941363310758731965L
+	)
+	long field4969;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		longValue = -8628826825301261969L
+	)
+	long field4966;
 
 	class466(Object var1, Object var2) {
-		this.field4969 = var1;
+		this.field4970 = var1;
 		this.field4967 = var2;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lrh;I)I",
-		garbageValue = "518719793"
+		descriptor = "(Lrs;I)I",
+		garbageValue = "-1075640087"
 	)
-	int method8898(class466 var1) {
-		if (this.field4970 < var1.field4970) {
+	int method9059(class466 var1) {
+		if (this.field4966 < var1.field4966) {
 			return -1;
 		} else {
-			return this.field4970 > var1.field4970 ? 1 : 0;
+			return this.field4966 > var1.field4966 ? 1 : 0;
 		}
 	}
 
@@ -45,11 +58,11 @@ public final class class466 implements Comparable {
 		}
 	}
 
-	public int hashCode() {
-		return this.field4967.hashCode();
+	public int compareTo(Object var1) {
+		return this.method9059((class466)var1);
 	}
 
-	public int compareTo(Object var1) {
-		return this.method8898((class466)var1);
+	public int hashCode() {
+		return this.field4967.hashCode();
 	}
 }

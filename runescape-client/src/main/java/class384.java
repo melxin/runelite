@@ -3,65 +3,110 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oz")
+@ObfuscatedName("os")
 public enum class384 implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Loz;"
+		descriptor = "Los;"
 	)
-	field4492(0),
-	@ObfuscatedName("aw")
+	field4498(0),
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Loz;"
+		descriptor = "Los;"
 	)
-	field4490(1),
-	@ObfuscatedName("at")
+	field4494(1),
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Loz;"
+		descriptor = "Los;"
 	)
-	field4494(2),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Loz;"
-	)
-	field4493(3);
-
+	field4496(2),
 	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = -1603803711
+	@ObfuscatedSignature(
+		descriptor = "Los;"
 	)
-	public final int field4491;
+	field4497(3);
+
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = 629776237
+	)
+	public final int field4495;
 
 	class384(int var3) {
-		this.field4491 = var3;
+		this.field4495 = var3;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1071289392"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field4491;
+		return this.field4495;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)I",
-		garbageValue = "1"
+		descriptor = "(II)I",
+		garbageValue = "130353676"
 	)
-	static final int method7491(int var0, int var1, int var2) {
-		int var3 = var0 / var2;
-		int var4 = var0 & var2 - 1;
-		int var5 = var1 / var2;
-		int var6 = var1 & var2 - 1;
-		int var7 = class169.method3658(var3, var5);
-		int var8 = class169.method3658(var3 + 1, var5);
-		int var9 = class169.method3658(var3, var5 + 1);
-		int var10 = class169.method3658(var3 + 1, var5 + 1);
-		int var11 = Buddy.method9124(var7, var8, var4, var2);
-		int var12 = Buddy.method9124(var9, var10, var4, var2);
-		return Buddy.method9124(var11, var12, var6, var2);
+	public static int method7653(int var0) {
+		return var0 >>> 4 & class550.field5421;
+	}
+
+	@ObfuscatedName("jo")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIIIIIIIILdx;I)V",
+		garbageValue = "-1315165544"
+	)
+	static void method7652(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, Player var13) {
+		ObjectComposition var14 = class142.getObjectDefinition(var6);
+		int var15;
+		int var16;
+		if (var4 != 1 && var4 != 3) {
+			var15 = var14.sizeX;
+			var16 = var14.sizeY;
+		} else {
+			var15 = var14.sizeY;
+			var16 = var14.sizeX;
+		}
+
+		int var17 = (var15 >> 1) + var1;
+		int var18 = (var15 + 1 >> 1) + var1;
+		int var19 = (var16 >> 1) + var2;
+		int var20 = var2 + (var16 + 1 >> 1);
+		int[][] var21 = class30.worldView.tileHeights[var0];
+		int var22 = var21[var17][var19] + var21[var18][var19] + var21[var17][var20] + var21[var18][var20] >> 2;
+		int var23 = (var1 << 7) + (var15 << 6);
+		int var24 = (var2 << 7) + (var16 << 6);
+		Model var25 = var14.getModel(var3, var4, var21, var23, var22, var24);
+		if (var25 != null) {
+			Varcs.method3211(class30.worldView, var0, var1, var2, var5, -1, 0, 0, 31, (String[])null, var7 + 1, var8 + 1);
+			var13.animationCycleStart = var7 + Client.cycle;
+			var13.animationCycleEnd = var8 + Client.cycle;
+			var13.model0 = var25;
+			var13.field1131 = var15 * 64 + var1 * 128;
+			var13.field1133 = var2 * 128 + var16 * 64;
+			var13.tileHeight2 = var22;
+			int var26;
+			if (var9 > var11) {
+				var26 = var9;
+				var9 = var11;
+				var11 = var26;
+			}
+
+			if (var10 > var12) {
+				var26 = var10;
+				var10 = var12;
+				var12 = var26;
+			}
+
+			var13.minX = var9 + var1;
+			var13.maxX = var11 + var1;
+			var13.minY = var10 + var2;
+			var13.maxY = var2 + var12;
+		}
+
 	}
 }

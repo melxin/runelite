@@ -2,9 +2,9 @@ import java.util.Random;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("rv")
+@ObfuscatedName("rr")
 public class class451 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("writeRandomDat")
 	public static void writeRandomDat(byte[] var0, int var1, byte[] var2, int var3, int var4) {
 		if (var2 == var0) {
@@ -52,7 +52,7 @@ public class class451 {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("clearIntArray")
 	public static void clearIntArray(int[] var0, int var1, int var2) {
 		for (var2 = var2 + var1 - 7; var1 < var2; var0[var1++] = 0) {
@@ -70,8 +70,8 @@ public class class451 {
 
 	}
 
-	@ObfuscatedName("af")
-	public static void method8760(int[] var0, int var1, int var2, int var3) {
+	@ObfuscatedName("au")
+	public static void method8899(int[] var0, int var1, int var2, int var3) {
 		if (var2 == 0 && var3 == 0) {
 			var2 = (int)(Math.random() * 2.147483647E9D);
 			var3 = (int)(Math.random() * 2.147483647E9D);

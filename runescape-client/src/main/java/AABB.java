@@ -4,60 +4,54 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jk")
+@ObfuscatedName("hr")
 @Implements("AABB")
 public class AABB {
-	@ObfuscatedName("vq")
-	@ObfuscatedSignature(
-		descriptor = "Lpf;"
-	)
-	@Export("grandExchangeEvents")
-	static GrandExchangeEvents grandExchangeEvents;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1764701235
+		intValue = 1086242221
 	)
 	@Export("orientation")
 	final int orientation;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1457712909
+		intValue = -999433467
 	)
 	@Export("xMid")
 	int xMid;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = 565410795
+		intValue = -1443786081
 	)
 	@Export("yMid")
 	int yMid;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -841799799
+		intValue = -1400987047
 	)
 	@Export("zMid")
 	int zMid;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -252446047
+		intValue = -1660098557
 	)
 	@Export("xMidOffset")
 	int xMidOffset;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -297231209
+		intValue = -816988281
 	)
 	@Export("yMidOffset")
 	int yMidOffset;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1584322801
+		intValue = 1447957023
 	)
 	@Export("zMidOffset")
 	int zMidOffset;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Ljk;"
+		descriptor = "Lhr;"
 	)
 	@Export("aabb")
 	AABB aabb;
@@ -70,21 +64,5 @@ public class AABB {
 		this.xMidOffset = var5;
 		this.yMidOffset = var6;
 		this.zMidOffset = var7;
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(Lvj;BIS)I",
-		garbageValue = "23401"
-	)
-	public static int method5139(Buffer var0, byte var1, int var2) {
-		int var3 = var1 >> var2 & 3;
-		if (var3 == 3) {
-			return var0.readInt();
-		} else if (var3 == 2) {
-			return var0.readShort();
-		} else {
-			return var3 == 1 ? var0.readByte() : 0;
-		}
 	}
 }

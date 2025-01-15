@@ -5,18 +5,19 @@ import java.util.Map;
 import java.util.Map.Entry;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tf")
+@ObfuscatedName("tk")
 @Implements("HttpQueryParams")
 public class HttpQueryParams implements HttpPayload {
-	@ObfuscatedName("jn")
-	@ObfuscatedSignature(
-		descriptor = "Ldm;"
+	@ObfuscatedName("ux")
+	@ObfuscatedGetter(
+		intValue = -171839523
 	)
-	static WorldView field5137;
-	@ObfuscatedName("ab")
+	static int field5142;
+	@ObfuscatedName("ay")
 	@Export("queryParameters")
 	final Map queryParameters;
 
@@ -24,30 +25,30 @@ public class HttpQueryParams implements HttpPayload {
 		this.queryParameters = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lto;",
-		garbageValue = "1892648748"
+		descriptor = "(I)Ltw;",
+		garbageValue = "-546778474"
 	)
 	@Export("getContentType")
 	public HttpContentType getContentType() {
 		return null;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(I)[B",
-		garbageValue = "-1854248554"
+		garbageValue = "613600609"
 	)
 	@Export("toBytes")
 	public byte[] toBytes() throws UnsupportedEncodingException {
 		return this.encode().getBytes("UTF-8");
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "11"
+		garbageValue = "43"
 	)
 	@Export("encode")
 	public String encode() throws UnsupportedEncodingException {
@@ -68,15 +69,5 @@ public class HttpQueryParams implements HttpPayload {
 			var1.insert(0, "?");
 			return var1.toString();
 		}
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(Lpi;Lpi;I)V",
-		garbageValue = "-64756694"
-	)
-	public static void method9395(AbstractArchive var0, AbstractArchive var1) {
-		SpotAnimationDefinition.SpotAnimationDefinition_archive = var0;
-		class36.SpotAnimationDefinition_modelArchive = var1;
 	}
 }

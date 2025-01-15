@@ -4,30 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jf")
+@ObfuscatedName("hd")
 @Implements("VertexNormal")
 public class VertexNormal {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -2134179721
+		intValue = -1397898627
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 2073571793
+		intValue = -396954475
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -1702880519
+		intValue = -411226141
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1628575481
+		intValue = 507587089
 	)
 	@Export("magnitude")
 	int magnitude;
@@ -36,7 +36,7 @@ public class VertexNormal {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljf;)V"
+		descriptor = "(Lhd;)V"
 	)
 	VertexNormal(VertexNormal var1) {
 		this.x = var1.x;
@@ -45,12 +45,25 @@ public class VertexNormal {
 		this.magnitude = var1.magnitude;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IS)I",
-		garbageValue = "-7219"
+		descriptor = "(II)Ljr;",
+		garbageValue = "-678648084"
 	)
-	public static int method5429(int var0) {
-		return var0 != 0 && var0 != 1 ? -1 : 0;
+	@Export("getEnum")
+	public static EnumComposition getEnum(int var0) {
+		EnumComposition var1 = (EnumComposition)EnumComposition.EnumDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = EnumComposition.EnumDefinition_archive.takeFile(8, var0);
+			var1 = new EnumComposition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
+
+			EnumComposition.EnumDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
 	}
 }

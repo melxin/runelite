@@ -1,26 +1,21 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lq")
+@ObfuscatedName("lp")
 public class class289 {
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = 43154695
-	)
-	static int field3175;
-	@ObfuscatedName("bq")
-	@Export("hasFocus")
-	protected static boolean hasFocus;
-
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;I)V",
-		garbageValue = "2032850800"
+		descriptor = "(I)Lqh;",
+		garbageValue = "-873555905"
 	)
-	@Export("addGameMessage")
-	static void addGameMessage(int var0, String var1, String var2) {
-		class417.addChatMessage(var0, var1, var2, (String)null);
+	static class426 method6322() {
+		synchronized(class426.field4746) {
+			if (class426.field4742 == 0) {
+				return new class426();
+			} else {
+				class426.field4746[--class426.field4742].method8287();
+				return class426.field4746[class426.field4742];
+			}
+		}
 	}
 }

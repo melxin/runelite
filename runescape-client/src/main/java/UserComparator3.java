@@ -1,12 +1,26 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ef")
+@ObfuscatedName("eu")
 @Implements("UserComparator3")
 public class UserComparator3 extends AbstractUserComparator {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = 1260367595
+	)
+	@Export("loginBoxCenter")
+	static int loginBoxCenter;
+	@ObfuscatedName("gq")
+	@ObfuscatedGetter(
+		intValue = -1449433465
+	)
+	static int field1506;
+	@ObfuscatedName("ay")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -14,10 +28,10 @@ public class UserComparator3 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lsi;Lsi;I)I",
-		garbageValue = "1431961330"
+		descriptor = "(Lsu;Lsu;I)I",
+		garbageValue = "1663642696"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -32,93 +46,66 @@ public class UserComparator3 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)Z",
-		garbageValue = "-1488142395"
-	)
-	@Export("isNumber")
-	public static boolean isNumber(CharSequence var0) {
-		return HttpRequest.method105(var0, 10, true);
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "([BIII)Z",
-		garbageValue = "-933804468"
-	)
-	static final boolean method3233(byte[] var0, int var1, int var2) {
-		boolean var3 = true;
-		Buffer var4 = new Buffer(var0);
-		int var5 = -1;
-
-		label71:
-		while (true) {
-			int var6 = var4.readIncrSmallSmart();
-			if (var6 == 0) {
-				return var3;
-			}
-
-			var5 += var6;
-			int var7 = 0;
-			boolean var8 = false;
-
-			while (true) {
-				int var9;
-				while (!var8) {
-					var9 = var4.readUShortSmart();
-					if (var9 == 0) {
-						continue label71;
-					}
-
-					var7 += var9 - 1;
-					int var10 = var7 & 63;
-					int var11 = var7 >> 6 & 63;
-					int var12 = var4.readUnsignedByte() >> 2;
-					int var13 = var11 + var1;
-					int var14 = var10 + var2;
-					if (var13 > 0 && var14 > 0 && var13 < 103 && var14 < 103) {
-						ObjectComposition var15 = HttpMethod.getObjectDefinition(var5);
-						if (var12 != 22 || !Client.isLowDetail || var15.int1 != 0 || var15.interactType == 1 || var15.boolean2) {
-							if (!var15.needsModelFiles()) {
-								++Client.field581;
-								var3 = false;
-							}
-
-							var8 = true;
-						}
-					}
-				}
-
-				var9 = var4.readUShortSmart();
-				if (var9 == 0) {
-					break;
-				}
-
-				var4.readUnsignedByte();
-			}
-		}
-	}
-
-	@ObfuscatedName("ih")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "2031742916"
+		garbageValue = "908157200"
 	)
-	static final void method3232() {
-		if (class75.pcmPlayer1 != null) {
-			class75.pcmPlayer1.run();
-		}
-
+	public static void method3346() {
+		class254.field2136.clear();
 	}
 
-	@ObfuscatedName("oi")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lnp;I)Z",
-		garbageValue = "-319371586"
+		descriptor = "(IIS)V",
+		garbageValue = "23665"
 	)
-	@Export("isComponentHidden")
-	static boolean isComponentHidden(Widget var0) {
-		return var0.isHidden;
+	public static void method3347(int var0, int var1) {
+		class333.musicPlayerStatus = var0;
+		class333.field3632 = var1;
+		class333.field3633 = 0;
+		class333.field3634 = 0;
+		class333.field3626.clear();
+		class333.field3629.clear();
+		if (!class333.musicSongs.isEmpty() && (var0 != 0 || var1 != 0)) {
+			class333.field3629.add(new DelayFadeTask((SongTask)null, class333.musicPlayerStatus));
+			class333.field3629.add(new FadeOutTask((SongTask)null, 0, false, class333.field3632));
+			ArrayList var10 = new ArrayList();
+			Iterator var4 = class333.musicSongs.iterator();
+
+			while (var4.hasNext()) {
+				MusicSong var5 = (MusicSong)var4.next();
+				var10.add(var5);
+			}
+
+			class333.field3629.add(new class443((SongTask)null, var10));
+		} else {
+			Iterator var2 = class333.musicSongs.iterator();
+
+			while (true) {
+				MusicSong var3;
+				do {
+					if (!var2.hasNext()) {
+						class333.musicSongs.clear();
+						return;
+					}
+
+					var3 = (MusicSong)var2.next();
+				} while(var3 == null);
+
+				var3.midiPcmStream.clear();
+				var3.midiPcmStream.method6714();
+				var3.midiPcmStream.setPcmStreamVolume(0);
+				var3.midiPcmStream.field3668 = 0;
+				int var8 = var3.musicTrackGroupId;
+				int var9 = var3.musicTrackFileId;
+				Iterator var6 = class333.field3627.iterator();
+
+				while (var6.hasNext()) {
+					class339 var7 = (class339)var6.next();
+					var7.vmethod6894(var8, var9);
+				}
+			}
+		}
 	}
 }

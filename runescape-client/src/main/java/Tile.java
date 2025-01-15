@@ -4,129 +4,129 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ju")
+@ObfuscatedName("gu")
 @Implements("Tile")
 public final class Tile extends Node {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1022484315
+		intValue = -774877491
 	)
 	@Export("plane")
 	int plane;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1430718767
+		intValue = 619029883
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = 880346099
+		intValue = -1814724795
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -1797654355
+		intValue = 1118517245
 	)
 	@Export("originalPlane")
 	int originalPlane;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lje;"
+		descriptor = "Lhz;"
 	)
 	@Export("paint")
 	SceneTilePaint paint;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Ljq;"
+		descriptor = "Lho;"
 	)
 	@Export("model")
 	SceneTileModel model;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lkv;"
+		descriptor = "Lha;"
 	)
 	@Export("boundaryObject")
 	BoundaryObject boundaryObject;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lks;"
+		descriptor = "Lie;"
 	)
 	@Export("wallDecoration")
 	WallDecoration wallDecoration;
-	@ObfuscatedName("au")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Ljr;"
+		descriptor = "Lgi;"
 	)
 	@Export("floorDecoration")
 	FloorDecoration floorDecoration;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Liu;"
+		descriptor = "Lgj;"
 	)
 	@Export("itemLayer")
 	ItemLayer itemLayer;
-	@ObfuscatedName("af")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -874772167
+		intValue = 593224731
 	)
 	@Export("gameObjectsCount")
 	int gameObjectsCount;
-	@ObfuscatedName("al")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "[Lkr;"
+		descriptor = "[Lik;"
 	)
 	@Export("gameObjects")
 	GameObject[] gameObjects;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("af")
 	@Export("gameObjectEdgeMasks")
 	int[] gameObjectEdgeMasks;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 372734409
+		intValue = -858281711
 	)
 	@Export("gameObjectsEdgeMask")
 	int gameObjectsEdgeMask;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 261645917
+		intValue = -885550693
 	)
 	@Export("minPlane")
 	int minPlane;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("al")
 	@Export("drawPrimary")
 	boolean drawPrimary;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("av")
 	@Export("drawSecondary")
 	boolean drawSecondary;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ag")
 	@Export("drawGameObjects")
 	boolean drawGameObjects;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1348956319
+		intValue = 1214984083
 	)
 	@Export("drawGameObjectEdges")
 	int drawGameObjectEdges;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -1772087291
+		intValue = 243927097
 	)
-	int field2581;
-	@ObfuscatedName("ax")
+	int field1947;
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 1631164287
+		intValue = 1869939313
 	)
-	int field2590;
-	@ObfuscatedName("aa")
+	int field1946;
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 1091419763
+		intValue = -64519713
 	)
-	int field2591;
-	@ObfuscatedName("aq")
+	int field1949;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lju;"
+		descriptor = "Lgu;"
 	)
 	@Export("linkedBelowTile")
 	Tile linkedBelowTile;
@@ -140,111 +140,53 @@ public final class Tile extends Node {
 		this.y = var3;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("hc")
 	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;[SIIB)V",
-		garbageValue = "1"
+		descriptor = "(Lna;IIB)V",
+		garbageValue = "119"
 	)
-	@Export("sortItemsByName")
-	static void sortItemsByName(String[] var0, short[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			String var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			short var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
+	@Export("checkIfMinimapClicked")
+	static final void checkIfMinimapClicked(Widget var0, int var1, int var2) {
+		if (Client.minimapState == 0 || Client.minimapState == 3) {
+			if (!Client.isMenuOpen && (MouseHandler.MouseHandler_lastButton == 1 || !KeyHandler.mouseCam && MouseHandler.MouseHandler_lastButton == 4)) {
+				SpriteMask var3 = var0.method7446(ClanChannel.widgetDefinition, true);
+				if (var3 == null) {
+					return;
+				}
 
-			for (int var8 = var2; var8 < var3; ++var8) {
-				if (var6 == null || var0[var8] != null && var0[var8].compareTo(var6) < (var8 & 1)) {
-					String var9 = var0[var8];
-					var0[var8] = var0[var5];
-					var0[var5] = var9;
-					short var10 = var1[var8];
-					var1[var8] = var1[var5];
-					var1[var5++] = var10;
+				int var4 = MouseHandler.MouseHandler_lastPressedX - var1;
+				int var5 = MouseHandler.MouseHandler_lastPressedY - var2;
+				if (var3.contains(var4, var5)) {
+					var4 -= var3.width / 2;
+					var5 -= var3.height / 2;
+					int var6 = Client.camAngleY & 2047;
+					int var7 = Rasterizer3D.Rasterizer3D_sine[var6];
+					int var8 = Rasterizer3D.Rasterizer3D_cosine[var6];
+					int var9 = var7 * var5 + var8 * var4 >> 11;
+					int var10 = var8 * var5 - var7 * var4 >> 11;
+					int var11 = class53.entity.getX() + var9 >> 7;
+					int var12 = class53.entity.getY() - var10 >> 7;
+					PacketBufferNode var13 = ScriptEvent.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
+					var13.packetBuffer.writeByte(18);
+					var13.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
+					var13.packetBuffer.writeShort(var12 + GameEngine.topLevelWorldView.baseY);
+					var13.packetBuffer.writeShortAddLE(var11 + GameEngine.topLevelWorldView.baseX);
+					var13.packetBuffer.writeByte(var4);
+					var13.packetBuffer.writeByte(var5);
+					var13.packetBuffer.writeShort(Client.camAngleY);
+					var13.packetBuffer.writeByte(57);
+					var13.packetBuffer.writeByte(0);
+					var13.packetBuffer.writeByte(0);
+					var13.packetBuffer.writeByte(89);
+					var13.packetBuffer.writeShort(ModeWhere.localPlayer.x);
+					var13.packetBuffer.writeShort(ModeWhere.localPlayer.y);
+					var13.packetBuffer.writeByte(63);
+					Client.packetWriter.addNode(var13);
+					Client.destinationX = var11;
+					Client.destinationY = var12;
 				}
 			}
 
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			sortItemsByName(var0, var1, var2, var5 - 1);
-			sortItemsByName(var0, var1, var5 + 1, var3);
-		}
-
-	}
-
-	@ObfuscatedName("mm")
-	@ObfuscatedSignature(
-		descriptor = "([Lnp;IIIZI)V",
-		garbageValue = "-715218419"
-	)
-	@Export("resizeInterface")
-	static void resizeInterface(Widget[] var0, int var1, int var2, int var3, boolean var4) {
-		for (int var5 = 0; var5 < var0.length; ++var5) {
-			Widget var6 = var0[var5];
-			if (var6 != null && var6.parentId == var1) {
-				AbstractWorldMapIcon.alignWidgetSize(var6, var2, var3, var4);
-				LoginScreenAnimation.alignWidgetPosition(var6, var2, var3);
-				if (var6.scrollX > var6.scrollWidth - var6.width) {
-					var6.scrollX = var6.scrollWidth - var6.width;
-				}
-
-				if (var6.scrollX < 0) {
-					var6.scrollX = 0;
-				}
-
-				if (var6.scrollY > var6.scrollHeight - var6.height) {
-					var6.scrollY = var6.scrollHeight - var6.height;
-				}
-
-				if (var6.scrollY < 0) {
-					var6.scrollY = 0;
-				}
-
-				if (var6.type == 0) {
-					GrandExchangeOfferAgeComparator.revalidateWidgetScroll(var0, var6, var4);
-				}
-			}
-		}
-
-	}
-
-	@ObfuscatedName("mu")
-	@ObfuscatedSignature(
-		descriptor = "(Lnp;I)Z",
-		garbageValue = "-30302104"
-	)
-	@Export("runCs1")
-	static final boolean runCs1(Widget var0) {
-		if (var0.cs1Comparisons == null) {
-			return false;
-		} else {
-			for (int var1 = 0; var1 < var0.cs1Comparisons.length; ++var1) {
-				int var2 = class300.method6248(var0, var1);
-				int var3 = var0.cs1ComparisonValues[var1];
-				if (var0.cs1Comparisons[var1] == 2) {
-					if (var2 >= var3) {
-						return false;
-					}
-				} else if (var0.cs1Comparisons[var1] == 3) {
-					if (var2 <= var3) {
-						return false;
-					}
-				} else if (var0.cs1Comparisons[var1] == 4) {
-					if (var2 == var3) {
-						return false;
-					}
-				} else if (var2 != var3) {
-					return false;
-				}
-			}
-
-			return true;
 		}
 	}
 }

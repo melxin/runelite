@@ -3,52 +3,66 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bf")
+@ObfuscatedName("bo")
 public class class47 {
-	@ObfuscatedName("gx")
-	@Export("characterId")
-	static String characterId;
-	@ObfuscatedName("hi")
-	static String field323;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lcy;"
+		descriptor = "Lcc;"
 	)
-	VorbisSample field324;
-	@ObfuscatedName("aw")
+	VorbisSample field304;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lbi;"
+		descriptor = "Lbc;"
 	)
-	RawSound field320;
-	@ObfuscatedName("at")
-	ReentrantLock field321;
+	RawSound field306;
+	@ObfuscatedName("az")
+	ReentrantLock field305;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lcy;Lbi;)V"
+		descriptor = "(Lcc;Lbc;)V"
 	)
 	class47(VorbisSample var1, RawSound var2) {
-		this.field324 = var1;
-		this.field320 = var2;
-		this.field321 = new ReentrantLock();
+		this.field304 = var1;
+		this.field306 = var2;
+		this.field305 = new ReentrantLock();
 	}
 
-	@ObfuscatedName("nq")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-943992326"
+		descriptor = "(Lue;ILjava/lang/String;I)Ljava/lang/String;",
+		garbageValue = "744078519"
 	)
-	static final void method866(int var0) {
-		if (class379.widgetDefinition.loadInterface(var0)) {
-			Widget[] var1 = class379.widgetDefinition.Widget_interfaceComponents[var0];
+	static String method906(IterableNodeHashTable var0, int var1, String var2) {
+		if (var0 == null) {
+			return var2;
+		} else {
+			ObjectNode var3 = (ObjectNode)var0.get((long)var1);
+			return var3 == null ? var2 : (String)var3.obj;
+		}
+	}
 
-			for (int var2 = 0; var2 < var1.length; ++var2) {
-				Widget var3 = var1[var2];
-				if (var3 != null) {
-					var3.modelFrame = 0;
-					var3.modelFrameCycle = 0;
-				}
-			}
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(III)Lct;",
+		garbageValue = "-799303863"
+	)
+	@Export("Messages_getByChannelAndID")
+	static Message Messages_getByChannelAndID(int var0, int var1) {
+		ChatChannel var2 = (ChatChannel)Messages.Messages_channels.get(var0);
+		return var2.getMessage(var1);
+	}
 
+	@ObfuscatedName("ow")
+	@ObfuscatedSignature(
+		descriptor = "(Lna;I)Ljava/lang/String;",
+		garbageValue = "972230593"
+	)
+	@Export("Widget_getSpellActionName")
+	static String Widget_getSpellActionName(Widget var0) {
+		if (class298.Widget_unpackTargetMask(class232.getWidgetFlags(var0)) == 0) {
+			return null;
+		} else {
+			return var0.spellActionName != null && var0.spellActionName.trim().length() != 0 ? var0.spellActionName : null;
 		}
 	}
 }

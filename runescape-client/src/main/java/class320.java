@@ -1,35 +1,42 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mt")
+@ObfuscatedName("mv")
 public class class320 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)[Lde;",
-		garbageValue = "122"
+		descriptor = "(II)I",
+		garbageValue = "-1617562708"
 	)
-	static class93[] method6452() {
-		return new class93[]{class93.field1117, class93.field1118, class93.field1116, class93.field1114, class93.field1120, class93.field1119};
-	}
-
-	@ObfuscatedName("le")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1500022745"
-	)
-	static void method6451() {
-		if (Client.isSpellSelected) {
-			Widget var0 = class379.widgetDefinition.getWidgetChild(Clock.selectedSpellWidget, Client.selectedSpellChildIndex);
-			if (var0 != null && var0.onTargetLeave != null) {
-				ScriptEvent var1 = new ScriptEvent();
-				var1.widget = var0;
-				var1.args = var0.onTargetLeave;
-				WorldMapEvent.runScriptEvent(var1);
-			}
-
-			Client.selectedSpellItemId = -1;
-			Client.isSpellSelected = false;
-			class178.invalidateWidget(var0);
+	@Export("iLog")
+	public static int iLog(int var0) {
+		int var1 = 0;
+		if (var0 < 0 || var0 >= 65536) {
+			var0 >>>= 16;
+			var1 += 16;
 		}
+
+		if (var0 >= 256) {
+			var0 >>>= 8;
+			var1 += 8;
+		}
+
+		if (var0 >= 16) {
+			var0 >>>= 4;
+			var1 += 4;
+		}
+
+		if (var0 >= 4) {
+			var0 >>>= 2;
+			var1 += 2;
+		}
+
+		if (var0 >= 1) {
+			var0 >>>= 1;
+			++var1;
+		}
+
+		return var0 + var1;
 	}
 }

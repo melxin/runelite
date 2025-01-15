@@ -4,50 +4,48 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fg")
+@ObfuscatedName("ft")
 @Implements("AuthenticationScheme")
 public enum AuthenticationScheme implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lfg;"
+		descriptor = "Lft;"
 	)
 	@Export("USERNAME_PASSWORD_REMEMBER")
 	USERNAME_PASSWORD_REMEMBER(1, 0),
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lfg;"
+		descriptor = "Lft;"
 	)
 	@Export("TOKEN_REMEMBER")
 	TOKEN_REMEMBER(4, 1),
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lfg;"
+		descriptor = "Lft;"
 	)
 	@Export("USERNAME_PASSWORD")
-	USERNAME_PASSWORD(0, 2),
-	@ObfuscatedName("ae")
+	USERNAME_PASSWORD(3, 2),
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lfg;"
+		descriptor = "Lft;"
 	)
 	@Export("TOKEN")
 	TOKEN(2, 3),
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lfg;"
+		descriptor = "Lft;"
 	)
-	field1517(3, 4);
+	field1663(0, 4);
 
-	@ObfuscatedName("jh")
-	static int[][] field1523;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1520029109
+		intValue = 1834694195
 	)
 	@Export("schemeId")
 	public final int schemeId;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1607210699
+		intValue = 274014195
 	)
 	@Export("packetId")
 	final int packetId;
@@ -57,23 +55,22 @@ public enum AuthenticationScheme implements Enum {
 		this.packetId = var4;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1071289392"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.packetId;
 	}
 
-	@ObfuscatedName("lr")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Ldm;III)V",
-		garbageValue = "-1472125526"
+		descriptor = "(I)[Lej;",
+		garbageValue = "1748459436"
 	)
-	@Export("updateItemPile3")
-	static final void updateItemPile3(WorldView var0, int var1, int var2) {
-		class92.updateItemPile2(var0, var0.plane, var1, var2);
+	static AttackOption[] method3561() {
+		return new AttackOption[]{AttackOption.field1378, AttackOption.field1379, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.AttackOption_alwaysRightClick, AttackOption.AttackOption_hidden};
 	}
 }

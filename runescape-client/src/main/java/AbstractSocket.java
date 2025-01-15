@@ -4,118 +4,100 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sw")
+@ObfuscatedName("sq")
 @Implements("AbstractSocket")
 public abstract class AbstractSocket {
 	AbstractSocket() {
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "-1341209698"
+		garbageValue = "1264971006"
 	)
 	@Export("isAvailable")
 	public abstract boolean isAvailable(int var1) throws IOException;
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "2"
+		descriptor = "(I)I",
+		garbageValue = "-2125512046"
 	)
 	@Export("available")
 	public abstract int available() throws IOException;
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "2014080520"
+		garbageValue = "1363854656"
 	)
 	@Export("readUnsignedByte")
 	public abstract int readUnsignedByte() throws IOException;
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)I",
-		garbageValue = "-1817161468"
+		descriptor = "([BIIB)I",
+		garbageValue = "72"
 	)
 	@Export("read")
 	public abstract int read(byte[] var1, int var2, int var3) throws IOException;
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)V",
-		garbageValue = "1976196201"
+		descriptor = "([BIIB)V",
+		garbageValue = "-105"
 	)
 	@Export("write")
 	public abstract void write(byte[] var1, int var2, int var3) throws IOException;
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "255"
+		descriptor = "(I)V",
+		garbageValue = "-1821776179"
 	)
 	@Export("close")
 	public abstract void close();
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lvr;",
-		garbageValue = "-2062540728"
+		descriptor = "(Lpq;IIB)[Lvf;",
+		garbageValue = "34"
 	)
-	static SpritePixels method9235() {
-		SpritePixels var0 = new SpritePixels();
-		var0.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
-		var0.height = SecureRandomFuture.SpriteBuffer_spriteHeight;
-		var0.xOffset = SpriteBufferProperties.SpriteBuffer_xOffsets[0];
-		var0.yOffset = HttpResponse.SpriteBuffer_yOffsets[0];
-		var0.subWidth = SpriteBufferProperties.SpriteBuffer_spriteWidths[0];
-		var0.subHeight = WorldMapCacheName.SpriteBuffer_spriteHeights[0];
-		int var1 = var0.subHeight * var0.subWidth;
-		byte[] var2 = SpriteBufferProperties.SpriteBuffer_pixels[0];
-		var0.pixels = new int[var1];
-
-		for (int var3 = 0; var3 < var1; ++var3) {
-			var0.pixels[var3] = class140.SpriteBuffer_spritePalette[var2[var3] & 255];
-		}
-
-		SpriteBufferProperties.SpriteBuffer_xOffsets = null;
-		HttpResponse.SpriteBuffer_yOffsets = null;
-		SpriteBufferProperties.SpriteBuffer_spriteWidths = null;
-		WorldMapCacheName.SpriteBuffer_spriteHeights = null;
-		class140.SpriteBuffer_spritePalette = null;
-		SpriteBufferProperties.SpriteBuffer_pixels = null;
-		return var0;
+	public static SpritePixels[] method9404(AbstractArchive var0, int var1, int var2) {
+		return !WorldMapSprite.method6397(var0, var1, var2) ? null : class457.method8965();
 	}
 
-	@ObfuscatedName("cy")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(ILdt;ZI)I",
-		garbageValue = "-2044924347"
+		descriptor = "(ZB)V",
+		garbageValue = "-97"
 	)
-	static int method9236(int var0, Script var1, boolean var2) {
-		int var3;
-		int var4;
-		if (var0 == 8000) {
-			--PrivateChatMode.Interpreter_intStackSize;
-			var3 = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize];
-			var4 = Interpreter.Interpreter_arrayLengths[var3];
-			PendingSpawn.method2635(Interpreter.Interpreter_arrays[var3], new int[var4], 0, var4 - 1);
-			return 1;
-		} else if (var0 == 8001) {
-			PrivateChatMode.Interpreter_intStackSize -= 3;
-			var3 = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize];
-			var4 = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 1];
-			int var5 = Interpreter.Interpreter_intStack[PrivateChatMode.Interpreter_intStackSize + 2];
-			int var6 = Interpreter.Interpreter_arrayLengths[var3];
-			if (var6 <= 1) {
-				return 1;
-			} else {
-				class451.method8760(Interpreter.Interpreter_arrays[var3], var6, var4, var5);
-				return 1;
-			}
-		} else {
-			return 2;
+	@Export("updateLoginStatusUsernameRemembered")
+	static void updateLoginStatusUsernameRemembered(boolean var0) {
+		byte var1 = 0;
+		if (!LoginScreenAnimation.method2876()) {
+			var1 = 12;
+		} else if (Client.client.containsAccessAndRefreshToken() || Client.client.otlTokenRequesterInitialized() || Client.client.containsSessionAndCharacterId()) {
+			var1 = 10;
 		}
+
+		Varcs.method3212(var1);
+		if (var0) {
+			Login.Login_username = "";
+			Login.Login_password = "";
+			class326.otpMedium = 0;
+			WorldEntity.otp = "";
+		}
+
+		if (Login.Login_username == null || Login.Login_username.length() <= 0) {
+			if (class544.clientPreferences.getRememberedUsername() != null) {
+				Login.Login_username = class544.clientPreferences.getRememberedUsername();
+				Client.Login_isUsernameRemembered = true;
+			} else {
+				Client.Login_isUsernameRemembered = false;
+			}
+		}
+
+		HealthBarUpdate.focusPasswordWhenUsernameFilled();
 	}
 }

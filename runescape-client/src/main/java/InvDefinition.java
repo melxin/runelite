@@ -4,30 +4,33 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gz")
+@ObfuscatedName("ip")
 @Implements("InvDefinition")
 public class InvDefinition extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpq;"
 	)
 	@Export("InvDefinition_archive")
 	static AbstractArchive InvDefinition_archive;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmi;"
 	)
 	@Export("InvDefinition_cached")
 	static EvictingDualNodeHashTable InvDefinition_cached;
-	@ObfuscatedName("gp")
-	@ObfuscatedGetter(
-		intValue = 1625230515
+	@ObfuscatedName("ax")
+	@Export("Tiles_hue")
+	static int[] Tiles_hue;
+	@ObfuscatedName("sf")
+	@ObfuscatedSignature(
+		descriptor = "Lgq;"
 	)
-	@Export("js5Port")
-	static int js5Port;
-	@ObfuscatedName("at")
+	@Export("guestClanSettings")
+	static ClanSettings guestClanSettings;
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = 2054796503
+		intValue = 522434629
 	)
 	@Export("size")
 	public int size;
@@ -40,10 +43,10 @@ public class InvDefinition extends DualNode {
 		this.size = 0;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;I)V",
-		garbageValue = "2024845865"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "659202401"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -57,10 +60,10 @@ public class InvDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;II)V",
-		garbageValue = "1447722129"
+		descriptor = "(Lvy;II)V",
+		garbageValue = "-1952497567"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -70,140 +73,58 @@ public class InvDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("mr")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lec;IIIII)V",
-		garbageValue = "-1080346208"
+		descriptor = "(IB)Z",
+		garbageValue = "16"
 	)
-	@Export("addNpcToMenu")
-	static final void addNpcToMenu(NPC var0, int var1, int var2, int var3, int var4) {
-		NPCComposition var5 = var0.definition;
-		if (Client.menu.menuOptionsCount < 400) {
-			if (var5.transforms != null) {
-				var5 = var5.transform();
-			}
+	@Export("isWorldMapEvent")
+	public static boolean isWorldMapEvent(int var0) {
+		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
+	}
 
-			if (var5 != null) {
-				if (var5.isInteractable) {
-					if (!var5.isFollower || Client.followerIndex == var1) {
-						String var6 = var0.method2893();
-						int var7;
-						int var10;
-						if (var5.combatLevel != 0 && var0.field1271 != 0) {
-							var7 = var0.field1271 != -1 ? var0.field1271 : var5.combatLevel;
-							var10 = AsyncHttpResponse.localPlayer.combatLevel;
-							int var11 = var10 - var7;
-							String var9;
-							if (var11 < -9) {
-								var9 = class438.colorStartTag(16711680);
-							} else if (var11 < -6) {
-								var9 = class438.colorStartTag(16723968);
-							} else if (var11 < -3) {
-								var9 = class438.colorStartTag(16740352);
-							} else if (var11 < 0) {
-								var9 = class438.colorStartTag(16756736);
-							} else if (var11 > 9) {
-								var9 = class438.colorStartTag(65280);
-							} else if (var11 > 6) {
-								var9 = class438.colorStartTag(4259584);
-							} else if (var11 > 3) {
-								var9 = class438.colorStartTag(8453888);
-							} else if (var11 > 0) {
-								var9 = class438.colorStartTag(12648192);
-							} else {
-								var9 = class438.colorStartTag(16776960);
-							}
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(Lpq;I)V",
+		garbageValue = "450752558"
+	)
+	public static void method5120(AbstractArchive var0) {
+		ParamComposition.ParamDefinition_archive = var0;
+	}
 
-							var6 = var6 + var9 + " " + " (" + "level-" + var7 + ")";
-						}
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;II)V",
+		garbageValue = "-728355894"
+	)
+	static final void method5121(String var0, int var1) {
+		PacketBufferNode var2 = ScriptEvent.getPacketBufferNode(ClientPacket.FRIEND_CHAT_SETRANK, Client.packetWriter.isaacCipher);
+		var2.packetBuffer.writeByte(MouseRecorder.stringCp1252NullTerminatedByteSize(var0) + 1);
+		var2.packetBuffer.writeByteAdd(var1);
+		var2.packetBuffer.writeStringCp1252NullTerminated(var0);
+		Client.packetWriter.addNode(var2);
+	}
 
-						if (var5.lowPriorityFollowerOps && Client.followerOpsLowPriority) {
-							LoginScreenAnimation.insertMenuItem("Examine", class438.colorStartTag(16776960) + var6, 1003, var1, var2, var3, -1, false, var4);
-						}
-
-						if (!Language.field4683 && Client.isItemSelected == 1) {
-							LoginScreenAnimation.insertMenuItem("Use", Client.field667 + " " + "->" + " " + class438.colorStartTag(16776960) + var6, 7, var1, var2, var3, -1, false, var4);
-						} else if (Client.isSpellSelected) {
-							if (!Language.field4683 && (class202.selectedSpellFlags & 2) == 2) {
-								LoginScreenAnimation.insertMenuItem(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + class438.colorStartTag(16776960) + var6, 8, var1, var2, var3, -1, false, var4);
-							}
-						} else {
-							var7 = var5.lowPriorityFollowerOps && Client.followerOpsLowPriority ? 2000 : 0;
-							String[] var8 = var5.actions;
-							int var12;
-							if (var8 != null) {
-								for (var12 = 4; var12 >= 0; --var12) {
-									if (!Language.field4683 && var0.method2892(var12) && var8[var12] != null && !var8[var12].equalsIgnoreCase("Attack")) {
-										var10 = 0;
-										if (var12 == 0) {
-											var10 = var7 + 9;
-										}
-
-										if (var12 == 1) {
-											var10 = var7 + 10;
-										}
-
-										if (var12 == 2) {
-											var10 = var7 + 11;
-										}
-
-										if (var12 == 3) {
-											var10 = var7 + 12;
-										}
-
-										if (var12 == 4) {
-											var10 = var7 + 13;
-										}
-
-										LoginScreenAnimation.insertMenuItem(var8[var12], class438.colorStartTag(16776960) + var6, var10, var1, var2, var3, -1, false, var4);
-									}
-								}
-							}
-
-							if (var8 != null) {
-								for (var12 = 4; var12 >= 0; --var12) {
-									if (!Language.field4683 && var0.method2892(var12) && var8[var12] != null && var8[var12].equalsIgnoreCase("Attack")) {
-										short var13 = 0;
-										if (AttackOption.AttackOption_hidden != Client.npcAttackOption) {
-											if (Client.npcAttackOption == AttackOption.AttackOption_alwaysRightClick || AttackOption.AttackOption_dependsOnCombatLevels == Client.npcAttackOption && var5.combatLevel > AsyncHttpResponse.localPlayer.combatLevel) {
-												var13 = 2000;
-											}
-
-											var10 = 0;
-											if (var12 == 0) {
-												var10 = var13 + 9;
-											}
-
-											if (var12 == 1) {
-												var10 = var13 + 10;
-											}
-
-											if (var12 == 2) {
-												var10 = var13 + 11;
-											}
-
-											if (var12 == 3) {
-												var10 = var13 + 12;
-											}
-
-											if (var12 == 4) {
-												var10 = var13 + 13;
-											}
-
-											LoginScreenAnimation.insertMenuItem(var8[var12], class438.colorStartTag(16776960) + var6, var10, var1, var2, var3, -1, false, var4);
-										}
-									}
-								}
-							}
-
-							if (!var5.lowPriorityFollowerOps || !Client.followerOpsLowPriority) {
-								LoginScreenAnimation.insertMenuItem("Examine", class438.colorStartTag(16776960) + var6, 1003, var1, var2, var3, -1, false, var4);
-							}
-						}
-
-					}
-				}
-			}
+	@ObfuscatedName("kd")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIIIIZI)V",
+		garbageValue = "-1228848950"
+	)
+	@Export("addTileItemToGroundItems")
+	static void addTileItemToGroundItems(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
+		TileItem var10 = new TileItem();
+		var10.id = var3;
+		var10.quantity = var4;
+		var10.setFlag(var5);
+		var10.visibleTime = Client.serverCycle + var6;
+		var10.despawnTime = var7 + Client.serverCycle;
+		var10.ownership = var8;
+		var10.isPrivate = var9;
+		if (class30.worldView.groundItems[var0][var1][var2] == null) {
+			class30.worldView.groundItems[var0][var1][var2] = new NodeDeque();
 		}
+
+		class30.worldView.groundItems[var0][var1][var2].addFirst(var10);
+		ByteArrayPool.updateItemPile(var0, var1, var2);
 	}
 }

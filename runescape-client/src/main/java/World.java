@@ -1,74 +1,80 @@
-import java.awt.image.BufferedImage;
-import java.awt.image.PixelGrabber;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import javax.imageio.ImageIO;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cu")
+@ObfuscatedName("cx")
 @Implements("World")
 public class World {
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "[Lcx;"
+	)
+	@Export("World_worlds")
+	static World[] World_worlds;
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1081999575
+		intValue = -661025249
 	)
 	@Export("World_count")
 	static int World_count;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 269994903
+		intValue = 972925949
 	)
 	@Export("World_listCount")
 	static int World_listCount;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@Export("World_sortOption2")
 	static int[] World_sortOption2;
-	@ObfuscatedName("au")
+	@ObfuscatedName("at")
 	@Export("World_sortOption1")
 	static int[] World_sortOption1;
-	@ObfuscatedName("af")
+	@ObfuscatedName("fz")
+	@ObfuscatedSignature(
+		descriptor = "Lok;"
+	)
+	@Export("soundEffectsArchive")
+	static Archive soundEffectsArchive;
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1337435201
+		intValue = -32054383
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -771152021
+		intValue = 950082965
 	)
 	@Export("properties")
 	int properties;
-	@ObfuscatedName("al")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1530172407
+		intValue = -785393975
 	)
 	@Export("population")
 	int population;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("af")
 	@Export("host")
 	String host;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aa")
 	@Export("activity")
 	String activity;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 1358489909
+		intValue = -419021337
 	)
 	@Export("location")
 	int location;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -170214931
+		intValue = -384975721
 	)
 	@Export("index")
 	int index;
-	@ObfuscatedName("ap")
-	String field822;
+	@ObfuscatedName("av")
+	String field819;
 
 	static {
 		World_count = 0;
@@ -80,181 +86,136 @@ public class World {
 	World() {
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "258167913"
+		garbageValue = "-646232155"
 	)
 	@Export("isMembersOnly")
 	boolean isMembersOnly() {
-		return (class552.field5437.rsOrdinal() & this.properties) != 0;
+		return (class552.field5434.rsOrdinal() & this.properties) != 0;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1098907175"
+		garbageValue = "-1734303995"
 	)
 	@Export("isDeadman")
 	boolean isDeadman() {
-		return (class552.field5440.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "3"
-	)
-	boolean method1914() {
-		return (class552.field5425.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-537639781"
-	)
-	@Export("isPvp")
-	boolean isPvp() {
-		return (class552.field5426.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-723015286"
-	)
-	boolean method1896() {
-		return (class552.field5449.rsOrdinal() & this.properties) != 0;
+		return (class552.field5442.rsOrdinal() & this.properties) != 0;
 	}
 
 	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1266629186"
+		garbageValue = "848046499"
 	)
-	boolean method1918() {
-		return (class552.field5424.rsOrdinal() & this.properties) != 0;
+	boolean method1965() {
+		return (class552.field5426.rsOrdinal() & this.properties) != 0;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "200536242"
+		garbageValue = "-726478743"
 	)
-	@Export("isBeta")
-	boolean isBeta() {
-		return (class552.field5444.rsOrdinal() & this.properties) != 0;
+	@Export("isPvp")
+	boolean isPvp() {
+		return (class552.field5428.rsOrdinal() & this.properties) != 0;
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "-76"
+	)
+	boolean method1977() {
+		return (class552.field5445.rsOrdinal() & this.properties) != 0;
+	}
+
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "1"
+	)
+	boolean method1963() {
+		return (class552.field5431.rsOrdinal() & this.properties) != 0;
 	}
 
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1052839029"
+		garbageValue = "1219185298"
 	)
-	boolean method1878() {
-		return (class552.field5454.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-22"
-	)
-	boolean method1869() {
-		return (class552.field5432.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1592160502"
-	)
-	boolean method1892() {
+	@Export("isBeta")
+	boolean isBeta() {
 		return (class552.field5451.rsOrdinal() & this.properties) != 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "([BI)Lvr;",
-		garbageValue = "622862629"
+		descriptor = "(I)Z",
+		garbageValue = "224954319"
 	)
-	@Export("readSpritePixelsFromBytes")
-	public static final SpritePixels readSpritePixelsFromBytes(byte[] var0) {
-		BufferedImage var1 = null;
-
-		try {
-			Class var2 = ImageIO.class;
-			synchronized(ImageIO.class) {
-				var1 = ImageIO.read(new ByteArrayInputStream(var0));
-			}
-
-			if (var1 != null) {
-				int var6 = var1.getWidth();
-				int var7 = var1.getHeight();
-				int[] var4 = new int[var6 * var7];
-				PixelGrabber var5 = new PixelGrabber(var1, 0, 0, var6, var7, var4, 0, var6);
-				var5.grabPixels();
-				return new SpritePixels(var4, var6, var7);
-			}
-		} catch (IOException var9) {
-		} catch (InterruptedException var10) {
-		}
-
-		return new SpritePixels(0, 0);
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(CLpw;B)I",
-		garbageValue = "101"
-	)
-	@Export("lowercaseChar")
-	static int lowercaseChar(char var0, Language var1) {
-		int var2 = var0 << 4;
-		if (Character.isUpperCase(var0) || Character.isTitleCase(var0)) {
-			var0 = Character.toLowerCase(var0);
-			var2 = (var0 << 4) + 1;
-		}
-
-		if (var0 == 241 && var1 == Language.Language_ES) {
-			var2 = 1762;
-		}
-
-		return var2;
+	boolean method2016() {
+		return (class552.field5456.rsOrdinal() & this.properties) != 0;
 	}
 
 	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIS)V",
-		garbageValue = "31531"
+		descriptor = "(I)Z",
+		garbageValue = "-670579797"
 	)
-	public static void method1931(int var0, int var1, int var2, int var3) {
-		if (class333.musicSongs.size() > 1 && class333.musicSongs.get(0) != null && ((MusicSong)class333.musicSongs.get(0)).midiPcmStream.isReady() && class333.musicSongs.get(1) != null && ((MusicSong)class333.musicSongs.get(1)).midiPcmStream.isReady()) {
-			StructComposition.method4069(var0, var1, var2, var3);
-			class333.field3627.add(new SwapSongTask((SongTask)null));
-			ArrayList var4 = new ArrayList();
-			var4.add(new DelayFadeTask(new FadeInTask((SongTask)null, 1, false, class333.field3632), class333.field3622));
-			var4.add(new DelayFadeTask(new FadeOutTask((SongTask)null, 0, false, class333.field3630), class333.musicPlayerStatus));
-			class333.field3627.add(new ConcurrentMidiTask((SongTask)null, var4));
-			if (class333.field3626.get(0) != null && class333.field3626.get(1) != null) {
-				MusicSong var5 = (MusicSong)class333.field3626.get(0);
-				class333.field3626.set(0, class333.musicSongs.get(1));
-				class333.field3626.set(1, var5);
+	boolean method1966() {
+		return (class552.field5441.rsOrdinal() & this.properties) != 0;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "34"
+	)
+	boolean method1984() {
+		return (class552.field5447.rsOrdinal() & this.properties) != 0;
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-729625320"
+	)
+	static void method1957() {
+		for (ObjectSound var0 = (ObjectSound)ObjectSound.objectSounds.last(); var0 != null; var0 = (ObjectSound)ObjectSound.objectSounds.previous()) {
+			if (var0.stream1 != null) {
+				UserList.pcmStreamMixer.removeSubStream(var0.stream1);
+				var0.stream1 = null;
+			}
+
+			if (var0.stream2 != null) {
+				UserList.pcmStreamMixer.removeSubStream(var0.stream2);
+				var0.stream2 = null;
 			}
 		}
 
+		ObjectSound.objectSounds.clear();
 	}
 
-	@ObfuscatedName("no")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "141533316"
+		descriptor = "(I)V",
+		garbageValue = "1610335580"
 	)
-	@Export("runIntfCloseListeners")
-	static final void runIntfCloseListeners(int var0, int var1) {
-		if (class379.widgetDefinition.loadInterface(var0)) {
-			class520.runComponentCloseListeners(class379.widgetDefinition.Widget_interfaceComponents[var0], var1);
-		}
+	public static void method1994() {
+		EnumComposition.EnumDefinition_cached.clear();
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "712989272"
+	)
+	public static void method1960() {
+		WorldMapElement.HitSplatDefinition_cached.clear();
 	}
 }

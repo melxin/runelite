@@ -6,70 +6,63 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mu")
+@ObfuscatedName("mh")
 public class class333 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpq;"
 	)
-	static AbstractArchive field3631;
-	@ObfuscatedName("aw")
+	static AbstractArchive field3628;
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpq;"
 	)
-	static AbstractArchive field3623;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lpi;"
-	)
-	static AbstractArchive field3625;
-	@ObfuscatedName("ae")
-	public static ArrayList field3635;
+	static AbstractArchive field3624;
 	@ObfuscatedName("ao")
-	public static LinkedList field3624;
-	@ObfuscatedName("ac")
+	public static ArrayList field3625;
+	@ObfuscatedName("ad")
+	public static LinkedList field3631;
+	@ObfuscatedName("an")
 	@Export("musicSongs")
 	public static ArrayList musicSongs;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	public static ArrayList field3626;
-	@ObfuscatedName("av")
-	static ArrayList field3627;
-	@ObfuscatedName("au")
-	static final List field3628;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ax")
+	public static ArrayList field3629;
+	@ObfuscatedName("at")
+	public static final List field3627;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -2011211629
+		intValue = 1151624493
 	)
 	@Export("musicPlayerStatus")
 	static int musicPlayerStatus;
-	@ObfuscatedName("af")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1829845027
-	)
-	static int field3630;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = 523328439
-	)
-	static int field3622;
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = 718952785
+		intValue = 2077797037
 	)
 	static int field3632;
-	@ObfuscatedName("jg")
-	static byte[][] field3621;
+	@ObfuscatedName("as")
+	@ObfuscatedGetter(
+		intValue = 959714837
+	)
+	static int field3633;
+	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = 709477055
+	)
+	static int field3634;
 
 	static {
-		field3635 = null;
-		field3624 = new LinkedList();
+		field3625 = null;
+		field3631 = new LinkedList();
 		musicSongs = new ArrayList(3);
 		field3626 = new ArrayList(3);
+		field3629 = new ArrayList();
 		field3627 = new ArrayList();
-		field3628 = new ArrayList();
 		musicPlayerStatus = 0;
-		field3630 = 0;
-		field3622 = 0;
 		field3632 = 0;
+		field3633 = 0;
+		field3634 = 0;
 	}
 }

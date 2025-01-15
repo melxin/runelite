@@ -3,77 +3,70 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ow")
+@ObfuscatedName("oi")
 @Implements("AbstractByteArrayCopier")
 public abstract class AbstractByteArrayCopier {
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lgk;"
+	)
+	static ClanChannel field4045;
+
 	AbstractByteArrayCopier() {
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "(B)[B",
-		garbageValue = "100"
+		garbageValue = "14"
 	)
 	@Export("get")
 	abstract byte[] get();
 
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "([BB)V",
-		garbageValue = "-63"
+		descriptor = "([BI)V",
+		garbageValue = "1288883946"
 	)
 	@Export("set")
-	abstract void set(byte[] var1);
+	public abstract void set(byte[] var1);
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lfm;FS)F",
-		garbageValue = "-29667"
+		descriptor = "(II)Lfb;",
+		garbageValue = "-1650010421"
 	)
-	static float method7435(class137 var0, float var1) {
-		if (var0 == null) {
-			return 0.0F;
-		} else {
-			float var2 = var1 - var0.field1576;
-			return var2 * ((var0.field1587 * var2 + var0.field1579) * var2 + var0.field1580) + var0.field1588;
+	static class134 method7582(int var0) {
+		class134[] var1 = new class134[]{class134.field1561, class134.field1557, class134.field1559, class134.field1560, class134.field1563};
+		class134 var2 = (class134)StructComposition.findEnumerated(var1, var0);
+		if (var2 == null) {
+			var2 = class134.field1561;
 		}
+
+		return var2;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("nh")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1061931063"
+		descriptor = "(B)V",
+		garbageValue = "63"
 	)
-	public static boolean method7434() {
-		boolean var0 = false;
-		boolean var1 = false;
-		if (!class333.field3627.isEmpty()) {
-			SongTask var2 = (SongTask)class333.field3627.get(0);
-			if (var2 == null) {
-				class333.field3627.remove(0);
-			} else if (var2.vmethod8722()) {
-				if (var2.method8714()) {
-					System.out.println("Error in midimanager.service: " + var2.method8700());
-					var0 = true;
-				} else {
-					if (var2.method8715() != null) {
-						class333.field3627.add(1, var2.method8715());
-					}
+	static final void method7584() {
+		PacketBufferNode var0 = ScriptEvent.getPacketBufferNode(ClientPacket.CLOSE_MODAL, Client.packetWriter.isaacCipher);
+		Client.packetWriter.addNode(var0);
+		Interpreter.field862 = true;
 
-					var1 = var2.method8699();
-				}
-
-				class333.field3627.remove(0);
-			} else {
-				var1 = var2.method8699();
+		for (InterfaceParent var1 = (InterfaceParent)Client.interfaceParents.first(); var1 != null; var1 = (InterfaceParent)Client.interfaceParents.next()) {
+			if (var1.type == 0 || var1.type == 3) {
+				NPCComposition.closeInterface(var1, true);
 			}
 		}
 
-		if (var0) {
-			class333.field3627.clear();
-			class136.method3325();
+		if (Client.meslayerContinueWidget != null) {
+			UserComparator8.invalidateWidget(Client.meslayerContinueWidget);
+			Client.meslayerContinueWidget = null;
 		}
 
-		return var1;
+		Interpreter.field862 = false;
 	}
 }

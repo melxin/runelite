@@ -1,118 +1,110 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fc")
+@ObfuscatedName("fp")
 public abstract class class150 extends Node {
-	@ObfuscatedName("gw")
-	@ObfuscatedGetter(
-		intValue = 1968038185
-	)
-	@Export("worldPort")
-	static int worldPort;
-
 	class150() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;B)V",
-		garbageValue = "-83"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "-1355269794"
 	)
-	abstract void vmethod3694(Buffer var1);
+	abstract void vmethod3879(Buffer var1);
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lgv;I)V",
-		garbageValue = "2002935935"
+		descriptor = "(Lgq;B)V",
+		garbageValue = "0"
 	)
-	abstract void vmethod3695(ClanSettings var1);
+	abstract void vmethod3882(ClanSettings var1);
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIII)I",
-		garbageValue = "2096244621"
+		descriptor = "(Ldf;III)V",
+		garbageValue = "-2022231235"
 	)
-	public static int method3459(int var0, int var1, int var2, int var3, int var4, int var5) {
-		if ((var5 & 1) == 1) {
-			int var6 = var3;
-			var3 = var4;
-			var4 = var6;
-		}
-
-		var2 &= 3;
-		if (var2 == 0) {
-			return var0;
-		} else if (var2 == 1) {
-			return var1;
+	@Export("runScript")
+	static void runScript(ScriptEvent var0, int var1, int var2) {
+		Object[] var3 = var0.args;
+		Script var4;
+		if (InvDefinition.isWorldMapEvent(var0.type)) {
+			UserComparator5.worldMapEvent = (WorldMapEvent)var3[0];
+			WorldMapElement var6 = class31.WorldMapElement_get(UserComparator5.worldMapEvent.mapElement);
+			var4 = class544.getWorldMapScript(var0.type, var6.objectId, var6.category);
 		} else {
-			return var2 == 2 ? 7 - var0 - (var3 - 1) : 7 - var1 - (var4 - 1);
+			int var5 = (Integer)var3[0];
+			var4 = GameEngine.getScript(var5);
 		}
+
+		if (var4 != null) {
+			class427.runScriptLogic(var0, var4, var1, var2);
+		}
+
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "86045249"
+		descriptor = "(I)V",
+		garbageValue = "2034697086"
 	)
-	public static int method3462(int var0) {
-		class145 var2 = (class145)SequenceDefinition.SequenceDefinition_cachedModel.get((long)var0);
-		class145 var1;
-		if (var2 != null) {
-			var1 = var2;
-		} else {
-			var2 = WorldMapID.method6239(SequenceDefinition.SequenceDefinition_animationsArchive, SequenceDefinition.SequenceDefinition_skeletonsArchive, var0, false);
-			if (var2 != null) {
-				SequenceDefinition.SequenceDefinition_cachedModel.put(var2, (long)var0);
+	public static void method3592() {
+		try {
+			JagexCache.JagexCache_dat2File.close();
+
+			for (int var0 = 0; var0 < class438.field4823; ++var0) {
+				UserComparator4.JagexCache_idxFiles[var0].close();
 			}
 
-			var1 = var2;
+			JagexCache.JagexCache_idx255File.close();
+			JagexCache.JagexCache_randomDat.close();
+		} catch (Exception var2) {
 		}
 
-		if (var1 == null) {
-			return 2;
-		} else {
-			return var1.method3404() ? 0 : 1;
-		}
 	}
 
-	@ObfuscatedName("hb")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)J",
-		garbageValue = "-769430053"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;B)V",
+		garbageValue = "1"
 	)
-	@Export("getUserId")
-	static long getUserId() {
-		return Client.userId;
+	@Export("setLoginResponseString")
+	static void setLoginResponseString(String var0, String var1, String var2) {
+		Login.Login_response1 = var0;
+		Login.Login_response2 = var1;
+		Login.Login_response3 = var2;
 	}
 
-	@ObfuscatedName("jb")
+	@ObfuscatedName("mx")
 	@ObfuscatedSignature(
-		descriptor = "(Ldy;III)V",
-		garbageValue = "-503631143"
+		descriptor = "(I)V",
+		garbageValue = "1872432444"
 	)
-	@Export("performPlayerAnimation")
-	static void performPlayerAnimation(Player var0, int var1, int var2) {
-		if (var0.sequence == var1 && var1 != -1) {
-			int var3 = HealthBarDefinition.SequenceDefinition_get(var1).restartMode;
-			if (var3 == 1) {
-				var0.sequenceFrame = 0;
-				var0.sequenceFrameCycle = 0;
-				var0.sequenceDelay = var2;
-				var0.field1195 = 0;
-			}
+	static void method3598() {
+		for (InterfaceParent var0 = (InterfaceParent)Client.interfaceParents.first(); var0 != null; var0 = (InterfaceParent)Client.interfaceParents.next()) {
+			int var1 = var0.group;
+			if (ClanChannel.widgetDefinition.loadInterface(var1)) {
+				boolean var2 = true;
+				Widget[] var3 = ClanChannel.widgetDefinition.Widget_interfaceComponents[var1];
 
-			if (var3 == 2) {
-				var0.field1195 = 0;
+				int var4;
+				for (var4 = 0; var4 < var3.length; ++var4) {
+					if (var3[var4] != null) {
+						var2 = var3[var4].isIf3;
+						break;
+					}
+				}
+
+				if (!var2) {
+					var4 = (int)var0.key;
+					Widget var5 = ClanChannel.widgetDefinition.method7031(var4);
+					if (var5 != null) {
+						UserComparator8.invalidateWidget(var5);
+					}
+				}
 			}
-		} else if (var1 == -1 || var0.sequence == -1 || HealthBarDefinition.SequenceDefinition_get(var1).field2319 >= HealthBarDefinition.SequenceDefinition_get(var0.sequence).field2319) {
-			var0.sequence = var1;
-			var0.sequenceFrame = 0;
-			var0.sequenceFrameCycle = 0;
-			var0.sequenceDelay = var2;
-			var0.field1195 = 0;
-			var0.field1270 = var0.pathLength;
 		}
 
 	}

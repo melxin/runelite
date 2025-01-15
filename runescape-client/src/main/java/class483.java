@@ -1,149 +1,96 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sj")
+@ObfuscatedName("sf")
 public class class483 extends class482 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 44791921
+		intValue = 511137801
 	)
-	static final int field5043;
-	@ObfuscatedName("ea")
-	@ObfuscatedSignature(
-		descriptor = "Loa;"
-	)
-	static Archive field5042;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lkj;"
-	)
-	final WorldEntityCoord field5044;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lkj;"
-	)
-	final WorldEntityCoord field5048;
-	@ObfuscatedName("ae")
+	static final int field5045;
+	@ObfuscatedName("cf")
 	@ObfuscatedGetter(
-		intValue = 1157501041
+		intValue = -1809519995
 	)
-	int field5045;
+	static int field5046;
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lks;"
+	)
+	final WorldEntityCoord field5042;
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "Lks;"
+	)
+	final WorldEntityCoord field5043;
 	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1558880061
+		intValue = -1218565273
 	)
-	int field5046;
+	int field5041;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = 434863069
+	)
+	int field5044;
 
 	static {
-		field5043 = Client.field689 + 3;
+		field5045 = Client.field695 + 3;
 	}
 
 	class483() {
-		this.field5044 = new WorldEntityCoord();
-		this.field5048 = new WorldEntityCoord();
-		this.field5045 = 0;
-		this.field5046 = 0;
+		this.field5042 = new WorldEntityCoord();
+		this.field5043 = new WorldEntityCoord();
+		this.field5041 = 0;
+		this.field5044 = 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lkj;Lsl;IB)V",
-		garbageValue = "0"
+		descriptor = "(Lks;Lsm;II)V",
+		garbageValue = "-1318895003"
 	)
-	void vmethod9208(WorldEntityCoord var1, class481 var2, int var3) {
-		this.field5044.method5695(var1);
-		this.field5048.method5695(var2.field5038);
-		this.field5045 = var3 - 1;
-		this.field5046 = var2.field5037 + field5043;
+	void vmethod9368(WorldEntityCoord var1, class481 var2, int var3) {
+		this.field5042.method5899(var1);
+		this.field5043.method5899(var2.field5037);
+		this.field5041 = var3 - 1;
+		this.field5044 = var2.field5038 + field5045;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lkj;III)Z",
-		garbageValue = "1905256684"
+		descriptor = "(Lks;IIB)Z",
+		garbageValue = "-65"
 	)
-	boolean vmethod9214(WorldEntityCoord var1, int var2, int var3) {
-		if (this.field5045 >= this.field5046) {
-			var1.method5695(this.field5048);
+	boolean vmethod9369(WorldEntityCoord var1, int var2, int var3) {
+		if (this.field5041 >= this.field5044) {
+			var1.method5899(this.field5043);
 			return true;
 		} else {
-			float var4 = class464.method8873(var2, this.field5045, this.field5046);
-			WorldEntityCoord var5 = this.field5044;
-			WorldEntityCoord var6 = this.field5048;
-			float var8 = Math.max(0.0F, Math.min(var4, 1.0F));
-			int var9 = var6.getX() - var5.getX();
-			int var10 = var6.getY() - var5.getY();
-			var9 = (int)(var8 * (float)var9);
-			var10 = (int)(var8 * (float)var10);
-			var1.method5696(var5.getX() + var9, var5.getY() + var10);
-			int var12 = var5.getCurrentRotationAngle();
-			int var13 = var6.getCurrentRotationAngle();
-			int var14 = var13 - var12 & 2047;
-			int var11;
-			if (var14 > 1024) {
-				var11 = -(2048 - var14);
-			} else {
-				var11 = var14;
-			}
-
-			var14 = (int)(var8 * (float)var11);
-			var1.setCurrentRotationAngle(var5.getCurrentRotationAngle() + var14);
+			float var4 = class33.method521(var2, this.field5041, this.field5044);
+			WorldEntityCoord var5 = this.field5042;
+			WorldEntityCoord var6 = this.field5043;
+			float var7 = Frames.method4470(0.0F, 1.0F, var4);
+			int var8 = var6.getX() - var5.getX();
+			int var9 = var6.getY() - var5.getY();
+			var8 = (int)(var7 * (float)var8);
+			var9 = (int)((float)var9 * var7);
+			var1.method5902(var5.getX() + var8, var5.getY() + var9);
+			int var10 = BuddyRankComparator.method3362(var5.getCurrentRotationAngle(), var6.getCurrentRotationAngle());
+			var10 = (int)(var7 * (float)var10);
+			var1.setCurrentRotationAngle(var5.getCurrentRotationAngle() + var10);
 			return var4 >= 1.0F;
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "-680568556"
+		garbageValue = "1212488341"
 	)
-	void vmethod9206(int var1, int var2) {
-		this.field5044.setDirection(var1, var2);
-		this.field5048.setDirection(var1, var2);
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(IZIZI)V",
-		garbageValue = "-1717200737"
-	)
-	@Export("sortWorldList")
-	static void sortWorldList(int var0, boolean var1, int var2, boolean var3) {
-		if (class142.World_worlds != null) {
-			ArchiveDiskActionHandler.doWorldSorting(0, class142.World_worlds.length - 1, var0, var1, var2, var3);
-		}
-
-	}
-
-	@ObfuscatedName("ic")
-	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-24108"
-	)
-	static final void method9204() {
-		class6.method47(RestClientThreadFactory.field76, class376.field4114, ClanSettings.field1763);
-		HealthBarDefinition.method3848(Language.field4677, class328.field3599);
-		if (RestClientThreadFactory.field76 == class403.cameraX && class166.cameraY == class376.field4114 && class328.cameraZ == ClanSettings.field1763 && SoundSystem.cameraPitch == Language.field4677 && ReflectionCheck.cameraYaw == class328.field3599) {
-			Client.field773 = false;
-			Client.isCameraLocked = false;
-			Client.field596 = false;
-			Client.field512 = false;
-			Client.field594 = 0;
-			class144.field1638 = 0;
-			ApproximateRouteStrategy.field474 = 0;
-			GrandExchangeOfferOwnWorldComparator.field479 = 0;
-			UserComparator9.field1502 = 0;
-			HttpRequest.field55 = 0;
-			class53.field357 = 0;
-			class153.field1700 = 0;
-			PcmPlayer.field290 = 0;
-			WorldMapLabelSize.field3089 = 0;
-			Client.field770 = null;
-			Client.field670 = null;
-			Client.field771 = null;
-		}
-
+	void vmethod9367(int var1, int var2) {
+		this.field5042.setDirection(var1, var2);
+		this.field5043.setDirection(var1, var2);
 	}
 }

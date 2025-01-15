@@ -1,66 +1,66 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ku")
+@ObfuscatedName("kk")
 public class class277 {
-	@ObfuscatedName("aw")
-	@Export("Tiles_underlays")
-	static short[][][] Tiles_underlays;
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "[Lko;"
+	@ObfuscatedName("ni")
+	@ObfuscatedGetter(
+		intValue = 877858037
 	)
-	class273[] field3080;
+	static int field3055;
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "[Lky;"
+	)
+	class273[] field3054;
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1911407772"
+		garbageValue = "1223628239"
 	)
-	public void method5744() {
-		this.field3080 = new class273[1];
-		class271 var1 = class271.field3032;
-		this.field3080[0] = new class273(var1.field3037, var1.field3038);
+	public void method5940() {
+		this.field3054 = new class273[1];
+		class271 var1 = class271.field3005;
+		this.field3054[0] = new class273(var1.field3013, var1.field3014);
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IIILkz;Lka;Z[I[IB)I",
-		garbageValue = "45"
+		descriptor = "(IIILkv;Lku;Z[I[IB)I",
+		garbageValue = "30"
 	)
-	public int method5760(int var1, int var2, int var3, RouteStrategy var4, CollisionMap var5, boolean var6, int[] var7, int[] var8) {
-		return this.method5745(var1, var2, var3, var4, var5, var6, var7, var8, this.field3080[0]);
+	public int method5941(int var1, int var2, int var3, RouteStrategy var4, CollisionMap var5, boolean var6, int[] var7, int[] var8) {
+		return this.method5942(var1, var2, var3, var4, var5, var6, var7, var8, this.field3054[0]);
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(IIILkz;Lka;Z[I[ILko;I)I",
-		garbageValue = "-2092708845"
+		descriptor = "(IIILkv;Lku;Z[I[ILky;I)I",
+		garbageValue = "1289071983"
 	)
-	int method5745(int var1, int var2, int var3, RouteStrategy var4, CollisionMap var5, boolean var6, int[] var7, int[] var8, class273 var9) {
-		var9.method5652();
-		int var10 = var9.method5656();
-		int var11 = var9.method5657();
-		int[][] var12 = var9.method5658();
-		int[][] var13 = var9.method5673();
-		int[] var14 = var9.method5659();
-		int[] var15 = var9.method5660();
+	int method5942(int var1, int var2, int var3, RouteStrategy var4, CollisionMap var5, boolean var6, int[] var7, int[] var8, class273 var9) {
+		var9.method5850();
+		int var10 = var9.method5886();
+		int var11 = var9.method5855();
+		int[][] var12 = var9.method5857();
+		int[][] var13 = var9.method5856();
+		int[] var14 = var9.method5858();
+		int[] var15 = var9.method5877();
 		boolean var16;
 		if (var3 == 1) {
-			var16 = this.method5751(var1, var2, var4, var5, var9);
+			var16 = this.method5958(var1, var2, var4, var5, var9);
 		} else if (var3 == 2) {
-			var16 = this.method5763(var1, var2, var4, var5, var9);
+			var16 = this.method5944(var1, var2, var4, var5, var9);
 		} else {
-			var16 = this.method5748(var1, var2, var3, var4, var5, var9);
+			var16 = this.method5943(var1, var2, var3, var4, var5, var9);
 		}
 
 		int var17 = var1 - (var10 >> 1);
 		int var18 = var2 - (var11 >> 1);
-		int var19 = var9.method5654();
-		int var20 = var9.method5665();
+		int var19 = var9.method5852();
+		int var20 = var9.method5863();
 		int var21;
 		int var22;
 		int var24;
@@ -92,12 +92,12 @@ public class class277 {
 						int var33 = 0;
 						if (var29 < var25) {
 							var33 = var25 - var29;
-						} else if (var29 > var25 + var27 - 1) {
+						} else if (var29 > var27 + var25 - 1) {
 							var33 = var29 - (var27 + var25 - 1);
 						}
 
 						int var34 = var33 * var33 + var32 * var32;
-						if (var34 < var21 || var34 == var21 && var12[var30][var31] < var22) {
+						if (var34 < var21 || var21 == var34 && var12[var30][var31] < var22) {
 							var21 = var34;
 							var22 = var12[var30][var31];
 							var19 = var28;
@@ -157,19 +157,19 @@ public class class277 {
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(IILkz;Lka;Lko;B)Z",
-		garbageValue = "0"
+		descriptor = "(IILkv;Lku;Lky;I)Z",
+		garbageValue = "1917928080"
 	)
-	final boolean method5751(int var1, int var2, RouteStrategy var3, CollisionMap var4, class273 var5) {
-		int var6 = var5.method5656();
-		int var7 = var5.method5657();
-		int[][] var8 = var5.method5658();
-		int[][] var9 = var5.method5673();
-		int[] var10 = var5.method5659();
-		int[] var11 = var5.method5660();
-		int var12 = var5.method5661();
+	final boolean method5958(int var1, int var2, RouteStrategy var3, CollisionMap var4, class273 var5) {
+		int var6 = var5.method5886();
+		int var7 = var5.method5855();
+		int[][] var8 = var5.method5857();
+		int[][] var9 = var5.method5856();
+		int[] var10 = var5.method5858();
+		int[] var11 = var5.method5877();
+		int var12 = var5.method5860();
 		int var13 = var1;
 		int var14 = var2;
 		int var15 = var6 >> 1;
@@ -186,7 +186,7 @@ public class class277 {
 		var11[var10001] = var2;
 		int[][] var21 = var4.flags;
 
-		while (var20 != var25) {
+		while (var25 != var20) {
 			var13 = var10[var20];
 			var14 = var11[var20];
 			var20 = var20 + 1 & var12;
@@ -195,7 +195,7 @@ public class class277 {
 			int var22 = var13 - var4.xInset;
 			int var23 = var14 - var4.yInset;
 			if (var3.hasArrived(1, var13, var14, var4)) {
-				var5.method5666(var13, var14);
+				var5.method5851(var13, var14);
 				return true;
 			}
 
@@ -265,23 +265,23 @@ public class class277 {
 			}
 		}
 
-		var5.method5666(var13, var14);
+		var5.method5851(var13, var14);
 		return false;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(IILkz;Lka;Lko;I)Z",
-		garbageValue = "-1672321077"
+		descriptor = "(IILkv;Lku;Lky;I)Z",
+		garbageValue = "-2127081683"
 	)
-	final boolean method5763(int var1, int var2, RouteStrategy var3, CollisionMap var4, class273 var5) {
-		int var6 = var5.method5656();
-		int var7 = var5.method5657();
-		int[][] var8 = var5.method5658();
-		int[][] var9 = var5.method5673();
-		int[] var10 = var5.method5659();
-		int[] var11 = var5.method5660();
-		int var12 = var5.method5661();
+	final boolean method5944(int var1, int var2, RouteStrategy var3, CollisionMap var4, class273 var5) {
+		int var6 = var5.method5886();
+		int var7 = var5.method5855();
+		int[][] var8 = var5.method5857();
+		int[][] var9 = var5.method5856();
+		int[] var10 = var5.method5858();
+		int[] var11 = var5.method5877();
+		int var12 = var5.method5860();
 		int var13 = var1;
 		int var14 = var2;
 		int var15 = var6 >> 1;
@@ -298,7 +298,7 @@ public class class277 {
 		var11[var10001] = var2;
 		int[][] var21 = var4.flags;
 
-		while (var20 != var25) {
+		while (var25 != var20) {
 			var13 = var10[var20];
 			var14 = var11[var20];
 			var20 = var20 + 1 & var12;
@@ -307,7 +307,7 @@ public class class277 {
 			int var22 = var13 - var4.xInset;
 			int var23 = var14 - var4.yInset;
 			if (var3.hasArrived(2, var13, var14, var4)) {
-				var5.method5666(var13, var14);
+				var5.method5851(var13, var14);
 				return true;
 			}
 
@@ -377,23 +377,23 @@ public class class277 {
 			}
 		}
 
-		var5.method5666(var13, var14);
+		var5.method5851(var13, var14);
 		return false;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIILkz;Lka;Lko;B)Z",
-		garbageValue = "0"
+		descriptor = "(IIILkv;Lku;Lky;I)Z",
+		garbageValue = "-905997927"
 	)
-	final boolean method5748(int var1, int var2, int var3, RouteStrategy var4, CollisionMap var5, class273 var6) {
-		int var7 = var6.method5656();
-		int var8 = var6.method5657();
-		int[][] var9 = var6.method5658();
-		int[][] var10 = var6.method5673();
-		int[] var11 = var6.method5659();
-		int[] var12 = var6.method5660();
-		int var13 = var6.method5661();
+	final boolean method5943(int var1, int var2, int var3, RouteStrategy var4, CollisionMap var5, class273 var6) {
+		int var7 = var6.method5886();
+		int var8 = var6.method5855();
+		int[][] var9 = var6.method5857();
+		int[][] var10 = var6.method5856();
+		int[] var11 = var6.method5858();
+		int[] var12 = var6.method5877();
+		int var13 = var6.method5860();
 		int var14 = var1;
 		int var15 = var2;
 		int var16 = var7 >> 1;
@@ -410,7 +410,7 @@ public class class277 {
 		int[][] var22 = var5.flags;
 
 		while (true) {
-			label304:
+			label305:
 			while (true) {
 				int var23;
 				int var24;
@@ -419,10 +419,10 @@ public class class277 {
 				do {
 					do {
 						do {
-							label281:
+							label282:
 							do {
 								if (var27 == var21) {
-									var6.method5666(var14, var15);
+									var6.method5851(var14, var15);
 									return false;
 								}
 
@@ -434,7 +434,7 @@ public class class277 {
 								var23 = var14 - var5.xInset;
 								var24 = var15 - var5.yInset;
 								if (var4.hasArrived(var3, var14, var15, var5)) {
-									var6.method5666(var14, var15);
+									var6.method5851(var14, var15);
 									return true;
 								}
 
@@ -494,7 +494,7 @@ public class class277 {
 											break;
 										}
 
-										if ((var22[var26 + var23][var24 - 1] & 1076101519) != 0) {
+										if ((var22[var23 + var26][var24 - 1] & 1076101519) != 0) {
 											break;
 										}
 
@@ -567,8 +567,8 @@ public class class277 {
 
 								if (var16 > 0 && var17 < var8 - var3 && var10[var16 - 1][var17 + 1] == 0 && (var22[var23 - 1][var3 + var24] & 1076101432) == 0) {
 									for (var26 = 1; var26 < var3; ++var26) {
-										if ((var22[var23 - 1][var26 + var24] & 1076101438) != 0 || (var22[var26 + (var23 - 1)][var3 + var24] & 1076101624) != 0) {
-											continue label281;
+										if ((var22[var23 - 1][var24 + var26] & 1076101438) != 0 || (var22[var26 + (var23 - 1)][var3 + var24] & 1076101624) != 0) {
+											continue label282;
 										}
 									}
 
@@ -584,8 +584,8 @@ public class class277 {
 				} while((var22[var3 + var23][var3 + var24] & 1076101600) != 0);
 
 				for (var26 = 1; var26 < var3; ++var26) {
-					if ((var22[var26 + var23][var3 + var24] & 1076101624) != 0 || (var22[var3 + var23][var26 + var24] & 1076101603) != 0) {
-						continue label304;
+					if ((var22[var23 + var26][var3 + var24] & 1076101624) != 0 || (var22[var3 + var23][var26 + var24] & 1076101603) != 0) {
+						continue label305;
 					}
 				}
 
@@ -598,63 +598,24 @@ public class class277 {
 		}
 	}
 
-	@ObfuscatedName("if")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Liy;IIIZB)V",
-		garbageValue = "1"
+		descriptor = "(B)[Ldv;",
+		garbageValue = "100"
 	)
-	static void method5753(SequenceDefinition var0, int var1, int var2, int var3, boolean var4) {
-		if (Client.soundEffectCount < 50) {
-			if (var0.field2315 != null && var0.field2315.containsKey(var1)) {
-				ArrayList var5 = (ArrayList)var0.field2315.get(var1);
-				if (!var5.isEmpty()) {
-					int var6 = 0;
-					int var8;
-					if (var5.size() > 1) {
-						int var7 = 1 + (int)(Math.random() * 100.0D);
-						var8 = 0;
+	static class93[] method5964() {
+		return new class93[]{class93.field1110, class93.field1109, class93.field1114, class93.field1113, class93.field1112, class93.field1117};
+	}
 
-						for (Iterator var9 = var5.iterator(); var9.hasNext(); ++var6) {
-							class208 var10 = (class208)var9.next();
-							int var11 = var8;
-							var8 += var10.field2154;
-							if (var11 <= var7 && var7 < var8) {
-								break;
-							}
-						}
-
-						if (var6 >= var5.size()) {
-							return;
-						}
-					}
-
-					class208 var15 = (class208)var5.get(var6);
-					var8 = var15.field2156 & 31;
-					if ((var8 <= 0 || SecureUrlRequester.clientPreferences.getAreaSoundEffectsVolume() != 0) && (var8 != 0 || SecureUrlRequester.clientPreferences.getSoundEffectsVolume() != 0)) {
-						if (var15 != null) {
-							if (var15.field2156 == 0) {
-								if (!var4) {
-									return;
-								}
-
-								Client.soundLocations[Client.soundEffectCount] = 0;
-							} else {
-								int var13 = (var2 - 64) / 128;
-								int var14 = (var3 - 64) / 128;
-								Client.soundLocations[Client.soundEffectCount] = (var14 << 8) + (var13 << 16) + var15.field2156;
-							}
-
-							Client.soundEffectIds[Client.soundEffectCount] = var15.field2155;
-							Client.queuedSoundEffectLoops[Client.soundEffectCount] = var15.field2160;
-							Client.queuedSoundEffectDelays[Client.soundEffectCount] = 0;
-							Client.soundEffects[Client.soundEffectCount] = null;
-							Client.field763[Client.soundEffectCount] = var15.field2157;
-							++Client.soundEffectCount;
-						}
-
-					}
-				}
-			}
-		}
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "281856499"
+	)
+	static void method5948() {
+		Messages.Messages_channels.clear();
+		Messages.Messages_hashTable.clear();
+		Messages.Messages_queue.clear();
+		Messages.Messages_count = 0;
 	}
 }

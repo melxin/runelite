@@ -1,49 +1,41 @@
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jw")
+@ObfuscatedName("ht")
 @Implements("Projection")
 public abstract class Projection {
-	@ObfuscatedName("jy")
-	@ObfuscatedSignature(
-		descriptor = "Ldm;"
-	)
-	@Export("worldView")
-	static WorldView worldView;
-
 	Projection() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lji;IIIIJ)V"
+		descriptor = "(Lhs;IIIIJ)V"
 	)
 	@Export("draw")
 	abstract void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6);
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Ljp;Lje;IIIB)V",
-		garbageValue = "36"
+		descriptor = "(Lhj;Lhz;IIII)V",
+		garbageValue = "54431755"
 	)
 	@Export("drawTileUnderlay")
 	abstract void drawTileUnderlay(Scene var1, SceneTilePaint var2, int var3, int var4, int var5);
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(Ljp;Ljq;III)V",
-		garbageValue = "-1019162740"
+		descriptor = "(Lhj;Lho;IIB)V",
+		garbageValue = "-59"
 	)
 	@Export("drawTileOverlay")
 	abstract void drawTileOverlay(Scene var1, SceneTileModel var2, int var3, int var4);
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Ljp;Lje;IIIIIIIIIIIIIIB)V",
-		garbageValue = "1"
+		descriptor = "(Lhj;Lhz;IIIIIIIIIIIIIII)V",
+		garbageValue = "101446402"
 	)
 	@Export("drawSceneTilePaint")
 	void drawSceneTilePaint(Scene var1, SceneTilePaint var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16) {
@@ -55,16 +47,16 @@ public abstract class Projection {
 		int var22 = Rasterizer3D.getClipMidY() + var11 * Rasterizer3D.get3dZoom() / var15;
 		int var23 = Rasterizer3D.getClipMidX() + var8 * Rasterizer3D.get3dZoom() / var16;
 		int var24 = Rasterizer3D.getClipMidY() + var12 * Rasterizer3D.get3dZoom() / var16;
-		float var25 = Decimator.method1117(var13);
-		float var26 = Decimator.method1117(var14);
-		float var27 = Decimator.method1117(var15);
-		float var28 = Decimator.method1117(var16);
+		float var25 = HttpResponse.method298(var13);
+		float var26 = HttpResponse.method298(var14);
+		float var27 = HttpResponse.method298(var15);
+		float var28 = HttpResponse.method298(var16);
 		Rasterizer3D.clips.currentFaceAlpha = 0;
 		int var29;
 		int var30;
-		if ((var21 - var23) * (var20 - var24) - (var22 - var24) * (var19 - var23) > 0) {
+		if ((var20 - var24) * (var21 - var23) - (var19 - var23) * (var22 - var24) > 0) {
 			Rasterizer3D.clips.clipping = false;
-			var29 = Rasterizer3D.method4780();
+			var29 = Rasterizer3D.method4015();
 			if (var21 < 0 || var23 < 0 || var19 < 0 || var21 > var29 || var23 > var29 || var19 > var29) {
 				Rasterizer3D.clips.clipping = true;
 			}
@@ -72,7 +64,7 @@ public abstract class Projection {
 			if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var22, var24, var20, var21, var23, var19)) {
 				var1.Scene_baseX = var3;
 				var1.Scene_baseY = var4;
-				var1.field2682 = FloatProjection.method5136(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var21, var23, var19, var22, var24, var20, var27, var28, var26);
+				var1.field2067 = class223.method5043(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var21, var23, var19, var22, var24, var20, var27, var28, var26);
 			}
 
 			if (var2.texture == -1) {
@@ -87,13 +79,13 @@ public abstract class Projection {
 				}
 			} else {
 				var30 = Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.texture);
-				Rasterizer3D.rasterGouraud(var22, var24, var20, var21, var23, var19, var27, var28, var26, Scene.method4949(var30, var2.neColor), Scene.method4949(var30, var2.nwColor), Scene.method4949(var30, var2.seColor));
+				Rasterizer3D.rasterGouraud(var22, var24, var20, var21, var23, var19, var27, var28, var26, Scene.method4239(var30, var2.neColor), Scene.method4239(var30, var2.nwColor), Scene.method4239(var30, var2.seColor));
 			}
 		}
 
-		if ((var24 - var20) * (var17 - var19) - (var23 - var19) * (var18 - var20) > 0) {
+		if ((var24 - var20) * (var17 - var19) - (var18 - var20) * (var23 - var19) > 0) {
 			Rasterizer3D.clips.clipping = false;
-			var29 = Rasterizer3D.method4780();
+			var29 = Rasterizer3D.method4015();
 			if (var17 < 0 || var19 < 0 || var23 < 0 || var17 > var29 || var19 > var29 || var23 > var29) {
 				Rasterizer3D.clips.clipping = true;
 			}
@@ -101,7 +93,7 @@ public abstract class Projection {
 			if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var18, var20, var24, var17, var19, var23)) {
 				var1.Scene_baseX = var3;
 				var1.Scene_baseY = var4;
-				var1.field2682 = FloatProjection.method5136(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var17, var19, var23, var18, var20, var24, var25, var26, var28);
+				var1.field2067 = class223.method5043(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var17, var19, var23, var18, var20, var24, var25, var26, var28);
 			}
 
 			if (var2.texture == -1) {
@@ -112,16 +104,16 @@ public abstract class Projection {
 				Rasterizer3D.rasterTextureWithColors(var18, var20, var24, var17, var19, var23, var25, var26, var28, var2.swColor, var2.seColor, var2.nwColor, var5, var6, var8, var9, var10, var12, var13, var14, var16, var2.texture);
 			} else {
 				var30 = Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.texture);
-				Rasterizer3D.rasterGouraud(var18, var20, var24, var17, var19, var23, var25, var26, var28, Scene.method4949(var30, var2.swColor), Scene.method4949(var30, var2.seColor), Scene.method4949(var30, var2.nwColor));
+				Rasterizer3D.rasterGouraud(var18, var20, var24, var17, var19, var23, var25, var26, var28, Scene.method4239(var30, var2.swColor), Scene.method4239(var30, var2.seColor), Scene.method4239(var30, var2.nwColor));
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Ljp;Ljq;IIB)V",
-		garbageValue = "1"
+		descriptor = "(Lhj;Lho;III)V",
+		garbageValue = "-950087355"
 	)
 	@Export("drawSceneTileModel")
 	void drawSceneTileModel(Scene var1, SceneTileModel var2, int var3, int var4) {
@@ -143,7 +135,7 @@ public abstract class Projection {
 			float var18 = SceneTileModel.verticesZ[var9];
 			if ((var10 - var11) * (var15 - var14) - (var12 - var11) * (var13 - var14) > 0) {
 				Rasterizer3D.clips.clipping = false;
-				int var19 = Rasterizer3D.method4780();
+				int var19 = Rasterizer3D.method4015();
 				if (var10 < 0 || var11 < 0 || var12 < 0 || var10 > var19 || var11 > var19 || var12 > var19) {
 					Rasterizer3D.clips.clipping = true;
 				}
@@ -151,7 +143,7 @@ public abstract class Projection {
 				if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var13, var14, var15, var10, var11, var12)) {
 					var1.Scene_baseX = var3;
 					var1.Scene_baseY = var4;
-					var1.field2682 = FloatProjection.method5136(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var10, var11, var12, var13, var14, var15, var16, var17, var18);
+					var1.field2067 = class223.method5043(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var10, var11, var12, var13, var14, var15, var16, var17, var18);
 				}
 
 				if (var2.triangleTextureId != null && var2.triangleTextureId[var6] != -1) {
@@ -163,27 +155,12 @@ public abstract class Projection {
 						}
 					} else {
 						int var20 = Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.triangleTextureId[var6]);
-						Rasterizer3D.rasterGouraud(var13, var14, var15, var10, var11, var12, var16, var17, var18, Scene.method4949(var20, var2.triangleColorA[var6]), Scene.method4949(var20, var2.triangleColorB[var6]), Scene.method4949(var20, var2.triangleColorC[var6]));
+						Rasterizer3D.rasterGouraud(var13, var14, var15, var10, var11, var12, var16, var17, var18, Scene.method4239(var20, var2.triangleColorA[var6]), Scene.method4239(var20, var2.triangleColorB[var6]), Scene.method4239(var20, var2.triangleColorC[var6]));
 					}
 				} else if (var2.triangleColorA[var6] != 12345678) {
 					Rasterizer3D.rasterGouraud(var13, var14, var15, var10, var11, var12, var16, var17, var18, var2.triangleColorA[var6], var2.triangleColorB[var6], var2.triangleColorC[var6]);
 				}
 			}
-		}
-
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-1988900381"
-	)
-	public static void method5195(int var0, int var1) {
-		Iterator var2 = class333.field3628.iterator();
-
-		while (var2.hasNext()) {
-			class339 var3 = (class339)var2.next();
-			var3.vmethod6746(var0, var1);
 		}
 
 	}

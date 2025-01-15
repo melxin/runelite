@@ -1,19 +1,18 @@
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nq")
+@ObfuscatedName("nu")
 @Implements("Varps")
 public class Varps {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("Varps_masks")
 	static int[] Varps_masks;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@Export("Varps_temp")
 	public static int[] Varps_temp;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@Export("Varps_main")
 	public static int[] Varps_main;
 
@@ -30,26 +29,19 @@ public class Varps {
 		Varps_main = new int[5000];
 	}
 
-	@ObfuscatedName("ie")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1734793010"
+		descriptor = "(FFFI)Lqh;",
+		garbageValue = "798739498"
 	)
-	static final void method6801() {
-		int var0 = Client.playerUpdateManager.playerCount;
-		int[] var1 = Client.playerUpdateManager.playerIndices;
-		Iterator var2 = Client.worldViewManager.iterator();
-
-		while (var2.hasNext()) {
-			WorldView var3 = (WorldView)var2.next();
-
-			for (int var4 = 0; var4 < var0; ++var4) {
-				Player var5 = var3.players[var1[var4]];
-				if (var5 != null) {
-					class36.updateActorSequence(var3, var5, 1);
-				}
+	public static class426 method6964(float var0, float var1, float var2) {
+		synchronized(class426.field4746) {
+			if (class426.field4742 == 0) {
+				return new class426(var0, var1, var2);
+			} else {
+				class426.field4746[--class426.field4742].method8285(var0, var1, var2);
+				return class426.field4746[class426.field4742];
 			}
 		}
-
 	}
 }

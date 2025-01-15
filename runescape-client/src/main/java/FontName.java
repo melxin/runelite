@@ -3,52 +3,57 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ub")
+@ObfuscatedName("un")
 @Implements("FontName")
 public class FontName {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Lun;"
 	)
 	@Export("FontName_plain11")
 	public static final FontName FontName_plain11;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Lun;"
 	)
 	@Export("FontName_plain12")
 	public static final FontName FontName_plain12;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Lun;"
 	)
 	@Export("FontName_bold12")
 	public static final FontName FontName_bold12;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Lun;"
 	)
 	@Export("FontName_verdana11")
 	public static final FontName FontName_verdana11;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Lun;"
 	)
 	@Export("FontName_verdana13")
 	public static final FontName FontName_verdana13;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Lun;"
 	)
 	@Export("FontName_verdana15")
 	public static final FontName FontName_verdana15;
-	@ObfuscatedName("fq")
+	@ObfuscatedName("au")
+	public static short[] field5323;
+	@ObfuscatedName("gn")
+	@Export("worldHost")
+	static String worldHost;
+	@ObfuscatedName("ig")
 	@ObfuscatedSignature(
-		descriptor = "Loa;"
+		descriptor = "Lqw;"
 	)
-	@Export("archive6")
-	static Archive archive6;
-	@ObfuscatedName("aj")
+	@Export("fontPlain11")
+	static Font fontPlain11;
+	@ObfuscatedName("ae")
 	@Export("name")
 	String name;
 
@@ -65,122 +70,87 @@ public class FontName {
 		this.name = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lpi;Lpi;Lpi;I)V",
-		garbageValue = "359534346"
+		descriptor = "(I)[Lun;",
+		garbageValue = "-1551767491"
 	)
-	public static void method9744(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2) {
-		HitSplatDefinition.HitSplatDefinition_archive = var0;
-		HitSplatDefinition.field2128 = var1;
-		HitSplatDefinition.HitSplatDefinition_fontsArchive = var2;
+	public static FontName[] method9935() {
+		return new FontName[]{FontName_verdana13, FontName_plain12, FontName_verdana11, FontName_verdana15, FontName_bold12, FontName_plain11};
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "-62429597"
+		descriptor = "(II)I",
+		garbageValue = "-1973306811"
 	)
-	static void method9745(int var0, int var1, int var2, int var3) {
-		for (ObjectSound var4 = (ObjectSound)ObjectSound.objectSounds.last(); var4 != null; var4 = (ObjectSound)ObjectSound.objectSounds.previous()) {
-			if (var4.soundEffectId != -1 || var4.soundEffectIds != null) {
-				int var5 = 0;
-				if (var1 > var4.maxX * 16384) {
-					var5 += var1 - var4.maxX * 16384;
-				} else if (var1 < var4.x * 16384) {
-					var5 += var4.x * 16384 - var1;
-				}
+	public static int method9937(int var0) {
+		long var2 = ViewportMouse.ViewportMouse_entityTags[var0];
+		int var1 = (int)(var2 >>> 14 & 3L);
+		return var1;
+	}
 
-				if (var2 > var4.maxY * 16384) {
-					var5 += var2 - var4.maxY * 16384;
-				} else if (var2 < var4.y * 16384) {
-					var5 += var4.y * 16384 - var2;
-				}
-
-				var5 = Math.max(var5 - 64, 0);
-				if (var5 < var4.field851 && SecureUrlRequester.clientPreferences.getAreaSoundEffectsVolume() != 0 && var0 == var4.plane) {
-					float var6 = var4.field847 < var4.field851 ? Math.min(Math.max((float)(var4.field851 - var5) / (float)(var4.field851 - var4.field847), 0.0F), 1.0F) : 1.0F;
-					int var7 = (int)(var6 * (float)SecureUrlRequester.clientPreferences.getAreaSoundEffectsVolume());
-					if (var4.stream1 == null) {
-						if (var4.soundEffectId >= 0) {
-							SoundEffect var8 = SoundEffect.readSoundEffect(GraphicsObject.soundEffectsArchive, var4.soundEffectId, 0);
-							if (var8 != null) {
-								RawSound var9 = var8.toRawSound().resample(SongTask.decimator);
-								RawPcmStream var10 = RawPcmStream.createRawPcmStream(var9, 100, var7);
-								var10.setNumLoops(-1);
-								class53.pcmStreamMixer.addSubStream(var10);
-								var4.stream1 = var10;
-							}
-						}
-					} else {
-						var4.stream1.method875(var7);
+	@ObfuscatedName("li")
+	@ObfuscatedSignature(
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;IIIIIII)V",
+		garbageValue = "-127263735"
+	)
+	static final void method9934(int var0, String var1, String var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		if (!Client.isMenuOpen) {
+			if (AbstractWorldMapIcon.method6465(var8, var3)) {
+				if (var0 >= 0 && var0 < Client.menu.subMenus.length) {
+					if (Client.menu.subMenus[var0] == null) {
+						Client.menu.subMenus[var0] = new Menu(false);
 					}
 
-					if (var4.stream2 == null) {
-						if (var4.soundEffectIds != null && (var4.field840 -= var3) <= 0) {
-							int var12 = (int)(Math.random() * (double)var4.soundEffectIds.length);
-							SoundEffect var13 = SoundEffect.readSoundEffect(GraphicsObject.soundEffectsArchive, var4.soundEffectIds[var12], 0);
-							if (var13 != null) {
-								RawSound var14 = var13.toRawSound().resample(SongTask.decimator);
-								RawPcmStream var11 = RawPcmStream.createRawPcmStream(var14, 100, var7);
-								var11.setNumLoops(0);
-								class53.pcmStreamMixer.addSubStream(var11);
-								var4.stream2 = var11;
-								var4.field840 = var4.field846 + (int)(Math.random() * (double)(var4.field850 - var4.field846));
-							}
-						}
-					} else {
-						var4.stream2.method875(var7);
-						if (!var4.stream2.hasNext()) {
-							var4.stream2 = null;
-						}
-					}
-				} else {
-					if (var4.stream1 != null) {
-						class53.pcmStreamMixer.removeSubStream(var4.stream1);
-						var4.stream1 = null;
-					}
-
-					if (var4.stream2 != null) {
-						class53.pcmStreamMixer.removeSubStream(var4.stream2);
-						var4.stream2 = null;
-					}
+					Client.menu.subMenus[var0].insertMenuItem(var1, var2, var3, var4, var5, var6, var7, false, var8);
 				}
 			}
 		}
-
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("lh")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1247677323"
+		descriptor = "(IB)Ljava/lang/String;",
+		garbageValue = "-5"
 	)
-	static final void method9746() {
-		HttpRequestTask.method269("You can't add yourself to your own friend list");
-	}
+	@Export("formatItemStacks")
+	static final String formatItemStacks(int var0) {
+		String var1 = Integer.toString(var0);
 
-	@ObfuscatedName("bv")
-	@ObfuscatedSignature(
-		descriptor = "(ILdt;ZI)I",
-		garbageValue = "993609960"
-	)
-	static int method9743(int var0, Script var1, boolean var2) {
-		int var3;
-		if (var0 == 3500) {
-			var3 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = Client.indexCheck.isValidIndexInRange(var3) ? 1 : 0;
-			return 1;
-		} else if (var0 == 3501) {
-			var3 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = Client.indexCheck.method5574(var3) ? 1 : 0;
-			return 1;
-		} else if (var0 == 3502) {
-			var3 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = Client.indexCheck.method5576(var3) ? 1 : 0;
-			return 1;
+		for (int var2 = var1.length() - 3; var2 > 0; var2 -= 3) {
+			var1 = var1.substring(0, var2) + "," + var1.substring(var2);
+		}
+
+		if (var1.length() > 9) {
+			return " " + WorldViewManager.colorStartTag(65408) + var1.substring(0, var1.length() - 8) + "M" + " " + " (" + var1 + ")" + "</col>";
 		} else {
-			return 2;
+			return var1.length() > 6 ? " " + WorldViewManager.colorStartTag(16777215) + var1.substring(0, var1.length() - 4) + "K" + " " + " (" + var1 + ")" + "</col>" : " " + WorldViewManager.colorStartTag(16776960) + var1 + "</col>";
+		}
+	}
+
+	@ObfuscatedName("nq")
+	@ObfuscatedSignature(
+		descriptor = "(IIIILvf;Lnf;B)V",
+		garbageValue = "1"
+	)
+	@Export("drawSpriteOnMinimap")
+	static final void drawSpriteOnMinimap(int var0, int var1, int var2, int var3, SpritePixels var4, SpriteMask var5) {
+		if (var4 != null) {
+			int var6 = Client.camAngleY & 2047;
+			int var7 = var3 * var3 + var2 * var2;
+			if (var7 <= 6400) {
+				int var8 = Rasterizer3D.Rasterizer3D_sine[var6];
+				int var9 = Rasterizer3D.Rasterizer3D_cosine[var6];
+				int var10 = var9 * var2 + var3 * var8 >> 16;
+				int var11 = var3 * var9 - var8 * var2 >> 16;
+				if (var7 > 2500) {
+					var4.method10758(var10 + var5.width / 2 - var4.width / 2, var5.height / 2 - var11 - var4.height / 2, var0, var1, var5.width, var5.height, var5.xStarts, var5.xWidths);
+				} else {
+					var4.drawTransBgAt(var0 + var10 + var5.width / 2 - var4.width / 2, var5.height / 2 + var1 - var11 - var4.height / 2);
+				}
+
+			}
 		}
 	}
 }

@@ -3,32 +3,38 @@ import java.util.LinkedList;
 import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lu")
+@ObfuscatedName("lv")
 @Implements("WorldMapAreaData")
 public class WorldMapAreaData extends WorldMapArea {
-	@ObfuscatedName("ar")
+	@ObfuscatedName("tb")
+	@ObfuscatedGetter(
+		intValue = -1291871039
+	)
+	static int field3274;
+	@ObfuscatedName("af")
+	HashSet field3272;
+	@ObfuscatedName("aa")
 	HashSet field3273;
-	@ObfuscatedName("as")
-	HashSet field3275;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ak")
 	@Export("iconList")
 	List iconList;
 
 	WorldMapAreaData() {
 	}
 
-	@ObfuscatedName("cj")
+	@ObfuscatedName("ck")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;Lvj;IZI)V",
-		garbageValue = "-1768177788"
+		descriptor = "(Lvy;Lvy;IZI)V",
+		garbageValue = "-1315466009"
 	)
-	void method6326(Buffer var1, Buffer var2, int var3, boolean var4) {
-		this.method5839(var1, var3);
+	void method6492(Buffer var1, Buffer var2, int var3, boolean var4) {
+		this.method6033(var1, var3);
 		int var5 = var2.readUnsignedShort();
-		this.field3273 = new HashSet(var5);
+		this.field3272 = new HashSet(var5);
 
 		int var6;
 		for (var6 = 0; var6 < var5; ++var6) {
@@ -40,11 +46,11 @@ public class WorldMapAreaData extends WorldMapArea {
 				continue;
 			}
 
-			this.field3273.add(var7);
+			this.field3272.add(var7);
 		}
 
 		var6 = var2.readUnsignedShort();
-		this.field3275 = new HashSet(var6);
+		this.field3273 = new HashSet(var6);
 
 		for (int var10 = 0; var10 < var6; ++var10) {
 			WorldMapData_1 var8 = new WorldMapData_1();
@@ -55,16 +61,16 @@ public class WorldMapAreaData extends WorldMapArea {
 				continue;
 			}
 
-			this.field3275.add(var8);
+			this.field3273.add(var8);
 		}
 
 		this.initIconsList(var2, var4);
 	}
 
-	@ObfuscatedName("cu")
+	@ObfuscatedName("cs")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;ZI)V",
-		garbageValue = "1806818645"
+		descriptor = "(Lvy;ZI)V",
+		garbageValue = "1912354326"
 	)
 	@Export("initIconsList")
 	void initIconsList(Buffer var1, boolean var2) {
@@ -82,42 +88,24 @@ public class WorldMapAreaData extends WorldMapArea {
 
 	}
 
-	@ObfuscatedName("cn")
+	@ObfuscatedName("na")
 	@ObfuscatedSignature(
-		descriptor = "(Luy;B)Ljava/lang/Object;",
-		garbageValue = "76"
+		descriptor = "(III)V",
+		garbageValue = "736875172"
 	)
-	static Object method6331(class544 var0) {
-		if (var0 == null) {
-			throw new IllegalStateException("popValueOfType() failure - null baseVarType");
-		} else {
-			switch(var0.field5394) {
-			case 0:
-				return Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
-			case 2:
-				return Interpreter.Interpreter_stringStack[--Interpreter.Interpreter_stringStackSize];
-			default:
-				throw new IllegalStateException("popValueOfType() failure - unsupported type");
+	static final void method6494(int var0, int var1) {
+		ClanChannel var2 = var0 >= 0 ? Client.currentClanChannels[var0] : class106.guestClanChannel;
+		if (var2 != null && var1 >= 0 && var1 < var2.method3837()) {
+			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1);
+			if (var3.rank == -1) {
+				String var4 = var3.username.getName();
+				PacketBufferNode var5 = ScriptEvent.getPacketBufferNode(ClientPacket.CLAN_CHANNEL_KICK_USER, Client.packetWriter.isaacCipher);
+				var5.packetBuffer.writeByte(3 + MouseRecorder.stringCp1252NullTerminatedByteSize(var4));
+				var5.packetBuffer.writeByte(var0);
+				var5.packetBuffer.writeShort(var1);
+				var5.packetBuffer.writeStringCp1252NullTerminated(var4);
+				Client.packetWriter.addNode(var5);
 			}
-		}
-	}
-
-	@ObfuscatedName("hn")
-	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "62"
-	)
-	static int method6330() {
-		if (Client.archiveLoaders != null && Client.archiveLoadersDone < Client.archiveLoaders.size()) {
-			int var0 = 0;
-
-			for (int var1 = 0; var1 <= Client.archiveLoadersDone; ++var1) {
-				var0 += ((ArchiveLoader)Client.archiveLoaders.get(var1)).loadedCount;
-			}
-
-			return var0 * 10000 / Client.field549;
-		} else {
-			return 10000;
 		}
 	}
 }

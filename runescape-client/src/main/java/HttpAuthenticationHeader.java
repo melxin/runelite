@@ -3,22 +3,22 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rq")
+@ObfuscatedName("rt")
 @Implements("HttpAuthenticationHeader")
 public class HttpAuthenticationHeader {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lrq;"
+		descriptor = "Lrt;"
 	)
 	@Export("BASIC")
 	static final HttpAuthenticationHeader BASIC;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lrq;"
+		descriptor = "Lrt;"
 	)
 	@Export("BEARER")
 	static final HttpAuthenticationHeader BEARER;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@Export("key")
 	final String key;
 
@@ -31,28 +31,13 @@ public class HttpAuthenticationHeader {
 		this.key = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1618097958"
+		garbageValue = "1894461815"
 	)
 	@Export("getKey")
 	String getKey() {
 		return this.key;
-	}
-
-	@ObfuscatedName("pt")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "-37"
-	)
-	static void method8811(int var0) {
-		SequenceDefinition var1 = HealthBarDefinition.SequenceDefinition_get(var0);
-		if (var1.isCachedModelIdSet()) {
-			if (class150.method3462(var1.SequenceDefinition_cachedModelId) == 2) {
-				Client.field803.add(var1.SequenceDefinition_cachedModelId);
-			}
-
-		}
 	}
 }

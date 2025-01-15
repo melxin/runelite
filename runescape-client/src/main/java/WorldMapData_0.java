@@ -1,26 +1,24 @@
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.Reflection;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ki")
+@ObfuscatedName("ko")
 @Implements("WorldMapData_0")
 public class WorldMapData_0 extends AbstractWorldMapData {
 	WorldMapData_0() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;I)V",
-		garbageValue = "-1762754826"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "28976712"
 	)
 	@Export("init")
 	void init(Buffer var1) {
 		int var2 = var1.readUnsignedByte();
-		if (var2 != WorldMapID.field3248.value) {
+		if (var2 != WorldMapID.field3247.value) {
 			throw new IllegalStateException("");
 		} else {
 			super.minPlane = var1.readUnsignedByte();
@@ -34,21 +32,21 @@ public class WorldMapData_0 extends AbstractWorldMapData {
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;B)V",
-		garbageValue = "84"
+		descriptor = "(Lvy;B)V",
+		garbageValue = "-46"
 	)
 	@Export("readGeography")
 	void readGeography(Buffer var1) {
 		super.planes = Math.min(super.planes, 4);
 		super.floorUnderlayIds = new short[1][64][64];
 		super.floorOverlayIds = new short[super.planes][64][64];
-		super.field3211 = new byte[super.planes][64][64];
-		super.field3220 = new byte[super.planes][64][64];
+		super.field3210 = new byte[super.planes][64][64];
+		super.field3205 = new byte[super.planes][64][64];
 		super.decorations = new WorldMapDecoration[super.planes][64][64][];
 		int var2 = var1.readUnsignedByte();
-		if (var2 != class298.field3240.value) {
+		if (var2 != class298.field3236.value) {
 			throw new IllegalStateException("");
 		} else {
 			int var3 = var1.readUnsignedByte();
@@ -66,144 +64,56 @@ public class WorldMapData_0 extends AbstractWorldMapData {
 		}
 	}
 
+	public int hashCode() {
+		return super.regionX | super.regionY << 8;
+	}
+
 	public boolean equals(Object var1) {
 		if (!(var1 instanceof WorldMapData_0)) {
 			return false;
 		} else {
 			WorldMapData_0 var2 = (WorldMapData_0)var1;
-			return var2.regionX == super.regionX && var2.regionY == super.regionY;
+			return super.regionX == var2.regionX && super.regionY == var2.regionY;
 		}
 	}
 
-	public int hashCode() {
-		return super.regionX | super.regionY << 8;
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(B)[Lmn;",
+		garbageValue = "48"
+	)
+	@Export("ServerPacket_values")
+	public static ServerPacket[] ServerPacket_values() {
+		return new ServerPacket[]{ServerPacket.SET_PLAYER_OP, ServerPacket.CAM_LOOKAT, ServerPacket.IF_SETNPCHEAD, ServerPacket.IF_SET_EVENTS, ServerPacket.GRAPHICSOBJECT_SPAWN, ServerPacket.DYNAMICOBJECT_SPAWN, ServerPacket.MIDI_JINGLE, ServerPacket.LOC_ANIM, ServerPacket.LOC_DEL, ServerPacket.IF_SETANGLE, ServerPacket.UPDATE_RUN_ENERGY, ServerPacket.IF_SETPOSITION, ServerPacket.RUNCLIENTSCRIPT, ServerPacket.IF_SET_PLAYERMODEL_BASECOLOUR, ServerPacket.CAM_LOOKAT_EASED_ANGLE_RELATIVE, ServerPacket.UPDATE_FRIENDLIST, ServerPacket.VAR_CLAN_DISABLE, ServerPacket.UPDATE_ZONE_PARTIAL_ENCLOSED, ServerPacket.IF_OPENTOP, ServerPacket.OBJ_ADD, ServerPacket.OBJ_DEL, ServerPacket.REBUILD_WORLDENTITY, ServerPacket.LOGOUT, ServerPacket.OCULUS_SYNC, ServerPacket.IF_RESYNC, ServerPacket.MIDI_SWAP, ServerPacket.NPC_SPOTANIM, ServerPacket.VARP_SMALL, ServerPacket.MAP_PROJANIM, ServerPacket.CAM_LOOKAT_EASED_COORD, ServerPacket.CAM_SHAKE, ServerPacket.REBUILD_REGION, ServerPacket.UPDATE_INV_CLEAR, ServerPacket.PING_STATISTICS_REQUEST, ServerPacket.IF_SETMODEL, ServerPacket.MIDI_SONG_WITH_SECONDARY, ServerPacket.EVENT_WORLDHOP, ServerPacket.URL_OPEN, ServerPacket.IF_SETANIM, ServerPacket.CAM_TARGET, ServerPacket.field3483, ServerPacket.HEAT_MAP, ServerPacket.VAR_CLAN, ServerPacket.IF_MOVESUB, ServerPacket.LOC_ADD_CHANGE, ServerPacket.CAM_RESET, ServerPacket.OBJ_OPFILTER, ServerPacket.LOGOUT_FULL, ServerPacket.MESSAGE_FRIENDS_CHAT, ServerPacket.UPDATE_RUN_WEIGHT, ServerPacket.CAM_MOVETO_EASED_CIRCULAR, ServerPacket.IF_SETSCROLLPOS, ServerPacket.PLAYER_SPOTANIM, ServerPacket.field3496, ServerPacket.IF_SETOBJECT, ServerPacket.VAR_CLAN_ENABLE, ServerPacket.MESSAGE_GAME, ServerPacket.CAM_MODE, ServerPacket.REBUILD_NORMAL, ServerPacket.IF_SETPLAYERHEAD, ServerPacket.CLAN_CHANNEL_FULL, ServerPacket.IF_SETHIDE, ServerPacket.MINIMAP_FLAG_SET, ServerPacket.field3506, ServerPacket.UPDATE_STOCKMARKET_SLOT, ServerPacket.VARP_LARGE, ServerPacket.UPDATE_UID192, ServerPacket.MIDI_SONG_STOP, ServerPacket.CLAN_SETTINGS_FULL, ServerPacket.IF_SETCOLOUR, ServerPacket.IF_SET_PLAYERMODEL_BODYTYPE, ServerPacket.TRIGGER_ONDIALOG_ABORT, ServerPacket.UPDATE_SITE_SETTINGS, ServerPacket.UPDATE_REBOOT_TIMER, ServerPacket.CAM_MOVETO, ServerPacket.UPDATE_TRADING_POST, ServerPacket.UPDATE_INV_PARTIAL, ServerPacket.HINT_ARROW, ServerPacket.PLAYER_ANIM_SPECIFIC, ServerPacket.IF_SET_ROTATE_SPEED, ServerPacket.CAM_MOVE_TO, ServerPacket.NPC_HEADICON_SPECIFIC, ServerPacket.MAP_ANIM, ServerPacket.field3526, ServerPacket.CAM_SMOOTH_RESET, ServerPacket.CLAN_SETTINGS_DELTA, ServerPacket.SERVER_TICK_END, ServerPacket.IF_OPENSUB, ServerPacket.SYNC_CLIENT_VARCACHE, ServerPacket.SET_ACTIVE_WORLD, ServerPacket.field3533, ServerPacket.RESET_ANIMS, ServerPacket.MESSAGE_CLAN_CHANNEL_SYSTEM, ServerPacket.UPDATE_INV_STOP_TRANSIT, ServerPacket.FRIENDS_LIST_LOADED, ServerPacket.IF_CLOSESUB, ServerPacket.PLAYER_INFO, ServerPacket.UPDATE_STAT, ServerPacket.PROJECTILE_SPAWN, ServerPacket.IF_SETNPCHEAD_ACTIVE, ServerPacket.CHAT_FILTER_SETTINGS, ServerPacket.UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL, ServerPacket.UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1, ServerPacket.SET_PRIVCHATMODE, ServerPacket.RESET_CLIENT_VARCACHE, ServerPacket.MESSAGE_PRIVATE_ECHO, ServerPacket.field3549, ServerPacket.IF_SET_PLAYERMODEL_OBJ, ServerPacket.CAM_SETANGLE, ServerPacket.MIDI_SONG, ServerPacket.CLAN_CHANNEL_DELTA, ServerPacket.UPDATE_IGNORELIST, ServerPacket.MESSAGE_PRIVATE, ServerPacket.MINIMAP_TOGGLE, ServerPacket.LOC_MERGEPLAYER, ServerPacket.MESSAGE_FRIEND_CHANNEL, ServerPacket.UPDATE_ZONE_FULL_FOLLOWS, ServerPacket.IF_SET_PLAYERMODEL_SELF, ServerPacket.REFLECTION_CHECKER, ServerPacket.SET_NPC_UPDATE_ORIGIN, ServerPacket.UPDATE_INV_FULL, ServerPacket.UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER, ServerPacket.CLEAR_ENTITIES, ServerPacket.IF_SET_TEXT, ServerPacket.field3567, ServerPacket.field3568, ServerPacket.OBJ_COUNT, ServerPacket.NPC_SET_SEQUENCE, ServerPacket.field3571, ServerPacket.NPC_INFO_SMALL_VIEWPORT, ServerPacket.field3573, ServerPacket.OBJ_RESET_CUSTOMIZATION, ServerPacket.RESET_INTERACTION_MODE, ServerPacket.NPC_INFO_LARGE_VIEWPORT, ServerPacket.field3505, ServerPacket.OBJ_SET_CUSTOMIZATION, ServerPacket.field3453};
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;II)V",
-		garbageValue = "1254028651"
+		descriptor = "(ILdm;ZI)I",
+		garbageValue = "-1281370951"
 	)
-	@Export("readReflectionCheck")
-	public static void readReflectionCheck(Buffer var0, int var1) {
-		ReflectionCheck var2 = new ReflectionCheck();
-		var2.size = var0.readUnsignedByte();
-		var2.id = var0.readInt();
-		var2.operations = new int[var2.size];
-		var2.creationErrors = new int[var2.size];
-		var2.fields = new Field[var2.size];
-		var2.intReplaceValues = new int[var2.size];
-		var2.methods = new Method[var2.size];
-		var2.arguments = new byte[var2.size][][];
-
-		for (int var3 = 0; var3 < var2.size; ++var3) {
-			try {
-				int var4 = var0.readUnsignedByte();
-				String var5;
-				String var6;
-				int var7;
-				if (var4 != 0 && var4 != 1 && var4 != 2) {
-					if (var4 == 3 || var4 == 4) {
-						var5 = var0.readStringCp1252NullTerminated();
-						var6 = var0.readStringCp1252NullTerminated();
-						var7 = var0.readUnsignedByte();
-						String[] var8 = new String[var7];
-
-						for (int var9 = 0; var9 < var7; ++var9) {
-							var8[var9] = var0.readStringCp1252NullTerminated();
-						}
-
-						String var20 = var0.readStringCp1252NullTerminated();
-						byte[][] var10 = new byte[var7][];
-						int var12;
-						if (var4 == 3) {
-							for (int var11 = 0; var11 < var7; ++var11) {
-								var12 = var0.readInt();
-								var10[var11] = new byte[var12];
-								var0.readBytes(var10[var11], 0, var12);
-							}
-						}
-
-						var2.operations[var3] = var4;
-						Class[] var21 = new Class[var7];
-
-						for (var12 = 0; var12 < var7; ++var12) {
-							var21[var12] = LoginState.loadClassFromDescriptor(var8[var12]);
-						}
-
-						Class var22 = LoginState.loadClassFromDescriptor(var20);
-						if (LoginState.loadClassFromDescriptor(var5).getClassLoader() == null) {
-							throw new SecurityException();
-						}
-
-						Method[] var13 = LoginState.loadClassFromDescriptor(var5).getDeclaredMethods();
-						Method[] var14 = var13;
-
-						for (int var15 = 0; var15 < var14.length; ++var15) {
-							Method var16 = var14[var15];
-							if (Reflection.getMethodName(var16).equals(var6)) {
-								Class[] var17 = Reflection.getParameterTypes(var16);
-								if (var17.length == var21.length) {
-									boolean var18 = true;
-
-									for (int var19 = 0; var19 < var21.length; ++var19) {
-										if (var17[var19] != var21[var19]) {
-											var18 = false;
-											break;
-										}
-									}
-
-									if (var18 && var22 == var16.getReturnType()) {
-										var2.methods[var3] = var16;
-									}
-								}
-							}
-						}
-
-						var2.arguments[var3] = var10;
-					}
-				} else {
-					var5 = var0.readStringCp1252NullTerminated();
-					var6 = var0.readStringCp1252NullTerminated();
-					var7 = 0;
-					if (var4 == 1) {
-						var7 = var0.readInt();
-					}
-
-					var2.operations[var3] = var4;
-					var2.intReplaceValues[var3] = var7;
-					if (LoginState.loadClassFromDescriptor(var5).getClassLoader() == null) {
-						throw new SecurityException();
-					}
-
-					var2.fields[var3] = Reflection.findField(LoginState.loadClassFromDescriptor(var5), var6);
-				}
-			} catch (ClassNotFoundException var24) {
-				var2.creationErrors[var3] = -1;
-			} catch (SecurityException var25) {
-				var2.creationErrors[var3] = -2;
-			} catch (NullPointerException var26) {
-				var2.creationErrors[var3] = -3;
-			} catch (Exception var27) {
-				var2.creationErrors[var3] = -4;
-			} catch (Throwable var28) {
-				var2.creationErrors[var3] = -5;
-			}
-		}
-
-		class36.reflectionChecks.addFirst(var2);
-	}
-
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(II)J",
-		garbageValue = "2142250023"
-	)
-	public static long method5775(int var0) {
-		if (var0 > 63) {
-			throw new class431("Cannot generate max unsigned value for more than 63 bits as this is greater than the boundaries of a java long. Value provided: %d", new Object[]{var0});
+	static int method5988(int var0, Script var1, boolean var2) {
+		Widget var3 = ClanChannel.widgetDefinition.method7031(Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize]);
+		if (var0 == ScriptOpcodes.IF_GETX) {
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.x;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETY) {
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.y;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETWIDTH) {
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.width;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETHEIGHT) {
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.height * -1528330031;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETHIDE) {
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.isHidden ? 1 : 0;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETLAYER) {
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.parentId;
+			return 1;
 		} else {
-			return (long)Math.pow(2.0D, (double)var0) - 1L;
+			return 2;
 		}
 	}
 }

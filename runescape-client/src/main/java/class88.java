@@ -1,50 +1,25 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dl")
+@ObfuscatedName("dg")
 public class class88 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("fa")
 	@ObfuscatedSignature(
-		descriptor = "(B)[Lsm;",
-		garbageValue = "-11"
+		descriptor = "Lok;"
 	)
-	public static class492[] method2470() {
-		return new class492[]{class492.field5095, class492.field5090, class492.field5091};
-	}
+	static Archive field1069;
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ca")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "2030810300"
+		descriptor = "(ILnz;ZB)V",
+		garbageValue = "32"
 	)
-	public static void method2485() {
-		while (true) {
-			ArchiveDiskAction var0;
-			synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-				var0 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.removeLast();
-			}
-
-			if (var0 == null) {
-				return;
-			}
-
-			var0.archive.load(var0.archiveDisk, (int)var0.key, var0.data, false);
-		}
-	}
-
-	@ObfuscatedName("ot")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "631172359"
-	)
-	@Export("clanKickUser")
-	static final void clanKickUser(String var0) {
-		if (class178.friendsChat != null) {
-			PacketBufferNode var1 = Message.getPacketBufferNode(ClientPacket.CLAN_KICKUSER, Client.packetWriter.isaacCipher);
-			var1.packetBuffer.writeByte(class164.stringCp1252NullTerminatedByteSize(var0));
-			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
-			Client.packetWriter.addNode(var1);
-		}
+	static void method2612(int var0, Coord var1, boolean var2) {
+		WorldMapArea var3 = Canvas.getWorldMap().getMapArea(var0);
+		int var4 = ModeWhere.localPlayer.plane;
+		int var5 = (ModeWhere.localPlayer.x >> 7) + GameEngine.topLevelWorldView.baseX;
+		int var6 = (ModeWhere.localPlayer.y >> 7) + GameEngine.topLevelWorldView.baseY;
+		Coord var7 = new Coord(var4, var5, var6);
+		Canvas.getWorldMap().method9736(var3, var7, var1, var2);
 	}
 }

@@ -1,29 +1,25 @@
+import java.awt.Component;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fp")
+@ObfuscatedName("fw")
 @Implements("ClanChannelMember")
 public class ClanChannelMember {
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lvy;"
-	)
-	static IndexedSprite field1690;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@Export("rank")
 	public byte rank;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1806536569
+		intValue = -1001783433
 	)
 	@Export("world")
 	public int world;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lwo;"
+		descriptor = "Lwb;"
 	)
 	@Export("username")
 	public Username username;
@@ -31,66 +27,15 @@ public class ClanChannelMember {
 	ClanChannelMember() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lpi;I)V",
-		garbageValue = "-1842639283"
+		descriptor = "(Ljava/awt/Component;B)V",
+		garbageValue = "43"
 	)
-	public static void method3475(AbstractArchive var0) {
-		DbRowType.field5415 = var0;
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lht;",
-		garbageValue = "2"
-	)
-	@Export("getParamDefinition")
-	public static ParamComposition getParamDefinition(int var0) {
-		ParamComposition var1 = (ParamComposition)ParamComposition.ParamDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = ParamComposition.ParamDefinition_archive.takeFile(11, var0);
-			var1 = new ParamComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.postDecode();
-			ParamComposition.ParamDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lhm;",
-		garbageValue = "2"
-	)
-	@Export("getEnum")
-	public static EnumComposition getEnum(int var0) {
-		EnumComposition var1 = (EnumComposition)EnumComposition.EnumDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = EnumComposition.EnumDefinition_archive.takeFile(8, var0);
-			var1 = new EnumComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			EnumComposition.EnumDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
-	}
-
-	@ObfuscatedName("io")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-2047586911"
-	)
-	static final int method3474(int var0) {
-		return Math.min(Math.max(var0, 128), 383);
+	static void method3609(Component var0) {
+		var0.removeMouseListener(MouseHandler.MouseHandler_instance);
+		var0.removeMouseMotionListener(MouseHandler.MouseHandler_instance);
+		var0.removeFocusListener(MouseHandler.MouseHandler_instance);
+		MouseHandler.MouseHandler_currentButtonVolatile = 0;
 	}
 }

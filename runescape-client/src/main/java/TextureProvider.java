@@ -3,53 +3,55 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("jm")
+@ObfuscatedName("hy")
 @Implements("TextureProvider")
 public class TextureProvider implements TextureLoader {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("je")
+	@Export("regions")
+	static int[] regions;
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "[Ljj;"
+		descriptor = "[Lgh;"
 	)
 	@Export("textures")
 	Texture[] textures;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lpm;"
 	)
 	@Export("deque")
 	NodeDeque deque;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = 391237351
+		intValue = 1827847465
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1505199993
+		intValue = 1077343619
 	)
 	@Export("remaining")
 	int remaining;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@Export("brightness")
 	double brightness;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 472624929
+		intValue = -1652188377
 	)
 	@Export("textureSize")
 	int textureSize;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lpq;"
 	)
 	@Export("archive")
 	AbstractArchive archive;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpi;Lpi;IDI)V"
+		descriptor = "(Lpq;Lpq;IDI)V"
 	)
 	public TextureProvider(AbstractArchive var1, AbstractArchive var2, int var3, double var4, int var6) {
 		this.deque = new NodeDeque();
@@ -76,10 +78,10 @@ public class TextureProvider implements TextureLoader {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "70"
+		garbageValue = "-70"
 	)
 	@Export("getLoadedPercentage")
 	public int getLoadedPercentage() {
@@ -98,7 +100,7 @@ public class TextureProvider implements TextureLoader {
 
 					for (int var7 = 0; var7 < var6.length; ++var7) {
 						int var8 = var6[var7];
-						if (this.archive.method7580(var8)) {
+						if (this.archive.method7731(var8)) {
 							++var2;
 						}
 					}
@@ -113,17 +115,17 @@ public class TextureProvider implements TextureLoader {
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@Export("setBrightness")
 	public void setBrightness(double var1) {
 		this.brightness = var1;
 		this.clear();
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(IB)[I",
-		garbageValue = "-36"
+		descriptor = "(II)[I",
+		garbageValue = "-294472347"
 	)
 	@Export("getTexturePixels")
 	public int[] getTexturePixels(int var1) {
@@ -153,39 +155,39 @@ public class TextureProvider implements TextureLoader {
 		return null;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "-203742621"
+		garbageValue = "667540605"
 	)
 	@Export("getAverageTextureRGB")
 	public int getAverageTextureRGB(int var1) {
 		return this.textures[var1] != null ? this.textures[var1].averageRGB : 0;
 	}
 
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "0"
-	)
-	public boolean vmethod5526(int var1) {
-		return this.textures[var1].field2544;
-	}
-
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "-882535974"
+		garbageValue = "1748706073"
+	)
+	public boolean vmethod4810(int var1) {
+		return this.textures[var1].field1907;
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "2020085258"
 	)
 	@Export("isLowDetail")
 	public boolean isLowDetail(int var1) {
 		return this.textureSize == 64;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "893202348"
+		garbageValue = "608282356"
 	)
 	@Export("clear")
 	public void clear() {
@@ -199,10 +201,10 @@ public class TextureProvider implements TextureLoader {
 		this.remaining = this.capacity;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IS)V",
-		garbageValue = "196"
+		descriptor = "(II)V",
+		garbageValue = "-1451779619"
 	)
 	@Export("animate")
 	public void animate(int var1) {
@@ -216,49 +218,23 @@ public class TextureProvider implements TextureLoader {
 
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(II)Luy;",
-		garbageValue = "611200086"
+		descriptor = "(I)V",
+		garbageValue = "1398740013"
 	)
-	public static class544 method5186(int var0) {
-		int var1 = class542.field5387[var0];
-		if (var1 == 1) {
-			return class544.field5392;
-		} else if (var1 == 2) {
-			return class544.field5399;
-		} else {
-			return var1 == 3 ? class544.field5391 : null;
-		}
+	public static void method4473() {
+		NPCComposition.NpcDefinition_cached.clear();
+		NPCComposition.NpcDefinition_cachedModels.clear();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("in")
 	@ObfuscatedSignature(
-		descriptor = "(ILdt;ZB)I",
-		garbageValue = "-66"
+		descriptor = "(I)I",
+		garbageValue = "-1509989655"
 	)
-	static int method5193(int var0, Script var1, boolean var2) {
-		Widget var3 = class379.widgetDefinition.method6875(Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize]);
-		if (var0 == ScriptOpcodes.IF_GETX) {
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.x;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETY) {
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.y;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETWIDTH) {
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.width;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETHEIGHT) {
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.height;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETHIDE) {
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.isHidden ? 1 : 0;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETLAYER) {
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = var3.parentId;
-			return 1;
-		} else {
-			return 2;
-		}
+	@Export("getWindowedMode")
+	static int getWindowedMode() {
+		return Client.isResizable ? 2 : 1;
 	}
 }

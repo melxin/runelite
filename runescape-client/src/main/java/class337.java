@@ -2,33 +2,41 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mi")
+@ObfuscatedName("mj")
 public class class337 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 546362975
+		intValue = 381161101
 	)
-	int field3688;
-	@ObfuscatedName("aw")
+	int field3689;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lct;"
+		descriptor = "Lcn;"
 	)
-	class53 field3687;
+	class53 field3688;
 
 	@ObfuscatedSignature(
-		descriptor = "(ILct;)V"
+		descriptor = "(ILcn;)V"
 	)
 	class337(int var1, class53 var2) {
-		this.field3688 = var1;
-		this.field3687 = var2;
+		this.field3689 = var1;
+		this.field3688 = var2;
 	}
 
-	@ObfuscatedName("jw")
+	@ObfuscatedName("nz")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "18"
+		descriptor = "(Lna;IIII)V",
+		garbageValue = "1197017701"
 	)
-	static boolean method6733() {
-		return (Client.drawPlayerNames & 8) != 0;
+	static final void method6885(Widget var0, int var1, int var2, int var3) {
+		SpriteMask var4 = var0.method7446(ClanChannel.widgetDefinition, false);
+		if (var4 != null) {
+			if (Client.minimapState < 3) {
+				SpriteMask.compass.drawRotatedMaskedCenteredAround(var1, var2, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var4.xStarts, var4.xWidths);
+			} else {
+				Rasterizer2D.Rasterizer2D_fillMaskedRectangle(var1, var2, 0, var4.xStarts, var4.xWidths);
+			}
+
+		}
 	}
 }

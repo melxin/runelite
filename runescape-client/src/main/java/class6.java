@@ -3,105 +3,81 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("aj")
+@ObfuscatedName("ae")
 public enum class6 implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Laj;"
+		descriptor = "Lae;"
 	)
-	field18(0, 0);
+	field20(0, 0);
 
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = 2114843991
+	@ObfuscatedName("bg")
+	@ObfuscatedSignature(
+		descriptor = "Lvg;"
 	)
-	final int field19;
-	@ObfuscatedName("at")
+	@Export("rasterProvider")
+	public static AbstractRasterProvider rasterProvider;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1994086901
+		intValue = 1595182735
 	)
-	final int field20;
+	final int field15;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = -1657914651
+	)
+	final int field16;
 
 	class6(int var3, int var4) {
-		this.field19 = var3;
-		this.field20 = var4;
+		this.field15 = var3;
+		this.field16 = var4;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1071289392"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field20;
+		return this.field16;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("la")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lob;",
-		garbageValue = "737395523"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIII)I",
+		garbageValue = "-873550757"
 	)
-	public static class383[] method48() {
-		return new class383[]{class383.field4486, class383.field4484, class383.field4485, class383.field4488};
+	@Export("insertMenuItemNoShift")
+	public static final int insertMenuItemNoShift(String var0, String var1, int var2, int var3, int var4, int var5) {
+		return class231.insertMenuItem(var0, var1, var2, var3, var4, var5, -1, false, -1);
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ns")
 	@ObfuscatedSignature(
-		descriptor = "(ZZB)Lvy;",
-		garbageValue = "-48"
+		descriptor = "(IIII)Ldt;",
+		garbageValue = "-1302722243"
 	)
-	static IndexedSprite method44(boolean var0, boolean var1) {
-		return var0 ? (var1 ? class273.field3054 : Login.options_buttons_2Sprite) : (var1 ? class309.field3285 : class227.options_buttons_0Sprite);
-	}
-
-	@ObfuscatedName("ip")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)V",
-		garbageValue = "-862075531"
-	)
-	static final void method47(int var0, int var1, int var2) {
-		if (class403.cameraX < var0) {
-			class403.cameraX = (var0 - class403.cameraX) * HttpRequest.field55 / 1000 + class403.cameraX + class53.field357;
-			if (class403.cameraX > var0) {
-				class403.cameraX = var0;
-			}
+	@Export("openInterface")
+	static final InterfaceParent openInterface(int var0, int var1, int var2) {
+		InterfaceParent var3 = new InterfaceParent();
+		var3.group = var1;
+		var3.type = var2;
+		Client.interfaceParents.put(var3, (long)var0);
+		RestClientThreadFactory.method211(var1);
+		Widget var4 = ClanChannel.widgetDefinition.method7031(var0);
+		UserComparator8.invalidateWidget(var4);
+		if (Client.meslayerContinueWidget != null) {
+			UserComparator8.invalidateWidget(Client.meslayerContinueWidget);
+			Client.meslayerContinueWidget = null;
 		}
 
-		if (class403.cameraX > var0) {
-			class403.cameraX -= (class403.cameraX - var0) * HttpRequest.field55 / 1000 + class53.field357;
-			if (class403.cameraX < var0) {
-				class403.cameraX = var0;
-			}
+		class244.revalidateWidgetScroll(ClanChannel.widgetDefinition.Widget_interfaceComponents[var0 >> 16], var4, false);
+		WorldMapIcon_0.runWidgetOnLoadListener(var1);
+		if (Client.rootInterface != -1) {
+			Client.runIntfCloseListeners(Client.rootInterface, 1);
 		}
 
-		if (class166.cameraY < var1) {
-			class166.cameraY = (var1 - class166.cameraY) * HttpRequest.field55 / 1000 + class166.cameraY + class53.field357;
-			if (class166.cameraY > var1) {
-				class166.cameraY = var1;
-			}
-		}
-
-		if (class166.cameraY > var1) {
-			class166.cameraY -= (class166.cameraY - var1) * HttpRequest.field55 / 1000 + class53.field357;
-			if (class166.cameraY < var1) {
-				class166.cameraY = var1;
-			}
-		}
-
-		if (class328.cameraZ < var2) {
-			class328.cameraZ = (var2 - class328.cameraZ) * HttpRequest.field55 / 1000 + class328.cameraZ + class53.field357;
-			if (class328.cameraZ > var2) {
-				class328.cameraZ = var2;
-			}
-		}
-
-		if (class328.cameraZ > var2) {
-			class328.cameraZ -= (class328.cameraZ - var2) * HttpRequest.field55 / 1000 + class53.field357;
-			if (class328.cameraZ < var2) {
-				class328.cameraZ = var2;
-			}
-		}
-
+		return var3;
 	}
 }

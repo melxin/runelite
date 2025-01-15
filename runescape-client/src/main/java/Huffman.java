@@ -1,19 +1,30 @@
-import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("nw")
 @Implements("Huffman")
 public class Huffman {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("an")
+	@ObfuscatedGetter(
+		intValue = -1458099025
+	)
+	static int field4034;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = -1493208141
+	)
+	@Export("canvasHeight")
+	public static int canvasHeight;
+	@ObfuscatedName("ay")
 	@Export("masks")
 	int[] masks;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@Export("bits")
 	byte[] bits;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@Export("keys")
 	int[] keys;
 
@@ -100,10 +111,10 @@ public class Huffman {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "([BII[BIB)I",
-		garbageValue = "36"
+		garbageValue = "0"
 	)
 	@Export("compress")
 	int compress(byte[] var1, int var2, int var3, byte[] var4, int var5) {
@@ -121,7 +132,7 @@ public class Huffman {
 			int var11 = var7 >> 3;
 			int var12 = var7 & 7;
 			var6 &= -var12 >> 31;
-			int var13 = (var10 + var12 - 1 >> 3) + var11;
+			int var13 = (var12 + var10 - 1 >> 3) + var11;
 			var12 += 24;
 			var4[var11] = (byte)(var6 |= var9 >>> var12);
 			if (var11 < var13) {
@@ -151,10 +162,10 @@ public class Huffman {
 		return (var7 + 7 >> 3) - var5;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "([BI[BIIB)I",
-		garbageValue = "-51"
+		descriptor = "([BI[BIII)I",
+		garbageValue = "-668999189"
 	)
 	@Export("decompress")
 	int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {
@@ -295,193 +306,13 @@ public class Huffman {
 		}
 	}
 
-	@ObfuscatedName("ii")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1845536787"
+		descriptor = "(CI)Z",
+		garbageValue = "-2130866999"
 	)
-	@Export("clear")
-	static final void clear() {
-		class188.field2007.clear();
-		class190.field2023.clear();
-		NPC.method2958();
-		SwapSongTask.method8677();
-		DbTableType.DBTableType_cache.clear();
-		class31.method439();
-		FloorOverlayDefinition.FloorOverlayDefinition_cached.clear();
-		FloorUnderlayDefinition.FloorUnderlayDefinition_cached.clear();
-		HealthBarDefinition.HealthBarDefinition_cached.clear();
-		HealthBarDefinition.HealthBarDefinition_cachedSprites.clear();
-		HitSplatDefinition.HitSplatDefinition_cached.clear();
-		HitSplatDefinition.HitSplatDefinition_cachedSprites.clear();
-		HitSplatDefinition.HitSplatDefinition_cachedFonts.clear();
-		Projectile.method2345();
-		KitDefinition.KitDefinition_cached.clear();
-		class143.method3397();
-		ObjectComposition.ObjectDefinition_cached.clear();
-		ObjectComposition.ObjectDefinition_cachedModelData.clear();
-		ObjectComposition.ObjectDefinition_cachedEntities.clear();
-		ObjectComposition.ObjectDefinition_cachedModels.clear();
-		WorldMapElement.HitSplatDefinition_cached.clear();
-		class191.field2026.clear();
-		NPCComposition.NpcDefinition_cached.clear();
-		NPCComposition.NpcDefinition_cachedModels.clear();
-		class464.method8871();
-		ParamComposition.ParamDefinition_cached.clear();
-		class111.method3024();
-		class268.method5563();
-		StructComposition.StructDefinition_cached.clear();
-		ReflectionCheck.method684();
-		if (Widget.field3962 != null) {
-			Widget.field3962.method9910();
-		}
-
-		if (FloorUnderlayDefinition.field2075 != null) {
-			FloorUnderlayDefinition.field2075.method9910();
-		}
-
-		class195.field2100.clear();
-		RouteStrategy.method5649();
-		class133.method3283();
-		class182.field1864.clear();
-		DevicePcmPlayerProvider.method297();
-		class180.field1851.clear();
-		class204.field1909.clear();
-		HealthBarDefinition.method3849();
-		class201.field2136.clear();
-		Client.DBTableIndex_cache.clear();
-		Client.archive11.clear();
-		class331.method6493();
-		if (class379.widgetDefinition != null) {
-			class379.widgetDefinition.method6873();
-		}
-
-		if (Rasterizer3D.clips.Rasterizer3D_textureLoader != null) {
-			((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).clear();
-		}
-
-		Script.Script_cached.clear();
-		Client.field768.clearFiles();
-		if (class390.field4572 != null) {
-			class390.field4572.clearFiles();
-		}
-
-		if (class483.field5042 != null) {
-			class483.field5042.clearFiles();
-		}
-
-		if (class419.archive10 != null) {
-			class419.archive10.clearFiles();
-		}
-
-		if (class450.archive12 != null) {
-			class450.archive12.clearFiles();
-		}
-
-		if (GameEngine.archive2 != null) {
-			GameEngine.archive2.clearFiles();
-		}
-
-		if (class53.field362 != null) {
-			class53.field362.clearFiles();
-		}
-
-		if (class204.field2110 != null) {
-			class204.field2110.clearFiles();
-		}
-
-		if (class213.archive13 != null) {
-			class213.archive13.clearFiles();
-		}
-
-		if (WorldMapCacheName.archive4 != null) {
-			WorldMapCacheName.archive4.clearFiles();
-		}
-
-		if (HealthBarConfig.field1344 != null) {
-			HealthBarConfig.field1344.clearFiles();
-		}
-
-		if (GraphicsObject.soundEffectsArchive != null) {
-			GraphicsObject.soundEffectsArchive.clearFiles();
-		}
-
-		if (class419.field4733 != null) {
-			class419.field4733.clearFiles();
-		}
-
-		if (class309.archive9 != null) {
-			class309.archive9.clearFiles();
-		}
-
-		if (FontName.archive6 != null) {
-			FontName.archive6.clearFiles();
-		}
-
-		if (Language.field4688 != null) {
-			Language.field4688.clearFiles();
-		}
-
-		if (class1.field0 != null) {
-			class1.field0.clearFiles();
-		}
-
-		if (AttackOption.archive8 != null) {
-			AttackOption.archive8.clearFiles();
-		}
-
-		if (AbstractArchive.field4596 != null) {
-			AbstractArchive.field4596.clearFiles();
-		}
-
-		if (AsyncHttpResponse.field84 != null) {
-			AsyncHttpResponse.field84.clearFiles();
-		}
-
-		if (class171.field1814 != null) {
-			class171.field1814.clearFiles();
-		}
-
-		if (UserComparator10.field1505 != null) {
-			UserComparator10.field1505.clearFiles();
-		}
-
-		if (ViewportMouse.field2903 != null) {
-			ViewportMouse.field2903.clearFiles();
-		}
-
-	}
-
-	@ObfuscatedName("oa")
-	@ObfuscatedSignature(
-		descriptor = "(Lvj;B)V",
-		garbageValue = "7"
-	)
-	@Export("randomDatData2")
-	static void randomDatData2(Buffer var0) {
-		if (Client.randomDatData != null) {
-			var0.writeBytes(Client.randomDatData, 0, Client.randomDatData.length);
-		} else {
-			byte[] var2 = new byte[24];
-
-			try {
-				JagexCache.JagexCache_randomDat.seek(0L);
-				JagexCache.JagexCache_randomDat.readFully(var2);
-
-				int var3;
-				for (var3 = 0; var3 < 24 && var2[var3] == 0; ++var3) {
-				}
-
-				if (var3 >= 24) {
-					throw new IOException();
-				}
-			} catch (Exception var6) {
-				for (int var4 = 0; var4 < 24; ++var4) {
-					var2[var4] = -1;
-				}
-			}
-
-			var0.writeBytes(var2, 0, var2.length);
-		}
+	@Export("isDigit")
+	public static boolean isDigit(char var0) {
+		return var0 >= '0' && var0 <= '9';
 	}
 }

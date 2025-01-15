@@ -1,36 +1,142 @@
-import net.runelite.mapping.ObfuscatedGetter;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("od")
+@ObfuscatedName("ou")
 public class class380 {
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = -852845319
-	)
-	static final int field4143;
-	@ObfuscatedName("at")
-	@ObfuscatedGetter(
-		intValue = 766484571
-	)
-	static final int field4156;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = -1736569723
-	)
-	static final int field4142;
+	@ObfuscatedName("dg")
+	static boolean field4145;
 
-	static {
-		field4143 = Coord.method6819(256);
-		field4156 = Coord.method6819(256);
-		Coord.method6822(field4143);
-		Coord.method6822(field4156);
-		Coord.method6819(100);
-		Coord.method6819(200);
-		Coord.method6819(1);
-		Coord.method6819(1);
-		field4142 = Coord.method6823(100);
-		int var0 = field4142;
-		Coord.method6819(1);
-		Coord.method6819(1);
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIZB)Lvf;",
+		garbageValue = "67"
+	)
+	@Export("getItemSprite")
+	public static final SpritePixels getItemSprite(int var0, int var1, int var2, int var3, int var4, boolean var5) {
+		if (var1 == -1) {
+			var4 = 0;
+		} else if (var4 == 2 && var1 != 1) {
+			var4 = 1;
+		}
+
+		long var6 = ((long)var2 << 38) + (long)var0 + ((long)var1 << 16) + ((long)var4 << 40) + ((long)var3 << 42);
+		SpritePixels var8;
+		if (!var5) {
+			var8 = (SpritePixels)ItemComposition.ItemDefinition_cachedSprites.get(var6);
+			if (var8 != null) {
+				return var8;
+			}
+		}
+
+		ItemComposition var9 = FaceNormal.ItemDefinition_get(var0);
+		if (var1 > 1 && var9.countobj != null) {
+			int var10 = -1;
+
+			for (int var11 = 0; var11 < 10; ++var11) {
+				if (var1 >= var9.countco[var11] && var9.countco[var11] != 0) {
+					var10 = var9.countobj[var11];
+				}
+			}
+
+			if (var10 != -1) {
+				var9 = FaceNormal.ItemDefinition_get(var10);
+			}
+		}
+
+		Model var20 = var9.getModel(1);
+		if (var20 == null) {
+			return null;
+		} else {
+			SpritePixels var21 = null;
+			if (var9.noteTemplate != -1) {
+				var21 = getItemSprite(var9.note, 10, 1, 0, 0, true);
+				if (var21 == null) {
+					return null;
+				}
+			} else if (var9.notedId != -1) {
+				var21 = getItemSprite(var9.unnotedId, var1, var2, var3, 0, false);
+				if (var21 == null) {
+					return null;
+				}
+			} else if (var9.placeholderTemplate != -1) {
+				var21 = getItemSprite(var9.placeholder, var1, 0, 0, 0, false);
+				if (var21 == null) {
+					return null;
+				}
+			}
+
+			int[] var12 = Rasterizer2D.Rasterizer2D_pixels;
+			int var13 = Rasterizer2D.Rasterizer2D_width;
+			int var14 = Rasterizer2D.Rasterizer2D_height;
+			float[] var15 = Rasterizer2D.Rasterizer2D_brightness;
+			int[] var16 = new int[4];
+			Rasterizer2D.Rasterizer2D_getClipArray(var16);
+			var8 = new SpritePixels(36, 32);
+			Rasterizer3D.method4016(var8.pixels, 36, 32, (float[])null);
+			Rasterizer2D.Rasterizer2D_clear();
+			Rasterizer3D.resetRasterClipping();
+			Rasterizer3D.setCustomClipBounds(16, 16);
+			Rasterizer3D.clips.rasterGouraudLowRes = false;
+			if (var9.placeholderTemplate != -1) {
+				var21.drawTransBgAt(0, 0);
+			}
+
+			int var17 = var9.zoom2d;
+			if (var5) {
+				var17 = (int)((double)var17 * 1.5D);
+			} else if (var2 == 2) {
+				var17 = (int)((double)var17 * 1.04D);
+			}
+
+			int var18 = var17 * Rasterizer3D.Rasterizer3D_sine[var9.xan2d] >> 16;
+			int var19 = var17 * Rasterizer3D.Rasterizer3D_cosine[var9.xan2d] >> 16;
+			var20.calculateBoundsCylinder();
+			var20.drawFrustum(0, var9.yan2d, var9.zan2d, var9.xan2d, var9.offsetX2d, var20.height / 2 + var18 + var9.offsetY2d, var19 + var9.offsetY2d);
+			if (var9.notedId != -1) {
+				var21.drawTransBgAt(0, 0);
+			}
+
+			if (var2 >= 1) {
+				var8.outline(1);
+			}
+
+			if (var2 >= 2) {
+				var8.outline(16777215);
+			}
+
+			if (var3 != 0) {
+				var8.shadow(var3);
+			}
+
+			Rasterizer3D.method4016(var8.pixels, 36, 32, (float[])null);
+			if (var9.noteTemplate != -1) {
+				var21.drawTransBgAt(0, 0);
+			}
+
+			if (var4 == 1 || var4 == 2 && var9.isStackable == 1) {
+				DesktopPlatformInfoProvider.ItemDefinition_fontPlain11.draw(class212.method4858(var1), 0, 9, 16776960, 1);
+			}
+
+			if (!var5) {
+				ItemComposition.ItemDefinition_cachedSprites.put(var8, var6);
+			}
+
+			Rasterizer3D.method4016(var12, var13, var14, var15);
+			Rasterizer2D.Rasterizer2D_setClipArray(var16);
+			Rasterizer3D.resetRasterClipping();
+			Rasterizer3D.clips.rasterGouraudLowRes = true;
+			return var8;
+		}
+	}
+
+	@ObfuscatedName("ob")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "1128240649"
+	)
+	static void method7644() {
+		Client.packetWriter.addNode(ScriptEvent.getPacketBufferNode(ClientPacket.field3365, Client.packetWriter.isaacCipher));
+		Client.oculusOrbState = 0;
 	}
 }

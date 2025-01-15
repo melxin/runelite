@@ -1,54 +1,40 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pu")
+@ObfuscatedName("po")
 public class class403 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lpo;"
 	)
-	static final class403 field4667;
-	@ObfuscatedName("aw")
+	static final class403 field4658;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lpo;"
 	)
-	static final class403 field4668;
-	@ObfuscatedName("at")
+	static final class403 field4661;
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lpo;"
 	)
-	static final class403 field4669;
+	static final class403 field4659;
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lpo;"
+	)
+	static final class403 field4660;
 	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lpu;"
-	)
-	static final class403 field4670;
-	@ObfuscatedName("ki")
-	@ObfuscatedGetter(
-		intValue = -1250849613
-	)
-	@Export("cameraX")
-	static int cameraX;
+	@Export("SpriteBuffer_spriteHeights")
+	public static int[] SpriteBuffer_spriteHeights;
 
 	static {
-		field4667 = new class403();
-		field4668 = new class403();
-		field4669 = new class403();
-		field4670 = new class403();
+		field4658 = new class403();
+		field4661 = new class403();
+		field4659 = new class403();
+		field4660 = new class403();
 	}
 
 	class403() {
-	}
-
-	@ObfuscatedName("gz")
-	@ObfuscatedSignature(
-		descriptor = "(B)Luq;",
-		garbageValue = "96"
-	)
-	@Export("getWorldMap")
-	static WorldMap getWorldMap() {
-		return class158.worldMap;
 	}
 }

@@ -1,35 +1,32 @@
-import java.util.concurrent.ThreadPoolExecutor;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sg")
+@ObfuscatedName("si")
 @Implements("FriendsList")
 public class FriendsList extends UserList {
-	@ObfuscatedName("av")
-	static ThreadPoolExecutor field4979;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Luk;"
+		descriptor = "Luo;"
 	)
 	@Export("loginType")
 	final LoginType loginType;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 864407083
+		intValue = -1250552947
 	)
 	int field4981;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lpd;"
+		descriptor = "Lpi;"
 	)
 	@Export("friendLoginUpdates")
 	public LinkDeque friendLoginUpdates;
 
 	@ObfuscatedSignature(
-		descriptor = "(Luk;)V"
+		descriptor = "(Luo;)V"
 	)
 	public FriendsList(LoginType var1) {
 		super(400);
@@ -38,30 +35,30 @@ public class FriendsList extends UserList {
 		this.loginType = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lsv;",
-		garbageValue = "-27"
+		descriptor = "(B)Lso;",
+		garbageValue = "35"
 	)
 	@Export("newInstance")
 	User newInstance() {
 		return new Friend();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lsv;",
-		garbageValue = "1120116714"
+		descriptor = "(II)[Lso;",
+		garbageValue = "-1808909632"
 	)
 	@Export("newTypedArray")
 	User[] newTypedArray(int var1) {
 		return new Friend[var1];
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(Lwo;ZB)Z",
-		garbageValue = "38"
+		descriptor = "(Lwb;ZI)Z",
+		garbageValue = "-1389788629"
 	)
 	@Export("isFriended")
 	public boolean isFriended(Username var1, boolean var2) {
@@ -73,10 +70,10 @@ public class FriendsList extends UserList {
 		}
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;II)V",
-		garbageValue = "713792668"
+		descriptor = "(Lvy;IS)V",
+		garbageValue = "4608"
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
@@ -142,15 +139,15 @@ public class FriendsList extends UserList {
 					if (var6 != var11.world) {
 						var11.int2 = ++this.field4981 - 1;
 						if (var11.world == -1 && var6 == 0) {
-							var11.int2 = -(var11.int2 * -1982347119) * 1614084209;
+							var11.int2 = -(var11.int2 * -2003439171) * -1806970475;
 						}
 
 						var11.world = var6;
 					}
 
 					var11.rank = var7;
-					var11.field4997 = var9;
-					var11.field4996 = var10;
+					var11.field4990 = var9;
+					var11.field4991 = var10;
 					continue;
 				}
 
@@ -162,18 +159,47 @@ public class FriendsList extends UserList {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("nf")
 	@ObfuscatedSignature(
-		descriptor = "(Lpi;Ljava/lang/String;Ljava/lang/String;B)[Lvr;",
-		garbageValue = "-114"
+		descriptor = "(Lna;I)Z",
+		garbageValue = "-1721141643"
 	)
-	public static SpritePixels[] method8935(AbstractArchive var0, String var1, String var2) {
-		if (!var0.isValidFileName(var1, var2)) {
-			return null;
+	static final boolean method9092(Widget var0) {
+		int var1 = var0.contentType;
+		if (var1 == 205) {
+			Client.logoutTimer = 250;
+			return true;
 		} else {
-			int var3 = var0.getGroupId(var1);
-			int var4 = var0.getFileId(var3, var2);
-			return class550.method10027(var0, var3, var4);
+			int var2;
+			int var3;
+			if (var1 >= 300 && var1 <= 313) {
+				var2 = (var1 - 300) / 2;
+				var3 = var1 & 1;
+				Client.playerAppearance.changeAppearance(var2, var3 == 1);
+			}
+
+			if (var1 >= 314 && var1 <= 323) {
+				var2 = (var1 - 314) / 2;
+				var3 = var1 & 1;
+				Client.playerAppearance.method7055(var2, var3 == 1);
+			}
+
+			if (var1 == 324) {
+				Client.playerAppearance.method7087(0);
+			}
+
+			if (var1 == 325) {
+				Client.playerAppearance.method7087(1);
+			}
+
+			if (var1 == 326) {
+				PacketBufferNode var4 = ScriptEvent.getPacketBufferNode(ClientPacket.UPDATE_PLAYER_MODEL, Client.packetWriter.isaacCipher);
+				Client.playerAppearance.write(var4.packetBuffer);
+				Client.packetWriter.addNode(var4);
+				return true;
+			} else {
+				return false;
+			}
 		}
 	}
 }

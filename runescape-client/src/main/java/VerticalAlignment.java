@@ -4,41 +4,40 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ha")
+@ObfuscatedName("jk")
 @Implements("VerticalAlignment")
 public enum VerticalAlignment implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lha;"
+		descriptor = "Ljk;"
 	)
-	field2044(1, 0),
-	@ObfuscatedName("aw")
+	field2673(2, 0),
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lha;"
+		descriptor = "Ljk;"
 	)
 	@Export("VerticalAlignment_centered")
-	VerticalAlignment_centered(0, 1),
-	@ObfuscatedName("at")
+	VerticalAlignment_centered(1, 1),
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lha;"
+		descriptor = "Ljk;"
 	)
-	field2043(2, 2);
+	field2670(0, 2);
 
-	@ObfuscatedName("tl")
+	@ObfuscatedName("io")
 	@ObfuscatedSignature(
-		descriptor = "Lvr;"
+		descriptor = "Lus;"
 	)
-	@Export("sceneMinimapSprite")
-	static SpritePixels sceneMinimapSprite;
-	@ObfuscatedName("ae")
+	static Fonts field2674;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 94294007
+		intValue = -761626247
 	)
 	@Export("value")
 	public final int value;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 802501761
+		intValue = -1236815397
 	)
 	@Export("id")
 	final int id;
@@ -48,48 +47,45 @@ public enum VerticalAlignment implements Enum {
 		this.id = var4;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1071289392"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lnp;I[B[BI)V",
-		garbageValue = "1255806932"
+		descriptor = "(II)Ljd;",
+		garbageValue = "801639333"
 	)
-	@Export("Widget_setKey")
-	static final void Widget_setKey(Widget var0, int var1, byte[] var2, byte[] var3) {
-		if (var0.field3941 == null) {
-			if (var2 == null) {
-				return;
-			}
-
-			var0.field3941 = new byte[11][];
-			var0.field3942 = new byte[11][];
-			var0.field3943 = new int[11];
-			var0.field3944 = new int[11];
-		}
-
-		var0.field3941[var1] = var2;
-		if (var2 != null) {
-			var0.field3940 = true;
+	@Export("getParamDefinition")
+	public static ParamComposition getParamDefinition(int var0) {
+		ParamComposition var1 = (ParamComposition)ParamComposition.ParamDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
 		} else {
-			var0.field3940 = false;
-
-			for (int var4 = 0; var4 < var0.field3941.length; ++var4) {
-				if (var0.field3941[var4] != null) {
-					var0.field3940 = true;
-					break;
-				}
+			byte[] var2 = ParamComposition.ParamDefinition_archive.takeFile(11, var0);
+			var1 = new ParamComposition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
 			}
-		}
 
-		var0.field3942[var1] = var3;
+			var1.postDecode();
+			ParamComposition.ParamDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
+	}
+
+	@ObfuscatedName("be")
+	@ObfuscatedSignature(
+		descriptor = "(ILdm;ZI)I",
+		garbageValue = "-445996510"
+	)
+	static int method5355(int var0, Script var1, boolean var2) {
+		return 2;
 	}
 }

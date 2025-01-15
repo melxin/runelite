@@ -1,75 +1,77 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dh")
+@ObfuscatedName("dj")
 @Implements("DynamicObject")
 public class DynamicObject extends Renderable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Ldm;"
+		descriptor = "Ldz;"
 	)
 	@Export("worldView")
 	final WorldView worldView;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -187555443
+		intValue = -1150913177
 	)
 	@Export("id")
 	final int id;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -1001500049
+		intValue = 977106559
 	)
 	@Export("type")
 	final int type;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 912708979
+		intValue = -839326733
 	)
 	@Export("orientation")
 	final int orientation;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 1085819089
+		intValue = -551069187
 	)
 	@Export("plane")
 	final int plane;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -787205583
+		intValue = 1717963547
 	)
 	@Export("x")
 	final int x;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 902682213
+		intValue = -1479527589
 	)
 	@Export("y")
 	final int y;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Liy;"
+		descriptor = "Lkb;"
 	)
 	@Export("sequenceDefinition")
 	SequenceDefinition sequenceDefinition;
-	@ObfuscatedName("au")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -2136771131
+		intValue = 1151289759
 	)
 	@Export("frame")
 	int frame;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1386060819
+		intValue = -1354187807
 	)
 	@Export("cycleStart")
 	int cycleStart;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ldm;IIIIIIIZLji;)V"
+		descriptor = "(Ldz;IIIIIIIZLhs;)V"
 	)
 	DynamicObject(WorldView var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, Renderable var10) {
 		this.worldView = var1;
@@ -80,12 +82,12 @@ public class DynamicObject extends Renderable {
 		this.x = var6;
 		this.y = var7;
 		if (var8 != -1) {
-			this.sequenceDefinition = HealthBarDefinition.SequenceDefinition_get(var8);
+			this.sequenceDefinition = class33.SequenceDefinition_get(var8);
 			this.frame = 0;
 			this.cycleStart = Client.cycle - 1;
 			if (this.sequenceDefinition.restartMode == 0 && var10 instanceof DynamicObject) {
 				DynamicObject var11 = (DynamicObject)var10;
-				if (var11.sequenceDefinition == this.sequenceDefinition) {
+				if (this.sequenceDefinition == var11.sequenceDefinition) {
 					this.frame = var11.frame;
 					this.cycleStart = var11.cycleStart;
 					return;
@@ -104,14 +106,14 @@ public class DynamicObject extends Renderable {
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljt;",
-		garbageValue = "-1562991930"
+		descriptor = "(B)Lhv;",
+		garbageValue = "-7"
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		ObjectComposition var1 = HttpMethod.getObjectDefinition(this.id);
+		ObjectComposition var1 = class142.getObjectDefinition(this.id);
 		if (var1.transforms != null) {
 			var1 = var1.transform();
 		}
@@ -134,35 +136,26 @@ public class DynamicObject extends Renderable {
 			int var6 = (var3 >> 1) + this.y;
 			int var7 = (var3 + 1 >> 1) + this.y;
 			int[][] var8 = this.worldView.tileHeights[this.plane];
-			int var9 = var8[var5][var7] + var8[var5][var6] + var8[var4][var6] + var8[var4][var7] >> 2;
+			int var9 = var8[var5][var7] + var8[var4][var6] + var8[var5][var6] + var8[var4][var7] >> 2;
 			int var10 = (this.x << 7) + (var2 << 6);
 			int var11 = (this.y << 7) + (var3 << 6);
 			if (this.sequenceDefinition != null) {
 				int var12 = Client.cycle - this.cycleStart;
-				if (var12 > 100 && this.sequenceDefinition.frameCount > 0) {
-					var12 = 100;
+				if (this.sequenceDefinition.frameCount > 0 && this.sequenceDefinition.field2931 > 0) {
+					var12 %= this.sequenceDefinition.field2931;
 				}
 
 				if (!this.sequenceDefinition.isCachedModelIdSet()) {
-					label60: {
-						do {
-							while (true) {
-								if (var12 <= this.sequenceDefinition.frameLengths[this.frame]) {
-									break label60;
-								}
-
-								var12 -= this.sequenceDefinition.frameLengths[this.frame];
-								++this.frame;
-								if (this.frame >= this.sequenceDefinition.frameIds.length) {
-									this.frame -= this.sequenceDefinition.frameCount;
-									break;
-								}
-
-								class277.method5753(this.sequenceDefinition, this.frame, var10, var11, false);
+					for (; var12 > this.sequenceDefinition.frameLengths[this.frame]; class271.method5839(this.sequenceDefinition, this.frame, var10, var11, false)) {
+						var12 -= this.sequenceDefinition.frameLengths[this.frame];
+						++this.frame;
+						if (this.frame >= this.sequenceDefinition.frameIds.length) {
+							this.frame -= this.sequenceDefinition.frameCount;
+							if (this.frame < 0 || this.frame >= this.sequenceDefinition.frameIds.length) {
+								this.sequenceDefinition = null;
+								break;
 							}
-						} while(this.frame >= 0 && this.frame < this.sequenceDefinition.frameIds.length);
-
-						this.sequenceDefinition = null;
+						}
 					}
 				} else {
 					int var13 = this.sequenceDefinition.getMayaAnimFrame();
@@ -176,7 +169,7 @@ public class DynamicObject extends Renderable {
 					}
 
 					if (this.sequenceDefinition != null) {
-						class277.method5753(this.sequenceDefinition, this.frame, var10, var11, false);
+						class271.method5839(this.sequenceDefinition, this.frame, var10, var11, false);
 					}
 				}
 
@@ -187,27 +180,40 @@ public class DynamicObject extends Renderable {
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ho")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhw;",
-		garbageValue = "-1818784260"
+		descriptor = "(III)V",
+		garbageValue = "1465461977"
 	)
-	@Export("getNpcDefinition")
-	public static NPCComposition getNpcDefinition(int var0) {
-		NPCComposition var1 = (NPCComposition)NPCComposition.NpcDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = class330.NpcDefinition_archive.takeFile(9, var0);
-			var1 = new NPCComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.postDecode();
-			NPCComposition.NpcDefinition_cached.put(var1, (long)var0);
-			return var1;
+	static void method2494(int var0, int var1) {
+		if (class544.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
+			ArrayList var2 = new ArrayList();
+			var2.add(new MusicSong(WorldMapSection2.field3102, var0, 0, class544.clientPreferences.getMusicVolume(), false));
+			class1.method9(var2, 0, 0, 0, 0, true);
+			Client.playingJingle = true;
 		}
+
+	}
+
+	@ObfuscatedName("ik")
+	@ObfuscatedSignature(
+		descriptor = "(S)V",
+		garbageValue = "256"
+	)
+	static final void method2491() {
+		Iterator var0 = Client.worldViewManager.iterator();
+
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
+
+			for (int var2 = 0; var2 < var1.npcCount; ++var2) {
+				int var3 = var1.npcIndices[var2];
+				NPC var4 = var1.npcs[var3];
+				if (var4 != null) {
+					MoveSpeed.updateActorSequence(var1, var4, var4.definition.size);
+				}
+			}
+		}
+
 	}
 }

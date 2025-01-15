@@ -1,71 +1,62 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cg")
+@ObfuscatedName("ck")
 @Implements("Interpreter")
 public class Interpreter {
-	@ObfuscatedName("ae")
-	@Export("Interpreter_intLocals")
-	static int[] Interpreter_intLocals;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@Export("Interpreter_arrayLengths")
 	static int[] Interpreter_arrayLengths;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@Export("Interpreter_arrays")
 	static int[][] Interpreter_arrays;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ax")
 	@Export("Interpreter_intStack")
 	static int[] Interpreter_intStack;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("Interpreter_stringStack")
 	static String[] Interpreter_stringStack;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -428395373
-	)
-	@Export("Interpreter_stringStackSize")
-	static int Interpreter_stringStackSize;
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = 1721967107
+		intValue = 702679413
 	)
 	@Export("Interpreter_frameDepth")
 	static int Interpreter_frameDepth;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "[Lca;"
+		descriptor = "[Lcf;"
 	)
 	@Export("Interpreter_frames")
 	static ScriptFrame[] Interpreter_frames;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aw")
 	@Export("Interpreter_calendar")
 	static java.util.Calendar Interpreter_calendar;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ai")
 	@Export("Interpreter_MONTHS")
 	static final String[] Interpreter_MONTHS;
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "Lle;"
-	)
-	@Export("worldMapEvent")
-	static WorldMapEvent worldMapEvent;
-	@ObfuscatedName("aa")
-	static boolean field871;
-	@ObfuscatedName("aq")
-	static boolean field868;
 	@ObfuscatedName("am")
-	static ArrayList field873;
-	@ObfuscatedName("ag")
+	static boolean field850;
+	@ObfuscatedName("ap")
+	static boolean field862;
+	@ObfuscatedName("ab")
+	static ArrayList field863;
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1085097899
+		intValue = 1673138457
 	)
-	static int field874;
-	@ObfuscatedName("bt")
-	static final double field864;
+	static int field864;
+	@ObfuscatedName("bb")
+	static final double field854;
+	@ObfuscatedName("or")
+	@ObfuscatedGetter(
+		intValue = 1192369403
+	)
+	static int field866;
 
 	static {
 		Interpreter_arrayLengths = new int[5];
@@ -76,55 +67,35 @@ public class Interpreter {
 		Interpreter_frames = new ScriptFrame[50];
 		Interpreter_calendar = java.util.Calendar.getInstance();
 		Interpreter_MONTHS = new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-		field871 = false;
-		field868 = false;
-		field873 = new ArrayList();
-		field874 = 0;
-		field864 = Math.log(2.0D);
+		field850 = false;
+		field862 = false;
+		field863 = new ArrayList();
+		field864 = 0;
+		field854 = Math.log(2.0D);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lmc;",
-		garbageValue = "1269711124"
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;I)V",
+		garbageValue = "-1931393022"
 	)
-	static PacketBufferNode method2155() {
-		return PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0 ? new PacketBufferNode() : PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
+	@Export("addGameMessage")
+	static void addGameMessage(int var0, String var1, String var2) {
+		Script.addChatMessage(var0, var1, var2, (String)null);
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)I",
-		garbageValue = "61"
+		descriptor = "(I)V",
+		garbageValue = "-171463991"
 	)
-	static final int method2104(int var0, int var1, int var2, int var3) {
-		return var0 * var2 - var3 * var1 >> 16;
-	}
+	static void method2269() {
+		Iterator var0 = Messages.Messages_hashTable.iterator();
 
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "-368263244"
-	)
-	public static int method2156(int var0, int var1, int var2) {
-		int var3 = class139.method3386(var2 - var1 + 1);
-		var3 <<= var1;
-		var0 |= var3;
-		return var0;
-	}
-
-	@ObfuscatedName("nm")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "37624772"
-	)
-	static boolean method2127(int var0) {
-		for (int var1 = 0; var1 < Client.field743; ++var1) {
-			if (Client.field745[var1] == var0) {
-				return true;
-			}
+		while (var0.hasNext()) {
+			Message var1 = (Message)var0.next();
+			var1.clearIsFromFriend();
 		}
 
-		return false;
 	}
 }

@@ -1,14 +1,18 @@
-import java.util.ArrayList;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lw")
+@ObfuscatedName("ld")
 @Implements("WorldMapSprite")
 public final class WorldMapSprite {
-	@ObfuscatedName("aw")
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = 1399333337
+	)
+	static int field3231;
+	@ObfuscatedName("ah")
 	@Export("tileColors")
 	final int[] tileColors;
 
@@ -20,40 +24,28 @@ public final class WorldMapSprite {
 		this.tileColors = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IIS)I",
-		garbageValue = "1612"
+		descriptor = "(III)I",
+		garbageValue = "1508282537"
 	)
 	@Export("getTileColor")
 	final int getTileColor(int var1, int var2) {
 		return this.tileColors[var1 + var2 * 64];
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-1218883081"
+		descriptor = "(Lpq;III)Z",
+		garbageValue = "761771961"
 	)
-	public static void method6235(int var0, int var1) {
-		StructComposition.method4069(var0, var1, 0, 0);
-		class333.field3626.clear();
-		class333.field3627.clear();
-		if (class333.musicSongs.isEmpty() || var0 == 0 && var1 == 0) {
-			class136.method3325();
+	public static boolean method6397(AbstractArchive var0, int var1, int var2) {
+		byte[] var3 = var0.takeFile(var1, var2);
+		if (var3 == null) {
+			return false;
 		} else {
-			class333.field3627.add(new DelayFadeTask((SongTask)null, class333.musicPlayerStatus));
-			class333.field3627.add(new FadeOutTask((SongTask)null, 0, false, class333.field3630));
-			ArrayList var3 = new ArrayList();
-			Iterator var4 = class333.musicSongs.iterator();
-
-			while (var4.hasNext()) {
-				MusicSong var5 = (MusicSong)var4.next();
-				var3.add(var5);
-			}
-
-			class333.field3627.add(new class443((SongTask)null, var3));
+			class443.SpriteBuffer_decode(var3);
+			return true;
 		}
-
 	}
 }

@@ -3,60 +3,60 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gd")
+@ObfuscatedName("gm")
 public class class169 extends class150 {
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lem;"
-	)
-	@Export("World_request")
-	static UrlRequest World_request;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1680438605
+		intValue = 875404857
 	)
-	int field1797;
+	static int field1804;
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "[Lvi;"
+	)
+	@Export("title_muteSprite")
+	static IndexedSprite[] title_muteSprite;
+	@ObfuscatedName("aq")
+	public static short[] field1805;
+	@ObfuscatedName("bl")
+	@ObfuscatedSignature(
+		descriptor = "Lql;"
+	)
+	static Bounds field1800;
+	@ObfuscatedName("ay")
+	@ObfuscatedGetter(
+		intValue = -722365081
+	)
+	int field1799;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfd;"
+		descriptor = "Lfv;"
 	)
 	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfd;)V"
+		descriptor = "(Lfv;)V"
 	)
 	class169(class153 var1) {
 		this.this$0 = var1;
-		this.field1797 = -1;
+		this.field1799 = -1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvj;B)V",
-		garbageValue = "-83"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "-1355269794"
 	)
-	void vmethod3694(Buffer var1) {
-		this.field1797 = var1.readUnsignedShort();
+	void vmethod3879(Buffer var1) {
+		this.field1799 = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lgv;I)V",
-		garbageValue = "2002935935"
-	)
-	void vmethod3695(ClanSettings var1) {
-		var1.method3546(this.field1797);
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
+		descriptor = "(Lgq;B)V",
 		garbageValue = "0"
 	)
-	static final int method3658(int var0, int var1) {
-		int var2 = HttpResponse.method284(var0 - 1, var1 - 1) + HttpResponse.method284(1 + var0, var1 - 1) + HttpResponse.method284(var0 - 1, 1 + var1) + HttpResponse.method284(var0 + 1, var1 + 1);
-		int var3 = HttpResponse.method284(var0 - 1, var1) + HttpResponse.method284(var0 + 1, var1) + HttpResponse.method284(var0, var1 - 1) + HttpResponse.method284(var0, var1 + 1);
-		int var4 = HttpResponse.method284(var0, var1);
-		return var2 / 16 + var3 / 8 + var4 / 4;
+	void vmethod3882(ClanSettings var1) {
+		var1.method3718(this.field1799);
 	}
 }

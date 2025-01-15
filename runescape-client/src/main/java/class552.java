@@ -3,174 +3,174 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vu")
+@ObfuscatedName("vk")
 public enum class552 implements Enum {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5437(1),
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5425(2),
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5426(4),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5449(8),
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5453(16),
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5442(32),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5430(64, true),
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5441(128),
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5432(256, true),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5433(512),
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5434(1024),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5435(2048),
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5436(4096),
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5446(8192),
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5438(16384),
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5450(32768),
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5440(65536),
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5429(131072),
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5428(262144),
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5443(524288),
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lvk;"
 	)
-	field5431(1048576),
+	field5434(1),
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5426(2),
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5428(4),
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5445(8),
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5430(16),
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5446(32),
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5432(64, true),
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lvk;"
 	)
-	field5445(2097152),
-	@ObfuscatedName("aa")
+	field5452(128),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lvk;"
 	)
-	field5439(4194304),
+	field5441(256, true),
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5435(512),
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5427(1024),
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5437(2048),
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lvk;"
 	)
-	field5447(8388608),
-	@ObfuscatedName("am")
+	field5438(4096),
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lvk;"
 	)
-	field5448(16777216),
+	field5439(8192),
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5440(16384),
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5429(32768),
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5442(65536),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5433(131072),
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lvk;"
 	)
-	field5444(33554432),
+	field5444(262144),
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5453(524288),
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5455(1048576),
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5443(2097152),
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5448(4194304),
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5449(8388608),
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5450(16777216),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5451(33554432),
+	@ObfuscatedName("bu")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5436(67108864, true),
+	@ObfuscatedName("bh")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5447(134217728),
 	@ObfuscatedName("bw")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lvk;"
 	)
-	field5427(67108864, true),
-	@ObfuscatedName("bm")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5451(134217728),
-	@ObfuscatedName("bv")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5452(268435456),
-	@ObfuscatedName("bt")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5424(536870912, true),
-	@ObfuscatedName("bk")
-	@ObfuscatedSignature(
-		descriptor = "Lvu;"
-	)
-	field5454(1073741824, true),
+	field5454(268435456),
 	@ObfuscatedName("bb")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lvk;"
 	)
-	field5455(Integer.MIN_VALUE);
+	field5431(536870912, true),
+	@ObfuscatedName("bx")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5456(1073741824, true),
+	@ObfuscatedName("bd")
+	@ObfuscatedSignature(
+		descriptor = "Lvk;"
+	)
+	field5457(Integer.MIN_VALUE);
 
-	@ObfuscatedName("ba")
+	@ObfuscatedName("bi")
 	@ObfuscatedGetter(
-		intValue = 257838815
+		intValue = 156122405
 	)
-	final int field5456;
+	final int field5458;
 
 	class552(int var3) {
 		this(var3, false);
@@ -181,16 +181,16 @@ public enum class552 implements Enum {
 		garbageValue = "1"
 	)
 	class552(int var3, boolean var4) {
-		this.field5456 = var3;
+		this.field5458 = var3;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1071289392"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field5456;
+		return this.field5458;
 	}
 }

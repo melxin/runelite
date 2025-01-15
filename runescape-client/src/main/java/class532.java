@@ -5,78 +5,60 @@ import java.util.Map;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("um")
+@ObfuscatedName("up")
 public class class532 implements class531 {
-	@ObfuscatedName("ab")
-	Map field5343;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ay")
+	Map field5344;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lvs;"
+		descriptor = "Lvp;"
 	)
-	final class564 field5341;
+	final class564 field5345;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvs;)V"
+		descriptor = "(Lvp;)V"
 	)
 	public class532(class564 var1) {
-		this.field5341 = var1;
+		this.field5345 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "-44"
+		descriptor = "(II)I",
+		garbageValue = "-195596197"
 	)
-	public int vmethod9817(int var1) {
-		if (this.field5343 != null) {
-			class565 var2 = (class565)this.field5343.get(var1);
+	public int vmethod10004(int var1) {
+		if (this.field5344 != null) {
+			class565 var2 = (class565)this.field5344.get(var1);
 			if (var2 != null) {
-				return (Integer)var2.field5536;
+				return (Integer)var2.field5539;
 			}
 		}
 
-		return (Integer)this.field5341.vmethod10431(var1);
+		return (Integer)this.field5345.vmethod10593(var1);
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/Object;B)V",
-		garbageValue = "16"
+		descriptor = "(ILjava/lang/Object;I)V",
+		garbageValue = "1337046256"
 	)
-	public void vmethod9822(int var1, Object var2) {
-		if (this.field5343 == null) {
-			this.field5343 = new HashMap();
-			this.field5343.put(var1, new class565(var1, var2));
+	public void vmethod10011(int var1, Object var2) {
+		if (this.field5344 == null) {
+			this.field5344 = new HashMap();
+			this.field5344.put(var1, new class565(var1, var2));
 		} else {
-			class565 var3 = (class565)this.field5343.get(var1);
+			class565 var3 = (class565)this.field5344.get(var1);
 			if (var3 == null) {
-				this.field5343.put(var1, new class565(var1, var2));
+				this.field5344.put(var1, new class565(var1, var2));
 			} else {
-				var3.field5536 = var2;
+				var3.field5539 = var2;
 			}
 		}
 
 	}
 
 	public Iterator iterator() {
-		return this.field5343 == null ? Collections.emptyList().iterator() : this.field5343.values().iterator();
-	}
-
-	@ObfuscatedName("ct")
-	@ObfuscatedSignature(
-		descriptor = "(ILdt;ZB)I",
-		garbageValue = "-15"
-	)
-	static int method9828(int var0, Script var1, boolean var2) {
-		if (var0 == 7900) {
-			int var3 = Interpreter.Interpreter_intStack[--PrivateChatMode.Interpreter_intStackSize];
-			Client.field805 = Math.max(var3, 0);
-			return 1;
-		} else if (var0 == 7901) {
-			Interpreter.Interpreter_intStack[++PrivateChatMode.Interpreter_intStackSize - 1] = Client.field805;
-			return 1;
-		} else {
-			return 2;
-		}
+		return this.field5344 == null ? Collections.emptyList().iterator() : this.field5344.values().iterator();
 	}
 }

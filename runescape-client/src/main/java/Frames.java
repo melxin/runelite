@@ -3,18 +3,18 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jv")
+@ObfuscatedName("hb")
 @Implements("Frames")
 public class Frames extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "[Lja;"
+		descriptor = "[Lgf;"
 	)
 	@Export("frames")
 	Animation[] frames;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpi;Lpi;IZ)V",
+		descriptor = "(Lpq;Lpq;IZ)V",
 		garbageValue = "0"
 	)
 	public Frames(AbstractArchive var1, AbstractArchive var2, int var3, boolean var4) {
@@ -46,46 +46,43 @@ public class Frames extends DualNode {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-1859345343"
+		descriptor = "(IB)Z",
+		garbageValue = "-36"
 	)
 	@Export("hasAlphaTransform")
 	public boolean hasAlphaTransform(int var1) {
 		return this.frames[var1].hasAlphaTransform;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "-24"
+		descriptor = "(FFFB)F",
+		garbageValue = "118"
 	)
-	@Export("getVarbit")
-	public static int getVarbit(int var0) {
-		VarbitComposition var1 = class202.method4010(var0);
-		int var2 = var1.baseVar;
-		int var3 = var1.startBit;
-		int var4 = var1.endBit;
-		int var5 = Varps.Varps_masks[var4 - var3];
-		return Varps.Varps_main[var2] >> var3 & var5;
+	public static float method4470(float var0, float var1, float var2) {
+		if (var1 < var0) {
+			throw new IllegalArgumentException("max: " + var1 + " can not be lower than min: " + var0);
+		} else {
+			return Math.max(var0, Math.min(var2, var1));
+		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("jw")
 	@ObfuscatedSignature(
-		descriptor = "(Lpi;II)V",
-		garbageValue = "-724466955"
+		descriptor = "(III)I",
+		garbageValue = "-1182838659"
 	)
-	static void method5162(AbstractArchive var0, int var1) {
-		if ((var1 & class552.field5424.rsOrdinal()) != 0) {
-			HttpResponse.logoSprite = Fonts.SpriteBuffer_getIndexedSpriteByName(var0, "logo_deadman_mode", "");
-		} else if ((var1 & class552.field5454.rsOrdinal()) != 0) {
-			HttpResponse.logoSprite = Fonts.SpriteBuffer_getIndexedSpriteByName(var0, "logo_seasonal_mode", "");
-		} else if ((var1 & class552.field5432.rsOrdinal()) != 0) {
-			HttpResponse.logoSprite = Fonts.SpriteBuffer_getIndexedSpriteByName(var0, "logo_speedrunning", "");
-		} else {
-			HttpResponse.logoSprite = Fonts.SpriteBuffer_getIndexedSpriteByName(var0, "logo", "");
+	static int method4471(int var0, int var1) {
+		int var2 = var1 - 334;
+		if (var2 < 0) {
+			var2 = 0;
+		} else if (var2 > 100) {
+			var2 = 100;
 		}
 
+		int var3 = (Client.zoomWidth - Client.zoomHeight) * var2 / 100 + Client.zoomHeight;
+		return var0 * var3 / 256;
 	}
 }

@@ -3,8 +3,6 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import net.runelite.mapping.Export;
@@ -13,21 +11,32 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("el")
+@ObfuscatedName("ez")
 @Implements("UrlRequester")
 public abstract class UrlRequester implements Runnable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "Lpq;"
+	)
+	@Export("ItemDefinition_modelArchive")
+	static AbstractArchive ItemDefinition_modelArchive;
+	@ObfuscatedName("cs")
+	@ObfuscatedGetter(
+		intValue = 2081606281
+	)
+	static int field1461;
+	@ObfuscatedName("ay")
 	@Export("requestThread")
 	final Thread requestThread;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@Export("isClosed")
 	volatile boolean isClosed;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@Export("requests")
 	Queue requests;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 444848075
+		intValue = -731538215
 	)
 	@Export("clientRevision")
 	int clientRevision;
@@ -40,21 +49,21 @@ public abstract class UrlRequester implements Runnable {
 		this.clientRevision = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lem;I)V",
-		garbageValue = "-1770364499"
+		descriptor = "(Len;I)V",
+		garbageValue = "-1821014649"
 	)
 	@Export("openConnection")
 	abstract void openConnection(UrlRequest var1) throws IOException;
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/net/URLConnection;B)I",
 		garbageValue = "-1"
 	)
-	int method3156(URLConnection var1) {
-		int var2 = UrlRequest.field1482;
+	int method3272(URLConnection var1) {
+		int var2 = UrlRequest.field1474;
 		if (var1 != null) {
 			try {
 				if (var1 instanceof HttpURLConnection) {
@@ -67,10 +76,10 @@ public abstract class UrlRequester implements Runnable {
 		return var2;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;I)V",
-		garbageValue = "-1586944327"
+		descriptor = "(Ljava/net/URLConnection;B)V",
+		garbageValue = "22"
 	)
 	@Export("setDefaultRequestProperties")
 	void setDefaultRequestProperties(URLConnection var1) {
@@ -81,12 +90,12 @@ public abstract class UrlRequester implements Runnable {
 		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.clientRevision);
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;Lem;I)V",
-		garbageValue = "-1661714496"
+		descriptor = "(Ljava/net/URLConnection;Len;I)V",
+		garbageValue = "1573162555"
 	)
-	void method3158(URLConnection var1, UrlRequest var2) {
+	void method3289(URLConnection var1, UrlRequest var2) {
 		DataInputStream var3 = null;
 
 		try {
@@ -98,7 +107,7 @@ public abstract class UrlRequester implements Runnable {
 				var3.readFully(var4);
 			} else {
 				var4 = new byte[0];
-				byte[] var6 = class326.method6472(5000);
+				byte[] var6 = PacketWriter.method3251(5000);
 
 				for (int var7 = var3.read(var6); var7 > -1; var7 = var3.read(var6)) {
 					byte[] var8 = new byte[var4.length + var7];
@@ -107,14 +116,14 @@ public abstract class UrlRequester implements Runnable {
 					var4 = var8;
 				}
 
-				class180.ByteArrayPool_release(var6);
+				WorldMapArea.ByteArrayPool_release(var6);
 			}
 
 			var2.response0 = var4;
 		} catch (IOException var14) {
 			var2.response0 = null;
 		} finally {
-			var2.field1485 = this.method3156(var1);
+			var2.field1476 = this.method3272(var1);
 		}
 
 		if (var3 != null) {
@@ -126,10 +135,10 @@ public abstract class UrlRequester implements Runnable {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;B)Lem;",
-		garbageValue = "-44"
+		descriptor = "(Ljava/net/URL;B)Len;",
+		garbageValue = "-108"
 	)
 	@Export("request")
 	public UrlRequest request(URL var1) {
@@ -141,10 +150,10 @@ public abstract class UrlRequester implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-61"
+		descriptor = "(I)V",
+		garbageValue = "-184934019"
 	)
 	@Export("close")
 	public void close() {
@@ -178,170 +187,142 @@ public abstract class UrlRequester implements Runnable {
 
 				this.openConnection(var1);
 			} catch (Exception var7) {
-				ArchiveLoader.RunException_sendStackTrace((String)null, var7);
+				class255.RunException_sendStackTrace((String)null, var7);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/ArrayList;IIIIZI)V",
-		garbageValue = "1514522332"
+		descriptor = "(Lpq;I)V",
+		garbageValue = "-1781265223"
 	)
-	public static void method3175(ArrayList var0, int var1, int var2, int var3, int var4, boolean var5) {
-		if (!var0.isEmpty()) {
-			class333.field3624.clear();
-			class333.field3627.clear();
-			MusicSong var7;
-			if (var5) {
-				class136.method3325();
-			} else {
-				for (int var6 = 0; var6 < class333.musicSongs.size(); ++var6) {
-					var7 = (MusicSong)class333.musicSongs.get(var6);
-					if (var7 == null) {
-						class333.musicSongs.remove(var6);
-						--var6;
-					} else if (var7.field3735) {
-						if (var7.midiPcmStream.field3667 > 0) {
-							--var7.midiPcmStream.field3667;
-						}
-
-						var7.midiPcmStream.clear();
-						var7.midiPcmStream.method6594();
-						var7.midiPcmStream.setPcmStreamVolume(0);
-						class333.musicSongs.remove(var6);
-						--var6;
-					} else {
-						var7.field3735 = true;
-					}
-				}
-			}
-
-			if (!var5) {
-				class333.field3626.clear();
-			}
-
-			Iterator var12 = var0.iterator();
-
-			while (var12.hasNext()) {
-				var7 = (MusicSong)var12.next();
-				if (var7.musicTrackGroupId != -1 && var7.musicTrackFileId != -1) {
-					if (!var5) {
-						class333.field3626.add(var7);
-					}
-
-					class333.field3624.add(var7);
-				}
-			}
-
-			if (!class333.field3624.isEmpty()) {
-				StructComposition.method4069(var1, var2, var3, var4);
-				class333.field3627.add(new AddRequestTask((SongTask)null));
-				class333.field3627.add(new class450((SongTask)null, class333.field3631, class333.field3623, class333.field3625));
-				ArrayList var14 = new ArrayList();
-				var14.add(new class445(new FadeInTask((SongTask)null, 0, true, class333.field3632)));
-				if (!class333.musicSongs.isEmpty()) {
-					ArrayList var13 = new ArrayList();
-					var13.add(new DelayFadeTask(new ConcurrentMidiTask((SongTask)null, var14), class333.field3622));
-					ArrayList var9 = new ArrayList();
-					Iterator var10 = class333.musicSongs.iterator();
-
-					while (var10.hasNext()) {
-						MusicSong var11 = (MusicSong)var10.next();
-						var9.add(var11);
-					}
-
-					var13.add(new DelayFadeTask(new FadeOutTask(new class443((SongTask)null, var9), 0, false, class333.field3630), class333.musicPlayerStatus));
-					class333.field3627.add(new ConcurrentMidiTask((SongTask)null, var13));
-				} else {
-					class333.field3627.add(new DelayFadeTask((SongTask)null, class333.field3622));
-					class333.field3627.add(new ConcurrentMidiTask((SongTask)null, var14));
-				}
-
-			}
-		}
+	public static void method3282(AbstractArchive var0) {
+		VarcInt.VarcInt_archive = var0;
 	}
 
-	@ObfuscatedName("ny")
+	@ObfuscatedName("lf")
 	@ObfuscatedSignature(
-		descriptor = "([Lnp;IB)V",
-		garbageValue = "-68"
+		descriptor = "(IIIILjava/lang/String;B)V",
+		garbageValue = "-94"
 	)
-	@Export("drawModelComponents")
-	static final void drawModelComponents(Widget[] var0, int var1) {
-		for (int var2 = 0; var2 < var0.length; ++var2) {
-			Widget var3 = var0[var2];
-			if (var3 != null && var3.parentId == var1 && (!var3.isIf3 || !UserComparator3.isComponentHidden(var3))) {
-				int var5;
-				if (var3.type == 0) {
-					if (!var3.isIf3 && UserComparator3.isComponentHidden(var3) && var3 != PcmPlayer.mousedOverWidgetIf1) {
-						continue;
+	@Export("widgetDefaultMenuAction")
+	static void widgetDefaultMenuAction(int var0, int var1, int var2, int var3, String var4) {
+		int var5 = var0 >>> 16;
+		int var6 = var0 & 65535;
+		Widget var7 = ClanChannel.widgetDefinition.getWidgetChild(var1, var2);
+		if (var7 != null) {
+			if (var7.onOp != null) {
+				ScriptEvent var8 = new ScriptEvent();
+				var8.widget = var7;
+				var8.opIndex = var6;
+				var8.field1081 = var5;
+				var8.targetName = var4;
+				var8.args = var7.onOp;
+				Friend.runScriptEvent(var8);
+			}
+
+			boolean var10 = true;
+			if (var7.contentType > 0) {
+				var10 = FriendsList.method9092(var7);
+			}
+
+			if (var10) {
+				if (class250.method5357(class232.getWidgetFlags(var7), var6 - 1)) {
+					PacketBufferNode var9;
+					if (var0 == 1) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON1, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
 					}
 
-					drawModelComponents(var0, var3.id);
-					if (var3.children != null) {
-						drawModelComponents(var3.children, var3.id);
+					if (var0 == 2) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON2, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
 					}
 
-					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
-					if (var4 != null) {
-						var5 = var4.group;
-						if (class379.widgetDefinition.loadInterface(var5)) {
-							drawModelComponents(class379.widgetDefinition.Widget_interfaceComponents[var5], -1);
-						}
-					}
-				}
-
-				if (var3.type == 6) {
-					if (var3.sequenceId != -1 || var3.sequenceId2 != -1) {
-						boolean var8 = Tile.runCs1(var3);
-						if (var8) {
-							var5 = var3.sequenceId2;
-						} else {
-							var5 = var3.sequenceId;
-						}
-
-						if (var5 != -1) {
-							SequenceDefinition var6 = HealthBarDefinition.SequenceDefinition_get(var5);
-							if (!var6.isCachedModelIdSet()) {
-								for (var3.modelFrameCycle += Client.graphicsCycle; var3.modelFrameCycle > var6.frameLengths[var3.modelFrame]; class178.invalidateWidget(var3)) {
-									var3.modelFrameCycle -= var6.frameLengths[var3.modelFrame];
-									++var3.modelFrame;
-									if (var3.modelFrame >= var6.frameIds.length) {
-										var3.modelFrame -= var6.frameCount;
-										if (var3.modelFrame < 0 || var3.modelFrame >= var6.frameIds.length) {
-											var3.modelFrame = 0;
-										}
-									}
-								}
-							} else {
-								var3.modelFrame += Client.graphicsCycle;
-								int var7 = var6.getMayaAnimFrame();
-								if (var3.modelFrame >= var7) {
-									var3.modelFrame -= var6.frameCount;
-									if (var3.modelFrame < 0 || var3.modelFrame >= var7) {
-										var3.modelFrame = 0;
-									}
-								}
-
-								class178.invalidateWidget(var3);
-							}
-						}
+					if (var0 == 3) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON3, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
 					}
 
-					if (var3.field3918 != 0 && !var3.isIf3) {
-						int var9 = var3.field3918 >> 16;
-						var5 = var3.field3918 << 16 >> 16;
-						var9 *= Client.graphicsCycle;
-						var5 *= Client.graphicsCycle;
-						var3.modelAngleX = var9 + var3.modelAngleX & 2047;
-						var3.modelAngleY = var5 + var3.modelAngleY & 2047;
-						class178.invalidateWidget(var3);
+					if (var0 == 4) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON4, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
 					}
+
+					if (var0 == 5) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON5, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
+					}
+
+					if (var0 == 6) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON6, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
+					}
+
+					if (var0 == 7) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON7, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
+					}
+
+					if (var0 == 8) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON8, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
+					}
+
+					if (var0 == 9) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON9, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
+					}
+
+					if (var0 == 10) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_BUTTON10, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var9);
+					}
+
+					if (var5 != 0) {
+						var9 = ScriptEvent.getPacketBufferNode(ClientPacket.IF_SUBOP, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeInt(var1);
+						var9.packetBuffer.writeShort(var2);
+						var9.packetBuffer.writeShort(var3);
+						var9.packetBuffer.writeByte(var6);
+						var9.packetBuffer.writeByte(var5 - 1);
+						Client.packetWriter.addNode(var9);
+					}
+
 				}
 			}
 		}
-
 	}
 }

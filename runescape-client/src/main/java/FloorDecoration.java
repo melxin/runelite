@@ -4,44 +4,42 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jr")
+@ObfuscatedName("gi")
 @Implements("FloorDecoration")
 public final class FloorDecoration {
-	@ObfuscatedName("jo")
-	static int[] field2539;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -967127495
+		intValue = -621260543
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1483991035
+		intValue = -1174008128
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = 1787793063
+		intValue = 28581227
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lji;"
+		descriptor = "Lhs;"
 	)
 	@Export("renderable")
 	public Renderable renderable;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		longValue = -2654504293480129969L
+		longValue = -2688195952529453661L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 466405665
+		intValue = -2030050993
 	)
 	@Export("flags")
 	int flags;
@@ -49,35 +47,15 @@ public final class FloorDecoration {
 	FloorDecoration() {
 	}
 
-	@ObfuscatedName("na")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1072566168"
+		descriptor = "(Ljava/lang/String;B)V",
+		garbageValue = "-118"
 	)
-	static void method4686() {
-		for (InterfaceParent var0 = (InterfaceParent)Client.interfaceParents.first(); var0 != null; var0 = (InterfaceParent)Client.interfaceParents.next()) {
-			int var1 = var0.group;
-			if (class379.widgetDefinition.loadInterface(var1)) {
-				boolean var2 = true;
-				Widget[] var3 = class379.widgetDefinition.Widget_interfaceComponents[var1];
-
-				int var4;
-				for (var4 = 0; var4 < var3.length; ++var4) {
-					if (var3[var4] != null) {
-						var2 = var3[var4].isIf3;
-						break;
-					}
-				}
-
-				if (!var2) {
-					var4 = (int)var0.key;
-					Widget var5 = class379.widgetDefinition.method6875(var4);
-					if (var5 != null) {
-						class178.invalidateWidget(var5);
-					}
-				}
-			}
-		}
-
+	static final void method3989(String var0) {
+		StringBuilder var10000 = (new StringBuilder()).append(var0);
+		Object var10001 = null;
+		String var1 = var10000.append(" is already on your friend list").toString();
+		Interpreter.addGameMessage(30, "", var1);
 	}
 }

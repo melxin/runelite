@@ -3,50 +3,50 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("re")
+@ObfuscatedName("rv")
 @Implements("ConcurrentMidiTask")
 public class ConcurrentMidiTask extends SongTask {
-	@ObfuscatedName("ab")
-	ArrayList field4884;
+	@ObfuscatedName("ay")
+	ArrayList field4871;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lrg;Ljava/util/ArrayList;)V"
+		descriptor = "(Lrh;Ljava/util/ArrayList;)V"
 	)
 	public ConcurrentMidiTask(SongTask var1, ArrayList var2) {
 		super(var1);
-		this.field4884 = var2;
-		super.field4876 = "ConcurrentMidiTask";
+		this.field4871 = var2;
+		super.field4868 = "ConcurrentMidiTask";
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-1"
+		descriptor = "(I)Z",
+		garbageValue = "1892560666"
 	)
-	public boolean vmethod8722() {
-		for (int var1 = 0; var1 < this.field4884.size(); ++var1) {
-			SongTask var2 = (SongTask)this.field4884.get(var1);
+	public boolean vmethod8883() {
+		for (int var1 = 0; var1 < this.field4871.size(); ++var1) {
+			SongTask var2 = (SongTask)this.field4871.get(var1);
 			if (var2 == null) {
-				this.field4884.remove(var1);
+				this.field4871.remove(var1);
 				--var1;
-			} else if (var2.vmethod8722()) {
-				if (var2.method8714()) {
-					this.method8702(var2.method8700());
-					this.field4884.clear();
+			} else if (var2.vmethod8883()) {
+				if (var2.method8855()) {
+					this.method8861(var2.method8870());
+					this.field4871.clear();
 					return true;
 				}
 
-				if (var2.method8715() != null) {
-					this.field4884.add(var2.method8715());
+				if (var2.method8860() != null) {
+					this.field4871.add(var2.method8860());
 				}
 
-				super.field4879 = var2.field4879;
-				this.field4884.remove(var1);
+				super.field4870 = var2.field4870;
+				this.field4871.remove(var1);
 				--var1;
 			}
 		}
 
-		if (this.field4884.isEmpty()) {
+		if (this.field4871.isEmpty()) {
 			return true;
 		} else {
 			return false;

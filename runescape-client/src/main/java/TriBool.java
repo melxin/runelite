@@ -1,31 +1,35 @@
-import java.net.MalformedURLException;
-import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sx")
+@ObfuscatedName("sb")
 @Implements("TriBool")
 public class TriBool {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lsx;"
+		descriptor = "Lsb;"
 	)
 	@Export("TriBool_unknown")
 	public static final TriBool TriBool_unknown;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lsx;"
+		descriptor = "Lsb;"
 	)
 	@Export("TriBool_true")
 	public static final TriBool TriBool_true;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lsx;"
+		descriptor = "Lsb;"
 	)
 	@Export("TriBool_false")
 	public static final TriBool TriBool_false;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lvf;"
+	)
+	@Export("rightTitleSprite")
+	static SpritePixels rightTitleSprite;
 
 	static {
 		TriBool_unknown = new TriBool();
@@ -36,21 +40,13 @@ public class TriBool {
 	TriBool() {
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Z",
-		garbageValue = "-1357687384"
+		descriptor = "(II)F",
+		garbageValue = "-1385881134"
 	)
-	static boolean method9132(String var0) {
-		if (var0 == null) {
-			return false;
-		} else {
-			try {
-				new URL(var0);
-				return true;
-			} catch (MalformedURLException var2) {
-				return false;
-			}
-		}
+	public static float method9284(int var0) {
+		var0 &= 16383;
+		return (float)(3.834951969714103E-4D * (double)((float)var0));
 	}
 }

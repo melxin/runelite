@@ -1,71 +1,84 @@
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("lg")
+@ObfuscatedName("lk")
 public class class298 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Llg;"
+		descriptor = "Llk;"
 	)
-	static final class298 field3240;
-	@ObfuscatedName("aw")
+	static final class298 field3236;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Llg;"
+		descriptor = "Llk;"
 	)
-	static final class298 field3241;
-	@ObfuscatedName("at")
+	static final class298 field3237;
+	@ObfuscatedName("ga")
 	@ObfuscatedGetter(
-		intValue = -328264079
+		intValue = -292070717
+	)
+	static int field3239;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = -1906777519
 	)
 	@Export("value")
 	final int value;
 
 	static {
-		field3240 = new class298(0);
-		field3241 = new class298(1);
+		field3236 = new class298(0);
+		field3237 = new class298(1);
 	}
 
 	class298(int var1) {
 		this.value = var1;
 	}
 
-	@ObfuscatedName("iw")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-74"
+		descriptor = "(II)I",
+		garbageValue = "-1463983379"
 	)
-	static final void method6238() {
-		int[] var0 = Client.playerUpdateManager.playerIndices;
-		Iterator var1 = Client.worldViewManager.iterator();
+	@Export("Widget_unpackTargetMask")
+	public static int Widget_unpackTargetMask(int var0) {
+		return var0 >> 11 & 63;
+	}
 
-		while (var1.hasNext()) {
-			WorldView var2 = (WorldView)var1.next();
-
-			int var3;
-			for (var3 = 0; var3 < Client.playerUpdateManager.playerCount; ++var3) {
-				Player var6 = var2.players[var0[var3]];
-				if (var6 != null && var6.overheadTextCyclesRemaining > 0) {
-					--var6.overheadTextCyclesRemaining;
-					if (var6.overheadTextCyclesRemaining == 0) {
-						var6.overheadText = null;
-					}
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(ILdm;ZI)I",
+		garbageValue = "-647715500"
+	)
+	static int method6400(int var0, Script var1, boolean var2) {
+		Widget var3 = ClanChannel.widgetDefinition.method7031(Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize]);
+		if (var0 == ScriptOpcodes.IF_GETTARGETMASK) {
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Widget_unpackTargetMask(class232.getWidgetFlags(var3));
+			return 1;
+		} else if (var0 != ScriptOpcodes.IF_GETOP) {
+			if (var0 == ScriptOpcodes.IF_GETOPBASE) {
+				if (var3.dataText == null) {
+					Interpreter.Interpreter_stringStack[++HealthBarConfig.Interpreter_stringStackSize - 1] = "";
+				} else {
+					Interpreter.Interpreter_stringStack[++HealthBarConfig.Interpreter_stringStackSize - 1] = var3.dataText;
 				}
+
+				return 1;
+			} else {
+				return 2;
+			}
+		} else {
+			int var4 = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize];
+			--var4;
+			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
+				Interpreter.Interpreter_stringStack[++HealthBarConfig.Interpreter_stringStackSize - 1] = var3.actions[var4];
+			} else {
+				Interpreter.Interpreter_stringStack[++HealthBarConfig.Interpreter_stringStackSize - 1] = "";
 			}
 
-			for (var3 = 0; var3 < var2.npcCount; ++var3) {
-				int var4 = var2.npcIndices[var3];
-				NPC var5 = var2.npcs[var4];
-				if (var5 != null && var5.overheadTextCyclesRemaining > 0) {
-					--var5.overheadTextCyclesRemaining;
-					if (var5.overheadTextCyclesRemaining == 0) {
-						var5.overheadText = null;
-					}
-				}
-			}
+			return 1;
 		}
-
 	}
 }
