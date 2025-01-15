@@ -81,7 +81,7 @@ public enum class134 implements Enum {
 					Client.rootWidgetXs[Client.rootWidgetCount] = var10.x + var6;
 					Client.rootWidgetYs[Client.rootWidgetCount] = var7 + var10.y;
 					Client.rootWidgetWidths[Client.rootWidgetCount] = var10.width;
-					Client.rootWidgetHeights[Client.rootWidgetCount] = var10.height * -1528330031;
+					Client.rootWidgetHeights[Client.rootWidgetCount] = var10.height;
 					var11 = ++Client.rootWidgetCount - 1;
 				} else {
 					var11 = var8;
@@ -124,8 +124,8 @@ public enum class134 implements Enum {
 								var16 = Client.field682;
 							}
 
-							if (var16 + var10.height * -1528330031 > Client.clickedWidgetParent.height * -1528330031 + Client.field682) {
-								var16 = Client.clickedWidgetParent.height * -1528330031 + Client.field682 - var10.height * -1528330031;
+							if (var16 + var10.height > Client.clickedWidgetParent.height + Client.field682) {
+								var16 = Client.clickedWidgetParent.height + Client.field682 - var10.height;
 							}
 
 							var12 = var15;
@@ -147,7 +147,7 @@ public enum class134 implements Enum {
 						var19 = var12;
 						var20 = var13;
 						var21 = var12 + var10.width;
-						var22 = var10.height * -1528330031 + var13;
+						var22 = var10.height + var13;
 						if (var21 < var12) {
 							var19 = var21;
 							var21 = var12;
@@ -166,7 +166,7 @@ public enum class134 implements Enum {
 						var18 = var22 < var5 ? var22 : var5;
 					} else {
 						var19 = var12 + var10.width;
-						var20 = var13 + var10.height * -1528330031;
+						var20 = var13 + var10.height;
 						var15 = var12 > var2 ? var12 : var2;
 						var16 = var13 > var3 ? var13 : var3;
 						var17 = var19 < var4 ? var19 : var4;
@@ -196,7 +196,7 @@ public enum class134 implements Enum {
 							if (var10.contentType == 1337) {
 								Client.viewportX = var12;
 								Client.viewportY = var13;
-								class138.drawEntities(var12, var13, var10.width, var10.height * -1528330031);
+								class138.drawEntities(var12, var13, var10.width, var10.height);
 								Client.validRootWidgets[var10.rootIndex] = true;
 								Rasterizer2D.Rasterizer2D_setClip(var2, var3, var4, var5);
 								continue;
@@ -215,11 +215,11 @@ public enum class134 implements Enum {
 							}
 
 							if (var10.contentType == 1400) {
-								class420.worldMap.draw(var12, var13, var10.width, var10.height * -1528330031, Client.cycle, class544.clientPreferences.getBrightness());
+								class420.worldMap.draw(var12, var13, var10.width, var10.height, Client.cycle, class544.clientPreferences.getBrightness());
 							}
 
 							if (var10.contentType == 1401) {
-								class420.worldMap.drawOverview(var12, var13, var10.width, var10.height * -1528330031);
+								class420.worldMap.drawOverview(var12, var13, var10.width, var10.height);
 							}
 
 							if (var10.contentType == 1402) {
@@ -233,8 +233,8 @@ public enum class134 implements Enum {
 							}
 
 							if (!var10.isIf3) {
-								if (var10.scrollY > var10.scrollHeight - var10.height * -1528330031) {
-									var10.scrollY = var10.scrollHeight - var10.height * -1528330031;
+								if (var10.scrollY > var10.scrollHeight - var10.height) {
+									var10.scrollY = var10.scrollHeight - var10.height;
 								}
 
 								if (var10.scrollY < 0) {
@@ -268,8 +268,8 @@ public enum class134 implements Enum {
 						}
 
 						if (Client.isResizable || Client.field580[var11] || Client.gameDrawingMode > 1) {
-							if (var10.type == 0 && !var10.isIf3 && var10.scrollHeight > var10.height * -1528330031) {
-								WorldEntity.drawScrollBar(var12 + var10.width, var13, var10.scrollY, var10.height * -1528330031, var10.scrollHeight);
+							if (var10.type == 0 && !var10.isIf3 && var10.scrollHeight > var10.height) {
+								WorldEntity.drawScrollBar(var12 + var10.width, var13, var10.scrollY, var10.height, var10.scrollHeight);
 							}
 
 							if (var10.type != 1) {
@@ -289,22 +289,22 @@ public enum class134 implements Enum {
 									if (var10.fill) {
 										switch(var10.fillMode.field5554) {
 										case 1:
-											Rasterizer2D.Rasterizer2D_fillRectangleGradient(var12, var13, var10.width, var10.height * -1528330031, var10.color, var10.color2);
+											Rasterizer2D.Rasterizer2D_fillRectangleGradient(var12, var13, var10.width, var10.height, var10.color, var10.color2);
 											break;
 										case 2:
-											Rasterizer2D.Rasterizer2D_fillRectangleGradientAlpha(var12, var13, var10.width, var10.height * -1528330031, var10.color, var10.color2, 255 - (var10.transparencyTop & 255), 255 - (var10.transparencyBot & 255));
+											Rasterizer2D.Rasterizer2D_fillRectangleGradientAlpha(var12, var13, var10.width, var10.height, var10.color, var10.color2, 255 - (var10.transparencyTop & 255), 255 - (var10.transparencyBot & 255));
 											break;
 										default:
 											if (var14 == 0) {
-												Rasterizer2D.Rasterizer2D_fillRectangle(var12, var13, var10.width, var10.height * -1528330031, var19);
+												Rasterizer2D.Rasterizer2D_fillRectangle(var12, var13, var10.width, var10.height, var19);
 											} else {
-												Rasterizer2D.Rasterizer2D_fillRectangleAlpha(var12, var13, var10.width, var10.height * -1528330031, var19, 256 - (var14 & 255));
+												Rasterizer2D.Rasterizer2D_fillRectangleAlpha(var12, var13, var10.width, var10.height, var19, 256 - (var14 & 255));
 											}
 										}
 									} else if (var14 == 0) {
-										Rasterizer2D.Rasterizer2D_drawRectangle(var12, var13, var10.width, var10.height * -1528330031, var19);
+										Rasterizer2D.Rasterizer2D_drawRectangle(var12, var13, var10.width, var10.height, var19);
 									} else {
-										Rasterizer2D.Rasterizer2D_drawRectangleAlpha(var12, var13, var10.width, var10.height * -1528330031, var19, 256 - (var14 & 255));
+										Rasterizer2D.Rasterizer2D_drawRectangleAlpha(var12, var13, var10.width, var10.height, var19, 256 - (var14 & 255));
 									}
 								} else if (var10.type == 4) {
 									Font var40 = var10.getFont(ClanChannel.widgetDefinition);
@@ -351,7 +351,7 @@ public enum class134 implements Enum {
 											var42 = class28.method458(var42, var10);
 										}
 
-										var40.drawWidgetText(var42, var12, var13, var10.width, var10.height * -1528330031, var20, var10.textShadowed ? 0 : -1, class508.method9604(var10.transparencyTop), var10.textXAlignment, var10.textYAlignment, var10.textLineHeight);
+										var40.drawWidgetText(var42, var12, var13, var10.width, var10.height, var20, var10.textShadowed ? 0 : -1, class508.method9604(var10.transparencyTop), var10.textXAlignment, var10.textYAlignment, var10.textLineHeight);
 									}
 								} else {
 									int var23;
@@ -383,18 +383,18 @@ public enum class134 implements Enum {
 												if (!var10.spriteTiling) {
 													var22 = var10.width * 4096 / var20;
 													if (var10.spriteAngle != 0) {
-														var38.method10770(var10.width / 2 + var12, var13 + var10.height * -1528330031 / 2, var10.spriteAngle, var22);
+														var38.method10770(var10.width / 2 + var12, var13 + var10.height / 2, var10.spriteAngle, var22);
 													} else if (var14 != 0) {
-														var38.drawTransScaledAt(var12, var13, var10.width, var10.height * -1528330031, 256 - (var14 & 255));
-													} else if (var20 == var10.width && var10.height * -1528330031 == var21) {
+														var38.drawTransScaledAt(var12, var13, var10.width, var10.height, 256 - (var14 & 255));
+													} else if (var20 == var10.width && var10.height == var21) {
 														var38.drawTransBgAt(var12, var13);
 													} else {
-														var38.drawScaledAt(var12, var13, var10.width, var10.height * -1528330031);
+														var38.drawScaledAt(var12, var13, var10.width, var10.height);
 													}
 												} else {
-													Rasterizer2D.Rasterizer2D_expandClip(var12, var13, var12 + var10.width, var10.height * -1528330031 + var13);
+													Rasterizer2D.Rasterizer2D_expandClip(var12, var13, var12 + var10.width, var10.height + var13);
 													var22 = (var20 - 1 + var10.width) / var20;
-													var23 = (var21 - 1 + var10.height * -1528330031) / var21;
+													var23 = (var21 - 1 + var10.height) / var21;
 
 													for (var24 = 0; var24 < var22; ++var24) {
 														for (var25 = 0; var25 < var23; ++var25) {
@@ -481,7 +481,7 @@ public enum class134 implements Enum {
 												}
 											}
 
-											Rasterizer3D.setCustomClipBounds(var10.width / 2 + var12, var13 + var10.height * -1528330031 / 2);
+											Rasterizer3D.setCustomClipBounds(var10.width / 2 + var12, var13 + var10.height / 2);
 											var23 = Rasterizer3D.Rasterizer3D_sine[var10.modelAngleX] * var10.modelZoom >> 16;
 											var24 = Rasterizer3D.Rasterizer3D_cosine[var10.modelAngleX] * var10.modelZoom >> 16;
 											if (var39 != null) {
@@ -526,7 +526,7 @@ public enum class134 implements Enum {
 												var19 += 6;
 												var20 += 7;
 												var24 = var12 + var10.width - 5 - var19;
-												var25 = var10.height * -1528330031 + var13 + 5;
+												var25 = var10.height + var13 + 5;
 												if (var24 < var12 + 5) {
 													var24 = var12 + 5;
 												}
@@ -561,14 +561,14 @@ public enum class134 implements Enum {
 											if (var10.type == 9) {
 												if (var10.field3907) {
 													var19 = var12;
-													var20 = var13 + var10.height * -1528330031;
+													var20 = var13 + var10.height;
 													var21 = var12 + var10.width;
 													var22 = var13;
 												} else {
 													var19 = var12;
 													var20 = var13;
 													var21 = var12 + var10.width;
-													var22 = var10.height * -1528330031 + var13;
+													var22 = var10.height + var13;
 												}
 
 												if (var10.lineWid == 1) {
@@ -582,7 +582,7 @@ public enum class134 implements Enum {
 												if (var37 != null && var32 != null && var37.method7276()) {
 													var29 = var10.getFont(ClanChannel.widgetDefinition);
 													if (var29 != null) {
-														Client.field755.method10905(var12, var13, var10.width, var10.height * -1528330031, var37.method7167(), var37.method7187(), var37.method7259(), var37.method7184(), var37.method7182());
+														Client.field755.method10905(var12, var13, var10.width, var10.height, var37.method7167(), var37.method7187(), var37.method7259(), var37.method7184(), var37.method7182());
 														var22 = var10.textShadowed ? var10.spriteShadow : -1;
 														if (!var37.method7221() && var37.method7331().method8579()) {
 															Client.field755.method10906(var32.field3782, var22, var32.field3783, var32.field3781);

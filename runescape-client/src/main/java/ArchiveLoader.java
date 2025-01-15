@@ -553,8 +553,8 @@ public class ArchiveLoader {
 					var6.scrollX = 0;
 				}
 
-				if (var6.scrollY > var6.scrollHeight - var6.height * -1528330031) {
-					var6.scrollY = var6.scrollHeight - var6.height * -1528330031;
+				if (var6.scrollY > var6.scrollHeight - var6.height) {
+					var6.scrollY = var6.scrollHeight - var6.height;
 				}
 
 				if (var6.scrollY < 0) {
@@ -593,15 +593,15 @@ public class ArchiveLoader {
 		if (var0.yAlignment == 0) {
 			var0.y = var0.rawY;
 		} else if (var0.yAlignment == 1) {
-			var0.y = (var2 - var0.height * -1528330031) / 2 + var0.rawY;
+			var0.y = (var2 - var0.height) / 2 + var0.rawY;
 		} else if (var0.yAlignment == 2) {
-			var0.y = var2 - var0.height * -1528330031 - var0.rawY;
+			var0.y = var2 - var0.height - var0.rawY;
 		} else if (var0.yAlignment == 3) {
 			var0.y = var2 * var0.rawY >> 14;
 		} else if (var0.yAlignment == 4) {
-			var0.y = (var2 * var0.rawY >> 14) + (var2 - var0.height * -1528330031) / 2;
+			var0.y = (var2 * var0.rawY >> 14) + (var2 - var0.height) / 2;
 		} else {
-			var0.y = var2 - var0.height * -1528330031 - (var2 * var0.rawY >> 14);
+			var0.y = var2 - var0.height - (var2 * var0.rawY >> 14);
 		}
 
 	}

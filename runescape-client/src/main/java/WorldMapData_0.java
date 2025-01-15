@@ -104,7 +104,7 @@ public class WorldMapData_0 extends AbstractWorldMapData {
 			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.width;
 			return 1;
 		} else if (var0 == ScriptOpcodes.IF_GETHEIGHT) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.height * -1528330031;
+			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.height;
 			return 1;
 		} else if (var0 == ScriptOpcodes.IF_GETHIDE) {
 			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.isHidden ? 1 : 0;

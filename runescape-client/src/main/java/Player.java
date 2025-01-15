@@ -724,7 +724,7 @@ public final class Player extends Actor {
 					var16 = var26;
 					var17 = var11;
 					var18 = var26 + var9.width;
-					int var19 = var9.height * -1528330031 + var11;
+					int var19 = var9.height + var11;
 					if (var18 < var26) {
 						var16 = var18;
 						var18 = var26;
@@ -743,7 +743,7 @@ public final class Player extends Actor {
 					var15 = var19 < var5 ? var19 : var5;
 				} else {
 					var16 = var26 + var9.width;
-					var17 = var11 + var9.height * -1528330031;
+					var17 = var11 + var9.height;
 					var12 = var26 > var2 ? var26 : var2;
 					var13 = var11 > var3 ? var11 : var3;
 					var14 = var16 < var4 ? var16 : var4;
@@ -823,12 +823,12 @@ public final class Player extends Actor {
 						Tile.checkIfMinimapClicked(var9, var26, var11);
 					} else {
 						if (var9.contentType == 1400) {
-							class420.worldMap.onCycle(MouseHandler.MouseHandler_x, MouseHandler.MouseHandler_y, var35, var26, var11, var9.width, var9.height * -1528330031);
+							class420.worldMap.onCycle(MouseHandler.MouseHandler_x, MouseHandler.MouseHandler_y, var35, var26, var11, var9.width, var9.height);
 						}
 
 						if (!Client.isMenuOpen && var35) {
 							if (var9.contentType == 1400) {
-								class420.worldMap.addElementMenuOptions(var26, var11, var9.width, var9.height * -1528330031, var17, var18);
+								class420.worldMap.addElementMenuOptions(var26, var11, var9.width, var9.height, var17, var18);
 							} else {
 								class419.Widget_addToMenu(var9);
 							}
@@ -1247,8 +1247,8 @@ public final class Player extends Actor {
 								HealthBarConfig.field1346 = var9;
 							}
 
-							if (var9.scrollHeight > var9.height * -1528330031) {
-								MenuAction.method2364(var9, var26 + var9.width, var11, var9.height * -1528330031, var9.scrollHeight, MouseHandler.MouseHandler_x, MouseHandler.MouseHandler_y);
+							if (var9.scrollHeight > var9.height) {
+								MenuAction.method2364(var9, var26 + var9.width, var11, var9.height, var9.scrollHeight, MouseHandler.MouseHandler_x, MouseHandler.MouseHandler_y);
 							}
 						}
 

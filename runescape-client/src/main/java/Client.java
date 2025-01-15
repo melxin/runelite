@@ -5098,8 +5098,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var5 = var3.readUnsignedShortAddLE();
 					var6 = ClanChannel.widgetDefinition.method7031(var21);
 					if (var6 != null && var6.type == 0) {
-						if (var5 > var6.scrollHeight - var6.height * -1528330031) {
-							var5 = var6.scrollHeight - var6.height * -1528330031;
+						if (var5 > var6.scrollHeight - var6.height) {
+							var5 = var6.scrollHeight - var6.height;
 						}
 
 						if (var5 < 0) {
@@ -6216,7 +6216,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 			var4 = Huffman.canvasHeight;
 		} else {
 			var3 = var2.width;
-			var4 = var2.height * -1528330031;
+			var4 = var2.height;
 		}
 
 		GrandExchangeOfferTotalQuantityComparator.alignWidgetSize(var1, var3, var4, false);
@@ -6250,8 +6250,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				var2 = field682;
 			}
 
-			if (var2 + clickedWidget.height * -1528330031 > clickedWidgetParent.height * -1528330031 + field682) {
-				var2 = field682 + clickedWidgetParent.height * -1528330031 - clickedWidget.height * -1528330031;
+			if (var2 + clickedWidget.height > clickedWidgetParent.height + field682) {
+				var2 = field682 + clickedWidgetParent.height - clickedWidget.height;
 			}
 
 			int var3 = var1 - field721;

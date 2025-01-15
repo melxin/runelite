@@ -58,8 +58,8 @@ public class class454 {
 				}
 
 				var3.scrollY = var16;
-				if (var3.scrollY > var3.scrollHeight - var3.height * -1528330031) {
-					var3.scrollY = var3.scrollHeight - var3.height * -1528330031;
+				if (var3.scrollY > var3.scrollHeight - var3.height) {
+					var3.scrollY = var3.scrollHeight - var3.height;
 				}
 
 				if (var3.scrollY < 0) {

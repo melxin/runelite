@@ -99,7 +99,7 @@ public class UserComparator9 extends AbstractUserComparator {
 			return 1;
 		} else if (var0 == ScriptOpcodes.VIEWPORT_GETEFFECTIVESIZE) {
 			if (Client.viewportWidget != null) {
-				class143.setViewportShape(0, 0, Client.viewportWidget.width, Client.viewportWidget.height * -1528330031, false);
+				class143.setViewportShape(0, 0, Client.viewportWidget.width, Client.viewportWidget.height, false);
 				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.viewportWidth;
 				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.viewportHeight;
 			} else {

@@ -62,7 +62,7 @@ final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
 	@Export("alignWidgetSize")
 	static void alignWidgetSize(Widget var0, int var1, int var2, boolean var3) {
 		int var4 = var0.width;
-		int var5 = var0.height * -1528330031;
+		int var5 = var0.height;
 		if (var0.widthAlignment == 0) {
 			var0.width = var0.rawWidth;
 		} else if (var0.widthAlignment == 1) {
@@ -80,7 +80,7 @@ final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
 		}
 
 		if (var0.widthAlignment == 4) {
-			var0.width = var0.height * var0.field3888 * -1528330031 / var0.field4008;
+			var0.width = var0.height * var0.field3888 / var0.field4008;
 		}
 
 		if (var0.heightAlignment == 4) {
@@ -92,10 +92,10 @@ final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
 		}
 
 		if (var0.type == 12) {
-			var0.method7444().method7134(var0.width, var0.height * -1528330031);
+			var0.method7444().method7134(var0.width, var0.height);
 		}
 
-		if (var3 && var0.onResize != null && (var4 != var0.width || var5 != var0.height * -1528330031)) {
+		if (var3 && var0.onResize != null && (var4 != var0.width || var5 != var0.height)) {
 			ScriptEvent var6 = new ScriptEvent();
 			var6.widget = var0;
 			var6.args = var0.onResize;

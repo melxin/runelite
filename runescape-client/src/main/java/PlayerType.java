@@ -193,9 +193,9 @@ public enum PlayerType implements Enum {
 		var8.widthAlignment = var5;
 		var8.heightAlignment = var6;
 		var8.rawX = (int)(var7[0] * (float)var1.width);
-		var8.rawY = (int)((float)(var1.height * -1528330031) * var7[1]);
+		var8.rawY = (int)((float)(var1.height) * var7[1]);
 		var8.rawWidth = (int)(var7[2] * (float)var1.width);
-		var8.rawHeight = (int)((float)(var1.height * -1528330031) * var7[3]);
+		var8.rawHeight = (int)((float)(var1.height) * var7[3]);
 		return var8;
 	}
 }

@@ -161,8 +161,8 @@ public class Menu {
 		}
 
 		this.menuY = var2;
-		if (this.menuHeight * 1569719871 + this.menuY > Huffman.canvasHeight) {
-			this.menuY = Huffman.canvasHeight - this.menuHeight * 1569719871;
+		if (this.menuHeight + this.menuY > Huffman.canvasHeight) {
+			this.menuY = Huffman.canvasHeight - this.menuHeight;
 		}
 
 		if (this.menuY < 0) {
@@ -198,8 +198,8 @@ public class Menu {
 
 		int var3 = var2 + 19;
 		this.menuY = var2;
-		if (this.menuHeight * 1569719871 + this.menuY > Huffman.canvasHeight) {
-			this.menuY = var3 - this.menuHeight * 1569719871;
+		if (this.menuHeight + this.menuY > Huffman.canvasHeight) {
+			this.menuY = var3 - this.menuHeight;
 		}
 
 		if (this.menuY < 0) {
@@ -247,7 +247,7 @@ public class Menu {
 	public final boolean method10922(int var1, int var2) {
 		if (this.field5626 != -1 && this.subMenus[this.field5626] != null && this.subMenus[this.field5626].method10922(var1, var2)) {
 			return true;
-		} else if (var1 >= this.menuX - 10 && var1 <= this.menuWidth + this.menuX + 10 && var2 >= this.menuY - 10 && var2 <= this.menuHeight * 1569719871 + this.menuY + 10) {
+		} else if (var1 >= this.menuX - 10 && var1 <= this.menuWidth + this.menuX + 10 && var2 >= this.menuY - 10 && var2 <= this.menuHeight + this.menuY + 10) {
 			int var3 = this.method10940(var1, var2);
 			if (var3 != -1 && var3 != this.field5626) {
 				if (var3 != this.field5627) {
@@ -319,7 +319,7 @@ public class Menu {
 		int var1 = this.menuX;
 		int var2 = this.menuY;
 		int var3 = this.menuWidth;
-		int var4 = this.menuHeight * 1569719871;
+		int var4 = this.menuHeight;
 
 		for (int var5 = 0; var5 < Client.rootWidgetCount; ++var5) {
 			if (Client.rootWidgetWidths[var5] + Client.rootWidgetXs[var5] > var1 && Client.rootWidgetXs[var5] < var1 + var3 && Client.rootWidgetYs[var5] + Client.rootWidgetHeights[var5] > var2 && Client.rootWidgetYs[var5] < var4 + var2) {
@@ -379,13 +379,13 @@ public class Menu {
 		int var1 = this.menuX;
 		int var2 = this.menuY;
 		int var3 = 6116423;
-		Rasterizer2D.Rasterizer2D_fillRectangle(var1, var2, this.menuWidth, this.menuHeight * 1569719871, var3);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var1, var2, this.menuWidth, this.menuHeight, var3);
 		if (this.field5611) {
 			Rasterizer2D.Rasterizer2D_fillRectangle(var1 + 1, var2 + 1, this.menuWidth - 2, 16, 0);
-			Rasterizer2D.Rasterizer2D_drawRectangle(var1 + 1, var2 + 18, this.menuWidth - 2, this.menuHeight * 1569719871 - 19, 0);
+			Rasterizer2D.Rasterizer2D_drawRectangle(var1 + 1, var2 + 18, this.menuWidth - 2, this.menuHeight - 19, 0);
 			GraphicsObject.fontBold12.draw("Choose Option", var1 + 3, var2 + 14, var3, -1);
 		} else {
-			Rasterizer2D.Rasterizer2D_drawRectangle(var1 + 1, var2 + 1, this.menuWidth - 2, this.menuHeight * 1569719871 - 2, 0);
+			Rasterizer2D.Rasterizer2D_drawRectangle(var1 + 1, var2 + 1, this.menuWidth - 2, this.menuHeight - 2, 0);
 		}
 
 		int var4 = MouseHandler.MouseHandler_x;
@@ -412,7 +412,7 @@ public class Menu {
 			}
 		}
 
-		FadeOutTask.method8847(this.menuX, this.menuY, this.menuWidth, this.menuHeight * 1569719871);
+		FadeOutTask.method8847(this.menuX, this.menuY, this.menuWidth, this.menuHeight);
 		if (this.field5626 != -1 && this.subMenus[this.field5626] != null) {
 			this.subMenus[this.field5626].method10928();
 		}
