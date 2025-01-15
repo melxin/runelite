@@ -70,7 +70,7 @@ public final class WorldMapRenderer {
 	int tileX;
 	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1414750528
+		intValue = -716092027
 	)
 	@Export("tileY")
 	int tileY;
