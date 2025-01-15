@@ -289,6 +289,13 @@ public enum VarPlayer
 	 */
 	DIZANAS_QUIVER_ITEM_ID(4142),
 
+	/**
+	 * Runecraft Essence Pouch degrade states
+	 */
+	ESSENCE_POUCH_MEDIUM_DEGRADE(488),
+	ESSENCE_POUCH_LARGE_DEGRADE(489),
+	ESSENCE_POUCH_GIANT_DEGRADE(490),
+
 	;
 
 	private final int id;

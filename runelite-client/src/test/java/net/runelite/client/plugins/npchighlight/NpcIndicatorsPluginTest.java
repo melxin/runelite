@@ -47,7 +47,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -106,7 +105,6 @@ public class NpcIndicatorsPluginTest
 	}
 
 	@Test
-	@Ignore
 	public void testDeadNpcMenuHighlight()
 	{
 		when(npcIndicatorsConfig.getNpcToHighlight()).thenReturn("goblin");
@@ -134,11 +132,10 @@ public class NpcIndicatorsPluginTest
 	}
 
 	@Test
-	@Ignore
-	public void testAliveNpcMenuHighlight()
+	public void testNpcMenuHighlightBoth()
 	{
 		when(npcIndicatorsConfig.getNpcToHighlight()).thenReturn("goblin");
-		when(npcIndicatorsConfig.highlightMenuNames()).thenReturn(true);
+		when(npcIndicatorsConfig.highlightMenuStyle()).thenReturn(NpcIndicatorsConfig.MenuHighlightStyle.BOTH);
 		when(npcIndicatorsConfig.highlightColor()).thenReturn(Color.BLUE);
 
 		npcIndicatorsPlugin.rebuild();
@@ -156,6 +153,54 @@ public class NpcIndicatorsPluginTest
 		npcIndicatorsPlugin.onMenuEntryAdded(menuEntryAdded);
 
 		assertEquals("<col=0000ff>Goblin", entry.getTarget()); // blue
+	}
+
+	@Test
+	public void testNpcMenuHighlightName()
+	{
+		when(npcIndicatorsConfig.getNpcToHighlight()).thenReturn("ram");
+		when(npcIndicatorsConfig.highlightMenuStyle()).thenReturn(NpcIndicatorsConfig.MenuHighlightStyle.NAME);
+		when(npcIndicatorsConfig.highlightColor()).thenReturn(Color.BLUE);
+
+		npcIndicatorsPlugin.rebuild();
+
+		NPC npc = mock(NPC.class);
+		when(npc.getName()).thenReturn("Ram");
+		npcIndicatorsPlugin.onNpcSpawned(new NpcSpawned(npc));
+
+		TestMenuEntry entry = new TestMenuEntry();
+		entry.setTarget("<col=ffff00>Ram<col=ff00>  (level-2)");
+		entry.setIdentifier(MenuAction.NPC_FIRST_OPTION.getId());
+		entry.setActor(npc);
+
+		MenuEntryAdded menuEntryAdded = new MenuEntryAdded(entry);
+		npcIndicatorsPlugin.onMenuEntryAdded(menuEntryAdded);
+
+		assertEquals("<col=0000ff>Ram<col=ff00>  (level-2)", entry.getTarget()); // blue name
+	}
+
+	@Test
+	public void testNpcMenuHighlightLevel()
+	{
+		when(npcIndicatorsConfig.getNpcToHighlight()).thenReturn("ram");
+		when(npcIndicatorsConfig.highlightMenuStyle()).thenReturn(NpcIndicatorsConfig.MenuHighlightStyle.LEVEL);
+		when(npcIndicatorsConfig.highlightColor()).thenReturn(Color.BLUE);
+
+		npcIndicatorsPlugin.rebuild();
+
+		NPC npc = mock(NPC.class);
+		when(npc.getName()).thenReturn("Ram");
+		npcIndicatorsPlugin.onNpcSpawned(new NpcSpawned(npc));
+
+		TestMenuEntry entry = new TestMenuEntry();
+		entry.setTarget("<col=ffff00>Ram<col=ff00>  (level-2)");
+		entry.setIdentifier(MenuAction.NPC_FIRST_OPTION.getId());
+		entry.setActor(npc);
+
+		MenuEntryAdded menuEntryAdded = new MenuEntryAdded(entry);
+		npcIndicatorsPlugin.onMenuEntryAdded(menuEntryAdded);
+
+		assertEquals("<col=ffff00>Ram<col=0000ff>  (level-2)", entry.getTarget()); // blue level
 	}
 
 	@Test

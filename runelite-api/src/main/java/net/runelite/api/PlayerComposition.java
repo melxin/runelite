@@ -25,6 +25,7 @@
 package net.runelite.api;
 
 import javax.annotation.Nullable;
+import net.runelite.api.annotations.VisibleForDevtools;
 import net.runelite.api.kit.KitType;
 
 /**
@@ -90,6 +91,21 @@ public interface PlayerComposition
 	 */
 	void setHash();
 
+	/**
+	 * Get the ID of the NPC that the player is currently transformed into.
+	 * Used natively for cutscenes.
+	 * @return the id of the npc that the player is rendering as
+	 * @see PlayerComposition#setTransformedNpcId(int)
+	 */
+	int getTransformedNpcId();
+
+	/**
+	 * Set the ID of the NPC that the player should transform into.
+	 * Used natively for cutscenes.
+	 * @see PlayerComposition#getTransformedNpcId()
+	 * @param id the id of the npc that the player should render as
+	 */
+	@VisibleForDevtools
 	void setTransformedNpcId(int id);
 
 	/**
