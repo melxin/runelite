@@ -317,7 +317,7 @@ public abstract class UrlRequester implements Runnable {
 								}
 							} else {
 								var3.modelFrame += Client.graphicsCycle;
-								int var7 = var6.method4269();
+								int var7 = var6.getMayaAnimFrame();
 								if (var3.modelFrame >= var7) {
 									var3.modelFrame -= var6.frameCount;
 									if (var3.modelFrame < 0 || var3.modelFrame >= var7) {

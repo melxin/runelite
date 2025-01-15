@@ -97,7 +97,7 @@ public class DynamicObject extends Renderable {
 					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.frameIds.length);
 					this.cycleStart -= (int)(Math.random() * (double)this.sequenceDefinition.frameLengths[this.frame]);
 				} else {
-					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.method4269());
+					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.getMayaAnimFrame());
 				}
 			}
 		}
@@ -165,7 +165,7 @@ public class DynamicObject extends Renderable {
 						this.sequenceDefinition = null;
 					}
 				} else {
-					int var13 = this.sequenceDefinition.method4269();
+					int var13 = this.sequenceDefinition.getMayaAnimFrame();
 					this.frame += var12;
 					var12 = 0;
 					if (this.frame >= var13) {

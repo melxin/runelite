@@ -114,7 +114,7 @@ public class GraphicsObject extends Renderable {
 				}
 			} else {
 				this.frame += var1;
-				if (this.frame >= this.sequenceDefinition.method4269()) {
+				if (this.frame >= this.sequenceDefinition.getMayaAnimFrame()) {
 					this.isFinished = true;
 				} else {
 					class277.method5753(this.sequenceDefinition, this.frame, this.x, this.y, false);

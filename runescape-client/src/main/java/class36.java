@@ -296,7 +296,7 @@ public class class36 {
 					}
 				} else if (var21.isCachedModelIdSet()) {
 					++var1.movementFrame;
-					var4 = var21.method4269();
+					var4 = var21.getMayaAnimFrame();
 					if (var1.movementFrame < var4) {
 						class277.method5753(var21, var1.movementFrame, var1.x, var1.y, var1 == AsyncHttpResponse.localPlayer);
 					} else {
@@ -351,7 +351,7 @@ public class class36 {
 						}
 					} else if (var27.isCachedModelIdSet()) {
 						++var23.spotAnimationFrame;
-						var13 = var27.method4269();
+						var13 = var27.getMayaAnimFrame();
 						if (var23.spotAnimationFrame < var13) {
 							class277.method5753(var27, var23.spotAnimationFrame, var1.x, var1.y, var1 == AsyncHttpResponse.localPlayer);
 						} else {
@@ -402,7 +402,7 @@ public class class36 {
 				var1.isWalking = var25.field2314;
 			} else if (var25.isCachedModelIdSet()) {
 				++var1.sequenceFrame;
-				var5 = var25.method4269();
+				var5 = var25.getMayaAnimFrame();
 				if (var1.sequenceFrame < var5) {
 					class277.method5753(var25, var1.sequenceFrame, var1.x, var1.y, var1 == AsyncHttpResponse.localPlayer);
 				} else {

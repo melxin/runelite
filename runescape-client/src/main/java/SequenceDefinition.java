@@ -645,7 +645,8 @@ public class SequenceDefinition extends DualNode {
 		descriptor = "(I)I",
 		garbageValue = "1227566721"
 	)
-	public int method4269() {
+	@Export("getMayaAnimFrame")
+	public int getMayaAnimFrame() {
 		return this.field2307 - this.field2306;
 	}
 

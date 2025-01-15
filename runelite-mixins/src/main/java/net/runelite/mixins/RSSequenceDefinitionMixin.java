@@ -313,6 +313,35 @@ public abstract class RSSequenceDefinitionMixin implements RSSequenceDefinition
 	@Override
 	public int getNumFrames()
 	{
-		return getFrameLengths().length;
+		if (this.isMayaAnim())
+		{
+			return this.getMayaAnimFrame();
+		}
+		else
+		{
+			return this.getFrameIDs() != null ? this.getFrameIDs().length : 1;
+		}
+	}
+
+
+	@Inject
+	@Override
+	public int getDuration()
+	{
+		if (this.isMayaAnim())
+		{
+			return this.getMayaAnimFrame();
+		}
+		else
+		{
+			return this.getFrameLengths() != null ? this.getFrameLengths().length : 1;
+		}
+	}
+
+	@Inject
+	@Override
+	public int getFrameStep()
+	{
+		return getFrameCount();
 	}
 }

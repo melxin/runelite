@@ -26,7 +26,11 @@ public interface RSSequenceDefinition extends RSNode, SequenceDefinition, Animat
 	RSModel transformSpotAnimationModel(RSModel var1, int var2);
 
 	@Import("isCachedModelIdSet")
-	boolean isCachedModelIdSet();
+	@Override
+	boolean isMayaAnim();
+
+	@Import("getMayaAnimFrame")
+	int getMayaAnimFrame();
 
 	void setId(int id);
 
