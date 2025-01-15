@@ -501,7 +501,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedGetter(
 		intValue = 1382683315
 	)
-	public static int field601;
+	@Export("revision")
+	public static int revision;
 	@ObfuscatedName("ly")
 	static boolean field602;
 	@ObfuscatedName("le")
@@ -1491,7 +1492,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		field626 = 0;
 		oculusOrbNormalSpeed = 12;
 		oculusOrbSlowedSpeed = 6;
-		field601 = 0;
+		revision = 0;
 		field602 = false;
 		field618 = 0;
 		field604 = false;
@@ -2070,7 +2071,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		var2.put("grant_type", "refresh_token");
 		var2.put("scope", "gamesso.token.create");
 		var2.put("refresh_token", var1);
-		URL var3 = new URL(FriendLoginUpdate.field4996 + "shield/oauth/token" + (new HttpQueryParams(var2)).encode());
+		URL var3 = new URL(FriendLoginUpdate.authServiceBaseUrl + "shield/oauth/token" + (new HttpQueryParams(var2)).encode());
 		HttpHeaders var4 = new HttpHeaders();
 		if (this.isRuneLite()) {
 			var4.basicAuthentication(BASIC_AUTH_DESKTOP_RUNELITE);
@@ -2078,7 +2079,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 			var4.basicAuthentication(BASIC_AUTH_DESKTOP_OSRS);
 		}
 
-		var4.header("Host", (new URL(FriendLoginUpdate.field4996)).getHost());
+		var4.header("Host", (new URL(FriendLoginUpdate.authServiceBaseUrl)).getHost());
 		var4.accept(HttpContentType.APPLICATION_JSON);
 		HttpMethod var5 = HttpMethod.POST;
 		RefreshAccessTokenRequester var6 = this.refreshAccessTokenRequester;
@@ -2097,7 +2098,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	)
 	@Export("requestOtlToken")
 	void requestOtlToken(String var1) throws IOException {
-		URL var2 = new URL(FriendLoginUpdate.field4996 + "public/v1/games/YCfdbvr2pM1zUYMxJRexZY/play");
+		URL var2 = new URL(FriendLoginUpdate.authServiceBaseUrl + "public/v1/games/YCfdbvr2pM1zUYMxJRexZY/play");
 		HttpHeaders var3 = new HttpHeaders();
 		var3.bearerToken(var1);
 		HttpMethod var4 = HttpMethod.GET;
@@ -2117,7 +2118,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	)
 	@Export("authenticate")
 	void authenticate(String var1, String var2) throws IOException, JSONException {
-		URL var3 = new URL(RouteStrategy.field3024 + "game-session/v1/tokens");
+		URL var3 = new URL(RouteStrategy.gameSessionServiceBaseUrl + "game-session/v1/tokens");
 		HttpRequest var4 = new HttpRequest(var3, HttpMethod.POST, this.https);
 		var4.getHeaders().bearerToken(var1);
 		var4.getHeaders().accept(HttpContentType.APPLICATION_JSON);
@@ -4788,8 +4789,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 
 				if (ServerPacket.OCULUS_SYNC == var1.serverPacket) {
 					var21 = var3.readInt();
-					if (var21 != field601) {
-						field601 = var21;
+					if (var21 != revision) {
+						revision = var21;
 						class142.method3514();
 					}
 
@@ -6421,7 +6422,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 							}
 							break;
 						case 11:
-							FriendLoginUpdate.field4996 = var2;
+							FriendLoginUpdate.authServiceBaseUrl = var2;
 							break;
 						case 12:
 							worldId = Integer.parseInt(var2);
@@ -6447,7 +6448,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 							field766 = Integer.parseInt(var2);
 							break;
 						case 22:
-							RouteStrategy.field3024 = var2;
+							RouteStrategy.gameSessionServiceBaseUrl = var2;
 							break;
 						case 25:
 							int var3 = var2.indexOf(".");

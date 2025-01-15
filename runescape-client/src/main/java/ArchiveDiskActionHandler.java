@@ -132,7 +132,8 @@ public class ArchiveDiskActionHandler implements Runnable {
 		descriptor = "(II)Lvh;",
 		garbageValue = "-1558697005"
 	)
-	public static DbTableType method7671(int var0) {
+	@Export("getDbTableType")
+	public static DbTableType getDbTableType(int var0) {
 		DbTableType var1 = (DbTableType)DbTableType.DBTableType_cache.get((long)var0);
 		if (var1 != null) {
 			return var1;

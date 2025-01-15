@@ -109,7 +109,7 @@ public class class156 extends class166 {
 				var7 = class384.method7653(var19);
 				int var21 = WallDecoration.method4819(var19);
 				DbRowType var26 = class28.getDbRowType(var3);
-				DbTableType var27 = ArchiveDiskActionHandler.method7671(var20);
+				DbTableType var27 = ArchiveDiskActionHandler.getDbTableType(var20);
 				int[] var28 = var27.types[var7];
 				int var12 = 0;
 				int var13 = var28.length;
@@ -167,7 +167,7 @@ public class class156 extends class166 {
 				var20 = class244.method5288(var19);
 				var7 = class384.method7653(var19);
 				DbRowType var25 = class28.getDbRowType(var3);
-				DbTableType var9 = ArchiveDiskActionHandler.method7671(var20);
+				DbTableType var9 = ArchiveDiskActionHandler.getDbTableType(var20);
 				int[] var10 = var9.types[var7];
 				Object[] var11 = var25.getColumnType(var7);
 				if (var11 == null && var9.defaultValues != null) {

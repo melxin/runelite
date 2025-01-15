@@ -46,8 +46,8 @@ public class IntProjection extends Projection {
 	@ObfuscatedGetter(
 		intValue = 1079699413
 	)
-	@Export("cameraYaw")
-	int cameraYaw;
+	@Export("cameraYaw2")
+	int cameraYaw2;
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(
 		intValue = -1738765779
@@ -88,7 +88,7 @@ public class IntProjection extends Projection {
 		this.cameraY = var2;
 		this.cameraZ = var3;
 		this.cameraPitch = var4;
-		this.cameraYaw = var5;
+		this.cameraYaw2 = var5;
 		this.pitchSin = Rasterizer3D.Rasterizer3D_sine[var4];
 		this.pitchCos = Rasterizer3D.Rasterizer3D_cosine[var4];
 		this.yawSin = Rasterizer3D.Rasterizer3D_sine[var5];
@@ -103,7 +103,7 @@ public class IntProjection extends Projection {
 	)
 	@Export("draw")
 	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
-		var1.vmethod4616(var2, this.cameraPitch, this.cameraYaw, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field1970, this.field1971, false);
+		var1.vmethod4616(var2, this.cameraPitch, this.cameraYaw2, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field1970, this.field1971, false);
 	}
 
 	@ObfuscatedName("ah")

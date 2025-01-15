@@ -14,7 +14,8 @@ public class FriendLoginUpdate extends Link {
 	@Export("options_buttons_2Sprite")
 	static IndexedSprite options_buttons_2Sprite;
 	@ObfuscatedName("gu")
-	static String field4996;
+	@Export("authServiceBaseUrl")
+	static String authServiceBaseUrl;
 	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
 		intValue = 932590219

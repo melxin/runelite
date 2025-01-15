@@ -461,7 +461,7 @@ public final class class427 {
 						}
 
 						var26.append("").append(var8);
-						class255.RunException_sendStackTrace(var26.toString(), var30);
+						//class255.RunException_sendStackTrace(var26.toString(), var30);
 						var29 = false;
 						break label928;
 					}

@@ -8,7 +8,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("RouteStrategy")
 public abstract class RouteStrategy {
 	@ObfuscatedName("hq")
-	static String field3024;
+	@Export("gameSessionServiceBaseUrl")
+	static String gameSessionServiceBaseUrl;
 	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
 		intValue = 843506147

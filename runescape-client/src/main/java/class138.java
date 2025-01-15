@@ -304,7 +304,7 @@ public class class138 implements Enum {
 			PacketBufferNode var22 = ScriptEvent.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
 			var22.packetBuffer.writeShortAddLE(var20);
 			var22.packetBuffer.writeShortAdd(var21);
-			var22.packetBuffer.writeIntME(Client.field601);
+			var22.packetBuffer.writeIntME(Client.revision);
 			var22.packetBuffer.writeByteNeg(var19);
 			Client.packetWriter.addNode(var22);
 		}

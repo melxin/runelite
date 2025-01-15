@@ -17,13 +17,14 @@ public class HttpContentType {
 	@ObfuscatedSignature(
 		descriptor = "Ltw;"
 	)
-	static final HttpContentType field5135;
+	@Export("TEXT_PLAIN")
+	static final HttpContentType TEXT_PLAIN;
 	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "Ltw;"
 	)
-	@Export("TEXT_PLAIN")
-	static final HttpContentType TEXT_PLAIN;
+	@Export("APPLICATION_X_WWW_FORM_URLENCODED")
+	static final HttpContentType APPLICATION_X_WWW_FORM_URLENCODED;
 	@ObfuscatedName("am")
 	@Export("userHomeDirectory")
 	static String userHomeDirectory;
@@ -33,8 +34,8 @@ public class HttpContentType {
 
 	static {
 		APPLICATION_JSON = new HttpContentType("application/json");
-		field5135 = new HttpContentType("text/plain");
-		TEXT_PLAIN = new HttpContentType("application/x-www-form-urlencoded");
+		TEXT_PLAIN = new HttpContentType("text/plain");
+		APPLICATION_X_WWW_FORM_URLENCODED = new HttpContentType("application/x-www-form-urlencoded");
 	}
 
 	HttpContentType(String var1) {
