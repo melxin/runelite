@@ -154,6 +154,7 @@ import net.runelite.rs.api.RSIndexedSprite;
 import net.runelite.rs.api.RSInterfaceParent;
 import net.runelite.rs.api.RSItemContainer;
 import net.runelite.rs.api.RSMenu;
+import net.runelite.rs.api.RSModel;
 import net.runelite.rs.api.RSModelData;
 import net.runelite.rs.api.RSMusicSong;
 import net.runelite.rs.api.RSNPC;
@@ -167,6 +168,7 @@ import net.runelite.rs.api.RSRuneLiteClanMember;
 import net.runelite.rs.api.RSRuneLiteMenuEntry;
 import net.runelite.rs.api.RSScene;
 import net.runelite.rs.api.RSScriptEvent;
+import net.runelite.rs.api.RSSequenceDefinition;
 import net.runelite.rs.api.RSSpritePixels;
 import net.runelite.rs.api.RSStructComposition;
 import net.runelite.rs.api.RSTile;
@@ -3547,6 +3549,31 @@ public abstract class RSClientMixin implements RSClient
 		catch (Exception e)
 		{
 			client.getLogger().error("unable to open url {}", url, e);
+		}
+	}
+
+	@Inject
+	@Override
+	public Model applyTransformations(Model model, Animation animA, int frameA, Animation animB, int frameB)
+	{
+		RSModel rsModel = (RSModel) model;
+		RSSequenceDefinition rsAnimA = (RSSequenceDefinition) animA;
+		RSSequenceDefinition rsAnimB = (RSSequenceDefinition) animB;
+		if (rsModel == null)
+		{
+			return null;
+		}
+		else if (rsAnimA != null && rsAnimB != null)
+		{
+			return rsAnimA.applyTransformations(rsModel, frameA, rsAnimB, frameB);
+		}
+		else if (rsAnimA != null)
+		{
+			return rsAnimA.transformWidgetModel(rsModel, frameA);
+		}
+		else
+		{
+			return (Model) (rsAnimB != null ? rsAnimB.transformWidgetModel(rsModel, frameB) : rsModel.toSharedModel(true));
 		}
 	}
 }

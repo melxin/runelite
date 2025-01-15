@@ -41,4 +41,10 @@ public interface RSSequenceDefinition extends RSNode, SequenceDefinition, Animat
 	@Import("restartMode")
 	@Override
 	void setRestartMode(int restartMode);
+
+	@Import("transformWidgetModel")
+	RSModel transformWidgetModel(RSModel model, int frame);
+
+	@Import("applyTransformations")
+	RSModel applyTransformations(RSModel model, int actionFrame, RSSequenceDefinition poseSeq, int poseFrame);
 }
