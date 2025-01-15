@@ -23,6 +23,10 @@ public interface RSPlayerComposition extends PlayerComposition
 
 	@Import("npcTransformId")
 	@Override
+	int getTransformedNpcId();
+
+	@Import("npcTransformId")
+	@Override
 	void setTransformedNpcId(int id);
 
 	@Import("setHash")
