@@ -21,12 +21,12 @@ public class AddRequestTask extends SongTask {
 	)
 	public boolean vmethod8883() {
 		while (!class333.field3631.isEmpty()) {
-			MusicSong var1 = (MusicSong)class333.field3631.peek();
+			MidiRequest var1 = (MidiRequest)class333.field3631.peek();
 			if (var1 == null) {
 				class333.field3631.pop();
 			} else {
 				var1.midiPcmStream = this.method8817();
-				class333.musicSongs.add(var1);
+				class333.midiRequests.add(var1);
 				class333.field3631.pop();
 			}
 		}

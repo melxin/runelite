@@ -30,12 +30,12 @@ public class class443 extends SongTask {
 			Iterator var1 = this.field4856.iterator();
 
 			while (var1.hasNext()) {
-				MusicSong var2 = (MusicSong)var1.next();
+				MidiRequest var2 = (MidiRequest)var1.next();
 
 				try {
-					if (class333.musicSongs.contains(var2)) {
+					if (class333.midiRequests.contains(var2)) {
 						if (var2 == null) {
-							class333.musicSongs.remove(var2);
+							class333.midiRequests.remove(var2);
 						} else {
 							if (var2.midiPcmStream.field3668 > 0) {
 								--var2.midiPcmStream.field3668;
@@ -56,13 +56,13 @@ public class class443 extends SongTask {
 								var6.vmethod6894(var3, var4);
 							}
 
-							class333.musicSongs.remove(var2);
+							class333.midiRequests.remove(var2);
 						}
 					}
 				} catch (Exception var8) {
 					class255.RunException_sendStackTrace((String)null, var8);
 					this.method8861(var8.getMessage());
-					class333.musicSongs.clear();
+					class333.midiRequests.clear();
 					return true;
 				}
 			}

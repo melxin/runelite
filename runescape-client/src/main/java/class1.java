@@ -75,21 +75,21 @@ public class class1 implements Callable {
 		if (!var0.isEmpty()) {
 			class333.field3631.clear();
 			class333.field3629.clear();
-			MusicSong var7;
+			MidiRequest var7;
 			Iterator var10;
 			Iterator var12;
 			if (var5) {
-				var12 = class333.musicSongs.iterator();
+				var12 = class333.midiRequests.iterator();
 
 				label102:
 				while (true) {
 					do {
 						if (!var12.hasNext()) {
-							class333.musicSongs.clear();
+							class333.midiRequests.clear();
 							break label102;
 						}
 
-						var7 = (MusicSong)var12.next();
+						var7 = (MidiRequest)var12.next();
 					} while(var7 == null);
 
 					var7.midiPcmStream.clear();
@@ -106,10 +106,10 @@ public class class1 implements Callable {
 					}
 				}
 			} else {
-				for (int var6 = 0; var6 < class333.musicSongs.size(); ++var6) {
-					var7 = (MusicSong)class333.musicSongs.get(var6);
+				for (int var6 = 0; var6 < class333.midiRequests.size(); ++var6) {
+					var7 = (MidiRequest)class333.midiRequests.get(var6);
 					if (var7 == null) {
-						class333.musicSongs.remove(var6);
+						class333.midiRequests.remove(var6);
 						--var6;
 					} else if (var7.field3744) {
 						if (var7.midiPcmStream.field3668 > 0) {
@@ -119,7 +119,7 @@ public class class1 implements Callable {
 						var7.midiPcmStream.clear();
 						var7.midiPcmStream.method6714();
 						var7.midiPcmStream.setPcmStreamVolume(0);
-						class333.musicSongs.remove(var6);
+						class333.midiRequests.remove(var6);
 						--var6;
 					} else {
 						var7.field3744 = true;
@@ -134,7 +134,7 @@ public class class1 implements Callable {
 			var12 = var0.iterator();
 
 			while (var12.hasNext()) {
-				var7 = (MusicSong)var12.next();
+				var7 = (MidiRequest)var12.next();
 				if (var7.musicTrackGroupId != -1 && var7.musicTrackFileId != -1) {
 					if (!var5) {
 						class333.field3626.add(var7);
@@ -153,14 +153,14 @@ public class class1 implements Callable {
 				class333.field3629.add(new class450((SongTask)null, class333.field3628, class553.field5461, class333.field3624));
 				ArrayList var17 = new ArrayList();
 				var17.add(new class445(new FadeInTask((SongTask)null, 0, true, class333.field3634)));
-				if (!class333.musicSongs.isEmpty()) {
+				if (!class333.midiRequests.isEmpty()) {
 					ArrayList var15 = new ArrayList();
 					var15.add(new DelayFadeTask(new ConcurrentMidiTask((SongTask)null, var17), class333.field3633));
 					ArrayList var9 = new ArrayList();
-					var10 = class333.musicSongs.iterator();
+					var10 = class333.midiRequests.iterator();
 
 					while (var10.hasNext()) {
-						MusicSong var16 = (MusicSong)var10.next();
+						MidiRequest var16 = (MidiRequest)var10.next();
 						var9.add(var16);
 					}
 

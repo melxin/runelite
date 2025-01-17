@@ -11,7 +11,7 @@ public class FadeInTask extends SongTask {
 	@ObfuscatedSignature(
 		descriptor = "Lnh;"
 	)
-	MusicSong field4864;
+	MidiRequest field4864;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		intValue = 1935554183
@@ -28,9 +28,9 @@ public class FadeInTask extends SongTask {
 		super.field4868 = "FadeInTask";
 		if (var2 >= 0) {
 			if (var3 && var2 < class333.field3631.size()) {
-				this.field4864 = (MusicSong)class333.field3631.get(var2);
-			} else if (!var3 && var2 < class333.musicSongs.size()) {
-				this.field4864 = (MusicSong)class333.musicSongs.get(var2);
+				this.field4864 = (MidiRequest)class333.field3631.get(var2);
+			} else if (!var3 && var2 < class333.midiRequests.size()) {
+				this.field4864 = (MidiRequest)class333.midiRequests.get(var2);
 			}
 
 			this.field4865 = var4;
@@ -49,7 +49,7 @@ public class FadeInTask extends SongTask {
 			try {
 				if (this.field4864.field3739 < (float)this.field4864.musicTrackVolume && this.field4864.midiPcmStream.isReady()) {
 					float var1 = this.field4865 == 0 ? (float)this.field4865 : (float)this.field4864.musicTrackVolume / (float)this.field4865;
-					MusicSong var10000 = this.field4864;
+					MidiRequest var10000 = this.field4864;
 					var10000.field3739 += 0.0F == var1 ? (float)this.field4864.musicTrackVolume : var1;
 					if (this.field4864.field3739 > (float)this.field4864.musicTrackVolume) {
 						this.field4864.field3739 = (float)this.field4864.musicTrackVolume;

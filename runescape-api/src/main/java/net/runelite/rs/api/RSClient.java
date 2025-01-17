@@ -1225,8 +1225,8 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("playingJingle")
 	boolean isPlayingJingle();
 
-	@Import("musicSongs")
-	ArrayList<RSMusicSong> getMusicSongs();
+	@Import("midiRequests")
+	ArrayList<RSMidiRequest> getMidiRequests();
 
 	@Import("setMusicVolume")
 	void setRSMusicVolume(int var0);

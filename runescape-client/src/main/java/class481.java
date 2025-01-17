@@ -93,8 +93,8 @@ public class class481 {
 			boolean var14;
 			if (!class333.field3629.isEmpty()) {
 				var14 = true;
-			} else if (!class333.musicSongs.isEmpty() && class333.musicSongs.get(0) != null && ((MusicSong)class333.musicSongs.get(0)).midiPcmStream != null) {
-				var14 = ((MusicSong)class333.musicSongs.get(0)).midiPcmStream.isReady();
+			} else if (!class333.midiRequests.isEmpty() && class333.midiRequests.get(0) != null && ((MidiRequest)class333.midiRequests.get(0)).midiPcmStream != null) {
+				var14 = ((MidiRequest)class333.midiRequests.get(0)).midiPcmStream.isReady();
 			} else {
 				var14 = false;
 			}

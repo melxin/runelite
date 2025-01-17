@@ -188,7 +188,7 @@ public class DynamicObject extends Renderable {
 	static void method2494(int var0, int var1) {
 		if (class544.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
 			ArrayList var2 = new ArrayList();
-			var2.add(new MusicSong(WorldMapSection2.field3102, var0, 0, class544.clientPreferences.getMusicVolume(), false));
+			var2.add(new MidiRequest(WorldMapSection2.field3102, var0, 0, class544.clientPreferences.getMusicVolume(), false));
 			class1.method9(var2, 0, 0, 0, 0, true);
 			Client.playingJingle = true;
 		}

@@ -156,7 +156,6 @@ import net.runelite.rs.api.RSItemContainer;
 import net.runelite.rs.api.RSMenu;
 import net.runelite.rs.api.RSModel;
 import net.runelite.rs.api.RSModelData;
-import net.runelite.rs.api.RSMusicSong;
 import net.runelite.rs.api.RSNPC;
 import net.runelite.rs.api.RSNode;
 import net.runelite.rs.api.RSNodeDeque;
@@ -2660,26 +2659,6 @@ public abstract class RSClientMixin implements RSClient
 	{
 		assert this.isClientThread() : "getNpcDefinition must be called on client thread";
 		return getRSNpcComposition(id);
-	}
-
-	// this exists because the original got inlined
-	@Inject
-	public void playMusicTrack(int var0, RSAbstractArchive var1, int var2, int var3, int var4, boolean var5)
-	{
-		for (RSMusicSong musicSong : client.getMusicSongs())
-		{
-			if (musicSong.getMusicTrackGroupId() == var2)
-			{
-				client.setMusicPlayerStatus(1);
-				musicSong.setMusicTrackArchive(var1);
-				musicSong.setMusicTrackGroupId(var2);
-				musicSong.setMusicTrackFileId(var3);
-				musicSong.setMusicTrackVolume(var4);
-				musicSong.setMusicTrackBoolean(var5);
-				//musicSong.setPcmSampleLength(var0);
-				break;
-			}
-		}
 	}
 
 	@Inject

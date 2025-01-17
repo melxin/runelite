@@ -24,6 +24,9 @@
  */
 package net.runelite.mixins;
 
+import java.util.Collections;
+import java.util.List;
+import net.runelite.api.MidiRequest;
 import net.runelite.api.SoundEffectVolume;
 import net.runelite.api.events.AreaSoundEffectPlayed;
 import net.runelite.api.events.SoundEffectPlayed;
@@ -33,8 +36,10 @@ import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.Mixin;
 import net.runelite.api.mixins.Replace;
 import net.runelite.api.mixins.Shadow;
+import net.runelite.rs.api.RSAbstractArchive;
 import net.runelite.rs.api.RSActor;
 import net.runelite.rs.api.RSClient;
+import net.runelite.rs.api.RSMidiRequest;
 import net.runelite.rs.api.RSPcmStream;
 import net.runelite.rs.api.RSRawPcmStream;
 import net.runelite.rs.api.RSRawSound;
@@ -173,5 +178,33 @@ public abstract class SoundEffectMixin implements RSClient
 
 			getSoundEffectAudioQueue().addSubStream((RSPcmStream) rawPcmStream);
 		}
+	}
+
+	// this exists because the original got inlined
+	@Inject
+	@Override
+	public void playMusicTrack(int var0, RSAbstractArchive var1, int var2, int var3, int var4, boolean var5)
+	{
+		for (RSMidiRequest midiRequest : client.getMidiRequests())
+		{
+			if (midiRequest.getMusicTrackGroupId() == var2)
+			{
+				client.setMusicPlayerStatus(1);
+				midiRequest.setMusicTrackArchive(var1);
+				midiRequest.setMusicTrackGroupId(var2);
+				midiRequest.setMusicTrackFileId(var3);
+				midiRequest.setMusicTrackVolume(var4);
+				midiRequest.setMusicTrackBoolean(var5);
+				//midiRequest.setPcmSampleLength(var0);
+				break;
+			}
+		}
+	}
+
+	@Inject
+	@Override
+	public List<MidiRequest> getActiveMidiRequests()
+	{
+		return Collections.unmodifiableList(getMidiRequests());
 	}
 }

@@ -142,17 +142,17 @@ public class ScriptEvent extends Node {
 		garbageValue = "-1400630297"
 	)
 	public static void method2622(int var0) {
-		if (!class333.musicSongs.isEmpty()) {
-			Iterator var1 = class333.musicSongs.iterator();
+		if (!class333.midiRequests.isEmpty()) {
+			Iterator var1 = class333.midiRequests.iterator();
 
 			while (var1.hasNext()) {
-				MusicSong var2 = (MusicSong)var1.next();
+				MidiRequest var2 = (MidiRequest)var1.next();
 				if (var2 != null) {
 					var2.musicTrackVolume = var0;
 				}
 			}
 
-			MusicSong var3 = (MusicSong)class333.musicSongs.get(0);
+			MidiRequest var3 = (MidiRequest)class333.midiRequests.get(0);
 			if (var3 != null && var3.midiPcmStream != null && var3.midiPcmStream.isReady() && !var3.field3745) {
 				var3.midiPcmStream.setPcmStreamVolume(var0);
 				var3.field3739 = (float)var0;

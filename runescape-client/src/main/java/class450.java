@@ -38,11 +38,11 @@ public class class450 extends SongTask {
 	)
 	public boolean vmethod8883() {
 		int var1 = 0;
-		Iterator var2 = class333.musicSongs.iterator();
+		Iterator var2 = class333.midiRequests.iterator();
 
 		while (true) {
 			while (var2.hasNext()) {
-				MusicSong var3 = (MusicSong)var2.next();
+				MidiRequest var3 = (MidiRequest)var2.next();
 				if (var3 != null && var3.midiPcmStream.field3668 > 1 && var3.midiPcmStream.method6749()) {
 					this.method8861("Attempted to load patches of already loading midiplayer!");
 					return true;
@@ -80,7 +80,7 @@ public class class450 extends SongTask {
 				}
 			}
 
-			if (var1 == class333.musicSongs.size()) {
+			if (var1 == class333.midiRequests.size()) {
 				return true;
 			}
 

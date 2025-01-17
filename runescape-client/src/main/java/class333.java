@@ -23,8 +23,8 @@ public class class333 {
 	@ObfuscatedName("ad")
 	public static LinkedList field3631;
 	@ObfuscatedName("an")
-	@Export("musicSongs")
-	public static ArrayList musicSongs;
+	@Export("midiRequests")
+	public static ArrayList midiRequests;
 	@ObfuscatedName("ae")
 	public static ArrayList field3626;
 	@ObfuscatedName("ax")
@@ -56,7 +56,7 @@ public class class333 {
 	static {
 		field3625 = null;
 		field3631 = new LinkedList();
-		musicSongs = new ArrayList(3);
+		midiRequests = new ArrayList(3);
 		field3626 = new ArrayList(3);
 		field3629 = new ArrayList();
 		field3627 = new ArrayList();

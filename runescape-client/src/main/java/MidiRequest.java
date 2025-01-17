@@ -5,8 +5,8 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("nh")
-@Implements("MusicSong")
-public class MusicSong {
+@Implements("MidiRequest")
+public class MidiRequest {
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "Lpq;"
@@ -64,7 +64,7 @@ public class MusicSong {
 	@ObfuscatedSignature(
 		descriptor = "(Lpq;Ljava/lang/String;Ljava/lang/String;IZ)V"
 	)
-	public MusicSong(AbstractArchive var1, String var2, String var3, int var4, boolean var5) {
+	public MidiRequest(AbstractArchive var1, String var2, String var3, int var4, boolean var5) {
 		this.musicTrackGroupId = -1;
 		this.musicTrackFileId = -1;
 		this.musicTrackVolume = 0;
@@ -74,13 +74,13 @@ public class MusicSong {
 		this.field3744 = false;
 		this.musicTrackGroupId = var1.getGroupId(var2);
 		this.musicTrackFileId = var1.getFileId(this.musicTrackGroupId, var3);
-		this.method6946(var1, this.musicTrackGroupId, this.musicTrackFileId, var4, var5);
+		this.playMusicTrack(var1, this.musicTrackGroupId, this.musicTrackFileId, var4, var5);
 	}
 
 	@ObfuscatedSignature(
 		descriptor = "(Lpq;IIIZ)V"
 	)
-	public MusicSong(AbstractArchive var1, int var2, int var3, int var4, boolean var5) {
+	public MidiRequest(AbstractArchive var1, int var2, int var3, int var4, boolean var5) {
 		this.musicTrackGroupId = -1;
 		this.musicTrackFileId = -1;
 		this.musicTrackVolume = 0;
@@ -88,7 +88,7 @@ public class MusicSong {
 		this.musicTrackBoolean = false;
 		this.field3745 = false;
 		this.field3744 = false;
-		this.method6946(var1, var2, var3, var4, var5);
+		this.playMusicTrack(var1, var2, var3, var4, var5);
 	}
 
 	@ObfuscatedName("ay")
@@ -96,7 +96,8 @@ public class MusicSong {
 		descriptor = "(Lpq;IIIZI)V",
 		garbageValue = "-205075161"
 	)
-	void method6946(AbstractArchive var1, int var2, int var3, int var4, boolean var5) {
+	@Export("playMusicTrack")
+	void playMusicTrack(AbstractArchive var1, int var2, int var3, int var4, boolean var5) {
 		this.musicTrackArchive = var1;
 		this.musicTrackGroupId = var2;
 		this.musicTrackFileId = var3;

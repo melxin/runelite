@@ -28,7 +28,7 @@ public class class420 {
 				if (class333.field3626.isEmpty()) {
 					var6 = false;
 				} else {
-					MusicSong var7 = (MusicSong)class333.field3626.get(0);
+					MidiRequest var7 = (MidiRequest)class333.field3626.get(0);
 					var6 = var7 != null && var5 == var7.musicTrackGroupId;
 				}
 
@@ -36,7 +36,7 @@ public class class420 {
 					ArrayList var9 = new ArrayList();
 
 					for (int var8 = 0; var8 < var0.size(); ++var8) {
-						var9.add(new MusicSong(class544.archive6, (Integer)var0.get(var8), 0, class544.clientPreferences.getMusicVolume(), false));
+						var9.add(new MidiRequest(class544.archive6, (Integer)var0.get(var8), 0, class544.clientPreferences.getMusicVolume(), false));
 					}
 
 					if (Client.playingJingle) {

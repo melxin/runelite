@@ -44,7 +44,7 @@ public class class106 {
 	static void method3078() {
 		if (!class544.clientPreferences.isTitleMusicDisabled()) {
 			ArrayList var0 = new ArrayList();
-			var0.add(new MusicSong(class544.archive6, "scape main", "", 255, false));
+			var0.add(new MidiRequest(class544.archive6, "scape main", "", 255, false));
 			class1.method9(var0, 0, 0, 0, 100, false);
 		} else {
 			UserComparator3.method3347(0, 0);

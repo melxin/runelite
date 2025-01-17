@@ -11,7 +11,7 @@ public class FadeOutTask extends SongTask {
 	@ObfuscatedSignature(
 		descriptor = "Lnh;"
 	)
-	MusicSong field4860;
+	MidiRequest field4860;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		intValue = 989740517
@@ -28,9 +28,9 @@ public class FadeOutTask extends SongTask {
 		super.field4868 = "FadeOutTask";
 		if (var2 >= 0) {
 			if (var3 && var2 < class333.field3631.size()) {
-				this.field4860 = (MusicSong)class333.field3631.get(var2);
-			} else if (!var3 && var2 < class333.musicSongs.size()) {
-				this.field4860 = (MusicSong)class333.musicSongs.get(var2);
+				this.field4860 = (MidiRequest)class333.field3631.get(var2);
+			} else if (!var3 && var2 < class333.midiRequests.size()) {
+				this.field4860 = (MidiRequest)class333.midiRequests.get(var2);
 			}
 
 			this.field4862 = var4;
@@ -49,7 +49,7 @@ public class FadeOutTask extends SongTask {
 			try {
 				if (this.field4860.field3739 > 0.0F && this.field4860.midiPcmStream.isReady()) {
 					float var1 = this.field4862 == 0 ? (float)this.field4862 : (float)this.field4860.musicTrackVolume / (float)this.field4862;
-					MusicSong var10000 = this.field4860;
+					MidiRequest var10000 = this.field4860;
 					var10000.field3739 -= var1 == 0.0F ? (float)this.field4860.musicTrackVolume : var1;
 					if (this.field4860.field3739 < 0.0F) {
 						this.field4860.field3739 = 0.0F;

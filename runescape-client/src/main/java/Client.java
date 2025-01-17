@@ -1819,18 +1819,18 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 
 		if (var2) {
 			class333.field3629.clear();
-			Iterator var10 = class333.musicSongs.iterator();
+			Iterator var10 = class333.midiRequests.iterator();
 
 			label125:
 			while (true) {
-				MusicSong var5;
+				MidiRequest var5;
 				do {
 					if (!var10.hasNext()) {
-						class333.musicSongs.clear();
+						class333.midiRequests.clear();
 						break label125;
 					}
 
-					var5 = (MusicSong)var10.next();
+					var5 = (MidiRequest)var10.next();
 				} while(var5 == null);
 
 				var5.midiPcmStream.clear();
@@ -4693,7 +4693,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					field757 = true;
 					var21 = var3.readShort();
 					var5 = var3.readShort();
-					var23 = MusicSong.method6949(var5 + class159.cameraPitch & 2027);
+					var23 = MidiRequest.method6949(var5 + class159.cameraPitch & 2027);
 					var7 = var21 + IntProjection.cameraYaw;
 					var24 = var3.readUnsignedShort();
 					var9 = var3.readUnsignedByte();
@@ -4949,7 +4949,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					field762 = false;
 					field757 = true;
 					var21 = SecureUrlRequester.method3301(var3.readShort() & 2027);
-					var5 = MusicSong.method6949(var3.readShort() & 2027);
+					var5 = MidiRequest.method6949(var3.readShort() & 2027);
 					var23 = var3.readUnsignedShort();
 					var7 = var3.readUnsignedByte();
 					field761 = new class520(class159.cameraPitch, var5, var23, var7);
@@ -5809,7 +5809,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var26 = var24 - Message.cameraY;
 					var11 = var7 - class31.cameraZ;
 					double var12 = Math.sqrt((double)(var11 * var11 + var9 * var9));
-					var14 = MusicSong.method6949((int)(Math.atan2((double)var26, var12) * 325.9490051269531D) & 2047);
+					var14 = MidiRequest.method6949((int)(Math.atan2((double)var26, var12) * 325.9490051269531D) & 2047);
 					var15 = SecureUrlRequester.method3301((int)(Math.atan2((double)var9, (double)var11) * -325.9490051269531D) & 2047);
 					field761 = new class520(class159.cameraPitch, var14, var21, var5);
 					field725 = new class520(IntProjection.cameraYaw, var15, var21, var5);

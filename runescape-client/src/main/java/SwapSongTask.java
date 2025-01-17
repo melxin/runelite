@@ -19,10 +19,10 @@ public class SwapSongTask extends SongTask {
 		garbageValue = "1892560666"
 	)
 	public boolean vmethod8883() {
-		if (class333.musicSongs.size() > 1 && class333.musicSongs.get(0) != null && ((MusicSong)class333.musicSongs.get(0)).midiPcmStream.isReady() && class333.musicSongs.get(1) != null && ((MusicSong)class333.musicSongs.get(1)).midiPcmStream.isReady()) {
-			MusicSong var1 = (MusicSong)class333.musicSongs.get(0);
-			class333.musicSongs.set(0, class333.musicSongs.get(1));
-			class333.musicSongs.set(1, var1);
+		if (class333.midiRequests.size() > 1 && class333.midiRequests.get(0) != null && ((MidiRequest)class333.midiRequests.get(0)).midiPcmStream.isReady() && class333.midiRequests.get(1) != null && ((MidiRequest)class333.midiRequests.get(1)).midiPcmStream.isReady()) {
+			MidiRequest var1 = (MidiRequest)class333.midiRequests.get(0);
+			class333.midiRequests.set(0, class333.midiRequests.get(1));
+			class333.midiRequests.set(1, var1);
 		}
 
 		return true;

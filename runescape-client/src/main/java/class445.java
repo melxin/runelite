@@ -18,10 +18,10 @@ public class class445 extends SongTask {
 		garbageValue = "1892560666"
 	)
 	public boolean vmethod8883() {
-		Iterator var1 = class333.musicSongs.iterator();
+		Iterator var1 = class333.midiRequests.iterator();
 
 		while (var1.hasNext()) {
-			MusicSong var2 = (MusicSong)var1.next();
+			MidiRequest var2 = (MidiRequest)var1.next();
 			if (var2 != null && !var2.field3742 && var2.midiPcmStream != null) {
 				try {
 					var2.midiPcmStream.method6713();

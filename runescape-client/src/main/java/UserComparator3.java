@@ -67,30 +67,30 @@ public class UserComparator3 extends AbstractUserComparator {
 		class333.field3634 = 0;
 		class333.field3626.clear();
 		class333.field3629.clear();
-		if (!class333.musicSongs.isEmpty() && (var0 != 0 || var1 != 0)) {
+		if (!class333.midiRequests.isEmpty() && (var0 != 0 || var1 != 0)) {
 			class333.field3629.add(new DelayFadeTask((SongTask)null, class333.musicPlayerStatus));
 			class333.field3629.add(new FadeOutTask((SongTask)null, 0, false, class333.field3632));
 			ArrayList var10 = new ArrayList();
-			Iterator var4 = class333.musicSongs.iterator();
+			Iterator var4 = class333.midiRequests.iterator();
 
 			while (var4.hasNext()) {
-				MusicSong var5 = (MusicSong)var4.next();
+				MidiRequest var5 = (MidiRequest)var4.next();
 				var10.add(var5);
 			}
 
 			class333.field3629.add(new class443((SongTask)null, var10));
 		} else {
-			Iterator var2 = class333.musicSongs.iterator();
+			Iterator var2 = class333.midiRequests.iterator();
 
 			while (true) {
-				MusicSong var3;
+				MidiRequest var3;
 				do {
 					if (!var2.hasNext()) {
-						class333.musicSongs.clear();
+						class333.midiRequests.clear();
 						return;
 					}
 
-					var3 = (MusicSong)var2.next();
+					var3 = (MidiRequest)var2.next();
 				} while(var3 == null);
 
 				var3.midiPcmStream.clear();

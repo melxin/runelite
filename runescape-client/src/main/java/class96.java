@@ -16,7 +16,7 @@ public class class96 {
 			Iterator var3 = class333.field3626.iterator();
 
 			while (var3.hasNext()) {
-				MusicSong var4 = (MusicSong)var3.next();
+				MidiRequest var4 = (MidiRequest)var3.next();
 				var4.field3742 = false;
 				var4.field3741 = false;
 				var4.field3745 = false;

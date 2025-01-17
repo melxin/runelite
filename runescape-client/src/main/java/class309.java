@@ -37,7 +37,7 @@ public abstract class class309 implements class311 {
 		garbageValue = "0"
 	)
 	public static void method6539(int var0, int var1, int var2, int var3) {
-		if (class333.musicSongs.size() > 1 && class333.musicSongs.get(0) != null && ((MusicSong)class333.musicSongs.get(0)).midiPcmStream.isReady() && class333.musicSongs.get(1) != null && ((MusicSong)class333.musicSongs.get(1)).midiPcmStream.isReady()) {
+		if (class333.midiRequests.size() > 1 && class333.midiRequests.get(0) != null && ((MidiRequest)class333.midiRequests.get(0)).midiPcmStream.isReady() && class333.midiRequests.get(1) != null && ((MidiRequest)class333.midiRequests.get(1)).midiPcmStream.isReady()) {
 			class333.musicPlayerStatus = var0;
 			class333.field3632 = var1;
 			class333.field3633 = var2;
@@ -48,8 +48,8 @@ public abstract class class309 implements class311 {
 			var4.add(new DelayFadeTask(new FadeOutTask((SongTask)null, 0, false, class333.field3632), class333.musicPlayerStatus));
 			class333.field3629.add(new ConcurrentMidiTask((SongTask)null, var4));
 			if (class333.field3626.get(0) != null && class333.field3626.get(1) != null) {
-				MusicSong var5 = (MusicSong)class333.field3626.get(0);
-				class333.field3626.set(0, class333.musicSongs.get(1));
+				MidiRequest var5 = (MidiRequest)class333.field3626.get(0);
+				class333.field3626.set(0, class333.midiRequests.get(1));
 				class333.field3626.set(1, var5);
 			}
 		}
