@@ -1280,6 +1280,12 @@ public interface Client extends OAuthApi, GameEngine
 	void playSoundEffect(int id, int volume);
 
 	/**
+	 * Get the currently playing midi requests.
+	 * @return
+	 */
+	List<MidiRequest> getActiveMidiRequests();
+
+	/**
 	 * Gets the clients graphic buffer provider.
 	 *
 	 * @return the buffer provider
