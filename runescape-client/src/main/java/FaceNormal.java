@@ -97,8 +97,8 @@ public class FaceNormal {
 
 				for (var3 = 0; var3 < var1.inventoryActions.length; ++var3) {
 					if (var3 != 4) {
-						if (var1.field2872 != null) {
-							var1.field2872[var3] = null;
+						if (var1.subOps != null) {
+							var1.subOps[var3] = null;
 						}
 
 						var1.inventoryActions[var3] = null;

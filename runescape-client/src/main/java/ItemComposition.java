@@ -131,7 +131,8 @@ public class ItemComposition extends DualNode {
 	@Export("inventoryActions")
 	public String[] inventoryActions;
 	@ObfuscatedName("bp")
-	public String[][] field2872;
+	@Export("subOps")
+	public String[][] subOps;
 	@ObfuscatedName("bc")
 	@ObfuscatedGetter(
 		intValue = -1741976857
@@ -322,7 +323,7 @@ public class ItemComposition extends DualNode {
 		this.isMembersOnly = false;
 		this.groundActions = new String[]{null, null, "Take", null, null};
 		this.inventoryActions = new String[]{null, null, null, null, "Drop"};
-		this.field2872 = null;
+		this.subOps = null;
 		this.shiftClickIndex = -2;
 		this.femaleModel = -1;
 		this.femaleModel1 = -1;
@@ -467,13 +468,13 @@ public class ItemComposition extends DualNode {
 				this.shiftClickIndex = var1.readByte();
 			} else if (var2 == 43) {
 				var3 = var1.readUnsignedByte();
-				if (this.field2872 == null) {
-					this.field2872 = new String[5][];
+				if (this.subOps == null) {
+					this.subOps = new String[5][];
 				}
 
 				boolean var7 = var3 >= 0 && var3 < 5;
-				if (var7 && this.field2872[var3] == null) {
-					this.field2872[var3] = new String[20];
+				if (var7 && this.subOps[var3] == null) {
+					this.subOps[var3] = new String[20];
 				}
 
 				while (true) {
@@ -484,7 +485,7 @@ public class ItemComposition extends DualNode {
 
 					String var6 = var1.readStringCp1252NullTerminated();
 					if (var7 && var5 >= 0 && var5 < 20) {
-						this.field2872[var3][var5] = var6;
+						this.subOps[var3][var5] = var6;
 					}
 				}
 			} else if (var2 == 65) {
@@ -617,11 +618,11 @@ public class ItemComposition extends DualNode {
 		}
 
 		this.inventoryActions[4] = "Discard";
-		if (var2.field2872 != null) {
-			this.field2872 = new String[5][];
-			System.arraycopy(var2.field2872, 0, this.field2872, 0, 4);
+		if (var2.subOps != null) {
+			this.subOps = new String[5][];
+			System.arraycopy(var2.subOps, 0, this.subOps, 0, 4);
 		} else {
-			this.field2872 = null;
+			this.subOps = null;
 		}
 
 		this.price = 0;

@@ -66,6 +66,10 @@ public interface RSItemComposition extends ItemComposition
 	@Override
 	String[] getInventoryActions();
 
+	@Import("subOps")
+	@Override
+	String[][] getSubops();
+
 	@Import("groundActions")
 	@Override
 	String[] getGroundActions();

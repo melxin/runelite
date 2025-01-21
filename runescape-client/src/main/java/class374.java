@@ -68,8 +68,8 @@ public class class374 {
 				int var5 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
 				ItemComposition var6 = FaceNormal.ItemDefinition_get(var3);
 				String var7 = null;
-				if (var8 >= 1 && var8 <= 5 && var6.inventoryActions[var8 - 1] != null && var6.field2872 != null && var6.field2872[var8 - 1] != null && var5 >= 1 && var5 <= var6.field2872[var8 - 1].length) {
-					var7 = var6.field2872[var8 - 1][var5 - 1];
+				if (var8 >= 1 && var8 <= 5 && var6.inventoryActions[var8 - 1] != null && var6.subOps != null && var6.subOps[var8 - 1] != null && var5 >= 1 && var5 <= var6.subOps[var8 - 1].length) {
+					var7 = var6.subOps[var8 - 1][var5 - 1];
 				}
 
 				Interpreter.Interpreter_stringStack[++HealthBarConfig.Interpreter_stringStackSize - 1] = var7 != null ? var7 : "";
