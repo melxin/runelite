@@ -296,6 +296,8 @@ public enum VarPlayer
 	ESSENCE_POUCH_LARGE_DEGRADE(489),
 	ESSENCE_POUCH_GIANT_DEGRADE(490),
 
+	RAIDS_PERSONAL_POINTS(4609),
+
 	;
 
 	private final int id;
