@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2017, Adam <Adam@sigterm.info>
+ * Copyright (c) 2020, Jordan Atwood <jordan.atwood423@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,20 +22,46 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.cache.index;
+package net.runelite.client.plugins.cluescrolls.clues;
 
-import lombok.Getter;
-import lombok.Setter;
+import net.runelite.api.Client;
+import net.runelite.api.Varbits;
+import net.runelite.client.plugins.cluescrolls.ClueScrollPlugin;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import static org.mockito.Mockito.when;
+import org.mockito.junit.MockitoJUnitRunner;
 
-@Setter
-@Getter
-public class ArchiveData
+@RunWith(MockitoJUnitRunner.class)
+public class AnagramClueTest
 {
-	int id;
-	int nameHash;
-	int crc;
-	int revision;
-	int compressedSize;
-	int decompressedSize;
-	FileData[] files;
+	@Mock
+	private ClueScrollPlugin plugin;
+
+	@Mock
+	private Client client;
+
+	@Test
+	public void forTextEmptyString()
+	{
+		assertNull(AnagramClue.forText(""));
+	}
+
+	@Test
+	public void countLumbridgeGravestones()
+	{
+		when(plugin.getClient()).thenReturn(client);
+		when(client.getVarbitValue(Varbits.JARVIS_GRAVESTONE)).thenReturn(0, 1, 2, 3);
+
+		AnagramClue clue = AnagramClue.forText("How many gravestones are in the church graveyard?");
+		assert clue != null;
+
+		assertEquals("19", clue.getAnswer(plugin));
+		assertEquals("20", clue.getAnswer(plugin));
+		assertEquals("19", clue.getAnswer(plugin));
+		assertEquals("19", clue.getAnswer(plugin));
+	}
 }
