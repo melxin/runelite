@@ -36,7 +36,8 @@ configurations {
 }
 
 dependencies {
-    deobjars(group = "net.runelite.rs", name = "vanilla", version = ProjectVersions.rsversion.toString())
+    //deobjars(group = "net.runelite.rs", name = "vanilla", version = ProjectVersions.rsversion.toString())
+    deobjars(files("${System.getProperty("user.home")}/gamepack/gamepack_"+ProjectVersions.rsversion.toString()+".jar"))
     deobjars(project(":runescape-client"))
 
     annotationProcessor(group = "org.projectlombok", name = "lombok", version = ProjectVersions.lombokVersion)
@@ -65,7 +66,7 @@ tasks {
 
     val tokens = mapOf(
             "rs.version" to ProjectVersions.rsversion.toString(),
-            "vanilla.jar" to deobjars.find { it.name.startsWith("vanilla") }.toString().replace("\\", "/"),
+            "vanilla.jar" to deobjars.find { it.name.startsWith("gamepack") }.toString().replace("\\", "/"),
             "rs.client" to deobjars.find { it.name.startsWith("runescape-client") }.toString().replace("\\", "/")
     )
 
@@ -93,6 +94,14 @@ tasks {
 
         classpath = project.sourceSets.main.get().runtimeClasspath
         mainClass.set("net.runelite.gamepack.Downloader")
+
+        // Check if gamepack.jar exists
+        val gamepack = deobjars.find { it.name.startsWith("gamepack") }
+        if (!file(gamepack).exists())
+        {
+            //println("Vanilla gamepack does not exist running $name")
+            exec()
+        }
     }
 
     register<JavaExec>("Deob\$main()") {
@@ -101,7 +110,7 @@ tasks {
         classpath = project.sourceSets.main.get().runtimeClasspath
         mainClass.set("net.runelite.deob.Deob")
         args = listOf(
-            "${System.getProperty("user.home")}/gamepack/gamepack.jar",
+            "${System.getProperty("user.home")}/gamepack/gamepack_"+ProjectVersions.rsversion.toString()+".jar",
             "$buildDir/libs/deobfuscated-$version.jar"
         )
     }

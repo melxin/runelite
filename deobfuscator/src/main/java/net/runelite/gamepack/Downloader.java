@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import net.runelite.deob.DeobProperties;
 
 public class Downloader
 {
@@ -29,12 +30,12 @@ public class Downloader
 
 		downloadLatest(folder);
 
-		return path + File.separator + "gamepack.jar";
+		return path + File.separator + "gamepack_" + DeobProperties.getRevision() + ".jar";
 	}
 
 	private static void downloadLatest(File folder)
 	{
-		File output = new File(folder, "gamepack.jar");
+		File output = new File(folder, "gamepack_" + DeobProperties.getRevision() + ".jar");
 
 		try
 		{

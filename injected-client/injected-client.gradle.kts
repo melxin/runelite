@@ -49,7 +49,8 @@ configurations {
 }
 
 dependencies {
-    vanillaDep(group = "net.runelite.rs", name = "vanilla", version = ProjectVersions.rsversion.toString())
+    //vanillaDep(group = "net.runelite.rs", name = "vanilla", version = ProjectVersions.rsversion.toString())
+    vanillaDep(files("${System.getProperty("user.home")}/gamepack/gamepack_"+ProjectVersions.rsversion.toString()+".jar"))
     rsapiDep(project(":runescape-api"))
     rsclientDep(project(":runescape-client"))
     mixinsDep(project(":runelite-mixins"))
