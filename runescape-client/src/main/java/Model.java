@@ -203,7 +203,7 @@ public class Model extends Renderable
 	@ObfuscatedSignature(
 		descriptor = "Ljb;"
 	)
-	class258 field2910;
+	ModelColorOverride field2910;
 	@ObfuscatedName("cc")
 	short field2946;
 
@@ -1996,9 +1996,9 @@ public class Model extends Renderable
 	@ObfuscatedSignature(
 		descriptor = "(Ljb;S)V"
 	)
-	public void method5295(class258 var1, short var2) {
+	public void method5295(ModelColorOverride var1, short var2) {
 		if (this.field2910 == null) {
-			this.field2910 = new class258();
+			this.field2910 = new ModelColorOverride();
 		}
 
 		this.field2910.method5434(var1);

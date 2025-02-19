@@ -255,4 +255,7 @@ public interface RSScene extends Scene
 
 	@Import("Scene_entityY")
 	void setEntityY(int y);
+
+	@Import("modelColorOverride")
+	RSModelColorOverride getModelColorOverride();
 }

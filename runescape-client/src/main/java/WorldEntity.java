@@ -92,12 +92,12 @@ public class WorldEntity extends Node implements Entity {
 			this.worldView.scene.field2684 = false;
 			this.worldView.scene.field2687 = -1200;
 			this.worldView.scene.field2685 = 0.01F;
-			this.worldView.scene.field2724.method5435((byte)38, (byte)2, (byte)20, (byte)127);
+			this.worldView.scene.modelColorOverride.method5435((byte)38, (byte)2, (byte)20, (byte)127);
 		} else {
 			this.worldView.scene.field2684 = true;
 			this.worldView.scene.field2687 = 0;
 			this.worldView.scene.field2685 = 1.0F;
-			this.worldView.scene.field2724.method5436();
+			this.worldView.scene.modelColorOverride.method5436();
 		}
 
 	}

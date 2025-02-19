@@ -1499,4 +1499,32 @@ public abstract class RSSceneMixin implements RSScene
 	{
 		return client.getMapRegions();
 	}
+
+	@Inject
+	@Override
+	public byte getOverrideAmount()
+	{
+		return getModelColorOverride().getOverrideAmount();
+	}
+
+	@Inject
+	@Override
+	public byte getOverrideHue()
+	{
+		return getModelColorOverride().getOverrideHue();
+	}
+
+	@Inject
+	@Override
+	public byte getOverrideSaturation()
+	{
+		return getModelColorOverride().getOverrideSaturation();
+	}
+
+	@Inject
+	@Override
+	public byte getOverrideLuminance()
+	{
+		return getModelColorOverride().getOverrideLuminance();
+	}
 }

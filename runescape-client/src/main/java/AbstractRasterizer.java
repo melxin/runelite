@@ -41,11 +41,11 @@ public abstract class AbstractRasterizer extends Rasterizer2D {
 
 	@ObfuscatedName("ad")
 	void method4869(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12) {
-		byte var13 = this.field2672.field3000.field2970;
+		byte var13 = this.field2672.field3000.overrideAmount;
 		if (var13 > 0) {
-			byte var14 = this.field2672.field3000.field2968;
-			byte var15 = this.field2672.field3000.field2967;
-			byte var16 = this.field2672.field3000.field2969;
+			byte var14 = this.field2672.field3000.overrideHue;
+			byte var15 = this.field2672.field3000.overrideSaturation;
+			byte var16 = this.field2672.field3000.overrideLuminance;
 			var10 = method4893(var10, var14, var15, var16, var13);
 			var11 = method4893(var11, var14, var15, var16, var13);
 			var12 = method4893(var12, var14, var15, var16, var13);
@@ -56,9 +56,9 @@ public abstract class AbstractRasterizer extends Rasterizer2D {
 
 	@ObfuscatedName("ah")
 	void method4861(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10) {
-		byte var11 = this.field2672.field3000.field2970;
+		byte var11 = this.field2672.field3000.overrideAmount;
 		if (var11 > 0) {
-			int var12 = method4893(var10, this.field2672.field3000.field2968, this.field2672.field3000.field2967, this.field2672.field3000.field2969, this.field2672.field3000.field2970);
+			int var12 = method4893(var10, this.field2672.field3000.overrideHue, this.field2672.field3000.overrideSaturation, this.field2672.field3000.overrideLuminance, this.field2672.field3000.overrideAmount);
 			var10 = this.field2670[var12];
 		}
 
