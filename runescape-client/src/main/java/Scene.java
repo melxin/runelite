@@ -136,12 +136,13 @@ public class Scene extends Renderable
 	@ObfuscatedSignature(
 		descriptor = "Ljb;"
 	)
-	public final class258 field2724;
+	@Export("modelColorOverride")
+	public final ModelColorOverride modelColorOverride;
 	@ObfuscatedName("bc")
 	@ObfuscatedSignature(
 		descriptor = "Ljb;"
 	)
-	final class258 field2741;
+	final ModelColorOverride field2741;
 	@ObfuscatedName("bb")
 	int field2734;
 	@ObfuscatedName("bi")
@@ -298,8 +299,8 @@ public class Scene extends Renderable
 		this.field2686 = 0;
 		this.field2685 = 1.0F;
 		this.field2684 = true;
-		this.field2724 = new class258();
-		this.field2741 = new class258();
+		this.modelColorOverride = new ModelColorOverride();
+		this.field2741 = new ModelColorOverride();
 		this.gameObjects = new GameObject[5];
 		this.checkClick = false;
 		this.Scene_selectedPlane = 0;
@@ -1483,7 +1484,7 @@ public class Scene extends Renderable
 		this.Scene_baseY = -1;
 		this.field2737 = -1.0F;
 		this.field2741.method5434(Rasterizer3D.clips.field3000);
-		Rasterizer3D.clips.field3000.method5434(this.field2724);
+		Rasterizer3D.clips.field3000.method5434(this.modelColorOverride);
 		boolean var3 = this.worldViewId == -1;
 		this.field2717 = !var2 && this.field2700 != class232.field2516 ? this.Scene_entityX : this.Scene_cameraXTile;
 		this.field2718 = !var2 && this.field2700 != class232.field2516 ? this.Scene_entityY : this.Scene_cameraYTile;

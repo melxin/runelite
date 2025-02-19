@@ -54,7 +54,7 @@ public class Clips {
 	@ObfuscatedSignature(
 		descriptor = "Ljb;"
 	)
-	final class258 field3000;
+	final ModelColorOverride field3000;
 
 	Clips() {
 		this.clipping = false;
@@ -62,7 +62,7 @@ public class Clips {
 		this.currentFaceAlpha = 0;
 		this.zoom = 512;
 		this.Rasterizer3D_rowOffsets = new int[1024];
-		this.field3000 = new class258();
+		this.field3000 = new ModelColorOverride();
 	}
 
 	@ObfuscatedName("ab")

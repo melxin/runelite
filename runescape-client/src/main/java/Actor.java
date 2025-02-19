@@ -325,7 +325,7 @@ public abstract class Actor extends Renderable implements Entity {
 	@ObfuscatedSignature(
 		descriptor = "Ljb;"
 	)
-	final class258 field1286;
+	final ModelColorOverride field1286;
 	@ObfuscatedName("dw")
 	@ObfuscatedGetter(
 		intValue = -902194799
@@ -432,7 +432,7 @@ public abstract class Actor extends Renderable implements Entity {
 		this.defaultHeight = 200;
 		this.npcCycle = -1;
 		this.field1281 = -1;
-		this.field1286 = new class258();
+		this.field1286 = new ModelColorOverride();
 		this.field1264 = 0;
 		this.field1265 = 32;
 		this.pathLength = 0;
