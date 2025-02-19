@@ -39,21 +39,21 @@ public abstract class RSWorldViewMixin implements RSWorldView
 	@Override
 	public IndexedObjectSet players()
 	{
-		return new IndexedObjectSet(this.getPlayers(), this.getPlayerUpdateManager().getPlayerIndices(), this.getPlayerUpdateManager().getPlayerCount());
+		return getPlayers();
 	}
 
 	@Inject
 	@Override
 	public IndexedObjectSet npcs()
 	{
-		return new IndexedObjectSet(this.getNpcs(), this.getNpcIndices(), this.getNpcCount());
+		return getNpcs();
 	}
 
 	@Inject
 	@Override
 	public IndexedObjectSet worldEntities()
 	{
-		return new IndexedObjectSet(this.getWorldEntities(), this.getWorldEntityIndices(), this.getWorldEntityCount());
+		return getWorldEntities();
 	}
 
 	@Inject
@@ -90,9 +90,9 @@ public abstract class RSWorldViewMixin implements RSWorldView
 	@Inject
 	public void cachedNPCsChanged(int idx)
 	{
-		if (idx > 0 && idx < this.getNpcs().length)
+		if (idx > 0 && idx < this.getNpcs().getSize())
 		{
-			RSNPC npc = this.getNpcs()[idx];
+			RSNPC npc = (RSNPC) this.getNpcs().get(idx);
 			if (npc != null)
 			{
 				npc.setIndex(idx);
@@ -122,9 +122,9 @@ public abstract class RSWorldViewMixin implements RSWorldView
 			oldPlayers = new RSPlayer[2048];
 		}
 
-		if (idx >= 0 && idx < this.getPlayers().length)
+		if (idx >= 0 && idx < this.getPlayers().getSize())
 		{
-			RSPlayer player = this.getPlayers()[idx];
+			RSPlayer player = (RSPlayer) this.getPlayers().get(idx);
 			Player oldPlayer = this.oldPlayers[idx];
 			this.oldPlayers[idx] = player;
 			if (oldPlayer != null)

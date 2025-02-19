@@ -33,8 +33,6 @@ import net.runelite.api.mixins.MethodHook;
 import net.runelite.api.mixins.Mixin;
 import net.runelite.api.mixins.Shadow;
 import net.runelite.rs.api.RSClient;
-import net.runelite.rs.api.RSNPC;
-import net.runelite.rs.api.RSPlayer;
 import net.runelite.rs.api.RSProjectile;
 import net.runelite.rs.api.RSWorldView;
 
@@ -77,11 +75,11 @@ public abstract class RSProjectileMixin implements RSProjectile
 			return null;
 		}
 
+		RSWorldView wv = client.getTopLevelWorldView();
 		if (interactingIndex > 0)
 		{
 			int idx = interactingIndex - 1;
-			RSNPC[] npcs = client.getTopLevelWorldView().getNpcs();
-			return npcs[idx];
+			return (Actor) wv.getNpcs().get(idx);
 		}
 		else
 		{
@@ -92,8 +90,7 @@ public abstract class RSProjectileMixin implements RSProjectile
 				return client.getLocalPlayer();
 			}
 
-			RSPlayer[] players = client.getTopLevelWorldView().getPlayers();
-			return players[idx];
+			return (Actor) wv.getPlayers().get(idx);
 		}
 	}
 

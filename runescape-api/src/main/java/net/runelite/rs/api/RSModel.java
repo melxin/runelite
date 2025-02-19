@@ -174,7 +174,7 @@ public interface RSModel extends RSRenderable, Model
 	RSModel getUnskewedModel();
 	void setUnskewedModel(RSModel unskewedModel);
 
-	@Import("overrideAmount")
+	/*@Import("overrideAmount")
 	@Override
 	byte getOverrideAmount();
 
@@ -188,7 +188,7 @@ public interface RSModel extends RSRenderable, Model
 
 	@Import("overrideLuminance")
 	@Override
-	byte getOverrideLuminance();
+	byte getOverrideLuminance();*/
 
 	@Import("textureFaces")
 	@Override

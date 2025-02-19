@@ -32,13 +32,6 @@ public interface RSPlayer extends RSActor, Player
 	@Import("username")
 	RSUsername getRsName();
 
-	@Import("index")
-	int getId();
-
-	@Deprecated(forRemoval = true, since = "4.28.0")
-	@Import("index")
-	int getPlayerId();
-
 	@Import("appearance")
 	@Override
 	RSPlayerComposition getPlayerComposition();
