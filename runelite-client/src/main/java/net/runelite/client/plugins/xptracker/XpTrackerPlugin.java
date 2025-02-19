@@ -44,6 +44,7 @@ import net.runelite.api.Player;
 import net.runelite.api.Skill;
 import net.runelite.api.VarPlayer;
 import net.runelite.api.WorldType;
+import net.runelite.api.annotations.Varp;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.events.MenuEntryAdded;
@@ -427,8 +428,8 @@ public class XpTrackerPlugin extends Plugin
 				// and apply them to the xpstate
 				for (Skill skill : save.skills.keySet())
 				{
-					@Varp final int startGoal = startGoalVarpForSkill(skill);
-					@Varp final int endGoal = endGoalVarpForSkill(skill);
+					@Varp final int startGoal = startGoalVarpForSkill(skill).getId();
+					@Varp final int endGoal = endGoalVarpForSkill(skill).getId();
 					final int startGoalXp = client.getVarpValue(startGoal);
 					final int endGoalXp = client.getVarpValue(endGoal);
 

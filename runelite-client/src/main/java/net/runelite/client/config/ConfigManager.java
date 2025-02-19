@@ -601,10 +601,11 @@ public class ConfigManager
 			}
 
 			rsProfileKey = prof.getKey();
+			String previousProfile = this.rsProfileKey;
 			this.rsProfileKey = rsProfileKey;
 
 			log.debug("RS profile changed to {}", rsProfileKey);
-			eventBus.post(new RuneScapeProfileChanged());
+			eventBus.post(new RuneScapeProfileChanged(previousProfile, rsProfileKey));
 		}
 		setConfiguration(groupName, rsProfileKey, key, value);
 	}
@@ -1391,10 +1392,11 @@ public class ConfigManager
 		{
 			return;
 		}
+		String previousProfile = rsProfileKey;
 		rsProfileKey = key;
 
 		log.debug("RS profile changed to {}", key);
-		eventBus.post(new RuneScapeProfileChanged());
+		eventBus.post(new RuneScapeProfileChanged(previousProfile, key));
 	}
 
 	@Subscribe
