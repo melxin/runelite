@@ -1,4 +1,4 @@
-public class RuneLiteObject extends GraphicsObject {
+public class RuneLiteObject extends Renderable {
 	public Model model;
 
 	public boolean loop;
@@ -7,8 +7,13 @@ public class RuneLiteObject extends GraphicsObject {
 	private int radius = 60;
 	private boolean drawFrontTilesFirst;
 
+	private boolean isFinished;
+
+	int frame;
+	int frameCycle;
+
 	public RuneLiteObject() {
-		super.isFinished = true;
+		this.isFinished = true;
 	}
 
 	public boolean isLooping() {
@@ -16,16 +21,16 @@ public class RuneLiteObject extends GraphicsObject {
 	}
 
 	public boolean isActive() {
-		return !super.isFinished;
+		return !this.isFinished;
 	}
 
 	public void setActive(boolean active) {
-		if (super.isFinished == active) {
-			super.isFinished = !active;
+		if (this.isFinished == active) {
+			this.isFinished = !active;
 			if (active) {
-				super.frame = 0;
-				super.frameCycle = 0;
-				class30.worldView.graphicsObjects.addFirst(this);
+				this.frame = 0;
+				this.frameCycle = 0;
+				class376.worldView.graphicsObjects.addFirst(this);
 			} else {
 				remove();
 			}
