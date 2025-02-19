@@ -97,16 +97,16 @@ public class class105 {
 			TextureProvider.archive12.clearFiles();
 		}
 
-		if (Client.field548 != null) {
-			Client.field548.clearFiles();
+		if (Client.archive4 != null) {
+			Client.archive4.clearFiles();
 		}
 
 		if (AsyncHttpResponse.field76 != null) {
 			AsyncHttpResponse.field76.clearFiles();
 		}
 
-		if (class78.field996 != null) {
-			class78.field996.clearFiles();
+		if (Projectile.field996 != null) {
+			Projectile.field996.clearFiles();
 		}
 
 		if (JagexCache.archive13 != null) {

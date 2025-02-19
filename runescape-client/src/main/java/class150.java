@@ -122,7 +122,7 @@ public class class150 extends class149 {
 			Login.clearLoginScreen = true;
 			Login.xPadding = (GameEngine.canvasWidth - 765) / 2;
 			Login.loginBoxX = Login.xPadding + 202;
-			class73.loginBoxCenter = Login.loginBoxX + 180;
+			GraphicsObject.loginBoxCenter = Login.loginBoxX + 180;
 			SoundCache.leftTitleSprite.drawAt(Login.xPadding, 0);
 			class155.rightTitleSprite.drawAt(Login.xPadding + 382, 0);
 			class87.logoSprite.drawAt(Login.xPadding + 382 - class87.logoSprite.subWidth / 2, 18);

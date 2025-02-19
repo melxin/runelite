@@ -91,7 +91,7 @@ public class IntProjection extends Projection {
 		descriptor = "(Ljc;IIIIJ)V"
 	)
 	@Export("draw")
-	void draw(TileItem var1, int var2, int var3, int var4, int var5, long var6) {
+	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
 		var1.vmethod5284(var2, this.cameraPitch, this.cameraYaw2, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field2656, this.field2657, false);
 	}
 

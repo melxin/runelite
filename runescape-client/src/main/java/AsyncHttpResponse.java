@@ -116,7 +116,7 @@ public class AsyncHttpResponse {
 			WorldView var1 = (WorldView)var0.next();
 
 			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
-				Player var3 = (Player)class200.topLevelWorldView.field1353.method7890((long)Client.playerUpdateManager.playerIndices[var2]);
+				Player var3 = (Player)class200.topLevelWorldView.players.get((long)Client.playerUpdateManager.playerIndices[var2]);
 				if (var3 != null) {
 					var3.clearIsInFriendsChat();
 				}

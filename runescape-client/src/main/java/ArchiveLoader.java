@@ -136,14 +136,14 @@ public class ArchiveLoader {
 
 		class178.mouseRecorder = null;
 		Client.packetWriter.close();
-		if (GraphicsObject.taskHandler != null) {
+		if (class332.taskHandler != null) {
 			try {
-				GraphicsObject.taskHandler.close();
+				class332.taskHandler.close();
 			} catch (Exception var2) {
 			}
 		}
 
-		GraphicsObject.taskHandler = null;
+		class332.taskHandler = null;
 		class105.clear();
 		class152.method3503();
 		Client.worldViewManager.clear();
@@ -162,7 +162,7 @@ public class ArchiveLoader {
 			Tiles.urlRequester.close();
 		}
 
-		TileItem.method5187();
+		Renderable.method5187();
 		JagexCache.JagexCache_dat2File = null;
 		JagexCache.JagexCache_idx255File = null;
 		class379.JagexCache_idxFiles = null;
@@ -180,7 +180,7 @@ public class ArchiveLoader {
 		}
 
 		RouteStrategy.masterDisk = new ArchiveDisk(255, JagexCache.JagexCache_dat2File, JagexCache.JagexCache_idx255File, 500000);
-		GraphicsObject.taskHandler = new TaskHandler();
+		class332.taskHandler = new TaskHandler();
 		class569.client.method606();
 		WorldMapIcon_0.method6208(class94.field1161);
 		class511.updateGameState(0);

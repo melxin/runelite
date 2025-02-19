@@ -150,7 +150,7 @@ public class class60 {
 		Client.playingJingle = false;
 		RouteStrategy.method5690();
 		class511.updateGameState(10);
-		Client.field598 = 0;
+		Client.serverCycle = 0;
 		class152.method3501().method4517();
 		class152.method3501().method4518();
 	}
@@ -213,7 +213,7 @@ public class class60 {
 				for (var6 = 0; var6 < 104; ++var6) {
 					long var7 = class200.topLevelWorldView.scene.getFloorDecorationTag(class200.topLevelWorldView.plane, var5, var6);
 					if (var7 != 0L) {
-						int var9 = class248.Entity_unpackID(var7);
+						int var9 = FaceNormal.Entity_unpackID(var7);
 						int var10 = class177.getObjectDefinition(var9).mapIconId;
 						if (var10 >= 0 && Canvas.WorldMapElement_get(var10).field1931) {
 							Client.mapIcons[Client.mapIconCount] = Canvas.WorldMapElement_get(var10).getSpriteBool(false);
@@ -259,7 +259,7 @@ public class class60 {
 			return false;
 		} else {
 			for (int var1 = 0; var1 < var0.cs1Comparisons.length; ++var1) {
-				int var2 = class263.method5541(var0, var1);
+				int var2 = ModelData0.method5541(var0, var1);
 				int var3 = var0.cs1ComparisonValues[var1];
 				if (var0.cs1Comparisons[var1] == 2) {
 					if (var2 >= var3) {

@@ -168,7 +168,7 @@ public class class274 {
 		try {
 			var0 = UserComparator3.getPreferencesFile("", DevicePcmPlayerProvider.field93.name, true);
 			Buffer var1 = AbstractWorldMapIcon.clientPreferences.toBuffer();
-			var0.write(var1.field5573, 0, var1.field5570);
+			var0.write(var1.array, 0, var1.offset);
 		} catch (Exception var3) {
 		}
 

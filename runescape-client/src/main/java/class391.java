@@ -17,11 +17,11 @@ public class class391 {
 		garbageValue = "-1991792090"
 	)
 	static void method7542(int var0) {
-		WorldView var1 = Client.worldViewManager.method2546(var0);
+		WorldView var1 = Client.worldViewManager.getWorldView(var0);
 		if (var1 != null) {
 			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
 				int var3 = Client.playerUpdateManager.playerIndices[var2];
-				Client.playerUpdateManager.method2987((Player)var1.field1353.method7890((long)var3));
+				Client.playerUpdateManager.method2987((Player)var1.players.get((long)var3));
 			}
 
 			Client.worldViewManager.method2529(var0);

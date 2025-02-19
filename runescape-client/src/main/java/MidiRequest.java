@@ -163,7 +163,7 @@ public class MidiRequest {
 			Client.isResizable = false;
 		}
 
-		if (class81.getWindowedMode() == 1) {
+		if (DynamicObject.getWindowedMode() == 1) {
 			class569.client.setMaxCanvasSize(765, 503);
 		} else {
 			class569.client.setMaxCanvasSize(7680, 2160);
@@ -171,7 +171,7 @@ public class MidiRequest {
 
 		if (Client.gameState >= 25 && Client.packetWriter != null && Client.packetWriter.isaacCipher != null) {
 			PacketBufferNode var1 = class272.getPacketBufferNode(ClientPacket.EVENT_WINDOW_SETTING, Client.packetWriter.isaacCipher);
-			var1.packetBuffer.writeByte(class81.getWindowedMode());
+			var1.packetBuffer.writeByte(DynamicObject.getWindowedMode());
 			var1.packetBuffer.writeShort(GameEngine.canvasWidth);
 			var1.packetBuffer.writeShort(SwapSongTask.canvasHeight);
 			Client.packetWriter.addNode(var1);

@@ -82,8 +82,8 @@ public class class136 {
 	int method3376(Buffer var1, int var2) {
 		int var3 = var1.readUnsignedShort();
 		MilliClock.method4494(var1.readUnsignedByte());
-		this.field1630 = class108.method2966(var1.readUnsignedByte());
-		this.field1616 = class108.method2966(var1.readUnsignedByte());
+		this.field1630 = TileItem.method2966(var1.readUnsignedByte());
+		this.field1616 = TileItem.method2966(var1.readUnsignedByte());
 		this.field1610 = var1.readUnsignedByte() != 0;
 		this.field1623 = new class131[var3];
 		class131 var4 = null;
@@ -248,7 +248,7 @@ public class class136 {
 			LoginPacket.addGameMessage(4, "", "Unable to find " + var1 + ", current world null.");
 		} else {
 			for (int var7 = 0; var7 < var2; ++var7) {
-				Player var8 = (Player)var6.field1353.method7890((long)var3[var7]);
+				Player var8 = (Player)var6.players.get((long)var3[var7]);
 				if (var8 != null && var8 != class132.localPlayer && var8.username != null && var8.username.equals(var5)) {
 					PacketBufferNode var9;
 					if (var0 == 1) {

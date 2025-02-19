@@ -42,7 +42,7 @@ public final class class331 {
 
 			int[] var12 = MidiRequest.sceneMinimapSprite.pixels;
 			var13 = var1 * 4 + (103 - var2) * 2048 + 24624;
-			var14 = class248.Entity_unpackID(var6);
+			var14 = FaceNormal.Entity_unpackID(var6);
 			ObjectComposition var15 = class177.getObjectDefinition(var14);
 			if (var15.mapSceneId != -1) {
 				IndexedSprite var16 = WorldMapID.mapSceneSprites[var15.mapSceneId];
@@ -119,7 +119,7 @@ public final class class331 {
 			var8 = var5.getObjectFlags(var0, var1, var2, var6);
 			var9 = var8 >> 6 & 3;
 			var10 = var8 & 31;
-			var11 = class248.Entity_unpackID(var6);
+			var11 = FaceNormal.Entity_unpackID(var6);
 			ObjectComposition var25 = class177.getObjectDefinition(var11);
 			int var20;
 			if (var25.mapSceneId != -1) {
@@ -153,7 +153,7 @@ public final class class331 {
 
 		var6 = var5.getFloorDecorationTag(var0, var1, var2);
 		if (var6 != 0L) {
-			var8 = class248.Entity_unpackID(var6);
+			var8 = FaceNormal.Entity_unpackID(var6);
 			ObjectComposition var22 = class177.getObjectDefinition(var8);
 			if (var22.mapSceneId != -1) {
 				IndexedSprite var23 = WorldMapID.mapSceneSprites[var22.mapSceneId];

@@ -39,7 +39,7 @@ public class class164 extends class149 {
 	)
 	void vmethod3702(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			--var1.field5570;
+			--var1.offset;
 			this.field1831 = var1.readLong();
 		}
 

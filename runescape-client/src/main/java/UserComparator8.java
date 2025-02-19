@@ -84,7 +84,7 @@ public class UserComparator8 extends AbstractUserComparator {
 						var18 = var0.collisionMaps[var17];
 					}
 
-					class581.addObjects(var0, var11, var15, var16, var5, var14, var13, var18);
+					FillMode.addObjects(var0, var11, var15, var16, var5, var14, var13, var18);
 				}
 			}
 		}
@@ -98,7 +98,7 @@ public class UserComparator8 extends AbstractUserComparator {
 	@Export("drawEntities")
 	static final void drawEntities(int var0, int var1, int var2, int var3) {
 		++Client.viewportDrawCount;
-		class200.topLevelWorldView.scene.baseY = Client.cycle;
+		class200.topLevelWorldView.scene.cycle = Client.cycle;
 		if (class132.localPlayer.x >> 7 == Client.destinationX && class132.localPlayer.y >> 7 == Client.destinationY) {
 			Client.destinationX = 0;
 		}
@@ -115,7 +115,7 @@ public class UserComparator8 extends AbstractUserComparator {
 			Model var6 = BoundaryObject.field3009;
 			boolean var7 = true;
 			var8 = Math.max(384, 2000 - Client.viewportZoom * 2);
-			var9 = Client.serverCycle;
+			var9 = Client.field647;
 			var12 = class520.field5274[var5 & 2047];
 			double var10 = (double)var12 / 65536.0D;
 			var12 = var9 - (int)(var10 * (double)var8);
@@ -124,12 +124,12 @@ public class UserComparator8 extends AbstractUserComparator {
 			var16 = var13 - (int)((double)var8 * var14);
 			var17 = var12 >> 7;
 			var19 = var16 >> 7;
-			long var20 = HttpRequestTask.calculateTag(var17, var19, 5, false, -1, var4.field1354);
+			long var20 = HttpRequestTask.calculateTag(var17, var19, 5, false, -1, var4.id);
 			var4.scene.drawEntity(var4.plane, var12, var16, Client.field648, 60, var6, var5, var20, false);
 		}
 
 		WorldView var27 = class200.topLevelWorldView;
-		int var28 = GraphicsObject.method6534();
+		int var28 = class332.method6534();
 		int var11;
 		int var15;
 		int var18;
@@ -142,7 +142,7 @@ public class UserComparator8 extends AbstractUserComparator {
 			Model var29 = SongTask.field5033;
 			boolean var45 = true;
 			var30 = Math.max(384, 2000 - Client.viewportZoom * 2);
-			var11 = Client.serverCycle;
+			var11 = Client.field647;
 			var31 = class520.field5274[var44 & 2047];
 			double var32 = (double)var31 / 65536.0D;
 			var31 = var11 - (int)(var32 * (double)var30);
@@ -151,28 +151,28 @@ public class UserComparator8 extends AbstractUserComparator {
 			var18 = var15 - (int)((double)var30 * var34);
 			var19 = var31 >> 7;
 			var21 = var18 >> 7;
-			long var22 = HttpRequestTask.calculateTag(var19, var21, 5, false, -1, var27.field1354);
+			long var22 = HttpRequestTask.calculateTag(var19, var21, 5, false, -1, var27.id);
 			var27.scene.drawEntity(var27.plane, var31, var18, Client.field648, 60, var29, var44, var22, false);
 		}
 
 		UserComparator3.method3217(class200.topLevelWorldView);
-		class248.method5192(class200.topLevelWorldView);
+		FaceNormal.method5192(class200.topLevelWorldView);
 		ReflectionCheck.method671(class200.topLevelWorldView, class386.TOKEN);
 		ReflectionCheck.method671(class200.topLevelWorldView, class386.field4552);
-		class138.method3391(class200.topLevelWorldView, true);
+		class138.addNpcsToScene(class200.topLevelWorldView, true);
 		class138.method3392(class200.topLevelWorldView);
-		class138.method3391(class200.topLevelWorldView, false);
+		class138.addNpcsToScene(class200.topLevelWorldView, false);
 		class1.method12(class200.topLevelWorldView);
 		WorldView var43 = class200.topLevelWorldView;
 
-		for (class73 var37 = (class73)var43.field1342.last(); var37 != null; var37 = (class73)var43.field1342.previous()) {
-			if (var37.field901 == var43.plane && !var37.field900) {
-				if (Client.cycle >= var37.field899) {
-					var37.method2210(Client.graphicsCycle);
-					if (var37.field900) {
+		for (GraphicsObject var37 = (GraphicsObject)var43.graphicsObjects.last(); var37 != null; var37 = (GraphicsObject)var43.graphicsObjects.previous()) {
+			if (var37.plane == var43.plane && !var37.isFinished) {
+				if (Client.cycle >= var37.cycleStart) {
+					var37.advance(Client.graphicsCycle);
+					if (var37.isFinished) {
 						var37.remove();
 					} else {
-						var43.scene.drawEntity(var37.field901, var37.field902, var37.field903, var37.field904, 60, var37, 0, -1L, false);
+						var43.scene.drawEntity(var37.plane, var37.x, var37.y, var37.z, 60, var37, 0, -1L, false);
 					}
 				}
 			} else {
@@ -265,7 +265,7 @@ public class UserComparator8 extends AbstractUserComparator {
 			} else {
 				label488: {
 					var16 = 3;
-					var17 = Client.serverCycle >> 7;
+					var17 = Client.field647 >> 7;
 					var18 = Client.field532 >> 7;
 					if (class59.cameraPitch < 310) {
 						if (Client.oculusOrbState == 1) {
@@ -448,7 +448,7 @@ public class UserComparator8 extends AbstractUserComparator {
 		Rasterizer3D.clips.zoom = Client.viewportZoom;
 		class232 var46 = Client.field780 == -1 ? class232.field2516 : class232.field2515;
 		class200.topLevelWorldView.scene.method4982(var46);
-		class200.topLevelWorldView.scene.draw(class181.cameraX, GrandExchangeOfferUnitPriceComparator.cameraY, ApproximateRouteStrategy.cameraZ, class59.cameraPitch, FloorDecoration.cameraYaw, var31, Client.serverCycle, Client.field532, Client.isCameraLocked);
+		class200.topLevelWorldView.scene.draw(class181.cameraX, GrandExchangeOfferUnitPriceComparator.cameraY, ApproximateRouteStrategy.cameraZ, class59.cameraPitch, FloorDecoration.cameraYaw, var31, Client.field647, Client.field532, Client.isCameraLocked);
 		Rasterizer3D.method4743(false);
 		if (Client.z) {
 			Rasterizer2D.adjustBrightness();
@@ -458,28 +458,28 @@ public class UserComparator8 extends AbstractUserComparator {
 		UrlRequester.method3151();
 		class200.topLevelWorldView.scene.setViewportWalking();
 
-		class492 var42;
+		WorldEntity var42;
 		for (var24 = 0; var24 < class200.topLevelWorldView.field1357.method9005(); ++var24) {
-			var42 = (class492)class200.topLevelWorldView.field1358.get((long)class200.topLevelWorldView.field1357.method9007(var24));
+			var42 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)class200.topLevelWorldView.field1357.method9007(var24));
 			if (var42 != null) {
-				var42.field5148.scene.setViewportWalking();
+				var42.worldView.scene.setViewportWalking();
 			}
 		}
 
 		ReflectionCheck.method669(class200.topLevelWorldView, var0, var1, var2, var3);
 
 		for (var24 = 0; var24 < class200.topLevelWorldView.field1357.method9005(); ++var24) {
-			var42 = (class492)class200.topLevelWorldView.field1358.get((long)class200.topLevelWorldView.field1357.method9007(var24));
+			var42 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)class200.topLevelWorldView.field1357.method9007(var24));
 			if (var42 != null) {
-				ReflectionCheck.method669(var42.field5148, var0, var1, var2, var3);
+				ReflectionCheck.method669(var42.worldView, var0, var1, var2, var3);
 			}
 		}
 
 		WorldView var41 = class200.topLevelWorldView;
 		if (Client.hintArrowType == 2) {
-			var25 = Client.field682 * 64 + (Client.field537 - var41.baseX << 7);
-			var26 = (Client.field642 - var41.baseY << 7) + Client.field541 * 4096;
-			VarpDefinition.worldToScreen(var41, var25, var26, var25, var26, Client.field539 * 2);
+			var25 = Client.hintArrowSubX * 64 + (Client.hintArrowX - var41.baseX << 7);
+			var26 = (Client.hintArrowY - var41.baseY << 7) + Client.hintArrowSubY * 4096;
+			VarpDefinition.worldToScreen(var41, var25, var26, var25, var26, Client.hintArrowHeight * 2);
 			if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
 				PlayerComposition.headIconHintSprites[0].drawTransBgAt(var0 + Client.viewportTempX - 12, Client.viewportTempY + var1 - 28);
 			}
@@ -528,12 +528,12 @@ public class UserComparator8 extends AbstractUserComparator {
 		if (var5 == class388.field4565.field4568) {
 			BoundaryObject var8 = var7.getBoundaryObject(var0, var1, var2);
 			if (var8 != null) {
-				var9 = class248.Entity_unpackID(var8.tag);
+				var9 = FaceNormal.Entity_unpackID(var8.tag);
 				if (var3 == WorldMapDecorationType.field4118.id) {
-					var8.renderable1 = new class81(class376.worldView, var9, 2, var4 + 4, var0, var1, var2, var6, false, var8.renderable1);
-					var8.renderable2 = new class81(class376.worldView, var9, 2, var4 + 1 & 3, var0, var1, var2, var6, false, var8.renderable2);
+					var8.renderable1 = new DynamicObject(class376.worldView, var9, 2, var4 + 4, var0, var1, var2, var6, false, var8.renderable1);
+					var8.renderable2 = new DynamicObject(class376.worldView, var9, 2, var4 + 1 & 3, var0, var1, var2, var6, false, var8.renderable2);
 				} else {
-					var8.renderable1 = new class81(class376.worldView, var9, var3, var4, var0, var1, var2, var6, false, var8.renderable1);
+					var8.renderable1 = new DynamicObject(class376.worldView, var9, var3, var4, var0, var1, var2, var6, false, var8.renderable1);
 				}
 
 				return true;
@@ -541,18 +541,18 @@ public class UserComparator8 extends AbstractUserComparator {
 		} else if (var5 == class388.field4566.field4568) {
 			WallDecoration var10 = var7.getWallDecoration(var0, var1, var2);
 			if (var10 != null) {
-				var9 = class248.Entity_unpackID(var10.tag);
+				var9 = FaceNormal.Entity_unpackID(var10.tag);
 				if (var3 != WorldMapDecorationType.field4121.id && var3 != WorldMapDecorationType.field4134.id) {
 					if (var3 == WorldMapDecorationType.field4123.id) {
-						var10.renderable1 = new class81(class376.worldView, var9, 4, var4 + 4, var0, var1, var2, var6, false, var10.renderable1);
+						var10.renderable1 = new DynamicObject(class376.worldView, var9, 4, var4 + 4, var0, var1, var2, var6, false, var10.renderable1);
 					} else if (var3 == WorldMapDecorationType.field4122.id) {
-						var10.renderable1 = new class81(class376.worldView, var9, 4, (var4 + 2 & 3) + 4, var0, var1, var2, var6, false, var10.renderable1);
+						var10.renderable1 = new DynamicObject(class376.worldView, var9, 4, (var4 + 2 & 3) + 4, var0, var1, var2, var6, false, var10.renderable1);
 					} else if (var3 == WorldMapDecorationType.field4125.id) {
-						var10.renderable1 = new class81(class376.worldView, var9, 4, var4 + 4, var0, var1, var2, var6, false, var10.renderable1);
-						var10.renderable2 = new class81(class376.worldView, var9, 4, (var4 + 2 & 3) + 4, var0, var1, var2, var6, false, var10.renderable2);
+						var10.renderable1 = new DynamicObject(class376.worldView, var9, 4, var4 + 4, var0, var1, var2, var6, false, var10.renderable1);
+						var10.renderable2 = new DynamicObject(class376.worldView, var9, 4, (var4 + 2 & 3) + 4, var0, var1, var2, var6, false, var10.renderable2);
 					}
 				} else {
-					var10.renderable1 = new class81(class376.worldView, var9, 4, var4, var0, var1, var2, var6, false, var10.renderable1);
+					var10.renderable1 = new DynamicObject(class376.worldView, var9, 4, var4, var0, var1, var2, var6, false, var10.renderable1);
 				}
 
 				return true;
@@ -564,13 +564,13 @@ public class UserComparator8 extends AbstractUserComparator {
 			}
 
 			if (var11 != null) {
-				var11.renderable = new class81(class376.worldView, class248.Entity_unpackID(var11.tag), var3, var4, var0, var1, var2, var6, false, var11.renderable);
+				var11.renderable = new DynamicObject(class376.worldView, FaceNormal.Entity_unpackID(var11.tag), var3, var4, var0, var1, var2, var6, false, var11.renderable);
 				return true;
 			}
 		} else if (var5 == class388.field4569.field4568) {
 			FloorDecoration var12 = var7.getFloorDecoration(var0, var1, var2);
 			if (var12 != null) {
-				var12.renderable = new class81(class376.worldView, class248.Entity_unpackID(var12.tag), 22, var4, var0, var1, var2, var6, false, var12.renderable);
+				var12.renderable = new DynamicObject(class376.worldView, FaceNormal.Entity_unpackID(var12.tag), 22, var4, var0, var1, var2, var6, false, var12.renderable);
 				return true;
 			}
 		}

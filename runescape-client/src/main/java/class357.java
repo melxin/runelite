@@ -13,7 +13,7 @@ public class class357 {
 	static void drawTitle(Font var0, Font var1, Font var2) {
 		Login.xPadding = (GameEngine.canvasWidth - 765) / 2;
 		Login.loginBoxX = Login.xPadding + 202;
-		class73.loginBoxCenter = Login.loginBoxX + 180;
+		GraphicsObject.loginBoxCenter = Login.loginBoxX + 180;
 		byte var3;
 		int var4;
 		int var9;
@@ -338,20 +338,20 @@ public class class357 {
 					IndexedSprite var36;
 					if (Login.loginIndex == 2) {
 						var33 = 201;
-						var0.drawCentered(Login.Login_response1, class73.loginBoxCenter, var33, 16776960, 0);
+						var0.drawCentered(Login.Login_response1, GraphicsObject.loginBoxCenter, var33, 16776960, 0);
 						var34 = var33 + 15;
-						var0.drawCentered(Login.Login_response2, class73.loginBoxCenter, var34, 16776960, 0);
+						var0.drawCentered(Login.Login_response2, GraphicsObject.loginBoxCenter, var34, 16776960, 0);
 						var34 += 15;
-						var0.drawCentered(Login.Login_response3, class73.loginBoxCenter, var34, 16776960, 0);
+						var0.drawCentered(Login.Login_response3, GraphicsObject.loginBoxCenter, var34, 16776960, 0);
 						var34 += 15;
 						var34 += 7;
-						var0.draw("Login: ", class73.loginBoxCenter - 110, var34, 16777215, 0);
+						var0.draw("Login: ", GraphicsObject.loginBoxCenter - 110, var34, 16777215, 0);
 						var35 = 200;
 
 						for (var5 = class393.method7565(); var0.stringWidth(var5) > var35; var5 = var5.substring(1)) {
 						}
 
-						var0.draw(AbstractFont.escapeBrackets(var5) + (Login.currentLoginField == 0 & Client.cycle % 40 < 20 ? MilliClock.colorStartTag(16776960) + "|" : ""), class73.loginBoxCenter - 70, var34, 16777215, 0);
+						var0.draw(AbstractFont.escapeBrackets(var5) + (Login.currentLoginField == 0 & Client.cycle % 40 < 20 ? MilliClock.colorStartTag(16776960) + "|" : ""), GraphicsObject.loginBoxCenter - 70, var34, 16777215, 0);
 						var34 += 15;
 						var7 = Login.Login_password;
 						var9 = var7.length();
@@ -366,17 +366,17 @@ public class class357 {
 						for (var8 = var8; var0.stringWidth(var8) > var35; var8 = var8.substring(1)) {
 						}
 
-						var0.draw("Password: " + var8 + (Login.currentLoginField == 1 & Client.cycle % 40 < 20 ? MilliClock.colorStartTag(16776960) + "|" : ""), class73.loginBoxCenter - 108, var34, 16777215, 0);
+						var0.draw("Password: " + var8 + (Login.currentLoginField == 1 & Client.cycle % 40 < 20 ? MilliClock.colorStartTag(16776960) + "|" : ""), GraphicsObject.loginBoxCenter - 108, var34, 16777215, 0);
 						var34 += 15;
 						var33 = 277;
-						var9 = class73.loginBoxCenter + -117;
+						var9 = GraphicsObject.loginBoxCenter + -117;
 						boolean var37 = Client.Login_isUsernameRemembered;
 						boolean var12 = Login.field968;
 						var36 = var37 ? (var12 ? SceneTilePaint.field2978 : class187.options_buttons_2Sprite) : (var12 ? class157.field1774 : WorldMapDecoration.options_buttons_0Sprite);
 						var36.drawAt(var9, var33);
 						var9 = var9 + var36.subWidth + 5;
 						var1.draw("Remember username", var9, var33 + 13, 16776960, 0);
-						var9 = class73.loginBoxCenter + 24;
+						var9 = GraphicsObject.loginBoxCenter + 24;
 						var15 = AbstractWorldMapIcon.clientPreferences.isUsernameHidden();
 						boolean var16 = Login.field969;
 						IndexedSprite var14 = var15 ? (var16 ? SceneTilePaint.field2978 : class187.options_buttons_2Sprite) : (var16 ? class157.field1774 : WorldMapDecoration.options_buttons_0Sprite);
@@ -384,11 +384,11 @@ public class class357 {
 						var9 = var9 + var14.subWidth + 5;
 						var1.draw("Hide username", var9, var33 + 13, 16776960, 0);
 						var34 = var33 + 15;
-						var17 = class73.loginBoxCenter - 80;
+						var17 = GraphicsObject.loginBoxCenter - 80;
 						short var18 = 321;
 						Login.titlebuttonSprite.drawAt(var17 - 73, var18 - 20);
 						var0.drawCentered("Login", var17, var18 + 5, 16777215, 0);
-						var17 = class73.loginBoxCenter + 80;
+						var17 = GraphicsObject.loginBoxCenter + 80;
 						Login.titlebuttonSprite.drawAt(var17 - 73, var18 - 20);
 						var0.drawCentered("Cancel", var17, var18 + 5, 16777215, 0);
 						var33 = 357;
@@ -400,9 +400,9 @@ public class class357 {
 							class447.field4932 = "Can't login? Click here.";
 						}
 
-						PlayerCompositionColorTextureOverride.field1897 = new Bounds(class73.loginBoxCenter, var33, var1.stringWidth(class447.field4932), 11);
-						ClientPreferences.field1325 = new Bounds(class73.loginBoxCenter, var33, var1.stringWidth("Still having trouble logging in?"), 11);
-						var1.drawCentered(class447.field4932, class73.loginBoxCenter, var33, 16777215, 0);
+						PlayerCompositionColorTextureOverride.field1897 = new Bounds(GraphicsObject.loginBoxCenter, var33, var1.stringWidth(class447.field4932), 11);
+						ClientPreferences.field1325 = new Bounds(GraphicsObject.loginBoxCenter, var33, var1.stringWidth("Still having trouble logging in?"), 11);
+						var1.drawCentered(class447.field4932, GraphicsObject.loginBoxCenter, var33, 16777215, 0);
 					} else if (Login.loginIndex == 3) {
 						var33 = 201;
 						var0.drawCentered("Incorrect username or password.", Login.loginBoxX + 180, var33, 16776960, 0);
@@ -487,7 +487,7 @@ public class class357 {
 						Login.titlebuttonSprite.drawAt(var27 - 73, var25 - 20);
 						var0.drawCentered("Back", var27, var25 + 5, 16777215, 0);
 						var25 = 356;
-						var1.drawCentered("Still having trouble logging in?", class73.loginBoxCenter, var25, 268435455, 0);
+						var1.drawCentered("Still having trouble logging in?", GraphicsObject.loginBoxCenter, var25, 268435455, 0);
 					} else if (Login.loginIndex == 6) {
 						var33 = 201;
 						var0.drawCentered(Login.Login_response1, Login.loginBoxX + 180, var33, 16776960, 0);
@@ -503,12 +503,12 @@ public class class357 {
 					} else if (Login.loginIndex == 7) {
 						if (Client.field524 && !Client.onMobile) {
 							var33 = 201;
-							var0.drawCentered(Login.Login_response1, class73.loginBoxCenter, var33, 16776960, 0);
+							var0.drawCentered(Login.Login_response1, GraphicsObject.loginBoxCenter, var33, 16776960, 0);
 							var34 = var33 + 15;
-							var0.drawCentered(Login.Login_response2, class73.loginBoxCenter, var34, 16776960, 0);
+							var0.drawCentered(Login.Login_response2, GraphicsObject.loginBoxCenter, var34, 16776960, 0);
 							var34 += 15;
-							var0.drawCentered(Login.Login_response3, class73.loginBoxCenter, var34, 16776960, 0);
-							var4 = class73.loginBoxCenter - 150;
+							var0.drawCentered(Login.Login_response3, GraphicsObject.loginBoxCenter, var34, 16776960, 0);
+							var4 = GraphicsObject.loginBoxCenter - 150;
 							var34 += 10;
 
 							for (var44 = 0; var44 < 8; ++var44) {
@@ -523,11 +523,11 @@ public class class357 {
 								}
 							}
 
-							var44 = class73.loginBoxCenter - 80;
+							var44 = GraphicsObject.loginBoxCenter - 80;
 							short var48 = 321;
 							Login.titlebuttonSprite.drawAt(var44 - 73, var48 - 20);
 							var0.drawCentered("Submit", var44, var48 + 5, 16777215, 0);
-							var44 = class73.loginBoxCenter + 80;
+							var44 = GraphicsObject.loginBoxCenter + 80;
 							Login.titlebuttonSprite.drawAt(var44 - 73, var48 - 20);
 							var0.drawCentered("Cancel", var44, var48 + 5, 16777215, 0);
 						} else {
@@ -585,7 +585,7 @@ public class class357 {
 							var0.drawCentered(Login.displayName, var34, var4 + 68 - 15, 16776960, 0);
 						}
 					} else if (Login.loginIndex == 12) {
-						var34 = class73.loginBoxCenter;
+						var34 = GraphicsObject.loginBoxCenter;
 						var35 = 216;
 						var2.drawCentered("Before using this app, please read and accept our", var34, var35, 16777215, 0);
 						var4 = var35 + 17;
@@ -594,11 +594,11 @@ public class class357 {
 						var2.drawCentered("<col=ffd200>agreement (EULA)</col>.", var34, var4, 16777215, 0);
 						var4 += 17;
 						var2.drawCentered("By accepting, you agree to these documents.", var34, var4, 16777215, 0);
-						var34 = class73.loginBoxCenter - 80;
+						var34 = GraphicsObject.loginBoxCenter - 80;
 						var35 = 311;
 						Login.titlebuttonSprite.drawAt(var34 - 73, var35 - 20);
 						var0.drawCentered("Accept", var34, var35 + 5, 16777215, 0);
-						var34 = class73.loginBoxCenter + 80;
+						var34 = GraphicsObject.loginBoxCenter + 80;
 						Login.titlebuttonSprite.drawAt(var34 - 73, var35 - 20);
 						var0.drawCentered("Decline", var34, var35 + 5, 16777215, 0);
 					} else if (Login.loginIndex == 13) {

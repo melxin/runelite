@@ -1049,12 +1049,12 @@ public class ItemComposition extends DualNode {
 	)
 	@Export("menuAction")
 	public static final void menuAction(int var0, int var1, int var2, int var3, int var4, int var5, String var6, String var7, int var8, int var9) {
-		WorldView var10 = Client.worldViewManager.method2546(var5);
+		WorldView var10 = Client.worldViewManager.getWorldView(var5);
 		if (var10 != null) {
 			int var11 = var10.baseX;
 			int var12 = var10.baseY;
-			class414 var13 = var10.field1356;
-			class414 var14 = var10.field1353;
+			IndexedObjectSet var13 = var10.npcs;
+			IndexedObjectSet var14 = var10.players;
 			if (var2 >= 2000) {
 				var2 -= 2000;
 			}
@@ -1069,7 +1069,7 @@ public class ItemComposition extends DualNode {
 				Client.destinationY = var1;
 				var15 = class272.getPacketBufferNode(ClientPacket.OPLOCU, Client.packetWriter.isaacCipher);
 				var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-				var15.packetBuffer.writeShort(class400.field4676);
+				var15.packetBuffer.writeShort(class400.Players_count);
 				var15.packetBuffer.writeShortAdd(class447.field4935);
 				var15.packetBuffer.writeIntIME(SoundCache.field309);
 				var15.packetBuffer.writeShortAddLE(var12 + var1);
@@ -1148,7 +1148,7 @@ public class ItemComposition extends DualNode {
 				PacketBufferNode var16;
 				NPC var20;
 				if (var2 == 7) {
-					var20 = (NPC)var13.method7890((long)var3);
+					var20 = (NPC)var13.get((long)var3);
 					if (var20 != null) {
 						Client.mouseCrossX = var8;
 						Client.mouseCrossY = var9;
@@ -1159,13 +1159,13 @@ public class ItemComposition extends DualNode {
 						var16 = class272.getPacketBufferNode(ClientPacket.OPNPCU, Client.packetWriter.isaacCipher);
 						var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var16.packetBuffer.writeShortLE(class447.field4935);
-						var16.packetBuffer.writeShortAddLE(class400.field4676);
+						var16.packetBuffer.writeShortAddLE(class400.Players_count);
 						var16.packetBuffer.writeShortLE(var3);
 						var16.packetBuffer.writeIntLE(SoundCache.field309);
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 8) {
-					var20 = (NPC)var13.method7890((long)var3);
+					var20 = (NPC)var13.get((long)var3);
 					if (var20 != null) {
 						Client.mouseCrossX = var8;
 						Client.mouseCrossY = var9;
@@ -1182,7 +1182,7 @@ public class ItemComposition extends DualNode {
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 9) {
-					var20 = (NPC)var13.method7890((long)var3);
+					var20 = (NPC)var13.get((long)var3);
 					if (var20 != null) {
 						Client.mouseCrossX = var8;
 						Client.mouseCrossY = var9;
@@ -1196,7 +1196,7 @@ public class ItemComposition extends DualNode {
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 10) {
-					var20 = (NPC)var13.method7890((long)var3);
+					var20 = (NPC)var13.get((long)var3);
 					if (var20 != null) {
 						Client.mouseCrossX = var8;
 						Client.mouseCrossY = var9;
@@ -1210,7 +1210,7 @@ public class ItemComposition extends DualNode {
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 11) {
-					var20 = (NPC)var13.method7890((long)var3);
+					var20 = (NPC)var13.get((long)var3);
 					if (var20 != null) {
 						Client.mouseCrossX = var8;
 						Client.mouseCrossY = var9;
@@ -1224,7 +1224,7 @@ public class ItemComposition extends DualNode {
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 12) {
-					var20 = (NPC)var13.method7890((long)var3);
+					var20 = (NPC)var13.get((long)var3);
 					if (var20 != null) {
 						Client.mouseCrossX = var8;
 						Client.mouseCrossY = var9;
@@ -1238,7 +1238,7 @@ public class ItemComposition extends DualNode {
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 13) {
-					var20 = (NPC)var13.method7890((long)var3);
+					var20 = (NPC)var13.get((long)var3);
 					if (var20 != null) {
 						Client.mouseCrossX = var8;
 						Client.mouseCrossY = var9;
@@ -1254,7 +1254,7 @@ public class ItemComposition extends DualNode {
 				} else {
 					Player var22;
 					if (var2 == 14) {
-						var22 = (Player)var14.method7890((long)var3);
+						var22 = (Player)var14.get((long)var3);
 						if (var22 != null) {
 							Client.mouseCrossX = var8;
 							Client.mouseCrossY = var9;
@@ -1266,12 +1266,12 @@ public class ItemComposition extends DualNode {
 							var16.packetBuffer.writeInt(SoundCache.field309);
 							var16.packetBuffer.writeShortAdd(var3);
 							var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-							var16.packetBuffer.writeShortAddLE(class400.field4676);
+							var16.packetBuffer.writeShortAddLE(class400.Players_count);
 							var16.packetBuffer.writeShort(class447.field4935);
 							Client.packetWriter.addNode(var16);
 						}
 					} else if (var2 == 15) {
-						var22 = (Player)var14.method7890((long)var3);
+						var22 = (Player)var14.get((long)var3);
 						if (var22 != null) {
 							Client.mouseCrossX = var8;
 							Client.mouseCrossY = var9;
@@ -1298,7 +1298,7 @@ public class ItemComposition extends DualNode {
 						var15.packetBuffer.writeShortAdd(var3);
 						var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var15.packetBuffer.writeShort(class447.field4935);
-						var15.packetBuffer.writeShort(class400.field4676);
+						var15.packetBuffer.writeShort(class400.Players_count);
 						var15.packetBuffer.writeShortLE(var0 + var11);
 						var15.packetBuffer.writeShort(var12 + var1);
 						var15.packetBuffer.writeIntME(SoundCache.field309);
@@ -1463,7 +1463,7 @@ public class ItemComposition extends DualNode {
 										MilliClock.invalidateWidget(Client.meslayerContinueWidget);
 									}
 								} else if (var2 == 44) {
-									var22 = (Player)var14.method7890((long)var3);
+									var22 = (Player)var14.get((long)var3);
 									if (var22 != null) {
 										Client.mouseCrossX = var8;
 										Client.mouseCrossY = var9;
@@ -1477,7 +1477,7 @@ public class ItemComposition extends DualNode {
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 45) {
-									var22 = (Player)var14.method7890((long)var3);
+									var22 = (Player)var14.get((long)var3);
 									if (var22 != null) {
 										Client.mouseCrossX = var8;
 										Client.mouseCrossY = var9;
@@ -1491,7 +1491,7 @@ public class ItemComposition extends DualNode {
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 46) {
-									var22 = (Player)var14.method7890((long)var3);
+									var22 = (Player)var14.get((long)var3);
 									if (var22 != null) {
 										Client.mouseCrossX = var8;
 										Client.mouseCrossY = var9;
@@ -1505,7 +1505,7 @@ public class ItemComposition extends DualNode {
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 47) {
-									var22 = (Player)var14.method7890((long)var3);
+									var22 = (Player)var14.get((long)var3);
 									if (var22 != null) {
 										Client.mouseCrossX = var8;
 										Client.mouseCrossY = var9;
@@ -1519,7 +1519,7 @@ public class ItemComposition extends DualNode {
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 48) {
-									var22 = (Player)var14.method7890((long)var3);
+									var22 = (Player)var14.get((long)var3);
 									if (var22 != null) {
 										Client.mouseCrossX = var8;
 										Client.mouseCrossY = var9;
@@ -1533,7 +1533,7 @@ public class ItemComposition extends DualNode {
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 49) {
-									var22 = (Player)var14.method7890((long)var3);
+									var22 = (Player)var14.get((long)var3);
 									if (var22 != null) {
 										Client.mouseCrossX = var8;
 										Client.mouseCrossY = var9;
@@ -1547,7 +1547,7 @@ public class ItemComposition extends DualNode {
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 50) {
-									var22 = (Player)var14.method7890((long)var3);
+									var22 = (Player)var14.get((long)var3);
 									if (var22 != null) {
 										Client.mouseCrossX = var8;
 										Client.mouseCrossY = var9;
@@ -1561,7 +1561,7 @@ public class ItemComposition extends DualNode {
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 51) {
-									var22 = (Player)var14.method7890((long)var3);
+									var22 = (Player)var14.get((long)var3);
 									if (var22 != null) {
 										Client.mouseCrossX = var8;
 										Client.mouseCrossY = var9;
@@ -1646,7 +1646,7 @@ public class ItemComposition extends DualNode {
 												Client.mouseCrossY = var9;
 												Client.mouseCrossColor = 2;
 												Client.mouseCrossState = 0;
-												var20 = (NPC)var13.method7890((long)var3);
+												var20 = (NPC)var13.get((long)var3);
 												if (var20 != null) {
 													NPCComposition var24 = var20.definition;
 													if (var24.transforms != null) {

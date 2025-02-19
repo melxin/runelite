@@ -41,7 +41,7 @@ public class class178 extends DualNode {
 	static boolean method3767(String var0, int var1, String var2) {
 		if (var1 == 0) {
 			try {
-				if (!WorldEntity.field144.startsWith("win")) {
+				if (!class31.field144.startsWith("win")) {
 					throw new Exception();
 				} else if (!var0.startsWith("http://") && !var0.startsWith("https://")) {
 					throw new Exception();
@@ -62,27 +62,27 @@ public class class178 extends DualNode {
 			}
 		} else if (var1 == 1) {
 			try {
-				Object var10 = class26.method339(WorldEntity.field153, var2, new Object[]{(new URL(WorldEntity.field153.getCodeBase(), var0)).toString()});
+				Object var10 = class26.method339(class31.field153, var2, new Object[]{(new URL(class31.field153.getCodeBase(), var0)).toString()});
 				return var10 != null;
 			} catch (Throwable var6) {
 				return false;
 			}
 		} else if (var1 == 2) {
 			try {
-				WorldEntity.field153.getAppletContext().showDocument(new URL(WorldEntity.field153.getCodeBase(), var0), "_blank");
+				class31.field153.getAppletContext().showDocument(new URL(class31.field153.getCodeBase(), var0), "_blank");
 				return true;
 			} catch (Exception var7) {
 				return false;
 			}
 		} else if (var1 == 3) {
 			try {
-				Applet var3 = WorldEntity.field153;
+				Applet var3 = class31.field153;
 				JSObject.getWindow(var3).call("loggedout", (Object[])null);
 			} catch (Throwable var9) {
 			}
 
 			try {
-				WorldEntity.field153.getAppletContext().showDocument(new URL(WorldEntity.field153.getCodeBase(), var0), "_top");
+				class31.field153.getAppletContext().showDocument(new URL(class31.field153.getCodeBase(), var0), "_top");
 				return true;
 			} catch (Exception var8) {
 				return false;
@@ -107,12 +107,13 @@ public class class178 extends DualNode {
 		descriptor = "(Ldt;IIIII)V",
 		garbageValue = "692291258"
 	)
-	static final void method3769(Player var0, int var1, int var2, int var3, int var4) {
-		if (var0.field1271 != Client.localPlayerIndex) {
+	@Export("addPlayerToMenu")
+	static final void addPlayerToMenu(Player var0, int var1, int var2, int var3, int var4) {
+		if (var0.index != Client.localPlayerIndex) {
 			if (Client.menu.menuOptionsCount < 400) {
 				String var5;
 				int var8;
-				if (var0.field1141 == 0) {
+				if (var0.skillLevel == 0) {
 					String var6 = var0.actions[0] + var0.username + var0.actions[1];
 					var8 = var0.combatLevel;
 					int var9 = class132.localPlayer.combatLevel;
@@ -140,7 +141,7 @@ public class class178 extends DualNode {
 
 					var5 = var6 + var7 + " " + " (" + "level-" + var0.combatLevel + ")" + var0.actions[2];
 				} else {
-					var5 = var0.actions[0] + var0.username + var0.actions[1] + " " + " (" + "skill-" + var0.field1141 + ")" + var0.actions[2];
+					var5 = var0.actions[0] + var0.username + var0.actions[1] + " " + " (" + "skill-" + var0.skillLevel + ")" + var0.actions[2];
 				}
 
 				int var11;
@@ -177,7 +178,7 @@ public class class178 extends DualNode {
 							}
 
 							boolean var13 = false;
-							var8 = Client.field654[var11] + var12;
+							var8 = Client.playerMenuOpcodes[var11] + var12;
 							WorldMapSprite.insertMenuItem(Client.playerMenuActions[var11], MilliClock.colorStartTag(16777215) + var5, var8, var1, var2, var3, -1, false, var4);
 						}
 					}

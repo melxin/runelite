@@ -92,7 +92,8 @@ public final class Tile extends Node {
 	@ObfuscatedGetter(
 		intValue = 1110399489
 	)
-	int field2627;
+	@Export("minPlane")
+	int minPlane;
 	@ObfuscatedName("ar")
 	@Export("drawPrimary")
 	boolean drawPrimary;
@@ -122,8 +123,7 @@ public final class Tile extends Node {
 	@ObfuscatedGetter(
 		intValue = 808614061
 	)
-	@Export("minPlane")
-	int minPlane;
+	int field2623;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "Lju;"

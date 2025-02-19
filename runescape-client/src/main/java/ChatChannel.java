@@ -81,9 +81,9 @@ public class ChatChannel {
 		garbageValue = "88"
 	)
 	static final void method2343(WorldView var0, Player var1, int var2, int var3, MoveSpeed var4) {
-		int var5 = var1.field1287[0];
-		int var6 = var1.field1288[0];
-		int var7 = var1.field1284;
+		int var5 = var1.pathX[0];
+		int var6 = var1.pathY[0];
+		int var7 = var1.size;
 		CollisionMap var8 = var0.collisionMaps[var0.plane];
 		if (var5 >= var7 && var5 < var8.xSize - var7 && var6 >= var7 && var6 < var8.ySize - var7) {
 			if (var2 >= var7 && var2 < var8.xSize - var7 && var3 >= var7 && var3 < var8.ySize - var7) {

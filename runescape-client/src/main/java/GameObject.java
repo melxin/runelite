@@ -41,7 +41,7 @@ public final class GameObject {
 		descriptor = "Ljc;"
 	)
 	@Export("renderable")
-	public TileItem renderable;
+	public Renderable renderable;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = 122481251

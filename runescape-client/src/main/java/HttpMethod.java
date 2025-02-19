@@ -189,7 +189,7 @@ public class HttpMethod implements Enum {
 	)
 	static final void method67() {
 		InvDefinition.method3751(class329.field3661, class190.field2016, FriendsChat.field5114);
-		GraphicsObject.method6532(Language.field4826, class346.field3797);
+		class332.method6532(Language.field4826, class346.field3797);
 		if (class181.cameraX == class329.field3661 && class190.field2016 == GrandExchangeOfferUnitPriceComparator.cameraY && ApproximateRouteStrategy.cameraZ == FriendsChat.field5114 && class59.cameraPitch == Language.field4826 && class346.field3797 == FloorDecoration.cameraYaw) {
 			Client.field781 = false;
 			Client.isCameraLocked = false;

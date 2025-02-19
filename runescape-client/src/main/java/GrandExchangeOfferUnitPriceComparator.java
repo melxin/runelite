@@ -47,7 +47,7 @@ final class GrandExchangeOfferUnitPriceComparator implements Comparator {
 	public static void method7855(AbstractArchive var0, AbstractArchive var1, boolean var2, Font var3) {
 		class140.ItemDefinition_archive = var0;
 		HttpAuthenticationHeader.ItemDefinition_modelArchive = var1;
-		class129.ItemDefinition_inMembersWorld = var2;
+		AuthenticationScheme.ItemDefinition_inMembersWorld = var2;
 		MouseRecorder.ItemDefinition_fileCount = class140.ItemDefinition_archive.getGroupFileCount(10);
 		class329.ItemDefinition_fontPlain11 = var3;
 	}

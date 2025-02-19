@@ -270,15 +270,15 @@ public class MouseRecorder implements Runnable {
 			int var10 = -2;
 			if (var1.overheadText != null && (!var9 || !var1.field1293 && (Client.publicChatMode == 4 || !var1.field1242 && (Client.publicChatMode == 0 || Client.publicChatMode == 3 || Client.publicChatMode == 1 && ((Player)var1).isFriend())))) {
 				class311.method6424(var0, var1, var1.vmethod2898());
-				if (Client.viewportTempX > -1 && Client.overheadTextCount < Client.field619) {
-					Client.field623[Client.overheadTextCount] = UserComparator7.fontBold12.stringWidth(var1.overheadText) / 2;
-					Client.field622[Client.overheadTextCount] = UserComparator7.fontBold12.ascent;
+				if (Client.viewportTempX > -1 && Client.overheadTextCount < Client.overheadTextLimit) {
+					Client.overheadTextXOffsets[Client.overheadTextCount] = UserComparator7.fontBold12.stringWidth(var1.overheadText) / 2;
+					Client.overheadTextAscents[Client.overheadTextCount] = UserComparator7.fontBold12.ascent;
 					Client.overheadTextXs[Client.overheadTextCount] = Client.viewportTempX;
-					Client.field621[Client.overheadTextCount] = Client.viewportTempY - var10;
-					Client.field624[Client.overheadTextCount] = var1.field1245;
-					Client.field775[Client.overheadTextCount] = var1.field1246;
-					Client.field525[Client.overheadTextCount] = var1.rotation;
-					Client.field547[Client.overheadTextCount] = var1.pathX;
+					Client.overheadTextYs[Client.overheadTextCount] = Client.viewportTempY - var10;
+					Client.overheadTextColors[Client.overheadTextCount] = var1.field1245;
+					Client.overheadTextEffects[Client.overheadTextCount] = var1.field1246;
+					Client.overheadTextCyclesRemaining[Client.overheadTextCount] = var1.overheadTextCyclesRemaining;
+					Client.field547[Client.overheadTextCount] = var1.field1247;
 					Client.overheadText[Client.overheadTextCount] = var1.overheadText;
 					++Client.overheadTextCount;
 					var10 += 12;
@@ -377,7 +377,7 @@ public class MouseRecorder implements Runnable {
 				var10 += 7;
 			}
 
-			if (var9 && Client.cycle == var1.field1225) {
+			if (var9 && Client.cycle == var1.playerCycle) {
 				Player var93 = (Player)var1;
 				boolean var77;
 				if (Client.drawPlayerNames == 0) {
@@ -417,22 +417,22 @@ public class MouseRecorder implements Runnable {
 					return;
 				}
 
-				if (var91.field1136 != -1 || var91.field1138 != -1) {
+				if (var91.headIconPk != -1 || var91.headIconPrayer != -1) {
 					class311.method6424(var0, var1, var1.defaultHeight + 15);
 					if (Client.viewportTempX > -1) {
-						if (var91.field1136 != -1) {
+						if (var91.headIconPk != -1) {
 							var10 += 25;
-							class165.headIconPkSprites[var91.field1136].drawTransBgAt(var3 + Client.viewportTempX - 12, var4 + Client.viewportTempY - var10);
+							class165.headIconPkSprites[var91.headIconPk].drawTransBgAt(var3 + Client.viewportTempX - 12, var4 + Client.viewportTempY - var10);
 						}
 
-						if (var91.field1138 != -1) {
+						if (var91.headIconPrayer != -1) {
 							var10 += 25;
-							WorldMapSectionType.headIconPrayerSprites[var91.field1138].drawTransBgAt(var3 + Client.viewportTempX - 12, var4 + Client.viewportTempY - var10);
+							WorldMapSectionType.headIconPrayerSprites[var91.headIconPrayer].drawTransBgAt(var3 + Client.viewportTempX - 12, var4 + Client.viewportTempY - var10);
 						}
 					}
 				}
 
-				if (var2 >= 0 && Client.hintArrowType == 10 && var8[var2] == Client.field536) {
+				if (var2 >= 0 && Client.hintArrowType == 10 && var8[var2] == Client.hintArrowPlayerIndex) {
 					class311.method6424(var0, var1, var1.defaultHeight + 15);
 					if (Client.viewportTempX > -1) {
 						var10 += PlayerComposition.headIconHintSprites[1].subHeight;
@@ -466,7 +466,7 @@ public class MouseRecorder implements Runnable {
 					}
 				}
 
-				if (Client.hintArrowType == 1 && Client.field535 == var0.field1355.method9007(var2 - var76) && Client.cycle % 20 < 10) {
+				if (Client.hintArrowType == 1 && Client.hintArrowNpcIndex == var0.field1355.method9007(var2 - var76) && Client.cycle % 20 < 10) {
 					class311.method6424(var0, var1, var1.vmethod2898() + 15);
 					if (Client.viewportTempX > -1) {
 						PlayerComposition.headIconHintSprites[0].drawTransBgAt(var3 + Client.viewportTempX - 12, var4 + Client.viewportTempY - 28);

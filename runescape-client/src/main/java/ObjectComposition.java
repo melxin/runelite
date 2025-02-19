@@ -369,7 +369,7 @@ public class ObjectComposition extends DualNode {
 			var3 = var1.readUnsignedByte();
 			if (var3 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.field5570 += var3 * 3;
+					var1.offset += var3 * 3;
 				} else {
 					this.models = new int[var3];
 					this.modelIds = new int[var3];
@@ -386,7 +386,7 @@ public class ObjectComposition extends DualNode {
 			var3 = var1.readUnsignedByte();
 			if (var3 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.field5570 += var3 * 2;
+					var1.offset += var3 * 2;
 				} else {
 					this.models = null;
 					this.modelIds = new int[var3];
@@ -593,7 +593,7 @@ public class ObjectComposition extends DualNode {
 		garbageValue = "7"
 	)
 	@Export("getEntity")
-	public final TileItem getEntity(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
+	public final Renderable getEntity(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
 		long var7;
 		if (this.models == null) {
 			var7 = (long)(var2 + (this.id << 10));
@@ -601,7 +601,7 @@ public class ObjectComposition extends DualNode {
 			var7 = (long)(var2 + (var1 << 3) + (this.id << 10));
 		}
 
-		Object var9 = (TileItem)ObjectDefinition_cachedEntities.get(var7);
+		Object var9 = (Renderable)ObjectDefinition_cachedEntities.get(var7);
 		if (var9 == null) {
 			ModelData var10 = this.getModelData(var1, var2);
 			if (var10 == null) {
@@ -611,8 +611,8 @@ public class ObjectComposition extends DualNode {
 			if (!this.nonFlatShading) {
 				var9 = var10.toModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
 			} else {
-				var10.field2562 = (short)(this.ambient + 64);
-				var10.field2563 = (short)(this.contrast + 768);
+				var10.ambient = (short)(this.ambient + 64);
+				var10.contrast = (short)(this.contrast + 768);
 				var10.calculateVertexNormals();
 				var9 = var10;
 			}
@@ -632,7 +632,7 @@ public class ObjectComposition extends DualNode {
 			}
 		}
 
-		return (TileItem)var9;
+		return (Renderable)var9;
 	}
 
 	@ObfuscatedName("af")

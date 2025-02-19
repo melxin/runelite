@@ -319,7 +319,7 @@ public class SequenceDefinition extends DualNode {
 		Model var4;
 		if (!this.isCachedModelIdSet()) {
 			var2 = this.frameIds[var2];
-			Frames var5 = ModelData0.getFrames(var2 >> 16);
+			Frames var5 = class473.getFrames(var2 >> 16);
 			var2 &= 65535;
 			if (var5 == null) {
 				return var1.toSharedSequenceModel(true);
@@ -350,7 +350,7 @@ public class SequenceDefinition extends DualNode {
 		Model var5;
 		if (!this.isCachedModelIdSet()) {
 			var2 = this.frameIds[var2];
-			Frames var6 = ModelData0.getFrames(var2 >> 16);
+			Frames var6 = class473.getFrames(var2 >> 16);
 			var2 &= 65535;
 			if (var6 == null) {
 				return var1.toSharedSequenceModel(true);
@@ -415,7 +415,7 @@ public class SequenceDefinition extends DualNode {
 		Model var4;
 		if (!this.isCachedModelIdSet()) {
 			var2 = this.frameIds[var2];
-			Frames var5 = ModelData0.getFrames(var2 >> 16);
+			Frames var5 = class473.getFrames(var2 >> 16);
 			var2 &= 65535;
 			if (var5 == null) {
 				return var1.toSharedSpotAnimationModel(true);
@@ -466,7 +466,7 @@ public class SequenceDefinition extends DualNode {
 				var5.method5273(var8, var9, var2, this.field2366, false, !var3.isCachedModelIdSet());
 			} else {
 				var2 = this.frameIds[var2];
-				var7 = ModelData0.getFrames(var2 >> 16);
+				var7 = class473.getFrames(var2 >> 16);
 				var2 &= 65535;
 				if (var7 == null) {
 					return var3.transformActorModel(var1, var4);
@@ -501,7 +501,7 @@ public class SequenceDefinition extends DualNode {
 				var5.method5273(var8, var9, var4, this.field2366, true, true);
 			} else {
 				var4 = var3.frameIds[var4];
-				Frames var10 = ModelData0.getFrames(var4 >> 16);
+				Frames var10 = class473.getFrames(var4 >> 16);
 				var4 &= 65535;
 				if (var10 == null) {
 					return this.transformActorModel(var1, var2);
@@ -526,13 +526,13 @@ public class SequenceDefinition extends DualNode {
 	)
 	Model method4332(Model var1, int var2, SequenceDefinition var3, int var4) {
 		var2 = this.frameIds[var2];
-		Frames var5 = ModelData0.getFrames(var2 >> 16);
+		Frames var5 = class473.getFrames(var2 >> 16);
 		var2 &= 65535;
 		if (var5 == null) {
 			return var3.transformActorModel(var1, var4);
 		} else {
 			var4 = var3.frameIds[var4];
-			Frames var6 = ModelData0.getFrames(var4 >> 16);
+			Frames var6 = class473.getFrames(var4 >> 16);
 			var4 &= 65535;
 			Model var7;
 			if (var6 == null) {
@@ -556,7 +556,7 @@ public class SequenceDefinition extends DualNode {
 	public Model transformWidgetModel(Model var1, int var2) {
 		if (!this.isCachedModelIdSet()) {
 			int var3 = this.frameIds[var2];
-			Frames var4 = ModelData0.getFrames(var3 >> 16);
+			Frames var4 = class473.getFrames(var3 >> 16);
 			var3 &= 65535;
 			if (var4 == null) {
 				return var1.toSharedSequenceModel(true);
@@ -565,7 +565,7 @@ public class SequenceDefinition extends DualNode {
 				int var6 = 0;
 				if (this.chatFrameIds != null && var2 < this.chatFrameIds.length) {
 					var6 = this.chatFrameIds[var2];
-					var5 = ModelData0.getFrames(var6 >> 16);
+					var5 = class473.getFrames(var6 >> 16);
 					var6 &= 65535;
 				}
 

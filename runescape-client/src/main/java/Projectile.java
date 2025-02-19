@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("dc")
-public final class class78 extends TileItem {
+@Implements("Projectile")
+public final class Projectile extends Renderable
+{
 	@ObfuscatedName("fs")
 	@ObfuscatedSignature(
 		descriptor = "Lpn;"
@@ -15,32 +18,38 @@ public final class class78 extends TileItem {
 	@ObfuscatedGetter(
 		intValue = -1772812479
 	)
-	int field982;
+	@Export("id")
+	int id;
 	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
 		intValue = -2006813189
 	)
-	int field1007;
+	@Export("plane")
+	int plane;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = 54788331
 	)
-	int field983;
+	@Export("sourceX")
+	int sourceX;
 	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
 		intValue = 1416635687
 	)
-	int field997;
+	@Export("sourceY")
+	int sourceY;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		intValue = -1173903731
 	)
-	int field985;
+	@Export("sourceZ")
+	int sourceZ;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = 530315563
 	)
-	int field1000;
+	@Export("endHeight")
+	int endHeight;
 	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
 		intValue = -1378628045
@@ -60,22 +69,26 @@ public final class class78 extends TileItem {
 	@ObfuscatedGetter(
 		intValue = -934038291
 	)
-	int field990;
+	@Export("cycleStart")
+	int cycleStart;
 	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
 		intValue = 829282721
 	)
-	int field991;
+	@Export("cycleEnd")
+	int cycleEnd;
 	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
 		intValue = 1749876389
 	)
-	int field992;
+	@Export("slope")
+	int slope;
 	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
 		intValue = -2099677945
 	)
-	int field1003;
+	@Export("startHeight")
+	int startHeight;
 	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
 		intValue = 1124979031
@@ -85,77 +98,92 @@ public final class class78 extends TileItem {
 	@ObfuscatedGetter(
 		intValue = 1387578407
 	)
-	int field995;
+	@Export("targetIndex")
+	int targetIndex;
 	@ObfuscatedName("av")
-	boolean field1006;
+	@Export("isMoving")
+	boolean isMoving;
 	@ObfuscatedName("ar")
-	double field981;
+	@Export("x")
+	double x;
 	@ObfuscatedName("ag")
-	double field998;
+	@Export("y")
+	double y;
 	@ObfuscatedName("az")
-	double field999;
+	@Export("z")
+	double z;
 	@ObfuscatedName("am")
-	double field1010;
+	@Export("speedX")
+	double speedX;
 	@ObfuscatedName("aq")
-	double field1001;
+	@Export("speedY")
+	double speedY;
 	@ObfuscatedName("aw")
-	double field1002;
+	@Export("speed")
+	double speed;
 	@ObfuscatedName("an")
-	double field1008;
+	@Export("speedZ")
+	double speedZ;
 	@ObfuscatedName("at")
-	double field1004;
+	@Export("accelerationZ")
+	double accelerationZ;
 	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
 		intValue = 279973185
 	)
-	int field1005;
+	@Export("yaw")
+	int yaw;
 	@ObfuscatedName("al")
 	@ObfuscatedGetter(
 		intValue = -2139517277
 	)
-	int field993;
+	@Export("pitch")
+	int pitch;
 	@ObfuscatedName("bw")
 	@ObfuscatedSignature(
 		descriptor = "Liw;"
 	)
-	SequenceDefinition field984;
+	@Export("sequenceDefinition")
+	SequenceDefinition sequenceDefinition;
 	@ObfuscatedName("bo")
 	@ObfuscatedGetter(
 		intValue = -1500047213
 	)
-	int field986;
+	@Export("frame")
+	int frame;
 	@ObfuscatedName("bs")
 	@ObfuscatedGetter(
 		intValue = 1666801517
 	)
-	int field1009;
+	@Export("frameCycle")
+	int frameCycle;
 
-	class78(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11) {
-		this.field1006 = false;
-		this.field986 = 0;
-		this.field1009 = 0;
-		this.field982 = var1;
-		this.field1007 = var2;
-		this.field983 = var3;
-		this.field997 = var4;
-		this.field985 = var5;
-		this.field990 = var6;
-		this.field991 = var7;
-		this.field992 = var8;
-		this.field1003 = var9;
-		this.field995 = var10;
-		this.field1000 = var11;
-		this.field1006 = false;
-		int var12 = class176.method3761(this.field982).sequence;
+	Projectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11) {
+		this.isMoving = false;
+		this.frame = 0;
+		this.frameCycle = 0;
+		this.id = var1;
+		this.plane = var2;
+		this.sourceX = var3;
+		this.sourceY = var4;
+		this.sourceZ = var5;
+		this.cycleStart = var6;
+		this.cycleEnd = var7;
+		this.slope = var8;
+		this.startHeight = var9;
+		this.targetIndex = var10;
+		this.endHeight = var11;
+		this.isMoving = false;
+		int var12 = class176.SpotAnimationDefinition_get(this.id).sequence;
 		if (var12 != -1) {
-			this.field984 = WorldMapData_1.SequenceDefinition_get(var12);
+			this.sequenceDefinition = WorldMapData_1.SequenceDefinition_get(var12);
 		} else {
-			this.field984 = null;
+			this.sequenceDefinition = null;
 		}
 
 	}
 
-	class78(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12) {
+	Projectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12) {
 		this(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, var12);
 		this.field994 = var10;
 	}
@@ -165,29 +193,30 @@ public final class class78 extends TileItem {
 		descriptor = "(IIIII)V",
 		garbageValue = "-74512933"
 	)
-	final void method2300(int var1, int var2, int var3, int var4) {
+	@Export("setDestination")
+	final void setDestination(int var1, int var2, int var3, int var4) {
 		this.field987 = var1;
 		this.field988 = var2;
 		this.field989 = var3;
 		double var5;
-		if (!this.field1006) {
-			var5 = (double)(this.field987 - this.field983);
-			double var7 = (double)(this.field988 - this.field997);
+		if (!this.isMoving) {
+			var5 = (double)(this.field987 - this.sourceX);
+			double var7 = (double)(this.field988 - this.sourceY);
 			double var9 = Math.sqrt(var5 * var5 + var7 * var7);
-			this.field981 = (double)this.field1003 * var5 / var9 + (double)this.field983;
-			this.field998 = (double)this.field997 + (double)this.field1003 * var7 / var9;
-			this.field999 = (double)this.field985;
+			this.x = (double)this.startHeight * var5 / var9 + (double)this.sourceX;
+			this.y = (double)this.sourceY + (double)this.startHeight * var7 / var9;
+			this.z = (double)this.sourceZ;
 		}
 
-		var5 = (double)(this.field991 + 1 - var4);
-		this.field1010 = ((double)this.field987 - this.field981) / var5;
-		this.field1001 = ((double)this.field988 - this.field998) / var5;
-		this.field1002 = Math.sqrt(this.field1010 * this.field1010 + this.field1001 * this.field1001);
-		if (!this.field1006) {
-			this.field1008 = -this.field1002 * Math.tan((double)this.field992 * 0.02454369D);
+		var5 = (double)(this.cycleEnd + 1 - var4);
+		this.speedX = ((double)this.field987 - this.x) / var5;
+		this.speedY = ((double)this.field988 - this.y) / var5;
+		this.speed = Math.sqrt(this.speedX * this.speedX + this.speedY * this.speedY);
+		if (!this.isMoving) {
+			this.speedZ = -this.speed * Math.tan((double)this.slope * 0.02454369D);
 		}
 
-		this.field1004 = ((double)this.field989 - this.field999 - this.field1008 * var5) * 2.0D / (var5 * var5);
+		this.accelerationZ = ((double)this.field989 - this.z - this.speedZ * var5) * 2.0D / (var5 * var5);
 	}
 
 	@ObfuscatedName("ay")
@@ -197,12 +226,12 @@ public final class class78 extends TileItem {
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		SpotAnimationDefinition var1 = class176.method3761(this.field982);
-		Model var2 = var1.getModel(this.field986);
+		SpotAnimationDefinition var1 = class176.SpotAnimationDefinition_get(this.id);
+		Model var2 = var1.getModel(this.frame);
 		if (var2 == null) {
 			return null;
 		} else {
-			var2.rotateZ(this.field993);
+			var2.rotateZ(this.pitch);
 			return var2;
 		}
 	}
@@ -212,39 +241,40 @@ public final class class78 extends TileItem {
 		descriptor = "(IB)V",
 		garbageValue = "-87"
 	)
-	final void method2297(int var1) {
-		this.field1006 = true;
-		this.field981 += this.field1010 * (double)var1;
-		this.field998 += (double)var1 * this.field1001;
-		this.field999 += this.field1008 * (double)var1 + (double)var1 * 0.5D * this.field1004 * (double)var1;
-		this.field1008 += this.field1004 * (double)var1;
-		this.field1005 = (int)(Math.atan2(this.field1010, this.field1001) * 325.949D) + 1024 & 2047;
-		this.field993 = (int)(Math.atan2(this.field1008, this.field1002) * 325.949D) & 2047;
-		if (this.field984 != null) {
-			if (!this.field984.isCachedModelIdSet()) {
-				this.field1009 += var1;
+	@Export("advance")
+	final void advance(int var1) {
+		this.isMoving = true;
+		this.x += this.speedX * (double)var1;
+		this.y += (double)var1 * this.speedY;
+		this.z += this.speedZ * (double)var1 + (double)var1 * 0.5D * this.accelerationZ * (double)var1;
+		this.speedZ += this.accelerationZ * (double)var1;
+		this.yaw = (int)(Math.atan2(this.speedX, this.speedY) * 325.949D) + 1024 & 2047;
+		this.pitch = (int)(Math.atan2(this.speedZ, this.speed) * 325.949D) & 2047;
+		if (this.sequenceDefinition != null) {
+			if (!this.sequenceDefinition.isCachedModelIdSet()) {
+				this.frameCycle += var1;
 
 				while (true) {
 					do {
 						do {
-							if (this.field1009 <= this.field984.frameLengths[this.field986]) {
+							if (this.frameCycle <= this.sequenceDefinition.frameLengths[this.frame]) {
 								return;
 							}
 
-							this.field1009 -= this.field984.frameLengths[this.field986];
-							++this.field986;
-						} while(this.field986 < this.field984.frameIds.length);
+							this.frameCycle -= this.sequenceDefinition.frameLengths[this.frame];
+							++this.frame;
+						} while(this.frame < this.sequenceDefinition.frameIds.length);
 
-						this.field986 -= this.field984.frameCount;
-					} while(this.field986 >= 0 && this.field986 < this.field984.frameIds.length);
+						this.frame -= this.sequenceDefinition.frameCount;
+					} while(this.frame >= 0 && this.frame < this.sequenceDefinition.frameIds.length);
 
-					this.field986 = 0;
+					this.frame = 0;
 				}
 			} else {
-				this.field986 += var1;
-				int var2 = this.field984.getMayaAnimFrame();
-				if (this.field986 >= var2) {
-					this.field986 = var2 - this.field984.frameCount;
+				this.frame += var1;
+				int var2 = this.sequenceDefinition.getMayaAnimFrame();
+				if (this.frame >= var2) {
+					this.frame = var2 - this.sequenceDefinition.frameCount;
 				}
 			}
 		}

@@ -69,7 +69,7 @@ public enum class387 implements Enum {
 			}
 
 			var3 = (WorldView)var2.next();
-		} while(var3.field1356.method7890((long)var0) == null);
+		} while(var3.npcs.get((long)var0) == null);
 
 		return var3;
 	}

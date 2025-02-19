@@ -138,16 +138,16 @@ public class class94 {
 		garbageValue = "-2057655311"
 	)
 	static void method2524(NPC var0) {
-		var0.field1284 = var0.definition.size;
-		var0.field1267 = var0.definition.rotation;
-		var0.field1237 = var0.definition.walkSequence;
-		var0.field1238 = var0.definition.walkBackSequence;
-		var0.field1231 = var0.definition.walkLeftSequence;
-		var0.field1232 = var0.definition.walkRightSequence;
+		var0.size = var0.definition.size;
+		var0.field1265 = var0.definition.rotation;
+		var0.walkSequence = var0.definition.walkSequence;
+		var0.walkBackSequence = var0.definition.walkBackSequence;
+		var0.walkLeftSequence = var0.definition.walkLeftSequence;
+		var0.walkRightSequence = var0.definition.walkRightSequence;
 		var0.idleSequence = var0.definition.idleSequence;
-		var0.field1292 = var0.definition.turnLeftSequence;
-		var0.field1228 = var0.definition.turnRightSequence;
-		var0.field1230 = var0.definition.field2049;
+		var0.turnLeftSequence = var0.definition.turnLeftSequence;
+		var0.turnRightSequence = var0.definition.turnRightSequence;
+		var0.runSequence = var0.definition.field2049;
 		var0.field1234 = var0.definition.field2037;
 		var0.field1235 = var0.definition.field2065;
 		var0.field1272 = var0.definition.field2052;

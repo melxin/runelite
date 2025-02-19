@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -130,7 +131,8 @@ public class class400 {
 	@ObfuscatedGetter(
 		intValue = -1454964213
 	)
-	static int field4676;
+	@Export("Players_count")
+	static int Players_count;
 	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
 		intValue = 821426081

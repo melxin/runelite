@@ -70,7 +70,7 @@ public class class374 {
 			int var6 = (int)Math.sqrt((double)(var3 * var3 + var5 * var5));
 			int var7 = (int)(Math.atan2((double)var4, (double)var6) * 325.9490051269531D) & 2047;
 			int var8 = (int)(Math.atan2((double)var3, (double)var5) * -325.9490051269531D) & 2047;
-			GraphicsObject.method6532(var7, var8);
+			class332.method6532(var7, var8);
 		} else {
 			if (Client.field791 != null) {
 				class59.cameraPitch = Client.field791.method9682();

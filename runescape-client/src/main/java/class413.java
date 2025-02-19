@@ -31,7 +31,7 @@ public class class413 {
 		this.field4777 = new int[2048];
 		this.field4778 = new int[2048];
 		this.field4781 = 0;
-		WorldEntity.method427();
+		class31.method427();
 	}
 
 	@ObfuscatedName("ay")

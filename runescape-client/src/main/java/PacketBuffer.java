@@ -57,7 +57,7 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("writeByteIsaac")
 	public void writeByteIsaac(int var1) {
-		super.field5573[++super.field5570 - 1] = (byte)(var1 + this.isaacCipher.nextInt());
+		super.array[++super.offset - 1] = (byte)(var1 + this.isaacCipher.nextInt());
 	}
 
 	@ObfuscatedName("ad")
@@ -67,7 +67,7 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("readByteIsaac")
 	public int readByteIsaac() {
-		return super.field5573[++super.field5570 - 1] - this.isaacCipher.nextInt() & 255;
+		return super.array[++super.offset - 1] - this.isaacCipher.nextInt() & 255;
 	}
 
 	@ObfuscatedName("ah")
@@ -76,7 +76,7 @@ public class PacketBuffer extends Buffer {
 		garbageValue = "-1"
 	)
 	public boolean method10171() {
-		int var1 = super.field5573[super.field5570] - this.isaacCipher.method10847() & 255;
+		int var1 = super.array[super.offset] - this.isaacCipher.method10847() & 255;
 		return var1 >= 128;
 	}
 
@@ -87,8 +87,8 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("readSmartByteShortIsaac")
 	public int readSmartByteShortIsaac() {
-		int var1 = super.field5573[++super.field5570 - 1] - this.isaacCipher.nextInt() & 255;
-		return var1 < 128 ? var1 : (var1 - 128 << 8) + (super.field5573[++super.field5570 - 1] - this.isaacCipher.nextInt() & 255);
+		int var1 = super.array[++super.offset - 1] - this.isaacCipher.nextInt() & 255;
+		return var1 < 128 ? var1 : (var1 - 128 << 8) + (super.array[++super.offset - 1] - this.isaacCipher.nextInt() & 255);
 	}
 
 	@ObfuscatedName("ao")
@@ -98,7 +98,7 @@ public class PacketBuffer extends Buffer {
 	)
 	public void method10173(byte[] var1, int var2, int var3) {
 		for (int var4 = 0; var4 < var3; ++var4) {
-			var1[var4 + var2] = (byte)(super.field5573[++super.field5570 - 1] - this.isaacCipher.nextInt());
+			var1[var4 + var2] = (byte)(super.array[++super.offset - 1] - this.isaacCipher.nextInt());
 		}
 
 	}
@@ -110,7 +110,7 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("importIndex")
 	public void importIndex() {
-		this.bitIndex = super.field5570 * 8;
+		this.bitIndex = super.offset * 8;
 	}
 
 	@ObfuscatedName("aa")
@@ -125,14 +125,14 @@ public class PacketBuffer extends Buffer {
 		int var4 = 0;
 
 		for (this.bitIndex += var1; var1 > var3; var3 = 8) {
-			var4 += (super.field5573[var2++] & field5566[var3]) << var1 - var3;
+			var4 += (super.array[var2++] & field5566[var3]) << var1 - var3;
 			var1 -= var3;
 		}
 
 		if (var3 == var1) {
-			var4 += super.field5573[var2] & field5566[var3];
+			var4 += super.array[var2] & field5566[var3];
 		} else {
-			var4 += super.field5573[var2] >> var3 - var1 & field5566[var1];
+			var4 += super.array[var2] >> var3 - var1 & field5566[var1];
 		}
 
 		return var4;
@@ -145,7 +145,7 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("exportIndex")
 	public void exportIndex() {
-		super.field5570 = (this.bitIndex + 7) / 8;
+		super.offset = (this.bitIndex + 7) / 8;
 	}
 
 	@ObfuscatedName("ae")
@@ -164,6 +164,6 @@ public class PacketBuffer extends Buffer {
 		garbageValue = "-1586488732"
 	)
 	public int method10178(int var1) {
-		return var1 - super.field5570;
+		return var1 - super.offset;
 	}
 }

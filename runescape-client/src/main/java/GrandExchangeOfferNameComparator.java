@@ -78,7 +78,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 			int var24;
 			if (var10 != 0L) {
 				var15 = var9.getObjectFlags(var1, var3, var4, var10);
-				int var45 = class248.Entity_unpackID(var10);
+				int var45 = FaceNormal.Entity_unpackID(var10);
 				int var46 = var15 & 31;
 				int var47 = var15 >> 6 & 3;
 				ObjectComposition var16 = class177.getObjectDefinition(var45);
@@ -196,7 +196,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 				int var27 = (var3 << 7) + (var19 << 6);
 				int var28 = (var4 << 7) + (var20 << 6);
 				Scene var29 = var0.scene;
-				long var30 = HttpRequestTask.calculateTag(var3, var4, 2, var39.int1 == 0, var5, var0.field1354);
+				long var30 = HttpRequestTask.calculateTag(var3, var4, 2, var39.int1 == 0, var5, var0.id);
 				int var32 = (var6 << 6) + var7;
 				if (var39.int3 == 1) {
 					var32 += 256;
@@ -207,10 +207,10 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 					if (var18 == -1 && var39.transforms == null) {
 						var43 = var39.getModel(22, var6, var40, var27, var41, var28);
 					} else {
-						var43 = new class81(var0, var5, 22, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+						var43 = new DynamicObject(var0, var5, 22, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 					}
 
-					var29.newFloorDecoration(var1, var3, var4, var41, (TileItem)var43, var30, var32);
+					var29.newFloorDecoration(var1, var3, var4, var41, (Renderable)var43, var30, var32);
 					if (var39.interactType == 1 && var48 != null) {
 						var48.setBlockedByFloorDec(var3, var4);
 					}
@@ -219,10 +219,10 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 						if (var18 == -1 && var39.transforms == null) {
 							var43 = var39.getModel(var7, var6, var40, var27, var41, var28);
 						} else {
-							var43 = new class81(var0, var5, var7, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+							var43 = new DynamicObject(var0, var5, var7, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 						}
 
-						var29.method5088(var1, var3, var4, var41, 1, 1, (TileItem)var43, 0, var30, var32);
+						var29.method5088(var1, var3, var4, var41, 1, 1, (Renderable)var43, 0, var30, var32);
 						if (var39.interactType != 0 && var48 != null) {
 							var48.addGameObject(var3, var4, var19, var20, var39.boolean1);
 						}
@@ -230,10 +230,10 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 						if (var18 == -1 && var39.transforms == null) {
 							var43 = var39.getModel(0, var6, var40, var27, var41, var28);
 						} else {
-							var43 = new class81(var0, var5, 0, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+							var43 = new DynamicObject(var0, var5, 0, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 						}
 
-						var29.newBoundaryObject(var1, var3, var4, var41, (TileItem)var43, (TileItem)null, Tiles.field1051[var6], 0, var30, var32);
+						var29.newBoundaryObject(var1, var3, var4, var41, (Renderable)var43, (Renderable)null, Tiles.field1051[var6], 0, var30, var32);
 						if (var39.interactType != 0 && var48 != null) {
 							var48.method5635(var3, var4, var7, var6, var39.boolean1);
 						}
@@ -241,10 +241,10 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 						if (var18 == -1 && var39.transforms == null) {
 							var43 = var39.getModel(1, var6, var40, var27, var41, var28);
 						} else {
-							var43 = new class81(var0, var5, 1, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+							var43 = new DynamicObject(var0, var5, 1, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 						}
 
-						var29.newBoundaryObject(var1, var3, var4, var41, (TileItem)var43, (TileItem)null, Tiles.field1052[var6], 0, var30, var32);
+						var29.newBoundaryObject(var1, var3, var4, var41, (Renderable)var43, (Renderable)null, Tiles.field1052[var6], 0, var30, var32);
 						if (var39.interactType != 0 && var48 != null) {
 							var48.method5635(var3, var4, var7, var6, var39.boolean1);
 						}
@@ -258,11 +258,11 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 								var44 = var39.getModel(2, var6 + 4, var40, var27, var41, var28);
 								var35 = var39.getModel(2, var33, var40, var27, var41, var28);
 							} else {
-								var44 = new class81(var0, var5, 2, var6 + 4, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
-								var35 = new class81(var0, var5, 2, var33, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+								var44 = new DynamicObject(var0, var5, 2, var6 + 4, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
+								var35 = new DynamicObject(var0, var5, 2, var33, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 							}
 
-							var29.newBoundaryObject(var1, var3, var4, var41, (TileItem)var44, (TileItem)var35, Tiles.field1051[var6], Tiles.field1051[var33], var30, var32);
+							var29.newBoundaryObject(var1, var3, var4, var41, (Renderable)var44, (Renderable)var35, Tiles.field1051[var6], Tiles.field1051[var33], var30, var32);
 							if (var39.interactType != 0 && var48 != null) {
 								var48.method5635(var3, var4, var7, var6, var39.boolean1);
 							}
@@ -270,10 +270,10 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 							if (var18 == -1 && var39.transforms == null) {
 								var43 = var39.getModel(3, var6, var40, var27, var41, var28);
 							} else {
-								var43 = new class81(var0, var5, 3, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+								var43 = new DynamicObject(var0, var5, 3, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 							}
 
-							var29.newBoundaryObject(var1, var3, var4, var41, (TileItem)var43, (TileItem)null, Tiles.field1052[var6], 0, var30, var32);
+							var29.newBoundaryObject(var1, var3, var4, var41, (Renderable)var43, (Renderable)null, Tiles.field1052[var6], 0, var30, var32);
 							if (var39.interactType != 0 && var48 != null) {
 								var48.method5635(var3, var4, var7, var6, var39.boolean1);
 							}
@@ -281,10 +281,10 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 							if (var18 == -1 && var39.transforms == null) {
 								var43 = var39.getModel(var7, var6, var40, var27, var41, var28);
 							} else {
-								var43 = new class81(var0, var5, var7, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+								var43 = new DynamicObject(var0, var5, var7, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 							}
 
-							var29.method5088(var1, var3, var4, var41, 1, 1, (TileItem)var43, 0, var30, var32);
+							var29.method5088(var1, var3, var4, var41, 1, 1, (Renderable)var43, 0, var30, var32);
 							if (var39.interactType != 0 && var48 != null) {
 								var48.addGameObject(var3, var4, var19, var20, var39.boolean1);
 							}
@@ -292,10 +292,10 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 							if (var18 == -1 && var39.transforms == null) {
 								var43 = var39.getModel(4, var6, var40, var27, var41, var28);
 							} else {
-								var43 = new class81(var0, var5, 4, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+								var43 = new DynamicObject(var0, var5, 4, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 							}
 
-							var29.newWallDecoration(var1, var3, var4, var41, (TileItem)var43, (TileItem)null, Tiles.field1051[var6], 0, 0, 0, var30, var32);
+							var29.newWallDecoration(var1, var3, var4, var41, (Renderable)var43, (Renderable)null, Tiles.field1051[var6], 0, 0, 0, var30, var32);
 						} else {
 							long var34;
 							Object var36;
@@ -303,44 +303,44 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 								var33 = 16;
 								var34 = var29.getBoundaryObjectTag(var1, var3, var4);
 								if (0L != var34) {
-									var33 = class177.getObjectDefinition(class248.Entity_unpackID(var34)).int2;
+									var33 = class177.getObjectDefinition(FaceNormal.Entity_unpackID(var34)).int2;
 								}
 
 								if (var18 == -1 && var39.transforms == null) {
 									var36 = var39.getModel(4, var6, var40, var27, var41, var28);
 								} else {
-									var36 = new class81(var0, var5, 4, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+									var36 = new DynamicObject(var0, var5, 4, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 								}
 
-								var29.newWallDecoration(var1, var3, var4, var41, (TileItem)var36, (TileItem)null, Tiles.field1051[var6], 0, Tiles.field1053[var6] * var33, Tiles.field1058[var6] * var33, var30, var32);
+								var29.newWallDecoration(var1, var3, var4, var41, (Renderable)var36, (Renderable)null, Tiles.field1051[var6], 0, Tiles.field1053[var6] * var33, Tiles.field1058[var6] * var33, var30, var32);
 							} else if (var7 == 6) {
 								var33 = 8;
 								var34 = var29.getBoundaryObjectTag(var1, var3, var4);
 								if (0L != var34) {
-									var33 = class177.getObjectDefinition(class248.Entity_unpackID(var34)).int2 / 2;
+									var33 = class177.getObjectDefinition(FaceNormal.Entity_unpackID(var34)).int2 / 2;
 								}
 
 								if (var18 == -1 && var39.transforms == null) {
 									var36 = var39.getModel(4, var6 + 4, var40, var27, var41, var28);
 								} else {
-									var36 = new class81(var0, var5, 4, var6 + 4, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+									var36 = new DynamicObject(var0, var5, 4, var6 + 4, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 								}
 
-								var29.newWallDecoration(var1, var3, var4, var41, (TileItem)var36, (TileItem)null, 256, var6, Tiles.field1055[var6] * var33, Tiles.field1056[var6] * var33, var30, var32);
+								var29.newWallDecoration(var1, var3, var4, var41, (Renderable)var36, (Renderable)null, 256, var6, Tiles.field1055[var6] * var33, Tiles.field1056[var6] * var33, var30, var32);
 							} else if (var7 == 7) {
 								int var42 = var6 + 2 & 3;
 								if (var18 == -1 && var39.transforms == null) {
 									var43 = var39.getModel(4, var42 + 4, var40, var27, var41, var28);
 								} else {
-									var43 = new class81(var0, var5, 4, var42 + 4, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+									var43 = new DynamicObject(var0, var5, 4, var42 + 4, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 								}
 
-								var29.newWallDecoration(var1, var3, var4, var41, (TileItem)var43, (TileItem)null, 256, var42, 0, 0, var30, var32);
+								var29.newWallDecoration(var1, var3, var4, var41, (Renderable)var43, (Renderable)null, 256, var42, 0, 0, var30, var32);
 							} else if (var7 == 8) {
 								var33 = 8;
 								var34 = var29.getBoundaryObjectTag(var1, var3, var4);
 								if (var34 != 0L) {
-									var33 = class177.getObjectDefinition(class248.Entity_unpackID(var34)).int2 / 2;
+									var33 = class177.getObjectDefinition(FaceNormal.Entity_unpackID(var34)).int2 / 2;
 								}
 
 								int var38 = var6 + 2 & 3;
@@ -349,11 +349,11 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 									var36 = var39.getModel(4, var6 + 4, var40, var27, var41, var28);
 									var37 = var39.getModel(4, var38 + 4, var40, var27, var41, var28);
 								} else {
-									var36 = new class81(var0, var5, 4, var6 + 4, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
-									var37 = new class81(var0, var5, 4, var38 + 4, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+									var36 = new DynamicObject(var0, var5, 4, var6 + 4, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
+									var37 = new DynamicObject(var0, var5, 4, var38 + 4, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 								}
 
-								var29.newWallDecoration(var1, var3, var4, var41, (TileItem)var36, (TileItem)var37, 256, var6, Tiles.field1055[var6] * var33, Tiles.field1056[var6] * var33, var30, var32);
+								var29.newWallDecoration(var1, var3, var4, var41, (Renderable)var36, (Renderable)var37, 256, var6, Tiles.field1055[var6] * var33, Tiles.field1056[var6] * var33, var30, var32);
 							}
 						}
 					}
@@ -361,11 +361,11 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 					if (var18 == -1 && var39.transforms == null) {
 						var43 = var39.getModel(10, var6, var40, var27, var41, var28);
 					} else {
-						var43 = new class81(var0, var5, 10, var6, var15, var3, var4, var18, var39.boolean3, (TileItem)null);
+						var43 = new DynamicObject(var0, var5, 10, var6, var15, var3, var4, var18, var39.boolean3, (Renderable)null);
 					}
 
 					if (var43 != null) {
-						var29.method5088(var1, var3, var4, var41, var19, var20, (TileItem)var43, var7 == 11 ? 256 : 0, var30, var32);
+						var29.method5088(var1, var3, var4, var41, var19, var20, (Renderable)var43, var7 == 11 ? 256 : 0, var30, var32);
 					}
 
 					if (var39.interactType != 0 && var48 != null) {

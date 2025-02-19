@@ -31,7 +31,8 @@ public class class176 extends DualNode {
 		descriptor = "(II)Lhu;",
 		garbageValue = "-1126967320"
 	)
-	public static SpotAnimationDefinition method3761(int var0) {
+	@Export("SpotAnimationDefinition_get")
+	public static SpotAnimationDefinition SpotAnimationDefinition_get(int var0) {
 		SpotAnimationDefinition var1 = (SpotAnimationDefinition)SpotAnimationDefinition.SpotAnimationDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;

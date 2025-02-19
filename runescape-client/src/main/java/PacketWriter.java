@@ -127,17 +127,17 @@ public class PacketWriter {
 	@Export("flush")
 	final void flush() throws IOException {
 		if (this.socket != null && this.bufferSize > 0) {
-			this.buffer.field5570 = 0;
+			this.buffer.offset = 0;
 
 			while (true) {
 				PacketBufferNode var1 = (PacketBufferNode)this.packetBufferNodes.last();
-				if (var1 == null || var1.index > this.buffer.field5573.length - this.buffer.field5570) {
-					this.socket.write(this.buffer.field5573, 0, this.buffer.field5570);
+				if (var1 == null || var1.index > this.buffer.array.length - this.buffer.offset) {
+					this.socket.write(this.buffer.array, 0, this.buffer.offset);
 					this.pendingWrites = 0;
 					break;
 				}
 
-				this.buffer.writeBytes(var1.packetBuffer.field5573, 0, var1.index);
+				this.buffer.writeBytes(var1.packetBuffer.array, 0, var1.index);
 				this.bufferSize -= var1.index;
 				var1.remove();
 				var1.packetBuffer.releaseArray();
@@ -155,8 +155,8 @@ public class PacketWriter {
 	@Export("addNode")
 	public final void addNode(PacketBufferNode var1) {
 		this.packetBufferNodes.addFirst(var1);
-		var1.index = var1.packetBuffer.field5570;
-		var1.packetBuffer.field5570 = 0;
+		var1.index = var1.packetBuffer.offset;
+		var1.packetBuffer.offset = 0;
 		this.bufferSize += var1.index;
 	}
 

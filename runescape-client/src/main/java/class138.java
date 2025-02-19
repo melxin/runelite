@@ -197,7 +197,7 @@ public class class138 implements Enum {
 				var1.genPlaceholder(ItemDefinition_get(var1.placeholderTemplate), ItemDefinition_get(var1.placeholder));
 			}
 
-			if (!class129.ItemDefinition_inMembersWorld && var1.isMembersOnly) {
+			if (!AuthenticationScheme.ItemDefinition_inMembersWorld && var1.isMembersOnly) {
 				if (var1.noteTemplate == -1 && var1.notedId == -1 && var1.placeholderTemplate == -1) {
 					var1.name = var1.name + " (Members)";
 				}
@@ -281,8 +281,9 @@ public class class138 implements Enum {
 		descriptor = "(Ldp;ZI)V",
 		garbageValue = "-2031906252"
 	)
-	static final void method3391(WorldView var0, boolean var1) {
-		Iterator var2 = var0.field1356.iterator();
+	@Export("addNpcsToScene")
+	static final void addNpcsToScene(WorldView var0, boolean var1) {
+		Iterator var2 = var0.npcs.iterator();
 
 		while (true) {
 			NPC var3;
@@ -316,7 +317,7 @@ public class class138 implements Enum {
 					} while(var6 < 0);
 				} while(var6 >= var0.sizeY);
 
-				if (var3.field1284 != 1 || (var3.x & 127) != 64 || (var3.y & 127) != 64) {
+				if (var3.size != 1 || (var3.x & 127) != 64 || (var3.y & 127) != 64) {
 					break;
 				}
 
@@ -326,11 +327,11 @@ public class class138 implements Enum {
 				}
 			}
 
-			long var7 = HttpRequestTask.calculateTag(0, 0, 1, !var3.definition.isInteractable, var3.field1271, var0.field1354);
-			var3.field1225 = Client.cycle;
-			int var9 = DevicePcmPlayerProvider.getTileHeight(var0, var3.field1284 * 64 - 64 + var3.x, var3.field1284 * 64 - 64 + var3.y, var4);
-			int var10 = var3.field1284 * 64 - 64 + 60;
-			var0.scene.drawEntity(var4, var3.x, var3.y, var9, var10, var3, var3.field1222, var7, var3.field1223);
+			long var7 = HttpRequestTask.calculateTag(0, 0, 1, !var3.definition.isInteractable, var3.index, var0.id);
+			var3.playerCycle = Client.cycle;
+			int var9 = DevicePcmPlayerProvider.getTileHeight(var0, var3.size * 64 - 64 + var3.x, var3.size * 64 - 64 + var3.y, var4);
+			int var10 = var3.size * 64 - 64 + 60;
+			var0.scene.drawEntity(var4, var3.x, var3.y, var9, var10, var3, var3.rotation, var7, var3.isWalking);
 		}
 	}
 }

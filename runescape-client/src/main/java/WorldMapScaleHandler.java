@@ -727,13 +727,13 @@ public class WorldMapScaleHandler {
 							}
 						}
 
-						var41 = class73.loginBoxCenter - 80;
+						var41 = GraphicsObject.loginBoxCenter - 80;
 						var40 = 291;
 						if (var5 == 1 && var37 >= var41 - 75 && var37 <= var41 + 75 && var38 >= var40 - 20 && var38 <= var40 + 20) {
 							class91.openURL(World.method1887("secure", true) + "m=account-creation/g=oldscape/create_account_funnel.ws", true, false);
 						}
 
-						var41 = class73.loginBoxCenter + 80;
+						var41 = GraphicsObject.loginBoxCenter + 80;
 						if (var5 == 1 && var37 >= var41 - 75 && var37 <= var41 + 75 && var38 >= var40 - 20 && var38 <= var40 + 20 || var46) {
 							if ((Client.worldProperties & class563.field5533.rsOrdinal()) != 0) {
 								Login.Login_response0 = "";
@@ -773,13 +773,13 @@ public class WorldMapScaleHandler {
 						if (Login.loginIndex == 1) {
 							while (true) {
 								if (!var23.method5597()) {
-									var9 = class73.loginBoxCenter - 80;
+									var9 = GraphicsObject.loginBoxCenter - 80;
 									var10 = 321;
 									if (var5 == 1 && var37 >= var9 - 75 && var37 <= var9 + 75 && var38 >= var10 - 20 && var38 <= var10 + 20) {
 										class280.Login_promptCredentials(false);
 									}
 
-									var9 = class73.loginBoxCenter + 80;
+									var9 = GraphicsObject.loginBoxCenter + 80;
 									if (var5 == 1 && var37 >= var9 - 75 && var37 <= var9 + 75 && var38 >= var10 - 20 && var38 <= var10 + 20) {
 										ObjectComposition.method4206(0);
 									}
@@ -823,7 +823,7 @@ public class WorldMapScaleHandler {
 									}
 								}
 
-								var41 = class73.loginBoxCenter - 80;
+								var41 = GraphicsObject.loginBoxCenter - 80;
 								var40 = 321;
 								if (var5 == 1 && var37 >= var41 - 75 && var37 <= var41 + 75 && var38 >= var40 - 20 && var38 <= var40 + 20) {
 									ReflectionCheck.method670();
@@ -840,7 +840,7 @@ public class WorldMapScaleHandler {
 									Login.rememberUsername = true;
 								}
 
-								var41 = class73.loginBoxCenter + -117;
+								var41 = GraphicsObject.loginBoxCenter + -117;
 								var40 = 277;
 								Login.field968 = var37 >= var41 && var37 < var41 + class241.field2658 && var38 >= var40 && var38 < var40 + class133.field1592;
 								if (var5 == 1 && Login.field968) {
@@ -850,7 +850,7 @@ public class WorldMapScaleHandler {
 									}
 								}
 
-								var41 = class73.loginBoxCenter + 24;
+								var41 = GraphicsObject.loginBoxCenter + 24;
 								var40 = 277;
 								Login.field969 = var37 >= var41 && var37 < var41 + class241.field2658 && var38 >= var40 && var38 < var40 + class133.field1592;
 								if (var5 == 1 && Login.field969) {
@@ -1096,7 +1096,7 @@ public class WorldMapScaleHandler {
 										} else if (Login.loginIndex != 6) {
 											if (Login.loginIndex == 7) {
 												if (Client.field524 && !Client.onMobile) {
-													var9 = class73.loginBoxCenter - 150;
+													var9 = GraphicsObject.loginBoxCenter - 150;
 													var41 = var9 + 40 + 240 + 25;
 													var40 = 231;
 													var12 = var40 + 40;
@@ -1269,7 +1269,7 @@ public class WorldMapScaleHandler {
 													class511.updateGameState(20);
 												}
 											} else if (Login.loginIndex == 12) {
-												var9 = class73.loginBoxCenter;
+												var9 = GraphicsObject.loginBoxCenter;
 												var10 = 233;
 												var26 = var2.method8690(0, 30, "<col=ffd200>terms of use</col>, <col=ffd200>privacy policy</col>, and <col=ffd200>end user licence</col>", var9, var10);
 												Bounds var24 = var2.method8690(32, 32, "<col=ffd200>terms of use</col>, <col=ffd200>privacy policy</col>, and <col=ffd200>end user licence</col>", var9, var10);
@@ -1286,19 +1286,19 @@ public class WorldMapScaleHandler {
 													}
 												}
 
-												var9 = class73.loginBoxCenter - 80;
+												var9 = GraphicsObject.loginBoxCenter - 80;
 												var10 = 311;
 												if (var5 == 1 && var37 >= var9 - 75 && var37 <= var9 + 75 && var38 >= var10 - 20 && var38 <= var10 + 20) {
 													AbstractWorldMapIcon.clientPreferences.updateEULA(Client.field515);
 													MusicPatchNode2.updateLoginStatusUsernameRemembered(true);
 												}
 
-												var9 = class73.loginBoxCenter + 80;
+												var9 = GraphicsObject.loginBoxCenter + 80;
 												if (var5 == 1 && var37 >= var9 - 75 && var37 <= var9 + 75 && var38 >= var10 - 20 && var38 <= var10 + 20) {
 													Login.loginIndex = 13;
 												}
 											} else if (Login.loginIndex == 13) {
-												var9 = class73.loginBoxCenter;
+												var9 = GraphicsObject.loginBoxCenter;
 												var10 = 321;
 												if (var5 == 1 && var37 >= var9 - 75 && var37 <= var9 + 75 && var38 >= var10 - 20 && var38 <= var10 + 20) {
 													MusicPatchNode2.updateLoginStatusUsernameRemembered(true);

@@ -6,14 +6,16 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("df")
 @Implements("Actor")
-public abstract class Actor extends TileItem implements Entity {
+public abstract class Actor extends Renderable implements Entity {
 	@ObfuscatedName("an")
-	boolean field1223;
+	@Export("isWalking")
+	boolean isWalking;
 	@ObfuscatedName("bo")
 	@ObfuscatedGetter(
 		intValue = -1247290939
 	)
-	int field1271;
+	@Export("index")
+	int index;
 	@ObfuscatedName("bs")
 	@ObfuscatedGetter(
 		intValue = 406046155
@@ -30,17 +32,20 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = 1569958261
 	)
-	int field1222;
+	@Export("rotation")
+	int rotation;
 	@ObfuscatedName("ba")
 	@ObfuscatedGetter(
 		intValue = -100682003
 	)
-	int field1284;
+	@Export("size")
+	int size;
 	@ObfuscatedName("bg")
 	@ObfuscatedGetter(
 		intValue = -1714653857
 	)
-	int field1225;
+	@Export("playerCycle")
+	int playerCycle;
 	@ObfuscatedName("bv")
 	@ObfuscatedGetter(
 		intValue = -1574036861
@@ -51,37 +56,44 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = 1403333573
 	)
-	int field1292;
+	@Export("turnLeftSequence")
+	int turnLeftSequence;
 	@ObfuscatedName("bu")
 	@ObfuscatedGetter(
 		intValue = 760794665
 	)
-	int field1228;
+	@Export("turnRightSequence")
+	int turnRightSequence;
 	@ObfuscatedName("by")
 	@ObfuscatedGetter(
 		intValue = -678951
 	)
-	int field1237;
+	@Export("walkSequence")
+	int walkSequence;
 	@ObfuscatedName("bh")
 	@ObfuscatedGetter(
 		intValue = -1868589995
 	)
-	int field1238;
+	@Export("walkBackSequence")
+	int walkBackSequence;
 	@ObfuscatedName("be")
 	@ObfuscatedGetter(
 		intValue = -704690621
 	)
-	int field1231;
+	@Export("walkLeftSequence")
+	int walkLeftSequence;
 	@ObfuscatedName("bj")
 	@ObfuscatedGetter(
 		intValue = -346870805
 	)
-	int field1232;
+	@Export("walkRightSequence")
+	int walkRightSequence;
 	@ObfuscatedName("bq")
 	@ObfuscatedGetter(
 		intValue = 1476364845
 	)
-	int field1230;
+	@Export("runSequence")
+	int runSequence;
 	@ObfuscatedName("bx")
 	@ObfuscatedGetter(
 		intValue = 790194091
@@ -128,8 +140,8 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = -1200692789
 	)
-	@Export("rotation")
-	int rotation;
+	@Export("overheadTextCyclesRemaining")
+	int overheadTextCyclesRemaining;
 	@ObfuscatedName("ch")
 	@ObfuscatedGetter(
 		intValue = -766822967
@@ -141,10 +153,10 @@ public abstract class Actor extends TileItem implements Entity {
 	)
 	int field1246;
 	@ObfuscatedName("cp")
-	@Export("pathX")
-	int[] pathX;
+	int[] field1247;
 	@ObfuscatedName("cs")
-	byte field1248;
+	@Export("hitSplatCount")
+	byte hitSplatCount;
 	@ObfuscatedName("cj")
 	@Export("hitSplatTypes")
 	int[] hitSplatTypes;
@@ -173,14 +185,13 @@ public abstract class Actor extends TileItem implements Entity {
 	@Export("targetIndex")
 	int targetIndex;
 	@ObfuscatedName("ck")
-	@Export("isWalking")
-	boolean isWalking;
+	@Export("false0")
+	boolean false0;
 	@ObfuscatedName("cx")
 	@ObfuscatedGetter(
 		intValue = -63911639
 	)
-	@Export("movementSequence")
-	int movementSequence;
+	int field1271;
 	@ObfuscatedName("cu")
 	@ObfuscatedGetter(
 		intValue = -1302450713
@@ -192,13 +203,13 @@ public abstract class Actor extends TileItem implements Entity {
 	)
 	int field1259;
 	@ObfuscatedName("cw")
-	@Export("false0")
-	boolean false0;
+	boolean field1260;
 	@ObfuscatedName("ce")
 	@ObfuscatedGetter(
 		intValue = -215228143
 	)
-	int field1261;
+	@Export("movementSequence")
+	int movementSequence;
 	@ObfuscatedName("cn")
 	@ObfuscatedGetter(
 		intValue = -421208937
@@ -209,7 +220,8 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = -261002867
 	)
-	int field1263;
+	@Export("movementFrameCycle")
+	int movementFrameCycle;
 	@ObfuscatedName("cl")
 	@ObfuscatedGetter(
 		intValue = 610225343
@@ -219,22 +231,26 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = 527657827
 	)
-	int field1265;
+	@Export("sequence")
+	int sequence;
 	@ObfuscatedName("cq")
 	@ObfuscatedGetter(
 		intValue = 1054664907
 	)
-	int field1266;
+	@Export("sequenceFrame")
+	int sequenceFrame;
 	@ObfuscatedName("cz")
 	@ObfuscatedGetter(
 		intValue = 1517708983
 	)
-	int field1262;
+	@Export("sequenceFrameCycle")
+	int sequenceFrameCycle;
 	@ObfuscatedName("cm")
 	@ObfuscatedGetter(
 		intValue = 416820659
 	)
-	int field1268;
+	@Export("sequenceDelay")
+	int sequenceDelay;
 	@ObfuscatedName("cr")
 	@ObfuscatedGetter(
 		intValue = 1817647195
@@ -276,7 +292,8 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = 2138752019
 	)
-	int field1276;
+	@Export("spotAnimation")
+	int spotAnimation;
 	@ObfuscatedName("dk")
 	@ObfuscatedGetter(
 		intValue = 1291252565
@@ -297,7 +314,8 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = 492292523
 	)
-	int field1280;
+	@Export("npcCycle")
+	int npcCycle;
 	@ObfuscatedName("dh")
 	@ObfuscatedGetter(
 		intValue = -124401555
@@ -312,7 +330,8 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = -902194799
 	)
-	int field1282;
+	@Export("orientation")
+	int orientation;
 	@ObfuscatedName("db")
 	@ObfuscatedGetter(
 		intValue = -1214035749
@@ -322,21 +341,25 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = -1915778493
 	)
-	int field1267;
+	int field1265;
 	@ObfuscatedName("dm")
 	@ObfuscatedGetter(
 		intValue = -754790111
 	)
-	int field1227;
+	@Export("pathLength")
+	int pathLength;
 	@ObfuscatedName("do")
-	int[] field1287;
+	@Export("pathX")
+	int[] pathX;
 	@ObfuscatedName("dx")
-	int[] field1288;
+	@Export("pathY")
+	int[] pathY;
 	@ObfuscatedName("dv")
 	@ObfuscatedSignature(
 		descriptor = "[Lkn;"
 	)
-	MoveSpeed[] field1289;
+	@Export("pathTraversed")
+	MoveSpeed[] pathTraversed;
 	@ObfuscatedName("df")
 	@ObfuscatedGetter(
 		intValue = -1627110221
@@ -356,19 +379,20 @@ public abstract class Actor extends TileItem implements Entity {
 	@ObfuscatedGetter(
 		intValue = 1911563667
 	)
-	int field1219;
+	@Export("worldViewId")
+	int worldViewId;
 
 	Actor(int var1) {
-		this.field1223 = false;
-		this.field1284 = 1;
+		this.isWalking = false;
+		this.size = 1;
 		this.idleSequence = -1;
-		this.field1292 = -1;
-		this.field1228 = -1;
-		this.field1237 = -1;
-		this.field1238 = -1;
-		this.field1231 = -1;
-		this.field1232 = -1;
-		this.field1230 = -1;
+		this.turnLeftSequence = -1;
+		this.turnRightSequence = -1;
+		this.walkSequence = -1;
+		this.walkBackSequence = -1;
+		this.walkLeftSequence = -1;
+		this.walkRightSequence = -1;
+		this.runSequence = -1;
 		this.field1234 = -1;
 		this.field1235 = -1;
 		this.field1272 = -1;
@@ -378,11 +402,11 @@ public abstract class Actor extends TileItem implements Entity {
 		this.field1240 = -1;
 		this.overheadText = null;
 		this.field1293 = false;
-		this.rotation = 100;
+		this.overheadTextCyclesRemaining = 100;
 		this.field1245 = 0;
 		this.field1246 = 0;
-		this.pathX = null;
-		this.field1248 = 0;
+		this.field1247 = null;
+		this.hitSplatCount = 0;
 		this.hitSplatTypes = new int[4];
 		this.hitSplatValues = new int[4];
 		this.hitSplatCycles = new int[4];
@@ -390,36 +414,36 @@ public abstract class Actor extends TileItem implements Entity {
 		this.hitSplatValues2 = new int[4];
 		this.healthBars = new IterableNodeDeque();
 		this.targetIndex = -1;
-		this.isWalking = false;
-		this.movementSequence = -1;
+		this.false0 = false;
+		this.field1271 = -1;
 		this.field1258 = -1;
 		this.field1259 = -1;
-		this.field1261 = -1;
+		this.movementSequence = -1;
 		this.movementFrame = 0;
-		this.field1263 = 0;
+		this.movementFrameCycle = 0;
 		this.field1294 = 0;
-		this.field1265 = -1;
-		this.field1266 = 0;
-		this.field1262 = 0;
-		this.field1268 = 0;
+		this.sequence = -1;
+		this.sequenceFrame = 0;
+		this.sequenceFrameCycle = 0;
+		this.sequenceDelay = 0;
 		this.field1255 = 0;
 		this.spotAnimations = new IterableNodeHashTable(4);
 		this.graphicsCount = 0;
 		this.defaultHeight = 200;
-		this.field1280 = -1;
+		this.npcCycle = -1;
 		this.field1281 = -1;
 		this.field1286 = new class258();
 		this.field1264 = 0;
-		this.field1267 = 32;
-		this.field1227 = 0;
-		this.field1287 = new int[10];
-		this.field1288 = new int[10];
-		this.field1289 = new MoveSpeed[10];
+		this.field1265 = 32;
+		this.pathLength = 0;
+		this.pathX = new int[10];
+		this.pathY = new int[10];
+		this.pathTraversed = new MoveSpeed[10];
 		this.field1277 = 0;
 		this.field1291 = 0;
 		this.field1257 = -1;
-		this.field1219 = -1;
-		this.field1271 = var1;
+		this.worldViewId = -1;
+		this.index = var1;
 	}
 
 	@ObfuscatedName("ar")
@@ -438,19 +462,19 @@ public abstract class Actor extends TileItem implements Entity {
 		garbageValue = "-45"
 	)
 	void method2590(int var1, int var2, MoveSpeed var3) {
-		if (this.field1227 < 9) {
-			++this.field1227;
+		if (this.pathLength < 9) {
+			++this.pathLength;
 		}
 
-		for (int var4 = this.field1227; var4 > 0; --var4) {
-			this.field1287[var4] = this.field1287[var4 - 1];
-			this.field1288[var4] = this.field1288[var4 - 1];
-			this.field1289[var4] = this.field1289[var4 - 1];
+		for (int var4 = this.pathLength; var4 > 0; --var4) {
+			this.pathX[var4] = this.pathX[var4 - 1];
+			this.pathY[var4] = this.pathY[var4 - 1];
+			this.pathTraversed[var4] = this.pathTraversed[var4 - 1];
 		}
 
-		this.field1287[0] = var1;
-		this.field1288[0] = var2;
-		this.field1289[0] = var3;
+		this.pathX[0] = var1;
+		this.pathY[0] = var2;
+		this.pathTraversed[0] = var3;
 	}
 
 	@ObfuscatedName("cd")
@@ -459,13 +483,13 @@ public abstract class Actor extends TileItem implements Entity {
 		garbageValue = "86"
 	)
 	void method2623(int var1, int var2) {
-		this.field1227 = 0;
+		this.pathLength = 0;
 		this.field1291 = 0;
 		this.field1277 = 0;
-		this.field1287[0] = var1;
-		this.field1288[0] = var2;
-		this.x = this.field1284 * 64 + this.field1287[0] * 128;
-		this.y = this.field1284 * 64 + this.field1288[0] * 128;
+		this.pathX[0] = var1;
+		this.pathY[0] = var2;
+		this.x = this.size * 64 + this.pathX[0] * 128;
+		this.y = this.size * 64 + this.pathY[0] * 128;
 	}
 
 	@ObfuscatedName("cp")
@@ -474,7 +498,7 @@ public abstract class Actor extends TileItem implements Entity {
 		garbageValue = "-1870852483"
 	)
 	final void method2592() {
-		this.field1227 = 0;
+		this.pathLength = 0;
 		this.field1291 = 0;
 	}
 
@@ -537,12 +561,12 @@ public abstract class Actor extends TileItem implements Entity {
 			}
 		} else {
 			if (var7) {
-				this.field1248 = 0;
+				this.hitSplatCount = 0;
 			}
 
 			for (var14 = 0; var14 < 4; ++var14) {
-				byte var15 = this.field1248;
-				this.field1248 = (byte)((this.field1248 + 1) % 4);
+				byte var15 = this.hitSplatCount;
+				this.hitSplatCount = (byte)((this.hitSplatCount + 1) % 4);
 				if (this.hitSplatCycles[var15] <= var5) {
 					var9 = var15;
 					break;
@@ -685,17 +709,17 @@ public abstract class Actor extends TileItem implements Entity {
 		} else {
 			IterableNodeHashTableIterator var2 = new IterableNodeHashTableIterator(this.spotAnimations);
 			int var3 = var1.verticesCount;
-			int var4 = var1.field2884;
-			int var5 = var1.field2896;
+			int var4 = var1.indicesCount;
+			int var5 = var1.texIndicesCount;
 			byte var6 = var1.field2904;
 
 			for (ActorSpotAnim var7 = (ActorSpotAnim)var2.method7899(); var7 != null; var7 = (ActorSpotAnim)var2.next()) {
 				if (var7.spotAnimationFrame != -1) {
-					Model var8 = class176.method3761(var7.spotAnimation).method3997();
+					Model var8 = class176.SpotAnimationDefinition_get(var7.spotAnimation).method3997();
 					if (var8 != null) {
 						var3 += var8.verticesCount;
-						var4 += var8.field2884;
-						var5 += var8.field2896;
+						var4 += var8.indicesCount;
+						var5 += var8.texIndicesCount;
 					}
 				}
 			}
@@ -705,7 +729,7 @@ public abstract class Actor extends TileItem implements Entity {
 
 			for (ActorSpotAnim var11 = (ActorSpotAnim)var2.method7899(); var11 != null; var11 = (ActorSpotAnim)var2.next()) {
 				if (var11.spotAnimationFrame != -1) {
-					Model var9 = class176.method3761(var11.spotAnimation).getModel(var11.spotAnimationFrame);
+					Model var9 = class176.SpotAnimationDefinition_get(var11.spotAnimation).getModel(var11.spotAnimationFrame);
 					if (var9 != null) {
 						var9.offsetBy(0, -var11.spotAnimationHeight, 0);
 						var10.method5257(var9);
@@ -723,8 +747,8 @@ public abstract class Actor extends TileItem implements Entity {
 		garbageValue = "103"
 	)
 	void method2601() {
-		this.false0 = false;
-		this.movementSequence = -1;
+		this.field1260 = false;
+		this.field1271 = -1;
 		this.field1258 = -1;
 		this.field1259 = -1;
 	}
@@ -758,7 +782,7 @@ public abstract class Actor extends TileItem implements Entity {
 		if (var1 == class200.topLevelWorldView) {
 			return new Coord(this.getPlane(), this.getX(), this.getY());
 		} else {
-			class492 var2 = (class492)class200.topLevelWorldView.field1358.get((long)var1.field1354);
+			WorldEntity var2 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)var1.id);
 			if (var2 == null) {
 				return new Coord(this.getPlane(), this.getX(), this.getY());
 			} else {
@@ -784,8 +808,8 @@ public abstract class Actor extends TileItem implements Entity {
 	)
 	@Export("getPlane")
 	public int getPlane() {
-		if (this.field1219 != -1) {
-			WorldView var1 = Client.worldViewManager.method2546(this.field1219);
+		if (this.worldViewId != -1) {
+			WorldView var1 = Client.worldViewManager.getWorldView(this.worldViewId);
 			if (var1 != null) {
 				return var1.plane;
 			}
@@ -809,7 +833,7 @@ public abstract class Actor extends TileItem implements Entity {
 		garbageValue = "-1821048708"
 	)
 	WorldView method2607() {
-		return this.field1219 != -1 ? Client.worldViewManager.method2546(this.field1219) : class200.topLevelWorldView;
+		return this.worldViewId != -1 ? Client.worldViewManager.getWorldView(this.worldViewId) : class200.topLevelWorldView;
 	}
 
 	@ObfuscatedName("ay")

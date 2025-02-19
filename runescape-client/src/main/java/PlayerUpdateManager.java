@@ -108,7 +108,7 @@ public class PlayerUpdateManager {
 		var3.field896 = 0;
 		Player var5 = var3.method2118(var2, class200.topLevelWorldView);
 		var3.method2158(var5);
-		class200.topLevelWorldView.field1353.method7884(var5, (long)var2);
+		class200.topLevelWorldView.players.add(var5, (long)var2);
 		class132.localPlayer = var5;
 		this.playerCount = 0;
 		this.playerIndices[++this.playerCount - 1] = var2;
@@ -134,15 +134,15 @@ public class PlayerUpdateManager {
 		garbageValue = "600662344"
 	)
 	final void method2988(PacketBuffer var1, int var2) {
-		int var3 = var1.field5570;
+		int var3 = var1.offset;
 		this.Players_pendingUpdateCount = 0;
 		this.method2989(var1);
 		this.method2999();
 		this.method2994();
 		this.updatePlayers(var1);
 		this.method3023();
-		if (var2 != var1.field5570 - var3) {
-			throw new RuntimeException(var1.field5570 - var3 + " " + var2);
+		if (var2 != var1.offset - var3) {
+			throw new RuntimeException(var1.offset - var3 + " " + var2);
 		}
 	}
 
@@ -574,10 +574,10 @@ public class PlayerUpdateManager {
 
 			while (var4.hasNext()) {
 				WorldView var5 = (WorldView)var4.next();
-				Player var6 = (Player)var5.field1353.method7890((long)var2);
+				Player var6 = (Player)var5.players.get((long)var2);
 				if (var6 != null) {
 					var3.method2116(var6);
-					var6.method9623();
+					var6.detach();
 				}
 			}
 
@@ -608,19 +608,19 @@ public class PlayerUpdateManager {
 					}
 
 					WorldView var6 = (WorldView)var5.next();
-					Player var7 = (Player)var6.field1353.method7890((long)var2);
+					Player var7 = (Player)var6.players.get((long)var2);
 					boolean var8 = var4.x > var6.baseX && var4.y > var6.baseY && var4.x < var6.sizeX + var6.baseX && var4.y < var6.baseY + var6.sizeY;
-					if (var2 == Client.localPlayerIndex && var8 && var6.field1354 != -1) {
-						Client.field780 = var6.field1354;
+					if (var2 == Client.localPlayerIndex && var8 && var6.id != -1) {
+						Client.field780 = var6.id;
 					}
 
 					if (var8 && var7 == null) {
 						var7 = var3.method2118(var2, var6);
 						var3.method2158(var7);
-						var6.field1353.method7884(var7, (long)var2);
+						var6.players.add(var7, (long)var2);
 					} else if (!var8 && var7 != null && var7 != class132.localPlayer) {
 						var3.method2116(var7);
-						var7.method9623();
+						var7.detach();
 					}
 				}
 			}
@@ -721,9 +721,9 @@ public class PlayerUpdateManager {
 			var1.readUnsignedByteAdd();
 			var1.readUnsignedByteSub();
 			var6 = var1.readUnsignedByte();
-			this.field1441.field5570 = 0;
-			var1.method10291(this.field1441.field5573, 0, var6);
-			this.field1441.field5570 = 0;
+			this.field1441.offset = 0;
+			var1.method10291(this.field1441.array, 0, var6);
+			this.field1441.offset = 0;
 		}
 
 		int var22;
@@ -735,9 +735,9 @@ public class PlayerUpdateManager {
 			PlayerType var15 = (PlayerType)class454.findEnumerated(SpriteMask.PlayerType_values(), var1.readUnsignedByte());
 			boolean var26 = var1.readUnsignedByte() == 1;
 			var28 = var1.readUnsignedByteSub();
-			this.field1441.field5570 = 0;
-			var1.method10272(this.field1441.field5573, 0, var28);
-			this.field1441.field5570 = 0;
+			this.field1441.offset = 0;
+			var1.method10272(this.field1441.array, 0, var28);
+			this.field1441.offset = 0;
 			String var12 = AbstractFont.escapeBrackets(FloorDecoration.method4731(FloorOverlayDefinition.method4294(this.field1441)));
 			byte[] var13 = null;
 			if (var22 > 0 && var22 <= 8) {
@@ -864,7 +864,7 @@ public class PlayerUpdateManager {
 	)
 	void method2987(Player var1) {
 		if (var1 != null) {
-			this.Players_regions[var1.field1271].method2116(var1);
+			this.Players_regions[var1.index].method2116(var1);
 		}
 	}
 

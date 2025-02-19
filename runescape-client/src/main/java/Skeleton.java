@@ -17,7 +17,8 @@ public class Skeleton extends Node {
 	@Export("transformTypes")
 	int[] transformTypes;
 	@ObfuscatedName("af")
-	int[][] field2679;
+	@Export("labels")
+	int[][] labels;
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "Ljq;"
@@ -28,7 +29,7 @@ public class Skeleton extends Node {
 		Buffer var3 = new Buffer(var2);
 		this.count = var3.readUnsignedByte();
 		this.transformTypes = new int[this.count];
-		this.field2679 = new int[this.count][];
+		this.labels = new int[this.count][];
 
 		int var4;
 		for (var4 = 0; var4 < this.count; ++var4) {
@@ -36,16 +37,16 @@ public class Skeleton extends Node {
 		}
 
 		for (var4 = 0; var4 < this.count; ++var4) {
-			this.field2679[var4] = new int[var3.readUnsignedByte()];
+			this.labels[var4] = new int[var3.readUnsignedByte()];
 		}
 
 		for (var4 = 0; var4 < this.count; ++var4) {
-			for (int var5 = 0; var5 < this.field2679[var4].length; ++var5) {
-				this.field2679[var4][var5] = var3.readUnsignedByte();
+			for (int var5 = 0; var5 < this.labels[var4].length; ++var5) {
+				this.labels[var4][var5] = var3.readUnsignedByte();
 			}
 		}
 
-		if (var3.field5570 < var3.field5573.length) {
+		if (var3.offset < var3.array.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
 				this.field2676 = new class241(var3, var4);

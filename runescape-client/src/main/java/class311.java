@@ -39,10 +39,10 @@ public abstract class class311 implements class313 {
 	static void method6424(WorldView var0, Actor var1, int var2) {
 		Coord var3 = var1.method2604(var0);
 		int var5 = var1.x;
-		int var6 = var1.field1284 - 1;
+		int var6 = var1.size - 1;
 		int var4 = var5 + (var6 << 6);
 		int var9 = var1.y;
-		int var10 = var1.field1284 - 1;
+		int var10 = var1.size - 1;
 		int var8 = var9 + (var10 << 6);
 		VarpDefinition.worldToScreen(var0, var3.x, var3.y, var4, var8, var2);
 	}

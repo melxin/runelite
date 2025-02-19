@@ -109,7 +109,7 @@ public class ClientPreferences {
 		this.windowMode = 1;
 		this.drawDistance = 25;
 		this.parameters = new LinkedHashMap();
-		if (var1 != null && var1.field5573 != null) {
+		if (var1 != null && var1.array != null) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 >= 0 && var2 <= 11) {
 				if (var1.readUnsignedByte() == 1) {
@@ -825,8 +825,8 @@ public class ClientPreferences {
 				if (var4 != -1L) {
 					var9 = Player.method2521(var4);
 					int var10 = (int)(var4 >>> 7 & 127L);
-					Player var12 = (Player)class200.topLevelWorldView.field1353.method7890((long)Client.combatTargetPlayerIndex);
-					class178.method3769(var12, Client.combatTargetPlayerIndex, var9, var10, var6);
+					Player var12 = (Player)class200.topLevelWorldView.players.get((long)Client.combatTargetPlayerIndex);
+					class178.addPlayerToMenu(var12, Client.combatTargetPlayerIndex, var9, var10, var6);
 				}
 
 				return;
@@ -839,19 +839,19 @@ public class ClientPreferences {
 					int var16 = SpriteMask.method6849(var9);
 					int var17 = VarbitComposition.method4068(var9);
 					int var18 = WorldMapSectionType.method6243(var9);
-					int var19 = class248.Entity_unpackID(ViewportMouse.ViewportMouse_entityTags[var9]);
+					int var19 = FaceNormal.Entity_unpackID(ViewportMouse.ViewportMouse_entityTags[var9]);
 					int var20 = var19;
 					int var21 = class555.method10064(ViewportMouse.ViewportMouse_entityTags[var9]);
 					int var22 = var21;
-					class492 var23 = null;
+					WorldEntity var23 = null;
 					WorldView var24 = null;
-					var23 = (class492)class200.topLevelWorldView.field1358.get((long)var21);
+					var23 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)var21);
 					if (var21 >= 0 && var23 != null) {
 						if (var23.method9285()) {
 							break label460;
 						}
 
-						var24 = var23.field5148;
+						var24 = var23.worldView;
 					} else if (var21 == -1) {
 						var23 = null;
 						var24 = class200.topLevelWorldView;
@@ -864,11 +864,11 @@ public class ClientPreferences {
 						} else if (Client.field780 == -1) {
 							var26 = var23.field5149.method4030();
 						} else {
-							class492 var27 = (class492)class200.topLevelWorldView.field1358.get((long)Client.field780);
-							WorldView var28 = var27.field5148;
+							WorldEntity var27 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)Client.field780);
+							WorldView var28 = var27.worldView;
 							if (var28.plane == var27.field5149.method4030()) {
 								if (var21 == -1) {
-									var26 = ((class492)class200.topLevelWorldView.field1358.get((long)Client.field780)).getPlane();
+									var26 = ((WorldEntity)class200.topLevelWorldView.worldEntities.get((long)Client.field780)).getPlane();
 								} else {
 									var26 = var23.field5149.method4030();
 								}
@@ -949,18 +949,18 @@ public class ClientPreferences {
 								int var37;
 								NPC var48;
 								if (var18 == 1) {
-									NPC var41 = (NPC)var24.field1356.method7890((long)var20);
+									NPC var41 = (NPC)var24.npcs.get((long)var20);
 									if (var41 == null) {
 										break label441;
 									}
 
 									if (var41.definition.size == 1 && (var41.x & 127) == 64 && (var41.y & 127) == 64) {
-										Iterator var45 = var24.field1356.iterator();
+										Iterator var45 = var24.npcs.iterator();
 
 										while (var45.hasNext()) {
 											var48 = (NPC)var45.next();
 											if (var48 != null && var41 != var48 && var48.definition.size == 1 && var41.x == var48.x && var48.y == var41.y) {
-												Script.addNpcToMenu(var48, var48.field1271, var16, var17, var22);
+												Script.addNpcToMenu(var48, var48.index, var16, var17, var22);
 											}
 										}
 
@@ -968,9 +968,9 @@ public class ClientPreferences {
 										int[] var36 = Client.playerUpdateManager.playerIndices;
 
 										for (var37 = 0; var37 < var35; ++var37) {
-											Player var38 = (Player)var24.field1353.method7890((long)var36[var37]);
+											Player var38 = (Player)var24.players.get((long)var36[var37]);
 											if (var38 != null && var38.x == var41.x && var41.y == var38.y) {
-												class178.method3769(var38, var36[var37], var16, var17, var22);
+												class178.addPlayerToMenu(var38, var36[var37], var16, var17, var22);
 											}
 										}
 									}
@@ -979,7 +979,7 @@ public class ClientPreferences {
 								}
 
 								if (var18 == 0) {
-									Player var43 = (Player)var24.field1353.method7890((long)var20);
+									Player var43 = (Player)var24.players.get((long)var20);
 									if (var43 == null) {
 										break label441;
 									}
@@ -987,7 +987,7 @@ public class ClientPreferences {
 									if ((var43.x & 127) == 64 && (var43.y & 127) == 64) {
 										int var39;
 										for (var39 = 0; var39 < var24.field1355.method9005(); ++var39) {
-											var48 = (NPC)var24.field1356.method7890((long)var24.field1355.method9007(var39));
+											var48 = (NPC)var24.npcs.get((long)var24.field1355.method9007(var39));
 											if (var48 != null && var48.definition.size == 1 && var43.x == var48.x && var48.y == var43.y) {
 												Script.addNpcToMenu(var48, var24.field1355.method9007(var39), var16, var17, var22);
 											}
@@ -997,15 +997,15 @@ public class ClientPreferences {
 										int[] var49 = Client.playerUpdateManager.playerIndices;
 
 										for (var30 = 0; var30 < var39; ++var30) {
-											Player var51 = (Player)var24.field1353.method7890((long)var49[var30]);
+											Player var51 = (Player)var24.players.get((long)var49[var30]);
 											if (var51 != null && var43 != var51 && var43.x == var51.x && var43.y == var51.y) {
-												class178.method3769(var51, var49[var30], var16, var17, var22);
+												class178.addPlayerToMenu(var51, var49[var30], var16, var17, var22);
 											}
 										}
 									}
 
 									if (var20 != Client.combatTargetPlayerIndex) {
-										class178.method3769(var43, var20, var16, var17, var22);
+										class178.addPlayerToMenu(var43, var20, var16, var17, var22);
 									} else {
 										var4 = var33;
 										var6 = var22;
@@ -1015,7 +1015,7 @@ public class ClientPreferences {
 								if (var18 == 3) {
 									NodeDeque var44 = var24.groundItems[var26][var16][var17];
 									if (var44 != null) {
-										for (class108 var46 = (class108)var44.first(); var46 != null; var46 = (class108)var44.next()) {
+										for (TileItem var46 = (TileItem)var44.first(); var46 != null; var46 = (TileItem)var44.next()) {
 											ItemComposition var50 = class138.ItemDefinition_get(var46.id);
 											if (!PendingSpawn.field1200 && Client.isItemSelected == 1) {
 												WorldMapSprite.insertMenuItem("Use", Client.field674 + " " + "->" + " " + MilliClock.colorStartTag(16748608) + var50.name, 16, var46.id, var16, var17, -1, false, var22);

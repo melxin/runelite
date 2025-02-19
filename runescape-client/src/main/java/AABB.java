@@ -1,10 +1,12 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("jl")
-public class class246 {
+@Implements("AABB")
+public class AABB {
 	@ObfuscatedName("gs")
 	@ObfuscatedGetter(
 		intValue = -830604617
@@ -21,51 +23,59 @@ public class class246 {
 	@ObfuscatedGetter(
 		intValue = 867640615
 	)
-	final int field2799;
+	@Export("orientation")
+	final int orientation;
 	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
 		intValue = -2093600087
 	)
-	int field2793;
+	@Export("xMid")
+	int xMid;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = 437245253
 	)
-	int field2794;
+	@Export("yMid")
+	int yMid;
 	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
 		intValue = -1034674873
 	)
-	int field2798;
+	@Export("zMid")
+	int zMid;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		intValue = -147340903
 	)
-	int field2796;
+	@Export("xMidOffset")
+	int xMidOffset;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = 1590977931
 	)
-	int field2797;
+	@Export("yMidOffset")
+	int yMidOffset;
 	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
 		intValue = -81534159
 	)
-	int field2801;
+	@Export("zMidOffset")
+	int zMidOffset;
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "Ljl;"
 	)
-	class246 field2795;
+	@Export("aabb")
+	AABB aabb;
 
-	class246(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-		this.field2799 = var1;
-		this.field2793 = var2;
-		this.field2794 = var3;
-		this.field2798 = var4;
-		this.field2796 = var5;
-		this.field2797 = var6;
-		this.field2801 = var7;
+	AABB(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+		this.orientation = var1;
+		this.xMid = var2;
+		this.yMid = var3;
+		this.zMid = var4;
+		this.xMidOffset = var5;
+		this.yMidOffset = var6;
+		this.zMidOffset = var7;
 	}
 
 	@ObfuscatedName("ab")

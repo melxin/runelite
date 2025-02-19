@@ -1,3 +1,4 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -5,7 +6,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("ff")
 public class class153 extends class149 {
 	@ObfuscatedName("ht")
-	static String field1747;
+	@Export("gameSessionServiceBaseUrl")
+	static String gameSessionServiceBaseUrl;
 	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
 		intValue = -99695897

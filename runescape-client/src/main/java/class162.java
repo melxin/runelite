@@ -95,7 +95,7 @@ public class class162 extends class165 {
 		if (class200.topLevelWorldView == var0) {
 			return EnumComposition.method3908((float)var1, 0.0F, (float)var2);
 		} else {
-			class492 var3 = (class492)class200.topLevelWorldView.field1358.get((long)var0.field1354);
+			WorldEntity var3 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)var0.id);
 			return var3 == null ? EnumComposition.method3908((float)var1, 0.0F, (float)var2) : var3.method9302(var1, var2);
 		}
 	}

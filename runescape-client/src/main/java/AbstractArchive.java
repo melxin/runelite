@@ -569,7 +569,7 @@ public abstract class AbstractArchive {
 				} else {
 					var18 = PlayerUpdateManager.method2996(this.groups[var1], true);
 					Buffer var8 = new Buffer(var18);
-					var8.xteaDecrypt(var2, 5, var8.field5573.length);
+					var8.xteaDecrypt(var2, 5, var8.array.length);
 				}
 
 				byte[] var20 = class302.decompressBytes(var18);
@@ -584,7 +584,7 @@ public abstract class AbstractArchive {
 					var9 -= var3 * var10 * 4;
 					Buffer var11 = new Buffer(var20);
 					int[] var12 = new int[var3];
-					var11.field5570 = var9;
+					var11.offset = var9;
 
 					int var14;
 					int var15;
@@ -604,7 +604,7 @@ public abstract class AbstractArchive {
 						var12[var14] = 0;
 					}
 
-					var11.field5570 = var9;
+					var11.offset = var9;
 					var14 = 0;
 
 					for (var15 = 0; var15 < var10; ++var15) {

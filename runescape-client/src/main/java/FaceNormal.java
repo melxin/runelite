@@ -1,11 +1,13 @@
 import java.util.Iterator;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("jp")
-public class class248 {
+@Implements("FaceNormal")
+public class FaceNormal {
 	@ObfuscatedName("bo")
 	@Export("fontHelvetica13")
 	static java.awt.Font fontHelvetica13;
@@ -13,22 +15,22 @@ public class class248 {
 	@ObfuscatedGetter(
 		intValue = -1683601757
 	)
-	@Export("y")
-	int y;
+	@Export("x")
+	int x;
 	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
 		intValue = -1114771997
 	)
-	@Export("z")
-	int z;
+	@Export("y")
+	int y;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = -790978015
 	)
-	@Export("x")
-	int x;
+	@Export("z")
+	int z;
 
-	class248() {
+	FaceNormal() {
 	}
 
 	@ObfuscatedName("ab")
@@ -59,7 +61,7 @@ public class class248 {
 				WorldView var1 = (WorldView)var0.next();
 
 				for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
-					Player var3 = (Player)class200.topLevelWorldView.field1353.method7890((long)Client.playerUpdateManager.playerIndices[var2]);
+					Player var3 = (Player)class200.topLevelWorldView.players.get((long)Client.playerUpdateManager.playerIndices[var2]);
 					if (var3 != null) {
 						var3.method2476();
 					}
@@ -77,7 +79,7 @@ public class class248 {
 		garbageValue = "-1562587506"
 	)
 	static void method5192(WorldView var0) {
-		if (Client.combatTargetPlayerIndex >= 0 && var0.field1353.method7890((long)Client.combatTargetPlayerIndex) != null) {
+		if (Client.combatTargetPlayerIndex >= 0 && var0.players.get((long)Client.combatTargetPlayerIndex) != null) {
 			VarbitComposition.addPlayerToScene(var0, Client.combatTargetPlayerIndex, false);
 		}
 

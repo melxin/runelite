@@ -58,7 +58,7 @@ public class UserComparator4 implements Comparator {
 		if (Client.field810 != null) {
 			Client.field811 = Client.cycle;
 			Client.field810.method7860();
-			Iterator var0 = class200.topLevelWorldView.field1353.iterator();
+			Iterator var0 = class200.topLevelWorldView.players.iterator();
 
 			while (var0.hasNext()) {
 				Player var1 = (Player)var0.next();

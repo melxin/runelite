@@ -97,7 +97,7 @@ public class class272 {
 	)
 	@Export("getPacketBufferNode")
 	public static PacketBufferNode getPacketBufferNode(ClientPacket var0, IsaacCipher var1) {
-		PacketBufferNode var2 = class248.method5190();
+		PacketBufferNode var2 = FaceNormal.method5190();
 		var2.clientPacket = var0;
 		var2.clientPacketLength = var0.length;
 		if (var2.clientPacketLength == -1) {
@@ -123,7 +123,8 @@ public class class272 {
 		descriptor = "(Ldp;Ldf;IB)V",
 		garbageValue = "80"
 	)
-	static final void method5682(WorldView var0, Actor var1, int var2) {
+	@Export("updateActorSequence")
+	static final void updateActorSequence(WorldView var0, Actor var1, int var2) {
 		int var3;
 		SequenceDefinition var4;
 		int var5;
@@ -132,60 +133,60 @@ public class class272 {
 		int var8;
 		int var9;
 		int var12;
-		if (var1.field1276 >= Client.cycle) {
-			var3 = Math.max(1, var1.field1276 - Client.cycle);
-			var12 = var1.field1284 * 64 + var1.field1221 * 128;
-			var5 = var1.field1284 * 64 + var1.field1274 * 128;
+		if (var1.spotAnimation >= Client.cycle) {
+			var3 = Math.max(1, var1.spotAnimation - Client.cycle);
+			var12 = var1.size * 64 + var1.field1221 * 128;
+			var5 = var1.size * 64 + var1.field1274 * 128;
 			var1.x += (var12 - var1.x) / var3;
 			var1.y += (var5 - var1.y) / var3;
 			var1.field1277 = 0;
-			var1.field1282 = var1.field1278;
+			var1.orientation = var1.field1278;
 		} else if (var1.field1239 >= Client.cycle) {
-			boolean var19 = Client.cycle == var1.field1239 || var1.field1265 == -1 || var1.field1268 != 0;
+			boolean var19 = Client.cycle == var1.field1239 || var1.sequence == -1 || var1.sequenceDelay != 0;
 			if (!var19) {
-				var4 = WorldMapData_1.SequenceDefinition_get(var1.field1265);
+				var4 = WorldMapData_1.SequenceDefinition_get(var1.sequence);
 				if (var4 != null && !var4.isCachedModelIdSet()) {
-					var19 = var1.field1262 + 1 > var4.frameLengths[var1.field1266];
+					var19 = var1.sequenceFrameCycle + 1 > var4.frameLengths[var1.sequenceFrame];
 				} else {
 					var19 = true;
 				}
 			}
 
 			if (var19) {
-				var12 = var1.field1239 - var1.field1276;
-				var5 = Client.cycle - var1.field1276;
-				var6 = var1.field1284 * 64 + var1.field1221 * 128;
-				var7 = var1.field1284 * 64 + var1.field1274 * 128;
-				var8 = var1.field1284 * 64 + var1.field1273 * 128;
-				var9 = var1.field1284 * 64 + var1.field1275 * 128;
+				var12 = var1.field1239 - var1.spotAnimation;
+				var5 = Client.cycle - var1.spotAnimation;
+				var6 = var1.size * 64 + var1.field1221 * 128;
+				var7 = var1.size * 64 + var1.field1274 * 128;
+				var8 = var1.size * 64 + var1.field1273 * 128;
+				var9 = var1.size * 64 + var1.field1275 * 128;
 				var1.x = (var5 * var8 + var6 * (var12 - var5)) / var12;
 				var1.y = (var9 * var5 + var7 * (var12 - var5)) / var12;
 			}
 
 			var1.field1277 = 0;
-			var1.field1282 = var1.field1278;
-			var1.field1222 = var1.field1282;
+			var1.orientation = var1.field1278;
+			var1.rotation = var1.orientation;
 		} else {
 			WorldMapRenderer.method6148(var1);
 		}
 
 		if (var1.x < 128 || 13184 <= var1.x || var1.y < 128 || 13184 <= var1.y) {
-			var1.field1265 = -1;
-			var1.field1276 = 0;
+			var1.sequence = -1;
+			var1.spotAnimation = 0;
 			var1.field1239 = 0;
 			var1.clearSpotAnimations();
-			var1.x = var1.field1287[0] * 128 + var1.field1284 * 64;
-			var1.y = var1.field1288[0] * 128 + var1.field1284 * 64;
+			var1.x = var1.pathX[0] * 128 + var1.size * 64;
+			var1.y = var1.pathY[0] * 128 + var1.size * 64;
 			var1.method2592();
 		}
 
 		if (var1 == class132.localPlayer && (var1.x < 1536 || 11776 <= var1.x || var1.y < 1536 || 11776 <= var1.y)) {
-			var1.field1265 = -1;
-			var1.field1276 = 0;
+			var1.sequence = -1;
+			var1.spotAnimation = 0;
 			var1.field1239 = 0;
 			var1.clearSpotAnimations();
-			var1.x = var1.field1287[0] * 128 + var1.field1284 * 64;
-			var1.y = var1.field1288[0] * 128 + var1.field1284 * 64;
+			var1.x = var1.pathX[0] * 128 + var1.size * 64;
+			var1.y = var1.pathY[0] * 128 + var1.size * 64;
 			var1.method2592();
 		}
 
@@ -196,7 +197,7 @@ public class class272 {
 			Actor var20;
 			if (var1.targetIndex < var5) {
 				var13 = class387.method7530(var1.targetIndex, Client.worldViewManager);
-				var20 = (Actor)var13.field1356.method7890((long)var1.targetIndex);
+				var20 = (Actor)var13.npcs.get((long)var1.targetIndex);
 			} else {
 				var6 = var1.targetIndex - var5;
 				WorldViewManager var14 = Client.worldViewManager;
@@ -206,8 +207,8 @@ public class class272 {
 				while (true) {
 					if (var15.hasNext()) {
 						WorldView var10 = (WorldView)var15.next();
-						Player var11 = (Player)var10.field1353.method7890((long)var6);
-						if (var11 == null || var10.field1354 == -1) {
+						Player var11 = (Player)var10.players.get((long)var6);
+						if (var11 == null || var10.id == -1) {
 							continue;
 						}
 
@@ -220,23 +221,23 @@ public class class272 {
 				}
 
 				var13 = var16;
-				var20 = (Actor)var16.field1353.method7890((long)var6);
+				var20 = (Actor)var16.players.get((long)var6);
 			}
 
 			if (var20 != null) {
 				class442 var17 = EnumComposition.method3908((float)var1.x, 0.0F, (float)var1.y);
 				class442 var30;
-				if (var0.field1354 != var13.field1354) {
-					class492 var26;
-					if (var0.field1354 == -1) {
-						var26 = (class492)class200.topLevelWorldView.field1358.get((long)var13.field1354);
+				if (var0.id != var13.id) {
+					WorldEntity var26;
+					if (var0.id == -1) {
+						var26 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)var13.id);
 						var30 = var26.method9302(var20.x, var20.y);
-					} else if (var13.field1354 == -1) {
-						var26 = (class492)class200.topLevelWorldView.field1358.get((long)var0.field1354);
+					} else if (var13.id == -1) {
+						var26 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)var0.id);
 						var30 = var26.method9347(var20.x, var20.y);
 					} else {
-						var26 = (class492)class200.topLevelWorldView.field1358.get((long)var13.field1354);
-						class492 var29 = (class492)class200.topLevelWorldView.field1358.get((long)var0.field1354);
+						var26 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)var13.id);
+						WorldEntity var29 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)var0.id);
 						class442 var24 = var26.method9302(var20.x, var20.y);
 						var30 = var29.method9347((int)var24.field4898, (int)var24.field4900);
 						var24.method8341();
@@ -249,18 +250,18 @@ public class class272 {
 				var9 = (int)(var17.field4900 - var30.field4900);
 				if (var8 != 0 || var9 != 0) {
 					int var18 = (int)(Math.atan2((double)var8, (double)var9) * 325.94932345220167D) & 2047;
-					var1.field1282 = var18;
+					var1.orientation = var18;
 				}
 
 				var17.method8341();
 				var30.method8341();
-			} else if (var1.isWalking) {
+			} else if (var1.false0) {
 				var1.targetIndex = -1;
-				var1.isWalking = false;
+				var1.false0 = false;
 			}
 		}
 
-		if (var1.field1227 == 0 || var1.field1277 > 0) {
+		if (var1.pathLength == 0 || var1.field1277 > 0) {
 			var3 = -1;
 			if (var1.field1258 != -1 && var1.field1259 != -1) {
 				var12 = Coord.method6905(var1.field1258 - class200.topLevelWorldView.baseX);
@@ -271,61 +272,61 @@ public class class272 {
 					var8 = (int)(Math.atan2((double)var6, (double)var7) * 325.94932345220167D) & 2047;
 					var3 = var8;
 				}
-			} else if (var1.movementSequence != -1) {
-				var3 = var1.movementSequence;
+			} else if (var1.field1271 != -1) {
+				var3 = var1.field1271;
 			}
 
 			if (var3 != -1) {
-				var1.field1282 = var3;
-				if (var1.false0) {
-					var1.field1222 = var1.field1282;
+				var1.orientation = var3;
+				if (var1.field1260) {
+					var1.rotation = var1.orientation;
 				}
 			}
 
 			var1.method2601();
 		}
 
-		var3 = var1.field1282 - var1.field1222 & 2047;
+		var3 = var1.orientation - var1.rotation & 2047;
 		if (var3 != 0) {
 			boolean var25 = true;
 			boolean var22 = true;
 			++var1.field1264;
 			var6 = var3 > 1024 ? -1 : 1;
-			var1.field1222 += var6 * var1.field1267;
+			var1.rotation += var6 * var1.field1265;
 			boolean var23 = true;
-			if (var3 < var1.field1267 || var3 > 2048 - var1.field1267) {
-				var1.field1222 = var1.field1282;
+			if (var3 < var1.field1265 || var3 > 2048 - var1.field1265) {
+				var1.rotation = var1.orientation;
 				var23 = false;
 			}
 
-			if (var1.field1267 > 0 && var1.field1261 == var1.idleSequence && (var1.field1264 > 25 || var23)) {
-				if (var6 == -1 && var1.field1292 != -1) {
-					var1.field1261 = var1.field1292;
-				} else if (var6 == 1 && var1.field1228 != -1) {
-					var1.field1261 = var1.field1228;
+			if (var1.field1265 > 0 && var1.movementSequence == var1.idleSequence && (var1.field1264 > 25 || var23)) {
+				if (var6 == -1 && var1.turnLeftSequence != -1) {
+					var1.movementSequence = var1.turnLeftSequence;
+				} else if (var6 == 1 && var1.turnRightSequence != -1) {
+					var1.movementSequence = var1.turnRightSequence;
 				} else {
-					var1.field1261 = var1.field1237;
+					var1.movementSequence = var1.walkSequence;
 				}
 			}
 
-			var1.field1222 &= 2047;
+			var1.rotation &= 2047;
 		} else {
-			if (var1.isWalking) {
+			if (var1.false0) {
 				var1.targetIndex = -1;
-				var1.isWalking = false;
+				var1.false0 = false;
 			}
 
 			var1.field1264 = 0;
 		}
 
-		var1.field1223 = false;
-		if (var1.field1261 != -1) {
-			SequenceDefinition var27 = WorldMapData_1.SequenceDefinition_get(var1.field1261);
+		var1.isWalking = false;
+		if (var1.movementSequence != -1) {
+			SequenceDefinition var27 = WorldMapData_1.SequenceDefinition_get(var1.movementSequence);
 			if (var27 != null) {
 				if (!var27.isCachedModelIdSet() && var27.frameIds != null) {
-					++var1.field1263;
-					if (var1.movementFrame < var27.frameIds.length && var1.field1263 > var27.frameLengths[var1.movementFrame]) {
-						var1.field1263 = 1;
+					++var1.movementFrameCycle;
+					if (var1.movementFrame < var27.frameIds.length && var1.movementFrameCycle > var27.frameLengths[var1.movementFrame]) {
+						var1.movementFrameCycle = 1;
 						++var1.movementFrame;
 						MusicPatchPcmStream.method6807(var27, var1.movementFrame, var1.x, var1.y, var1 == class132.localPlayer);
 					}
@@ -338,12 +339,12 @@ public class class272 {
 							}
 
 							if (var1.movementFrame < 0 || var1.movementFrame >= var27.frameIds.length || var27.field2372 && var1.field1294 >= var27.field2355) {
-								var1.field1263 = 0;
+								var1.movementFrameCycle = 0;
 								var1.movementFrame = 0;
 								var1.field1294 = 0;
 							}
 						} else {
-							var1.field1263 = 0;
+							var1.movementFrameCycle = 0;
 							var1.movementFrame = 0;
 						}
 
@@ -363,21 +364,21 @@ public class class272 {
 
 							if (var1.movementFrame < 0 || var1.movementFrame >= var12 || var27.field2372 && var1.field1294 >= var27.field2355) {
 								var1.movementFrame = 0;
-								var1.field1263 = 0;
+								var1.movementFrameCycle = 0;
 								var1.field1294 = 0;
 							}
 						} else {
-							var1.field1263 = 0;
+							var1.movementFrameCycle = 0;
 							var1.movementFrame = 0;
 						}
 
 						MusicPatchPcmStream.method6807(var27, var1.movementFrame, var1.x, var1.y, var1 == class132.localPlayer);
 					}
 				} else {
-					var1.field1261 = -1;
+					var1.movementSequence = -1;
 				}
 			} else {
-				var1.field1261 = -1;
+				var1.movementSequence = -1;
 			}
 		}
 
@@ -385,7 +386,7 @@ public class class272 {
 
 		for (ActorSpotAnim var21 = (ActorSpotAnim)var28.method7899(); var21 != null; var21 = (ActorSpotAnim)var28.next()) {
 			if (var21.spotAnimation != -1 && Client.cycle >= var21.field5168) {
-				var5 = class176.method3761(var21.spotAnimation).sequence;
+				var5 = class176.SpotAnimationDefinition_get(var21.spotAnimation).sequence;
 				if (var5 == -1) {
 					var21.remove();
 					--var1.graphicsCount;
@@ -421,62 +422,62 @@ public class class272 {
 			}
 		}
 
-		if (var1.field1265 != -1 && var1.field1268 <= 1) {
-			var4 = WorldMapData_1.SequenceDefinition_get(var1.field1265);
-			if (var4.field2373 == 1 && var1.field1291 > 0 && var1.field1276 <= Client.cycle && var1.field1239 < Client.cycle) {
-				var1.field1268 = 1;
+		if (var1.sequence != -1 && var1.sequenceDelay <= 1) {
+			var4 = WorldMapData_1.SequenceDefinition_get(var1.sequence);
+			if (var4.field2373 == 1 && var1.field1291 > 0 && var1.spotAnimation <= Client.cycle && var1.field1239 < Client.cycle) {
+				var1.sequenceDelay = 1;
 				return;
 			}
 		}
 
-		if (var1.field1265 != -1 && var1.field1268 == 0) {
-			var4 = WorldMapData_1.SequenceDefinition_get(var1.field1265);
+		if (var1.sequence != -1 && var1.sequenceDelay == 0) {
+			var4 = WorldMapData_1.SequenceDefinition_get(var1.sequence);
 			if (var4 == null) {
-				var1.field1265 = -1;
+				var1.sequence = -1;
 			} else if (!var4.isCachedModelIdSet() && var4.frameIds != null) {
-				++var1.field1262;
-				if (var1.field1266 < var4.frameIds.length && var1.field1262 > var4.frameLengths[var1.field1266]) {
-					var1.field1262 = 1;
-					++var1.field1266;
-					MusicPatchPcmStream.method6807(var4, var1.field1266, var1.x, var1.y, var1 == class132.localPlayer);
+				++var1.sequenceFrameCycle;
+				if (var1.sequenceFrame < var4.frameIds.length && var1.sequenceFrameCycle > var4.frameLengths[var1.sequenceFrame]) {
+					var1.sequenceFrameCycle = 1;
+					++var1.sequenceFrame;
+					MusicPatchPcmStream.method6807(var4, var1.sequenceFrame, var1.x, var1.y, var1 == class132.localPlayer);
 				}
 
-				if (var1.field1266 >= var4.frameIds.length) {
-					var1.field1266 -= var4.frameCount;
+				if (var1.sequenceFrame >= var4.frameIds.length) {
+					var1.sequenceFrame -= var4.frameCount;
 					++var1.field1255;
 					if (var1.field1255 >= var4.field2355) {
-						var1.field1265 = -1;
-					} else if (var1.field1266 >= 0 && var1.field1266 < var4.frameIds.length) {
-						MusicPatchPcmStream.method6807(var4, var1.field1266, var1.x, var1.y, var1 == class132.localPlayer);
+						var1.sequence = -1;
+					} else if (var1.sequenceFrame >= 0 && var1.sequenceFrame < var4.frameIds.length) {
+						MusicPatchPcmStream.method6807(var4, var1.sequenceFrame, var1.x, var1.y, var1 == class132.localPlayer);
 					} else {
-						var1.field1265 = -1;
+						var1.sequence = -1;
 					}
 				}
 
-				var1.field1223 = var4.field2350;
+				var1.isWalking = var4.field2350;
 			} else if (var4.isCachedModelIdSet()) {
-				++var1.field1266;
+				++var1.sequenceFrame;
 				var5 = var4.getMayaAnimFrame();
-				if (var1.field1266 < var5) {
-					MusicPatchPcmStream.method6807(var4, var1.field1266, var1.x, var1.y, var1 == class132.localPlayer);
+				if (var1.sequenceFrame < var5) {
+					MusicPatchPcmStream.method6807(var4, var1.sequenceFrame, var1.x, var1.y, var1 == class132.localPlayer);
 				} else {
-					var1.field1266 -= var4.frameCount;
+					var1.sequenceFrame -= var4.frameCount;
 					++var1.field1255;
 					if (var1.field1255 >= var4.field2355) {
-						var1.field1265 = -1;
-					} else if (var1.field1266 >= 0 && var1.field1266 < var5) {
-						MusicPatchPcmStream.method6807(var4, var1.field1266, var1.x, var1.y, var1 == class132.localPlayer);
+						var1.sequence = -1;
+					} else if (var1.sequenceFrame >= 0 && var1.sequenceFrame < var5) {
+						MusicPatchPcmStream.method6807(var4, var1.sequenceFrame, var1.x, var1.y, var1 == class132.localPlayer);
 					} else {
-						var1.field1265 = -1;
+						var1.sequence = -1;
 					}
 				}
 			} else {
-				var1.field1265 = -1;
+				var1.sequence = -1;
 			}
 		}
 
-		if (var1.field1268 > 0) {
-			--var1.field1268;
+		if (var1.sequenceDelay > 0) {
+			--var1.sequenceDelay;
 		}
 
 	}

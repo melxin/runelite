@@ -76,7 +76,7 @@ public class ViewportMouse {
 		garbageValue = "877198529"
 	)
 	public static int method5407(Buffer var0, String var1) {
-		int var2 = var0.field5570;
+		int var2 = var0.offset;
 		int var4 = var1.length();
 		byte[] var5 = new byte[var4];
 
@@ -146,8 +146,8 @@ public class ViewportMouse {
 		}
 
 		var0.writeSmartByteShort(var5.length);
-		var0.field5570 += class366.huffman.compress(var5, 0, var5.length, var0.field5573, var0.field5570);
-		return var0.field5570 - var2;
+		var0.offset += class366.huffman.compress(var5, 0, var5.length, var0.array, var0.offset);
+		return var0.offset - var2;
 	}
 
 	@ObfuscatedName("jj")

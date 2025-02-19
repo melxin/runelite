@@ -285,10 +285,10 @@ public class class59 {
 	static Script newScript(byte[] var0) {
 		Script var1 = new Script();
 		Buffer var2 = new Buffer(var0);
-		var2.field5570 = var2.field5573.length - 2;
+		var2.offset = var2.array.length - 2;
 		int var3 = var2.readUnsignedShort();
-		int var4 = var2.field5573.length - 2 - var3 - 12;
-		var2.field5570 = var4;
+		int var4 = var2.array.length - 2 - var3 - 12;
+		var2.offset = var4;
 		int var5 = var2.readInt();
 		var1.localIntCount = var2.readUnsignedShort();
 		var1.localStringCount = var2.readUnsignedShort();
@@ -313,13 +313,13 @@ public class class59 {
 			}
 		}
 
-		var2.field5570 = 0;
+		var2.offset = 0;
 		var1.field1019 = var2.readStringCp1252NullTerminatedOrNull();
 		var1.opcodes = new int[var5];
 		var1.intOperands = new int[var5];
 		var1.stringOperands = new String[var5];
 
-		for (var7 = 0; var2.field5570 < var4; var1.opcodes[var7++] = var8) {
+		for (var7 = 0; var2.offset < var4; var1.opcodes[var7++] = var8) {
 			var8 = var2.readUnsignedShort();
 			if (var8 == 3) {
 				var1.stringOperands[var7] = var2.readStringCp1252NullTerminated();
@@ -407,9 +407,9 @@ public class class59 {
 	static void method1132(int var0, int var1, int var2, int var3, int var4, int var5) {
 		NodeDeque var6 = class376.worldView.groundItems[var0][var1][var2];
 		if (var6 != null) {
-			for (class108 var7 = (class108)var6.last(); var7 != null; var7 = (class108)var6.previous()) {
-				if ((var3 & 32767) == var7.id && var4 == var7.field1414) {
-					var7.field1414 = var5;
+			for (TileItem var7 = (TileItem)var6.last(); var7 != null; var7 = (TileItem)var6.previous()) {
+				if ((var3 & 32767) == var7.id && var4 == var7.quantity) {
+					var7.quantity = var5;
 					break;
 				}
 			}

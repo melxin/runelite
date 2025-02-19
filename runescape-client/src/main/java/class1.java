@@ -172,58 +172,58 @@ public class class1 implements Callable {
 		garbageValue = "407744035"
 	)
 	static final void method12(WorldView var0) {
-		for (class78 var1 = (class78)var0.projectiles.last(); var1 != null; var1 = (class78)var0.projectiles.previous()) {
-			if (var0.plane == var1.field1007 && Client.cycle <= var1.field991) {
-				if (Client.cycle >= var1.field990) {
+		for (Projectile var1 = (Projectile)var0.projectiles.last(); var1 != null; var1 = (Projectile)var0.projectiles.previous()) {
+			if (var0.plane == var1.plane && Client.cycle <= var1.cycleEnd) {
+				if (Client.cycle >= var1.cycleStart) {
 					NPC var2;
 					int var3;
 					Player var4;
-					if (!var1.field1006 && var1.field994 != 0) {
+					if (!var1.isMoving && var1.field994 != 0) {
 						if (var1.field994 > 0) {
-							var2 = (NPC)class376.worldView.field1356.method7890((long)(var1.field994 - 1));
+							var2 = (NPC)class376.worldView.npcs.get((long)(var1.field994 - 1));
 							if (var2 != null && 0 <= var2.x && var2.x < 13312 && 0 <= var2.y && var2.y < 13312) {
-								var1.field983 = var2.x;
-								var1.field997 = var2.y;
-								var1.method2300(var1.field987, var1.field988, var1.field989, Client.cycle);
+								var1.sourceX = var2.x;
+								var1.sourceY = var2.y;
+								var1.setDestination(var1.field987, var1.field988, var1.field989, Client.cycle);
 							}
 						} else {
 							var3 = -var1.field994 - 1;
 							if (var3 == Client.localPlayerIndex) {
 								var4 = class132.localPlayer;
 							} else {
-								var4 = (Player)class376.worldView.field1353.method7890((long)var3);
+								var4 = (Player)class376.worldView.players.get((long)var3);
 							}
 
 							if (var4 != null && 0 <= var4.x && var4.x < 13312 && 0 <= var4.y && var4.y < 13312) {
-								var1.field983 = var4.x;
-								var1.field997 = var4.y;
-								var1.method2300(var1.field987, var1.field988, var1.field989, Client.cycle);
+								var1.sourceX = var4.x;
+								var1.sourceY = var4.y;
+								var1.setDestination(var1.field987, var1.field988, var1.field989, Client.cycle);
 							}
 						}
 					}
 
-					if (var1.field995 > 0) {
-						var2 = (NPC)var0.field1356.method7890((long)(var1.field995 - 1));
+					if (var1.targetIndex > 0) {
+						var2 = (NPC)var0.npcs.get((long)(var1.targetIndex - 1));
 						if (var2 != null && 0 <= var2.x && var2.x < 13312 && 0 <= var2.y && var2.y < 13312) {
-							var1.method2300(var2.x, var2.y, DevicePcmPlayerProvider.getTileHeight(var0, var2.x, var2.y, var1.field1007) - var1.field1000, Client.cycle);
+							var1.setDestination(var2.x, var2.y, DevicePcmPlayerProvider.getTileHeight(var0, var2.x, var2.y, var1.plane) - var1.endHeight, Client.cycle);
 						}
 					}
 
-					if (var1.field995 < 0) {
-						var3 = -var1.field995 - 1;
+					if (var1.targetIndex < 0) {
+						var3 = -var1.targetIndex - 1;
 						if (var3 == Client.localPlayerIndex) {
 							var4 = class132.localPlayer;
 						} else {
-							var4 = (Player)var0.field1353.method7890((long)var3);
+							var4 = (Player)var0.players.get((long)var3);
 						}
 
 						if (var4 != null && 0 <= var4.x && var4.x < 13312 && 0 <= var4.y && var4.y < 13312) {
-							var1.method2300(var4.x, var4.y, DevicePcmPlayerProvider.getTileHeight(var0, var4.x, var4.y, var1.field1007) - var1.field1000, Client.cycle);
+							var1.setDestination(var4.x, var4.y, DevicePcmPlayerProvider.getTileHeight(var0, var4.x, var4.y, var1.plane) - var1.endHeight, Client.cycle);
 						}
 					}
 
-					var1.method2297(Client.graphicsCycle);
-					var0.scene.drawEntity(var0.plane, (int)var1.field981, (int)var1.field998, (int)var1.field999, 60, var1, var1.field1005, -1L, false);
+					var1.advance(Client.graphicsCycle);
+					var0.scene.drawEntity(var0.plane, (int)var1.x, (int)var1.y, (int)var1.z, 60, var1, var1.yaw, -1L, false);
 				}
 			} else {
 				var1.remove();

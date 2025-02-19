@@ -135,19 +135,19 @@ public enum class145 implements Enum {
 			}
 
 			boolean var6 = false;
-			NPC var21 = (NPC)var0.field1356.method7890((long)var5);
+			NPC var21 = (NPC)var0.npcs.get((long)var5);
 			if (var21 == null) {
 				var21 = new NPC(var5);
-				var0.field1356.method7884(var21, (long)var5);
+				var0.npcs.add(var21, (long)var5);
 				var6 = true;
 			}
 
 			var0.field1355.method9006(var5);
 			var21.field1371 = false;
-			var21.field1219 = var0.field1354;
+			var21.worldViewId = var0.id;
 			var11 = Client.defaultRotations[var2.readBits(3)];
 			if (var6) {
-				var21.field1282 = var21.field1222 = var11;
+				var21.orientation = var21.rotation = var11;
 			}
 
 			boolean var12 = var2.readBits(1) == 1;
@@ -187,8 +187,8 @@ public enum class145 implements Enum {
 
 			var21.definition = class91.getNpcDefinition(var2.readBits(14));
 			class94.method2524(var21);
-			if (var21.field1267 == 0) {
-				var21.field1222 = 0;
+			if (var21.field1265 == 0) {
+				var21.rotation = 0;
 			}
 
 			var21.method2901(var9 + class519.field5270, var10 + Canvas.field100, var8 == 1);
@@ -200,7 +200,7 @@ public enum class145 implements Enum {
 		int var22;
 		for (var22 = 0; var22 < Client.npcCount; ++var22) {
 			var4 = Client.npcIndices[var22];
-			var15 = (NPC)var0.field1356.method7890((long)var4);
+			var15 = (NPC)var0.npcs.get((long)var4);
 			int var23 = var2.readUnsignedByte();
 			int var7;
 			if ((var23 & 16) != 0) {
@@ -256,7 +256,7 @@ public enum class145 implements Enum {
 			}
 
 			if ((var23 & 256) != 0) {
-				var15.field1280 = Client.cycle + var2.readUnsignedShortAdd();
+				var15.npcCycle = Client.cycle + var2.readUnsignedShortAdd();
 				var15.field1281 = Client.cycle + var2.readUnsignedShortAdd();
 				byte var24 = var2.readByte();
 				byte var25 = var2.readByteSub();
@@ -267,7 +267,7 @@ public enum class145 implements Enum {
 
 			if ((var23 & 4) != 0) {
 				var15.overheadText = var2.readStringCp1252NullTerminated();
-				var15.rotation = 100;
+				var15.overheadTextCyclesRemaining = 100;
 			}
 
 			if ((var23 & 32) != 0) {
@@ -277,25 +277,25 @@ public enum class145 implements Enum {
 				}
 
 				var8 = var2.readUnsignedByte();
-				if (var7 == var15.field1265 && var7 != -1) {
+				if (var7 == var15.sequence && var7 != -1) {
 					var9 = WorldMapData_1.SequenceDefinition_get(var7).restartMode;
 					if (var9 == 1) {
-						var15.field1266 = 0;
-						var15.field1262 = 0;
-						var15.field1268 = var8;
+						var15.sequenceFrame = 0;
+						var15.sequenceFrameCycle = 0;
+						var15.sequenceDelay = var8;
 						var15.field1255 = 0;
 					}
 
 					if (var9 == 2) {
 						var15.field1255 = 0;
 					}
-				} else if (var7 == -1 || var15.field1265 == -1 || WorldMapData_1.SequenceDefinition_get(var7).field2368 >= WorldMapData_1.SequenceDefinition_get(var15.field1265).field2368) {
-					var15.field1265 = var7;
-					var15.field1266 = 0;
-					var15.field1262 = 0;
-					var15.field1268 = var8;
+				} else if (var7 == -1 || var15.sequence == -1 || WorldMapData_1.SequenceDefinition_get(var7).field2368 >= WorldMapData_1.SequenceDefinition_get(var15.sequence).field2368) {
+					var15.sequence = var7;
+					var15.sequenceFrame = 0;
+					var15.sequenceFrameCycle = 0;
+					var15.sequenceDelay = var8;
 					var15.field1255 = 0;
-					var15.field1291 = var15.field1227;
+					var15.field1291 = var15.pathLength;
 				}
 			}
 
@@ -363,13 +363,13 @@ public enum class145 implements Enum {
 
 			if ((var23 & 131072) != 0) {
 				var7 = var2.readUnsignedIntLE();
-				var15.field1292 = (var7 & 1) != 0 ? var2.readUnsignedShort() : var15.definition.turnLeftSequence;
-				var15.field1228 = (var7 & 2) != 0 ? var2.readUnsignedShort() : var15.definition.turnRightSequence;
-				var15.field1237 = (var7 & 4) != 0 ? var2.readUnsignedShort() : var15.definition.walkSequence;
-				var15.field1238 = (var7 & 8) != 0 ? var2.readUnsignedShortLE() : var15.definition.walkBackSequence;
-				var15.field1231 = (var7 & 16) != 0 ? var2.readUnsignedShortAdd() : var15.definition.walkLeftSequence;
-				var15.field1232 = (var7 & 32) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.walkRightSequence;
-				var15.field1230 = (var7 & 64) != 0 ? var2.readUnsignedShort() : var15.definition.field2049;
+				var15.turnLeftSequence = (var7 & 1) != 0 ? var2.readUnsignedShort() : var15.definition.turnLeftSequence;
+				var15.turnRightSequence = (var7 & 2) != 0 ? var2.readUnsignedShort() : var15.definition.turnRightSequence;
+				var15.walkSequence = (var7 & 4) != 0 ? var2.readUnsignedShort() : var15.definition.walkSequence;
+				var15.walkBackSequence = (var7 & 8) != 0 ? var2.readUnsignedShortLE() : var15.definition.walkBackSequence;
+				var15.walkLeftSequence = (var7 & 16) != 0 ? var2.readUnsignedShortAdd() : var15.definition.walkLeftSequence;
+				var15.walkRightSequence = (var7 & 32) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.walkRightSequence;
+				var15.runSequence = (var7 & 64) != 0 ? var2.readUnsignedShort() : var15.definition.field2049;
 				var15.field1234 = (var7 & 128) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.field2037;
 				var15.field1235 = (var7 & 256) != 0 ? var2.readUnsignedShort() : var15.definition.field2065;
 				var15.field1272 = (var7 & 512) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.field2052;
@@ -445,7 +445,7 @@ public enum class145 implements Enum {
 			if ((var23 & 64) != 0) {
 				var7 = var2.readUnsignedShortAdd();
 				var8 = var2.readUnsignedShortAddLE();
-				var15.false0 = var2.readUnsignedByte() == 1;
+				var15.field1260 = var2.readUnsignedByte() == 1;
 				var15.field1258 = var7;
 				var15.field1259 = var8;
 			}
@@ -510,29 +510,29 @@ public enum class145 implements Enum {
 				var15.field1274 = var2.readByte();
 				var15.field1273 = var2.readByteAdd();
 				var15.field1275 = var2.readByteSub();
-				var15.field1276 = var2.readUnsignedShortAddLE() + Client.cycle;
+				var15.spotAnimation = var2.readUnsignedShortAddLE() + Client.cycle;
 				var15.field1239 = var2.readUnsignedShortAddLE() + Client.cycle;
 				var15.field1278 = var2.readUnsignedShortAddLE();
-				var15.field1227 = 1;
+				var15.pathLength = 1;
 				var15.field1291 = 0;
-				var15.field1221 += var15.field1287[0];
-				var15.field1274 += var15.field1288[0];
-				var15.field1273 += var15.field1287[0];
-				var15.field1275 += var15.field1288[0];
+				var15.field1221 += var15.pathX[0];
+				var15.field1274 += var15.pathY[0];
+				var15.field1273 += var15.pathX[0];
+				var15.field1275 += var15.pathY[0];
 			}
 		}
 
 		for (var22 = 0; var22 < Client.field709; ++var22) {
 			var4 = Client.field653[var22];
-			var15 = (NPC)var0.field1356.method7890((long)var4);
+			var15 = (NPC)var0.npcs.get((long)var4);
 			if (var15.field1371) {
 				var15.definition = null;
-				var15.method9623();
+				var15.detach();
 			}
 		}
 
-		if (var2.field5570 != Client.packetWriter.serverPacketLength) {
-			throw new RuntimeException(var2.field5570 + "," + Client.packetWriter.serverPacketLength);
+		if (var2.offset != Client.packetWriter.serverPacketLength) {
+			throw new RuntimeException(var2.offset + "," + Client.packetWriter.serverPacketLength);
 		}
 	}
 }

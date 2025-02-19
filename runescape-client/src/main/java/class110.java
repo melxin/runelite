@@ -41,8 +41,8 @@ final class class110 implements class353 {
 		var2 = var2 * 128 + 64;
 		var3 = var3 * 128 + 64;
 		var4 = var4 * 128 + 64;
-		class78 var14 = new class78(var6, var0, var1, var2, DevicePcmPlayerProvider.getTileHeight(class376.worldView, var1, var2, var0) - var7, var9 + Client.cycle, var10 + Client.cycle, var11, var12, var13, var5, var8);
-		var14.method2300(var3, var4, DevicePcmPlayerProvider.getTileHeight(class376.worldView, var3, var4, var0) - var8, var9 + Client.cycle);
+		Projectile var14 = new Projectile(var6, var0, var1, var2, DevicePcmPlayerProvider.getTileHeight(class376.worldView, var1, var2, var0) - var7, var9 + Client.cycle, var10 + Client.cycle, var11, var12, var13, var5, var8);
+		var14.setDestination(var3, var4, DevicePcmPlayerProvider.getTileHeight(class376.worldView, var3, var4, var0) - var8, var9 + Client.cycle);
 		class376.worldView.projectiles.addFirst(var14);
 	}
 }

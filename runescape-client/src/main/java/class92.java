@@ -80,7 +80,7 @@ public enum class92 implements Enum {
 		int var4;
 		int var5;
 		if (Client.oculusOrbState == 0) {
-			WorldView var11 = Client.worldViewManager.method2546(Client.field645);
+			WorldView var11 = Client.worldViewManager.getWorldView(Client.field645);
 			if (var11 == null) {
 				var11 = class200.topLevelWorldView;
 			}
@@ -88,39 +88,39 @@ public enum class92 implements Enum {
 			Object var12 = null;
 			switch(SoundCache.field311.field4173) {
 			case 0:
-				var12 = (Entity)var11.field1353.method7890((long)Client.field646);
+				var12 = (Entity)var11.players.get((long)Client.field646);
 				break;
 			case 1:
-				var12 = (Entity)var11.field1356.method7890((long)Client.field646);
+				var12 = (Entity)var11.npcs.get((long)Client.field646);
 				break;
 			case 2:
-				var12 = (Entity)var11.field1358.get((long)Client.field646);
+				var12 = (Entity)var11.worldEntities.get((long)Client.field646);
 			}
 
 			if (var12 == null) {
 				var12 = class132.localPlayer;
 			}
 
-			Client.serverCycle = ((Entity)var12).getX();
+			Client.field647 = ((Entity)var12).getX();
 			Client.field532 = ((Entity)var12).getY();
 			if (var11 != class200.topLevelWorldView) {
 				class442 var13 = class162.method3620(var11, ((Entity)var12).getX(), ((Entity)var12).getY());
-				Client.serverCycle = (int)var13.field4898;
+				Client.field647 = (int)var13.field4898;
 				Client.field532 = (int)var13.field4900;
 				var13.method8341();
 			}
 
 			var2 = ((Entity)var12).getPlane();
-			if (RestClientThreadFactory.oculusOrbFocalPointX - Client.serverCycle >= -500 && RestClientThreadFactory.oculusOrbFocalPointX - Client.serverCycle <= 500 && class173.oculusOrbFocalPointY - Client.field532 >= -500 && class173.oculusOrbFocalPointY - Client.field532 <= 500) {
-				if (RestClientThreadFactory.oculusOrbFocalPointX != Client.serverCycle) {
-					RestClientThreadFactory.oculusOrbFocalPointX += (Client.serverCycle - RestClientThreadFactory.oculusOrbFocalPointX) / 16;
+			if (RestClientThreadFactory.oculusOrbFocalPointX - Client.field647 >= -500 && RestClientThreadFactory.oculusOrbFocalPointX - Client.field647 <= 500 && class173.oculusOrbFocalPointY - Client.field532 >= -500 && class173.oculusOrbFocalPointY - Client.field532 <= 500) {
+				if (RestClientThreadFactory.oculusOrbFocalPointX != Client.field647) {
+					RestClientThreadFactory.oculusOrbFocalPointX += (Client.field647 - RestClientThreadFactory.oculusOrbFocalPointX) / 16;
 				}
 
 				if (Client.field532 != class173.oculusOrbFocalPointY) {
 					class173.oculusOrbFocalPointY += (Client.field532 - class173.oculusOrbFocalPointY) / 16;
 				}
 			} else {
-				RestClientThreadFactory.oculusOrbFocalPointX = Client.serverCycle;
+				RestClientThreadFactory.oculusOrbFocalPointX = Client.field647;
 				class173.oculusOrbFocalPointY = Client.field532;
 			}
 
@@ -160,12 +160,12 @@ public enum class92 implements Enum {
 				Client.field617 += (var7 - Client.field617) / 80;
 			}
 
-			Client.field648 = DevicePcmPlayerProvider.getTileHeight(class200.topLevelWorldView, Client.serverCycle, Client.field532, var2);
+			Client.field648 = DevicePcmPlayerProvider.getTileHeight(class200.topLevelWorldView, Client.field647, Client.field532, var2);
 			class274.oculusOrbFocalPointZ = Client.field648 - Client.camFollowHeight;
 		} else if (Client.oculusOrbState == 1) {
 			if (Client.field614 && class132.localPlayer != null) {
-				var0 = class132.localPlayer.field1287[0];
-				var1 = class132.localPlayer.field1288[0];
+				var0 = class132.localPlayer.pathX[0];
+				var1 = class132.localPlayer.pathY[0];
 				if (var0 >= 0 && 104 > var0 && var1 >= 0 && 104 > var1) {
 					RestClientThreadFactory.oculusOrbFocalPointX = class132.localPlayer.x;
 					var2 = DevicePcmPlayerProvider.getTileHeight(class200.topLevelWorldView, class132.localPlayer.x, class132.localPlayer.y, class200.topLevelWorldView.plane) - Client.camFollowHeight;

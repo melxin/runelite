@@ -229,7 +229,7 @@ public class FloorOverlayDefinition extends DualNode {
 			}
 
 			byte[] var3 = new byte[var2];
-			var0.field5570 += class366.huffman.decompress(var0.field5573, var0.field5570, var3, 0, var2);
+			var0.offset += class366.huffman.decompress(var0.array, var0.offset, var3, 0, var2);
 			String var4 = class159.decodeStringCp1252(var3, 0, var2);
 			var1 = var4;
 		} catch (Exception var6) {

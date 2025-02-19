@@ -76,7 +76,8 @@ public class FontName {
 		descriptor = "(I)[B",
 		garbageValue = "431709269"
 	)
-	public static byte[] method9924() {
+	@Export("randomDatData2")
+	public static byte[] randomDatData2() {
 		byte[] var0 = new byte[24];
 
 		try {

@@ -33,7 +33,7 @@ public class Varcs {
 
 	Varcs() {
 		this.unwrittenChanges = false;
-		int var1 = Client.field548.getGroupFileCount(19);
+		int var1 = Client.archive4.getGroupFileCount(19);
 		this.map = new HashMap();
 		this.intsPersistence = new boolean[var1];
 
@@ -170,7 +170,7 @@ public class Varcs {
 				}
 			}
 
-			var1.write(var26.field5573, 0, var26.field5570);
+			var1.write(var26.array, 0, var26.offset);
 		} catch (Exception var24) {
 		} finally {
 			try {
@@ -206,7 +206,7 @@ public class Varcs {
 				}
 
 				Buffer var14 = new Buffer(var2);
-				if (var14.field5573.length - var14.field5570 < 1) {
+				if (var14.array.length - var14.offset < 1) {
 					return;
 				}
 

@@ -409,7 +409,7 @@ public class Menu {
 			}
 		}
 
-		class78.method2303(this.menuX, this.menuY, this.menuWidth, this.menuHeight * -907939499);
+		Projectile.method2303(this.menuX, this.menuY, this.menuWidth, this.menuHeight * -907939499);
 		if (this.field5720 != -1 && this.subMenus[this.field5720] != null) {
 			this.subMenus[this.field5720].method10879();
 		}
