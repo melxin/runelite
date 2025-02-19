@@ -3,53 +3,53 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lb")
+@ObfuscatedName("ld")
 @Implements("WorldMapSection")
 public interface WorldMapSection {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lkg;B)V",
-		garbageValue = "43"
+		descriptor = "(Lly;B)V",
+		garbageValue = "-127"
 	)
 	@Export("expandBounds")
 	void expandBounds(WorldMapArea var1);
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)Z",
-		garbageValue = "53"
+		descriptor = "(IIII)Z",
+		garbageValue = "2003842246"
 	)
 	@Export("containsCoord")
 	boolean containsCoord(int var1, int var2, int var3);
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(III)Z",
-		garbageValue = "-177019651"
+		garbageValue = "-1047006974"
 	)
 	@Export("containsPosition")
 	boolean containsPosition(int var1, int var2);
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)[I",
-		garbageValue = "1"
+		descriptor = "(IIII)[I",
+		garbageValue = "16776960"
 	)
 	@Export("getBorderTileLengths")
 	int[] getBorderTileLengths(int var1, int var2, int var3);
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lnz;",
-		garbageValue = "-425070677"
+		descriptor = "(III)Lnq;",
+		garbageValue = "-1362839714"
 	)
 	@Export("coord")
 	Coord coord(int var1, int var2);
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;I)V",
-		garbageValue = "-1542767096"
+		garbageValue = "-2010052210"
 	)
 	@Export("read")
 	void read(Buffer var1);

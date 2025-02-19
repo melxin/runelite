@@ -4,61 +4,61 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jx")
+@ObfuscatedName("ha")
 @Implements("KitDefinition")
 public class KitDefinition extends DualNode {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
+		descriptor = "Lpl;"
 	)
 	@Export("KitDefinition_archive")
 	public static AbstractArchive KitDefinition_archive;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
+		descriptor = "Lpl;"
 	)
 	@Export("KitDefinition_modelsArchive")
 	public static AbstractArchive KitDefinition_modelsArchive;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -596329219
+		intValue = 1282647929
 	)
 	@Export("KitDefinition_fileCount")
 	public static int KitDefinition_fileCount;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("KitDefinition_cached")
-	public static EvictingDualNodeHashTable KitDefinition_cached;
-	@ObfuscatedName("ag")
-	@Export("ByteArrayPool_altSizeArrayCounts")
-	static int[] ByteArrayPool_altSizeArrayCounts;
-	@ObfuscatedName("ad")
+	static EvictingDualNodeHashTable KitDefinition_cached;
+	@ObfuscatedName("ju")
+	@Export("regionLandArchives")
+	static byte[][] regionLandArchives;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -2047161983
+		intValue = 528326695
 	)
 	@Export("bodypartID")
 	int bodypartID;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("models2")
 	int[] models2;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@Export("recolorFrom")
 	short[] recolorFrom;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@Export("recolorTo")
 	short[] recolorTo;
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@Export("retextureFrom")
 	short[] retextureFrom;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@Export("retextureTo")
 	short[] retextureTo;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@Export("models")
 	int[] models;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ax")
 	@Export("nonSelectable")
 	public boolean nonSelectable;
 
@@ -66,7 +66,7 @@ public class KitDefinition extends DualNode {
 		KitDefinition_cached = new EvictingDualNodeHashTable(64);
 	}
 
-	public KitDefinition() {
+	KitDefinition() {
 		this.bodypartID = -1;
 		this.models = new int[]{-1, -1, -1, -1, -1};
 		this.nonSelectable = false;
@@ -75,10 +75,10 @@ public class KitDefinition extends DualNode {
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;I)V",
-		garbageValue = "-1489503012"
+		garbageValue = "-1535189292"
 	)
 	@Export("decode")
-	public void decode(Buffer var1) {
+	void decode(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
@@ -89,10 +89,10 @@ public class KitDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;II)V",
-		garbageValue = "2046111270"
+		garbageValue = "-1938189657"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -135,23 +135,23 @@ public class KitDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(III)Z",
-		garbageValue = "1606136182"
+		descriptor = "(IIB)Z",
+		garbageValue = "5"
 	)
-	public boolean method5207(int var1, int var2) {
+	public boolean method3844(int var1, int var2) {
 		if (var2 == 1) {
-			return var1 + 7 == this.bodypartID;
+			return this.bodypartID == var1 + 7;
 		} else {
 			return this.bodypartID == var1;
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "182221784"
+		descriptor = "(B)Z",
+		garbageValue = "77"
 	)
 	@Export("ready")
 	public boolean ready() {
@@ -170,10 +170,10 @@ public class KitDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lgx;",
-		garbageValue = "-364982580"
+		descriptor = "(B)Ljk;",
+		garbageValue = "80"
 	)
 	@Export("getModelData")
 	public ModelData getModelData() {
@@ -210,12 +210,12 @@ public class KitDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-115"
+		descriptor = "(I)Z",
+		garbageValue = "-1932626116"
 	)
-	public boolean method5210() {
+	public boolean method3836() {
 		boolean var1 = true;
 
 		for (int var2 = 0; var2 < 5; ++var2) {
@@ -227,10 +227,10 @@ public class KitDefinition extends DualNode {
 		return var1;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lgx;",
-		garbageValue = "-1755493310"
+		descriptor = "(B)Ljk;",
+		garbageValue = "17"
 	)
 	@Export("getKitDefinitionModels")
 	public ModelData getKitDefinitionModels() {
@@ -258,5 +258,42 @@ public class KitDefinition extends DualNode {
 		}
 
 		return var5;
+	}
+
+	@ObfuscatedName("md")
+	@ObfuscatedSignature(
+		descriptor = "(Lnz;IIS)V",
+		garbageValue = "4315"
+	)
+	@Export("alignWidgetPosition")
+	static void alignWidgetPosition(Widget var0, int var1, int var2) {
+		if (var0.xAlignment == 0) {
+			var0.x = var0.rawX;
+		} else if (var0.xAlignment == 1) {
+			var0.x = var0.rawX + (var1 - var0.width * 779142065) / 2;
+		} else if (var0.xAlignment == 2) {
+			var0.x = var1 - var0.width * 779142065 - var0.rawX;
+		} else if (var0.xAlignment == 3) {
+			var0.x = var0.rawX * var1 >> 14;
+		} else if (var0.xAlignment == 4) {
+			var0.x = (var0.rawX * var1 >> 14) + (var1 - var0.width * 779142065) / 2;
+		} else {
+			var0.x = var1 - var0.width * 779142065 - (var0.rawX * var1 >> 14);
+		}
+
+		if (var0.yAlignment == 0) {
+			var0.y = var0.rawY;
+		} else if (var0.yAlignment == 1) {
+			var0.y = var0.rawY + (var2 - var0.height * 1836304183) / 2;
+		} else if (var0.yAlignment == 2) {
+			var0.y = var2 - var0.height * 1836304183 - var0.rawY;
+		} else if (var0.yAlignment == 3) {
+			var0.y = var2 * var0.rawY >> 14;
+		} else if (var0.yAlignment == 4) {
+			var0.y = (var2 * var0.rawY >> 14) + (var2 - var0.height * 1836304183) / 2;
+		} else {
+			var0.y = var2 - var0.height * 1836304183 - (var2 * var0.rawY >> 14);
+		}
+
 	}
 }

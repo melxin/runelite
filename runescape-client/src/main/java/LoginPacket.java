@@ -4,79 +4,115 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fk")
+@ObfuscatedName("fm")
 @Implements("LoginPacket")
-public class LoginPacket extends class150 {
-	@ObfuscatedName("ad")
-	@Export("Interpreter_stringLocals")
-	static String[] Interpreter_stringLocals;
-	@ObfuscatedName("mz")
+public class LoginPacket extends class149 {
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 851312265
+		longValue = 569762769106855655L
 	)
-	static int field1676;
+	long field1714;
 	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		longValue = -7198038692640291871L
-	)
-	long field1673;
-	@ObfuscatedName("ah")
-	String field1672;
+	String field1712;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
 		descriptor = "Lfv;"
 	)
-	final class153 this$0;
+	final class152 this$0;
 
 	@ObfuscatedSignature(
 		descriptor = "(Lfv;)V"
 	)
-	LoginPacket(class153 var1) {
+	LoginPacket(class152 var1) {
 		this.this$0 = var1;
-		this.field1673 = -1L;
-		this.field1672 = null;
+		this.field1714 = -1L;
+		this.field1712 = null;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Lvy;B)V",
+		garbageValue = "25"
+	)
+	void vmethod3702(Buffer var1) {
+		if (var1.readUnsignedByte() != 255) {
+			--var1.field5570;
+			this.field1714 = var1.readLong();
+		}
+
+		this.field1712 = var1.readStringCp1252NullTerminatedOrNull();
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "-1355269794"
+		descriptor = "(Lgg;I)V",
+		garbageValue = "2011970201"
 	)
-	void vmethod3879(Buffer var1) {
-		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
-			this.field1673 = var1.readLong();
+	void vmethod3705(ClanSettings var1) {
+		var1.method3553(this.field1714, this.field1712, 0);
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;B)V",
+		garbageValue = "7"
+	)
+	@Export("addGameMessage")
+	static void addGameMessage(int var0, String var1, String var2) {
+		ScriptFrame.addChatMessage(var0, var1, var2, (String)null);
+	}
+
+	@ObfuscatedName("ia")
+	@ObfuscatedSignature(
+		descriptor = "(S)V",
+		garbageValue = "-3425"
+	)
+	static void method3468() {
+		if (class541.worldMap != null) {
+			class541.worldMap.method9727(class200.topLevelWorldView.plane, (Client.serverCycle >> 7) + class200.topLevelWorldView.baseX, (Client.field532 >> 7) + class200.topLevelWorldView.baseY, false);
+			class541.worldMap.loadCache();
 		}
 
-		this.field1672 = var1.readStringCp1252NullTerminatedOrNull();
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ld")
 	@ObfuscatedSignature(
-		descriptor = "(Lgq;B)V",
-		garbageValue = "0"
+		descriptor = "(IIB)Z",
+		garbageValue = "15"
 	)
-	void vmethod3882(ClanSettings var1) {
-		var1.method3691(this.field1673, this.field1672, 0);
-	}
+	static boolean method3469(int var0, int var1) {
+		if (var1 >= 2000) {
+			var1 -= 2000;
+		}
 
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "37"
-	)
-	public static int method3577(int var0) {
-		long var2 = ViewportMouse.ViewportMouse_entityTags[var0];
-		int var1 = (int)(var2 >>> 7 & 127L);
-		return var1;
-	}
-
-	@ObfuscatedName("bc")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "98"
-	)
-	static int method3575(int var0) {
-		return (int)Math.pow(2.0D, (double)(7.0F + (float)var0 / 256.0F));
+		class503 var2 = Client.worldViewManager.method2537(var0);
+		boolean var3 = var0 == -1;
+		boolean var4 = var0 == Client.field780;
+		boolean var5 = true;
+		boolean var6 = var1 == 1 || var1 == 2 || var1 >= 3 && var1 <= 6 || var1 == 1001;
+		if (var6 && !var2.method9491(var5, var3, var4)) {
+			return false;
+		} else {
+			boolean var7 = var1 == 16 || var1 == 17 || var1 >= 18 && var1 <= 22;
+			if (var7 && !var2.method9489(var5, var3, var4)) {
+				return false;
+			} else {
+				boolean var8 = var1 == 7 || var1 == 8 || var1 >= 9 && var1 <= 13;
+				if (var8 && !var2.method9490(var5, var3, var4)) {
+					return false;
+				} else {
+					boolean var9 = var1 == 14 || var1 == 15 || var1 >= 44 && var1 <= 51;
+					if (var9 && !var2.method9487(var5, var3, var4)) {
+						return false;
+					} else if (var1 == 1002 && !var2.method9511(var5, var3, var4)) {
+						return false;
+					} else if (var1 == 1004 && !var2.method9492(var5, var3, var4)) {
+						return false;
+					} else {
+						return var1 != 1003 || var2.method9493(var5, var3, var4);
+					}
+				}
+			}
+		}
 	}
 }

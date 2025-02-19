@@ -4,125 +4,93 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eg")
+@ObfuscatedName("jc")
 @Implements("TileItem")
-public final class TileItem extends Renderable {
-	@ObfuscatedName("ay")
+public abstract class TileItem extends Renderable {
+	@ObfuscatedName("es")
 	@ObfuscatedGetter(
-		intValue = 993264681
+		intValue = 1006610245
 	)
-	@Export("id")
-	int id;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = -1292745957
-	)
-	@Export("quantity")
-	int quantity;
-	@ObfuscatedName("az")
-	@ObfuscatedGetter(
-		intValue = 208941453
-	)
-	@Export("visibleTime")
-	int visibleTime;
-	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = 731829437
-	)
-	@Export("despawnTime")
-	int despawnTime;
-	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = 455551503
-	)
-	@Export("ownership")
-	int ownership;
-	@ObfuscatedName("an")
-	@Export("isPrivate")
-	boolean isPrivate;
-	@ObfuscatedName("ax")
-	@ObfuscatedGetter(
-		intValue = 1407412917
-	)
-	@Export("flag")
-	int flag;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lia;"
-	)
-	PlayerCompositionColorTextureOverride field1388;
+	@Export("height")
+	public int height;
 
-	TileItem() {
-		this.flag = 31;
+	protected TileItem() {
+		this.height = 1000;
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-768696378"
+		descriptor = "(I)Ljf;",
+		garbageValue = "-516720946"
 	)
-	@Export("setFlag")
-	void setFlag(int var1) {
-		this.flag = var1;
+	@Export("getModel")
+	protected Model getModel() {
+		return null;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("fu")
+	void vmethod5284(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, long var10, int var12, int var13, boolean var14) {
+		Model var15 = this.getModel();
+		if (var15 != null) {
+			this.height = var15.height;
+			int var16 = Rasterizer3D.Rasterizer3D_sine[var2];
+			int var17 = Rasterizer3D.Rasterizer3D_cosine[var2];
+			int var18 = Rasterizer3D.Rasterizer3D_sine[var3];
+			int var19 = Rasterizer3D.Rasterizer3D_cosine[var3];
+			var15.draw(var1, var16, var17, var18, var19, var4 - var7, var5 - var8, var6 - var9, var10);
+		}
+
+	}
+
+	@ObfuscatedName("kk")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "49"
+		descriptor = "(ILro;IIIJ)V"
 	)
-	boolean method3116(int var1) {
-		if (var1 >= 0 && var1 <= 4) {
-			return (this.flag & 1 << var1) != 0;
+	@Export("draw")
+	void draw(int var1, TransformationMatrix var2, int var3, int var4, int var5, long var6) {
+		Model var8 = this.getModel();
+		if (var8 != null) {
+			this.height = var8.height;
+			var8.draw(var1, var2, var3, var4, var5, var6);
+		}
+
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Luk;B)I",
+		garbageValue = "-18"
+	)
+	public static final int method5177(LoginType var0) {
+		if (var0 == null) {
+			return 12;
 		} else {
-			return true;
+			switch(var0.field5450) {
+			case 1:
+				return 20;
+			default:
+				return 12;
+			}
 		}
 	}
 
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "(Lia;I)V",
-		garbageValue = "-1220201616"
-	)
-	void method3104(PlayerCompositionColorTextureOverride var1) {
-		this.field1388 = var1;
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lia;",
-		garbageValue = "-55471053"
-	)
-	PlayerCompositionColorTextureOverride method3105() {
-		return this.field1388;
-	}
-
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1906303790"
+		garbageValue = "1367207519"
 	)
-	void method3106() {
-		this.field1388 = null;
-	}
+	public static void method5187() {
+		try {
+			JagexCache.JagexCache_dat2File.close();
 
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(B)Lhv;",
-		garbageValue = "-7"
-	)
-	@Export("getModel")
-	protected final Model getModel() {
-		ItemComposition var1 = FaceNormal.ItemDefinition_get(this.id);
-		return this.field1388 == null ? var1.getModel(this.quantity) : var1.method5582(this.field1388);
-	}
+			for (int var0 = 0; var0 < BuddyRankComparator.field1546; ++var0) {
+				class379.JagexCache_idxFiles[var0].close();
+			}
 
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(Lnw;B)V",
-		garbageValue = "60"
-	)
-	public static void method3111(Huffman var0) {
-		class364.huffman = var0;
+			JagexCache.JagexCache_idx255File.close();
+			JagexCache.JagexCache_randomDat.close();
+		} catch (Exception var2) {
+		}
+
 	}
 }

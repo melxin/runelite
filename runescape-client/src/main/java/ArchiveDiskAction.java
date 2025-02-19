@@ -1,34 +1,46 @@
+import java.awt.Image;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oh")
+@ObfuscatedName("pz")
 @Implements("ArchiveDiskAction")
 public class ArchiveDiskAction extends Node {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("bg")
+	static Image field4631;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 659066549
+		intValue = 75168507
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@Export("data")
 	byte[] data;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lsh;"
+		descriptor = "Ltu;"
 	)
 	@Export("archiveDisk")
 	ArchiveDisk archiveDisk;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Lpn;"
 	)
 	@Export("archive")
 	Archive archive;
 
 	ArchiveDiskAction() {
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-76"
+	)
+	public static void method7568() {
+		class204.field1909.clear();
 	}
 }

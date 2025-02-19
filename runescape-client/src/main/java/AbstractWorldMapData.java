@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
@@ -5,113 +7,108 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lu")
+@ObfuscatedName("lr")
 @Implements("AbstractWorldMapData")
 public abstract class AbstractWorldMapData {
-	@ObfuscatedName("jq")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 930710513
-	)
-	static int field3215;
-	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = -1598926912
+		intValue = 309112832
 	)
 	@Export("regionXLow")
 	int regionXLow;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 938496000
+		intValue = -1556097216
 	)
 	@Export("regionYLow")
 	int regionYLow;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 780184599
+		intValue = 1548761135
 	)
 	@Export("regionX")
 	int regionX;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -950004071
+		intValue = -1649035655
 	)
 	@Export("regionY")
 	int regionY;
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -432409417
+		intValue = -1794354395
 	)
 	@Export("minPlane")
 	int minPlane;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -171903861
+		intValue = 1227508487
 	)
 	@Export("planes")
 	int planes;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1411211197
+		intValue = -827235575
 	)
 	@Export("groupId")
 	int groupId;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -921447447
+		intValue = -862015397
 	)
 	@Export("fileId")
 	int fileId;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ai")
 	@Export("floorUnderlayIds")
 	short[][][] floorUnderlayIds;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ak")
 	@Export("floorOverlayIds")
 	short[][][] floorOverlayIds;
-	@ObfuscatedName("aa")
-	byte[][][] field3210;
-	@ObfuscatedName("ak")
-	byte[][][] field3205;
-	@ObfuscatedName("al")
+	@ObfuscatedName("aj")
+	byte[][][] field3280;
+	@ObfuscatedName("av")
+	byte[][][] field3284;
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "[[[[Llx;"
+		descriptor = "[[[[Llq;"
 	)
 	@Export("decorations")
 	WorldMapDecoration[][][][] decorations;
-	@ObfuscatedName("av")
-	boolean field3213;
 	@ObfuscatedName("ag")
-	boolean field3214;
+	boolean field3286;
+	@ObfuscatedName("az")
+	boolean field3287;
 
 	AbstractWorldMapData() {
 		this.groupId = -1;
 		this.fileId = -1;
 		new LinkedList();
-		this.field3213 = false;
-		this.field3214 = false;
+		this.field3286 = false;
+		this.field3287 = false;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;B)V",
-		garbageValue = "-46"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "650368316"
 	)
 	@Export("readGeography")
 	abstract void readGeography(Buffer var1);
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1510656174"
+		garbageValue = "1756556106"
 	)
 	@Export("isFullyLoaded")
 	boolean isFullyLoaded() {
-		return this.field3213 && this.field3214;
+		return this.field3286 && this.field3287;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lpq;I)V",
-		garbageValue = "1797083612"
+		descriptor = "(Lpl;I)V",
+		garbageValue = "1608907740"
 	)
 	@Export("loadGeography")
 	void loadGeography(AbstractArchive var1) {
@@ -119,30 +116,30 @@ public abstract class AbstractWorldMapData {
 			byte[] var2 = var1.takeFile(this.groupId, this.fileId);
 			if (var2 != null) {
 				this.readGeography(new Buffer(var2));
-				this.field3213 = true;
-				this.field3214 = true;
+				this.field3286 = true;
+				this.field3287 = true;
 			}
 
 		}
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-2138652093"
+		garbageValue = "-86541057"
 	)
 	@Export("reset")
 	void reset() {
 		this.floorUnderlayIds = null;
 		this.floorOverlayIds = null;
-		this.field3210 = null;
-		this.field3205 = null;
+		this.field3280 = null;
+		this.field3284 = null;
 		this.decorations = null;
-		this.field3213 = false;
-		this.field3214 = false;
+		this.field3286 = false;
+		this.field3287 = false;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(IILvy;B)V",
 		garbageValue = "4"
@@ -152,20 +149,20 @@ public abstract class AbstractWorldMapData {
 		int var4 = var3.readUnsignedByte();
 		if (var4 != 0) {
 			if ((var4 & 1) != 0) {
-				this.method6367(var1, var2, var3, var4);
+				this.method6251(var1, var2, var3, var4);
 			} else {
-				this.method6368(var1, var2, var3, var4);
+				this.method6282(var1, var2, var3, var4);
 			}
 
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(IILvy;II)V",
-		garbageValue = "-91703415"
+		garbageValue = "-1789228277"
 	)
-	void method6367(int var1, int var2, Buffer var3, int var4) {
+	void method6251(int var1, int var2, Buffer var3, int var4) {
 		boolean var5 = (var4 & 2) != 0;
 		if (var5) {
 			this.floorOverlayIds[0][var1][var2] = (short)var3.readUnsignedShort();
@@ -174,12 +171,12 @@ public abstract class AbstractWorldMapData {
 		this.floorUnderlayIds[0][var1][var2] = (short)var3.readUnsignedShort();
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(IILvy;IB)V",
-		garbageValue = "-67"
+		garbageValue = "1"
 	)
-	void method6368(int var1, int var2, Buffer var3, int var4) {
+	void method6282(int var1, int var2, Buffer var3, int var4) {
 		int var5 = ((var4 & 24) >> 3) + 1;
 		boolean var6 = (var4 & 2) != 0;
 		boolean var7 = (var4 & 4) != 0;
@@ -195,8 +192,8 @@ public abstract class AbstractWorldMapData {
 				if (var14 != 0) {
 					this.floorOverlayIds[var9][var1][var2] = (short)var14;
 					var11 = var3.readUnsignedByte();
-					this.field3210[var9][var1][var2] = (byte)(var11 >> 2);
-					this.field3205[var9][var1][var2] = (byte)(var11 & 3);
+					this.field3280[var9][var1][var2] = (byte)(var11 >> 2);
+					this.field3284[var9][var1][var2] = (byte)(var11 & 3);
 				}
 			}
 		}
@@ -218,39 +215,40 @@ public abstract class AbstractWorldMapData {
 
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "16"
+		descriptor = "(I)I",
+		garbageValue = "-1268291206"
 	)
 	@Export("getRegionX")
 	int getRegionX() {
 		return this.regionX;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "35"
+		descriptor = "(S)I",
+		garbageValue = "-19000"
 	)
 	@Export("getRegionY")
 	int getRegionY() {
 		return this.regionY;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lqe;",
-		garbageValue = "1411520419"
+		descriptor = "(I)Ljava/util/ArrayList;",
+		garbageValue = "-2094779987"
 	)
-	public static TransformationMatrix method6389() {
-		synchronized(TransformationMatrix.field4758) {
-			if (TransformationMatrix.field4759 == 0) {
-				return new TransformationMatrix();
-			} else {
-				TransformationMatrix.field4758[--TransformationMatrix.field4759].method8372();
-				return TransformationMatrix.field4758[TransformationMatrix.field4759];
-			}
+	static ArrayList method6246() {
+		ArrayList var0 = new ArrayList();
+		Iterator var1 = class335.midiRequests.iterator();
+
+		while (var1.hasNext()) {
+			MidiRequest var2 = (MidiRequest)var1.next();
+			var0.add(var2);
 		}
+
+		return var0;
 	}
 }

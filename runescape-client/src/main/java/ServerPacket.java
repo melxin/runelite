@@ -1,848 +1,849 @@
+import java.security.SecureRandom;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mn")
+@ObfuscatedName("mi")
 @Implements("ServerPacket")
 public class ServerPacket {
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket SET_PLAYER_OP;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_LOOKAT;
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETNPCHEAD;
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SET_EVENTS;
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket GRAPHICSOBJECT_SPAWN;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket DYNAMICOBJECT_SPAWN;
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MIDI_JINGLE;
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket LOC_ANIM;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket LOC_DEL;
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETANGLE;
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_RUN_ENERGY;
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETPOSITION;
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket RUNCLIENTSCRIPT;
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SET_PLAYERMODEL_BASECOLOUR;
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_LOOKAT_EASED_ANGLE_RELATIVE;
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_FRIENDLIST;
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket VAR_CLAN_DISABLE;
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_ZONE_PARTIAL_ENCLOSED;
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_OPENTOP;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket OBJ_ADD;
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket OBJ_DEL;
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket REBUILD_WORLDENTITY;
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket LOGOUT;
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket OCULUS_SYNC;
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_RESYNC;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MIDI_SWAP;
-	@ObfuscatedName("bu")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket NPC_SPOTANIM;
-	@ObfuscatedName("bh")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket VARP_SMALL;
-	@ObfuscatedName("bw")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MAP_PROJANIM;
-	@ObfuscatedName("bb")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_LOOKAT_EASED_COORD;
-	@ObfuscatedName("bx")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_SHAKE;
-	@ObfuscatedName("bd")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket REBUILD_REGION;
-	@ObfuscatedName("bi")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_INV_CLEAR;
-	@ObfuscatedName("bz")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket PING_STATISTICS_REQUEST;
-	@ObfuscatedName("bt")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETMODEL;
-	@ObfuscatedName("bf")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MIDI_SONG_WITH_SECONDARY;
-	@ObfuscatedName("by")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket EVENT_WORLDHOP;
-	@ObfuscatedName("bm")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket URL_OPEN;
-	@ObfuscatedName("bp")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETANIM;
-	@ObfuscatedName("bg")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_TARGET;
-	@ObfuscatedName("bc")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket field3483;
-	@ObfuscatedName("bv")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket HEAT_MAP;
-	@ObfuscatedName("bq")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket VAR_CLAN;
-	@ObfuscatedName("ba")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_MOVESUB;
-	@ObfuscatedName("bk")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket LOC_ADD_CHANGE;
-	@ObfuscatedName("bs")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket CAM_RESET;
-	@ObfuscatedName("bj")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket OBJ_OPFILTER;
-	@ObfuscatedName("bo")
+	public static final ServerPacket IF_OPENTOP;
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket LOGOUT_FULL;
-	@ObfuscatedName("be")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket MESSAGE_FRIENDS_CHAT;
-	@ObfuscatedName("bn")
+	public static final ServerPacket IF_SET_PLAYERMODEL_SELF;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_RUN_WEIGHT;
-	@ObfuscatedName("br")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_MOVETO_EASED_CIRCULAR;
-	@ObfuscatedName("bl")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETSCROLLPOS;
-	@ObfuscatedName("cb")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket PLAYER_SPOTANIM;
-	@ObfuscatedName("cn")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket field3496;
-	@ObfuscatedName("cc")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETOBJECT;
-	@ObfuscatedName("co")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket VAR_CLAN_ENABLE;
-	@ObfuscatedName("ca")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MESSAGE_GAME;
-	@ObfuscatedName("cg")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_MODE;
-	@ObfuscatedName("cp")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket REBUILD_NORMAL;
-	@ObfuscatedName("cz")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETPLAYERHEAD;
-	@ObfuscatedName("cy")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CLAN_CHANNEL_FULL;
-	@ObfuscatedName("cu")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETHIDE;
-	@ObfuscatedName("cq")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MINIMAP_FLAG_SET;
-	@ObfuscatedName("cf")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	static final ServerPacket field3506;
-	@ObfuscatedName("ct")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_STOCKMARKET_SLOT;
-	@ObfuscatedName("ci")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket VARP_LARGE;
-	@ObfuscatedName("cl")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_UID192;
-	@ObfuscatedName("cw")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MIDI_SONG_STOP;
-	@ObfuscatedName("cj")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CLAN_SETTINGS_FULL;
-	@ObfuscatedName("cx")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETCOLOUR;
-	@ObfuscatedName("cd")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SET_PLAYERMODEL_BODYTYPE;
-	@ObfuscatedName("cv")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket TRIGGER_ONDIALOG_ABORT;
-	@ObfuscatedName("ck")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_SITE_SETTINGS;
-	@ObfuscatedName("cs")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_REBOOT_TIMER;
-	@ObfuscatedName("cm")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_MOVETO;
-	@ObfuscatedName("ce")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_TRADING_POST;
-	@ObfuscatedName("cr")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_INV_PARTIAL;
-	@ObfuscatedName("ch")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket HINT_ARROW;
-	@ObfuscatedName("dh")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket PLAYER_ANIM_SPECIFIC;
-	@ObfuscatedName("dn")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SET_ROTATE_SPEED;
-	@ObfuscatedName("dc")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_MOVE_TO;
-	@ObfuscatedName("dm")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket NPC_HEADICON_SPECIFIC;
-	@ObfuscatedName("dj")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MAP_ANIM;
-	@ObfuscatedName("dk")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket field3526;
-	@ObfuscatedName("ds")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CAM_SMOOTH_RESET;
-	@ObfuscatedName("dr")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CLAN_SETTINGS_DELTA;
-	@ObfuscatedName("dl")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket SERVER_TICK_END;
-	@ObfuscatedName("do")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_OPENSUB;
-	@ObfuscatedName("dg")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket SYNC_CLIENT_VARCACHE;
-	@ObfuscatedName("dt")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket SET_ACTIVE_WORLD;
-	@ObfuscatedName("df")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	static final ServerPacket field3533;
-	@ObfuscatedName("de")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket RESET_ANIMS;
-	@ObfuscatedName("dw")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MESSAGE_CLAN_CHANNEL_SYSTEM;
-	@ObfuscatedName("dv")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_INV_STOP_TRANSIT;
-	@ObfuscatedName("dx")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket FRIENDS_LIST_LOADED;
-	@ObfuscatedName("dd")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_CLOSESUB;
-	@ObfuscatedName("dy")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket PLAYER_INFO;
-	@ObfuscatedName("db")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_STAT;
-	@ObfuscatedName("du")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket PROJECTILE_SPAWN;
-	@ObfuscatedName("da")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SETNPCHEAD_ACTIVE;
-	@ObfuscatedName("dp")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CHAT_FILTER_SETTINGS;
-	@ObfuscatedName("di")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL;
-	@ObfuscatedName("dq")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1;
-	@ObfuscatedName("dz")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket SET_PRIVCHATMODE;
-	@ObfuscatedName("ex")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket RESET_CLIENT_VARCACHE;
-	@ObfuscatedName("eq")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket MESSAGE_PRIVATE_ECHO;
-	@ObfuscatedName("ef")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3549;
-	@ObfuscatedName("ei")
+	public static final ServerPacket CLAN_CHANNEL_FULL;
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket IF_SET_PLAYERMODEL_OBJ;
-	@ObfuscatedName("ej")
+	public static final ServerPacket MAP_ANIM;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket CAM_SETANGLE;
-	@ObfuscatedName("eg")
+	public static final ServerPacket LOC_ANIM;
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket MIDI_SONG;
-	@ObfuscatedName("ek")
+	public static final ServerPacket UPDATE_STAT;
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3514;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket NPC_INFO_LARGE_VIEWPORT;
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket PROJECTILE_SPAWN;
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket URL_OPEN;
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_STOCKMARKET_SLOT;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket SET_PRIVCHATMODE;
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MESSAGE_FRIEND_PRIVATE;
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_LOOKAT_EASED_COORD;
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_FRIENDLIST;
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3598;
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3524;
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3525;
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket CLAN_CHANNEL_DELTA;
-	@ObfuscatedName("et")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETHIDE;
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MIDI_SONG;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER;
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_INV_FULL;
+	@ObfuscatedName("bw")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_INV_PARTIAL;
+	@ObfuscatedName("bo")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket RUNCLIENTSCRIPT;
+	@ObfuscatedName("bs")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket VARP_LARGE;
+	@ObfuscatedName("bz")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETOBJECT;
+	@ObfuscatedName("bt")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MIDI_JINGLE;
+	@ObfuscatedName("ba")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CLAN_SETTINGS_DELTA;
+	@ObfuscatedName("bg")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MESSAGE_GAME;
+	@ObfuscatedName("bv")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MESSAGE_FRIENDS_CHAT;
+	@ObfuscatedName("bk")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3539;
+	@ObfuscatedName("bu")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3540;
+	@ObfuscatedName("by")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3541;
+	@ObfuscatedName("bh")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3542;
+	@ObfuscatedName("be")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_SMOOTH_RESET;
+	@ObfuscatedName("bj")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	static final ServerPacket field3544;
+	@ObfuscatedName("bq")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_UID192;
+	@ObfuscatedName("bx")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket LOC_MERGEPLAYER;
+	@ObfuscatedName("bf")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETPLAYERHEAD;
+	@ObfuscatedName("bc")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3548;
+	@ObfuscatedName("bb")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_CLOSESUB;
+	@ObfuscatedName("bi")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETANIM;
+	@ObfuscatedName("bn")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_MOVETO;
+	@ObfuscatedName("bl")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket PING_STATISTICS_REQUEST;
+	@ObfuscatedName("bd")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3516;
+	@ObfuscatedName("br")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket OCULUS_SYNC;
+	@ObfuscatedName("bm")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_MOVETO_EASED_CIRCULAR;
+	@ObfuscatedName("bp")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SET_PLAYERMODEL_BASECOLOUR;
+	@ObfuscatedName("ch")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_INV_CLEAR;
+	@ObfuscatedName("cd")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SET_TEXT;
+	@ObfuscatedName("cp")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETMODEL;
+	@ObfuscatedName("ca")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket LOC_ADD_CHANGE;
+	@ObfuscatedName("cs")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETPOSITION;
+	@ObfuscatedName("cj")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket NPC_SET_SEQUENCE;
+	@ObfuscatedName("cy")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MIDI_SONG_STOP;
+	@ObfuscatedName("cb")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket PLAYER_INFO;
+	@ObfuscatedName("co")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_ZONE_PARTIAL_ENCLOSED;
+	@ObfuscatedName("ct")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MIDI_SWAP;
+	@ObfuscatedName("cv")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_OPENSUB;
+	@ObfuscatedName("cf")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket SET_PLAYER_OP;
+	@ObfuscatedName("ck")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket VAR_CLAN_ENABLE;
+	@ObfuscatedName("cx")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_REBOOT_TIMER;
+	@ObfuscatedName("cu")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_ZONE_FULL_FOLLOWS;
+	@ObfuscatedName("cg")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket UPDATE_IGNORELIST;
+	@ObfuscatedName("cw")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket VAR_CLAN;
+	@ObfuscatedName("ce")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket HEAT_MAP;
+	@ObfuscatedName("cn")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3556;
+	@ObfuscatedName("ci")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETNPCHEAD_ACTIVE;
+	@ObfuscatedName("cl")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3577;
+	@ObfuscatedName("cc")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MINIMAP_TOGGLE;
+	@ObfuscatedName("cq")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETSCROLLPOS;
+	@ObfuscatedName("cz")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket PLAYER_SPOTANIM;
+	@ObfuscatedName("cm")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_INV_STOP_TRANSIT;
+	@ObfuscatedName("cr")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket SYNC_CLIENT_VARCACHE;
+	@ObfuscatedName("dc")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_SITE_SETTINGS;
+	@ObfuscatedName("dd")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_LOOKAT_EASED_ANGLE_RELATIVE;
+	@ObfuscatedName("dy")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MAP_PROJANIM;
+	@ObfuscatedName("dj")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket NPC_SPOTANIM;
+	@ObfuscatedName("dr")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3587;
+	@ObfuscatedName("dq")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3596;
+	@ObfuscatedName("ds")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_SHAKE;
+	@ObfuscatedName("dk")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3632;
+	@ObfuscatedName("du")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket MESSAGE_CLAN_CHANNEL_SYSTEM;
+	@ObfuscatedName("dl")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CLAN_SETTINGS_FULL;
+	@ObfuscatedName("dn")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1;
+	@ObfuscatedName("dh")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3594;
+	@ObfuscatedName("di")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_LOOKAT;
+	@ObfuscatedName("dw")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_TRADING_POST;
+	@ObfuscatedName("db")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SET_PLAYERMODEL_BODYTYPE;
+	@ObfuscatedName("dt")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3559;
+	@ObfuscatedName("dm")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL;
+	@ObfuscatedName("do")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETNPCHEAD;
+	@ObfuscatedName("dx")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket OBJ_OPFILTER;
+	@ObfuscatedName("dv")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket VAR_CLAN_DISABLE;
+	@ObfuscatedName("df")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_MOVE_TO;
+	@ObfuscatedName("de")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket OBJ_COUNT;
+	@ObfuscatedName("da")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket GRAPHICSOBJECT_SPAWN;
+	@ObfuscatedName("dz")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket OBJ_DEL;
+	@ObfuscatedName("dp")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket LOGOUT;
+	@ObfuscatedName("dg")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket REBUILD_NORMAL;
+	@ObfuscatedName("ew")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETCOLOUR;
+	@ObfuscatedName("es")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket REFLECTION_CHECKER;
+	@ObfuscatedName("ed")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket VARP_SMALL;
+	@ObfuscatedName("ep")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket CAM_MODE;
+	@ObfuscatedName("et")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket REBUILD_REGION;
+	@ObfuscatedName("er")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket NPC_HEADICON_SPECIFIC;
+	@ObfuscatedName("ez")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket OBJ_ADD;
+	@ObfuscatedName("ex")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket LOC_DEL;
+	@ObfuscatedName("ea")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket TRIGGER_ONDIALOG_ABORT;
+	@ObfuscatedName("eo")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SETANGLE;
+	@ObfuscatedName("ev")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket DYNAMICOBJECT_SPAWN;
+	@ObfuscatedName("ee")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_MOVESUB;
+	@ObfuscatedName("ek")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_RESYNC;
 	@ObfuscatedName("ec")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SET_PLAYERMODEL_OBJ;
+	@ObfuscatedName("ei")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket HINT_ARROW;
+	@ObfuscatedName("ey")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SET_ROTATE_SPEED;
+	@ObfuscatedName("eh")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket IF_SET_EVENTS;
+	@ObfuscatedName("ef")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket SET_NPC_UPDATE_ORIGIN;
+	@ObfuscatedName("ej")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket RESET_CLIENT_VARCACHE;
+	@ObfuscatedName("en")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket MESSAGE_PRIVATE;
 	@ObfuscatedName("em")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket MINIMAP_TOGGLE;
-	@ObfuscatedName("es")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket LOC_MERGEPLAYER;
-	@ObfuscatedName("er")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket MESSAGE_FRIEND_CHANNEL;
-	@ObfuscatedName("ep")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_ZONE_FULL_FOLLOWS;
-	@ObfuscatedName("eo")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SET_PLAYERMODEL_SELF;
-	@ObfuscatedName("ez")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket REFLECTION_CHECKER;
-	@ObfuscatedName("eb")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket SET_NPC_UPDATE_ORIGIN;
-	@ObfuscatedName("en")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_INV_FULL;
-	@ObfuscatedName("ee")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER;
-	@ObfuscatedName("ev")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket CLEAR_ENTITIES;
-	@ObfuscatedName("el")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket IF_SET_TEXT;
-	@ObfuscatedName("ea")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket field3567;
+	static final ServerPacket field3580;
 	@ObfuscatedName("eu")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3568;
-	@ObfuscatedName("ey")
+	public static final ServerPacket MIDI_SONG_WITH_SECONDARY;
+	@ObfuscatedName("el")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket OBJ_COUNT;
-	@ObfuscatedName("eh")
+	public static final ServerPacket EVENT_WORLDHOP;
+	@ObfuscatedName("eq")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket NPC_SET_SEQUENCE;
-	@ObfuscatedName("ew")
+	public static final ServerPacket CAM_SETANGLE;
+	@ObfuscatedName("eg")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket field3571;
-	@ObfuscatedName("ed")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket NPC_INFO_SMALL_VIEWPORT;
+	@ObfuscatedName("eb")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket REBUILD_WORLDENTITY;
 	@ObfuscatedName("fz")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3573;
-	@ObfuscatedName("fn")
+	public static final ServerPacket SET_ACTIVE_WORLD;
+	@ObfuscatedName("fr")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket OBJ_RESET_CUSTOMIZATION;
-	@ObfuscatedName("fd")
+	public static final ServerPacket field3636;
+	@ObfuscatedName("fk")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket RESET_INTERACTION_MODE;
-	@ObfuscatedName("fc")
+	@ObfuscatedName("fe")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket NPC_INFO_LARGE_VIEWPORT;
-	@ObfuscatedName("fb")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
-	)
-	public static final ServerPacket field3505;
-	@ObfuscatedName("fg")
-	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
 	public static final ServerPacket OBJ_SET_CUSTOMIZATION;
-	@ObfuscatedName("ff")
+	@ObfuscatedName("fh")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3453;
-	@ObfuscatedName("fs")
+	public static final ServerPacket field3639;
+	@ObfuscatedName("fg")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket OBJ_RESET_CUSTOMIZATION;
+	@ObfuscatedName("fn")
+	@ObfuscatedSignature(
+		descriptor = "Lmi;"
+	)
+	public static final ServerPacket field3641;
+	@ObfuscatedName("fq")
 	@ObfuscatedGetter(
-		intValue = 1163003239
+		intValue = 122258383
 	)
 	@Export("id")
 	public final int id;
-	@ObfuscatedName("fm")
+	@ObfuscatedName("fu")
 	@ObfuscatedGetter(
-		intValue = -315600729
+		intValue = -954054933
 	)
 	@Export("length")
 	public final int length;
 
 	static {
-		SET_PLAYER_OP = new ServerPacket(0, -1);
-		CAM_LOOKAT = new ServerPacket(1, 7);
-		IF_SETNPCHEAD = new ServerPacket(2, 6);
-		IF_SET_EVENTS = new ServerPacket(3, 12);
-		GRAPHICSOBJECT_SPAWN = new ServerPacket(4, 8);
-		DYNAMICOBJECT_SPAWN = new ServerPacket(5, 6);
-		MIDI_JINGLE = new ServerPacket(6, 5);
+		CAM_RESET = new ServerPacket(0, 0);
+		IF_OPENTOP = new ServerPacket(1, 2);
+		LOGOUT_FULL = new ServerPacket(2, 0);
+		IF_SET_PLAYERMODEL_SELF = new ServerPacket(3, 5);
+		MESSAGE_PRIVATE_ECHO = new ServerPacket(4, -2);
+		CLAN_CHANNEL_FULL = new ServerPacket(5, -2);
+		MAP_ANIM = new ServerPacket(6, 6);
 		LOC_ANIM = new ServerPacket(7, 4);
-		LOC_DEL = new ServerPacket(8, 2);
-		IF_SETANGLE = new ServerPacket(9, 10);
-		UPDATE_RUN_ENERGY = new ServerPacket(10, 2);
-		IF_SETPOSITION = new ServerPacket(11, 8);
-		RUNCLIENTSCRIPT = new ServerPacket(12, -2);
-		IF_SET_PLAYERMODEL_BASECOLOUR = new ServerPacket(13, 6);
-		CAM_LOOKAT_EASED_ANGLE_RELATIVE = new ServerPacket(14, 7);
-		UPDATE_FRIENDLIST = new ServerPacket(15, -2);
-		VAR_CLAN_DISABLE = new ServerPacket(16, 0);
-		UPDATE_ZONE_PARTIAL_ENCLOSED = new ServerPacket(17, -2);
-		IF_OPENTOP = new ServerPacket(18, 2);
-		OBJ_ADD = new ServerPacket(19, 14);
-		OBJ_DEL = new ServerPacket(20, 7);
-		REBUILD_WORLDENTITY = new ServerPacket(21, -2);
-		LOGOUT = new ServerPacket(22, 1);
-		OCULUS_SYNC = new ServerPacket(23, 4);
-		IF_RESYNC = new ServerPacket(24, -2);
-		MIDI_SWAP = new ServerPacket(25, 8);
-		NPC_SPOTANIM = new ServerPacket(26, 9);
-		VARP_SMALL = new ServerPacket(27, 3);
-		MAP_PROJANIM = new ServerPacket(28, 20);
-		CAM_LOOKAT_EASED_COORD = new ServerPacket(29, 7);
-		CAM_SHAKE = new ServerPacket(30, 4);
-		REBUILD_REGION = new ServerPacket(31, -2);
-		UPDATE_INV_CLEAR = new ServerPacket(32, 4);
-		PING_STATISTICS_REQUEST = new ServerPacket(33, 8);
-		IF_SETMODEL = new ServerPacket(34, 6);
-		MIDI_SONG_WITH_SECONDARY = new ServerPacket(35, 12);
-		EVENT_WORLDHOP = new ServerPacket(36, -1);
-		URL_OPEN = new ServerPacket(37, -2);
-		IF_SETANIM = new ServerPacket(38, 6);
-		CAM_TARGET = new ServerPacket(39, 5);
-		field3483 = new ServerPacket(40, 5);
-		HEAT_MAP = new ServerPacket(41, 1);
-		VAR_CLAN = new ServerPacket(42, -1);
-		IF_MOVESUB = new ServerPacket(43, 8);
-		LOC_ADD_CHANGE = new ServerPacket(44, 5);
-		CAM_RESET = new ServerPacket(45, 0);
-		OBJ_OPFILTER = new ServerPacket(46, 4);
-		LOGOUT_FULL = new ServerPacket(47, 0);
-		MESSAGE_FRIENDS_CHAT = new ServerPacket(48, -1);
-		UPDATE_RUN_WEIGHT = new ServerPacket(49, 2);
+		UPDATE_STAT = new ServerPacket(8, 7);
+		field3514 = new ServerPacket(9, 0);
+		NPC_INFO_LARGE_VIEWPORT = new ServerPacket(10, -2);
+		PROJECTILE_SPAWN = new ServerPacket(11, 22);
+		URL_OPEN = new ServerPacket(12, -2);
+		UPDATE_STOCKMARKET_SLOT = new ServerPacket(13, 20);
+		SET_PRIVCHATMODE = new ServerPacket(14, 1);
+		MESSAGE_FRIEND_PRIVATE = new ServerPacket(15, -1);
+		CAM_LOOKAT_EASED_COORD = new ServerPacket(16, 7);
+		UPDATE_FRIENDLIST = new ServerPacket(17, -2);
+		field3598 = new ServerPacket(18, 2);
+		field3524 = new ServerPacket(19, 3);
+		field3525 = new ServerPacket(20, 0);
+		CLAN_CHANNEL_DELTA = new ServerPacket(21, -2);
+		IF_SETHIDE = new ServerPacket(22, 5);
+		MIDI_SONG = new ServerPacket(23, 10);
+		UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER = new ServerPacket(24, -1);
+		UPDATE_INV_FULL = new ServerPacket(25, -2);
+		UPDATE_INV_PARTIAL = new ServerPacket(26, -2);
+		RUNCLIENTSCRIPT = new ServerPacket(27, -2);
+		VARP_LARGE = new ServerPacket(28, 6);
+		IF_SETOBJECT = new ServerPacket(29, 10);
+		MIDI_JINGLE = new ServerPacket(30, 5);
+		CLAN_SETTINGS_DELTA = new ServerPacket(31, -2);
+		MESSAGE_GAME = new ServerPacket(32, -1);
+		MESSAGE_FRIENDS_CHAT = new ServerPacket(33, -1);
+		field3539 = new ServerPacket(34, 1);
+		field3540 = new ServerPacket(35, 0);
+		field3541 = new ServerPacket(36, 2);
+		field3542 = new ServerPacket(37, -1);
+		CAM_SMOOTH_RESET = new ServerPacket(38, 4);
+		field3544 = new ServerPacket(39, 7);
+		UPDATE_UID192 = new ServerPacket(40, 28);
+		LOC_MERGEPLAYER = new ServerPacket(41, 14);
+		IF_SETPLAYERHEAD = new ServerPacket(42, 4);
+		field3548 = new ServerPacket(43, 0);
+		IF_CLOSESUB = new ServerPacket(44, 4);
+		IF_SETANIM = new ServerPacket(45, 6);
+		CAM_MOVETO = new ServerPacket(46, 8);
+		PING_STATISTICS_REQUEST = new ServerPacket(47, 8);
+		field3516 = new ServerPacket(48, 5);
+		OCULUS_SYNC = new ServerPacket(49, 4);
 		CAM_MOVETO_EASED_CIRCULAR = new ServerPacket(50, 10);
-		IF_SETSCROLLPOS = new ServerPacket(51, 6);
-		PLAYER_SPOTANIM = new ServerPacket(52, 9);
-		field3496 = new ServerPacket(53, -1);
-		IF_SETOBJECT = new ServerPacket(54, 10);
-		VAR_CLAN_ENABLE = new ServerPacket(55, 0);
-		MESSAGE_GAME = new ServerPacket(56, -1);
-		CAM_MODE = new ServerPacket(57, 1);
-		REBUILD_NORMAL = new ServerPacket(58, -2);
-		IF_SETPLAYERHEAD = new ServerPacket(59, 4);
-		CLAN_CHANNEL_FULL = new ServerPacket(60, -2);
-		IF_SETHIDE = new ServerPacket(61, 5);
-		MINIMAP_FLAG_SET = new ServerPacket(62, 2);
-		field3506 = new ServerPacket(63, -2);
-		UPDATE_STOCKMARKET_SLOT = new ServerPacket(64, 20);
-		VARP_LARGE = new ServerPacket(65, 6);
-		UPDATE_UID192 = new ServerPacket(66, 28);
-		MIDI_SONG_STOP = new ServerPacket(67, 4);
-		CLAN_SETTINGS_FULL = new ServerPacket(68, -2);
-		IF_SETCOLOUR = new ServerPacket(69, 6);
-		IF_SET_PLAYERMODEL_BODYTYPE = new ServerPacket(70, 5);
-		TRIGGER_ONDIALOG_ABORT = new ServerPacket(71, 0);
-		UPDATE_SITE_SETTINGS = new ServerPacket(72, -1);
-		UPDATE_REBOOT_TIMER = new ServerPacket(73, 2);
-		CAM_MOVETO = new ServerPacket(74, 8);
-		UPDATE_TRADING_POST = new ServerPacket(75, -2);
-		UPDATE_INV_PARTIAL = new ServerPacket(76, -2);
-		HINT_ARROW = new ServerPacket(77, 6);
-		PLAYER_ANIM_SPECIFIC = new ServerPacket(78, 3);
-		IF_SET_ROTATE_SPEED = new ServerPacket(79, 8);
-		CAM_MOVE_TO = new ServerPacket(80, 6);
-		NPC_HEADICON_SPECIFIC = new ServerPacket(81, 9);
-		MAP_ANIM = new ServerPacket(82, 6);
-		field3526 = new ServerPacket(83, -2);
-		CAM_SMOOTH_RESET = new ServerPacket(84, 4);
-		CLAN_SETTINGS_DELTA = new ServerPacket(85, -2);
-		SERVER_TICK_END = new ServerPacket(86, 0);
-		IF_OPENSUB = new ServerPacket(87, 7);
-		SYNC_CLIENT_VARCACHE = new ServerPacket(88, 0);
-		SET_ACTIVE_WORLD = new ServerPacket(89, 4);
-		field3533 = new ServerPacket(90, 7);
-		RESET_ANIMS = new ServerPacket(91, 0);
-		MESSAGE_CLAN_CHANNEL_SYSTEM = new ServerPacket(92, -1);
-		UPDATE_INV_STOP_TRANSIT = new ServerPacket(93, 2);
-		FRIENDS_LIST_LOADED = new ServerPacket(94, 0);
-		IF_CLOSESUB = new ServerPacket(95, 4);
-		PLAYER_INFO = new ServerPacket(96, -2);
-		UPDATE_STAT = new ServerPacket(97, 7);
-		PROJECTILE_SPAWN = new ServerPacket(98, 22);
-		IF_SETNPCHEAD_ACTIVE = new ServerPacket(99, 6);
-		CHAT_FILTER_SETTINGS = new ServerPacket(100, 2);
-		UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL = new ServerPacket(101, 3);
-		UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1 = new ServerPacket(102, -2);
-		SET_PRIVCHATMODE = new ServerPacket(103, 1);
-		RESET_CLIENT_VARCACHE = new ServerPacket(104, 0);
-		MESSAGE_PRIVATE_ECHO = new ServerPacket(105, -2);
-		field3549 = new ServerPacket(106, 1);
-		IF_SET_PLAYERMODEL_OBJ = new ServerPacket(107, 8);
-		CAM_SETANGLE = new ServerPacket(108, 6);
-		MIDI_SONG = new ServerPacket(109, 10);
-		CLAN_CHANNEL_DELTA = new ServerPacket(110, -2);
-		UPDATE_IGNORELIST = new ServerPacket(111, -2);
-		MESSAGE_PRIVATE = new ServerPacket(112, -2);
-		MINIMAP_TOGGLE = new ServerPacket(113, 1);
-		LOC_MERGEPLAYER = new ServerPacket(114, 14);
-		MESSAGE_FRIEND_CHANNEL = new ServerPacket(115, -1);
-		UPDATE_ZONE_FULL_FOLLOWS = new ServerPacket(116, 3);
-		IF_SET_PLAYERMODEL_SELF = new ServerPacket(117, 5);
-		REFLECTION_CHECKER = new ServerPacket(118, -2);
-		SET_NPC_UPDATE_ORIGIN = new ServerPacket(119, 2);
-		UPDATE_INV_FULL = new ServerPacket(120, -2);
-		UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER = new ServerPacket(121, -1);
-		CLEAR_ENTITIES = new ServerPacket(122, 0);
-		IF_SET_TEXT = new ServerPacket(123, -2);
-		field3567 = new ServerPacket(124, 1);
-		field3568 = new ServerPacket(125, 1);
-		OBJ_COUNT = new ServerPacket(126, 11);
-		NPC_SET_SEQUENCE = new ServerPacket(127, 5);
-		field3571 = new ServerPacket(128, -2);
-		NPC_INFO_SMALL_VIEWPORT = new ServerPacket(129, -2);
-		field3573 = new ServerPacket(130, 4);
-		OBJ_RESET_CUSTOMIZATION = new ServerPacket(131, 7);
+		IF_SET_PLAYERMODEL_BASECOLOUR = new ServerPacket(51, 6);
+		UPDATE_INV_CLEAR = new ServerPacket(52, 4);
+		IF_SET_TEXT = new ServerPacket(53, -2);
+		IF_SETMODEL = new ServerPacket(54, 6);
+		LOC_ADD_CHANGE = new ServerPacket(55, -2);
+		IF_SETPOSITION = new ServerPacket(56, 8);
+		NPC_SET_SEQUENCE = new ServerPacket(57, 5);
+		MIDI_SONG_STOP = new ServerPacket(58, 4);
+		PLAYER_INFO = new ServerPacket(59, -2);
+		UPDATE_ZONE_PARTIAL_ENCLOSED = new ServerPacket(60, -2);
+		MIDI_SWAP = new ServerPacket(61, 8);
+		IF_OPENSUB = new ServerPacket(62, 7);
+		SET_PLAYER_OP = new ServerPacket(63, -1);
+		VAR_CLAN_ENABLE = new ServerPacket(64, 0);
+		UPDATE_REBOOT_TIMER = new ServerPacket(65, 2);
+		UPDATE_ZONE_FULL_FOLLOWS = new ServerPacket(66, 3);
+		UPDATE_IGNORELIST = new ServerPacket(67, -2);
+		VAR_CLAN = new ServerPacket(68, -1);
+		HEAT_MAP = new ServerPacket(69, 1);
+		field3556 = new ServerPacket(70, 4);
+		IF_SETNPCHEAD_ACTIVE = new ServerPacket(71, 6);
+		field3577 = new ServerPacket(72, 1);
+		MINIMAP_TOGGLE = new ServerPacket(73, 1);
+		IF_SETSCROLLPOS = new ServerPacket(74, 6);
+		PLAYER_SPOTANIM = new ServerPacket(75, 9);
+		UPDATE_INV_STOP_TRANSIT = new ServerPacket(76, 2);
+		SYNC_CLIENT_VARCACHE = new ServerPacket(77, 0);
+		UPDATE_SITE_SETTINGS = new ServerPacket(78, -1);
+		CAM_LOOKAT_EASED_ANGLE_RELATIVE = new ServerPacket(79, 7);
+		MAP_PROJANIM = new ServerPacket(80, 20);
+		NPC_SPOTANIM = new ServerPacket(81, 9);
+		field3587 = new ServerPacket(82, -2);
+		field3596 = new ServerPacket(83, 1);
+		CAM_SHAKE = new ServerPacket(84, 4);
+		field3632 = new ServerPacket(85, 5);
+		MESSAGE_CLAN_CHANNEL_SYSTEM = new ServerPacket(86, -1);
+		CLAN_SETTINGS_FULL = new ServerPacket(87, -2);
+		UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1 = new ServerPacket(88, -2);
+		field3594 = new ServerPacket(89, 2);
+		CAM_LOOKAT = new ServerPacket(90, 7);
+		UPDATE_TRADING_POST = new ServerPacket(91, -2);
+		IF_SET_PLAYERMODEL_BODYTYPE = new ServerPacket(92, 5);
+		field3559 = new ServerPacket(93, 2);
+		UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL = new ServerPacket(94, 3);
+		IF_SETNPCHEAD = new ServerPacket(95, 6);
+		OBJ_OPFILTER = new ServerPacket(96, 4);
+		VAR_CLAN_DISABLE = new ServerPacket(97, 0);
+		CAM_MOVE_TO = new ServerPacket(98, 6);
+		OBJ_COUNT = new ServerPacket(99, 11);
+		GRAPHICSOBJECT_SPAWN = new ServerPacket(100, 8);
+		OBJ_DEL = new ServerPacket(101, 7);
+		LOGOUT = new ServerPacket(102, 1);
+		REBUILD_NORMAL = new ServerPacket(103, -2);
+		IF_SETCOLOUR = new ServerPacket(104, 6);
+		REFLECTION_CHECKER = new ServerPacket(105, -2);
+		VARP_SMALL = new ServerPacket(106, 3);
+		CAM_MODE = new ServerPacket(107, 1);
+		REBUILD_REGION = new ServerPacket(108, -2);
+		NPC_HEADICON_SPECIFIC = new ServerPacket(109, 9);
+		OBJ_ADD = new ServerPacket(110, 14);
+		LOC_DEL = new ServerPacket(111, 2);
+		TRIGGER_ONDIALOG_ABORT = new ServerPacket(112, 0);
+		IF_SETANGLE = new ServerPacket(113, 10);
+		DYNAMICOBJECT_SPAWN = new ServerPacket(114, 6);
+		IF_MOVESUB = new ServerPacket(115, 8);
+		IF_RESYNC = new ServerPacket(116, -2);
+		IF_SET_PLAYERMODEL_OBJ = new ServerPacket(117, 8);
+		HINT_ARROW = new ServerPacket(118, 6);
+		IF_SET_ROTATE_SPEED = new ServerPacket(119, 8);
+		IF_SET_EVENTS = new ServerPacket(120, 12);
+		SET_NPC_UPDATE_ORIGIN = new ServerPacket(121, 2);
+		RESET_CLIENT_VARCACHE = new ServerPacket(122, 0);
+		MESSAGE_PRIVATE = new ServerPacket(123, -2);
+		field3580 = new ServerPacket(124, -2);
+		MIDI_SONG_WITH_SECONDARY = new ServerPacket(125, 12);
+		EVENT_WORLDHOP = new ServerPacket(126, -1);
+		CAM_SETANGLE = new ServerPacket(127, 6);
+		NPC_INFO_SMALL_VIEWPORT = new ServerPacket(128, -2);
+		REBUILD_WORLDENTITY = new ServerPacket(129, -2);
+		SET_ACTIVE_WORLD = new ServerPacket(130, 3);
+		field3636 = new ServerPacket(131, 2);
 		RESET_INTERACTION_MODE = new ServerPacket(132, 2);
-		NPC_INFO_LARGE_VIEWPORT = new ServerPacket(133, -2);
-		field3505 = new ServerPacket(134, -2);
-		OBJ_SET_CUSTOMIZATION = new ServerPacket(135, 17);
-		field3453 = new ServerPacket(136, 2);
+		OBJ_SET_CUSTOMIZATION = new ServerPacket(133, 17);
+		field3639 = new ServerPacket(134, -2);
+		OBJ_RESET_CUSTOMIZATION = new ServerPacket(135, 7);
+		field3641 = new ServerPacket(136, 4);
 	}
 
 	ServerPacket(int var1, int var2) {
@@ -850,12 +851,14 @@ public class ServerPacket {
 		this.length = var2;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "42"
+		descriptor = "(I)Ljava/security/SecureRandom;",
+		garbageValue = "284592598"
 	)
-	public static void method6635() {
-		FloorOverlayDefinition.FloorOverlayDefinition_cached.clear();
+	static SecureRandom method6515() {
+		SecureRandom var0 = new SecureRandom();
+		var0.nextInt();
+		return var0;
 	}
 }

@@ -4,132 +4,100 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("aw")
+@ObfuscatedName("am")
 @Implements("HttpRequestTask")
 public class HttpRequestTask implements Callable {
-	@ObfuscatedName("ml")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lhy;"
+		descriptor = "Lae;"
 	)
-	@Export("textureProvider")
-	static TextureProvider textureProvider;
-	@ObfuscatedName("qz")
-	@ObfuscatedSignature(
-		descriptor = "Les;"
-	)
-	@Export("varcs")
-	static Varcs varcs;
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lau;"
-	)
-	final HttpRequest field83;
+	final HttpRequest field78;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Laa;"
+		descriptor = "Laj;"
 	)
 	final AsyncRestClient this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Laa;Lau;)V"
+		descriptor = "(Laj;Lae;)V"
 	)
 	HttpRequestTask(AsyncRestClient var1, HttpRequest var2) {
 		this.this$0 = var1;
-		this.field83 = var2;
+		this.field78 = var2;
 	}
 
 	public Object call() throws Exception {
 		try {
-			while (this.field83.connect()) {
-				class174.method3881(10L);
+			while (this.field78.connect()) {
+				IntProjection.method4837(10L);
 			}
 		} catch (IOException var2) {
 			return new HttpResponse("Error servicing REST query: " + var2.getMessage());
 		}
 
-		return this.field83.getResponse();
+		return this.field78.getResponse();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lmb;",
-		garbageValue = "1134121866"
+		descriptor = "(I)V",
+		garbageValue = "822542457"
 	)
-	static PacketBufferNode method288() {
-		return PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0 ? new PacketBufferNode() : PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
+	static void method246() {
+		Tiles.Tiles_minPlane = 99;
+		Tiles.Tiles_underlays = new short[4][104][104];
+		Tiles.Tiles_overlays = new short[4][104][104];
+		Tiles.Tiles_shapes = new byte[4][104][104];
+		Tiles.field1047 = new byte[4][104][104];
+		Canvas.field98 = new int[4][105][105];
+		SpriteMask.Tiles_underlays2 = new byte[4][105][105];
+		SecureUrlRequester.field1506 = new int[105][105];
+		Tiles.Tiles_hue = new int[104];
+		class592.Tiles_saturation = new int[104];
+		class447.Tiles_lightness = new int[104];
+		class330.Tiles_hueMultiplier = new int[104];
+		BoundaryObject.field3005 = new int[104];
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(ILdm;ZB)I",
-		garbageValue = "32"
+		descriptor = "(I)V",
+		garbageValue = "-354962834"
 	)
-	static int method285(int var0, Script var1, boolean var2) {
-		int var3 = -1;
-		Widget var4;
-		if (var0 >= 2000) {
-			var0 -= 1000;
-			var3 = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize];
-			var4 = ClanChannel.widgetDefinition.method7031(var3);
-		} else {
-			var4 = var2 ? class134.scriptDotWidget : HttpMethod.scriptActiveWidget;
-		}
-
-		if (var0 == ScriptOpcodes.CC_SETPOSITION) {
-			ScriptFrame.Interpreter_intStackSize -= 4;
-			var4.rawX = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
-			var4.rawY = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
-			var4.xAlignment = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
-			var4.yAlignment = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 3];
-			UserComparator8.invalidateWidget(var4);
-			Client.client.alignWidget(var4);
-			if (var3 != -1 && var4.type == 0) {
-				class244.revalidateWidgetScroll(ClanChannel.widgetDefinition.Widget_interfaceComponents[var3 >> 16], var4, false);
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_SETSIZE) {
-			ScriptFrame.Interpreter_intStackSize -= 4;
-			var4.rawWidth = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
-			var4.rawHeight = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
-			var4.widthAlignment = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
-			var4.heightAlignment = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 3];
-			UserComparator8.invalidateWidget(var4);
-			Client.client.alignWidget(var4);
-			if (var3 != -1 && var4.type == 0) {
-				class244.revalidateWidgetScroll(ClanChannel.widgetDefinition.Widget_interfaceComponents[var3 >> 16], var4, false);
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_SETHIDE) {
-			boolean var5 = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize] == 1;
-			if (var5 != var4.isHidden) {
-				var4.isHidden = var5;
-				UserComparator8.invalidateWidget(var4);
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_SETNOCLICKTHROUGH) {
-			var4.noClickThrough = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize] == 1;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_SETNOSCROLLTHROUGH) {
-			var4.noScrollThrough = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize] == 1;
-			return 1;
-		} else {
-			return 2;
-		}
+	public static void method248() {
+		FileSystem.FileSystem_cacheFiles.clear();
 	}
 
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "116531498"
+		descriptor = "(IIIZIII)J",
+		garbageValue = "1486707715"
 	)
-	static final void method287() {
-		Object var10000 = null;
-		String var0 = "Your ignore list is full. Max of 100 for free users, and 400 for members";
-		Interpreter.addGameMessage(30, "", var0);
+	@Export("calculateTag")
+	public static long calculateTag(int var0, int var1, int var2, boolean var3, int var4, int var5) {
+		long var6 = (long)((var0 & 127) << 0 | (var1 & 127) << 7 | (var2 & 7) << 14) | ((long)var4 & 4294967295L) << 18 | ((long)var5 & 4095L) << 50;
+		if (var3) {
+			var6 |= 131072L;
+		}
+
+		return var6;
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Lfb;",
+		garbageValue = "50"
+	)
+	static class144 method249(int var0) {
+		class144 var2 = class144.method3421(var0);
+		int var1;
+		if (var2 == null) {
+			var1 = 2;
+		} else {
+			var1 = var2.method3412() ? 0 : 1;
+		}
+
+		return var1 != 0 ? null : class144.method3421(var0);
 	}
 }

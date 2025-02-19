@@ -6,33 +6,32 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ix")
+@ObfuscatedName("iq")
 @Implements("TaskHandler")
 public class TaskHandler implements Runnable {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@Export("javaVendor")
 	public static String javaVendor;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@Export("javaVersion")
 	public static String javaVersion;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Liq;"
+		descriptor = "Lii;"
 	)
 	@Export("current")
 	Task current;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Liq;"
+		descriptor = "Lii;"
 	)
 	@Export("task")
 	Task task;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("isClosed")
 	boolean isClosed;
 
@@ -56,10 +55,10 @@ public class TaskHandler implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "25896"
+		descriptor = "(I)V",
+		garbageValue = "-561449421"
 	)
 	@Export("close")
 	public final void close() {
@@ -75,10 +74,10 @@ public class TaskHandler implements Runnable {
 
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IIILjava/lang/Object;I)Liq;",
-		garbageValue = "496476713"
+		descriptor = "(IIILjava/lang/Object;I)Lii;",
+		garbageValue = "-1876676379"
 	)
 	@Export("newTask")
 	final Task newTask(int var1, int var2, int var3, Object var4) {
@@ -99,20 +98,20 @@ public class TaskHandler implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;II)Liq;",
-		garbageValue = "-530151426"
+		descriptor = "(Ljava/lang/String;II)Lii;",
+		garbageValue = "43483765"
 	)
 	@Export("newSocketTask")
 	public final Task newSocketTask(String var1, int var2) {
 		return this.newTask(1, var2, 0, var1);
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Runnable;IB)Liq;",
-		garbageValue = "82"
+		descriptor = "(Ljava/lang/Runnable;IB)Lii;",
+		garbageValue = "-79"
 	)
 	@Export("newThreadTask")
 	public final Task newThreadTask(Runnable var1, int var2) {
@@ -167,126 +166,22 @@ public class TaskHandler implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "688799447"
-	)
-	public static void method4914() {
-		synchronized(MouseHandler.MouseHandler_instance) {
-			MouseHandler.MouseHandler_currentButton = MouseHandler.MouseHandler_currentButtonVolatile;
-			MouseHandler.MouseHandler_x = MouseHandler.MouseHandler_xVolatile;
-			MouseHandler.MouseHandler_y = MouseHandler.MouseHandler_yVolatile;
-			MouseHandler.MouseHandler_millis = MouseHandler.MouseHandler_lastMovedVolatile;
-			MouseHandler.MouseHandler_lastButton = MouseHandler.MouseHandler_lastButtonVolatile;
-			MouseHandler.MouseHandler_lastPressedX = MouseHandler.MouseHandler_lastPressedXVolatile;
-			MouseHandler.MouseHandler_lastPressedY = MouseHandler.MouseHandler_lastPressedYVolatile;
-			MouseHandler.MouseHandler_lastPressedTimeMillis = MouseHandler.MouseHandler_lastPressedTimeMillisVolatile;
-			MouseHandler.MouseHandler_lastButtonVolatile = 0;
-		}
-	}
-
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "-116"
+		garbageValue = "-102"
 	)
-	public static void method4916() {
-		synchronized(ArchiveDiskActionHandler.field4530) {
-			if (ArchiveDiskActionHandler.field4526 != 0) {
-				ArchiveDiskActionHandler.field4526 = 1;
-
-				try {
-					ArchiveDiskActionHandler.field4530.wait();
-				} catch (InterruptedException var5) {
-				}
-			}
-		}
-
-		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.clear();
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.clear();
-		}
+	static final void method4455() {
+		AsyncRestClient.method146("Your ignore list is full. Max of 100 for free users, and 400 for members");
 	}
 
-	@ObfuscatedName("bp")
+	@ObfuscatedName("ku")
 	@ObfuscatedSignature(
-		descriptor = "(ILdm;ZI)I",
-		garbageValue = "936346055"
+		descriptor = "(Ldp;IIB)V",
+		garbageValue = "-69"
 	)
-	static int method4922(int var0, Script var1, boolean var2) {
-		int var3;
-		if (var0 == ScriptOpcodes.CAM_FORCEANGLE) {
-			ScriptFrame.Interpreter_intStackSize -= 2;
-			var3 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
-			int var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
-			if (!Client.isCameraLocked) {
-				Client.camAngleX = var3;
-				Client.camAngleY = var4;
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_XA) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.camAngleX;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_YA) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.camAngleY;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_SETFOLLOWHEIGHT) {
-			var3 = Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize];
-			if (var3 < 0) {
-				var3 = 0;
-			}
-
-			Client.camFollowHeight = var3;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETFOLLOWHEIGHT) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.camFollowHeight;
-			return 1;
-		} else {
-			return 2;
-		}
-	}
-
-	@ObfuscatedName("ck")
-	@ObfuscatedSignature(
-		descriptor = "([BB)[B",
-		garbageValue = "7"
-	)
-	@Export("decompressBytes")
-	static final byte[] decompressBytes(byte[] var0) {
-		Buffer var1 = new Buffer(var0);
-		int var2 = var1.readUnsignedByte();
-		int var3 = var1.readInt();
-		if (var3 < 0 || AbstractArchive.field4585 != 0 && var3 > AbstractArchive.field4585) {
-			throw new RuntimeException();
-		} else if (var2 == 0) {
-			byte[] var6 = new byte[var3];
-			var1.readBytes(var6, 0, var3);
-			return var6;
-		} else {
-			int var4 = var1.readInt();
-			if (var4 >= 0 && (AbstractArchive.field4585 == 0 || var4 <= AbstractArchive.field4585)) {
-				byte[] var5 = new byte[var4];
-				if (var2 == 1) {
-					BZip2Decompressor.BZip2Decompressor_decompress(var5, var4, var0, var3, 9);
-				} else {
-					AbstractArchive.gzipDecompressor.decompress(var1, var5);
-				}
-
-				return var5;
-			} else {
-				throw new RuntimeException();
-			}
-		}
-	}
-
-	@ObfuscatedName("lx")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIIII)I",
-		garbageValue = "-1396127676"
-	)
-	static final int method4908(String var0, String var1, int var2, int var3, int var4, int var5, int var6) {
-		return class231.insertMenuItem(var0, var1, var2, var3, var4, var5, var6, false, -1);
+	@Export("updateItemPile3")
+	static final void updateItemPile3(WorldView var0, int var1, int var2) {
+		WorldMapRegion.updateItemPile2(var0, var0.plane, var1, var2);
 	}
 }

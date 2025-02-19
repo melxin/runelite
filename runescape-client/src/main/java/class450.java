@@ -1,126 +1,221 @@
+import java.util.AbstractQueue;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rw")
-public class class450 extends SongTask {
+@ObfuscatedName("rx")
+public class class450 extends AbstractQueue {
+	@ObfuscatedName("jj")
+	static int[] field4944;
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "[Lrs;"
+	)
+	class448[] field4951;
 	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lpq;"
+	Map field4945;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -1548273269
 	)
-	AbstractArchive field4875;
+	int field4946;
+	@ObfuscatedName("ad")
+	final Comparator field4947;
 	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lpq;"
+	@ObfuscatedGetter(
+		intValue = -572902437
 	)
-	AbstractArchive field4874;
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "Lpq;"
-	)
-	AbstractArchive field4873;
+	int field4948;
 
+	public class450(int var1, Comparator var2) {
+		this.field4948 = 0;
+		this.field4951 = new class448[var1];
+		this.field4945 = new HashMap();
+		this.field4947 = var2;
+	}
+
+	public class450(int var1) {
+		this(var1, (Comparator)null);
+	}
+
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lrh;Lpq;Lpq;Lpq;)V"
+		descriptor = "(S)V",
+		garbageValue = "26450"
 	)
-	public class450(SongTask var1, AbstractArchive var2, AbstractArchive var3, AbstractArchive var4) {
-		super(var1);
-		this.field4875 = var2;
-		this.field4874 = var3;
-		this.field4873 = var4;
-		super.field4868 = "LoadSongTask";
+	void method8518() {
+		int var1 = (this.field4951.length << 1) + 1;
+		this.field4951 = (class448[])((class448[])Arrays.copyOf(this.field4951, var1));
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1892560666"
+		descriptor = "(IB)V",
+		garbageValue = "-59"
 	)
-	public boolean vmethod8883() {
-		int var1 = 0;
-		Iterator var2 = class333.midiRequests.iterator();
-
-		while (true) {
-			while (var2.hasNext()) {
-				MidiRequest var3 = (MidiRequest)var2.next();
-				if (var3 != null && var3.midiPcmStream.field3668 > 1 && var3.midiPcmStream.method6749()) {
-					this.method8861("Attempted to load patches of already loading midiplayer!");
-					return true;
+	void method8523(int var1) {
+		class448 var2;
+		int var3;
+		for (var2 = this.field4951[var1]; var1 > 0; var1 = var3) {
+			var3 = var1 - 1 >>> 1;
+			class448 var4 = this.field4951[var3];
+			if (this.field4947 != null) {
+				if (this.field4947.compare(var2.field4938, var4.field4938) >= 0) {
+					break;
 				}
-
-				if (var3 != null && !var3.field3741) {
-					try {
-						if (var3.musicTrackArchive != null && var3.musicTrackGroupId != -1 && var3.musicTrackFileId != -1) {
-							if (var3.field3747 == null) {
-								var3.field3747 = MusicTrack.readTrack(var3.musicTrackArchive, var3.musicTrackGroupId, var3.musicTrackFileId);
-								if (var3.field3747 == null) {
-									continue;
-								}
-							}
-
-							if (var3.field3746 == null) {
-								var3.field3746 = new SoundCache(this.field4873, this.field4874);
-							}
-
-							if (var3.midiPcmStream.updateExternalPlayer(var3.field3747, this.field4875, var3.field3746)) {
-								++var1;
-								var3.field3741 = true;
-								var3.midiPcmStream.method6712();
-							}
-						} else {
-							++var1;
-						}
-					} catch (Exception var5) {
-						class255.RunException_sendStackTrace((String)null, var5);
-						this.method8861(var5.getMessage());
-						return true;
-					}
-				} else {
-					++var1;
-				}
+			} else if (((Comparable)var2.field4938).compareTo(var4.field4938) >= 0) {
+				break;
 			}
 
-			if (var1 == class333.midiRequests.size()) {
+			this.field4951[var1] = var4;
+			this.field4951[var1].field4937 = var1;
+		}
+
+		this.field4951[var1] = var2;
+		this.field4951[var1].field4937 = var1;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(IB)V",
+		garbageValue = "-67"
+	)
+	void method8524(int var1) {
+		class448 var2 = this.field4951[var1];
+
+		int var8;
+		for (int var3 = this.field4946 >>> 1; var1 < var3; var1 = var8) {
+			int var4 = (var1 << 1) + 1;
+			class448 var5 = this.field4951[var4];
+			int var6 = (var1 << 1) + 2;
+			class448 var7 = this.field4951[var6];
+			if (this.field4947 != null) {
+				if (var6 < this.field4946 && this.field4947.compare(var5.field4938, var7.field4938) > 0) {
+					var8 = var6;
+				} else {
+					var8 = var4;
+				}
+			} else if (var6 < this.field4946 && ((Comparable)var5.field4938).compareTo(var7.field4938) > 0) {
+				var8 = var6;
+			} else {
+				var8 = var4;
+			}
+
+			if (this.field4947 != null) {
+				if (this.field4947.compare(var2.field4938, this.field4951[var8].field4938) <= 0) {
+					break;
+				}
+			} else if (((Comparable)var2.field4938).compareTo(this.field4951[var8].field4938) <= 0) {
+				break;
+			}
+
+			this.field4951[var1] = this.field4951[var8];
+			this.field4951[var1].field4937 = var1;
+		}
+
+		this.field4951[var1] = var2;
+		this.field4951[var1].field4937 = var1;
+	}
+
+	public boolean remove(Object var1) {
+		class448 var2 = (class448)this.field4945.remove(var1);
+		if (var2 == null) {
+			return false;
+		} else {
+			++this.field4948;
+			--this.field4946;
+			if (var2.field4937 == this.field4946) {
+				this.field4951[this.field4946] = null;
+				return true;
+			} else {
+				class448 var3 = this.field4951[this.field4946];
+				this.field4951[this.field4946] = null;
+				this.field4951[var2.field4937] = var3;
+				this.field4951[var2.field4937].field4937 = var2.field4937;
+				this.method8524(var2.field4937);
+				if (var3 == this.field4951[var2.field4937]) {
+					this.method8523(var2.field4937);
+				}
+
 				return true;
 			}
-
-			return false;
 		}
 	}
 
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "([FIFI)F",
-		garbageValue = "889884528"
-	)
-	static float method8887(float[] var0, int var1, float var2) {
-		float var3 = var0[var1];
-
-		for (int var4 = var1 - 1; var4 >= 0; --var4) {
-			var3 = var0[var4] + var2 * var3;
-		}
-
-		return var3;
+	public Object peek() {
+		return this.field4946 == 0 ? null : this.field4951[0].field4938;
 	}
 
-	@ObfuscatedName("ng")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1840217495"
-	)
-	static final void method8884() {
-		Iterator var0 = Client.worldViewManager.iterator();
+	public int size() {
+		return this.field4946;
+	}
 
-		while (var0.hasNext()) {
-			WorldView var1 = (WorldView)var0.next();
+	public boolean contains(Object var1) {
+		return this.field4945.containsKey(var1);
+	}
 
-			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
-				Player var3 = GameEngine.topLevelWorldView.players[Client.playerUpdateManager.playerIndices[var2]];
-				if (var3 != null) {
-					var3.method2662();
-				}
+	public Object[] toArray() {
+		Object[] var1 = super.toArray();
+		if (this.field4947 != null) {
+			Arrays.sort(var1, this.field4947);
+		} else {
+			Arrays.sort(var1);
+		}
+
+		return var1;
+	}
+
+	public Iterator iterator() {
+		return new class449(this);
+	}
+
+	public Object poll() {
+		if (this.field4946 == 0) {
+			return null;
+		} else {
+			++this.field4948;
+			Object var1 = this.field4951[0].field4938;
+			this.field4945.remove(var1);
+			--this.field4946;
+			if (this.field4946 == 0) {
+				this.field4951[this.field4946] = null;
+			} else {
+				this.field4951[0] = this.field4951[this.field4946];
+				this.field4951[0].field4937 = 0;
+				this.field4951[this.field4946] = null;
+				this.method8524(0);
 			}
-		}
 
+			return var1;
+		}
+	}
+
+	public boolean offer(Object var1) {
+		if (this.field4945.containsKey(var1)) {
+			throw new IllegalArgumentException("");
+		} else {
+			++this.field4948;
+			int var2 = this.field4946;
+			if (var2 >= this.field4951.length) {
+				this.method8518();
+			}
+
+			++this.field4946;
+			if (var2 == 0) {
+				this.field4951[0] = new class448(var1, 0);
+				this.field4945.put(var1, this.field4951[0]);
+			} else {
+				this.field4951[var2] = new class448(var1, var2);
+				this.field4945.put(var1, this.field4951[var2]);
+				this.method8523(var2);
+			}
+
+			return true;
+		}
 	}
 }

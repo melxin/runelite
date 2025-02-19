@@ -3,57 +3,66 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-@ObfuscatedName("ac")
+@ObfuscatedName("as")
 @Implements("HttpMethod")
 public class HttpMethod implements Enum {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Las;"
 	)
 	@Export("POST")
 	public static final HttpMethod POST;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Las;"
 	)
 	@Export("GET")
 	public static final HttpMethod GET;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Las;"
 	)
 	@Export("PUT")
 	static final HttpMethod PUT;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Las;"
 	)
 	@Export("PATCH")
 	static final HttpMethod PATCH;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Las;"
 	)
 	@Export("DELETE")
 	static final HttpMethod DELETE;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("sm")
 	@ObfuscatedSignature(
-		descriptor = "Lna;"
+		descriptor = "Lgd;"
 	)
-	@Export("scriptActiveWidget")
-	static Widget scriptActiveWidget;
-	@ObfuscatedName("an")
+	@Export("guestClanChannel")
+	static ClanChannel guestClanChannel;
+	@ObfuscatedName("ul")
+	@ObfuscatedSignature(
+		descriptor = "Lcj;"
+	)
+	@Export("decimator")
+	static Decimator decimator;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 697922389
+		intValue = 616054977
 	)
-	int field36;
-	@ObfuscatedName("ae")
+	int field39;
+	@ObfuscatedName("ao")
 	@Export("name")
 	String name;
-	@ObfuscatedName("ax")
-	boolean field41;
-	@ObfuscatedName("at")
+	@ObfuscatedName("af")
+	boolean field43;
+	@ObfuscatedName("aa")
 	boolean field42;
 
 	static {
@@ -65,226 +74,141 @@ public class HttpMethod implements Enum {
 	}
 
 	HttpMethod(int var1, String var2, boolean var3, boolean var4) {
-		this.field36 = var1;
+		this.field39 = var1;
 		this.name = var2;
-		this.field41 = var3;
+		this.field43 = var3;
 		this.field42 = var4;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-65"
+		descriptor = "(B)I",
+		garbageValue = "32"
 	)
-	boolean method75() {
-		return this.field41;
+	@Export("rsOrdinal")
+	public int rsOrdinal() {
+		return this.field39;
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(I)Z",
+		garbageValue = "1778852731"
+	)
+	boolean method72() {
+		return this.field43;
 	}
 
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "118"
-	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field36;
-	}
-
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
 		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-3"
+		garbageValue = "-1"
 	)
 	@Export("getName")
 	public String getName() {
 		return this.name;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1399283481"
+		descriptor = "(B)Z",
+		garbageValue = "123"
 	)
-	boolean method68() {
+	boolean method70() {
 		return this.field42;
 	}
 
 	@ObfuscatedName("ay")
-	public static final int method82(double var0, double var2, double var4) {
-		double var6 = var4;
-		double var8 = var4;
-		double var10 = var4;
-		if (0.0D != var2) {
-			double var12;
-			if (var4 < 0.5D) {
-				var12 = (1.0D + var2) * var4;
-			} else {
-				var12 = var2 + var4 - var2 * var4;
-			}
+	@ObfuscatedSignature(
+		descriptor = "(DDIS)[D",
+		garbageValue = "-559"
+	)
+	public static double[] method74(double var0, double var2, int var4) {
+		int var5 = var4 * 2 + 1;
+		double[] var6 = new double[var5];
+		int var7 = -var4;
 
-			double var14 = var4 * 2.0D - var12;
-			double var16 = 0.3333333333333333D + var0;
-			if (var16 > 1.0D) {
-				--var16;
-			}
-
-			double var20 = var0 - 0.3333333333333333D;
-			if (var20 < 0.0D) {
-				++var20;
-			}
-
-			if (6.0D * var16 < 1.0D) {
-				var6 = var16 * 6.0D * (var12 - var14) + var14;
-			} else if (var16 * 2.0D < 1.0D) {
-				var6 = var12;
-			} else if (var16 * 3.0D < 2.0D) {
-				var6 = (0.6666666666666666D - var16) * (var12 - var14) * 6.0D + var14;
-			} else {
-				var6 = var14;
-			}
-
-			if (6.0D * var0 < 1.0D) {
-				var8 = 6.0D * (var12 - var14) * var0 + var14;
-			} else if (var0 * 2.0D < 1.0D) {
-				var8 = var12;
-			} else if (3.0D * var0 < 2.0D) {
-				var8 = var14 + (var12 - var14) * (0.6666666666666666D - var0) * 6.0D;
-			} else {
-				var8 = var14;
-			}
-
-			if (6.0D * var20 < 1.0D) {
-				var10 = var14 + var20 * 6.0D * (var12 - var14);
-			} else if (2.0D * var20 < 1.0D) {
-				var10 = var12;
-			} else if (var20 * 3.0D < 2.0D) {
-				var10 = 6.0D * (var12 - var14) * (0.6666666666666666D - var20) + var14;
-			} else {
-				var10 = var14;
-			}
+		for (int var8 = 0; var7 <= var4; ++var8) {
+			var6[var8] = class387.method7531((double)var7, var0, var2);
+			++var7;
 		}
 
-		int var22 = (int)(256.0D * var6);
-		int var13 = (int)(256.0D * var8);
-		int var23 = (int)(256.0D * var10);
-		int var15 = var23 + (var13 << 8) + (var22 << 16);
-		return var15;
+		return var6;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "39"
+		descriptor = "(IIIIIII)I",
+		garbageValue = "-1245925185"
 	)
-	static void method84() {
-		if (Login.clearLoginScreen) {
-			Login.titleboxSprite = null;
-			class454.titlebuttonSprite = null;
-			class538.runesSprite = null;
-			WorldMapSectionType.leftTitleSprite = null;
-			TriBool.rightTitleSprite = null;
-			Login.logoSprite = null;
-			class169.title_muteSprite = null;
-			Login.options_buttons_0Sprite = null;
-			FriendLoginUpdate.options_buttons_2Sprite = null;
-			UserComparator5.worldSelectBackSprites = null;
-			class73.worldSelectFlagSprites = null;
-			Script.worldSelectArrows = null;
-			class140.worldSelectStars = null;
-			class93.field1118 = null;
-			HttpHeaders.loginScreenRunesAnimation.method2852();
-			UserComparator3.method3347(0, 100);
-			UserComparator8.method3320().method7823(true);
-			Login.clearLoginScreen = false;
+	public static int method73(int var0, int var1, int var2, int var3, int var4, int var5) {
+		if ((var5 & 1) == 1) {
+			int var6 = var3;
+			var3 = var4;
+			var4 = var6;
 		}
-	}
 
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(Lvy;BII)I",
-		garbageValue = "-1622496793"
-	)
-	static int method65(Buffer var0, byte var1, int var2) {
-		int var3 = var1 >> var2 & 3;
-		if (var3 == 3) {
-			return var0.readInt();
-		} else if (var3 == 2) {
-			return var0.readShort();
+		var2 &= 3;
+		if (var2 == 0) {
+			return var0;
+		} else if (var2 == 1) {
+			return var1;
 		} else {
-			return var3 == 1 ? var0.readByte() : 0;
+			return var2 == 2 ? 7 - var0 - (var3 - 1) : 7 - var1 - (var4 - 1);
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "([FB)V",
-		garbageValue = "-97"
+		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;I)[F",
+		garbageValue = "674499231"
 	)
-	static void method81(float[] var0) {
-		var0[1] = 1.0F - var0[1];
-		if (var0[0] < 0.0F) {
-			var0[0] = 0.0F;
+	static float[] method62(JSONObject var0, String var1) throws JSONException {
+		float[] var2 = new float[4];
+
+		try {
+			JSONArray var3 = var0.getJSONArray(var1);
+			var2[0] = (float)var3.optDouble(0, 0.0D);
+			var2[1] = (float)var3.optDouble(1, 0.0D);
+			var2[2] = (float)var3.optDouble(2, 1.0D);
+			var2[3] = (float)var3.optDouble(3, 1.0D);
+		} catch (JSONException var4) {
+			var2[0] = 0.0F;
+			var2[1] = 0.0F;
+			var2[2] = 1.0F;
+			var2[3] = 1.0F;
 		}
 
-		if (var0[1] < 0.0F) {
-			var0[1] = 0.0F;
-		}
-
-		if (var0[0] > 1.0F || var0[1] > 1.0F) {
-			float var1 = 1.0F + var0[1] * (var0[1] - 2.0F) + var0[0] * (var0[0] - 2.0F + var0[1]);
-			if (var1 + class132.field1535 > 0.0F) {
-				if (class132.field1535 + var0[0] < 1.3333334F) {
-					float var2 = var0[0] - 2.0F;
-					float var3 = var0[0] - 1.0F;
-					float var4 = (float)Math.sqrt((double)(var2 * var2 - var3 * 4.0F * var3));
-					float var5 = 0.5F * (-var2 + var4);
-					if (class132.field1535 + var0[1] > var5) {
-						var0[1] = var5 - class132.field1535;
-					} else {
-						var5 = 0.5F * (-var2 - var4);
-						if (var0[1] < class132.field1535 + var5) {
-							var0[1] = class132.field1535 + var5;
-						}
-					}
-				} else {
-					var0[0] = 1.3333334F - class132.field1535;
-					var0[1] = 0.33333334F - class132.field1535;
-				}
-			}
-		}
-
-		var0[1] = 1.0F - var0[1];
+		return var2;
 	}
 
-	@ObfuscatedName("bv")
+	@ObfuscatedName("ib")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-1946123852"
+		descriptor = "(S)V",
+		garbageValue = "10881"
 	)
-	static int method85(int var0) {
-		return (int)((Math.log((double)var0) / Interpreter.field854 - 7.0D) * 256.0D);
-	}
-
-	@ObfuscatedName("ih")
-	@ObfuscatedSignature(
-		descriptor = "(Ldz;I)V",
-		garbageValue = "1976579478"
-	)
-	static void method79(WorldView var0) {
-		if (Client.combatTargetPlayerIndex >= 0 && var0.players[Client.combatTargetPlayerIndex] != null) {
-			class137.addPlayerToScene(var0, Client.combatTargetPlayerIndex, false);
+	static final void method67() {
+		InvDefinition.method3751(class329.field3661, class190.field2016, FriendsChat.field5114);
+		GraphicsObject.method6532(Language.field4826, class346.field3797);
+		if (class181.cameraX == class329.field3661 && class190.field2016 == GrandExchangeOfferUnitPriceComparator.cameraY && ApproximateRouteStrategy.cameraZ == FriendsChat.field5114 && class59.cameraPitch == Language.field4826 && class346.field3797 == FloorDecoration.cameraYaw) {
+			Client.field781 = false;
+			Client.isCameraLocked = false;
+			Client.field552 = false;
+			Client.field776 = false;
+			Decimator.field399 = 0;
+			GameObject.field3039 = 0;
+			FloorOverlayDefinition.field2345 = 0;
+			User.field5125 = 0;
+			MusicPatch.field3764 = 0;
+			FloatProjection.field2789 = 0;
+			ItemContainer.field1069 = 0;
+			ItemLayer.field2525 = 0;
+			GraphicsDefaults.field5219 = 0;
+			WorldMapSection1.field3329 = 0;
+			Client.field779 = null;
+			Client.field791 = null;
+			Client.field596 = null;
 		}
 
-	}
-
-	@ObfuscatedName("mu")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "96"
-	)
-	static final void method83(int var0) {
-		if (ClanChannel.widgetDefinition.loadInterface(var0)) {
-			GameBuild.drawModelComponents(ClanChannel.widgetDefinition.Widget_interfaceComponents[var0], -1);
-		}
 	}
 }

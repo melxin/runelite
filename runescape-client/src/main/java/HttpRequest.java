@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.util.Date;
 import javax.net.ssl.HttpsURLConnection;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
@@ -11,67 +10,50 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("au")
+@ObfuscatedName("ae")
 @Implements("HttpRequest")
 public class HttpRequest {
-	@ObfuscatedName("kh")
-	@ObfuscatedSignature(
-		descriptor = "[Lvf;"
-	)
-	@Export("headIconPrayerSprites")
-	static SpritePixels[] headIconPrayerSprites;
-	@ObfuscatedName("pr")
-	@ObfuscatedSignature(
-		descriptor = "[Lna;"
-	)
-	static Widget[] field53;
-	@ObfuscatedName("va")
-	@ObfuscatedSignature(
-		descriptor = "Lcd;"
-	)
-	@Export("friendSystem")
-	public static FriendSystem friendSystem;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@Export("connection")
 	final HttpsURLConnection connection;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lri;"
+		descriptor = "Lsf;"
 	)
 	@Export("httpHeaders")
 	final HttpHeaders httpHeaders;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Las;"
 	)
-	final HttpMethod field48;
-	@ObfuscatedName("ao")
+	final HttpMethod field50;
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Ltn;"
+		descriptor = "Ltl;"
 	)
 	@Export("httpPayload")
 	HttpPayload httpPayload;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@Export("requestInitialized")
 	boolean requestInitialized;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("followRedirects")
 	boolean followRedirects;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -1817451863
+		intValue = -1481354131
 	)
 	@Export("connectionTimeout")
 	int connectionTimeout;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;Lac;Lri;Z)V"
+		descriptor = "(Ljava/net/URL;Las;Lsf;Z)V"
 	)
 	public HttpRequest(URL var1, HttpMethod var2, HttpHeaders var3, boolean var4) throws IOException {
 		this.requestInitialized = false;
 		this.followRedirects = false;
 		this.connectionTimeout = 300000;
-		if (!var2.method75()) {
+		if (!var2.method72()) {
 			throw new UnsupportedEncodingException("Unsupported request method used " + var2.getName());
 		} else {
 			this.connection = (HttpsURLConnection)var1.openConnection();
@@ -85,32 +67,32 @@ public class HttpRequest {
 				var5.setSSLSocketFactory(var6);
 			}
 
-			this.field48 = var2;
+			this.field50 = var2;
 			this.httpHeaders = var3 != null ? var3 : new HttpHeaders();
 		}
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;Lac;Z)V"
+		descriptor = "(Ljava/net/URL;Las;Z)V"
 	)
 	public HttpRequest(URL var1, HttpMethod var2, boolean var3) throws IOException {
 		this(var1, var2, new HttpHeaders(), var3);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lri;",
-		garbageValue = "62"
+		descriptor = "(I)Lsf;",
+		garbageValue = "-941648855"
 	)
 	@Export("getHeaders")
 	public HttpHeaders getHeaders() {
 		return this.httpHeaders;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Ltn;B)V",
-		garbageValue = "2"
+		descriptor = "(Ltl;B)V",
+		garbageValue = "0"
 	)
 	@Export("setPayload")
 	public void setPayload(HttpPayload var1) {
@@ -130,17 +112,17 @@ public class HttpRequest {
 		}
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1136076020"
+		garbageValue = "-173259788"
 	)
 	@Export("initializeRequest")
 	void initializeRequest() throws ProtocolException {
 		if (!this.requestInitialized) {
-			this.connection.setRequestMethod(this.field48.getName());
+			this.connection.setRequestMethod(this.field50.getName());
 			this.httpHeaders.setRequestProperties(this.connection);
-			if (this.field48.method68() && this.httpPayload != null) {
+			if (this.field50.method70() && this.httpPayload != null) {
 				this.connection.setDoOutput(true);
 				ByteArrayOutputStream var1 = new ByteArrayOutputStream();
 
@@ -165,10 +147,10 @@ public class HttpRequest {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1407153734"
+		descriptor = "(B)Z",
+		garbageValue = "3"
 	)
 	@Export("connect")
 	boolean connect() throws IOException {
@@ -180,10 +162,10 @@ public class HttpRequest {
 		return this.connection.getResponseCode() == -1;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(S)Lai;",
-		garbageValue = "-252"
+		descriptor = "(B)Laq;",
+		garbageValue = "-17"
 	)
 	@Export("getResponse")
 	HttpResponse getResponse() {
@@ -209,60 +191,33 @@ public class HttpRequest {
 		return var3;
 	}
 
-	@ObfuscatedName("ay")
-	public static String method113(long var0) {
-		Calendar.Calendar_calendar.setTime(new Date(var0));
-		int var2 = Calendar.Calendar_calendar.get(7);
-		int var3 = Calendar.Calendar_calendar.get(5);
-		int var4 = Calendar.Calendar_calendar.get(2);
-		int var5 = Calendar.Calendar_calendar.get(1);
-		int var6 = Calendar.Calendar_calendar.get(11);
-		int var7 = Calendar.Calendar_calendar.get(12);
-		int var8 = Calendar.Calendar_calendar.get(13);
-		return Calendar.DAYS_OF_THE_WEEK[var2 - 1] + ", " + var3 / 10 + var3 % 10 + "-" + Calendar.MONTH_NAMES_ENGLISH_GERMAN[0][var4] + "-" + var5 + " " + var6 / 10 + var6 % 10 + ":" + var7 / 10 + var7 % 10 + ":" + var8 / 10 + var8 % 10 + " GMT";
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "761848290"
+	)
+	static final void method99() {
+		AsyncRestClient.method146("Your friend list is full. Max of 200 for free users, and 400 for members");
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("oh")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "78"
+		descriptor = "(IIB)V",
+		garbageValue = "14"
 	)
-	public static int method100(int var0) {
-		return class506.field5148[var0 & 16383];
-	}
-
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(Lna;B)I",
-		garbageValue = "-36"
-	)
-	static int method112(Widget var0) {
-		if (var0.type != 11) {
-			--HealthBarConfig.Interpreter_stringStackSize;
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = -1;
-			return 1;
-		} else {
-			String var1 = Interpreter.Interpreter_stringStack[--HealthBarConfig.Interpreter_stringStackSize];
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var0.method7465(var1);
-			return 1;
-		}
-	}
-
-	@ObfuscatedName("jy")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIII)V",
-		garbageValue = "-439773603"
-	)
-	static void method92(int var0, int var1, int var2, int var3, int var4) {
-		NodeDeque var5 = class30.worldView.groundItems[var0][var1][var2];
-		if (var5 != null) {
-			for (TileItem var6 = (TileItem)var5.last(); var6 != null; var6 = (TileItem)var5.previous()) {
-				if ((var3 & 32767) == var6.id) {
-					var6.setFlag(var4);
-					break;
-				}
+	static final void method98(int var0, int var1) {
+		ClanChannel var2 = var0 >= 0 ? Client.currentClanChannels[var0] : HttpMethod.guestClanChannel;
+		if (var2 != null && var1 >= 0 && var1 < var2.method3665()) {
+			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1);
+			if (var3.rank == -1) {
+				String var4 = var3.username.getName();
+				PacketBufferNode var5 = class272.getPacketBufferNode(ClientPacket.CLAN_CHANNEL_KICK_USER, Client.packetWriter.isaacCipher);
+				var5.packetBuffer.writeByte(3 + AsyncRestClient.stringCp1252NullTerminatedByteSize(var4));
+				var5.packetBuffer.writeByte(var0);
+				var5.packetBuffer.writeShort(var1);
+				var5.packetBuffer.writeStringCp1252NullTerminated(var4);
+				Client.packetWriter.addNode(var5);
 			}
 		}
-
 	}
 }

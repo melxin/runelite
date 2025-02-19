@@ -1,18 +1,49 @@
+import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lc")
+@ObfuscatedName("la")
 public class class300 {
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lla;"
+	)
+	static final class300 field3314;
 	@ObfuscatedName("ay")
-	public static int method6411(int var0, double var1) {
-		double var3 = (double)(var0 >> 16 & 255) / 256.0D;
-		double var5 = (double)(var0 >> 8 & 255) / 256.0D;
-		double var7 = (double)(var0 & 255) / 256.0D;
-		var3 = Math.pow(var3, var1);
-		var5 = Math.pow(var5, var1);
-		var7 = Math.pow(var7, var1);
-		int var9 = (int)(var3 * 256.0D);
-		int var10 = (int)(var5 * 256.0D);
-		int var11 = (int)(256.0D * var7);
-		return var11 + (var10 << 8) + (var9 << 16) + -16777216;
+	@ObfuscatedSignature(
+		descriptor = "Lla;"
+	)
+	static final class300 field3313;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = 606403969
+	)
+	@Export("value")
+	final int value;
+
+	static {
+		field3314 = new class300(0);
+		field3313 = new class300(1);
+	}
+
+	class300(int var1) {
+		this.value = var1;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(IIIS)I",
+		garbageValue = "-28696"
+	)
+	public static int method6292(int var0, int var1, int var2) {
+		var2 &= 3;
+		if (var2 == 0) {
+			return var0;
+		} else if (var2 == 1) {
+			return var1;
+		} else {
+			return var2 == 2 ? 7 - var0 : 7 - var1;
+		}
 	}
 }

@@ -1,36 +1,37 @@
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("oa")
+@ObfuscatedName("ob")
 public class class381 {
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = -1480091247
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(ILdy;ZI)I",
+		garbageValue = "466340003"
 	)
-	static final int field4150;
-	@ObfuscatedName("az")
-	@ObfuscatedGetter(
-		intValue = -214655591
-	)
-	static final int field4155;
-	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = 2022571361
-	)
-	static final int field4167;
+	static int method7517(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? class132.scriptDotWidget : PlayerCompositionColorTextureOverride.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETINVOBJECT) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.itemId;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETINVCOUNT) {
+			if (var3.itemId != -1) {
+				Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.itemQuantity;
+			} else {
+				Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = 0;
+			}
 
-	static {
-		field4150 = Coord.method6979(256);
-		field4155 = Coord.method6979(256);
-		Coord.method6970(field4150);
-		Coord.method6970(field4155);
-		Coord.method6979(100);
-		Coord.method6979(200);
-		Coord.method6979(1);
-		Coord.method6979(1);
-		field4167 = Coord.method6978(100);
-		Coord.method6976(field4167);
-		Coord.method6979(1);
-		Coord.method6979(1);
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETID) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.childIndex;
+			return 1;
+		} else if (var0 == 1707) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.method7342() ? 1 : 0;
+			return 1;
+		} else if (var0 == 1708) {
+			return IndexCheck.method5621(var3);
+		} else {
+			return var0 == 1709 ? PacketWriter.method3123(var3) : 2;
+		}
 	}
 }

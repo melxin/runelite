@@ -1,45 +1,21 @@
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("uh")
-public class class520 extends class522 {
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -664920125
-	)
-	int field5232;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = -144132369
-	)
-	int field5231;
+public class class520 {
+	@ObfuscatedName("ai")
+	public static final int[] field5274;
+	@ObfuscatedName("ak")
+	static final int[] field5278;
 
-	public class520(int var1, int var2, int var3, int var4) {
-		super(var3, var4);
-		this.field5232 = 0;
-		this.field5231 = 0;
-		this.field5232 = var1;
-		this.field5231 = var2;
-	}
+	static {
+		field5274 = new int[2048];
+		field5278 = new int[2048];
+		double var0 = 0.0030679615757712823D;
 
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1957368633"
-	)
-	public int method9684() {
-		double var1 = this.method9695();
-		return (int)Math.round((double)this.field5232 + var1 * (double)(this.field5231 - this.field5232));
-	}
+		for (int var2 = 0; var2 < 2048; ++var2) {
+			field5274[var2] = (int)(65536.0D * Math.sin(var0 * (double)var2));
+			field5278[var2] = (int)(65536.0D * Math.cos((double)var2 * var0));
+		}
 
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "(IB)D",
-		garbageValue = "0"
-	)
-	public static double method9685(int var0) {
-		int var1 = class507.field5153[var0 & 2047];
-		return (double)var1 / 65536.0D;
 	}
 }

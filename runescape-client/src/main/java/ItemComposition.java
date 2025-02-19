@@ -4,298 +4,298 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("km")
+@ObfuscatedName("in")
 @Implements("ItemComposition")
 public class ItemComposition extends DualNode {
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("ItemDefinition_cached")
 	public static EvictingDualNodeHashTable ItemDefinition_cached;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("ItemDefinition_cachedModels")
 	public static EvictingDualNodeHashTable ItemDefinition_cachedModels;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("ItemDefinition_cachedSprites")
 	public static EvictingDualNodeHashTable ItemDefinition_cachedSprites;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -892737005
+		intValue = 712507937
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -2136818033
+		intValue = -643206809
 	)
 	@Export("model")
 	int model;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ar")
 	@Export("name")
 	public String name;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ag")
 	@Export("examine")
 	public String examine;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("az")
 	@Export("recolorFrom")
 	short[] recolorFrom;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("am")
 	@Export("recolorTo")
 	short[] recolorTo;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("aq")
 	@Export("retextureFrom")
 	short[] retextureFrom;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("aw")
 	@Export("retextureTo")
 	short[] retextureTo;
-	@ObfuscatedName("am")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 119514159
+		intValue = 1075715471
 	)
 	@Export("zoom2d")
 	public int zoom2d;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 276276175
+		intValue = -110386271
 	)
 	@Export("xan2d")
 	public int xan2d;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 799654401
+		intValue = 382787719
 	)
 	@Export("yan2d")
 	public int yan2d;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -1071851413
+		intValue = 1789857765
 	)
 	@Export("zan2d")
 	public int zan2d;
-	@ObfuscatedName("bu")
+	@ObfuscatedName("bw")
 	@ObfuscatedGetter(
-		intValue = 1952162727
+		intValue = 132661455
 	)
 	@Export("offsetX2d")
 	public int offsetX2d;
-	@ObfuscatedName("bh")
+	@ObfuscatedName("bo")
 	@ObfuscatedGetter(
-		intValue = -767015285
+		intValue = 1215395515
 	)
 	@Export("offsetY2d")
 	public int offsetY2d;
-	@ObfuscatedName("bx")
+	@ObfuscatedName("bt")
 	@ObfuscatedGetter(
-		intValue = 553532525
+		intValue = 482679283
 	)
 	@Export("isStackable")
 	public int isStackable;
-	@ObfuscatedName("bd")
+	@ObfuscatedName("ba")
 	@ObfuscatedGetter(
-		intValue = -1439711833
+		intValue = -559222991
 	)
 	@Export("price")
 	public int price;
-	@ObfuscatedName("bi")
+	@ObfuscatedName("bg")
 	@ObfuscatedGetter(
-		intValue = -1905187571
+		intValue = -2072290267
 	)
 	@Export("maleModel")
 	public int maleModel;
-	@ObfuscatedName("bz")
+	@ObfuscatedName("bv")
 	@ObfuscatedGetter(
-		intValue = 1125129175
+		intValue = 4829839
 	)
 	@Export("maleModel1")
 	public int maleModel1;
-	@ObfuscatedName("bt")
+	@ObfuscatedName("bk")
 	@ObfuscatedGetter(
-		intValue = -1417048927
+		intValue = 1583596783
 	)
 	@Export("maleModel2")
 	public int maleModel2;
-	@ObfuscatedName("bf")
+	@ObfuscatedName("bu")
 	@Export("isMembersOnly")
 	public boolean isMembersOnly;
 	@ObfuscatedName("by")
 	@Export("groundActions")
 	public String[] groundActions;
-	@ObfuscatedName("bm")
+	@ObfuscatedName("bh")
 	@Export("inventoryActions")
 	public String[] inventoryActions;
-	@ObfuscatedName("bp")
+	@ObfuscatedName("be")
 	@Export("subOps")
 	public String[][] subOps;
-	@ObfuscatedName("bc")
+	@ObfuscatedName("bq")
 	@ObfuscatedGetter(
-		intValue = -1741976857
+		intValue = -399408617
 	)
 	@Export("shiftClickIndex")
 	int shiftClickIndex;
-	@ObfuscatedName("bv")
+	@ObfuscatedName("bx")
 	@ObfuscatedGetter(
-		intValue = -1049243131
+		intValue = 177389791
 	)
 	@Export("femaleModel")
 	int femaleModel;
-	@ObfuscatedName("bq")
+	@ObfuscatedName("bf")
 	@ObfuscatedGetter(
-		intValue = -109723523
+		intValue = 1845041483
 	)
 	@Export("femaleModel1")
 	int femaleModel1;
-	@ObfuscatedName("ba")
+	@ObfuscatedName("bc")
 	@ObfuscatedGetter(
-		intValue = 2135044085
+		intValue = 1284230419
 	)
 	@Export("femaleOffset")
 	int femaleOffset;
-	@ObfuscatedName("bk")
+	@ObfuscatedName("bb")
 	@ObfuscatedGetter(
-		intValue = -619364413
+		intValue = -1717131775
 	)
 	@Export("maleHeadModel")
 	int maleHeadModel;
-	@ObfuscatedName("bs")
+	@ObfuscatedName("bi")
 	@ObfuscatedGetter(
-		intValue = 1167900573
+		intValue = -1312685035
 	)
 	@Export("maleHeadModel2")
 	int maleHeadModel2;
-	@ObfuscatedName("bj")
+	@ObfuscatedName("bn")
 	@ObfuscatedGetter(
-		intValue = 380180787
+		intValue = -979768397
 	)
-	int field2847;
-	@ObfuscatedName("bo")
+	int field2309;
+	@ObfuscatedName("bl")
 	@ObfuscatedGetter(
-		intValue = 474682293
+		intValue = 2070174905
 	)
 	@Export("femaleModel2")
 	int femaleModel2;
-	@ObfuscatedName("be")
+	@ObfuscatedName("bd")
 	@ObfuscatedGetter(
-		intValue = -973052635
+		intValue = -1135908487
 	)
 	@Export("femaleHeadModel")
 	int femaleHeadModel;
-	@ObfuscatedName("bn")
+	@ObfuscatedName("br")
 	@ObfuscatedGetter(
-		intValue = -441648217
+		intValue = 285796877
 	)
 	@Export("femaleHeadModel2")
 	int femaleHeadModel2;
-	@ObfuscatedName("br")
+	@ObfuscatedName("bm")
 	@ObfuscatedGetter(
-		intValue = 706978655
+		intValue = 727309241
 	)
-	int field2883;
-	@ObfuscatedName("bl")
+	int field2313;
+	@ObfuscatedName("bp")
 	@ObfuscatedGetter(
-		intValue = 224115793
+		intValue = 1241015161
 	)
-	int field2884;
-	@ObfuscatedName("cb")
+	int field2300;
+	@ObfuscatedName("ch")
 	@ObfuscatedGetter(
-		intValue = 1891834093
+		intValue = -591840663
 	)
-	int field2885;
-	@ObfuscatedName("cn")
+	int field2296;
+	@ObfuscatedName("cd")
 	@Export("countobj")
 	int[] countobj;
-	@ObfuscatedName("cc")
+	@ObfuscatedName("cp")
 	@Export("countco")
 	int[] countco;
-	@ObfuscatedName("co")
+	@ObfuscatedName("ca")
 	@ObfuscatedGetter(
-		intValue = 324168927
+		intValue = 982636231
 	)
 	@Export("note")
 	public int note;
-	@ObfuscatedName("ca")
+	@ObfuscatedName("cs")
 	@ObfuscatedGetter(
-		intValue = -2102002821
+		intValue = 935512107
 	)
 	@Export("noteTemplate")
 	public int noteTemplate;
-	@ObfuscatedName("cg")
+	@ObfuscatedName("cj")
 	@ObfuscatedGetter(
-		intValue = -676025685
+		intValue = -1906882619
 	)
 	@Export("resizeX")
 	int resizeX;
-	@ObfuscatedName("cp")
+	@ObfuscatedName("cy")
 	@ObfuscatedGetter(
-		intValue = -1065577369
+		intValue = -226469301
 	)
 	@Export("resizeY")
 	int resizeY;
-	@ObfuscatedName("cz")
+	@ObfuscatedName("cb")
 	@ObfuscatedGetter(
-		intValue = -1443180817
+		intValue = -1277493207
 	)
 	@Export("resizeZ")
 	int resizeZ;
-	@ObfuscatedName("cy")
+	@ObfuscatedName("co")
 	@ObfuscatedGetter(
-		intValue = 1763920749
+		intValue = 984147917
 	)
 	@Export("ambient")
 	public int ambient;
-	@ObfuscatedName("cu")
+	@ObfuscatedName("ct")
 	@ObfuscatedGetter(
-		intValue = 1283640709
+		intValue = 1459082497
 	)
 	@Export("contrast")
 	public int contrast;
-	@ObfuscatedName("cq")
+	@ObfuscatedName("cv")
 	@ObfuscatedGetter(
-		intValue = 600104221
+		intValue = -181735495
 	)
 	@Export("team")
 	public int team;
 	@ObfuscatedName("cf")
 	@ObfuscatedGetter(
-		intValue = 796033429
+		intValue = -1800481187
 	)
-	public int field2896;
-	@ObfuscatedName("ct")
+	public int field2286;
+	@ObfuscatedName("ck")
 	@ObfuscatedSignature(
-		descriptor = "Lue;"
+		descriptor = "Lqv;"
 	)
 	@Export("params")
 	IterableNodeHashTable params;
-	@ObfuscatedName("ci")
+	@ObfuscatedName("cx")
 	@Export("isTradable")
 	public boolean isTradable;
-	@ObfuscatedName("cl")
+	@ObfuscatedName("cu")
 	@ObfuscatedGetter(
-		intValue = -1385069669
+		intValue = 751484131
 	)
 	@Export("unnotedId")
 	int unnotedId;
-	@ObfuscatedName("cw")
+	@ObfuscatedName("cg")
 	@ObfuscatedGetter(
-		intValue = 1482194655
+		intValue = -50468245
 	)
 	@Export("notedId")
 	int notedId;
-	@ObfuscatedName("cj")
+	@ObfuscatedName("cw")
 	@ObfuscatedGetter(
-		intValue = -181289213
+		intValue = 1333449207
 	)
 	@Export("placeholder")
 	public int placeholder;
-	@ObfuscatedName("cx")
+	@ObfuscatedName("ce")
 	@ObfuscatedGetter(
-		intValue = 1463720475
+		intValue = 803840765
 	)
 	@Export("placeholderTemplate")
 	public int placeholderTemplate;
@@ -330,13 +330,13 @@ public class ItemComposition extends DualNode {
 		this.femaleOffset = 0;
 		this.maleHeadModel = -1;
 		this.maleHeadModel2 = -1;
-		this.field2847 = 0;
+		this.field2309 = 0;
 		this.femaleModel2 = -1;
 		this.femaleHeadModel = -1;
 		this.femaleHeadModel2 = -1;
-		this.field2883 = -1;
-		this.field2884 = -1;
-		this.field2885 = -1;
+		this.field2313 = -1;
+		this.field2300 = -1;
+		this.field2296 = -1;
 		this.note = -1;
 		this.noteTemplate = -1;
 		this.resizeX = 128;
@@ -345,7 +345,7 @@ public class ItemComposition extends DualNode {
 		this.ambient = 0;
 		this.contrast = 0;
 		this.team = 0;
-		this.field2896 = 0;
+		this.field2286 = 0;
 		this.isTradable = false;
 		this.unnotedId = -1;
 		this.notedId = -1;
@@ -353,23 +353,23 @@ public class ItemComposition extends DualNode {
 		this.placeholderTemplate = -1;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "164105098"
+		garbageValue = "16711935"
 	)
 	@Export("post")
 	void post() {
 		if (this.isStackable == 1) {
-			this.field2896 = 0;
+			this.field2286 = 0;
 		}
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;I)V",
-		garbageValue = "-625177235"
+		garbageValue = "-303430887"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -383,10 +383,10 @@ public class ItemComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;II)V",
-		garbageValue = "1710442107"
+		descriptor = "(Lvy;IB)V",
+		garbageValue = "-97"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -431,7 +431,7 @@ public class ItemComposition extends DualNode {
 			this.femaleModel1 = var1.readUnsignedShort();
 		} else if (var2 == 25) {
 			this.maleHeadModel = var1.readUnsignedShort();
-			this.field2847 = var1.readUnsignedByte();
+			this.field2309 = var1.readUnsignedByte();
 		} else if (var2 == 26) {
 			this.maleHeadModel2 = var1.readUnsignedShort();
 		} else if (var2 == 27) {
@@ -491,7 +491,7 @@ public class ItemComposition extends DualNode {
 			} else if (var2 == 65) {
 				this.isTradable = true;
 			} else if (var2 == 75) {
-				this.field2896 = var1.readShort();
+				this.field2286 = var1.readShort();
 			} else if (var2 == 78) {
 				this.femaleModel2 = var1.readUnsignedShort();
 			} else if (var2 == 79) {
@@ -499,11 +499,11 @@ public class ItemComposition extends DualNode {
 			} else if (var2 == 90) {
 				this.femaleHeadModel2 = var1.readUnsignedShort();
 			} else if (var2 == 91) {
-				this.field2884 = var1.readUnsignedShort();
+				this.field2300 = var1.readUnsignedShort();
 			} else if (var2 == 92) {
-				this.field2883 = var1.readUnsignedShort();
+				this.field2313 = var1.readUnsignedShort();
 			} else if (var2 == 93) {
-				this.field2885 = var1.readUnsignedShort();
+				this.field2296 = var1.readUnsignedShort();
 			} else if (var2 == 94) {
 				var1.readUnsignedShort();
 			} else if (var2 == 95) {
@@ -529,7 +529,7 @@ public class ItemComposition extends DualNode {
 			} else if (var2 == 113) {
 				this.ambient = var1.readByte();
 			} else if (var2 == 114) {
-				this.contrast = var1.readByte() * 5;
+				this.contrast = var1.readByte();
 			} else if (var2 == 115) {
 				this.team = var1.readUnsignedByte();
 			} else if (var2 == 139) {
@@ -541,16 +541,16 @@ public class ItemComposition extends DualNode {
 			} else if (var2 == 149) {
 				this.placeholderTemplate = var1.readUnsignedShort();
 			} else if (var2 == 249) {
-				this.params = class1.readStringIntParameters(var1, this.params);
+				this.params = UserComparator6.readStringIntParameters(var1, this.params);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lkm;Lkm;I)V",
-		garbageValue = "-931912257"
+		descriptor = "(Lin;Lin;I)V",
+		garbageValue = "-851146257"
 	)
 	@Export("genCert")
 	void genCert(ItemComposition var1, ItemComposition var2) {
@@ -572,10 +572,10 @@ public class ItemComposition extends DualNode {
 		this.isStackable = 1;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lkm;Lkm;S)V",
-		garbageValue = "-5411"
+		descriptor = "(Lin;Lin;I)V",
+		garbageValue = "-1924703854"
 	)
 	@Export("genBought")
 	void genBought(ItemComposition var1, ItemComposition var2) {
@@ -604,12 +604,12 @@ public class ItemComposition extends DualNode {
 		this.maleHeadModel2 = var2.maleHeadModel2;
 		this.femaleHeadModel = var2.femaleHeadModel;
 		this.femaleHeadModel2 = var2.femaleHeadModel2;
-		this.field2883 = var2.field2883;
-		this.field2884 = var2.field2884;
-		this.field2885 = var2.field2885;
+		this.field2313 = var2.field2313;
+		this.field2300 = var2.field2300;
+		this.field2296 = var2.field2296;
 		this.team = var2.team;
 		this.groundActions = var2.groundActions;
-		this.field2896 = var2.field2896;
+		this.field2286 = var2.field2286;
 		this.inventoryActions = new String[5];
 		if (var2.inventoryActions != null) {
 			for (int var3 = 0; var3 < 4; ++var3) {
@@ -628,10 +628,10 @@ public class ItemComposition extends DualNode {
 		this.price = 0;
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lkm;Lkm;I)V",
-		garbageValue = "786881847"
+		descriptor = "(Lin;Lin;I)V",
+		garbageValue = "-504064882"
 	)
 	@Export("genPlaceholder")
 	void genPlaceholder(ItemComposition var1, ItemComposition var2) {
@@ -654,10 +654,10 @@ public class ItemComposition extends DualNode {
 		this.isTradable = false;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lgx;",
-		garbageValue = "-1768715510"
+		descriptor = "(IB)Ljk;",
+		garbageValue = "1"
 	)
 	@Export("getModelData")
 	public final ModelData getModelData(int var1) {
@@ -671,11 +671,11 @@ public class ItemComposition extends DualNode {
 			}
 
 			if (var2 != -1) {
-				return FaceNormal.ItemDefinition_get(var2).getModelData(1);
+				return class138.ItemDefinition_get(var2).getModelData(1);
 			}
 		}
 
-		ModelData var4 = ModelData.ModelData_get(UrlRequester.ItemDefinition_modelArchive, this.model, 0);
+		ModelData var4 = ModelData.ModelData_get(HttpAuthenticationHeader.ItemDefinition_modelArchive, this.model, 0);
 		if (var4 == null) {
 			return null;
 		} else {
@@ -683,15 +683,15 @@ public class ItemComposition extends DualNode {
 				var4.resize(this.resizeX, this.resizeY, this.resizeZ);
 			}
 
-			this.method5574(var4, (PlayerCompositionColorTextureOverride)null);
+			this.method4222(var4, (PlayerCompositionColorTextureOverride)null);
 			return var4;
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lhv;",
-		garbageValue = "-79"
+		descriptor = "(II)Ljf;",
+		garbageValue = "-1960162776"
 	)
 	@Export("getModel")
 	public final Model getModel(int var1) {
@@ -705,7 +705,7 @@ public class ItemComposition extends DualNode {
 			}
 
 			if (var2 != -1) {
-				return FaceNormal.ItemDefinition_get(var2).getModel(1);
+				return class138.ItemDefinition_get(var2).getModel(1);
 			}
 		}
 
@@ -713,7 +713,7 @@ public class ItemComposition extends DualNode {
 		if (var4 != null) {
 			return var4;
 		} else {
-			ModelData var5 = ModelData.ModelData_get(UrlRequester.ItemDefinition_modelArchive, this.model, 0);
+			ModelData var5 = ModelData.ModelData_get(HttpAuthenticationHeader.ItemDefinition_modelArchive, this.model, 0);
 			if (var5 == null) {
 				return null;
 			} else {
@@ -721,8 +721,8 @@ public class ItemComposition extends DualNode {
 					var5.resize(this.resizeX, this.resizeY, this.resizeZ);
 				}
 
-				this.method5574(var5, (PlayerCompositionColorTextureOverride)null);
-				var4 = var5.toModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+				this.method4222(var5, (PlayerCompositionColorTextureOverride)null);
+				var4 = var5.toModel(this.ambient + 64, this.contrast * 5 + 768, -50, -10, -50);
 				var4.isSingleTile = true;
 				ItemDefinition_cachedModels.put(var4, (long)this.id);
 				return var4;
@@ -730,17 +730,17 @@ public class ItemComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lia;I)Lhv;",
-		garbageValue = "-1284864010"
+		descriptor = "(Lgf;I)Ljf;",
+		garbageValue = "379136474"
 	)
-	public final Model method5582(PlayerCompositionColorTextureOverride var1) {
-		Model var2 = var1.field2483;
+	public final Model method4216(PlayerCompositionColorTextureOverride var1) {
+		Model var2 = var1.field1895;
 		if (var2 != null) {
 			return var2;
 		} else {
-			ModelData var3 = ModelData.ModelData_get(UrlRequester.ItemDefinition_modelArchive, var1.field2474, 0);
+			ModelData var3 = ModelData.ModelData_get(HttpAuthenticationHeader.ItemDefinition_modelArchive, var1.field1894, 0);
 			if (var3 == null) {
 				return null;
 			} else {
@@ -748,19 +748,19 @@ public class ItemComposition extends DualNode {
 					var3.resize(this.resizeX, this.resizeY, this.resizeZ);
 				}
 
-				this.method5574(var3, var1);
-				var2 = var3.toModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+				this.method4222(var3, var1);
+				var2 = var3.toModel(this.ambient + 64, this.contrast * 5 + 768, -50, -10, -50);
 				var2.isSingleTile = true;
-				var1.field2483 = var2;
+				var1.field1895 = var2;
 				return var2;
 			}
 		}
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lkm;",
-		garbageValue = "-100301827"
+		descriptor = "(II)Lin;",
+		garbageValue = "805318704"
 	)
 	@Export("getCountObj")
 	public ItemComposition getCountObj(int var1) {
@@ -774,19 +774,19 @@ public class ItemComposition extends DualNode {
 			}
 
 			if (var2 != -1) {
-				return FaceNormal.ItemDefinition_get(var2);
+				return class138.ItemDefinition_get(var2);
 			}
 		}
 
 		return this;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(ILia;I)Z",
-		garbageValue = "403119401"
+		descriptor = "(ILgf;I)Z",
+		garbageValue = "1711900683"
 	)
-	public final boolean method5571(int var1, PlayerCompositionColorTextureOverride var2) {
+	public final boolean method4254(int var1, PlayerCompositionColorTextureOverride var2) {
 		int var3 = this.femaleModel;
 		int var4 = this.femaleModel1;
 		int var5 = this.femaleModel2;
@@ -796,23 +796,23 @@ public class ItemComposition extends DualNode {
 			var5 = this.femaleHeadModel;
 		}
 
-		if (var2 != null && var2.method5083(var1)) {
-			var3 = var2.method5099(var1);
+		if (var2 != null && var2.method3731(var1)) {
+			var3 = var2.method3708(var1);
 		}
 
 		if (var3 == -1) {
 			return true;
 		} else {
 			boolean var6 = true;
-			if (!UrlRequester.ItemDefinition_modelArchive.tryLoadFile(var3, 0)) {
+			if (!HttpAuthenticationHeader.ItemDefinition_modelArchive.tryLoadFile(var3, 0)) {
 				var6 = false;
 			}
 
-			if (var4 != -1 && !UrlRequester.ItemDefinition_modelArchive.tryLoadFile(var4, 0)) {
+			if (var4 != -1 && !HttpAuthenticationHeader.ItemDefinition_modelArchive.tryLoadFile(var4, 0)) {
 				var6 = false;
 			}
 
-			if (var5 != -1 && !UrlRequester.ItemDefinition_modelArchive.tryLoadFile(var5, 0)) {
+			if (var5 != -1 && !HttpAuthenticationHeader.ItemDefinition_modelArchive.tryLoadFile(var5, 0)) {
 				var6 = false;
 			}
 
@@ -820,12 +820,12 @@ public class ItemComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(ILia;I)Lgx;",
-		garbageValue = "811824866"
+		descriptor = "(ILgf;I)Ljk;",
+		garbageValue = "1935386794"
 	)
-	public final ModelData method5572(int var1, PlayerCompositionColorTextureOverride var2) {
+	public final ModelData method4268(int var1, PlayerCompositionColorTextureOverride var2) {
 		int var3 = this.femaleModel;
 		int var4 = this.femaleModel1;
 		int var5 = this.femaleModel2;
@@ -835,18 +835,18 @@ public class ItemComposition extends DualNode {
 			var5 = this.femaleHeadModel;
 		}
 
-		if (var2 != null && var2.method5083(var1)) {
-			var3 = var2.method5099(var1);
+		if (var2 != null && var2.method3731(var1)) {
+			var3 = var2.method3708(var1);
 		}
 
 		if (var3 == -1) {
 			return null;
 		} else {
-			ModelData var6 = ModelData.ModelData_get(UrlRequester.ItemDefinition_modelArchive, var3, 0);
+			ModelData var6 = ModelData.ModelData_get(HttpAuthenticationHeader.ItemDefinition_modelArchive, var3, 0);
 			if (var4 != -1) {
-				ModelData var7 = ModelData.ModelData_get(UrlRequester.ItemDefinition_modelArchive, var4, 0);
+				ModelData var7 = ModelData.ModelData_get(HttpAuthenticationHeader.ItemDefinition_modelArchive, var4, 0);
 				if (var5 != -1) {
-					ModelData var8 = ModelData.ModelData_get(UrlRequester.ItemDefinition_modelArchive, var5, 0);
+					ModelData var8 = ModelData.ModelData_get(HttpAuthenticationHeader.ItemDefinition_modelArchive, var5, 0);
 					ModelData[] var9 = new ModelData[]{var6, var7, var8};
 					var6 = new ModelData(var9, 3);
 				} else {
@@ -859,41 +859,41 @@ public class ItemComposition extends DualNode {
 				var6.changeOffset(0, this.femaleOffset, 0);
 			}
 
-			if (var1 == 1 && this.field2847 != 0) {
-				var6.changeOffset(0, this.field2847, 0);
+			if (var1 == 1 && this.field2309 != 0) {
+				var6.changeOffset(0, this.field2309, 0);
 			}
 
-			this.method5574(var6, var2);
+			this.method4222(var6, var2);
 			return var6;
 		}
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(ILia;B)Z",
-		garbageValue = "42"
+		descriptor = "(ILgf;I)Z",
+		garbageValue = "310801323"
 	)
-	public final boolean method5630(int var1, PlayerCompositionColorTextureOverride var2) {
+	public final boolean method4220(int var1, PlayerCompositionColorTextureOverride var2) {
 		int var3 = this.femaleHeadModel2;
-		int var4 = this.field2883;
+		int var4 = this.field2313;
 		if (var1 == 1) {
-			var3 = this.field2884;
-			var4 = this.field2885;
+			var3 = this.field2300;
+			var4 = this.field2296;
 		}
 
-		if (var2 != null && var2.method5084(var1)) {
-			var3 = var2.method5080(var1);
+		if (var2 != null && var2.method3712(var1)) {
+			var3 = var2.method3714(var1);
 		}
 
 		if (var3 == -1) {
 			return true;
 		} else {
 			boolean var5 = true;
-			if (!UrlRequester.ItemDefinition_modelArchive.tryLoadFile(var3, 0)) {
+			if (!HttpAuthenticationHeader.ItemDefinition_modelArchive.tryLoadFile(var3, 0)) {
 				var5 = false;
 			}
 
-			if (var4 != -1 && !UrlRequester.ItemDefinition_modelArchive.tryLoadFile(var4, 0)) {
+			if (var4 != -1 && !HttpAuthenticationHeader.ItemDefinition_modelArchive.tryLoadFile(var4, 0)) {
 				var5 = false;
 			}
 
@@ -901,44 +901,44 @@ public class ItemComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(ILia;I)Lgx;",
-		garbageValue = "1783399362"
+		descriptor = "(ILgf;I)Ljk;",
+		garbageValue = "-1599804383"
 	)
-	public final ModelData method5573(int var1, PlayerCompositionColorTextureOverride var2) {
+	public final ModelData method4257(int var1, PlayerCompositionColorTextureOverride var2) {
 		int var3 = this.femaleHeadModel2;
-		int var4 = this.field2883;
+		int var4 = this.field2313;
 		if (var1 == 1) {
-			var3 = this.field2884;
-			var4 = this.field2885;
+			var3 = this.field2300;
+			var4 = this.field2296;
 		}
 
-		if (var2 != null && var2.method5084(var1)) {
-			var3 = var2.method5080(var1);
+		if (var2 != null && var2.method3712(var1)) {
+			var3 = var2.method3714(var1);
 		}
 
 		if (var3 == -1) {
 			return null;
 		} else {
-			ModelData var5 = ModelData.ModelData_get(UrlRequester.ItemDefinition_modelArchive, var3, 0);
+			ModelData var5 = ModelData.ModelData_get(HttpAuthenticationHeader.ItemDefinition_modelArchive, var3, 0);
 			if (var4 != -1) {
-				ModelData var6 = ModelData.ModelData_get(UrlRequester.ItemDefinition_modelArchive, var4, 0);
+				ModelData var6 = ModelData.ModelData_get(HttpAuthenticationHeader.ItemDefinition_modelArchive, var4, 0);
 				ModelData[] var7 = new ModelData[]{var5, var6};
 				var5 = new ModelData(var7, 2);
 			}
 
-			this.method5574(var5, var2);
+			this.method4222(var5, var2);
 			return var5;
 		}
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lgx;Lia;B)V",
-		garbageValue = "16"
+		descriptor = "(Ljk;Lgf;I)V",
+		garbageValue = "-1373324365"
 	)
-	void method5574(ModelData var1, PlayerCompositionColorTextureOverride var2) {
+	void method4222(ModelData var1, PlayerCompositionColorTextureOverride var2) {
 		short[] var3;
 		short[] var4;
 		int var5;
@@ -968,30 +968,30 @@ public class ItemComposition extends DualNode {
 
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "(III)I",
-		garbageValue = "-1636243841"
+		garbageValue = "1136514864"
 	)
 	@Export("getIntParam")
 	public int getIntParam(int var1, int var2) {
-		return Canvas.method336(this.params, var1, var2);
+		return class28.method391(this.params, var1, var2);
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "181061069"
+		descriptor = "(ILjava/lang/String;B)Ljava/lang/String;",
+		garbageValue = "-6"
 	)
 	@Export("getStringParam")
 	public String getStringParam(int var1, String var2) {
-		return class47.method906(this.params, var1, var2);
+		return class59.method1133(this.params, var1, var2);
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "69"
+		garbageValue = "-48"
 	)
 	@Export("getShiftClickIndex")
 	public int getShiftClickIndex() {
@@ -1006,47 +1006,704 @@ public class ItemComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1865588074"
+		descriptor = "(B)Z",
+		garbageValue = "126"
 	)
-	boolean method5611() {
+	boolean method4226() {
 		return this.recolorTo != null;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(B)Z",
-		garbageValue = "101"
+		garbageValue = "-66"
 	)
-	boolean method5579() {
+	boolean method4227() {
 		return this.retextureTo != null;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "([BZS)Ljava/lang/Object;",
-		garbageValue = "-20607"
+		descriptor = "(I)V",
+		garbageValue = "-2082127430"
 	)
-	public static Object method5587(byte[] var0, boolean var1) {
-		if (var0 == null) {
-			return null;
-		} else if (var0.length > 136) {
-			DirectByteArrayCopier var2 = new DirectByteArrayCopier();
-			var2.set(var0);
-			return var2;
-		} else {
-			return var0;
-		}
+	static final void method4285() {
+		AsyncRestClient.method146("You can't add yourself to your own ignore list");
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("cy")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "-62"
+		descriptor = "(IB)Ljava/lang/Object;",
+		garbageValue = "62"
 	)
-	public static int method5643(int var0) {
-		return class331.field3612[var0];
+	static Object method4221(int var0) {
+		return WorldMapSection1.method6326((class555)class454.findEnumerated(class555.method10068(), var0));
+	}
+
+	@ObfuscatedName("lw")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIILjava/lang/String;Ljava/lang/String;III)V",
+		garbageValue = "923421879"
+	)
+	@Export("menuAction")
+	public static final void menuAction(int var0, int var1, int var2, int var3, int var4, int var5, String var6, String var7, int var8, int var9) {
+		WorldView var10 = Client.worldViewManager.method2546(var5);
+		if (var10 != null) {
+			int var11 = var10.baseX;
+			int var12 = var10.baseY;
+			class414 var13 = var10.field1356;
+			class414 var14 = var10.field1353;
+			if (var2 >= 2000) {
+				var2 -= 2000;
+			}
+
+			PacketBufferNode var15;
+			if (var2 == 1) {
+				Client.mouseCrossX = var8;
+				Client.mouseCrossY = var9;
+				Client.mouseCrossColor = 2;
+				Client.mouseCrossState = 0;
+				Client.destinationX = var0;
+				Client.destinationY = var1;
+				var15 = class272.getPacketBufferNode(ClientPacket.OPLOCU, Client.packetWriter.isaacCipher);
+				var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeShort(class400.field4676);
+				var15.packetBuffer.writeShortAdd(class447.field4935);
+				var15.packetBuffer.writeIntIME(SoundCache.field309);
+				var15.packetBuffer.writeShortAddLE(var12 + var1);
+				var15.packetBuffer.writeShortAddLE(var3);
+				var15.packetBuffer.writeShortAdd(var0 + var11);
+				Client.packetWriter.addNode(var15);
+			} else if (var2 == 2) {
+				Client.mouseCrossX = var8;
+				Client.mouseCrossY = var9;
+				Client.mouseCrossColor = 2;
+				Client.mouseCrossState = 0;
+				Client.destinationX = var0;
+				Client.destinationY = var1;
+				var15 = class272.getPacketBufferNode(ClientPacket.OPLOCT, Client.packetWriter.isaacCipher);
+				var15.packetBuffer.writeShortAdd(var0 + var11);
+				var15.packetBuffer.writeShortAddLE(Client.selectedSpellChildIndex);
+				var15.packetBuffer.writeShortAddLE(var3);
+				var15.packetBuffer.writeShortAddLE(Client.selectedSpellItemId);
+				var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeIntME(class171.selectedSpellWidget);
+				var15.packetBuffer.writeShortLE(var12 + var1);
+				Client.packetWriter.addNode(var15);
+			} else if (var2 == 3) {
+				Client.mouseCrossX = var8;
+				Client.mouseCrossY = var9;
+				Client.mouseCrossColor = 2;
+				Client.mouseCrossState = 0;
+				Client.destinationX = var0;
+				Client.destinationY = var1;
+				var15 = class272.getPacketBufferNode(ClientPacket.OPLOC1, Client.packetWriter.isaacCipher);
+				var15.packetBuffer.writeShortAddLE(var0 + var11);
+				var15.packetBuffer.writeShort(var3);
+				var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeShortLE(var12 + var1);
+				Client.packetWriter.addNode(var15);
+			} else if (var2 == 4) {
+				Client.mouseCrossX = var8;
+				Client.mouseCrossY = var9;
+				Client.mouseCrossColor = 2;
+				Client.mouseCrossState = 0;
+				Client.destinationX = var0;
+				Client.destinationY = var1;
+				var15 = class272.getPacketBufferNode(ClientPacket.OPLOC2, Client.packetWriter.isaacCipher);
+				var15.packetBuffer.writeShortAddLE(var12 + var1);
+				var15.packetBuffer.writeShort(var0 + var11);
+				var15.packetBuffer.writeShortAdd(var3);
+				var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				Client.packetWriter.addNode(var15);
+			} else if (var2 == 5) {
+				Client.mouseCrossX = var8;
+				Client.mouseCrossY = var9;
+				Client.mouseCrossColor = 2;
+				Client.mouseCrossState = 0;
+				Client.destinationX = var0;
+				Client.destinationY = var1;
+				var15 = class272.getPacketBufferNode(ClientPacket.OPLOC3, Client.packetWriter.isaacCipher);
+				var15.packetBuffer.writeShortAddLE(var0 + var11);
+				var15.packetBuffer.writeShort(var12 + var1);
+				var15.packetBuffer.writeShortAddLE(var3);
+				var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				Client.packetWriter.addNode(var15);
+			} else if (var2 == 6) {
+				Client.mouseCrossX = var8;
+				Client.mouseCrossY = var9;
+				Client.mouseCrossColor = 2;
+				Client.mouseCrossState = 0;
+				Client.destinationX = var0;
+				Client.destinationY = var1;
+				var15 = class272.getPacketBufferNode(ClientPacket.OPLOC4, Client.packetWriter.isaacCipher);
+				var15.packetBuffer.writeShort(var0 + var11);
+				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeShortAddLE(var12 + var1);
+				var15.packetBuffer.writeShortAddLE(var3);
+				Client.packetWriter.addNode(var15);
+			} else {
+				PacketBufferNode var16;
+				NPC var20;
+				if (var2 == 7) {
+					var20 = (NPC)var13.method7890((long)var3);
+					if (var20 != null) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var16 = class272.getPacketBufferNode(ClientPacket.OPNPCU, Client.packetWriter.isaacCipher);
+						var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortLE(class447.field4935);
+						var16.packetBuffer.writeShortAddLE(class400.field4676);
+						var16.packetBuffer.writeShortLE(var3);
+						var16.packetBuffer.writeIntLE(SoundCache.field309);
+						Client.packetWriter.addNode(var16);
+					}
+				} else if (var2 == 8) {
+					var20 = (NPC)var13.method7890((long)var3);
+					if (var20 != null) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var16 = class272.getPacketBufferNode(ClientPacket.OPNPCT, Client.packetWriter.isaacCipher);
+						var16.packetBuffer.writeShort(Client.selectedSpellChildIndex);
+						var16.packetBuffer.writeShortLE(Client.selectedSpellItemId);
+						var16.packetBuffer.writeShort(var3);
+						var16.packetBuffer.writeIntLE(class171.selectedSpellWidget);
+						var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						Client.packetWriter.addNode(var16);
+					}
+				} else if (var2 == 9) {
+					var20 = (NPC)var13.method7890((long)var3);
+					if (var20 != null) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var16 = class272.getPacketBufferNode(ClientPacket.OPNPC1, Client.packetWriter.isaacCipher);
+						var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortAdd(var3);
+						Client.packetWriter.addNode(var16);
+					}
+				} else if (var2 == 10) {
+					var20 = (NPC)var13.method7890((long)var3);
+					if (var20 != null) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var16 = class272.getPacketBufferNode(ClientPacket.OPNPC2, Client.packetWriter.isaacCipher);
+						var16.packetBuffer.writeShortAdd(var3);
+						var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						Client.packetWriter.addNode(var16);
+					}
+				} else if (var2 == 11) {
+					var20 = (NPC)var13.method7890((long)var3);
+					if (var20 != null) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var16 = class272.getPacketBufferNode(ClientPacket.OPNPC3, Client.packetWriter.isaacCipher);
+						var16.packetBuffer.writeShortAdd(var3);
+						var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						Client.packetWriter.addNode(var16);
+					}
+				} else if (var2 == 12) {
+					var20 = (NPC)var13.method7890((long)var3);
+					if (var20 != null) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var16 = class272.getPacketBufferNode(ClientPacket.OPNPC4, Client.packetWriter.isaacCipher);
+						var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortAdd(var3);
+						Client.packetWriter.addNode(var16);
+					}
+				} else if (var2 == 13) {
+					var20 = (NPC)var13.method7890((long)var3);
+					if (var20 != null) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var16 = class272.getPacketBufferNode(ClientPacket.OPNPC5, Client.packetWriter.isaacCipher);
+						var16.packetBuffer.writeShortAdd(var3);
+						var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						Client.packetWriter.addNode(var16);
+					}
+				} else {
+					Player var22;
+					if (var2 == 14) {
+						var22 = (Player)var14.method7890((long)var3);
+						if (var22 != null) {
+							Client.mouseCrossX = var8;
+							Client.mouseCrossY = var9;
+							Client.mouseCrossColor = 2;
+							Client.mouseCrossState = 0;
+							Client.destinationX = var0;
+							Client.destinationY = var1;
+							var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYERU, Client.packetWriter.isaacCipher);
+							var16.packetBuffer.writeInt(SoundCache.field309);
+							var16.packetBuffer.writeShortAdd(var3);
+							var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+							var16.packetBuffer.writeShortAddLE(class400.field4676);
+							var16.packetBuffer.writeShort(class447.field4935);
+							Client.packetWriter.addNode(var16);
+						}
+					} else if (var2 == 15) {
+						var22 = (Player)var14.method7890((long)var3);
+						if (var22 != null) {
+							Client.mouseCrossX = var8;
+							Client.mouseCrossY = var9;
+							Client.mouseCrossColor = 2;
+							Client.mouseCrossState = 0;
+							Client.destinationX = var0;
+							Client.destinationY = var1;
+							var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYERT, Client.packetWriter.isaacCipher);
+							var16.packetBuffer.writeShortAdd(var3);
+							var16.packetBuffer.writeIntLE(class171.selectedSpellWidget);
+							var16.packetBuffer.writeShortAddLE(Client.selectedSpellItemId);
+							var16.packetBuffer.writeShort(Client.selectedSpellChildIndex);
+							var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+							Client.packetWriter.addNode(var16);
+						}
+					} else if (var2 == 16) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var15 = class272.getPacketBufferNode(ClientPacket.OPOBJU, Client.packetWriter.isaacCipher);
+						var15.packetBuffer.writeShortAdd(var3);
+						var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShort(class447.field4935);
+						var15.packetBuffer.writeShort(class400.field4676);
+						var15.packetBuffer.writeShortLE(var0 + var11);
+						var15.packetBuffer.writeShort(var12 + var1);
+						var15.packetBuffer.writeIntME(SoundCache.field309);
+						Client.packetWriter.addNode(var15);
+					} else if (var2 == 17) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var15 = class272.getPacketBufferNode(ClientPacket.OPOBJT, Client.packetWriter.isaacCipher);
+						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeInt(class171.selectedSpellWidget);
+						var15.packetBuffer.writeShortAddLE(Client.selectedSpellItemId);
+						var15.packetBuffer.writeShortLE(var3);
+						var15.packetBuffer.writeShortAdd(var0 + var11);
+						var15.packetBuffer.writeShort(var12 + var1);
+						var15.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
+						Client.packetWriter.addNode(var15);
+					} else if (var2 == 18) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var15 = class272.getPacketBufferNode(ClientPacket.OPOBJ1, Client.packetWriter.isaacCipher);
+						var15.packetBuffer.writeShortAddLE(var3);
+						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShort(var12 + var1);
+						var15.packetBuffer.writeShortAddLE(var0 + var11);
+						Client.packetWriter.addNode(var15);
+					} else if (var2 == 19) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var15 = class272.getPacketBufferNode(ClientPacket.OPOBJ2, Client.packetWriter.isaacCipher);
+						var15.packetBuffer.writeShortAdd(var0 + var11);
+						var15.packetBuffer.writeShortAdd(var3);
+						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortAdd(var12 + var1);
+						Client.packetWriter.addNode(var15);
+					} else if (var2 == 20) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var15 = class272.getPacketBufferNode(ClientPacket.OPOBJ3, Client.packetWriter.isaacCipher);
+						var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortAddLE(var0 + var11);
+						var15.packetBuffer.writeShortAdd(var12 + var1);
+						var15.packetBuffer.writeShortLE(var3);
+						Client.packetWriter.addNode(var15);
+					} else if (var2 == 21) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var15 = class272.getPacketBufferNode(ClientPacket.OPOBJ4, Client.packetWriter.isaacCipher);
+						var15.packetBuffer.writeShortAddLE(var0 + var11);
+						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortAddLE(var3);
+						var15.packetBuffer.writeShortLE(var12 + var1);
+						Client.packetWriter.addNode(var15);
+					} else if (var2 == 22) {
+						Client.mouseCrossX = var8;
+						Client.mouseCrossY = var9;
+						Client.mouseCrossColor = 2;
+						Client.mouseCrossState = 0;
+						Client.destinationX = var0;
+						Client.destinationY = var1;
+						var15 = class272.getPacketBufferNode(ClientPacket.OPOBJ5, Client.packetWriter.isaacCipher);
+						var15.packetBuffer.writeShort(var12 + var1);
+						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortLE(var0 + var11);
+						var15.packetBuffer.writeShortLE(var3);
+						Client.packetWriter.addNode(var15);
+					} else if (var2 == 23) {
+						if (Client.isMenuOpen) {
+							var10.scene.method5043();
+						} else {
+							var10.scene.menuOpen(true);
+						}
+					} else {
+						PacketBufferNode var17;
+						Widget var23;
+						if (var2 == 24) {
+							var23 = class376.widgetDefinition.method6918(var1);
+							if (var23 != null) {
+								boolean var19 = true;
+								if (var23.contentType > 0) {
+									var19 = class272.method5683(var23);
+								}
+
+								if (var19) {
+									var17 = class272.getPacketBufferNode(ClientPacket.WIDGET_TYPE, Client.packetWriter.isaacCipher);
+									var17.packetBuffer.writeInt(var1);
+									Client.packetWriter.addNode(var17);
+								}
+							}
+						} else {
+							if (var2 == 25) {
+								var23 = class376.widgetDefinition.getWidgetChild(var1, var0);
+								if (var23 != null) {
+									class142.method3403();
+									SpriteMask.method6854(var1, var0, ItemLayer.Widget_unpackTargetMask(class441.getWidgetFlags(var23)), var4);
+									Client.isItemSelected = 0;
+									Client.selectedSpellActionName = PlayerType.Widget_getSpellActionName(var23);
+									if (Client.selectedSpellActionName == null) {
+										Client.selectedSpellActionName = "null";
+									}
+
+									if (var23.isIf3) {
+										Client.selectedSpellName = var23.dataText + MilliClock.colorStartTag(16777215);
+									} else {
+										Client.selectedSpellName = MilliClock.colorStartTag(65280) + var23.field4054 + MilliClock.colorStartTag(16777215);
+									}
+								}
+
+								return;
+							}
+
+							if (var2 == 26) {
+								class179.method3771();
+							} else {
+								int var18;
+								Widget var21;
+								if (var2 == 28) {
+									var15 = class272.getPacketBufferNode(ClientPacket.WIDGET_TYPE, Client.packetWriter.isaacCipher);
+									var15.packetBuffer.writeInt(var1);
+									Client.packetWriter.addNode(var15);
+									var21 = class376.widgetDefinition.method6918(var1);
+									if (var21 != null && var21.cs1Instructions != null && var21.cs1Instructions[0][0] == 5) {
+										var18 = var21.cs1Instructions[0][1];
+										Varps.Varps_main[var18] = 1 - Varps.Varps_main[var18];
+										DevicePcmPlayerProvider.changeGameOptions(var18);
+									}
+								} else if (var2 == 29) {
+									var15 = class272.getPacketBufferNode(ClientPacket.WIDGET_TYPE, Client.packetWriter.isaacCipher);
+									var15.packetBuffer.writeInt(var1);
+									Client.packetWriter.addNode(var15);
+									var21 = class376.widgetDefinition.method6918(var1);
+									if (var21 != null && var21.cs1Instructions != null && var21.cs1Instructions[0][0] == 5) {
+										var18 = var21.cs1Instructions[0][1];
+										if (Varps.Varps_main[var18] != var21.cs1ComparisonValues[0]) {
+											Varps.Varps_main[var18] = var21.cs1ComparisonValues[0];
+											DevicePcmPlayerProvider.changeGameOptions(var18);
+										}
+									}
+								} else if (var2 == 30) {
+									if (Client.meslayerContinueWidget == null) {
+										class157.resumePauseWidget(var1, var0);
+										Client.meslayerContinueWidget = class376.widgetDefinition.getWidgetChild(var1, var0);
+										MilliClock.invalidateWidget(Client.meslayerContinueWidget);
+									}
+								} else if (var2 == 44) {
+									var22 = (Player)var14.method7890((long)var3);
+									if (var22 != null) {
+										Client.mouseCrossX = var8;
+										Client.mouseCrossY = var9;
+										Client.mouseCrossColor = 2;
+										Client.mouseCrossState = 0;
+										Client.destinationX = var0;
+										Client.destinationY = var1;
+										var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
+										var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShortAdd(var3);
+										Client.packetWriter.addNode(var16);
+									}
+								} else if (var2 == 45) {
+									var22 = (Player)var14.method7890((long)var3);
+									if (var22 != null) {
+										Client.mouseCrossX = var8;
+										Client.mouseCrossY = var9;
+										Client.mouseCrossColor = 2;
+										Client.mouseCrossState = 0;
+										Client.destinationX = var0;
+										Client.destinationY = var1;
+										var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYER2, Client.packetWriter.isaacCipher);
+										var16.packetBuffer.writeShortAdd(var3);
+										var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										Client.packetWriter.addNode(var16);
+									}
+								} else if (var2 == 46) {
+									var22 = (Player)var14.method7890((long)var3);
+									if (var22 != null) {
+										Client.mouseCrossX = var8;
+										Client.mouseCrossY = var9;
+										Client.mouseCrossColor = 2;
+										Client.mouseCrossState = 0;
+										Client.destinationX = var0;
+										Client.destinationY = var1;
+										var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYER3, Client.packetWriter.isaacCipher);
+										var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShort(var3);
+										Client.packetWriter.addNode(var16);
+									}
+								} else if (var2 == 47) {
+									var22 = (Player)var14.method7890((long)var3);
+									if (var22 != null) {
+										Client.mouseCrossX = var8;
+										Client.mouseCrossY = var9;
+										Client.mouseCrossColor = 2;
+										Client.mouseCrossState = 0;
+										Client.destinationX = var0;
+										Client.destinationY = var1;
+										var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
+										var16.packetBuffer.writeShortAdd(var3);
+										var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										Client.packetWriter.addNode(var16);
+									}
+								} else if (var2 == 48) {
+									var22 = (Player)var14.method7890((long)var3);
+									if (var22 != null) {
+										Client.mouseCrossX = var8;
+										Client.mouseCrossY = var9;
+										Client.mouseCrossColor = 2;
+										Client.mouseCrossState = 0;
+										Client.destinationX = var0;
+										Client.destinationY = var1;
+										var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYER5, Client.packetWriter.isaacCipher);
+										var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShort(var3);
+										Client.packetWriter.addNode(var16);
+									}
+								} else if (var2 == 49) {
+									var22 = (Player)var14.method7890((long)var3);
+									if (var22 != null) {
+										Client.mouseCrossX = var8;
+										Client.mouseCrossY = var9;
+										Client.mouseCrossColor = 2;
+										Client.mouseCrossState = 0;
+										Client.destinationX = var0;
+										Client.destinationY = var1;
+										var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
+										var16.packetBuffer.writeShort(var3);
+										var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										Client.packetWriter.addNode(var16);
+									}
+								} else if (var2 == 50) {
+									var22 = (Player)var14.method7890((long)var3);
+									if (var22 != null) {
+										Client.mouseCrossX = var8;
+										Client.mouseCrossY = var9;
+										Client.mouseCrossColor = 2;
+										Client.mouseCrossState = 0;
+										Client.destinationX = var0;
+										Client.destinationY = var1;
+										var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
+										var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShort(var3);
+										Client.packetWriter.addNode(var16);
+									}
+								} else if (var2 == 51) {
+									var22 = (Player)var14.method7890((long)var3);
+									if (var22 != null) {
+										Client.mouseCrossX = var8;
+										Client.mouseCrossY = var9;
+										Client.mouseCrossColor = 2;
+										Client.mouseCrossState = 0;
+										Client.destinationX = var0;
+										Client.destinationY = var1;
+										var16 = class272.getPacketBufferNode(ClientPacket.OPPLAYER8, Client.packetWriter.isaacCipher);
+										var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShortAdd(var3);
+										Client.packetWriter.addNode(var16);
+									}
+								} else {
+									label574: {
+										if (var2 != 57) {
+											if (var2 == 58) {
+												var23 = class376.widgetDefinition.getWidgetChild(var1, var0);
+												if (var23 != null) {
+													if (var23.field4045 != null) {
+														ScriptEvent var25 = new ScriptEvent();
+														var25.widget = var23;
+														var25.opIndex = var3;
+														var25.targetName = var7;
+														var25.args = var23.field4045;
+														MilliClock.runScriptEvent(var25);
+													}
+
+													var16 = class272.getPacketBufferNode(ClientPacket.IF_BUTTONT, Client.packetWriter.isaacCipher);
+													var16.packetBuffer.writeShortAdd(var4);
+													var16.packetBuffer.writeShortAddLE(Client.selectedSpellChildIndex);
+													var16.packetBuffer.writeShortLE(var0);
+													var16.packetBuffer.writeShort(Client.selectedSpellItemId);
+													var16.packetBuffer.writeIntLE(var1);
+													var16.packetBuffer.writeIntIME(class171.selectedSpellWidget);
+													Client.packetWriter.addNode(var16);
+												}
+												break label574;
+											}
+
+											if (var2 == 60) {
+												Client.mouseCrossX = var8;
+												Client.mouseCrossY = var9;
+												Client.mouseCrossColor = 1;
+												Client.mouseCrossState = 0;
+												Client.field742 = var3;
+												Client.field790 = 30;
+												var15 = class272.getPacketBufferNode(ClientPacket.SET_HEADING, Client.packetWriter.isaacCipher);
+												var15.packetBuffer.writeByteNeg(var3);
+												Client.packetWriter.addNode(var15);
+												break label574;
+											}
+
+											if (var2 == 1001) {
+												Client.mouseCrossX = var8;
+												Client.mouseCrossY = var9;
+												Client.mouseCrossColor = 2;
+												Client.mouseCrossState = 0;
+												Client.destinationX = var0;
+												Client.destinationY = var1;
+												var15 = class272.getPacketBufferNode(ClientPacket.OPLOC5, Client.packetWriter.isaacCipher);
+												var15.packetBuffer.writeShortAddLE(var0 + var11);
+												var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeShortAdd(var3);
+												var15.packetBuffer.writeShortLE(var12 + var1);
+												Client.packetWriter.addNode(var15);
+												break label574;
+											}
+
+											if (var2 == 1002) {
+												Client.mouseCrossX = var8;
+												Client.mouseCrossY = var9;
+												Client.mouseCrossColor = 2;
+												Client.mouseCrossState = 0;
+												var15 = class272.getPacketBufferNode(ClientPacket.OPLOCE, Client.packetWriter.isaacCipher);
+												var15.packetBuffer.writeShortLE(var3);
+												Client.packetWriter.addNode(var15);
+												break label574;
+											}
+
+											if (var2 == 1003) {
+												Client.mouseCrossX = var8;
+												Client.mouseCrossY = var9;
+												Client.mouseCrossColor = 2;
+												Client.mouseCrossState = 0;
+												var20 = (NPC)var13.method7890((long)var3);
+												if (var20 != null) {
+													NPCComposition var24 = var20.definition;
+													if (var24.transforms != null) {
+														var24 = var24.transform();
+													}
+
+													if (var24 != null) {
+														var17 = class272.getPacketBufferNode(ClientPacket.OPNPCE, Client.packetWriter.isaacCipher);
+														var17.packetBuffer.writeShortAdd(var24.id);
+														Client.packetWriter.addNode(var17);
+													}
+												}
+												break label574;
+											}
+
+											if (var2 == 1004) {
+												Client.mouseCrossX = var8;
+												Client.mouseCrossY = var9;
+												Client.mouseCrossColor = 2;
+												Client.mouseCrossState = 0;
+												var15 = class272.getPacketBufferNode(ClientPacket.OPOBJE, Client.packetWriter.isaacCipher);
+												var15.packetBuffer.writeShortAddLE(var12 + var1);
+												var15.packetBuffer.writeShort(var3);
+												var15.packetBuffer.writeShortLE(var0 + var11);
+												Client.packetWriter.addNode(var15);
+												break label574;
+											}
+
+											if (var2 != 1007) {
+												if (var2 == 1010 || var2 == 1011 || var2 == 1009 || var2 == 1008 || var2 == 1012) {
+													class541.worldMap.worldMapMenuAction(var2, var3, new Coord(var0), new Coord(var1));
+												}
+												break label574;
+											}
+										}
+
+										var23 = class376.widgetDefinition.getWidgetChild(var1, var0);
+										if (var23 != null) {
+											class449.widgetDefaultMenuAction(var3, var1, var0, var4, var7);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			if (Client.isItemSelected != 0) {
+				Client.isItemSelected = 0;
+				MilliClock.invalidateWidget(class376.widgetDefinition.method6918(SoundCache.field309));
+			}
+
+			if (Client.isSpellSelected) {
+				class142.method3403();
+			}
+
+		}
 	}
 }

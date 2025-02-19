@@ -4,30 +4,24 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("su")
+@ObfuscatedName("st")
 @Implements("Buddy")
 public class Buddy extends User {
-	@ObfuscatedName("ko")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 130611919
-	)
-	@Export("cameraX")
-	static int cameraX;
-	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = -609922555
+		intValue = 504337945
 	)
 	@Export("world")
 	public int world;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1806970475
+		intValue = -2133670385
 	)
 	@Export("int2")
 	public int int2;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 364975233
+		intValue = -1034335627
 	)
 	@Export("rank")
 	public int rank;
@@ -36,10 +30,10 @@ public class Buddy extends User {
 		this.world = -1;
 	}
 
-	@ObfuscatedName("bp")
+	@ObfuscatedName("be")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "391643508"
+		garbageValue = "-122412232"
 	)
 	@Export("set")
 	void set(int var1, int var2) {
@@ -47,20 +41,20 @@ public class Buddy extends User {
 		this.int2 = var2;
 	}
 
-	@ObfuscatedName("bg")
+	@ObfuscatedName("bj")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "29"
+		descriptor = "(I)I",
+		garbageValue = "-1742868420"
 	)
 	@Export("getWorld")
 	public int getWorld() {
 		return this.world;
 	}
 
-	@ObfuscatedName("bc")
+	@ObfuscatedName("bq")
 	@ObfuscatedSignature(
 		descriptor = "(B)Z",
-		garbageValue = "11"
+		garbageValue = "102"
 	)
 	@Export("hasWorld")
 	public boolean hasWorld() {

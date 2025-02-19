@@ -8,27 +8,22 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("aa")
+@ObfuscatedName("aj")
 @Implements("AsyncRestClient")
 public class AsyncRestClient {
-	@ObfuscatedName("ir")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -934221379
-	)
-	static int field62;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -1368043261
+		intValue = -1652364669
 	)
 	@Export("workQueueCapacity")
 	final int workQueueCapacity;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@Export("threadNamePrefix")
 	final String threadNamePrefix;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@Export("threadFactory")
 	final ThreadFactory threadFactory;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@Export("threadPoolExecutor")
 	final ThreadPoolExecutor threadPoolExecutor;
 
@@ -39,20 +34,20 @@ public class AsyncRestClient {
 		this.threadPoolExecutor = this.createThreadPoolExecutor(var3);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(II)Ljava/util/concurrent/ThreadPoolExecutor;",
-		garbageValue = "816481997"
+		garbageValue = "-1215161377"
 	)
 	@Export("createThreadPoolExecutor")
 	final ThreadPoolExecutor createThreadPoolExecutor(int var1) {
 		return new ThreadPoolExecutor(var1, var1, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(this.workQueueCapacity), this.threadFactory);
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lau;I)Lag;",
-		garbageValue = "2084087012"
+		descriptor = "(Lae;I)Laz;",
+		garbageValue = "2106579208"
 	)
 	@Export("submitRequest")
 	public AsyncHttpResponse submitRequest(HttpRequest var1) {
@@ -65,10 +60,10 @@ public class AsyncRestClient {
 		}
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1078520818"
+		garbageValue = "2037455773"
 	)
 	@Export("shutdown")
 	public final void shutdown() {
@@ -80,49 +75,81 @@ public class AsyncRestClient {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "([F[IIII)V",
-		garbageValue = "-1881468642"
+		descriptor = "(IB)I",
+		garbageValue = "4"
 	)
-	static void method187(float[] var0, int[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			float var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			int var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
+	public static int method145(int var0) {
+		return class333.field3673[var0];
+	}
 
-			for (int var8 = var2; var8 < var3; ++var8) {
-				if (var0[var8] < var6) {
-					float var9 = var0[var8];
-					var0[var8] = var0[var5];
-					var0[var5] = var9;
-					int var10 = var1[var8];
-					var1[var8] = var1[var5];
-					var1[var5++] = var10;
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(IIIZIZB)V",
+		garbageValue = "-37"
+	)
+	@Export("doWorldSorting")
+	static void doWorldSorting(int var0, int var1, int var2, boolean var3, int var4, boolean var5) {
+		if (var0 < var1) {
+			int var6 = (var0 + var1) / 2;
+			int var7 = var0;
+			World var8 = GZipDecompressor.World_worlds[var6];
+			GZipDecompressor.World_worlds[var6] = GZipDecompressor.World_worlds[var1];
+			GZipDecompressor.World_worlds[var1] = var8;
+
+			for (int var9 = var0; var9 < var1; ++var9) {
+				World var11 = GZipDecompressor.World_worlds[var9];
+				int var12 = ClientPreferences.compareWorlds(var11, var8, var2, var3);
+				int var10;
+				if (var12 != 0) {
+					if (var3) {
+						var10 = -var12;
+					} else {
+						var10 = var12;
+					}
+				} else if (var4 == -1) {
+					var10 = 0;
+				} else {
+					int var13 = ClientPreferences.compareWorlds(var11, var8, var4, var5);
+					if (var5) {
+						var10 = -var13;
+					} else {
+						var10 = var13;
+					}
+				}
+
+				if (var10 <= 0) {
+					World var14 = GZipDecompressor.World_worlds[var9];
+					GZipDecompressor.World_worlds[var9] = GZipDecompressor.World_worlds[var7];
+					GZipDecompressor.World_worlds[var7++] = var14;
 				}
 			}
 
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			method187(var0, var1, var2, var5 - 1);
-			method187(var0, var1, var5 + 1, var3);
+			GZipDecompressor.World_worlds[var1] = GZipDecompressor.World_worlds[var7];
+			GZipDecompressor.World_worlds[var7] = var8;
+			doWorldSorting(var0, var7 - 1, var2, var3, var4, var5);
+			doWorldSorting(var7 + 1, var1, var2, var3, var4, var5);
 		}
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "2001552610"
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "1668913407"
 	)
-	static boolean method188(char var0) {
-		return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"ï¿½$%^&*()-_=+[{]};:'@#~,<.>/?\\| ".indexOf(var0) != -1;
+	static final void method146(String var0) {
+		LoginPacket.addGameMessage(30, "", var0);
+	}
+
+	@ObfuscatedName("cs")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;I)I",
+		garbageValue = "542847787"
+	)
+	@Export("stringCp1252NullTerminatedByteSize")
+	public static int stringCp1252NullTerminatedByteSize(String var0) {
+		return var0.length() + 1;
 	}
 }

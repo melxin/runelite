@@ -4,49 +4,58 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jr")
+@ObfuscatedName("hq")
 @Implements("EnumComposition")
 public class EnumComposition extends DualNode {
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
-	)
-	@Export("EnumDefinition_archive")
-	static AbstractArchive EnumDefinition_archive;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("EnumDefinition_cached")
-	static EvictingDualNodeHashTable EnumDefinition_cached;
-	@ObfuscatedName("az")
+	public static EvictingDualNodeHashTable EnumDefinition_cached;
+	@ObfuscatedName("fk")
+	@ObfuscatedSignature(
+		descriptor = "Lpn;"
+	)
+	static Archive field2011;
+	@ObfuscatedName("fy")
+	@ObfuscatedSignature(
+		descriptor = "Lpn;"
+	)
+	static Archive field2004;
+	@ObfuscatedName("qx")
+	@ObfuscatedSignature(
+		descriptor = "Lti;"
+	)
+	static class509 field2010;
+	@ObfuscatedName("au")
 	@Export("inputType")
 	public char inputType;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@Export("outputType")
 	public char outputType;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@Export("defaultStr")
 	public String defaultStr;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -592889597
+		intValue = 1902992755
 	)
 	@Export("defaultInt")
 	public int defaultInt;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -176546561
+		intValue = 182095407
 	)
 	@Export("outputCount")
 	public int outputCount;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@Export("keys")
 	public int[] keys;
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@Export("intVals")
 	public int[] intVals;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@Export("strVals")
 	public String[] strVals;
 
@@ -59,10 +68,10 @@ public class EnumComposition extends DualNode {
 		this.outputCount = 0;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "687907281"
+		descriptor = "(Lvy;B)V",
+		garbageValue = "99"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -76,10 +85,10 @@ public class EnumComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;II)V",
-		garbageValue = "-94680643"
+		descriptor = "(Lvy;IS)V",
+		garbageValue = "22234"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -116,39 +125,110 @@ public class EnumComposition extends DualNode {
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-2052156765"
+		descriptor = "(B)I",
+		garbageValue = "4"
 	)
 	@Export("size")
 	public int size() {
 		return this.outputCount;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ab")
+	public static final int method3909(double var0, double var2, double var4) {
+		double var6 = var4;
+		double var8 = var4;
+		double var10 = var4;
+		if (var2 != 0.0D) {
+			double var12;
+			if (var4 < 0.5D) {
+				var12 = (var2 + 1.0D) * var4;
+			} else {
+				var12 = var2 + var4 - var4 * var2;
+			}
+
+			double var14 = 2.0D * var4 - var12;
+			double var16 = 0.3333333333333333D + var0;
+			if (var16 > 1.0D) {
+				--var16;
+			}
+
+			double var20 = var0 - 0.3333333333333333D;
+			if (var20 < 0.0D) {
+				++var20;
+			}
+
+			if (var16 * 6.0D < 1.0D) {
+				var6 = var14 + var16 * 6.0D * (var12 - var14);
+			} else if (2.0D * var16 < 1.0D) {
+				var6 = var12;
+			} else if (3.0D * var16 < 2.0D) {
+				var6 = 6.0D * (var12 - var14) * (0.6666666666666666D - var16) + var14;
+			} else {
+				var6 = var14;
+			}
+
+			if (6.0D * var0 < 1.0D) {
+				var8 = 6.0D * (var12 - var14) * var0 + var14;
+			} else if (var0 * 2.0D < 1.0D) {
+				var8 = var12;
+			} else if (3.0D * var0 < 2.0D) {
+				var8 = (var12 - var14) * (0.6666666666666666D - var0) * 6.0D + var14;
+			} else {
+				var8 = var14;
+			}
+
+			if (6.0D * var20 < 1.0D) {
+				var10 = var14 + (var12 - var14) * 6.0D * var20;
+			} else if (2.0D * var20 < 1.0D) {
+				var10 = var12;
+			} else if (3.0D * var20 < 2.0D) {
+				var10 = var14 + (var12 - var14) * (0.6666666666666666D - var20) * 6.0D;
+			} else {
+				var10 = var14;
+			}
+		}
+
+		int var22 = (int)(var6 * 256.0D);
+		int var13 = (int)(var8 * 256.0D);
+		int var23 = (int)(256.0D * var10);
+		int var15 = var23 + (var13 << 8) + (var22 << 16);
+		return var15;
+	}
+
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lud;",
-		garbageValue = "-1958777495"
+		descriptor = "(FFFB)Lrp;",
+		garbageValue = "1"
 	)
-	public static class544 method5280(int var0) {
-		int var1 = class542.field5387[var0];
-		if (var1 == 1) {
-			return class544.field5392;
-		} else if (var1 == 2) {
-			return class544.field5393;
-		} else {
-			return var1 == 3 ? class544.field5395 : null;
+	public static class442 method3908(float var0, float var1, float var2) {
+		synchronized(class442.field4894) {
+			if (class187.field1997 == 0) {
+				return new class442(var0, var1, var2);
+			} else {
+				class442.field4894[--class187.field1997].method8296(var0, var1, var2);
+				return class442.field4894[class187.field1997];
+			}
 		}
 	}
 
-	@ObfuscatedName("hx")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)J",
-		garbageValue = "-1013211388"
+		descriptor = "(I)Lmo;",
+		garbageValue = "-1376349754"
 	)
-	@Export("getUserHash")
-	static long getUserHash() {
-		return Client.userHash;
+	public static PacketBufferNode method3907() {
+		PacketBufferNode var0;
+		if (PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0) {
+			var0 = new PacketBufferNode();
+		} else {
+			var0 = PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
+		}
+
+		var0.clientPacket = null;
+		var0.clientPacketLength = 0;
+		var0.packetBuffer = new PacketBuffer(5000);
+		return var0;
 	}
 }

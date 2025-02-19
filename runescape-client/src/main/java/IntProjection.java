@@ -4,84 +4,73 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hg")
+@ObfuscatedName("jr")
 @Implements("IntProjection")
 public class IntProjection extends Projection {
-	@ObfuscatedName("ji")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 2009752845
-	)
-	static int field1966;
-	@ObfuscatedName("kp")
-	@ObfuscatedGetter(
-		intValue = 433204117
-	)
-	@Export("cameraYaw")
-	static int cameraYaw;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -353137283
+		intValue = -1608440103
 	)
 	@Export("cameraX")
 	int cameraX;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1352147805
+		intValue = -1723217167
 	)
 	@Export("cameraY")
 	int cameraY;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -2132346569
+		intValue = 792472047
 	)
 	@Export("cameraZ")
 	int cameraZ;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 1144738481
+		intValue = 90971525
 	)
 	@Export("cameraPitch")
 	int cameraPitch;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1079699413
+		intValue = -1194145231
 	)
 	@Export("cameraYaw2")
 	int cameraYaw2;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1738765779
+		intValue = -784870449
 	)
 	@Export("pitchSin")
 	int pitchSin;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1946329855
+		intValue = -1848907429
 	)
 	@Export("pitchCos")
 	int pitchCos;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -184582315
+		intValue = -813067171
 	)
 	@Export("yawSin")
 	int yawSin;
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -346578271
+		intValue = -497223295
 	)
 	@Export("yawCos")
 	int yawCos;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -531791061
+		intValue = -1705739525
 	)
-	int field1970;
-	@ObfuscatedName("au")
+	int field2656;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1754429917
+		intValue = -1426253923
 	)
-	int field1971;
+	int field2657;
 
 	IntProjection(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
 		this.cameraX = var1;
@@ -93,23 +82,23 @@ public class IntProjection extends Projection {
 		this.pitchCos = Rasterizer3D.Rasterizer3D_cosine[var4];
 		this.yawSin = Rasterizer3D.Rasterizer3D_sine[var5];
 		this.yawCos = Rasterizer3D.Rasterizer3D_cosine[var5];
-		this.field1970 = var6;
-		this.field1971 = var7;
+		this.field2656 = var6;
+		this.field2657 = var7;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Ljc;IIIIJ)V"
+	)
+	@Export("draw")
+	void draw(TileItem var1, int var2, int var3, int var4, int var5, long var6) {
+		var1.vmethod5284(var2, this.cameraPitch, this.cameraYaw2, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field2656, this.field2657, false);
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lhs;IIIIJ)V"
-	)
-	@Export("draw")
-	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
-		var1.vmethod4616(var2, this.cameraPitch, this.cameraYaw2, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field1970, this.field1971, false);
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(Lhj;Lhz;IIII)V",
-		garbageValue = "54431755"
+		descriptor = "(Ljz;Ljh;IIII)V",
+		garbageValue = "-1468794048"
 	)
 	@Export("drawTileUnderlay")
 	void drawTileUnderlay(Scene var1, SceneTilePaint var2, int var3, int var4, int var5) {
@@ -129,14 +118,14 @@ public class IntProjection extends Projection {
 		var9 = var9 * this.yawCos - var7 * this.yawSin >> 16;
 		var7 = var18;
 		var18 = var14 * this.pitchCos - var9 * this.pitchSin >> 16;
-		var9 = var9 * this.pitchCos + var14 * this.pitchSin >> 16;
+		var9 = var14 * this.pitchSin + var9 * this.pitchCos >> 16;
 		var14 = var18;
 		if (var9 >= 50) {
 			var18 = var8 * this.yawSin + var11 * this.yawCos >> 16;
 			var8 = var8 * this.yawCos - var11 * this.yawSin >> 16;
 			var11 = var18;
 			var18 = var15 * this.pitchCos - var8 * this.pitchSin >> 16;
-			var8 = var8 * this.pitchCos + var15 * this.pitchSin >> 16;
+			var8 = var15 * this.pitchSin + var8 * this.pitchCos >> 16;
 			var15 = var18;
 			if (var8 >= 50) {
 				var18 = var10 * this.yawCos + var13 * this.yawSin >> 16;
@@ -150,7 +139,7 @@ public class IntProjection extends Projection {
 					var12 = var12 * this.yawCos - var6 * this.yawSin >> 16;
 					var6 = var18;
 					var18 = var17 * this.pitchCos - var12 * this.pitchSin >> 16;
-					var12 = var12 * this.pitchCos + var17 * this.pitchSin >> 16;
+					var12 = var17 * this.pitchSin + var12 * this.pitchCos >> 16;
 					if (var12 >= 50) {
 						this.drawSceneTilePaint(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var18, var9, var8, var13, var12);
 					}
@@ -159,10 +148,10 @@ public class IntProjection extends Projection {
 		}
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lhj;Lho;IIB)V",
-		garbageValue = "-59"
+		descriptor = "(Ljz;Lji;III)V",
+		garbageValue = "-2141053540"
 	)
 	@Export("drawTileOverlay")
 	void drawTileOverlay(Scene var1, SceneTileModel var2, int var3, int var4) {
@@ -172,7 +161,7 @@ public class IntProjection extends Projection {
 			int var7 = var2.vertexX[var6] - this.cameraX;
 			int var8 = var2.vertexY[var6] - this.cameraY;
 			int var9 = var2.vertexZ[var6] - this.cameraZ;
-			int var10 = var9 * this.yawSin + var7 * this.yawCos >> 16;
+			int var10 = var7 * this.yawCos + var9 * this.yawSin >> 16;
 			var9 = var9 * this.yawCos - var7 * this.yawSin >> 16;
 			var7 = var10;
 			var10 = var8 * this.pitchCos - var9 * this.pitchSin >> 16;
@@ -189,30 +178,34 @@ public class IntProjection extends Projection {
 
 			SceneTileModel.verticesX[var6] = Rasterizer3D.getClipMidX() + var7 * Rasterizer3D.get3dZoom() / var9;
 			SceneTileModel.verticesY[var6] = Rasterizer3D.getClipMidY() + var10 * Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.verticesZ[var6] = HttpResponse.method298(var9);
+			SceneTileModel.verticesZ[var6] = class148.method3471(var9);
 		}
 
 		this.drawSceneTileModel(var1, var2, var3, var4);
 	}
 
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lkd;",
-		garbageValue = "1793206579"
-	)
-	public static HitSplatDefinition method4104(int var0) {
-		HitSplatDefinition var1 = (HitSplatDefinition)HitSplatDefinition.HitSplatDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = HitSplatDefinition.HitSplatDefinition_archive.takeFile(32, var0);
-			var1 = new HitSplatDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+	@ObfuscatedName("ab")
+	public static final void method4837(long var0) {
+		if (var0 > 0L) {
+			if (0L == var0 % 10L) {
+				long var2 = var0 - 1L;
+
+				try {
+					Thread.sleep(var2);
+				} catch (InterruptedException var8) {
+				}
+
+				try {
+					Thread.sleep(1L);
+				} catch (InterruptedException var7) {
+				}
+			} else {
+				try {
+					Thread.sleep(var0);
+				} catch (InterruptedException var6) {
+				}
 			}
 
-			HitSplatDefinition.HitSplatDefinition_cached.put(var1, (long)var0);
-			return var1;
 		}
 	}
 }

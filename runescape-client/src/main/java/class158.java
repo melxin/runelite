@@ -1,84 +1,68 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gw")
-public class class158 extends class166 {
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = 965396529
+@ObfuscatedName("gp")
+public class class158 extends class149 {
+	@ObfuscatedName("kx")
+	@ObfuscatedSignature(
+		descriptor = "Lwg;"
 	)
-	int field1726;
+	@Export("redHintArrowSprite")
+	static SpritePixels redHintArrowSprite;
+	@ObfuscatedName("ab")
+	String field1777;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lgv;"
+		descriptor = "Lfv;"
 	)
-	final class167 this$0;
+	final class152 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lgv;)V"
+		descriptor = "(Lfv;)V"
 	)
-	class158(class167 var1) {
+	class158(class152 var1) {
 		this.this$0 = var1;
-		this.field1726 = -1;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Lvy;B)V",
+		garbageValue = "25"
+	)
+	void vmethod3702(Buffer var1) {
+		this.field1777 = var1.readStringCp1252NullTerminated();
+		var1.readInt();
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "1969161379"
+		descriptor = "(Lgg;I)V",
+		garbageValue = "2011970201"
 	)
-	void vmethod3869(Buffer var1) {
-		this.field1726 = var1.readUnsignedShort();
-		var1.readUnsignedByte();
-		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
-			var1.readLong();
+	void vmethod3705(ClanSettings var1) {
+		var1.name = this.field1777;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)I",
+		garbageValue = "-22"
+	)
+	public static int method3538(int var0, int var1) {
+		int var2;
+		for (var2 = 1; var1 > 1; var1 >>= 1) {
+			if ((var1 & 1) != 0) {
+				var2 = var0 * var2;
+			}
+
+			var0 *= var0;
 		}
 
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(Lgk;I)V",
-		garbageValue = "-1263140647"
-	)
-	void vmethod3870(ClanChannel var1) {
-		var1.removeMember(this.field1726);
-	}
-
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "(III)Ldm;",
-		garbageValue = "642980328"
-	)
-	@Export("getScript")
-	static Script getScript(int var0, int var1) {
-		Script var2 = (Script)Script.Script_cached.get((long)(var0 << 16));
-		if (var2 != null) {
-			return var2;
+		if (var1 == 1) {
+			return var0 * var2;
 		} else {
-			String var3 = String.valueOf(var0);
-			int var4 = class167.archive12.getGroupId(var3);
-			if (var4 == -1) {
-				return null;
-			} else {
-				byte[] var5 = class167.archive12.takeFileFlat(var4);
-				if (var5 != null) {
-					if (var5.length <= 1) {
-						return null;
-					}
-
-					var2 = GrandExchangeOfferAgeComparator.newScript(var5);
-					if (var2 != null) {
-						Script.Script_cached.put(var2, (long)(var0 << 16));
-						return var2;
-					}
-				}
-
-				return null;
-			}
+			return var2;
 		}
 	}
 }

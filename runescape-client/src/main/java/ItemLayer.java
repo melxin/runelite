@@ -4,58 +4,76 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gj")
+@ObfuscatedName("iy")
 @Implements("ItemLayer")
 public final class ItemLayer {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("jw")
+	@Export("regionMapArchiveIds")
+	static int[] regionMapArchiveIds;
+	@ObfuscatedName("ut")
 	@ObfuscatedGetter(
-		intValue = -352679989
+		intValue = 555553693
+	)
+	static int field2525;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = -683061363
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 373348255
+		intValue = 681176637
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 472754515
+		intValue = 1830527111
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lhs;"
-	)
-	@Export("first")
-	Renderable first;
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lhs;"
+		descriptor = "Ljc;"
+	)
+	@Export("first")
+	TileItem first;
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Ljc;"
 	)
 	@Export("second")
-	Renderable second;
-	@ObfuscatedName("an")
+	TileItem second;
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lhs;"
+		descriptor = "Ljc;"
 	)
 	@Export("third")
-	Renderable third;
-	@ObfuscatedName("ae")
+	TileItem third;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		longValue = -7391763247128294713L
+		longValue = 1723065648273843879L
 	)
 	@Export("tag")
 	long tag;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1845304357
+		intValue = 1887534507
 	)
 	@Export("height")
 	int height;
 
 	ItemLayer() {
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "923388292"
+	)
+	@Export("Widget_unpackTargetMask")
+	public static int Widget_unpackTargetMask(int var0) {
+		return var0 >> 11 & 63;
 	}
 }

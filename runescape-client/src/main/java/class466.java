@@ -1,68 +1,110 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rs")
-public final class class466 implements Comparable {
-	@ObfuscatedName("ae")
+@ObfuscatedName("rw")
+public class class466 extends SongTask {
+	@ObfuscatedName("ed")
+	@Export("mouseCam")
+	static boolean mouseCam;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
+		descriptor = "Lpl;"
 	)
-	@Export("SequenceDefinition_skeletonsArchive")
-	static AbstractArchive SequenceDefinition_skeletonsArchive;
-	@ObfuscatedName("ee")
-	@ObfuscatedSignature(
-		descriptor = "Liq;"
-	)
-	@Export("js5SocketTask")
-	static Task js5SocketTask;
+	AbstractArchive field5037;
 	@ObfuscatedName("ay")
-	Object field4970;
-	@ObfuscatedName("ah")
-	Object field4967;
-	@ObfuscatedName("az")
-	@ObfuscatedGetter(
-		longValue = 7941363310758731965L
+	@ObfuscatedSignature(
+		descriptor = "Lpl;"
 	)
-	long field4969;
-	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		longValue = -8628826825301261969L
+	AbstractArchive field5035;
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lpl;"
 	)
-	long field4966;
+	AbstractArchive field5036;
 
-	class466(Object var1, Object var2) {
-		this.field4970 = var1;
-		this.field4967 = var2;
+	@ObfuscatedSignature(
+		descriptor = "(Lrt;Lpl;Lpl;Lpl;)V"
+	)
+	public class466(SongTask var1, AbstractArchive var2, AbstractArchive var3, AbstractArchive var4) {
+		super(var1);
+		this.field5037 = var2;
+		this.field5035 = var3;
+		this.field5036 = var4;
+		super.field5028 = "LoadSongTask";
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lrs;I)I",
-		garbageValue = "-1075640087"
+		descriptor = "(I)Z",
+		garbageValue = "2115930134"
 	)
-	int method9059(class466 var1) {
-		if (this.field4966 < var1.field4966) {
-			return -1;
-		} else {
-			return this.field4966 > var1.field4966 ? 1 : 0;
+	public boolean vmethod8896() {
+		int var1 = 0;
+		Iterator var2 = class335.midiRequests.iterator();
+
+		while (true) {
+			while (var2.hasNext()) {
+				MidiRequest var3 = (MidiRequest)var2.next();
+				if (var3 != null && var3.midiPcmStream.field3728 > 1 && var3.midiPcmStream.method6606()) {
+					this.method8875("Attempted to load patches of already loading midiplayer!");
+					return true;
+				}
+
+				if (var3 != null && !var3.field3805) {
+					try {
+						if (var3.musicTrackArchive != null && var3.musicTrackGroupId != -1 && var3.musicTrackFileId != -1) {
+							if (var3.field3811 == null) {
+								var3.field3811 = MusicTrack.readTrack(var3.musicTrackArchive, var3.musicTrackGroupId, var3.musicTrackFileId);
+								if (var3.field3811 == null) {
+									continue;
+								}
+							}
+
+							if (var3.field3810 == null) {
+								var3.field3810 = new SoundCache(this.field5036, this.field5035);
+							}
+
+							if (var3.midiPcmStream.updateExternalPlayer(var3.field3811, this.field5037, var3.field3810)) {
+								++var1;
+								var3.field3805 = true;
+								var3.midiPcmStream.method6610();
+							}
+						} else {
+							++var1;
+						}
+					} catch (Exception var5) {
+						class213.RunException_sendStackTrace((String)null, var5);
+						this.method8875(var5.getMessage());
+						return true;
+					}
+				} else {
+					++var1;
+				}
+			}
+
+			if (var1 == class335.midiRequests.size()) {
+				return true;
+			}
+
+			return false;
 		}
 	}
 
-	public boolean equals(Object var1) {
-		if (var1 instanceof class466) {
-			return this.field4967.equals(((class466)var1).field4967);
-		} else {
-			throw new IllegalArgumentException();
+	@ObfuscatedName("hn")
+	@ObfuscatedSignature(
+		descriptor = "(III)V",
+		garbageValue = "-2069187067"
+	)
+	static void method8895(int var0, int var1) {
+		if (AbstractWorldMapIcon.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
+			ArrayList var2 = new ArrayList();
+			var2.add(new MidiRequest(PlayerUpdateManager.archive9, var0, 0, AbstractWorldMapIcon.clientPreferences.getMusicVolume(), false));
+			UserComparator3.method3219(var2, 0, 0, 0, 0, true);
+			Client.playingJingle = true;
 		}
-	}
 
-	public int compareTo(Object var1) {
-		return this.method9059((class466)var1);
-	}
-
-	public int hashCode() {
-		return this.field4967.hashCode();
 	}
 }

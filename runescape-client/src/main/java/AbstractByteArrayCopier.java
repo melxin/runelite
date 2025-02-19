@@ -3,70 +3,92 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oi")
+@ObfuscatedName("oo")
 @Implements("AbstractByteArrayCopier")
 public abstract class AbstractByteArrayCopier {
-	@ObfuscatedName("av")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lgk;"
+		descriptor = "Lpl;"
 	)
-	static ClanChannel field4045;
+	static AbstractArchive field4097;
 
 	AbstractByteArrayCopier() {
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "14"
+		descriptor = "(I)[B",
+		garbageValue = "1066205984"
 	)
 	@Export("get")
 	abstract byte[] get();
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "([BI)V",
-		garbageValue = "1288883946"
+		garbageValue = "-426944211"
 	)
 	@Export("set")
-	public abstract void set(byte[] var1);
+	abstract void set(byte[] var1);
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lfb;",
-		garbageValue = "-1650010421"
+		descriptor = "(Ljava/lang/CharSequence;IZI)Z",
+		garbageValue = "-935791052"
 	)
-	static class134 method7582(int var0) {
-		class134[] var1 = new class134[]{class134.field1561, class134.field1557, class134.field1559, class134.field1560, class134.field1563};
-		class134 var2 = (class134)StructComposition.findEnumerated(var1, var0);
-		if (var2 == null) {
-			var2 = class134.field1561;
-		}
+	static boolean method7474(CharSequence var0, int var1, boolean var2) {
+		if (var1 >= 2 && var1 <= 36) {
+			boolean var3 = false;
+			boolean var4 = false;
+			int var5 = 0;
+			int var6 = var0.length();
 
-		return var2;
-	}
+			for (int var7 = 0; var7 < var6; ++var7) {
+				char var8 = var0.charAt(var7);
+				if (var7 == 0) {
+					if (var8 == '-') {
+						var3 = true;
+						continue;
+					}
 
-	@ObfuscatedName("nh")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "63"
-	)
-	static final void method7584() {
-		PacketBufferNode var0 = ScriptEvent.getPacketBufferNode(ClientPacket.CLOSE_MODAL, Client.packetWriter.isaacCipher);
-		Client.packetWriter.addNode(var0);
-		Interpreter.field862 = true;
+					if (var8 == '+') {
+						continue;
+					}
+				}
 
-		for (InterfaceParent var1 = (InterfaceParent)Client.interfaceParents.first(); var1 != null; var1 = (InterfaceParent)Client.interfaceParents.next()) {
-			if (var1.type == 0 || var1.type == 3) {
-				NPCComposition.closeInterface(var1, true);
+				int var10;
+				if (var8 >= '0' && var8 <= '9') {
+					var10 = var8 - '0';
+				} else if (var8 >= 'A' && var8 <= 'Z') {
+					var10 = var8 - '7';
+				} else {
+					if (var8 < 'a' || var8 > 'z') {
+						return false;
+					}
+
+					var10 = var8 - 'W';
+				}
+
+				if (var10 >= var1) {
+					return false;
+				}
+
+				if (var3) {
+					var10 = -var10;
+				}
+
+				int var9 = var5 * var1 + var10;
+				if (var9 / var1 != var5) {
+					return false;
+				}
+
+				var5 = var9;
+				var4 = true;
 			}
-		}
 
-		if (Client.meslayerContinueWidget != null) {
-			UserComparator8.invalidateWidget(Client.meslayerContinueWidget);
-			Client.meslayerContinueWidget = null;
+			return var4;
+		} else {
+			throw new IllegalArgumentException("" + var1);
 		}
-
-		Interpreter.field862 = false;
 	}
 }

@@ -3,81 +3,66 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ae")
+@ObfuscatedName("ao")
 public enum class6 implements Enum {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lae;"
+		descriptor = "Lao;"
 	)
-	field20(0, 0);
+	@Export("USERNAME_PASSWORD_REMEMBER")
+	USERNAME_PASSWORD_REMEMBER(0, 0);
 
-	@ObfuscatedName("bg")
+	@ObfuscatedName("fn")
 	@ObfuscatedSignature(
-		descriptor = "Lvg;"
+		descriptor = "Lpn;"
 	)
-	@Export("rasterProvider")
-	public static AbstractRasterProvider rasterProvider;
-	@ObfuscatedName("ah")
+	@Export("archive10")
+	static Archive archive10;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1595182735
+		intValue = 592035307
 	)
-	final int field15;
-	@ObfuscatedName("az")
+	final int field17;
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1657914651
+		intValue = 1927951115
 	)
 	final int field16;
 
 	class6(int var3, int var4) {
-		this.field15 = var3;
+		this.field17 = var3;
 		this.field16 = var4;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "118"
+		garbageValue = "32"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.field16;
 	}
 
-	@ObfuscatedName("la")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIII)I",
-		garbageValue = "-873550757"
+		descriptor = "(Lpl;I)V",
+		garbageValue = "-1755559997"
 	)
-	@Export("insertMenuItemNoShift")
-	public static final int insertMenuItemNoShift(String var0, String var1, int var2, int var3, int var4, int var5) {
-		return class231.insertMenuItem(var0, var1, var2, var3, var4, var5, -1, false, -1);
+	public static void method40(AbstractArchive var0) {
+		FloorUnderlayDefinition.FloorUnderlayDefinition_archive = var0;
 	}
 
-	@ObfuscatedName("ns")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)Ldt;",
-		garbageValue = "-1302722243"
+		descriptor = "(B)Z",
+		garbageValue = "-78"
 	)
-	@Export("openInterface")
-	static final InterfaceParent openInterface(int var0, int var1, int var2) {
-		InterfaceParent var3 = new InterfaceParent();
-		var3.group = var1;
-		var3.type = var2;
-		Client.interfaceParents.put(var3, (long)var0);
-		RestClientThreadFactory.method211(var1);
-		Widget var4 = ClanChannel.widgetDefinition.method7031(var0);
-		UserComparator8.invalidateWidget(var4);
-		if (Client.meslayerContinueWidget != null) {
-			UserComparator8.invalidateWidget(Client.meslayerContinueWidget);
-			Client.meslayerContinueWidget = null;
+	public static boolean method39() {
+		if (!class335.field3694.isEmpty()) {
+			return true;
+		} else {
+			return !class335.midiRequests.isEmpty() && class335.midiRequests.get(0) != null && ((MidiRequest)class335.midiRequests.get(0)).midiPcmStream != null ? ((MidiRequest)class335.midiRequests.get(0)).midiPcmStream.isReady() : false;
 		}
-
-		class244.revalidateWidgetScroll(ClanChannel.widgetDefinition.Widget_interfaceComponents[var0 >> 16], var4, false);
-		WorldMapIcon_0.runWidgetOnLoadListener(var1);
-		if (Client.rootInterface != -1) {
-			Client.runIntfCloseListeners(Client.rootInterface, 1);
-		}
-
-		return var3;
 	}
 }

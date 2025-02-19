@@ -6,117 +6,138 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pg")
+@ObfuscatedName("qp")
 @Implements("ModeWhere")
 public enum ModeWhere implements Enum {
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4839("", 0, new class419[]{class419.field4808, class419.field4809}),
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpg;"
+		descriptor = "Lqp;"
 	)
-	field4684("", 0, new class403[]{class403.field4660, class403.field4658}),
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4680("", 1, new class403[]{class403.field4659, class403.field4660, class403.field4658}),
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4685("", 2, new class403[]{class403.field4659, class403.field4661, class403.field4660}),
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4681("", 3, new class403[]{class403.field4659}),
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4678("", 4),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4683("", 5, new class403[]{class403.field4659, class403.field4660}),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4688("", 6, new class403[]{class403.field4660}),
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4682("", 8, new class403[]{class403.field4659, class403.field4660}),
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4686("", 9, new class403[]{class403.field4659, class403.field4661}),
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	field4687("", 10, new class403[]{class403.field4659}),
+	field4844("", 1, new class419[]{class419.field4805, class419.field4808, class419.field4809}),
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lpg;"
+		descriptor = "Lqp;"
 	)
-	field4679("", 11, new class403[]{class403.field4659}),
+	field4832("", 2, new class419[]{class419.field4805, class419.field4807, class419.field4808}),
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4834("", 3, new class419[]{class419.field4805}),
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4835("", 4),
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4836("", 5, new class419[]{class419.field4805, class419.field4808}),
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4837("", 6, new class419[]{class419.field4808}),
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4838("", 8, new class419[]{class419.field4805, class419.field4808}),
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4847("", 9, new class419[]{class419.field4805, class419.field4807}),
 	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lpg;"
+		descriptor = "Lqp;"
 	)
-	field4689("", 12, new class403[]{class403.field4659, class403.field4660}),
-	@ObfuscatedName("aq")
+	field4840("", 10, new class419[]{class419.field4805}),
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lpg;"
+		descriptor = "Lqp;"
 	)
-	field4690("", 13, new class403[]{class403.field4659});
+	field4841("", 11, new class419[]{class419.field4805}),
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4842("", 12, new class419[]{class419.field4805, class419.field4808}),
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Lqp;"
+	)
+	field4831("", 13, new class419[]{class419.field4805});
 
-	@ObfuscatedName("mu")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Ldx;"
+		descriptor = "Lgd;"
 	)
-	@Export("localPlayer")
-	static Player localPlayer;
-	@ObfuscatedName("af")
+	static ClanChannel field4846;
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = -398111645
+		intValue = 914374273
 	)
 	@Export("id")
 	final int id;
-	@ObfuscatedName("aa")
-	final Set field4692;
+	@ObfuscatedName("aj")
+	final Set field4833;
+
+	static {
+		method7980();
+	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I[Lpo;)V"
+		descriptor = "(Ljava/lang/String;I[Lqu;)V"
 	)
-	ModeWhere(String var3, int var4, class403[] var5) {
-		this.field4692 = new HashSet();
+	ModeWhere(String var3, int var4, class419[] var5) {
+		this.field4833 = new HashSet();
 		this.id = var4;
-		class403[] var6 = var5;
+		class419[] var6 = var5;
 
 		for (int var7 = 0; var7 < var6.length; ++var7) {
-			class403 var8 = var6[var7];
-			this.field4692.add(var8);
+			class419 var8 = var6[var7];
+			this.field4833.add(var8);
 		}
 
 	}
 
 	ModeWhere(String var3, int var4) {
-		this.field4692 = new HashSet();
+		this.field4833 = new HashSet();
 		this.id = var4;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "118"
+		garbageValue = "32"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Lpl;I)V",
+		garbageValue = "-396239743"
+	)
+	public static void method7985(AbstractArchive var0) {
+		class593.EnumDefinition_archive = var0;
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(B)[Lqp;",
+		garbageValue = "3"
+	)
+	static ModeWhere[] method7980() {
+		return new ModeWhere[]{field4842, field4847, field4839, field4840, field4832, field4836, field4841, field4831, field4838, field4835, field4844, field4834, field4837};
 	}
 }

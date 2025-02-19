@@ -1,57 +1,57 @@
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lf")
+@ObfuscatedName("lw")
 @Implements("WorldMapSectionType")
 public enum WorldMapSectionType implements Enum {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Llf;"
+		descriptor = "Llw;"
 	)
 	@Export("WORLDMAPSECTIONTYPE0")
 	WORLDMAPSECTIONTYPE0(0, (byte)0),
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Llf;"
+		descriptor = "Llw;"
 	)
 	@Export("WORLDMAPSECTIONTYPE1")
-	WORLDMAPSECTIONTYPE1(3, (byte)1),
-	@ObfuscatedName("az")
+	WORLDMAPSECTIONTYPE1(1, (byte)1),
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Llf;"
+		descriptor = "Llw;"
 	)
 	@Export("WORLDMAPSECTIONTYPE2")
-	WORLDMAPSECTIONTYPE2(1, (byte)2),
-	@ObfuscatedName("ao")
+	WORLDMAPSECTIONTYPE2(2, (byte)2),
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Llf;"
+		descriptor = "Llw;"
 	)
 	@Export("WORLDMAPSECTIONTYPE3")
-	WORLDMAPSECTIONTYPE3(2, (byte)3);
+	WORLDMAPSECTIONTYPE3(3, (byte)3);
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ge")
+	@ObfuscatedGetter(
+		intValue = -1219945599
+	)
+	static int field3272;
+	@ObfuscatedName("kc")
 	@ObfuscatedSignature(
-		descriptor = "Lvf;"
+		descriptor = "[Lwg;"
 	)
-	@Export("leftTitleSprite")
-	static SpritePixels leftTitleSprite;
-	@ObfuscatedName("ju")
-	static byte[][] field3193;
-	@ObfuscatedName("tq")
+	@Export("headIconPrayerSprites")
+	static SpritePixels[] headIconPrayerSprites;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 58883679
-	)
-	static int field3187;
-	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = -1870578927
+		intValue = 1967746237
 	)
 	@Export("type")
 	final int type;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("id")
 	final byte id;
 
@@ -60,22 +60,100 @@ public enum WorldMapSectionType implements Enum {
 		this.id = var4;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "118"
+		garbageValue = "32"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lmr;",
-		garbageValue = "-1935350685"
+		descriptor = "(I)Lic;",
+		garbageValue = "489473561"
 	)
-	public static class323[] method6360() {
-		return new class323[]{class323.field3420, class323.field3423, class323.field3421, class323.field3427, class323.field3419, class323.field3424, class323.field3425, class323.field3422, class323.field3429, class323.field3428, class323.field3433, class323.field3430, class323.field3431, class323.field3432};
+	static class229 method6239() {
+		return class229.field2501;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "1344314233"
+	)
+	public static void method6245() {
+		while (true) {
+			ArchiveDiskAction var0;
+			synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
+				var0 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.removeLast();
+			}
+
+			if (var0 == null) {
+				return;
+			}
+
+			var0.archive.load(var0.archiveDisk, (int)var0.key, var0.data, false);
+		}
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "28"
+	)
+	public static int method6243(int var0) {
+		long var2 = ViewportMouse.ViewportMouse_entityTags[var0];
+		int var1 = (int)(var2 >>> 14 & 7L);
+		return var1;
+	}
+
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "(Liq;III)Lbf;",
+		garbageValue = "-1217177028"
+	)
+	public static final PcmPlayer method6244(TaskHandler var0, int var1, int var2) {
+		if (PcmPlayer.field284 == 0) {
+			throw new IllegalStateException();
+		} else if (var1 >= 0 && var1 < 2) {
+			if (var2 < 256) {
+				var2 = 256;
+			}
+
+			try {
+				PcmPlayer var3 = PcmPlayer.pcmPlayerProvider.player();
+				var3.samples = new int[256 * (PcmPlayer.PcmPlayer_stereo ? 2 : 1)];
+				var3.field281 = var2;
+				var3.init();
+				var3.capacity = (var2 & -1024) + 1024;
+				if (var3.capacity > 16384) {
+					var3.capacity = 16384;
+				}
+
+				var3.open(var3.capacity);
+				if (MouseRecorder.field1106 > 0 && NpcOverrides.soundSystem == null) {
+					NpcOverrides.soundSystem = new SoundSystem();
+					class7.soundSystemExecutor = Executors.newScheduledThreadPool(1);
+					class7.soundSystemExecutor.scheduleAtFixedRate(NpcOverrides.soundSystem, 0L, 10L, TimeUnit.MILLISECONDS);
+				}
+
+				if (NpcOverrides.soundSystem != null) {
+					if (NpcOverrides.soundSystem.players[var1] != null) {
+						throw new IllegalArgumentException();
+					}
+
+					NpcOverrides.soundSystem.players[var1] = var3;
+				}
+
+				return var3;
+			} catch (Throwable var4) {
+				return new PcmPlayer();
+			}
+		} else {
+			throw new IllegalArgumentException();
+		}
 	}
 }

@@ -4,103 +4,56 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pt")
+@ObfuscatedName("pd")
 @Implements("GrandExchangeOfferTotalQuantityComparator")
 final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lpj;Lpj;I)I",
-		garbageValue = "1877472683"
+		descriptor = "(Lpx;Lpx;B)I",
+		garbageValue = "61"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
 		return var1.grandExchangeOffer.totalQuantity < var2.grandExchangeOffer.totalQuantity ? -1 : (var2.grandExchangeOffer.totalQuantity == var1.grandExchangeOffer.totalQuantity ? 0 : 1);
 	}
 
-	public int compare(Object var1, Object var2) {
-		return this.compare_bridged((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
-	}
-
 	public boolean equals(Object var1) {
 		return super.equals(var1);
 	}
 
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "([BIII)Ljava/lang/String;",
-		garbageValue = "512362012"
-	)
-	@Export("decodeStringCp1252")
-	public static String decodeStringCp1252(byte[] var0, int var1, int var2) {
-		char[] var3 = new char[var2];
-		int var4 = 0;
-
-		for (int var5 = 0; var5 < var2; ++var5) {
-			int var6 = var0[var5 + var1] & 255;
-			if (var6 != 0) {
-				if (var6 >= 128 && var6 < 160) {
-					char var7 = class417.cp1252AsciiExtension[var6 - 128];
-					if (var7 == 0) {
-						var7 = '?';
-					}
-
-					var6 = var7;
-				}
-
-				var3[var4++] = (char)var6;
-			}
-		}
-
-		return new String(var3, 0, var4);
+	public int compare(Object var1, Object var2) {
+		return this.compare_bridged((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
 	}
 
-	@ObfuscatedName("mf")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lna;IIZI)V",
-		garbageValue = "452329856"
+		descriptor = "(Lpl;Lpl;III)Lrf;",
+		garbageValue = "-158631099"
 	)
-	@Export("alignWidgetSize")
-	static void alignWidgetSize(Widget var0, int var1, int var2, boolean var3) {
-		int var4 = var0.width;
-		int var5 = var0.height;
-		if (var0.widthAlignment == 0) {
-			var0.width = var0.rawWidth;
-		} else if (var0.widthAlignment == 1) {
-			var0.width = var1 - var0.rawWidth;
-		} else if (var0.widthAlignment == 2) {
-			var0.width = var0.rawWidth * var1 >> 14;
+	public static Font method7791(AbstractArchive var0, AbstractArchive var1, int var2, int var3) {
+		byte[] var5 = var0.takeFile(var2, var3);
+		boolean var4;
+		if (var5 == null) {
+			var4 = false;
+		} else {
+			class478.SpriteBuffer_decode(var5);
+			var4 = true;
 		}
 
-		if (var0.heightAlignment == 0) {
-			var0.height = var0.rawHeight * 2037764145;
-		} else if (var0.heightAlignment == 1) {
-			var0.height = (var2 - var0.rawHeight) * 2037764145;
-		} else if (var0.heightAlignment == 2) {
-			var0.height = (var2 * var0.rawHeight >> 14) * 2037764145;
-		}
+		if (!var4) {
+			return null;
+		} else {
+			byte[] var6 = var1.takeFile(var2, var3);
+			Font var8;
+			if (var6 == null) {
+				var8 = null;
+			} else {
+				Font var7 = new Font(var6, Canvas.SpriteBuffer_xOffsets, class194.SpriteBuffer_yOffsets, SpriteBufferProperties.SpriteBuffer_spriteWidths, class456.SpriteBuffer_spriteHeights, DbTable.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
+				CollisionMap.method5672();
+				var8 = var7;
+			}
 
-		if (var0.widthAlignment == 4) {
-			var0.width = var0.height * var0.field3888 / var0.field4008;
+			return var8;
 		}
-
-		if (var0.heightAlignment == 4) {
-			var0.height = var0.width * var0.field4008 / var0.field3888 * 2037764145;
-		}
-
-		if (var0.contentType == 1337) {
-			Client.viewportWidget = var0;
-		}
-
-		if (var0.type == 12) {
-			var0.method7444().method7134(var0.width, var0.height);
-		}
-
-		if (var3 && var0.onResize != null && (var4 != var0.width || var5 != var0.height)) {
-			ScriptEvent var6 = new ScriptEvent();
-			var6.widget = var0;
-			var6.args = var0.onResize;
-			Client.scriptEvents.addFirst(var6);
-		}
-
 	}
 }

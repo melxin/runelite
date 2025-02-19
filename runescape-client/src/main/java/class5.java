@@ -4,26 +4,26 @@ import java.security.NoSuchAlgorithmException;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("an")
+@ObfuscatedName("ac")
 public class class5 implements class2 {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	final MessageDigest field13;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lat;)V"
+		descriptor = "(Laa;)V"
 	)
 	class5(class8 var1) {
-		this.field13 = this.method26();
+		this.field13 = this.method21();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	boolean method22(int var1, String var2, long var3) {
-		byte[] var5 = this.method35(var2, var3);
-		return method27(var5) >= var1;
+		byte[] var5 = this.method31(var2, var3);
+		return method23(var5) >= var1;
 	}
 
-	@ObfuscatedName("ao")
-	byte[] method35(String var1, long var2) {
+	@ObfuscatedName("ad")
+	byte[] method31(String var1, long var2) {
 		StringBuilder var4 = new StringBuilder();
 		var4.append(var1).append(Long.toHexString(var2));
 		this.field13.reset();
@@ -37,8 +37,8 @@ public class class5 implements class2 {
 		return this.field13.digest();
 	}
 
-	@ObfuscatedName("ad")
-	MessageDigest method26() {
+	@ObfuscatedName("ah")
+	MessageDigest method21() {
 		try {
 			return MessageDigest.getInstance("SHA-256");
 		} catch (NoSuchAlgorithmException var2) {
@@ -47,14 +47,14 @@ public class class5 implements class2 {
 		}
 	}
 
-	@ObfuscatedName("ah")
-	static int method27(byte[] var0) {
+	@ObfuscatedName("ay")
+	static int method23(byte[] var0) {
 		int var1 = 0;
 		byte[] var2 = var0;
 
 		for (int var3 = 0; var3 < var2.length; ++var3) {
 			byte var4 = var2[var3];
-			int var5 = method24(var4);
+			int var5 = method32(var4);
 			var1 += var5;
 			if (var5 != 8) {
 				break;
@@ -64,8 +64,8 @@ public class class5 implements class2 {
 		return var1;
 	}
 
-	@ObfuscatedName("az")
-	static int method24(byte var0) {
+	@ObfuscatedName("au")
+	static int method32(byte var0) {
 		int var1 = 0;
 		if (var0 == 0) {
 			var1 = 8;

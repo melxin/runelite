@@ -2,37 +2,32 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("jf")
+@ObfuscatedName("hn")
 @Implements("StructComposition")
 public class StructComposition extends DualNode {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
+		descriptor = "Lpl;"
 	)
 	@Export("StructDefinition_archive")
 	public static AbstractArchive StructDefinition_archive;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("StructDefinition_cached")
 	public static EvictingDualNodeHashTable StructDefinition_cached;
-	@ObfuscatedName("ca")
+	@ObfuscatedName("ds")
 	@ObfuscatedSignature(
-		descriptor = "Lol;"
+		descriptor = "[Lwg;"
 	)
-	static StudioGame field2749;
-	@ObfuscatedName("fr")
+	@Export("worldSelectBackSprites")
+	static SpritePixels[] worldSelectBackSprites;
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
-	)
-	static Archive field2746;
-	@ObfuscatedName("jw")
-	static int[] field2742;
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lue;"
+		descriptor = "Lqv;"
 	)
 	@Export("params")
 	IterableNodeHashTable params;
@@ -44,19 +39,19 @@ public class StructComposition extends DualNode {
 	StructComposition() {
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1529643123"
+		garbageValue = "-743932481"
 	)
 	@Export("postDecode")
 	void postDecode() {
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;B)V",
-		garbageValue = "5"
+		descriptor = "(Lvy;I)V",
+		garbageValue = "1942163586"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -70,55 +65,107 @@ public class StructComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;II)V",
-		garbageValue = "1848014011"
+		garbageValue = "-2117204605"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 249) {
-			this.params = class1.readStringIntParameters(var1, this.params);
+			this.params = UserComparator6.readStringIntParameters(var1, this.params);
 		}
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(IIB)I",
-		garbageValue = "7"
+		garbageValue = "-99"
 	)
 	@Export("getIntParam")
 	public int getIntParam(int var1, int var2) {
-		return Canvas.method336(this.params, var1, var2);
+		return class28.method391(this.params, var1, var2);
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(ILjava/lang/String;I)Ljava/lang/String;",
+		garbageValue = "-6703034"
+	)
+	@Export("getStringParam")
+	public String getStringParam(int var1, String var2) {
+		return class59.method1133(this.params, var1, var2);
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lhn;",
+		garbageValue = "390455846"
+	)
+	@Export("StructDefinition_getStructDefinition")
+	public static StructComposition StructDefinition_getStructDefinition(int var0) {
+		StructComposition var1 = (StructComposition)StructDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = StructDefinition_archive.takeFile(34, var0);
+			var1 = new StructComposition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
+
+			var1.postDecode();
+			StructDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
 	}
 
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "-634217919"
+		descriptor = "(ILdy;ZB)I",
+		garbageValue = "-85"
 	)
-	@Export("getStringParam")
-	public String getStringParam(int var1, String var2) {
-		return class47.method906(this.params, var1, var2);
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "([Lpd;II)Lpd;",
-		garbageValue = "-1909362778"
-	)
-	@Export("findEnumerated")
-	public static Enum findEnumerated(Enum[] var0, int var1) {
-		Enum[] var2 = var0;
-
-		for (int var3 = 0; var3 < var2.length; ++var3) {
-			Enum var4 = var2[var3];
-			if (var1 == var4.rsOrdinal()) {
-				return var4;
+	static int method4116(int var0, Script var1, boolean var2) {
+		Widget var3;
+		if (var0 == ScriptOpcodes.IF_GETINVOBJECT) {
+			var3 = class376.widgetDefinition.method6918(Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize]);
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.itemId;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETINVCOUNT) {
+			var3 = class376.widgetDefinition.method6918(Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize]);
+			if (var3.itemId != -1) {
+				Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.itemQuantity;
+			} else {
+				Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = 0;
 			}
-		}
 
-		return null;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_HASSUB) {
+			int var5 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
+			InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var5);
+			if (var4 != null) {
+				Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = 1;
+			} else {
+				Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = 0;
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETTOP) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.rootInterface;
+			return 1;
+		} else if (var0 == 2707) {
+			var3 = class376.widgetDefinition.method6918(Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize]);
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.method7342() ? 1 : 0;
+			return 1;
+		} else if (var0 == 2708) {
+			var3 = class376.widgetDefinition.method6918(Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize]);
+			return IndexCheck.method5621(var3);
+		} else if (var0 == 2709) {
+			var3 = class376.widgetDefinition.method6918(Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize]);
+			return PacketWriter.method3123(var3);
+		} else {
+			return 2;
+		}
 	}
 }

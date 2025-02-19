@@ -1,5 +1,3 @@
-import java.io.IOException;
-import java.net.Socket;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
@@ -8,10 +6,10 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("oq")
 @Implements("Skills")
 public class Skills {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@Export("Skills_enabled")
 	public static final boolean[] Skills_enabled;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@Export("Skills_experienceTable")
 	public static int[] Skills_experienceTable;
 
@@ -29,72 +27,27 @@ public class Skills {
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/Socket;III)Lsq;",
-		garbageValue = "-1851008494"
+		descriptor = "(II)I",
+		garbageValue = "1773586847"
 	)
-	public static AbstractSocket method7618(Socket var0, int var1, int var2) throws IOException {
-		return new BufferedNetSocket(var0, var1, var2);
+	public static int method7501(int var0) {
+		return (var0 & class561.field5517) - 1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "1792590271"
+		descriptor = "(Lpl;II)Z",
+		garbageValue = "1357021198"
 	)
-	public static String method7619(String var0) {
-		int var1 = var0.length();
-		char[] var2 = new char[var1];
-		byte var3 = 2;
-
-		for (int var4 = 0; var4 < var1; ++var4) {
-			char var5 = var0.charAt(var4);
-			if (var3 == 0) {
-				var5 = Character.toLowerCase(var5);
-			} else if (var3 == 2 || Character.isUpperCase(var5)) {
-				char var6;
-				if (var5 != 181 && var5 != 402) {
-					var6 = Character.toTitleCase(var5);
-				} else {
-					var6 = var5;
-				}
-
-				var5 = var6;
-			}
-
-			if (Character.isLetter(var5)) {
-				var3 = 0;
-			} else if (var5 != '.' && var5 != '?' && var5 != '!') {
-				if (Character.isSpaceChar(var5)) {
-					if (var3 != 2) {
-						var3 = 1;
-					}
-				} else {
-					var3 = 1;
-				}
-			} else {
-				var3 = 2;
-			}
-
-			var2[var4] = var5;
-		}
-
-		return new String(var2);
-	}
-
-	@ObfuscatedName("ny")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-1110094328"
-	)
-	@Export("clanKickUser")
-	static final void clanKickUser(String var0) {
-		if (WorldMapLabelSize.friendsChat != null) {
-			PacketBufferNode var1 = ScriptEvent.getPacketBufferNode(ClientPacket.CLAN_KICKUSER, Client.packetWriter.isaacCipher);
-			var1.packetBuffer.writeByte(MouseRecorder.stringCp1252NullTerminatedByteSize(var0));
-			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
-			Client.packetWriter.addNode(var1);
+	public static boolean method7500(AbstractArchive var0, int var1) {
+		byte[] var2 = var0.takeFileFlat(var1);
+		if (var2 == null) {
+			return false;
+		} else {
+			class478.SpriteBuffer_decode(var2);
+			return true;
 		}
 	}
 }

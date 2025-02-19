@@ -1,25 +1,14 @@
 import java.util.Comparator;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ee")
+@ObfuscatedName("eh")
 @Implements("UserComparator4")
 public class UserComparator4 implements Comparator {
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "[Luc;"
-	)
-	@Export("JagexCache_idxFiles")
-	public static BufferedFile[] JagexCache_idxFiles;
-	@ObfuscatedName("cy")
-	@ObfuscatedGetter(
-		intValue = -1400294067
-	)
-	static int field1481;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -27,10 +16,10 @@ public class UserComparator4 implements Comparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lsu;Lsu;B)I",
-		garbageValue = "76"
+		descriptor = "(Lst;Lst;I)I",
+		garbageValue = "-232025448"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(Buddy var1, Buddy var2) {
@@ -45,15 +34,37 @@ public class UserComparator4 implements Comparator {
 		return super.equals(var1);
 	}
 
-	@ObfuscatedName("nr")
+	@ObfuscatedName("hi")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-3927"
+		descriptor = "(IZZZZI)Lpn;",
+		garbageValue = "-7744816"
 	)
-	@Export("Clan_leaveChat")
-	static final void Clan_leaveChat() {
-		PacketBufferNode var0 = ScriptEvent.getPacketBufferNode(ClientPacket.FRIEND_CHAT_JOIN_LEAVE, Client.packetWriter.isaacCipher);
-		var0.packetBuffer.writeByte(0);
-		Client.packetWriter.addNode(var0);
+	@Export("newArchive")
+	static Archive newArchive(int var0, boolean var1, boolean var2, boolean var3, boolean var4) {
+		ArchiveDisk var5 = null;
+		if (JagexCache.JagexCache_dat2File != null) {
+			var5 = new ArchiveDisk(var0, JagexCache.JagexCache_dat2File, class379.JagexCache_idxFiles[var0], 1000000);
+		}
+
+		return new Archive(var5, RouteStrategy.masterDisk, AsyncHttpResponse.field77, var0, var1, var2, var3, var4, false);
+	}
+
+	@ObfuscatedName("or")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-127"
+	)
+	static void method3177() {
+		if (Client.field810 != null) {
+			Client.field811 = Client.cycle;
+			Client.field810.method7860();
+			Iterator var0 = class200.topLevelWorldView.field1353.iterator();
+
+			while (var0.hasNext()) {
+				Player var1 = (Player)var0.next();
+				Client.field810.method7859((var1.x >> 7) + class200.topLevelWorldView.baseX, (var1.y >> 7) + class200.topLevelWorldView.baseY);
+			}
+		}
+
 	}
 }

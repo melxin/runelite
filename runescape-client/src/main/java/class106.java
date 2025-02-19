@@ -1,65 +1,79 @@
-import java.util.ArrayList;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ef")
+@ObfuscatedName("ed")
 public class class106 {
-	@ObfuscatedName("ot")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1925365391
+		intValue = -1498762183
 	)
-	@Export("selectedSpellFlags")
-	static int selectedSpellFlags;
-	@ObfuscatedName("st")
-	@ObfuscatedSignature(
-		descriptor = "Lgk;"
+	int field1400;
+	@ObfuscatedName("ay")
+	@ObfuscatedGetter(
+		intValue = -1060987869
 	)
-	@Export("guestClanChannel")
-	static ClanChannel guestClanChannel;
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)Ljava/lang/String;",
-		garbageValue = "609674269"
+	int field1395;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -230670305
 	)
-	public static String method3069(CharSequence var0) {
-		int var2 = var0.length();
-		char[] var3 = new char[var2];
+	int field1396;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = -1799315863
+	)
+	int field1397;
 
-		for (int var4 = 0; var4 < var2; ++var4) {
-			var3[var4] = '*';
-		}
-
-		String var1 = new String(var3);
-		return var1;
+	class106(int var1, int var2, int var3, int var4) {
+		this.field1400 = var1;
+		this.field1395 = var2;
+		this.field1396 = var3;
+		this.field1397 = var4;
 	}
 
-	@ObfuscatedName("bh")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-29"
+		descriptor = "(I)I",
+		garbageValue = "-1442371487"
 	)
-	static void method3078() {
-		if (!class544.clientPreferences.isTitleMusicDisabled()) {
-			ArrayList var0 = new ArrayList();
-			var0.add(new MidiRequest(class544.archive6, "scape main", "", 255, false));
-			class1.method9(var0, 0, 0, 0, 100, false);
-		} else {
-			UserComparator3.method3347(0, 0);
-		}
-
+	int method2935() {
+		return this.field1400;
 	}
 
-	@ObfuscatedName("cz")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lna;S)V",
-		garbageValue = "-32485"
+		descriptor = "(B)I",
+		garbageValue = "-15"
 	)
-	static void method3077(Widget var0) {
-		var0.method7411();
-		var0.method7444().method7176(new class110(var0));
-		var0.method7444().method7175(new class111(var0));
+	int method2936() {
+		return this.field1395;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-222359523"
+	)
+	int method2937() {
+		return this.field1396;
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "1786326525"
+	)
+	int method2938() {
+		return this.field1397;
+	}
+
+	@ObfuscatedName("ox")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "1086213130"
+	)
+	static void method2944(int var0) {
+		Client.oculusOrbState = var0;
 	}
 }
