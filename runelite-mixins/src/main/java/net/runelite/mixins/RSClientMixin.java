@@ -150,6 +150,7 @@ import net.runelite.rs.api.RSFloorOverlayDefinition;
 import net.runelite.rs.api.RSFont;
 import net.runelite.rs.api.RSFriendSystem;
 import net.runelite.rs.api.RSGameEngine;
+import net.runelite.rs.api.RSIndexedObjectSet;
 import net.runelite.rs.api.RSIndexedSprite;
 import net.runelite.rs.api.RSInterfaceParent;
 import net.runelite.rs.api.RSItemContainer;
@@ -1710,40 +1711,18 @@ public abstract class RSClientMixin implements RSClient
 	@Override
 	public Player getHintArrowPlayer()
 	{
-		if (getHintArrowType() == HintArrowType.PLAYER)
-		{
-			int idx = client.getHintArrowPlayerTargetIdx();
-			RSPlayer[] players = client.getTopLevelWorldView().getPlayers();
-
-			if (idx < 0 || idx >= players.length)
-			{
-				return null;
-			}
-
-			return players[idx];
-		}
-
-		return null;
+		return this.getHintArrowType() == HintArrowType.PLAYER
+			? (Player) client.getTopLevelWorldView().getPlayers().get(client.getHintArrowPlayerTargetIdx())
+			: null;
 	}
 
 	@Inject
 	@Override
 	public NPC getHintArrowNpc()
 	{
-		if (getHintArrowType() == HintArrowType.NPC)
-		{
-			int idx = client.getHintArrowNpcTargetIdx();
-			RSNPC[] npcs = client.getTopLevelWorldView().getNpcs();
-
-			if (idx < 0 || idx >= npcs.length)
-			{
-				return null;
-			}
-
-			return npcs[idx];
-		}
-
-		return null;
+		return this.getHintArrowType() == HintArrowType.NPC
+			? (NPC) client.getTopLevelWorldView().getNpcs().get(client.getHintArrowNpcTargetIdx())
+			: null;
 	}
 
 	@Inject
@@ -2126,7 +2105,7 @@ public abstract class RSClientMixin implements RSClient
 		}
 		else
 		{
-			RSWorldEntity worldEntity = client.getTopLevelWorldView().getWorldEntities()[id];
+			RSWorldEntity worldEntity = (RSWorldEntity) client.getTopLevelWorldView().getWorldEntities().get(id);
 			return worldEntity == null ? null : worldEntity.getWorldView();
 		}
 	}
@@ -3245,9 +3224,9 @@ public abstract class RSClientMixin implements RSClient
 	@Nullable
 	public RSNPC getFollower()
 	{
-		int var1 = client.getFollowerIndex();
-		RSNPC[] var2 = this.getTopLevelWorldView().getNpcs();
-		return var1 >= 0 && var1 < var2.length ? var2[var1] : null;
+		int idx = client.getFollowerIndex();
+		RSIndexedObjectSet npcs = this.getTopLevelWorldView().getNpcs();
+		return idx >= 0 && idx < npcs.getSize() ? (RSNPC) npcs.get(idx) : null;
 	}
 
 	// Render menu

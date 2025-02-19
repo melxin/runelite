@@ -14,7 +14,7 @@ public final class IndexedObjectSet implements Iterable {
 	@ObfuscatedSignature(
 		descriptor = "[Lut;"
 	)
-	@Export("node")
+	@Export("nodes")
 	IndexedObjectNode[] nodes;
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(

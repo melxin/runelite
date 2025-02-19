@@ -31,6 +31,9 @@ import net.runelite.mapping.Import;
 
 public interface RSActor extends RSRenderable, Actor, RSActorSpotAnim
 {
+	@Import("index")
+	int getId();
+
 	@Import("targetIndex")
 	@Override
 	int getRSInteracting();
@@ -250,4 +253,10 @@ public interface RSActor extends RSRenderable, Actor, RSActorSpotAnim
 
 	@Import("overheadTextCyclesRemaining")
 	void setOverheadCycle(int cycle);
+
+	@Import("worldViewId")
+	int getWorldViewId();
+
+	@Import("worldViewId")
+	void setWorldViewId(int id);
 }

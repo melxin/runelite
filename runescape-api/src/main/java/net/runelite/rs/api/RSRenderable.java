@@ -27,7 +27,7 @@ package net.runelite.rs.api;
 import net.runelite.api.Renderable;
 import net.runelite.mapping.Import;
 
-public interface RSRenderable extends RSNode, Renderable
+public interface RSRenderable extends RSIndexedObjectNode, Renderable
 {
 	@Import("height")
 	int getModelHeight();

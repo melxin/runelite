@@ -38,7 +38,6 @@ import net.runelite.api.NPC;
 import net.runelite.api.NPCComposition;
 import net.runelite.api.NpcID;
 import net.runelite.api.Perspective;
-import net.runelite.api.Player;
 import net.runelite.api.Point;
 import net.runelite.api.SpritePixels;
 import net.runelite.api.WorldView;
@@ -65,6 +64,7 @@ import net.runelite.rs.api.RSHealthBarUpdate;
 import net.runelite.rs.api.RSIterableNodeDeque;
 import net.runelite.rs.api.RSNPC;
 import net.runelite.rs.api.RSNode;
+import net.runelite.rs.api.RSWorldView;
 
 @Mixin(RSActor.class)
 public abstract class RSActorMixin implements RSActor
@@ -114,16 +114,15 @@ public abstract class RSActorMixin implements RSActor
 				return null;
 			}
 
+			RSWorldView wv = client.getWorldViewManager().getWorldView(this.getWorldViewId());
 			int var2 = 65536;
 			if (index < var2)
 			{
-				NPC[] npcs = client.getCachedNPCs();
-				return npcs[index];
+				return (Actor) wv.getNpcs().get(index);
 			}
 
 			index -= var2;
-			Player[] players = client.getCachedPlayers();
-			return players[index];
+			return (Actor) wv.getPlayers().get(index);
 		}
 		catch (ArrayIndexOutOfBoundsException e)
 		{

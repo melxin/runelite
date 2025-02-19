@@ -6,6 +6,8 @@ import net.runelite.api.widgets.Widget;
 import net.runelite.api.NPC;
 import net.runelite.api.MenuAction;
 import net.runelite.rs.api.RSClient;
+import net.runelite.rs.api.RSIndexedObjectSet;
+
 public class RuneLiteMenuEntry implements MenuEntry {
 	private static RSClient client;
 
@@ -391,13 +393,13 @@ public class RuneLiteMenuEntry implements MenuEntry {
 
 	@Override
 	public NPC getNpc() {
-		NPC[] npcs = client.getCachedNPCs();
+		RSIndexedObjectSet npcs = client.getTopLevelWorldView().getNpcs();
 		NPC npc = null;
 		MenuAction menuAction = this.getType();
 		if (menuAction == MenuAction.NPC_FIRST_OPTION || menuAction == MenuAction.NPC_SECOND_OPTION || menuAction == MenuAction.NPC_THIRD_OPTION || menuAction == MenuAction.NPC_FOURTH_OPTION || menuAction == MenuAction.NPC_FIFTH_OPTION || menuAction == MenuAction.WIDGET_TARGET_ON_NPC || menuAction == MenuAction.EXAMINE_NPC) {
 			int identifier = this.getIdentifier();
-			if (identifier >= 0 && identifier < npcs.length) {
-				npc = npcs[identifier];
+			if (identifier >= 0 && identifier < npcs.getSize()) {
+				npc = (NPC) npcs.get(identifier);
 			}
 		}
 		return npc;
@@ -405,13 +407,13 @@ public class RuneLiteMenuEntry implements MenuEntry {
 
 	@Override
 	public Player getPlayer() {
-		Player[] players = client.getCachedPlayers();
+		RSIndexedObjectSet players = client.getTopLevelWorldView().getPlayers();
 		Player player = null;
 		MenuAction menuAction = this.getType();
 		if (menuAction == MenuAction.PLAYER_FIRST_OPTION || menuAction == MenuAction.PLAYER_SECOND_OPTION || menuAction == MenuAction.PLAYER_THIRD_OPTION || menuAction == MenuAction.PLAYER_FOURTH_OPTION || menuAction == MenuAction.PLAYER_FIFTH_OPTION || menuAction == MenuAction.PLAYER_SIXTH_OPTION || menuAction == MenuAction.PLAYER_SEVENTH_OPTION || menuAction == MenuAction.PLAYER_EIGHTH_OPTION || menuAction == MenuAction.WIDGET_TARGET_ON_PLAYER || menuAction == MenuAction.RUNELITE_PLAYER) {
 			int identifier = this.getIdentifier();
-			if (identifier >= 0 && identifier < players.length) {
-				player = players[identifier];
+			if (identifier >= 0 && identifier < players.getSize()) {
+				player = (Player) players.get(identifier);
 			}
 		}
 		return player;
