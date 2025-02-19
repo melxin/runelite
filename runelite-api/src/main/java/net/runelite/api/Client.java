@@ -2596,6 +2596,42 @@ public interface Client extends OAuthApi, GameEngine
 	}
 
 	/**
+	 * Gets an array of all cached NPCs.
+	 *
+	 * @return cached NPCs
+	 * @see WorldView#npcs()
+	 */
+	@Deprecated
+	default NPC[] getCachedNPCs()
+	{
+		var wv = getTopLevelWorldView();
+		if (wv == null)
+		{
+			return new NPC[0];
+		}
+		List<NPC> npcs = wv.npcs().stream().collect(Collectors.toList());
+		return npcs.toArray(new NPC[0]);
+	}
+
+	/**
+	 * Gets an array of all cached players.
+	 *
+	 * @return cached players
+	 * @see WorldView#players()
+	 */
+	@Deprecated
+	default Player[] getCachedPlayers()
+	{
+		var wv = getTopLevelWorldView();
+		if (wv == null)
+		{
+			return new Player[0];
+		}
+		List<Player> players = wv.players().stream().collect(Collectors.toList());
+		return players.toArray(new Player[0]);
+	}
+
+	/**
 	 * Gets an array of tile collision data.
 	 * <p>
 	 * The index into the array is the plane/z-axis coordinate.
