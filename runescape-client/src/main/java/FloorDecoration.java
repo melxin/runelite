@@ -48,7 +48,7 @@ public final class FloorDecoration {
 		descriptor = "Ljc;"
 	)
 	@Export("renderable")
-	public TileItem renderable;
+	public Renderable renderable;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		longValue = 6591267376166635853L

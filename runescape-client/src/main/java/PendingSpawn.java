@@ -158,7 +158,7 @@ public final class PendingSpawn extends Node {
 	public static PacketBufferNode method2583(int var0, String var1, Language var2, int var3) {
 		PacketBufferNode var4 = class272.getPacketBufferNode(ClientPacket.MESSAGE_PUBLIC, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(0);
-		int var5 = var4.packetBuffer.field5570;
+		int var5 = var4.packetBuffer.offset;
 		var4.packetBuffer.writeByte(var0);
 		String var6 = var1.toLowerCase();
 		int var7 = 0;
@@ -242,7 +242,7 @@ public final class PendingSpawn extends Node {
 			var4.packetBuffer.writeByte(var3);
 		}
 
-		var4.packetBuffer.writeLengthByte(var4.packetBuffer.field5570 - var5);
+		var4.packetBuffer.writeLengthByte(var4.packetBuffer.offset - var5);
 		return var4;
 	}
 

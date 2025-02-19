@@ -201,7 +201,7 @@ public class class229 {
 			Rasterizer2D.Rasterizer2D_setClip(var1, var2, var4.width + var1, var2 + var4.height);
 			if (Client.minimapState != 2 && Client.minimapState != 5) {
 				int var5 = Client.camAngleY & 2047;
-				int var6 = Client.serverCycle / 32 + 48;
+				int var6 = Client.field647 / 32 + 48;
 				int var7 = 464 - Client.field532 / 32;
 				MidiRequest.sceneMinimapSprite.drawRotatedMaskedCenteredAround(var1, var2, var4.width, var4.height, var6, var7, var5, 256, var4.xStarts, var4.xWidths);
 
@@ -209,7 +209,7 @@ public class class229 {
 				int var10;
 				int var37;
 				for (var8 = 0; var8 < Client.mapIconCount; ++var8) {
-					var37 = Client.mapIconXs[var8] * 4 + 2 - Client.serverCycle / 32;
+					var37 = Client.mapIconXs[var8] * 4 + 2 - Client.field647 / 32;
 					var10 = Client.mapIconYs[var8] * 4 + 2 - Client.field532 / 32;
 					ClanChannelMember.drawSpriteOnMinimap(var1, var2, var37, var10, Client.mapIcons[var8], var4);
 				}
@@ -220,7 +220,7 @@ public class class229 {
 					for (var37 = 0; var37 < 104; ++var37) {
 						NodeDeque var27 = class200.topLevelWorldView.groundItems[class200.topLevelWorldView.plane][var8][var37];
 						if (var27 != null) {
-							var11 = var8 * 4 + 2 - Client.serverCycle / 32;
+							var11 = var8 * 4 + 2 - Client.field647 / 32;
 							var12 = var37 * 4 + 2 - Client.field532 / 32;
 							ClanChannelMember.drawSpriteOnMinimap(var1, var2, var11, var12, class27.field124[0], var4);
 						}
@@ -228,7 +228,7 @@ public class class229 {
 				}
 
 				for (var8 = 0; var8 < class200.topLevelWorldView.field1355.method9005(); ++var8) {
-					NPC var9 = (NPC)class200.topLevelWorldView.field1356.method7890((long)class200.topLevelWorldView.field1355.method9007(var8));
+					NPC var9 = (NPC)class200.topLevelWorldView.npcs.get((long)class200.topLevelWorldView.field1355.method9007(var8));
 					if (var9 != null && var9.isVisible()) {
 						NPCComposition var41 = var9.definition;
 						if (var41 != null && var41.transforms != null) {
@@ -236,7 +236,7 @@ public class class229 {
 						}
 
 						if (var41 != null && var41.drawMapDot && var41.isInteractable) {
-							var11 = var9.x / 32 - Client.serverCycle / 32;
+							var11 = var9.x / 32 - Client.field647 / 32;
 							var12 = var9.y / 32 - Client.field532 / 32;
 							ClanChannelMember.drawSpriteOnMinimap(var1, var2, var11, var12, class27.field124[1], var4);
 						}
@@ -248,9 +248,9 @@ public class class229 {
 
 				int var13;
 				for (var10 = 0; var10 < var8; ++var10) {
-					Player var36 = (Player)class200.topLevelWorldView.field1353.method7890((long)var38[var10]);
+					Player var36 = (Player)class200.topLevelWorldView.players.get((long)var38[var10]);
 					if (var36 != null && var36.isVisible() && !var36.isHidden && var36 != class132.localPlayer) {
-						var12 = var36.x / 32 - Client.serverCycle / 32;
+						var12 = var36.x / 32 - Client.field647 / 32;
 						var13 = var36.y / 32 - Client.field532 / 32;
 						if (var36.isFriend()) {
 							ClanChannelMember.drawSpriteOnMinimap(var1, var2, var12, var13, class27.field124[3], var4);
@@ -267,25 +267,25 @@ public class class229 {
 				}
 
 				if (Client.hintArrowType != 0 && Client.cycle % 20 < 10) {
-					if (Client.hintArrowType == 1 && Client.field535 >= 0) {
-						NPC var42 = (NPC)class200.topLevelWorldView.field1356.method7890((long)Client.field535);
+					if (Client.hintArrowType == 1 && Client.hintArrowNpcIndex >= 0) {
+						NPC var42 = (NPC)class200.topLevelWorldView.npcs.get((long)Client.hintArrowNpcIndex);
 						if (var42 != null) {
-							var11 = var42.x / 32 - Client.serverCycle / 32;
+							var11 = var42.x / 32 - Client.field647 / 32;
 							var12 = var42.y / 32 - Client.field532 / 32;
 							class172.worldToMinimap(var1, var2, var11, var12, BuddyRankComparator.mapDotSprites[1], var4);
 						}
 					}
 
 					if (Client.hintArrowType == 2) {
-						var10 = Client.field537 * 4 - class200.topLevelWorldView.baseX * 4 + 2 - Client.serverCycle / 32;
-						var11 = Client.field642 * 4 - class200.topLevelWorldView.baseY * 4 + 2 - Client.field532 / 32;
+						var10 = Client.hintArrowX * 4 - class200.topLevelWorldView.baseX * 4 + 2 - Client.field647 / 32;
+						var11 = Client.hintArrowY * 4 - class200.topLevelWorldView.baseY * 4 + 2 - Client.field532 / 32;
 						class172.worldToMinimap(var1, var2, var10, var11, BuddyRankComparator.mapDotSprites[1], var4);
 					}
 
-					if (Client.hintArrowType == 10 && Client.field536 >= 0) {
-						Player var43 = (Player)class200.topLevelWorldView.field1353.method7890((long)Client.field536);
+					if (Client.hintArrowType == 10 && Client.hintArrowPlayerIndex >= 0) {
+						Player var43 = (Player)class200.topLevelWorldView.players.get((long)Client.hintArrowPlayerIndex);
 						if (var43 != null) {
-							var11 = var43.x / 32 - Client.serverCycle / 32;
+							var11 = var43.x / 32 - Client.field647 / 32;
 							var12 = var43.y / 32 - Client.field532 / 32;
 							class172.worldToMinimap(var1, var2, var11, var12, BuddyRankComparator.mapDotSprites[1], var4);
 						}
@@ -293,7 +293,7 @@ public class class229 {
 				}
 
 				if (Client.destinationX != 0) {
-					var10 = Client.destinationX * 4 + 2 - Client.serverCycle / 32;
+					var10 = Client.destinationX * 4 + 2 - Client.field647 / 32;
 					var11 = Client.destinationY * 4 + 2 - Client.field532 / 32;
 					ClanChannelMember.drawSpriteOnMinimap(var1, var2, var10, var11, BuddyRankComparator.mapDotSprites[0], var4);
 				}

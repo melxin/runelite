@@ -101,7 +101,7 @@ public class User implements Comparable {
 						break;
 					}
 
-					var0 = var0.substring(0, var3) + class219.method4459(class263.method5541(var1, var2 - 1)) + var0.substring(var3 + 2);
+					var0 = var0.substring(0, var3) + class219.method4459(ModelData0.method5541(var1, var2 - 1)) + var0.substring(var3 + 2);
 				}
 			}
 		}

@@ -320,12 +320,14 @@ public class Rasterizer3D {
 	}
 
 	@ObfuscatedName("ap")
-	static void method4766(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9, int var10, int var11) {
+	@Export("rasterTriangleWithGradient")
+	static void rasterTriangleWithGradient(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9, int var10, int var11) {
 		field2637.method4869(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
 	}
 
 	@ObfuscatedName("al")
-	static void method4761(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9) {
+	@Export("rasterTriangle")
+	static void rasterTriangle(int var0, int var1, int var2, int var3, int var4, int var5, float var6, float var7, float var8, int var9) {
 		field2637.method4861(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
 	}
 }

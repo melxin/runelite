@@ -949,14 +949,14 @@ public class WorldMapRegion {
 			var0.scene.removeGroundItemPile(var1, var2, var3);
 		} else {
 			long var5 = -99999999L;
-			class108 var7 = null;
+			TileItem var7 = null;
 
-			class108 var8;
-			for (var8 = (class108)var4.last(); var8 != null; var8 = (class108)var4.previous()) {
+			TileItem var8;
+			for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
 				ItemComposition var9 = class138.ItemDefinition_get(var8.id);
 				long var13 = (long)var9.price;
 				if (var9.isStackable == 1) {
-					var13 *= var8.field1414 < Integer.MAX_VALUE ? (long)(var8.field1414 + 1) : (long)var8.field1414;
+					var13 *= var8.quantity < Integer.MAX_VALUE ? (long)(var8.quantity + 1) : (long)var8.quantity;
 				}
 
 				if (var13 > var5) {
@@ -969,10 +969,10 @@ public class WorldMapRegion {
 				var0.scene.removeGroundItemPile(var1, var2, var3);
 			} else {
 				var4.addLast(var7);
-				class108 var15 = null;
-				class108 var10 = null;
+				TileItem var15 = null;
+				TileItem var10 = null;
 
-				for (var8 = (class108)var4.last(); var8 != null; var8 = (class108)var4.previous()) {
+				for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
 					if (var8.id != var7.id) {
 						if (var15 == null) {
 							var15 = var8;
@@ -984,7 +984,7 @@ public class WorldMapRegion {
 					}
 				}
 
-				long var11 = HttpRequestTask.calculateTag(var2, var3, 3, false, 0, var0.field1354);
+				long var11 = HttpRequestTask.calculateTag(var2, var3, 3, false, 0, var0.id);
 				var0.scene.newGroundItemPile(var1, var2, var3, DevicePcmPlayerProvider.getTileHeight(var0, Coord.method6905(var2), Coord.method6905(var3), var1), var7, var11, var15, var10);
 			}
 		}

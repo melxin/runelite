@@ -148,7 +148,7 @@ public final class Tiles {
 							var31 = var0.collisionMaps[var30];
 						}
 
-						class581.addObjects(var0, var2, var21, var29, var10, var19 + var8 & 3, var18, var31);
+						FillMode.addObjects(var0, var2, var21, var29, var10, var19 + var8 & 3, var18, var31);
 					}
 				}
 			}

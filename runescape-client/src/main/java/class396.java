@@ -28,12 +28,12 @@ public class class396 {
 			int var11;
 			int[] var10000;
 			for (int var9 = 0; var9 < 65536; ++var9) {
-				NPC var24 = (NPC)class200.topLevelWorldView.field1356.method7890((long)var9);
+				NPC var24 = (NPC)class200.topLevelWorldView.npcs.get((long)var9);
 				if (var24 != null) {
 					for (var11 = 0; var11 < 10; ++var11) {
-						var10000 = var24.field1287;
+						var10000 = var24.pathX;
 						var10000[var11] -= var5;
-						var10000 = var24.field1288;
+						var10000 = var24.pathY;
 						var10000[var11] -= var6;
 					}
 
@@ -46,16 +46,16 @@ public class class396 {
 				}
 			}
 
-			Iterator var21 = class200.topLevelWorldView.field1353.iterator();
+			Iterator var21 = class200.topLevelWorldView.players.iterator();
 
 			while (true) {
 				Player var27;
 				do {
 					if (!var21.hasNext()) {
 						for (int var10 = 0; var10 < 4095; ++var10) {
-							class492 var23 = (class492)class200.topLevelWorldView.field1358.get((long)var10);
+							WorldEntity var23 = (WorldEntity)class200.topLevelWorldView.worldEntities.get((long)var10);
 							if (var23 != null) {
-								var23.method9297(-var7, -var8);
+								var23.setPosition(-var7, -var8);
 							}
 						}
 
@@ -113,7 +113,7 @@ public class class396 {
 						RestClientThreadFactory.oculusOrbFocalPointX -= var5 << 7;
 						class173.oculusOrbFocalPointY -= var6 << 7;
 						Client.field799 = -1;
-						class200.topLevelWorldView.field1342.clear();
+						class200.topLevelWorldView.graphicsObjects.clear();
 						class200.topLevelWorldView.projectiles.clear();
 
 						for (var17 = 0; var17 < 4; ++var17) {
@@ -127,9 +127,9 @@ public class class396 {
 				} while(var27 == null);
 
 				for (var11 = 0; var11 < 10; ++var11) {
-					var10000 = var27.field1287;
+					var10000 = var27.pathX;
 					var10000[var11] -= var5;
-					var10000 = var27.field1288;
+					var10000 = var27.pathY;
 					var10000[var11] -= var6;
 				}
 

@@ -33,7 +33,7 @@ public class Username implements Comparable {
 			}
 
 			int var7 = var6 - var5;
-			if (var7 >= 1 && var7 <= TileItem.method5177(var2)) {
+			if (var7 >= 1 && var7 <= Renderable.method5177(var2)) {
 				StringBuilder var8 = new StringBuilder(var7);
 
 				for (int var9 = var5; var9 < var6; ++var9) {
@@ -197,7 +197,7 @@ public class Username implements Comparable {
 			}
 
 			int var7 = var6 - var5;
-			if (var7 >= 1 && var7 <= TileItem.method5177(var4)) {
+			if (var7 >= 1 && var7 <= Renderable.method5177(var4)) {
 				StringBuilder var8 = new StringBuilder(var7);
 
 				for (int var9 = var5; var9 < var6; ++var9) {

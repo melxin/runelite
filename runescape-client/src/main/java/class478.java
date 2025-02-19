@@ -67,14 +67,14 @@ public final class class478 implements Comparable {
 	@Export("SpriteBuffer_decode")
 	public static void SpriteBuffer_decode(byte[] var0) {
 		Buffer var1 = new Buffer(var0);
-		var1.field5570 = var0.length - 2;
+		var1.offset = var0.length - 2;
 		class561.SpriteBuffer_spriteCount = var1.readUnsignedShort();
 		Canvas.SpriteBuffer_xOffsets = new int[class561.SpriteBuffer_spriteCount];
 		class194.SpriteBuffer_yOffsets = new int[class561.SpriteBuffer_spriteCount];
 		SpriteBufferProperties.SpriteBuffer_spriteWidths = new int[class561.SpriteBuffer_spriteCount];
 		class456.SpriteBuffer_spriteHeights = new int[class561.SpriteBuffer_spriteCount];
 		SpriteBufferProperties.SpriteBuffer_pixels = new byte[class561.SpriteBuffer_spriteCount][];
-		var1.field5570 = var0.length - 7 - class561.SpriteBuffer_spriteCount * 8;
+		var1.offset = var0.length - 7 - class561.SpriteBuffer_spriteCount * 8;
 		SpriteBufferProperties.SpriteBuffer_spriteWidth = var1.readUnsignedShort();
 		SpriteBufferProperties.SpriteBuffer_spriteHeight = var1.readUnsignedShort();
 		int var2 = (var1.readUnsignedByte() & 255) + 1;
@@ -96,7 +96,7 @@ public final class class478 implements Comparable {
 			class456.SpriteBuffer_spriteHeights[var3] = var1.readUnsignedShort();
 		}
 
-		var1.field5570 = var0.length - 7 - class561.SpriteBuffer_spriteCount * 8 - (var2 - 1) * 3;
+		var1.offset = var0.length - 7 - class561.SpriteBuffer_spriteCount * 8 - (var2 - 1) * 3;
 		DbTable.SpriteBuffer_spritePalette = new int[var2];
 
 		for (var3 = 1; var3 < var2; ++var3) {
@@ -106,7 +106,7 @@ public final class class478 implements Comparable {
 			}
 		}
 
-		var1.field5570 = 0;
+		var1.offset = 0;
 
 		for (var3 = 0; var3 < class561.SpriteBuffer_spriteCount; ++var3) {
 			int var4 = SpriteBufferProperties.SpriteBuffer_spriteWidths[var3];

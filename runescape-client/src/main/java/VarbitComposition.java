@@ -105,23 +105,23 @@ public class VarbitComposition extends DualNode {
 	)
 	@Export("addPlayerToScene")
 	static void addPlayerToScene(WorldView var0, int var1, boolean var2) {
-		Player var3 = (Player)var0.field1353.method7890((long)var1);
+		Player var3 = (Player)var0.players.get((long)var1);
 		if (var3 != null && var3.isVisible() && !var3.isHidden) {
 			int var4 = var3.plane;
 			var3.isUnanimated = false;
-			if ((Client.isLowDetail && Client.playerUpdateManager.playerCount > 50 || Client.playerUpdateManager.playerCount > 200) && var2 && var3.field1261 == var3.idleSequence) {
+			if ((Client.isLowDetail && Client.playerUpdateManager.playerCount > 50 || Client.playerUpdateManager.playerCount > 200) && var2 && var3.movementSequence == var3.idleSequence) {
 				var3.isUnanimated = true;
 			}
 
 			int var5 = var3.x >> 7;
 			int var6 = var3.y >> 7;
 			if (0 <= var5 && var5 < 104 && 0 <= var6 && var6 < 104) {
-				long var7 = HttpRequestTask.calculateTag(0, 0, 0, false, var3.field1271, var0.field1354);
-				if (var3.field1147 != null && Client.cycle >= var3.field1143 && Client.cycle < var3.field1144) {
+				long var7 = HttpRequestTask.calculateTag(0, 0, 0, false, var3.index, var0.id);
+				if (var3.model0 != null && Client.cycle >= var3.animationCycleStart && Client.cycle < var3.animationCycleEnd) {
 					var3.isUnanimated = false;
-					var3.field1142 = DevicePcmPlayerProvider.getTileHeight(var0, var3.x, var3.y, var4);
-					var3.field1225 = Client.cycle;
-					var0.scene.addNullableObject(var4, var3.x, var3.y, var3.field1142, 60, var3, var3.field1222, var7, var3.field1149, var3.field1150, var3.headIconPk, var3.field1157);
+					var3.tileHeight = DevicePcmPlayerProvider.getTileHeight(var0, var3.x, var3.y, var4);
+					var3.playerCycle = Client.cycle;
+					var0.scene.addNullableObject(var4, var3.x, var3.y, var3.tileHeight, 60, var3, var3.rotation, var7, var3.minX, var3.minY, var3.maxX, var3.maxY);
 				} else {
 					if ((var3.x & 127) == 64 && (var3.y & 127) == 64) {
 						if (var0.tileLastDrawnActor[var5][var6] == Client.viewportDrawCount) {
@@ -131,9 +131,9 @@ public class VarbitComposition extends DualNode {
 						var0.tileLastDrawnActor[var5][var6] = Client.viewportDrawCount;
 					}
 
-					var3.field1142 = DevicePcmPlayerProvider.getTileHeight(var0, var3.x, var3.y, var4);
-					var3.field1225 = Client.cycle;
-					var0.scene.drawEntity(var4, var3.x, var3.y, var3.field1142, 60, var3, var3.field1222, var7, var3.field1223);
+					var3.tileHeight = DevicePcmPlayerProvider.getTileHeight(var0, var3.x, var3.y, var4);
+					var3.playerCycle = Client.cycle;
+					var0.scene.drawEntity(var4, var3.x, var3.y, var3.tileHeight, 60, var3, var3.rotation, var7, var3.isWalking);
 				}
 			}
 		}
@@ -155,7 +155,7 @@ public class VarbitComposition extends DualNode {
 			for (var3 = var2; var3 < var0.field1355.method9005(); ++var3) {
 				var4 = var0.field1355.method9007(var3);
 				Client.field653[++Client.field709 - 1] = var4;
-				var5 = (NPC)var0.field1356.method7890((long)var4);
+				var5 = (NPC)var0.npcs.get((long)var4);
 				var5.field1371 = true;
 			}
 		}
@@ -167,7 +167,7 @@ public class VarbitComposition extends DualNode {
 
 			for (var3 = 0; var3 < var2; ++var3) {
 				var4 = var0.field1355.method9007(var3);
-				var5 = (NPC)var0.field1356.method7890((long)var4);
+				var5 = (NPC)var0.npcs.get((long)var4);
 				int var6 = var1.readBits(1);
 				if (var6 == 0) {
 					var0.field1355.method9006(var4);

@@ -621,7 +621,7 @@ public class class278 {
 	)
 	static int method5809(int var0, Script var1, boolean var2) {
 		if (var0 == ScriptOpcodes.GETWINDOWMODE) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = class81.getWindowedMode();
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = DynamicObject.getWindowedMode();
 			return 1;
 		} else {
 			int var3;

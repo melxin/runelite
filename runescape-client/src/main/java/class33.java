@@ -67,7 +67,7 @@ public class class33 {
 			return 1;
 		} else if (var0 == ScriptOpcodes.ANIM) {
 			HealthBarConfig.Interpreter_intStackSize -= 2;
-			RestClientThreadFactory.method170(class132.localPlayer, Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize], Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1]);
+			RestClientThreadFactory.performPlayerAnimation(class132.localPlayer, Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize], Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1]);
 			return 1;
 		} else if (var0 == ScriptOpcodes.IF_CLOSE) {
 			if (!Interpreter.field882) {

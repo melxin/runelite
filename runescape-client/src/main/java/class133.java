@@ -363,7 +363,7 @@ public class class133 {
 								var4 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1];
 								var5 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 2];
 								var6 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 3];
-								class78.method2302(var3, var4, var5, var6);
+								Projectile.method2302(var3, var4, var5, var6);
 								return 1;
 							} else {
 								return 2;

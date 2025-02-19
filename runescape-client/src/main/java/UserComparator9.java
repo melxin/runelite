@@ -52,13 +52,13 @@ public class UserComparator9 extends AbstractUserComparator {
 			return false;
 		} else {
 			class443.method8380(var5, var6, var7, var8);
-			class246 var10 = var0.getAABB(var1);
-			int var11 = var2 + var10.field2793;
-			int var12 = var3 + var10.field2794;
-			int var13 = var4 + var10.field2798;
-			int var14 = var10.field2796;
-			int var15 = var10.field2797;
-			int var16 = var10.field2801;
+			AABB var10 = var0.getAABB(var1);
+			int var11 = var2 + var10.xMid;
+			int var12 = var3 + var10.yMid;
+			int var13 = var4 + var10.zMid;
+			int var14 = var10.xMidOffset;
+			int var15 = var10.yMidOffset;
+			int var16 = var10.zMidOffset;
 			int var17 = ViewportMouse.field2952 - var11;
 			int var18 = ViewportMouse.field2953 - var12;
 			int var19 = class202.field2160 - var13;

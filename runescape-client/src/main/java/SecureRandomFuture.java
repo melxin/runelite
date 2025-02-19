@@ -98,12 +98,12 @@ public class SecureRandomFuture {
 		Model var25 = var14.getModel(var3, var4, var21, var23, var22, var24);
 		if (var25 != null) {
 			ObjectSound.method1959(class376.worldView, var0, var1, var2, var5, -1, 0, 0, 31, (String[])null, var7 + 1, var8 + 1);
-			var13.field1143 = var7 + Client.cycle;
-			var13.field1144 = var8 + Client.cycle;
-			var13.field1147 = var25;
+			var13.animationCycleStart = var7 + Client.cycle;
+			var13.animationCycleEnd = var8 + Client.cycle;
+			var13.model0 = var25;
 			var13.field1145 = var1 * 128 + var15 * 64;
 			var13.field1134 = var2 * 128 + var16 * 64;
-			var13.field1137 = var22;
+			var13.tileHeight2 = var22;
 			int var26;
 			if (var9 > var11) {
 				var26 = var9;
@@ -117,10 +117,10 @@ public class SecureRandomFuture {
 				var12 = var26;
 			}
 
-			var13.field1149 = var9 + var1;
-			var13.headIconPk = var11 + var1;
-			var13.field1150 = var10 + var2;
-			var13.field1157 = var2 + var12;
+			var13.minX = var9 + var1;
+			var13.maxX = var11 + var1;
+			var13.minY = var10 + var2;
+			var13.maxY = var2 + var12;
 		}
 
 	}

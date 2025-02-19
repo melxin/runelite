@@ -251,7 +251,7 @@ public class TextureProvider implements TextureLoader {
 			if (var1) {
 				class159.rasterProvider.drawFull(0, 0);
 			} else {
-				class78.method2303(var3, var4, var5, var6);
+				Projectile.method2303(var3, var4, var5, var6);
 			}
 
 		}

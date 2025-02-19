@@ -134,7 +134,7 @@ public class SecureUrlRequester extends UrlRequester {
 		var4.packetBuffer.writeShort(var0);
 		var4.packetBuffer.writeByteAdd(var2);
 		var4.packetBuffer.writeShortAddLE(var1);
-		var4.packetBuffer.writeIntLE(var3 ? Client.field613 : 0);
+		var4.packetBuffer.writeIntLE(var3 ? Client.revision : 0);
 		Client.packetWriter.addNode(var4);
 	}
 }

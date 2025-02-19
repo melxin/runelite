@@ -17,14 +17,15 @@ public class Frames extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "[Ljv;"
 	)
-	Animation[] field2812;
+	@Export("frames")
+	Animation[] frames;
 
 	@ObfuscatedSignature(
 		descriptor = "(Lpl;Lpl;I)V"
 	)
 	Frames(AbstractArchive var1, AbstractArchive var2, int var3) {
 		int var4 = var1.getGroupFileCount(var3);
-		this.field2812 = new Animation[var4];
+		this.frames = new Animation[var4];
 		Skeleton var5 = null;
 		int[] var6 = var1.getGroupFileIds(var3);
 
@@ -36,7 +37,7 @@ public class Frames extends DualNode {
 				var5 = new Skeleton(var9, var10);
 			}
 
-			this.field2812[var6[var7]] = new Animation(var8, var5);
+			this.frames[var6[var7]] = new Animation(var8, var5);
 		}
 
 	}
@@ -48,6 +49,6 @@ public class Frames extends DualNode {
 	)
 	@Export("hasAlphaTransform")
 	public boolean hasAlphaTransform(int var1) {
-		return this.field2812[var1].hasAlphaTransform;
+		return this.frames[var1].hasAlphaTransform;
 	}
 }

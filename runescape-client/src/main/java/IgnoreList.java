@@ -47,7 +47,7 @@ public class IgnoreList extends UserList {
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
-		while (var1.field5570 < var2) {
+		while (var1.offset < var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 == 4) {
 				Username var10 = new Username(var1.readStringCp1252NullTerminated(), this.field5098);

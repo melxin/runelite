@@ -73,9 +73,9 @@ public class ReflectionCheck extends Node {
 		int var2 = 0;
 
 		for (int var3 = 0; var3 < var0.field1357.method9005(); ++var3) {
-			class492 var4 = (class492)var0.field1358.get((long)var0.field1357.method9007(var3));
+			WorldEntity var4 = (WorldEntity)var0.worldEntities.get((long)var0.field1357.method9007(var3));
 			if (var4 != null && var4.method9294() == var1) {
-				boolean var5 = var4.field5148.field1354 == Client.field780;
+				boolean var5 = var4.worldView.id == Client.field780;
 				boolean var6;
 				if (!var5) {
 					var6 = var2 < Client.field778;
@@ -96,28 +96,28 @@ public class ReflectionCheck extends Node {
 				int var8 = var9 >> 7;
 				int var12 = var4.getY();
 				int var11 = var12 >> 7;
-				long var13 = HttpRequestTask.calculateTag(var8, var11, 4, var7, var4.field5147, var0.field1354);
-				var4.field5150.setZ(DevicePcmPlayerProvider.getTileHeight(var0, var4.getX(), var4.getY(), var0.plane));
-				var4.field5148.scene.baseY = Client.cycle;
-				var4.method9284(var6);
-				var0.scene.drawEntity(var0.plane, var4.getX(), var4.getY(), var4.method9322(), 60, var4.field5148.scene, var4.method9290(), var13, false);
+				long var13 = HttpRequestTask.calculateTag(var8, var11, 4, var7, var4.plane, var0.id);
+				var4.worldEntityCoord.setZ(DevicePcmPlayerProvider.getTileHeight(var0, var4.getX(), var4.getY(), var0.plane));
+				var4.worldView.scene.cycle = Client.cycle;
+				var4.initScenePlane(var6);
+				var0.scene.drawEntity(var0.plane, var4.getX(), var4.getY(), var4.getZ(), 60, var4.worldView.scene, var4.method9290(), var13, false);
 				if (!var6) {
-					UserComparator3.method3217(var4.field5148);
-					class248.method5192(var4.field5148);
-					class138.method3391(var4.field5148, true);
-					class138.method3392(var4.field5148);
-					class138.method3391(var4.field5148, false);
-					class1.method12(var4.field5148);
-					WorldView var15 = var4.field5148;
+					UserComparator3.method3217(var4.worldView);
+					FaceNormal.method5192(var4.worldView);
+					class138.addNpcsToScene(var4.worldView, true);
+					class138.method3392(var4.worldView);
+					class138.addNpcsToScene(var4.worldView, false);
+					class1.method12(var4.worldView);
+					WorldView var15 = var4.worldView;
 
-					for (class73 var16 = (class73)var15.field1342.last(); var16 != null; var16 = (class73)var15.field1342.previous()) {
-						if (var15.plane == var16.field901 && !var16.field900) {
-							if (Client.cycle >= var16.field899) {
-								var16.method2210(Client.graphicsCycle);
-								if (var16.field900) {
+					for (GraphicsObject var16 = (GraphicsObject)var15.graphicsObjects.last(); var16 != null; var16 = (GraphicsObject)var15.graphicsObjects.previous()) {
+						if (var15.plane == var16.plane && !var16.isFinished) {
+							if (Client.cycle >= var16.cycleStart) {
+								var16.advance(Client.graphicsCycle);
+								if (var16.isFinished) {
 									var16.remove();
 								} else {
-									var15.scene.drawEntity(var16.field901, var16.field902, var16.field903, var16.field904, 60, var16, 0, -1L, false);
+									var15.scene.drawEntity(var16.plane, var16.x, var16.y, var16.z, 60, var16, 0, -1L, false);
 								}
 							}
 						} else {
@@ -147,7 +147,7 @@ public class ReflectionCheck extends Node {
 		for (var10 = 0; var10 < var8 + var0.field1355.method9005(); ++var10) {
 			Actor var23;
 			if (var10 < var8) {
-				var23 = (Actor)var0.field1353.method7890((long)var9[var10]);
+				var23 = (Actor)var0.players.get((long)var9[var10]);
 				if (var9[var10] == Client.combatTargetPlayerIndex) {
 					var5 = true;
 					var6 = var10;
@@ -159,7 +159,7 @@ public class ReflectionCheck extends Node {
 					continue;
 				}
 			} else {
-				var23 = (Actor)var0.field1356.method7890((long)var0.field1355.method9007(var10 - var8));
+				var23 = (Actor)var0.npcs.get((long)var0.field1355.method9007(var10 - var8));
 			}
 
 			MouseRecorder.drawActor2d(var0, var23, var10, var1, var2, var3, var4);
@@ -170,51 +170,51 @@ public class ReflectionCheck extends Node {
 		}
 
 		if (var5) {
-			MouseRecorder.drawActor2d(var0, (Actor)var0.field1353.method7890((long)Client.combatTargetPlayerIndex), var6, var1, var2, var3, var4);
+			MouseRecorder.drawActor2d(var0, (Actor)var0.players.get((long)Client.combatTargetPlayerIndex), var6, var1, var2, var3, var4);
 		}
 
 		for (var10 = 0; var10 < Client.overheadTextCount; ++var10) {
 			int var11 = Client.overheadTextXs[var10];
-			int var12 = Client.field621[var10];
-			int var13 = Client.field623[var10];
-			int var14 = Client.field622[var10];
+			int var12 = Client.overheadTextYs[var10];
+			int var13 = Client.overheadTextXOffsets[var10];
+			int var14 = Client.overheadTextAscents[var10];
 			boolean var15 = true;
 
 			while (var15) {
 				var15 = false;
 
 				for (int var22 = 0; var22 < var10; ++var22) {
-					if (var12 + 2 > Client.field621[var22] - Client.field622[var22] && var12 - var14 < Client.field621[var22] + 2 && var11 - var13 < Client.field623[var22] + Client.overheadTextXs[var22] && var13 + var11 > Client.overheadTextXs[var22] - Client.field623[var22] && Client.field621[var22] - Client.field622[var22] < var12) {
-						var12 = Client.field621[var22] - Client.field622[var22];
+					if (var12 + 2 > Client.overheadTextYs[var22] - Client.overheadTextAscents[var22] && var12 - var14 < Client.overheadTextYs[var22] + 2 && var11 - var13 < Client.overheadTextXOffsets[var22] + Client.overheadTextXs[var22] && var13 + var11 > Client.overheadTextXs[var22] - Client.overheadTextXOffsets[var22] && Client.overheadTextYs[var22] - Client.overheadTextAscents[var22] < var12) {
+						var12 = Client.overheadTextYs[var22] - Client.overheadTextAscents[var22];
 						var15 = true;
 					}
 				}
 			}
 
 			Client.viewportTempX = Client.overheadTextXs[var10];
-			Client.viewportTempY = Client.field621[var10] = var12;
+			Client.viewportTempY = Client.overheadTextYs[var10] = var12;
 			String var16 = Client.overheadText[var10];
 			if (Client.chatEffects == 0) {
 				int var17 = 16776960;
-				if (Client.field624[var10] < 6) {
-					var17 = Client.field803[Client.field624[var10]];
+				if (Client.overheadTextColors[var10] < 6) {
+					var17 = Client.field803[Client.overheadTextColors[var10]];
 				}
 
-				if (Client.field624[var10] == 6) {
+				if (Client.overheadTextColors[var10] == 6) {
 					var17 = Client.viewportDrawCount % 20 < 10 ? 16711680 : 16776960;
 				}
 
-				if (Client.field624[var10] == 7) {
+				if (Client.overheadTextColors[var10] == 7) {
 					var17 = Client.viewportDrawCount % 20 < 10 ? 255 : '\uffff';
 				}
 
-				if (Client.field624[var10] == 8) {
+				if (Client.overheadTextColors[var10] == 8) {
 					var17 = Client.viewportDrawCount % 20 < 10 ? '뀀' : 8454016;
 				}
 
 				int var18;
-				if (Client.field624[var10] == 9) {
-					var18 = 150 - Client.field525[var10];
+				if (Client.overheadTextColors[var10] == 9) {
+					var18 = 150 - Client.overheadTextCyclesRemaining[var10];
 					if (var18 < 50) {
 						var17 = var18 * 1280 + 16711680;
 					} else if (var18 < 100) {
@@ -224,8 +224,8 @@ public class ReflectionCheck extends Node {
 					}
 				}
 
-				if (Client.field624[var10] == 10) {
-					var18 = 150 - Client.field525[var10];
+				if (Client.overheadTextColors[var10] == 10) {
+					var18 = 150 - Client.overheadTextCyclesRemaining[var10];
 					if (var18 < 50) {
 						var17 = var18 * 5 + 16711680;
 					} else if (var18 < 100) {
@@ -235,8 +235,8 @@ public class ReflectionCheck extends Node {
 					}
 				}
 
-				if (Client.field624[var10] == 11) {
-					var18 = 150 - Client.field525[var10];
+				if (Client.overheadTextColors[var10] == 11) {
+					var18 = 150 - Client.overheadTextCyclesRemaining[var10];
 					if (var18 < 50) {
 						var17 = 16777215 - var18 * 327685;
 					} else if (var18 < 100) {
@@ -247,7 +247,7 @@ public class ReflectionCheck extends Node {
 				}
 
 				int var19;
-				if (Client.field624[var10] == 12 && Client.field547[var10] == null) {
+				if (Client.overheadTextColors[var10] == 12 && Client.field547[var10] == null) {
 					var18 = var16.length();
 					Client.field547[var10] = new int[var18];
 
@@ -258,31 +258,31 @@ public class ReflectionCheck extends Node {
 					}
 				}
 
-				if (Client.field775[var10] == 0) {
+				if (Client.overheadTextEffects[var10] == 0) {
 					UserComparator7.fontBold12.method8701(var16, Client.viewportTempX + var1, var2 + Client.viewportTempY, var17, 0, Client.field547[var10]);
 				}
 
-				if (Client.field775[var10] == 1) {
+				if (Client.overheadTextEffects[var10] == 1) {
 					UserComparator7.fontBold12.method8698(var16, Client.viewportTempX + var1, var2 + Client.viewportTempY, var17, 0, Client.viewportDrawCount, Client.field547[var10]);
 				}
 
-				if (Client.field775[var10] == 2) {
+				if (Client.overheadTextEffects[var10] == 2) {
 					UserComparator7.fontBold12.method8699(var16, Client.viewportTempX + var1, var2 + Client.viewportTempY, var17, 0, Client.viewportDrawCount, Client.field547[var10]);
 				}
 
-				if (Client.field775[var10] == 3) {
-					UserComparator7.fontBold12.method8706(var16, Client.viewportTempX + var1, var2 + Client.viewportTempY, var17, 0, Client.viewportDrawCount, 150 - Client.field525[var10], Client.field547[var10]);
+				if (Client.overheadTextEffects[var10] == 3) {
+					UserComparator7.fontBold12.method8706(var16, Client.viewportTempX + var1, var2 + Client.viewportTempY, var17, 0, Client.viewportDrawCount, 150 - Client.overheadTextCyclesRemaining[var10], Client.field547[var10]);
 				}
 
-				if (Client.field775[var10] == 4) {
-					var18 = (150 - Client.field525[var10]) * (UserComparator7.fontBold12.stringWidth(var16) + 100) / 150;
+				if (Client.overheadTextEffects[var10] == 4) {
+					var18 = (150 - Client.overheadTextCyclesRemaining[var10]) * (UserComparator7.fontBold12.stringWidth(var16) + 100) / 150;
 					Rasterizer2D.Rasterizer2D_expandClip(Client.viewportTempX + var1 - 50, var2, Client.viewportTempX + var1 + 50, var2 + var4);
 					UserComparator7.fontBold12.method8716(var16, Client.viewportTempX + var1 + 50 - var18, var2 + Client.viewportTempY, var17, 0, Client.field547[var10]);
 					Rasterizer2D.Rasterizer2D_setClip(var1, var2, var3 + var1, var2 + var4);
 				}
 
-				if (Client.field775[var10] == 5) {
-					var18 = 150 - Client.field525[var10];
+				if (Client.overheadTextEffects[var10] == 5) {
+					var18 = 150 - Client.overheadTextCyclesRemaining[var10];
 					var19 = 0;
 					if (var18 < 25) {
 						var19 = var18 - 25;

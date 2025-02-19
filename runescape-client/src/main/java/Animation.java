@@ -56,11 +56,11 @@ public class Animation {
 		this.skeleton = var2;
 		Buffer var3 = new Buffer(var1);
 		Buffer var4 = new Buffer(var1);
-		var3.field5570 = 2;
+		var3.offset = 2;
 		int var5 = var3.readUnsignedByte();
 		int var6 = -1;
 		int var7 = 0;
-		var4.field5570 = var5 + var3.field5570;
+		var4.offset = var5 + var3.offset;
 
 		int var8;
 		for (var8 = 0; var8 < var5; ++var8) {
@@ -111,7 +111,7 @@ public class Animation {
 			}
 		}
 
-		if (var1.length != var4.field5570) {
+		if (var1.length != var4.offset) {
 			throw new RuntimeException();
 		} else {
 			this.transformCount = var7;
@@ -127,7 +127,7 @@ public class Animation {
 				this.transformZs[var8] = field2606[var8];
 			}
 
-			var3.field5570 = var4.field5570;
+			var3.offset = var4.offset;
 		}
 	}
 }

@@ -42,11 +42,11 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 		if (var0.isMembersOnly() != Client.isMembersWorld) {
 			Client.isMembersWorld = var0.isMembersOnly();
 			boolean var1 = var0.isMembersOnly();
-			if (var1 != class129.ItemDefinition_inMembersWorld) {
+			if (var1 != AuthenticationScheme.ItemDefinition_inMembersWorld) {
 				ItemComposition.ItemDefinition_cached.clear();
 				ItemComposition.ItemDefinition_cachedModels.clear();
 				ItemComposition.ItemDefinition_cachedSprites.clear();
-				class129.ItemDefinition_inMembersWorld = var1;
+				AuthenticationScheme.ItemDefinition_inMembersWorld = var1;
 			}
 		}
 
@@ -69,7 +69,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 		Client.worldProperties = var0.properties;
 		class154.field1752 = var0.field836;
 		class132.worldPort = Client.gameBuild == 0 ? 43594 : var0.id + 40000;
-		class246.js5Port = Client.gameBuild == 0 ? 443 : var0.id + 50000;
+		AABB.js5Port = Client.gameBuild == 0 ? 443 : var0.id + 50000;
 		Frames.currentPort = class132.worldPort;
 	}
 

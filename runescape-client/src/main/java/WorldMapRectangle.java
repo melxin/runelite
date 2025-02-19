@@ -62,7 +62,7 @@ public final class WorldMapRectangle {
 		class36.reflectionChecks = new IterableNodeDeque();
 		Client.packetWriter.clearBuffer();
 		Client.packetWriter.field1492 = 0;
-		Client.packetWriter.packetBuffer.field5570 = 0;
+		Client.packetWriter.packetBuffer.offset = 0;
 		Client.packetWriter.serverPacket = null;
 		Client.packetWriter.field1491 = null;
 		Client.packetWriter.field1495 = null;
@@ -144,7 +144,7 @@ public final class WorldMapRectangle {
 
 		if (Client.packetWriter != null && Client.packetWriter.isaacCipher != null) {
 			PacketBufferNode var3 = class272.getPacketBufferNode(ClientPacket.EVENT_WINDOW_SETTING, Client.packetWriter.isaacCipher);
-			var3.packetBuffer.writeByte(class81.getWindowedMode());
+			var3.packetBuffer.writeByte(DynamicObject.getWindowedMode());
 			var3.packetBuffer.writeShort(GameEngine.canvasWidth);
 			var3.packetBuffer.writeShort(SwapSongTask.canvasHeight);
 			Client.packetWriter.addNode(var3);
@@ -160,7 +160,7 @@ public final class WorldMapRectangle {
 			Client.grandExchangeOffers[var0] = new GrandExchangeOffer();
 		}
 
-		class246.grandExchangeEvents = null;
+		AABB.grandExchangeEvents = null;
 		Client.viewportOffsetX = 0;
 		Client.viewportOffsetY = 0;
 		Client.viewportWidth = 0;

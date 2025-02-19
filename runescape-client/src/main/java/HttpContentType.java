@@ -22,7 +22,8 @@ public class HttpContentType {
 	@ObfuscatedSignature(
 		descriptor = "Ltd;"
 	)
-	static final HttpContentType field5255;
+	@Export("APPLICATION_X_WWW_FORM_URLENCODED")
+	static final HttpContentType APPLICATION_X_WWW_FORM_URLENCODED;
 	@ObfuscatedName("ad")
 	@Export("contentType")
 	String contentType;
@@ -30,7 +31,7 @@ public class HttpContentType {
 	static {
 		APPLICATION_JSON = new HttpContentType("application/json");
 		TEXT_PLAIN = new HttpContentType("text/plain");
-		field5255 = new HttpContentType("application/x-www-form-urlencoded");
+		APPLICATION_X_WWW_FORM_URLENCODED = new HttpContentType("application/x-www-form-urlencoded");
 	}
 
 	HttpContentType(String var1) {

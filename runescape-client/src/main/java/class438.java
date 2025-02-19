@@ -76,7 +76,7 @@ public class class438 {
 
 		for (Iterator var5 = Client.worldViewManager.iterator(); var5.hasNext(); ++var4) {
 			WorldView var21 = (WorldView)var5.next();
-			var2[var4] = var21.field1354;
+			var2[var4] = var21.id;
 			var3[var4] = var21.scene.field2737;
 		}
 
@@ -102,7 +102,7 @@ public class class438 {
 				} else if (var7 == class505.field5213) {
 					class442 var9 = class161.method3617(Client.field648, class181.cameraX, GrandExchangeOfferUnitPriceComparator.cameraY, ApproximateRouteStrategy.cameraZ);
 					if (var9 != null) {
-						class442 var10 = EnumComposition.method3908((float)Client.serverCycle, (float)Client.field648, (float)Client.field532);
+						class442 var10 = EnumComposition.method3908((float)Client.field647, (float)Client.field648, (float)Client.field532);
 						class442 var12 = WorldMapDecoration.method6284(var9);
 						var12.method8295(var10);
 						class442 var14 = class442.field4895;

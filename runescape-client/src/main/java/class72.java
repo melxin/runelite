@@ -145,11 +145,11 @@ public class class72 {
 			var3.read(this.field895);
 		}
 
-		var3.field1282 = this.orientation;
+		var3.orientation = this.orientation;
 		var3.targetIndex = this.targetIndex;
-		var3.field1289[0] = this.pathTraversed;
+		var3.pathTraversed[0] = this.pathTraversed;
 		var3.plane = this.coord.plane;
-		var3.field1219 = var2.field1354;
+		var3.worldViewId = var2.id;
 		var3.actions = this.actions;
 		var3.method2623(this.coord.x - var2.baseX, this.coord.y - var2.baseY);
 		return var3;
@@ -215,7 +215,7 @@ public class class72 {
 			MoveSpeed var7 = var1;
 			boolean var8 = true;
 			boolean var9 = true;
-			if (var4.field1354 == -1 && this.field887 == Client.field646 && class377.USERNAME_PASSWORD == SoundCache.field311 && (var3.x < 1536 || var3.y < 1536 || var3.x >= 11776 || var3.y >= 11776)) {
+			if (var4.id == -1 && this.field887 == Client.field646 && class377.USERNAME_PASSWORD == SoundCache.field311 && (var3.x < 1536 || var3.y < 1536 || var3.x >= 11776 || var3.y >= 11776)) {
 				var7 = MoveSpeed.field3124;
 			}
 
@@ -250,7 +250,7 @@ public class class72 {
 	)
 	void method2126(int var1, int var2) {
 		for (int var3 = 0; var3 < this.field897.size(); ++var3) {
-			RestClientThreadFactory.method170((Player)this.field897.get(var3), var1, var2);
+			RestClientThreadFactory.performPlayerAnimation((Player)this.field897.get(var3), var1, var2);
 		}
 
 	}
@@ -287,7 +287,7 @@ public class class72 {
 			var5.field1242 = false;
 			var5.field1245 = 0;
 			var5.field1246 = 0;
-			var5.rotation = 150;
+			var5.overheadTextCyclesRemaining = 150;
 			var5.overheadText = var1;
 			var3 = var5.username;
 		}
@@ -346,9 +346,9 @@ public class class72 {
 
 		for (int var2 = 0; var2 < this.field897.size(); ++var2) {
 			Player var3 = (Player)this.field897.get(var2);
-			var3.movementSequence = this.field892;
-			if (var3.field1227 == 0) {
-				var3.field1282 = this.field892;
+			var3.field1271 = this.field892;
+			if (var3.pathLength == 0) {
+				var3.orientation = this.field892;
 				var3.method2601();
 			}
 		}
@@ -379,7 +379,7 @@ public class class72 {
 					var9.overheadText = var4.trim();
 					var9.field1245 = var1 >> 8;
 					var9.field1246 = var1 & 255;
-					var9.rotation = 150;
+					var9.overheadTextCyclesRemaining = 150;
 					byte[] var13 = var5;
 					int[] var12;
 					if (var5 != null && var5.length != 0 && var5.length <= 8) {
@@ -404,7 +404,7 @@ public class class72 {
 						var12 = null;
 					}
 
-					var9.pathX = var12;
+					var9.field1247 = var12;
 					var9.field1242 = var3;
 					var9.field1293 = var9 != class132.localPlayer && var2.isUser && !Client.field745.isEmpty() && var4.toLowerCase().indexOf(Client.field745) == -1;
 				}
@@ -442,7 +442,7 @@ public class class72 {
 			var9.field1274 = var12 + var2;
 			var9.field1273 = var3 + var11;
 			var9.field1275 = var12 + var4;
-			var9.field1276 = var5;
+			var9.spotAnimation = var5;
 			var9.field1239 = var6;
 			var9.field1278 = var7;
 			var9.field1291 = 0;
@@ -473,7 +473,7 @@ public class class72 {
 	void method2136(int var1, int var2, byte var3, byte var4, byte var5, byte var6) {
 		for (int var7 = 0; var7 < this.field897.size(); ++var7) {
 			Player var8 = (Player)this.field897.get(var7);
-			var8.field1280 = var1;
+			var8.npcCycle = var1;
 			var8.field1281 = var2;
 			var8.field1286.method5435(var3, var4, var5, var6);
 		}
@@ -562,7 +562,7 @@ public class class72 {
 					int var8 = Rasterizer3D.Rasterizer3D_cosine[var6];
 					int var9 = var8 * var4 + var7 * var5 >> 11;
 					int var10 = var5 * var8 - var4 * var7 >> 11;
-					int var11 = var9 + Client.serverCycle >> 7;
+					int var11 = var9 + Client.field647 >> 7;
 					int var12 = Client.field532 - var10 >> 7;
 					class505 var13 = Client.worldViewManager.method2536(-1);
 					if (var13 == class505.field5212) {
@@ -677,7 +677,7 @@ public class class72 {
 				var9 = (var7 & 7) + class477.field5082;
 				if (0 <= var8 && var8 < 103 && 0 <= var9 && var9 < 103) {
 					var10 = Client.field591 == -1 ? class376.worldView.plane : Client.field591;
-					PendingSpawn var23 = class263.method5540(class376.worldView, var10, var8, var9, var5);
+					PendingSpawn var23 = ModelData0.method5540(class376.worldView, var10, var8, var9, var5);
 					if (var23 != null) {
 						ObjectComposition var35 = class177.getObjectDefinition(var23.field1206);
 						if (var35.field2270) {
@@ -719,7 +719,7 @@ public class class72 {
 				var9 = var1.readUnsignedByteAdd() & 31;
 				if (var4 >= 0 && var5 >= 0 && var4 < class376.worldView.sizeX && var5 < class376.worldView.sizeY) {
 					var10 = var9 + 1;
-					if (class132.localPlayer.field1287[0] >= var4 - var10 && class132.localPlayer.field1287[0] <= var10 + var4 && class132.localPlayer.field1288[0] >= var5 - var10 && class132.localPlayer.field1288[0] <= var10 + var5 && AbstractWorldMapIcon.clientPreferences.getAreaSoundEffectsVolume() != 0 && var2 > 0 && Client.soundEffectCount < 50) {
+					if (class132.localPlayer.pathX[0] >= var4 - var10 && class132.localPlayer.pathX[0] <= var10 + var4 && class132.localPlayer.pathY[0] >= var5 - var10 && class132.localPlayer.pathY[0] <= var10 + var5 && AbstractWorldMapIcon.clientPreferences.getAreaSoundEffectsVolume() != 0 && var2 > 0 && Client.soundEffectCount < 50) {
 						Client.soundEffectIds[Client.soundEffectCount] = var8;
 						Client.soundEffects[Client.soundEffectCount] = null;
 						Client.soundLocations[Client.soundEffectCount] = var9 + (var5 << 8) + (var4 << 16);
@@ -775,7 +775,7 @@ public class class72 {
 					if (var13 == Client.localPlayerIndex) {
 						var17 = class132.localPlayer;
 					} else {
-						var17 = (Player)class376.worldView.field1353.method7890((long)var13);
+						var17 = (Player)class376.worldView.players.get((long)var13);
 					}
 
 					if (var17 != null) {
@@ -824,8 +824,8 @@ public class class72 {
 						var4 = Coord.method6905(var4);
 						var5 = Coord.method6905(var5);
 						var8 = Client.field591 == -1 ? class376.worldView.plane : Client.field591;
-						class73 var34 = new class73(var6, var8, var4, var5, DevicePcmPlayerProvider.getTileHeight(class376.worldView, var4, var5, var8) - var7, var2, Client.cycle);
-						class376.worldView.field1342.addFirst(var34);
+						GraphicsObject var34 = new GraphicsObject(var6, var8, var4, var5, DevicePcmPlayerProvider.getTileHeight(class376.worldView, var4, var5, var8) - var7, var2, Client.cycle);
+						class376.worldView.graphicsObjects.addFirst(var34);
 					}
 
 				} else if (class325.field3484 == var0) {
@@ -852,9 +852,9 @@ public class class72 {
 						if (var3 >= 0 && var4 >= 0 && var3 < class376.worldView.sizeX && var4 < class376.worldView.sizeY) {
 							NodeDeque var19 = class376.worldView.groundItems[var7][var3][var4];
 							if (var19 != null) {
-								for (class108 var20 = (class108)var19.last(); var20 != null; var20 = (class108)var19.previous()) {
+								for (TileItem var20 = (TileItem)var19.last(); var20 != null; var20 = (TileItem)var19.previous()) {
 									if ((var6 & 32767) == var20.id) {
-										var20.method2953(var5);
+										var20.setFlag(var5);
 										break;
 									}
 								}

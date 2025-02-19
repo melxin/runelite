@@ -118,7 +118,7 @@ public class class475 {
 			}
 
 			if (var0.equalsIgnoreCase("clientdrop")) {
-				WorldEntity.method413();
+				class31.method413();
 			}
 
 			if (var0.equalsIgnoreCase("clientreload")) {

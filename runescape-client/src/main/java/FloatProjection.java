@@ -37,7 +37,7 @@ public class FloatProjection extends Projection {
 		descriptor = "(Ljc;IIIIJ)V"
 	)
 	@Export("draw")
-	void draw(TileItem var1, int var2, int var3, int var4, int var5, long var6) {
+	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
 		var1.draw(var2, this.transformationMatrix, var3, var4, var5, var6);
 	}
 

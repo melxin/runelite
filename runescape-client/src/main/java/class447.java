@@ -47,8 +47,8 @@ public class class447 extends RuntimeException {
 	static void method8503(int var0, int var1, int var2, int var3, int var4, short var5, int var6, short var7, int var8, int var9) {
 		NodeDeque var10 = class376.worldView.groundItems[var0][var1][var2];
 		if (var10 != null) {
-			for (class108 var11 = (class108)var10.last(); var11 != null; var11 = (class108)var10.previous()) {
-				if ((var3 & 32767) == var11.id && var4 == var11.field1414) {
+			for (TileItem var11 = (TileItem)var10.last(); var11 != null; var11 = (TileItem)var10.previous()) {
+				if ((var3 & 32767) == var11.id && var4 == var11.quantity) {
 					PlayerCompositionColorTextureOverride var12 = var11.method2958();
 					if (var12 == null) {
 						var12 = new PlayerCompositionColorTextureOverride(var3);

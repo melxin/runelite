@@ -497,11 +497,11 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 			class176.RunException_revision = var3;
 			RunException.field5742 = var4;
 			RunException.RunException_applet = this;
-			if (GraphicsObject.taskHandler == null) {
-				GraphicsObject.taskHandler = new TaskHandler();
+			if (class332.taskHandler == null) {
+				class332.taskHandler = new TaskHandler();
 			}
 
-			GraphicsObject.taskHandler.newThreadTask(this, 1);
+			class332.taskHandler.newThreadTask(this, 1);
 		} catch (Exception var6) {
 			class213.RunException_sendStackTrace((String)null, var6);
 			this.error("crash");
@@ -728,9 +728,9 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 				}
 			}
 
-			if (GraphicsObject.taskHandler != null) {
+			if (class332.taskHandler != null) {
 				try {
-					GraphicsObject.taskHandler.close();
+					class332.taskHandler.close();
 				} catch (Exception var2) {
 				}
 			}
@@ -780,9 +780,9 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 	protected final void drawInitial(int var1, String var2, boolean var3, boolean var4) {
 		try {
 			Graphics var5 = this.canvas.getGraphics();
-			if (class248.fontHelvetica13 == null) {
-				class248.fontHelvetica13 = new java.awt.Font("Helvetica", 1, 13);
-				class176.loginScreenFontMetrics = this.canvas.getFontMetrics(class248.fontHelvetica13);
+			if (FaceNormal.fontHelvetica13 == null) {
+				FaceNormal.fontHelvetica13 = new java.awt.Font("Helvetica", 1, 13);
+				class176.loginScreenFontMetrics = this.canvas.getFontMetrics(FaceNormal.fontHelvetica13);
 			}
 
 			if (var3 && !var4) {
@@ -804,7 +804,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 				var7.setColor(Color.black);
 				var7.drawRect(1, 1, 301, 31);
 				var7.fillRect(var1 * 3 + 2, 2, 300 - var1 * 3, 30);
-				var7.setFont(class248.fontHelvetica13);
+				var7.setFont(FaceNormal.fontHelvetica13);
 				var7.setColor(Color.white);
 				var7.drawString(var2, (304 - class176.loginScreenFontMetrics.stringWidth(var2)) / 2, 22);
 				var5.drawImage(ArchiveDiskAction.field4631, canvasWidth / 2 - 152, (var4 ? 50 : -18) + SwapSongTask.canvasHeight / 2, (ImageObserver)null);
@@ -817,7 +817,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 				var5.setColor(Color.black);
 				var5.drawRect(var8 + 1, var9 + 1, 301, 31);
 				var5.fillRect(var8 + var1 * 3 + 2, var9 + 2, 300 - var1 * 3, 30);
-				var5.setFont(class248.fontHelvetica13);
+				var5.setFont(FaceNormal.fontHelvetica13);
 				var5.setColor(Color.white);
 				var5.drawString(var2, var8 + (304 - class176.loginScreenFontMetrics.stringWidth(var2)) / 2, var9 + 22);
 			}
@@ -834,7 +834,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 	)
 	protected final void method476() {
 		ArchiveDiskAction.field4631 = null;
-		class248.fontHelvetica13 = null;
+		FaceNormal.fontHelvetica13 = null;
 		class176.loginScreenFontMetrics = null;
 	}
 

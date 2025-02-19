@@ -19,8 +19,8 @@ public class WorldViewManager implements Iterable {
 	@ObfuscatedSignature(
 		descriptor = "Lqv;"
 	)
-	@Export("hashTable")
-	final IterableNodeHashTable hashTable;
+	@Export("worldViews")
+	final IterableNodeHashTable worldViews;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = 1588511189
@@ -42,7 +42,7 @@ public class WorldViewManager implements Iterable {
 	class503 field1196;
 
 	WorldViewManager() {
-		this.hashTable = new IterableNodeHashTable(16);
+		this.worldViews = new IterableNodeHashTable(16);
 		this.field1197 = 0;
 		this.field1193 = new HashMap(16);
 		this.field1194 = new HashMap(16);
@@ -66,7 +66,7 @@ public class WorldViewManager implements Iterable {
 	)
 	WorldView method2528(int var1, int var2, int var3, int var4, class232 var5) {
 		WorldView var6 = new WorldView(var1, var2, var3, var4, var5);
-		this.hashTable.put(var6, (long)var1);
+		this.worldViews.put(var6, (long)var1);
 		++this.field1197;
 		return var6;
 	}
@@ -77,7 +77,7 @@ public class WorldViewManager implements Iterable {
 		garbageValue = "76690858"
 	)
 	void method2529(int var1) {
-		WorldView var2 = (WorldView)this.hashTable.get((long)var1);
+		WorldView var2 = (WorldView)this.worldViews.get((long)var1);
 		this.method2538(var2);
 	}
 
@@ -88,8 +88,8 @@ public class WorldViewManager implements Iterable {
 	)
 	void method2538(WorldView var1) {
 		if (var1 != null) {
-			this.field1193.remove(var1.field1354);
-			this.field1194.remove(var1.field1354);
+			this.field1193.remove(var1.id);
+			this.field1194.remove(var1.id);
 			var1.remove();
 			--this.field1197;
 		}
@@ -101,8 +101,9 @@ public class WorldViewManager implements Iterable {
 		descriptor = "(IB)Ldp;",
 		garbageValue = "-13"
 	)
-	public WorldView method2546(int var1) {
-		return (WorldView)this.hashTable.get((long)var1);
+	@Export("getWorldView")
+	public WorldView getWorldView(int var1) {
+		return (WorldView)this.worldViews.get((long)var1);
 	}
 
 	@ObfuscatedName("ac")
@@ -180,7 +181,7 @@ public class WorldViewManager implements Iterable {
 	)
 	@Export("clear")
 	void clear() {
-		this.hashTable.clear();
+		this.worldViews.clear();
 		this.field1197 = 0;
 		this.field1193.clear();
 		this.field1194.clear();
@@ -188,14 +189,14 @@ public class WorldViewManager implements Iterable {
 		this.field1196 = class503.field5199;
 		if (this.worldView != null) {
 			this.worldView.method2823();
-			this.hashTable.put(this.worldView, -1L);
+			this.worldViews.put(this.worldView, -1L);
 			this.field1197 = 1;
 		}
 
 	}
 
 	public Iterator iterator() {
-		return this.hashTable.iterator();
+		return this.worldViews.iterator();
 	}
 
 	@ObfuscatedName("ad")
@@ -363,7 +364,7 @@ public class WorldViewManager implements Iterable {
 							if (var9.contentType == 1400) {
 								class541.worldMap.addElementMenuOptions(var26, var11, var9.width * 779142065, var9.height * 1836304183, var17, var18);
 							} else {
-								class248.Widget_addToMenu(var9);
+								FaceNormal.Widget_addToMenu(var9);
 							}
 						}
 

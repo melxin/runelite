@@ -64,7 +64,7 @@ public class RestClientThreadFactory implements ThreadFactory {
 	public static void performReflectionCheck(PacketBuffer var0) {
 		ReflectionCheck var1 = (ReflectionCheck)class36.reflectionChecks.last();
 		if (var1 != null) {
-			int var2 = var0.field5570;
+			int var2 = var0.offset;
 			var0.writeInt(var1.id);
 
 			for (int var3 = 0; var3 < var1.size; ++var3) {
@@ -170,26 +170,27 @@ public class RestClientThreadFactory implements ThreadFactory {
 		descriptor = "(Ldt;IIB)V",
 		garbageValue = "-53"
 	)
-	static void method170(Player var0, int var1, int var2) {
-		if (var0.field1265 == var1 && var1 != -1) {
+	@Export("performPlayerAnimation")
+	static void performPlayerAnimation(Player var0, int var1, int var2) {
+		if (var0.sequence == var1 && var1 != -1) {
 			int var3 = WorldMapData_1.SequenceDefinition_get(var1).restartMode;
 			if (var3 == 1) {
-				var0.field1266 = 0;
-				var0.field1262 = 0;
-				var0.field1268 = var2;
+				var0.sequenceFrame = 0;
+				var0.sequenceFrameCycle = 0;
+				var0.sequenceDelay = var2;
 				var0.field1255 = 0;
 			}
 
 			if (var3 == 2) {
 				var0.field1255 = 0;
 			}
-		} else if (var1 == -1 || var0.field1265 == -1 || WorldMapData_1.SequenceDefinition_get(var1).field2368 >= WorldMapData_1.SequenceDefinition_get(var0.field1265).field2368) {
-			var0.field1265 = var1;
-			var0.field1266 = 0;
-			var0.field1262 = 0;
-			var0.field1268 = var2;
+		} else if (var1 == -1 || var0.sequence == -1 || WorldMapData_1.SequenceDefinition_get(var1).field2368 >= WorldMapData_1.SequenceDefinition_get(var0.sequence).field2368) {
+			var0.sequence = var1;
+			var0.sequenceFrame = 0;
+			var0.sequenceFrameCycle = 0;
+			var0.sequenceDelay = var2;
 			var0.field1255 = 0;
-			var0.field1291 = var0.field1227;
+			var0.field1291 = var0.pathLength;
 		}
 
 	}

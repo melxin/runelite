@@ -14,7 +14,7 @@ public abstract class Projection {
 		descriptor = "(Ljc;IIIIJ)V"
 	)
 	@Export("draw")
-	abstract void draw(TileItem var1, int var2, int var3, int var4, int var5, long var6);
+	abstract void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6);
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
@@ -61,10 +61,10 @@ public abstract class Projection {
 				Rasterizer3D.clips.clipping = true;
 			}
 
-			if (Scene.containsBounds(var1.field2785, var1.field2702, var22, var24, var20, var21, var23, var19)) {
-				var1.field2735 = var3;
-				var1.field2699 = var4;
-				var1.field2737 = AbstractWorldMapIcon.method6336(var1.field2785, var1.field2702, var21, var23, var19, var22, var24, var20, var27, var28, var26);
+			if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var22, var24, var20, var21, var23, var19)) {
+				var1.Scene_baseX = var3;
+				var1.Scene_baseY = var4;
+				var1.field2737 = AbstractWorldMapIcon.method6336(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var21, var23, var19, var22, var24, var20, var27, var28, var26);
 			}
 
 			if (var2.texture == -1) {
@@ -90,10 +90,10 @@ public abstract class Projection {
 				Rasterizer3D.clips.clipping = true;
 			}
 
-			if (Scene.containsBounds(var1.field2785, var1.field2702, var18, var20, var24, var17, var19, var23)) {
-				var1.field2735 = var3;
-				var1.field2699 = var4;
-				var1.field2737 = AbstractWorldMapIcon.method6336(var1.field2785, var1.field2702, var17, var19, var23, var18, var20, var24, var25, var26, var28);
+			if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var18, var20, var24, var17, var19, var23)) {
+				var1.Scene_baseX = var3;
+				var1.Scene_baseY = var4;
+				var1.field2737 = AbstractWorldMapIcon.method6336(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var17, var19, var23, var18, var20, var24, var25, var26, var28);
 			}
 
 			if (var2.texture == -1) {
@@ -140,10 +140,10 @@ public abstract class Projection {
 					Rasterizer3D.clips.clipping = true;
 				}
 
-				if (Scene.containsBounds(var1.field2785, var1.field2702, var13, var14, var15, var10, var11, var12)) {
-					var1.field2735 = var3;
-					var1.field2699 = var4;
-					var1.field2737 = AbstractWorldMapIcon.method6336(var1.field2785, var1.field2702, var10, var11, var12, var13, var14, var15, var16, var17, var18);
+				if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var13, var14, var15, var10, var11, var12)) {
+					var1.Scene_baseX = var3;
+					var1.Scene_baseY = var4;
+					var1.field2737 = AbstractWorldMapIcon.method6336(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var10, var11, var12, var13, var14, var15, var16, var17, var18);
 				}
 
 				if (var2.triangleTextureId != null && var2.triangleTextureId[var6] != -1) {
@@ -172,9 +172,9 @@ public abstract class Projection {
 	)
 	static final void method5234(boolean var0) {
 		if (var0) {
-			Client.field626 = Login.rememberUsername ? class129.field1551 : class129.field1553;
+			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.TOKEN_REMEMBER : AuthenticationScheme.TOKEN;
 		} else {
-			Client.field626 = AbstractWorldMapIcon.clientPreferences.containsKey(Login.Login_username) ? class129.TOKEN_REMEMBER : class129.field1557;
+			Client.authenticationScheme = AbstractWorldMapIcon.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
 		}
 
 	}

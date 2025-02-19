@@ -54,13 +54,13 @@ public final class WallDecoration {
 		descriptor = "Ljc;"
 	)
 	@Export("renderable1")
-	public TileItem renderable1;
+	public Renderable renderable1;
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "Ljc;"
 	)
 	@Export("renderable2")
-	public TileItem renderable2;
+	public Renderable renderable2;
 	@ObfuscatedName("as")
 	@ObfuscatedGetter(
 		longValue = -657155813371911417L

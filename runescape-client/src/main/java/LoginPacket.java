@@ -36,7 +36,7 @@ public class LoginPacket extends class149 {
 	)
 	void vmethod3702(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			--var1.field5570;
+			--var1.offset;
 			this.field1714 = var1.readLong();
 		}
 
@@ -69,7 +69,7 @@ public class LoginPacket extends class149 {
 	)
 	static void method3468() {
 		if (class541.worldMap != null) {
-			class541.worldMap.method9727(class200.topLevelWorldView.plane, (Client.serverCycle >> 7) + class200.topLevelWorldView.baseX, (Client.field532 >> 7) + class200.topLevelWorldView.baseY, false);
+			class541.worldMap.method9727(class200.topLevelWorldView.plane, (Client.field647 >> 7) + class200.topLevelWorldView.baseX, (Client.field532 >> 7) + class200.topLevelWorldView.baseY, false);
 			class541.worldMap.loadCache();
 		}
 

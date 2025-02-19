@@ -100,8 +100,8 @@ public class class215 extends class230 {
 	)
 	@Export("updateLoginState")
 	static void updateLoginState(LoginState var0) {
-		if (class263.loginState != var0) {
-			class263.loginState = var0;
+		if (ModelData0.loginState != var0) {
+			ModelData0.loginState = var0;
 		}
 	}
 }

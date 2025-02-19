@@ -12,7 +12,8 @@ public class WorldView extends Node {
 	@ObfuscatedGetter(
 		intValue = -825145433
 	)
-	int field1354;
+	@Export("id")
+	int id;
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "Ljz;"
@@ -68,27 +69,30 @@ public class WorldView extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Lpj;"
 	)
-	class414 field1353;
+	@Export("players")
+	IndexedObjectSet players;
 	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
 		descriptor = "Lpj;"
 	)
-	public class414 field1356;
+	@Export("npcs")
+	public IndexedObjectSet npcs;
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "Lse;"
 	)
-	ModelData0 field1355;
+	class473 field1355;
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "Lqv;"
 	)
-	IterableNodeHashTable field1358;
+	@Export("worldEntities")
+	IterableNodeHashTable worldEntities;
 	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "Lse;"
 	)
-	ModelData0 field1357;
+	class473 field1357;
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
 		descriptor = "[[[Lqb;"
@@ -111,24 +115,25 @@ public class WorldView extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Lqb;"
 	)
-	NodeDeque field1342;
+	@Export("graphicsObjects")
+	NodeDeque graphicsObjects;
 
 	@ObfuscatedSignature(
 		descriptor = "(IIIILio;)V"
 	)
 	WorldView(int var1, int var2, int var3, int var4, class232 var5) {
 		this.collisionMaps = new CollisionMap[4];
-		this.field1355 = new ModelData0(149);
-		this.field1357 = new ModelData0(25);
+		this.field1355 = new class473(149);
+		this.field1357 = new class473(25);
 		this.pendingSpawns = new NodeDeque();
 		this.projectiles = new NodeDeque();
-		this.field1342 = new NodeDeque();
-		this.field1354 = var1;
+		this.graphicsObjects = new NodeDeque();
+		this.id = var1;
 		this.sizeX = var2;
 		this.sizeY = var3;
-		this.field1353 = new class414(var1 == -1 ? 512 : 8);
-		this.field1356 = new class414(var1 == -1 ? 128 : 8);
-		this.field1358 = new IterableNodeHashTable(var1 == -1 ? 32 : 1);
+		this.players = new IndexedObjectSet(var1 == -1 ? 512 : 8);
+		this.npcs = new IndexedObjectSet(var1 == -1 ? 128 : 8);
+		this.worldEntities = new IterableNodeHashTable(var1 == -1 ? 32 : 1);
 		this.groundItems = new NodeDeque[4][var2][var3];
 		this.tileHeights = new int[4][var2 + 1][var3 + 1];
 		this.tileSettings = new byte[4][var2][var3];
@@ -150,11 +155,11 @@ public class WorldView extends Node {
 	void method2823() {
 		this.field1355.method9009();
 		this.field1357.method9009();
-		this.field1353.method7885();
-		this.field1356.method7885();
-		this.field1358.clear();
+		this.players.clear();
+		this.npcs.clear();
+		this.worldEntities.clear();
 		this.projectiles.clear();
-		this.field1342.clear();
+		this.graphicsObjects.clear();
 		this.pendingSpawns = new NodeDeque();
 
 		int var1;
@@ -180,10 +185,10 @@ public class WorldView extends Node {
 		garbageValue = "-1435748252"
 	)
 	void method2824() {
-		this.field1353.method7885();
+		this.players.clear();
 
 		Actor var2;
-		for (Iterator var1 = this.field1356.iterator(); var1.hasNext(); var2.isWalking = false) {
+		for (Iterator var1 = this.npcs.iterator(); var1.hasNext(); var2.false0 = false) {
 			var2 = (Actor)var1.next();
 			var2.targetIndex = -1;
 		}

@@ -211,7 +211,7 @@ public class class496 {
 					return 1;
 				} else if (var0 == 1125) {
 					var23 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-					class581 var22 = (class581)class454.findEnumerated(class437.FillMode_values(), var23);
+					FillMode var22 = (FillMode)class454.findEnumerated(class437.FillMode_values(), var23);
 					if (var22 != null) {
 						var3.fillMode = var22;
 						MilliClock.invalidateWidget(var3);

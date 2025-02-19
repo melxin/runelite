@@ -95,15 +95,15 @@ class class549 implements Iterator {
 				boolean var12;
 				if (var0 == ScriptOpcodes.TRADINGPOST_SORTBY_NAME) {
 					var12 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize] == 1;
-					if (class246.grandExchangeEvents != null) {
-						class246.grandExchangeEvents.sort(GrandExchangeEvents.GrandExchangeEvents_nameComparator, var12);
+					if (AABB.grandExchangeEvents != null) {
+						AABB.grandExchangeEvents.sort(GrandExchangeEvents.GrandExchangeEvents_nameComparator, var12);
 					}
 
 					return 1;
 				} else if (var0 == ScriptOpcodes.TRADINGPOST_SORTBY_PRICE) {
 					var12 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize] == 1;
-					if (class246.grandExchangeEvents != null) {
-						class246.grandExchangeEvents.sort(GrandExchangeEvents.GrandExchangeEvents_priceComparator, var12);
+					if (AABB.grandExchangeEvents != null) {
+						AABB.grandExchangeEvents.sort(GrandExchangeEvents.GrandExchangeEvents_priceComparator, var12);
 					}
 
 					return 1;
@@ -111,49 +111,49 @@ class class549 implements Iterator {
 					HealthBarConfig.Interpreter_intStackSize -= 2;
 					var12 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize] == 1;
 					boolean var11 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1] == 1;
-					if (class246.grandExchangeEvents != null) {
+					if (AABB.grandExchangeEvents != null) {
 						Client.GrandExchangeEvents_worldComparator.filterWorlds = var11;
-						class246.grandExchangeEvents.sort(Client.GrandExchangeEvents_worldComparator, var12);
+						AABB.grandExchangeEvents.sort(Client.GrandExchangeEvents_worldComparator, var12);
 					}
 
 					return 1;
 				} else if (var0 == ScriptOpcodes.TRADINGPOST_SORTBY_AGE) {
 					var12 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize] == 1;
-					if (class246.grandExchangeEvents != null) {
-						class246.grandExchangeEvents.sort(GrandExchangeEvents.GrandExchangeEvents_ageComparator, var12);
+					if (AABB.grandExchangeEvents != null) {
+						AABB.grandExchangeEvents.sort(GrandExchangeEvents.GrandExchangeEvents_ageComparator, var12);
 					}
 
 					return 1;
 				} else if (var0 == ScriptOpcodes.TRADINGPOST_SORTBY_COUNT) {
 					var12 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize] == 1;
-					if (class246.grandExchangeEvents != null) {
-						class246.grandExchangeEvents.sort(GrandExchangeEvents.GrandExchangeEvents_quantityComparator, var12);
+					if (AABB.grandExchangeEvents != null) {
+						AABB.grandExchangeEvents.sort(GrandExchangeEvents.GrandExchangeEvents_quantityComparator, var12);
 					}
 
 					return 1;
 				} else if (var0 == ScriptOpcodes.TRADINGPOST_GETTOTALOFFERS) {
-					Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = class246.grandExchangeEvents == null ? 0 : class246.grandExchangeEvents.events.size();
+					Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = AABB.grandExchangeEvents == null ? 0 : AABB.grandExchangeEvents.events.size();
 					return 1;
 				} else {
 					GrandExchangeEvent var4;
 					if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERWORLD) {
 						var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-						var4 = (GrandExchangeEvent)class246.grandExchangeEvents.events.get(var3);
+						var4 = (GrandExchangeEvent) AABB.grandExchangeEvents.events.get(var3);
 						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var4.world;
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERNAME) {
 						var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-						var4 = (GrandExchangeEvent)class246.grandExchangeEvents.events.get(var3);
+						var4 = (GrandExchangeEvent) AABB.grandExchangeEvents.events.get(var3);
 						Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = var4.getOfferName();
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERPREVIOUSNAME) {
 						var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-						var4 = (GrandExchangeEvent)class246.grandExchangeEvents.events.get(var3);
+						var4 = (GrandExchangeEvent) AABB.grandExchangeEvents.events.get(var3);
 						Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = var4.getPreviousOfferName();
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERAGE) {
 						var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-						var4 = (GrandExchangeEvent)class246.grandExchangeEvents.events.get(var3);
+						var4 = (GrandExchangeEvent) AABB.grandExchangeEvents.events.get(var3);
 						long var5 = InterfaceParent.method2434() - class168.field1856 - var4.age;
 						int var7 = (int)(var5 / 3600000L);
 						int var8 = (int)((var5 - (long)(var7 * 3600000)) / 60000L);
@@ -163,17 +163,17 @@ class class549 implements Iterator {
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERCOUNT) {
 						var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-						var4 = (GrandExchangeEvent)class246.grandExchangeEvents.events.get(var3);
+						var4 = (GrandExchangeEvent) AABB.grandExchangeEvents.events.get(var3);
 						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var4.grandExchangeOffer.totalQuantity;
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERPRICE) {
 						var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-						var4 = (GrandExchangeEvent)class246.grandExchangeEvents.events.get(var3);
+						var4 = (GrandExchangeEvent) AABB.grandExchangeEvents.events.get(var3);
 						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var4.grandExchangeOffer.unitPrice;
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERITEM) {
 						var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-						var4 = (GrandExchangeEvent)class246.grandExchangeEvents.events.get(var3);
+						var4 = (GrandExchangeEvent) AABB.grandExchangeEvents.events.get(var3);
 						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var4.grandExchangeOffer.id;
 						return 1;
 					} else if (var0 == 3939) {

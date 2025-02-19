@@ -256,7 +256,7 @@ public class InterfaceParent extends Node {
 
 		if (var3 != 0L) {
 			int var8 = var2.getObjectFlags(var1.plane, var1.x, var1.y, var3);
-			var5 = class248.Entity_unpackID(var3);
+			var5 = FaceNormal.Entity_unpackID(var3);
 			var6 = var8 & 31;
 			var7 = var8 >> 6 & 3;
 		}

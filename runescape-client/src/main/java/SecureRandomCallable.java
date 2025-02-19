@@ -104,7 +104,7 @@ public class SecureRandomCallable implements Callable {
 				if (Client.randomDatData != null) {
 					var7.writeBytes(Client.randomDatData, 0, Client.randomDatData.length);
 				} else {
-					byte[] var21 = FontName.method9924();
+					byte[] var21 = FontName.randomDatData2();
 					var7.writeBytes(var21, 0, var21.length);
 				}
 
@@ -117,17 +117,17 @@ public class SecureRandomCallable implements Callable {
 
 				Buffer var10 = new Buffer(var9);
 				var10.writeStringCp1252NullTerminated(var4);
-				var10.field5570 = var9;
+				var10.offset = var9;
 				var10.xteaEncryptAll(var8);
-				Buffer var11 = new Buffer(var7.field5570 + var6.field5570 + var10.field5570 + 5);
+				Buffer var11 = new Buffer(var7.offset + var6.offset + var10.offset + 5);
 				var11.writeByte(2);
-				var11.writeByte(var6.field5570);
-				var11.writeBytes(var6.field5573, 0, var6.field5570);
-				var11.writeByte(var7.field5570);
-				var11.writeBytes(var7.field5573, 0, var7.field5570);
-				var11.writeShort(var10.field5570);
-				var11.writeBytes(var10.field5573, 0, var10.field5570);
-				byte[] var13 = var11.field5573;
+				var11.writeByte(var6.offset);
+				var11.writeBytes(var6.array, 0, var6.offset);
+				var11.writeByte(var7.offset);
+				var11.writeBytes(var7.array, 0, var7.offset);
+				var11.writeShort(var10.offset);
+				var11.writeBytes(var10.array, 0, var10.offset);
+				byte[] var13 = var11.array;
 				int var15 = var13.length;
 				StringBuilder var16 = new StringBuilder();
 
@@ -166,11 +166,11 @@ public class SecureRandomCallable implements Callable {
 					var11 = new Buffer(new byte[1000]);
 
 					while (true) {
-						var19 = var24.read(var11.field5573, var11.field5570, 1000 - var11.field5570);
+						var19 = var24.read(var11.array, var11.offset, 1000 - var11.offset);
 						if (var19 == -1) {
 							var23.close();
 							var24.close();
-							String var25 = new String(var11.field5573);
+							String var25 = new String(var11.array);
 							if (var25.startsWith("OFFLINE")) {
 								var3 = 4;
 							} else if (var25.startsWith("WRONG")) {
@@ -182,11 +182,11 @@ public class SecureRandomCallable implements Callable {
 							} else {
 								var11.xteaDecryptAll(var8);
 
-								while (var11.field5570 > 0 && var11.field5573[var11.field5570 - 1] == 0) {
-									--var11.field5570;
+								while (var11.offset > 0 && var11.array[var11.offset - 1] == 0) {
+									--var11.offset;
 								}
 
-								var25 = new String(var11.field5573, 0, var11.field5570);
+								var25 = new String(var11.array, 0, var11.offset);
 								if (FriendSystem.method1929(var25)) {
 									class91.openURL(var25, true, false);
 									var3 = 2;
@@ -197,8 +197,8 @@ public class SecureRandomCallable implements Callable {
 							break;
 						}
 
-						var11.field5570 += var19;
-						if (var11.field5570 >= 1000) {
+						var11.offset += var19;
+						if (var11.offset >= 1000) {
 							var3 = 5;
 							break;
 						}
@@ -266,7 +266,7 @@ public class SecureRandomCallable implements Callable {
 		garbageValue = "-1212802427"
 	)
 	static void method2411(Buffer var0, int var1) {
-		byte[] var2 = var0.field5573;
+		byte[] var2 = var0.array;
 		if (Client.randomDatData == null) {
 			Client.randomDatData = new byte[24];
 		}

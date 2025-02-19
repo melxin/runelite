@@ -40,7 +40,7 @@ public class class171 extends class149 {
 	)
 	void vmethod3702(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			--var1.field5570;
+			--var1.offset;
 			this.field1872 = var1.readLong();
 		}
 

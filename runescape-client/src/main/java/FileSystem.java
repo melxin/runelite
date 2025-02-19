@@ -47,15 +47,15 @@ public class FileSystem {
 			Buffer var4 = new Buffer(new byte[1000]);
 
 			do {
-				int var5 = var3.read(var4.field5573, var4.field5570, 1000 - var4.field5570);
+				int var5 = var3.read(var4.array, var4.offset, 1000 - var4.offset);
 				if (var5 == -1) {
-					var4.field5570 = 0;
+					var4.offset = 0;
 					long var7 = var4.readLong();
 					return var7;
 				}
 
-				var4.field5570 += var5;
-			} while(var4.field5570 < 1000);
+				var4.offset += var5;
+			} while(var4.offset < 1000);
 
 			return 0L;
 		} catch (Exception var9) {

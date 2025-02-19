@@ -67,7 +67,7 @@ public class class228 {
 					Client.widgetClickY = var2;
 					class155.widgetDragDuration = 0;
 					Client.isDraggingWidget = false;
-					int var5 = GraphicsObject.method6534();
+					int var5 = class332.method6534();
 					if (var5 != -1) {
 						class153.method3510(var5);
 					}

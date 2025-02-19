@@ -43,7 +43,8 @@ public final class NPC extends Actor {
 	@ObfuscatedSignature(
 		descriptor = "Lhw;"
 	)
-	NpcOverrides field1376;
+	@Export("modelOverrides")
+	NpcOverrides modelOverrides;
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "Lhw;"
@@ -82,13 +83,13 @@ public final class NPC extends Actor {
 		if (this.definition == null) {
 			return null;
 		} else {
-			SequenceDefinition var1 = super.field1265 != -1 && super.field1268 == 0 ? WorldMapData_1.SequenceDefinition_get(super.field1265) : null;
-			SequenceDefinition var2 = super.field1261 == -1 || super.idleSequence == super.field1261 && var1 != null ? null : WorldMapData_1.SequenceDefinition_get(super.field1261);
+			SequenceDefinition var1 = super.sequence != -1 && super.sequenceDelay == 0 ? WorldMapData_1.SequenceDefinition_get(super.sequence) : null;
+			SequenceDefinition var2 = super.movementSequence == -1 || super.idleSequence == super.movementSequence && var1 != null ? null : WorldMapData_1.SequenceDefinition_get(super.movementSequence);
 			Model var3 = null;
-			if (this.field1376 != null && this.field1376.useLocalPlayer) {
-				var3 = class132.localPlayer.appearance.getModel(var1, super.field1266, var2, super.movementFrame);
+			if (this.modelOverrides != null && this.modelOverrides.useLocalPlayer) {
+				var3 = class132.localPlayer.appearance.getModel(var1, super.sequenceFrame, var2, super.movementFrame);
 			} else {
-				var3 = this.definition.getModel(var1, super.field1266, var2, super.movementFrame, this.field1376);
+				var3 = this.definition.getModel(var1, super.sequenceFrame, var2, super.movementFrame, this.modelOverrides);
 			}
 
 			if (var3 == null) {
@@ -96,13 +97,13 @@ public final class NPC extends Actor {
 			} else {
 				var3.calculateBoundsCylinder();
 				super.defaultHeight = var3.height;
-				int var4 = var3.field2884;
+				int var4 = var3.indicesCount;
 				var3 = this.method2600(var3);
 				if (this.definition.size == 1) {
 					var3.isSingleTile = true;
 				}
 
-				if (super.field1286.method5437() && Client.cycle >= super.field1280 && Client.cycle < super.field1281) {
+				if (super.field1286.method5437() && Client.cycle >= super.npcCycle && Client.cycle < super.field1281) {
 					var3.method5295(super.field1286, (short)var4);
 				} else {
 					var3.method5296();
@@ -162,8 +163,8 @@ public final class NPC extends Actor {
 		garbageValue = "1731449205"
 	)
 	final void method2856(int var1, MoveSpeed var2) {
-		int var3 = super.field1287[0];
-		int var4 = super.field1288[0];
+		int var3 = super.pathX[0];
+		int var4 = super.pathY[0];
 		if (var1 == 0) {
 			--var3;
 			++var4;
@@ -200,8 +201,8 @@ public final class NPC extends Actor {
 			--var4;
 		}
 
-		if (super.field1265 != -1 && WorldMapData_1.SequenceDefinition_get(super.field1265).field2374 == 1) {
-			super.field1265 = -1;
+		if (super.sequence != -1 && WorldMapData_1.SequenceDefinition_get(super.sequence).field2374 == 1) {
+			super.sequence = -1;
 		}
 
 		this.method2590(var3, var4, var2);
@@ -213,13 +214,13 @@ public final class NPC extends Actor {
 		garbageValue = "1534401578"
 	)
 	final void method2901(int var1, int var2, boolean var3) {
-		if (super.field1265 != -1 && WorldMapData_1.SequenceDefinition_get(super.field1265).field2374 == 1) {
-			super.field1265 = -1;
+		if (super.sequence != -1 && WorldMapData_1.SequenceDefinition_get(super.sequence).field2374 == 1) {
+			super.sequence = -1;
 		}
 
 		if (!var3) {
-			int var4 = var1 - super.field1287[0];
-			int var5 = var2 - super.field1288[0];
+			int var4 = var1 - super.pathX[0];
+			int var5 = var2 - super.pathY[0];
 			if (var4 >= -8 && var4 <= 8 && var5 >= -8 && var5 <= 8) {
 				this.method2590(var1, var2, MoveSpeed.field3122);
 				return;
@@ -316,7 +317,7 @@ public final class NPC extends Actor {
 		garbageValue = "-25"
 	)
 	void method2867(NpcOverrides var1) {
-		this.field1376 = var1;
+		this.modelOverrides = var1;
 	}
 
 	@ObfuscatedName("am")
@@ -334,7 +335,7 @@ public final class NPC extends Actor {
 		garbageValue = "-1808766329"
 	)
 	void method2869() {
-		this.field1376 = null;
+		this.modelOverrides = null;
 	}
 
 	@ObfuscatedName("cg")

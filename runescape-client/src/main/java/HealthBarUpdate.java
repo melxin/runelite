@@ -70,7 +70,7 @@ public class HealthBarUpdate extends Node {
 				var3.writeCESU8("");
 			}
 
-			var2.write(var3.field5573, 0, var3.field5570);
+			var2.write(var3.array, 0, var3.offset);
 			var2.close();
 		} catch (IOException var4) {
 			var4.printStackTrace();

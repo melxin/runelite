@@ -53,13 +53,13 @@ public final class BoundaryObject {
 		descriptor = "Ljc;"
 	)
 	@Export("renderable1")
-	public TileItem renderable1;
+	public Renderable renderable1;
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "Ljc;"
 	)
 	@Export("renderable2")
-	public TileItem renderable2;
+	public Renderable renderable2;
 	@ObfuscatedName("af")
 	@ObfuscatedGetter(
 		longValue = -1173552471521436951L

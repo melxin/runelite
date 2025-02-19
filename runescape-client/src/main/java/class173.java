@@ -61,17 +61,17 @@ public class class173 extends class149 {
 	@Export("getWorldMapScript")
 	static Script getWorldMapScript(int var0, int var1, int var2) {
 		int var3 = class159.method3544(var1, var0);
-		Script var4 = class78.getScript(var3, var0);
+		Script var4 = Projectile.getScript(var3, var0);
 		if (var4 != null) {
 			return var4;
 		} else {
 			var3 = Calendar.method7475(var2, var0);
-			var4 = class78.getScript(var3, var0);
+			var4 = Projectile.getScript(var3, var0);
 			if (var4 != null) {
 				return var4;
 			} else {
 				int var5 = var0 + -512;
-				var4 = class78.getScript(var5, var0);
+				var4 = Projectile.getScript(var5, var0);
 				return var4 != null ? var4 : null;
 			}
 		}

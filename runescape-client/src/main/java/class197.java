@@ -380,7 +380,7 @@ public class class197 {
 
 									var47 = 0;
 									if (var46 != -2) {
-										var47 = Rasterizer3D.Rasterizer3D_colorPalette[class81.method2333(var46, 96)];
+										var47 = Rasterizer3D.Rasterizer3D_colorPalette[DynamicObject.method2333(var46, 96)];
 									}
 
 									if (var43.secondaryRgb != -1) {
@@ -393,10 +393,10 @@ public class class197 {
 										}
 
 										var46 = class442.method8350(var48, var43.secondarySaturation, var49);
-										var47 = Rasterizer3D.Rasterizer3D_colorPalette[class81.method2333(var46, 96)];
+										var47 = Rasterizer3D.Rasterizer3D_colorPalette[DynamicObject.method2333(var46, 96)];
 									}
 
-									var5.addTile(var7, var16, var22, var41, var69, var44, var30, var31, var32, var33, class141.method3402(var38, var34), class141.method3402(var38, var35), class141.method3402(var38, var36), class141.method3402(var38, var37), class81.method2333(var45, var34), class81.method2333(var45, var35), class81.method2333(var45, var36), class81.method2333(var45, var37), var40, var47);
+									var5.addTile(var7, var16, var22, var41, var69, var44, var30, var31, var32, var33, class141.method3402(var38, var34), class141.method3402(var38, var35), class141.method3402(var38, var36), class141.method3402(var38, var37), DynamicObject.method2333(var45, var34), DynamicObject.method2333(var45, var35), DynamicObject.method2333(var45, var36), DynamicObject.method2333(var45, var37), var40, var47);
 								}
 							}
 						}

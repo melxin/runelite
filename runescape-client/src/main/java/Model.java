@@ -6,7 +6,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("jf")
 @Implements("Model")
-public class Model extends TileItem {
+public class Model extends Renderable
+{
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "Ljf;"
@@ -118,41 +119,52 @@ public class Model extends TileItem {
 	@Export("verticesZ")
 	int[] verticesZ;
 	@ObfuscatedName("ax")
-	public int field2884;
+	@Export("indicesCount")
+	public int indicesCount;
 	@ObfuscatedName("ai")
-	@Export("texIndices1")
-	int[] texIndices1;
+	@Export("indices1")
+	int[] indices1;
 	@ObfuscatedName("ak")
-	int[] field2886;
+	@Export("indices2")
+	int[] indices2;
 	@ObfuscatedName("aj")
-	int[] field2887;
+	@Export("indices3")
+	int[] indices3;
 	@ObfuscatedName("av")
-	int[] field2888;
+	@Export("faceColors1")
+	int[] faceColors1;
 	@ObfuscatedName("ar")
-	int[] field2889;
+	@Export("faceColors2")
+	int[] faceColors2;
 	@ObfuscatedName("ag")
-	int[] field2890;
+	@Export("faceColors3")
+	int[] faceColors3;
 	@ObfuscatedName("az")
 	@Export("faceRenderPriorities")
 	byte[] faceRenderPriorities;
 	@ObfuscatedName("am")
-	byte[] field2892;
+	@Export("faceAlphas")
+	byte[] faceAlphas;
 	@ObfuscatedName("aq")
-	byte[] field2943;
+	@Export("textureFaces")
+	byte[] textureFaces;
 	@ObfuscatedName("aw")
 	@Export("faceTextures")
 	short[] faceTextures;
 	@ObfuscatedName("an")
 	public byte field2904;
 	@ObfuscatedName("at")
-	public int field2896;
+	@Export("texIndicesCount")
+	public int texIndicesCount;
 	@ObfuscatedName("ap")
-	@Export("indices1")
-	int[] indices1;
+	@Export("texIndices1")
+	int[] texIndices1;
 	@ObfuscatedName("al")
-	int[] field2898;
+	@Export("texIndices2")
+	int[] texIndices2;
 	@ObfuscatedName("bw")
-	int[] field2917;
+	@Export("texIndices3")
+	int[] texIndices3;
 	@ObfuscatedName("bo")
 	@Export("vertexLabels")
 	int[][] vertexLabels;
@@ -170,19 +182,23 @@ public class Model extends TileItem {
 	@Export("boundsType")
 	int boundsType;
 	@ObfuscatedName("bv")
-	int field2885;
+	@Export("bottomY")
+	int bottomY;
 	@ObfuscatedName("bk")
 	@Export("xzRadius")
 	int xzRadius;
 	@ObfuscatedName("bu")
-	int field2908;
+	@Export("diameter")
+	int diameter;
 	@ObfuscatedName("by")
-	int field2909;
+	@Export("radius")
+	int radius;
 	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
 		descriptor = "Ljl;"
 	)
-	class246 field2940;
+	@Export("aabb")
+	AABB aabb;
 	@ObfuscatedName("cl")
 	@ObfuscatedSignature(
 		descriptor = "Ljb;"
@@ -230,25 +246,25 @@ public class Model extends TileItem {
 
 	Model() {
 		this.verticesCount = 0;
-		this.field2884 = 0;
+		this.indicesCount = 0;
 		this.field2904 = 0;
-		this.field2896 = 0;
+		this.texIndicesCount = 0;
 		this.isSingleTile = false;
 		this.field2910 = null;
 	}
 
 	public Model(int var1, int var2, int var3, byte var4) {
 		this.verticesCount = 0;
-		this.field2884 = 0;
+		this.indicesCount = 0;
 		this.field2904 = 0;
-		this.field2896 = 0;
+		this.texIndicesCount = 0;
 		this.isSingleTile = false;
 		this.field2910 = null;
 		this.method5259(var1, var2, var3);
 		this.field2904 = var4;
 		this.verticesCount = 0;
-		this.field2884 = 0;
-		this.field2896 = 0;
+		this.indicesCount = 0;
+		this.texIndicesCount = 0;
 	}
 
 	@ObfuscatedSignature(
@@ -256,31 +272,31 @@ public class Model extends TileItem {
 	)
 	Model(Model var1) {
 		this.verticesCount = 0;
-		this.field2884 = 0;
+		this.indicesCount = 0;
 		this.field2904 = 0;
-		this.field2896 = 0;
+		this.texIndicesCount = 0;
 		this.isSingleTile = false;
 		this.field2910 = null;
 		this.verticesCount = var1.verticesCount;
-		this.field2884 = var1.field2884;
-		this.field2896 = var1.field2896;
+		this.indicesCount = var1.indicesCount;
+		this.texIndicesCount = var1.texIndicesCount;
 		this.verticesX = var1.verticesX;
 		this.verticesY = var1.verticesY;
 		this.verticesZ = var1.verticesZ;
-		this.texIndices1 = var1.texIndices1;
-		this.field2886 = var1.field2886;
-		this.field2887 = var1.field2887;
-		this.field2888 = var1.field2888;
-		this.field2889 = var1.field2889;
-		this.field2890 = var1.field2890;
+		this.indices1 = var1.indices1;
+		this.indices2 = var1.indices2;
+		this.indices3 = var1.indices3;
+		this.faceColors1 = var1.faceColors1;
+		this.faceColors2 = var1.faceColors2;
+		this.faceColors3 = var1.faceColors3;
 		this.faceRenderPriorities = var1.faceRenderPriorities;
-		this.field2892 = var1.field2892;
-		this.field2943 = var1.field2943;
+		this.faceAlphas = var1.faceAlphas;
+		this.textureFaces = var1.textureFaces;
 		this.faceTextures = var1.faceTextures;
 		this.field2904 = var1.field2904;
-		this.indices1 = var1.indices1;
-		this.field2898 = var1.field2898;
-		this.field2917 = var1.field2917;
+		this.texIndices1 = var1.texIndices1;
+		this.texIndices2 = var1.texIndices2;
+		this.texIndices3 = var1.texIndices3;
 		this.vertexLabels = var1.vertexLabels;
 		this.faceLabelsAlpha = var1.faceLabelsAlpha;
 		this.isSingleTile = var1.isSingleTile;
@@ -291,14 +307,14 @@ public class Model extends TileItem {
 	)
 	public Model(Model[] var1, int var2) {
 		this.verticesCount = 0;
-		this.field2884 = 0;
+		this.indicesCount = 0;
 		this.field2904 = 0;
-		this.field2896 = 0;
+		this.texIndicesCount = 0;
 		this.isSingleTile = false;
 		this.field2910 = null;
 		this.verticesCount = 0;
-		this.field2884 = 0;
-		this.field2896 = 0;
+		this.indicesCount = 0;
+		this.texIndicesCount = 0;
 		this.field2904 = -1;
 
 		int var3;
@@ -306,18 +322,18 @@ public class Model extends TileItem {
 			Model var4 = var1[var3];
 			if (var4 != null) {
 				this.verticesCount += var4.verticesCount;
-				this.field2884 += var4.field2884;
-				this.field2896 += var4.field2896;
+				this.indicesCount += var4.indicesCount;
+				this.texIndicesCount += var4.texIndicesCount;
 				if (this.field2904 == -1) {
 					this.field2904 = var4.field2904;
 				}
 			}
 		}
 
-		this.method5259(this.verticesCount, this.field2884, this.field2896);
+		this.method5259(this.verticesCount, this.indicesCount, this.texIndicesCount);
 		this.verticesCount = 0;
-		this.field2884 = 0;
-		this.field2896 = 0;
+		this.indicesCount = 0;
+		this.texIndicesCount = 0;
 
 		for (var3 = 0; var3 < var2; ++var3) {
 			this.method5257(var1[var3]);
@@ -330,16 +346,16 @@ public class Model extends TileItem {
 		this.verticesX = new int[var1];
 		this.verticesY = new int[var1];
 		this.verticesZ = new int[var1];
-		this.texIndices1 = new int[var2];
-		this.field2886 = new int[var2];
-		this.field2887 = new int[var2];
-		this.field2888 = new int[var2];
-		this.field2889 = new int[var2];
-		this.field2890 = new int[var2];
+		this.indices1 = new int[var2];
+		this.indices2 = new int[var2];
+		this.indices3 = new int[var2];
+		this.faceColors1 = new int[var2];
+		this.faceColors2 = new int[var2];
+		this.faceColors3 = new int[var2];
 		if (var3 > 0) {
-			this.indices1 = new int[var3];
-			this.field2898 = new int[var3];
-			this.field2917 = new int[var3];
+			this.texIndices1 = new int[var3];
+			this.texIndices2 = new int[var3];
+			this.texIndices3 = new int[var3];
 		}
 
 	}
@@ -349,15 +365,15 @@ public class Model extends TileItem {
 		descriptor = "(Ljf;)V"
 	)
 	void method5256(Model var1) {
-		int var2 = this.texIndices1.length;
+		int var2 = this.indices1.length;
 		if (this.faceRenderPriorities == null && (var1.faceRenderPriorities != null || this.field2904 != var1.field2904)) {
 			this.faceRenderPriorities = new byte[var2];
 			Arrays.fill(this.faceRenderPriorities, this.field2904);
 		}
 
-		if (this.field2892 == null && var1.field2892 != null) {
-			this.field2892 = new byte[var2];
-			Arrays.fill(this.field2892, (byte)0);
+		if (this.faceAlphas == null && var1.faceAlphas != null) {
+			this.faceAlphas = new byte[var2];
+			Arrays.fill(this.faceAlphas, (byte)0);
 		}
 
 		if (this.faceTextures == null && var1.faceTextures != null) {
@@ -365,9 +381,9 @@ public class Model extends TileItem {
 			Arrays.fill(this.faceTextures, (short)-1);
 		}
 
-		if (this.field2943 == null && var1.field2943 != null) {
-			this.field2943 = new byte[var2];
-			Arrays.fill(this.field2943, (byte)-1);
+		if (this.textureFaces == null && var1.textureFaces != null) {
+			this.textureFaces = new byte[var2];
+			Arrays.fill(this.textureFaces, (byte)-1);
 		}
 
 	}
@@ -381,41 +397,41 @@ public class Model extends TileItem {
 			this.method5256(var1);
 
 			int var2;
-			for (var2 = 0; var2 < var1.field2884; ++var2) {
-				this.texIndices1[this.field2884] = this.verticesCount + var1.texIndices1[var2];
-				this.field2886[this.field2884] = this.verticesCount + var1.field2886[var2];
-				this.field2887[this.field2884] = this.verticesCount + var1.field2887[var2];
-				this.field2888[this.field2884] = var1.field2888[var2];
-				this.field2889[this.field2884] = var1.field2889[var2];
-				this.field2890[this.field2884] = var1.field2890[var2];
+			for (var2 = 0; var2 < var1.indicesCount; ++var2) {
+				this.indices1[this.indicesCount] = this.verticesCount + var1.indices1[var2];
+				this.indices2[this.indicesCount] = this.verticesCount + var1.indices2[var2];
+				this.indices3[this.indicesCount] = this.verticesCount + var1.indices3[var2];
+				this.faceColors1[this.indicesCount] = var1.faceColors1[var2];
+				this.faceColors2[this.indicesCount] = var1.faceColors2[var2];
+				this.faceColors3[this.indicesCount] = var1.faceColors3[var2];
 				if (this.faceRenderPriorities != null) {
-					this.faceRenderPriorities[this.field2884] = var1.faceRenderPriorities != null ? var1.faceRenderPriorities[var2] : var1.field2904;
+					this.faceRenderPriorities[this.indicesCount] = var1.faceRenderPriorities != null ? var1.faceRenderPriorities[var2] : var1.field2904;
 				}
 
-				if (this.field2892 != null && var1.field2892 != null) {
-					this.field2892[this.field2884] = var1.field2892[var2];
+				if (this.faceAlphas != null && var1.faceAlphas != null) {
+					this.faceAlphas[this.indicesCount] = var1.faceAlphas[var2];
 				}
 
 				if (this.faceTextures != null) {
-					this.faceTextures[this.field2884] = var1.faceTextures != null ? var1.faceTextures[var2] : -1;
+					this.faceTextures[this.indicesCount] = var1.faceTextures != null ? var1.faceTextures[var2] : -1;
 				}
 
-				if (this.field2943 != null) {
-					if (var1.field2943 != null && var1.field2943[var2] != -1) {
-						this.field2943[this.field2884] = (byte)(var1.field2943[var2] + this.field2896);
+				if (this.textureFaces != null) {
+					if (var1.textureFaces != null && var1.textureFaces[var2] != -1) {
+						this.textureFaces[this.indicesCount] = (byte)(var1.textureFaces[var2] + this.texIndicesCount);
 					} else {
-						this.field2943[this.field2884] = -1;
+						this.textureFaces[this.indicesCount] = -1;
 					}
 				}
 
-				++this.field2884;
+				++this.indicesCount;
 			}
 
-			for (var2 = 0; var2 < var1.field2896; ++var2) {
-				this.indices1[this.field2896] = this.verticesCount + var1.indices1[var2];
-				this.field2898[this.field2896] = this.verticesCount + var1.field2898[var2];
-				this.field2917[this.field2896] = this.verticesCount + var1.field2917[var2];
-				++this.field2896;
+			for (var2 = 0; var2 < var1.texIndicesCount; ++var2) {
+				this.texIndices1[this.texIndicesCount] = this.verticesCount + var1.texIndices1[var2];
+				this.texIndices2[this.texIndicesCount] = this.verticesCount + var1.texIndices2[var2];
+				this.texIndices3[this.texIndicesCount] = this.verticesCount + var1.texIndices3[var2];
+				++this.texIndicesCount;
 			}
 
 			for (var2 = 0; var2 < var1.verticesCount; ++var2) {
@@ -512,8 +528,8 @@ public class Model extends TileItem {
 	)
 	@Export("toSharedSequenceModel")
 	public Model toSharedSequenceModel(boolean var1) {
-		if (!var1 && Model_sharedSequenceModelFaceAlphas.length < this.field2884) {
-			Model_sharedSequenceModelFaceAlphas = new byte[this.field2884 + 100];
+		if (!var1 && Model_sharedSequenceModelFaceAlphas.length < this.indicesCount) {
+			Model_sharedSequenceModelFaceAlphas = new byte[this.indicesCount + 100];
 		}
 
 		return this.buildSharedModel(var1, Model_sharedSequenceModel, Model_sharedSequenceModelFaceAlphas);
@@ -525,8 +541,8 @@ public class Model extends TileItem {
 	)
 	@Export("toSharedSpotAnimationModel")
 	public Model toSharedSpotAnimationModel(boolean var1) {
-		if (!var1 && Model_sharedSpotAnimationModelFaceAlphas.length < this.field2884) {
-			Model_sharedSpotAnimationModelFaceAlphas = new byte[this.field2884 + 100];
+		if (!var1 && Model_sharedSpotAnimationModelFaceAlphas.length < this.indicesCount) {
+			Model_sharedSpotAnimationModelFaceAlphas = new byte[this.indicesCount + 100];
 		}
 
 		return this.buildSharedModel(var1, Model_sharedSpotAnimationModel, Model_sharedSpotAnimationModelFaceAlphas);
@@ -539,8 +555,8 @@ public class Model extends TileItem {
 	@Export("buildSharedModel")
 	Model buildSharedModel(boolean var1, Model var2, byte[] var3) {
 		var2.verticesCount = this.verticesCount;
-		var2.field2884 = this.field2884;
-		var2.field2896 = this.field2896;
+		var2.indicesCount = this.indicesCount;
+		var2.texIndicesCount = this.texIndicesCount;
 		if (var2.verticesX == null || var2.verticesX.length < this.verticesCount) {
 			var2.verticesX = new int[this.verticesCount + 100];
 			var2.verticesY = new int[this.verticesCount + 100];
@@ -555,33 +571,33 @@ public class Model extends TileItem {
 		}
 
 		if (var1) {
-			var2.field2892 = this.field2892;
+			var2.faceAlphas = this.faceAlphas;
 		} else {
-			var2.field2892 = var3;
-			if (this.field2892 == null) {
-				for (var4 = 0; var4 < this.field2884; ++var4) {
-					var2.field2892[var4] = 0;
+			var2.faceAlphas = var3;
+			if (this.faceAlphas == null) {
+				for (var4 = 0; var4 < this.indicesCount; ++var4) {
+					var2.faceAlphas[var4] = 0;
 				}
 			} else {
-				for (var4 = 0; var4 < this.field2884; ++var4) {
-					var2.field2892[var4] = this.field2892[var4];
+				for (var4 = 0; var4 < this.indicesCount; ++var4) {
+					var2.faceAlphas[var4] = this.faceAlphas[var4];
 				}
 			}
 		}
 
-		var2.texIndices1 = this.texIndices1;
-		var2.field2886 = this.field2886;
-		var2.field2887 = this.field2887;
-		var2.field2888 = this.field2888;
-		var2.field2889 = this.field2889;
-		var2.field2890 = this.field2890;
+		var2.indices1 = this.indices1;
+		var2.indices2 = this.indices2;
+		var2.indices3 = this.indices3;
+		var2.faceColors1 = this.faceColors1;
+		var2.faceColors2 = this.faceColors2;
+		var2.faceColors3 = this.faceColors3;
 		var2.faceRenderPriorities = this.faceRenderPriorities;
-		var2.field2943 = this.field2943;
+		var2.textureFaces = this.textureFaces;
 		var2.faceTextures = this.faceTextures;
 		var2.field2904 = this.field2904;
-		var2.indices1 = this.indices1;
-		var2.field2898 = this.field2898;
-		var2.field2917 = this.field2917;
+		var2.texIndices1 = this.texIndices1;
+		var2.texIndices2 = this.texIndices2;
+		var2.texIndices3 = this.texIndices3;
 		var2.vertexLabels = this.vertexLabels;
 		var2.faceLabelsAlpha = this.faceLabelsAlpha;
 		var2.field2902 = this.field2902;
@@ -596,7 +612,7 @@ public class Model extends TileItem {
 	@ObfuscatedName("ax")
 	@Export("calculateBoundingBox")
 	void calculateBoundingBox(int var1) {
-		class246 var2 = this.getAABB(var1);
+		AABB var2 = this.getAABB(var1);
 		if (var2 == null) {
 			int var3 = 0;
 			int var4 = 0;
@@ -640,24 +656,24 @@ public class Model extends TileItem {
 				}
 			}
 
-			var2 = new class246(var1, (var6 + var3) / 2, (var7 + var4) / 2, (var8 + var5) / 2, (var6 - var3 + 1) / 2, (var7 - var4 + 1) / 2, (var8 - var5 + 1) / 2);
+			var2 = new AABB(var1, (var6 + var3) / 2, (var7 + var4) / 2, (var8 + var5) / 2, (var6 - var3 + 1) / 2, (var7 - var4 + 1) / 2, (var8 - var5 + 1) / 2);
 			boolean var21 = true;
-			if (var2.field2796 < 32) {
-				var2.field2796 = 32;
+			if (var2.xMidOffset < 32) {
+				var2.xMidOffset = 32;
 			}
 
-			if (var2.field2801 < 32) {
-				var2.field2801 = 32;
+			if (var2.zMidOffset < 32) {
+				var2.zMidOffset = 32;
 			}
 
 			if (this.isSingleTile) {
 				boolean var22 = true;
-				var2.field2796 += 8;
-				var2.field2801 += 8;
+				var2.xMidOffset += 8;
+				var2.zMidOffset += 8;
 			}
 
-			var2.field2795 = this.field2940;
-			this.field2940 = var2;
+			var2.aabb = this.aabb;
+			this.aabb = var2;
 		}
 	}
 
@@ -666,9 +682,9 @@ public class Model extends TileItem {
 		descriptor = "(I)Ljl;"
 	)
 	@Export("getAABB")
-	class246 getAABB(int var1) {
-		for (class246 var2 = this.field2940; var2 != null; var2 = var2.field2795) {
-			if (var2.field2799 == var1) {
+	AABB getAABB(int var1) {
+		for (AABB var2 = this.aabb; var2 != null; var2 = var2.aabb) {
+			if (var2.orientation == var1) {
 				return var2;
 			}
 		}
@@ -682,7 +698,7 @@ public class Model extends TileItem {
 		if (this.boundsType != 1) {
 			this.boundsType = 1;
 			super.height = 0;
-			this.field2885 = 0;
+			this.bottomY = 0;
 			this.xzRadius = 0;
 
 			for (int var1 = 0; var1 < this.verticesCount; ++var1) {
@@ -693,8 +709,8 @@ public class Model extends TileItem {
 					super.height = -var3;
 				}
 
-				if (var3 > this.field2885) {
-					this.field2885 = var3;
+				if (var3 > this.bottomY) {
+					this.bottomY = var3;
 				}
 
 				int var5 = var2 * var2 + var4 * var4;
@@ -704,8 +720,8 @@ public class Model extends TileItem {
 			}
 
 			this.xzRadius = (int)(Math.sqrt((double)this.xzRadius) + 0.99D);
-			this.field2909 = (int)(Math.sqrt((double)(this.xzRadius * this.xzRadius + super.height * super.height)) + 0.99D);
-			this.field2908 = this.field2909 + (int)(Math.sqrt((double)(this.xzRadius * this.xzRadius + this.field2885 * this.field2885)) + 0.99D);
+			this.radius = (int)(Math.sqrt((double)(this.xzRadius * this.xzRadius + super.height * super.height)) + 0.99D);
+			this.diameter = this.radius + (int)(Math.sqrt((double)(this.xzRadius * this.xzRadius + this.bottomY * this.bottomY)) + 0.99D);
 		}
 	}
 
@@ -726,8 +742,8 @@ public class Model extends TileItem {
 			}
 
 			this.xzRadius = (int)(Math.sqrt((double)this.xzRadius) + 0.99D);
-			this.field2909 = this.xzRadius;
-			this.field2908 = this.xzRadius + this.xzRadius;
+			this.radius = this.xzRadius;
+			this.diameter = this.xzRadius + this.xzRadius;
 		}
 	}
 
@@ -741,7 +757,7 @@ public class Model extends TileItem {
 	@Export("resetBounds")
 	public void resetBounds() {
 		this.boundsType = 0;
-		this.field2940 = null;
+		this.aabb = null;
 	}
 
 	@ObfuscatedName("ag")
@@ -752,7 +768,7 @@ public class Model extends TileItem {
 	public void animate(Frames var1, int var2) {
 		if (this.vertexLabels != null) {
 			if (var2 != -1) {
-				Animation var3 = var1.field2812[var2];
+				Animation var3 = var1.frames[var2];
 				Skeleton var4 = var3.skeleton;
 				Model_transformTempX = 0;
 				Model_transformTempY = 0;
@@ -760,7 +776,7 @@ public class Model extends TileItem {
 
 				for (int var5 = 0; var5 < var3.transformCount; ++var5) {
 					int var6 = var3.transformSkeletonLabels[var5];
-					this.transform(var4.transformTypes[var6], var4.field2679[var6], var3.transformXs[var5], var3.transformYs[var5], var3.transformZs[var5]);
+					this.transform(var4.transformTypes[var6], var4.labels[var6], var3.transformXs[var5], var3.transformYs[var5], var3.transformZs[var5]);
 				}
 
 				this.resetBounds();
@@ -796,9 +812,9 @@ public class Model extends TileItem {
 
 		for (int var4 = 0; var4 < var3.count; ++var4) {
 			int var5 = var3.transformTypes[var4];
-			if (var5 == 5 && var1.field1681 != null && var1.field1681[var4] != null && var1.field1681[var4][0] != null && this.faceLabelsAlpha != null && this.field2892 != null) {
+			if (var5 == 5 && var1.field1681 != null && var1.field1681[var4] != null && var1.field1681[var4][0] != null && this.faceLabelsAlpha != null && this.faceAlphas != null) {
 				class136 var6 = var1.field1681[var4][0];
-				int[] var7 = var3.field2679[var4];
+				int[] var7 = var3.labels[var4];
 				int var8 = var7.length;
 
 				for (int var9 = 0; var9 < var8; ++var9) {
@@ -808,14 +824,14 @@ public class Model extends TileItem {
 
 						for (int var12 = 0; var12 < var11.length; ++var12) {
 							int var13 = var11[var12];
-							int var14 = (int)((float)(this.field2892[var13] & 255) + var6.method3370(var2) * 255.0F);
+							int var14 = (int)((float)(this.faceAlphas[var13] & 255) + var6.method3370(var2) * 255.0F);
 							if (var14 < 0) {
 								var14 = 0;
 							} else if (var14 > 255) {
 								var14 = 255;
 							}
 
-							this.field2892[var13] = (byte)var14;
+							this.faceAlphas[var13] = (byte)var14;
 						}
 					}
 				}
@@ -840,8 +856,8 @@ public class Model extends TileItem {
 	public void animate2(Frames var1, int var2, Frames var3, int var4, int[] var5) {
 		if (var2 != -1) {
 			if (var5 != null && var4 != -1) {
-				Animation var6 = var1.field2812[var2];
-				Animation var7 = var3.field2812[var4];
+				Animation var6 = var1.frames[var2];
+				Animation var7 = var3.frames[var4];
 				Skeleton var8 = var6.skeleton;
 				Model_transformTempX = 0;
 				Model_transformTempY = 0;
@@ -857,7 +873,7 @@ public class Model extends TileItem {
 					}
 
 					if (var12 != var10 || var8.transformTypes[var12] == 0) {
-						this.transform(var8.transformTypes[var12], var8.field2679[var12], var6.transformXs[var11], var6.transformYs[var11], var6.transformZs[var11]);
+						this.transform(var8.transformTypes[var12], var8.labels[var12], var6.transformXs[var11], var6.transformYs[var11], var6.transformZs[var11]);
 					}
 				}
 
@@ -873,7 +889,7 @@ public class Model extends TileItem {
 					}
 
 					if (var12 == var10 || var8.transformTypes[var12] == 0) {
-						this.transform(var8.transformTypes[var12], var8.field2679[var12], var7.transformXs[var11], var7.transformYs[var11], var7.transformZs[var11]);
+						this.transform(var8.transformTypes[var12], var8.labels[var12], var7.transformXs[var11], var7.transformYs[var11], var7.transformZs[var11]);
 					}
 				}
 
@@ -911,7 +927,7 @@ public class Model extends TileItem {
 		if (var3 == null) {
 			this.animate(var1, var2);
 		} else {
-			Animation var5 = var1.field2812[var2];
+			Animation var5 = var1.frames[var2];
 			Skeleton var6 = var5.skeleton;
 			byte var7 = 0;
 			int var11 = var7 + 1;
@@ -927,10 +943,10 @@ public class Model extends TileItem {
 
 				if (var4) {
 					if (var10 == var8 || var6.transformTypes[var10] == 0) {
-						this.transform(var6.transformTypes[var10], var6.field2679[var10], var5.transformXs[var9], var5.transformYs[var9], var5.transformZs[var9]);
+						this.transform(var6.transformTypes[var10], var6.labels[var10], var5.transformXs[var9], var5.transformYs[var9], var5.transformZs[var9]);
 					}
 				} else if (var10 != var8 || var6.transformTypes[var10] == 0) {
-					this.transform(var6.transformTypes[var10], var6.field2679[var10], var5.transformXs[var9], var5.transformYs[var9], var5.transformZs[var9]);
+					this.transform(var6.transformTypes[var10], var6.labels[var10], var5.transformXs[var9], var5.transformYs[var9], var5.transformZs[var9]);
 				}
 			}
 
@@ -1080,7 +1096,7 @@ public class Model extends TileItem {
 				}
 
 			} else if (var1 == 5) {
-				if (this.faceLabelsAlpha != null && this.field2892 != null) {
+				if (this.faceLabelsAlpha != null && this.faceAlphas != null) {
 					for (var7 = 0; var7 < var6; ++var7) {
 						var8 = var2[var7];
 						if (var8 < this.faceLabelsAlpha.length) {
@@ -1088,14 +1104,14 @@ public class Model extends TileItem {
 
 							for (var10 = 0; var10 < var9.length; ++var10) {
 								var11 = var9[var10];
-								var12 = (this.field2892[var11] & 255) + var3 * 8;
+								var12 = (this.faceAlphas[var11] & 255) + var3 * 8;
 								if (var12 < 0) {
 									var12 = 0;
 								} else if (var12 > 255) {
 									var12 = 255;
 								}
 
-								this.field2892[var11] = (byte)var12;
+								this.faceAlphas[var11] = (byte)var12;
 							}
 						}
 					}
@@ -1332,7 +1348,7 @@ public class Model extends TileItem {
 				if (var17 / var14 > Rasterizer3D.Rasterizer3D_clipMidX2()) {
 					int var18 = var3 * var7 - var11 * var2 >> 16;
 					int var19 = var2 * this.xzRadius >> 16;
-					int var20 = (var3 * this.field2885 >> 16) + var19;
+					int var20 = (var3 * this.bottomY >> 16) + var19;
 					int var21 = (var18 + var20) * Rasterizer3D.get3dZoom();
 					if (var21 / var14 > Rasterizer3D.method4754()) {
 						int var22 = (var3 * super.height >> 16) + var19;
@@ -1462,9 +1478,9 @@ public class Model extends TileItem {
 	@ObfuscatedName("bu")
 	@Export("draw0")
 	final void draw0(boolean var1, boolean var2, boolean var3, long var4) {
-		if (this.field2908 < 6000) {
+		if (this.diameter < 6000) {
 			int var6;
-			for (var6 = 0; var6 < this.field2908; ++var6) {
+			for (var6 = 0; var6 < this.diameter; ++var6) {
 				field2922[var6] = 0;
 			}
 
@@ -1480,11 +1496,11 @@ public class Model extends TileItem {
 			int var18;
 			int var20;
 			int var28;
-			for (char var7 = 0; var7 < this.field2884; ++var7) {
-				if (this.field2890[var7] != -2) {
-					int var8 = this.texIndices1[var7];
-					var9 = this.field2886[var7];
-					var10 = this.field2887[var7];
+			for (char var7 = 0; var7 < this.indicesCount; ++var7) {
+				if (this.faceColors3[var7] != -2) {
+					int var8 = this.indices1[var7];
+					var9 = this.indices2[var7];
+					var10 = this.indices3[var7];
 					var11 = modelViewportXs[var8];
 					var12 = modelViewportXs[var9];
 					var13 = modelViewportXs[var10];
@@ -1509,7 +1525,7 @@ public class Model extends TileItem {
 						int var25 = var14 * var30 - var17 * var29;
 						if (var28 * var23 + var18 * var24 + var21 * var25 > 0) {
 							field2913[var7] = true;
-							int var26 = (field2928[var8] + field2928[var9] + field2928[var10]) / 3 + this.field2909;
+							int var26 = (field2928[var8] + field2928[var9] + field2928[var10]) / 3 + this.radius;
 							field2944[var26][field2922[var26]++] = var7;
 						}
 					} else {
@@ -1527,7 +1543,7 @@ public class Model extends TileItem {
 								field2935[var7] = true;
 							}
 
-							var28 = (field2928[var8] + field2928[var9] + field2928[var10]) / 3 + this.field2909;
+							var28 = (field2928[var8] + field2928[var9] + field2928[var10]) / 3 + this.radius;
 							field2944[var28][field2922[var28]++] = var7;
 						}
 					}
@@ -1539,13 +1555,13 @@ public class Model extends TileItem {
 			if (var31) {
 				Rasterizer3D.clips.field3000.method5434(this.field2910);
 			} else {
-				this.field2946 = (short)this.field2884;
+				this.field2946 = (short)this.indicesCount;
 			}
 
 			char[] var27;
 			char var33;
 			if (this.faceRenderPriorities == null) {
-				for (var9 = this.field2908 - 1; var9 >= 0; --var9) {
+				for (var9 = this.diameter - 1; var9 >= 0; --var9) {
 					var33 = field2922[var9];
 					if (var33 > 0) {
 						var27 = field2944[var9];
@@ -1567,7 +1583,7 @@ public class Model extends TileItem {
 					field2895[var9] = 0;
 				}
 
-				for (var9 = this.field2908 - 1; var9 >= 0; --var9) {
+				for (var9 = this.diameter - 1; var9 >= 0; --var9) {
 					var33 = field2922[var9];
 					if (var33 > 0) {
 						var27 = field2944[var9];
@@ -1709,17 +1725,17 @@ public class Model extends TileItem {
 		if (field2913[var1]) {
 			this.method5335(var1);
 		} else {
-			int var2 = this.texIndices1[var1];
-			int var3 = this.field2886[var1];
-			int var4 = this.field2887[var1];
+			int var2 = this.indices1[var1];
+			int var3 = this.indices2[var1];
+			int var4 = this.indices3[var1];
 			Rasterizer3D.clips.clipping = field2935[var1];
-			if (this.field2892 == null) {
+			if (this.faceAlphas == null) {
 				Rasterizer3D.clips.currentFaceAlpha = 0;
 			} else {
-				Rasterizer3D.clips.currentFaceAlpha = (this.field2892[var1] == -1 ? 253 : this.field2892[var1]) & 255;
+				Rasterizer3D.clips.currentFaceAlpha = (this.faceAlphas[var1] == -1 ? 253 : this.faceAlphas[var1]) & 255;
 			}
 
-			this.method5291(var1, modelViewportYs[var2], modelViewportYs[var3], modelViewportYs[var4], modelViewportXs[var2], modelViewportXs[var3], modelViewportXs[var4], field2905[var2], field2905[var3], field2905[var4], this.field2888[var1], this.field2889[var1], this.field2890[var1]);
+			this.method5291(var1, modelViewportYs[var2], modelViewportYs[var3], modelViewportYs[var4], modelViewportXs[var2], modelViewportXs[var3], modelViewportXs[var4], field2905[var2], field2905[var3], field2905[var4], this.faceColors1[var1], this.faceColors2[var1], this.faceColors3[var1]);
 		}
 	}
 
@@ -1734,30 +1750,30 @@ public class Model extends TileItem {
 			int var15;
 			int var16;
 			int var18;
-			if (this.field2943 != null && this.field2943[var1] != -1) {
-				int var17 = this.field2943[var1] & 255;
-				var18 = this.indices1[var17];
-				var15 = this.field2898[var17];
-				var16 = this.field2917[var17];
+			if (this.textureFaces != null && this.textureFaces[var1] != -1) {
+				int var17 = this.textureFaces[var1] & 255;
+				var18 = this.texIndices1[var17];
+				var15 = this.texIndices2[var17];
+				var16 = this.texIndices3[var17];
 			} else {
-				var18 = this.texIndices1[var1];
-				var15 = this.field2886[var1];
-				var16 = this.field2887[var1];
+				var18 = this.indices1[var1];
+				var15 = this.indices2[var1];
+				var16 = this.indices3[var1];
 			}
 
-			if (this.field2890[var1] == -1) {
+			if (this.faceColors3[var1] == -1) {
 				Rasterizer3D.rasterTextureWithShadingAndLighting(var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var11, var11, field2918[var18], field2918[var15], field2918[var16], field2919[var18], field2919[var15], field2919[var16], field2920[var18], field2920[var15], field2920[var16], this.faceTextures[var1]);
 			} else {
 				Rasterizer3D.rasterTextureWithShadingAndLighting(var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, field2918[var18], field2918[var15], field2918[var16], field2919[var18], field2919[var15], field2919[var16], field2920[var18], field2920[var15], field2920[var16], this.faceTextures[var1]);
 			}
 		} else {
 			boolean var14 = this.method5290(var1);
-			if (this.field2890[var1] == -1 && var14) {
-				Rasterizer3D.method4761(var2, var3, var4, var5, var6, var7, var8, var9, var10, field2941[this.field2888[var1]]);
-			} else if (this.field2890[var1] == -1) {
-				Rasterizer3D.rasterFlat(var2, var3, var4, var5, var6, var7, var8, var9, var10, field2941[this.field2888[var1]]);
+			if (this.faceColors3[var1] == -1 && var14) {
+				Rasterizer3D.rasterTriangle(var2, var3, var4, var5, var6, var7, var8, var9, var10, field2941[this.faceColors1[var1]]);
+			} else if (this.faceColors3[var1] == -1) {
+				Rasterizer3D.rasterFlat(var2, var3, var4, var5, var6, var7, var8, var9, var10, field2941[this.faceColors1[var1]]);
 			} else if (var14) {
-				Rasterizer3D.method4766(var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13);
+				Rasterizer3D.rasterTriangleWithGradient(var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13);
 			} else {
 				Rasterizer3D.rasterGouraud(var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13);
 			}
@@ -1770,16 +1786,16 @@ public class Model extends TileItem {
 		int var2 = Rasterizer3D.getClipMidX();
 		int var3 = Rasterizer3D.getClipMidY();
 		int var4 = 0;
-		int var5 = this.texIndices1[var1];
-		int var6 = this.field2886[var1];
-		int var7 = this.field2887[var1];
+		int var5 = this.indices1[var1];
+		int var6 = this.indices2[var1];
+		int var7 = this.indices3[var1];
 		int var8 = field2920[var5];
 		int var9 = field2920[var6];
 		int var10 = field2920[var7];
-		if (this.field2892 == null) {
+		if (this.faceAlphas == null) {
 			Rasterizer3D.clips.currentFaceAlpha = 0;
 		} else {
-			Rasterizer3D.clips.currentFaceAlpha = this.field2892[var1] & 255;
+			Rasterizer3D.clips.currentFaceAlpha = this.faceAlphas[var1] & 255;
 		}
 
 		int var11;
@@ -1790,17 +1806,17 @@ public class Model extends TileItem {
 			field2945[var4] = modelViewportXs[var5];
 			field2923[var4] = modelViewportYs[var5];
 			field2936[var4] = field2905[var7];
-			field2931[var4++] = this.field2888[var1];
+			field2931[var4++] = this.faceColors1[var1];
 		} else {
 			var11 = field2918[var5];
 			var12 = field2919[var5];
-			var13 = this.field2888[var1];
+			var13 = this.faceColors1[var1];
 			if (var10 >= 50) {
 				var14 = field2942[var10 - var8] * (50 - var8);
 				field2945[var4] = var2 + (var11 + ((field2918[var7] - var11) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2923[var4] = var3 + (var12 + ((field2919[var7] - var12) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2936[var4] = field2927;
-				field2931[var4++] = var13 + ((this.field2890[var1] - var13) * var14 >> 16);
+				field2931[var4++] = var13 + ((this.faceColors3[var1] - var13) * var14 >> 16);
 			}
 
 			if (var9 >= 50) {
@@ -1808,7 +1824,7 @@ public class Model extends TileItem {
 				field2945[var4] = var2 + (var11 + ((field2918[var6] - var11) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2923[var4] = var3 + (var12 + ((field2919[var6] - var12) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2936[var4] = field2927;
-				field2931[var4++] = var13 + ((this.field2889[var1] - var13) * var14 >> 16);
+				field2931[var4++] = var13 + ((this.faceColors2[var1] - var13) * var14 >> 16);
 			}
 		}
 
@@ -1816,24 +1832,24 @@ public class Model extends TileItem {
 			field2945[var4] = modelViewportXs[var6];
 			field2923[var4] = modelViewportYs[var6];
 			field2936[var4] = field2905[var7];
-			field2931[var4++] = this.field2889[var1];
+			field2931[var4++] = this.faceColors2[var1];
 		} else {
 			var11 = field2918[var6];
 			var12 = field2919[var6];
-			var13 = this.field2889[var1];
+			var13 = this.faceColors2[var1];
 			if (var8 >= 50) {
 				var14 = field2942[var8 - var9] * (50 - var9);
 				field2945[var4] = var2 + (var11 + ((field2918[var5] - var11) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2923[var4] = var3 + (var12 + ((field2919[var5] - var12) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2936[var4] = field2927;
-				field2931[var4++] = var13 + ((this.field2888[var1] - var13) * var14 >> 16);
+				field2931[var4++] = var13 + ((this.faceColors1[var1] - var13) * var14 >> 16);
 			}
 
 			if (var10 >= 50) {
 				var14 = field2942[var10 - var9] * (50 - var9);
 				field2945[var4] = var2 + (var11 + ((field2918[var7] - var11) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2923[var4] = var3 + (var12 + ((field2919[var7] - var12) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
-				field2931[var4++] = var13 + ((this.field2890[var1] - var13) * var14 >> 16);
+				field2931[var4++] = var13 + ((this.faceColors3[var1] - var13) * var14 >> 16);
 			}
 		}
 
@@ -1841,17 +1857,17 @@ public class Model extends TileItem {
 			field2945[var4] = modelViewportXs[var7];
 			field2923[var4] = modelViewportYs[var7];
 			field2936[var4] = field2905[var7];
-			field2931[var4++] = this.field2890[var1];
+			field2931[var4++] = this.faceColors3[var1];
 		} else {
 			var11 = field2918[var7];
 			var12 = field2919[var7];
-			var13 = this.field2890[var1];
+			var13 = this.faceColors3[var1];
 			if (var9 >= 50) {
 				var14 = field2942[var9 - var10] * (50 - var10);
 				field2945[var4] = var2 + (var11 + ((field2918[var6] - var11) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2923[var4] = var3 + (var12 + ((field2919[var6] - var12) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2936[var4] = field2927;
-				field2931[var4++] = var13 + ((this.field2889[var1] - var13) * var14 >> 16);
+				field2931[var4++] = var13 + ((this.faceColors2[var1] - var13) * var14 >> 16);
 			}
 
 			if (var8 >= 50) {
@@ -1859,7 +1875,7 @@ public class Model extends TileItem {
 				field2945[var4] = var2 + (var11 + ((field2918[var5] - var11) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2923[var4] = var3 + (var12 + ((field2919[var5] - var12) * var14 >> 16)) * Rasterizer3D.get3dZoom() / 50;
 				field2936[var4] = field2927;
-				field2931[var4++] = var13 + ((this.field2888[var1] - var13) * var14 >> 16);
+				field2931[var4++] = var13 + ((this.faceColors1[var1] - var13) * var14 >> 16);
 			}
 		}
 
@@ -1891,11 +1907,11 @@ public class Model extends TileItem {
 			if (this.faceTextures != null && this.faceTextures[var1] != -1) {
 				int var23;
 				int var25;
-				if (this.field2943 != null && this.field2943[var1] != -1) {
-					int var24 = this.field2943[var1] & 255;
-					var25 = this.indices1[var24];
-					var22 = this.field2898[var24];
-					var23 = this.field2917[var24];
+				if (this.textureFaces != null && this.textureFaces[var1] != -1) {
+					int var24 = this.textureFaces[var1] & 255;
+					var25 = this.texIndices1[var24];
+					var22 = this.texIndices2[var24];
+					var23 = this.texIndices3[var24];
 				} else {
 					var25 = var5;
 					var22 = var6;
@@ -1903,26 +1919,26 @@ public class Model extends TileItem {
 				}
 
 				short var26 = this.faceTextures[var1];
-				if (this.field2890[var1] == -1) {
-					Rasterizer3D.rasterTextureWithShadingAndLighting(var14, var15, var16, var11, var12, var13, var17, var18, var19, this.field2888[var1], this.field2888[var1], this.field2888[var1], field2918[var25], field2918[var22], field2918[var23], field2919[var25], field2919[var22], field2919[var23], field2920[var25], field2920[var22], field2920[var23], var26);
-					Rasterizer3D.rasterTextureWithShadingAndLighting(var14, var16, field2923[3], var11, var13, field2945[3], var17, var19, field2936[3], this.field2888[var1], this.field2888[var1], this.field2888[var1], field2918[var25], field2918[var22], field2918[var23], field2919[var25], field2919[var22], field2919[var23], field2920[var25], field2920[var22], field2920[var23], var26);
+				if (this.faceColors3[var1] == -1) {
+					Rasterizer3D.rasterTextureWithShadingAndLighting(var14, var15, var16, var11, var12, var13, var17, var18, var19, this.faceColors1[var1], this.faceColors1[var1], this.faceColors1[var1], field2918[var25], field2918[var22], field2918[var23], field2919[var25], field2919[var22], field2919[var23], field2920[var25], field2920[var22], field2920[var23], var26);
+					Rasterizer3D.rasterTextureWithShadingAndLighting(var14, var16, field2923[3], var11, var13, field2945[3], var17, var19, field2936[3], this.faceColors1[var1], this.faceColors1[var1], this.faceColors1[var1], field2918[var25], field2918[var22], field2918[var23], field2919[var25], field2919[var22], field2919[var23], field2920[var25], field2920[var22], field2920[var23], var26);
 				} else {
 					Rasterizer3D.rasterTextureWithShadingAndLighting(var14, var15, var16, var11, var12, var13, var17, var18, var19, field2931[0], field2931[1], field2931[2], field2918[var25], field2918[var22], field2918[var23], field2919[var25], field2919[var22], field2919[var23], field2920[var25], field2920[var22], field2920[var23], var26);
 					Rasterizer3D.rasterTextureWithShadingAndLighting(var14, var16, field2923[3], var11, var13, field2945[3], var17, var19, field2936[3], field2931[0], field2931[2], field2931[3], field2918[var25], field2918[var22], field2918[var23], field2919[var25], field2919[var22], field2919[var23], field2920[var25], field2920[var22], field2920[var23], var26);
 				}
 			} else {
 				boolean var21 = this.method5290(var1);
-				if (this.field2890[var1] == -1 && var21) {
-					var22 = field2941[this.field2888[var1]];
-					Rasterizer3D.method4761(var14, var15, var16, var11, var12, var13, var17, var18, var19, var22);
-					Rasterizer3D.method4761(var14, var16, field2923[3], var11, var13, field2945[3], var17, var19, field2936[3], var22);
-				} else if (this.field2890[var1] == -1) {
-					var22 = field2941[this.field2888[var1]];
+				if (this.faceColors3[var1] == -1 && var21) {
+					var22 = field2941[this.faceColors1[var1]];
+					Rasterizer3D.rasterTriangle(var14, var15, var16, var11, var12, var13, var17, var18, var19, var22);
+					Rasterizer3D.rasterTriangle(var14, var16, field2923[3], var11, var13, field2945[3], var17, var19, field2936[3], var22);
+				} else if (this.faceColors3[var1] == -1) {
+					var22 = field2941[this.faceColors1[var1]];
 					Rasterizer3D.rasterFlat(var14, var15, var16, var11, var12, var13, var17, var18, var19, var22);
 					Rasterizer3D.rasterFlat(var14, var16, field2923[3], var11, var13, field2945[3], var17, var19, field2936[3], var22);
 				} else if (var21) {
-					Rasterizer3D.method4766(var14, var15, var16, var11, var12, var13, var17, var18, var19, field2931[0], field2931[1], field2931[2]);
-					Rasterizer3D.method4766(var14, var16, field2923[3], var11, var13, field2945[3], 0.0F, 0.0F, 0.0F, field2931[0], field2931[2], field2931[3]);
+					Rasterizer3D.rasterTriangleWithGradient(var14, var15, var16, var11, var12, var13, var17, var18, var19, field2931[0], field2931[1], field2931[2]);
+					Rasterizer3D.rasterTriangleWithGradient(var14, var16, field2923[3], var11, var13, field2945[3], 0.0F, 0.0F, 0.0F, field2931[0], field2931[2], field2931[3]);
 				} else {
 					Rasterizer3D.rasterGouraud(var14, var15, var16, var11, var12, var13, var17, var18, var19, field2931[0], field2931[1], field2931[2]);
 					Rasterizer3D.rasterGouraud(var14, var16, field2923[3], var11, var13, field2945[3], var17, var19, field2936[3], field2931[0], field2931[2], field2931[3]);
@@ -2023,7 +2039,7 @@ public class Model extends TileItem {
 		var9.method8399(var2);
 		int var10 = (int)var9.method8410(0.0F, 0.0F, 0.0F);
 		boolean var11 = false;
-		int var12 = var10 - this.field2909;
+		int var12 = var10 - this.radius;
 		boolean var13 = var12 <= 50 || this.faceTextures != null;
 		int var14 = Rasterizer3D.getClipMidX();
 		int var15 = Rasterizer3D.getClipMidY();

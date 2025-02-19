@@ -108,14 +108,14 @@ public class Varps {
 
 					Buffer var12;
 					int var13;
-					for (var12 = new Buffer((int)var11.length()); var12.field5570 < var12.field5573.length; var12.field5570 += var13) {
-						var13 = var11.read(var12.field5573, var12.field5570, var12.field5573.length - var12.field5570);
+					for (var12 = new Buffer((int)var11.length()); var12.offset < var12.array.length; var12.offset += var13) {
+						var13 = var11.read(var12.array, var12.offset, var12.array.length - var12.offset);
 						if (var13 == -1) {
 							throw new IOException();
 						}
 					}
 
-					var12.field5570 = 0;
+					var12.offset = 0;
 					var13 = var12.readUnsignedByte();
 					if (var13 < 1 || var13 > 3) {
 						throw new IOException("" + var13);

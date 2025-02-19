@@ -174,10 +174,10 @@ public class class36 {
 							String var11 = Interpreter.Interpreter_stringStack[Interpreter.Interpreter_stringStackSize + 1];
 							var12 = class272.getPacketBufferNode(ClientPacket.CHAT_SENDPRIVATE, Client.packetWriter.isaacCipher);
 							var12.packetBuffer.writeShort(0);
-							int var10 = var12.packetBuffer.field5570;
+							int var10 = var12.packetBuffer.offset;
 							var12.packetBuffer.writeStringCp1252NullTerminated(var8);
 							ViewportMouse.method5407(var12.packetBuffer, var11);
-							var12.packetBuffer.writeLengthShort(var12.packetBuffer.field5570 - var10);
+							var12.packetBuffer.writeLengthShort(var12.packetBuffer.offset - var10);
 							Client.packetWriter.addNode(var12);
 							return 1;
 						} else if (var0 == ScriptOpcodes.CHAT_SENDCLAN) {

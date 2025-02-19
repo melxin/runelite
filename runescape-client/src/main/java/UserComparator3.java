@@ -64,12 +64,12 @@ public class UserComparator3 extends AbstractUserComparator {
 				}
 			}
 
-			if (WorldEntity.field144.startsWith("win") && !var3) {
+			if (class31.field144.startsWith("win") && !var3) {
 				SoundSystem.method829(var0, 0);
 				return;
 			}
 
-			if (WorldEntity.field144.startsWith("mac")) {
+			if (class31.field144.startsWith("mac")) {
 				class178.method3767(var0, 1, var2);
 				return;
 			}

@@ -490,12 +490,12 @@ public final class WorldMapRenderer {
 		garbageValue = "-1892676673"
 	)
 	static final void method6148(Actor var0) {
-		var0.field1261 = var0.idleSequence;
-		if (var0.field1227 == 0) {
+		var0.movementSequence = var0.idleSequence;
+		if (var0.pathLength == 0) {
 			var0.field1277 = 0;
 		} else {
-			if (var0.field1265 != -1 && var0.field1268 == 0) {
-				SequenceDefinition var1 = WorldMapData_1.SequenceDefinition_get(var0.field1265);
+			if (var0.sequence != -1 && var0.sequenceDelay == 0) {
+				SequenceDefinition var1 = WorldMapData_1.SequenceDefinition_get(var0.sequence);
 				if (var0.field1291 > 0 && var1.field2373 == 0) {
 					++var0.field1277;
 					return;
@@ -509,51 +509,51 @@ public final class WorldMapRenderer {
 
 			int var10 = var0.x;
 			int var2 = var0.y;
-			int var3 = var0.field1287[var0.field1227 - 1] * 128 + var0.field1284 * 64;
-			int var4 = var0.field1288[var0.field1227 - 1] * 128 + var0.field1284 * 64;
+			int var3 = var0.pathX[var0.pathLength - 1] * 128 + var0.size * 64;
+			int var4 = var0.pathY[var0.pathLength - 1] * 128 + var0.size * 64;
 			if (var10 < var3) {
 				if (var2 < var4) {
-					var0.field1282 = 1280;
+					var0.orientation = 1280;
 				} else if (var2 > var4) {
-					var0.field1282 = 1792;
+					var0.orientation = 1792;
 				} else {
-					var0.field1282 = 1536;
+					var0.orientation = 1536;
 				}
 			} else if (var10 > var3) {
 				if (var2 < var4) {
-					var0.field1282 = 768;
+					var0.orientation = 768;
 				} else if (var2 > var4) {
-					var0.field1282 = 256;
+					var0.orientation = 256;
 				} else {
-					var0.field1282 = 512;
+					var0.orientation = 512;
 				}
 			} else if (var2 < var4) {
-				var0.field1282 = 1024;
+				var0.orientation = 1024;
 			} else if (var2 > var4) {
-				var0.field1282 = 0;
+				var0.orientation = 0;
 			}
 
-			MoveSpeed var5 = var0.field1289[var0.field1227 - 1];
+			MoveSpeed var5 = var0.pathTraversed[var0.pathLength - 1];
 			if (var3 - var10 <= 256 && var3 - var10 >= -256 && var4 - var2 <= 256 && var4 - var2 >= -256) {
-				int var6 = var0.field1282 - var0.field1222 & 2047;
+				int var6 = var0.orientation - var0.rotation & 2047;
 				if (var6 > 1024) {
 					var6 -= 2048;
 				}
 
-				int var7 = var0.field1238;
+				int var7 = var0.walkBackSequence;
 				if (var6 >= -256 && var6 <= 256) {
-					var7 = var0.field1237;
+					var7 = var0.walkSequence;
 				} else if (var6 >= 256 && var6 < 768) {
-					var7 = var0.field1232;
+					var7 = var0.walkRightSequence;
 				} else if (var6 >= -768 && var6 <= -256) {
-					var7 = var0.field1231;
+					var7 = var0.walkLeftSequence;
 				}
 
 				if (var7 == -1) {
-					var7 = var0.field1237;
+					var7 = var0.walkSequence;
 				}
 
-				var0.field1261 = var7;
+				var0.movementSequence = var7;
 				int var8 = 4;
 				boolean var9 = true;
 				if (var0 instanceof NPC) {
@@ -561,32 +561,32 @@ public final class WorldMapRenderer {
 				}
 
 				if (var9) {
-					if (var0.field1282 != var0.field1222 && var0.targetIndex == -1 && var0.field1267 != 0) {
+					if (var0.orientation != var0.rotation && var0.targetIndex == -1 && var0.field1265 != 0) {
 						var8 = 2;
 					}
 
-					if (var0.field1227 > 2) {
+					if (var0.pathLength > 2) {
 						var8 = 6;
 					}
 
-					if (var0.field1227 > 3) {
+					if (var0.pathLength > 3) {
 						var8 = 8;
 					}
 
-					if (var0.field1277 > 0 && var0.field1227 > 1) {
+					if (var0.field1277 > 0 && var0.pathLength > 1) {
 						var8 = 8;
 						--var0.field1277;
 					}
 				} else {
-					if (var0.field1227 > 1) {
+					if (var0.pathLength > 1) {
 						var8 = 6;
 					}
 
-					if (var0.field1227 > 2) {
+					if (var0.pathLength > 2) {
 						var8 = 8;
 					}
 
-					if (var0.field1277 > 0 && var0.field1227 > 1) {
+					if (var0.field1277 > 0 && var0.pathLength > 1) {
 						var8 = 8;
 						--var0.field1277;
 					}
@@ -599,24 +599,24 @@ public final class WorldMapRenderer {
 				}
 
 				if (var8 >= 8) {
-					if (var0.field1237 == var0.field1261 && var0.field1230 != -1) {
-						var0.field1261 = var0.field1230;
-					} else if (var0.field1261 == var0.field1238 && var0.field1234 != -1) {
-						var0.field1261 = var0.field1234;
-					} else if (var0.field1231 == var0.field1261 && var0.field1235 != -1) {
-						var0.field1261 = var0.field1235;
-					} else if (var0.field1232 == var0.field1261 && var0.field1272 != -1) {
-						var0.field1261 = var0.field1272;
+					if (var0.walkSequence == var0.movementSequence && var0.runSequence != -1) {
+						var0.movementSequence = var0.runSequence;
+					} else if (var0.movementSequence == var0.walkBackSequence && var0.field1234 != -1) {
+						var0.movementSequence = var0.field1234;
+					} else if (var0.walkLeftSequence == var0.movementSequence && var0.field1235 != -1) {
+						var0.movementSequence = var0.field1235;
+					} else if (var0.walkRightSequence == var0.movementSequence && var0.field1272 != -1) {
+						var0.movementSequence = var0.field1272;
 					}
 				} else if (var8 <= 2) {
-					if (var0.field1261 == var0.field1237 && var0.field1229 != -1) {
-						var0.field1261 = var0.field1229;
-					} else if (var0.field1238 == var0.field1261 && var0.field1243 != -1) {
-						var0.field1261 = var0.field1243;
-					} else if (var0.field1231 == var0.field1261 && var0.field1283 != -1) {
-						var0.field1261 = var0.field1283;
-					} else if (var0.field1261 == var0.field1232 && var0.field1240 != -1) {
-						var0.field1261 = var0.field1240;
+					if (var0.movementSequence == var0.walkSequence && var0.field1229 != -1) {
+						var0.movementSequence = var0.field1229;
+					} else if (var0.walkBackSequence == var0.movementSequence && var0.field1243 != -1) {
+						var0.movementSequence = var0.field1243;
+					} else if (var0.walkLeftSequence == var0.movementSequence && var0.field1283 != -1) {
+						var0.movementSequence = var0.field1283;
+					} else if (var0.movementSequence == var0.walkRightSequence && var0.field1240 != -1) {
+						var0.movementSequence = var0.field1240;
 					}
 				}
 
@@ -647,7 +647,7 @@ public final class WorldMapRenderer {
 				}
 
 				if (var3 == var0.x && var4 == var0.y) {
-					--var0.field1227;
+					--var0.pathLength;
 					if (var0.field1291 > 0) {
 						--var0.field1291;
 					}
@@ -656,7 +656,7 @@ public final class WorldMapRenderer {
 			} else {
 				var0.x = var3;
 				var0.y = var4;
-				--var0.field1227;
+				--var0.pathLength;
 				if (var0.field1291 > 0) {
 					--var0.field1291;
 				}

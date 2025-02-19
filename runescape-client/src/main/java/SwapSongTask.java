@@ -243,7 +243,7 @@ public class SwapSongTask extends SongTask {
 
 						if (Client.isResizable || Client.field732[var11] || Client.gameDrawingMode > 1) {
 							if (var10.type == 0 && !var10.isIf3 && var10.scrollHeight > var10.height * 1836304183) {
-								WorldEntity.drawScrollBar(var12 + var10.width * 779142065, var13, var10.scrollY, var10.height * 1836304183, var10.scrollHeight);
+								class31.drawScrollBar(var12 + var10.width * 779142065, var13, var10.scrollY, var10.height * 1836304183, var10.scrollHeight);
 							}
 
 							if (var10.type != 1) {
@@ -424,7 +424,7 @@ public class SwapSongTask extends SongTask {
 												if (var10.modelType == 6) {
 													var25 = var10.modelId;
 													if (var25 >= 0) {
-														NPC var34 = (NPC)class200.topLevelWorldView.field1356.method7890((long)var25);
+														NPC var34 = (NPC)class200.topLevelWorldView.npcs.get((long)var25);
 														if (var34 != null && var34.definition != null) {
 															var45 = var34.definition;
 															if (var45.transforms != null) {

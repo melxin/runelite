@@ -164,7 +164,7 @@ public class Language implements Enum {
 			JagexCache.archive13 = UserComparator4.newArchive(class400.field4686.field4685, true, false, true, false);
 			EnumComposition.field2004 = UserComparator4.newArchive(class400.field4665.field4685, false, true, true, false);
 			MenuAction.field931 = UserComparator4.newArchive(class400.field4677.field4685, false, true, true, false);
-			class78.field996 = UserComparator4.newArchive(class400.field4678.field4685, true, true, true, false);
+			Projectile.field996 = UserComparator4.newArchive(class400.field4678.field4685, true, true, true, false);
 			ScriptFrame.method1176(20, "Connecting to update server");
 			WorldMapIcon_0.method6208(class94.field1163);
 		} else {
@@ -179,7 +179,7 @@ public class Language implements Enum {
 				var25 += JagexCache.archive13.percentage() / 100;
 				var25 += EnumComposition.field2004.percentage() * 2 / 100;
 				var25 += MenuAction.field931.percentage() / 100;
-				var25 += class78.field996.vmethod7631() && class78.field996.isFullyLoaded() ? 1 : 0;
+				var25 += Projectile.field996.vmethod7631() && Projectile.field996.isFullyLoaded() ? 1 : 0;
 				if (var25 != 100) {
 					if (var25 != 0) {
 						ScriptFrame.method1176(30, "Checking for updates - " + var25 + "%");
@@ -192,7 +192,7 @@ public class Language implements Enum {
 					class109.method2978(EnumComposition.field2004, "Music Samples");
 					class109.method2978(MenuAction.field931, "Music Patches");
 					class355.field3850 = new GraphicsDefaults();
-					class355.field3850.decode(class78.field996);
+					class355.field3850.decode(Projectile.field996);
 					ScriptFrame.method1176(40, "Loaded update list");
 					WorldMapIcon_0.method6208(class94.field1165);
 				}
@@ -201,7 +201,7 @@ public class Language implements Enum {
 				if (Client.field545 == class94.field1165) {
 					class361.method7291(22050, !Client.isLowDetail, 2);
 					ArrayList var35 = new ArrayList(3);
-					FloorDecoration.pcmPlayer1 = WorldMapSectionType.method6244(GraphicsObject.taskHandler, 0, 2048);
+					FloorDecoration.pcmPlayer1 = WorldMapSectionType.method6244(class332.taskHandler, 0, 2048);
 					WorldMapIcon_0.pcmStreamMixer = new PcmStreamMixer();
 					PcmStreamMixer var38 = new PcmStreamMixer();
 					var38.addSubStream(WorldMapIcon_0.pcmStreamMixer);
@@ -297,7 +297,7 @@ public class Language implements Enum {
 								MilliClock.field2452 = UserComparator4.newArchive(class400.field4662.field4685, false, true, true, false);
 								class60.field422 = UserComparator4.newArchive(class400.field4675.field4685, false, true, true, true);
 								class189.archive2 = UserComparator4.newArchive(class400.field4663.field4685, false, true, true, false);
-								Client.field548 = UserComparator4.newArchive(class400.field4664.field4685, true, false, true, false);
+								Client.archive4 = UserComparator4.newArchive(class400.field4664.field4685, true, false, true, false);
 								WorldMapIcon_1.field3170 = UserComparator4.newArchive(class400.field4682.field4685, false, true, true, false);
 								class166.archive6 = UserComparator4.newArchive(class400.field4667.field4685, true, true, true, false);
 								class1.field3 = UserComparator4.newArchive(class400.field4669.field4685, false, true, true, false);
@@ -323,7 +323,7 @@ public class Language implements Enum {
 								var25 = var46 + MilliClock.field2452.percentage() * 4 / 100;
 								var25 += class60.field422.percentage() / 100;
 								var25 += class189.archive2.percentage() * 2 / 100;
-								var25 += Client.field548.percentage() / 100;
+								var25 += Client.archive4.percentage() / 100;
 								var25 += WorldMapIcon_1.field3170.percentage() / 100;
 								var25 += class166.archive6.percentage() * 10 / 100;
 								var25 += class1.field3.percentage() * 65 / 100;
@@ -360,30 +360,30 @@ public class Language implements Enum {
 								ScriptFrame.method1176(30, "Starting game engine...");
 								WorldMapIcon_0.method6208(class94.field1162);
 							} else if (Client.field545 == class94.field1162) {
-								if (!Client.field548.isFullyLoaded()) {
-									ScriptFrame.method1176(40, "Loading config - " + Client.field548.loadPercent() + "%");
+								if (!Client.archive4.isFullyLoaded()) {
+									ScriptFrame.method1176(40, "Loading config - " + Client.archive4.loadPercent() + "%");
 								} else if (!AsyncHttpResponse.field76.isFullyLoaded()) {
 									ScriptFrame.method1176(40, "Loading config - " + (80 + TextureProvider.archive12.loadPercent() / 6) + "%");
 								} else {
-									var33 = Client.field548;
+									var33 = Client.archive4;
 									FloorOverlayDefinition.FloorOverlayDefinition_archive = var33;
-									class6.method40(Client.field548);
-									var37 = Client.field548;
+									class6.method40(Client.archive4);
+									var37 = Client.archive4;
 									var2 = class1.field3;
 									KitDefinition.KitDefinition_archive = var37;
 									KitDefinition.KitDefinition_modelsArchive = var2;
 									KitDefinition.KitDefinition_fileCount = KitDefinition.KitDefinition_archive.getGroupFileCount(3);
-									Archive var28 = Client.field548;
+									Archive var28 = Client.archive4;
 									Archive var29 = class1.field3;
 									boolean var30 = Client.isLowDetail;
 									class279.ObjectDefinition_archive = var28;
 									ObjectComposition.ObjectDefinition_modelsArchive = var29;
 									ObjectComposition.ObjectDefinition_isLowDetail = var30;
-									class277.method5805(Client.field548, class1.field3);
-									Archive var39 = Client.field548;
+									class277.method5805(Client.archive4, class1.field3);
+									Archive var39 = Client.archive4;
 									StructComposition.StructDefinition_archive = var39;
-									GrandExchangeOfferUnitPriceComparator.method7855(Client.field548, class1.field3, Client.isMembersWorld, SecureRandomCallable.fontPlain11);
-									Archive var31 = Client.field548;
+									GrandExchangeOfferUnitPriceComparator.method7855(Client.archive4, class1.field3, Client.isMembersWorld, SecureRandomCallable.fontPlain11);
+									Archive var31 = Client.archive4;
 									Archive var42 = MilliClock.field2452;
 									Archive var9 = class60.field422;
 									Archive var10 = class189.archive2;
@@ -391,38 +391,38 @@ public class Language implements Enum {
 									SequenceDefinition.SequenceDefinition_animationsArchive = var42;
 									SequenceDefinition.SequenceDefinition_skeletonsArchive = var9;
 									class194.SpotAnimationDefinition_archive = var10;
-									Player.method2520(Client.field548, class1.field3);
-									Archive var11 = Client.field548;
+									Player.method2520(Client.archive4, class1.field3);
+									Archive var11 = Client.archive4;
 									VarbitComposition.VarbitDefinition_archive = var11;
-									Archive var12 = Client.field548;
+									Archive var12 = Client.archive4;
 									class447.VarpDefinition_archive = var12;
 									VarpDefinition.field1924 = class447.VarpDefinition_archive.getGroupFileCount(16);
 									class376.widgetDefinition = new WidgetDefinition(WorldMapIcon_1.field3170, class1.field3, PendingSpawn.archive8, JagexCache.archive13, HealthBarConfig.soundEffectsArchive);
-									UserComparator9.method3234(Client.field548);
-									ModeWhere.method7985(Client.field548);
-									Archive var13 = Client.field548;
+									UserComparator9.method3234(Client.archive4);
+									ModeWhere.method7985(Client.archive4);
+									Archive var13 = Client.archive4;
 									VarcInt.VarcInt_archive = var13;
-									class146.method3459(Client.field548);
-									Archive var14 = Client.field548;
+									class146.method3459(Client.archive4);
+									Archive var14 = Client.archive4;
 									ParamComposition.ParamDefinition_archive = var14;
-									Archive var15 = Client.field548;
+									Archive var15 = Client.archive4;
 									class28.field137 = var15;
-									GrandExchangeEvent.method7822(Client.field548);
-									PacketBufferNode.method6510(Client.field548);
-									class478.field5096 = new class550(DevicePcmPlayerProvider.field93, 54, class144.clientLanguage, Client.field548);
-									class328.field3644 = new class550(DevicePcmPlayerProvider.field93, 47, class144.clientLanguage, Client.field548);
+									GrandExchangeEvent.method7822(Client.archive4);
+									PacketBufferNode.method6510(Client.archive4);
+									class478.field5096 = new class550(DevicePcmPlayerProvider.field93, 54, class144.clientLanguage, Client.archive4);
+									class328.field3644 = new class550(DevicePcmPlayerProvider.field93, 47, class144.clientLanguage, Client.archive4);
 									class322.varcs = new Varcs();
-									Archive var16 = Client.field548;
+									Archive var16 = Client.archive4;
 									Archive var17 = PendingSpawn.archive8;
 									Archive var18 = JagexCache.archive13;
 									HitSplatDefinition.HitSplatDefinition_archive = var16;
 									HitSplatDefinition.field2188 = var17;
 									HitSplatDefinition.HitSplatDefinition_fontsArchive = var18;
-									Archive var19 = Client.field548;
+									Archive var19 = Client.archive4;
 									Archive var20 = PendingSpawn.archive8;
 									class557.HealthBarDefinition_archive = var19;
 									HealthBarDefinition.field1978 = var20;
-									Archive var21 = Client.field548;
+									Archive var21 = Client.archive4;
 									Archive var22 = PendingSpawn.archive8;
 									WorldMapElement.WorldMapElement_archive = var22;
 									if (var21.isFullyLoaded()) {
@@ -641,7 +641,7 @@ public class Language implements Enum {
 								}
 							} else if (class94.field1172 == Client.field545) {
 								class178.mouseRecorder = new MouseRecorder();
-								GraphicsObject.taskHandler.newThreadTask(class178.mouseRecorder, 10);
+								class332.taskHandler.newThreadTask(class178.mouseRecorder, 10);
 								ScriptFrame.method1176(92, "Loaded input handler");
 								WorldMapIcon_0.method6208(class94.field1181);
 							} else if (Client.field545 == class94.field1181) {

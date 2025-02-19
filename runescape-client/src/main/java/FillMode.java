@@ -1,10 +1,12 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("wy")
-public enum class581 implements Enum {
+@Implements("FillMode")
+public enum FillMode implements Enum {
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "Lwy;"
@@ -33,7 +35,7 @@ public enum class581 implements Enum {
 	)
 	final int field5653;
 
-	class581(int var3, int var4) {
+	FillMode(int var3, int var4) {
 		this.field5657 = var3;
 		this.field5653 = var4;
 	}
@@ -95,7 +97,7 @@ public enum class581 implements Enum {
 			int var16 = var15[var12][var13] + var15[var11][var13] + var15[var11][var14] + var15[var12][var14] >> 2;
 			int var17 = (var2 << 7) + (var9 << 6);
 			int var18 = (var3 << 7) + (var10 << 6);
-			long var19 = HttpRequestTask.calculateTag(var2, var3, 2, var8.int1 == 0, var4, var0.field1354);
+			long var19 = HttpRequestTask.calculateTag(var2, var3, 2, var8.int1 == 0, var4, var0.id);
 			int var21 = (var5 << 6) + var6;
 			if (var8.int3 == 1) {
 				var21 += 256;
@@ -112,10 +114,10 @@ public enum class581 implements Enum {
 					if (var8.animationId == -1 && var8.transforms == null) {
 						var30 = var8.getEntity(22, var5, var15, var17, var16, var18);
 					} else {
-						var30 = new class81(var0, var4, 22, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+						var30 = new DynamicObject(var0, var4, 22, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 					}
 
-					var22.newFloorDecoration(var1, var2, var3, var16, (TileItem)var30, var19, var21);
+					var22.newFloorDecoration(var1, var2, var3, var16, (Renderable)var30, var19, var21);
 					if (var8.interactType == 1 && var7 != null) {
 						var7.setBlockedByFloorDec(var2, var3);
 					}
@@ -129,10 +131,10 @@ public enum class581 implements Enum {
 						if (var8.animationId == -1 && var8.transforms == null) {
 							var30 = var8.getEntity(var6, var5, var15, var17, var16, var18);
 						} else {
-							var30 = new class81(var0, var4, var6, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+							var30 = new DynamicObject(var0, var4, var6, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 						}
 
-						var22.method5088(var1, var2, var3, var16, 1, 1, (TileItem)var30, 0, var19, var21);
+						var22.method5088(var1, var2, var3, var16, 1, 1, (Renderable)var30, 0, var19, var21);
 						if (var6 >= 12 && var6 <= 17 && var6 != 13 && var1 > 0) {
 							var10000 = Canvas.field98[var1][var2];
 							var10000[var3] |= 2340;
@@ -146,10 +148,10 @@ public enum class581 implements Enum {
 						if (var8.animationId == -1 && var8.transforms == null) {
 							var30 = var8.getEntity(0, var5, var15, var17, var16, var18);
 						} else {
-							var30 = new class81(var0, var4, 0, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+							var30 = new DynamicObject(var0, var4, 0, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 						}
 
-						var22.newBoundaryObject(var1, var2, var3, var16, (TileItem)var30, (TileItem)null, Tiles.field1051[var5], 0, var19, var21);
+						var22.newBoundaryObject(var1, var2, var3, var16, (Renderable)var30, (Renderable)null, Tiles.field1051[var5], 0, var19, var21);
 						if (var5 == 0) {
 							if (var8.clipped) {
 								SpriteMask.Tiles_underlays2[var1][var2][var3] = 50;
@@ -204,10 +206,10 @@ public enum class581 implements Enum {
 						if (var8.animationId == -1 && var8.transforms == null) {
 							var30 = var8.getEntity(1, var5, var15, var17, var16, var18);
 						} else {
-							var30 = new class81(var0, var4, 1, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+							var30 = new DynamicObject(var0, var4, 1, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 						}
 
-						var22.newBoundaryObject(var1, var2, var3, var16, (TileItem)var30, (TileItem)null, Tiles.field1052[var5], 0, var19, var21);
+						var22.newBoundaryObject(var1, var2, var3, var16, (Renderable)var30, (Renderable)null, Tiles.field1052[var5], 0, var19, var21);
 						if (var8.clipped) {
 							if (var5 == 0) {
 								SpriteMask.Tiles_underlays2[var1][var2][var3 + 1] = 50;
@@ -234,11 +236,11 @@ public enum class581 implements Enum {
 								var31 = var8.getEntity(2, var5 + 4, var15, var17, var16, var18);
 								var25 = var8.getEntity(2, var23, var15, var17, var16, var18);
 							} else {
-								var31 = new class81(var0, var4, 2, var5 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
-								var25 = new class81(var0, var4, 2, var23, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+								var31 = new DynamicObject(var0, var4, 2, var5 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
+								var25 = new DynamicObject(var0, var4, 2, var23, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 							}
 
-							var22.newBoundaryObject(var1, var2, var3, var16, (TileItem)var31, (TileItem)var25, Tiles.field1051[var5], Tiles.field1051[var23], var19, var21);
+							var22.newBoundaryObject(var1, var2, var3, var16, (Renderable)var31, (Renderable)var25, Tiles.field1051[var5], Tiles.field1051[var23], var19, var21);
 							if (var8.modelClipped) {
 								if (var5 == 0) {
 									var10000 = Canvas.field98[var1][var2];
@@ -275,10 +277,10 @@ public enum class581 implements Enum {
 							if (var8.animationId == -1 && var8.transforms == null) {
 								var30 = var8.getEntity(3, var5, var15, var17, var16, var18);
 							} else {
-								var30 = new class81(var0, var4, 3, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+								var30 = new DynamicObject(var0, var4, 3, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 							}
 
-							var22.newBoundaryObject(var1, var2, var3, var16, (TileItem)var30, (TileItem)null, Tiles.field1052[var5], 0, var19, var21);
+							var22.newBoundaryObject(var1, var2, var3, var16, (Renderable)var30, (Renderable)null, Tiles.field1052[var5], 0, var19, var21);
 							if (var8.clipped) {
 								if (var5 == 0) {
 									SpriteMask.Tiles_underlays2[var1][var2][var3 + 1] = 50;
@@ -299,10 +301,10 @@ public enum class581 implements Enum {
 							if (var8.animationId == -1 && var8.transforms == null) {
 								var30 = var8.getEntity(var6, var5, var15, var17, var16, var18);
 							} else {
-								var30 = new class81(var0, var4, var6, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+								var30 = new DynamicObject(var0, var4, var6, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 							}
 
-							var22.method5088(var1, var2, var3, var16, 1, 1, (TileItem)var30, 0, var19, var21);
+							var22.method5088(var1, var2, var3, var16, 1, 1, (Renderable)var30, 0, var19, var21);
 							if (var8.interactType != 0 && var7 != null) {
 								var7.addGameObject(var2, var3, var9, var10, var8.boolean1);
 							}
@@ -315,10 +317,10 @@ public enum class581 implements Enum {
 							if (var8.animationId == -1 && var8.transforms == null) {
 								var30 = var8.getEntity(4, var5, var15, var17, var16, var18);
 							} else {
-								var30 = new class81(var0, var4, 4, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+								var30 = new DynamicObject(var0, var4, 4, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 							}
 
-							var22.newWallDecoration(var1, var2, var3, var16, (TileItem)var30, (TileItem)null, Tiles.field1051[var5], 0, 0, 0, var19, var21);
+							var22.newWallDecoration(var1, var2, var3, var16, (Renderable)var30, (Renderable)null, Tiles.field1051[var5], 0, 0, 0, var19, var21);
 						} else {
 							long var24;
 							Object var26;
@@ -326,44 +328,44 @@ public enum class581 implements Enum {
 								var23 = 16;
 								var24 = var22.getBoundaryObjectTag(var1, var2, var3);
 								if (var24 != 0L) {
-									var23 = class177.getObjectDefinition(class248.Entity_unpackID(var24)).int2;
+									var23 = class177.getObjectDefinition(FaceNormal.Entity_unpackID(var24)).int2;
 								}
 
 								if (var8.animationId == -1 && var8.transforms == null) {
 									var26 = var8.getEntity(4, var5, var15, var17, var16, var18);
 								} else {
-									var26 = new class81(var0, var4, 4, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+									var26 = new DynamicObject(var0, var4, 4, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 								}
 
-								var22.newWallDecoration(var1, var2, var3, var16, (TileItem)var26, (TileItem)null, Tiles.field1051[var5], 0, var23 * Tiles.field1053[var5], var23 * Tiles.field1058[var5], var19, var21);
+								var22.newWallDecoration(var1, var2, var3, var16, (Renderable)var26, (Renderable)null, Tiles.field1051[var5], 0, var23 * Tiles.field1053[var5], var23 * Tiles.field1058[var5], var19, var21);
 							} else if (var6 == 6) {
 								var23 = 8;
 								var24 = var22.getBoundaryObjectTag(var1, var2, var3);
 								if (var24 != 0L) {
-									var23 = class177.getObjectDefinition(class248.Entity_unpackID(var24)).int2 / 2;
+									var23 = class177.getObjectDefinition(FaceNormal.Entity_unpackID(var24)).int2 / 2;
 								}
 
 								if (var8.animationId == -1 && var8.transforms == null) {
 									var26 = var8.getEntity(4, var5 + 4, var15, var17, var16, var18);
 								} else {
-									var26 = new class81(var0, var4, 4, var5 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+									var26 = new DynamicObject(var0, var4, 4, var5 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 								}
 
-								var22.newWallDecoration(var1, var2, var3, var16, (TileItem)var26, (TileItem)null, 256, var5, var23 * Tiles.field1055[var5], var23 * Tiles.field1056[var5], var19, var21);
+								var22.newWallDecoration(var1, var2, var3, var16, (Renderable)var26, (Renderable)null, 256, var5, var23 * Tiles.field1055[var5], var23 * Tiles.field1056[var5], var19, var21);
 							} else if (var6 == 7) {
 								var29 = var5 + 2 & 3;
 								if (var8.animationId == -1 && var8.transforms == null) {
 									var30 = var8.getEntity(4, var29 + 4, var15, var17, var16, var18);
 								} else {
-									var30 = new class81(var0, var4, 4, var29 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+									var30 = new DynamicObject(var0, var4, 4, var29 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 								}
 
-								var22.newWallDecoration(var1, var2, var3, var16, (TileItem)var30, (TileItem)null, 256, var29, 0, 0, var19, var21);
+								var22.newWallDecoration(var1, var2, var3, var16, (Renderable)var30, (Renderable)null, 256, var29, 0, 0, var19, var21);
 							} else if (var6 == 8) {
 								var23 = 8;
 								var24 = var22.getBoundaryObjectTag(var1, var2, var3);
 								if (0L != var24) {
-									var23 = class177.getObjectDefinition(class248.Entity_unpackID(var24)).int2 / 2;
+									var23 = class177.getObjectDefinition(FaceNormal.Entity_unpackID(var24)).int2 / 2;
 								}
 
 								int var28 = var5 + 2 & 3;
@@ -372,11 +374,11 @@ public enum class581 implements Enum {
 									var26 = var8.getEntity(4, var5 + 4, var15, var17, var16, var18);
 									var27 = var8.getEntity(4, var28 + 4, var15, var17, var16, var18);
 								} else {
-									var26 = new class81(var0, var4, 4, var5 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
-									var27 = new class81(var0, var4, 4, var28 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+									var26 = new DynamicObject(var0, var4, 4, var5 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
+									var27 = new DynamicObject(var0, var4, 4, var28 + 4, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 								}
 
-								var22.newWallDecoration(var1, var2, var3, var16, (TileItem)var26, (TileItem)var27, 256, var5, var23 * Tiles.field1055[var5], var23 * Tiles.field1056[var5], var19, var21);
+								var22.newWallDecoration(var1, var2, var3, var16, (Renderable)var26, (Renderable)var27, 256, var5, var23 * Tiles.field1055[var5], var23 * Tiles.field1056[var5], var19, var21);
 							}
 						}
 					}
@@ -384,10 +386,10 @@ public enum class581 implements Enum {
 					if (var8.animationId == -1 && var8.transforms == null) {
 						var30 = var8.getEntity(10, var5, var15, var17, var16, var18);
 					} else {
-						var30 = new class81(var0, var4, 10, var5, var1, var2, var3, var8.animationId, var8.boolean3, (TileItem)null);
+						var30 = new DynamicObject(var0, var4, 10, var5, var1, var2, var3, var8.animationId, var8.boolean3, (Renderable)null);
 					}
 
-					if (var30 != null && var22.method5088(var1, var2, var3, var16, var9, var10, (TileItem)var30, var6 == 11 ? 256 : 0, var19, var21) && var8.clipped) {
+					if (var30 != null && var22.method5088(var1, var2, var3, var16, var9, var10, (Renderable)var30, var6 == 11 ? 256 : 0, var19, var21) && var8.clipped) {
 						var29 = 15;
 						if (var30 instanceof Model) {
 							var29 = ((Model)var30).method5266() / 4;

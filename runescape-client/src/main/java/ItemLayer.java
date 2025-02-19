@@ -38,19 +38,19 @@ public final class ItemLayer {
 		descriptor = "Ljc;"
 	)
 	@Export("first")
-	TileItem first;
+	Renderable first;
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "Ljc;"
 	)
 	@Export("second")
-	TileItem second;
+	Renderable second;
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "Ljc;"
 	)
 	@Export("third")
-	TileItem third;
+	Renderable third;
 	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
 		longValue = 1723065648273843879L

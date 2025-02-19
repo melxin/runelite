@@ -34,7 +34,7 @@ public class class161 extends class165 {
 	)
 	void vmethod3695(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			--var1.field5570;
+			--var1.offset;
 			var1.readLong();
 		}
 
