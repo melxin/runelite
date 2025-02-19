@@ -4928,7 +4928,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3524 == var1.serverPacket) {
+				if (ServerPacket.PLAYER_ANIM_SPECIFIC == var1.serverPacket) {
 					var66 = var3.readUnsignedByteNeg();
 					var5 = var3.readUnsignedShortAdd();
 					if (var5 == 65535) {
@@ -5160,7 +5160,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3559 == var1.serverPacket) {
+				if (ServerPacket.UPDATE_RUN_WEIGHT == var1.serverPacket) {
 					class478.method9065();
 					weight = var3.readShort();
 					field720 = cycleCntr;
@@ -5560,7 +5560,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3541 == var1.serverPacket) {
+				if (ServerPacket.UPDATE_RUN_ENERGY == var1.serverPacket) {
 					class478.method9065();
 					runEnergy = var3.readUnsignedShort();
 					field720 = cycleCntr;
@@ -5608,7 +5608,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3540 == var1.serverPacket) {
+				if (ServerPacket.CLEAR_ENTITIES == var1.serverPacket) {
 					class376.worldView.field1357.method9009();
 					class376.worldView.field1355.method9009();
 					class376.worldView.npcs.clear();
@@ -5617,20 +5617,20 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3548 == var1.serverPacket) {
+				if (ServerPacket.FRIENDS_LIST_LOADED == var1.serverPacket) {
 					SoundCache.friendSystem.method1891();
 					field714 = cycleCntr;
 					var1.serverPacket = null;
 					return true;
 				}
 
-				if (ServerPacket.field3514 == var1.serverPacket) {
+				if (ServerPacket.SERVER_TICK_END == var1.serverPacket) {
 					++serverCycle;
 					var1.serverPacket = null;
 					return true;
 				}
 
-				if (ServerPacket.field3525 == var1.serverPacket) {
+				if (ServerPacket.RESET_ANIMS == var1.serverPacket) {
 					Player var75;
 					for (Iterator var53 = class376.worldView.players.iterator(); var53.hasNext(); var75.sequence = -1) {
 						var75 = (Player)var53.next();
@@ -5651,7 +5651,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.SET_NPC_UPDATE_ORIGIN == var1.serverPacket) {
+				if (ServerPacket.CHAT_FILTER_SETTINGS == var1.serverPacket) {
 					publicChatMode = var3.readUnsignedByteAdd();
 					tradeChatMode = var3.readUnsignedByteNeg();
 					var1.serverPacket = null;
@@ -6082,7 +6082,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3598 == var1.serverPacket) {
+				if (ServerPacket.MINIMAP_FLAG_SET == var1.serverPacket) {
 					destinationX = var3.readUnsignedByte();
 					if (destinationX == 255) {
 						destinationX = 0;

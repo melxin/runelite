@@ -241,7 +241,7 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmu;"
 	)
-	public static final ClientPacket field3426;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("bl")
 	@ObfuscatedSignature(
 		descriptor = "Lmu;"
@@ -567,7 +567,7 @@ public class ClientPacket implements class323 {
 		IF_SUBOP = new ClientPacket(43, 10);
 		IF_BUTTON9 = new ClientPacket(44, 8);
 		OPPLAYER5 = new ClientPacket(45, 3);
-		field3426 = new ClientPacket(46, 0);
+		FREECAM_EXIT = new ClientPacket(46, 0);
 		IF_CRMVIEW = new ClientPacket(47, 22);
 		IF_BUTTON4 = new ClientPacket(48, 8);
 		DOCHEAT = new ClientPacket(49, -1);

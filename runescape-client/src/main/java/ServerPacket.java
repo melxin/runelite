@@ -57,7 +57,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3514;
+	public static final ServerPacket SERVER_TICK_END;
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -102,17 +102,17 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3598;
+	public static final ServerPacket MINIMAP_FLAG_SET;
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3524;
+	public static final ServerPacket PLAYER_ANIM_SPECIFIC;
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3525;
+	public static final ServerPacket RESET_ANIMS;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -187,12 +187,12 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3540;
+	public static final ServerPacket CLEAR_ENTITIES;
 	@ObfuscatedName("by")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3541;
+	public static final ServerPacket UPDATE_RUN_ENERGY;
 	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -227,7 +227,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3548;
+	public static final ServerPacket FRIENDS_LIST_LOADED;
 	@ObfuscatedName("bb")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -477,7 +477,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket field3559;
+	public static final ServerPacket UPDATE_RUN_WEIGHT;
 	@ObfuscatedName("dm")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -617,7 +617,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ServerPacket SET_NPC_UPDATE_ORIGIN;
+	public static final ServerPacket CHAT_FILTER_SETTINGS;
 	@ObfuscatedName("ej")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -716,7 +716,7 @@ public class ServerPacket {
 		MAP_ANIM = new ServerPacket(6, 6);
 		LOC_ANIM = new ServerPacket(7, 4);
 		UPDATE_STAT = new ServerPacket(8, 7);
-		field3514 = new ServerPacket(9, 0);
+		SERVER_TICK_END = new ServerPacket(9, 0);
 		NPC_INFO_LARGE_VIEWPORT = new ServerPacket(10, -2);
 		PROJECTILE_SPAWN = new ServerPacket(11, 22);
 		URL_OPEN = new ServerPacket(12, -2);
@@ -725,9 +725,9 @@ public class ServerPacket {
 		MESSAGE_FRIEND_PRIVATE = new ServerPacket(15, -1);
 		CAM_LOOKAT_EASED_COORD = new ServerPacket(16, 7);
 		UPDATE_FRIENDLIST = new ServerPacket(17, -2);
-		field3598 = new ServerPacket(18, 2);
-		field3524 = new ServerPacket(19, 3);
-		field3525 = new ServerPacket(20, 0);
+		MINIMAP_FLAG_SET = new ServerPacket(18, 2);
+		PLAYER_ANIM_SPECIFIC = new ServerPacket(19, 3);
+		RESET_ANIMS = new ServerPacket(20, 0);
 		CLAN_CHANNEL_DELTA = new ServerPacket(21, -2);
 		IF_SETHIDE = new ServerPacket(22, 5);
 		MIDI_SONG = new ServerPacket(23, 10);
@@ -742,15 +742,15 @@ public class ServerPacket {
 		MESSAGE_GAME = new ServerPacket(32, -1);
 		MESSAGE_FRIENDS_CHAT = new ServerPacket(33, -1);
 		field3539 = new ServerPacket(34, 1);
-		field3540 = new ServerPacket(35, 0);
-		field3541 = new ServerPacket(36, 2);
+		CLEAR_ENTITIES = new ServerPacket(35, 0);
+		UPDATE_RUN_ENERGY = new ServerPacket(36, 2);
 		field3542 = new ServerPacket(37, -1);
 		CAM_SMOOTH_RESET = new ServerPacket(38, 4);
 		field3544 = new ServerPacket(39, 7);
 		UPDATE_UID192 = new ServerPacket(40, 28);
 		LOC_MERGEPLAYER = new ServerPacket(41, 14);
 		IF_SETPLAYERHEAD = new ServerPacket(42, 4);
-		field3548 = new ServerPacket(43, 0);
+		FRIENDS_LIST_LOADED = new ServerPacket(43, 0);
 		IF_CLOSESUB = new ServerPacket(44, 4);
 		IF_SETANIM = new ServerPacket(45, 6);
 		CAM_MOVETO = new ServerPacket(46, 8);
@@ -800,7 +800,7 @@ public class ServerPacket {
 		CAM_LOOKAT = new ServerPacket(90, 7);
 		UPDATE_TRADING_POST = new ServerPacket(91, -2);
 		IF_SET_PLAYERMODEL_BODYTYPE = new ServerPacket(92, 5);
-		field3559 = new ServerPacket(93, 2);
+		UPDATE_RUN_WEIGHT = new ServerPacket(93, 2);
 		UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL = new ServerPacket(94, 3);
 		IF_SETNPCHEAD = new ServerPacket(95, 6);
 		OBJ_OPFILTER = new ServerPacket(96, 4);
@@ -828,7 +828,7 @@ public class ServerPacket {
 		HINT_ARROW = new ServerPacket(118, 6);
 		IF_SET_ROTATE_SPEED = new ServerPacket(119, 8);
 		IF_SET_EVENTS = new ServerPacket(120, 12);
-		SET_NPC_UPDATE_ORIGIN = new ServerPacket(121, 2);
+		CHAT_FILTER_SETTINGS = new ServerPacket(121, 2);
 		RESET_CLIENT_VARCACHE = new ServerPacket(122, 0);
 		MESSAGE_PRIVATE = new ServerPacket(123, -2);
 		field3580 = new ServerPacket(124, -2);
