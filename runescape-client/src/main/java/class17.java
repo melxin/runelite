@@ -7,16 +7,16 @@ import javax.security.cert.X509Certificate;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("av")
+@ObfuscatedName("ag")
 class class17 implements SSLSession {
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Laq;"
+		descriptor = "Lai;"
 	)
 	final SecureRandomSSLSocket this$1;
 
 	@ObfuscatedSignature(
-		descriptor = "(Laq;)V"
+		descriptor = "(Lai;)V"
 	)
 	class17(SecureRandomSSLSocket var1) {
 		this.this$1 = var1;
@@ -26,19 +26,15 @@ class class17 implements SSLSession {
 		throw new UnsupportedOperationException();
 	}
 
-	public int getApplicationBufferSize() {
-		return 0;
-	}
-
 	public String getCipherSuite() {
 		throw new UnsupportedOperationException();
 	}
 
-	public long getCreationTime() {
+	public long getLastAccessedTime() {
 		throw new UnsupportedOperationException();
 	}
 
-	public long getLastAccessedTime() {
+	public void removeValue(String var1) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -54,15 +50,15 @@ class class17 implements SSLSession {
 		return null;
 	}
 
-	public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
-		return null;
+	public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
+		return this.this$1.field57;
 	}
 
-	public int getPeerPort() {
-		return 0;
+	public String getPeerHost() {
+		throw new UnsupportedOperationException();
 	}
 
-	public byte[] getId() {
+	public String getProtocol() {
 		throw new UnsupportedOperationException();
 	}
 
@@ -70,11 +66,15 @@ class class17 implements SSLSession {
 		throw new UnsupportedOperationException();
 	}
 
+	public Object getValue(String var1) {
+		throw new UnsupportedOperationException();
+	}
+
 	public String[] getValueNames() {
 		throw new UnsupportedOperationException();
 	}
 
-	public boolean isValid() {
+	public void invalidate() {
 		throw new UnsupportedOperationException();
 	}
 
@@ -82,27 +82,27 @@ class class17 implements SSLSession {
 		throw new UnsupportedOperationException();
 	}
 
-	public String getPeerHost() {
+	public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
+		return null;
+	}
+
+	public boolean isValid() {
 		throw new UnsupportedOperationException();
 	}
 
-	public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
-		return this.this$1.field57;
+	public int getPeerPort() {
+		return 0;
 	}
 
-	public void invalidate() {
+	public int getApplicationBufferSize() {
+		return 0;
+	}
+
+	public byte[] getId() {
 		throw new UnsupportedOperationException();
 	}
 
-	public Object getValue(String var1) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void removeValue(String var1) {
-		throw new UnsupportedOperationException();
-	}
-
-	public String getProtocol() {
+	public long getCreationTime() {
 		throw new UnsupportedOperationException();
 	}
 }

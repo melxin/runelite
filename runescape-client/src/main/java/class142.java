@@ -1,69 +1,34 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fq")
+@ObfuscatedName("fw")
 public class class142 {
-	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = 1869948611
-	)
-	static int field1631;
-
-	@ObfuscatedName("ay")
+	@ObfuscatedName("jh")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lfe;",
-		garbageValue = "121870175"
+		descriptor = "Lwg;"
 	)
-	static class145 method3513(int var0) {
-		class145[] var1 = new class145[]{class145.field1652, class145.field1658, class145.field1649, class145.field1650, class145.field1651, class145.field1647, class145.field1648, class145.field1653, class145.field1655};
-		class145 var2 = (class145)StructComposition.findEnumerated(var1, var0);
-		if (var2 == null) {
-			var2 = class145.field1655;
-		}
+	@Export("compass")
+	static SpritePixels compass;
 
-		return var2;
-	}
-
-	@ObfuscatedName("ah")
+	@ObfuscatedName("lq")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lkl;",
-		garbageValue = "1781059216"
+		descriptor = "(I)V",
+		garbageValue = "-1779336879"
 	)
-	@Export("getObjectDefinition")
-	public static ObjectComposition getObjectDefinition(int var0) {
-		ObjectComposition var1 = (ObjectComposition)ObjectComposition.ObjectDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = ObjectComposition.ObjectDefinition_archive.takeFile(6, var0);
-			var1 = new ObjectComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+	static void method3403() {
+		if (Client.isSpellSelected) {
+			Widget var0 = class376.widgetDefinition.getWidgetChild(class171.selectedSpellWidget, Client.selectedSpellChildIndex);
+			if (var0 != null && var0.onTargetLeave != null) {
+				ScriptEvent var1 = new ScriptEvent();
+				var1.widget = var0;
+				var1.args = var0.onTargetLeave;
+				MilliClock.runScriptEvent(var1);
 			}
 
-			var1.postDecode();
-			if (var1.isSolid) {
-				var1.interactType = 0;
-				var1.boolean1 = false;
-			}
-
-			ObjectComposition.ObjectDefinition_cached.put(var1, (long)var0);
-			return var1;
+			Client.selectedSpellItemId = -1;
+			Client.isSpellSelected = false;
+			MilliClock.invalidateWidget(var0);
 		}
-	}
-
-	@ObfuscatedName("ot")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "0"
-	)
-	static void method3514() {
-		if (Client.oculusOrbState == 1) {
-			Client.field602 = true;
-		}
-
 	}
 }

@@ -3,88 +3,61 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("le")
+@ObfuscatedName("lh")
 @Implements("WorldMapCacheName")
 public class WorldMapCacheName {
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Llh;"
+	)
+	public static final WorldMapCacheName field3340;
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lle;"
+		descriptor = "Llh;"
 	)
-	public static final WorldMapCacheName field3264;
-	@ObfuscatedName("ah")
+	public static final WorldMapCacheName field3336;
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lle;"
+		descriptor = "Llh;"
 	)
-	public static final WorldMapCacheName field3269;
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lle;"
-	)
-	public static final WorldMapCacheName field3265;
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lle;"
-	)
-	static final WorldMapCacheName field3263;
+	public static final WorldMapCacheName field3338;
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lle;"
+		descriptor = "Llh;"
 	)
-	public static final WorldMapCacheName field3267;
-	@ObfuscatedName("cb")
+	static final WorldMapCacheName field3337;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lql;"
+		descriptor = "Llh;"
 	)
-	static Bounds field3266;
-	@ObfuscatedName("jc")
-	@Export("regionMapArchives")
-	static byte[][] regionMapArchives;
-	@ObfuscatedName("an")
+	public static final WorldMapCacheName field3339;
+	@ObfuscatedName("ac")
 	@Export("name")
 	public final String name;
 
 	static {
-		field3264 = new WorldMapCacheName("details");
-		field3269 = new WorldMapCacheName("compositemap");
-		field3265 = new WorldMapCacheName("compositetexture");
-		field3263 = new WorldMapCacheName("area");
-		field3267 = new WorldMapCacheName("labels");
+		field3340 = new WorldMapCacheName("details");
+		field3336 = new WorldMapCacheName("compositemap");
+		field3338 = new WorldMapCacheName("compositetexture");
+		field3337 = new WorldMapCacheName("area");
+		field3339 = new WorldMapCacheName("labels");
 	}
 
 	WorldMapCacheName(String var1) {
 		this.name = var1;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "-34"
+		descriptor = "(II)I",
+		garbageValue = "-673049827"
 	)
-	@Export("clearItemContainer")
-	static void clearItemContainer(int var0) {
-		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var1 != null) {
-			for (int var2 = 0; var2 < var1.ids.length; ++var2) {
-				var1.ids[var2] = -1;
-				var1.quantities[var2] = 0;
-			}
-
-		}
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(Lna;B)I",
-		garbageValue = "8"
-	)
-	static int method6467(Widget var0) {
-		if (var0.type != 11) {
-			Interpreter.Interpreter_stringStack[HealthBarConfig.Interpreter_stringStackSize - 1] = "";
-			return 1;
-		} else {
-			String var1 = Interpreter.Interpreter_stringStack[--HealthBarConfig.Interpreter_stringStackSize];
-			Interpreter.Interpreter_stringStack[++HealthBarConfig.Interpreter_stringStackSize - 1] = var0.method7548(var1);
-			return 1;
-		}
+	public static int method6355(int var0) {
+		var0 = (var0 & 1431655765) + (var0 >>> 1 & 1431655765);
+		var0 = (var0 >>> 2 & 858993459) + (var0 & 858993459);
+		var0 = var0 + (var0 >>> 4) & 252645135;
+		var0 += var0 >>> 8;
+		var0 += var0 >>> 16;
+		return var0 & 255;
 	}
 }

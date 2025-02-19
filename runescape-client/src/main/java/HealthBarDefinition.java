@@ -4,89 +4,81 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jc")
+@ObfuscatedName("he")
 @Implements("HealthBarDefinition")
 public class HealthBarDefinition extends DualNode {
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
+		descriptor = "Lpl;"
 	)
-	@Export("HealthBarDefinition_archive")
-	static AbstractArchive HealthBarDefinition_archive;
-	@ObfuscatedName("ah")
+	public static AbstractArchive field1978;
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
-	)
-	static AbstractArchive field2572;
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("HealthBarDefinition_cached")
-	static EvictingDualNodeHashTable HealthBarDefinition_cached;
-	@ObfuscatedName("ao")
+	public static EvictingDualNodeHashTable HealthBarDefinition_cached;
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("HealthBarDefinition_cachedSprites")
-	static EvictingDualNodeHashTable HealthBarDefinition_cachedSprites;
-	@ObfuscatedName("jr")
-	static int[] field2578;
-	@ObfuscatedName("ad")
+	public static EvictingDualNodeHashTable HealthBarDefinition_cachedSprites;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1735350197
+		intValue = -1065415567
 	)
-	public int field2568;
-	@ObfuscatedName("ax")
+	public int field1980;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 849378789
+		intValue = -277746591
 	)
 	@Export("int1")
 	public int int1;
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 437889605
+		intValue = 1087481631
 	)
 	@Export("int2")
 	public int int2;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 798558681
+		intValue = 593108275
 	)
 	@Export("int3")
 	public int int3;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1254299183
+		intValue = -1504826967
 	)
-	public int field2565;
-	@ObfuscatedName("as")
+	public int field1984;
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = 566914995
+		intValue = -1639116147
 	)
 	@Export("int5")
 	public int int5;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 683773839
+		intValue = -874201563
 	)
 	@Export("frontSpriteID")
 	int frontSpriteID;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = -1171934191
+		intValue = 300501177
 	)
 	@Export("backSpriteID")
 	int backSpriteID;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1397526847
+		intValue = -316020979
 	)
 	@Export("width")
 	public int width;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 714006507
+		intValue = 1553312085
 	)
 	@Export("widthPadding")
 	public int widthPadding;
@@ -100,7 +92,7 @@ public class HealthBarDefinition extends DualNode {
 		this.int1 = 255;
 		this.int2 = 255;
 		this.int3 = -1;
-		this.field2565 = 1;
+		this.field1984 = 1;
 		this.int5 = 70;
 		this.frontSpriteID = -1;
 		this.backSpriteID = -1;
@@ -108,10 +100,10 @@ public class HealthBarDefinition extends DualNode {
 		this.widthPadding = 0;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;I)V",
-		garbageValue = "163483323"
+		garbageValue = "-1868501661"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -125,10 +117,10 @@ public class HealthBarDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;IB)V",
-		garbageValue = "-95"
+		descriptor = "(Lvy;II)V",
+		garbageValue = "-1926368622"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -160,8 +152,8 @@ public class HealthBarDefinition extends DualNode {
 
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lvf;",
-		garbageValue = "1179546533"
+		descriptor = "(I)Lwg;",
+		garbageValue = "1484979707"
 	)
 	@Export("getFrontSprite")
 	public SpritePixels getFrontSprite() {
@@ -172,7 +164,7 @@ public class HealthBarDefinition extends DualNode {
 			if (var1 != null) {
 				return var1;
 			} else {
-				var1 = ChatChannel.SpriteBuffer_getSprite(field2572, this.frontSpriteID, 0);
+				var1 = class145.SpriteBuffer_getSprite(field1978, this.frontSpriteID, 0);
 				if (var1 != null) {
 					HealthBarDefinition_cachedSprites.put(var1, (long)this.frontSpriteID);
 				}
@@ -182,10 +174,10 @@ public class HealthBarDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lvf;",
-		garbageValue = "-1979105144"
+		descriptor = "(B)Lwg;",
+		garbageValue = "-89"
 	)
 	@Export("getBackSprite")
 	public SpritePixels getBackSprite() {
@@ -196,44 +188,13 @@ public class HealthBarDefinition extends DualNode {
 			if (var1 != null) {
 				return var1;
 			} else {
-				var1 = ChatChannel.SpriteBuffer_getSprite(field2572, this.backSpriteID, 0);
+				var1 = class145.SpriteBuffer_getSprite(field1978, this.backSpriteID, 0);
 				if (var1 != null) {
 					HealthBarDefinition_cachedSprites.put(var1, (long)this.backSpriteID);
 				}
 
 				return var1;
 			}
-		}
-	}
-
-	@ObfuscatedName("cc")
-	@ObfuscatedSignature(
-		descriptor = "(ILdm;ZB)I",
-		garbageValue = "63"
-	)
-	static int method5247(int var0, Script var1, boolean var2) {
-		int var3;
-		int var4;
-		if (var0 == 8000) {
-			--ScriptFrame.Interpreter_intStackSize;
-			var3 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
-			var4 = Interpreter.Interpreter_arrayLengths[var3];
-			DesktopPlatformInfoProvider.method9651(Interpreter.Interpreter_arrays[var3], new int[var4], 0, var4 - 1);
-			return 1;
-		} else if (var0 == 8001) {
-			ScriptFrame.Interpreter_intStackSize -= 3;
-			var3 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
-			var4 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
-			int var5 = Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
-			int var6 = Interpreter.Interpreter_arrayLengths[var3];
-			if (var6 <= 1) {
-				return 1;
-			} else {
-				class451.method8899(Interpreter.Interpreter_arrays[var3], var6, var4, var5);
-				return 1;
-			}
-		} else {
-			return 2;
 		}
 	}
 }

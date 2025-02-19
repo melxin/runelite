@@ -7,10 +7,12 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eb")
+@ObfuscatedName("ei")
 @Implements("SecureUrlRequester")
 public class SecureUrlRequester extends UrlRequester {
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ao")
+	static int[][] field1506;
+	@ObfuscatedName("ah")
 	@Export("secureHttps")
 	final boolean secureHttps;
 
@@ -19,10 +21,10 @@ public class SecureUrlRequester extends UrlRequester {
 		this.secureHttps = var1;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Len;I)V",
-		garbageValue = "-1821014649"
+		descriptor = "(Ley;I)V",
+		garbageValue = "-2139590636"
 	)
 	@Export("openConnection")
 	void openConnection(UrlRequest var1) throws IOException {
@@ -35,12 +37,12 @@ public class SecureUrlRequester extends UrlRequester {
 				try {
 					label131: {
 						var9 = true;
-						String var3 = var1.field1473.getProtocol();
+						String var3 = var1.field1509.getProtocol();
 						if (var3.equals("http")) {
 							var2 = this.openHttpConnection(var1);
 						} else {
 							if (!var3.equals("https")) {
-								var1.field1476 = UrlRequest.field1474;
+								var1.field1512 = UrlRequest.field1510;
 								var9 = false;
 								break label131;
 							}
@@ -48,12 +50,12 @@ public class SecureUrlRequester extends UrlRequester {
 							var2 = this.openHttpsConnection(var1);
 						}
 
-						this.method3289(var2, var1);
+						this.method3146(var2, var1);
 						var9 = false;
 						break label136;
 					}
 				} catch (IOException var10) {
-					var1.field1476 = UrlRequest.field1474;
+					var1.field1512 = UrlRequest.field1510;
 					var9 = false;
 					break label128;
 				} finally {
@@ -89,26 +91,26 @@ public class SecureUrlRequester extends UrlRequester {
 
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Len;S)Ljava/net/URLConnection;",
-		garbageValue = "24310"
+		descriptor = "(Ley;I)Ljava/net/URLConnection;",
+		garbageValue = "-1343505306"
 	)
 	@Export("openHttpConnection")
 	URLConnection openHttpConnection(UrlRequest var1) throws IOException {
-		URLConnection var2 = var1.field1473.openConnection();
+		URLConnection var2 = var1.field1509.openConnection();
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Len;B)Ljava/net/URLConnection;",
-		garbageValue = "-103"
+		descriptor = "(Ley;I)Ljava/net/URLConnection;",
+		garbageValue = "-1550057756"
 	)
 	@Export("openHttpsConnection")
 	URLConnection openHttpsConnection(UrlRequest var1) throws IOException {
-		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1473.openConnection();
+		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1509.openConnection();
 		if (!this.secureHttps) {
 			if (SecureRandomSSLSocketFactory.INSTANCE == null) {
 				SecureRandomSSLSocketFactory.INSTANCE = new SecureRandomSSLSocketFactory();
@@ -122,12 +124,17 @@ public class SecureUrlRequester extends UrlRequester {
 		return var2;
 	}
 
-	@ObfuscatedName("hl")
+	@ObfuscatedName("ot")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "2"
+		descriptor = "(IIIZB)V",
+		garbageValue = "46"
 	)
-	static final int method3301(int var0) {
-		return Math.abs(var0 - IntProjection.cameraYaw) > 1024 ? var0 + (var0 < IntProjection.cameraYaw ? 1 : -1) * 2048 : var0;
+	public static void method3159(int var0, int var1, int var2, boolean var3) {
+		PacketBufferNode var4 = class272.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
+		var4.packetBuffer.writeShort(var0);
+		var4.packetBuffer.writeByteAdd(var2);
+		var4.packetBuffer.writeShortAddLE(var1);
+		var4.packetBuffer.writeIntLE(var3 ? Client.field613 : 0);
+		Client.packetWriter.addNode(var4);
 	}
 }

@@ -4,33 +4,18 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ip")
+@ObfuscatedName("gv")
 @Implements("InvDefinition")
 public class InvDefinition extends DualNode {
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
-	)
-	@Export("InvDefinition_archive")
-	static AbstractArchive InvDefinition_archive;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("InvDefinition_cached")
 	static EvictingDualNodeHashTable InvDefinition_cached;
-	@ObfuscatedName("ax")
-	@Export("Tiles_hue")
-	static int[] Tiles_hue;
-	@ObfuscatedName("sf")
-	@ObfuscatedSignature(
-		descriptor = "Lgq;"
-	)
-	@Export("guestClanSettings")
-	static ClanSettings guestClanSettings;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 522434629
+		intValue = 487397955
 	)
 	@Export("size")
 	public int size;
@@ -43,10 +28,10 @@ public class InvDefinition extends DualNode {
 		this.size = 0;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "659202401"
+		descriptor = "(Lvy;B)V",
+		garbageValue = "-75"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -60,10 +45,10 @@ public class InvDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;II)V",
-		garbageValue = "-1952497567"
+		descriptor = "(Lvy;IB)V",
+		garbageValue = "1"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -73,58 +58,62 @@ public class InvDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "16"
+		descriptor = "(I)[Lfs;",
+		garbageValue = "-2098268102"
 	)
-	@Export("isWorldMapEvent")
-	public static boolean isWorldMapEvent(int var0) {
-		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
+	static class145[] method3760() {
+		return new class145[]{class145.field1702, class145.field1704, class145.field1696, class145.field1697, class145.field1698, class145.field1700, class145.field1699, class145.field1701, class145.field1695};
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("iu")
 	@ObfuscatedSignature(
-		descriptor = "(Lpq;I)V",
-		garbageValue = "450752558"
+		descriptor = "(IIII)V",
+		garbageValue = "1972787827"
 	)
-	public static void method5120(AbstractArchive var0) {
-		ParamComposition.ParamDefinition_archive = var0;
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;II)V",
-		garbageValue = "-728355894"
-	)
-	static final void method5121(String var0, int var1) {
-		PacketBufferNode var2 = ScriptEvent.getPacketBufferNode(ClientPacket.FRIEND_CHAT_SETRANK, Client.packetWriter.isaacCipher);
-		var2.packetBuffer.writeByte(MouseRecorder.stringCp1252NullTerminatedByteSize(var0) + 1);
-		var2.packetBuffer.writeByteAdd(var1);
-		var2.packetBuffer.writeStringCp1252NullTerminated(var0);
-		Client.packetWriter.addNode(var2);
-	}
-
-	@ObfuscatedName("kd")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIIZI)V",
-		garbageValue = "-1228848950"
-	)
-	@Export("addTileItemToGroundItems")
-	static void addTileItemToGroundItems(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
-		TileItem var10 = new TileItem();
-		var10.id = var3;
-		var10.quantity = var4;
-		var10.setFlag(var5);
-		var10.visibleTime = Client.serverCycle + var6;
-		var10.despawnTime = var7 + Client.serverCycle;
-		var10.ownership = var8;
-		var10.isPrivate = var9;
-		if (class30.worldView.groundItems[var0][var1][var2] == null) {
-			class30.worldView.groundItems[var0][var1][var2] = new NodeDeque();
+	static final void method3751(int var0, int var1, int var2) {
+		if (class181.cameraX < var0) {
+			class181.cameraX = (var0 - class181.cameraX) * FloatProjection.field2789 / 1000 + class181.cameraX + ItemContainer.field1069;
+			if (class181.cameraX > var0) {
+				class181.cameraX = var0;
+			}
 		}
 
-		class30.worldView.groundItems[var0][var1][var2].addFirst(var10);
-		ByteArrayPool.updateItemPile(var0, var1, var2);
+		if (class181.cameraX > var0) {
+			class181.cameraX -= (class181.cameraX - var0) * FloatProjection.field2789 / 1000 + ItemContainer.field1069;
+			if (class181.cameraX < var0) {
+				class181.cameraX = var0;
+			}
+		}
+
+		if (GrandExchangeOfferUnitPriceComparator.cameraY < var1) {
+			GrandExchangeOfferUnitPriceComparator.cameraY = (var1 - GrandExchangeOfferUnitPriceComparator.cameraY) * FloatProjection.field2789 / 1000 + GrandExchangeOfferUnitPriceComparator.cameraY + ItemContainer.field1069;
+			if (GrandExchangeOfferUnitPriceComparator.cameraY > var1) {
+				GrandExchangeOfferUnitPriceComparator.cameraY = var1;
+			}
+		}
+
+		if (GrandExchangeOfferUnitPriceComparator.cameraY > var1) {
+			GrandExchangeOfferUnitPriceComparator.cameraY -= (GrandExchangeOfferUnitPriceComparator.cameraY - var1) * FloatProjection.field2789 / 1000 + ItemContainer.field1069;
+			if (GrandExchangeOfferUnitPriceComparator.cameraY < var1) {
+				GrandExchangeOfferUnitPriceComparator.cameraY = var1;
+			}
+		}
+
+		if (ApproximateRouteStrategy.cameraZ < var2) {
+			ApproximateRouteStrategy.cameraZ = (var2 - ApproximateRouteStrategy.cameraZ) * FloatProjection.field2789 / 1000 + ApproximateRouteStrategy.cameraZ + ItemContainer.field1069;
+			if (ApproximateRouteStrategy.cameraZ > var2) {
+				ApproximateRouteStrategy.cameraZ = var2;
+			}
+		}
+
+		if (ApproximateRouteStrategy.cameraZ > var2) {
+			ApproximateRouteStrategy.cameraZ -= (ApproximateRouteStrategy.cameraZ - var2) * FloatProjection.field2789 / 1000 + ItemContainer.field1069;
+			if (ApproximateRouteStrategy.cameraZ < var2) {
+				ApproximateRouteStrategy.cameraZ = var2;
+			}
+		}
+
 	}
 }

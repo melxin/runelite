@@ -4,18 +4,18 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dk")
+@ObfuscatedName("dr")
 @Implements("ChatChannel")
 public class ChatChannel {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "[Lct;"
+		descriptor = "[Lck;"
 	)
 	@Export("messages")
 	Message[] messages;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 2144686969
+		intValue = -842935601
 	)
 	@Export("count")
 	int count;
@@ -24,10 +24,10 @@ public class ChatChannel {
 		this.messages = new Message[100];
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Lct;",
-		garbageValue = "-373552992"
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;B)Lck;",
+		garbageValue = "-111"
 	)
 	@Export("addMessage")
 	Message addMessage(int var1, String var2, String var3, String var4) {
@@ -55,76 +55,66 @@ public class ChatChannel {
 		return var5;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lct;",
-		garbageValue = "-1427940988"
+		descriptor = "(II)Lck;",
+		garbageValue = "1661282114"
 	)
 	@Export("getMessage")
 	Message getMessage(int var1) {
 		return var1 >= 0 && var1 < this.count ? this.messages[var1] : null;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1858544506"
+		garbageValue = "-2004839987"
 	)
 	@Export("size")
 	int size() {
 		return this.count;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("kv")
 	@ObfuscatedSignature(
-		descriptor = "(II)Loe;",
-		garbageValue = "-908384021"
+		descriptor = "(Ldp;Ldt;IILkn;B)V",
+		garbageValue = "88"
 	)
-	public static GameBuild method2508(int var0) {
-		GameBuild[] var1 = Messages.method3241();
+	static final void method2343(WorldView var0, Player var1, int var2, int var3, MoveSpeed var4) {
+		int var5 = var1.field1287[0];
+		int var6 = var1.field1288[0];
+		int var7 = var1.field1284;
+		CollisionMap var8 = var0.collisionMaps[var0.plane];
+		if (var5 >= var7 && var5 < var8.xSize - var7 && var6 >= var7 && var6 < var8.ySize - var7) {
+			if (var2 >= var7 && var2 < var8.xSize - var7 && var3 >= var7 && var3 < var8.ySize - var7) {
+				int var9 = Client.field572.method5808(var5, var6, var7, ClientPreferences.method2700(var2, var3), var8, true, Client.field711, Client.field650);
+				if (var9 >= 1) {
+					for (int var10 = 0; var10 < var9 - 1; ++var10) {
+						var1.method2590(Client.field711[var10], Client.field650[var10], var4);
+					}
 
-		for (int var2 = 0; var2 < var1.length; ++var2) {
-			GameBuild var3 = var1[var2];
-			if (var0 == var3.buildId) {
-				return var3;
+				}
 			}
 		}
-
-		return null;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ow")
 	@ObfuscatedSignature(
-		descriptor = "(Lpq;III)Lvf;",
-		garbageValue = "437889605"
+		descriptor = "(IIZI)V",
+		garbageValue = "-1717992490"
 	)
-	@Export("SpriteBuffer_getSprite")
-	public static SpritePixels SpriteBuffer_getSprite(AbstractArchive var0, int var1, int var2) {
-		if (!WorldMapSprite.method6397(var0, var1, var2)) {
-			return null;
-		} else {
-			SpritePixels var4 = new SpritePixels();
-			var4.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
-			var4.height = class174.SpriteBuffer_spriteHeight;
-			var4.xOffset = class241.SpriteBuffer_xOffsets[0];
-			var4.yOffset = SpriteBufferProperties.SpriteBuffer_yOffsets[0];
-			var4.subWidth = SpriteBufferProperties.SpriteBuffer_spriteWidths[0];
-			var4.subHeight = class403.SpriteBuffer_spriteHeights[0];
-			int var5 = var4.subHeight * var4.subWidth;
-			byte[] var6 = class240.SpriteBuffer_pixels[0];
-			var4.pixels = new int[var5];
-
-			for (int var7 = 0; var7 < var5; ++var7) {
-				var4.pixels[var7] = KeyHandler.SpriteBuffer_spritePalette[var6[var7] & 255];
+	static final void method2352(int var0, int var1, boolean var2) {
+		if (Client.currentClanChannels[var0] != null) {
+			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3665()) {
+				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
+				PacketBufferNode var4 = class272.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
+				var4.packetBuffer.writeByte(4 + AsyncRestClient.stringCp1252NullTerminatedByteSize(var3.username.getName()));
+				var4.packetBuffer.writeByte(var0);
+				var4.packetBuffer.writeShort(var1);
+				var4.packetBuffer.writeBoolean(var2);
+				var4.packetBuffer.writeStringCp1252NullTerminated(var3.username.getName());
+				Client.packetWriter.addNode(var4);
 			}
-
-			class241.SpriteBuffer_xOffsets = null;
-			SpriteBufferProperties.SpriteBuffer_yOffsets = null;
-			SpriteBufferProperties.SpriteBuffer_spriteWidths = null;
-			class403.SpriteBuffer_spriteHeights = null;
-			KeyHandler.SpriteBuffer_spritePalette = null;
-			class240.SpriteBuffer_pixels = null;
-			return var4;
 		}
 	}
 }

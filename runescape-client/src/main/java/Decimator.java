@@ -3,35 +3,35 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("cg")
+@ObfuscatedName("cj")
 @Implements("Decimator")
 public class Decimator {
-	@ObfuscatedName("ai")
-	@Export("osNameLowercase")
-	public static String osNameLowercase;
-	@ObfuscatedName("df")
-	@ObfuscatedSignature(
-		descriptor = "Lvi;"
-	)
-	@Export("worldSelectRightSprite")
-	static IndexedSprite worldSelectRightSprite;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ui")
 	@ObfuscatedGetter(
-		intValue = 801369339
+		intValue = 2112032923
+	)
+	static int field399;
+	@ObfuscatedName("vn")
+	@ObfuscatedSignature(
+		descriptor = "Luq;"
+	)
+	@Export("platformInfo")
+	static PlatformInfo platformInfo;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = -561299537
 	)
 	@Export("inputRate")
 	int inputRate;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 2125733325
+		intValue = -993990095
 	)
 	@Export("outputRate")
 	int outputRate;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("table")
 	int[][] table;
 
@@ -58,13 +58,13 @@ public class Decimator {
 
 			for (int var7 = 0; var7 < var1; ++var7) {
 				int[] var8 = this.table[var7];
-				double var9 = (double)var7 / (double)var1 + 6.0D;
+				double var9 = 6.0D + (double)var7 / (double)var1;
 				int var11 = (int)Math.floor(1.0D + (var9 - 7.0D));
 				if (var11 < 0) {
 					var11 = 0;
 				}
 
-				int var12 = (int)Math.ceil(7.0D + var9);
+				int var12 = (int)Math.ceil(var9 + 7.0D);
 				if (var12 > 14) {
 					var12 = 14;
 				}
@@ -84,15 +84,15 @@ public class Decimator {
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "([BB)[B",
-		garbageValue = "1"
+		descriptor = "([BI)[B",
+		garbageValue = "143788683"
 	)
 	@Export("resample")
 	byte[] resample(byte[] var1) {
 		if (this.table != null) {
-			int var2 = (int)((long)this.outputRate * (long)var1.length / (long)this.inputRate) + 14;
+			int var2 = (int)((long)var1.length * (long)this.outputRate / (long)this.inputRate) + 14;
 			int[] var3 = new int[var2];
 			int var4 = 0;
 			int var5 = 0;
@@ -130,24 +130,24 @@ public class Decimator {
 		return var1;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "-2139017699"
+		garbageValue = "-1274589404"
 	)
 	@Export("scaleRate")
 	int scaleRate(int var1) {
 		if (this.table != null) {
-			var1 = (int)((long)this.outputRate * (long)var1 / (long)this.inputRate);
+			var1 = (int)((long)var1 * (long)this.outputRate / (long)this.inputRate);
 		}
 
 		return var1;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "1868959261"
+		garbageValue = "-29742966"
 	)
 	@Export("scalePosition")
 	int scalePosition(int var1) {
@@ -158,57 +158,73 @@ public class Decimator {
 		return var1;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;I)[F",
-		garbageValue = "459813264"
+		descriptor = "(I)[Lhh;",
+		garbageValue = "-1909847341"
 	)
-	static float[] method1176(JSONObject var0, String var1) throws JSONException {
-		float[] var2 = new float[4];
-
-		try {
-			JSONArray var3 = var0.getJSONArray(var1);
-			var2[0] = (float)var3.optDouble(0, 0.0D);
-			var2[1] = (float)var3.optDouble(1, 0.0D);
-			var2[2] = (float)var3.optDouble(2, 1.0D);
-			var2[3] = (float)var3.optDouble(3, 1.0D);
-		} catch (JSONException var4) {
-			var2[0] = 0.0F;
-			var2[1] = 0.0F;
-			var2[2] = 1.0F;
-			var2[3] = 1.0F;
-		}
-
-		return var2;
+	static VerticalAlignment[] method1111() {
+		return new VerticalAlignment[]{VerticalAlignment.VerticalAlignment_centered, VerticalAlignment.field2086, VerticalAlignment.field2090};
 	}
 
-	@ObfuscatedName("iy")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ldx;III)V",
-		garbageValue = "1611710142"
+		descriptor = "(ILdy;ZI)I",
+		garbageValue = "-228598003"
 	)
-	@Export("performPlayerAnimation")
-	static void performPlayerAnimation(Player var0, int var1, int var2) {
-		if (var0.sequence == var1 && var1 != -1) {
-			int var3 = class33.SequenceDefinition_get(var1).restartMode;
-			if (var3 == 1) {
-				var0.sequenceFrame = 0;
-				var0.sequenceFrameCycle = 0;
-				var0.sequenceDelay = var2;
-				var0.field1244 = 0;
-			}
-
-			if (var3 == 2) {
-				var0.field1244 = 0;
-			}
-		} else if (var1 == -1 || var0.sequence == -1 || class33.SequenceDefinition_get(var1).field2930 >= class33.SequenceDefinition_get(var0.sequence).field2930) {
-			var0.sequence = var1;
-			var0.sequenceFrame = 0;
-			var0.sequenceFrameCycle = 0;
-			var0.sequenceDelay = var2;
-			var0.field1244 = 0;
-			var0.field1270 = var0.pathLength;
+	static int method1110(int var0, Script var1, boolean var2) {
+		int var3 = -1;
+		Widget var4;
+		if (var0 >= 2000) {
+			var0 -= 1000;
+			var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
+			var4 = class376.widgetDefinition.method6918(var3);
+		} else {
+			var4 = var2 ? class132.scriptDotWidget : PlayerCompositionColorTextureOverride.scriptActiveWidget;
 		}
 
+		if (var0 == ScriptOpcodes.CC_SETPOSITION) {
+			HealthBarConfig.Interpreter_intStackSize -= 4;
+			var4.rawX = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize];
+			var4.rawY = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1];
+			var4.xAlignment = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 2];
+			var4.yAlignment = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 3];
+			MilliClock.invalidateWidget(var4);
+			class569.client.alignWidget(var4);
+			if (var3 != -1 && var4.type == 0) {
+				class95.revalidateWidgetScroll(class376.widgetDefinition.Widget_interfaceComponents[var3 >> 16], var4, false);
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_SETSIZE) {
+			HealthBarConfig.Interpreter_intStackSize -= 4;
+			var4.rawWidth = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize];
+			var4.rawHeight = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1];
+			var4.widthAlignment = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 2];
+			var4.heightAlignment = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 3];
+			MilliClock.invalidateWidget(var4);
+			class569.client.alignWidget(var4);
+			if (var3 != -1 && var4.type == 0) {
+				class95.revalidateWidgetScroll(class376.widgetDefinition.Widget_interfaceComponents[var3 >> 16], var4, false);
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_SETHIDE) {
+			boolean var5 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize] == 1;
+			if (var5 != var4.isHidden) {
+				var4.isHidden = var5;
+				MilliClock.invalidateWidget(var4);
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_SETNOCLICKTHROUGH) {
+			var4.noClickThrough = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize] == 1;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_SETNOSCROLLTHROUGH) {
+			var4.noScrollThrough = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize] == 1;
+			return 1;
+		} else {
+			return 2;
+		}
 	}
 }

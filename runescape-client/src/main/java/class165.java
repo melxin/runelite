@@ -1,103 +1,58 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("gy")
-public class class165 extends class150 {
-	@ObfuscatedName("gt")
-	@Export("refreshToken")
-	static String refreshToken;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		longValue = -2094426101884963605L
-	)
-	long field1783;
-	@ObfuscatedName("ah")
-	String field1781;
-	@ObfuscatedName("az")
-	@ObfuscatedGetter(
-		intValue = -1010564325
-	)
-	int field1784;
-	// $FF: synthetic field
+@ObfuscatedName("gn")
+public abstract class class165 extends Node {
+	@ObfuscatedName("ke")
 	@ObfuscatedSignature(
-		descriptor = "Lfv;"
+		descriptor = "[Lwg;"
 	)
-	final class153 this$0;
+	@Export("headIconPkSprites")
+	static SpritePixels[] headIconPkSprites;
 
-	@ObfuscatedSignature(
-		descriptor = "(Lfv;)V"
-	)
-	class165(class153 var1) {
-		this.this$0 = var1;
-		this.field1783 = -1L;
-		this.field1781 = null;
-		this.field1784 = 0;
+	class165() {
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;I)V",
-		garbageValue = "-1355269794"
+		garbageValue = "1818142003"
 	)
-	void vmethod3879(Buffer var1) {
-		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
-			this.field1783 = var1.readLong();
-		}
+	abstract void vmethod3695(Buffer var1);
 
-		this.field1781 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1784 = var1.readUnsignedShort();
-	}
-
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lgq;B)V",
-		garbageValue = "0"
+		descriptor = "(Lgd;I)V",
+		garbageValue = "488725669"
 	)
-	void vmethod3882(ClanSettings var1) {
-		var1.method3691(this.field1783, this.field1781, this.field1784);
-	}
+	abstract void vmethod3696(ClanChannel var1);
 
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1951312105"
+		descriptor = "(II)Z",
+		garbageValue = "-419248128"
 	)
-	public static void method3794() {
-		InvDefinition.InvDefinition_cached.clear();
+	public static boolean method3638(int var0) {
+		return (var0 >> 20 & 1) != 0;
 	}
 
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(ILdm;ZI)I",
-		garbageValue = "1147545767"
+		descriptor = "(IIIB)I",
+		garbageValue = "-52"
 	)
-	static int method3793(int var0, Script var1, boolean var2) {
-		Widget var3 = var2 ? class134.scriptDotWidget : HttpMethod.scriptActiveWidget;
-		if (var0 == ScriptOpcodes.CC_GETINVOBJECT) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.itemId;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_GETINVCOUNT) {
-			if (var3.itemId != -1) {
-				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.itemQuantity;
-			} else {
-				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = 0;
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_GETID) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.childIndex;
-			return 1;
-		} else if (var0 == 1707) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = var3.method7433() ? 1 : 0;
-			return 1;
-		} else if (var0 == 1708) {
-			return HttpRequest.method112(var3);
-		} else {
-			return var0 == 1709 ? WorldMapCacheName.method6467(var3) : 2;
-		}
+	static final int method3642(int var0, int var1, int var2) {
+		int var3 = var0 / var2;
+		int var4 = var0 & var2 - 1;
+		int var5 = var1 / var2;
+		int var6 = var1 & var2 - 1;
+		int var7 = Varcs.method3071(var3, var5);
+		int var8 = Varcs.method3071(var3 + 1, var5);
+		int var9 = Varcs.method3071(var3, var5 + 1);
+		int var10 = Varcs.method3071(var3 + 1, var5 + 1);
+		int var11 = HealthBarConfig.method2838(var7, var8, var4, var2);
+		int var12 = HealthBarConfig.method2838(var9, var10, var4, var2);
+		return HealthBarConfig.method2838(var11, var12, var6, var2);
 	}
 }

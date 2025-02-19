@@ -4,61 +4,61 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("si")
+@ObfuscatedName("sv")
 @Implements("FriendsList")
 public class FriendsList extends UserList {
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Luo;"
+		descriptor = "Luk;"
 	)
 	@Export("loginType")
 	final LoginType loginType;
-	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = -1250552947
-	)
-	int field4981;
 	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = -1255317991
+	)
+	int field5104;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lpi;"
+		descriptor = "Lqz;"
 	)
 	@Export("friendLoginUpdates")
 	public LinkDeque friendLoginUpdates;
 
 	@ObfuscatedSignature(
-		descriptor = "(Luo;)V"
+		descriptor = "(Luk;)V"
 	)
 	public FriendsList(LoginType var1) {
 		super(400);
-		this.field4981 = 1;
+		this.field5104 = 1;
 		this.friendLoginUpdates = new LinkDeque();
 		this.loginType = var1;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lso;",
-		garbageValue = "35"
+		descriptor = "(I)Lsz;",
+		garbageValue = "-1615585210"
 	)
 	@Export("newInstance")
 	User newInstance() {
 		return new Friend();
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lso;",
-		garbageValue = "-1808909632"
+		descriptor = "(II)[Lsz;",
+		garbageValue = "-1800506505"
 	)
 	@Export("newTypedArray")
 	User[] newTypedArray(int var1) {
 		return new Friend[var1];
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;ZI)Z",
-		garbageValue = "-1389788629"
+		descriptor = "(Lwm;ZI)Z",
+		garbageValue = "413352991"
 	)
 	@Export("isFriended")
 	public boolean isFriended(Username var1, boolean var2) {
@@ -70,15 +70,15 @@ public class FriendsList extends UserList {
 		}
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;IS)V",
-		garbageValue = "4608"
+		descriptor = "(Lvy;II)V",
+		garbageValue = "1147988484"
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
 		while (true) {
-			if (var1.offset < var2) {
+			if (var1.field5570 < var2) {
 				boolean var3 = var1.readUnsignedByte() == 1;
 				Username var4 = new Username(var1.readStringCp1252NullTerminated(), this.loginType);
 				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.loginType);
@@ -98,7 +98,7 @@ public class FriendsList extends UserList {
 					Friend var11 = (Friend)this.getByCurrentUsername(var4);
 					if (var3) {
 						Friend var12 = (Friend)this.getByCurrentUsername(var5);
-						if (var12 != null && var11 != var12) {
+						if (var12 != null && var12 != var11) {
 							if (var11 != null) {
 								this.remove(var12);
 							} else {
@@ -137,17 +137,17 @@ public class FriendsList extends UserList {
 					}
 
 					if (var6 != var11.world) {
-						var11.int2 = ++this.field4981 - 1;
+						var11.int2 = ++this.field5104 - 1;
 						if (var11.world == -1 && var6 == 0) {
-							var11.int2 = -(var11.int2 * -2003439171) * -1806970475;
+							var11.int2 = -(var11.int2 * 873294063) * -2133670385;
 						}
 
 						var11.world = var6;
 					}
 
 					var11.rank = var7;
-					var11.field4990 = var9;
-					var11.field4991 = var10;
+					var11.field5117 = var9;
+					var11.field5118 = var10;
 					continue;
 				}
 
@@ -159,47 +159,23 @@ public class FriendsList extends UserList {
 		}
 	}
 
-	@ObfuscatedName("nf")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Lna;I)Z",
-		garbageValue = "-1721141643"
+		descriptor = "(CB)Z",
+		garbageValue = "64"
 	)
-	static final boolean method9092(Widget var0) {
-		int var1 = var0.contentType;
-		if (var1 == 205) {
-			Client.logoutTimer = 250;
-			return true;
-		} else {
-			int var2;
-			int var3;
-			if (var1 >= 300 && var1 <= 313) {
-				var2 = (var1 - 300) / 2;
-				var3 = var1 & 1;
-				Client.playerAppearance.changeAppearance(var2, var3 == 1);
-			}
+	@Export("isDigit")
+	public static boolean isDigit(char var0) {
+		return var0 >= '0' && var0 <= '9';
+	}
 
-			if (var1 >= 314 && var1 <= 323) {
-				var2 = (var1 - 314) / 2;
-				var3 = var1 & 1;
-				Client.playerAppearance.method7055(var2, var3 == 1);
-			}
-
-			if (var1 == 324) {
-				Client.playerAppearance.method7087(0);
-			}
-
-			if (var1 == 325) {
-				Client.playerAppearance.method7087(1);
-			}
-
-			if (var1 == 326) {
-				PacketBufferNode var4 = ScriptEvent.getPacketBufferNode(ClientPacket.UPDATE_PLAYER_MODEL, Client.packetWriter.isaacCipher);
-				Client.playerAppearance.write(var4.packetBuffer);
-				Client.packetWriter.addNode(var4);
-				return true;
-			} else {
-				return false;
-			}
-		}
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(IB)V",
+		garbageValue = "121"
+	)
+	static void method9091(int var0) {
+		ObjectComposition.method4206(14);
+		Login.Login_banType = var0;
 	}
 }

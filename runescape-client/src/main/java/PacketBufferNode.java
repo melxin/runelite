@@ -4,42 +4,42 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mb")
+@ObfuscatedName("mo")
 @Implements("PacketBufferNode")
 public class PacketBufferNode extends Node {
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "[Lmb;"
+		descriptor = "[Lmo;"
 	)
 	@Export("PacketBufferNode_packetBufferNodes")
 	static PacketBufferNode[] PacketBufferNode_packetBufferNodes;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 790177349
+		intValue = -32555091
 	)
 	@Export("PacketBufferNode_packetBufferNodeCount")
 	static int PacketBufferNode_packetBufferNodeCount;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lmm;"
+		descriptor = "Lmu;"
 	)
 	@Export("clientPacket")
 	ClientPacket clientPacket;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1977829057
+		intValue = -76101975
 	)
 	@Export("clientPacketLength")
 	int clientPacketLength;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lvv;"
+		descriptor = "Lvu;"
 	)
 	@Export("packetBuffer")
 	public PacketBuffer packetBuffer;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 1763756621
+		intValue = 2066707877
 	)
 	@Export("index")
 	public int index;
@@ -52,10 +52,10 @@ public class PacketBufferNode extends Node {
 	PacketBufferNode() {
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1974751955"
+		garbageValue = "-1589846155"
 	)
 	@Export("release")
 	public void release() {
@@ -64,35 +64,62 @@ public class PacketBufferNode extends Node {
 		}
 	}
 
-	@ObfuscatedName("je")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ldx;I)Z",
-		garbageValue = "-1639240470"
+		descriptor = "(Lpl;I)V",
+		garbageValue = "1102921096"
 	)
-	static boolean method6629(Player var0) {
-		if (Client.drawPlayerNames == 0) {
-			return false;
-		} else {
-			boolean var1;
-			if (ModeWhere.localPlayer == var0) {
-				var1 = (Client.drawPlayerNames & 8) != 0;
-				return var1;
-			} else {
-				var1 = WorldMapSection0.method6358();
-				boolean var2;
-				if (!var1) {
-					var2 = (Client.drawPlayerNames & 1) != 0;
-					var1 = var2 && var0.isFriend();
-				}
+	public static void method6510(AbstractArchive var0) {
+		DbRowType.field5516 = var0;
+	}
 
-				var2 = var1;
-				if (!var1) {
-					boolean var3 = (Client.drawPlayerNames & 2) != 0;
-					var2 = var3 && var0.isFriendsChatMember();
-				}
+	@ObfuscatedName("la")
+	@ObfuscatedSignature(
+		descriptor = "(Lwn;I)V",
+		garbageValue = "-2091999222"
+	)
+	static final void method6509(Menu var0) {
+		boolean var1 = false;
 
-				return var2;
+		while (!var1) {
+			var1 = true;
+
+			for (int var2 = 0; var2 < var0.menuOptionsCount - 1; ++var2) {
+				if (var0.menuOpcodes[var2] < 1000 && var0.menuOpcodes[var2 + 1] > 1000) {
+					String var3 = var0.menuTargets[var2];
+					var0.menuTargets[var2] = var0.menuTargets[var2 + 1];
+					var0.menuTargets[var2 + 1] = var3;
+					String var4 = var0.menuActions[var2];
+					var0.menuActions[var2] = var0.menuActions[var2 + 1];
+					var0.menuActions[var2 + 1] = var4;
+					Menu var5 = var0.subMenus[var2];
+					var0.subMenus[var2] = var0.subMenus[var2 + 1];
+					var0.subMenus[var2 + 1] = var5;
+					int var6 = var0.menuOpcodes[var2];
+					var0.menuOpcodes[var2] = var0.menuOpcodes[var2 + 1];
+					var0.menuOpcodes[var2 + 1] = var6;
+					var6 = var0.menuArguments1[var2];
+					var0.menuArguments1[var2] = var0.menuArguments1[var2 + 1];
+					var0.menuArguments1[var2 + 1] = var6;
+					var6 = var0.menuArguments2[var2];
+					var0.menuArguments2[var2] = var0.menuArguments2[var2 + 1];
+					var0.menuArguments2[var2 + 1] = var6;
+					var6 = var0.menuIdentifiers[var2];
+					var0.menuIdentifiers[var2] = var0.menuIdentifiers[var2 + 1];
+					var0.menuIdentifiers[var2 + 1] = var6;
+					var6 = var0.menuItemIds[var2];
+					var0.menuItemIds[var2] = var0.menuItemIds[var2 + 1];
+					var0.menuItemIds[var2 + 1] = var6;
+					var6 = var0.menuWorldViewIds[var2];
+					var0.menuWorldViewIds[var2] = var0.menuWorldViewIds[var2 + 1];
+					var0.menuWorldViewIds[var2 + 1] = var6;
+					boolean var7 = var0.menuShiftClick[var2];
+					var0.menuShiftClick[var2] = var0.menuShiftClick[var2 + 1];
+					var0.menuShiftClick[var2 + 1] = var7;
+					var1 = false;
+				}
 			}
 		}
+
 	}
 }

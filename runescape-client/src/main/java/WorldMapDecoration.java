@@ -2,25 +2,35 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lx")
+@ObfuscatedName("lq")
 @Implements("WorldMapDecoration")
 public class WorldMapDecoration {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ah")
+	@Export("ArchiveDiskActionHandler_thread")
+	static Thread ArchiveDiskActionHandler_thread;
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Lws;"
+	)
+	@Export("options_buttons_0Sprite")
+	static IndexedSprite options_buttons_0Sprite;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -814245525
+		intValue = 1402378187
 	)
 	@Export("objectDefinitionId")
 	final int objectDefinitionId;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -484641233
+		intValue = -795675999
 	)
 	@Export("decoration")
 	final int decoration;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 2020167799
+		intValue = -26992829
 	)
 	@Export("rotation")
 	final int rotation;
@@ -29,5 +39,21 @@ public class WorldMapDecoration {
 		this.objectDefinitionId = var1;
 		this.decoration = var2;
 		this.rotation = var3;
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(Lrp;B)Lrp;",
+		garbageValue = "84"
+	)
+	public static class442 method6284(class442 var0) {
+		synchronized(class442.field4894) {
+			if (class187.field1997 == 0) {
+				return new class442(var0);
+			} else {
+				class442.field4894[--class187.field1997].method8309(var0);
+				return class442.field4894[class187.field1997];
+			}
+		}
 	}
 }

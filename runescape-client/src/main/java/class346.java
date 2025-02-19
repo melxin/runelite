@@ -1,37 +1,38 @@
-import java.util.BitSet;
+import java.util.Comparator;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ns")
-public class class346 extends Node {
-	@ObfuscatedName("ay")
+@ObfuscatedName("nd")
+public class class346 implements Comparator {
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1313234445
+		intValue = 1975425553
 	)
-	int field3751;
-	@ObfuscatedName("ah")
-	BitSet field3748;
+	public static int field3798;
+	@ObfuscatedName("us")
+	@ObfuscatedGetter(
+		intValue = 380414627
+	)
+	static int field3797;
 
-	class346(int var1) {
-		this.field3751 = var1;
-		this.field3748 = new BitSet(128);
+	class346() {
 	}
 
-	@ObfuscatedName("hv")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "49"
+		descriptor = "(Lnh;Lnh;B)I",
+		garbageValue = "59"
 	)
-	static final void method6950() {
-		if (class424.ClanChat_inClanChat) {
-			if (WorldMapLabelSize.friendsChat != null) {
-				WorldMapLabelSize.friendsChat.sort();
-			}
+	int method6840(class339 var1, class339 var2) {
+		return var1.field3753 - var2.field3753;
+	}
 
-			class397.method7892();
-			class424.ClanChat_inClanChat = false;
-		}
+	public int compare(Object var1, Object var2) {
+		return this.method6840((class339)var1, (class339)var2);
+	}
 
+	public boolean equals(Object var1) {
+		return super.equals(var1);
 	}
 }

@@ -4,55 +4,64 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ku")
+@ObfuscatedName("kj")
 @Implements("CollisionMap")
 public class CollisionMap {
-	@ObfuscatedName("ac")
+	@ObfuscatedName("bh")
 	@ObfuscatedGetter(
-		intValue = -300118987
-	)
-	static int field2995;
-	@ObfuscatedName("bt")
-	@ObfuscatedGetter(
-		intValue = -282336855
+		intValue = 564340479
 	)
 	@Export("xInset")
-	int xInset;
-	@ObfuscatedName("bf")
+	public int xInset;
+	@ObfuscatedName("be")
 	@ObfuscatedGetter(
-		intValue = -2013653011
+		intValue = 1318449449
 	)
 	@Export("yInset")
-	int yInset;
-	@ObfuscatedName("by")
+	public int yInset;
+	@ObfuscatedName("bj")
 	@ObfuscatedGetter(
-		intValue = -1403464625
+		intValue = -1044380191
 	)
 	@Export("xSize")
 	public int xSize;
-	@ObfuscatedName("bm")
+	@ObfuscatedName("bq")
 	@ObfuscatedGetter(
-		intValue = 1481826841
+		intValue = -428819217
 	)
 	@Export("ySize")
 	public int ySize;
-	@ObfuscatedName("bp")
+	@ObfuscatedName("bx")
 	@Export("flags")
 	public int[][] flags;
 
-	public CollisionMap(int var1, int var2) {
-		this.xInset = 0;
-		this.yInset = 0;
-		this.xSize = var1;
-		this.ySize = var2;
+	public CollisionMap(int var1, int var2, boolean var3) {
+		if (var3) {
+			this.method5633(-1, -1, var1 + 6, var2 + 6);
+		} else {
+			this.method5633(0, 0, var1, var2);
+		}
+
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIB)V",
+		garbageValue = "89"
+	)
+	void method5633(int var1, int var2, int var3, int var4) {
+		this.xInset = var1;
+		this.yInset = var2;
+		this.xSize = var3;
+		this.ySize = var4;
 		this.flags = new int[this.xSize][this.ySize];
 		this.clear();
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-999668508"
+		descriptor = "(S)V",
+		garbageValue = "16256"
 	)
 	@Export("clear")
 	public void clear() {
@@ -68,12 +77,12 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(IIIIZB)V",
-		garbageValue = "-116"
+		garbageValue = "66"
 	)
-	public void method5797(int var1, int var2, int var3, int var4, boolean var5) {
+	public void method5635(int var1, int var2, int var3, int var4, boolean var5) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
 		if (var3 == 0) {
@@ -220,10 +229,10 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIZI)V",
-		garbageValue = "-2042285315"
+		descriptor = "(IIIIZB)V",
+		garbageValue = "1"
 	)
 	@Export("addGameObject")
 	public void addGameObject(int var1, int var2, int var3, int var4, boolean var5) {
@@ -247,10 +256,10 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "-9"
+		descriptor = "(III)V",
+		garbageValue = "1095369856"
 	)
 	@Export("setBlockedByFloor")
 	public void setBlockedByFloor(int var1, int var2) {
@@ -260,10 +269,10 @@ public class CollisionMap {
 		var10000[var2] |= 2097152;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "48"
+		descriptor = "(III)V",
+		garbageValue = "1029963392"
 	)
 	@Export("setBlockedByFloorDec")
 	public void setBlockedByFloorDec(int var1, int var2) {
@@ -273,10 +282,10 @@ public class CollisionMap {
 		var10000[var2] |= 262144;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)V",
-		garbageValue = "884769403"
+		garbageValue = "-1894276170"
 	)
 	@Export("setFlag")
 	void setFlag(int var1, int var2, int var3) {
@@ -284,12 +293,12 @@ public class CollisionMap {
 		var10000[var2] |= var3;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(IIIIZI)V",
-		garbageValue = "1594522752"
+		garbageValue = "-1593326249"
 	)
-	public void method5802(int var1, int var2, int var3, int var4, boolean var5) {
+	public void method5640(int var1, int var2, int var3, int var4, boolean var5) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
 		if (var3 == 0) {
@@ -436,10 +445,10 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIZI)V",
-		garbageValue = "120960399"
+		descriptor = "(IIIIIZB)V",
+		garbageValue = "-93"
 	)
 	@Export("setFlagOffNonSquare")
 	public void setFlagOffNonSquare(int var1, int var2, int var3, int var4, int var5, boolean var6) {
@@ -469,10 +478,10 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "(IIIB)V",
-		garbageValue = "31"
+		garbageValue = "97"
 	)
 	@Export("setFlagOff")
 	void setFlagOff(int var1, int var2, int var3) {
@@ -480,38 +489,29 @@ public class CollisionMap {
 		var10000[var2] &= ~var3;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(IIB)V",
-		garbageValue = "53"
+		garbageValue = "7"
 	)
-	public void method5805(int var1, int var2) {
+	public void method5639(int var1, int var2) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
 		int[] var10000 = this.flags[var1];
 		var10000[var2] &= -262145;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "([BI)Ljava/lang/String;",
-		garbageValue = "1992752177"
+		descriptor = "(I)V",
+		garbageValue = "-1655459881"
 	)
-	public static String method5830(byte[] var0) {
-		return class232.method5130(var0, 0, var0.length);
-	}
-
-	@ObfuscatedName("op")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-712588839"
-	)
-	static void method5831(int var0) {
-		for (IntegerNode var1 = (IntegerNode)Client.widgetFlags.first(); var1 != null; var1 = (IntegerNode)Client.widgetFlags.next()) {
-			if ((long)var0 == (var1.key >> 48 & 65535L)) {
-				var1.remove();
-			}
-		}
-
+	public static void method5672() {
+		Canvas.SpriteBuffer_xOffsets = null;
+		class194.SpriteBuffer_yOffsets = null;
+		SpriteBufferProperties.SpriteBuffer_spriteWidths = null;
+		class456.SpriteBuffer_spriteHeights = null;
+		DbTable.SpriteBuffer_spritePalette = null;
+		SpriteBufferProperties.SpriteBuffer_pixels = null;
 	}
 }

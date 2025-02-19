@@ -1,41 +1,55 @@
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InvalidClassException;
+import java.io.ObjectInputStream;
+import java.io.OptionalDataException;
+import java.io.StreamCorruptedException;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.Reflection;
 
-@ObfuscatedName("al")
+@ObfuscatedName("ar")
 @Implements("RestClientThreadFactory")
 public class RestClientThreadFactory implements ThreadFactory {
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lit;"
+	@ObfuscatedName("lx")
+	@ObfuscatedGetter(
+		intValue = -288890197
 	)
-	@Export("clock")
-	static Clock clock;
+	@Export("oculusOrbFocalPointX")
+	static int oculusOrbFocalPointX;
+	@ObfuscatedName("sz")
+	@Export("ClanChat_inClanChat")
+	static boolean ClanChat_inClanChat;
+	@ObfuscatedName("ab")
+	final ThreadGroup field71;
 	@ObfuscatedName("ay")
-	final ThreadGroup field67;
-	@ObfuscatedName("ah")
-	final AtomicInteger field69;
+	final AtomicInteger field68;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Laa;"
+		descriptor = "Laj;"
 	)
 	final AsyncRestClient this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Laa;)V"
+		descriptor = "(Laj;)V"
 	)
 	RestClientThreadFactory(AsyncRestClient var1) {
 		this.this$0 = var1;
-		this.field69 = new AtomicInteger(1);
+		this.field68 = new AtomicInteger(1);
 		SecurityManager var2 = System.getSecurityManager();
-		this.field67 = var2 != null ? var2.getThreadGroup() : Thread.currentThread().getThreadGroup();
+		this.field71 = var2 != null ? var2.getThreadGroup() : Thread.currentThread().getThreadGroup();
 	}
 
 	public Thread newThread(Runnable var1) {
-		Thread var2 = new Thread(this.field67, var1, this.this$0.threadNamePrefix + "-rest-request-" + this.field69.getAndIncrement(), 0L);
+		Thread var2 = new Thread(this.field71, var1, this.this$0.threadNamePrefix + "-rest-request-" + this.field68.getAndIncrement(), 0L);
 		var2.setDaemon(true);
 		var2.setPriority(5);
 		return var2;
@@ -43,87 +57,140 @@ public class RestClientThreadFactory implements ThreadFactory {
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lpq;III)[Lvi;",
-		garbageValue = "591347831"
+		descriptor = "(Lvu;B)V",
+		garbageValue = "0"
 	)
-	public static IndexedSprite[] method213(AbstractArchive var0, int var1, int var2) {
-		if (!WorldMapSprite.method6397(var0, var1, var2)) {
-			return null;
-		} else {
-			IndexedSprite[] var4 = new IndexedSprite[SpriteBufferProperties.SpriteBuffer_spriteCount];
+	@Export("performReflectionCheck")
+	public static void performReflectionCheck(PacketBuffer var0) {
+		ReflectionCheck var1 = (ReflectionCheck)class36.reflectionChecks.last();
+		if (var1 != null) {
+			int var2 = var0.field5570;
+			var0.writeInt(var1.id);
 
-			for (int var5 = 0; var5 < SpriteBufferProperties.SpriteBuffer_spriteCount; ++var5) {
-				IndexedSprite var6 = var4[var5] = new IndexedSprite();
-				var6.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
-				var6.height = class174.SpriteBuffer_spriteHeight;
-				var6.xOffset = class241.SpriteBuffer_xOffsets[var5];
-				var6.yOffset = SpriteBufferProperties.SpriteBuffer_yOffsets[var5];
-				var6.subWidth = SpriteBufferProperties.SpriteBuffer_spriteWidths[var5];
-				var6.subHeight = class403.SpriteBuffer_spriteHeights[var5];
-				var6.palette = KeyHandler.SpriteBuffer_spritePalette;
-				var6.pixels = class240.SpriteBuffer_pixels[var5];
-			}
+			for (int var3 = 0; var3 < var1.size; ++var3) {
+				if (var1.creationErrors[var3] != 0) {
+					var0.writeByte(var1.creationErrors[var3]);
+				} else {
+					try {
+						int var4 = var1.operations[var3];
+						Field var5;
+						int var6;
+						if (var4 == 0) {
+							var5 = var1.fields[var3];
+							var6 = Reflection.getInt(var5, (Object)null);
+							var0.writeByte(0);
+							var0.writeInt(var6);
+						} else if (var4 == 1) {
+							var5 = var1.fields[var3];
+							Reflection.setInt(var5, (Object)null, var1.intReplaceValues[var3]);
+							var0.writeByte(0);
+						} else if (var4 == 2) {
+							var5 = var1.fields[var3];
+							var6 = var5.getModifiers();
+							var0.writeByte(0);
+							var0.writeInt(var6);
+						}
 
-			class241.SpriteBuffer_xOffsets = null;
-			SpriteBufferProperties.SpriteBuffer_yOffsets = null;
-			SpriteBufferProperties.SpriteBuffer_spriteWidths = null;
-			class403.SpriteBuffer_spriteHeights = null;
-			KeyHandler.SpriteBuffer_spritePalette = null;
-			class240.SpriteBuffer_pixels = null;
-			return var4;
-		}
-	}
+						Method var25;
+						if (var4 != 3) {
+							if (var4 == 4) {
+								var25 = var1.methods[var3];
+								var6 = var25.getModifiers();
+								var0.writeByte(0);
+								var0.writeInt(var6);
+							}
+						} else {
+							var25 = var1.methods[var3];
+							byte[][] var10 = var1.arguments[var3];
+							Object[] var7 = new Object[var10.length];
 
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "595905120"
-	)
-	public static void method209() {
-		HealthBarDefinition.HealthBarDefinition_cached.clear();
-		HealthBarDefinition.HealthBarDefinition_cachedSprites.clear();
-	}
+							for (int var8 = 0; var8 < var10.length; ++var8) {
+								ObjectInputStream var9 = new ObjectInputStream(new ByteArrayInputStream(var10[var8]));
+								var7[var8] = var9.readObject();
+							}
 
-	@ObfuscatedName("ia")
-	@ObfuscatedSignature(
-		descriptor = "(Ldz;I)V",
-		garbageValue = "790177061"
-	)
-	static final void method208(WorldView var0) {
-		for (GraphicsObject var1 = (GraphicsObject)var0.graphicsObjects.last(); var1 != null; var1 = (GraphicsObject)var0.graphicsObjects.previous()) {
-			if (var0.plane == var1.plane && !var1.isFinished) {
-				if (Client.cycle >= var1.cycleStart) {
-					var1.advance(Client.graphicsCycle);
-					if (var1.isFinished) {
-						var1.remove();
-					} else {
-						var0.scene.drawEntity(var1.plane, var1.x, var1.y, var1.z, 60, var1, 0, -1L, false);
+							Object var11 = Reflection.invoke(var25, (Object)null, var7);
+							if (var11 == null) {
+								var0.writeByte(0);
+							} else if (var11 instanceof Number) {
+								var0.writeByte(1);
+								var0.writeLong(((Number)var11).longValue());
+							} else if (var11 instanceof String) {
+								var0.writeByte(2);
+								var0.writeStringCp1252NullTerminated((String)var11);
+							} else {
+								var0.writeByte(4);
+							}
+						}
+					} catch (ClassNotFoundException var13) {
+						var0.writeByte(-10);
+					} catch (InvalidClassException var14) {
+						var0.writeByte(-11);
+					} catch (StreamCorruptedException var15) {
+						var0.writeByte(-12);
+					} catch (OptionalDataException var16) {
+						var0.writeByte(-13);
+					} catch (IllegalAccessException var17) {
+						var0.writeByte(-14);
+					} catch (IllegalArgumentException var18) {
+						var0.writeByte(-15);
+					} catch (InvocationTargetException var19) {
+						var0.writeByte(-16);
+					} catch (SecurityException var20) {
+						var0.writeByte(-17);
+					} catch (IOException var21) {
+						var0.writeByte(-18);
+					} catch (NullPointerException var22) {
+						var0.writeByte(-19);
+					} catch (Exception var23) {
+						var0.writeByte(-20);
+					} catch (Throwable var24) {
+						var0.writeByte(-21);
 					}
 				}
-			} else {
-				var1.remove();
 			}
-		}
 
+			var0.writeCrc(var2);
+			var1.remove();
+		}
 	}
 
-	@ObfuscatedName("ma")
+	@ObfuscatedName("hr")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1734456775"
+		descriptor = "(I)J",
+		garbageValue = "1809829103"
 	)
-	static final void method211(int var0) {
-		if (ClanChannel.widgetDefinition.loadInterface(var0)) {
-			Widget[] var1 = ClanChannel.widgetDefinition.Widget_interfaceComponents[var0];
+	@Export("getUserHash")
+	static long getUserHash() {
+		return Client.userHash;
+	}
 
-			for (int var2 = 0; var2 < var1.length; ++var2) {
-				Widget var3 = var1[var2];
-				if (var3 != null) {
-					var3.modelFrame = 0;
-					var3.modelFrameCycle = 0;
-				}
+	@ObfuscatedName("il")
+	@ObfuscatedSignature(
+		descriptor = "(Ldt;IIB)V",
+		garbageValue = "-53"
+	)
+	static void method170(Player var0, int var1, int var2) {
+		if (var0.field1265 == var1 && var1 != -1) {
+			int var3 = WorldMapData_1.SequenceDefinition_get(var1).restartMode;
+			if (var3 == 1) {
+				var0.field1266 = 0;
+				var0.field1262 = 0;
+				var0.field1268 = var2;
+				var0.field1255 = 0;
 			}
 
+			if (var3 == 2) {
+				var0.field1255 = 0;
+			}
+		} else if (var1 == -1 || var0.field1265 == -1 || WorldMapData_1.SequenceDefinition_get(var1).field2368 >= WorldMapData_1.SequenceDefinition_get(var0.field1265).field2368) {
+			var0.field1265 = var1;
+			var0.field1266 = 0;
+			var0.field1262 = 0;
+			var0.field1268 = var2;
+			var0.field1255 = 0;
+			var0.field1291 = var0.field1227;
 		}
+
 	}
 }

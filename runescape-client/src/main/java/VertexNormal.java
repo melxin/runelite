@@ -4,30 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hd")
+@ObfuscatedName("jy")
 @Implements("VertexNormal")
 public class VertexNormal {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1397898627
+		intValue = -781146027
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -396954475
+		intValue = 361732789
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -411226141
+		intValue = 1794956465
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 507587089
+		intValue = 1010980195
 	)
 	@Export("magnitude")
 	int magnitude;
@@ -36,7 +36,7 @@ public class VertexNormal {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lhd;)V"
+		descriptor = "(Ljy;)V"
 	)
 	VertexNormal(VertexNormal var1) {
 		this.x = var1.x;
@@ -45,25 +45,26 @@ public class VertexNormal {
 		this.magnitude = var1.magnitude;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ljr;",
-		garbageValue = "-678648084"
+		descriptor = "(I)V",
+		garbageValue = "1931190339"
 	)
-	@Export("getEnum")
-	public static EnumComposition getEnum(int var0) {
-		EnumComposition var1 = (EnumComposition)EnumComposition.EnumDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = EnumComposition.EnumDefinition_archive.takeFile(8, var0);
-			var1 = new EnumComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
+	public static void method5432() {
+		synchronized(ArchiveDiskActionHandler.field4639) {
+			if (ArchiveDiskActionHandler.field4637 != 0) {
+				ArchiveDiskActionHandler.field4637 = 1;
 
-			EnumComposition.EnumDefinition_cached.put(var1, (long)var0);
-			return var1;
+				try {
+					ArchiveDiskActionHandler.field4639.wait();
+				} catch (InterruptedException var5) {
+				}
+			}
+		}
+
+		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
+			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.clear();
+			ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.clear();
 		}
 	}
 }

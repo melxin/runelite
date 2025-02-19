@@ -4,165 +4,71 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cr")
+@ObfuscatedName("cz")
 @Implements("MenuAction")
 public class MenuAction {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("fp")
+	@ObfuscatedSignature(
+		descriptor = "Lpn;"
+	)
+	static Archive field931;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1769426223
+		intValue = -145730583
 	)
 	@Export("param0")
 	int param0;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 465307575
+		intValue = 325992667
 	)
 	@Export("param1")
 	int param1;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 791045811
+		intValue = -331524495
 	)
 	@Export("opcode")
 	int opcode;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -829818609
+		intValue = -386846997
 	)
 	@Export("identifier")
 	int identifier;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1480952507
+		intValue = 1078497283
 	)
 	@Export("itemId")
 	int itemId;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1603213755
+		intValue = 1567231879
 	)
 	@Export("worldViewId")
 	int worldViewId;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@Export("action")
 	String action;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@Export("target")
 	String target;
-	@ObfuscatedName("at")
-	boolean field912;
+	@ObfuscatedName("aa")
+	boolean field930;
 
 	MenuAction() {
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ma")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ljy;",
-		garbageValue = "-512309802"
+		descriptor = "(IIIIIIIB)V",
+		garbageValue = "1"
 	)
-	public static FloorUnderlayDefinition method2365(int var0) {
-		FloorUnderlayDefinition var1 = (FloorUnderlayDefinition)FloorUnderlayDefinition.FloorUnderlayDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = FloorUnderlayDefinition.FloorUnderlayDefinition_archive.takeFile(1, var0);
-			var1 = new FloorUnderlayDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2), var0);
-			}
-
-			var1.postDecode();
-			FloorUnderlayDefinition.FloorUnderlayDefinition_cached.put(var1, (long)var0);
-			return var1;
+	@Export("updateRootInterface")
+	static final void updateRootInterface(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+		if (class376.widgetDefinition.loadInterface(var0)) {
+			WorldViewManager.updateInterface(class376.widgetDefinition.Widget_interfaceComponents[var0], -1, var1, var2, var3, var4, var5, var6);
 		}
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "82"
-	)
-	static final int method2362(int var0, int var1) {
-		if (var0 == -2) {
-			return 12345678;
-		} else if (var0 == -1) {
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
-			}
-
-			return var1;
-		} else {
-			var1 = (var0 & 127) * var1 / 128;
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
-			}
-
-			return (var0 & 65408) + var1;
-		}
-	}
-
-	@ObfuscatedName("hp")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-192239950"
-	)
-	static final void method2363() {
-		if (Client.logoutTimer > 0) {
-			Client.logOut();
-		} else {
-			Client.timer.method8954();
-			class360.updateGameState(40);
-			VarpDefinition.field2508 = Client.packetWriter.getSocket();
-			Client.packetWriter.removeSocket();
-		}
-	}
-
-	@ObfuscatedName("mi")
-	@ObfuscatedSignature(
-		descriptor = "(Lna;IIIIIIB)V",
-		garbageValue = "11"
-	)
-	static final void method2364(Widget var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-		if (Client.field519) {
-			Client.alternativeScrollbarWidth = 32;
-		} else {
-			Client.alternativeScrollbarWidth = 0;
-		}
-
-		Client.field519 = false;
-		int var7;
-		if (MouseHandler.MouseHandler_currentButton == 1 || !KeyHandler.mouseCam && MouseHandler.MouseHandler_currentButton == 4) {
-			if (var5 >= var1 && var5 < var1 + 16 && var6 >= var2 && var6 < var2 + 16) {
-				var0.scrollY -= 4;
-				UserComparator8.invalidateWidget(var0);
-			} else if (var5 >= var1 && var5 < var1 + 16 && var6 >= var3 + var2 - 16 && var6 < var3 + var2) {
-				var0.scrollY += 4;
-				UserComparator8.invalidateWidget(var0);
-			} else if (var5 >= var1 - Client.alternativeScrollbarWidth && var5 < Client.alternativeScrollbarWidth + var1 + 16 && var6 >= var2 + 16 && var6 < var3 + var2 - 16) {
-				var7 = var3 * (var3 - 32) / var4;
-				if (var7 < 8) {
-					var7 = 8;
-				}
-
-				int var8 = var6 - var2 - 16 - var7 / 2;
-				int var9 = var3 - 32 - var7;
-				var0.scrollY = var8 * (var4 - var3) / var9;
-				UserComparator8.invalidateWidget(var0);
-				Client.field519 = true;
-			}
-		}
-
-		if (Client.mouseWheelRotation != 0) {
-			var7 = var0.width;
-			if (var5 >= var1 - var7 && var6 >= var2 && var5 < var1 + 16 && var6 <= var3 + var2) {
-				var0.scrollY += Client.mouseWheelRotation * 45;
-				UserComparator8.invalidateWidget(var0);
-			}
-		}
-
 	}
 }

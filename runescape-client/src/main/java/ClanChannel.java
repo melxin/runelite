@@ -7,37 +7,31 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gk")
+@ObfuscatedName("gd")
 @Implements("ClanChannel")
 public class ClanChannel extends Node {
-	@ObfuscatedName("ek")
-	@ObfuscatedSignature(
-		descriptor = "Lnq;"
-	)
-	@Export("widgetDefinition")
-	static WidgetDefinition widgetDefinition;
+	@ObfuscatedName("ab")
+	boolean field1864;
 	@ObfuscatedName("ay")
-	boolean field1814;
-	@ObfuscatedName("ah")
-	boolean field1806;
-	@ObfuscatedName("az")
+	boolean field1861;
+	@ObfuscatedName("au")
 	@Export("members")
 	public List members;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@Export("sortedMembers")
 	int[] sortedMembers;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		longValue = 5804263768996706621L
+		longValue = 3536578833763292603L
 	)
-	public long field1810;
-	@ObfuscatedName("an")
+	public long field1858;
+	@ObfuscatedName("ac")
 	@Export("name")
 	public String name;
-	@ObfuscatedName("ae")
-	public byte field1812;
-	@ObfuscatedName("ax")
-	public byte field1813;
+	@ObfuscatedName("ao")
+	public byte field1863;
+	@ObfuscatedName("af")
+	public byte field1857;
 
 	static {
 		new BitSet(65536);
@@ -47,15 +41,15 @@ public class ClanChannel extends Node {
 		descriptor = "(Lvy;)V"
 	)
 	public ClanChannel(Buffer var1) {
-		this.field1806 = true;
+		this.field1861 = true;
 		this.name = null;
-		this.method3851(var1);
+		this.method3675(var1);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)[I",
-		garbageValue = "-338552712"
+		descriptor = "(B)[I",
+		garbageValue = "-34"
 	)
 	@Export("getSortedMembers")
 	public int[] getSortedMembers() {
@@ -64,19 +58,19 @@ public class ClanChannel extends Node {
 			this.sortedMembers = new int[this.members.size()];
 
 			for (int var2 = 0; var2 < this.members.size(); this.sortedMembers[var2] = var2++) {
-				var1[var2] = ((ClanChannelMember)this.members.get(var2)).username.method10974();
+				var1[var2] = ((ClanChannelMember)this.members.get(var2)).username.method10912();
 			}
 
-			Renderable.method4461(var1, this.sortedMembers);
+			PlayerCompositionColorTextureOverride.method3724(var1, this.sortedMembers);
 		}
 
 		return this.sortedMembers;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lfw;I)V",
-		garbageValue = "-564141182"
+		descriptor = "(Lfi;S)V",
+		garbageValue = "23523"
 	)
 	@Export("addMember")
 	void addMember(ClanChannelMember var1) {
@@ -84,10 +78,10 @@ public class ClanChannel extends Node {
 		this.sortedMembers = null;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "-561369554"
+		garbageValue = "-683029574"
 	)
 	@Export("removeMember")
 	void removeMember(int var1) {
@@ -95,22 +89,22 @@ public class ClanChannel extends Node {
 		this.sortedMembers = null;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-730358534"
+		descriptor = "(S)I",
+		garbageValue = "27175"
 	)
-	public int method3837() {
+	public int method3665() {
 		return this.members.size();
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;B)I",
-		garbageValue = "-91"
+		garbageValue = "1"
 	)
-	public int method3850(String var1) {
-		if (!this.field1806) {
+	public int method3661(String var1) {
+		if (!this.field1861) {
 			throw new RuntimeException("Displaynames not available");
 		} else {
 			for (int var2 = 0; var2 < this.members.size(); ++var2) {
@@ -123,19 +117,19 @@ public class ClanChannel extends Node {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "2119647539"
+		descriptor = "(Lvy;B)V",
+		garbageValue = "-60"
 	)
-	void method3851(Buffer var1) {
+	void method3675(Buffer var1) {
 		int var2 = var1.readUnsignedByte();
 		if ((var2 & 1) != 0) {
-			this.field1814 = true;
+			this.field1864 = true;
 		}
 
 		if ((var2 & 2) != 0) {
-			this.field1806 = true;
+			this.field1861 = true;
 		}
 
 		int var3 = 2;
@@ -144,22 +138,22 @@ public class ClanChannel extends Node {
 		}
 
 		super.key = var1.readLong();
-		this.field1810 = var1.readLong();
+		this.field1858 = var1.readLong();
 		this.name = var1.readStringCp1252NullTerminated();
 		var1.readBoolean();
-		this.field1813 = var1.readByte();
-		this.field1812 = var1.readByte();
+		this.field1857 = var1.readByte();
+		this.field1863 = var1.readByte();
 		int var4 = var1.readUnsignedShort();
 		if (var4 > 0) {
 			this.members = new ArrayList(var4);
 
 			for (int var5 = 0; var5 < var4; ++var5) {
 				ClanChannelMember var6 = new ClanChannelMember();
-				if (this.field1814) {
+				if (this.field1864) {
 					var1.readLong();
 				}
 
-				if (this.field1806) {
+				if (this.field1861) {
 					var6.username = new Username(var1.readStringCp1252NullTerminated());
 				}
 
@@ -175,98 +169,93 @@ public class ClanChannel extends Node {
 
 	}
 
-	@ObfuscatedName("kv")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Ldz;Lvv;I)V",
-		garbageValue = "433669662"
+		descriptor = "(Lpl;Ljava/lang/String;Ljava/lang/String;I)Lws;",
+		garbageValue = "-860354333"
 	)
-	static void method3857(WorldView var0, PacketBuffer var1) {
-		int var2 = var1.readUnsignedShort();
-		WorldEntity var3 = var0.worldEntities[var2];
-		WorldView var4 = var3.worldView;
-		var4.baseX = var1.readUnsignedShort();
-		var4.baseY = var1.readUnsignedShort();
-		int var5 = var4.sizeX / 8;
-		int var6 = var4.sizeY / 8;
-		int var7 = var1.readUnsignedShort();
-		var1.importIndex();
-
-		int var8;
-		int var9;
-		int var10;
-		int var11;
-		for (var8 = 0; var8 < 4; ++var8) {
-			for (var9 = 0; var9 < var5; ++var9) {
-				for (var10 = 0; var10 < var6; ++var10) {
-					var11 = var1.readBits(1);
-					if (var11 == 1) {
-						Client.field574[var8][var9][var10] = var1.readBits(26);
-					} else {
-						Client.field574[var8][var9][var10] = -1;
-					}
-				}
+	@Export("SpriteBuffer_getIndexedSpriteByName")
+	public static IndexedSprite SpriteBuffer_getIndexedSpriteByName(AbstractArchive var0, String var1, String var2) {
+		if (!var0.isValidFileName(var1, var2)) {
+			return null;
+		} else {
+			int var3 = var0.getGroupId(var1);
+			int var4 = var0.getFileId(var3, var2);
+			byte[] var7 = var0.takeFile(var3, var4);
+			boolean var6;
+			if (var7 == null) {
+				var6 = false;
+			} else {
+				class478.SpriteBuffer_decode(var7);
+				var6 = true;
 			}
-		}
 
-		var1.exportIndex();
-		class374.field4114 = new int[var7][4];
-
-		for (var8 = 0; var8 < var7; ++var8) {
-			for (var9 = 0; var9 < 4; ++var9) {
-				class374.field4114[var8][var9] = var1.readInt();
+			IndexedSprite var5;
+			if (!var6) {
+				var5 = null;
+			} else {
+				IndexedSprite var8 = new IndexedSprite();
+				var8.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
+				var8.height = SpriteBufferProperties.SpriteBuffer_spriteHeight;
+				var8.xOffset = Canvas.SpriteBuffer_xOffsets[0];
+				var8.yOffset = class194.SpriteBuffer_yOffsets[0];
+				var8.subWidth = SpriteBufferProperties.SpriteBuffer_spriteWidths[0];
+				var8.subHeight = class456.SpriteBuffer_spriteHeights[0];
+				var8.palette = DbTable.SpriteBuffer_spritePalette;
+				var8.pixels = SpriteBufferProperties.SpriteBuffer_pixels[0];
+				CollisionMap.method5672();
+				var5 = var8;
 			}
+
+			return var5;
 		}
-
-		StructComposition.field2742 = new int[var7];
-		class440.field4851 = new int[var7];
-		HealthBarDefinition.field2578 = new int[var7];
-		WorldMapSectionType.field3193 = new byte[var7][];
-		AccessFile.field5365 = new byte[var7][];
-		var7 = 0;
-
-		for (var8 = 0; var8 < 4; ++var8) {
-			for (var9 = 0; var9 < var5; ++var9) {
-				for (var10 = 0; var10 < var6; ++var10) {
-					var11 = Client.field574[var8][var9][var10];
-					if (var11 != -1) {
-						int var12 = var11 >> 14 & 1023;
-						int var13 = var11 >> 3 & 2047;
-						int var14 = (var12 / 8 << 8) + var13 / 8;
-
-						int var15;
-						for (var15 = 0; var15 < var7; ++var15) {
-							if (StructComposition.field2742[var15] == var14) {
-								var14 = -1;
-								break;
-							}
-						}
-
-						if (var14 != -1) {
-							StructComposition.field2742[var7] = var14;
-							var15 = var14 >> 8 & 255;
-							int var16 = var14 & 255;
-							class440.field4851[var7] = LoginState.archive9.getGroupId("m" + var15 + "_" + var16);
-							HealthBarDefinition.field2578[var7] = LoginState.archive9.getGroupId("l" + var15 + "_" + var16);
-							++var7;
-						}
-					}
-				}
-			}
-		}
-
-		class360.updateGameState(25);
-		Client.field509 = true;
-		class151.field1683 = var4;
-		GrandExchangeEvents.method7859(var4);
 	}
 
-	@ObfuscatedName("nv")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1899065248"
+		descriptor = "([[[IIIII)V",
+		garbageValue = "996651896"
 	)
-	static final void method3839(int var0) {
-		var0 = Math.min(Math.max(var0, 0), 127);
-		class544.clientPreferences.updateSoundEffectVolume(var0);
+	static final void method3672(int[][][] var0, int var1, int var2, int var3) {
+		int var4;
+		for (var4 = 0; var4 < 8; ++var4) {
+			for (int var5 = 0; var5 < 8; ++var5) {
+				var0[var1][var4 + var2][var3 + var5] = 0;
+			}
+		}
+
+		if (var2 > 0) {
+			for (var4 = 1; var4 < 8; ++var4) {
+				var0[var1][var2][var3 + var4] = var0[var1][var2 - 1][var3 + var4];
+			}
+		}
+
+		if (var3 > 0) {
+			for (var4 = 1; var4 < 8; ++var4) {
+				var0[var1][var4 + var2][var3] = var0[var1][var4 + var2][var3 - 1];
+			}
+		}
+
+		if (var2 > 0 && var0[var1][var2 - 1][var3] != 0) {
+			var0[var1][var2][var3] = var0[var1][var2 - 1][var3];
+		} else if (var3 > 0 && var0[var1][var2][var3 - 1] != 0) {
+			var0[var1][var2][var3] = var0[var1][var2][var3 - 1];
+		} else if (var2 > 0 && var3 > 0 && var0[var1][var2 - 1][var3 - 1] != 0) {
+			var0[var1][var2][var3] = var0[var1][var2 - 1][var3 - 1];
+		}
+
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(III)V",
+		garbageValue = "960493532"
+	)
+	public static final void method3682(int var0, int var1) {
+		ViewportMouse.ViewportMouse_x = var0;
+		ViewportMouse.ViewportMouse_y = var1;
+		ViewportMouse.ViewportMouse_isInViewport = true;
+		ViewportMouse.ViewportMouse_entityCount = 0;
+		ViewportMouse.ViewportMouse_false0 = false;
 	}
 }

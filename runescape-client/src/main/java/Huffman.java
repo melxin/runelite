@@ -1,30 +1,19 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("nw")
+@ObfuscatedName("ov")
 @Implements("Huffman")
 public class Huffman {
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = -1458099025
-	)
-	static int field4034;
-	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = -1493208141
-	)
-	@Export("canvasHeight")
-	public static int canvasHeight;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@Export("masks")
 	int[] masks;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@Export("bits")
 	byte[] bits;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@Export("keys")
 	int[] keys;
 
@@ -111,10 +100,10 @@ public class Huffman {
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "([BII[BIB)I",
-		garbageValue = "0"
+		descriptor = "([BII[BII)I",
+		garbageValue = "-1164648474"
 	)
 	@Export("compress")
 	int compress(byte[] var1, int var2, int var3, byte[] var4, int var5) {
@@ -162,10 +151,10 @@ public class Huffman {
 		return (var7 + 7 >> 3) - var5;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "([BI[BIII)I",
-		garbageValue = "-668999189"
+		descriptor = "([BI[BIIS)I",
+		garbageValue = "28835"
 	)
 	@Export("decompress")
 	int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {
@@ -308,11 +297,40 @@ public class Huffman {
 
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-2130866999"
+		descriptor = "(II)I",
+		garbageValue = "1424339608"
 	)
-	@Export("isDigit")
-	public static boolean isDigit(char var0) {
-		return var0 >= '0' && var0 <= '9';
+	public static int method7448(int var0) {
+		return class519.field5269[var0 & 16383];
+	}
+
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "(ILdy;ZB)I",
+		garbageValue = "-33"
+	)
+	static int method7444(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? class132.scriptDotWidget : PlayerCompositionColorTextureOverride.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETX) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.x;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETY) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.y;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETWIDTH) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.width * 779142065;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETHEIGHT) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.height * 1836304183;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETHIDE) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.isHidden ? 1 : 0;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETLAYER) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.parentId;
+			return 1;
+		} else {
+			return 2;
+		}
 	}
 }

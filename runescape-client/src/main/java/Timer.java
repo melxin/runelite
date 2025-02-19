@@ -1,242 +1,168 @@
-import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rb")
+@ObfuscatedName("pe")
 @Implements("Timer")
 public class Timer {
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		longValue = 7989917339610278775L
+	)
+	long field4604;
 	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		longValue = -4641101876541563541L
+		longValue = -6935304082437014645L
 	)
-	long field4909;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		longValue = 6644330373994654651L
-	)
-	long field4903;
-	@ObfuscatedName("az")
-	public boolean field4907;
-	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		longValue = -8356337548988540209L
-	)
-	long field4902;
+	long field4599;
+	@ObfuscatedName("au")
+	public boolean field4600;
 	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		longValue = 2576810478100689245L
+		longValue = -5153540442769448995L
 	)
-	long field4904;
-	@ObfuscatedName("an")
+	long field4601;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		longValue = -6467865585511420701L
+		longValue = -3992193137707866651L
 	)
-	long field4905;
-	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = -900855465
-	)
-	int field4906;
-	@ObfuscatedName("ax")
-	@ObfuscatedGetter(
-		intValue = 1473568515
-	)
-	int field4900;
-	@ObfuscatedName("at")
-	@ObfuscatedGetter(
-		intValue = -767770327
-	)
-	int field4908;
+	long field4606;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 2066281717
+		longValue = -8564107248365794285L
 	)
-	int field4901;
+	long field4603;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = 1923135181
+	)
+	int field4602;
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		intValue = -712332113
+	)
+	int field4605;
+	@ObfuscatedName("aa")
+	@ObfuscatedGetter(
+		intValue = -347387541
+	)
+	int field4607;
+	@ObfuscatedName("as")
+	@ObfuscatedGetter(
+		intValue = 976925115
+	)
+	int field4598;
 
 	public Timer() {
-		this.field4909 = -1L;
-		this.field4903 = -1L;
-		this.field4907 = false;
-		this.field4902 = 0L;
-		this.field4904 = 0L;
-		this.field4905 = 0L;
-		this.field4906 = 0;
-		this.field4900 = 0;
-		this.field4908 = 0;
-		this.field4901 = 0;
+		this.field4604 = -1L;
+		this.field4599 = -1L;
+		this.field4600 = false;
+		this.field4601 = 0L;
+		this.field4606 = 0L;
+		this.field4603 = 0L;
+		this.field4602 = 0;
+		this.field4605 = 0;
+		this.field4607 = 0;
+		this.field4598 = 0;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-1"
+	)
+	public void method7544() {
+		this.field4604 = InterfaceParent.method2434();
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1947241197"
+		descriptor = "(B)V",
+		garbageValue = "90"
 	)
-	public void method8937() {
-		this.field4909 = ReflectionCheck.method724();
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1510722758"
-	)
-	public void method8954() {
-		if (-1L != this.field4909) {
-			this.field4904 = ReflectionCheck.method724() - this.field4909;
-			this.field4909 = -1L;
+	public void method7545() {
+		if (-1L != this.field4604) {
+			this.field4606 = InterfaceParent.method2434() - this.field4604;
+			this.field4604 = -1L;
 		}
 
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1806918946"
+		descriptor = "(IB)V",
+		garbageValue = "-69"
 	)
-	public void method8944(int var1) {
-		this.field4903 = ReflectionCheck.method724();
-		this.field4906 = var1;
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "511371086"
-	)
-	public void method8940() {
-		if (this.field4903 != -1L) {
-			this.field4902 = ReflectionCheck.method724() - this.field4903;
-			this.field4903 = -1L;
-		}
-
-		++this.field4908;
-		this.field4907 = true;
+	public void method7546(int var1) {
+		this.field4599 = InterfaceParent.method2434();
+		this.field4602 = var1;
 	}
 
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1638122827"
+		garbageValue = "2044944855"
 	)
-	public void method8964() {
-		this.field4907 = false;
-		this.field4900 = 0;
+	public void method7547() {
+		if (-1L != this.field4599) {
+			this.field4601 = InterfaceParent.method2434() - this.field4599;
+			this.field4599 = -1L;
+		}
+
+		++this.field4607;
+		this.field4600 = true;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "440496412"
+		garbageValue = "-174407209"
 	)
-	public void method8942() {
-		this.method8940();
+	public void method7549() {
+		this.field4600 = false;
+		this.field4605 = 0;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "-57710978"
+		descriptor = "(I)V",
+		garbageValue = "-2035907827"
+	)
+	public void method7554() {
+		this.method7547();
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(Lvy;B)V",
+		garbageValue = "-10"
 	)
 	@Export("write")
 	public void write(Buffer var1) {
-		long var2 = this.field4904;
-		var2 /= 10L;
-		if (var2 < 0L) {
-			var2 = 0L;
-		} else if (var2 > 65535L) {
-			var2 = 65535L;
-		}
-
-		var1.writeShort((int)var2);
-		long var4 = this.field4902;
-		var4 /= 10L;
-		if (var4 < 0L) {
-			var4 = 0L;
-		} else if (var4 > 65535L) {
-			var4 = 65535L;
-		}
-
-		var1.writeShort((int)var4);
-		long var6 = this.field4905;
-		var6 /= 10L;
-		if (var6 < 0L) {
-			var6 = 0L;
-		} else if (var6 > 65535L) {
-			var6 = 65535L;
-		}
-
-		var1.writeShort((int)var6);
-		var1.writeShort(this.field4906);
-		var1.writeShort(this.field4900);
-		var1.writeShort(this.field4908);
-		var1.writeShort(this.field4901);
+		MusicPatchNode.method6832(var1, this.field4606);
+		MusicPatchNode.method6832(var1, this.field4601);
+		MusicPatchNode.method6832(var1, this.field4603);
+		var1.writeShort(this.field4602);
+		var1.writeShort(this.field4605);
+		var1.writeShort(this.field4607);
+		var1.writeShort(this.field4598);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ok")
 	@ObfuscatedSignature(
-		descriptor = "(Lpq;Lpq;Lpq;Ljava/util/ArrayList;I)Z",
-		garbageValue = "311867327"
+		descriptor = "(IB)Lvp;",
+		garbageValue = "-115"
 	)
-	public static boolean method8939(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2, ArrayList var3) {
-		class333.field3628 = var0;
-		class553.field5461 = var1;
-		class333.field3624 = var2;
-		class333.field3625 = var3;
-		return true;
-	}
-
-	@ObfuscatedName("cg")
-	@ObfuscatedSignature(
-		descriptor = "(Lud;I)Ljava/lang/Object;",
-		garbageValue = "1496692321"
-	)
-	static Object method8952(class544 var0) {
-		if (var0 == null) {
-			throw new IllegalStateException("popValueOfType() failure - null baseVarType");
-		} else {
-			switch(var0.field5394) {
-			case 0:
-				return Interpreter.Interpreter_stringStack[--HealthBarConfig.Interpreter_stringStackSize];
-			case 2:
-				return Interpreter.Interpreter_intStack[--ScriptFrame.Interpreter_intStackSize];
-			default:
-				throw new IllegalStateException("popValueOfType() failure - unsupported type");
-			}
-		}
-	}
-
-	@ObfuscatedName("ir")
-	@ObfuscatedSignature(
-		descriptor = "(Ldz;ZI)V",
-		garbageValue = "-1611699744"
-	)
-	@Export("addNpcsToScene")
-	static final void addNpcsToScene(WorldView var0, boolean var1) {
-		for (int var2 = 0; var2 < var0.npcCount; ++var2) {
-			NPC var3 = var0.npcs[var0.npcIndices[var2]];
-			if (var3 != null && var3.isVisible() && var3.definition.isVisible == var1 && var3.definition.transformIsVisible()) {
-				int var4 = var0.plane;
-				int var5 = var3.x >> 7;
-				int var6 = var3.y >> 7;
-				if (var5 >= 0 && var5 < var0.sizeX && var6 >= 0 && var6 < var0.sizeY) {
-					if (var3.field1268 * -2132848751 == 1 && (var3.x & 127) == 64 && (var3.y & 127) == 64) {
-						if (var0.tileLastDrawnActor[var5][var6] == Client.viewportDrawCount) {
-							continue;
-						}
-
-						var0.tileLastDrawnActor[var5][var6] = Client.viewportDrawCount;
-					}
-
-					long var7 = Projectile.calculateTag(0, 0, 1, !var3.definition.isInteractable, var0.npcIndices[var2], var0.id);
-					var3.playerCycle = Client.cycle;
-					int var9 = Canvas.getTileHeight(var0, var3.field1268 * 936633408 - 64 + var3.x, var3.field1268 * 936633408 - 64 + var3.y, var4);
-					var0.scene.drawEntity(var4, var3.x, var3.y, var9, var3.field1268 * 936633408 - 64 + 60, var3, var3.rotation, var7, var3.isWalking);
-				}
-			}
+	@Export("getDbTable")
+	static DbTable getDbTable(int var0) {
+		DbTable var1 = (DbTable)Client.DBTableIndex_cache.get((long)var0);
+		if (var1 == null) {
+			var1 = new DbTable(AsyncHttpResponse.field76, class72.method2202(var0), DbTable.method10109(var0));
+			Client.DBTableIndex_cache.put(var1, (long)var0);
 		}
 
+		return var1;
 	}
 }

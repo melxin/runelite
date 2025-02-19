@@ -6,21 +6,21 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("vh")
 @Implements("DbTableType")
 public class DbTableType extends DualNode {
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lpl;"
+	)
+	static AbstractArchive field5505;
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
-	)
-	public static AbstractArchive field5408;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("DBTableType_cache")
-	public static EvictingDualNodeHashTable DBTableType_cache;
-	@ObfuscatedName("az")
+	static EvictingDualNodeHashTable DBTableType_cache;
+	@ObfuscatedName("au")
 	@Export("types")
 	public int[][] types;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@Export("defaultValues")
 	public Object[][] defaultValues;
 
@@ -31,28 +31,28 @@ public class DbTableType extends DualNode {
 	DbTableType() {
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;I)V",
-		garbageValue = "215413861"
+		garbageValue = "555016332"
 	)
-	void method10151(Buffer var1) {
+	void method10093(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
 				return;
 			}
 
-			this.method10152(var1, var2);
+			this.method10092(var1, var2);
 		}
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;IB)V",
-		garbageValue = "14"
+		garbageValue = "65"
 	)
-	void method10152(Buffer var1, int var2) {
+	void method10092(Buffer var1, int var2) {
 		if (var2 == 1) {
 			int var3 = var1.readUnsignedByte();
 			if (this.types == null) {
@@ -74,30 +74,18 @@ public class DbTableType extends DualNode {
 						this.defaultValues = new Object[this.types.length][];
 					}
 
-					Object[][] var17 = this.defaultValues;
-					int var11 = var1.readUShortSmart();
-					Object[] var12 = new Object[var7.length * var11];
-
-					for (int var13 = 0; var13 < var11; ++var13) {
-						for (int var14 = 0; var14 < var7.length; ++var14) {
-							int var15 = var14 + var7.length * var13;
-							class544 var16 = EnumComposition.method5280(var7[var14]);
-							var12[var15] = var16.method10123(var1);
-						}
-					}
-
-					var17[var5] = var12;
+					this.defaultValues[var5] = DevicePcmPlayerProvider.method274(var1, var7);
 				}
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "124"
+		descriptor = "(I)V",
+		garbageValue = "-1536385694"
 	)
-	void method10159() {
+	void method10091() {
 	}
 }

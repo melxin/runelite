@@ -1,78 +1,84 @@
+import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kh")
+@ObfuscatedName("ik")
 @Implements("FloorOverlayDefinition")
 public class FloorOverlayDefinition extends DualNode {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpq;"
+		descriptor = "Lpl;"
 	)
 	@Export("FloorOverlayDefinition_archive")
 	public static AbstractArchive FloorOverlayDefinition_archive;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("FloorOverlayDefinition_cached")
-	public static EvictingDualNodeHashTable FloorOverlayDefinition_cached;
-	@ObfuscatedName("az")
+	static EvictingDualNodeHashTable FloorOverlayDefinition_cached;
+	@ObfuscatedName("ud")
 	@ObfuscatedGetter(
-		intValue = 723339769
+		intValue = 796959955
+	)
+	static int field2345;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = 1906668611
 	)
 	@Export("primaryRgb")
 	public int primaryRgb;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -1608774715
+		intValue = -419185883
 	)
 	@Export("texture")
 	public int texture;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@Export("hideUnderlay")
 	public boolean hideUnderlay;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1188899257
+		intValue = 1986339245
 	)
 	@Export("secondaryRgb")
 	public int secondaryRgb;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1268256995
+		intValue = 1991221299
 	)
 	@Export("hue")
 	public int hue;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1591346701
+		intValue = -1162965891
 	)
 	@Export("saturation")
 	public int saturation;
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 790799761
+		intValue = 633884433
 	)
 	@Export("lightness")
 	public int lightness;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1813568943
+		intValue = 1995036331
 	)
 	@Export("secondaryHue")
 	public int secondaryHue;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -756026487
+		intValue = 1796899931
 	)
 	@Export("secondarySaturation")
 	public int secondarySaturation;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -1827749161
+		intValue = -67608257
 	)
 	@Export("secondaryLightness")
 	public int secondaryLightness;
@@ -81,20 +87,20 @@ public class FloorOverlayDefinition extends DualNode {
 		FloorOverlayDefinition_cached = new EvictingDualNodeHashTable(64);
 	}
 
-	public FloorOverlayDefinition() {
+	FloorOverlayDefinition() {
 		this.primaryRgb = 0;
 		this.texture = -1;
 		this.hideUnderlay = true;
 		this.secondaryRgb = -1;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "58"
+		descriptor = "(I)V",
+		garbageValue = "-661881233"
 	)
 	@Export("postDecode")
-	public void postDecode() {
+	void postDecode() {
 		if (this.secondaryRgb != -1) {
 			this.setHsl(this.secondaryRgb);
 			this.secondaryHue = this.hue;
@@ -105,13 +111,13 @@ public class FloorOverlayDefinition extends DualNode {
 		this.setHsl(this.primaryRgb);
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;IB)V",
-		garbageValue = "92"
+		descriptor = "(Lvy;II)V",
+		garbageValue = "1061252077"
 	)
 	@Export("decode")
-	public void decode(Buffer var1, int var2) {
+	void decode(Buffer var1, int var2) {
 		while (true) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 == 0) {
@@ -122,10 +128,10 @@ public class FloorOverlayDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;III)V",
-		garbageValue = "-2100971127"
+		garbageValue = "-1359488793"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2, int var3) {
@@ -142,10 +148,10 @@ public class FloorOverlayDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "92"
+		descriptor = "(II)V",
+		garbageValue = "815368914"
 	)
 	@Export("setHsl")
 	void setHsl(int var1) {
@@ -173,27 +179,27 @@ public class FloorOverlayDefinition extends DualNode {
 		double var12 = 0.0D;
 		double var14 = 0.0D;
 		double var16 = (var10 + var8) / 2.0D;
-		if (var10 != var8) {
+		if (var8 != var10) {
 			if (var16 < 0.5D) {
-				var14 = (var10 - var8) / (var8 + var10);
+				var14 = (var10 - var8) / (var10 + var8);
 			}
 
 			if (var16 >= 0.5D) {
 				var14 = (var10 - var8) / (2.0D - var10 - var8);
 			}
 
-			if (var2 == var10) {
+			if (var10 == var2) {
 				var12 = (var4 - var6) / (var10 - var8);
-			} else if (var4 == var10) {
-				var12 = (var6 - var2) / (var10 - var8) + 2.0D;
-			} else if (var10 == var6) {
+			} else if (var10 == var4) {
+				var12 = 2.0D + (var6 - var2) / (var10 - var8);
+			} else if (var6 == var10) {
 				var12 = (var2 - var4) / (var10 - var8) + 4.0D;
 			}
 		}
 
 		var12 /= 6.0D;
 		this.hue = (int)(var12 * 256.0D);
-		this.saturation = (int)(256.0D * var14);
+		this.saturation = (int)(var14 * 256.0D);
 		this.lightness = (int)(var16 * 256.0D);
 		if (this.saturation < 0) {
 			this.saturation = 0;
@@ -209,38 +215,55 @@ public class FloorOverlayDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "([[[IIIII)V",
-		garbageValue = "441580607"
+		descriptor = "(Lvy;I)Ljava/lang/String;",
+		garbageValue = "2006937813"
 	)
-	static final void method5662(int[][][] var0, int var1, int var2, int var3) {
-		int var4;
-		for (var4 = 0; var4 < 8; ++var4) {
-			for (int var5 = 0; var5 < 8; ++var5) {
-				var0[var1][var4 + var2][var3 + var5] = 0;
+	public static String method4294(Buffer var0) {
+		String var1;
+		try {
+			int var2 = var0.readUShortSmart();
+			if (var2 > 32767) {
+				var2 = 32767;
 			}
+
+			byte[] var3 = new byte[var2];
+			var0.field5570 += class366.huffman.decompress(var0.field5573, var0.field5570, var3, 0, var2);
+			String var4 = class159.decodeStringCp1252(var3, 0, var2);
+			var1 = var4;
+		} catch (Exception var6) {
+			var1 = "Cabbage";
 		}
 
-		if (var2 > 0) {
-			for (var4 = 1; var4 < 8; ++var4) {
-				var0[var1][var2][var3 + var4] = var0[var1][var2 - 1][var3 + var4];
+		return var1;
+	}
+
+	@ObfuscatedName("hs")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/util/ArrayList;IIIII)V",
+		garbageValue = "-1467864409"
+	)
+	@Export("playSong")
+	static void playSong(ArrayList var0, int var1, int var2, int var3, int var4) {
+		if (!var0.isEmpty()) {
+			int var5 = (Integer)var0.get(0);
+			if (var5 == -1 && !Client.playingJingle) {
+				class177.method3764(0, 0);
+			} else if (var5 != -1 && !ItemContainer.method2427(var5) && AbstractWorldMapIcon.clientPreferences.getMusicVolume() != 0) {
+				ArrayList var6 = new ArrayList();
+
+				for (int var7 = 0; var7 < var0.size(); ++var7) {
+					var6.add(new MidiRequest(EnumComposition.field2011, (Integer)var0.get(var7), 0, AbstractWorldMapIcon.clientPreferences.getMusicVolume(), false));
+				}
+
+				if (Client.playingJingle) {
+					ClanSettings.method3613(var6, var1, var2, var3, var4);
+				} else {
+					UserComparator3.method3219(var6, var1, var2, var3, var4, false);
+				}
 			}
-		}
 
-		if (var3 > 0) {
-			for (var4 = 1; var4 < 8; ++var4) {
-				var0[var1][var4 + var2][var3] = var0[var1][var4 + var2][var3 - 1];
-			}
 		}
-
-		if (var2 > 0 && var0[var1][var2 - 1][var3] != 0) {
-			var0[var1][var2][var3] = var0[var1][var2 - 1][var3];
-		} else if (var3 > 0 && var0[var1][var2][var3 - 1] != 0) {
-			var0[var1][var2][var3] = var0[var1][var2][var3 - 1];
-		} else if (var2 > 0 && var3 > 0 && var0[var1][var2 - 1][var3 - 1] != 0) {
-			var0[var1][var2][var3] = var0[var1][var2 - 1][var3 - 1];
-		}
-
 	}
 }

@@ -1,59 +1,56 @@
-import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
-import net.runelite.mapping.ObfuscatedGetter;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qz")
-public class class433 implements Iterator {
-	@ObfuscatedName("ps")
-	@ObfuscatedGetter(
-		intValue = 886392145
-	)
-	static int field4786;
+@ObfuscatedName("qj")
+public class class433 {
+	@ObfuscatedName("ab")
+	@Export("cp1252AsciiExtension")
+	public static final char[] cp1252AsciiExtension;
+
+	static {
+		cp1252AsciiExtension = new char[]{'€', '\u0000', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '\u0000', 'Ž', '\u0000', '\u0000', '‘', '’', '“', '”', '•', '–', '—', '˜', '™', 'š', '›', 'œ', '\u0000', 'ž', 'Ÿ'};
+	}
+
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lqn;"
+		descriptor = "(I)Lrc;",
+		garbageValue = "-1340374633"
 	)
-	class434 field4791;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = 685335463
-	)
-	int field4790;
-	@ObfuscatedName("az")
-	@ObfuscatedGetter(
-		intValue = 316027243
-	)
-	int field4788;
-
-	@ObfuscatedSignature(
-		descriptor = "(Lqn;)V"
-	)
-	class433(class434 var1) {
-		this.field4790 = 0;
-		this.field4788 = this.field4791.field4796;
-		this.field4791 = var1;
-	}
-
-	public boolean hasNext() {
-		return this.field4790 < this.field4791.field4792;
-	}
-
-	public Object next() {
-		if (this.field4791.field4796 != this.field4788) {
-			throw new ConcurrentModificationException();
-		} else if (this.field4790 < this.field4791.field4792) {
-			Object var1 = this.field4791.field4793[this.field4790].field4785;
-			++this.field4790;
-			return var1;
-		} else {
-			throw new NoSuchElementException();
+	public static class443 method8185() {
+		synchronized(class443.field4905) {
+			if (class443.field4903 == 0) {
+				return new class443();
+			} else {
+				class443.field4905[--class443.field4903].method8355();
+				return class443.field4905[class443.field4903];
+			}
 		}
 	}
 
-	public void remove() {
-		throw new UnsupportedOperationException();
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "-1798900048"
+	)
+	public static void method8178(int var0) {
+		if (!class335.midiRequests.isEmpty()) {
+			Iterator var1 = class335.midiRequests.iterator();
+
+			while (var1.hasNext()) {
+				MidiRequest var2 = (MidiRequest)var1.next();
+				if (var2 != null) {
+					var2.musicTrackVolume = var0;
+				}
+			}
+
+			MidiRequest var3 = (MidiRequest)class335.midiRequests.get(0);
+			if (var3 != null && var3.midiPcmStream != null && var3.midiPcmStream.isReady() && !var3.field3807) {
+				var3.midiPcmStream.setPcmStreamVolume(var0);
+				var3.field3803 = (float)var0;
+			}
+		}
+
 	}
 }

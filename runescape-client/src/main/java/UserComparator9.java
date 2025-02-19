@@ -2,17 +2,11 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ey")
+@ObfuscatedName("eu")
 @Implements("UserComparator9")
 public class UserComparator9 extends AbstractUserComparator {
-	@ObfuscatedName("qw")
-	@ObfuscatedSignature(
-		descriptor = "Luf;"
-	)
-	static class539 field1513;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -20,10 +14,10 @@ public class UserComparator9 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lsu;Lsu;I)I",
-		garbageValue = "-1948928075"
+		descriptor = "(Lst;Lst;I)I",
+		garbageValue = "-347884592"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -38,98 +32,87 @@ public class UserComparator9 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("bq")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(ILdm;ZI)I",
-		garbageValue = "1358990506"
+		descriptor = "(Lpl;I)V",
+		garbageValue = "-1319646134"
 	)
-	static int method3354(int var0, Script var1, boolean var2) {
-		if (var0 == ScriptOpcodes.VIEWPORT_SETFOV) {
-			ScriptFrame.Interpreter_intStackSize -= 2;
-			Client.field609 = (short)LoginPacket.method3575(Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize]);
-			if (Client.field609 <= 0) {
-				Client.field609 = 256;
-			}
+	public static void method3234(AbstractArchive var0) {
+		GrandExchangeOfferUnitPriceComparator.InvDefinition_archive = var0;
+	}
 
-			Client.field656 = (short)LoginPacket.method3575(Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1]);
-			if (Client.field656 <= 0) {
-				Client.field656 = 256;
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.VIEWPORT_SETZOOM) {
-			ScriptFrame.Interpreter_intStackSize -= 2;
-			Client.zoomHeight = (short)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
-			if (Client.zoomHeight <= 0) {
-				Client.zoomHeight = 256;
-			}
-
-			Client.zoomWidth = (short)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
-			if (Client.zoomWidth <= 0) {
-				Client.zoomWidth = 320;
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.VIEWPORT_CLAMPFOV) {
-			ScriptFrame.Interpreter_intStackSize -= 4;
-			Client.field772 = (short)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize];
-			if (Client.field772 <= 0) {
-				Client.field772 = 1;
-			}
-
-			Client.field773 = (short)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 1];
-			if (Client.field773 <= 0) {
-				Client.field773 = 32767;
-			} else if (Client.field773 < Client.field772) {
-				Client.field773 = Client.field772;
-			}
-
-			Client.field702 = (short)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 2];
-			if (Client.field702 <= 0) {
-				Client.field702 = 1;
-			}
-
-			Client.field775 = (short)Interpreter.Interpreter_intStack[ScriptFrame.Interpreter_intStackSize + 3];
-			if (Client.field775 <= 0) {
-				Client.field775 = 32767;
-			} else if (Client.field775 < Client.field702) {
-				Client.field775 = Client.field702;
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.VIEWPORT_GETEFFECTIVESIZE) {
-			if (Client.viewportWidget != null) {
-				class143.setViewportShape(0, 0, Client.viewportWidget.width, Client.viewportWidget.height, false);
-				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.viewportWidth;
-				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.viewportHeight;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(Ljf;IIIIIIIIB)Z",
+		garbageValue = "66"
+	)
+	static final boolean method3223(Model var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		boolean var9 = ViewportMouse.ViewportMouse_isInViewport;
+		if (!var9) {
+			return false;
+		} else {
+			class443.method8380(var5, var6, var7, var8);
+			class246 var10 = var0.getAABB(var1);
+			int var11 = var2 + var10.field2793;
+			int var12 = var3 + var10.field2794;
+			int var13 = var4 + var10.field2798;
+			int var14 = var10.field2796;
+			int var15 = var10.field2797;
+			int var16 = var10.field2801;
+			int var17 = ViewportMouse.field2952 - var11;
+			int var18 = ViewportMouse.field2953 - var12;
+			int var19 = class202.field2160 - var13;
+			if (Math.abs(var17) > var14 + ViewportMouse.field2955) {
+				return false;
+			} else if (Math.abs(var18) > var15 + class95.field1188) {
+				return false;
+			} else if (Math.abs(var19) > var16 + class159.field1784) {
+				return false;
+			} else if (Math.abs(var19 * class376.field4168 - var18 * ViewportMouse.field2960) > var16 * class95.field1188 + var15 * class159.field1784) {
+				return false;
+			} else if (Math.abs(var17 * ViewportMouse.field2960 - var19 * ClanChannelMember.field1737) > var16 * ViewportMouse.field2955 + var14 * class159.field1784) {
+				return false;
 			} else {
-				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = -1;
-				Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = -1;
+				return Math.abs(var18 * ClanChannelMember.field1737 - var17 * class376.field4168) <= var15 * ViewportMouse.field2955 + var14 * class95.field1188;
 			}
+		}
+	}
 
+	@ObfuscatedName("cd")
+	@ObfuscatedSignature(
+		descriptor = "(ILdy;ZB)I",
+		garbageValue = "88"
+	)
+	static int method3233(int var0, Script var1, boolean var2) {
+		if (var0 == 7900) {
+			int var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
+			Client.field778 = Math.max(var3, 0);
 			return 1;
-		} else if (var0 == ScriptOpcodes.VIEWPORT_GETZOOM) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.zoomHeight;
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Client.zoomWidth;
-			return 1;
-		} else if (var0 == ScriptOpcodes.VIEWPORT_GETFOV) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = HttpMethod.method85(Client.field609);
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = HttpMethod.method85(Client.field656);
-			return 1;
-		} else if (var0 == 6220) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = 0;
-			return 1;
-		} else if (var0 == 6221) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = 0;
-			return 1;
-		} else if (var0 == 6222) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = BuddyRankComparator.canvasWidth;
-			return 1;
-		} else if (var0 == 6223) {
-			Interpreter.Interpreter_intStack[++ScriptFrame.Interpreter_intStackSize - 1] = Huffman.canvasHeight;
+		} else if (var0 == 7901) {
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.field778;
 			return 1;
 		} else {
 			return 2;
 		}
+	}
+
+	@ObfuscatedName("hz")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "-1245308508"
+	)
+	@Export("forceDisconnect")
+	static final void forceDisconnect(int var0) {
+		class60.logOut();
+		switch(var0) {
+		case 1:
+			ObjectComposition.method4206(24);
+			class401.setLoginResponseString("", "You were disconnected from the server.", "");
+			break;
+		case 2:
+			ObjectComposition.method4206(24);
+			class401.setLoginResponseString("The game servers are currently being updated.", "Please wait a few minutes and try again.", "");
+		}
+
 	}
 }

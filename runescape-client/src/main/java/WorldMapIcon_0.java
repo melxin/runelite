@@ -4,42 +4,48 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lj")
+@ObfuscatedName("lt")
 @Implements("WorldMapIcon_0")
 public class WorldMapIcon_0 extends AbstractWorldMapIcon {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("tv")
+	@ObfuscatedSignature(
+		descriptor = "Lbe;"
+	)
+	@Export("pcmStreamMixer")
+	static PcmStreamMixer pcmStreamMixer;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1454486399
+		intValue = 1671019033
 	)
 	@Export("element")
 	final int element;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lli;"
+		descriptor = "Llj;"
 	)
 	@Export("label")
 	final WorldMapLabel label;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -530200853
+		intValue = 1647289709
 	)
 	@Export("subWidth")
 	final int subWidth;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -179215661
+		intValue = -1780618385
 	)
 	@Export("subHeight")
 	final int subHeight;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lnz;Lnz;ILli;)V"
+		descriptor = "(Lnq;Lnq;ILlj;)V"
 	)
 	WorldMapIcon_0(Coord var1, Coord var2, int var3, WorldMapLabel var4) {
 		super(var1, var2);
 		this.element = var3;
 		this.label = var4;
-		WorldMapElement var5 = class31.WorldMapElement_get(this.getElement());
+		WorldMapElement var5 = Canvas.WorldMapElement_get(this.getElement());
 		SpritePixels var6 = var5.getSpriteBool(false);
 		if (var6 != null) {
 			this.subWidth = var6.subWidth;
@@ -51,68 +57,78 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "468922444"
+		descriptor = "(S)I",
+		garbageValue = "-11538"
 	)
 	@Export("getElement")
 	public int getElement() {
 		return this.element;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lli;",
-		garbageValue = "24"
+		descriptor = "(I)Llj;",
+		garbageValue = "-10265660"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
 		return this.label;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1283952551"
+		descriptor = "(B)I",
+		garbageValue = "-127"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
 		return this.subWidth;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1685687159"
+		garbageValue = "-1221967219"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
 		return this.subHeight;
 	}
 
-	@ObfuscatedName("co")
+	@ObfuscatedName("bs")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-2063488600"
+		descriptor = "(ILdy;ZB)I",
+		garbageValue = "49"
 	)
-	@Export("runWidgetOnLoadListener")
-	static void runWidgetOnLoadListener(int var0) {
-		if (var0 != -1) {
-			if (ClanChannel.widgetDefinition.loadInterface(var0)) {
-				Widget[] var1 = ClanChannel.widgetDefinition.Widget_interfaceComponents[var0];
+	static int method6214(int var0, Script var1, boolean var2) {
+		int var3;
+		if (var0 == 3500) {
+			var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.indexCheck.isValidIndexInRange(var3) ? 1 : 0;
+			return 1;
+		} else if (var0 == 3501) {
+			var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.indexCheck.method5598(var3) ? 1 : 0;
+			return 1;
+		} else if (var0 == 3502) {
+			var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.indexCheck.method5600(var3) ? 1 : 0;
+			return 1;
+		} else {
+			return 2;
+		}
+	}
 
-				for (int var2 = 0; var2 < var1.length; ++var2) {
-					Widget var3 = var1[var2];
-					if (var3.onLoad != null) {
-						ScriptEvent var4 = new ScriptEvent();
-						var4.widget = var3;
-						var4.args = var3.onLoad;
-						class150.runScript(var4, 5000000, 0);
-					}
-				}
-
-			}
+	@ObfuscatedName("hq")
+	@ObfuscatedSignature(
+		descriptor = "(Ldm;B)V",
+		garbageValue = "-46"
+	)
+	static void method6208(class94 var0) {
+		if (Client.field545 != var0) {
+			Client.field545 = var0;
 		}
 	}
 }

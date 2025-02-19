@@ -1,58 +1,41 @@
-import net.runelite.mapping.Export;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jl")
-public class class254 extends DualNode {
-	@ObfuscatedName("ay")
+@ObfuscatedName("jd")
+public class class254 {
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "(Lpl;Lpl;Lpl;II)Lfb;",
+		garbageValue = "1071342260"
 	)
-	@Export("field2136")
-	static EvictingDualNodeHashTable field2136;
-
-	static {
-		field2136 = new EvictingDualNodeHashTable(64);
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lje;",
-		garbageValue = "-41"
-	)
-	@Export("VarpDefinition_get")
-	public static VarpDefinition VarpDefinition_get(int var0) {
-		VarpDefinition var1 = (VarpDefinition)VarpDefinition.VarpDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	public static class144 method5253(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2, int var3) {
+		AbstractArchive var4 = var1.vmethod7631() ? var1 : var0;
+		byte[] var6 = var4.getFile(var3 >> 16 & 65535, var3 & 65535);
+		boolean var5;
+		if (var6 == null) {
+			var5 = false;
 		} else {
-			byte[] var2 = VarpDefinition.VarpDefinition_archive.takeFile(16, var0);
-			var1 = new VarpDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			VarpDefinition.VarpDefinition_cached.put(var1, (long)var0);
-			return var1;
+			int var7 = (var6[1] & 255) << 8 | var6[2] & 255;
+			byte[] var8 = var2.getFile(var7, 0);
+			var5 = var8 != null;
 		}
-	}
 
-	@ObfuscatedName("gm")
-	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "50"
-	)
-	static int method5409() {
-		if (Client.archiveLoaders != null && Client.archiveLoadersDone < Client.archiveLoaders.size()) {
-			int var0 = 0;
-
-			for (int var1 = 0; var1 <= Client.archiveLoadersDone; ++var1) {
-				var0 += ((ArchiveLoader)Client.archiveLoaders.get(var1)).loadedCount;
+		if (!var5) {
+			return null;
+		} else {
+			if (class144.field1687 == null) {
+				class144.field1686 = Runtime.getRuntime().availableProcessors();
+				class144.field1687 = new ThreadPoolExecutor(0, class144.field1686, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(class144.field1686 * 100 + 100), new class141());
 			}
 
-			return var0 * 10000 / Client.field692;
-		} else {
-			return 10000;
+			try {
+				return new class144(var4, var2, var3);
+			} catch (Exception var11) {
+				return null;
+			}
 		}
 	}
 }

@@ -4,37 +4,34 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oc")
+@ObfuscatedName("pq")
 @Implements("ArchiveDiskActionHandler")
 public class ArchiveDiskActionHandler implements Runnable {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpm;"
+		descriptor = "Lqb;"
 	)
 	@Export("ArchiveDiskActionHandler_requestQueue")
 	static final NodeDeque ArchiveDiskActionHandler_requestQueue;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lpm;"
+		descriptor = "Lqb;"
 	)
 	@Export("ArchiveDiskActionHandler_responseQueue")
 	static NodeDeque ArchiveDiskActionHandler_responseQueue;
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -900251729
+		intValue = -1055879773
 	)
-	static int field4526;
-	@ObfuscatedName("ao")
-	static final Object field4530;
+	static int field4637;
 	@ObfuscatedName("ad")
-	@Export("ArchiveDiskActionHandler_thread")
-	static Thread ArchiveDiskActionHandler_thread;
+	static final Object field4639;
 
 	static {
 		ArchiveDiskActionHandler_requestQueue = new NodeDeque();
 		ArchiveDiskActionHandler_responseQueue = new NodeDeque();
-		field4526 = 0;
-		field4530 = new Object();
+		field4637 = 0;
+		field4639 = new Object();
 	}
 
 	ArchiveDiskActionHandler() {
@@ -61,92 +58,30 @@ public class ArchiveDiskActionHandler implements Runnable {
 						}
 					}
 
-					synchronized(field4530) {
-						if (field4526 <= 1) {
-							field4526 = 0;
-							field4530.notifyAll();
+					synchronized(field4639) {
+						if (field4637 <= 1) {
+							field4637 = 0;
+							field4639.notifyAll();
 							return;
 						}
 
-						field4526 = 600;
+						field4637 = 600;
 					}
 				} else {
-					class174.method3881(100L);
-					synchronized(field4530) {
-						if (field4526 <= 1) {
-							field4526 = 0;
-							field4530.notifyAll();
+					IntProjection.method4837(100L);
+					synchronized(field4639) {
+						if (field4637 <= 1) {
+							field4637 = 0;
+							field4639.notifyAll();
 							return;
 						}
 
-						--field4526;
+						--field4637;
 					}
 				}
 			}
 		} catch (Exception var13) {
-			class255.RunException_sendStackTrace((String)null, var13);
-		}
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/CharSequence;III)Ljava/lang/String;",
-		garbageValue = "-1902639880"
-	)
-	public static String method7668(CharSequence[] var0, int var1, int var2) {
-		if (var2 == 0) {
-			return "";
-		} else if (var2 == 1) {
-			CharSequence var10 = var0[var1];
-			return var10 == null ? "null" : var10.toString();
-		} else {
-			int var3 = var2 + var1;
-			int var4 = 0;
-
-			for (int var5 = var1; var5 < var3; ++var5) {
-				CharSequence var9 = var0[var5];
-				if (var9 == null) {
-					var4 += 4;
-				} else {
-					var4 += var9.length();
-				}
-			}
-
-			StringBuilder var8 = new StringBuilder(var4);
-
-			for (int var6 = var1; var6 < var3; ++var6) {
-				CharSequence var7 = var0[var6];
-				if (var7 == null) {
-					var8.append("null");
-				} else {
-					var8.append(var7);
-				}
-			}
-
-			return var8.toString();
-		}
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lvh;",
-		garbageValue = "-1558697005"
-	)
-	@Export("getDbTableType")
-	public static DbTableType getDbTableType(int var0) {
-		DbTableType var1 = (DbTableType)DbTableType.DBTableType_cache.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = DbTableType.field5408.takeFile(39, var0);
-			var1 = new DbTableType();
-			if (var2 != null) {
-				var1.method10151(new Buffer(var2));
-			}
-
-			var1.method10159();
-			DbTableType.DBTableType_cache.put(var1, (long)var0);
-			return var1;
+			class213.RunException_sendStackTrace((String)null, var13);
 		}
 	}
 }

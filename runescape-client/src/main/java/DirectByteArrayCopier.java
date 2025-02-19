@@ -4,17 +4,20 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("om")
+@ObfuscatedName("oy")
 @Implements("DirectByteArrayCopier")
 public class DirectByteArrayCopier extends AbstractByteArrayCopier {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@Export("directBuffer")
 	ByteBuffer directBuffer;
 
-	@ObfuscatedName("az")
+	DirectByteArrayCopier() {
+	}
+
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "14"
+		descriptor = "(I)[B",
+		garbageValue = "1066205984"
 	)
 	@Export("get")
 	byte[] get() {
@@ -24,27 +27,33 @@ public class DirectByteArrayCopier extends AbstractByteArrayCopier {
 		return var1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "([BI)V",
-		garbageValue = "1288883946"
+		garbageValue = "-426944211"
 	)
 	@Export("set")
-	public void set(byte[] var1) {
+	void set(byte[] var1) {
 		this.directBuffer = ByteBuffer.allocateDirect(var1.length);
 		this.directBuffer.position(0);
 		this.directBuffer.put(var1);
 	}
 
-	@ObfuscatedName("mr")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIB)V",
-		garbageValue = "-40"
+		descriptor = "(Lnz;II)V",
+		garbageValue = "1476541086"
 	)
-	@Export("updateRootInterface")
-	static final void updateRootInterface(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-		if (ClanChannel.widgetDefinition.loadInterface(var0)) {
-			Player.updateInterface(ClanChannel.widgetDefinition.Widget_interfaceComponents[var0], -1, var1, var2, var3, var4, var5, var6);
+	@Export("Widget_setKeyIgnoreHeld")
+	static final void Widget_setKeyIgnoreHeld(Widget var0, int var1) {
+		if (var0.field3939 == null) {
+			throw new RuntimeException();
+		} else {
+			if (var0.field4083 == null) {
+				var0.field4083 = new int[var0.field3939.length];
+			}
+
+			var0.field4083[var1] = Integer.MAX_VALUE;
 		}
 	}
 }

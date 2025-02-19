@@ -4,39 +4,31 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hu")
+@ObfuscatedName("jg")
 @Implements("Skeleton")
 public class Skeleton extends Node {
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -986149625
-	)
-	@Export("id")
-	int id;
-	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = 771980369
+		intValue = 1258680517
 	)
 	@Export("count")
 	int count;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ao")
 	@Export("transformTypes")
 	int[] transformTypes;
-	@ObfuscatedName("at")
-	@Export("labels")
-	int[][] labels;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("af")
+	int[][] field2679;
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lhn;"
+		descriptor = "Ljq;"
 	)
-	class184 field1991;
+	class241 field2676;
 
 	public Skeleton(int var1, byte[] var2) {
-		this.id = var1;
 		Buffer var3 = new Buffer(var2);
 		this.count = var3.readUnsignedByte();
 		this.transformTypes = new int[this.count];
-		this.labels = new int[this.count][];
+		this.field2679 = new int[this.count][];
 
 		int var4;
 		for (var4 = 0; var4 < this.count; ++var4) {
@@ -44,61 +36,60 @@ public class Skeleton extends Node {
 		}
 
 		for (var4 = 0; var4 < this.count; ++var4) {
-			this.labels[var4] = new int[var3.readUnsignedByte()];
+			this.field2679[var4] = new int[var3.readUnsignedByte()];
 		}
 
 		for (var4 = 0; var4 < this.count; ++var4) {
-			for (int var5 = 0; var5 < this.labels[var4].length; ++var5) {
-				this.labels[var4][var5] = var3.readUnsignedByte();
+			for (int var5 = 0; var5 < this.field2679[var4].length; ++var5) {
+				this.field2679[var4][var5] = var3.readUnsignedByte();
 			}
 		}
 
-		if (var3.offset < var3.array.length) {
+		if (var3.field5570 < var3.field5573.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
-				this.field1991 = new class184(var3, var4);
+				this.field2676 = new class241(var3, var4);
 			}
 		}
 
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-1694021201"
+	)
+	public int method4899() {
+		return this.count;
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1958480408"
+		descriptor = "(B)Ljq;",
+		garbageValue = "-30"
 	)
-	public int method4164() {
-		return this.count;
+	public class241 method4900() {
+		return this.field2676;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lhn;",
-		garbageValue = "11"
+		descriptor = "([BI)[B",
+		garbageValue = "-1680902473"
 	)
-	public class184 method4168() {
-		return this.field1991;
+	static byte[] method4903(byte[] var0) {
+		int var1 = var0.length;
+		byte[] var2 = new byte[var1];
+		System.arraycopy(var0, 0, var2, 0, var1);
+		return var2;
 	}
 
-	@ObfuscatedName("kz")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(S)Z",
-		garbageValue = "21389"
+		descriptor = "(B)Z",
+		garbageValue = "-44"
 	)
-	static final boolean method4171() {
-		return Client.isMenuOpen;
-	}
-
-	@ObfuscatedName("ov")
-	@ObfuscatedSignature(
-		descriptor = "([BII)V",
-		garbageValue = "904018870"
-	)
-	static void method4172(byte[] var0, int var1) {
-		if (Client.randomDatData == null) {
-			Client.randomDatData = new byte[24];
-		}
-
-		class451.writeRandomDat(var0, var1, Client.randomDatData, 0, 24);
+	public static boolean method4902() {
+		return !class335.field3689.isEmpty();
 	}
 }

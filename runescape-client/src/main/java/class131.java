@@ -1,97 +1,100 @@
-import java.awt.Component;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fn")
+@ObfuscatedName("fr")
 public class class131 {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 59770549
+		intValue = -58572205
 	)
-	int field1528;
-	@ObfuscatedName("ah")
-	float field1527;
-	@ObfuscatedName("az")
-	float field1531;
-	@ObfuscatedName("ao")
-	float field1529;
+	int field1564;
+	@ObfuscatedName("ay")
+	float field1563;
+	@ObfuscatedName("au")
+	float field1560;
 	@ObfuscatedName("ad")
-	float field1530;
-	@ObfuscatedName("an")
-	float field1526;
-	@ObfuscatedName("ae")
+	float field1561;
+	@ObfuscatedName("ah")
+	float field1562;
+	@ObfuscatedName("ac")
+	float field1565;
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lfn;"
+		descriptor = "Lfr;"
 	)
-	class131 field1532;
+	class131 field1566;
 
 	class131() {
-		this.field1531 = Float.MAX_VALUE;
-		this.field1529 = Float.MAX_VALUE;
-		this.field1530 = Float.MAX_VALUE;
-		this.field1526 = Float.MAX_VALUE;
+		this.field1560 = Float.MAX_VALUE;
+		this.field1561 = Float.MAX_VALUE;
+		this.field1562 = Float.MAX_VALUE;
+		this.field1565 = Float.MAX_VALUE;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(Lvy;II)V",
-		garbageValue = "740982673"
+		garbageValue = "687857728"
 	)
-	void method3375(Buffer var1, int var2) {
-		this.field1528 = var1.readShort();
-		this.field1527 = var1.method10302();
-		this.field1531 = var1.method10302();
-		this.field1529 = var1.method10302();
-		this.field1530 = var1.method10302();
-		this.field1526 = var1.method10302();
+	void method3269(Buffer var1, int var2) {
+		this.field1564 = var1.readShort();
+		this.field1563 = var1.method10354();
+		this.field1560 = var1.method10354();
+		this.field1561 = var1.method10354();
+		this.field1562 = var1.method10354();
+		this.field1565 = var1.method10354();
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/awt/Component;I)V",
-		garbageValue = "2033705331"
+		descriptor = "(III)V",
+		garbageValue = "-765403087"
 	)
-	static void method3379(Component var0) {
-		var0.addMouseListener(MouseHandler.MouseHandler_instance);
-		var0.addMouseMotionListener(MouseHandler.MouseHandler_instance);
-		var0.addFocusListener(MouseHandler.MouseHandler_instance);
+	public static void method3273(int var0, int var1) {
+		VarbitComposition var2 = ArchiveDisk.method9483(var0);
+		int var3 = var2.baseVar;
+		int var4 = var2.startBit;
+		int var5 = var2.endBit;
+		int var6 = Varps.Varps_masks[var5 - var4];
+		if (var1 < 0 || var1 > var6) {
+			var1 = 0;
+		}
+
+		var6 <<= var4;
+		Varps.Varps_main[var3] = Varps.Varps_main[var3] & ~var6 | var1 << var4 & var6;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "-1032226607"
+		descriptor = "(IIS)I",
+		garbageValue = "2340"
 	)
-	@Export("itemContainerSetItem")
-	static void itemContainerSetItem(int var0, int var1, int var2, int var3) {
-		ItemContainer var4 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var4 == null) {
-			var4 = new ItemContainer();
-			ItemContainer.itemContainers.put(var4, (long)var0);
-		}
+	static int method3274(int var0, int var1) {
+		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+		if (var2 == null) {
+			return 0;
+		} else if (var1 == -1) {
+			return 0;
+		} else {
+			int var3 = 0;
 
-		if (var4.ids.length <= var1) {
-			int[] var5 = new int[var1 + 1];
-			int[] var6 = new int[var1 + 1];
-
-			int var7;
-			for (var7 = 0; var7 < var4.ids.length; ++var7) {
-				var5[var7] = var4.ids[var7];
-				var6[var7] = var4.quantities[var7];
+			for (int var4 = 0; var4 < var2.quantities.length; ++var4) {
+				if (var2.ids[var4] == var1) {
+					var3 += var2.quantities[var4];
+				}
 			}
 
-			for (var7 = var4.ids.length; var7 < var1; ++var7) {
-				var5[var7] = -1;
-				var6[var7] = 0;
-			}
-
-			var4.ids = var5;
-			var4.quantities = var6;
+			return var3;
 		}
+	}
 
-		var4.ids[var1] = var2;
-		var4.quantities[var1] = var3;
+	@ObfuscatedName("bl")
+	@ObfuscatedSignature(
+		descriptor = "(ILdy;ZI)I",
+		garbageValue = "1519303876"
+	)
+	static int method3272(int var0, Script var1, boolean var2) {
+		return 2;
 	}
 }

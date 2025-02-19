@@ -3,157 +3,95 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gc")
-public class class159 extends class150 {
-	@ObfuscatedName("kf")
+@ObfuscatedName("gs")
+public class class159 extends class149 {
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 340683139
+		intValue = 1455535601
 	)
-	@Export("cameraPitch")
-	static int cameraPitch;
+	static int field1784;
+	@ObfuscatedName("be")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	@Export("rasterProvider")
+	public static AbstractRasterProvider rasterProvider;
+	@ObfuscatedName("je")
+	static byte[][] field1785;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = -595760045
+	)
+	int field1781;
 	@ObfuscatedName("ay")
-	String field1728;
+	String field1782;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
 		descriptor = "Lfv;"
 	)
-	final class153 this$0;
+	final class152 this$0;
 
 	@ObfuscatedSignature(
 		descriptor = "(Lfv;)V"
 	)
-	class159(class153 var1) {
+	class159(class152 var1) {
 		this.this$0 = var1;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Lvy;B)V",
+		garbageValue = "25"
+	)
+	void vmethod3702(Buffer var1) {
+		this.field1781 = var1.readInt();
+		this.field1782 = var1.readStringCp1252NullTerminated();
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "-1355269794"
+		descriptor = "(Lgg;I)V",
+		garbageValue = "2011970201"
 	)
-	void vmethod3879(Buffer var1) {
-		this.field1728 = var1.readStringCp1252NullTerminated();
-		var1.readInt();
+	void vmethod3705(ClanSettings var1) {
+		var1.method3590(this.field1781, this.field1782);
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)I",
+		garbageValue = "-117"
+	)
+	public static int method3544(int var0, int var1) {
+		return (var0 << 8) + var1;
 	}
 
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lgq;B)V",
-		garbageValue = "0"
+		descriptor = "([BIII)Ljava/lang/String;",
+		garbageValue = "-1959271403"
 	)
-	void vmethod3882(ClanSettings var1) {
-		var1.name = this.field1728;
-	}
+	@Export("decodeStringCp1252")
+	public static String decodeStringCp1252(byte[] var0, int var1, int var2) {
+		char[] var3 = new char[var2];
+		int var4 = 0;
 
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "([Lcx;II[I[IB)V",
-		garbageValue = "-55"
-	)
-	@Export("sortWorlds")
-	static void sortWorlds(World[] var0, int var1, int var2, int[] var3, int[] var4) {
-		if (var1 < var2) {
-			int var5 = var1 - 1;
-			int var6 = var2 + 1;
-			int var7 = (var2 + var1) / 2;
-			World var8 = var0[var7];
-			var0[var7] = var0[var1];
-			var0[var1] = var8;
-
-			while (var5 < var6) {
-				boolean var9 = true;
-
-				int var10;
-				int var11;
-				int var12;
-				do {
-					--var6;
-
-					for (var10 = 0; var10 < 4; ++var10) {
-						if (var3[var10] == 2) {
-							var11 = var0[var6].index;
-							var12 = var8.index;
-						} else if (var3[var10] == 1) {
-							var11 = var0[var6].population;
-							var12 = var8.population;
-							if (var11 == -1 && var4[var10] == 1) {
-								var11 = 2001;
-							}
-
-							if (var12 == -1 && var4[var10] == 1) {
-								var12 = 2001;
-							}
-						} else if (var3[var10] == 3) {
-							var11 = var0[var6].isMembersOnly() ? 1 : 0;
-							var12 = var8.isMembersOnly() ? 1 : 0;
-						} else {
-							var11 = var0[var6].id;
-							var12 = var8.id;
-						}
-
-						if (var11 != var12) {
-							if ((var4[var10] != 1 || var11 <= var12) && (var4[var10] != 0 || var11 >= var12)) {
-								var9 = false;
-							}
-							break;
-						}
-
-						if (var10 == 3) {
-							var9 = false;
-						}
+		for (int var5 = 0; var5 < var2; ++var5) {
+			int var6 = var0[var5 + var1] & 255;
+			if (var6 != 0) {
+				if (var6 >= 128 && var6 < 160) {
+					char var7 = class433.cp1252AsciiExtension[var6 - 128];
+					if (var7 == 0) {
+						var7 = '?';
 					}
-				} while(var9);
 
-				var9 = true;
-
-				do {
-					++var5;
-
-					for (var10 = 0; var10 < 4; ++var10) {
-						if (var3[var10] == 2) {
-							var11 = var0[var5].index;
-							var12 = var8.index;
-						} else if (var3[var10] == 1) {
-							var11 = var0[var5].population;
-							var12 = var8.population;
-							if (var11 == -1 && var4[var10] == 1) {
-								var11 = 2001;
-							}
-
-							if (var12 == -1 && var4[var10] == 1) {
-								var12 = 2001;
-							}
-						} else if (var3[var10] == 3) {
-							var11 = var0[var5].isMembersOnly() ? 1 : 0;
-							var12 = var8.isMembersOnly() ? 1 : 0;
-						} else {
-							var11 = var0[var5].id;
-							var12 = var8.id;
-						}
-
-						if (var11 != var12) {
-							if ((var4[var10] != 1 || var11 >= var12) && (var4[var10] != 0 || var11 <= var12)) {
-								var9 = false;
-							}
-							break;
-						}
-
-						if (var10 == 3) {
-							var9 = false;
-						}
-					}
-				} while(var9);
-
-				if (var5 < var6) {
-					World var13 = var0[var5];
-					var0[var5] = var0[var6];
-					var0[var6] = var13;
+					var6 = var7;
 				}
-			}
 
-			sortWorlds(var0, var1, var6, var3, var4);
-			sortWorlds(var0, var6 + 1, var2, var3, var4);
+				var3[var4++] = (char)var6;
+			}
 		}
 
+		return new String(var3, 0, var4);
 	}
 }

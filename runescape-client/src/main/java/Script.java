@@ -1,63 +1,58 @@
-import java.util.Date;
+import java.awt.Component;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dm")
+@ObfuscatedName("dy")
 @Implements("Script")
 public class Script extends DualNode {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "Lmj;"
 	)
 	@Export("Script_cached")
 	static EvictingDualNodeHashTable Script_cached;
-	@ObfuscatedName("dl")
-	@ObfuscatedSignature(
-		descriptor = "[Lvi;"
-	)
-	@Export("worldSelectArrows")
-	static IndexedSprite[] worldSelectArrows;
-	@ObfuscatedName("ah")
-	String field1004;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ay")
+	String field1019;
+	@ObfuscatedName("au")
 	@Export("opcodes")
 	int[] opcodes;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@Export("intOperands")
 	int[] intOperands;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@Export("stringOperands")
 	String[] stringOperands;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1831460751
+		intValue = 1492122487
 	)
 	@Export("localIntCount")
 	int localIntCount;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -970822451
+		intValue = 784639269
 	)
 	@Export("localStringCount")
 	int localStringCount;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 386041121
+		intValue = 1202144317
 	)
 	@Export("intArgumentCount")
 	int intArgumentCount;
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -914529041
+		intValue = 1985618717
 	)
 	@Export("stringArgumentCount")
 	int stringArgumentCount;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "[Lue;"
+		descriptor = "[Lqv;"
 	)
 	@Export("switches")
 	IterableNodeHashTable[] switches;
@@ -69,147 +64,211 @@ public class Script extends DualNode {
 	Script() {
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lue;",
-		garbageValue = "-1004050298"
+		descriptor = "(II)[Lqv;",
+		garbageValue = "1320858081"
 	)
 	@Export("newIterableNodeHashTable")
 	IterableNodeHashTable[] newIterableNodeHashTable(int var1) {
 		return new IterableNodeHashTable[var1];
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
-		garbageValue = "310846203"
+		descriptor = "(Ljava/lang/Throwable;Ljava/lang/String;)Lwf;"
 	)
-	@Export("addChatMessage")
-	static void addChatMessage(int var0, String var1, String var2, String var3) {
-		ChatChannel var4 = (ChatChannel)Messages.Messages_channels.get(var0);
-		if (var4 == null) {
-			var4 = new ChatChannel();
-			Messages.Messages_channels.put(var0, var4);
+	@Export("newRunException")
+	public static RunException newRunException(Throwable var0, String var1) {
+		RunException var2;
+		if (var0 instanceof RunException) {
+			var2 = (RunException)var0;
+			var2.message = var2.message + ' ' + var1;
+		} else {
+			var2 = new RunException(var0, var1);
 		}
 
-		Message var5 = var4.addMessage(var0, var1, var2, var3);
-		Messages.Messages_hashTable.put(var5, (long)var5.count);
-		Messages.Messages_queue.add(var5);
-		Client.chatCycle = Client.cycleCntr;
+		return var2;
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/util/Date;",
-		garbageValue = "-1522771239"
+		descriptor = "(Ljava/awt/Component;I)V",
+		garbageValue = "836242365"
 	)
-	static Date method2490() {
-		java.util.Calendar var0 = java.util.Calendar.getInstance();
-		var0.set(2, 0);
-		var0.set(5, 1);
-		var0.set(1, 1900);
-		return var0.getTime();
+	static void method2327(Component var0) {
+		var0.removeMouseListener(MouseHandler.MouseHandler_instance);
+		var0.removeMouseMotionListener(MouseHandler.MouseHandler_instance);
+		var0.removeFocusListener(MouseHandler.MouseHandler_instance);
+		MouseHandler.MouseHandler_currentButtonVolatile = 0;
 	}
 
-	@ObfuscatedName("hd")
+	@ObfuscatedName("ln")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "1144422908"
+		descriptor = "(Lew;IIIIB)V",
+		garbageValue = "-60"
 	)
-	@Export("doCheat")
-	static final void doCheat(String var0) {
-		if (var0.equalsIgnoreCase("toggleroof")) {
-			class544.clientPreferences.updateRoofsHidden(!class544.clientPreferences.isRoofsHidden());
-			if (class544.clientPreferences.isRoofsHidden()) {
-				Interpreter.addGameMessage(99, "", "Roofs are now all hidden");
-			} else {
-				Interpreter.addGameMessage(99, "", "Roofs will only be removed selectively");
+	@Export("addNpcToMenu")
+	static final void addNpcToMenu(NPC var0, int var1, int var2, int var3, int var4) {
+		NPCComposition var5 = var0.definition;
+		if (Client.menu.menuOptionsCount < 400) {
+			if (var5.transforms != null) {
+				var5 = var5.transform();
+			}
+
+			if (var5 != null) {
+				if (var5.isInteractable) {
+					if (!var5.isFollower || Client.followerIndex == var1) {
+						String var6 = var0.method2855();
+						int var7;
+						int var10;
+						if (var5.combatLevel != 0 && var0.field1257 != 0) {
+							var7 = var0.field1257 != -1 ? var0.field1257 : var5.combatLevel;
+							var10 = class132.localPlayer.combatLevel;
+							int var11 = var10 - var7;
+							String var9;
+							if (var11 < -9) {
+								var9 = MilliClock.colorStartTag(16711680);
+							} else if (var11 < -6) {
+								var9 = MilliClock.colorStartTag(16723968);
+							} else if (var11 < -3) {
+								var9 = MilliClock.colorStartTag(16740352);
+							} else if (var11 < 0) {
+								var9 = MilliClock.colorStartTag(16756736);
+							} else if (var11 > 9) {
+								var9 = MilliClock.colorStartTag(65280);
+							} else if (var11 > 6) {
+								var9 = MilliClock.colorStartTag(4259584);
+							} else if (var11 > 3) {
+								var9 = MilliClock.colorStartTag(8453888);
+							} else if (var11 > 0) {
+								var9 = MilliClock.colorStartTag(12648192);
+							} else {
+								var9 = MilliClock.colorStartTag(16776960);
+							}
+
+							var6 = var6 + var9 + " " + " (" + "level-" + var7 + ")";
+						}
+
+						if (var5.lowPriorityFollowerOps && Client.followerOpsLowPriority) {
+							WorldMapSprite.insertMenuItem("Examine", MilliClock.colorStartTag(16776960) + var6, 1003, var1, var2, var3, -1, false, var4);
+						}
+
+						if (!class7.field23 && Client.isItemSelected == 1) {
+							WorldMapSprite.insertMenuItem("Use", Client.field674 + " " + "->" + " " + MilliClock.colorStartTag(16776960) + var6, 7, var1, var2, var3, -1, false, var4);
+						} else if (Client.isSpellSelected) {
+							if (!class7.field23 && (Message.selectedSpellFlags & 2) == 2) {
+								WorldMapSprite.insertMenuItem(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + MilliClock.colorStartTag(16776960) + var6, 8, var1, var2, var3, -1, false, var4);
+							}
+						} else {
+							var7 = var5.lowPriorityFollowerOps && Client.followerOpsLowPriority ? 2000 : 0;
+							String[] var8 = var5.actions;
+							int var12;
+							if (var8 != null) {
+								for (var12 = 4; var12 >= 0; --var12) {
+									if (!class7.field23 && var0.method2854(var12) && var8[var12] != null && !var8[var12].equalsIgnoreCase("Attack")) {
+										var10 = 0;
+										if (var12 == 0) {
+											var10 = var7 + 9;
+										}
+
+										if (var12 == 1) {
+											var10 = var7 + 10;
+										}
+
+										if (var12 == 2) {
+											var10 = var7 + 11;
+										}
+
+										if (var12 == 3) {
+											var10 = var7 + 12;
+										}
+
+										if (var12 == 4) {
+											var10 = var7 + 13;
+										}
+
+										WorldMapSprite.insertMenuItem(var8[var12], MilliClock.colorStartTag(16776960) + var6, var10, var1, var2, var3, -1, false, var4);
+									}
+								}
+							}
+
+							if (var8 != null) {
+								for (var12 = 4; var12 >= 0; --var12) {
+									if (!class7.field23 && var0.method2854(var12) && var8[var12] != null && var8[var12].equalsIgnoreCase("Attack")) {
+										short var13 = 0;
+										if (Client.npcAttackOption != AttackOption.AttackOption_hidden) {
+											if (Client.npcAttackOption == AttackOption.AttackOption_alwaysRightClick || AttackOption.AttackOption_dependsOnCombatLevels == Client.npcAttackOption && var5.combatLevel > class132.localPlayer.combatLevel) {
+												var13 = 2000;
+											}
+
+											var10 = 0;
+											if (var12 == 0) {
+												var10 = var13 + 9;
+											}
+
+											if (var12 == 1) {
+												var10 = var13 + 10;
+											}
+
+											if (var12 == 2) {
+												var10 = var13 + 11;
+											}
+
+											if (var12 == 3) {
+												var10 = var13 + 12;
+											}
+
+											if (var12 == 4) {
+												var10 = var13 + 13;
+											}
+
+											WorldMapSprite.insertMenuItem(var8[var12], MilliClock.colorStartTag(16776960) + var6, var10, var1, var2, var3, -1, false, var4);
+										}
+									}
+								}
+							}
+
+							if (!var5.lowPriorityFollowerOps || !Client.followerOpsLowPriority) {
+								WorldMapSprite.insertMenuItem("Examine", MilliClock.colorStartTag(16776960) + var6, 1003, var1, var2, var3, -1, false, var4);
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	@ObfuscatedName("nc")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1450353238"
+	)
+	static final void method2328() {
+		Iterator var0 = Client.worldViewManager.iterator();
+
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
+
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				Player var3 = (Player)var1.field1353.method7890((long)Client.playerUpdateManager.playerIndices[var2]);
+				if (var3 != null) {
+					var3.clearIsFriend();
+				}
 			}
 		}
 
-		if (var0.startsWith("zbuf")) {
-			boolean var1 = class278.method5972(var0.substring(5).trim()) == 1;
-			Client.client.method541(var1);
-			Rasterizer3D.method4017(var1);
+		var0 = Messages.Messages_hashTable.iterator();
+
+		while (var0.hasNext()) {
+			Message var4 = (Message)var0.next();
+			var4.clearIsFromFriend();
 		}
 
-		if (var0.equalsIgnoreCase("z")) {
-			Client.z = !Client.z;
+		if (class7.friendsChat != null) {
+			class7.friendsChat.clearFriends();
 		}
 
-		if (var0.equalsIgnoreCase("displayfps")) {
-			class544.clientPreferences.toggleDisplayFps();
-		}
-
-		if (var0.equalsIgnoreCase("renderself")) {
-			Client.renderSelf = !Client.renderSelf;
-		}
-
-		if (var0.equalsIgnoreCase("mouseovertext")) {
-			Client.showMouseOverText = !Client.showMouseOverText;
-		}
-
-		int var2;
-		String[] var3;
-		if (var0.startsWith("setdrawdistance")) {
-			var3 = var0.split(" ");
-
-			try {
-				var2 = Integer.parseInt(var3[1]);
-				class544.clientPreferences.setDrawDistance(var2);
-			} catch (NumberFormatException var6) {
-				Interpreter.addGameMessage(99, "", String.format("Error setting draw distance. setdrawdistance should be in the format \"::setdrawdistance X\" where X is a valid number. Value provided: %s", var3[1]));
-			}
-		}
-
-		if (var0.startsWith("settilerendermode")) {
-			var3 = var0.split(" ");
-
-			try {
-				var2 = Integer.parseInt(var3[1]);
-				GameEngine.topLevelWorldView.scene.method4212(class175.method3888()[var2]);
-			} catch (NumberFormatException var5) {
-				Interpreter.addGameMessage(99, "", String.format("Error setting tile render mode. settilerendermode should be in the format \"::settilerendermode X\" where X is a valid number from 0-1. 0=camera 1=target Value provided: %s", var3[1]));
-			}
-		}
-
-		if (var0.equalsIgnoreCase("getdrawdistance")) {
-			Interpreter.addGameMessage(99, "", String.format("%d", class544.clientPreferences.getDrawDistance()));
-		}
-
-		if (Client.staffModLevel >= 2) {
-			if (var0.equalsIgnoreCase("errortest")) {
-				throw new RuntimeException();
-			}
-
-			if (var0.equalsIgnoreCase("showcoord")) {
-				class420.worldMap.showCoord = !class420.worldMap.showCoord;
-			}
-
-			if (var0.equalsIgnoreCase("fpson")) {
-				class544.clientPreferences.updateDisplayFps(true);
-			}
-
-			if (var0.equalsIgnoreCase("fpsoff")) {
-				class544.clientPreferences.updateDisplayFps(false);
-			}
-
-			if (var0.equalsIgnoreCase("gc")) {
-				System.gc();
-			}
-
-			if (var0.equalsIgnoreCase("clientdrop")) {
-				MenuAction.method2363();
-			}
-
-			if (var0.equalsIgnoreCase("clientreload")) {
-				ModelData0.method4808();
-			}
-		}
-
-		PacketBufferNode var7 = ScriptEvent.getPacketBufferNode(ClientPacket.DOCHEAT, Client.packetWriter.isaacCipher);
-		var7.packetBuffer.writeByte(var0.length() + 1);
-		var7.packetBuffer.writeStringCp1252NullTerminated(var0);
-		Client.packetWriter.addNode(var7);
 	}
 }

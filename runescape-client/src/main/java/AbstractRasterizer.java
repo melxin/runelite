@@ -3,74 +3,85 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hx")
+@ObfuscatedName("jj")
 @Implements("AbstractRasterizer")
 public abstract class AbstractRasterizer extends Rasterizer2D {
-	@ObfuscatedName("au")
-	static int field1990;
+	@ObfuscatedName("ae")
+	static int field2673;
+	@ObfuscatedName("ab")
+	boolean field2671;
 	@ObfuscatedName("ay")
-	boolean field1983;
-	@ObfuscatedName("ah")
-	boolean field1981;
-	@ObfuscatedName("at")
-	int[] field1989;
-	@ObfuscatedName("ac")
+	boolean field2663;
+	@ObfuscatedName("aa")
+	int[] field2670;
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lhm;"
+		descriptor = "Lkb;"
 	)
-	Clips field1982;
+	Clips field2672;
 
 	static {
-		field1990 = 0;
+		field2673 = 0;
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lhm;)V"
+		descriptor = "(Lkb;)V"
 	)
 	AbstractRasterizer(Clips var1) {
-		this.field1983 = false;
-		this.field1981 = false;
-		this.field1989 = Rasterizer3D.Rasterizer3D_colorPalette;
-		this.field1982 = var1;
+		this.field2671 = false;
+		this.field2663 = false;
+		this.field2670 = Rasterizer3D.Rasterizer3D_colorPalette;
+		this.field2672 = var1;
 	}
 
-	@ObfuscatedName("ay")
-	void method4133(int[] var1, int var2, int var3, float[] var4) {
+	@ObfuscatedName("ab")
+	void method4857(int[] var1, int var2, int var3, float[] var4) {
 		Rasterizer2D.Rasterizer2D_init(var1, var2, var3, var4);
 	}
 
-	@ObfuscatedName("ao")
-	void method4134(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12, byte var13, byte var14, byte var15, byte var16) {
-		var10 = method4132(var10, var13, var14, var15, var16);
-		var11 = method4132(var11, var13, var14, var15, var16);
-		var12 = method4132(var12, var13, var14, var15, var16);
+	@ObfuscatedName("ad")
+	void method4869(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12) {
+		byte var13 = this.field2672.field3000.field2970;
+		if (var13 > 0) {
+			byte var14 = this.field2672.field3000.field2968;
+			byte var15 = this.field2672.field3000.field2967;
+			byte var16 = this.field2672.field3000.field2969;
+			var10 = method4893(var10, var14, var15, var16, var13);
+			var11 = method4893(var11, var14, var15, var16, var13);
+			var12 = method4893(var12, var14, var15, var16, var13);
+		}
+
 		this.drawAlphaBlendedGraphics(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12);
 	}
 
-	@ObfuscatedName("ad")
-	void method4152(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, byte var11, byte var12, byte var13, byte var14) {
-		int var15 = method4132(var10, var11, var12, var13, var14);
-		var10 = this.field1989[var15];
-		this.vmethod4755(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
+	@ObfuscatedName("ah")
+	void method4861(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10) {
+		byte var11 = this.field2672.field3000.field2970;
+		if (var11 > 0) {
+			int var12 = method4893(var10, this.field2672.field3000.field2968, this.field2672.field3000.field2967, this.field2672.field3000.field2969, this.field2672.field3000.field2970);
+			var10 = this.field2670[var12];
+		}
+
+		this.vmethod5491(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10);
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("drawAlphaBlendedGraphics")
 	abstract void drawAlphaBlendedGraphics(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12);
 
-	@ObfuscatedName("ae")
-	abstract void vmethod4755(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10);
+	@ObfuscatedName("ao")
+	abstract void vmethod5491(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10);
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("af")
 	@Export("drawGradientTriangle")
 	abstract void drawGradientTriangle(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22);
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("aa")
 	@Export("textureMapPolygons")
 	abstract void textureMapPolygons(int var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22);
 
-	@ObfuscatedName("ah")
-	static int method4132(int var0, byte var1, byte var2, byte var3, byte var4) {
+	@ObfuscatedName("ay")
+	static int method4893(int var0, byte var1, byte var2, byte var3, byte var4) {
 		int var5 = var0 >> 10 & 63;
 		int var6 = var0 >> 7 & 7;
 		int var7 = var0 & 127;
@@ -90,8 +101,8 @@ public abstract class AbstractRasterizer extends Rasterizer2D {
 		return (var5 << 10 | var6 << 7 | var7) & 65535;
 	}
 
-	@ObfuscatedName("az")
-	static final int method4131(int var0, int var1) {
+	@ObfuscatedName("au")
+	static final int method4866(int var0, int var1) {
 		var1 = (var0 & 127) * var1 >> 7;
 		if (var1 < 2) {
 			var1 = 2;
@@ -102,19 +113,19 @@ public abstract class AbstractRasterizer extends Rasterizer2D {
 		return (var0 & 65408) + var1;
 	}
 
-	@ObfuscatedName("ac")
-	static final int method4138() {
-		return field1990;
-	}
-
-	@ObfuscatedName("au")
-	static void method4139(int var0) {
-		field1990 = var0;
-	}
-
 	@ObfuscatedName("as")
-	static void method4156(int var0) {
+	static final int method4881() {
+		return field2673;
+	}
+
+	@ObfuscatedName("ae")
+	static void method4867(int var0) {
+		field2673 = var0;
+	}
+
+	@ObfuscatedName("ax")
+	static void method4868(int var0) {
 		int var1 = var0 * 210;
-		method4139(var1);
+		method4867(var1);
 	}
 }

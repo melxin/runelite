@@ -1,47 +1,50 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hp")
+@ObfuscatedName("je")
 @Implements("FloatProjection")
 public class FloatProjection extends Projection {
-	@ObfuscatedName("eh")
-	@ObfuscatedSignature(
-		descriptor = "Lok;"
+	@ObfuscatedName("si")
+	static boolean field2787;
+	@ObfuscatedName("um")
+	@ObfuscatedGetter(
+		intValue = 124017645
 	)
-	static Archive field2104;
-	@ObfuscatedName("ay")
+	static int field2789;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lqe;"
+		descriptor = "Lro;"
 	)
 	@Export("transformationMatrix")
 	TransformationMatrix transformationMatrix;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@Export("projection")
 	float[] projection;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lqe;)V"
+		descriptor = "(Lro;)V"
 	)
 	FloatProjection(TransformationMatrix var1) {
 		this.projection = new float[3];
 		this.transformationMatrix = var1;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lhs;IIIIJ)V"
+		descriptor = "(Ljc;IIIIJ)V"
 	)
 	@Export("draw")
-	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
+	void draw(TileItem var1, int var2, int var3, int var4, int var5, long var6) {
 		var1.draw(var2, this.transformationMatrix, var3, var4, var5, var6);
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(Lhj;Lhz;IIII)V",
-		garbageValue = "54431755"
+		descriptor = "(Ljz;Ljh;IIII)V",
+		garbageValue = "-1468794048"
 	)
 	@Export("drawTileUnderlay")
 	void drawTileUnderlay(Scene var1, SceneTilePaint var2, int var3, int var4, int var5) {
@@ -76,10 +79,10 @@ public class FloatProjection extends Projection {
 		this.drawSceneTilePaint(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var17, var9, var8, var13, var12);
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lhj;Lho;IIB)V",
-		garbageValue = "-59"
+		descriptor = "(Ljz;Lji;III)V",
+		garbageValue = "-2141053540"
 	)
 	@Export("drawTileOverlay")
 	void drawTileOverlay(Scene var1, SceneTileModel var2, int var3, int var4) {
@@ -102,195 +105,27 @@ public class FloatProjection extends Projection {
 			var9 |= 1;
 			SceneTileModel.verticesX[var6] = Rasterizer3D.getClipMidX() + var7 * Rasterizer3D.get3dZoom() / var9;
 			SceneTileModel.verticesY[var6] = Rasterizer3D.getClipMidY() + var8 * Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.verticesZ[var6] = HttpResponse.method298(var9);
+			SceneTileModel.verticesZ[var6] = class148.method3471(var9);
 		}
 
 		this.drawSceneTileModel(var1, var2, var3, var4);
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("bs")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "345972941"
+		descriptor = "(Lbr;B)V",
+		garbageValue = "89"
 	)
-	@Export("changeWorldSelectSorting")
-	static void changeWorldSelectSorting(int var0, int var1) {
-		int[] var2 = new int[4];
-		int[] var3 = new int[4];
-		var2[0] = var0;
-		var3[0] = var1;
-		int var4 = 1;
-
-		for (int var5 = 0; var5 < 4; ++var5) {
-			if (World.World_sortOption1[var5] != var0) {
-				var2[var4] = World.World_sortOption1[var5];
-				var3[var4] = World.World_sortOption2[var5];
-				++var4;
-			}
+	@Export("PcmStream_disable")
+	static final void PcmStream_disable(PcmStream var0) {
+		var0.active = false;
+		if (var0.sound != null) {
+			var0.sound.position = 0;
 		}
 
-		World.World_sortOption1 = var2;
-		World.World_sortOption2 = var3;
-		class159.sortWorlds(World.World_worlds, 0, World.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
-	}
-
-	@ObfuscatedName("jr")
-	@ObfuscatedSignature(
-		descriptor = "(IIZI)V",
-		garbageValue = "-947724231"
-	)
-	static final void method4437(int var0, int var1, boolean var2) {
-		if (!var2 || var0 != AsyncRestClient.field62 || class133.field1554 != var1) {
-			AsyncRestClient.field62 = var0;
-			class133.field1554 = var1;
-			class360.updateGameState(25);
-			Client.field723 = true;
-			class328.drawLoadingMessage("Loading - please wait.", true);
-			int var3 = GameEngine.topLevelWorldView.baseX;
-			int var4 = GameEngine.topLevelWorldView.baseY;
-			GameEngine.topLevelWorldView.baseX = (var0 - 6) * 8;
-			GameEngine.topLevelWorldView.baseY = (var1 - 6) * 8;
-			int var5 = GameEngine.topLevelWorldView.baseX - var3;
-			int var6 = GameEngine.topLevelWorldView.baseY - var4;
-			int var7 = var5 * 128;
-			int var8 = var6 * 128;
-
-			int var9;
-			int var11;
-			int[] var10000;
-			for (var9 = 0; var9 < 65536; ++var9) {
-				NPC var21 = GameEngine.topLevelWorldView.npcs[var9];
-				if (var21 != null) {
-					for (var11 = 0; var11 < 10; ++var11) {
-						var10000 = var21.pathX;
-						var10000[var11] -= var5;
-						var10000 = var21.pathY;
-						var10000[var11] -= var6;
-					}
-
-					var21.x -= var7;
-					var21.y -= var8;
-					var21.field1247 -= var5;
-					var21.field1249 -= var6;
-					var21.field1248 -= var5;
-					var21.field1250 -= var6;
-				}
-			}
-
-			for (var9 = 0; var9 < 2048; ++var9) {
-				Player var24 = GameEngine.topLevelWorldView.players[var9];
-				if (var24 != null) {
-					for (var11 = 0; var11 < 10; ++var11) {
-						var10000 = var24.pathX;
-						var10000[var11] -= var5;
-						var10000 = var24.pathY;
-						var10000[var11] -= var6;
-					}
-
-					var24.x -= var7;
-					var24.y -= var8;
-					var24.field1247 -= var5;
-					var24.field1249 -= var6;
-					var24.field1248 -= var5;
-					var24.field1250 -= var6;
-				}
-			}
-
-			for (var9 = 0; var9 < 2048; ++var9) {
-				WorldEntity var25 = GameEngine.topLevelWorldView.worldEntities[var9];
-				if (var25 != null) {
-					var25.setPosition(-var7, -var8);
-				}
-			}
-
-			byte var22 = 0;
-			byte var10 = 104;
-			byte var23 = 1;
-			if (var5 < 0) {
-				var22 = 103;
-				var10 = -1;
-				var23 = -1;
-			}
-
-			byte var12 = 0;
-			byte var13 = 104;
-			byte var14 = 1;
-			if (var6 < 0) {
-				var12 = 103;
-				var13 = -1;
-				var14 = -1;
-			}
-
-			int var16;
-			for (int var15 = var22; var10 != var15; var15 += var23) {
-				for (var16 = var12; var16 != var13; var16 += var14) {
-					int var17 = var15 + var5;
-					int var18 = var6 + var16;
-
-					for (int var19 = 0; var19 < 4; ++var19) {
-						if (0 <= var17 && var17 < 104 && 0 <= var18 && var18 < 104) {
-							GameEngine.topLevelWorldView.groundItems[var19][var15][var16] = GameEngine.topLevelWorldView.groundItems[var19][var17][var18];
-						} else {
-							GameEngine.topLevelWorldView.groundItems[var19][var15][var16] = null;
-						}
-					}
-				}
-			}
-
-			for (PendingSpawn var20 = (PendingSpawn)GameEngine.topLevelWorldView.pendingSpawns.last(); var20 != null; var20 = (PendingSpawn)GameEngine.topLevelWorldView.pendingSpawns.previous()) {
-				var20.x -= var5;
-				var20.y -= var6;
-				if (var20.x < 0 || 104 <= var20.x || var20.y < 0 || 104 <= var20.y) {
-					var20.remove();
-				}
-			}
-
-			if (Client.destinationX != 0) {
-				Client.destinationX -= var5;
-				Client.destinationY -= var6;
-			}
-
-			Client.soundEffectCount = 0;
-			Client.isCameraLocked = false;
-			Buddy.cameraX -= var5 << 7;
-			class31.cameraZ -= var6 << 7;
-			VarpDefinition.oculusOrbFocalPointX -= var5 << 7;
-			class7.oculusOrbFocalPointY -= var6 << 7;
-			Client.field739 = -1;
-			GameEngine.topLevelWorldView.graphicsObjects.clear();
-			GameEngine.topLevelWorldView.projectiles.clear();
-
-			for (var16 = 0; var16 < 4; ++var16) {
-				GameEngine.topLevelWorldView.collisionMaps[var16].clear();
-			}
-
-		}
-	}
-
-	@ObfuscatedName("kb")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "708605342"
-	)
-	static final void method4435() {
-		for (PendingSpawn var0 = (PendingSpawn)GameEngine.topLevelWorldView.pendingSpawns.last(); var0 != null; var0 = (PendingSpawn)GameEngine.topLevelWorldView.pendingSpawns.previous()) {
-			if (var0.hitpoints == -1) {
-				var0.delay = 0;
-				ObjectComposition.method5557(GameEngine.topLevelWorldView, var0);
-			} else {
-				var0.remove();
-			}
+		for (PcmStream var1 = var0.firstSubStream(); var1 != null; var1 = var0.nextSubStream()) {
+			PcmStream_disable(var1);
 		}
 
-	}
-
-	@ObfuscatedName("ko")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "544538834"
-	)
-	static void method4443() {
-		Client.menu.menuOptionsCount = 0;
-		Client.isMenuOpen = false;
 	}
 }

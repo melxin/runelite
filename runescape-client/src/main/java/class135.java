@@ -1,75 +1,81 @@
 import java.util.concurrent.Callable;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("fg")
 public class class135 implements Callable {
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lfn;"
+	)
+	final class136 field1602;
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lff;"
+		descriptor = "Lfq;"
 	)
-	final class136 field1567;
-	@ObfuscatedName("ah")
+	final class137 field1601;
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lfs;"
+		descriptor = "Lfu;"
 	)
-	final class137 field1569;
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lfm;"
-	)
-	final class138 field1566;
-	@ObfuscatedName("ao")
+	final class138 field1603;
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 2124282617
+		intValue = -129259055
 	)
-	final int field1568;
+	final int field1604;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfl;"
+		descriptor = "Lfb;"
 	)
 	final class144 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfl;Lff;Lfs;Lfm;I)V"
+		descriptor = "(Lfb;Lfn;Lfq;Lfu;I)V"
 	)
 	class135(class144 var1, class136 var2, class137 var3, class138 var4, int var5) {
 		this.this$0 = var1;
-		this.field1567 = var2;
-		this.field1569 = var3;
-		this.field1566 = var4;
-		this.field1568 = var5;
+		this.field1602 = var2;
+		this.field1601 = var3;
+		this.field1603 = var4;
+		this.field1604 = var5;
 	}
 
 	public Object call() {
-		this.field1567.method3448();
+		this.field1602.method3353();
 		class136[][] var1;
-		if (this.field1569 == class137.field1600) {
-			var1 = this.this$0.field1638;
+		if (this.field1601 == class137.field1632) {
+			var1 = this.this$0.field1685;
 		} else {
-			var1 = this.this$0.field1639;
+			var1 = this.this$0.field1681;
 		}
 
-		var1[this.field1568][this.field1566.method3491()] = this.field1567;
+		var1[this.field1604][this.field1603.method3393()] = this.field1602;
 		return null;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)I",
-		garbageValue = "43"
+		descriptor = "(IB)Lvt;",
+		garbageValue = "-31"
 	)
-	static int method3445(int var0, int var1, int var2) {
-		int var3 = var0 >> 16 & 255;
-		int var4 = var0 >> 8 & 255;
-		int var5 = var0 & 255;
-		int var6 = var1 >> 16 & 255;
-		int var7 = var1 >> 8 & 255;
-		int var8 = var1 & 255;
-		int var9 = var3 + (var6 - var3 + 1) * var2 / 64 & 255;
-		int var10 = var4 + (var7 - var4 + 1) * var2 / 64 & 255;
-		int var11 = (var8 - var5 + 1) * var2 / 64 + var5 & 255;
-		return var9 << 16 | var10 << 8 | var11;
+	@Export("getDbRowType")
+	public static DbRowType getDbRowType(int var0) {
+		DbRowType var1 = (DbRowType)DbRowType.DBRowType_cache.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = DbRowType.field5516.takeFile(38, var0);
+			var1 = new DbRowType();
+			if (var2 != null) {
+				var1.method10118(new Buffer(var2));
+			}
+
+			var1.method10121();
+			DbRowType.DBRowType_cache.put(var1, (long)var0);
+			return var1;
+		}
 	}
 }

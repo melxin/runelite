@@ -3,29 +3,29 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cw")
+@ObfuscatedName("wz")
 @Implements("Entity")
 public interface Entity {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("cf")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "392218032"
+		descriptor = "(B)I",
+		garbageValue = "-74"
 	)
 	@Export("getX")
 	int getX();
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ck")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "251050381"
+		garbageValue = "1017918393"
 	)
 	@Export("getY")
 	int getY();
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("cu")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "105"
+		descriptor = "(I)I",
+		garbageValue = "640118507"
 	)
 	@Export("getPlane")
 	int getPlane();

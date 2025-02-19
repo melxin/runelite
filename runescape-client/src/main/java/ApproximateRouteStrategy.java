@@ -1,59 +1,86 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import netscape.javascript.JSObject;
 
-@ObfuscatedName("ci")
+@ObfuscatedName("cx")
 @Implements("ApproximateRouteStrategy")
 public class ApproximateRouteStrategy extends RouteStrategy {
+	@ObfuscatedName("ir")
+	@ObfuscatedGetter(
+		intValue = 1768568553
+	)
+	static int field476;
+	@ObfuscatedName("kz")
+	@ObfuscatedGetter(
+		intValue = -634553563
+	)
+	@Export("cameraZ")
+	static int cameraZ;
+
 	ApproximateRouteStrategy() {
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIILku;B)Z",
-		garbageValue = "-42"
+		descriptor = "(IIILkj;B)Z",
+		garbageValue = "82"
 	)
 	@Export("hasArrived")
 	protected boolean hasArrived(int var1, int var2, int var3, CollisionMap var4) {
 		return var2 == super.approxDestinationX && var3 == super.approxDestinationY;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "-62"
+		descriptor = "(Lcw;I)V",
+		garbageValue = "279287509"
 	)
-	@Export("Messages_getHistorySize")
-	static int Messages_getHistorySize(int var0) {
-		ChatChannel var1 = (ChatChannel)Messages.Messages_channels.get(var0);
-		return var1 == null ? 0 : var1.size();
-	}
-
-	@ObfuscatedName("og")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "1"
-	)
-	static void method1254(String var0) {
-		Language.field4674 = var0;
-
-		try {
-			String var1 = Client.client.getParameter(Integer.toString(18));
-			String var2 = Client.client.getParameter(Integer.toString(13));
-			String var3 = var1 + "settings=" + var0 + "; version=1; path=/; domain=" + var2;
-			if (var0.length() == 0) {
-				var3 = var3 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
-			} else {
-				var3 = var3 + "; Expires=" + HttpRequest.method113(ReflectionCheck.method724() + 94608000000L) + "; Max-Age=" + 94608000L;
+	@Export("changeWorld")
+	static void changeWorld(World var0) {
+		if (var0.isMembersOnly() != Client.isMembersWorld) {
+			Client.isMembersWorld = var0.isMembersOnly();
+			boolean var1 = var0.isMembersOnly();
+			if (var1 != class129.ItemDefinition_inMembersWorld) {
+				ItemComposition.ItemDefinition_cached.clear();
+				ItemComposition.ItemDefinition_cachedModels.clear();
+				ItemComposition.ItemDefinition_cachedSprites.clear();
+				class129.ItemDefinition_inMembersWorld = var1;
 			}
-
-			Client var4 = Client.client;
-			String var5 = "document.cookie=\"" + var3 + "\"";
-			JSObject.getWindow(var4).eval(var5);
-		} catch (Throwable var6) {
 		}
 
+		if (var0.properties != Client.worldProperties) {
+			Archive var3 = PendingSpawn.archive8;
+			int var2 = var0.properties;
+			if ((var2 & class563.field5529.rsOrdinal()) != 0) {
+				class87.logoSprite = ClanChannel.SpriteBuffer_getIndexedSpriteByName(var3, "logo_deadman_mode", "");
+			} else if ((var2 & class563.field5550.rsOrdinal()) != 0) {
+				class87.logoSprite = ClanChannel.SpriteBuffer_getIndexedSpriteByName(var3, "logo_seasonal_mode", "");
+			} else if ((var2 & class563.field5528.rsOrdinal()) != 0) {
+				class87.logoSprite = ClanChannel.SpriteBuffer_getIndexedSpriteByName(var3, "logo_speedrunning", "");
+			} else {
+				class87.logoSprite = ClanChannel.SpriteBuffer_getIndexedSpriteByName(var3, "logo", "");
+			}
+		}
+
+		HttpResponse.worldHost = var0.host;
+		Client.worldId = var0.id;
+		Client.worldProperties = var0.properties;
+		class154.field1752 = var0.field836;
+		class132.worldPort = Client.gameBuild == 0 ? 43594 : var0.id + 40000;
+		class246.js5Port = Client.gameBuild == 0 ? 443 : var0.id + 50000;
+		Frames.currentPort = class132.worldPort;
+	}
+
+	@ObfuscatedName("hu")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-54"
+	)
+	static final void method1212() {
+		KitDefinition.KitDefinition_archive = null;
+		KitDefinition.KitDefinition_modelsArchive = null;
+		KitDefinition.KitDefinition_fileCount = 0;
 	}
 }
