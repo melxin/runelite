@@ -256,7 +256,7 @@ public enum class92 implements Enum {
 			}
 
 			if (Client.indexCheck.isValidIndexInRange(13)) {
-				Client.packetWriter.addNode(class272.getPacketBufferNode(ClientPacket.field3426, Client.packetWriter.isaacCipher));
+				Client.packetWriter.addNode(class272.getPacketBufferNode(ClientPacket.FREECAM_EXIT, Client.packetWriter.isaacCipher));
 				Client.oculusOrbState = 0;
 			}
 		}
