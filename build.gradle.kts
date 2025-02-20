@@ -85,7 +85,8 @@ subprojects {
                 }
             }
             filter {
-                includeGroup("net.runelite.rs")
+                //includeGroup("net.runelite.rs")
+                includeModule("net.runelite.rs", "cache")
                 includeModule("net.runelite", "discord")
                 includeModule("net.runelite", "orange-extensions")
             }
@@ -97,6 +98,7 @@ subprojects {
                 }
             }
             filter {
+                includeModule("net.runelite.rs", "vanilla")
                 includeModule("net.runelite", "fernflower")
             }
         }
