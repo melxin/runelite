@@ -13,11 +13,6 @@ public interface RSNPC extends RSActor, NPC
 	@Import("definition")
 	void setComposition(RSNPCComposition composition);
 
-	@Override
-	int getIndex();
-
-	void setIndex(int id);
-
 	@Import("modelOverrides")
 	@Override
 	NpcOverrides getModelOverrides();

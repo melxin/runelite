@@ -95,7 +95,6 @@ public abstract class RSWorldViewMixin implements RSWorldView
 			RSNPC npc = (RSNPC) this.getNpcs().get(idx);
 			if (npc != null)
 			{
-				npc.setIndex(idx);
 				npc.setWorldView(this);
 				client.getCallbacks().postDeferred(new NpcSpawned(npc));
 			}

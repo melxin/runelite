@@ -39,6 +39,7 @@ import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.Mixin;
 import net.runelite.api.mixins.Replace;
 import net.runelite.api.mixins.Shadow;
+import net.runelite.rs.api.RSActor;
 import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSModel;
 import net.runelite.rs.api.RSNPC;
@@ -49,9 +50,6 @@ public abstract class RSNPCMixin implements RSNPC
 {
 	@Shadow("client")
 	private static RSClient client;
-
-	@Inject
-	private int npcIndex;
 
 	@Inject
 	@Override
@@ -89,18 +87,10 @@ public abstract class RSNPCMixin implements RSNPC
 		return composition == null ? -1 : composition.getCombatLevel();
 	}
 
-	@Inject
 	@Override
 	public int getIndex()
 	{
-		return npcIndex;
-	}
-
-	@Inject
-	@Override
-	public void setIndex(int id)
-	{
-		npcIndex = id;
+		return ((RSActor) this).getIndex();
 	}
 
 	@Inject
