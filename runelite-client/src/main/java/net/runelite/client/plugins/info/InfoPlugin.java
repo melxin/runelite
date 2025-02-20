@@ -34,7 +34,8 @@ import net.runelite.client.util.ImageUtil;
 
 @PluginDescriptor(
 	name = "Info Panel",
-	description = "Enable the Info panel"
+	description = "Enable the Info panel",
+	loadWhenOutdated = true
 )
 public class InfoPlugin extends Plugin
 {

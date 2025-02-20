@@ -39,7 +39,8 @@ import net.runelite.client.util.ImageUtil;
 @PluginDescriptor(
 	name = "Notes",
 	description = "Enable the Notes panel",
-	tags = {"panel"}
+	tags = {"panel"},
+	loadWhenOutdated = true
 )
 public class NotesPlugin extends Plugin
 {

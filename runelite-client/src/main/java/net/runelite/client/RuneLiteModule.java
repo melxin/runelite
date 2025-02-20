@@ -45,6 +45,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
+import javax.annotation.Nullable;
 import javax.inject.Named;
 import javax.inject.Singleton;
 import lombok.AllArgsConstructor;
@@ -71,7 +72,7 @@ import okhttp3.OkHttpClient;
 public class RuneLiteModule extends AbstractModule
 {
 	private final OkHttpClient okHttpClient;
-	private final Supplier<Client> clientLoader;
+	private final Supplier<Applet> clientLoader;
 	private final RuntimeConfigLoader configLoader;
 	private final boolean developerMode;
 	private final boolean safeMode;
@@ -152,16 +153,16 @@ public class RuneLiteModule extends AbstractModule
 
 	@Provides
 	@Singleton
-	Applet provideApplet(Client client)
+	Applet provideApplet()
 	{
-		return (Applet) client;
+		return clientLoader.get();
 	}
 
 	@Provides
 	@Singleton
-	Client provideClient()
+	Client provideClient(@Nullable Applet applet)
 	{
-		return clientLoader.get();
+		return applet instanceof Client ? (Client) applet : null;
 	}
 
 	@Provides
