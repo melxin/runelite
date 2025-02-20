@@ -36,7 +36,6 @@ import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.Nullable;
 import javax.inject.Named;
 import javax.swing.Box;
 import javax.swing.ImageIcon;
@@ -76,7 +75,6 @@ public class InfoPanel extends PluginPanel
 	private JPanel actionsContainer;
 
 	@Inject
-	@Nullable
 	private Client client;
 
 	@Inject
@@ -143,11 +141,7 @@ public class InfoPanel extends PluginPanel
 		JLabel revision = new JLabel();
 		revision.setFont(smallFont);
 
-		String engineVer = "Unknown";
-		if (client != null)
-		{
-			engineVer = String.format("Rev %d", client.getRevision());
-		}
+		String engineVer = engineVer = String.format("Rev %d", client.getRevision());
 
 		revision.setText(htmlLabel("OldSchool revision: ", engineVer));
 
