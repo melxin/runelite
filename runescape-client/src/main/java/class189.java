@@ -14,8 +14,7 @@ public class class189 extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Lpn;"
 	)
-	@Export("archive2")
-	static Archive archive2;
+	static Archive field2024;
 
 	static {
 		field2023 = new EvictingDualNodeHashTable(64);

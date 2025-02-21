@@ -78,14 +78,14 @@ public class UserComparator6 extends AbstractUserComparator {
 		int var4;
 		for (var4 = 0; var4 < class139.field1661.length; ++var4) {
 			if (SecureRandomFuture.field1016[var4] != -1 && class139.field1661[var4] == null) {
-				class139.field1661[var4] = class166.archive6.takeFile(SecureRandomFuture.field1016[var4], 0);
+				class139.field1661[var4] = class166.archive9.takeFile(SecureRandomFuture.field1016[var4], 0);
 				if (class139.field1661[var4] == null) {
 					var3 = false;
 				}
 			}
 
 			if (class450.field4944[var4] != -1 && class159.field1785[var4] == null) {
-				class159.field1785[var4] = class166.archive6.takeFileEncrypted(class450.field4944[var4], 0, FriendSystem.field845[var4]);
+				class159.field1785[var4] = class166.archive9.takeFileEncrypted(class450.field4944[var4], 0, FriendSystem.field845[var4]);
 				if (class159.field1785[var4] == null) {
 					var3 = false;
 				}

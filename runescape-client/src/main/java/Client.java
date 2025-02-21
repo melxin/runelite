@@ -228,8 +228,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedSignature(
 		descriptor = "Lpn;"
 	)
-	@Export("archive4")
-	static Archive archive4;
+	@Export("archive2")
+	static Archive archive2;
 	@ObfuscatedName("ft")
 	@ObfuscatedGetter(
 		intValue = -1165060455
@@ -2720,10 +2720,10 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				} else if (class566.field5563 >= 229) {
 					var32.packetBuffer.writeInt(EnumComposition.field2011.hash);
 					var32.packetBuffer.writeIntME(MenuAction.field931.hash);
-					var32.packetBuffer.writeIntLE(archive4.hash);
+					var32.packetBuffer.writeIntLE(archive2.hash);
 					var32.packetBuffer.writeIntLE(class60.field422.hash);
 					var32.packetBuffer.writeIntME(MilliClock.field2452.hash);
-					var32.packetBuffer.writeIntIME(PlayerUpdateManager.archive9.hash);
+					var32.packetBuffer.writeIntIME(PlayerUpdateManager.archive6.hash);
 					var32.packetBuffer.writeIntME(class553.field5487.hash);
 					var32.packetBuffer.writeIntIME(JagexCache.archive13.hash);
 					var32.packetBuffer.writeIntIME(class6.archive10.hash);
@@ -2731,11 +2731,11 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var32.packetBuffer.writeInt(AsyncHttpResponse.field76.hash);
 					var32.packetBuffer.writeIntME(class1.field3.hash);
 					var32.packetBuffer.writeIntME(SpriteMask.field3819.hash);
-					var32.packetBuffer.writeInt(class189.archive2.hash);
+					var32.packetBuffer.writeInt(class189.field2024.hash);
 					var32.packetBuffer.writeInt(TextureProvider.archive12.hash);
 					var32.packetBuffer.writeIntLE(Projectile.field996.hash);
-					var32.packetBuffer.writeIntIME(WorldMapIcon_1.field3170.hash);
-					var32.packetBuffer.writeIntME(class166.archive6.hash);
+					var32.packetBuffer.writeIntIME(WorldMapIcon_1.archive4.hash);
+					var32.packetBuffer.writeIntME(class166.archive9.hash);
 					var32.packetBuffer.writeIntME(0);
 					var32.packetBuffer.writeIntIME(ArchiveLoader.field1065.hash);
 					var32.packetBuffer.writeInt(PendingSpawn.archive8.hash);
@@ -2746,7 +2746,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var32.packetBuffer.writeIntME(MilliClock.field2452.hash);
 					var32.packetBuffer.writeIntIME(TextureProvider.archive12.hash);
 					var32.packetBuffer.writeInt(class1.field3.hash);
-					var32.packetBuffer.writeIntLE(PlayerUpdateManager.archive9.hash);
+					var32.packetBuffer.writeIntLE(PlayerUpdateManager.archive6.hash);
 					var32.packetBuffer.writeInt(PendingSpawn.archive8.hash);
 					var32.packetBuffer.writeInt(0);
 					var32.packetBuffer.writeIntIME(ArchiveLoader.field1065.hash);
@@ -2754,14 +2754,14 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var32.packetBuffer.writeIntIME(EnumComposition.field2011.hash);
 					var32.packetBuffer.writeIntME(EnumComposition.field2004.hash);
 					var32.packetBuffer.writeInt(GrandExchangeEvents.field4746.hash);
-					var32.packetBuffer.writeInt(WorldMapIcon_1.field3170.hash);
+					var32.packetBuffer.writeInt(WorldMapIcon_1.archive4.hash);
 					var32.packetBuffer.writeInt(class553.field5487.hash);
 					var32.packetBuffer.writeIntLE(class6.archive10.hash);
 					var32.packetBuffer.writeIntLE(Projectile.field996.hash);
 					var32.packetBuffer.writeIntME(KeyHandler.field116.hash);
-					var32.packetBuffer.writeIntLE(class189.archive2.hash);
-					var32.packetBuffer.writeIntME(archive4.hash);
-					var32.packetBuffer.writeInt(class166.archive6.hash);
+					var32.packetBuffer.writeIntLE(class189.field2024.hash);
+					var32.packetBuffer.writeIntME(archive2.hash);
+					var32.packetBuffer.writeInt(class166.archive9.hash);
 					var32.packetBuffer.writeIntIME(SpriteMask.field3819.hash);
 				}
 
@@ -2902,14 +2902,14 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				if (class566.field5563 >= 229) {
 					var26.packetBuffer.writeIntIME(TextureProvider.archive12.hash);
 					var26.packetBuffer.writeIntIME(GrandExchangeEvents.field4746.hash);
-					var26.packetBuffer.writeIntIME(archive4.hash);
-					var26.packetBuffer.writeIntLE(class189.archive2.hash);
-					var26.packetBuffer.writeIntLE(class166.archive6.hash);
+					var26.packetBuffer.writeIntIME(archive2.hash);
+					var26.packetBuffer.writeIntLE(class189.field2024.hash);
+					var26.packetBuffer.writeIntLE(class166.archive9.hash);
 					var26.packetBuffer.writeIntLE(Projectile.field996.hash);
-					var26.packetBuffer.writeInt(PlayerUpdateManager.archive9.hash);
+					var26.packetBuffer.writeInt(PlayerUpdateManager.archive6.hash);
 					var26.packetBuffer.writeIntLE(KeyHandler.field116.hash);
 					var26.packetBuffer.writeInt(class1.field3.hash);
-					var26.packetBuffer.writeIntIME(WorldMapIcon_1.field3170.hash);
+					var26.packetBuffer.writeIntIME(WorldMapIcon_1.archive4.hash);
 					var26.packetBuffer.writeInt(ArchiveLoader.field1065.hash);
 					var26.packetBuffer.writeIntLE(MilliClock.field2452.hash);
 					var26.packetBuffer.writeIntME(AsyncHttpResponse.field76.hash);
@@ -2917,14 +2917,14 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var26.packetBuffer.writeInt(class60.field422.hash);
 					var26.packetBuffer.writeIntME(SpriteMask.field3819.hash);
 				} else {
-					var26.packetBuffer.writeIntLE(archive4.hash);
+					var26.packetBuffer.writeIntLE(archive2.hash);
 					var26.packetBuffer.writeIntME(TextureProvider.archive12.hash);
 					var26.packetBuffer.writeIntLE(0);
-					var26.packetBuffer.writeIntLE(class189.archive2.hash);
-					var26.packetBuffer.writeIntLE(class166.archive6.hash);
-					var26.packetBuffer.writeIntLE(PlayerUpdateManager.archive9.hash);
+					var26.packetBuffer.writeIntLE(class189.field2024.hash);
+					var26.packetBuffer.writeIntLE(class166.archive9.hash);
+					var26.packetBuffer.writeIntLE(PlayerUpdateManager.archive6.hash);
 					var26.packetBuffer.writeIntME(SpriteMask.field3819.hash);
-					var26.packetBuffer.writeIntIME(WorldMapIcon_1.field3170.hash);
+					var26.packetBuffer.writeIntIME(WorldMapIcon_1.archive4.hash);
 					var26.packetBuffer.writeIntIME(GrandExchangeEvents.field4746.hash);
 					var26.packetBuffer.writeIntIME(KeyHandler.field116.hash);
 					var26.packetBuffer.writeIntIME(class1.field3.hash);

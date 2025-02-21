@@ -101,7 +101,7 @@ public class class466 extends SongTask {
 	static void method8895(int var0, int var1) {
 		if (AbstractWorldMapIcon.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
 			ArrayList var2 = new ArrayList();
-			var2.add(new MidiRequest(PlayerUpdateManager.archive9, var0, 0, AbstractWorldMapIcon.clientPreferences.getMusicVolume(), false));
+			var2.add(new MidiRequest(PlayerUpdateManager.archive6, var0, 0, AbstractWorldMapIcon.clientPreferences.getMusicVolume(), false));
 			UserComparator3.method3219(var2, 0, 0, 0, 0, true);
 			Client.playingJingle = true;
 		}

@@ -33,7 +33,7 @@ public class Varcs {
 
 	Varcs() {
 		this.unwrittenChanges = false;
-		int var1 = Client.archive4.getGroupFileCount(19);
+		int var1 = Client.archive2.getGroupFileCount(19);
 		this.map = new HashMap();
 		this.intsPersistence = new boolean[var1];
 

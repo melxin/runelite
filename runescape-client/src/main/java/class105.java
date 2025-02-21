@@ -85,8 +85,8 @@ public class class105 {
 			class60.field422.clearFiles();
 		}
 
-		if (class189.archive2 != null) {
-			class189.archive2.clearFiles();
+		if (class189.field2024 != null) {
+			class189.field2024.clearFiles();
 		}
 
 		if (class6.archive10 != null) {
@@ -97,8 +97,8 @@ public class class105 {
 			TextureProvider.archive12.clearFiles();
 		}
 
-		if (Client.archive4 != null) {
-			Client.archive4.clearFiles();
+		if (Client.archive2 != null) {
+			Client.archive2.clearFiles();
 		}
 
 		if (AsyncHttpResponse.field76 != null) {
@@ -113,8 +113,8 @@ public class class105 {
 			JagexCache.archive13.clearFiles();
 		}
 
-		if (WorldMapIcon_1.field3170 != null) {
-			WorldMapIcon_1.field3170.clearFiles();
+		if (WorldMapIcon_1.archive4 != null) {
+			WorldMapIcon_1.archive4.clearFiles();
 		}
 
 		if (HealthBarConfig.soundEffectsArchive != null) {
@@ -125,12 +125,12 @@ public class class105 {
 			class553.field5487.clearFiles();
 		}
 
-		if (PlayerUpdateManager.archive9 != null) {
-			PlayerUpdateManager.archive9.clearFiles();
+		if (PlayerUpdateManager.archive6 != null) {
+			PlayerUpdateManager.archive6.clearFiles();
 		}
 
-		if (class166.archive6 != null) {
-			class166.archive6.clearFiles();
+		if (class166.archive9 != null) {
+			class166.archive9.clearFiles();
 		}
 
 		if (EnumComposition.field2011 != null) {
