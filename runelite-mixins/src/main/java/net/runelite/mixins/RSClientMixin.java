@@ -3226,7 +3226,7 @@ public abstract class RSClientMixin implements RSClient
 	{
 		int idx = client.getFollowerIndex();
 		RSIndexedObjectSet npcs = this.getTopLevelWorldView().getNpcs();
-		return idx >= 0 && idx < npcs.getSize() ? (RSNPC) npcs.get(idx) : null;
+		return idx >= 0 ? (RSNPC) npcs.get(idx) : null;
 	}
 
 	// Render menu
