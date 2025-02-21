@@ -45,8 +45,8 @@ public class class370 {
 				for (var6 = (var3 - 6) / 8; var6 <= (var3 + 6) / 8; ++var6) {
 					var7 = var6 + (var5 << 8);
 					class401.regions[var4] = var7;
-					ItemLayer.regionMapArchiveIds[var4] = class166.archive6.getGroupId("m" + var5 + "_" + var6);
-					UserComparator8.regionLandArchiveIds[var4] = class166.archive6.getGroupId("l" + var5 + "_" + var6);
+					ItemLayer.regionMapArchiveIds[var4] = class166.archive9.getGroupId("m" + var5 + "_" + var6);
+					UserComparator8.regionLandArchiveIds[var4] = class166.archive9.getGroupId("l" + var5 + "_" + var6);
 					++var4;
 				}
 			}
@@ -111,8 +111,8 @@ public class class370 {
 								class401.regions[var5] = var12;
 								var13 = var12 >> 8 & 255;
 								int var14 = var12 & 255;
-								ItemLayer.regionMapArchiveIds[var5] = class166.archive6.getGroupId("m" + var13 + "_" + var14);
-								UserComparator8.regionLandArchiveIds[var5] = class166.archive6.getGroupId("l" + var13 + "_" + var14);
+								ItemLayer.regionMapArchiveIds[var5] = class166.archive9.getGroupId("m" + var13 + "_" + var14);
+								UserComparator8.regionLandArchiveIds[var5] = class166.archive9.getGroupId("l" + var13 + "_" + var14);
 								++var5;
 							}
 						}

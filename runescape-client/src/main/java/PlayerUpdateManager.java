@@ -12,8 +12,8 @@ public class PlayerUpdateManager {
 	@ObfuscatedSignature(
 		descriptor = "Lpn;"
 	)
-	@Export("archive9")
-	static Archive archive9;
+	@Export("archive6")
+	static Archive archive6;
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "[Lcl;"

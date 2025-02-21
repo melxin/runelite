@@ -296,13 +296,13 @@ public class Language implements Enum {
 							if (class94.field1178 == Client.field545) {
 								MilliClock.field2452 = UserComparator4.newArchive(class400.field4662.field4685, false, true, true, false);
 								class60.field422 = UserComparator4.newArchive(class400.field4675.field4685, false, true, true, true);
-								class189.archive2 = UserComparator4.newArchive(class400.field4663.field4685, false, true, true, false);
-								Client.archive4 = UserComparator4.newArchive(class400.field4664.field4685, true, false, true, false);
-								WorldMapIcon_1.field3170 = UserComparator4.newArchive(class400.field4682.field4685, false, true, true, false);
-								class166.archive6 = UserComparator4.newArchive(class400.field4667.field4685, true, true, true, false);
+								class189.field2024 = UserComparator4.newArchive(class400.field4663.field4685, false, true, true, false);
+								Client.archive2 = UserComparator4.newArchive(class400.field4664.field4685, true, false, true, false);
+								WorldMapIcon_1.archive4 = UserComparator4.newArchive(class400.field4682.field4685, false, true, true, false);
+								class166.archive9 = UserComparator4.newArchive(class400.field4667.field4685, true, true, true, false);
 								class1.field3 = UserComparator4.newArchive(class400.field4669.field4685, false, true, true, false);
 								SpriteMask.field3819 = UserComparator4.newArchive(class400.field4671.field4685, false, true, true, false);
-								PlayerUpdateManager.archive9 = UserComparator4.newArchive(class400.field4673.field4685, false, true, true, false);
+								PlayerUpdateManager.archive6 = UserComparator4.newArchive(class400.field4673.field4685, false, true, true, false);
 								TextureProvider.archive12 = UserComparator4.newArchive(class400.field4683.field4685, false, true, true, false);
 								ArchiveLoader.field1065 = UserComparator4.newArchive(class400.field4679.field4685, false, true, true, false);
 								GrandExchangeEvents.field4746 = UserComparator4.newArchive(class400.field4670.field4685, false, true, true, false);
@@ -322,13 +322,13 @@ public class Language implements Enum {
 								var46 = 0;
 								var25 = var46 + MilliClock.field2452.percentage() * 4 / 100;
 								var25 += class60.field422.percentage() / 100;
-								var25 += class189.archive2.percentage() * 2 / 100;
-								var25 += Client.archive4.percentage() / 100;
-								var25 += WorldMapIcon_1.field3170.percentage() / 100;
-								var25 += class166.archive6.percentage() * 10 / 100;
+								var25 += class189.field2024.percentage() * 2 / 100;
+								var25 += Client.archive2.percentage() / 100;
+								var25 += WorldMapIcon_1.archive4.percentage() / 100;
+								var25 += class166.archive9.percentage() * 10 / 100;
 								var25 += class1.field3.percentage() * 65 / 100;
 								var25 += SpriteMask.field3819.percentage() / 100;
-								var25 += PlayerUpdateManager.archive9.percentage() / 100;
+								var25 += PlayerUpdateManager.archive6.percentage() / 100;
 								var25 += TextureProvider.archive12.percentage() * 6 / 100;
 								var25 += GrandExchangeEvents.field4746.percentage() / 100;
 								var25 += ArchiveLoader.field1065.percentage() * 2 / 100;
@@ -343,10 +343,10 @@ public class Language implements Enum {
 								} else {
 									class109.method2978(MilliClock.field2452, "Animations");
 									class109.method2978(class60.field422, "Animation Keyframes");
-									class109.method2978(class189.archive2, "Skeletons");
-									class109.method2978(class166.archive6, "Maps");
+									class109.method2978(class189.field2024, "Skeletons");
+									class109.method2978(class166.archive9, "Maps");
 									class109.method2978(class1.field3, "Models");
-									class109.method2978(PlayerUpdateManager.archive9, "Music Jingles");
+									class109.method2978(PlayerUpdateManager.archive6, "Music Jingles");
 									class109.method2978(GrandExchangeEvents.field4746, "World Map");
 									class109.method2978(ArchiveLoader.field1065, "World Map Geography");
 									class109.method2978(KeyHandler.field116, "World Map Ground");
@@ -360,69 +360,69 @@ public class Language implements Enum {
 								ScriptFrame.method1176(30, "Starting game engine...");
 								WorldMapIcon_0.method6208(class94.field1162);
 							} else if (Client.field545 == class94.field1162) {
-								if (!Client.archive4.isFullyLoaded()) {
-									ScriptFrame.method1176(40, "Loading config - " + Client.archive4.loadPercent() + "%");
+								if (!Client.archive2.isFullyLoaded()) {
+									ScriptFrame.method1176(40, "Loading config - " + Client.archive2.loadPercent() + "%");
 								} else if (!AsyncHttpResponse.field76.isFullyLoaded()) {
 									ScriptFrame.method1176(40, "Loading config - " + (80 + TextureProvider.archive12.loadPercent() / 6) + "%");
 								} else {
-									var33 = Client.archive4;
+									var33 = Client.archive2;
 									FloorOverlayDefinition.FloorOverlayDefinition_archive = var33;
-									class6.method40(Client.archive4);
-									var37 = Client.archive4;
+									class6.method40(Client.archive2);
+									var37 = Client.archive2;
 									var2 = class1.field3;
 									KitDefinition.KitDefinition_archive = var37;
 									KitDefinition.KitDefinition_modelsArchive = var2;
 									KitDefinition.KitDefinition_fileCount = KitDefinition.KitDefinition_archive.getGroupFileCount(3);
-									Archive var28 = Client.archive4;
+									Archive var28 = Client.archive2;
 									Archive var29 = class1.field3;
 									boolean var30 = Client.isLowDetail;
 									class279.ObjectDefinition_archive = var28;
 									ObjectComposition.ObjectDefinition_modelsArchive = var29;
 									ObjectComposition.ObjectDefinition_isLowDetail = var30;
-									class277.method5805(Client.archive4, class1.field3);
-									Archive var39 = Client.archive4;
+									class277.method5805(Client.archive2, class1.field3);
+									Archive var39 = Client.archive2;
 									StructComposition.StructDefinition_archive = var39;
-									GrandExchangeOfferUnitPriceComparator.method7855(Client.archive4, class1.field3, Client.isMembersWorld, SecureRandomCallable.fontPlain11);
-									Archive var31 = Client.archive4;
+									GrandExchangeOfferUnitPriceComparator.method7855(Client.archive2, class1.field3, Client.isMembersWorld, SecureRandomCallable.fontPlain11);
+									Archive var31 = Client.archive2;
 									Archive var42 = MilliClock.field2452;
 									Archive var9 = class60.field422;
-									Archive var10 = class189.archive2;
+									Archive var10 = class189.field2024;
 									SequenceDefinition.SequenceDefinition_archive = var31;
 									SequenceDefinition.SequenceDefinition_animationsArchive = var42;
 									SequenceDefinition.SequenceDefinition_skeletonsArchive = var9;
 									class194.SpotAnimationDefinition_archive = var10;
-									Player.method2520(Client.archive4, class1.field3);
-									Archive var11 = Client.archive4;
+									Player.method2520(Client.archive2, class1.field3);
+									Archive var11 = Client.archive2;
 									VarbitComposition.VarbitDefinition_archive = var11;
-									Archive var12 = Client.archive4;
+									Archive var12 = Client.archive2;
 									class447.VarpDefinition_archive = var12;
 									VarpDefinition.field1924 = class447.VarpDefinition_archive.getGroupFileCount(16);
-									class376.widgetDefinition = new WidgetDefinition(WorldMapIcon_1.field3170, class1.field3, PendingSpawn.archive8, JagexCache.archive13, HealthBarConfig.soundEffectsArchive);
-									UserComparator9.method3234(Client.archive4);
-									ModeWhere.method7985(Client.archive4);
-									Archive var13 = Client.archive4;
+									class376.widgetDefinition = new WidgetDefinition(WorldMapIcon_1.archive4, class1.field3, PendingSpawn.archive8, JagexCache.archive13, HealthBarConfig.soundEffectsArchive);
+									UserComparator9.method3234(Client.archive2);
+									ModeWhere.method7985(Client.archive2);
+									Archive var13 = Client.archive2;
 									VarcInt.VarcInt_archive = var13;
-									class146.method3459(Client.archive4);
-									Archive var14 = Client.archive4;
+									class146.method3459(Client.archive2);
+									Archive var14 = Client.archive2;
 									ParamComposition.ParamDefinition_archive = var14;
-									Archive var15 = Client.archive4;
+									Archive var15 = Client.archive2;
 									class28.field137 = var15;
-									GrandExchangeEvent.method7822(Client.archive4);
-									PacketBufferNode.method6510(Client.archive4);
-									class478.field5096 = new class550(DevicePcmPlayerProvider.field93, 54, class144.clientLanguage, Client.archive4);
-									class328.field3644 = new class550(DevicePcmPlayerProvider.field93, 47, class144.clientLanguage, Client.archive4);
+									GrandExchangeEvent.method7822(Client.archive2);
+									PacketBufferNode.method6510(Client.archive2);
+									class478.field5096 = new class550(DevicePcmPlayerProvider.field93, 54, class144.clientLanguage, Client.archive2);
+									class328.field3644 = new class550(DevicePcmPlayerProvider.field93, 47, class144.clientLanguage, Client.archive2);
 									class322.varcs = new Varcs();
-									Archive var16 = Client.archive4;
+									Archive var16 = Client.archive2;
 									Archive var17 = PendingSpawn.archive8;
 									Archive var18 = JagexCache.archive13;
 									HitSplatDefinition.HitSplatDefinition_archive = var16;
 									HitSplatDefinition.field2188 = var17;
 									HitSplatDefinition.HitSplatDefinition_fontsArchive = var18;
-									Archive var19 = Client.archive4;
+									Archive var19 = Client.archive2;
 									Archive var20 = PendingSpawn.archive8;
 									class557.HealthBarDefinition_archive = var19;
 									HealthBarDefinition.field1978 = var20;
-									Archive var21 = Client.archive4;
+									Archive var21 = Client.archive2;
 									Archive var22 = PendingSpawn.archive8;
 									WorldMapElement.WorldMapElement_archive = var22;
 									if (var21.isFullyLoaded()) {
@@ -654,8 +654,8 @@ public class Language implements Enum {
 									WorldMapIcon_0.method6208(class94.field1173);
 								}
 							} else if (Client.field545 == class94.field1173) {
-								if (!WorldMapIcon_1.field3170.isFullyLoaded()) {
-									ScriptFrame.method1176(96, "Loading interfaces - " + WorldMapIcon_1.field3170.loadPercent() * 4 / 5 + "%");
+								if (!WorldMapIcon_1.archive4.isFullyLoaded()) {
+									ScriptFrame.method1176(96, "Loading interfaces - " + WorldMapIcon_1.archive4.loadPercent() * 4 / 5 + "%");
 								} else if (!HealthBarConfig.soundEffectsArchive.isFullyLoaded()) {
 									ScriptFrame.method1176(96, "Loading interfaces - " + HealthBarConfig.soundEffectsArchive.loadPercent() * 4 / 5 + "%");
 								} else if (!TextureProvider.archive12.isFullyLoaded()) {
@@ -718,7 +718,7 @@ public class Language implements Enum {
 		int var1;
 		for (var1 = 0; var1 < KitDefinition.regionLandArchives.length; ++var1) {
 			if (ItemLayer.regionMapArchiveIds[var1] != -1 && KitDefinition.regionLandArchives[var1] == null) {
-				KitDefinition.regionLandArchives[var1] = class166.archive6.takeFile(ItemLayer.regionMapArchiveIds[var1], 0);
+				KitDefinition.regionLandArchives[var1] = class166.archive9.takeFile(ItemLayer.regionMapArchiveIds[var1], 0);
 				if (KitDefinition.regionLandArchives[var1] == null) {
 					var0 = false;
 					++Client.field553;
@@ -726,7 +726,7 @@ public class Language implements Enum {
 			}
 
 			if (UserComparator8.regionLandArchiveIds[var1] != -1 && class370.regionMapArchives[var1] == null) {
-				class370.regionMapArchives[var1] = class166.archive6.takeFileEncrypted(UserComparator8.regionLandArchiveIds[var1], 0, class28.xteaKeys[var1]);
+				class370.regionMapArchives[var1] = class166.archive9.takeFileEncrypted(UserComparator8.regionLandArchiveIds[var1], 0, class28.xteaKeys[var1]);
 				if (class370.regionMapArchives[var1] == null) {
 					var0 = false;
 					++Client.field553;
@@ -939,8 +939,8 @@ public class Language implements Enum {
 					for (var7 = var3 - 1; var7 <= var4 + 1; ++var7) {
 						for (var8 = var5 - 1; var8 <= var6 + 1; ++var8) {
 							if (var7 < var3 || var7 > var4 || var8 < var5 || var8 > var6) {
-								class166.archive6.loadRegionFromName("m" + var7 + "_" + var8);
-								class166.archive6.loadRegionFromName("l" + var7 + "_" + var8);
+								class166.archive9.loadRegionFromName("m" + var7 + "_" + var8);
+								class166.archive9.loadRegionFromName("l" + var7 + "_" + var8);
 							}
 						}
 					}

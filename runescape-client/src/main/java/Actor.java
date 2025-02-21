@@ -942,8 +942,8 @@ public abstract class Actor extends Renderable implements Entity {
 							UrlRequester.field1504[var5] = var12;
 							var13 = var12 >> 8 & 255;
 							int var14 = var12 & 255;
-							SecureRandomFuture.field1016[var5] = class166.archive6.getGroupId("m" + var13 + "_" + var14);
-							class450.field4944[var5] = class166.archive6.getGroupId("l" + var13 + "_" + var14);
+							SecureRandomFuture.field1016[var5] = class166.archive9.getGroupId("m" + var13 + "_" + var14);
+							class450.field4944[var5] = class166.archive9.getGroupId("l" + var13 + "_" + var14);
 							++var5;
 						}
 					}

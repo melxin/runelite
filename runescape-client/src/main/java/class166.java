@@ -9,8 +9,8 @@ public class class166 {
 	@ObfuscatedSignature(
 		descriptor = "Lpn;"
 	)
-	@Export("archive6")
-	static Archive archive6;
+	@Export("archive9")
+	static Archive archive9;
 	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
 		longValue = -4938632966518421695L

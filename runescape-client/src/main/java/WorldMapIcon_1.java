@@ -11,7 +11,8 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	@ObfuscatedSignature(
 		descriptor = "Lpn;"
 	)
-	static Archive field3170;
+	@Export("archive4")
+	static Archive archive4;
 	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
 		intValue = -739608175
