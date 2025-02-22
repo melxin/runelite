@@ -11,6 +11,7 @@ import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.Mixin;
 import net.runelite.api.mixins.Shadow;
 import net.runelite.rs.api.RSClient;
+import net.runelite.rs.api.RSIndexedObjectSet;
 import net.runelite.rs.api.RSProjectile;
 import net.runelite.rs.api.RSScene;
 import net.runelite.rs.api.RSTile;
@@ -30,17 +31,37 @@ public abstract class RSWorldViewMixin implements RSWorldView
 	}
 
 	@Inject
+	public static RSIndexedObjectSet cachedPlayers = client.newIndexedObjectSet(512);
+
+	@Inject
+	public static RSIndexedObjectSet cachedNpcs = client.newIndexedObjectSet(128);
+
+	@Inject
+	@Override
+	public void setCachedPlayers(RSIndexedObjectSet players)
+	{
+		cachedPlayers = players;
+	}
+
+	@Inject
+	@Override
+	public void setCachedNpcs(RSIndexedObjectSet npcs)
+	{
+		cachedNpcs = npcs;
+	}
+
+	@Inject
 	@Override
 	public IndexedObjectSet players()
 	{
-		return getPlayers();
+		return client.isClientThread() ? getPlayers() : cachedPlayers;
 	}
 
 	@Inject
 	@Override
 	public IndexedObjectSet npcs()
 	{
-		return getNpcs();
+		return client.isClientThread() ? getNpcs() : cachedNpcs;
 	}
 
 	@Inject

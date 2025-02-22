@@ -13,6 +13,7 @@ import net.runelite.rs.api.RSIndexedObjectNode;
 import net.runelite.rs.api.RSIndexedObjectSet;
 import net.runelite.rs.api.RSNPC;
 import net.runelite.rs.api.RSPlayer;
+import net.runelite.rs.api.RSWorldView;
 
 @Mixin(RSIndexedObjectSet.class)
 public abstract class RSIndexedObjectSetMixin implements RSIndexedObjectSet
@@ -24,13 +25,33 @@ public abstract class RSIndexedObjectSetMixin implements RSIndexedObjectSet
 	@Inject
 	public void onAdd(RSIndexedObjectNode node, long idx)
 	{
-		if (node instanceof RSNPC)
+		if (node instanceof RSPlayer)
+		{
+			client.getCallbacks().postDeferred(new PlayerSpawned((Player) node));
+		}
+		else if (node instanceof RSNPC)
 		{
 			client.getCallbacks().postDeferred(new NpcSpawned((NPC) node));
 		}
-		else if (node instanceof RSPlayer)
+	}
+
+	@MethodHook(value = "add", end = true)
+	@Inject
+	public void onAddEnd(RSIndexedObjectNode node, long idx)
+	{
+		RSWorldView wv = client.getTopLevelWorldView();
+		if (wv == null)
 		{
-			client.getCallbacks().postDeferred(new PlayerSpawned((Player) node));
+			return;
+		}
+
+		if (node instanceof RSPlayer)
+		{
+			wv.setCachedPlayers(wv.getPlayers());
+		}
+		else if (node instanceof RSNPC)
+		{
+			wv.setCachedNpcs(wv.getNpcs());
 		}
 	}
 }

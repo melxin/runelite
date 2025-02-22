@@ -27,6 +27,9 @@ public interface RSWorldView extends WorldView
 	//@Import("npcCount")
 	//int getNpcCount();
 
+	void setCachedPlayers(RSIndexedObjectSet players);
+	void setCachedNpcs(RSIndexedObjectSet npcs);
+
 	@Import("worldEntities")
 	RSIterableNodeHashTable getWorldEntities();
 
