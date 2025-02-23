@@ -35,13 +35,14 @@ import net.runelite.asm.Type;
 import net.runelite.deob.deobfuscators.mapping.AnnotationIntegrityChecker;
 import net.runelite.deob.deobfuscators.mapping.AnnotationMapper;
 import net.runelite.deob.deobfuscators.mapping.Mapper;
+import net.runelite.deob.deobfuscators.mapping.MissingMappingChecker;
 import net.runelite.deob.deobfuscators.mapping.ParallelExecutorMapping;
 import net.runelite.deob.deobfuscators.mapping.packets.ModWeathPacketsParser;
 import net.runelite.deob.deobfuscators.transformers.BufferRenameTransformer;
 import net.runelite.deob.deobfuscators.transformers.ClassToPackageTransformer;
 import net.runelite.deob.deobfuscators.transformers.GraphicsObjectTransformer;
 import net.runelite.deob.deobfuscators.transformers.JSONSyntheticTransformer;
-import net.runelite.deob.deobfuscators.mapping.MissingMappingChecker;
+import net.runelite.deob.deobfuscators.transformers.MissingMultiplicationTransformer;
 import net.runelite.deob.deobfuscators.transformers.ScriptOpcodesTransformer;
 import net.runelite.deob.deobfuscators.transformers.BadEnumConstructorTransformer;
 import net.runelite.deob.util.JarUtil;
@@ -110,6 +111,8 @@ public class UpdateMappings
 				.collect(Collectors.toList())
 				.forEach(annotations::remove);
 		}
+
+		new MissingMultiplicationTransformer().transform(group2);
 	}
 
 	public void save(File out) throws IOException
