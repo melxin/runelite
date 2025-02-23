@@ -66,7 +66,7 @@ tasks {
 
     val tokens = mapOf(
             "rs.version" to ProjectVersions.rsversion.toString(),
-            "vanilla.jar" to deobjars.find { it.name.startsWith("gamepack") }.toString().replace("\\", "/"),
+            "vanilla.jar" to deobjars.find { it.name.startsWith("vanilla") || it.name.startsWith("gamepack") }.toString().replace("\\", "/"),
             "rs.client" to deobjars.find { it.name.startsWith("runescape-client") }.toString().replace("\\", "/")
     )
 
