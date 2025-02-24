@@ -393,7 +393,7 @@ public class RuneLiteMenuEntry implements MenuEntry {
 
 	@Override
 	public NPC getNpc() {
-		RSIndexedObjectSet npcs = client.getTopLevelWorldView().getNpcs();
+		RSIndexedObjectSet npcs = client.getTopLevelWorldView().getRSNpcs();
 		NPC npc = null;
 		MenuAction menuAction = this.getType();
 		if (menuAction == MenuAction.NPC_FIRST_OPTION || menuAction == MenuAction.NPC_SECOND_OPTION || menuAction == MenuAction.NPC_THIRD_OPTION || menuAction == MenuAction.NPC_FOURTH_OPTION || menuAction == MenuAction.NPC_FIFTH_OPTION || menuAction == MenuAction.WIDGET_TARGET_ON_NPC || menuAction == MenuAction.EXAMINE_NPC) {
@@ -407,7 +407,7 @@ public class RuneLiteMenuEntry implements MenuEntry {
 
 	@Override
 	public Player getPlayer() {
-		RSIndexedObjectSet players = client.getTopLevelWorldView().getPlayers();
+		RSIndexedObjectSet players = client.getTopLevelWorldView().getRSPlayers();
 		Player player = null;
 		MenuAction menuAction = this.getType();
 		if (menuAction == MenuAction.PLAYER_FIRST_OPTION || menuAction == MenuAction.PLAYER_SECOND_OPTION || menuAction == MenuAction.PLAYER_THIRD_OPTION || menuAction == MenuAction.PLAYER_FOURTH_OPTION || menuAction == MenuAction.PLAYER_FIFTH_OPTION || menuAction == MenuAction.PLAYER_SIXTH_OPTION || menuAction == MenuAction.PLAYER_SEVENTH_OPTION || menuAction == MenuAction.PLAYER_EIGHTH_OPTION || menuAction == MenuAction.WIDGET_TARGET_ON_PLAYER || menuAction == MenuAction.RUNELITE_PLAYER) {

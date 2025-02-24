@@ -79,7 +79,7 @@ public abstract class RSProjectileMixin implements RSProjectile
 		if (interactingIndex > 0)
 		{
 			int idx = interactingIndex - 1;
-			return (Actor) wv.getNpcs().get(idx);
+			return (Actor) wv.getRSNpcs().get(idx);
 		}
 		else
 		{
@@ -90,7 +90,7 @@ public abstract class RSProjectileMixin implements RSProjectile
 				return client.getLocalPlayer();
 			}
 
-			return (Actor) wv.getPlayers().get(idx);
+			return (Actor) wv.getRSPlayers().get(idx);
 		}
 	}
 
