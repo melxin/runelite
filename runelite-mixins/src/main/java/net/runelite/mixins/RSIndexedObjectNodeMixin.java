@@ -8,6 +8,7 @@ import net.runelite.api.mixins.Mixin;
 import net.runelite.api.mixins.Shadow;
 import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSIndexedObjectNode;
+import net.runelite.rs.api.RSNPC;
 import net.runelite.rs.api.RSPlayer;
 
 @Mixin(RSIndexedObjectNode.class)
@@ -23,6 +24,12 @@ public abstract class RSIndexedObjectNodeMixin implements RSIndexedObjectNode
 		if (this instanceof RSPlayer)
 		{
 			client.getCallbacks().postDeferred(new PlayerDespawned((Player) this));
+
+			client.removeCachedPlayer((RSPlayer) this);
+		}
+		else if (this instanceof RSNPC)
+		{
+			client.removeCachedNpc((RSNPC) this);
 		}
 	}
 }

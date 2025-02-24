@@ -1481,6 +1481,14 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("worldViewManager")
 	RSWorldViewManager getWorldViewManager();
 
+	@Construct
+	RSIndexedObjectSet newIndexedObjectSet(int size);
+
+	void addCachedPlayer(RSPlayer player);
+	void removeCachedPlayer(RSPlayer player);
+	void addCachedNpc(RSNPC npc);
+	void removeCachedNpc(RSNPC npc);
+
 	/**
 	 * Jagex launcher credentials
 	 */

@@ -118,11 +118,11 @@ public abstract class RSActorMixin implements RSActor
 			int var2 = 65536;
 			if (index < var2)
 			{
-				return (Actor) wv.getNpcs().get(index);
+				return (Actor) wv.getRSNpcs().get(index);
 			}
 
 			index -= var2;
-			return (Actor) wv.getPlayers().get(index);
+			return (Actor) wv.getRSPlayers().get(index);
 		}
 		catch (ArrayIndexOutOfBoundsException e)
 		{

@@ -6,6 +6,7 @@ import net.runelite.api.NPC;
 import net.runelite.api.Perspective;
 import net.runelite.api.Player;
 import net.runelite.api.Projectile;
+import net.runelite.api.WorldEntity;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.Mixin;
@@ -31,23 +32,26 @@ public abstract class RSWorldViewMixin implements RSWorldView
 
 	@Inject
 	@Override
-	public IndexedObjectSet players()
+	public IndexedObjectSet<? extends Player> players()
 	{
-		return getPlayers();
+		assert client.isClientThread() : "players must be called on client thread";
+		return getRSPlayers();
 	}
 
 	@Inject
 	@Override
-	public IndexedObjectSet npcs()
+	public IndexedObjectSet<? extends NPC> npcs()
 	{
-		return getNpcs();
+		assert client.isClientThread() : "npcs must be called on client thread";
+		return getRSNpcs();
 	}
 
 	@Inject
 	@Override
-	public IndexedObjectSet worldEntities()
+	public IndexedObjectSet<? extends WorldEntity> worldEntities()
 	{
-		return getWorldEntities();
+		assert client.isClientThread() : "worldEntities must be called on client thread";
+		return getRSWorldEntities();
 	}
 
 	@Inject

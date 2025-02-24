@@ -28,14 +28,11 @@ import com.jagex.oldscape.pub.OAuthApi;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.IntPredicate;
-import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import net.runelite.api.annotations.Component;
@@ -2572,13 +2569,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * @see WorldView#players()
 	 */
 	@Deprecated
-	default List<Player> getPlayers()
-	{
-		var wv = getTopLevelWorldView();
-		return wv == null ? Collections.emptyList() : wv.players()
-			.stream()
-			.collect(Collectors.toCollection(ArrayList::new));
-	}
+	List<Player> getPlayers();
 
 	/**
 	 * Gets a list of all valid NPCs from the NPC cache.
@@ -2587,13 +2578,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * @see WorldView#npcs()
 	 */
 	@Deprecated
-	default List<NPC> getNpcs()
-	{
-		var wv = getTopLevelWorldView();
-		return wv == null ? Collections.emptyList() : wv.npcs()
-			.stream()
-			.collect(Collectors.toCollection(ArrayList::new));
-	}
+	List<NPC> getNpcs();
 
 	/**
 	 * Gets an array of all cached NPCs.
@@ -2604,13 +2589,22 @@ public interface Client extends OAuthApi, GameEngine
 	@Deprecated
 	default NPC[] getCachedNPCs()
 	{
-		var wv = getTopLevelWorldView();
-		if (wv == null)
+		List<NPC> npcs = getNpcs();
+
+		if (npcs == null || npcs.isEmpty())
 		{
 			return new NPC[0];
 		}
-		List<NPC> npcs = wv.npcs().stream().collect(Collectors.toList());
-		return npcs.toArray(new NPC[0]);
+
+		int highestIdx = npcs.stream()
+			.mapToInt(NPC::getIndex)
+			.max()
+			.orElse(-1);
+
+		NPC[] npcsArray = new NPC[highestIdx + 1];
+
+		npcs.forEach(npc -> npcsArray[npc.getIndex()] = npc);
+		return npcsArray;
 	}
 
 	/**
@@ -2622,13 +2616,22 @@ public interface Client extends OAuthApi, GameEngine
 	@Deprecated
 	default Player[] getCachedPlayers()
 	{
-		var wv = getTopLevelWorldView();
-		if (wv == null)
+		List<Player> players = getPlayers();
+
+		if (players == null || players.isEmpty())
 		{
 			return new Player[0];
 		}
-		List<Player> players = wv.players().stream().collect(Collectors.toList());
-		return players.toArray(new Player[0]);
+
+		int highestIdx = players.stream()
+			.mapToInt(Player::getId)
+			.max()
+			.orElse(-1);
+
+		Player[] playersArray = new Player[highestIdx + 1];
+
+		players.forEach(player -> playersArray[player.getId()] = player);
+		return playersArray;
 	}
 
 	/**

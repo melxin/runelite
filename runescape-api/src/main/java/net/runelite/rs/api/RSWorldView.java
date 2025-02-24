@@ -16,19 +16,19 @@ public interface RSWorldView extends WorldView
 	RSScene getScene();
 
 	@Import("players")
-	RSIndexedObjectSet getPlayers();
+	RSIndexedObjectSet getRSPlayers();
 
 	@Import("playerUpdateManager")
 	RSPlayerUpdateManager getPlayerUpdateManager();
 
 	@Import("npcs")
-	RSIndexedObjectSet getNpcs();
+	RSIndexedObjectSet getRSNpcs();
 
 	//@Import("npcCount")
 	//int getNpcCount();
 
 	@Import("worldEntities")
-	RSIterableNodeHashTable getWorldEntities();
+	RSIterableNodeHashTable getRSWorldEntities();
 
 	@Import("groundItems")
 	RSNodeDeque[][][] getGroundItems();

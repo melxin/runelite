@@ -24,13 +24,17 @@ public abstract class RSIndexedObjectSetMixin implements RSIndexedObjectSet
 	@Inject
 	public void onAdd(RSIndexedObjectNode node, long idx)
 	{
-		if (node instanceof RSNPC)
-		{
-			client.getCallbacks().postDeferred(new NpcSpawned((NPC) node));
-		}
-		else if (node instanceof RSPlayer)
+		if (node instanceof RSPlayer)
 		{
 			client.getCallbacks().postDeferred(new PlayerSpawned((Player) node));
+
+			client.addCachedPlayer((RSPlayer) node);
+		}
+		else if (node instanceof RSNPC)
+		{
+			client.getCallbacks().postDeferred(new NpcSpawned((NPC) node));
+
+			client.addCachedNpc((RSNPC) node);
 		}
 	}
 }
