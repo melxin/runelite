@@ -43,6 +43,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
@@ -3528,10 +3529,10 @@ public abstract class RSClientMixin implements RSClient
 	}
 
 	@Inject
-	private static final List<Player> cachedPlayers = new ArrayList<>();
+	private static final List<Player> cachedPlayers = new CopyOnWriteArrayList<>();
 
 	@Inject
-	private static final List<NPC> cachedNpcs = new ArrayList<>();
+	private static final List<NPC> cachedNpcs = new CopyOnWriteArrayList<>();
 
 	@Inject
 	@Override
