@@ -67,6 +67,13 @@ public abstract class RSPlayerMixin implements RSPlayer
 
 	@Inject
 	@Override
+	public int getPlayerId()
+	{
+		return this.getId();
+	}
+
+	@Inject
+	@Override
 	public String getName()
 	{
 		final RSUsername rsName = getRsName();
