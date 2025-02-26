@@ -243,7 +243,7 @@ public class class136 {
 		int[] var3 = Client.playerUpdateManager.playerIndices;
 		boolean var4 = false;
 		Username var5 = new Username(var1, class280.loginType);
-		WorldView var6 = class132.localPlayer.method2607();
+		WorldView var6 = class132.localPlayer.getWorldView();
 		if (var6 == null) {
 			LoginPacket.addGameMessage(4, "", "Unable to find " + var1 + ", current world null.");
 		} else {

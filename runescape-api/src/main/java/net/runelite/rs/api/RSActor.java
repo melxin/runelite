@@ -26,6 +26,7 @@
 package net.runelite.rs.api;
 
 import net.runelite.api.Actor;
+import net.runelite.api.WorldView;
 import net.runelite.mapping.Construct;
 import net.runelite.mapping.Import;
 
@@ -262,4 +263,8 @@ public interface RSActor extends RSRenderable, Actor, RSActorSpotAnim
 
 	@Import("worldViewId")
 	void setWorldViewId(int id);
+
+	@Import("getWorldView")
+	@Override
+	WorldView getWorldView();
 }

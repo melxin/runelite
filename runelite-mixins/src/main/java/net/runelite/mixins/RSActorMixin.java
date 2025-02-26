@@ -40,7 +40,6 @@ import net.runelite.api.NpcID;
 import net.runelite.api.Perspective;
 import net.runelite.api.Point;
 import net.runelite.api.SpritePixels;
-import net.runelite.api.WorldView;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldArea;
 import net.runelite.api.coords.WorldPoint;
@@ -79,23 +78,6 @@ public abstract class RSActorMixin implements RSActor
 	private boolean dead;
 
 	@Inject
-	private WorldView worldView;
-
-	@Inject
-	@Override
-	public WorldView getWorldView()
-	{
-		return worldView;
-	}
-
-	@Inject
-	@Override
-	public void setWorldView(WorldView wv)
-	{
-		this.worldView = wv;
-	}
-
-	@Inject
 	@Override
 	public boolean isInteracting()
 	{
@@ -114,7 +96,7 @@ public abstract class RSActorMixin implements RSActor
 				return null;
 			}
 
-			RSWorldView wv = client.getWorldViewManager().getWorldView(this.getWorldViewId());
+			RSWorldView wv = (RSWorldView) this.getWorldView();
 			int var2 = 65536;
 			if (index < var2)
 			{
