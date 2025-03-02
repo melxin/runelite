@@ -29,7 +29,6 @@ import java.util.UUID;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import com.openosrs.client.config.OpenOSRSConfig;
@@ -54,7 +53,7 @@ public class ClientSessionManager
 
 	@Inject
 	ClientSessionManager(ScheduledExecutorService executorService,
-		@Nullable Client client,
+		Client client,
 		SessionClient sessionClient,
 		OpenOSRSConfig openOSRSConfig)
 	{

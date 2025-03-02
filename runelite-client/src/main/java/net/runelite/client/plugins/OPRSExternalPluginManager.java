@@ -71,7 +71,6 @@ import javax.inject.Singleton;
 import javax.swing.JOptionPane;
 import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.client.RuneLite;
 import net.runelite.client.config.Config;
@@ -126,8 +125,6 @@ public class OPRSExternalPluginManager
 	@Inject
 	@Named("safeMode")
 	private boolean safeMode;
-	@Setter
-	boolean isOutdated;
 
 	public void setupInstance()
 	{
@@ -499,11 +496,6 @@ public class OPRSExternalPluginManager
 			catch (EnumConstantNotPresentException e)
 			{
 				log.warn("{} has an invalid plugin type of {}", clazz, e.getMessage());
-				continue;
-			}
-
-			if (!pluginDescriptor.loadWhenOutdated() && isOutdated)
-			{
 				continue;
 			}
 

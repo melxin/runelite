@@ -45,7 +45,6 @@ import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.util.ImageUtil;
 
 @PluginDescriptor(
-	loadWhenOutdated = true, // prevent users from disabling
 	hidden = true, // prevent users from disabling
 	name = "OpenOSRS"
 )
