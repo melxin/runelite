@@ -34,7 +34,10 @@ import java.applet.Applet;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
 import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
 import java.util.Enumeration;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -44,6 +47,7 @@ import javax.annotation.Nonnull;
 import javax.swing.SwingUtilities;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
+import net.runelite.client.RuneLite;
 import net.runelite.client.RuneLiteProperties;
 import net.runelite.client.RuntimeConfig;
 import net.runelite.client.RuntimeConfigLoader;
@@ -57,6 +61,8 @@ import okhttp3.OkHttpClient;
 @SuppressWarnings({"deprecation"})
 public class ClientLoader implements Supplier<Client>
 {
+	private static File LOCK_FILE = new File(RuneLite.CACHE_DIR, "cache.lock");
+
 	private static final String INJECTED_CLIENT_NAME = "/injected-client.oprs";
 	
 	private static final int NUM_ATTEMPTS = 6;
@@ -100,12 +106,18 @@ public class ClientLoader implements Supplier<Client>
 
 			SplashScreen.stage(.3, "Starting", "Starting Old School RuneScape");
 
-			File oprsInjected = new File(System.getProperty("user.home") + "/.openosrs/cache/injected-client.jar");
-			writeInjectedClient(oprsInjected);
-			// create the classloader for the jar while we hold the lock, and eagerly load and link all classes
-			// in the jar. Otherwise the jar can change on disk and can break future classloads.
-			ClassLoader classLoader = createJarClassLoader(oprsInjected);
-
+			LOCK_FILE.getParentFile().mkdirs();
+			ClassLoader classLoader;
+			try (FileChannel lockfile = FileChannel.open(LOCK_FILE.toPath(),
+				StandardOpenOption.CREATE, StandardOpenOption.READ, StandardOpenOption.WRITE);
+				@SuppressWarnings("PMD.UnusedLocalVariable") FileLock flock = lockfile.lock())
+			{
+				File oprsInjected = new File(System.getProperty("user.home") + "/.openosrs/cache/injected-client.jar");
+				writeInjectedClient(oprsInjected);
+				// create the classloader for the jar while we hold the lock, and eagerly load and link all classes
+				// in the jar. Otherwise the jar can change on disk and can break future classloads.
+				classLoader = createJarClassLoader(oprsInjected);
+			}
 			Client rs = loadClient(config, classLoader);
 
 			SplashScreen.stage(.4, null, "Starting core classes");
