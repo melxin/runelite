@@ -1821,6 +1821,12 @@ public interface Client extends OAuthApi, GameEngine
 	void setHdMinimapEnabled(boolean enabled);
 
 	/**
+	 * Get the hostname of the current world
+	 * @return
+	 */
+	String getWorldHost();
+
+	/**
 	 * Gets a set of current world types that apply to the logged in world.
 	 *
 	 * @return the types for current world
