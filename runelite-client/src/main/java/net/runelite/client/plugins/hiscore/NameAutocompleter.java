@@ -45,7 +45,6 @@ import net.runelite.api.FriendsChatManager;
 import net.runelite.api.Nameable;
 import net.runelite.api.NameableContainer;
 import net.runelite.api.Player;
-import net.runelite.api.WorldView;
 import net.runelite.api.clan.ClanID;
 import net.runelite.api.clan.ClanMember;
 import net.runelite.api.clan.ClanSettings;
@@ -252,8 +251,7 @@ class NameAutocompleter implements KeyListener
 		// Search cached players if a friend wasn't found
 		if (!autocompleteName.isPresent())
 		{
-			WorldView wv = client.getTopLevelWorldView();
-			autocompleteName = wv.players().stream()
+			autocompleteName = client.getPlayers().stream()
 				.filter(Objects::nonNull)
 				.map(Player::getName)
 				.filter(Objects::nonNull)
