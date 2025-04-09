@@ -2154,7 +2154,7 @@ public abstract class RSClientMixin implements RSClient
 
 	@MethodHook("drawInterface")
 	@Inject
-	public static void preRenderWidgetLayer(Widget[] widgets, int parentId, int minX, int minY, int maxX, int maxY, int x, int y, int var8)
+	public static void preRenderWidgetLayer(Widget[] widgets, int parentId, int minX, int minY, int maxX, int maxY, int x, int y, int var8, int var9, int var10, int var11)
 	{
 		for (Widget value : widgets)
 		{
@@ -2189,7 +2189,7 @@ public abstract class RSClientMixin implements RSClient
 
 	@Inject
 	@MethodHook(value = "drawInterface", end = true)
-	public static void postRenderWidgetLayer(Widget[] widgets, int parentId, int minX, int minY, int maxX, int maxY, int x, int y, int var8)
+	public static void postRenderWidgetLayer(Widget[] widgets, int parentId, int minX, int minY, int maxX, int maxY, int x, int y, int var8, int var9, int var10, int var11)
 	{
 		Callbacks callbacks = client.getCallbacks();
 		int oldSize = widgetItems.size();

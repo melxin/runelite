@@ -368,7 +368,7 @@ public class DynamicObject extends Renderable {
 	@Export("updateRootInterface")
 	static final void updateRootInterface(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
 		if (class232.widgetDefinition.loadInterface(var0)) {
-			HttpRequest.method98(class232.widgetDefinition.Widget_interfaceComponents[var0], 0, class232.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1, var1, var2, var3, var4, var5, var6);
+			HttpRequest.updateInterface(class232.widgetDefinition.Widget_interfaceComponents[var0], 0, class232.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1, var1, var2, var3, var4, var5, var6);
 		}
 	}
 
@@ -377,7 +377,8 @@ public class DynamicObject extends Renderable {
 		descriptor = "(Lnh;I)Z",
 		garbageValue = "-416080900"
 	)
-	static boolean method2369(Widget var0) {
+	@Export("isComponentHidden")
+	static boolean isComponentHidden(Widget var0) {
 		return var0.isHidden;
 	}
 }

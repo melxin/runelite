@@ -84,7 +84,8 @@ public class VorbisSample extends Node {
 	@ObfuscatedName("bz")
 	float[] field352;
 	@ObfuscatedName("bb")
-	short[] field350;
+	@Export("samples")
+	short[] samples;
 	@ObfuscatedName("bl")
 	int field378;
 	@ObfuscatedName("bw")
@@ -397,10 +398,10 @@ public class VorbisSample extends Node {
 		if (var1 != null && var1[0] <= 0) {
 			return null;
 		} else {
-			if (this.field350 == null) {
+			if (this.samples == null) {
 				this.field373 = 0;
 				this.field372 = new float[field363];
-				this.field350 = new short[this.sampleCount];
+				this.samples = new short[this.sampleCount];
 				this.field378 = 0;
 				this.field379 = 0;
 			}
@@ -419,7 +420,7 @@ public class VorbisSample extends Node {
 					}
 
 					for (int var5 = 0; var5 < var4; ++var5) {
-						short[] var6 = this.field350;
+						short[] var6 = this.samples;
 						int var7 = var3++;
 						int var9 = (int)(32768.0F * var2[var5]);
 						int var8 = Math.max(-32768, Math.min(var9, 32767));
@@ -435,8 +436,8 @@ public class VorbisSample extends Node {
 			}
 
 			this.field372 = null;
-			short[] var10 = this.field350;
-			this.field350 = null;
+			short[] var10 = this.samples;
+			this.samples = null;
 			return new RawSound(this.sampleRate, var10, this.start, this.end, this.field371, false);
 		}
 	}

@@ -43,7 +43,7 @@ public class SoundEffect {
 		descriptor = "(Z)Lbj;"
 	)
 	public RawSound method755(boolean var1) {
-		short[] var2 = this.method756(var1);
+		short[] var2 = this.mix(var1);
 		RawSound var3 = new RawSound(22050, var2, this.start * 22050 / 1000, this.end * 22050 / 1000, false, var1);
 		return var3;
 	}
@@ -93,7 +93,8 @@ public class SoundEffect {
 	}
 
 	@ObfuscatedName("as")
-	final short[] method756(boolean var1) {
+	@Export("mix")
+	final short[] mix(boolean var1) {
 		int var2 = 0;
 
 		int var3;

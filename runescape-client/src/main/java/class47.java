@@ -50,7 +50,7 @@ public class class47 {
 			var4 = class232.widgetDefinition.method6951(Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize]);
 			var3 = false;
 		} else {
-			var4 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+			var4 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		}
 
 		int var11;
@@ -209,7 +209,7 @@ public class class47 {
 		garbageValue = "112"
 	)
 	static int method890(int var0, Script var1, boolean var2) {
-		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		if (var0 == ScriptOpcodes.CC_GETX) {
 			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.x;
 			return 1;

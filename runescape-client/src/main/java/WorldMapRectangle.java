@@ -147,7 +147,8 @@ public final class WorldMapRectangle {
 		descriptor = "([Lnh;IIIIIIIIIIIB)V",
 		garbageValue = "0"
 	)
-	static final void method6332(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11) {
+	@Export("drawInterface")
+	static final void drawInterface(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11) {
 		Rasterizer2D.Rasterizer2D_setClip(var5, var6, var7, var8);
 		Rasterizer3D.resetRasterClipping();
 
@@ -165,9 +166,9 @@ public final class WorldMapRectangle {
 					var14 = var11;
 				}
 
-				var13.field3940 = var14;
+				var13.rootIndex = var14;
 				var13.cycle = Client.cycle;
-				if (!var13.isIf3 || !DynamicObject.method2369(var13)) {
+				if (!var13.isIf3 || !DynamicObject.isComponentHidden(var13)) {
 					if (var13.contentType > 0) {
 						Script.method2363(var13);
 					}
@@ -275,7 +276,7 @@ public final class WorldMapRectangle {
 								Client.viewportX = var15;
 								Client.viewportY = var16;
 								FriendsList.drawEntities(var15, var16, var13.width * 624892547, var13.height * 1265510039);
-								Client.validRootWidgets[var13.field3940] = true;
+								Client.validRootWidgets[var13.rootIndex] = true;
 								Rasterizer2D.Rasterizer2D_setClip(var5, var6, var7, var8);
 								continue;
 							}
@@ -306,7 +307,7 @@ public final class WorldMapRectangle {
 						}
 
 						if (var13.type == 0) {
-							if (!var13.isIf3 && DynamicObject.method2369(var13) && var13 != AbstractUserComparator.field5138) {
+							if (!var13.isIf3 && DynamicObject.isComponentHidden(var13) && var13 != AbstractUserComparator.mousedOverWidgetIf1) {
 								continue;
 							}
 
@@ -320,9 +321,9 @@ public final class WorldMapRectangle {
 								}
 							}
 
-							method6332(var0, var13.field3962, var13.field3968, var13.id, var13.childIndex * -1626125685, var18, var19, var20, var21, var15 - var13.scrollX, var16 - var13.scrollY, var14);
+							drawInterface(var0, var13.field3962, var13.field3968, var13.id, var13.childIndex * -1626125685, var18, var19, var20, var21, var15 - var13.scrollX, var16 - var13.scrollY, var14);
 							if (var13.children != null) {
-								method6332(var13.children, 0, var13.children.length - 1, var13.id, -1, var18, var19, var20, var21, var15 - var13.scrollX, var16 - var13.scrollY, var14);
+								drawInterface(var13.children, 0, var13.children.length - 1, var13.id, -1, var18, var19, var20, var21, var15 - var13.scrollX, var16 - var13.scrollY, var14);
 							}
 
 							if (var13.childIndex * -1626125685 == -1) {
@@ -335,12 +336,12 @@ public final class WorldMapRectangle {
 							Rasterizer2D.Rasterizer2D_setClip(var5, var6, var7, var8);
 							Rasterizer3D.resetRasterClipping();
 						} else if (var13.type == 11) {
-							if (DynamicObject.method2369(var13) && var13 != AbstractUserComparator.field5138) {
+							if (DynamicObject.isComponentHidden(var13) && var13 != AbstractUserComparator.mousedOverWidgetIf1) {
 								continue;
 							}
 
 							if (var13.children != null) {
-								method6332(var13.children, 0, var13.children.length - 1, var13.id, -1, var18, var19, var20, var21, var15 - var13.scrollX, var16 - var13.scrollY, var14);
+								drawInterface(var13.children, 0, var13.children.length - 1, var13.id, -1, var18, var19, var20, var21, var15 - var13.scrollX, var16 - var13.scrollY, var14);
 							}
 
 							Rasterizer2D.Rasterizer2D_setClip(var5, var6, var7, var8);
@@ -356,12 +357,12 @@ public final class WorldMapRectangle {
 								if (var13.type == 3) {
 									if (class370.runCs1(var13)) {
 										var22 = var13.color2;
-										if (var13 == AbstractUserComparator.field5138 && var13.mouseOverColor2 != 0) {
+										if (var13 == AbstractUserComparator.mousedOverWidgetIf1 && var13.mouseOverColor2 != 0) {
 											var22 = var13.mouseOverColor2;
 										}
 									} else {
 										var22 = var13.color;
-										if (var13 == AbstractUserComparator.field5138 && var13.mouseOverColor != 0) {
+										if (var13 == AbstractUserComparator.mousedOverWidgetIf1 && var13.mouseOverColor != 0) {
 											var22 = var13.mouseOverColor;
 										}
 									}
@@ -396,7 +397,7 @@ public final class WorldMapRectangle {
 										String var45 = var13.text;
 										if (class370.runCs1(var13)) {
 											var23 = var13.color2;
-											if (var13 == AbstractUserComparator.field5138 && var13.mouseOverColor2 != 0) {
+											if (var13 == AbstractUserComparator.mousedOverWidgetIf1 && var13.mouseOverColor2 != 0) {
 												var23 = var13.mouseOverColor2;
 											}
 
@@ -405,7 +406,7 @@ public final class WorldMapRectangle {
 											}
 										} else {
 											var23 = var13.color;
-											if (var13 == AbstractUserComparator.field5138 && var13.mouseOverColor != 0) {
+											if (var13 == AbstractUserComparator.mousedOverWidgetIf1 && var13.mouseOverColor != 0) {
 												var23 = var13.mouseOverColor;
 											}
 										}

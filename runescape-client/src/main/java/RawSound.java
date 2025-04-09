@@ -10,7 +10,8 @@ public class RawSound extends AbstractSound {
 	@Export("sampleRate")
 	public int sampleRate;
 	@ObfuscatedName("an")
-	public short[] field240;
+	@Export("samples")
+	public short[] samples;
 	@ObfuscatedName("ae")
 	@Export("start")
 	public int start;
@@ -25,7 +26,7 @@ public class RawSound extends AbstractSound {
 	RawSound(int var1, short[] var2, int var3, int var4, boolean var5, boolean var6) {
 		this.field244 = false;
 		this.sampleRate = var1;
-		this.field240 = var2;
+		this.samples = var2;
 		this.start = var3;
 		this.end = var4;
 		this.field243 = var5;
@@ -38,7 +39,7 @@ public class RawSound extends AbstractSound {
 	)
 	@Export("resample")
 	public RawSound resample(Decimator var1) {
-		this.field240 = var1.method1130(this.field240);
+		this.samples = var1.resample(this.samples);
 		this.sampleRate = var1.scaleRate(this.sampleRate);
 		if (this.start == this.end) {
 			this.start = this.end = var1.scalePosition(this.start);

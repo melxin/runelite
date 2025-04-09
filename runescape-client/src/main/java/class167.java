@@ -164,7 +164,7 @@ public class class167 extends class148 {
 		} else {
 			class137.otpMedium = Integer.parseInt(WorldMapIcon_1.otp);
 			WorldMapIcon_1.otp = "";
-			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.field1683 : AuthenticationScheme.USERNAME_PASSWORD_REMEMBER;
+			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.TOKEN_REMEMBER : AuthenticationScheme.TOKEN;
 			TileItem.setLoginResponseString("", "Connecting to server...", "");
 			class325.updateGameState(20);
 		}

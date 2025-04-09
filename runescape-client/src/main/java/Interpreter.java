@@ -10,7 +10,8 @@ import net.runelite.rs.ScriptOpcodes;
 @Implements("Interpreter")
 public class Interpreter {
 	@ObfuscatedName("as")
-	static final String[] field856;
+	@Export("Interpreter_MONTHS")
+	static final String[] Interpreter_MONTHS;
 	@ObfuscatedName("aa")
 	static final double field859;
 	@ObfuscatedName("aw")
@@ -35,7 +36,8 @@ public class Interpreter {
 	@ObfuscatedSignature(
 		descriptor = "[Lcv;"
 	)
-	static ScriptFrame[] field865;
+	@Export("Interpreter_frames")
+	static ScriptFrame[] Interpreter_frames;
 	@ObfuscatedName("ad")
 	@Export("Interpreter_calendar")
 	static java.util.Calendar Interpreter_calendar;
@@ -58,14 +60,14 @@ public class Interpreter {
 	static IndexedSprite[] worldSelectFlagSprites;
 
 	static {
-		field856 = new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+		Interpreter_MONTHS = new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 		field859 = Math.log(2.0D);
 		Interpreter_arrayLengths = new int[5];
 		Interpreter_arrays = new int[5][5000];
 		Interpreter_intStack = new int[1000];
 		Interpreter_stringStack = new String[1000];
 		Interpreter_frameDepth = 0;
-		field865 = new ScriptFrame[50];
+		Interpreter_frames = new ScriptFrame[50];
 		Interpreter_calendar = java.util.Calendar.getInstance();
 		field867 = false;
 		field868 = false;

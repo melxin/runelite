@@ -11,11 +11,11 @@ public class Instrument {
 	@Export("Instrument_samples")
 	static int[] Instrument_samples;
 	@ObfuscatedName("ae")
-	@Export("Instrument_sine")
-	static int[] Instrument_sine;
-	@ObfuscatedName("af")
 	@Export("Instrument_noise")
 	static int[] Instrument_noise;
+	@ObfuscatedName("af")
+	@Export("Instrument_sine")
+	static int[] Instrument_sine;
 	@ObfuscatedName("as")
 	@Export("Instrument_phases")
 	static int[] Instrument_phases;
@@ -119,18 +119,18 @@ public class Instrument {
 		Instrument_volumeSteps = new int[5];
 		Instrument_pitchSteps = new int[5];
 		Instrument_pitchBaseSteps = new int[5];
-		Instrument_sine = new int[32768];
+		Instrument_noise = new int[32768];
 		Random var0 = new Random(0L);
 
 		int var1;
 		for (var1 = 0; var1 < 32768; ++var1) {
-			Instrument_sine[var1] = (var0.nextInt() & 2) - 1;
+			Instrument_noise[var1] = (var0.nextInt() & 2) - 1;
 		}
 
-		Instrument_noise = new int[32768];
+		Instrument_sine = new int[32768];
 
 		for (var1 = 0; var1 < 32768; ++var1) {
-			Instrument_noise[var1] = (int)(Math.sin((double)var1 / 5215.1903D) * 16384.0D);
+			Instrument_sine[var1] = (int)(Math.sin((double)var1 / 5215.1903D) * 16384.0D);
 		}
 
 		Instrument_samples = new int[220500];
@@ -360,11 +360,11 @@ public class Instrument {
 		if (var3 == 1) {
 			return (var1 & 32767) < 16384 ? var2 : -var2;
 		} else if (var3 == 2) {
-			return Instrument_noise[var1 & 32767] * var2 >> 14;
+			return Instrument_sine[var1 & 32767] * var2 >> 14;
 		} else if (var3 == 3) {
 			return (var2 * (var1 & 32767) >> 14) - var2;
 		} else {
-			return var3 == 4 ? var2 * Instrument_sine[var1 / 2607 & 32767] : 0;
+			return var3 == 4 ? var2 * Instrument_noise[var1 / 2607 & 32767] : 0;
 		}
 	}
 

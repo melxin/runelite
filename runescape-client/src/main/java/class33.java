@@ -157,9 +157,9 @@ public class class33 {
 	static final void drawWidgets(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
 		if (class232.widgetDefinition.loadInterface(var0)) {
 			WorldMapLabel.field3304 = null;
-			WorldMapRectangle.method6332(class232.widgetDefinition.Widget_interfaceComponents[var0], 0, class232.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1, var1, var2, var3, var4, var5, var6, var7);
+			WorldMapRectangle.drawInterface(class232.widgetDefinition.Widget_interfaceComponents[var0], 0, class232.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1, var1, var2, var3, var4, var5, var6, var7);
 			if (WorldMapLabel.field3304 != null) {
-				WorldMapRectangle.method6332(WorldMapLabel.field3304, 0, WorldMapLabel.field3304.length - 1, -1412584499, -1412584499, var1, var2, var3, var4, HealthBarConfig.field1360, UrlRequest.field1489, var7);
+				WorldMapRectangle.drawInterface(WorldMapLabel.field3304, 0, WorldMapLabel.field3304.length - 1, -1412584499, -1412584499, var1, var2, var3, var4, HealthBarConfig.field1360, UrlRequest.field1489, var7);
 				WorldMapLabel.field3304 = null;
 			}
 

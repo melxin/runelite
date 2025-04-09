@@ -139,7 +139,7 @@ public enum class92 implements Enum {
 
 			switch(var0) {
 			case 2:
-				TileItem.setLoginResponseString(class385.field4505, class385.field4522, class385.field4564);
+				TileItem.setLoginResponseString(Strings.field4505, Strings.field4522, Strings.field4564);
 				class137.method3379(6);
 				break;
 			case 3:

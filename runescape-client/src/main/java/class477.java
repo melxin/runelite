@@ -210,7 +210,8 @@ public final class class477 {
 		descriptor = "(Ldj;ZI)V",
 		garbageValue = "1146600533"
 	)
-	static final void method9102(WorldView var0, boolean var1) {
+	@Export("addNpcsToScene")
+	static final void addNpcsToScene(WorldView var0, boolean var1) {
 		for (int var2 = 0; var2 < var0.field1351.method9060(); ++var2) {
 			NPC var3 = (NPC)var0.npcs.get((long)var0.field1351.method9056(var2));
 			if (var3 != null && var3.isVisible() && var3.definition.isVisible == var1 && var3.definition.transformIsVisible()) {

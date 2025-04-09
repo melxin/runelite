@@ -532,7 +532,7 @@ public final class ItemLayer {
 						UserComparator4.field1497 = var31;
 						class335.field3703 = var8;
 						class335.field3697 = var1;
-						class153.field1736 = new Decimator(22050, class4.field7 * -70401264);
+						class153.decimator = new Decimator(22050, class4.field7 * -70401264);
 						WorldMapIcon_0.method6262(60, "Prepared sound engine");
 						class136.method3366(class94.field1170);
 					}

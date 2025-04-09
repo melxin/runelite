@@ -69,8 +69,8 @@ public class class278 {
 			byte var23 = 10;
 			var24 = var4.approxDestinationX;
 			int var25 = var4.approxDestinationY;
-			int var26 = var4.approxDestinationSizeY;
-			int var27 = var4.approxDestinationSizeX;
+			int var26 = var4.approxDestinationSizeX;
+			int var27 = var4.approxDestinationSizeY;
 
 			for (int var28 = var24 - var23; var28 <= var23 + var24; ++var28) {
 				for (int var29 = var25 - var23; var29 <= var25 + var23; ++var29) {

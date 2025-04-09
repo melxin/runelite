@@ -11,7 +11,8 @@ public abstract class AbstractUserComparator implements Comparator {
 	@ObfuscatedSignature(
 		descriptor = "Lnh;"
 	)
-	static Widget field5138;
+	@Export("mousedOverWidgetIf1")
+	static Widget mousedOverWidgetIf1;
 	@ObfuscatedName("an")
 	@Export("nextComparator")
 	Comparator nextComparator;

@@ -11,12 +11,14 @@ public class ScriptFrame {
 	@ObfuscatedSignature(
 		descriptor = "Ldb;"
 	)
-	Script field448;
+	@Export("script")
+	Script script;
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(
 		intValue = 187401251
 	)
-	int field449;
+	@Export("pc")
+	int pc;
 	@ObfuscatedName("ae")
 	@Export("intLocals")
 	int[] intLocals;
@@ -25,7 +27,7 @@ public class ScriptFrame {
 	String[] stringLocals;
 
 	ScriptFrame() {
-		this.field449 = -1;
+		this.pc = -1;
 	}
 
 	@ObfuscatedName("ao")

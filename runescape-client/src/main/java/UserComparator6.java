@@ -62,7 +62,7 @@ public class UserComparator6 extends AbstractUserComparator {
 		garbageValue = "-1827898610"
 	)
 	static int method3254(int var0, Script var1, boolean var2) {
-		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		if (var0 == ScriptOpcodes.CC_GETSCROLLX) {
 			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.scrollX;
 			return 1;

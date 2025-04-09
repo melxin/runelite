@@ -1,7 +1,9 @@
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 
 @ObfuscatedName("ot")
-public class class385 {
+@Implements("Strings")
+public class Strings {
 	@ObfuscatedName("fr")
 	public static String field4268;
 	@ObfuscatedName("kj")

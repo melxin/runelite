@@ -12,7 +12,8 @@ public class class320 {
 	@ObfuscatedGetter(
 		intValue = 1948641161
 	)
-	static int field3376;
+	@Export("Players_count")
+	static int Players_count;
 
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(

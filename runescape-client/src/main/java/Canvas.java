@@ -207,7 +207,7 @@ public final class Canvas extends java.awt.Canvas {
 										TileItem.setLoginResponseString("", "Please enter your password.", "");
 									} else {
 										TileItem.setLoginResponseString("", "Connecting to server...", "");
-										Client.authenticationScheme = Renderable.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.field1687 : AuthenticationScheme.field1684;
+										Client.authenticationScheme = Renderable.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
 										class325.updateGameState(20);
 									}
 
@@ -301,7 +301,7 @@ public final class Canvas extends java.awt.Canvas {
 														TileItem.setLoginResponseString("", "Please enter your password.", "");
 													} else {
 														TileItem.setLoginResponseString("", "Connecting to server...", "");
-														Client.authenticationScheme = Renderable.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.field1687 : AuthenticationScheme.field1684;
+														Client.authenticationScheme = Renderable.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
 														class325.updateGameState(20);
 													}
 
@@ -674,7 +674,7 @@ public final class Canvas extends java.awt.Canvas {
 												if (var25.field3071 == 84 || var24 == 1 && var38 >= var10 - 109 && var38 <= var10 + 109 && var39 >= var11 && var39 <= var11 + 68) {
 													TileItem.setLoginResponseString("", "Connecting to server...", "");
 													Client.field515 = class573.field5652;
-													Client.authenticationScheme = Renderable.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.field1687 : AuthenticationScheme.field1684;
+													Client.authenticationScheme = Renderable.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
 													class325.updateGameState(20);
 												}
 											} else if (Login.loginIndex == 12) {

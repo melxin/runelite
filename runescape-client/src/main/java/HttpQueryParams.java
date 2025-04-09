@@ -12,10 +12,11 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("HttpQueryParams")
 public class HttpQueryParams implements HttpPayload {
 	@ObfuscatedName("ao")
-	final Map field5284;
+	@Export("queryParameters")
+	final Map queryParameters;
 
 	public HttpQueryParams(Map var1) {
-		this.field5284 = var1;
+		this.queryParameters = var1;
 	}
 
 	@ObfuscatedName("ao")
@@ -46,7 +47,7 @@ public class HttpQueryParams implements HttpPayload {
 	@Export("encode")
 	public String encode() throws UnsupportedEncodingException {
 		StringBuilder var1 = new StringBuilder();
-		Iterator var2 = this.field5284.entrySet().iterator();
+		Iterator var2 = this.queryParameters.entrySet().iterator();
 
 		while (var2.hasNext()) {
 			Entry var3 = (Entry)var2.next();

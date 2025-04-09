@@ -935,7 +935,7 @@ public abstract class Actor extends Renderable implements Entity {
 						WorldMapRectangle.addPlayerToScene(var17, Client.combatTargetPlayerIndex, false);
 					}
 
-					class477.method9102(var4.worldView, true);
+					class477.addNpcsToScene(var4.worldView, true);
 					WorldView var18 = var4.worldView;
 					int var19 = Client.playerUpdateManager.playerCount;
 					int[] var20 = Client.playerUpdateManager.playerIndices;
@@ -946,7 +946,7 @@ public abstract class Actor extends Renderable implements Entity {
 						}
 					}
 
-					class477.method9102(var4.worldView, false);
+					class477.addNpcsToScene(var4.worldView, false);
 					class280.method5892(var4.worldView);
 					WorldMapDecorationType.method7541(var4.worldView);
 				}

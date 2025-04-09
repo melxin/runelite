@@ -317,7 +317,7 @@ public class Varcs {
 		garbageValue = "-199615513"
 	)
 	static int method3086(int var0, Script var1, boolean var2) {
-		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
 			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = WorldMapIcon_1.Widget_unpackTargetMask(class31.getWidgetFlags(var3));
 			return 1;

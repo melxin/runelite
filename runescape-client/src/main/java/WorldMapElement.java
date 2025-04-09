@@ -375,7 +375,7 @@ public class WorldMapElement extends DualNode {
 						}
 					}
 
-					int var13 = Client.field587[var2.readBits(3)];
+					int var13 = Client.defaultRotations[var2.readBits(3)];
 					if (var6) {
 						var7.orientation = var7.rotation = var13;
 					}

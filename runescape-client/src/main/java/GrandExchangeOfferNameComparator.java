@@ -120,7 +120,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 				if (var2) {
 					class156.scriptDotWidget = var8;
 				} else {
-					SoundCache.field295 = var8;
+					SoundCache.scriptActiveWidget = var8;
 				}
 
 				class139.invalidateWidget(var7);
@@ -130,7 +130,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 			Widget var3;
 			Widget var4;
 			if (var0 == ScriptOpcodes.CC_DELETE) {
-				var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+				var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 				var4 = class232.widgetDefinition.method6951(var3.id);
 				class322.method6542(var3, var4);
 				class139.invalidateWidget(var4);
@@ -176,7 +176,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 						if (var2) {
 							class156.scriptDotWidget = var8;
 						} else {
-							SoundCache.field295 = var8;
+							SoundCache.scriptActiveWidget = var8;
 						}
 
 						class139.invalidateWidget(var12);
@@ -188,7 +188,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 						AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
 						var10 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
 						var11 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
-						var9 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+						var9 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 						if (var9 == null) {
 							throw new RuntimeException("");
 						} else {
@@ -214,7 +214,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 								if (var2) {
 									class156.scriptDotWidget = var7;
 								} else {
-									SoundCache.field295 = var7;
+									SoundCache.scriptActiveWidget = var7;
 								}
 
 								class139.invalidateWidget(var12);
@@ -225,7 +225,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 						AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
 						var10 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
 						var11 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
-						var9 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+						var9 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 						if (var9 == null) {
 							throw new RuntimeException("");
 						} else {
@@ -252,7 +252,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 								if (var2) {
 									class156.scriptDotWidget = var8;
 								} else {
-									SoundCache.field295 = var8;
+									SoundCache.scriptActiveWidget = var8;
 								}
 
 								class139.invalidateWidget(var7);
@@ -269,7 +269,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 							if (var2) {
 								class156.scriptDotWidget = var9;
 							} else {
-								SoundCache.field295 = var9;
+								SoundCache.scriptActiveWidget = var9;
 							}
 						} else {
 							Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
@@ -283,7 +283,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 							if (var2) {
 								class156.scriptDotWidget = var3;
 							} else {
-								SoundCache.field295 = var3;
+								SoundCache.scriptActiveWidget = var3;
 							}
 						} else {
 							Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
@@ -291,7 +291,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 
 						return 1;
 					} else if (var0 == 204) {
-						var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+						var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 						if (var3 != null) {
 							var4 = class232.widgetDefinition.getWidgetChild(var3.parentId, var3.field3960);
 							if (var4 != null) {
@@ -299,7 +299,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 								if (var2) {
 									class156.scriptDotWidget = var4;
 								} else {
-									SoundCache.field295 = var4;
+									SoundCache.scriptActiveWidget = var4;
 								}
 
 								return 1;
@@ -309,7 +309,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 						Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
 						return 1;
 					} else if (var0 == 205) {
-						var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+						var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 						if (var3 != null) {
 							var4 = class232.widgetDefinition.method6951(var3.parentId);
 							if (var4 != null) {
@@ -317,7 +317,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 								if (var2) {
 									class156.scriptDotWidget = var4;
 								} else {
-									SoundCache.field295 = var4;
+									SoundCache.scriptActiveWidget = var4;
 								}
 
 								return 1;
@@ -329,7 +329,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 					} else {
 						int var6;
 						if (var0 == 206) {
-							var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+							var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 							if (var3 == null) {
 								Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
 								return 1;
@@ -356,7 +356,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 									if (var2) {
 										class156.scriptDotWidget = var9;
 									} else {
-										SoundCache.field295 = var9;
+										SoundCache.scriptActiveWidget = var9;
 									}
 
 									return 1;
@@ -364,7 +364,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 							}
 						} else if (var0 != 207) {
 							if (var0 == 208) {
-								var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+								var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 								if (var3 == null) {
 									Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
 									return 1;
@@ -394,7 +394,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 								return 2;
 							}
 						} else {
-							var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+							var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 							if (var3 == null) {
 								Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
 								return 1;
@@ -421,7 +421,7 @@ final class GrandExchangeOfferNameComparator implements Comparator {
 									if (var2) {
 										class156.scriptDotWidget = var9;
 									} else {
-										SoundCache.field295 = var9;
+										SoundCache.scriptActiveWidget = var9;
 									}
 
 									return 1;

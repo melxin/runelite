@@ -56,7 +56,7 @@ public class WorldMapDecoration {
 		garbageValue = "-63"
 	)
 	static int method6337(int var0, Script var1, boolean var2) {
-		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		if (var0 == ScriptOpcodes.CC_GETINVOBJECT) {
 			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.itemId;
 			return 1;

@@ -84,7 +84,7 @@ public class class358 {
 			var4 = Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize];
 			var3 = class232.widgetDefinition.method6951(var4);
 		} else {
-			var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+			var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		}
 
 		int var23;

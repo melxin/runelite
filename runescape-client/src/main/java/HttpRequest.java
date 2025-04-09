@@ -423,15 +423,16 @@ public class HttpRequest {
 		descriptor = "([Lnh;IIIIIIIIIIB)V",
 		garbageValue = "-117"
 	)
-	static final void method98(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
+	@Export("updateInterface")
+	static final void updateInterface(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
 		for (int var11 = var1; var11 <= var2; ++var11) {
 			Widget var12 = var0[var11];
 			if (var12 != null && var3 == var12.parentId && var4 == var12.field3960 && (var12.method7357() || class31.getWidgetFlags(var12) != 0 || var12 == Client.clickedWidgetParent)) {
 				if (var12.isIf3) {
-					if (DynamicObject.method2369(var12)) {
+					if (DynamicObject.isComponentHidden(var12)) {
 						continue;
 					}
-				} else if (var12.type == 0 && var12 != AbstractUserComparator.field5138 && DynamicObject.method2369(var12)) {
+				} else if (var12.type == 0 && var12 != AbstractUserComparator.mousedOverWidgetIf1 && DynamicObject.isComponentHidden(var12)) {
 					continue;
 				}
 
@@ -739,7 +740,7 @@ public class HttpRequest {
 										var25.mouseX = MouseHandler.MouseHandler_x - var29;
 										var25.mouseY = MouseHandler.MouseHandler_y - var14;
 										var25.args = var12.onRelease;
-										Client.field621.addFirst(var25);
+										Client.scriptEvents3.addFirst(var25);
 									}
 								}
 
@@ -785,7 +786,7 @@ public class HttpRequest {
 										var25.mouseX = MouseHandler.MouseHandler_x - var29;
 										var25.mouseY = MouseHandler.MouseHandler_y - var14;
 										var25.args = var12.onMouseLeave;
-										Client.field621.addFirst(var25);
+										Client.scriptEvents3.addFirst(var25);
 									}
 								}
 
@@ -793,7 +794,7 @@ public class HttpRequest {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
 									var25.args = var12.onTimer;
-									Client.field620.addFirst(var25);
+									Client.scriptEvents2.addFirst(var25);
 								}
 
 								ScriptEvent var28;
@@ -803,7 +804,7 @@ public class HttpRequest {
 									if (var12.varTransmitTriggers != null && Client.changedVarpCount - var12.field4081 <= 32) {
 										label830:
 										for (var42 = var12.field4081; var42 < Client.changedVarpCount; ++var42) {
-											var26 = Client.changedItemContainers[var42 & 31];
+											var26 = Client.changedVarps[var42 & 31];
 
 											for (var40 = 0; var40 < var12.varTransmitTriggers.length; ++var40) {
 												if (var26 == var12.varTransmitTriggers[var40]) {
@@ -829,7 +830,7 @@ public class HttpRequest {
 									if (var12.invTransmitTriggers != null && Client.field735 - var12.field4086 <= 32) {
 										label806:
 										for (var42 = var12.field4086; var42 < Client.field735; ++var42) {
-											var26 = Client.defaultRotations[var42 & 31];
+											var26 = Client.changedItemContainers[var42 & 31];
 
 											for (var40 = 0; var40 < var12.invTransmitTriggers.length; ++var40) {
 												if (var26 == var12.invTransmitTriggers[var40]) {
@@ -851,11 +852,11 @@ public class HttpRequest {
 									var12.field4086 = Client.field735;
 								}
 
-								if (var12.onStatTransmit != null && Client.field737 > var12.field4077) {
-									if (var12.statTransmitTriggers != null && Client.field737 - var12.field4077 <= 32) {
+								if (var12.onStatTransmit != null && Client.changedSkillsCount > var12.field4077) {
+									if (var12.statTransmitTriggers != null && Client.changedSkillsCount - var12.field4077 <= 32) {
 										label782:
-										for (var42 = var12.field4077; var42 < Client.field737; ++var42) {
-											var26 = Client.field736[var42 & 31];
+										for (var42 = var12.field4077; var42 < Client.changedSkillsCount; ++var42) {
+											var26 = Client.changedSkills[var42 & 31];
 
 											for (var40 = 0; var40 < var12.statTransmitTriggers.length; ++var40) {
 												if (var26 == var12.statTransmitTriggers[var40]) {
@@ -874,27 +875,27 @@ public class HttpRequest {
 										Client.scriptEvents.addFirst(var25);
 									}
 
-									var12.field4077 = Client.field737;
+									var12.field4077 = Client.changedSkillsCount;
 								}
 
-								if (Client.chatCycle > var12.field4013 && var12.field4054 != null) {
+								if (Client.chatCycle > var12.field4013 && var12.onChatTransmit != null) {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
-									var25.args = var12.field4054;
+									var25.args = var12.onChatTransmit;
 									Client.scriptEvents.addFirst(var25);
 								}
 
-								if (Client.field740 > var12.field4013 && var12.field4058 != null) {
+								if (Client.field740 > var12.field4013 && var12.onFriendTransmit != null) {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
-									var25.args = var12.field4058;
+									var25.args = var12.onFriendTransmit;
 									Client.scriptEvents.addFirst(var25);
 								}
 
-								if (Client.field741 > var12.field4013 && var12.field4059 != null) {
+								if (Client.field741 > var12.field4013 && var12.onClanTransmit != null) {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
-									var25.args = var12.field4059;
+									var25.args = var12.onClanTransmit;
 									Client.scriptEvents.addFirst(var25);
 								}
 
@@ -912,35 +913,35 @@ public class HttpRequest {
 									Client.scriptEvents.addFirst(var25);
 								}
 
-								if (Client.field744 > var12.field4013 && var12.field3988 != null) {
+								if (Client.field744 > var12.field4013 && var12.onStockTransmit != null) {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
-									var25.args = var12.field3988;
+									var25.args = var12.onStockTransmit;
 									Client.scriptEvents.addFirst(var25);
 								}
 
-								if (Client.hintArrowHeight > var12.field4013 && var12.field4015 != null) {
+								if (Client.field745 > var12.field4013 && var12.field4015 != null) {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
 									var25.args = var12.field4015;
 									Client.scriptEvents.addFirst(var25);
 								}
 
-								if (Client.field746 > var12.field4013 && var12.onChatTransmit != null) {
+								if (Client.field746 > var12.field4013 && var12.onMiscTransmit != null) {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
-									var25.args = var12.onChatTransmit;
+									var25.args = var12.onMiscTransmit;
 									Client.scriptEvents.addFirst(var25);
 								}
 
 								var12.field4013 = Client.cycleCntr;
-								if (var12.field4055 != null) {
+								if (var12.onKey != null) {
 									for (var42 = 0; var42 < Client.field627; ++var42) {
 										ScriptEvent var35 = new ScriptEvent();
 										var35.widget = var12;
 										var35.keyTyped = Client.field629[var42];
 										var35.keyPressed = Client.field575[var42];
-										var35.args = var12.field4055;
+										var35.args = var12.onKey;
 										Client.scriptEvents.addFirst(var35);
 									}
 								}
@@ -980,9 +981,9 @@ public class HttpRequest {
 
 							if ((var12.mouseOverRedirect >= 0 || var12.mouseOverColor != 0) && MouseHandler.MouseHandler_x >= var15 && MouseHandler.MouseHandler_y >= var16 && MouseHandler.MouseHandler_x < var17 && MouseHandler.MouseHandler_y < var18) {
 								if (var12.mouseOverRedirect >= 0) {
-									AbstractUserComparator.field5138 = var0[var12.mouseOverRedirect];
+									AbstractUserComparator.mousedOverWidgetIf1 = var0[var12.mouseOverRedirect];
 								} else {
-									AbstractUserComparator.field5138 = var12;
+									AbstractUserComparator.mousedOverWidgetIf1 = var12;
 								}
 							}
 
@@ -996,9 +997,9 @@ public class HttpRequest {
 						}
 
 						if (var12.type == 0) {
-							method98(var0, var12.field3962, var12.field3968, var12.id, var12.childIndex * -1626125685, var15, var16, var17, var18, var29 - var12.scrollX, var14 - var12.scrollY);
+							updateInterface(var0, var12.field3962, var12.field3968, var12.id, var12.childIndex * -1626125685, var15, var16, var17, var18, var29 - var12.scrollX, var14 - var12.scrollY);
 							if (var12.children != null) {
-								method98(var12.children, 0, var12.children.length - 1, var12.id, -1, var15, var16, var17, var18, var29 - var12.scrollX, var14 - var12.scrollY);
+								updateInterface(var12.children, 0, var12.children.length - 1, var12.id, -1, var15, var16, var17, var18, var29 - var12.scrollX, var14 - var12.scrollY);
 							}
 
 							if (var12.childIndex * -1626125685 == -1) {

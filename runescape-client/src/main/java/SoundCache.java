@@ -12,7 +12,8 @@ public class SoundCache {
 	@ObfuscatedSignature(
 		descriptor = "Lnh;"
 	)
-	static Widget field295;
+	@Export("scriptActiveWidget")
+	static Widget scriptActiveWidget;
 	@ObfuscatedName("bo")
 	@ObfuscatedSignature(
 		descriptor = "Lqs;"
@@ -72,7 +73,7 @@ public class SoundCache {
 				RawSound var8 = var7.toRawSound();
 				this.field293.put(new class53(var8), var4);
 				if (var3 != null) {
-					var3[0] -= var8.field240.length;
+					var3[0] -= var8.samples.length;
 				}
 
 				return var8;

@@ -149,7 +149,8 @@ public final class BZip2State {
 	@Export("base")
 	int[][] base;
 	@ObfuscatedName("bu")
-	int[][] field5641;
+	@Export("perm")
+	int[][] perm;
 	@ObfuscatedName("bc")
 	@Export("minLens")
 	int[] minLens;
@@ -180,7 +181,7 @@ public final class BZip2State {
 		this.temp_charArray2d = new byte[6][258];
 		this.limit = new int[6][258];
 		this.base = new int[6][258];
-		this.field5641 = new int[6][258];
+		this.perm = new int[6][258];
 		this.minLens = new int[6];
 	}
 }

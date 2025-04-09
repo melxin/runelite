@@ -168,7 +168,7 @@ public class DevicePcmPlayerProvider implements class51 {
 			var0 -= 1000;
 			var3 = class232.widgetDefinition.method6951(Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize]);
 		} else {
-			var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+			var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		}
 
 		class139.invalidateWidget(var3);

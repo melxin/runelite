@@ -15,7 +15,8 @@ public class class153 extends class148 {
 	@ObfuscatedSignature(
 		descriptor = "Lcc;"
 	)
-	static Decimator field1736;
+	@Export("decimator")
+	static Decimator decimator;
 	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
 		intValue = -1373180083
@@ -214,7 +215,7 @@ public class class153 extends class148 {
 	)
 	static final void method3511(int var0) {
 		if (class232.widgetDefinition.loadInterface(var0)) {
-			WorldViewManager.method2615(class232.widgetDefinition.Widget_interfaceComponents[var0], 0, class232.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1);
+			WorldViewManager.drawModelComponents(class232.widgetDefinition.Widget_interfaceComponents[var0], 0, class232.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1);
 		}
 	}
 }

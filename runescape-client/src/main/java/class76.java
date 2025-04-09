@@ -61,7 +61,7 @@ public class class76 {
 				var15.packetBuffer.method10279(class325.field3498);
 				var15.packetBuffer.writeShortAdd(var12 + var1);
 				var15.packetBuffer.writeShortAddLE(var3);
-				var15.packetBuffer.writeShort(class320.field3376);
+				var15.packetBuffer.writeShort(class320.Players_count);
 				var15.packetBuffer.writeShortAdd(class156.field1756);
 				var15.packetBuffer.writeShortAddLE(var0 + var11);
 				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
@@ -147,7 +147,7 @@ public class class76 {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var16 = FloorDecoration.getPacketBufferNode(ClientPacket.field3422, Client.packetWriter.isaacCipher);
-						var16.packetBuffer.writeShortAddLE(class320.field3376);
+						var16.packetBuffer.writeShortAddLE(class320.Players_count);
 						var16.packetBuffer.writeShortAddLE(class156.field1756);
 						var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var16.packetBuffer.writeIntIME(class325.field3498);
@@ -257,7 +257,7 @@ public class class76 {
 							var16.packetBuffer.writeShortAdd(var3);
 							var16.packetBuffer.writeIntME(class325.field3498);
 							var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-							var16.packetBuffer.writeShort(class320.field3376);
+							var16.packetBuffer.writeShort(class320.Players_count);
 							Client.packetWriter.addNode(var16);
 						}
 					} else if (var2 == 15) {
@@ -290,7 +290,7 @@ public class class76 {
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var15.packetBuffer.writeIntIME(class325.field3498);
 						var15.packetBuffer.writeShortAddLE(var0 + var11);
-						var15.packetBuffer.writeShortAdd(class320.field3376);
+						var15.packetBuffer.writeShortAdd(class320.Players_count);
 						var15.packetBuffer.writeShortAdd(var3);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 17) {
@@ -719,7 +719,7 @@ public class class76 {
 				int var29;
 				for (var8 = 0; var8 < Client.mapIconCount; ++var8) {
 					var29 = Client.mapIconXs[var8] * 4 + 2 - Client.field696 / 32;
-					var10 = Client.field684[var8] * 4 + 2 - Client.field697 / 32;
+					var10 = Client.mapIconYs[var8] * 4 + 2 - Client.field697 / 32;
 					HttpRequestTask.drawSpriteOnMinimap(var1, var2, var29, var10, Client.mapIcons[var8], var4);
 				}
 

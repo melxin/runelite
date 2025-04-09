@@ -145,7 +145,8 @@ public class BufferedNetSocket extends AbstractSocket {
 		descriptor = "([Lnh;IIIIIIZI)V",
 		garbageValue = "1412665573"
 	)
-	static void method9474(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
+	@Export("resizeInterface")
+	static void resizeInterface(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
 		for (int var8 = var1; var8 <= var2; ++var8) {
 			Widget var9 = var0[var8];
 			if (var9 != null && var3 == var9.parentId && var4 == var9.field3960) {

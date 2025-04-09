@@ -1661,7 +1661,7 @@ public abstract class GameEngine extends Applet implements Runnable, FocusListen
 						case 2:
 							var24 = "The unpaid balance on your account needs";
 							var5 = "to be resolved before you can play.";
-							var6 = class385.field4268;
+							var6 = Strings.field4268;
 							break;
 						default:
 							class396.Login_promptCredentials(false);

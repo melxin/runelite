@@ -184,7 +184,7 @@ public class class325 {
 				Client.field592 = 0;
 				Client.timer.method7590(var0);
 				if (var0 != 20) {
-					Client.authenticationScheme = Renderable.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.field1687 : AuthenticationScheme.field1684;
+					Client.authenticationScheme = Renderable.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
 				}
 			}
 

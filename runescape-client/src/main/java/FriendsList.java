@@ -234,9 +234,9 @@ public class FriendsList extends UserList {
 
 		Actor.method2699(class509.topLevelWorldView, class386.TOKEN);
 		Actor.method2699(class509.topLevelWorldView, class386.field4571);
-		class477.method9102(class509.topLevelWorldView, true);
+		class477.addNpcsToScene(class509.topLevelWorldView, true);
 		class92.method2494(class509.topLevelWorldView);
-		class477.method9102(class509.topLevelWorldView, false);
+		class477.addNpcsToScene(class509.topLevelWorldView, false);
 		class280.method5892(class509.topLevelWorldView);
 		WorldMapDecorationType.method7541(class509.topLevelWorldView);
 		Actor.method2699(class509.topLevelWorldView, class386.field4570);
@@ -305,7 +305,7 @@ public class FriendsList extends UserList {
 			PacketBufferNode var36 = FloorDecoration.getPacketBufferNode(ClientPacket.field3386, Client.packetWriter.isaacCipher);
 			var36.packetBuffer.writeShortAdd(var20);
 			var36.packetBuffer.writeByteAdd(var18);
-			var36.packetBuffer.writeIntME(Client.field671);
+			var36.packetBuffer.writeIntME(Client.revision);
 			var36.packetBuffer.writeShortLE(var19);
 			Client.packetWriter.addNode(var36);
 		}
@@ -540,9 +540,9 @@ public class FriendsList extends UserList {
 
 		WorldView var39 = class509.topLevelWorldView;
 		if (Client.hintArrowType == 2) {
-			var24 = Client.field747 * 64 + (Client.hintArrowX - var39.baseX << 7);
-			var25 = Client.field680 * 64 + (Client.hintArrowY - var39.baseY << 7);
-			class136.worldToScreen(var39, var24, var25, var24, var25, Client.changedSkillsCount * 2);
+			var24 = Client.hintArrowSubX * 64 + (Client.hintArrowX - var39.baseX << 7);
+			var25 = Client.hintArrowSubY * 64 + (Client.hintArrowY - var39.baseY << 7);
+			class136.worldToScreen(var39, var24, var25, var24, var25, Client.hintArrowHeight * 2);
 			if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
 				KeyHandler.headIconHintSprites[0].drawTransBgAt(var0 + Client.viewportTempX - 12, Client.viewportTempY + var1 - 28);
 			}

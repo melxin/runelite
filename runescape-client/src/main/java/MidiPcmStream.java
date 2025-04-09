@@ -524,7 +524,7 @@ public class MidiPcmStream extends PcmStream {
 		garbageValue = "103002332"
 	)
 	void method6696(MusicPatchNode var1, boolean var2) {
-		int var3 = var1.rawSound.field240.length;
+		int var3 = var1.rawSound.samples.length;
 		int var4;
 		if (var2 && var1.rawSound.field243) {
 			int var5 = var3 + var3 - var1.rawSound.start;

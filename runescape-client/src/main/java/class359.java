@@ -120,7 +120,7 @@ public class class359 {
 						AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
 						var3 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
 						var15 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
-						Widget var12 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+						Widget var12 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 						WorldMapArea.clickWidget(var12, var3, var15);
 						return 1;
 					} else if (var0 == ScriptOpcodes.MOUSECAM) {
@@ -256,7 +256,7 @@ public class class359 {
 						return 1;
 					} else if (var0 == 3140) {
 						Client.field608 = 3;
-						Client.field609 = var2 ? class156.scriptDotWidget.id : SoundCache.field295.id;
+						Client.field609 = var2 ? class156.scriptDotWidget.id : SoundCache.scriptActiveWidget.id;
 						return 1;
 					} else {
 						boolean var10;

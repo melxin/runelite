@@ -326,7 +326,7 @@ public final class BZip2Decompressor {
 						}
 					}
 
-					BZip2Decompressor_createHuffmanTables(var0.limit[var38], var0.base[var38], var0.field5641[var38], var0.temp_charArray2d[var38], var2, var3, var39);
+					BZip2Decompressor_createHuffmanTables(var0.limit[var38], var0.base[var38], var0.perm[var38], var0.temp_charArray2d[var38], var2, var3, var39);
 					var0.minLens[var38] = var2;
 				}
 
@@ -359,7 +359,7 @@ public final class BZip2Decompressor {
 					var54 = var0.selector[var43];
 					var22 = var0.minLens[var54];
 					var23 = var0.limit[var54];
-					var25 = var0.field5641[var54];
+					var25 = var0.perm[var54];
 					var24 = var0.base[var54];
 				}
 
@@ -438,7 +438,7 @@ public final class BZip2Decompressor {
 								var54 = var0.selector[var43];
 								var22 = var0.minLens[var54];
 								var23 = var0.limit[var54];
-								var25 = var0.field5641[var54];
+								var25 = var0.perm[var54];
 								var24 = var0.base[var54];
 							}
 
@@ -469,7 +469,7 @@ public final class BZip2Decompressor {
 									var54 = var0.selector[var43];
 									var22 = var0.minLens[var54];
 									var23 = var0.limit[var54];
-									var25 = var0.field5641[var54];
+									var25 = var0.perm[var54];
 									var24 = var0.base[var54];
 								}
 

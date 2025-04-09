@@ -203,7 +203,7 @@ class class139 implements Callable {
 	@Export("invalidateWidget")
 	public static void invalidateWidget(Widget var0) {
 		if (var0 != null && var0.cycle == Client.field779) {
-			Client.validRootWidgets[var0.field3940] = true;
+			Client.validRootWidgets[var0.rootIndex] = true;
 		}
 
 	}

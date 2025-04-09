@@ -522,24 +522,28 @@ public class Widget extends Node {
 	@Export("onScroll")
 	public Object[] onScroll;
 	@ObfuscatedName("fr")
-	public Object[] field4054;
+	@Export("onChatTransmit")
+	public Object[] onChatTransmit;
 	@ObfuscatedName("fp")
-	public Object[] field4055;
+	@Export("onKey")
+	public Object[] onKey;
 	@ObfuscatedName("fi")
 	public Object[] field4056;
 	@ObfuscatedName("fd")
 	public Object[] field4057;
 	@ObfuscatedName("ff")
-	public Object[] field4058;
+	@Export("onFriendTransmit")
+	public Object[] onFriendTransmit;
 	@ObfuscatedName("fb")
-	public Object[] field4059;
+	@Export("onClanTransmit")
+	public Object[] onClanTransmit;
 	@ObfuscatedName("fo")
 	public Object[] field4060;
 	@ObfuscatedName("fn")
 	public Object[] field4010;
 	@ObfuscatedName("gj")
-	@Export("onChatTransmit")
-	public Object[] onChatTransmit;
+	@Export("onMiscTransmit")
+	public Object[] onMiscTransmit;
 	@ObfuscatedName("gt")
 	@Export("onDialogAbort")
 	public Object[] onDialogAbort;
@@ -550,7 +554,8 @@ public class Widget extends Node {
 	@Export("onResize")
 	public Object[] onResize;
 	@ObfuscatedName("gm")
-	public Object[] field3988;
+	@Export("onStockTransmit")
+	public Object[] onStockTransmit;
 	@ObfuscatedName("gi")
 	public Object[] field4015;
 	@ObfuscatedName("ge")
@@ -639,7 +644,8 @@ public class Widget extends Node {
 	@ObfuscatedGetter(
 		intValue = 1591462005
 	)
-	public int field3940;
+	@Export("rootIndex")
+	public int rootIndex;
 	@ObfuscatedName("hx")
 	@ObfuscatedGetter(
 		intValue = 1288947373
@@ -773,7 +779,7 @@ public class Widget extends Node {
 		this.field4081 = 0;
 		this.field4086 = 0;
 		this.field4077 = 0;
-		this.field3940 = -1;
+		this.rootIndex = -1;
 		this.cycle = -1;
 		this.noClickThrough = false;
 		this.noScrollThrough = false;
@@ -876,7 +882,7 @@ public class Widget extends Node {
 		this.field4081 = 0;
 		this.field4086 = 0;
 		this.field4077 = 0;
-		this.field3940 = -1;
+		this.rootIndex = -1;
 		this.cycle = -1;
 		this.noClickThrough = false;
 		this.noScrollThrough = false;
@@ -1038,19 +1044,19 @@ public class Widget extends Node {
 		this.onOp = var1.onOp;
 		this.field4052 = var1.field4052;
 		this.onScroll = var1.onScroll;
-		this.field4054 = var1.field4054;
-		this.field4055 = var1.field4055;
+		this.onChatTransmit = var1.onChatTransmit;
+		this.onKey = var1.onKey;
 		this.field4056 = var1.field4056;
 		this.field4057 = var1.field4057;
-		this.field4058 = var1.field4058;
-		this.field4059 = var1.field4059;
+		this.onFriendTransmit = var1.onFriendTransmit;
+		this.onClanTransmit = var1.onClanTransmit;
 		this.field4060 = var1.field4060;
 		this.field4010 = var1.field4010;
-		this.onChatTransmit = var1.onChatTransmit;
+		this.onMiscTransmit = var1.onMiscTransmit;
 		this.onDialogAbort = var1.onDialogAbort;
 		this.onSubChange = var1.onSubChange;
 		this.onResize = var1.onResize;
-		this.field3988 = var1.field3988;
+		this.onStockTransmit = var1.onStockTransmit;
 		this.field4015 = var1.field4015;
 		this.field4068 = var1.field4068;
 		this.cs1Instructions = var1.cs1Instructions;
@@ -1079,7 +1085,7 @@ public class Widget extends Node {
 		this.field4081 = var1.field4081;
 		this.field4086 = var1.field4086;
 		this.field4077 = var1.field4077;
-		this.field3940 = var1.field3940;
+		this.rootIndex = var1.rootIndex;
 		this.cycle = var1.cycle;
 		this.field4090 = this.method7341(var1.field4090);
 		this.noClickThrough = var1.noClickThrough;

@@ -65,7 +65,8 @@ public class Decimator {
 		descriptor = "([SB)[S",
 		garbageValue = "-56"
 	)
-	short[] method1130(short[] var1) {
+	@Export("resample")
+	short[] resample(short[] var1) {
 		if (this.table != null) {
 			int var2 = (int)((long)this.outputRate * (long)var1.length / (long)this.inputRate) + 14;
 			int[] var3 = new int[var2];

@@ -137,8 +137,8 @@ public class AABB {
 				class278 var9 = Client.field501;
 				Client.field508.approxDestinationX = var2;
 				Client.field508.approxDestinationY = var3;
-				Client.field508.approxDestinationSizeY = 1;
 				Client.field508.approxDestinationSizeX = 1;
+				Client.field508.approxDestinationSizeY = 1;
 				ApproximateRouteStrategy var13 = Client.field508;
 				int var14 = var9.method5858(var5, var6, var7, var13, var8, true, Client.field795, Client.field796);
 				if (var14 >= 1) {

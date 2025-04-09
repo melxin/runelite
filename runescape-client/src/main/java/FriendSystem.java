@@ -290,7 +290,7 @@ public class FriendSystem {
 			var3 = Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize];
 			var4 = class232.widgetDefinition.method6951(var3);
 		} else {
-			var4 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+			var4 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		}
 
 		if (var0 == ScriptOpcodes.CC_SETPOSITION) {

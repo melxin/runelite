@@ -193,11 +193,11 @@ public class HealthBarUpdate extends Node {
 										break label902;
 									}
 
-									ScriptFrame var39 = Interpreter.field865[--Interpreter.Interpreter_frameDepth];
-									var1 = var39.field448;
+									ScriptFrame var39 = Interpreter.Interpreter_frames[--Interpreter.Interpreter_frameDepth];
+									var1 = var39.script;
 									var6 = var1.opcodes;
 									var7 = var1.intOperands;
-									var5 = var39.field449;
+									var5 = var39.pc;
 									VerticalAlignment.Interpreter_intLocals = var39.intLocals;
 									class156.Interpreter_stringLocals = var39.stringLocals;
 								} else if (var32 == 25) {
@@ -253,11 +253,11 @@ public class HealthBarUpdate extends Node {
 									AbstractByteArrayCopier.Interpreter_intStackSize -= var36.intArgumentCount;
 									class338.Interpreter_stringStackSize -= var36.stringArgumentCount;
 									ScriptFrame var17 = new ScriptFrame();
-									var17.field448 = var1;
-									var17.field449 = var5;
+									var17.script = var1;
+									var17.pc = var5;
 									var17.intLocals = VerticalAlignment.Interpreter_intLocals;
 									var17.stringLocals = class156.Interpreter_stringLocals;
-									Interpreter.field865[++Interpreter.Interpreter_frameDepth - 1] = var17;
+									Interpreter.Interpreter_frames[++Interpreter.Interpreter_frameDepth - 1] = var17;
 									var1 = var36;
 									var6 = var36.opcodes;
 									var7 = var36.intOperands;
@@ -356,7 +356,7 @@ public class HealthBarUpdate extends Node {
 						var26.append("").append(var1.key).append(" ");
 
 						for (var13 = Interpreter.Interpreter_frameDepth - 1; var13 >= 0; --var13) {
-							var26.append("").append(Interpreter.field865[var13].field448.key).append(" ");
+							var26.append("").append(Interpreter.Interpreter_frames[var13].script.key).append(" ");
 						}
 
 						var26.append("").append(var8);

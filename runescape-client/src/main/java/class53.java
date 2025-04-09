@@ -156,7 +156,7 @@ public class class53 extends Node {
 					var6 = Interpreter.Interpreter_calendar.get(5);
 					int var17 = Interpreter.Interpreter_calendar.get(2);
 					int var8 = Interpreter.Interpreter_calendar.get(1);
-					Interpreter.Interpreter_stringStack[++class338.Interpreter_stringStackSize - 1] = var6 + "-" + Interpreter.field856[var17] + "-" + var8;
+					Interpreter.Interpreter_stringStack[++class338.Interpreter_stringStackSize - 1] = var6 + "-" + Interpreter.Interpreter_MONTHS[var17] + "-" + var8;
 					return 1;
 				} else if (var0 != ScriptOpcodes.TEXT_GENDER) {
 					if (var0 == ScriptOpcodes.TOSTRING) {

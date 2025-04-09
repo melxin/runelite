@@ -204,18 +204,19 @@ public class WorldViewManager implements Iterable {
 		descriptor = "([Lnh;IIIII)V",
 		garbageValue = "-1961184731"
 	)
-	static final void method2615(Widget[] var0, int var1, int var2, int var3, int var4) {
+	@Export("drawModelComponents")
+	static final void drawModelComponents(Widget[] var0, int var1, int var2, int var3, int var4) {
 		for (int var5 = var1; var5 <= var2; ++var5) {
 			Widget var6 = var0[var5];
-			if (var6 != null && var3 == var6.parentId && var4 == var6.field3960 && (!var6.isIf3 || !DynamicObject.method2369(var6))) {
+			if (var6 != null && var3 == var6.parentId && var4 == var6.field3960 && (!var6.isIf3 || !DynamicObject.isComponentHidden(var6))) {
 				if (var6.type == 0) {
-					if (!var6.isIf3 && DynamicObject.method2369(var6) && var6 != AbstractUserComparator.field5138) {
+					if (!var6.isIf3 && DynamicObject.isComponentHidden(var6) && var6 != AbstractUserComparator.mousedOverWidgetIf1) {
 						continue;
 					}
 
-					method2615(var0, var6.field3962, var6.field3968, var6.id, var6.childIndex * -1626125685);
+					drawModelComponents(var0, var6.field3962, var6.field3968, var6.id, var6.childIndex * -1626125685);
 					if (var6.children != null) {
-						method2615(var6.children, 0, var6.children.length - 1, var6.id, -1);
+						drawModelComponents(var6.children, 0, var6.children.length - 1, var6.id, -1);
 					}
 
 					if (var6.childIndex * -1626125685 == -1) {

@@ -169,7 +169,7 @@ public class ArchiveDiskActionHandler implements Runnable {
 			var0 -= 1000;
 			var3 = class232.widgetDefinition.method6951(Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize]);
 		} else {
-			var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+			var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
 		}
 
 		String var4 = Interpreter.Interpreter_stringStack[--class338.Interpreter_stringStackSize];
@@ -240,21 +240,21 @@ public class ArchiveDiskActionHandler implements Runnable {
 		} else if (var0 == ScriptOpcodes.CC_SETONSCROLLWHEEL) {
 			var3.onScroll = var9;
 		} else if (var0 == ScriptOpcodes.CC_SETONCHATTRANSMIT) {
-			var3.field4054 = var9;
-		} else if (var0 == ScriptOpcodes.CC_SETONKEY) {
-			var3.field4055 = var9;
-		} else if (var0 == ScriptOpcodes.CC_SETONFRIENDTRANSMIT) {
-			var3.field4058 = var9;
-		} else if (var0 == ScriptOpcodes.CC_SETONCLANTRANSMIT) {
-			var3.field4059 = var9;
-		} else if (var0 == ScriptOpcodes.CC_SETONMISCTRANSMIT) {
 			var3.onChatTransmit = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONKEY) {
+			var3.onKey = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONFRIENDTRANSMIT) {
+			var3.onFriendTransmit = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONCLANTRANSMIT) {
+			var3.onClanTransmit = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONMISCTRANSMIT) {
+			var3.onMiscTransmit = var9;
 		} else if (var0 == ScriptOpcodes.CC_SETONDIALOGABORT) {
 			var3.onDialogAbort = var9;
 		} else if (var0 == ScriptOpcodes.CC_SETONSUBCHANGE) {
 			var3.onSubChange = var9;
 		} else if (var0 == ScriptOpcodes.CC_SETONSTOCKTRANSMIT) {
-			var3.field3988 = var9;
+			var3.onStockTransmit = var9;
 		} else if (var0 == 1426) {
 			var3.field4015 = var9;
 		} else if (var0 == ScriptOpcodes.CC_SETONRESIZE) {

@@ -10,7 +10,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("FriendLoginUpdate")
 public class FriendLoginUpdate extends Link {
 	@ObfuscatedName("ln")
-	static String field5130;
+	@Export("authServiceBaseUrl")
+	static String authServiceBaseUrl;
 	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
 		intValue = 1346167821
