@@ -1,4 +1,5 @@
 import java.io.DataInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -11,23 +12,21 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ec")
+@ObfuscatedName("ep")
 @Implements("UrlRequester")
 public abstract class UrlRequester implements Runnable {
-	@ObfuscatedName("jr")
-	static int[] field1504;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@Export("requestThread")
 	final Thread requestThread;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@Export("isClosed")
 	volatile boolean isClosed;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@Export("requests")
 	Queue requests;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1132745441
+		intValue = 877248441
 	)
 	@Export("clientRevision")
 	int clientRevision;
@@ -40,21 +39,21 @@ public abstract class UrlRequester implements Runnable {
 		this.clientRevision = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ley;I)V",
-		garbageValue = "-2139590636"
+		descriptor = "(Lee;I)V",
+		garbageValue = "1399223766"
 	)
 	@Export("openConnection")
 	abstract void openConnection(UrlRequest var1) throws IOException;
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/net/URLConnection;B)I",
-		garbageValue = "2"
+		garbageValue = "1"
 	)
-	int method3124(URLConnection var1) {
-		int var2 = UrlRequest.field1510;
+	int method3148(URLConnection var1) {
+		int var2 = UrlRequest.field1490;
 		if (var1 != null) {
 			try {
 				if (var1 instanceof HttpURLConnection) {
@@ -67,10 +66,10 @@ public abstract class UrlRequester implements Runnable {
 		return var2;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/net/URLConnection;I)V",
-		garbageValue = "543006362"
+		garbageValue = "1978831992"
 	)
 	@Export("setDefaultRequestProperties")
 	void setDefaultRequestProperties(URLConnection var1) {
@@ -81,12 +80,12 @@ public abstract class UrlRequester implements Runnable {
 		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.clientRevision);
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;Ley;I)V",
-		garbageValue = "1431280241"
+		descriptor = "(Ljava/net/URLConnection;Lee;I)V",
+		garbageValue = "-2013585713"
 	)
-	void method3146(URLConnection var1, UrlRequest var2) {
+	void method3149(URLConnection var1, UrlRequest var2) {
 		DataInputStream var3 = null;
 
 		try {
@@ -98,7 +97,7 @@ public abstract class UrlRequester implements Runnable {
 				var3.readFully(var4);
 			} else {
 				var4 = new byte[0];
-				byte[] var6 = class152.method3494(5000);
+				byte[] var6 = ArchiveLoader.method2432(5000);
 
 				for (int var7 = var3.read(var6); var7 > -1; var7 = var3.read(var6)) {
 					byte[] var8 = new byte[var4.length + var7];
@@ -107,14 +106,14 @@ public abstract class UrlRequester implements Runnable {
 					var4 = var8;
 				}
 
-				class374.ByteArrayPool_release(var6);
+				class7.ByteArrayPool_release(var6);
 			}
 
 			var2.response0 = var4;
 		} catch (IOException var14) {
 			var2.response0 = null;
 		} finally {
-			var2.field1512 = this.method3124(var1);
+			var2.field1487 = this.method3148(var1);
 		}
 
 		if (var3 != null) {
@@ -126,10 +125,10 @@ public abstract class UrlRequester implements Runnable {
 
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;B)Ley;",
-		garbageValue = "7"
+		descriptor = "(Ljava/net/URL;I)Lee;",
+		garbageValue = "1413595348"
 	)
 	@Export("request")
 	public UrlRequest request(URL var1) {
@@ -141,10 +140,10 @@ public abstract class UrlRequester implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "147185943"
+		garbageValue = "-844049968"
 	)
 	@Export("close")
 	public void close() {
@@ -178,89 +177,50 @@ public abstract class UrlRequester implements Runnable {
 
 				this.openConnection(var1);
 			} catch (Exception var7) {
-				class213.RunException_sendStackTrace((String)null, var7);
+				class290.RunException_sendStackTrace((String)null, var7);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(S)[Lty;",
-		garbageValue = "245"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;ZB)Lvn;",
+		garbageValue = "-97"
 	)
-	public static class503[] method3150() {
-		return new class503[]{class503.field5203, class503.field5198, class503.field5204, class503.field5199};
-	}
-
-	@ObfuscatedName("ho")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1449839346"
-	)
-	static final void method3151() {
-		if (FloorDecoration.pcmPlayer1 != null) {
-			FloorDecoration.pcmPlayer1.run();
-		}
-
-	}
-
-	@ObfuscatedName("mn")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "2"
-	)
-	@Export("runIntfCloseListeners")
-	static final void runIntfCloseListeners(int var0, int var1) {
-		if (class376.widgetDefinition.loadInterface(var0)) {
-			DevicePcmPlayerProvider.runComponentCloseListeners(class376.widgetDefinition.Widget_interfaceComponents[var0], var1);
-		}
-	}
-
-	@ObfuscatedName("ol")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZB)V",
-		garbageValue = "87"
-	)
-	@Export("findItemDefinitions")
-	static void findItemDefinitions(String var0, boolean var1) {
-		var0 = var0.toLowerCase();
-		short[] var2 = new short[16];
-		int var3 = 0;
-
-		for (int var4 = 0; var4 < MouseRecorder.ItemDefinition_fileCount; ++var4) {
-			ItemComposition var9 = class138.ItemDefinition_get(var4);
-			if ((!var1 || var9.isTradable) && var9.noteTemplate == -1 && var9.name.toLowerCase().indexOf(var0) != -1) {
-				if (var3 >= 250) {
-					class394.foundItemIdCount = -1;
-					FloorUnderlayDefinition.foundItemIds = null;
-					return;
-				}
-
-				if (var3 >= var2.length) {
-					short[] var6 = new short[var2.length * 2];
-
-					for (int var7 = 0; var7 < var3; ++var7) {
-						var6[var7] = var2[var7];
-					}
-
-					var2 = var6;
-				}
-
-				var2[var3++] = (short)var4;
+	@Export("getPreferencesFile")
+	public static AccessFile getPreferencesFile(String var0, String var1, boolean var2) {
+		File var3 = new File(class7.cacheDir, "preferences" + var0 + ".dat");
+		if (var3.exists()) {
+			try {
+				AccessFile var10 = new AccessFile(var3, "rw", 10000L);
+				return var10;
+			} catch (IOException var9) {
 			}
 		}
 
-		FloorUnderlayDefinition.foundItemIds = var2;
-		class394.foundItemIndex = 0;
-		class394.foundItemIdCount = var3;
-		String[] var8 = new String[class394.foundItemIdCount];
-
-		for (int var5 = 0; var5 < class394.foundItemIdCount; ++var5) {
-			var8[var5] = class138.ItemDefinition_get(var2[var5]).name;
+		String var4 = "";
+		if (class450.cacheGamebuild == 33) {
+			var4 = "_rc";
+		} else if (class450.cacheGamebuild == 34) {
+			var4 = "_wip";
 		}
 
-		short[] var10 = FloorUnderlayDefinition.foundItemIds;
-		class320.sortItemsByName(var8, var10, 0, var8.length - 1);
+		File var5 = new File(class166.userHomeDirectory, "jagex_" + var1 + "_preferences" + var0 + var4 + ".dat");
+		AccessFile var6;
+		if (!var2 && var5.exists()) {
+			try {
+				var6 = new AccessFile(var5, "rw", 10000L);
+				return var6;
+			} catch (IOException var8) {
+			}
+		}
+
+		try {
+			var6 = new AccessFile(var3, "rw", 10000L);
+			return var6;
+		} catch (IOException var7) {
+			throw new RuntimeException();
+		}
 	}
 }

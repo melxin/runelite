@@ -1,43 +1,42 @@
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ph")
+@ObfuscatedName("pw")
 @Implements("GrandExchangeOffer")
 public class GrandExchangeOffer {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@Export("state")
 	byte state;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1520836929
+		intValue = 450065359
 	)
 	@Export("id")
 	public int id;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1156688627
+		intValue = 1498003283
 	)
 	@Export("unitPrice")
 	public int unitPrice;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1463224135
+		intValue = 1742110137
 	)
 	@Export("totalQuantity")
 	public int totalQuantity;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1566894201
+		intValue = -1694308953
 	)
 	@Export("currentQuantity")
 	public int currentQuantity;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1316645795
+		intValue = -758131793
 	)
 	@Export("currentPrice")
 	public int currentPrice;
@@ -46,7 +45,7 @@ public class GrandExchangeOffer {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;Z)V",
+		descriptor = "(Lve;Z)V",
 		garbageValue = "0"
 	)
 	public GrandExchangeOffer(Buffer var1, boolean var2) {
@@ -58,68 +57,46 @@ public class GrandExchangeOffer {
 		this.currentPrice = var1.readInt();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-68"
+		descriptor = "(I)I",
+		garbageValue = "1953706289"
 	)
 	@Export("status")
 	public int status() {
 		return this.state & 7;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "1428100996"
+	)
+	void method7880(int var1) {
+		this.state &= -8;
+		this.state = (byte)(this.state | var1 & 7);
+	}
+
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-543272797"
+		garbageValue = "-1613183821"
 	)
 	@Export("type")
 	public int type() {
 		return (this.state & 8) == 8 ? 1 : 0;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "-2063597236"
+		garbageValue = "411642647"
 	)
-	void method7834(int var1) {
-		this.state &= -8;
-		this.state = (byte)(this.state | var1 & 7);
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1566771720"
-	)
-	void method7835(int var1) {
+	void method7891(int var1) {
 		this.state &= -9;
 		if (var1 == 1) {
 			this.state = (byte)(this.state | 8);
 		}
 
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "61067285"
-	)
-	public static void method7838() {
-		Iterator var0 = class335.midiRequests.iterator();
-
-		while (var0.hasNext()) {
-			MidiRequest var1 = (MidiRequest)var0.next();
-			if (var1 != null) {
-				var1.midiPcmStream.clear();
-				var1.midiPcmStream.method6619();
-				var1.midiPcmStream.setPcmStreamVolume(0);
-				var1.midiPcmStream.field3728 = 0;
-				JagexCache.method4478(var1.musicTrackGroupId, var1.musicTrackFileId);
-			}
-		}
-
-		class335.midiRequests.clear();
 	}
 }

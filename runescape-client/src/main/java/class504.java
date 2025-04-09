@@ -1,14 +1,11 @@
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tn")
+@ObfuscatedName("tu")
 public class class504 {
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "-57"
+	@ObfuscatedName("bd")
+	@ObfuscatedGetter(
+		intValue = -1539575449
 	)
-	public static boolean method9519(int var0) {
-		return (var0 >> 22 & 1) != 0;
-	}
+	static int field5236;
 }

@@ -1,14 +1,18 @@
 import java.util.Comparator;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eh")
+@ObfuscatedName("ec")
 @Implements("UserComparator4")
 public class UserComparator4 implements Comparator {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "Lph;"
+	)
+	public static AbstractArchive field1497;
+	@ObfuscatedName("ao")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -16,10 +20,10 @@ public class UserComparator4 implements Comparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lst;Lst;I)I",
-		garbageValue = "-232025448"
+		descriptor = "(Lse;Lse;I)I",
+		garbageValue = "-2018446946"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(Buddy var1, Buddy var2) {
@@ -34,37 +38,39 @@ public class UserComparator4 implements Comparator {
 		return super.equals(var1);
 	}
 
-	@ObfuscatedName("hi")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(IZZZZI)Lpn;",
-		garbageValue = "-7744816"
+		descriptor = "(II)Lkr;",
+		garbageValue = "562628854"
 	)
-	@Export("newArchive")
-	static Archive newArchive(int var0, boolean var1, boolean var2, boolean var3, boolean var4) {
-		ArchiveDisk var5 = null;
-		if (JagexCache.JagexCache_dat2File != null) {
-			var5 = new ArchiveDisk(var0, JagexCache.JagexCache_dat2File, class379.JagexCache_idxFiles[var0], 1000000);
-		}
+	public static FloorOverlayDefinition method3198(int var0) {
+		FloorOverlayDefinition var1 = (FloorOverlayDefinition)FloorOverlayDefinition.FloorOverlayDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = FloorOverlayDefinition.FloorOverlayDefinition_archive.takeFile(4, var0);
+			var1 = new FloorOverlayDefinition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2), var0);
+			}
 
-		return new Archive(var5, RouteStrategy.masterDisk, AsyncHttpResponse.field77, var0, var1, var2, var3, var4, false);
+			var1.postDecode();
+			FloorOverlayDefinition.FloorOverlayDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
 	}
 
-	@ObfuscatedName("or")
+	@ObfuscatedName("ok")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-127"
+		descriptor = "(IB)Lvm;",
+		garbageValue = "-12"
 	)
-	static void method3177() {
-		if (Client.field810 != null) {
-			Client.field811 = Client.cycle;
-			Client.field810.method7860();
-			Iterator var0 = class200.topLevelWorldView.players.iterator();
-
-			while (var0.hasNext()) {
-				Player var1 = (Player)var0.next();
-				Client.field810.method7859((var1.x >> 7) + class200.topLevelWorldView.baseX, (var1.y >> 7) + class200.topLevelWorldView.baseY);
-			}
+	static DbTable method3197(int var0) {
+		DbTable var1 = (DbTable)Client.archive11.get((long)var0);
+		if (var1 == null) {
+			var1 = new DbTable(class171.field1872, var0);
 		}
 
+		return var1;
 	}
 }

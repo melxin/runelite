@@ -1,21 +1,15 @@
-import java.lang.management.GarbageCollectorMXBean;
-import java.lang.management.ManagementFactory;
-import java.util.Iterator;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ej")
+@ObfuscatedName("ey")
 @Implements("UserComparator7")
 public class UserComparator7 extends AbstractUserComparator {
-	@ObfuscatedName("iv")
-	@ObfuscatedSignature(
-		descriptor = "Lrf;"
-	)
-	@Export("fontBold12")
-	public static Font fontBold12;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -23,10 +17,10 @@ public class UserComparator7 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lst;Lst;B)I",
-		garbageValue = "12"
+		descriptor = "(Lse;Lse;I)I",
+		garbageValue = "-290030494"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -41,253 +35,229 @@ public class UserComparator7 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "([FIFZFZ[FI)I",
-		garbageValue = "-1937212089"
+		descriptor = "(I[BLti;I)V",
+		garbageValue = "-84672039"
 	)
-	public static int method3193(float[] var0, int var1, float var2, boolean var3, float var4, boolean var5, float[] var6) {
-		float var7 = 0.0F;
-
-		for (int var8 = 0; var8 < var1 + 1; ++var8) {
-			var7 += Math.abs(var0[var8]);
+	static void method3222(int var0, byte[] var1, ArchiveDisk var2) {
+		ArchiveDiskAction var3 = new ArchiveDiskAction();
+		var3.type = 0;
+		var3.key = (long)var0;
+		var3.data = var1;
+		var3.archiveDisk = var2;
+		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
+			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.addFirst(var3);
 		}
 
-		float var44 = (Math.abs(var2) + Math.abs(var4)) * (float)(var1 + 1) * class132.field1572;
-		if (var7 <= var44) {
-			return -1;
-		} else {
-			float[] var9 = new float[var1 + 1];
-
-			int var10;
-			for (var10 = 0; var10 < var1 + 1; ++var10) {
-				var9[var10] = var0[var10] * (1.0F / var7);
+		synchronized(ArchiveDiskActionHandler.field4664) {
+			if (ArchiveDiskActionHandler.field4668 == 0) {
+				GrandExchangeOfferOwnWorldComparator.ArchiveDiskActionHandler_thread = new Thread(new ArchiveDiskActionHandler());
+				GrandExchangeOfferOwnWorldComparator.ArchiveDiskActionHandler_thread.setDaemon(true);
+				GrandExchangeOfferOwnWorldComparator.ArchiveDiskActionHandler_thread.start();
+				GrandExchangeOfferOwnWorldComparator.ArchiveDiskActionHandler_thread.setPriority(5);
 			}
 
-			while (Math.abs(var9[var1]) < var44) {
-				--var1;
-			}
-
-			var10 = 0;
-			if (var1 == 0) {
-				return var10;
-			} else if (var1 == 1) {
-				var6[0] = -var9[0] / var9[1];
-				boolean var42 = var3 ? var2 < var6[0] + var44 : var2 < var6[0] - var44;
-				boolean var43 = var5 ? var4 > var6[0] - var44 : var4 > var6[0] + var44;
-				var10 = var42 && var43 ? 1 : 0;
-				if (var10 > 0) {
-					if (var3 && var6[0] < var2) {
-						var6[0] = var2;
-					} else if (var5 && var6[0] > var4) {
-						var6[0] = var4;
-					}
-				}
-
-				return var10;
-			} else {
-				class446 var11 = new class446(var9, var1);
-				float[] var12 = new float[var1 + 1];
-
-				for (int var13 = 1; var13 <= var1; ++var13) {
-					var12[var13 - 1] = (float)var13 * var9[var13];
-				}
-
-				float[] var41 = new float[var1 + 1];
-				int var14 = method3193(var12, var1 - 1, var2, false, var4, false, var41);
-				if (var14 == -1) {
-					return 0;
-				} else {
-					boolean var15 = false;
-					float var17 = 0.0F;
-					float var18 = 0.0F;
-					float var19 = 0.0F;
-
-					for (int var20 = 0; var20 <= var14; ++var20) {
-						if (var10 > var1) {
-							return var10;
-						}
-
-						float var16;
-						if (var20 == 0) {
-							var16 = var2;
-							var18 = IndexCheck.method5629(var9, var1, var2);
-							if (Math.abs(var18) <= var44 && var3) {
-								var6[var10++] = var2;
-							}
-						} else {
-							var16 = var19;
-							var18 = var17;
-						}
-
-						if (var14 == var20) {
-							var19 = var4;
-							var15 = false;
-						} else {
-							var19 = var41[var20];
-						}
-
-						var17 = IndexCheck.method5629(var9, var1, var19);
-						if (var15) {
-							var15 = false;
-						} else if (Math.abs(var17) < var44) {
-							if (var20 != var14 || var5) {
-								var6[var10++] = var19;
-								var15 = true;
-							}
-						} else if (var18 < 0.0F && var17 > 0.0F || var18 > 0.0F && var17 < 0.0F) {
-							int var22 = var10++;
-							float var24 = var16;
-							float var25 = var19;
-							float var26 = IndexCheck.method5629(var11.field4929, var11.field4928, var16);
-							float var23;
-							if (Math.abs(var26) < class132.field1572) {
-								var23 = var16;
-							} else {
-								float var27 = IndexCheck.method5629(var11.field4929, var11.field4928, var19);
-								if (Math.abs(var27) < class132.field1572) {
-									var23 = var19;
-								} else {
-									float var28 = 0.0F;
-									float var29 = 0.0F;
-									float var30 = 0.0F;
-									float var35 = 0.0F;
-									boolean var36 = true;
-									boolean var37 = false;
-
-									do {
-										var37 = false;
-										if (var36) {
-											var28 = var24;
-											var35 = var26;
-											var29 = var25 - var24;
-											var30 = var29;
-											var36 = false;
-										}
-
-										if (Math.abs(var35) < Math.abs(var27)) {
-											var24 = var25;
-											var25 = var28;
-											var28 = var24;
-											var26 = var27;
-											var27 = var35;
-											var35 = var26;
-										}
-
-										float var38 = class132.field1573 * Math.abs(var25) + 0.0F;
-										float var39 = 0.5F * (var28 - var25);
-										boolean var40 = Math.abs(var39) > var38 && 0.0F != var27;
-										if (var40) {
-											if (Math.abs(var30) >= var38 && Math.abs(var26) > Math.abs(var27)) {
-												float var34 = var27 / var26;
-												float var31;
-												float var32;
-												if (var24 == var28) {
-													var31 = var34 * var39 * 2.0F;
-													var32 = 1.0F - var34;
-												} else {
-													var32 = var26 / var35;
-													float var33 = var27 / var35;
-													var31 = ((var32 - var33) * var32 * var39 * 2.0F - (var33 - 1.0F) * (var25 - var24)) * var34;
-													var32 = (var34 - 1.0F) * (var33 - 1.0F) * (var32 - 1.0F);
-												}
-
-												if ((double)var31 > 0.0D) {
-													var32 = -var32;
-												} else {
-													var31 = -var31;
-												}
-
-												var34 = var30;
-												var30 = var29;
-												if (2.0F * var31 < var39 * 3.0F * var32 - Math.abs(var38 * var32) && var31 < Math.abs(0.5F * var34 * var32)) {
-													var29 = var31 / var32;
-												} else {
-													var29 = var39;
-													var30 = var39;
-												}
-											} else {
-												var29 = var39;
-												var30 = var39;
-											}
-
-											var24 = var25;
-											var26 = var27;
-											if (Math.abs(var29) > var38) {
-												var25 += var29;
-											} else if ((double)var39 > 0.0D) {
-												var25 += var38;
-											} else {
-												var25 -= var38;
-											}
-
-											var27 = IndexCheck.method5629(var11.field4929, var11.field4928, var25);
-											if ((double)(var27 * (var35 / Math.abs(var35))) > 0.0D) {
-												var36 = true;
-												var37 = true;
-											} else {
-												var37 = true;
-											}
-										}
-									} while(var37);
-
-									var23 = var25;
-								}
-							}
-
-							var6[var22] = var23;
-							if (var10 > 1 && var6[var10 - 2] >= var6[var10 - 1] - var44) {
-								var6[var10 - 2] = (var6[var10 - 1] + var6[var10 - 2]) * 0.5F;
-								--var10;
-							}
-						}
-					}
-
-					return var10;
-				}
-			}
+			ArchiveDiskActionHandler.field4668 = 600;
 		}
 	}
 
-	@ObfuscatedName("bi")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1559027478"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V",
+		garbageValue = "-889019955"
 	)
-	@Export("getGcDuration")
-	protected static int getGcDuration() {
-		int var0 = 0;
-		if (AbstractSocket.garbageCollector == null || !AbstractSocket.garbageCollector.isValid()) {
-			try {
-				Iterator var1 = ManagementFactory.getGarbageCollectorMXBeans().iterator();
+	public static void method3214(String var0, String var1, String var2, int var3, int var4) throws IOException {
+		if (var1 != null && !var1.isEmpty()) {
+			var0 = var0 + "-" + var1;
+		}
 
-				while (var1.hasNext()) {
-					GarbageCollectorMXBean var2 = (GarbageCollectorMXBean)var1.next();
-					if (var2.isValid()) {
-						AbstractSocket.garbageCollector = var2;
-						GameEngine.garbageCollectorLastCheckTimeMs = -1L;
-						GameEngine.garbageCollectorLastCollectionTime = -1L;
+		class250.field2763 = var4;
+		class450.cacheGamebuild = var3;
+
+		try {
+			class386.osName = System.getProperty("os.name");
+		} catch (Exception var16) {
+			class386.osName = "Unknown";
+		}
+
+		UserComparator5.osNameLowercase = class386.osName.toLowerCase();
+		class166.userHomeDirectory = null;
+
+		try {
+			class166.userHomeDirectory = System.getProperty("jagex.userhome");
+		} catch (Exception var15) {
+		}
+
+		if (class166.userHomeDirectory == null) {
+			try {
+				class166.userHomeDirectory = System.getProperty("user.home");
+			} catch (Exception var14) {
+			}
+		}
+
+		if (class166.userHomeDirectory != null) {
+			class166.userHomeDirectory = class166.userHomeDirectory + "/";
+		}
+
+		try {
+			if (UserComparator5.osNameLowercase.startsWith("win")) {
+				if (class166.userHomeDirectory == null) {
+					class166.userHomeDirectory = System.getenv("USERPROFILE");
+				}
+			} else if (class166.userHomeDirectory == null) {
+				class166.userHomeDirectory = System.getenv("HOME");
+			}
+
+			if (class166.userHomeDirectory != null) {
+				class166.userHomeDirectory = class166.userHomeDirectory + "/";
+			}
+		} catch (Exception var13) {
+		}
+
+		if (class166.userHomeDirectory == null) {
+			class166.userHomeDirectory = "~/";
+		}
+
+		VertexNormal.field2318 = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", class166.userHomeDirectory, "/tmp/", ""};
+		Varcs.field1454 = new String[]{".jagex_cache_" + class450.cacheGamebuild, ".file_store_" + class450.cacheGamebuild};
+		int var10 = 0;
+
+		int var8;
+		File var9;
+		label154:
+		while (var10 < 4) {
+			class7.cacheDir = class130.method3260(var0, var2, var10);
+			if (!class7.cacheDir.exists()) {
+				class7.cacheDir.mkdirs();
+			}
+
+			File[] var6 = class7.cacheDir.listFiles();
+			if (var6 == null) {
+				break;
+			}
+
+			File[] var7 = var6;
+			var8 = 0;
+
+			while (true) {
+				if (var8 >= var7.length) {
+					break label154;
+				}
+
+				var9 = var7[var8];
+				if (!RestClientThreadFactory.method204(var9, false)) {
+					++var10;
+					break;
+				}
+
+				++var8;
+			}
+		}
+
+		File var5 = class7.cacheDir;
+		FileSystem.FileSystem_cacheDir = var5;
+		if (!FileSystem.FileSystem_cacheDir.exists()) {
+			throw new RuntimeException("");
+		} else {
+			FileSystem.FileSystem_hasPermissions = true;
+
+			try {
+				File var18 = new File(class166.userHomeDirectory, "random.dat");
+				if (var18.exists()) {
+					JagexCache.JagexCache_randomDat = new BufferedFile(new AccessFile(var18, "rw", 25L), 24, 0);
+				} else {
+					label134:
+					for (int var11 = 0; var11 < Varcs.field1454.length; ++var11) {
+						for (var8 = 0; var8 < VertexNormal.field2318.length; ++var8) {
+							var9 = new File(VertexNormal.field2318[var8] + Varcs.field1454[var11] + File.separatorChar + "random.dat");
+							if (var9.exists()) {
+								JagexCache.JagexCache_randomDat = new BufferedFile(new AccessFile(var9, "rw", 25L), 24, 0);
+								break label134;
+							}
+						}
 					}
 				}
-			} catch (Throwable var11) {
-			}
-		}
 
-		if (AbstractSocket.garbageCollector != null) {
-			long var9 = InterfaceParent.method2434();
-			long var3 = AbstractSocket.garbageCollector.getCollectionTime();
-			if (GameEngine.garbageCollectorLastCollectionTime != -1L) {
-				long var5 = var3 - GameEngine.garbageCollectorLastCollectionTime;
-				long var7 = var9 - GameEngine.garbageCollectorLastCheckTimeMs;
-				if (0L != var7) {
-					var0 = (int)(100L * var5 / var7);
+				if (JagexCache.JagexCache_randomDat == null) {
+					RandomAccessFile var19 = new RandomAccessFile(var18, "rw");
+					var8 = var19.read();
+					var19.seek(0L);
+					var19.write(var8);
+					var19.seek(0L);
+					var19.close();
+					JagexCache.JagexCache_randomDat = new BufferedFile(new AccessFile(var18, "rw", 25L), 24, 0);
 				}
+			} catch (IOException var17) {
 			}
 
-			GameEngine.garbageCollectorLastCollectionTime = var3;
-			GameEngine.garbageCollectorLastCheckTimeMs = var9;
+			JagexCache.JagexCache_dat2File = new AccessFile(class140.getFile("main_file_cache.dat2"), "rw", 1048576000L);
+			JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(class140.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+			JagexCache.JagexCache_idxFiles = new BufferedFile[class250.field2763];
+
+			for (int var12 = 0; var12 < class250.field2763; ++var12) {
+				JagexCache.JagexCache_idxFiles[var12] = new BufferedFile(new AccessFile(class140.getFile("main_file_cache.idx" + var12), "rw", 1048576L), 6000, 0);
+			}
+
+		}
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(S)V",
+		garbageValue = "256"
+	)
+	public static void method3219() {
+		StructComposition.StructDefinition_cached.clear();
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(Lnh;IZLdb;I)V",
+		garbageValue = "-486713431"
+	)
+	static void method3221(Widget var0, int var1, boolean var2, Script var3) {
+		if (var0.children == null) {
+			var0.children = new Widget[var1 + 1];
 		}
 
-		return var0;
+		if (var0.children.length <= var1) {
+			Widget[] var4 = new Widget[var1 + 1];
+			System.arraycopy(var0.children, 0, var4, 0, var0.children.length);
+			var0.children = var4;
+		} else {
+			Widget var5 = var0.children[var1];
+			if (var5 != null) {
+				if (var2) {
+					throw new RuntimeException("");
+				}
+
+				class322.method6542(var5, var0);
+			}
+		}
+
+	}
+
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "(Lph;Ljava/lang/String;Ljava/lang/String;B)Lws;",
+		garbageValue = "-17"
+	)
+	@Export("SpriteBuffer_getIndexedSpriteByName")
+	public static IndexedSprite SpriteBuffer_getIndexedSpriteByName(AbstractArchive var0, String var1, String var2) {
+		if (!var0.isValidFileName(var1, var2)) {
+			return null;
+		} else {
+			int var3 = var0.getGroupId(var1);
+			int var4 = var0.getFileId(var3, var2);
+			IndexedSprite var5;
+			if (!class362.method7335(var0, var3, var4)) {
+				var5 = null;
+			} else {
+				var5 = class280.method5890();
+			}
+
+			return var5;
+		}
 	}
 }

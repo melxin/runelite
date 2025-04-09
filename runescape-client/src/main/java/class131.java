@@ -1,100 +1,50 @@
-import net.runelite.mapping.ObfuscatedGetter;
+import java.awt.Desktop;
+import java.awt.Desktop.Action;
+import java.net.URI;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fr")
+@ObfuscatedName("fc")
 public class class131 {
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -58572205
-	)
-	int field1564;
-	@ObfuscatedName("ay")
-	float field1563;
-	@ObfuscatedName("au")
-	float field1560;
-	@ObfuscatedName("ad")
-	float field1561;
-	@ObfuscatedName("ah")
-	float field1562;
-	@ObfuscatedName("ac")
-	float field1565;
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lfr;"
-	)
-	class131 field1566;
+	@ObfuscatedName("af")
+	public static final float field1545;
+	@ObfuscatedName("as")
+	public static final float field1546;
 
-	class131() {
-		this.field1560 = Float.MAX_VALUE;
-		this.field1561 = Float.MAX_VALUE;
-		this.field1562 = Float.MAX_VALUE;
-		this.field1565 = Float.MAX_VALUE;
+	static {
+		field1545 = Math.ulp(1.0F);
+		field1546 = 2.0F * field1545;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;II)V",
-		garbageValue = "687857728"
+		descriptor = "(Ljava/lang/String;ZLjava/lang/String;ZS)V",
+		garbageValue = "22126"
 	)
-	void method3269(Buffer var1, int var2) {
-		this.field1564 = var1.readShort();
-		this.field1563 = var1.method10354();
-		this.field1560 = var1.method10354();
-		this.field1561 = var1.method10354();
-		this.field1562 = var1.method10354();
-		this.field1565 = var1.method10354();
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-765403087"
-	)
-	public static void method3273(int var0, int var1) {
-		VarbitComposition var2 = ArchiveDisk.method9483(var0);
-		int var3 = var2.baseVar;
-		int var4 = var2.startBit;
-		int var5 = var2.endBit;
-		int var6 = Varps.Varps_masks[var5 - var4];
-		if (var1 < 0 || var1 > var6) {
-			var1 = 0;
-		}
-
-		var6 <<= var4;
-		Varps.Varps_main[var3] = Varps.Varps_main[var3] & ~var6 | var1 << var4 & var6;
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(IIS)I",
-		garbageValue = "2340"
-	)
-	static int method3274(int var0, int var1) {
-		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var2 == null) {
-			return 0;
-		} else if (var1 == -1) {
-			return 0;
-		} else {
-			int var3 = 0;
-
-			for (int var4 = 0; var4 < var2.quantities.length; ++var4) {
-				if (var2.ids[var4] == var1) {
-					var3 += var2.quantities[var4];
+	static void method3265(String var0, boolean var1, String var2, boolean var3) {
+		if (var1) {
+			if (!var3 && Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
+				try {
+					Desktop.getDesktop().browse(new URI(var0));
+					return;
+				} catch (Exception var5) {
 				}
 			}
 
-			return var3;
-		}
-	}
+			if (class31.field137.startsWith("win") && !var3) {
+				AsyncRestClient.method175(var0, 0);
+				return;
+			}
 
-	@ObfuscatedName("bl")
-	@ObfuscatedSignature(
-		descriptor = "(ILdy;ZI)I",
-		garbageValue = "1519303876"
-	)
-	static int method3272(int var0, Script var1, boolean var2) {
-		return 2;
+			if (class31.field137.startsWith("mac")) {
+				UserComparator5.method3225(var0, 1, var2);
+				return;
+			}
+
+			AsyncRestClient.method175(var0, 2);
+		} else {
+			AsyncRestClient.method175(var0, 3);
+		}
+
 	}
 }

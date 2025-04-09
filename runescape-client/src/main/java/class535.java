@@ -1,37 +1,39 @@
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("uo")
 public abstract class class535 extends class536 {
-	@ObfuscatedName("cv")
-	@ObfuscatedGetter(
-		intValue = -898033027
-	)
-	static int field5358;
-
 	class535(int var1, int var2) {
 		super(var1, var2);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1312763798"
+		garbageValue = "-2133258747"
 	)
-	public abstract int vmethod9685();
+	public abstract int vmethod9768();
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1028002245"
+		garbageValue = "1239347117"
 	)
-	public abstract int vmethod9686();
+	public abstract int vmethod9763();
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-51009761"
+		descriptor = "(B)I",
+		garbageValue = "1"
 	)
-	public abstract int vmethod9689();
+	public abstract int vmethod9764();
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(Lph;I)V",
+		garbageValue = "29325410"
+	)
+	public static void method9769(AbstractArchive var0) {
+		class222.field2495 = var0;
+	}
 }

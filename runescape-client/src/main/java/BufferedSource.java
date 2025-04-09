@@ -1,43 +1,44 @@
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tf")
+@ObfuscatedName("tk")
 @Implements("BufferedSource")
 public class BufferedSource implements Runnable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@Export("inputStream")
 	InputStream inputStream;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -716834397
+		intValue = 1740301353
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@Export("buffer")
 	byte[] buffer;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1786641143
+		intValue = 1674029401
 	)
 	@Export("position")
 	int position;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 705731055
+		intValue = -2042826127
 	)
 	@Export("limit")
 	int limit;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@Export("exception")
 	IOException exception;
 
@@ -52,10 +53,10 @@ public class BufferedSource implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(IS)Z",
-		garbageValue = "-13424"
+		descriptor = "(IB)Z",
+		garbageValue = "-58"
 	)
 	@Export("isAvailable")
 	boolean isAvailable(int var1) throws IOException {
@@ -86,10 +87,10 @@ public class BufferedSource implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1542152664"
+		garbageValue = "-284804473"
 	)
 	@Export("available")
 	int available() throws IOException {
@@ -110,10 +111,10 @@ public class BufferedSource implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1151976416"
+		descriptor = "(S)I",
+		garbageValue = "16383"
 	)
 	@Export("readUnsignedByte")
 	int readUnsignedByte() throws IOException {
@@ -133,10 +134,10 @@ public class BufferedSource implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "([BIIB)I",
-		garbageValue = "25"
+		garbageValue = "108"
 	)
 	@Export("read")
 	int read(byte[] var1, int var2, int var3) throws IOException {
@@ -174,10 +175,10 @@ public class BufferedSource implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-14"
+		descriptor = "(I)V",
+		garbageValue = "2039107686"
 	)
 	@Export("close")
 	void close() {
@@ -240,6 +241,145 @@ public class BufferedSource implements Runnable {
 
 			synchronized(this) {
 				this.limit = (var7 + this.limit) % this.capacity;
+			}
+		}
+	}
+
+	@ObfuscatedName("jq")
+	@ObfuscatedSignature(
+		descriptor = "(IIZI)V",
+		garbageValue = "-1382957471"
+	)
+	static final void method9490(int var0, int var1, boolean var2) {
+		if (!var2 || var0 != class137.field1641 || WidgetDefinition.field3856 != var1) {
+			class137.field1641 = var0;
+			WidgetDefinition.field3856 = var1;
+			class325.updateGameState(25);
+			Client.field706 = true;
+			NpcOverrides.drawLoadingMessage("Loading - please wait.", true);
+			int var3 = class509.topLevelWorldView.baseX;
+			int var4 = class509.topLevelWorldView.baseY;
+			class509.topLevelWorldView.baseX = (var0 - 6) * 8;
+			class509.topLevelWorldView.baseY = (var1 - 6) * 8;
+			int var5 = class509.topLevelWorldView.baseX - var3;
+			int var6 = class509.topLevelWorldView.baseY - var4;
+			int var7 = var5 * 128;
+			int var8 = var6 * 128;
+
+			int var11;
+			int[] var10000;
+			for (int var9 = 0; var9 < 65536; ++var9) {
+				NPC var24 = (NPC)class509.topLevelWorldView.npcs.get((long)var9);
+				if (var24 != null) {
+					for (var11 = 0; var11 < 10; ++var11) {
+						var10000 = var24.pathX;
+						var10000[var11] -= var5;
+						var10000 = var24.pathY;
+						var10000[var11] -= var6;
+					}
+
+					var24.x -= var7;
+					var24.y -= var8;
+					var24.field1256 -= var5;
+					var24.field1270 -= var6;
+					var24.field1269 -= var5;
+					var24.field1229 -= var6;
+				}
+			}
+
+			Iterator var21 = class509.topLevelWorldView.players.iterator();
+
+			while (true) {
+				Player var27;
+				do {
+					if (!var21.hasNext()) {
+						for (int var10 = 0; var10 < 4095; ++var10) {
+							WorldEntity var23 = (WorldEntity)class509.topLevelWorldView.worldEntities.get((long)var10);
+							if (var23 != null) {
+								var23.setPosition(-var7, -var8);
+							}
+						}
+
+						byte var25 = 0;
+						byte var26 = 104;
+						byte var12 = 1;
+						if (var5 < 0) {
+							var25 = 103;
+							var26 = -1;
+							var12 = -1;
+						}
+
+						byte var13 = 0;
+						byte var14 = 104;
+						byte var15 = 1;
+						if (var6 < 0) {
+							var13 = 103;
+							var14 = -1;
+							var15 = -1;
+						}
+
+						int var17;
+						for (int var16 = var25; var16 != var26; var16 += var12) {
+							for (var17 = var13; var14 != var17; var17 += var15) {
+								int var18 = var5 + var16;
+								int var19 = var6 + var17;
+
+								for (int var20 = 0; var20 < 4; ++var20) {
+									if (0 <= var18 && var18 < 104 && 0 <= var19 && var19 < 104) {
+										class509.topLevelWorldView.groundItems[var20][var16][var17] = class509.topLevelWorldView.groundItems[var20][var18][var19];
+									} else {
+										class509.topLevelWorldView.groundItems[var20][var16][var17] = null;
+									}
+								}
+							}
+						}
+
+						for (PendingSpawn var22 = (PendingSpawn)class509.topLevelWorldView.pendingSpawns.last(); var22 != null; var22 = (PendingSpawn)class509.topLevelWorldView.pendingSpawns.previous()) {
+							var22.x -= var5;
+							var22.y -= var6;
+							if (var22.x < 0 || 104 <= var22.x || var22.y < 0 || 104 <= var22.y) {
+								var22.remove();
+							}
+						}
+
+						if (Client.destinationX != 0) {
+							Client.destinationX -= var5;
+							Client.destinationY -= var6;
+						}
+
+						Client.soundEffectCount = 0;
+						Client.isCameraLocked = false;
+						MusicPatchNode2.cameraX -= var5 << 7;
+						SceneTilePaint.cameraZ -= var6 << 7;
+						ReflectionCheck.oculusOrbFocalPointX -= var5 << 7;
+						KeyHandler.oculusOrbFocalPointY -= var6 << 7;
+						Client.field761 = -1;
+						class509.topLevelWorldView.graphicsObjects.clear();
+						class509.topLevelWorldView.projectiles.clear();
+
+						for (var17 = 0; var17 < 4; ++var17) {
+							class509.topLevelWorldView.collisionMaps[var17].clear();
+						}
+
+						return;
+					}
+
+					var27 = (Player)var21.next();
+				} while(var27 == null);
+
+				for (var11 = 0; var11 < 10; ++var11) {
+					var10000 = var27.pathX;
+					var10000[var11] -= var5;
+					var10000 = var27.pathY;
+					var10000[var11] -= var6;
+				}
+
+				var27.x -= var7;
+				var27.y -= var8;
+				var27.field1256 -= var5;
+				var27.field1270 -= var6;
+				var27.field1269 -= var5;
+				var27.field1229 -= var6;
 			}
 		}
 	}

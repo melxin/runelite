@@ -3,75 +3,218 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ff")
-public class class153 extends class149 {
-	@ObfuscatedName("ht")
-	@Export("gameSessionServiceBaseUrl")
-	static String gameSessionServiceBaseUrl;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -99695897
+@ObfuscatedName("fb")
+public class class153 extends class148 {
+	@ObfuscatedName("ca")
+	@ObfuscatedSignature(
+		descriptor = "Lws;"
 	)
-	int field1746;
-	@ObfuscatedName("ay")
-	byte field1745;
+	@Export("titlebuttonSprite")
+	static IndexedSprite titlebuttonSprite;
+	@ObfuscatedName("nf")
+	@ObfuscatedSignature(
+		descriptor = "Lcc;"
+	)
+	static Decimator field1736;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = -1373180083
+	)
+	int field1740;
+	@ObfuscatedName("an")
+	@ObfuscatedGetter(
+		intValue = -2007512231
+	)
+	int field1737;
+	@ObfuscatedName("ae")
+	@ObfuscatedGetter(
+		intValue = 672487067
+	)
+	int field1738;
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		intValue = -1073730913
+	)
+	int field1739;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfv;"
+		descriptor = "Lfd;"
 	)
-	final class152 this$0;
+	final class151 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfv;)V"
+		descriptor = "(Lfd;)V"
 	)
-	class153(class152 var1) {
+	class153(class151 var1) {
 		this.this$0 = var1;
-		this.field1746 = -1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;B)V",
-		garbageValue = "25"
+		descriptor = "(Lve;B)V",
+		garbageValue = "53"
 	)
-	void vmethod3702(Buffer var1) {
-		this.field1746 = var1.readUnsignedShort();
-		this.field1745 = var1.readByte();
+	void vmethod3749(Buffer var1) {
+		this.field1740 = var1.readInt();
+		this.field1739 = var1.readInt();
+		this.field1737 = var1.readUnsignedByte();
+		this.field1738 = var1.readUnsignedByte();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lgg;I)V",
-		garbageValue = "2011970201"
+		descriptor = "(Lgw;I)V",
+		garbageValue = "1984465176"
 	)
-	void vmethod3705(ClanSettings var1) {
-		var1.method3558(this.field1746, this.field1745);
+	void vmethod3750(ClanSettings var1) {
+		var1.method3571(this.field1740, this.field1739, this.field1737, this.field1738);
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "470578133"
+		descriptor = "(I)Z",
+		garbageValue = "-659778853"
 	)
-	static final void method3505(String var0) {
-		AsyncRestClient.method146(var0 + " is already on your ignore list");
+	public static boolean method3503() {
+		ReflectionCheck var0 = (ReflectionCheck)class36.reflectionChecks.last();
+		return var0 != null;
 	}
 
-	@ObfuscatedName("nl")
+	@ObfuscatedName("lz")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "3"
+		descriptor = "(IIIILjava/lang/String;B)V",
+		garbageValue = "-9"
 	)
-	static void method3510(int var0) {
-		class162.tempMenuAction = new MenuAction();
-		class162.tempMenuAction.param0 = Client.menu.menuArguments1[var0];
-		class162.tempMenuAction.param1 = Client.menu.menuArguments2[var0];
-		class162.tempMenuAction.opcode = Client.menu.menuOpcodes[var0];
-		class162.tempMenuAction.identifier = Client.menu.menuIdentifiers[var0];
-		class162.tempMenuAction.itemId = Client.menu.menuItemIds[var0];
-		class162.tempMenuAction.action = Client.menu.menuActions[var0];
-		class162.tempMenuAction.target = Client.menu.menuTargets[var0];
-		class162.tempMenuAction.worldViewId = Client.menu.menuWorldViewIds[var0];
-		class162.tempMenuAction.field930 = Client.menu.menuShiftClick[var0];
+	@Export("widgetDefaultMenuAction")
+	static void widgetDefaultMenuAction(int var0, int var1, int var2, int var3, String var4) {
+		int var5 = var0 >>> 16;
+		int var6 = var0 & 65535;
+		Widget var7 = class232.widgetDefinition.getWidgetChild(var1, var2);
+		if (var7 != null) {
+			if (var7.onOp != null) {
+				ScriptEvent var8 = new ScriptEvent();
+				var8.widget = var7;
+				var8.opIndex = var6;
+				var8.field1091 = var5;
+				var8.targetName = var4;
+				var8.args = var7.onOp;
+				class60.runScriptEvent(var8);
+			}
+
+			boolean var13 = true;
+			if (var7.contentType > 0) {
+				var13 = class210.method4717(var7);
+			}
+
+			if (var13) {
+				int var10 = class31.getWidgetFlags(var7);
+				int var11 = var6 - 1;
+				boolean var9 = (var10 >> var11 + 1 & 1) != 0;
+				if (var9) {
+					PacketBufferNode var12;
+					if (var0 == 1) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3395, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 2) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3459, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 3) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3468, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 4) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3457, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 5) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3410, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 6) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3406, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 7) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3387, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 8) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3436, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 9) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3405, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var0 == 10) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3407, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						Client.packetWriter.addNode(var12);
+					}
+
+					if (var5 != 0) {
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3461, Client.packetWriter.isaacCipher);
+						var12.packetBuffer.writeInt(var1);
+						var12.packetBuffer.writeShort(var2);
+						var12.packetBuffer.writeShort(var3);
+						var12.packetBuffer.writeByte(var6);
+						var12.packetBuffer.writeByte(var5 - 1);
+						Client.packetWriter.addNode(var12);
+					}
+
+				}
+			}
+		}
+	}
+
+	@ObfuscatedName("my")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "-2099870514"
+	)
+	static final void method3511(int var0) {
+		if (class232.widgetDefinition.loadInterface(var0)) {
+			WorldViewManager.method2615(class232.widgetDefinition.Widget_interfaceComponents[var0], 0, class232.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1);
+		}
 	}
 }

@@ -1,32 +1,32 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vf")
+@ObfuscatedName("vr")
 final class class552 implements class551 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Object;Lvy;B)V",
-		garbageValue = "56"
+		descriptor = "(Ljava/lang/Object;Lve;B)V",
+		garbageValue = "-59"
 	)
-	public void vmethod10083(Object var1, Buffer var2) {
-		this.method10044((Integer)var1, var2);
+	public void vmethod10161(Object var1, Buffer var2) {
+		this.method10114((Integer)var1, var2);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)Ljava/lang/Object;",
-		garbageValue = "-1561644665"
+		descriptor = "(Lve;I)Ljava/lang/Object;",
+		garbageValue = "-651548546"
 	)
-	public Object vmethod10078(Buffer var1) {
+	public Object vmethod10160(Buffer var1) {
 		return var1.readInt();
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Integer;Lvy;I)V",
-		garbageValue = "1284433803"
+		descriptor = "(Ljava/lang/Integer;Lve;I)V",
+		garbageValue = "87545707"
 	)
-	void method10044(Integer var1, Buffer var2) {
+	void method10114(Integer var1, Buffer var2) {
 		var2.writeInt(var1);
 	}
 }

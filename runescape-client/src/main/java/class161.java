@@ -1,92 +1,92 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("gi")
-public class class161 extends class165 {
-	@ObfuscatedName("ab")
-	String field1814;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -342002681
+public class class161 extends class164 {
+	@ObfuscatedName("ka")
+	@ObfuscatedSignature(
+		descriptor = "Lpx;"
 	)
-	int field1815;
-	@ObfuscatedName("au")
-	byte field1816;
+	@Export("archive9")
+	static Archive archive9;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = -1342483327
+	)
+	int field1810;
+	@ObfuscatedName("an")
+	byte field1814;
+	@ObfuscatedName("ae")
+	@ObfuscatedGetter(
+		intValue = 13447819
+	)
+	int field1811;
+	@ObfuscatedName("af")
+	String field1809;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lgl;"
+		descriptor = "Lgo;"
 	)
-	final class166 this$0;
+	final class165 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lgl;)V"
+		descriptor = "(Lgo;)V"
 	)
-	class161(class166 var1) {
+	class161(class165 var1) {
 		this.this$0 = var1;
-		this.field1814 = null;
+		this.field1810 = -1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "1818142003"
+		descriptor = "(Lve;I)V",
+		garbageValue = "-1341652344"
 	)
-	void vmethod3695(Buffer var1) {
-		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
-			var1.readLong();
-		}
-
-		this.field1814 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1815 = var1.readUnsignedShort();
-		this.field1816 = var1.readByte();
+	void vmethod3736(Buffer var1) {
+		var1.readUnsignedByte();
+		this.field1810 = var1.readUnsignedShort();
+		this.field1814 = var1.readByte();
+		this.field1811 = var1.readUnsignedShort();
 		var1.readLong();
+		this.field1809 = var1.readStringCp1252NullTerminated();
+		var1.readUnsignedByte();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lgd;I)V",
-		garbageValue = "488725669"
+		descriptor = "(Lgb;I)V",
+		garbageValue = "992088037"
 	)
-	void vmethod3696(ClanChannel var1) {
-		ClanChannelMember var2 = new ClanChannelMember();
-		var2.username = new Username(this.field1814);
-		var2.world = this.field1815;
-		var2.rank = this.field1816;
-		var1.addMember(var2);
+	void vmethod3737(ClanChannel var1) {
+		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1810);
+		var2.rank = this.field1814;
+		var2.world = this.field1811;
+		var2.username = new Username(this.field1809);
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("cc")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)Lrp;",
-		garbageValue = "-1810966579"
+		descriptor = "(II)V",
+		garbageValue = "1571849208"
 	)
-	public static final class442 method3617(int var0, int var1, int var2, int var3) {
-		float var4 = 1.0E-5F;
-		class442 var5 = EnumComposition.method3908(0.0F, 1.0F, 0.0F);
-		float var6 = MidiRequest.method6843(var5, ViewportMouse.field2956);
-		if (Math.abs(var6) < 1.0E-5F) {
-			var5.method8341();
-			return null;
-		} else {
-			class442 var7 = EnumComposition.method3908((float)var1, (float)var2, (float)var3);
-			class442 var8 = EnumComposition.method3908(var7.field4898, var7.field4899 - (float)var0, var7.field4900);
-			float var9 = -MidiRequest.method6843(var5, var8) / var6;
-			var5.method8341();
-			if (var9 < 0.0F) {
-				var8.method8341();
-				var7.method8341();
-				return null;
-			} else {
-				class442 var11 = ViewportMouse.field2956;
-				class442 var12 = WorldMapDecoration.method6284(var11);
-				var12.method8307(var9);
-				class442 var13 = class208.method4151(var7, var12);
-				var12.method8341();
-				var8.method8341();
-				var7.method8341();
-				return var13;
+	@Export("runWidgetOnLoadListener")
+	static void runWidgetOnLoadListener(int var0) {
+		if (var0 != -1) {
+			if (class232.widgetDefinition.loadInterface(var0)) {
+				Widget[] var1 = class232.widgetDefinition.Widget_interfaceComponents[var0];
+
+				for (int var2 = 0; var2 < var1.length; ++var2) {
+					Widget var3 = var1[var2];
+					if (var3.onLoad != null) {
+						ScriptEvent var4 = new ScriptEvent();
+						var4.widget = var3;
+						var4.args = var3.onLoad;
+						class7.runScript(var4, 5000000, 0);
+					}
+				}
+
 			}
 		}
 	}

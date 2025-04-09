@@ -4,104 +4,139 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pi")
+@ObfuscatedName("pa")
 public class class413 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
+	static int[] field4799;
+	@ObfuscatedName("as")
 	@Export("spriteMap")
 	final HashMap spriteMap;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lqn;"
+		descriptor = "Lqs;"
 	)
 	@Export("bounds")
 	Bounds bounds;
-	@ObfuscatedName("au")
-	int[] field4777;
-	@ObfuscatedName("ad")
-	int[] field4778;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("av")
+	int[] field4803;
+	@ObfuscatedName("am")
+	int[] field4805;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 800218613
+		intValue = -398477263
 	)
-	int field4781;
+	int field4798;
 
 	public class413() {
 		this.spriteMap = new HashMap();
 		this.bounds = new Bounds(0, 0);
-		this.field4777 = new int[2048];
-		this.field4778 = new int[2048];
-		this.field4781 = 0;
-		class31.method427();
+		this.field4803 = new int[2048];
+		this.field4805 = new int[2048];
+		this.field4798 = 0;
+		field4799 = new int[2000];
+		int var1 = 0;
+		int var2 = 240;
+
+		int var4;
+		for (byte var3 = 12; var1 < 16; var2 -= var3) {
+			var4 = HitSplatDefinition.method5422((double)((float)var2 / 360.0F), 0.9998999834060669D, (double)(0.075F + 0.425F * (float)var1 / 16.0F));
+			field4799[var1] = var4;
+			++var1;
+		}
+
+		var2 = 48;
+
+		for (int var6 = var2 / 6; var1 < field4799.length; var2 -= var6) {
+			var4 = var1 * 2;
+
+			for (int var5 = HitSplatDefinition.method5422((double)((float)var2 / 360.0F), 0.9998999834060669D, 0.5D); var1 < var4 && var1 < field4799.length; ++var1) {
+				field4799[var1] = var5;
+			}
+		}
+
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "78"
+		descriptor = "(II)V",
+		garbageValue = "2067006566"
 	)
-	void method7856(int var1) {
+	void method7904(int var1) {
 		int var2 = var1 * 2 + 1;
-		double[] var3 = HttpMethod.method74(0.0D, (double)((float)var1 / 3.0F), var1);
-		double var4 = var3[var1] * var3[var1];
-		int[] var6 = new int[var2 * var2];
-		boolean var7 = false;
+		double var4 = (double)((float)var1 / 3.0F);
+		int var6 = var1 * 2 + 1;
+		double[] var7 = new double[var6];
+		int var8 = -var1;
 
-		for (int var8 = 0; var8 < var2; ++var8) {
-			for (int var9 = 0; var9 < var2; ++var9) {
-				int var10 = var6[var9 + var2 * var8] = (int)(256.0D * (var3[var9] * var3[var8] / var4));
-				if (!var7 && var10 > 0) {
-					var7 = true;
+		for (int var9 = 0; var8 <= var1; ++var9) {
+			double var16 = (double)(var8 - 0) / var4;
+			double var14 = Math.exp(var16 * -var16 / 2.0D) / Math.sqrt(6.283185307179586D);
+			double var24 = var14 / var4;
+			var7[var9] = var24;
+			++var8;
+		}
+
+		double[] var18 = var7;
+		double var19 = var7[var1] * var7[var1];
+		int[] var21 = new int[var2 * var2];
+		boolean var10 = false;
+
+		for (int var11 = 0; var11 < var2; ++var11) {
+			for (int var12 = 0; var12 < var2; ++var12) {
+				int var13 = var21[var12 + var11 * var2] = (int)(var18[var12] * var18[var11] / var19 * 256.0D);
+				if (!var10 && var13 > 0) {
+					var10 = true;
 				}
 			}
 		}
 
-		SpritePixels var11 = new SpritePixels(var6, var2, var2);
-		this.spriteMap.put(var1, var11);
+		SpritePixels var22 = new SpritePixels(var21, var2, var2);
+		this.spriteMap.put(var1, var22);
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lwg;",
-		garbageValue = "2"
+		descriptor = "(IB)Lwc;",
+		garbageValue = "-82"
 	)
-	SpritePixels method7858(int var1) {
+	SpritePixels method7905(int var1) {
 		if (!this.spriteMap.containsKey(var1)) {
-			this.method7856(var1);
+			this.method7904(var1);
 		}
 
 		return (SpritePixels)this.spriteMap.get(var1);
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "44"
+		descriptor = "(III)V",
+		garbageValue = "1181831999"
 	)
-	public final void method7859(int var1, int var2) {
-		if (this.field4781 < this.field4777.length) {
-			this.field4777[this.field4781] = var1;
-			this.field4778[this.field4781] = var2;
-			++this.field4781;
+	public final void method7906(int var1, int var2) {
+		if (this.field4798 < this.field4803.length) {
+			this.field4803[this.field4798] = var1;
+			this.field4805[this.field4798] = var2;
+			++this.field4798;
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-2131627858"
+		garbageValue = "-1135573552"
 	)
-	public final void method7860() {
-		this.field4781 = 0;
+	public final void method7907() {
+		this.field4798 = 0;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(IILwg;FB)V",
-		garbageValue = "-25"
+		descriptor = "(IILwc;FI)V",
+		garbageValue = "-667437099"
 	)
-	public final void method7861(int var1, int var2, SpritePixels var3, float var4) {
+	public final void method7908(int var1, int var2, SpritePixels var3, float var4) {
 		int var5 = (int)(18.0F * var4);
-		SpritePixels var6 = this.method7858(var5);
+		SpritePixels var6 = this.method7905(var5);
 		int var7 = var5 * 2 + 1;
 		Bounds var8 = new Bounds(0, 0, var3.subWidth, var3.subHeight);
 		Bounds var9 = new Bounds(0, 0);
@@ -111,14 +146,14 @@ public class class413 {
 		int var10;
 		int var11;
 		int var12;
-		for (var10 = 0; var10 < this.field4781; ++var10) {
-			var11 = this.field4777[var10];
-			var12 = this.field4778[var10];
-			int var13 = (int)(var4 * (float)(var11 - var1)) - var5;
+		for (var10 = 0; var10 < this.field4798; ++var10) {
+			var11 = this.field4803[var10];
+			var12 = this.field4805[var10];
+			int var13 = (int)((float)(var11 - var1) * var4) - var5;
 			int var14 = (int)((float)var3.subHeight - (float)(var12 - var2) * var4) - var5;
 			this.bounds.setLow(var13, var14);
-			this.bounds.method8282(var8, var9);
-			this.method7862(var6, var3, var9);
+			this.bounds.method8308(var8, var9);
+			this.method7912(var6, var3, var9);
 		}
 
 		System.nanoTime();
@@ -132,11 +167,11 @@ public class class413 {
 				if (var11 <= 0) {
 					var3.pixels[var10] = -16777216;
 				} else {
-					if (var11 > Varcs.field1473.length) {
-						var11 = Varcs.field1473.length;
+					if (var11 > field4799.length) {
+						var11 = field4799.length;
 					}
 
-					var12 = Varcs.field1473[var11 - 1];
+					var12 = field4799[var11 - 1];
 					var3.pixels[var10] = -16777216 | var12;
 				}
 			}
@@ -145,12 +180,12 @@ public class class413 {
 		System.nanoTime();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Lwg;Lwg;Lqn;I)V",
-		garbageValue = "1836304183"
+		descriptor = "(Lwc;Lwc;Lqs;B)V",
+		garbageValue = "39"
 	)
-	void method7862(SpritePixels var1, SpritePixels var2, Bounds var3) {
+	void method7912(SpritePixels var1, SpritePixels var2, Bounds var3) {
 		if (var3.highX != 0 && var3.highY != 0) {
 			int var4 = 0;
 			int var5 = 0;
@@ -177,5 +212,14 @@ public class class413 {
 			}
 
 		}
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-68780674"
+	)
+	public static void method7928() {
+		DbTableType.DBTableType_cache.clear();
 	}
 }

@@ -3,19 +3,19 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jb")
+@ObfuscatedName("hv")
 @Implements("ModelColorOverride")
 public class ModelColorOverride {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@Export("overrideHue")
 	byte overrideHue;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@Export("overrideSaturation")
 	byte overrideSaturation;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@Export("overrideLuminance")
 	byte overrideLuminance;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@Export("overrideAmount")
 	byte overrideAmount;
 
@@ -26,35 +26,35 @@ public class ModelColorOverride {
 		this.overrideAmount = 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljb;)V"
+		descriptor = "(Lhv;)V"
 	)
-	void method5434(ModelColorOverride var1) {
+	void method4581(ModelColorOverride var1) {
 		this.overrideHue = var1.overrideHue;
 		this.overrideSaturation = var1.overrideSaturation;
 		this.overrideLuminance = var1.overrideLuminance;
 		this.overrideAmount = var1.overrideAmount;
 	}
 
-	@ObfuscatedName("ay")
-	public void method5435(byte var1, byte var2, byte var3, byte var4) {
+	@ObfuscatedName("an")
+	public void method4574(byte var1, byte var2, byte var3, byte var4) {
 		this.overrideHue = var1;
 		this.overrideSaturation = var2;
 		this.overrideLuminance = var3;
 		this.overrideAmount = var4;
 	}
 
-	@ObfuscatedName("au")
-	public void method5436() {
+	@ObfuscatedName("ae")
+	public void method4585() {
 		this.overrideHue = -1;
 		this.overrideSaturation = -1;
 		this.overrideLuminance = -1;
 		this.overrideAmount = 0;
 	}
 
-	@ObfuscatedName("ad")
-	public boolean method5437() {
+	@ObfuscatedName("af")
+	public boolean method4575() {
 		return this.overrideAmount > 0;
 	}
 }

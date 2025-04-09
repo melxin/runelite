@@ -2,34 +2,34 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uj")
+@ObfuscatedName("uq")
 public class class534 extends class536 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 838881665
+		intValue = 1713985587
 	)
-	int field5357;
-	@ObfuscatedName("ay")
+	int field5378;
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -2005056559
+		intValue = 1131379071
 	)
-	int field5356;
+	int field5377;
 
 	public class534(int var1, int var2, int var3, int var4) {
 		super(var3, var4);
-		this.field5357 = 0;
-		this.field5356 = 0;
-		this.field5357 = var1;
-		this.field5356 = var2;
+		this.field5378 = 0;
+		this.field5377 = 0;
+		this.field5378 = var1;
+		this.field5377 = var2;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "14"
+		descriptor = "(I)I",
+		garbageValue = "1108907890"
 	)
-	public int method9682() {
-		double var1 = this.method9695();
-		return (int)Math.round(var1 * (double)(this.field5356 - this.field5357) + (double)this.field5357);
+	public int method9757() {
+		double var1 = this.method9776();
+		return (int)Math.round((double)this.field5378 + var1 * (double)(this.field5377 - this.field5378));
 	}
 }

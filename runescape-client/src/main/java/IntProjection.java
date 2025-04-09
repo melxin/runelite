@@ -4,73 +4,78 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jr")
+@ObfuscatedName("gv")
 @Implements("IntProjection")
 public class IntProjection extends Projection {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("il")
+	@ObfuscatedSignature(
+		descriptor = "Loy;"
+	)
+	static GameBuild field2013;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -1608440103
+		intValue = -1953447775
 	)
 	@Export("cameraX")
 	int cameraX;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1723217167
+		intValue = 1188164869
 	)
 	@Export("cameraY")
 	int cameraY;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 792472047
+		intValue = 837948911
 	)
 	@Export("cameraZ")
 	int cameraZ;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 90971525
+		intValue = 679215415
 	)
 	@Export("cameraPitch")
 	int cameraPitch;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1194145231
+		intValue = -841401355
 	)
 	@Export("cameraYaw2")
 	int cameraYaw2;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -784870449
+		intValue = -2105898649
 	)
 	@Export("pitchSin")
 	int pitchSin;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1848907429
+		intValue = -256154995
 	)
 	@Export("pitchCos")
 	int pitchCos;
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -813067171
+		intValue = -588305301
 	)
 	@Export("yawSin")
 	int yawSin;
 	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -497223295
+		intValue = -1391053273
 	)
 	@Export("yawCos")
 	int yawCos;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1705739525
+		intValue = 1902832441
 	)
-	int field2656;
-	@ObfuscatedName("ae")
+	int field2007;
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -1426253923
+		intValue = 896628605
 	)
-	int field2657;
+	int field2008;
 
 	IntProjection(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
 		this.cameraX = var1;
@@ -82,23 +87,23 @@ public class IntProjection extends Projection {
 		this.pitchCos = Rasterizer3D.Rasterizer3D_cosine[var4];
 		this.yawSin = Rasterizer3D.Rasterizer3D_sine[var5];
 		this.yawCos = Rasterizer3D.Rasterizer3D_cosine[var5];
-		this.field2656 = var6;
-		this.field2657 = var7;
+		this.field2007 = var6;
+		this.field2008 = var7;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljc;IIIIJ)V"
+		descriptor = "(Lhy;IIIIJ)V"
 	)
 	@Export("draw")
 	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
-		var1.vmethod5284(var2, this.cameraPitch, this.cameraYaw2, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field2656, this.field2657, false);
+		var1.vmethod4418(var2, this.cameraPitch, this.cameraYaw2, var3, var4, var5, this.cameraX, this.cameraY, this.cameraZ, var6, this.field2007, this.field2008, false);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;Ljh;IIII)V",
-		garbageValue = "-1468794048"
+		descriptor = "(Lho;Lhp;IIIB)V",
+		garbageValue = "-94"
 	)
 	@Export("drawTileUnderlay")
 	void drawTileUnderlay(Scene var1, SceneTilePaint var2, int var3, int var4, int var5) {
@@ -118,10 +123,10 @@ public class IntProjection extends Projection {
 		var9 = var9 * this.yawCos - var7 * this.yawSin >> 16;
 		var7 = var18;
 		var18 = var14 * this.pitchCos - var9 * this.pitchSin >> 16;
-		var9 = var14 * this.pitchSin + var9 * this.pitchCos >> 16;
+		var9 = var9 * this.pitchCos + var14 * this.pitchSin >> 16;
 		var14 = var18;
 		if (var9 >= 50) {
-			var18 = var8 * this.yawSin + var11 * this.yawCos >> 16;
+			var18 = var11 * this.yawCos + var8 * this.yawSin >> 16;
 			var8 = var8 * this.yawCos - var11 * this.yawSin >> 16;
 			var11 = var18;
 			var18 = var15 * this.pitchCos - var8 * this.pitchSin >> 16;
@@ -132,10 +137,10 @@ public class IntProjection extends Projection {
 				var13 = var13 * this.yawCos - var10 * this.yawSin >> 16;
 				var10 = var18;
 				var18 = var16 * this.pitchCos - var13 * this.pitchSin >> 16;
-				var13 = var13 * this.pitchCos + var16 * this.pitchSin >> 16;
+				var13 = var16 * this.pitchSin + var13 * this.pitchCos >> 16;
 				var16 = var18;
 				if (var13 >= 50) {
-					var18 = var6 * this.yawCos + var12 * this.yawSin >> 16;
+					var18 = var12 * this.yawSin + var6 * this.yawCos >> 16;
 					var12 = var12 * this.yawCos - var6 * this.yawSin >> 16;
 					var6 = var18;
 					var18 = var17 * this.pitchCos - var12 * this.pitchSin >> 16;
@@ -148,10 +153,10 @@ public class IntProjection extends Projection {
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;Lji;III)V",
-		garbageValue = "-2141053540"
+		descriptor = "(Lho;Lht;III)V",
+		garbageValue = "2016350808"
 	)
 	@Export("drawTileOverlay")
 	void drawTileOverlay(Scene var1, SceneTileModel var2, int var3, int var4) {
@@ -165,7 +170,7 @@ public class IntProjection extends Projection {
 			var9 = var9 * this.yawCos - var7 * this.yawSin >> 16;
 			var7 = var10;
 			var10 = var8 * this.pitchCos - var9 * this.pitchSin >> 16;
-			var9 = var9 * this.pitchCos + var8 * this.pitchSin >> 16;
+			var9 = var8 * this.pitchSin + var9 * this.pitchCos >> 16;
 			if (var9 < 50) {
 				return;
 			}
@@ -178,34 +183,34 @@ public class IntProjection extends Projection {
 
 			SceneTileModel.verticesX[var6] = Rasterizer3D.getClipMidX() + var7 * Rasterizer3D.get3dZoom() / var9;
 			SceneTileModel.verticesY[var6] = Rasterizer3D.getClipMidY() + var10 * Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.verticesZ[var6] = class148.method3471(var9);
+			SceneTileModel.verticesZ[var6] = class503.method9561(var9);
 		}
 
 		this.drawSceneTileModel(var1, var2, var3, var4);
 	}
 
-	@ObfuscatedName("ab")
-	public static final void method4837(long var0) {
-		if (var0 > 0L) {
-			if (0L == var0 % 10L) {
-				long var2 = var0 - 1L;
-
-				try {
-					Thread.sleep(var2);
-				} catch (InterruptedException var8) {
-				}
-
-				try {
-					Thread.sleep(1L);
-				} catch (InterruptedException var7) {
-				}
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lrc;",
+		garbageValue = "1785154817"
+	)
+	public static class443 method3961() {
+		synchronized(class443.field4930) {
+			if (class443.field4926 == 0) {
+				return new class443();
 			} else {
-				try {
-					Thread.sleep(var0);
-				} catch (InterruptedException var6) {
-				}
+				class443.field4930[--class443.field4926].method8400();
+				return class443.field4930[class443.field4926];
 			}
-
 		}
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "-615599086"
+	)
+	static int method3971(int var0) {
+		return class28.KeyHandler_keyCodes[var0];
 	}
 }

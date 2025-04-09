@@ -1,4 +1,3 @@
-import java.awt.Image;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
@@ -8,39 +7,47 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("pz")
 @Implements("ArchiveDiskAction")
 public class ArchiveDiskAction extends Node {
-	@ObfuscatedName("bg")
-	static Image field4631;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 75168507
+		intValue = -2008589591
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@Export("data")
-	byte[] data;
-	@ObfuscatedName("au")
+	public byte[] data;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ltu;"
+		descriptor = "Lti;"
 	)
 	@Export("archiveDisk")
-	ArchiveDisk archiveDisk;
-	@ObfuscatedName("ad")
+	public ArchiveDisk archiveDisk;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lpn;"
+		descriptor = "Lpx;"
 	)
 	@Export("archive")
-	Archive archive;
+	public Archive archive;
 
 	ArchiveDiskAction() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-76"
+		descriptor = "(II)Ljk;",
+		garbageValue = "-874653325"
 	)
-	public static void method7568() {
-		class204.field1909.clear();
+	@Export("WorldMapElement_get")
+	public static WorldMapElement WorldMapElement_get(int var0) {
+		return var0 >= 0 && var0 < WorldMapElement.WorldMapElement_cached.length && WorldMapElement.WorldMapElement_cached[var0] != null ? WorldMapElement.WorldMapElement_cached[var0] : new WorldMapElement(var0);
+	}
+
+	@ObfuscatedName("gz")
+	@ObfuscatedSignature(
+		descriptor = "(B)Lkl;",
+		garbageValue = "4"
+	)
+	public static IndexCheck method7614() {
+		return Client.indexCheck;
 	}
 }

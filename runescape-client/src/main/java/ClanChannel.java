@@ -7,49 +7,49 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gd")
+@ObfuscatedName("gb")
 @Implements("ClanChannel")
 public class ClanChannel extends Node {
-	@ObfuscatedName("ab")
-	boolean field1864;
-	@ObfuscatedName("ay")
-	boolean field1861;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ao")
 	@Export("members")
 	public List members;
-	@ObfuscatedName("ad")
-	@Export("sortedMembers")
-	int[] sortedMembers;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		longValue = 3536578833763292603L
+		longValue = 1984400237991481065L
 	)
-	public long field1858;
-	@ObfuscatedName("ac")
+	public long field1854;
+	@ObfuscatedName("ae")
 	@Export("name")
 	public String name;
-	@ObfuscatedName("ao")
-	public byte field1863;
 	@ObfuscatedName("af")
-	public byte field1857;
+	public byte field1853;
+	@ObfuscatedName("as")
+	public byte field1851;
+	@ObfuscatedName("aq")
+	boolean field1855;
+	@ObfuscatedName("av")
+	boolean field1850;
+	@ObfuscatedName("am")
+	@Export("sortedMembers")
+	int[] sortedMembers;
 
 	static {
 		new BitSet(65536);
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;)V"
+		descriptor = "(Lve;)V"
 	)
 	public ClanChannel(Buffer var1) {
-		this.field1861 = true;
 		this.name = null;
-		this.method3675(var1);
+		this.field1850 = true;
+		this.method3706(var1);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)[I",
-		garbageValue = "-34"
+		descriptor = "(I)[I",
+		garbageValue = "-1620813235"
 	)
 	@Export("getSortedMembers")
 	public int[] getSortedMembers() {
@@ -58,19 +58,19 @@ public class ClanChannel extends Node {
 			this.sortedMembers = new int[this.members.size()];
 
 			for (int var2 = 0; var2 < this.members.size(); this.sortedMembers[var2] = var2++) {
-				var1[var2] = ((ClanChannelMember)this.members.get(var2)).username.method10912();
+				var1[var2] = ((ClanChannelMember)this.members.get(var2)).username.method11006();
 			}
 
-			PlayerCompositionColorTextureOverride.method3724(var1, this.sortedMembers);
+			class377.method7553(var1, this.sortedMembers);
 		}
 
 		return this.sortedMembers;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lfi;S)V",
-		garbageValue = "23523"
+		descriptor = "(Lfi;I)V",
+		garbageValue = "-1719904498"
 	)
 	@Export("addMember")
 	void addMember(ClanChannelMember var1) {
@@ -78,10 +78,10 @@ public class ClanChannel extends Node {
 		this.sortedMembers = null;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "-683029574"
+		garbageValue = "-837262748"
 	)
 	@Export("removeMember")
 	void removeMember(int var1) {
@@ -89,22 +89,22 @@ public class ClanChannel extends Node {
 		this.sortedMembers = null;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(S)I",
-		garbageValue = "27175"
+		descriptor = "(I)I",
+		garbageValue = "-1481562757"
 	)
-	public int method3665() {
+	public int method3704() {
 		return this.members.size();
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)I",
-		garbageValue = "1"
+		descriptor = "(Ljava/lang/String;I)I",
+		garbageValue = "90379401"
 	)
-	public int method3661(String var1) {
-		if (!this.field1861) {
+	public int method3700(String var1) {
+		if (!this.field1850) {
 			throw new RuntimeException("Displaynames not available");
 		} else {
 			for (int var2 = 0; var2 < this.members.size(); ++var2) {
@@ -117,19 +117,19 @@ public class ClanChannel extends Node {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;B)V",
-		garbageValue = "-60"
+		descriptor = "(Lve;I)V",
+		garbageValue = "1691587227"
 	)
-	void method3675(Buffer var1) {
+	void method3706(Buffer var1) {
 		int var2 = var1.readUnsignedByte();
 		if ((var2 & 1) != 0) {
-			this.field1864 = true;
+			this.field1855 = true;
 		}
 
 		if ((var2 & 2) != 0) {
-			this.field1861 = true;
+			this.field1850 = true;
 		}
 
 		int var3 = 2;
@@ -138,22 +138,22 @@ public class ClanChannel extends Node {
 		}
 
 		super.key = var1.readLong();
-		this.field1858 = var1.readLong();
+		this.field1854 = var1.readLong();
 		this.name = var1.readStringCp1252NullTerminated();
 		var1.readBoolean();
-		this.field1857 = var1.readByte();
-		this.field1863 = var1.readByte();
+		this.field1851 = var1.readByte();
+		this.field1853 = var1.readByte();
 		int var4 = var1.readUnsignedShort();
 		if (var4 > 0) {
 			this.members = new ArrayList(var4);
 
 			for (int var5 = 0; var5 < var4; ++var5) {
 				ClanChannelMember var6 = new ClanChannelMember();
-				if (this.field1864) {
+				if (this.field1855) {
 					var1.readLong();
 				}
 
-				if (this.field1861) {
+				if (this.field1850) {
 					var6.username = new Username(var1.readStringCp1252NullTerminated());
 				}
 
@@ -167,95 +167,5 @@ public class ClanChannel extends Node {
 			}
 		}
 
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(Lpl;Ljava/lang/String;Ljava/lang/String;I)Lws;",
-		garbageValue = "-860354333"
-	)
-	@Export("SpriteBuffer_getIndexedSpriteByName")
-	public static IndexedSprite SpriteBuffer_getIndexedSpriteByName(AbstractArchive var0, String var1, String var2) {
-		if (!var0.isValidFileName(var1, var2)) {
-			return null;
-		} else {
-			int var3 = var0.getGroupId(var1);
-			int var4 = var0.getFileId(var3, var2);
-			byte[] var7 = var0.takeFile(var3, var4);
-			boolean var6;
-			if (var7 == null) {
-				var6 = false;
-			} else {
-				class478.SpriteBuffer_decode(var7);
-				var6 = true;
-			}
-
-			IndexedSprite var5;
-			if (!var6) {
-				var5 = null;
-			} else {
-				IndexedSprite var8 = new IndexedSprite();
-				var8.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
-				var8.height = SpriteBufferProperties.SpriteBuffer_spriteHeight;
-				var8.xOffset = Canvas.SpriteBuffer_xOffsets[0];
-				var8.yOffset = class194.SpriteBuffer_yOffsets[0];
-				var8.subWidth = SpriteBufferProperties.SpriteBuffer_spriteWidths[0];
-				var8.subHeight = class456.SpriteBuffer_spriteHeights[0];
-				var8.palette = DbTable.SpriteBuffer_spritePalette;
-				var8.pixels = SpriteBufferProperties.SpriteBuffer_pixels[0];
-				CollisionMap.method5672();
-				var5 = var8;
-			}
-
-			return var5;
-		}
-	}
-
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "([[[IIIII)V",
-		garbageValue = "996651896"
-	)
-	static final void method3672(int[][][] var0, int var1, int var2, int var3) {
-		int var4;
-		for (var4 = 0; var4 < 8; ++var4) {
-			for (int var5 = 0; var5 < 8; ++var5) {
-				var0[var1][var4 + var2][var3 + var5] = 0;
-			}
-		}
-
-		if (var2 > 0) {
-			for (var4 = 1; var4 < 8; ++var4) {
-				var0[var1][var2][var3 + var4] = var0[var1][var2 - 1][var3 + var4];
-			}
-		}
-
-		if (var3 > 0) {
-			for (var4 = 1; var4 < 8; ++var4) {
-				var0[var1][var4 + var2][var3] = var0[var1][var4 + var2][var3 - 1];
-			}
-		}
-
-		if (var2 > 0 && var0[var1][var2 - 1][var3] != 0) {
-			var0[var1][var2][var3] = var0[var1][var2 - 1][var3];
-		} else if (var3 > 0 && var0[var1][var2][var3 - 1] != 0) {
-			var0[var1][var2][var3] = var0[var1][var2][var3 - 1];
-		} else if (var2 > 0 && var3 > 0 && var0[var1][var2 - 1][var3 - 1] != 0) {
-			var0[var1][var2][var3] = var0[var1][var2 - 1][var3 - 1];
-		}
-
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "960493532"
-	)
-	public static final void method3682(int var0, int var1) {
-		ViewportMouse.ViewportMouse_x = var0;
-		ViewportMouse.ViewportMouse_y = var1;
-		ViewportMouse.ViewportMouse_isInViewport = true;
-		ViewportMouse.ViewportMouse_entityCount = 0;
-		ViewportMouse.ViewportMouse_false0 = false;
 	}
 }

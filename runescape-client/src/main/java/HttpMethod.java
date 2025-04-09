@@ -3,67 +3,60 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-@ObfuscatedName("as")
+@ObfuscatedName("ap")
 @Implements("HttpMethod")
 public class HttpMethod implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Las;"
+		descriptor = "Lap;"
 	)
 	@Export("POST")
 	public static final HttpMethod POST;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Las;"
+		descriptor = "Lap;"
 	)
 	@Export("GET")
 	public static final HttpMethod GET;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Las;"
+		descriptor = "Lap;"
 	)
 	@Export("PUT")
 	static final HttpMethod PUT;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Las;"
+		descriptor = "Lap;"
 	)
 	@Export("PATCH")
 	static final HttpMethod PATCH;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Las;"
+		descriptor = "Lap;"
 	)
 	@Export("DELETE")
 	static final HttpMethod DELETE;
-	@ObfuscatedName("sm")
+	@ObfuscatedName("kh")
 	@ObfuscatedSignature(
-		descriptor = "Lgd;"
+		descriptor = "Lpx;"
 	)
-	@Export("guestClanChannel")
-	static ClanChannel guestClanChannel;
-	@ObfuscatedName("ul")
-	@ObfuscatedSignature(
-		descriptor = "Lcj;"
-	)
-	@Export("decimator")
-	static Decimator decimator;
-	@ObfuscatedName("ac")
+	static Archive field39;
+	@ObfuscatedName("uo")
+	@Export("ClanChat_inClanChat")
+	static boolean ClanChat_inClanChat;
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 616054977
+		intValue = -1724406643
 	)
-	int field39;
-	@ObfuscatedName("ao")
+	int field35;
+	@ObfuscatedName("av")
 	@Export("name")
 	String name;
-	@ObfuscatedName("af")
-	boolean field43;
+	@ObfuscatedName("am")
+	boolean field37;
 	@ObfuscatedName("aa")
-	boolean field42;
+	boolean field38;
 
 	static {
 		POST = new HttpMethod(0, "POST", true, true);
@@ -74,141 +67,239 @@ public class HttpMethod implements Enum {
 	}
 
 	HttpMethod(int var1, String var2, boolean var3, boolean var4) {
-		this.field39 = var1;
+		this.field35 = var1;
 		this.name = var2;
-		this.field43 = var3;
-		this.field42 = var4;
+		this.field37 = var3;
+		this.field38 = var4;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "32"
+		descriptor = "(I)I",
+		garbageValue = "1746725635"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field39;
+		return this.field35;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "1778852731"
+		garbageValue = "-953554784"
 	)
-	boolean method72() {
-		return this.field43;
+	boolean method64() {
+		return this.field37;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-1"
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "-1798000015"
 	)
 	@Export("getName")
 	public String getName() {
 		return this.name;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(B)Z",
-		garbageValue = "123"
+		garbageValue = "72"
 	)
-	boolean method70() {
-		return this.field42;
+	boolean method66() {
+		return this.field38;
+	}
+
+	@ObfuscatedName("am")
+	@Export("Entity_unpackID")
+	public static int Entity_unpackID(long var0) {
+		return (int)(var0 >>> 20 & 4294967295L);
 	}
 
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(DDIS)[D",
-		garbageValue = "-559"
+		descriptor = "(IIB)I",
+		garbageValue = "-13"
 	)
-	public static double[] method74(double var0, double var2, int var4) {
-		int var5 = var4 * 2 + 1;
-		double[] var6 = new double[var5];
-		int var7 = -var4;
+	static final int method71(int var0, int var1) {
+		if (var0 == -2) {
+			return 12345678;
+		} else if (var0 == -1) {
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
+			}
 
-		for (int var8 = 0; var7 <= var4; ++var8) {
-			var6[var8] = class387.method7531((double)var7, var0, var2);
-			++var7;
-		}
-
-		return var6;
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIII)I",
-		garbageValue = "-1245925185"
-	)
-	public static int method73(int var0, int var1, int var2, int var3, int var4, int var5) {
-		if ((var5 & 1) == 1) {
-			int var6 = var3;
-			var3 = var4;
-			var4 = var6;
-		}
-
-		var2 &= 3;
-		if (var2 == 0) {
-			return var0;
-		} else if (var2 == 1) {
 			return var1;
 		} else {
-			return var2 == 2 ? 7 - var0 - (var3 - 1) : 7 - var1 - (var4 - 1);
+			var1 = (var0 & 127) * var1 / 128;
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
+			}
+
+			return (var0 & 65408) + var1;
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("hf")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;I)[F",
-		garbageValue = "674499231"
+		descriptor = "(II)V",
+		garbageValue = "-262096386"
 	)
-	static float[] method62(JSONObject var0, String var1) throws JSONException {
-		float[] var2 = new float[4];
+	@Export("getLoginError")
+	static void getLoginError(int var0) {
+		int var1 = Login.loginIndex;
+		if (var0 == -3) {
+			TileItem.setLoginResponseString("Connection timed out.", "Please try using a different world.", "");
+		} else if (var0 == -2) {
+			TileItem.setLoginResponseString("Error connecting to server.", "Please try using a different world.", "");
+		} else if (var0 == -1) {
+			TileItem.setLoginResponseString("No response from server.", "Please try using a different world.", "");
+		} else if (var0 == 3) {
+			class137.method3379(3);
+			Login.field956 = 1;
+		} else if (var0 == 4) {
+			class94.method2565(0);
+		} else if (var0 == 5) {
+			Login.field956 = 2;
+			TileItem.setLoginResponseString("Either your account is still logged in, or the last", "world you were using has become unavailable.", "Please try again later.");
+		} else if (var0 == 68) {
+			if (!Client.field638) {
+				Client.field638 = true;
+				class106.method2966();
+				return;
+			}
 
-		try {
-			JSONArray var3 = var0.getJSONArray(var1);
-			var2[0] = (float)var3.optDouble(0, 0.0D);
-			var2[1] = (float)var3.optDouble(1, 0.0D);
-			var2[2] = (float)var3.optDouble(2, 1.0D);
-			var2[3] = (float)var3.optDouble(3, 1.0D);
-		} catch (JSONException var4) {
-			var2[0] = 0.0F;
-			var2[1] = 0.0F;
-			var2[2] = 1.0F;
-			var2[3] = 1.0F;
+			TileItem.setLoginResponseString("RuneScape has been updated!", "Please restart your client.", "");
+		} else if (!Client.onMobile && var0 == 6) {
+			TileItem.setLoginResponseString("RuneScape has been updated!", "Please restart your client.", "");
+		} else if (var0 == 7) {
+			TileItem.setLoginResponseString("This world is full.", "Please use a different world.", "");
+		} else if (var0 == 8) {
+			TileItem.setLoginResponseString("Unable to connect.", "Login server offline.", "");
+		} else if (var0 == 9) {
+			TileItem.setLoginResponseString("Login limit exceeded.", "Too many connections from your address.", "");
+		} else if (var0 == 10) {
+			TileItem.setLoginResponseString("Unable to connect.", "Bad session id.", "");
+		} else if (var0 == 11) {
+			TileItem.setLoginResponseString("We suspect someone knows your password.", "Press 'change your password' on front page.", "");
+		} else if (var0 == 12) {
+			class325.updateGameState(10);
+			TileItem.setLoginResponseString("You need a members' account to use this world.", "Please subscribe to login to this world,", "or use a different world.");
+			class137.method3379(34);
+		} else if (var0 == 13) {
+			TileItem.setLoginResponseString("Could not complete login.", "Please try using a different world.", "");
+		} else if (var0 == 14) {
+			TileItem.setLoginResponseString("The server is being updated.", "Please wait a few minutes", "before trying again.");
+		} else if (var0 == 16) {
+			TileItem.setLoginResponseString("Too many login attempts.", "You can use the Jagex Launcher to continue playing.", "Press the button below to download it now.");
+			class137.method3379(33);
+		} else if (var0 == 17) {
+			TileItem.setLoginResponseString("To access this free world, log into a", "members world and move your character", "to a non-members area.");
+		} else if (var0 == 18) {
+			class94.method2565(1);
+		} else if (var0 == 19) {
+			TileItem.setLoginResponseString("This world is running a", "closed Beta. Please ", "use a different world.");
+		} else if (var0 == 20) {
+			TileItem.setLoginResponseString("Invalid loginserver requested.", "Please try using a different world.", "");
+		} else if (var0 == 22) {
+			TileItem.setLoginResponseString("Malformed login packet.", "Please try again.", "");
+		} else if (var0 == 23) {
+			TileItem.setLoginResponseString("No reply from loginserver.", "Please wait 1 minute and try again.", "");
+		} else if (var0 == 24) {
+			TileItem.setLoginResponseString("Error loading your profile.", "Please contact customer support.", "");
+		} else if (var0 == 25) {
+			TileItem.setLoginResponseString("Unexpected loginserver response.", "Please try using a different world.", "");
+		} else if (var0 == 26) {
+			TileItem.setLoginResponseString("This computers address has been blocked", "as it was used to break our rules.", "");
+		} else if (var0 == 27) {
+			TileItem.setLoginResponseString("", "Service unavailable.", "");
+		} else if (var0 == 31) {
+			TileItem.setLoginResponseString("Your account must have a displayname set", "in order to play the game.  Please set it", "via the website, or the main game.");
+		} else if (var0 == 32) {
+			class94.method2565(2);
+		} else if (var0 == 37) {
+			TileItem.setLoginResponseString("Your account is currently inaccessible.", "Please try again in a few minutes.", "");
+		} else if (var0 == 38) {
+			TileItem.setLoginResponseString("You need to vote to play!", "Visit runescape.com and vote,", "and then come back here!");
+		} else if (var0 == 74) {
+			TileItem.setLoginResponseString("Access to this world is", "restricted. Please use", "a different world.");
+		} else if (var0 == 55) {
+			class137.method3379(8);
+		} else {
+			if (var0 == 56) {
+				TileItem.setLoginResponseString("Enter the 6-digit code generated by your", "authenticator app.", "");
+				class325.updateGameState(11);
+				return;
+			}
+
+			if (var0 == 57) {
+				TileItem.setLoginResponseString("The code you entered was incorrect.", "Please try again.", "");
+				class325.updateGameState(11);
+				return;
+			}
+
+			if (var0 == 61) {
+				TileItem.setLoginResponseString("", "Please enter your date of birth (DD/MM/YYYY)", "");
+				class137.method3379(7);
+			} else {
+				if (var0 == 62) {
+					class325.updateGameState(10);
+					class137.method3379(9);
+					TileItem.setLoginResponseString("Login attempt timed out.", "Please try again.", "");
+					return;
+				}
+
+				if (var0 == 63) {
+					class325.updateGameState(10);
+					class137.method3379(9);
+					TileItem.setLoginResponseString("You were signed out.", "Please sign in again.", "");
+					return;
+				}
+
+				if (var0 == 65 || var0 == 67) {
+					class325.updateGameState(10);
+					class137.method3379(9);
+					TileItem.setLoginResponseString("Failed to login.", "Please try again.", "");
+					return;
+				}
+
+				if (var0 == 71) {
+					class325.updateGameState(10);
+					class137.method3379(7);
+					TileItem.setLoginResponseString("There was a problem updating your DOB.", "Please try again later. If the problem ", "persists, please contact Jagex Support.");
+				} else if (var0 == 73) {
+					class325.updateGameState(10);
+					class137.method3379(6);
+					TileItem.setLoginResponseString("Your date of birth information is waiting", "to be reviewed by our staff.", "It will be processed shortly.");
+				} else if (var0 == 72) {
+					class325.updateGameState(10);
+					class137.method3379(32);
+				} else {
+					TileItem.setLoginResponseString("Unexpected server response", "Please try using a different world.", "");
+				}
+			}
 		}
 
-		return var2;
+		class325.updateGameState(10);
+		int var4 = Login.loginIndex;
+		boolean var5 = var4 != var1;
+		if (!var5 && Client.field515.method10602()) {
+			class137.method3379(9);
+		}
+
 	}
 
-	@ObfuscatedName("ib")
+	@ObfuscatedName("og")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "10881"
+		descriptor = "(I)Z",
+		garbageValue = "883300482"
 	)
-	static final void method67() {
-		InvDefinition.method3751(class329.field3661, class190.field2016, FriendsChat.field5114);
-		class332.method6532(Language.field4826, class346.field3797);
-		if (class181.cameraX == class329.field3661 && class190.field2016 == GrandExchangeOfferUnitPriceComparator.cameraY && ApproximateRouteStrategy.cameraZ == FriendsChat.field5114 && class59.cameraPitch == Language.field4826 && class346.field3797 == FloorDecoration.cameraYaw) {
-			Client.field781 = false;
-			Client.isCameraLocked = false;
-			Client.field552 = false;
-			Client.field776 = false;
-			Decimator.field399 = 0;
-			GameObject.field3039 = 0;
-			FloorOverlayDefinition.field2345 = 0;
-			User.field5125 = 0;
-			MusicPatch.field3764 = 0;
-			FloatProjection.field2789 = 0;
-			ItemContainer.field1069 = 0;
-			ItemLayer.field2525 = 0;
-			GraphicsDefaults.field5219 = 0;
-			WorldMapSection1.field3329 = 0;
-			Client.field779 = null;
-			Client.field791 = null;
-			Client.field596 = null;
-		}
-
+	public static boolean method79() {
+		return Client.clickedWidget != null;
 	}
 }

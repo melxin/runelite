@@ -2,99 +2,101 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tk")
+@ObfuscatedName("tr")
 public class class495 extends class494 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -823595953
+		intValue = 993706947
 	)
-	static final int field5162;
-	@ObfuscatedName("ay")
+	static final int field5177;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lku;"
+		descriptor = "Lkz;"
 	)
-	final WorldEntityCoord field5160;
-	@ObfuscatedName("au")
+	final WorldEntityCoord field5180;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lku;"
+		descriptor = "Lkz;"
 	)
-	final WorldEntityCoord field5161;
-	@ObfuscatedName("ad")
+	final WorldEntityCoord field5176;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1496919941
+		intValue = 1620791619
 	)
-	int field5159;
-	@ObfuscatedName("ah")
+	int field5179;
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -402679797
+		intValue = 1468008399
 	)
-	int field5163;
+	int field5178;
 
 	static {
-		field5162 = Client.field741 + 3;
+		field5177 = Client.field645 + 3;
 	}
 
 	class495() {
-		this.field5160 = new WorldEntityCoord();
-		this.field5161 = new WorldEntityCoord();
-		this.field5159 = 0;
-		this.field5163 = 0;
+		this.field5180 = new WorldEntityCoord();
+		this.field5176 = new WorldEntityCoord();
+		this.field5179 = 0;
+		this.field5178 = 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lku;Lsl;II)V",
-		garbageValue = "-80024626"
+		descriptor = "(Lkz;Lsm;IB)V",
+		garbageValue = "1"
 	)
-	void vmethod9375(WorldEntityCoord var1, class493 var2, int var3) {
-		this.field5160.method5747(var1);
-		this.field5161.method5747(var2.field5158);
-		this.field5159 = var3 - 1;
-		this.field5163 = var2.field5157 + field5162;
+	void vmethod9415(WorldEntityCoord var1, class493 var2, int var3) {
+		this.field5180.method5807(var1);
+		this.field5176.method5807(var2.field5171);
+		this.field5179 = var3 - 1;
+		this.field5178 = var2.field5172 + field5177;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lku;IIB)Z",
-		garbageValue = "-59"
+		descriptor = "(Lkz;III)Z",
+		garbageValue = "-86250779"
 	)
-	boolean vmethod9371(WorldEntityCoord var1, int var2, int var3) {
-		if (this.field5159 >= this.field5163) {
-			var1.method5747(this.field5161);
+	boolean vmethod9414(WorldEntityCoord var1, int var2, int var3) {
+		if (this.field5179 >= this.field5178) {
+			var1.method5807(this.field5176);
 			return true;
 		} else {
-			float var4 = class112.method3030(var2, this.field5159, this.field5163);
-			WorldEntityCoord var5 = this.field5160;
-			WorldEntityCoord var6 = this.field5161;
-			float var7 = class555.method10077(0.0F, 1.0F, var4);
-			int var8 = var6.getX() - var5.getX();
-			int var9 = var6.getY() - var5.getY();
-			var8 = (int)((float)var8 * var7);
-			var9 = (int)(var7 * (float)var9);
-			var1.method5748(var5.getX() + var8, var5.getY() + var9);
-			int var11 = var5.getCurrentRotationAngle();
-			int var12 = var6.getCurrentRotationAngle();
-			int var13 = var12 - var11 & 2047;
-			int var10;
-			if (var13 > 1024) {
-				var10 = -(2048 - var13);
+			int var5 = this.field5179;
+			int var6 = this.field5178;
+			float var4 = (float)(var2 - var5) / (float)(var6 - var5);
+			WorldEntityCoord var8 = this.field5180;
+			WorldEntityCoord var9 = this.field5176;
+			float var11 = Math.max(0.0F, Math.min(var4, 1.0F));
+			int var12 = var9.getX() - var8.getX();
+			int var13 = var9.getY() - var8.getY();
+			var12 = (int)(var11 * (float)var12);
+			var13 = (int)((float)var13 * var11);
+			var1.method5815(var8.getX() + var12, var8.getY() + var13);
+			int var15 = var8.getCurrentRotationAngle();
+			int var16 = var9.getCurrentRotationAngle();
+			int var17 = var16 - var15 & 2047;
+			int var14;
+			if (var17 > 1024) {
+				var14 = -(2048 - var17);
 			} else {
-				var10 = var13;
+				var14 = var17;
 			}
 
-			var13 = (int)((float)var10 * var7);
-			var1.setCurrentRotationAngle(var5.getCurrentRotationAngle() + var13);
+			var17 = (int)((float)var14 * var11);
+			var1.setCurrentRotationAngle(var8.getCurrentRotationAngle() + var17);
 			return var4 >= 1.0F;
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-1107559269"
+		descriptor = "(IIS)V",
+		garbageValue = "24575"
 	)
-	void vmethod9370(int var1, int var2) {
-		this.field5160.setDirection(var1, var2);
-		this.field5161.setDirection(var1, var2);
+	void vmethod9423(int var1, int var2) {
+		this.field5180.setDirection(var1, var2);
+		this.field5176.setDirection(var1, var2);
 	}
 }

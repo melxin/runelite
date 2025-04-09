@@ -1,12 +1,30 @@
+import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eu")
+@ObfuscatedName("ev")
 @Implements("UserComparator9")
 public class UserComparator9 extends AbstractUserComparator {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lph;"
+	)
+	static AbstractArchive field1513;
+	@ObfuscatedName("dd")
+	@ObfuscatedSignature(
+		descriptor = "[Lws;"
+	)
+	@Export("worldSelectArrows")
+	static IndexedSprite[] worldSelectArrows;
+	@ObfuscatedName("pw")
+	@ObfuscatedSignature(
+		descriptor = "Lwc;"
+	)
+	@Export("compass")
+	static SpritePixels compass;
+	@ObfuscatedName("ao")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -14,10 +32,10 @@ public class UserComparator9 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lst;Lst;I)I",
-		garbageValue = "-347884592"
+		descriptor = "(Lse;Lse;I)I",
+		garbageValue = "-670141518"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -32,87 +50,59 @@ public class UserComparator9 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lpl;I)V",
-		garbageValue = "-1319646134"
+		descriptor = "(I)Ldf;",
+		garbageValue = "-1180313644"
 	)
-	public static void method3234(AbstractArchive var0) {
-		GrandExchangeOfferUnitPriceComparator.InvDefinition_archive = var0;
+	static ClientPreferences method3234() {
+		AccessFile var0 = null;
+		ClientPreferences var1 = new ClientPreferences();
+
+		try {
+			var0 = UrlRequester.getPreferencesFile("", class496.field5187.name, false);
+			byte[] var2 = new byte[(int)var0.length()];
+
+			int var4;
+			for (int var3 = 0; var3 < var2.length; var3 += var4) {
+				var4 = var0.read(var2, var3, var2.length - var3);
+				if (var4 == -1) {
+					throw new IOException();
+				}
+			}
+
+			var1 = new ClientPreferences(new Buffer(var2));
+		} catch (Exception var6) {
+		}
+
+		try {
+			if (var0 != null) {
+				var0.close();
+			}
+		} catch (Exception var5) {
+		}
+
+		return var1;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("nk")
 	@ObfuscatedSignature(
-		descriptor = "(Ljf;IIIIIIIIB)Z",
-		garbageValue = "66"
+		descriptor = "(IIB)V",
+		garbageValue = "6"
 	)
-	static final boolean method3223(Model var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-		boolean var9 = ViewportMouse.ViewportMouse_isInViewport;
-		if (!var9) {
-			return false;
-		} else {
-			class443.method8380(var5, var6, var7, var8);
-			AABB var10 = var0.getAABB(var1);
-			int var11 = var2 + var10.xMid;
-			int var12 = var3 + var10.yMid;
-			int var13 = var4 + var10.zMid;
-			int var14 = var10.xMidOffset;
-			int var15 = var10.yMidOffset;
-			int var16 = var10.zMidOffset;
-			int var17 = ViewportMouse.field2952 - var11;
-			int var18 = ViewportMouse.field2953 - var12;
-			int var19 = class202.field2160 - var13;
-			if (Math.abs(var17) > var14 + ViewportMouse.field2955) {
-				return false;
-			} else if (Math.abs(var18) > var15 + class95.field1188) {
-				return false;
-			} else if (Math.abs(var19) > var16 + class159.field1784) {
-				return false;
-			} else if (Math.abs(var19 * class376.field4168 - var18 * ViewportMouse.field2960) > var16 * class95.field1188 + var15 * class159.field1784) {
-				return false;
-			} else if (Math.abs(var17 * ViewportMouse.field2960 - var19 * ClanChannelMember.field1737) > var16 * ViewportMouse.field2955 + var14 * class159.field1784) {
-				return false;
-			} else {
-				return Math.abs(var18 * ClanChannelMember.field1737 - var17 * class376.field4168) <= var15 * ViewportMouse.field2955 + var14 * class95.field1188;
+	static final void method3238(int var0, int var1) {
+		ClanChannel var2 = var0 >= 0 ? Client.currentClanChannels[var0] : class92.guestClanChannel;
+		if (var2 != null && var1 >= 0 && var1 < var2.method3704()) {
+			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1);
+			if (var3.rank == -1) {
+				String var4 = var3.username.getName();
+				PacketBufferNode var5 = FloorDecoration.getPacketBufferNode(ClientPacket.field3388, Client.packetWriter.isaacCipher);
+				var5.packetBuffer.writeByte(3 + class466.stringCp1252NullTerminatedByteSize(var4));
+				var5.packetBuffer.writeByte(var0);
+				var5.packetBuffer.writeShort(var1);
+				var5.packetBuffer.writeStringCp1252NullTerminated(var4);
+				Client.packetWriter.addNode(var5);
 			}
 		}
-	}
-
-	@ObfuscatedName("cd")
-	@ObfuscatedSignature(
-		descriptor = "(ILdy;ZB)I",
-		garbageValue = "88"
-	)
-	static int method3233(int var0, Script var1, boolean var2) {
-		if (var0 == 7900) {
-			int var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-			Client.field778 = Math.max(var3, 0);
-			return 1;
-		} else if (var0 == 7901) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.field778;
-			return 1;
-		} else {
-			return 2;
-		}
-	}
-
-	@ObfuscatedName("hz")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1245308508"
-	)
-	@Export("forceDisconnect")
-	static final void forceDisconnect(int var0) {
-		class60.logOut();
-		switch(var0) {
-		case 1:
-			ObjectComposition.method4206(24);
-			class401.setLoginResponseString("", "You were disconnected from the server.", "");
-			break;
-		case 2:
-			ObjectComposition.method4206(24);
-			class401.setLoginResponseString("The game servers are currently being updated.", "Please wait a few minutes and try again.", "");
-		}
-
 	}
 }

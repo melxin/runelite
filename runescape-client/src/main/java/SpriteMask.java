@@ -4,33 +4,25 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nu")
+@ObfuscatedName("ne")
 @Implements("SpriteMask")
 public class SpriteMask extends DualNode {
-	@ObfuscatedName("ac")
-	@Export("Tiles_underlays2")
-	static byte[][][] Tiles_underlays2;
-	@ObfuscatedName("fg")
-	@ObfuscatedSignature(
-		descriptor = "Lpn;"
-	)
-	static Archive field3819;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -90957949
+		intValue = -1833279057
 	)
 	@Export("width")
 	public final int width;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1029185231
+		intValue = -463817013
 	)
 	@Export("height")
 	public final int height;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@Export("xWidths")
 	public final int[] xWidths;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@Export("xStarts")
 	public final int[] xStarts;
 
@@ -41,10 +33,10 @@ public class SpriteMask extends DualNode {
 		this.xStarts = var4;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "-80"
+		descriptor = "(III)Z",
+		garbageValue = "932777880"
 	)
 	@Export("contains")
 	public boolean contains(int var1, int var2) {
@@ -58,75 +50,34 @@ public class SpriteMask extends DualNode {
 		return false;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1663361682"
+		descriptor = "(Lph;Lph;I)V",
+		garbageValue = "-556174471"
 	)
-	public static int method6849(int var0) {
-		return Player.method2521(ViewportMouse.ViewportMouse_entityTags[var0]);
+	public static void method6879(AbstractArchive var0, AbstractArchive var1) {
+		KitDefinition.KitDefinition_archive = var0;
+		class435.KitDefinition_modelsArchive = var1;
+		KitDefinition.KitDefinition_fileCount = KitDefinition.KitDefinition_archive.getGroupFileCount(3);
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Loc;",
-		garbageValue = "262439079"
+		descriptor = "(Lrz;Lrz;I)Lrz;",
+		garbageValue = "-924095736"
 	)
-	@Export("PlayerType_values")
-	public static PlayerType[] PlayerType_values() {
-		return new PlayerType[]{PlayerType.PlayerType_ultimateIronman, PlayerType.PlayerType_ironman, PlayerType.field4571, PlayerType.field4584, PlayerType.field4579, PlayerType.field4588, PlayerType.field4591, PlayerType.field4587, PlayerType.field4582, PlayerType.PlayerType_playerModerator, PlayerType.PlayerType_hardcoreIronman, PlayerType.PlayerType_normal, PlayerType.field4577, PlayerType.field4580, PlayerType.PlayerType_jagexModerator, PlayerType.field4583, PlayerType.field4586};
-	}
-
-	@ObfuscatedName("cp")
-	@ObfuscatedSignature(
-		descriptor = "(ILdy;ZI)I",
-		garbageValue = "1887413158"
-	)
-	static int method6855(int var0, Script var1, boolean var2) {
-		int var3;
-		int var4;
-		if (var0 == 8000) {
-			--HealthBarConfig.Interpreter_intStackSize;
-			var3 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize];
-			var4 = Interpreter.Interpreter_arrayLengths[var3];
-			class219.method4460(Interpreter.Interpreter_arrays[var3], new int[var4], 0, var4 - 1);
-			return 1;
-		} else if (var0 == 8001) {
-			HealthBarConfig.Interpreter_intStackSize -= 3;
-			var3 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize];
-			var4 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1];
-			int var5 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 2];
-			int var6 = Interpreter.Interpreter_arrayLengths[var3];
-			if (var6 <= 1) {
-				return 1;
+	public static final class442 method6872(class442 var0, class442 var1) {
+		class442 var2;
+		synchronized(class442.field4917) {
+			if (class442.field4920 == 0) {
+				var2 = new class442(var0);
 			} else {
-				class467.method8911(Interpreter.Interpreter_arrays[var3], var6, var4, var5);
-				return 1;
+				class442.field4917[--class442.field4920].method8341(var0);
+				var2 = class442.field4917[class442.field4920];
 			}
-		} else {
-			return 2;
-		}
-	}
-
-	@ObfuscatedName("lz")
-	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "423233738"
-	)
-	static void method6854(int var0, int var1, int var2, int var3) {
-		Widget var4 = class376.widgetDefinition.getWidgetChild(var0, var1);
-		if (var4 != null && var4.onTargetEnter != null) {
-			ScriptEvent var5 = new ScriptEvent();
-			var5.widget = var4;
-			var5.args = var4.onTargetEnter;
-			MilliClock.runScriptEvent(var5);
 		}
 
-		Client.selectedSpellItemId = var3;
-		Client.isSpellSelected = true;
-		class171.selectedSpellWidget = var0;
-		Client.selectedSpellChildIndex = var1;
-		Message.selectedSpellFlags = var2;
-		MilliClock.invalidateWidget(var4);
+		var2.method8346(var1);
+		return var2;
 	}
 }

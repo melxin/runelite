@@ -1,46 +1,56 @@
-import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("om")
+@ObfuscatedName("oy")
 @Implements("GameBuild")
 public class GameBuild {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lom;"
+		descriptor = "Loy;"
 	)
 	@Export("LIVE")
-	public static final GameBuild LIVE;
-	@ObfuscatedName("ay")
+	static final GameBuild LIVE;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lom;"
+		descriptor = "Loy;"
 	)
 	@Export("BUILDLIVE")
-	public static final GameBuild BUILDLIVE;
-	@ObfuscatedName("au")
+	static final GameBuild BUILDLIVE;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lom;"
+		descriptor = "Loy;"
 	)
 	@Export("RC")
-	public static final GameBuild RC;
-	@ObfuscatedName("ad")
+	static final GameBuild RC;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lom;"
+		descriptor = "Loy;"
 	)
 	@Export("WIP")
-	public static final GameBuild WIP;
-	@ObfuscatedName("ah")
+	static final GameBuild WIP;
+	@ObfuscatedName("vp")
+	@ObfuscatedGetter(
+		intValue = -1069164939
+	)
+	static int field4198;
+	@ObfuscatedName("wd")
+	@ObfuscatedSignature(
+		descriptor = "Luy;"
+	)
+	@Export("worldMap")
+	static WorldMap worldMap;
+	@ObfuscatedName("as")
 	@Export("name")
 	public final String name;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 2079755729
+		intValue = 250730267
 	)
 	@Export("buildId")
-	public final int buildId;
+	final int buildId;
 
 	static {
 		LIVE = new GameBuild("LIVE", 0);
@@ -54,27 +64,18 @@ public class GameBuild {
 		this.buildId = var2;
 	}
 
-	@ObfuscatedName("js")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(ZB)V",
-		garbageValue = "52"
+		descriptor = "(II)I",
+		garbageValue = "1093681776"
 	)
-	static final void method7512(boolean var0) {
-		UrlRequester.method3151();
-		++Client.packetWriter.pendingWrites;
-		if (Client.packetWriter.pendingWrites >= 50 || var0) {
-			Client.packetWriter.pendingWrites = 0;
-			if (!Client.hadNetworkError && Client.packetWriter.getSocket() != null) {
-				PacketBufferNode var1 = class272.getPacketBufferNode(ClientPacket.NO_TIMEOUT, Client.packetWriter.isaacCipher);
-				Client.packetWriter.addNode(var1);
-
-				try {
-					Client.packetWriter.flush();
-				} catch (IOException var3) {
-					Client.hadNetworkError = true;
-				}
-			}
-
+	@Export("Messages_getLastChatID")
+	static int Messages_getLastChatID(int var0) {
+		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
+		if (var1 == null) {
+			return -1;
+		} else {
+			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count;
 		}
 	}
 }

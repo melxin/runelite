@@ -3,206 +3,70 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("hw")
+@ObfuscatedName("ja")
 @Implements("NpcOverrides")
 public class NpcOverrides {
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lbb;"
-	)
-	@Export("soundSystem")
-	static SoundSystem soundSystem;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		longValue = -2056366945527975403L
+		longValue = 8321521740653857443L
 	)
-	public long field2029;
-	@ObfuscatedName("ay")
+	public long field2690;
+	@ObfuscatedName("an")
 	@Export("modelIds")
 	int[] modelIds;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@Export("recolorTo")
 	short[] recolorTo;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@Export("retextureTo")
 	short[] retextureTo;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@Export("useLocalPlayer")
 	public boolean useLocalPlayer;
 
 	public NpcOverrides(long var1, int[] var3, short[] var4, short[] var5, boolean var6) {
 		this.useLocalPlayer = false;
-		this.field2029 = var1;
+		this.field2690 = var1;
 		this.modelIds = var3;
 		this.recolorTo = var4;
 		this.retextureTo = var5;
 		this.useLocalPlayer = var6;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ih")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhp;",
-		garbageValue = "-839434821"
+		descriptor = "(Ljava/lang/String;ZS)V",
+		garbageValue = "13610"
 	)
-	public static HitSplatDefinition method3920(int var0) {
-		HitSplatDefinition var1 = (HitSplatDefinition)HitSplatDefinition.HitSplatDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = HitSplatDefinition.HitSplatDefinition_archive.takeFile(32, var0);
-			var1 = new HitSplatDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
+	@Export("drawLoadingMessage")
+	static final void drawLoadingMessage(String var0, boolean var1) {
+		if (Client.showLoadingMessages) {
+			byte var2 = 4;
+			int var3 = var2 + 6;
+			int var4 = var2 + 6;
+			int var5 = HorizontalAlignment.fontPlain12.lineWidth(var0, 250);
+			int var6 = HorizontalAlignment.fontPlain12.lineCount(var0, 250) * 13;
+			Rasterizer2D.Rasterizer2D_fillRectangle(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var6 + var2, 0);
+			Rasterizer2D.Rasterizer2D_drawRectangle(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var6 + var2, 16777215);
+			HorizontalAlignment.fontPlain12.drawLines(var0, var3, var4, var5, var6, 16777215, -1, 1, 1, 0);
+			int var7 = var3 - var2;
+			int var8 = var4 - var2;
+			int var9 = var2 + var5 + var2;
+			int var10 = var2 + var6 + var2;
 
-			HitSplatDefinition.HitSplatDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(ILdy;ZI)I",
-		garbageValue = "-1362789250"
-	)
-	static int method3919(int var0, Script var1, boolean var2) {
-		Widget var3 = class376.widgetDefinition.method6918(Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize]);
-		if (var0 == ScriptOpcodes.IF_GETSCROLLX) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.scrollX;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETSCROLLY) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.scrollY;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETTEXT) {
-			Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = var3.text;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETSCROLLWIDTH) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.scrollWidth;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETSCROLLHEIGHT) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.scrollHeight;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETMODELZOOM) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.modelZoom;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETMODELANGLE_X) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.modelAngleX;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETMODELANGLE_Z) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.modelAngleZ;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETMODELANGLE_Y) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.modelAngleY;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETTRANS) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.transparencyTop;
-			return 1;
-		} else if (var0 == 2610) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.transparencyBot;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETCOLOUR) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.color;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETFILLCOLOUR) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.color2;
-			return 1;
-		} else if (var0 == 2613) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.fillMode.rsOrdinal();
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETMODELTRANSPARENT) {
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var3.modelTransparency ? 1 : 0;
-			return 1;
-		} else {
-			class355 var4;
-			if (var0 == 2617) {
-				var4 = var3.method7332();
-				Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var4 != null ? var4.field3853 : 0;
-			}
-
-			if (var0 == 2618) {
-				var4 = var3.method7332();
-				Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var4 != null ? var4.field3848 : 0;
-				return 1;
-			} else {
-				class361 var7;
-				if (var0 == 2619) {
-					var7 = var3.method7331();
-					Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = var7 != null ? var7.method7070().method8601() : "";
-					return 1;
-				} else if (var0 == 2620) {
-					var4 = var3.method7332();
-					Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var4 != null ? var4.field3849 : 0;
-					return 1;
-				} else if (var0 == 2621) {
-					var7 = var3.method7331();
-					Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null ? var7.method7208() : 0;
-					return 1;
-				} else if (var0 == 2622) {
-					var7 = var3.method7331();
-					Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null ? var7.method7149() : 0;
-					return 1;
-				} else if (var0 == 2623) {
-					var7 = var3.method7331();
-					Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null ? var7.method7237() : 0;
-					return 1;
-				} else if (var0 == 2624) {
-					var7 = var3.method7331();
-					Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null && var7.method7072() ? 1 : 0;
-					return 1;
-				} else if (var0 != 2625) {
-					if (var0 == 2626) {
-						var7 = var3.method7331();
-						Interpreter.Interpreter_stringStack[++Interpreter.Interpreter_stringStackSize - 1] = var7 != null ? var7.method7107().method8803() : "";
-						return 1;
-					} else if (var0 == 2627) {
-						var7 = var3.method7331();
-						int var5 = var7 != null ? var7.method7076() : 0;
-						int var6 = var7 != null ? var7.method7075() : 0;
-						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Math.min(var5, var6);
-						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Math.max(var5, var6);
-						return 1;
-					} else if (var0 == 2628) {
-						var7 = var3.method7331();
-						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null ? var7.method7075() : 0;
-						return 1;
-					} else if (var0 == 2629) {
-						var7 = var3.method7331();
-						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null ? var7.method7290() : 0;
-						return 1;
-					} else if (var0 == 2630) {
-						var7 = var3.method7331();
-						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null ? var7.method7205() : 0;
-						return 1;
-					} else if (var0 == 2631) {
-						var7 = var3.method7331();
-						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null ? var7.method7163() : 0;
-						return 1;
-					} else if (var0 == 2632) {
-						var7 = var3.method7331();
-						Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null ? var7.method7143() : 0;
-						return 1;
-					} else {
-						class27 var8;
-						if (var0 == 2633) {
-							var8 = var3.method7333();
-							Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize - 1] = var8 != null ? var8.method368(Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize - 1]) : 0;
-							return 1;
-						} else if (var0 == 2634) {
-							var8 = var3.method7333();
-							Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize - 1] = var8 != null ? var8.method344((char)Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize - 1]) : 0;
-							return 1;
-						} else {
-							return 2;
-						}
-					}
-				} else {
-					var7 = var3.method7331();
-					Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = var7 != null && var7.method7073() ? 1 : 0;
-					return 1;
+			for (int var11 = 0; var11 < Client.rootWidgetCount; ++var11) {
+				if (Client.rootWidgetWidths[var11] + Client.rootWidgetXs[var11] > var7 && Client.rootWidgetXs[var11] < var7 + var9 && Client.rootWidgetHeights[var11] + Client.rootWidgetYs[var11] > var8 && Client.rootWidgetYs[var11] < var8 + var10) {
+					Client.validRootWidgets[var11] = true;
 				}
 			}
+
+			if (var1) {
+				GameEngine.rasterProvider.drawFull(0, 0);
+			} else {
+				class225.method4972(var3, var4, var5, var6);
+			}
+
 		}
 	}
 }

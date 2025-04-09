@@ -1,58 +1,42 @@
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gq")
-public class class164 extends class149 {
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		longValue = 7822213305044393103L
-	)
-	long field1831;
-	@ObfuscatedName("ay")
-	String field1827;
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = -166402173
-	)
-	int field1828;
-	// $FF: synthetic field
-	@ObfuscatedSignature(
-		descriptor = "Lfv;"
-	)
-	final class152 this$0;
-
-	@ObfuscatedSignature(
-		descriptor = "(Lfv;)V"
-	)
-	class164(class152 var1) {
-		this.this$0 = var1;
-		this.field1831 = -1L;
-		this.field1827 = null;
-		this.field1828 = 0;
+@ObfuscatedName("gf")
+public abstract class class164 extends Node {
+	class164() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;B)V",
-		garbageValue = "25"
+		descriptor = "(Lve;I)V",
+		garbageValue = "-1341652344"
 	)
-	void vmethod3702(Buffer var1) {
-		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
-			this.field1831 = var1.readLong();
+	abstract void vmethod3736(Buffer var1);
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(Lgb;I)V",
+		garbageValue = "992088037"
+	)
+	abstract void vmethod3737(ClanChannel var1);
+
+	@ObfuscatedName("ca")
+	@ObfuscatedSignature(
+		descriptor = "(Lvh;I)Ljava/lang/Object;",
+		garbageValue = "-1816852553"
+	)
+	static Object method3674(class555 var0) {
+		if (var0 == null) {
+			throw new IllegalStateException("popValueOfType() failure - null baseVarType");
+		} else {
+			switch(var0.field5519) {
+			case 0:
+				return Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize];
+			case 2:
+				return Interpreter.Interpreter_stringStack[--class338.Interpreter_stringStackSize];
+			default:
+				throw new IllegalStateException("popValueOfType() failure - unsupported type");
+			}
 		}
-
-		this.field1827 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1828 = var1.readUnsignedShort();
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(Lgg;I)V",
-		garbageValue = "2011970201"
-	)
-	void vmethod3705(ClanSettings var1) {
-		var1.method3553(this.field1831, this.field1827, this.field1828);
 	}
 }

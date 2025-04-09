@@ -3,24 +3,24 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vh")
+@ObfuscatedName("vy")
 @Implements("DbTableType")
 public class DbTableType extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lpl;"
+		descriptor = "Lph;"
 	)
-	static AbstractArchive field5505;
-	@ObfuscatedName("ay")
+	public static AbstractArchive field5533;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "Lmj;"
 	)
 	@Export("DBTableType_cache")
 	static EvictingDualNodeHashTable DBTableType_cache;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@Export("types")
 	public int[][] types;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@Export("defaultValues")
 	public Object[][] defaultValues;
 
@@ -31,28 +31,28 @@ public class DbTableType extends DualNode {
 	DbTableType() {
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "555016332"
+		descriptor = "(Lve;I)V",
+		garbageValue = "-1812527706"
 	)
-	void method10093(Buffer var1) {
+	void method10182(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
 				return;
 			}
 
-			this.method10092(var1, var2);
+			this.method10175(var1, var2);
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;IB)V",
-		garbageValue = "65"
+		descriptor = "(Lve;II)V",
+		garbageValue = "1342351555"
 	)
-	void method10092(Buffer var1, int var2) {
+	void method10175(Buffer var1, int var2) {
 		if (var2 == 1) {
 			int var3 = var1.readUnsignedByte();
 			if (this.types == null) {
@@ -74,18 +74,30 @@ public class DbTableType extends DualNode {
 						this.defaultValues = new Object[this.types.length][];
 					}
 
-					this.defaultValues[var5] = DevicePcmPlayerProvider.method274(var1, var7);
+					Object[][] var17 = this.defaultValues;
+					int var11 = var1.readUShortSmart();
+					Object[] var12 = new Object[var7.length * var11];
+
+					for (int var13 = 0; var13 < var11; ++var13) {
+						for (int var14 = 0; var14 < var7.length; ++var14) {
+							int var15 = var14 + var7.length * var13;
+							class555 var16 = SpotAnimationDefinition.method5259(var7[var14]);
+							var12[var15] = var16.method10144(var1);
+						}
+					}
+
+					var17[var5] = var12;
 				}
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1536385694"
+		descriptor = "(B)V",
+		garbageValue = "62"
 	)
-	void method10091() {
+	void method10176() {
 	}
 }

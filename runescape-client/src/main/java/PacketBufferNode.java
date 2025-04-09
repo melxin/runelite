@@ -4,42 +4,45 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mo")
+@ObfuscatedName("mr")
 @Implements("PacketBufferNode")
 public class PacketBufferNode extends Node {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "[Lmo;"
+		descriptor = "[Lmr;"
 	)
 	@Export("PacketBufferNode_packetBufferNodes")
 	static PacketBufferNode[] PacketBufferNode_packetBufferNodes;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -32555091
+		intValue = -1749995417
 	)
 	@Export("PacketBufferNode_packetBufferNodeCount")
 	static int PacketBufferNode_packetBufferNodeCount;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("pq")
+	@Export("xteaKeys")
+	static int[][] xteaKeys;
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lmu;"
+		descriptor = "Lmq;"
 	)
 	@Export("clientPacket")
 	ClientPacket clientPacket;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -76101975
+		intValue = 1791612557
 	)
 	@Export("clientPacketLength")
 	int clientPacketLength;
-	@ObfuscatedName("au")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "Lvu;"
 	)
 	@Export("packetBuffer")
 	public PacketBuffer packetBuffer;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 2066707877
+		intValue = 1711647789
 	)
 	@Export("index")
 	public int index;
@@ -52,10 +55,10 @@ public class PacketBufferNode extends Node {
 	PacketBufferNode() {
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1589846155"
+		descriptor = "(B)V",
+		garbageValue = "10"
 	)
 	@Export("release")
 	public void release() {
@@ -64,62 +67,27 @@ public class PacketBufferNode extends Node {
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lpl;I)V",
-		garbageValue = "1102921096"
+		descriptor = "(CI)Z",
+		garbageValue = "-461362733"
 	)
-	public static void method6510(AbstractArchive var0) {
-		DbRowType.field5516 = var0;
-	}
+	public static boolean method6559(char var0) {
+		if ((var0 <= 0 || var0 >= 128) && (var0 < 160 || var0 > 255)) {
+			if (var0 != 0) {
+				char[] var1 = class433.cp1252AsciiExtension;
 
-	@ObfuscatedName("la")
-	@ObfuscatedSignature(
-		descriptor = "(Lwn;I)V",
-		garbageValue = "-2091999222"
-	)
-	static final void method6509(Menu var0) {
-		boolean var1 = false;
-
-		while (!var1) {
-			var1 = true;
-
-			for (int var2 = 0; var2 < var0.menuOptionsCount - 1; ++var2) {
-				if (var0.menuOpcodes[var2] < 1000 && var0.menuOpcodes[var2 + 1] > 1000) {
-					String var3 = var0.menuTargets[var2];
-					var0.menuTargets[var2] = var0.menuTargets[var2 + 1];
-					var0.menuTargets[var2 + 1] = var3;
-					String var4 = var0.menuActions[var2];
-					var0.menuActions[var2] = var0.menuActions[var2 + 1];
-					var0.menuActions[var2 + 1] = var4;
-					Menu var5 = var0.subMenus[var2];
-					var0.subMenus[var2] = var0.subMenus[var2 + 1];
-					var0.subMenus[var2 + 1] = var5;
-					int var6 = var0.menuOpcodes[var2];
-					var0.menuOpcodes[var2] = var0.menuOpcodes[var2 + 1];
-					var0.menuOpcodes[var2 + 1] = var6;
-					var6 = var0.menuArguments1[var2];
-					var0.menuArguments1[var2] = var0.menuArguments1[var2 + 1];
-					var0.menuArguments1[var2 + 1] = var6;
-					var6 = var0.menuArguments2[var2];
-					var0.menuArguments2[var2] = var0.menuArguments2[var2 + 1];
-					var0.menuArguments2[var2 + 1] = var6;
-					var6 = var0.menuIdentifiers[var2];
-					var0.menuIdentifiers[var2] = var0.menuIdentifiers[var2 + 1];
-					var0.menuIdentifiers[var2 + 1] = var6;
-					var6 = var0.menuItemIds[var2];
-					var0.menuItemIds[var2] = var0.menuItemIds[var2 + 1];
-					var0.menuItemIds[var2 + 1] = var6;
-					var6 = var0.menuWorldViewIds[var2];
-					var0.menuWorldViewIds[var2] = var0.menuWorldViewIds[var2 + 1];
-					var0.menuWorldViewIds[var2 + 1] = var6;
-					boolean var7 = var0.menuShiftClick[var2];
-					var0.menuShiftClick[var2] = var0.menuShiftClick[var2 + 1];
-					var0.menuShiftClick[var2 + 1] = var7;
-					var1 = false;
+				for (int var2 = 0; var2 < var1.length; ++var2) {
+					char var3 = var1[var2];
+					if (var0 == var3) {
+						return true;
+					}
 				}
 			}
-		}
 
+			return false;
+		} else {
+			return true;
+		}
 	}
 }

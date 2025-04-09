@@ -2,36 +2,41 @@ import java.io.DataInputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("iq")
+@ObfuscatedName("im")
 @Implements("TaskHandler")
 public class TaskHandler implements Runnable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
 	@Export("javaVendor")
 	public static String javaVendor;
-	@ObfuscatedName("ay")
-	@Export("javaVersion")
-	public static String javaVersion;
-	@ObfuscatedName("au")
+	@ObfuscatedName("mk")
+	@ObfuscatedGetter(
+		intValue = -1412620743
+	)
+	@Export("cameraY")
+	static int cameraY;
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Lip;"
 	)
 	@Export("current")
 	Task current;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Lip;"
 	)
 	@Export("task")
 	Task task;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aa")
 	@Export("isClosed")
 	boolean isClosed;
 
@@ -40,11 +45,11 @@ public class TaskHandler implements Runnable {
 		this.task = null;
 		this.isClosed = false;
 		javaVendor = "Unknown";
-		javaVersion = "1.6";
+		class447.javaVersion = "1.6";
 
 		try {
 			javaVendor = System.getProperty("java.vendor");
-			javaVersion = System.getProperty("java.version");
+			class447.javaVersion = System.getProperty("java.version");
 		} catch (Exception var2) {
 		}
 
@@ -55,10 +60,10 @@ public class TaskHandler implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-561449421"
+		garbageValue = "1454106467"
 	)
 	@Export("close")
 	public final void close() {
@@ -74,10 +79,10 @@ public class TaskHandler implements Runnable {
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIILjava/lang/Object;I)Lii;",
-		garbageValue = "-1876676379"
+		descriptor = "(IIILjava/lang/Object;B)Lip;",
+		garbageValue = "-70"
 	)
 	@Export("newTask")
 	final Task newTask(int var1, int var2, int var3, Object var4) {
@@ -98,20 +103,20 @@ public class TaskHandler implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;II)Lii;",
-		garbageValue = "43483765"
+		descriptor = "(Ljava/lang/String;IB)Lip;",
+		garbageValue = "49"
 	)
 	@Export("newSocketTask")
 	public final Task newSocketTask(String var1, int var2) {
 		return this.newTask(1, var2, 0, var1);
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Runnable;IB)Lii;",
-		garbageValue = "-79"
+		descriptor = "(Ljava/lang/Runnable;IB)Lip;",
+		garbageValue = "-16"
 	)
 	@Export("newThreadTask")
 	public final Task newThreadTask(Runnable var1, int var2) {
@@ -166,22 +171,46 @@ public class TaskHandler implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "-102"
+		garbageValue = "16"
 	)
-	static final void method4455() {
-		AsyncRestClient.method146("Your ignore list is full. Max of 100 for free users, and 400 for members");
+	public static void method4803() {
+		VarcInt.VarcInt_cached.clear();
 	}
 
-	@ObfuscatedName("ku")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Ldp;IIB)V",
-		garbageValue = "-69"
+		descriptor = "(I)V",
+		garbageValue = "-964431882"
 	)
-	@Export("updateItemPile3")
-	static final void updateItemPile3(WorldView var0, int var1, int var2) {
-		WorldMapRegion.updateItemPile2(var0, var0.plane, var1, var2);
+	static void method4790() {
+		Iterator var0 = Messages.Messages_hashTable.iterator();
+
+		while (var0.hasNext()) {
+			Message var1 = (Message)var0.next();
+			var1.clearIsFromFriend();
+		}
+
+	}
+
+	@ObfuscatedName("oz")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "125"
+	)
+	static void method4791() {
+		if (class224.field2524 != null) {
+			Client.field569 = Client.cycle;
+			class224.field2524.method7907();
+			Iterator var0 = class509.topLevelWorldView.players.iterator();
+
+			while (var0.hasNext()) {
+				Player var1 = (Player)var0.next();
+				class224.field2524.method7906((var1.x >> 7) + class509.topLevelWorldView.baseX, (var1.y >> 7) + class509.topLevelWorldView.baseY);
+			}
+		}
+
 	}
 }

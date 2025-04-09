@@ -4,85 +4,60 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("gl")
-public class class166 {
-	@ObfuscatedName("fr")
+public class class166 extends class148 {
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lpn;"
+		descriptor = "Lph;"
 	)
-	@Export("archive9")
-	static Archive archive9;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		longValue = -4938632966518421695L
-	)
-	long field1846;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		longValue = 1135078271159672253L
-	)
-	public long field1841;
-	@ObfuscatedName("au")
+	@Export("ItemDefinition_modelArchive")
+	static AbstractArchive ItemDefinition_modelArchive;
+	@ObfuscatedName("al")
+	@Export("userHomeDirectory")
+	static String userHomeDirectory;
+	@ObfuscatedName("gj")
 	@ObfuscatedSignature(
-		descriptor = "Lqk;"
+		descriptor = "Ldj;"
 	)
-	IterableNodeDeque field1842;
+	static WorldView field1847;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = -1631334281
+	)
+	int field1842;
+	@ObfuscatedName("an")
+	@ObfuscatedGetter(
+		intValue = 1241144525
+	)
+	int field1844;
+	// $FF: synthetic field
+	@ObfuscatedSignature(
+		descriptor = "Lfd;"
+	)
+	final class151 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;)V"
+		descriptor = "(Lfd;)V"
 	)
-	public class166(Buffer var1) {
-		this.field1841 = -1L;
-		this.field1842 = new IterableNodeDeque();
-		this.method3644(var1);
+	class166(class151 var1) {
+		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "-1148066029"
+		descriptor = "(Lve;B)V",
+		garbageValue = "53"
 	)
-	void method3644(Buffer var1) {
-		this.field1846 = var1.readLong();
-		this.field1841 = var1.readLong();
-
-		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
-			Object var3;
-			if (var2 == 1) {
-				var3 = new class161(this);
-			} else if (var2 == 4) {
-				var3 = new class172(this);
-			} else if (var2 == 3) {
-				var3 = new class157(this);
-			} else if (var2 == 2) {
-				var3 = new class155(this);
-			} else {
-				if (var2 != 5) {
-					throw new RuntimeException("");
-				}
-
-				var3 = new class162(this);
-			}
-
-			((class165)var3).vmethod3695(var1);
-			this.field1842.addFirst((Node)var3);
-		}
-
+	void vmethod3749(Buffer var1) {
+		this.field1842 = var1.readInt();
+		this.field1844 = var1.readInt();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lgd;I)V",
-		garbageValue = "1368552627"
+		descriptor = "(Lgw;I)V",
+		garbageValue = "1984465176"
 	)
-	public void method3646(ClanChannel var1) {
-		if (var1.key == this.field1846 && var1.field1858 == this.field1841) {
-			for (class165 var2 = (class165)this.field1842.last(); var2 != null; var2 = (class165)this.field1842.previous()) {
-				var2.vmethod3696(var1);
-			}
-
-			++var1.field1858;
-		} else {
-			throw new RuntimeException("");
-		}
+	void vmethod3750(ClanSettings var1) {
+		var1.method3587(this.field1842, this.field1844);
 	}
 }

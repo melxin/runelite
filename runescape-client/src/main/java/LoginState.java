@@ -2,160 +2,166 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("cg")
+@ObfuscatedName("cj")
 @Implements("LoginState")
 public class LoginState {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("SHUTDOWN_PREVIOUS_CONNECTION")
 	static final LoginState SHUTDOWN_PREVIOUS_CONNECTION;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("INIT_MOUSEHANDLER_SOCKET")
 	static final LoginState INIT_MOUSEHANDLER_SOCKET;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("UNMAPPED_20")
 	static final LoginState UNMAPPED_20;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("READ_LOGIN_STATUS")
 	static final LoginState READ_LOGIN_STATUS;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("READ_RANDOM_VERIFICATION_NUMBER")
 	static final LoginState READ_RANDOM_VERIFICATION_NUMBER;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("WRITE_INITIAL_LOGIN_PACKET")
 	static final LoginState WRITE_INITIAL_LOGIN_PACKET;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("READ_CLIENT_INFO_STATUS")
 	static final LoginState READ_CLIENT_INFO_STATUS;
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("READ_DIGEST_PARSER_PACKET_SIZE")
 	static final LoginState READ_DIGEST_PARSER_PACKET_SIZE;
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("SUBMIT_DIGEST_PARSER_TASK")
 	static final LoginState SUBMIT_DIGEST_PARSER_TASK;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("WRITE_DIGEST_PARSER_RESULT")
 	static final LoginState WRITE_DIGEST_PARSER_RESULT;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("READ_STATE_11_PACKET_SIZE")
 	static final LoginState READ_STATE_11_PACKET_SIZE;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("UNMAPPED_11")
 	static final LoginState UNMAPPED_11;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("READ_PROFILE_TRANSFER_TIME")
 	static final LoginState READ_PROFILE_TRANSFER_TIME;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("PROFILE_TRANSFER")
 	static final LoginState PROFILE_TRANSFER;
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("UNMAPPED")
 	static final LoginState UNMAPPED;
-	@ObfuscatedName("av")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("READ_ACCOUNT_INFO")
 	static final LoginState READ_ACCOUNT_INFO;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("SET_SERVER_PROTOCOL")
 	static final LoginState SET_SERVER_PROTOCOL;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("UPDATE_PLAYER_AND_LOAD_REGIONS")
 	static final LoginState UPDATE_PLAYER_AND_LOAD_REGIONS;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("UNMAPPED_17")
 	static final LoginState UNMAPPED_17;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("UNMAPPED_18")
 	static final LoginState UNMAPPED_18;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("UNMAPPED_19")
 	static final LoginState UNMAPPED_19;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("REFRESHING_TOKEN")
 	static final LoginState REFRESHING_TOKEN;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("TOKEN_RESPONSE")
 	static final LoginState TOKEN_RESPONSE;
-	@ObfuscatedName("at")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("UNMAPPED_21")
 	static final LoginState UNMAPPED_21;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lcg;"
+		descriptor = "Lcj;"
 	)
 	@Export("READ_ACCOUNT_INFO_PACKET_SIZE")
 	static final LoginState READ_ACCOUNT_INFO_PACKET_SIZE;
+	@ObfuscatedName("hq")
+	@ObfuscatedSignature(
+		descriptor = "Lvs;"
+	)
+	static class550 field491;
 
 	static {
 		SHUTDOWN_PREVIOUS_CONNECTION = new LoginState();
@@ -188,57 +194,235 @@ public class LoginState {
 	LoginState() {
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("bd")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "1101689905"
+		descriptor = "(ILdb;ZI)I",
+		garbageValue = "-147095719"
 	)
-	static final int method1224(int var0, int var1) {
-		int var2 = var1 * 57 + var0;
-		var2 ^= var2 << 13;
-		int var3 = var2 * (var2 * var2 * 15731 + 789221) + 1376312589 & Integer.MAX_VALUE;
-		return var3 >> 19 & 255;
-	}
+	static int method1238(int var0, Script var1, boolean var2) {
+		int var4;
+		int var9;
+		if (var0 == ScriptOpcodes.ADD) {
+			AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+			var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var4 + var9;
+			return 1;
+		} else if (var0 == ScriptOpcodes.SUB) {
+			AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+			var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 - var4;
+			return 1;
+		} else if (var0 == ScriptOpcodes.MULTIPLY) {
+			AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+			var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 * var4;
+			return 1;
+		} else if (var0 == ScriptOpcodes.DIV) {
+			AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+			var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 / var4;
+			return 1;
+		} else if (var0 == ScriptOpcodes.RANDOM) {
+			var9 = Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (int)(Math.random() * (double)var9);
+			return 1;
+		} else if (var0 == ScriptOpcodes.RANDOMINC) {
+			var9 = Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (int)(Math.random() * (double)(var9 + 1));
+			return 1;
+		} else {
+			int var5;
+			int var6;
+			int var7;
+			if (var0 == ScriptOpcodes.INTERPOLATE) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 5;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 2];
+				var6 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 3];
+				var7 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 4];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 + (var7 - var5) * (var4 - var9) / (var6 - var5);
+				return 1;
+			} else if (var0 == ScriptOpcodes.ADDPERCENT) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 + var4 * var9 / 100;
+				return 1;
+			} else if (var0 == ScriptOpcodes.SETBIT) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 | 1 << var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.CLEARBIT) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 & -1 - (1 << var4);
+				return 1;
+			} else if (var0 == ScriptOpcodes.TESTBIT) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (var9 & 1 << var4) != 0 ? 1 : 0;
+				return 1;
+			} else if (var0 == ScriptOpcodes.MOD) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 % var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.POW) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				if (var9 == 0) {
+					Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
+				} else {
+					Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (int)Math.pow((double)var9, (double)var4);
+				}
 
-	@ObfuscatedName("bu")
-	@ObfuscatedSignature(
-		descriptor = "(ILnz;IIIII[FI)Lnz;",
-		garbageValue = "508490756"
-	)
-	static Widget method1225(int var0, Widget var1, int var2, int var3, int var4, int var5, int var6, float[] var7) {
-		Widget var8 = new Widget();
-		var8.type = var0;
-		var8.parentId = var1.id;
-		var8.childIndex = var2;
-		var8.isIf3 = true;
-		var8.xAlignment = var3;
-		var8.yAlignment = var4;
-		var8.widthAlignment = var5;
-		var8.heightAlignment = var6;
-		var8.rawX = (int)((float)(var1.width * 779142065) * var7[0]);
-		var8.rawY = (int)((float)(var1.height * 1836304183) * var7[1]);
-		var8.rawWidth = (int)((float)(var1.width * 779142065) * var7[2]);
-		var8.rawHeight = (int)((float)(var1.height * 1836304183) * var7[3]);
-		return var8;
-	}
+				return 1;
+			} else if (var0 == ScriptOpcodes.INVPOW) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				if (var9 == 0) {
+					Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
+					return 1;
+				} else {
+					switch(var4) {
+					case 0:
+						Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = Integer.MAX_VALUE;
+						break;
+					case 1:
+						Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9;
+						break;
+					case 2:
+						Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (int)Math.sqrt((double)var9);
+						break;
+					case 3:
+						Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (int)Math.cbrt((double)var9);
+						break;
+					case 4:
+						Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (int)Math.sqrt(Math.sqrt((double)var9));
+						break;
+					default:
+						Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (int)Math.pow((double)var9, 1.0D / (double)var4);
+					}
 
-	@ObfuscatedName("gb")
-	@ObfuscatedSignature(
-		descriptor = "(I)Luu;",
-		garbageValue = "-570444977"
-	)
-	@Export("getWorldMap")
-	static WorldMap getWorldMap() {
-		return class541.worldMap;
-	}
+					return 1;
+				}
+			} else if (var0 == ScriptOpcodes.AND) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 & var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.OR) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 | var4;
+				return 1;
+			} else if (var0 == 4016) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 < var4 ? var9 : var4;
+				return 1;
+			} else if (var0 == 4017) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 > var4 ? var9 : var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.SCALE) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 3;
+				long var10 = (long)Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				long var12 = (long)Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				long var14 = (long)Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 2];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = (int)(var10 * var14 / var12);
+				return 1;
+			} else if (var0 == ScriptOpcodes.BITCOUNT) {
+				var9 = class321.method6538(Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize]);
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9;
+				return 1;
+			} else if (var0 == ScriptOpcodes.TOGGLEBIT) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 ^ 1 << var4;
+				return 1;
+			} else if (var0 == ScriptOpcodes.SETBIT_RANGE) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 3;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 2];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = class331.method6571(var9, var4, var5);
+				return 1;
+			} else if (var0 == ScriptOpcodes.CLEARBIT_RANGE) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 3;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 2];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = class311.method6481(var9, var4, var5);
+				return 1;
+			} else if (var0 == ScriptOpcodes.GETBIT_RANGE) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 3;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 2];
+				var6 = 31 - var5;
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 << var6 >>> var6 + var4;
+				return 1;
+			} else if (var0 == 4030) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 4;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				var5 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 2];
+				var6 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 3];
+				var9 = class311.method6481(var9, var5, var6);
+				var7 = VerticalAlignment.method5222(var6 - var5 + 1);
+				if (var4 > var7) {
+					var4 = var7;
+				}
 
-	@ObfuscatedName("mr")
-	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "1634236746"
-	)
-	@Export("setTapToDrop")
-	static void setTapToDrop(boolean var0) {
-		Client.tapToDrop = var0;
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var9 | var4 << var5;
+				return 1;
+			} else if (var0 == 4032) {
+				Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize - 1] = class466.method8941(Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize - 1]);
+				return 1;
+			} else if (var0 == 4033) {
+				Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize - 1] = class269.method5665(Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize - 1]);
+				return 1;
+			} else if (var0 == 4034) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var9 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				var5 = class140.method3389(var9, var4);
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var5;
+				return 1;
+			} else if (var0 == 4035) {
+				Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize - 1] = Math.abs(Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize - 1]);
+				return 1;
+			} else if (var0 == 4036) {
+				String var3 = Interpreter.Interpreter_stringStack[--class338.Interpreter_stringStackSize];
+				var4 = -1;
+				if (UserComparator5.isNumber(var3)) {
+					var4 = HttpQueryParams.method9661(var3);
+				}
+
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var4;
+				return 1;
+			} else {
+				return 2;
+			}
+		}
 	}
 }

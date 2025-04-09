@@ -1,96 +1,54 @@
 import java.applet.Applet;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ba")
+@ObfuscatedName("bw")
 public class class31 {
-	@ObfuscatedName("ab")
-	public static Applet field153;
-	@ObfuscatedName("ay")
-	public static String field144;
-	@ObfuscatedName("in")
+	@ObfuscatedName("as")
+	public static Applet field136;
+	@ObfuscatedName("aq")
+	public static String field137;
+	@ObfuscatedName("sh")
 	@ObfuscatedGetter(
-		longValue = 6705849333685993077L
+		intValue = -2079809159
 	)
-	static long field147;
+	@Export("selectedSpellFlags")
+	static int selectedSpellFlags;
 
 	static {
-		field153 = null;
-		field144 = "";
+		field136 = null;
+		field137 = "";
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("mz")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-16"
+		descriptor = "(II)V",
+		garbageValue = "-1174795376"
 	)
-	static void method427() {
-		Varcs.field1473 = new int[2000];
-		int var0 = 0;
-		int var1 = 240;
-
-		int var3;
-		for (byte var2 = 12; var0 < 16; var1 -= var2) {
-			var3 = EnumComposition.method3909((double)((float)var1 / 360.0F), 0.9998999834060669D, (double)(0.425F * (float)var0 / 16.0F + 0.075F));
-			Varcs.field1473[var0] = var3;
-			++var0;
+	static final void method474(int var0) {
+		var0 = Math.max(Math.min(var0, 100), 0);
+		var0 = 100 - var0;
+		float var1 = (float)var0 / 200.0F + 0.5F;
+		Rasterizer3D.buildPalette((double)var1);
+		((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness((double)var1);
+		if (GameBuild.worldMap != null) {
+			GameBuild.worldMap.method9818();
 		}
 
-		var1 = 48;
-
-		for (int var5 = var1 / 6; var0 < Varcs.field1473.length; var1 -= var5) {
-			var3 = var0 * 2;
-
-			for (int var4 = EnumComposition.method3909((double)((float)var1 / 360.0F), 0.9998999834060669D, 0.5D); var0 < var3 && var0 < Varcs.field1473.length; ++var0) {
-				Varcs.field1473[var0] = var4;
-			}
-		}
-
+		ItemComposition.ItemDefinition_cachedSprites.clear();
+		Renderable.clientPreferences.updateBrightness((double)var1);
 	}
 
-	@ObfuscatedName("hg")
+	@ObfuscatedName("ny")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "0"
+		descriptor = "(Lnh;B)I",
+		garbageValue = "-17"
 	)
-	static final void method413() {
-		if (Client.logoutTimer > 0) {
-			class60.logOut();
-		} else {
-			Client.timer.method7545();
-			class511.updateGameState(40);
-			class280.field3142 = Client.packetWriter.getSocket();
-			Client.packetWriter.removeSocket();
-		}
-	}
-
-	@ObfuscatedName("mu")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIII)V",
-		garbageValue = "2125705893"
-	)
-	@Export("drawScrollBar")
-	static final void drawScrollBar(int var0, int var1, int var2, int var3, int var4) {
-		ClanChannelMember.scrollBarSprites[0].drawAt(var0, var1);
-		ClanChannelMember.scrollBarSprites[1].drawAt(var0, var3 + var1 - 16);
-		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1 + 16, 16, var3 - 32, Client.field594);
-		int var5 = var3 * (var3 - 32) / var4;
-		if (var5 < 8) {
-			var5 = 8;
-		}
-
-		int var6 = (var3 - 32 - var5) * var2 / (var4 - var3);
-		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var6 + var1 + 16, 16, var5, Client.field730);
-		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0, var6 + var1 + 16, var5, Client.field592);
-		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 1, var6 + var1 + 16, var5, Client.field592);
-		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 16, 16, Client.field592);
-		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 17, 16, Client.field592);
-		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 15, var6 + var1 + 16, var5, Client.field561);
-		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 14, var6 + var1 + 17, var5 - 1, Client.field561);
-		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var5 + var1 + 15, 16, Client.field561);
-		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0 + 1, var6 + var5 + var1 + 14, 15, Client.field561);
+	@Export("getWidgetFlags")
+	static int getWidgetFlags(Widget var0) {
+		IntegerNode var1 = (IntegerNode)Client.widgetFlags.get(((long)var0.id << 32) + (long)(var0.childIndex * -1626125685));
+		return var1 != null ? var1.integer : var0.flags;
 	}
 }

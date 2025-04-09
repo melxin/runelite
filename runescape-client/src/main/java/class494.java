@@ -1,29 +1,29 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tr")
+@ObfuscatedName("tq")
 public abstract class class494 {
 	class494() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lku;Lsl;II)V",
-		garbageValue = "-80024626"
+		descriptor = "(Lkz;Lsm;IB)V",
+		garbageValue = "1"
 	)
-	abstract void vmethod9375(WorldEntityCoord var1, class493 var2, int var3);
+	abstract void vmethod9415(WorldEntityCoord var1, class493 var2, int var3);
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lku;IIB)Z",
-		garbageValue = "-59"
+		descriptor = "(Lkz;III)Z",
+		garbageValue = "-86250779"
 	)
-	abstract boolean vmethod9371(WorldEntityCoord var1, int var2, int var3);
+	abstract boolean vmethod9414(WorldEntityCoord var1, int var2, int var3);
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-1107559269"
+		descriptor = "(IIS)V",
+		garbageValue = "24575"
 	)
-	abstract void vmethod9370(int var1, int var2);
+	abstract void vmethod9423(int var1, int var2);
 }

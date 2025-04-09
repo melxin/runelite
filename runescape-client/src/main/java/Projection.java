@@ -1,41 +1,48 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jx")
+@ObfuscatedName("hn")
 @Implements("Projection")
 public abstract class Projection {
+	@ObfuscatedName("vj")
+	@ObfuscatedGetter(
+		intValue = 2116707009
+	)
+	static int field2196;
+
 	Projection() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljc;IIIIJ)V"
+		descriptor = "(Lhy;IIIIJ)V"
 	)
 	@Export("draw")
 	abstract void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6);
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;Ljh;IIII)V",
-		garbageValue = "-1468794048"
+		descriptor = "(Lho;Lhp;IIIB)V",
+		garbageValue = "-94"
 	)
 	@Export("drawTileUnderlay")
 	abstract void drawTileUnderlay(Scene var1, SceneTilePaint var2, int var3, int var4, int var5);
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;Lji;III)V",
-		garbageValue = "-2141053540"
+		descriptor = "(Lho;Lht;III)V",
+		garbageValue = "2016350808"
 	)
 	@Export("drawTileOverlay")
 	abstract void drawTileOverlay(Scene var1, SceneTileModel var2, int var3, int var4);
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;Ljh;IIIIIIIIIIIIIII)V",
-		garbageValue = "-523070857"
+		descriptor = "(Lho;Lhp;IIIIIIIIIIIIIII)V",
+		garbageValue = "1477439990"
 	)
 	@Export("drawSceneTilePaint")
 	void drawSceneTilePaint(Scene var1, SceneTilePaint var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16) {
@@ -47,16 +54,16 @@ public abstract class Projection {
 		int var22 = Rasterizer3D.getClipMidY() + var11 * Rasterizer3D.get3dZoom() / var15;
 		int var23 = Rasterizer3D.getClipMidX() + var8 * Rasterizer3D.get3dZoom() / var16;
 		int var24 = Rasterizer3D.getClipMidY() + var12 * Rasterizer3D.get3dZoom() / var16;
-		float var25 = class148.method3471(var13);
-		float var26 = class148.method3471(var14);
-		float var27 = class148.method3471(var15);
-		float var28 = class148.method3471(var16);
+		float var25 = class503.method9561(var13);
+		float var26 = class503.method9561(var14);
+		float var27 = class503.method9561(var15);
+		float var28 = class503.method9561(var16);
 		Rasterizer3D.clips.currentFaceAlpha = 0;
 		int var29;
 		int var30;
-		if ((var21 - var23) * (var20 - var24) - (var19 - var23) * (var22 - var24) > 0) {
+		if ((var20 - var24) * (var21 - var23) - (var22 - var24) * (var19 - var23) > 0) {
 			Rasterizer3D.clips.clipping = false;
-			var29 = Rasterizer3D.method4749();
+			var29 = Rasterizer3D.method3870();
 			if (var21 < 0 || var23 < 0 || var19 < 0 || var21 > var29 || var23 > var29 || var19 > var29) {
 				Rasterizer3D.clips.clipping = true;
 			}
@@ -64,7 +71,7 @@ public abstract class Projection {
 			if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var22, var24, var20, var21, var23, var19)) {
 				var1.Scene_baseX = var3;
 				var1.Scene_baseY = var4;
-				var1.field2737 = AbstractWorldMapIcon.method6336(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var21, var23, var19, var22, var24, var20, var27, var28, var26);
+				var1.field2082 = class28.method439(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var21, var23, var19, var22, var24, var20, var27, var28, var26);
 			}
 
 			if (var2.texture == -1) {
@@ -79,13 +86,13 @@ public abstract class Projection {
 				}
 			} else {
 				var30 = Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.texture);
-				Rasterizer3D.rasterGouraud(var22, var24, var20, var21, var23, var19, var27, var28, var26, Scene.method4969(var30, var2.neColor), Scene.method4969(var30, var2.nwColor), Scene.method4969(var30, var2.seColor));
+				Rasterizer3D.rasterGouraud(var22, var24, var20, var21, var23, var19, var27, var28, var26, Scene.method4123(var30, var2.neColor), Scene.method4123(var30, var2.nwColor), Scene.method4123(var30, var2.seColor));
 			}
 		}
 
-		if ((var24 - var20) * (var17 - var19) - (var18 - var20) * (var23 - var19) > 0) {
+		if ((var24 - var20) * (var17 - var19) - (var23 - var19) * (var18 - var20) > 0) {
 			Rasterizer3D.clips.clipping = false;
-			var29 = Rasterizer3D.method4749();
+			var29 = Rasterizer3D.method3870();
 			if (var17 < 0 || var19 < 0 || var23 < 0 || var17 > var29 || var19 > var29 || var23 > var29) {
 				Rasterizer3D.clips.clipping = true;
 			}
@@ -93,7 +100,7 @@ public abstract class Projection {
 			if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var18, var20, var24, var17, var19, var23)) {
 				var1.Scene_baseX = var3;
 				var1.Scene_baseY = var4;
-				var1.field2737 = AbstractWorldMapIcon.method6336(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var17, var19, var23, var18, var20, var24, var25, var26, var28);
+				var1.field2082 = class28.method439(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var17, var19, var23, var18, var20, var24, var25, var26, var28);
 			}
 
 			if (var2.texture == -1) {
@@ -104,16 +111,16 @@ public abstract class Projection {
 				Rasterizer3D.rasterTextureWithColors(var18, var20, var24, var17, var19, var23, var25, var26, var28, var2.swColor, var2.seColor, var2.nwColor, var5, var6, var8, var9, var10, var12, var13, var14, var16, var2.texture);
 			} else {
 				var30 = Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.texture);
-				Rasterizer3D.rasterGouraud(var18, var20, var24, var17, var19, var23, var25, var26, var28, Scene.method4969(var30, var2.swColor), Scene.method4969(var30, var2.seColor), Scene.method4969(var30, var2.nwColor));
+				Rasterizer3D.rasterGouraud(var18, var20, var24, var17, var19, var23, var25, var26, var28, Scene.method4123(var30, var2.swColor), Scene.method4123(var30, var2.seColor), Scene.method4123(var30, var2.nwColor));
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;Lji;III)V",
-		garbageValue = "1418777143"
+		descriptor = "(Lho;Lht;III)V",
+		garbageValue = "695097178"
 	)
 	@Export("drawSceneTileModel")
 	void drawSceneTileModel(Scene var1, SceneTileModel var2, int var3, int var4) {
@@ -133,9 +140,9 @@ public abstract class Projection {
 			float var16 = SceneTileModel.verticesZ[var7];
 			float var17 = SceneTileModel.verticesZ[var8];
 			float var18 = SceneTileModel.verticesZ[var9];
-			if ((var10 - var11) * (var15 - var14) - (var12 - var11) * (var13 - var14) > 0) {
+			if ((var10 - var11) * (var15 - var14) - (var13 - var14) * (var12 - var11) > 0) {
 				Rasterizer3D.clips.clipping = false;
-				int var19 = Rasterizer3D.method4749();
+				int var19 = Rasterizer3D.method3870();
 				if (var10 < 0 || var11 < 0 || var12 < 0 || var10 > var19 || var11 > var19 || var12 > var19) {
 					Rasterizer3D.clips.clipping = true;
 				}
@@ -143,7 +150,7 @@ public abstract class Projection {
 				if (Scene.containsBounds(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var13, var14, var15, var10, var11, var12)) {
 					var1.Scene_baseX = var3;
 					var1.Scene_baseY = var4;
-					var1.field2737 = AbstractWorldMapIcon.method6336(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var10, var11, var12, var13, var14, var15, var16, var17, var18);
+					var1.field2082 = class28.method439(var1.Scene_selectedScreenX, var1.Scene_selectedScreenY, var10, var11, var12, var13, var14, var15, var16, var17, var18);
 				}
 
 				if (var2.triangleTextureId != null && var2.triangleTextureId[var6] != -1) {
@@ -155,7 +162,7 @@ public abstract class Projection {
 						}
 					} else {
 						int var20 = Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.triangleTextureId[var6]);
-						Rasterizer3D.rasterGouraud(var13, var14, var15, var10, var11, var12, var16, var17, var18, Scene.method4969(var20, var2.triangleColorA[var6]), Scene.method4969(var20, var2.triangleColorB[var6]), Scene.method4969(var20, var2.triangleColorC[var6]));
+						Rasterizer3D.rasterGouraud(var13, var14, var15, var10, var11, var12, var16, var17, var18, Scene.method4123(var20, var2.triangleColorA[var6]), Scene.method4123(var20, var2.triangleColorB[var6]), Scene.method4123(var20, var2.triangleColorC[var6]));
 					}
 				} else if (var2.triangleColorA[var6] != 12345678) {
 					Rasterizer3D.rasterGouraud(var13, var14, var15, var10, var11, var12, var16, var17, var18, var2.triangleColorA[var6], var2.triangleColorB[var6], var2.triangleColorC[var6]);
@@ -165,17 +172,14 @@ public abstract class Projection {
 
 	}
 
-	@ObfuscatedName("hy")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "-886157014"
+		descriptor = "(Lph;Lph;Lph;I)V",
+		garbageValue = "-1119847973"
 	)
-	static final void method5234(boolean var0) {
-		if (var0) {
-			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.TOKEN_REMEMBER : AuthenticationScheme.TOKEN;
-		} else {
-			Client.authenticationScheme = AbstractWorldMapIcon.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
-		}
-
+	public static void method4367(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2) {
+		HitSplatDefinition.HitSplatDefinition_archive = var0;
+		UserComparator9.field1513 = var1;
+		class30.HitSplatDefinition_fontsArchive = var2;
 	}
 }

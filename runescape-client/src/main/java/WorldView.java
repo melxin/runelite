@@ -5,129 +5,129 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dp")
+@ObfuscatedName("dj")
 @Implements("WorldView")
 public class WorldView extends Node {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -825145433
+		intValue = 2085597975
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Ljz;"
+		descriptor = "Lho;"
 	)
 	@Export("scene")
 	public Scene scene;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "[Lkj;"
+		descriptor = "[Lkd;"
 	)
 	@Export("collisionMaps")
 	CollisionMap[] collisionMaps;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -2066943567
+		intValue = -1445092353
 	)
 	@Export("plane")
 	public int plane;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1118763905
+		intValue = -762638669
 	)
 	@Export("sizeX")
 	public int sizeX;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1221502571
+		intValue = 976750293
 	)
 	@Export("sizeY")
 	public int sizeY;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1427471673
+		intValue = 1702914355
 	)
 	@Export("baseX")
 	int baseX;
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 1397534037
+		intValue = -1095873273
 	)
 	@Export("baseY")
 	int baseY;
 	@ObfuscatedName("aa")
 	@Export("tileLastDrawnActor")
 	int[][] tileLastDrawnActor;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ap")
 	@Export("tileHeights")
 	int[][][] tileHeights;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ax")
 	@Export("tileSettings")
 	byte[][][] tileSettings;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lpj;"
+		descriptor = "Lpd;"
 	)
 	@Export("players")
 	IndexedObjectSet players;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lpj;"
+		descriptor = "Lpd;"
 	)
 	@Export("npcs")
-	public IndexedObjectSet npcs;
-	@ObfuscatedName("ak")
+	IndexedObjectSet npcs;
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lse;"
-	)
-	class473 field1355;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lqv;"
+		descriptor = "Lqf;"
 	)
 	@Export("worldEntities")
 	IterableNodeHashTable worldEntities;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lse;"
-	)
-	class473 field1357;
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "[[[Lqb;"
+		descriptor = "[[[Lqx;"
 	)
 	@Export("groundItems")
 	NodeDeque[][][] groundItems;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lqb;"
+		descriptor = "Lqx;"
 	)
 	@Export("pendingSpawns")
 	NodeDeque pendingSpawns;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lqb;"
+		descriptor = "Lqx;"
 	)
 	@Export("projectiles")
 	NodeDeque projectiles;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lqb;"
+		descriptor = "Lqx;"
 	)
 	@Export("graphicsObjects")
 	NodeDeque graphicsObjects;
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "Lsw;"
+	)
+	class473 field1351;
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lsw;"
+	)
+	class473 field1352;
 
 	@ObfuscatedSignature(
-		descriptor = "(IIIILio;)V"
+		descriptor = "(IIIILgx;)V"
 	)
-	WorldView(int var1, int var2, int var3, int var4, class232 var5) {
+	WorldView(int var1, int var2, int var3, int var4, class173 var5) {
 		this.collisionMaps = new CollisionMap[4];
-		this.field1355 = new class473(149);
-		this.field1357 = new class473(25);
 		this.pendingSpawns = new NodeDeque();
 		this.projectiles = new NodeDeque();
 		this.graphicsObjects = new NodeDeque();
+		this.field1351 = new class473(149);
+		this.field1352 = new class473(25);
 		this.id = var1;
 		this.sizeX = var2;
 		this.sizeY = var3;
@@ -147,14 +147,23 @@ public class WorldView extends Node {
 		this.scene = new Scene(var1, 4, var2, var3, var4, var5, this.tileHeights);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "-61"
+	)
+	boolean method2871() {
+		return this.id == -1;
+	}
+
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "294103836"
+		garbageValue = "-358479222"
 	)
-	void method2823() {
-		this.field1355.method9009();
-		this.field1357.method9009();
+	void method2869() {
+		this.field1351.method9058();
+		this.field1352.method9058();
 		this.players.clear();
 		this.npcs.clear();
 		this.worldEntities.clear();
@@ -179,12 +188,12 @@ public class WorldView extends Node {
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1435748252"
+		descriptor = "(B)V",
+		garbageValue = "-7"
 	)
-	void method2824() {
+	void method2872() {
 		this.players.clear();
 
 		Actor var2;
@@ -195,92 +204,46 @@ public class WorldView extends Node {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(ILvy;I)Lgf;",
-		garbageValue = "-1005551502"
+		descriptor = "(IZI)Ljava/lang/String;",
+		garbageValue = "-832812176"
 	)
-	public static PlayerCompositionColorTextureOverride method2834(int var0, Buffer var1) {
-		int var2 = var1.readUnsignedByte();
-		boolean var3 = (var2 & 1) != 0;
-		boolean var4 = (var2 & 2) != 0;
-		boolean var5 = (var2 & 4) != 0;
-		boolean var6 = (var2 & 8) != 0;
-		PlayerCompositionColorTextureOverride var7 = new PlayerCompositionColorTextureOverride(var0);
-		int var8;
-		int[] var9;
-		boolean var10;
-		int var11;
-		short var12;
-		if (var3) {
-			var8 = var1.readUnsignedByte();
-			var9 = new int[]{var8 & 15, var8 >> 4 & 15};
-			var10 = var7.playerCompositionRecolorTo != null && var9.length == var7.playerCompositionRecolorTo.length;
-
-			for (var11 = 0; var11 < 2; ++var11) {
-				if (var9[var11] != 15) {
-					var12 = (short)var1.readUnsignedShort();
-					if (var10) {
-						var7.playerCompositionRecolorTo[var9[var11]] = var12;
-					}
-				}
-			}
-		}
-
-		if (var4) {
-			var8 = var1.readUnsignedByte();
-			var9 = new int[]{var8 & 15, var8 >> 4 & 15};
-			var10 = var7.playerCompositionRetextureTo != null && var9.length == var7.playerCompositionRetextureTo.length;
-
-			for (var11 = 0; var11 < 2; ++var11) {
-				if (var9[var11] != 15) {
-					var12 = (short)var1.readUnsignedShort();
-					if (var10) {
-						var7.playerCompositionRetextureTo[var9[var11]] = var12;
-					}
-				}
-			}
-		}
-
-		if (var5) {
-			var7.field1890 = var1.readUnsignedShort();
-			var7.field1898 = var1.readUnsignedShort();
-		}
-
-		if (var6) {
-			var7.field1891 = var1.readUnsignedShort();
-			var7.field1893 = var1.readUnsignedShort();
-		}
-
-		return var7;
+	@Export("intToString")
+	public static String intToString(int var0, boolean var1) {
+		return var1 && var0 >= 0 ? class169.method3723(var0, 10, var1) : Integer.toString(var0);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "53"
+		descriptor = "([BIIB)I",
+		garbageValue = "-107"
 	)
-	static void method2831() {
-		Tiles.Tiles_underlays = null;
-		Tiles.Tiles_overlays = null;
-		Tiles.Tiles_shapes = null;
-		Tiles.field1047 = null;
-		Canvas.field98 = null;
-		SpriteMask.Tiles_underlays2 = null;
-		SecureUrlRequester.field1506 = null;
-		Tiles.Tiles_hue = null;
-		class592.Tiles_saturation = null;
-		class447.Tiles_lightness = null;
-		class330.Tiles_hueMultiplier = null;
-		BoundaryObject.field3005 = null;
+	static int method2877(byte[] var0, int var1, int var2) {
+		int var3 = -1;
+
+		for (int var4 = var1; var4 < var2; ++var4) {
+			var3 = var3 >>> 8 ^ Buffer.field5600[(var3 ^ var0[var4]) & 255];
+		}
+
+		var3 = ~var3;
+		return var3;
 	}
 
-	@ObfuscatedName("og")
+	@ObfuscatedName("kc")
 	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "1212919709"
+		descriptor = "(I)V",
+		garbageValue = "-710402881"
 	)
-	static void method2835(boolean var0) {
-		Client.leftClickOpensMenu = var0;
+	@Export("addCancelMenuEntry")
+	static void addCancelMenuEntry() {
+		WorldMapIcon_0.method6266();
+		Client.menu.menuWorldViewIds[0] = -1;
+		Client.menu.menuActions[0] = "Cancel";
+		Client.menu.menuTargets[0] = "";
+		Client.menu.menuOpcodes[0] = 1006;
+		Client.menu.menuShiftClick[0] = false;
+		Client.menu.subMenus[0] = null;
+		Client.menu.menuOptionsCount = 1;
 	}
 }

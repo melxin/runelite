@@ -4,18 +4,24 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gv")
+@ObfuscatedName("ir")
 @Implements("InvDefinition")
 public class InvDefinition extends DualNode {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lph;"
+	)
+	@Export("InvDefinition_archive")
+	static AbstractArchive InvDefinition_archive;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "Lmj;"
 	)
 	@Export("InvDefinition_cached")
 	static EvictingDualNodeHashTable InvDefinition_cached;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 487397955
+		intValue = -2119542881
 	)
 	@Export("size")
 	public int size;
@@ -28,10 +34,10 @@ public class InvDefinition extends DualNode {
 		this.size = 0;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;B)V",
-		garbageValue = "-75"
+		descriptor = "(Lve;I)V",
+		garbageValue = "-1628860869"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -45,10 +51,10 @@ public class InvDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;IB)V",
-		garbageValue = "1"
+		descriptor = "(Lve;II)V",
+		garbageValue = "-623255684"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -58,62 +64,36 @@ public class InvDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lfs;",
-		garbageValue = "-2098268102"
+		descriptor = "(IIB)V",
+		garbageValue = "-1"
 	)
-	static class145[] method3760() {
-		return new class145[]{class145.field1702, class145.field1704, class145.field1696, class145.field1697, class145.field1698, class145.field1700, class145.field1699, class145.field1701, class145.field1695};
-	}
-
-	@ObfuscatedName("iu")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)V",
-		garbageValue = "1972787827"
-	)
-	static final void method3751(int var0, int var1, int var2) {
-		if (class181.cameraX < var0) {
-			class181.cameraX = (var0 - class181.cameraX) * FloatProjection.field2789 / 1000 + class181.cameraX + ItemContainer.field1069;
-			if (class181.cameraX > var0) {
-				class181.cameraX = var0;
+	public static void method5009(int var0, int var1) {
+		VarbitComposition var3 = (VarbitComposition)VarbitComposition.VarbitDefinition_cached.get((long)var0);
+		VarbitComposition var2;
+		if (var3 != null) {
+			var2 = var3;
+		} else {
+			byte[] var4 = class157.VarbitDefinition_archive.takeFile(14, var0);
+			var3 = new VarbitComposition();
+			if (var4 != null) {
+				var3.decode(new Buffer(var4));
 			}
+
+			VarbitComposition.VarbitDefinition_cached.put(var3, (long)var0);
+			var2 = var3;
 		}
 
-		if (class181.cameraX > var0) {
-			class181.cameraX -= (class181.cameraX - var0) * FloatProjection.field2789 / 1000 + ItemContainer.field1069;
-			if (class181.cameraX < var0) {
-				class181.cameraX = var0;
-			}
+		int var8 = var2.baseVar;
+		int var5 = var2.startBit;
+		int var6 = var2.endBit;
+		int var7 = Varps.Varps_masks[var6 - var5];
+		if (var1 < 0 || var1 > var7) {
+			var1 = 0;
 		}
 
-		if (GrandExchangeOfferUnitPriceComparator.cameraY < var1) {
-			GrandExchangeOfferUnitPriceComparator.cameraY = (var1 - GrandExchangeOfferUnitPriceComparator.cameraY) * FloatProjection.field2789 / 1000 + GrandExchangeOfferUnitPriceComparator.cameraY + ItemContainer.field1069;
-			if (GrandExchangeOfferUnitPriceComparator.cameraY > var1) {
-				GrandExchangeOfferUnitPriceComparator.cameraY = var1;
-			}
-		}
-
-		if (GrandExchangeOfferUnitPriceComparator.cameraY > var1) {
-			GrandExchangeOfferUnitPriceComparator.cameraY -= (GrandExchangeOfferUnitPriceComparator.cameraY - var1) * FloatProjection.field2789 / 1000 + ItemContainer.field1069;
-			if (GrandExchangeOfferUnitPriceComparator.cameraY < var1) {
-				GrandExchangeOfferUnitPriceComparator.cameraY = var1;
-			}
-		}
-
-		if (ApproximateRouteStrategy.cameraZ < var2) {
-			ApproximateRouteStrategy.cameraZ = (var2 - ApproximateRouteStrategy.cameraZ) * FloatProjection.field2789 / 1000 + ApproximateRouteStrategy.cameraZ + ItemContainer.field1069;
-			if (ApproximateRouteStrategy.cameraZ > var2) {
-				ApproximateRouteStrategy.cameraZ = var2;
-			}
-		}
-
-		if (ApproximateRouteStrategy.cameraZ > var2) {
-			ApproximateRouteStrategy.cameraZ -= (ApproximateRouteStrategy.cameraZ - var2) * FloatProjection.field2789 / 1000 + ItemContainer.field1069;
-			if (ApproximateRouteStrategy.cameraZ < var2) {
-				ApproximateRouteStrategy.cameraZ = var2;
-			}
-		}
-
+		var7 <<= var5;
+		Varps.Varps_main[var8] = Varps.Varps_main[var8] & ~var7 | var1 << var5 & var7;
 	}
 }

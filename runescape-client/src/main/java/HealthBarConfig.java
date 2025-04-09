@@ -4,46 +4,44 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dg")
+@ObfuscatedName("dn")
 @Implements("HealthBarConfig")
 public class HealthBarConfig extends Node {
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -1820696693
+		intValue = -407288341
 	)
-	@Export("Interpreter_intStackSize")
-	static int Interpreter_intStackSize;
-	@ObfuscatedName("fm")
-	@ObfuscatedSignature(
-		descriptor = "Lpn;"
+	static int field1357;
+	@ObfuscatedName("tu")
+	@ObfuscatedGetter(
+		intValue = -313454327
 	)
-	@Export("soundEffectsArchive")
-	static Archive soundEffectsArchive;
-	@ObfuscatedName("au")
+	static int field1360;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lhe;"
+		descriptor = "Ljm;"
 	)
 	@Export("definition")
 	HealthBarDefinition definition;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lqk;"
+		descriptor = "Lqi;"
 	)
 	@Export("updates")
 	IterableNodeDeque updates;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lhe;)V"
+		descriptor = "(Ljm;)V"
 	)
 	HealthBarConfig(HealthBarDefinition var1) {
 		this.updates = new IterableNodeDeque();
 		this.definition = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(IIIIB)V",
-		garbageValue = "7"
+		garbageValue = "48"
 	)
 	@Export("put")
 	void put(int var1, int var2, int var3, int var4) {
@@ -76,10 +74,10 @@ public class HealthBarConfig extends Node {
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lde;",
-		garbageValue = "1199108951"
+		descriptor = "(II)Ldw;",
+		garbageValue = "4279352"
 	)
 	@Export("get")
 	HealthBarUpdate get(int var1) {
@@ -90,7 +88,7 @@ public class HealthBarConfig extends Node {
 				var2 = var3;
 			}
 
-			if (this.definition.int5 + var2.cycle + var2.cycleOffset > var1) {
+			if (this.definition.int5 + var2.cycleOffset + var2.cycle > var1) {
 				return var2;
 			} else {
 				var2.remove();
@@ -101,32 +99,13 @@ public class HealthBarConfig extends Node {
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "10"
+		descriptor = "(I)Z",
+		garbageValue = "146853013"
 	)
 	@Export("isEmpty")
 	boolean isEmpty() {
-		return this.updates.method8055();
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "300127497"
-	)
-	static final int method2839() {
-		return ViewportMouse.ViewportMouse_y;
-	}
-
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(IIIII)I",
-		garbageValue = "1097002671"
-	)
-	static final int method2838(int var0, int var1, int var2, int var3) {
-		int var4 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var2 * 1024 / var3] >> 1;
-		return ((65536 - var4) * var0 >> 16) + (var4 * var1 >> 16);
+		return this.updates.method8103();
 	}
 }

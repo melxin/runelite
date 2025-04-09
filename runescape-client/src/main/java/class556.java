@@ -1,50 +1,32 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vb")
+@ObfuscatedName("vg")
 final class class556 implements class551 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Object;Lvy;B)V",
-		garbageValue = "56"
+		descriptor = "(Ljava/lang/Object;Lve;B)V",
+		garbageValue = "-59"
 	)
-	public void vmethod10083(Object var1, Buffer var2) {
-		this.method10079((String)var1, var2);
+	public void vmethod10161(Object var1, Buffer var2) {
+		this.method10159((String)var1, var2);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)Ljava/lang/Object;",
-		garbageValue = "-1561644665"
+		descriptor = "(Lve;I)Ljava/lang/Object;",
+		garbageValue = "-651548546"
 	)
-	public Object vmethod10078(Buffer var1) {
+	public Object vmethod10160(Buffer var1) {
 		return var1.readStringCp1252NullTerminated();
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lvy;I)V",
-		garbageValue = "368244727"
+		descriptor = "(Ljava/lang/String;Lve;I)V",
+		garbageValue = "-430151294"
 	)
-	void method10079(String var1, Buffer var2) {
+	void method10159(String var1, Buffer var2) {
 		var2.writeStringCp1252NullTerminated(var1);
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(Lpl;III)[Lwg;",
-		garbageValue = "-1041865634"
-	)
-	public static SpritePixels[] method10080(AbstractArchive var0, int var1, int var2) {
-		byte[] var4 = var0.takeFile(var1, var2);
-		boolean var3;
-		if (var4 == null) {
-			var3 = false;
-		} else {
-			class478.SpriteBuffer_decode(var4);
-			var3 = true;
-		}
-
-		return !var3 ? null : class36.method668();
 	}
 }

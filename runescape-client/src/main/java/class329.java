@@ -1,29 +1,20 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mr")
+@ObfuscatedName("mg")
 public class class329 {
-	@ObfuscatedName("ak")
+	@ObfuscatedName("oe")
 	@ObfuscatedSignature(
-		descriptor = "Lrf;"
+		descriptor = "Ltm;"
 	)
-	@Export("ItemDefinition_fontPlain11")
-	static Font ItemDefinition_fontPlain11;
-	@ObfuscatedName("ub")
-	@ObfuscatedGetter(
-		intValue = 2000305701
-	)
-	static int field3661;
+	static AbstractSocket field3664;
 
-	@ObfuscatedName("nr")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "2066707877"
+		descriptor = "(II)Z",
+		garbageValue = "2097312958"
 	)
-	static final void method6519(int var0) {
-		var0 = Math.min(Math.max(var0, 0), 127);
-		AbstractWorldMapIcon.clientPreferences.updateAreaSoundEffectsVolume(var0);
+	static final boolean method6565(int var0) {
+		return var0 == 14 || var0 == 15 || var0 >= 44 && var0 <= 51;
 	}
 }

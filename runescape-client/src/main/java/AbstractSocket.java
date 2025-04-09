@@ -1,64 +1,59 @@
 import java.io.IOException;
-import java.lang.management.GarbageCollectorMXBean;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tj")
+@ObfuscatedName("tm")
 @Implements("AbstractSocket")
 public abstract class AbstractSocket {
-	@ObfuscatedName("bi")
-	@Export("garbageCollector")
-	static GarbageCollectorMXBean garbageCollector;
-
 	AbstractSocket() {
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IS)Z",
-		garbageValue = "128"
+		descriptor = "(II)Z",
+		garbageValue = "1009353249"
 	)
 	@Export("isAvailable")
 	public abstract boolean isAvailable(int var1) throws IOException;
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-973602939"
+		garbageValue = "1631332948"
 	)
 	@Export("available")
 	public abstract int available() throws IOException;
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1634388430"
+		descriptor = "(B)I",
+		garbageValue = "46"
 	)
 	@Export("readUnsignedByte")
 	public abstract int readUnsignedByte() throws IOException;
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "([BIIB)I",
-		garbageValue = "99"
+		descriptor = "([BIII)I",
+		garbageValue = "-806069505"
 	)
 	@Export("read")
 	public abstract int read(byte[] var1, int var2, int var3) throws IOException;
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "([BIIB)V",
-		garbageValue = "125"
+		descriptor = "([BIII)V",
+		garbageValue = "956103531"
 	)
 	@Export("write")
 	public abstract void write(byte[] var1, int var2, int var3) throws IOException;
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-776875768"
+		garbageValue = "-2067505043"
 	)
 	@Export("close")
 	public abstract void close();

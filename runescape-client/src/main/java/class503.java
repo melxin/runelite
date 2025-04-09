@@ -3,91 +3,91 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ty")
+@ObfuscatedName("te")
 public class class503 implements Enum {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lty;"
-	)
-	static final class503 field5203;
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lty;"
-	)
-	static final class503 field5198;
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lty;"
-	)
-	static final class503 field5204;
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lty;"
-	)
-	public static final class503 field5199;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = 818290841
-	)
-	final int field5200;
-	@ObfuscatedName("ac")
-	@ObfuscatedGetter(
-		intValue = -549467053
-	)
-	final int field5201;
 	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = -441623435
+	@ObfuscatedSignature(
+		descriptor = "Lte;"
 	)
-	final int field5202;
+	static final class503 field5230;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lte;"
+	)
+	static final class503 field5221;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lte;"
+	)
+	static final class503 field5227;
 	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = 1884355355
+	@ObfuscatedSignature(
+		descriptor = "Lte;"
 	)
-	final int field5197;
-	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = -1083686743
-	)
-	final int field5196;
+	public static final class503 field5223;
 	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1038260919
+		intValue = 444677079
 	)
-	final int field5205;
+	final int field5229;
+	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = -1789071353
+	)
+	final int field5225;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = 216029657
+	)
+	final int field5226;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = 1557696271
+	)
+	final int field5224;
+	@ObfuscatedName("aa")
+	@ObfuscatedGetter(
+		intValue = -632774357
+	)
+	final int field5228;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = 1751845183
+	)
+	final int field5222;
 
 	static {
-		field5203 = new class503(0, 0, 0, 0, 0, 0);
-		field5198 = new class503(1, 1, 507, 507, 507, 507);
-		field5204 = new class503(2, 2, 338, 338, 338, 507);
-		field5199 = new class503(3, 3, 499, 499, 499, 507);
+		field5230 = new class503(0, 0, 0, 0, 0, 0);
+		field5221 = new class503(1, 1, 507, 507, 507, 507);
+		field5227 = new class503(2, 2, 338, 338, 338, 507);
+		field5223 = new class503(3, 3, 499, 499, 499, 507);
 	}
 
 	class503(int var1, int var2, int var3, int var4, int var5, int var6) {
-		this.field5200 = var1;
-		this.field5201 = var2;
-		this.field5202 = var3;
-		this.field5197 = var4;
-		this.field5196 = var5;
-		this.field5205 = var6;
+		this.field5229 = var1;
+		this.field5222 = var2;
+		this.field5225 = var3;
+		this.field5226 = var4;
+		this.field5224 = var5;
+		this.field5228 = var6;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "32"
+		descriptor = "(I)I",
+		garbageValue = "1746725635"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field5201;
+		return this.field5222;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(IZZZB)Z",
-		garbageValue = "20"
+		descriptor = "(IZZZI)Z",
+		garbageValue = "552386988"
 	)
-	boolean method9486(int var1, boolean var2, boolean var3, boolean var4) {
+	boolean method9530(int var1, boolean var2, boolean var3, boolean var4) {
 		byte var5 = 0;
 		int var6 = var5 | (var3 ? 1 : 0);
 		var6 |= var2 ? 8 : 32;
@@ -95,12 +95,12 @@ public class class503 implements Enum {
 		return (var1 & var6) != 0;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(IZZZS)Z",
-		garbageValue = "-27374"
+		descriptor = "(IZZZB)Z",
+		garbageValue = "27"
 	)
-	boolean method9506(int var1, boolean var2, boolean var3, boolean var4) {
+	boolean method9531(int var1, boolean var2, boolean var3, boolean var4) {
 		byte var5 = 0;
 		int var6 = var5 | (var3 ? 2 : 0);
 		var6 |= var2 ? 16 : 64;
@@ -108,66 +108,76 @@ public class class503 implements Enum {
 		return (var1 & var6) != 0;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(ZZZI)Z",
-		garbageValue = "1349967394"
+		garbageValue = "-514736094"
 	)
-	public boolean method9491(boolean var1, boolean var2, boolean var3) {
-		return this.method9486(this.field5202, var1, var2, var3);
+	public boolean method9546(boolean var1, boolean var2, boolean var3) {
+		return this.method9530(this.field5225, var1, var2, var3);
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(ZZZB)Z",
-		garbageValue = "-30"
+		descriptor = "(ZZZI)Z",
+		garbageValue = "1855308654"
 	)
-	public boolean method9489(boolean var1, boolean var2, boolean var3) {
-		return this.method9486(this.field5197, var1, var2, var3);
+	public boolean method9533(boolean var1, boolean var2, boolean var3) {
+		return this.method9530(this.field5226, var1, var2, var3);
 	}
 
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(ZZZI)Z",
-		garbageValue = "320123392"
+		garbageValue = "1602602031"
 	)
-	public boolean method9490(boolean var1, boolean var2, boolean var3) {
-		return this.method9486(this.field5196, var1, var2, var3);
+	public boolean method9534(boolean var1, boolean var2, boolean var3) {
+		return this.method9530(this.field5224, var1, var2, var3);
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(ZZZI)Z",
-		garbageValue = "1795846943"
+		garbageValue = "270498834"
 	)
-	public boolean method9487(boolean var1, boolean var2, boolean var3) {
-		return this.method9486(this.field5205, var1, var2, var3);
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(ZZZI)Z",
-		garbageValue = "837920734"
-	)
-	public boolean method9511(boolean var1, boolean var2, boolean var3) {
-		return this.method9506(this.field5202, var1, var2, var3);
+	public boolean method9559(boolean var1, boolean var2, boolean var3) {
+		return this.method9530(this.field5228, var1, var2, var3);
 	}
 
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "(ZZZI)Z",
-		garbageValue = "401813950"
+		garbageValue = "1221455637"
 	)
-	public boolean method9492(boolean var1, boolean var2, boolean var3) {
-		return this.method9506(this.field5197, var1, var2, var3);
+	public boolean method9536(boolean var1, boolean var2, boolean var3) {
+		return this.method9531(this.field5225, var1, var2, var3);
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(ZZZB)Z",
-		garbageValue = "70"
+		descriptor = "(ZZZI)Z",
+		garbageValue = "389405663"
 	)
-	public boolean method9493(boolean var1, boolean var2, boolean var3) {
-		return this.method9506(this.field5196, var1, var2, var3);
+	public boolean method9535(boolean var1, boolean var2, boolean var3) {
+		return this.method9531(this.field5226, var1, var2, var3);
+	}
+
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "(ZZZS)Z",
+		garbageValue = "-23800"
+	)
+	public boolean method9538(boolean var1, boolean var2, boolean var3) {
+		return this.method9531(this.field5224, var1, var2, var3);
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(II)F",
+		garbageValue = "1462812786"
+	)
+	static final float method9561(int var0) {
+		float var1 = 10075.0F - (float)var0;
+		return (1.0075567F * var1 - 75.56675F) / var1;
 	}
 }

@@ -4,60 +4,48 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jw")
+@ObfuscatedName("gd")
 @Implements("FloorDecoration")
 public final class FloorDecoration {
-	@ObfuscatedName("ar")
+	@ObfuscatedName("kf")
 	@ObfuscatedSignature(
-		descriptor = "Lda;"
+		descriptor = "Lpx;"
 	)
-	@Export("loginScreenRunesAnimation")
-	static LoginScreenAnimation loginScreenRunesAnimation;
-	@ObfuscatedName("kp")
-	@ObfuscatedGetter(
-		intValue = 290695197
-	)
-	@Export("cameraYaw")
-	static int cameraYaw;
-	@ObfuscatedName("tg")
+	@Export("archive10")
+	static Archive archive10;
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lbf;"
-	)
-	@Export("pcmPlayer1")
-	static PcmPlayer pcmPlayer1;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = 767011573
-	)
-	@Export("z")
-	int z;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -1841618653
-	)
-	@Export("x")
-	int x;
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = -1302761429
-	)
-	@Export("y")
-	int y;
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Ljc;"
+		descriptor = "Lhy;"
 	)
 	@Export("renderable")
 	public Renderable renderable;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		longValue = 6591267376166635853L
+		longValue = 6652514834654138687L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1691655069
+		intValue = -1138829483
+	)
+	@Export("z")
+	int z;
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		intValue = 1171186368
+	)
+	@Export("x")
+	int x;
+	@ObfuscatedName("as")
+	@ObfuscatedGetter(
+		intValue = -2040204096
+	)
+	@Export("y")
+	int y;
+	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = 1048877089
 	)
 	@Export("flags")
 	int flags;
@@ -65,57 +53,60 @@ public final class FloorDecoration {
 	FloorDecoration() {
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1903384992"
+		descriptor = "(Lmq;Lwl;B)Lmr;",
+		garbageValue = "44"
 	)
-	public static void method4730() {
-		WorldMapRegion.WorldMapRegion_cachedSprites.demote(5);
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)Ljava/lang/String;",
-		garbageValue = "-111"
-	)
-	public static String method4731(String var0) {
-		int var1 = var0.length();
-		char[] var2 = new char[var1];
-		byte var3 = 2;
-
-		for (int var4 = 0; var4 < var1; ++var4) {
-			char var5 = var0.charAt(var4);
-			if (var3 == 0) {
-				var5 = Character.toLowerCase(var5);
-			} else if (var3 == 2 || Character.isUpperCase(var5)) {
-				char var6;
-				if (var5 != 181 && var5 != 402) {
-					var6 = Character.toTitleCase(var5);
-				} else {
-					var6 = var5;
-				}
-
-				var5 = var6;
-			}
-
-			if (Character.isLetter(var5)) {
-				var3 = 0;
-			} else if (var5 != '.' && var5 != '?' && var5 != '!') {
-				if (Character.isSpaceChar(var5)) {
-					if (var3 != 2) {
-						var3 = 1;
-					}
-				} else {
-					var3 = 1;
-				}
-			} else {
-				var3 = 2;
-			}
-
-			var2[var4] = var5;
+	@Export("getPacketBufferNode")
+	public static PacketBufferNode getPacketBufferNode(ClientPacket var0, IsaacCipher var1) {
+		PacketBufferNode var2;
+		if (PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0) {
+			var2 = new PacketBufferNode();
+		} else {
+			var2 = PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
 		}
 
-		return new String(var2);
+		var2.clientPacket = var0;
+		var2.clientPacketLength = var0.length;
+		if (var2.clientPacketLength == -1) {
+			var2.packetBuffer = new PacketBuffer(260);
+		} else if (var2.clientPacketLength == -2) {
+			var2.packetBuffer = new PacketBuffer(10000);
+		} else if (var2.clientPacketLength <= 18) {
+			var2.packetBuffer = new PacketBuffer(20);
+		} else if (var2.clientPacketLength <= 98) {
+			var2.packetBuffer = new PacketBuffer(100);
+		} else {
+			var2.packetBuffer = new PacketBuffer(260);
+		}
+
+		var2.packetBuffer.setIsaacCipher(var1);
+		var2.packetBuffer.writeByteIsaac(var2.clientPacket.id);
+		var2.index = 0;
+		return var2;
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lvc;",
+		garbageValue = "2069196071"
+	)
+	@Export("getDbRowType")
+	public static DbRowType getDbRowType(int var0) {
+		DbRowType var1 = (DbRowType)DbRowType.DBRowType_cache.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = class222.field2495.takeFile(38, var0);
+			var1 = new DbRowType();
+			if (var2 != null) {
+				var1.method10212(new Buffer(var2));
+			}
+
+			var1.method10211();
+			DbRowType.DBRowType_cache.put(var1, (long)var0);
+			return var1;
+		}
 	}
 }

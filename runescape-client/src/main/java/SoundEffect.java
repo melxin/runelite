@@ -3,24 +3,24 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bj")
+@ObfuscatedName("bx")
 @Implements("SoundEffect")
 public class SoundEffect {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "[Lct;"
+		descriptor = "[Lcf;"
 	)
 	@Export("instruments")
-	Instrument[] instruments;
-	@ObfuscatedName("au")
+	final Instrument[] instruments;
+	@ObfuscatedName("ae")
 	@Export("start")
 	int start;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@Export("end")
 	int end;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;)V"
+		descriptor = "(Lve;)V"
 	)
 	SoundEffect(Buffer var1) {
 		this.instruments = new Instrument[10];
@@ -28,7 +28,7 @@ public class SoundEffect {
 		for (int var2 = 0; var2 < 10; ++var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 != 0) {
-				--var1.offset;
+				var1.offset -= 29699747;
 				this.instruments[var2] = new Instrument();
 				this.instruments[var2].decode(var1);
 			}
@@ -38,17 +38,26 @@ public class SoundEffect {
 		this.end = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "()Lbq;"
+		descriptor = "(Z)Lbj;"
 	)
-	@Export("toRawSound")
-	public RawSound toRawSound() {
-		byte[] var1 = this.mix();
-		return new RawSound(22050, var1, this.start * 22050 / 1000, this.end * 22050 / 1000);
+	public RawSound method755(boolean var1) {
+		short[] var2 = this.method756(var1);
+		RawSound var3 = new RawSound(22050, var2, this.start * 22050 / 1000, this.end * 22050 / 1000, false, var1);
+		return var3;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "()Lbj;"
+	)
+	@Export("toRawSound")
+	RawSound toRawSound() {
+		return this.method755(false);
+	}
+
+	@ObfuscatedName("af")
 	@Export("calculateDelay")
 	public final int calculateDelay() {
 		int var1 = 9999999;
@@ -83,48 +92,54 @@ public class SoundEffect {
 		}
 	}
 
-	@ObfuscatedName("ad")
-	@Export("mix")
-	final byte[] mix() {
-		int var1 = 0;
+	@ObfuscatedName("as")
+	final short[] method756(boolean var1) {
+		int var2 = 0;
 
-		int var2;
-		for (var2 = 0; var2 < 10; ++var2) {
-			if (this.instruments[var2] != null && this.instruments[var2].duration + this.instruments[var2].offset > var1) {
-				var1 = this.instruments[var2].duration + this.instruments[var2].offset;
+		int var3;
+		for (var3 = 0; var3 < 10; ++var3) {
+			if (this.instruments[var3] != null && this.instruments[var3].duration + this.instruments[var3].offset > var2) {
+				var2 = this.instruments[var3].duration + this.instruments[var3].offset;
 			}
 		}
 
-		if (var1 == 0) {
-			return new byte[0];
+		if (var2 == 0) {
+			return new short[0];
 		} else {
-			var2 = var1 * 22050 / 1000;
-			byte[] var3 = new byte[var2];
+			var3 = var2 * 22050 / 1000;
+			short[] var4 = new short[var3];
 
-			for (int var4 = 0; var4 < 10; ++var4) {
-				if (this.instruments[var4] != null) {
-					int var5 = this.instruments[var4].duration * 22050 / 1000;
-					int var6 = this.instruments[var4].offset * 22050 / 1000;
-					int[] var7 = this.instruments[var4].synthesize(var5, this.instruments[var4].duration);
-
-					for (int var8 = 0; var8 < var5; ++var8) {
-						int var9 = (var7[var8] >> 8) + var3[var8 + var6];
-						if ((var9 + 128 & -256) != 0) {
-							var9 = var9 >> 31 ^ 127;
+			for (int var5 = 0; var5 < 10; ++var5) {
+				if (this.instruments[var5] != null) {
+					int var6 = this.instruments[var5].duration * 22050 / 1000;
+					int var7 = this.instruments[var5].offset * 22050 / 1000;
+					int[] var8 = this.instruments[var5].synthesize(var6, this.instruments[var5].duration);
+					int var9;
+					int var10;
+					int var11;
+					if (var1) {
+						for (var9 = 0; var9 < var6; ++var9) {
+							var10 = (var8[var9] >> 8) + var4[var9 + var7];
+							var11 = Math.max(-128, Math.min(var10, 127));
+							var4[var9 + var7] = (short)((byte)var11);
 						}
-
-						var3[var8 + var6] = (byte)var9;
+					} else {
+						for (var9 = 0; var9 < var6; ++var9) {
+							var10 = var8[var9] + var4[var9 + var7];
+							var11 = Math.max(-32768, Math.min(var10, 32767));
+							var4[var9 + var7] = (short)var11;
+						}
 					}
 				}
 			}
 
-			return var3;
+			return var4;
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lpl;II)Lbj;"
+		descriptor = "(Lph;II)Lbx;"
 	)
 	@Export("readSoundEffect")
 	public static SoundEffect readSoundEffect(AbstractArchive var0, int var1, int var2) {

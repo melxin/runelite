@@ -1,62 +1,56 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gu")
+@ObfuscatedName("fn")
 @Implements("Sound")
-public class Sound extends class149 {
-	@ObfuscatedName("ct")
-	static String field1770;
-	@ObfuscatedName("gt")
-	@Export("characterId")
-	static String characterId;
-	@ObfuscatedName("ab")
-	boolean field1763;
-	@ObfuscatedName("ay")
-	byte field1766;
-	@ObfuscatedName("au")
-	byte field1767;
-	@ObfuscatedName("ad")
-	byte field1764;
-	@ObfuscatedName("ah")
-	byte field1765;
+public class Sound extends class148 {
+	@ObfuscatedName("ao")
+	boolean field1751;
+	@ObfuscatedName("an")
+	byte field1750;
+	@ObfuscatedName("ae")
+	byte field1754;
+	@ObfuscatedName("af")
+	byte field1752;
+	@ObfuscatedName("as")
+	byte field1753;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfv;"
+		descriptor = "Lfd;"
 	)
-	final class152 this$0;
+	final class151 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfv;)V"
+		descriptor = "(Lfd;)V"
 	)
-	Sound(class152 var1) {
+	Sound(class151 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;B)V",
-		garbageValue = "25"
+		descriptor = "(Lve;B)V",
+		garbageValue = "53"
 	)
-	void vmethod3702(Buffer var1) {
-		this.field1763 = var1.readUnsignedByte() == 1;
-		this.field1766 = var1.readByte();
-		this.field1767 = var1.readByte();
-		this.field1764 = var1.readByte();
-		this.field1765 = var1.readByte();
+	void vmethod3749(Buffer var1) {
+		this.field1751 = var1.readUnsignedByte() == 1;
+		this.field1750 = var1.readByte();
+		this.field1754 = var1.readByte();
+		this.field1752 = var1.readByte();
+		this.field1753 = var1.readByte();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lgg;I)V",
-		garbageValue = "2011970201"
+		descriptor = "(Lgw;I)V",
+		garbageValue = "1984465176"
 	)
-	void vmethod3705(ClanSettings var1) {
-		var1.allowGuests = this.field1763;
-		var1.field1795 = this.field1766;
-		var1.field1805 = this.field1767;
-		var1.field1797 = this.field1764;
-		var1.field1796 = this.field1765;
+	void vmethod3750(ClanSettings var1) {
+		var1.allowGuests = this.field1751;
+		var1.field1803 = this.field1750;
+		var1.field1784 = this.field1754;
+		var1.field1773 = this.field1752;
+		var1.field1786 = this.field1753;
 	}
 }

@@ -6,30 +6,36 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ev")
+@ObfuscatedName("er")
 @Implements("Messages")
 public class Messages {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@Export("Messages_channels")
 	static final Map Messages_channels;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lqv;"
+		descriptor = "Lqf;"
 	)
 	@Export("Messages_hashTable")
 	static final IterableNodeHashTable Messages_hashTable;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lqo;"
+		descriptor = "Lqq;"
 	)
 	@Export("Messages_queue")
 	static final IterableDualNodeQueue Messages_queue;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 566929589
+		intValue = -1230698183
 	)
 	@Export("Messages_count")
 	static int Messages_count;
+	@ObfuscatedName("ki")
+	@ObfuscatedSignature(
+		descriptor = "Lpx;"
+	)
+	@Export("soundEffectsArchive")
+	static Archive soundEffectsArchive;
 
 	static {
 		Messages_channels = new HashMap();
@@ -38,97 +44,70 @@ public class Messages {
 		Messages_count = 0;
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("lb")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1106367544"
+		descriptor = "(Ldu;IIIIB)V",
+		garbageValue = "61"
 	)
-	static final void method3083() {
-		AsyncRestClient.method146("You can't add yourself to your own friend list");
-	}
+	@Export("addPlayerToMenu")
+	static final void addPlayerToMenu(Player var0, int var1, int var2, int var3, int var4) {
+		if (var0.index != Client.localPlayerIndex) {
+			if (Client.menu.menuOptionsCount < 400) {
+				String var5;
+				if (var0.skillLevel == 0) {
+					var5 = var0.actions[0] + var0.username + var0.actions[1] + class322.method6541(var0.combatLevel, Script.localPlayer.combatLevel) + " " + " (" + "level-" + var0.combatLevel + ")" + var0.actions[2];
+				} else {
+					var5 = var0.actions[0] + var0.username + var0.actions[1] + " " + " (" + "skill-" + var0.skillLevel + ")" + var0.actions[2];
+				}
 
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)D",
-		garbageValue = "2116486088"
-	)
-	static double method3077(int var0, int var1, int var2) {
-		double var3 = var1 > 0 ? (double)Math.max(0.0F, Math.min(1.0F, (float)var0 / (float)var1)) : 1.0D;
-		if (var3 > 0.0D && var3 < 1.0D) {
-			double var5;
-			double var7;
-			switch(var2) {
-			case 0:
-				return var3;
-			case 1:
-				return 1.0D - Math.cos(3.141592653589793D * var3 / 2.0D);
-			case 2:
-				return Math.sin(var3 * 3.141592653589793D / 2.0D);
-			case 3:
-				return -(Math.cos(3.141592653589793D * var3) - 1.0D) / 2.0D;
-			case 4:
-				return var3 * var3;
-			case 5:
-				return 1.0D - (1.0D - var3) * (1.0D - var3);
-			case 6:
-				return var3 < 0.5D ? var3 * var3 * 2.0D : 1.0D - Math.pow(2.0D + var3 * -2.0D, 2.0D) / 2.0D;
-			case 7:
-				return var3 * var3 * var3;
-			case 8:
-				return 1.0D - Math.pow(1.0D - var3, 3.0D);
-			case 9:
-				return var3 < 0.5D ? var3 * var3 * 4.0D * var3 : 1.0D - Math.pow(2.0D + var3 * -2.0D, 3.0D) / 2.0D;
-			case 10:
-				return var3 * var3 * var3 * var3;
-			case 11:
-				return 1.0D - Math.pow(1.0D - var3, 4.0D);
-			case 12:
-				return var3 < 0.5D ? var3 * var3 * 8.0D * var3 * var3 : 1.0D - Math.pow(var3 * -2.0D + 2.0D, 4.0D) / 2.0D;
-			case 13:
-				return var3 * var3 * var3 * var3 * var3;
-			case 14:
-				return 1.0D - Math.pow(1.0D - var3, 5.0D);
-			case 15:
-				return var3 < 0.5D ? 8.0D * var3 * var3 * var3 * var3 * var3 : 1.0D - Math.pow(2.0D + var3 * -2.0D, 5.0D) / 2.0D;
-			case 16:
-				return Math.pow(2.0D, 10.0D * var3 - 10.0D);
-			case 17:
-				return 1.0D - Math.pow(2.0D, -10.0D * var3);
-			case 18:
-				return var3 < 0.5D ? Math.pow(2.0D, 10.0D + var3 * 20.0D) / 2.0D : (2.0D - Math.pow(2.0D, 10.0D + var3 * -20.0D)) / 2.0D;
-			case 19:
-				return 1.0D - Math.sqrt(1.0D - Math.pow(var3, 2.0D));
-			case 20:
-				return Math.sqrt(1.0D - Math.pow(var3 - 1.0D, 2.0D));
-			case 21:
-				return var3 < 0.5D ? (1.0D - Math.sqrt(1.0D - Math.pow(2.0D * var3, 2.0D))) / 2.0D : (Math.sqrt(1.0D - Math.pow(2.0D + var3 * -2.0D, 2.0D)) + 1.0D) / 2.0D;
-			case 22:
-				var5 = 1.70158D;
-				var7 = 2.70158D;
-				return var3 * 2.70158D * var3 * var3 - var3 * 1.70158D * var3;
-			case 23:
-				var5 = 1.70158D;
-				var7 = 2.70158D;
-				return 1.0D + 2.70158D * Math.pow(var3 - 1.0D, 3.0D) + 1.70158D * Math.pow(var3 - 1.0D, 2.0D);
-			case 24:
-				var5 = 1.70158D;
-				var7 = 2.5949095D;
-				return var3 < 0.5D ? Math.pow(var3 * 2.0D, 2.0D) * (7.189819D * var3 - 2.5949095D) / 2.0D : (Math.pow(2.0D * var3 - 2.0D, 2.0D) * ((var3 * 2.0D - 2.0D) * 3.5949095D + 2.5949095D) + 2.0D) / 2.0D;
-			case 25:
-				var5 = 2.0943951023931953D;
-				return -Math.pow(2.0D, 10.0D * var3 - 10.0D) * Math.sin((var3 * 10.0D - 10.75D) * 2.0943951023931953D);
-			case 26:
-				var5 = 2.0943951023931953D;
-				return Math.pow(2.0D, var3 * -10.0D) * Math.sin(2.0943951023931953D * (10.0D * var3 - 0.75D)) + 1.0D;
-			case 27:
-				var5 = 1.3962634015954636D;
-				var7 = Math.sin(1.3962634015954636D * (var3 * 20.0D - 11.125D));
-				return var3 < 0.5D ? -(Math.pow(2.0D, var3 * 20.0D - 10.0D) * var7) / 2.0D : Math.pow(2.0D, 10.0D + -20.0D * var3) * var7 / 2.0D + 1.0D;
-			default:
-				return var3;
+				int var6;
+				if (Client.isItemSelected == 1) {
+					UserComparator6.insertMenuItem("Use", Client.field713 + " " + "->" + " " + Decimator.colorStartTag(16777215) + var5, 14, var1, var2, var3, -1, false, var4);
+				} else if (Client.isSpellSelected) {
+					if ((class31.selectedSpellFlags & 8) == 8) {
+						UserComparator6.insertMenuItem(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + Decimator.colorStartTag(16777215) + var5, 15, var1, var2, var3, -1, false, var4);
+					}
+				} else {
+					for (var6 = 7; var6 >= 0; --var6) {
+						if (Client.playerMenuActions[var6] != null) {
+							short var7 = 0;
+							if (Client.playerMenuActions[var6].equalsIgnoreCase("Attack")) {
+								if (Client.playerAttackOption == AttackOption.AttackOption_hidden) {
+									continue;
+								}
+
+								if (AttackOption.AttackOption_alwaysRightClick == Client.playerAttackOption || AttackOption.AttackOption_dependsOnCombatLevels == Client.playerAttackOption && var0.combatLevel > Script.localPlayer.combatLevel) {
+									var7 = 2000;
+								}
+
+								if (Script.localPlayer.team != 0 && var0.team != 0) {
+									if (var0.team == Script.localPlayer.team) {
+										var7 = 2000;
+									} else {
+										var7 = 0;
+									}
+								} else if (Client.playerAttackOption == AttackOption.field1388 && var0.isClanMember()) {
+									var7 = 2000;
+								}
+							} else if (Client.playerOptionsPriorities[var6]) {
+								var7 = 2000;
+							}
+
+							boolean var8 = false;
+							int var9 = Client.playerMenuOpcodes[var6] + var7;
+							UserComparator6.insertMenuItem(Client.playerMenuActions[var6], Decimator.colorStartTag(16777215) + var5, var9, var1, var2, var3, -1, false, var4);
+						}
+					}
+				}
+
+				for (var6 = 0; var6 < Client.menu.menuOptionsCount; ++var6) {
+					if (Client.menu.menuOpcodes[var6] == 23) {
+						Client.menu.menuTargets[var6] = Decimator.colorStartTag(16777215) + var5;
+						break;
+					}
+				}
+
 			}
-		} else {
-			return var3 <= 0.0D ? 0.0D : 1.0D;
 		}
 	}
 }

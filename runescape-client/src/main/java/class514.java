@@ -1,5 +1,5 @@
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("tt")
+@ObfuscatedName("tv")
 public interface class514 extends class513 {
 }

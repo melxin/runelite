@@ -4,26 +4,31 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jg")
+@ObfuscatedName("hl")
 @Implements("Skeleton")
 public class Skeleton extends Node {
-	@ObfuscatedName("ac")
+	@ObfuscatedName("lm")
 	@ObfuscatedGetter(
-		intValue = 1258680517
+		intValue = -1503822345
+	)
+	static int field2034;
+	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = 974602179
 	)
 	@Export("count")
 	int count;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@Export("transformTypes")
 	int[] transformTypes;
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@Export("labels")
 	int[][] labels;
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Ljq;"
+		descriptor = "Lhs;"
 	)
-	class241 field2676;
+	class182 field2035;
 
 	public Skeleton(int var1, byte[] var2) {
 		Buffer var3 = new Buffer(var2);
@@ -46,51 +51,62 @@ public class Skeleton extends Node {
 			}
 		}
 
-		if (var3.offset < var3.array.length) {
+		if (var3.offset * -2066221813 < var3.array.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
-				this.field2676 = new class241(var3, var4);
+				this.field2035 = new class182(var3, var4);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1694021201"
+		garbageValue = "-1046596733"
 	)
-	public int method4899() {
+	public int method4041() {
 		return this.count;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljq;",
-		garbageValue = "-30"
+		descriptor = "(B)Lhs;",
+		garbageValue = "16"
 	)
-	public class241 method4900() {
-		return this.field2676;
+	public class182 method4046() {
+		return this.field2035;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "([BI)[B",
-		garbageValue = "-1680902473"
+		descriptor = "(IB)Lkp;",
+		garbageValue = "-111"
 	)
-	static byte[] method4903(byte[] var0) {
-		int var1 = var0.length;
-		byte[] var2 = new byte[var1];
-		System.arraycopy(var0, 0, var2, 0, var1);
-		return var2;
+	@Export("StructDefinition_getStructDefinition")
+	public static StructComposition StructDefinition_getStructDefinition(int var0) {
+		StructComposition var1 = (StructComposition)StructComposition.StructDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = StructComposition.StructDefinition_archive.takeFile(34, var0);
+			var1 = new StructComposition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
+
+			var1.postDecode();
+			StructComposition.StructDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-44"
+		descriptor = "(I)[Ldg;",
+		garbageValue = "-1240838613"
 	)
-	public static boolean method4902() {
-		return !class335.field3689.isEmpty();
+	static class91[] method4040() {
+		return new class91[]{class91.field1107, class91.field1108, class91.field1110, class91.field1112, class91.field1105};
 	}
 }

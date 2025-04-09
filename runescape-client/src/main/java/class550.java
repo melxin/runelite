@@ -3,74 +3,74 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vv")
+@ObfuscatedName("vs")
 public class class550 extends class510 implements class313 {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lpl;"
+		descriptor = "Lmh;"
 	)
-	final AbstractArchive field5486;
-	@ObfuscatedName("au")
+	final DemotingHashTable field5511;
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lml;"
+		descriptor = "Lph;"
 	)
-	final DemotingHashTable field5483;
-	@ObfuscatedName("ad")
+	final AbstractArchive field5510;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1475261733
+		intValue = -1808972777
 	)
-	final int field5484;
+	final int field5512;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lot;ILqt;Lpl;)V"
+		descriptor = "(Loi;ILqa;Lph;)V"
 	)
 	public class550(StudioGame var1, int var2, Language var3, AbstractArchive var4) {
 		super(var1, var3, var4 != null ? var4.getGroupFileCount(var2) : 0);
-		this.field5483 = new DemotingHashTable(64);
-		this.field5486 = var4;
-		this.field5484 = var2;
+		this.field5511 = new DemotingHashTable(64);
+		this.field5510 = var4;
+		this.field5512 = var2;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ltg;",
-		garbageValue = "945027352"
+		descriptor = "(II)Lts;",
+		garbageValue = "1975982205"
 	)
-	protected class512 vmethod10020(int var1) {
-		synchronized(this.field5483) {
-			class511 var2 = (class511)this.field5483.get((long)var1);
+	protected class512 vmethod10094(int var1) {
+		synchronized(this.field5511) {
+			class511 var2 = (class511)this.field5511.get((long)var1);
 			if (var2 == null) {
-				var2 = this.method10021(var1);
-				this.field5483.method6432(var2, (long)var1);
+				var2 = this.method10105(var1);
+				this.field5511.method6490(var2, (long)var1);
 			}
 
 			return var2;
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(IS)Ltv;",
-		garbageValue = "8656"
+		descriptor = "(II)Ltx;",
+		garbageValue = "65533"
 	)
-	class511 method10021(int var1) {
-		byte[] var2 = this.field5486.takeFile(this.field5484, var1);
+	class511 method10105(int var1) {
+		byte[] var2 = this.field5510.takeFile(this.field5512, var1);
 		class511 var3 = new class511(var1);
 		if (var2 != null) {
-			var3.method9553(new Buffer(var2));
+			var3.method9605(new Buffer(var2));
 		}
 
 		return var3;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "190071571"
+		garbageValue = "943291364"
 	)
-	public void method10019() {
-		synchronized(this.field5483) {
-			this.field5483.clear();
+	public void method10097() {
+		synchronized(this.field5511) {
+			this.field5511.clear();
 		}
 	}
 

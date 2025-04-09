@@ -1,56 +1,84 @@
 import java.io.File;
+import java.io.RandomAccessFile;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fy")
-public class class140 implements class130 {
+@ObfuscatedName("fs")
+public class class140 {
+	@ObfuscatedName("ks")
+	@ObfuscatedSignature(
+		descriptor = "Lpx;"
+	)
+	static Archive field1650;
+
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lpl;"
+		descriptor = "(Ljava/lang/String;B)Ljava/io/File;",
+		garbageValue = "42"
 	)
-	@Export("ItemDefinition_archive")
-	static AbstractArchive ItemDefinition_archive;
-	@ObfuscatedName("ax")
-	public static short[][] field1665;
-	@ObfuscatedName("aw")
-	@Export("osName")
-	static String osName;
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lhs;",
-		garbageValue = "1805384113"
-	)
-	@Export("getParamDefinition")
-	public static ParamComposition getParamDefinition(int var0) {
-		ParamComposition var1 = (ParamComposition)ParamComposition.ParamDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	@Export("getFile")
+	static File getFile(String var0) {
+		if (!FileSystem.FileSystem_hasPermissions) {
+			throw new RuntimeException("");
 		} else {
-			byte[] var2 = ParamComposition.ParamDefinition_archive.takeFile(11, var0);
-			var1 = new ParamComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
+			File var1 = (File)FileSystem.FileSystem_cacheFiles.get(var0);
+			if (var1 != null) {
+				return var1;
+			} else {
+				File var2 = new File(FileSystem.FileSystem_cacheDir, var0);
+				RandomAccessFile var3 = null;
 
-			var1.postDecode();
-			ParamComposition.ParamDefinition_cached.put(var1, (long)var0);
-			return var1;
+				try {
+					File var4 = new File(var2.getParent());
+					if (!var4.exists()) {
+						throw new RuntimeException("");
+					} else {
+						var3 = new RandomAccessFile(var2, "rw");
+						int var5 = var3.read();
+						var3.seek(0L);
+						var3.write(var5);
+						var3.seek(0L);
+						var3.close();
+						FileSystem.FileSystem_cacheFiles.put(var0, var2);
+						return var2;
+					}
+				} catch (Exception var8) {
+					try {
+						if (var3 != null) {
+							var3.close();
+							var3 = null;
+						}
+					} catch (Exception var7) {
+					}
+
+					throw new RuntimeException();
+				}
+			}
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/io/File;B)V",
-		garbageValue = "1"
+		descriptor = "(IIB)I",
+		garbageValue = "3"
 	)
-	static void method3399(File var0) {
-		FileSystem.FileSystem_cacheDir = var0;
-		if (!FileSystem.FileSystem_cacheDir.exists()) {
-			throw new RuntimeException("");
+	public static int method3389(int var0, int var1) {
+		return (int)Math.round(Math.atan2((double)var0, (double)var1) * 2607.5945876176133D) & 16383;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(Lph;II)Z",
+		garbageValue = "864580892"
+	)
+	static boolean method3387(AbstractArchive var0, int var1) {
+		byte[] var2 = var0.takeFileFlat(var1);
+		if (var2 == null) {
+			return false;
 		} else {
-			FileSystem.FileSystem_hasPermissions = true;
+			GrandExchangeEvent.SpriteBuffer_decode(var2);
+			return true;
 		}
 	}
 }

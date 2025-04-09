@@ -4,98 +4,91 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cc")
+@ObfuscatedName("cm")
 @Implements("GraphicsObject")
-public final class GraphicsObject extends Renderable
-{
-	@ObfuscatedName("an")
+public class GraphicsObject extends Renderable {
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -956220971
-	)
-	@Export("loginBoxCenter")
-	static int loginBoxCenter;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -476291279
-	)
-	@Export("id")
-	int id;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = 457140355
+		intValue = 1875664871
 	)
 	@Export("cycleStart")
 	int cycleStart;
-	@ObfuscatedName("au")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1317959927
+		intValue = -2141960109
 	)
 	@Export("plane")
 	int plane;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1719565105
+		intValue = 1713498473
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 324113643
+		intValue = 2090204447
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1317372139
+		intValue = -726395587
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aq")
+	@Export("isFinished")
+	boolean isFinished;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = 1052289895
+	)
+	@Export("id")
+	int id;
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Liw;"
+		descriptor = "Lkm;"
 	)
 	@Export("sequenceDefinition")
 	SequenceDefinition sequenceDefinition;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -1900652113
+		intValue = 1334387567
 	)
 	@Export("frame")
 	int frame;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 119061181
+		intValue = 1440325189
 	)
 	@Export("frameCycle")
 	int frameCycle;
-	@ObfuscatedName("as")
-	@Export("isFinished")
-	boolean isFinished;
 
 	GraphicsObject(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+		this.isFinished = false;
 		this.frame = 0;
 		this.frameCycle = 0;
-		this.isFinished = false;
 		this.id = var1;
 		this.plane = var2;
 		this.x = var3;
 		this.y = var4;
 		this.z = var5;
 		this.cycleStart = var7 + var6;
-		int var8 = class176.SpotAnimationDefinition_get(this.id).sequence;
+		int var8 = ArchiveLoader.SpotAnimationDefinition_get(this.id).sequence;
 		if (var8 != -1) {
 			this.isFinished = false;
-			this.sequenceDefinition = WorldMapData_1.SequenceDefinition_get(var8);
+			this.sequenceDefinition = class91.SequenceDefinition_get(var8);
 		} else {
 			this.isFinished = true;
 		}
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "2133536490"
+		garbageValue = "-1376332092"
 	)
 	@Export("advance")
 	final void advance(int var1) {
@@ -110,28 +103,28 @@ public final class GraphicsObject extends Renderable
 						break;
 					}
 
-					MusicPatchPcmStream.method6807(this.sequenceDefinition, this.frame, this.x, this.y, false);
+					GrandExchangeEvents.method7827(this.sequenceDefinition, this.frame, this.x, this.y, false);
 				}
 			} else {
 				this.frame += var1;
 				if (this.frame >= this.sequenceDefinition.getMayaAnimFrame()) {
 					this.isFinished = true;
 				} else {
-					MusicPatchPcmStream.method6807(this.sequenceDefinition, this.frame, this.x, this.y, false);
+					GrandExchangeEvents.method7827(this.sequenceDefinition, this.frame, this.x, this.y, false);
 				}
 			}
 
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljf;",
-		garbageValue = "-516720946"
+		descriptor = "(I)Lhe;",
+		garbageValue = "-1407261867"
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		SpotAnimationDefinition var1 = class176.SpotAnimationDefinition_get(this.id);
+		SpotAnimationDefinition var1 = ArchiveLoader.SpotAnimationDefinition_get(this.id);
 		Model var2;
 		if (!this.isFinished) {
 			var2 = var1.getModel(this.frame);
@@ -142,12 +135,31 @@ public final class GraphicsObject extends Renderable
 		return var2 == null ? null : var2;
 	}
 
-	@ObfuscatedName("le")
+	@ObfuscatedName("ja")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "79"
+		descriptor = "(Ldj;IIII)I",
+		garbageValue = "1945688569"
 	)
-	static final boolean method2212() {
-		return Client.isMenuOpen;
+	@Export("getTileHeight")
+	static final int getTileHeight(WorldView var0, int var1, int var2, int var3) {
+		int var4 = var1 >> 7;
+		int var5 = var2 >> 7;
+		if (var4 >= 0 && var5 >= 0 && var4 < var0.tileSettings[0].length && var5 < var0.tileSettings[0][0].length) {
+			int var6 = var3;
+			if (var3 < 3 && (var0.tileSettings[1][var4][var5] & 2) == 2) {
+				var6 = var3 + 1;
+			}
+
+			int var7 = var1 & 127;
+			int var8 = var2 & 127;
+			int var9 = var7 * var0.tileHeights[var6][var4 + 1][var5] + var0.tileHeights[var6][var4][var5] * (128 - var7) >> 7;
+			int var10 = var7 * var0.tileHeights[var6][var4 + 1][var5 + 1] + var0.tileHeights[var6][var4][var5 + 1] * (128 - var7) >> 7;
+			return var9 * (128 - var8) + var8 * var10 >> 7;
+		} else {
+			return 0;
+		}
+	}
+
+	public GraphicsObject() {
 	}
 }

@@ -4,108 +4,97 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nx")
+@ObfuscatedName("nr")
 @Implements("MidiRequest")
 public class MidiRequest {
-	@ObfuscatedName("qm")
-	@ObfuscatedGetter(
-		intValue = 2142656309
-	)
-	static int field3815;
-	@ObfuscatedName("tu")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lwg;"
-	)
-	@Export("sceneMinimapSprite")
-	static SpritePixels sceneMinimapSprite;
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lpl;"
+		descriptor = "Lph;"
 	)
 	@Export("musicTrackArchive")
 	public AbstractArchive musicTrackArchive;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1034270059
+		intValue = -652555527
 	)
 	@Export("musicTrackGroupId")
 	public int musicTrackGroupId;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 678027195
+		intValue = -794490939
 	)
 	@Export("musicTrackFileId")
 	public int musicTrackFileId;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1383913311
+		intValue = 1748337339
 	)
 	@Export("musicTrackVolume")
 	public int musicTrackVolume;
-	@ObfuscatedName("ah")
-	public float field3803;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
+	public float field3815;
+	@ObfuscatedName("aq")
 	@Export("musicTrackBoolean")
 	public boolean musicTrackBoolean;
-	@ObfuscatedName("ao")
-	public boolean field3805;
-	@ObfuscatedName("af")
-	public boolean field3799;
+	@ObfuscatedName("av")
+	public boolean field3820;
+	@ObfuscatedName("am")
+	public boolean field3818;
 	@ObfuscatedName("aa")
-	public boolean field3807;
-	@ObfuscatedName("as")
-	boolean field3801;
-	@ObfuscatedName("ae")
+	public boolean field3819;
+	@ObfuscatedName("ap")
+	boolean field3814;
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lmp;"
+		descriptor = "Lmv;"
 	)
 	@Export("midiPcmStream")
 	public MidiPcmStream midiPcmStream;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lbi;"
+		descriptor = "Lbt;"
 	)
-	public SoundCache field3810;
-	@ObfuscatedName("ai")
+	public SoundCache field3822;
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lna;"
+		descriptor = "Lnn;"
 	)
-	public MusicTrack field3811;
+	public MusicTrack field3823;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpl;Ljava/lang/String;Ljava/lang/String;IZ)V"
+		descriptor = "(Lph;Ljava/lang/String;Ljava/lang/String;IZ)V"
 	)
 	public MidiRequest(AbstractArchive var1, String var2, String var3, int var4, boolean var5) {
 		this.musicTrackGroupId = -1;
 		this.musicTrackFileId = -1;
 		this.musicTrackVolume = 0;
-		this.field3803 = 0.0F;
+		this.field3815 = 0.0F;
 		this.musicTrackBoolean = false;
-		this.field3807 = false;
-		this.field3801 = false;
+		this.field3819 = false;
+		this.field3814 = false;
 		this.musicTrackGroupId = var1.getGroupId(var2);
 		this.musicTrackFileId = var1.getFileId(this.musicTrackGroupId, var3);
 		this.playMusicTrack(var1, this.musicTrackGroupId, this.musicTrackFileId, var4, var5);
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpl;IIIZ)V"
+		descriptor = "(Lph;IIIZ)V"
 	)
 	public MidiRequest(AbstractArchive var1, int var2, int var3, int var4, boolean var5) {
 		this.musicTrackGroupId = -1;
 		this.musicTrackFileId = -1;
 		this.musicTrackVolume = 0;
-		this.field3803 = 0.0F;
+		this.field3815 = 0.0F;
 		this.musicTrackBoolean = false;
-		this.field3807 = false;
-		this.field3801 = false;
+		this.field3819 = false;
+		this.field3814 = false;
 		this.playMusicTrack(var1, var2, var3, var4, var5);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lpl;IIIZI)V",
-		garbageValue = "-1361594421"
+		descriptor = "(Lph;IIIZB)V",
+		garbageValue = "-1"
 	)
 	@Export("playMusicTrack")
 	void playMusicTrack(AbstractArchive var1, int var2, int var3, int var4, boolean var5) {
@@ -114,68 +103,5 @@ public class MidiRequest {
 		this.musicTrackFileId = var3;
 		this.musicTrackVolume = var4;
 		this.musicTrackBoolean = var5;
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(ILtu;Lpn;I)V",
-		garbageValue = "-1233859456"
-	)
-	static void method6846(int var0, ArchiveDisk var1, Archive var2) {
-		byte[] var3 = null;
-		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-			for (ArchiveDiskAction var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.last(); var5 != null; var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.previous()) {
-				if (var5.key == (long)var0 && var1 == var5.archiveDisk && var5.type == 0) {
-					var3 = var5.data;
-					break;
-				}
-			}
-		}
-
-		if (var3 != null) {
-			var2.load(var1, var0, var3, true);
-		} else {
-			byte[] var4 = var1.read(var0);
-			var2.load(var1, var0, var4, true);
-		}
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(Lrp;Lrp;I)F",
-		garbageValue = "1793257304"
-	)
-	public static final float method6843(class442 var0, class442 var1) {
-		return var0.method8303(var1);
-	}
-
-	@ObfuscatedName("ii")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "-54"
-	)
-	@Export("setWindowedMode")
-	static void setWindowedMode(int var0) {
-		Client.field738 = 0L;
-		if (var0 >= 2) {
-			Client.isResizable = true;
-		} else {
-			Client.isResizable = false;
-		}
-
-		if (DynamicObject.getWindowedMode() == 1) {
-			class569.client.setMaxCanvasSize(765, 503);
-		} else {
-			class569.client.setMaxCanvasSize(7680, 2160);
-		}
-
-		if (Client.gameState >= 25 && Client.packetWriter != null && Client.packetWriter.isaacCipher != null) {
-			PacketBufferNode var1 = class272.getPacketBufferNode(ClientPacket.EVENT_WINDOW_SETTING, Client.packetWriter.isaacCipher);
-			var1.packetBuffer.writeByte(DynamicObject.getWindowedMode());
-			var1.packetBuffer.writeShort(GameEngine.canvasWidth);
-			var1.packetBuffer.writeShort(SwapSongTask.canvasHeight);
-			Client.packetWriter.addNode(var1);
-		}
-
 	}
 }

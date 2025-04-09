@@ -4,48 +4,42 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lt")
+@ObfuscatedName("lz")
 @Implements("WorldMapIcon_0")
 public class WorldMapIcon_0 extends AbstractWorldMapIcon {
-	@ObfuscatedName("tv")
-	@ObfuscatedSignature(
-		descriptor = "Lbe;"
-	)
-	@Export("pcmStreamMixer")
-	static PcmStreamMixer pcmStreamMixer;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1671019033
+		intValue = 1227794245
 	)
 	@Export("element")
 	final int element;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Llj;"
+		descriptor = "Llw;"
 	)
 	@Export("label")
 	final WorldMapLabel label;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1647289709
+		intValue = -362236807
 	)
 	@Export("subWidth")
 	final int subWidth;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1780618385
+		intValue = 1505045187
 	)
 	@Export("subHeight")
 	final int subHeight;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lnq;Lnq;ILlj;)V"
+		descriptor = "(Lnt;Lnt;ILlw;)V"
 	)
 	WorldMapIcon_0(Coord var1, Coord var2, int var3, WorldMapLabel var4) {
 		super(var1, var2);
 		this.element = var3;
 		this.label = var4;
-		WorldMapElement var5 = Canvas.WorldMapElement_get(this.getElement());
+		WorldMapElement var5 = ArchiveDiskAction.WorldMapElement_get(this.getElement());
 		SpritePixels var6 = var5.getSpriteBool(false);
 		if (var6 != null) {
 			this.subWidth = var6.subWidth;
@@ -57,78 +51,72 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(S)I",
-		garbageValue = "-11538"
+		descriptor = "(I)I",
+		garbageValue = "-1723335551"
 	)
 	@Export("getElement")
 	public int getElement() {
 		return this.element;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)Llj;",
-		garbageValue = "-10265660"
+		descriptor = "(B)Llw;",
+		garbageValue = "115"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
 		return this.label;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-127"
+		descriptor = "(I)I",
+		garbageValue = "747885801"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
 		return this.subWidth;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1221967219"
+		garbageValue = "1535434695"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
 		return this.subHeight;
 	}
 
-	@ObfuscatedName("bs")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(ILdy;ZB)I",
-		garbageValue = "49"
+		descriptor = "(Ljava/lang/String;B)Ljava/lang/String;",
+		garbageValue = "31"
 	)
-	static int method6214(int var0, Script var1, boolean var2) {
-		int var3;
-		if (var0 == 3500) {
-			var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.indexCheck.isValidIndexInRange(var3) ? 1 : 0;
-			return 1;
-		} else if (var0 == 3501) {
-			var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.indexCheck.method5598(var3) ? 1 : 0;
-			return 1;
-		} else if (var0 == 3502) {
-			var3 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++HealthBarConfig.Interpreter_intStackSize - 1] = Client.indexCheck.method5600(var3) ? 1 : 0;
-			return 1;
-		} else {
-			return 2;
-		}
+	public static String method6264(String var0) {
+		return var0 != null && !var0.isEmpty() && var0.charAt(0) != '#' ? var0 : "";
 	}
 
-	@ObfuscatedName("hq")
+	@ObfuscatedName("bp")
 	@ObfuscatedSignature(
-		descriptor = "(Ldm;B)V",
-		garbageValue = "-46"
+		descriptor = "(ILjava/lang/String;I)V",
+		garbageValue = "1402536023"
 	)
-	static void method6208(class94 var0) {
-		if (Client.field545 != var0) {
-			Client.field545 = var0;
-		}
+	static void method6262(int var0, String var1) {
+		Login.Login_loadingText = var1;
+		Login.Login_loadingPercent = var0;
+	}
+
+	@ObfuscatedName("kk")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "1655701041"
+	)
+	static void method6266() {
+		Client.menu.menuOptionsCount = 0;
+		Client.isMenuOpen = false;
 	}
 }

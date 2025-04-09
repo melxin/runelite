@@ -4,51 +4,45 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eb")
+@ObfuscatedName("fw")
 @Implements("AuthenticationScheme")
 public enum AuthenticationScheme implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Leb;"
+		descriptor = "Lfw;"
+	)
+	field1687(3, 0),
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lfw;"
+	)
+	field1683(4, 1),
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lfw;"
+	)
+	field1684(0, 2),
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lfw;"
 	)
 	@Export("USERNAME_PASSWORD_REMEMBER")
-	USERNAME_PASSWORD_REMEMBER(4, 0),
-	@ObfuscatedName("ay")
+	USERNAME_PASSWORD_REMEMBER(2, 3),
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Leb;"
+		descriptor = "Lfw;"
 	)
-	@Export("TOKEN_REMEMBER")
-	TOKEN_REMEMBER(3, 1),
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Leb;"
-	)
-	@Export("USERNAME_PASSWORD")
-	USERNAME_PASSWORD(2, 2),
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Leb;"
-	)
-	@Export("TOKEN")
-	TOKEN(1, 3),
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Leb;"
-	)
-	field1554(0, 4);
+	field1686(1, 4);
 
-	@ObfuscatedName("aa")
-	@Export("ItemDefinition_inMembersWorld")
-	public static boolean ItemDefinition_inMembersWorld;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1668492585
+		intValue = 1426398969
 	)
 	@Export("schemeId")
 	public final int schemeId;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -733125649
+		intValue = 1898117253
 	)
 	@Export("packetId")
 	final int packetId;
@@ -58,10 +52,10 @@ public enum AuthenticationScheme implements Enum {
 		this.packetId = var4;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "32"
+		descriptor = "(I)I",
+		garbageValue = "1746725635"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {

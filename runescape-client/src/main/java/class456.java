@@ -1,125 +1,121 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ra")
+@ObfuscatedName("rl")
 public class class456 {
-	@ObfuscatedName("ao")
-	@Export("SpriteBuffer_spriteHeights")
-	public static int[] SpriteBuffer_spriteHeights;
-	@ObfuscatedName("co")
-	@ObfuscatedGetter(
-		intValue = 637004629
-	)
-	static int field5001;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("kb")
 	@ObfuscatedSignature(
-		descriptor = "Lrn;"
+		descriptor = "Lpx;"
 	)
-	class452 field4999;
-	@ObfuscatedName("ay")
+	static Archive field5014;
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lre;"
+	)
+	class452 field5015;
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -728863639
+		intValue = 674489597
 	)
-	int field4998;
-	@ObfuscatedName("au")
+	int field5019;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -2027456091
+		intValue = -715946205
 	)
-	int field5000;
+	int field5016;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lrn;II)V"
+		descriptor = "(Lre;II)V"
 	)
 	class456(class452 var1, int var2, int var3) {
-		this.field4998 = 0;
-		this.field5000 = 0;
-		this.field4999 = var1;
-		this.field4998 = var2;
-		this.field5000 = var3;
+		this.field5019 = 0;
+		this.field5016 = 0;
+		this.field5015 = var1;
+		this.field5019 = var2;
+		this.field5016 = var3;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1041332992"
+		descriptor = "(B)Ljava/lang/String;",
+		garbageValue = "32"
 	)
-	public String method8803() {
-		if (this.method8805()) {
+	public String method8854() {
+		if (this.method8856()) {
 			return "";
 		} else {
-			StringBuilder var1 = new StringBuilder(this.method8802());
+			StringBuilder var1 = new StringBuilder(this.method8857());
 
-			for (int var2 = this.field4998; var2 < this.field5000; ++var2) {
-				class454 var3 = this.field4999.method8552(var2);
-				var1.append(var3.field4974);
+			for (int var2 = this.field5019; var2 < this.field5016; ++var2) {
+				class454 var3 = this.field5015.method8627(var2);
+				var1.append(var3.field4990);
 			}
 
 			return var1.toString();
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "1868433047"
+		garbageValue = "-59295384"
 	)
-	boolean method8804(int var1) {
-		return this.field4999.method8655() == 2 || this.field4999.method8655() == 1 && (!this.field4999.field4963 || this.field5000 - 1 != var1);
+	boolean method8861(int var1) {
+		return this.field5015.method8622() == 2 || this.field5015.method8622() == 1 && (!this.field5015.field4980 || this.field5016 - 1 != var1);
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1976575165"
+		descriptor = "(B)Z",
+		garbageValue = "57"
 	)
-	public boolean method8805() {
-		return this.field4998 == this.field5000;
+	public boolean method8856() {
+		return this.field5019 == this.field5016;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "785926966"
+		descriptor = "(B)I",
+		garbageValue = "-11"
 	)
-	public int method8802() {
-		return this.field5000 - this.field4998;
+	public int method8857() {
+		return this.field5016 - this.field5019;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Lrh;I)Z",
-		garbageValue = "-1873808834"
+		descriptor = "(Lry;I)Z",
+		garbageValue = "1171236534"
 	)
-	boolean method8806(class454 var1) {
-		if (this.field4999.field4965 == 2) {
+	boolean method8858(class454 var1) {
+		if (this.field5015.field4978 == 2) {
 			return true;
-		} else if (this.field4999.field4965 == 0) {
+		} else if (this.field5015.field4978 == 0) {
 			return false;
 		} else {
-			return this.field4999.method8632() != var1;
+			return this.field5015.method8633() != var1;
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "731102107"
+		descriptor = "(B)I",
+		garbageValue = "68"
 	)
-	int method8824() {
-		if (this.method8805()) {
+	int method8859() {
+		if (this.method8856()) {
 			return 0;
 		} else {
-			class454 var1 = this.field4999.method8552(this.field5000 - 1);
-			if (var1.field4974 == '\n') {
+			class454 var1 = this.field5015.method8627(this.field5016 - 1);
+			if (var1.field4990 == '\n') {
 				return 0;
-			} else if (this.method8806(var1)) {
-				return this.field4999.field4964.advances[42];
+			} else if (this.method8858(var1)) {
+				return this.field5015.field4976.advances[42];
 			} else {
-				int var2 = this.field4999.field4964.advances[var1.field4974];
+				int var2 = this.field5015.field4976.advances[var1.field4990];
 				if (var2 == 0) {
-					return var1.field4974 == '\t' ? this.field4999.field4964.advances[32] * 3 : this.field4999.field4964.advances[32];
+					return var1.field4990 == '\t' ? this.field5015.field4976.advances[32] * 3 : this.field5015.field4976.advances[32];
 				} else {
 					return var2;
 				}
@@ -127,35 +123,26 @@ public class class456 {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)Luv;",
-		garbageValue = "-1176270027"
+		descriptor = "(B)Lug;",
+		garbageValue = "1"
 	)
-	public class541 method8808() {
-		if (this.method8805()) {
+	public class541 method8853() {
+		if (this.method8856()) {
 			return new class541(0, 0);
 		} else {
-			class454 var1 = this.field4999.method8552(this.field5000 - 1);
-			return new class541(var1.field4972 + this.method8824(), var1.field4971);
+			class454 var1 = this.field5015.method8627(this.field5016 - 1);
+			return new class541(var1.field4987 + this.method8859(), var1.field4988);
 		}
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lrh;",
-		garbageValue = "697971714"
+		descriptor = "(IB)Lry;",
+		garbageValue = "51"
 	)
-	public class454 method8821(int var1) {
-		return var1 >= 0 && var1 < this.method8802() ? this.field4999.method8552(this.field4998 + var1) : null;
-	}
-
-	@ObfuscatedName("bt")
-	@ObfuscatedSignature(
-		descriptor = "(ILdy;ZI)I",
-		garbageValue = "-737477347"
-	)
-	static int method8831(int var0, Script var1, boolean var2) {
-		return 2;
+	public class454 method8873(int var1) {
+		return var1 >= 0 && var1 < this.method8857() ? this.field5015.method8627(this.field5019 + var1) : null;
 	}
 }

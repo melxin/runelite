@@ -6,29 +6,41 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lf")
+@ObfuscatedName("lk")
 @Implements("WorldMapAreaData")
 public class WorldMapAreaData extends WorldMapArea {
-	@ObfuscatedName("ak")
-	HashSet field3346;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lrk;"
+	)
+	@Export("ItemDefinition_fontPlain11")
+	static Font ItemDefinition_fontPlain11;
+	@ObfuscatedName("ws")
+	@ObfuscatedSignature(
+		descriptor = "Luu;"
+	)
+	@Export("platformInfo")
+	static PlatformInfo platformInfo;
+	@ObfuscatedName("au")
+	HashSet field3341;
 	@ObfuscatedName("aj")
-	HashSet field3344;
-	@ObfuscatedName("av")
+	HashSet field3342;
+	@ObfuscatedName("al")
 	@Export("iconList")
 	List iconList;
 
 	WorldMapAreaData() {
 	}
 
-	@ObfuscatedName("cn")
+	@ObfuscatedName("cr")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;Lvy;IZB)V",
-		garbageValue = "52"
+		descriptor = "(Lve;Lve;IZI)V",
+		garbageValue = "-2127506204"
 	)
-	void method6378(Buffer var1, Buffer var2, int var3, boolean var4) {
-		this.method5909(var1, var3);
+	void method6433(Buffer var1, Buffer var2, int var3, boolean var4) {
+		this.method5971(var1, var3);
 		int var5 = var2.readUnsignedShort();
-		this.field3346 = new HashSet(var5);
+		this.field3341 = new HashSet(var5);
 
 		int var6;
 		for (var6 = 0; var6 < var5; ++var6) {
@@ -40,11 +52,11 @@ public class WorldMapAreaData extends WorldMapArea {
 				continue;
 			}
 
-			this.field3346.add(var7);
+			this.field3341.add(var7);
 		}
 
 		var6 = var2.readUnsignedShort();
-		this.field3344 = new HashSet(var6);
+		this.field3342 = new HashSet(var6);
 
 		for (int var10 = 0; var10 < var6; ++var10) {
 			WorldMapData_1 var8 = new WorldMapData_1();
@@ -55,16 +67,16 @@ public class WorldMapAreaData extends WorldMapArea {
 				continue;
 			}
 
-			this.field3344.add(var8);
+			this.field3342.add(var8);
 		}
 
 		this.initIconsList(var2, var4);
 	}
 
-	@ObfuscatedName("ci")
+	@ObfuscatedName("cb")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;ZI)V",
-		garbageValue = "-1949347260"
+		descriptor = "(Lve;ZI)V",
+		garbageValue = "-1830303755"
 	)
 	@Export("initIconsList")
 	void initIconsList(Buffer var1, boolean var2) {
@@ -80,5 +92,42 @@ public class WorldMapAreaData extends WorldMapArea {
 			}
 		}
 
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1783177534"
+	)
+	public static void method6436() {
+		HitSplatDefinition.HitSplatDefinition_cached.clear();
+		HitSplatDefinition.HitSplatDefinition_cachedSprites.clear();
+		HitSplatDefinition.HitSplatDefinition_cachedFonts.clear();
+	}
+
+	@ObfuscatedName("hj")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIB)V",
+		garbageValue = "0"
+	)
+	static void method6441(int var0, int var1, int var2, int var3) {
+		PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.field3446, Client.packetWriter.isaacCipher);
+		var4.packetBuffer.writeByte(18);
+		var4.packetBuffer.writeShortAdd(var0 + class509.topLevelWorldView.baseX);
+		var4.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
+		var4.packetBuffer.writeShortAdd(var1 + class509.topLevelWorldView.baseY);
+		var4.packetBuffer.writeByte(var2);
+		var4.packetBuffer.writeByte(var3);
+		var4.packetBuffer.writeShort(Client.camAngleY);
+		var4.packetBuffer.writeByte(57);
+		var4.packetBuffer.writeByte(0);
+		var4.packetBuffer.writeByte(0);
+		var4.packetBuffer.writeByte(89);
+		var4.packetBuffer.writeShort(Script.localPlayer.x);
+		var4.packetBuffer.writeShort(Script.localPlayer.y);
+		var4.packetBuffer.writeByte(63);
+		Client.packetWriter.addNode(var4);
+		Client.destinationX = var0;
+		Client.destinationY = var1;
 	}
 }

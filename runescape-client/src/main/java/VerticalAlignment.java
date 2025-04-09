@@ -4,35 +4,38 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hh")
+@ObfuscatedName("jq")
 @Implements("VerticalAlignment")
 public enum VerticalAlignment implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lhh;"
+		descriptor = "Ljq;"
 	)
-	field2090(2, 0),
-	@ObfuscatedName("ay")
+	field2750(1, 0),
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lhh;"
+		descriptor = "Ljq;"
 	)
 	@Export("VerticalAlignment_centered")
-	VerticalAlignment_centered(0, 1),
-	@ObfuscatedName("au")
+	VerticalAlignment_centered(2, 1),
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lhh;"
+		descriptor = "Ljq;"
 	)
-	field2086(1, 2);
+	field2752(0, 2);
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ap")
+	@Export("Interpreter_intLocals")
+	static int[] Interpreter_intLocals;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1276552817
+		intValue = -2015156517
 	)
 	@Export("value")
 	public final int value;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1985848733
+		intValue = -871672953
 	)
 	@Export("id")
 	final int id;
@@ -42,13 +45,32 @@ public enum VerticalAlignment implements Enum {
 		this.id = var4;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "32"
+		descriptor = "(I)I",
+		garbageValue = "1746725635"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "1"
+	)
+	public static int method5222(int var0) {
+		return class333.field3678[var0];
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lcu;",
+		garbageValue = "1603378894"
+	)
+	@Export("Messages_getMessage")
+	static Message Messages_getMessage(int var0) {
+		return (Message)Messages.Messages_hashTable.get((long)var0);
 	}
 }

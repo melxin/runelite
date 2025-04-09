@@ -4,91 +4,61 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cf")
+@ObfuscatedName("cv")
 @Implements("ScriptFrame")
 public class ScriptFrame {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Ldy;"
+		descriptor = "Ldb;"
 	)
-	@Export("script")
-	Script script;
-	@ObfuscatedName("ay")
+	Script field448;
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 121806885
+		intValue = 187401251
 	)
-	@Export("pc")
-	int pc;
-	@ObfuscatedName("au")
+	int field449;
+	@ObfuscatedName("ae")
 	@Export("intLocals")
 	int[] intLocals;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@Export("stringLocals")
 	String[] stringLocals;
 
 	ScriptFrame() {
-		this.pc = -1;
+		this.field449 = -1;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ao")
+	public static int method1191(int var0, double var1) {
+		double var3 = (double)(var0 >> 16 & 255) / 256.0D;
+		double var5 = (double)(var0 >> 8 & 255) / 256.0D;
+		double var7 = (double)(var0 & 255) / 256.0D;
+		var3 = Math.pow(var3, var1);
+		var5 = Math.pow(var5, var1);
+		var7 = Math.pow(var7, var1);
+		int var9 = (int)(var3 * 256.0D);
+		int var10 = (int)(var5 * 256.0D);
+		int var11 = (int)(256.0D * var7);
+		return var11 + (var10 << 8) + (var9 << 16) + -16777216;
+	}
+
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
-		garbageValue = "-817613244"
+		descriptor = "(Lph;Lph;ZI)V",
+		garbageValue = "-1284364629"
 	)
-	@Export("addChatMessage")
-	static void addChatMessage(int var0, String var1, String var2, String var3) {
-		ChatChannel var4 = (ChatChannel)Messages.Messages_channels.get(var0);
-		if (var4 == null) {
-			var4 = new ChatChannel();
-			Messages.Messages_channels.put(var0, var4);
-		}
-
-		Message var5 = var4.addMessage(var0, var1, var2, var3);
-		Messages.Messages_hashTable.put(var5, (long)var5.count);
-		Messages.Messages_queue.add(var5);
-		Client.chatCycle = Client.cycleCntr;
+	public static void method1192(AbstractArchive var0, AbstractArchive var1, boolean var2) {
+		ObjectComposition.ObjectDefinition_archive = var0;
+		class154.ObjectDefinition_modelsArchive = var1;
+		ObjectComposition.ObjectDefinition_isLowDetail = var2;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("oi")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;I)V",
-		garbageValue = "-869643289"
+		descriptor = "(ZI)V",
+		garbageValue = "-201478541"
 	)
-	static void method1176(int var0, String var1) {
-		Login.Login_loadingText = var1;
-		Login.Login_loadingPercent = var0;
-	}
-
-	@ObfuscatedName("ch")
-	@ObfuscatedSignature(
-		descriptor = "(ILdy;ZI)I",
-		garbageValue = "689864395"
-	)
-	static int method1175(int var0, Script var1, boolean var2) {
-		return 2;
-	}
-
-	@ObfuscatedName("na")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "862570306"
-	)
-	static final void method1178(int var0) {
-		var0 = Math.max(Math.min(var0, 100), 0);
-		var0 = 100 - var0;
-		float var1 = (float)var0 / 200.0F + 0.5F;
-		method1177((double)var1);
-	}
-
-	@ObfuscatedName("nd")
-	static final void method1177(double var0) {
-		Rasterizer3D.buildPalette(var0);
-		((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness(var0);
-		if (class541.worldMap != null) {
-			class541.worldMap.method9736();
-		}
-
-		Actor.method2618();
-		AbstractWorldMapIcon.clientPreferences.updateBrightness(var0);
+	static void method1190(boolean var0) {
+		Client.leftClickOpensMenu = var0;
 	}
 }

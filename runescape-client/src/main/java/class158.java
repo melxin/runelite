@@ -1,68 +1,54 @@
-import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gp")
-public class class158 extends class149 {
-	@ObfuscatedName("kx")
-	@ObfuscatedSignature(
-		descriptor = "Lwg;"
+@ObfuscatedName("gh")
+public class class158 extends class148 {
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = -758358327
 	)
-	@Export("redHintArrowSprite")
-	static SpritePixels redHintArrowSprite;
-	@ObfuscatedName("ab")
-	String field1777;
+	int field1772;
+	@ObfuscatedName("an")
+	String field1770;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfv;"
+		descriptor = "Lfd;"
 	)
-	final class152 this$0;
+	final class151 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfv;)V"
+		descriptor = "(Lfd;)V"
 	)
-	class158(class152 var1) {
+	class158(class151 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;B)V",
-		garbageValue = "25"
+		descriptor = "(Lve;B)V",
+		garbageValue = "53"
 	)
-	void vmethod3702(Buffer var1) {
-		this.field1777 = var1.readStringCp1252NullTerminated();
-		var1.readInt();
+	void vmethod3749(Buffer var1) {
+		this.field1772 = var1.readInt();
+		this.field1770 = var1.readStringCp1252NullTerminated();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lgg;I)V",
-		garbageValue = "2011970201"
+		descriptor = "(Lgw;I)V",
+		garbageValue = "1984465176"
 	)
-	void vmethod3705(ClanSettings var1) {
-		var1.name = this.field1777;
+	void vmethod3750(ClanSettings var1) {
+		var1.method3604(this.field1772, this.field1770);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "-22"
+		descriptor = "(I)V",
+		garbageValue = "574580513"
 	)
-	public static int method3538(int var0, int var1) {
-		int var2;
-		for (var2 = 1; var1 > 1; var1 >>= 1) {
-			if ((var1 & 1) != 0) {
-				var2 = var0 * var2;
-			}
-
-			var0 *= var0;
-		}
-
-		if (var1 == 1) {
-			return var0 * var2;
-		} else {
-			return var2;
-		}
+	public static void method3553() {
+		VarpDefinition.VarpDefinition_cached.clear();
 	}
 }

@@ -4,36 +4,36 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ku")
+@ObfuscatedName("kz")
 @Implements("WorldEntityCoord")
 public class WorldEntityCoord {
-	@ObfuscatedName("di")
-	@ObfuscatedSignature(
-		descriptor = "Lws;"
-	)
-	@Export("worldSelectRightSprite")
-	static IndexedSprite worldSelectRightSprite;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
+	@Export("Tiles_overlays")
+	static short[][][] Tiles_overlays;
+	@ObfuscatedName("ay")
+	@Export("ByteArrayPool_alternativeSizes")
+	static int[] ByteArrayPool_alternativeSizes;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 986557265
+		intValue = 72054689
 	)
 	@Export("currentRotationAngle")
 	int currentRotationAngle;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -589896517
+		intValue = -1828580065
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 697492007
+		intValue = -1101149553
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -405580393
+		intValue = 1453329045
 	)
 	@Export("z")
 	int z;
@@ -45,112 +45,112 @@ public class WorldEntityCoord {
 		this.z = 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "19"
+		descriptor = "(I)I",
+		garbageValue = "1522803016"
 	)
 	@Export("getX")
 	public int getX() {
 		return this.x;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1349987698"
+		garbageValue = "1376350042"
 	)
 	@Export("getZ")
 	public int getZ() {
 		return this.z;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1172449722"
+		garbageValue = "-1135284845"
 	)
 	@Export("getY")
 	public int getY() {
 		return this.y;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2020545739"
+		garbageValue = "1853949333"
 	)
 	@Export("getTileX")
 	public int getTileX() {
 		return this.x >> 7;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "703857090"
+		descriptor = "(B)I",
+		garbageValue = "-74"
 	)
 	@Export("getTileY")
 	public int getTileY() {
 		return this.y >> 7;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "475407581"
+		garbageValue = "367687359"
 	)
 	@Export("getCurrentRotationAngle")
 	public int getCurrentRotationAngle() {
 		return this.currentRotationAngle;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lku;I)V",
-		garbageValue = "-1693557961"
-	)
-	public void method5747(WorldEntityCoord var1) {
-		this.currentRotationAngle = var1.currentRotationAngle;
-		this.x = var1.x;
-		this.z = var1.z;
-		this.y = var1.y;
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-2013492847"
-	)
-	public void method5748(int var1, int var2) {
-		this.x = var1;
-		this.y = var2;
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "-19"
+		descriptor = "(IS)V",
+		garbageValue = "23157"
 	)
 	@Export("setCurrentRotationAngle")
 	public void setCurrentRotationAngle(int var1) {
 		this.currentRotationAngle = var1 & 2047;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(Lkz;I)V",
+		garbageValue = "-1018986386"
+	)
+	public void method5807(WorldEntityCoord var1) {
+		this.currentRotationAngle = var1.currentRotationAngle;
+		this.x = var1.x;
+		this.z = var1.z;
+		this.y = var1.y;
+	}
+
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)V",
+		garbageValue = "-126"
+	)
+	public void method5815(int var1, int var2) {
+		this.x = var1;
+		this.y = var2;
+	}
+
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "2042852794"
+		garbageValue = "-1157323083"
 	)
 	@Export("setZ")
 	public void setZ(int var1) {
 		this.z = var1;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "-1185400996"
+		garbageValue = "-1172637217"
 	)
 	@Export("setDirection")
 	public void setDirection(int var1, int var2) {
@@ -158,41 +158,39 @@ public class WorldEntityCoord {
 		this.y += var2;
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(IIIII)V",
-		garbageValue = "1383151892"
+		garbageValue = "-2021511856"
 	)
-	public void method5752(int var1, int var2, int var3, int var4) {
+	public void method5839(int var1, int var2, int var3, int var4) {
 		this.x += var1;
 		this.z += var2;
 		this.y += var3;
 		this.setCurrentRotationAngle(var4 + this.currentRotationAngle);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "1191339749"
+		descriptor = "([F[IS)V",
+		garbageValue = "255"
 	)
-	@Export("changeWorldSelectSorting")
-	static void changeWorldSelectSorting(int var0, int var1) {
-		int[] var2 = new int[4];
-		int[] var3 = new int[4];
-		var2[0] = var0;
-		var3[0] = var1;
-		int var4 = 1;
+	public static void method5845(float[] var0, int[] var1) {
+		World.method1875(var0, var1, 0, var0.length - 1);
+	}
 
-		for (int var5 = 0; var5 < 4; ++var5) {
-			if (World.World_sortOption1[var5] != var0) {
-				var2[var4] = World.World_sortOption1[var5];
-				var3[var4] = World.World_sortOption2[var5];
-				++var4;
-			}
+	@ObfuscatedName("of")
+	@ObfuscatedSignature(
+		descriptor = "(Lnh;II)Ljava/lang/String;",
+		garbageValue = "312779251"
+	)
+	static String method5844(Widget var0, int var1) {
+		int var3 = class31.getWidgetFlags(var0);
+		boolean var2 = (var3 >> var1 + 1 & 1) != 0;
+		if (!var2 && var0.onOp == null) {
+			return null;
+		} else {
+			return var0.actions != null && var0.actions.length > var1 && var0.actions[var1] != null && !var0.actions[var1].trim().isEmpty() ? var0.actions[var1] : null;
 		}
-
-		World.World_sortOption1 = var2;
-		World.World_sortOption2 = var3;
-		WorldMapEvent.sortWorlds(GZipDecompressor.World_worlds, 0, GZipDecompressor.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
 	}
 }

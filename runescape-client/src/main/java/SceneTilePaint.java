@@ -4,50 +4,56 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jh")
+@ObfuscatedName("hp")
 @Implements("SceneTilePaint")
 public final class SceneTilePaint {
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lws;"
-	)
-	static IndexedSprite field2978;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("mw")
 	@ObfuscatedGetter(
-		intValue = -874543525
+		intValue = -1338435615
+	)
+	@Export("cameraZ")
+	static int cameraZ;
+	@ObfuscatedName("vi")
+	@ObfuscatedGetter(
+		intValue = -430705209
+	)
+	static int field2331;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = -401608449
 	)
 	@Export("swColor")
 	int swColor;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 191749339
+		intValue = 1204512953
 	)
 	@Export("seColor")
 	int seColor;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -171580963
+		intValue = -2008812151
 	)
 	@Export("neColor")
 	int neColor;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 424070781
+		intValue = 1001865991
 	)
 	@Export("nwColor")
 	int nwColor;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -914427957
+		intValue = 1784135893
 	)
 	@Export("texture")
 	int texture;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@Export("isFlat")
 	boolean isFlat;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -810840195
+		intValue = -179143249
 	)
 	@Export("rgb")
 	int rgb;
@@ -61,5 +67,19 @@ public final class SceneTilePaint {
 		this.texture = var5;
 		this.rgb = var6;
 		this.isFlat = var7;
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(Lqf;ILjava/lang/String;S)Ljava/lang/String;",
+		garbageValue = "-16257"
+	)
+	static String method4586(IterableNodeHashTable var0, int var1, String var2) {
+		if (var0 == null) {
+			return var2;
+		} else {
+			ObjectNode var3 = (ObjectNode)var0.get((long)var1);
+			return var3 == null ? var2 : (String)var3.obj;
+		}
 	}
 }

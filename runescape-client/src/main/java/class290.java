@@ -1,206 +1,214 @@
+import java.io.DataInputStream;
+import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lg")
+@ObfuscatedName("ly")
 public class class290 implements WorldMapSection {
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -170651379
-	)
-	int field3238;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = 1857428401
-	)
-	int field3232;
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = 1410355269
-	)
-	int field3231;
-	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = 1116388347
-	)
-	int field3235;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = 2074557753
-	)
-	int field3233;
-	@ObfuscatedName("ac")
-	@ObfuscatedGetter(
-		intValue = -1951754291
-	)
-	int field3236;
 	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -990682481
-	)
-	int field3237;
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = 875678329
-	)
-	int field3234;
-	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = -1818571029
+		intValue = 955485295
 	)
 	int field3239;
+	@ObfuscatedName("an")
+	@ObfuscatedGetter(
+		intValue = 1110007873
+	)
+	int field3235;
+	@ObfuscatedName("ae")
+	@ObfuscatedGetter(
+		intValue = 381258643
+	)
+	int field3243;
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		intValue = -572693509
+	)
+	int field3236;
 	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1898724939
+		intValue = -990644791
+	)
+	int field3238;
+	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = -1636123673
+	)
+	int field3237;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -1748152763
 	)
 	int field3240;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = -1103385191
+	)
+	int field3241;
+	@ObfuscatedName("aa")
+	@ObfuscatedGetter(
+		intValue = -1908524915
+	)
+	int field3242;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = 881307469
+	)
+	int field3234;
 
 	class290() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lly;B)V",
-		garbageValue = "-127"
+		descriptor = "(Lli;B)V",
+		garbageValue = "121"
 	)
 	@Export("expandBounds")
 	public void expandBounds(WorldMapArea var1) {
-		if (var1.regionLowX > this.field3233) {
-			var1.regionLowX = this.field3233;
+		if (var1.regionLowX > this.field3238) {
+			var1.regionLowX = this.field3238;
 		}
 
-		if (var1.regionHighX < this.field3233) {
-			var1.regionHighX = this.field3233;
+		if (var1.regionHighX < this.field3238) {
+			var1.regionHighX = this.field3238;
 		}
 
-		if (var1.regionLowY > this.field3236) {
-			var1.regionLowY = this.field3236;
+		if (var1.regionLowY > this.field3237) {
+			var1.regionLowY = this.field3237;
 		}
 
-		if (var1.regionHighY < this.field3236) {
-			var1.regionHighY = this.field3236;
+		if (var1.regionHighY < this.field3237) {
+			var1.regionHighY = this.field3237;
 		}
 
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)Z",
-		garbageValue = "2003842246"
+		descriptor = "(IIIB)Z",
+		garbageValue = "51"
 	)
 	@Export("containsCoord")
 	public boolean containsCoord(int var1, int var2, int var3) {
-		if (var1 >= this.field3238 && var1 < this.field3238 + this.field3232) {
-			return var2 >= (this.field3231 << 6) + (this.field3237 << 3) && var2 <= (this.field3231 << 6) + (this.field3237 << 3) + 7 && var3 >= (this.field3235 << 6) + (this.field3234 << 3) && var3 <= (this.field3235 << 6) + (this.field3234 << 3) + 7;
+		if (var1 >= this.field3239 && var1 < this.field3235 + this.field3239) {
+			return var2 >= (this.field3243 << 6) + (this.field3240 << 3) && var2 <= (this.field3243 << 6) + (this.field3240 << 3) + 7 && var3 >= (this.field3236 << 6) + (this.field3241 << 3) && var3 <= (this.field3236 << 6) + (this.field3241 << 3) + 7;
 		} else {
 			return false;
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(III)Z",
-		garbageValue = "-1047006974"
+		garbageValue = "1479617515"
 	)
 	@Export("containsPosition")
 	public boolean containsPosition(int var1, int var2) {
-		return var1 >= (this.field3233 << 6) + (this.field3239 << 3) && var1 <= (this.field3233 << 6) + (this.field3239 << 3) + 7 && var2 >= (this.field3236 << 6) + (this.field3240 << 3) && var2 <= (this.field3236 << 6) + (this.field3240 << 3) + 7;
+		return var1 >= (this.field3238 << 6) + (this.field3242 << 3) && var1 <= (this.field3238 << 6) + (this.field3242 << 3) + 7 && var2 >= (this.field3237 << 6) + (this.field3234 << 3) && var2 <= (this.field3237 << 6) + (this.field3234 << 3) + 7;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)[I",
-		garbageValue = "16776960"
+		garbageValue = "1854006794"
 	)
 	@Export("getBorderTileLengths")
 	public int[] getBorderTileLengths(int var1, int var2, int var3) {
 		if (!this.containsCoord(var1, var2, var3)) {
 			return null;
 		} else {
-			int[] var4 = new int[]{this.field3233 * 64 - this.field3231 * 64 + var2 + (this.field3239 * 8 - this.field3237 * 8), var3 + (this.field3236 * 64 - this.field3235 * 64) + (this.field3240 * 8 - this.field3234 * 8)};
+			int[] var4 = new int[]{this.field3238 * 64 - this.field3243 * 64 + var2 + (this.field3242 * 8 - this.field3240 * 8), var3 + (this.field3237 * 64 - this.field3236 * 64) + (this.field3234 * 8 - this.field3241 * 8)};
 			return var4;
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lnq;",
-		garbageValue = "-1362839714"
+		descriptor = "(III)Lnt;",
+		garbageValue = "1321767121"
 	)
 	@Export("coord")
 	public Coord coord(int var1, int var2) {
 		if (!this.containsPosition(var1, var2)) {
 			return null;
 		} else {
-			int var3 = this.field3231 * 64 - this.field3233 * 64 + (this.field3237 * 8 - this.field3239 * 8) + var1;
-			int var4 = this.field3235 * 64 - this.field3236 * 64 + var2 + (this.field3234 * 8 - this.field3240 * 8);
-			return new Coord(this.field3238, var3, var4);
+			int var3 = this.field3243 * 64 - this.field3238 * 64 + (this.field3240 * 8 - this.field3242 * 8) + var1;
+			int var4 = this.field3236 * 64 - this.field3237 * 64 + var2 + (this.field3241 * 8 - this.field3234 * 8);
+			return new Coord(this.field3239, var3, var4);
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;I)V",
-		garbageValue = "-2010052210"
+		descriptor = "(Lve;I)V",
+		garbageValue = "1096753286"
 	)
 	@Export("read")
 	public void read(Buffer var1) {
-		this.field3238 = var1.readUnsignedByte();
-		this.field3232 = var1.readUnsignedByte();
-		this.field3231 = var1.readUnsignedShort();
-		this.field3237 = var1.readUnsignedByte();
-		this.field3235 = var1.readUnsignedShort();
-		this.field3234 = var1.readUnsignedByte();
-		this.field3233 = var1.readUnsignedShort();
 		this.field3239 = var1.readUnsignedByte();
-		this.field3236 = var1.readUnsignedShort();
+		this.field3235 = var1.readUnsignedByte();
+		this.field3243 = var1.readUnsignedShort();
 		this.field3240 = var1.readUnsignedByte();
-		this.method6179();
+		this.field3236 = var1.readUnsignedShort();
+		this.field3241 = var1.readUnsignedByte();
+		this.field3238 = var1.readUnsignedShort();
+		this.field3242 = var1.readUnsignedByte();
+		this.field3237 = var1.readUnsignedShort();
+		this.field3234 = var1.readUnsignedByte();
+		this.method6227();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
 		garbageValue = "0"
 	)
-	void method6179() {
+	void method6227() {
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "([F[IIII)V",
-		garbageValue = "856724468"
+		descriptor = "(Ljava/lang/String;Ljava/lang/Throwable;I)V",
+		garbageValue = "-1164068852"
 	)
-	public static void method6197(float[] var0, int[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			float var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			int var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
-
-			for (int var8 = var2; var8 < var3; ++var8) {
-				if (var0[var8] < var6) {
-					float var9 = var0[var8];
-					var0[var8] = var0[var5];
-					var0[var5] = var9;
-					int var10 = var1[var8];
-					var1[var8] = var1[var5];
-					var1[var5++] = var10;
+	@Export("RunException_sendStackTrace")
+	public static void RunException_sendStackTrace(String var0, Throwable var1) {
+		if (var1 != null) {
+			var1.printStackTrace();
+		} else {
+			try {
+				String var2 = "";
+				if (var1 != null) {
+					var2 = EnumComposition.method5160(var1);
 				}
+
+				if (var0 != null) {
+					if (var1 != null) {
+						var2 = var2 + " | ";
+					}
+
+					var2 = var2 + var0;
+				}
+
+				System.out.println("Error: " + var2);
+				var2 = var2.replace(':', '.');
+				var2 = var2.replace('@', '_');
+				var2 = var2.replace('&', '_');
+				var2 = var2.replace('#', '_');
+				if (RunException.RunException_applet == null) {
+					return;
+				}
+
+				URL var3 = new URL(RunException.RunException_applet.getCodeBase(), "clienterror.ws?cv=" + class493.RunException_revision + "&cs=" + RunException.field5761 + "&u=" + RunException.field5759 + "&v1=" + TaskHandler.javaVendor + "&v2=" + class447.javaVersion + "&ct=" + RunException.field5762 + "&e=" + var2);
+				DataInputStream var4 = new DataInputStream(var3.openStream());
+				var4.read();
+				var4.close();
+			} catch (Exception var5) {
 			}
 
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			method6197(var0, var1, var2, var5 - 1);
-			method6197(var0, var1, var5 + 1, var3);
 		}
-
 	}
 }

@@ -3,46 +3,46 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ok")
+@ObfuscatedName("oe")
 public enum class388 implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Loe;"
 	)
-	field4565(0),
-	@ObfuscatedName("ay")
+	field4592(0),
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Loe;"
 	)
-	field4566(1),
-	@ObfuscatedName("au")
+	field4587(1),
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Loe;"
 	)
-	field4567(2),
-	@ObfuscatedName("ad")
+	field4588(2),
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Loe;"
 	)
-	field4569(3);
+	field4586(3);
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1147894731
+		intValue = 1443041759
 	)
-	public final int field4568;
+	public final int field4590;
 
 	class388(int var3) {
-		this.field4568 = var3;
+		this.field4590 = var3;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "32"
+		descriptor = "(I)I",
+		garbageValue = "1746725635"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field4568;
+		return this.field4590;
 	}
 }

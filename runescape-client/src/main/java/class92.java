@@ -1,302 +1,194 @@
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("db")
+@ObfuscatedName("de")
 public enum class92 implements Enum {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1126(0, -1),
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1124(1, 2),
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1125(2, 3),
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1130(3, 4),
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1127(4, 5),
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Ldb;"
-	)
-	field1131(5, 6);
-
 	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = 653668643
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
 	)
-	final int field1129;
+	field1123(0, -1),
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
+	)
+	field1114(1, 2),
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
+	)
+	field1119(2, 3),
 	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = -1129291547
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
 	)
-	final int field1123;
+	field1116(3, 4),
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
+	)
+	field1117(4, 5),
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
+	)
+	field1113(5, 6),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lde;"
+	)
+	field1115(6, 21);
+
+	@ObfuscatedName("hh")
+	@ObfuscatedSignature(
+		descriptor = "Lgb;"
+	)
+	@Export("guestClanChannel")
+	static ClanChannel guestClanChannel;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = -807320721
+	)
+	final int field1118;
+	@ObfuscatedName("aa")
+	@ObfuscatedGetter(
+		intValue = 1542864681
+	)
+	final int field1121;
 
 	class92(int var3, int var4) {
-		this.field1129 = var3;
-		this.field1123 = var4;
+		this.field1118 = var3;
+		this.field1121 = var4;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "32"
+		descriptor = "(I)I",
+		garbageValue = "1746725635"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1123;
+		return this.field1121;
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(I)[Lkx;",
+		garbageValue = "234297115"
+	)
+	static class272[] method2499() {
+		return new class272[]{class272.field3101, class272.field3096, class272.field3095, class272.field3092, class272.field3091, class272.field3103, class272.field3090};
 	}
 
 	@ObfuscatedName("ac")
-	static boolean method2465(long var0) {
-		return (int)(var0 >>> 17 & 1L) == 1;
-	}
-
-	@ObfuscatedName("im")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "287103962"
+		garbageValue = "1492538263"
 	)
-	static final void method2467() {
-		int var0;
-		int var1;
-		int var2;
-		int var3;
-		int var4;
-		int var5;
-		if (Client.oculusOrbState == 0) {
-			WorldView var11 = Client.worldViewManager.getWorldView(Client.field645);
-			if (var11 == null) {
-				var11 = class200.topLevelWorldView;
-			}
-
-			Object var12 = null;
-			switch(SoundCache.field311.field4173) {
-			case 0:
-				var12 = (Entity)var11.players.get((long)Client.field646);
-				break;
-			case 1:
-				var12 = (Entity)var11.npcs.get((long)Client.field646);
-				break;
-			case 2:
-				var12 = (Entity)var11.worldEntities.get((long)Client.field646);
-			}
-
-			if (var12 == null) {
-				var12 = class132.localPlayer;
-			}
-
-			Client.field647 = ((Entity)var12).getX();
-			Client.field532 = ((Entity)var12).getY();
-			if (var11 != class200.topLevelWorldView) {
-				class442 var13 = class162.method3620(var11, ((Entity)var12).getX(), ((Entity)var12).getY());
-				Client.field647 = (int)var13.field4898;
-				Client.field532 = (int)var13.field4900;
-				var13.method8341();
-			}
-
-			var2 = ((Entity)var12).getPlane();
-			if (RestClientThreadFactory.oculusOrbFocalPointX - Client.field647 >= -500 && RestClientThreadFactory.oculusOrbFocalPointX - Client.field647 <= 500 && class173.oculusOrbFocalPointY - Client.field532 >= -500 && class173.oculusOrbFocalPointY - Client.field532 <= 500) {
-				if (RestClientThreadFactory.oculusOrbFocalPointX != Client.field647) {
-					RestClientThreadFactory.oculusOrbFocalPointX += (Client.field647 - RestClientThreadFactory.oculusOrbFocalPointX) / 16;
-				}
-
-				if (Client.field532 != class173.oculusOrbFocalPointY) {
-					class173.oculusOrbFocalPointY += (Client.field532 - class173.oculusOrbFocalPointY) / 16;
-				}
-			} else {
-				RestClientThreadFactory.oculusOrbFocalPointX = Client.field647;
-				class173.oculusOrbFocalPointY = Client.field532;
-			}
-
-			var3 = RestClientThreadFactory.oculusOrbFocalPointX >> 7;
-			var4 = class173.oculusOrbFocalPointY >> 7;
-			var5 = DevicePcmPlayerProvider.getTileHeight(class200.topLevelWorldView, RestClientThreadFactory.oculusOrbFocalPointX, class173.oculusOrbFocalPointY, var2);
-			int var6 = 0;
-			int var7;
-			if (var3 > 3 && var4 > 3 && var3 < 100 && var4 < 100) {
-				for (var7 = var3 - 4; var7 <= var3 + 4; ++var7) {
-					for (int var8 = var4 - 4; var8 <= var4 + 4; ++var8) {
-						int var9 = var2;
-						if (var2 < 3 && (class200.topLevelWorldView.tileSettings[1][var7][var8] & 2) == 2) {
-							var9 = var2 + 1;
-						}
-
-						int var10 = var5 - class200.topLevelWorldView.tileHeights[var9][var7][var8];
-						if (var10 > var6) {
-							var6 = var10;
-						}
-					}
-				}
-			}
-
-			var7 = var6 * 192;
-			if (var7 > 98048) {
-				var7 = 98048;
-			}
-
-			if (var7 < 32768) {
-				var7 = 32768;
-			}
-
-			if (var7 > Client.field617) {
-				Client.field617 += (var7 - Client.field617) / 24;
-			} else if (var7 < Client.field617) {
-				Client.field617 += (var7 - Client.field617) / 80;
-			}
-
-			Client.field648 = DevicePcmPlayerProvider.getTileHeight(class200.topLevelWorldView, Client.field647, Client.field532, var2);
-			class274.oculusOrbFocalPointZ = Client.field648 - Client.camFollowHeight;
-		} else if (Client.oculusOrbState == 1) {
-			if (Client.field614 && class132.localPlayer != null) {
-				var0 = class132.localPlayer.pathX[0];
-				var1 = class132.localPlayer.pathY[0];
-				if (var0 >= 0 && 104 > var0 && var1 >= 0 && 104 > var1) {
-					RestClientThreadFactory.oculusOrbFocalPointX = class132.localPlayer.x;
-					var2 = DevicePcmPlayerProvider.getTileHeight(class200.topLevelWorldView, class132.localPlayer.x, class132.localPlayer.y, class200.topLevelWorldView.plane) - Client.camFollowHeight;
-					if (var2 < class274.oculusOrbFocalPointZ) {
-						class274.oculusOrbFocalPointZ = var2;
-					}
-
-					class173.oculusOrbFocalPointY = class132.localPlayer.y;
-					Client.field614 = false;
-				}
-			}
-
-			short var14 = -1;
-			if (Client.indexCheck.isValidIndexInRange(33)) {
-				var14 = 0;
-			} else if (Client.indexCheck.isValidIndexInRange(49)) {
-				var14 = 1024;
-			}
-
-			if (Client.indexCheck.isValidIndexInRange(48)) {
-				if (var14 == 0) {
-					var14 = 1792;
-				} else if (var14 == 1024) {
-					var14 = 1280;
-				} else {
-					var14 = 1536;
-				}
-			} else if (Client.indexCheck.isValidIndexInRange(50)) {
-				if (var14 == 0) {
-					var14 = 256;
-				} else if (var14 == 1024) {
-					var14 = 768;
-				} else {
-					var14 = 512;
-				}
-			}
-
-			byte var15 = 0;
-			if (Client.indexCheck.isValidIndexInRange(35)) {
-				var15 = -1;
-			} else if (Client.indexCheck.isValidIndexInRange(51)) {
-				var15 = 1;
-			}
-
-			var2 = 0;
-			if (var14 >= 0 || var15 != 0) {
-				var2 = Client.indexCheck.isValidIndexInRange(81) ? Client.oculusOrbSlowedSpeed : Client.oculusOrbNormalSpeed;
-				var2 *= 16;
-				Client.field609 = var14;
-				Client.field610 = var15;
-			}
-
-			if (Client.field663 < var2) {
-				Client.field663 += var2 / 8;
-				if (Client.field663 > var2) {
-					Client.field663 = var2;
-				}
-			} else if (Client.field663 > var2) {
-				Client.field663 = Client.field663 * 9 / 10;
-			}
-
-			if (Client.field663 > 0) {
-				var3 = Client.field663 / 16;
-				if (Client.field609 >= 0) {
-					var0 = Client.field609 - FloorDecoration.cameraYaw & 2047;
-					var4 = Rasterizer3D.Rasterizer3D_sine[var0];
-					var5 = Rasterizer3D.Rasterizer3D_cosine[var0];
-					RestClientThreadFactory.oculusOrbFocalPointX += var3 * var4 / 65536;
-					class173.oculusOrbFocalPointY += var3 * var5 / 65536;
-				}
-
-				if (Client.field610 != 0) {
-					class274.oculusOrbFocalPointZ += var3 * Client.field610;
-					if (class274.oculusOrbFocalPointZ > 0) {
-						class274.oculusOrbFocalPointZ = 0;
-					}
-				}
-			} else {
-				Client.field609 = -1;
-				Client.field610 = -1;
-			}
-
-			char var16 = '耀';
-			if (var16 > Client.field617) {
-				Client.field617 += (var16 - Client.field617) / 24;
-			} else if (var16 < Client.field617) {
-				Client.field617 += (var16 - Client.field617) / 80;
-			}
-
-			if (Client.indexCheck.isValidIndexInRange(13)) {
-				Client.packetWriter.addNode(class272.getPacketBufferNode(ClientPacket.FREECAM_EXIT, Client.packetWriter.isaacCipher));
-				Client.oculusOrbState = 0;
-			}
-		}
-
-		if (MouseHandler.MouseHandler_currentButton == 4 && class466.mouseCam) {
-			var0 = MouseHandler.MouseHandler_y - Client.mouseCamClickedY;
-			Client.camAngleDX = var0 * 2;
-			Client.mouseCamClickedY = var0 != -1 && var0 != 1 ? (MouseHandler.MouseHandler_y + Client.mouseCamClickedY) / 2 : MouseHandler.MouseHandler_y;
-			var1 = Client.mouseCamClickedX - MouseHandler.MouseHandler_x;
-			Client.camAngleDY = var1 * 2;
-			Client.mouseCamClickedX = var1 != -1 && var1 != 1 ? (MouseHandler.MouseHandler_x + Client.mouseCamClickedX) / 2 : MouseHandler.MouseHandler_x;
+	static void method2492() {
+		Login.Login_username = Login.Login_username.trim();
+		if (Login.Login_username.isEmpty()) {
+			TileItem.setLoginResponseString("Please enter your username.", "If you created your account after November", "2010, this will be the creation email address.");
 		} else {
-			if (Client.indexCheck.isValidIndexInRange(96)) {
-				Client.camAngleDY += (-24 - Client.camAngleDY) / 2;
-			} else if (Client.indexCheck.isValidIndexInRange(97)) {
-				Client.camAngleDY += (24 - Client.camAngleDY) / 2;
-			} else {
-				Client.camAngleDY /= 2;
+			long var1;
+			try {
+				URL var3 = new URL(WorldMapArchiveLoader.method9796("services", false) + "m=accountappeal/login.ws");
+				URLConnection var4 = var3.openConnection();
+				var4.setRequestProperty("connection", "close");
+				var4.setDoInput(true);
+				var4.setDoOutput(true);
+				var4.setConnectTimeout(5000);
+				OutputStreamWriter var5 = new OutputStreamWriter(var4.getOutputStream());
+				var5.write("data1=req");
+				var5.flush();
+				InputStream var6 = var4.getInputStream();
+				Buffer var7 = new Buffer(new byte[1000]);
+
+				while (true) {
+					int var8 = var6.read(var7.array, var7.offset * -2066221813, 1000 - var7.offset * -2066221813);
+					if (var8 == -1) {
+						var7.offset = 0;
+						long var10 = var7.readLong();
+						var1 = var10;
+						break;
+					}
+
+					var7.offset += var8 * 29699747;
+					if (var7.offset * -2066221813 >= 1000) {
+						var1 = 0L;
+						break;
+					}
+				}
+			} catch (Exception var14) {
+				var1 = 0L;
 			}
 
-			if (Client.indexCheck.isValidIndexInRange(98)) {
-				Client.camAngleDX += (12 - Client.camAngleDX) / 2;
-			} else if (Client.indexCheck.isValidIndexInRange(99)) {
-				Client.camAngleDX += (-12 - Client.camAngleDX) / 2;
+			int var0;
+			if (0L == var1) {
+				var0 = 5;
 			} else {
-				Client.camAngleDX /= 2;
+				var0 = GrandExchangeOfferOwnWorldComparator.method1233(var1, Login.Login_username);
 			}
 
-			Client.mouseCamClickedY = MouseHandler.MouseHandler_y;
-			Client.mouseCamClickedX = MouseHandler.MouseHandler_x;
+			switch(var0) {
+			case 2:
+				TileItem.setLoginResponseString(class385.field4505, class385.field4522, class385.field4564);
+				class137.method3379(6);
+				break;
+			case 3:
+				TileItem.setLoginResponseString("", "Error connecting to server.", "");
+				break;
+			case 4:
+				TileItem.setLoginResponseString("The part of the website you are trying", "to connect to is offline at the moment.", "Please try again later.");
+				break;
+			case 5:
+				TileItem.setLoginResponseString("Sorry, there was an error trying to", "log you in to this part of the website.", "Please try again later.");
+				break;
+			case 6:
+				TileItem.setLoginResponseString("", "Error connecting to server.", "");
+				break;
+			case 7:
+				TileItem.setLoginResponseString("You must enter a valid login to proceed. For accounts", "created after 24th November 2010, please use your", "email address. Otherwise please use your username.");
+			}
+
+		}
+	}
+
+	@ObfuscatedName("hm")
+	@ObfuscatedSignature(
+		descriptor = "(III)V",
+		garbageValue = "-199520677"
+	)
+	static void method2497(int var0, int var1) {
+		if (Renderable.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
+			ArrayList var2 = new ArrayList();
+			var2.add(new MidiRequest(class143.archive6, var0, 0, Renderable.clientPreferences.getMusicVolume(), false));
+			MouseHandler.method665(var2, 0, 0, 0, 0, true);
+			Client.playingJingle = true;
 		}
 
-		Client.camAngleY = Client.camAngleDY / 2 + Client.camAngleY & 2047;
-		Client.camAngleX += Client.camAngleDX / 2;
-		if (Client.camAngleX < 128) {
-			Client.camAngleX = 128;
-		}
+	}
 
-		if (Client.camAngleX > 383) {
-			Client.camAngleX = 383;
+	@ObfuscatedName("ir")
+	@ObfuscatedSignature(
+		descriptor = "(Ldj;I)V",
+		garbageValue = "1581554779"
+	)
+	static void method2494(WorldView var0) {
+		int var1 = Client.playerUpdateManager.playerCount;
+		int[] var2 = Client.playerUpdateManager.playerIndices;
+
+		for (int var3 = 0; var3 < var1; ++var3) {
+			if (var2[var3] != Client.combatTargetPlayerIndex && var2[var3] != Client.localPlayerIndex) {
+				WorldMapRectangle.addPlayerToScene(var0, var2[var3], true);
+			}
 		}
 
 	}

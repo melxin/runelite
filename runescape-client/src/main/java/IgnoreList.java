@@ -1,66 +1,69 @@
+import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("so")
+@ObfuscatedName("sp")
 @Implements("IgnoreList")
 public class IgnoreList extends UserList {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ip")
+	static List field5105;
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Luk;"
+		descriptor = "Luw;"
 	)
-	final LoginType field5098;
+	final LoginType field5107;
 
 	@ObfuscatedSignature(
-		descriptor = "(Luk;)V"
+		descriptor = "(Luw;)V"
 	)
 	public IgnoreList(LoginType var1) {
 		super(400);
-		this.field5098 = var1;
+		this.field5107 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lsz;",
-		garbageValue = "-1615585210"
+		descriptor = "(I)Lsh;",
+		garbageValue = "-1223410224"
 	)
 	@Export("newInstance")
 	User newInstance() {
 		return new Ignored();
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lsz;",
-		garbageValue = "-1800506505"
+		descriptor = "(IB)[Lsh;",
+		garbageValue = "11"
 	)
 	@Export("newTypedArray")
 	User[] newTypedArray(int var1) {
 		return new Ignored[var1];
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;II)V",
-		garbageValue = "516380597"
+		descriptor = "(Lve;II)V",
+		garbageValue = "-1564274723"
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
-		while (var1.offset < var2) {
+		while (var1.offset * -2066221813 < var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 == 4) {
-				Username var10 = new Username(var1.readStringCp1252NullTerminated(), this.field5098);
+				Username var10 = new Username(var1.readStringCp1252NullTerminated(), this.field5107);
 				if (!var10.hasCleanName()) {
 					throw new IllegalStateException();
 				}
 
 				boolean var11 = false;
-				SoundCache.friendSystem.removeIgnore(var10.getName(), var11);
+				class223.friendSystem.removeIgnore(var10.getName(), var11);
 			} else {
 				boolean var4 = (var3 & 1) != 0;
-				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.field5098);
-				Username var6 = new Username(var1.readStringCp1252NullTerminated(), this.field5098);
+				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.field5107);
+				Username var6 = new Username(var1.readStringCp1252NullTerminated(), this.field5107);
 				var1.readStringCp1252NullTerminated();
 				if (!var5.hasCleanName()) {
 					throw new IllegalStateException();
@@ -88,5 +91,14 @@ public class IgnoreList extends UserList {
 			}
 		}
 
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(Lph;B)V",
+		garbageValue = "85"
+	)
+	public static void method9127(AbstractArchive var0) {
+		StructComposition.StructDefinition_archive = var0;
 	}
 }

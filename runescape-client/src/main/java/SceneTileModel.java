@@ -2,88 +2,88 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("ji")
+@ObfuscatedName("ht")
 @Implements("SceneTileModel")
 public final class SceneTileModel {
-	@ObfuscatedName("av")
-	@Export("verticesX")
-	static int[] verticesX;
-	@ObfuscatedName("ar")
-	@Export("verticesY")
-	static int[] verticesY;
-	@ObfuscatedName("ag")
-	@Export("verticesZ")
-	static float[] verticesZ;
-	@ObfuscatedName("az")
-	@Export("triangleTexturesX")
-	static int[] triangleTexturesX;
-	@ObfuscatedName("am")
-	@Export("triangleTexturesY")
-	static int[] triangleTexturesY;
-	@ObfuscatedName("aq")
-	@Export("triangleTexturesZ")
-	static int[] triangleTexturesZ;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ao")
 	@Export("triangleTextureIndices")
 	static final int[][] triangleTextureIndices;
 	@ObfuscatedName("an")
 	@Export("faceIndices")
 	static final int[][] faceIndices;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ae")
+	@Export("verticesX")
+	static int[] verticesX;
+	@ObfuscatedName("af")
+	@Export("verticesY")
+	static int[] verticesY;
+	@ObfuscatedName("as")
+	@Export("verticesZ")
+	static float[] verticesZ;
+	@ObfuscatedName("aq")
+	@Export("triangleTexturesX")
+	static int[] triangleTexturesX;
+	@ObfuscatedName("av")
+	@Export("triangleTexturesY")
+	static int[] triangleTexturesY;
+	@ObfuscatedName("am")
+	@Export("triangleTexturesZ")
+	static int[] triangleTexturesZ;
+	@ObfuscatedName("aa")
 	@Export("vertexX")
 	int[] vertexX;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ap")
 	@Export("vertexY")
 	int[] vertexY;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ax")
 	@Export("vertexZ")
 	int[] vertexZ;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aw")
 	@Export("triangleColorA")
 	int[] triangleColorA;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ar")
 	@Export("triangleColorB")
 	int[] triangleColorB;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("au")
 	@Export("triangleColorC")
 	int[] triangleColorC;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aj")
 	@Export("faceX")
 	int[] faceX;
-	@ObfuscatedName("af")
+	@ObfuscatedName("al")
 	@Export("faceY")
 	int[] faceY;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ac")
 	@Export("faceZ")
 	int[] faceZ;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ay")
 	@Export("triangleTextureId")
 	int[] triangleTextureId;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@Export("isFlat")
 	boolean isFlat;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ag")
 	@Export("shape")
 	int shape;
 	@ObfuscatedName("ai")
 	@Export("rotation")
 	int rotation;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ad")
 	@Export("underlayRgb")
 	int underlayRgb;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ah")
 	@Export("overlayRgb")
 	int overlayRgb;
 
 	static {
+		triangleTextureIndices = new int[][]{{1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 2, 6}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 11, 12}, {1, 3, 5, 7, 11, 12}, {1, 3, 5, 7, 13, 14}};
+		faceIndices = new int[][]{{0, 1, 2, 3, 0, 0, 1, 3}, {1, 1, 2, 3, 1, 0, 1, 3}, {0, 1, 2, 3, 1, 0, 1, 3}, {0, 0, 1, 2, 0, 0, 2, 4, 1, 0, 4, 3}, {0, 0, 1, 4, 0, 0, 4, 3, 1, 1, 2, 4}, {0, 0, 4, 3, 1, 0, 1, 2, 1, 0, 2, 4}, {0, 1, 2, 4, 1, 0, 1, 4, 1, 0, 4, 3}, {0, 4, 1, 2, 0, 4, 2, 5, 1, 0, 4, 5, 1, 0, 5, 3}, {0, 4, 1, 2, 0, 4, 2, 3, 0, 4, 3, 5, 1, 0, 4, 5}, {0, 0, 4, 5, 1, 4, 1, 2, 1, 4, 2, 3, 1, 4, 3, 5}, {0, 0, 1, 5, 0, 1, 4, 5, 0, 1, 2, 4, 1, 0, 5, 3, 1, 5, 4, 3, 1, 4, 2, 3}, {1, 0, 1, 5, 1, 1, 4, 5, 1, 1, 2, 4, 0, 0, 5, 3, 0, 5, 4, 3, 0, 4, 2, 3}, {1, 0, 5, 4, 1, 0, 1, 5, 0, 0, 4, 3, 0, 4, 5, 3, 0, 5, 2, 3, 0, 1, 2, 5}};
 		verticesX = new int[6];
 		verticesY = new int[6];
 		verticesZ = new float[6];
 		triangleTexturesX = new int[6];
 		triangleTexturesY = new int[6];
 		triangleTexturesZ = new int[6];
-		triangleTextureIndices = new int[][]{{1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 2, 6}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 11, 12}, {1, 3, 5, 7, 11, 12}, {1, 3, 5, 7, 13, 14}};
-		faceIndices = new int[][]{{0, 1, 2, 3, 0, 0, 1, 3}, {1, 1, 2, 3, 1, 0, 1, 3}, {0, 1, 2, 3, 1, 0, 1, 3}, {0, 0, 1, 2, 0, 0, 2, 4, 1, 0, 4, 3}, {0, 0, 1, 4, 0, 0, 4, 3, 1, 1, 2, 4}, {0, 0, 4, 3, 1, 0, 1, 2, 1, 0, 2, 4}, {0, 1, 2, 4, 1, 0, 1, 4, 1, 0, 4, 3}, {0, 4, 1, 2, 0, 4, 2, 5, 1, 0, 4, 5, 1, 0, 5, 3}, {0, 4, 1, 2, 0, 4, 2, 3, 0, 4, 3, 5, 1, 0, 4, 5}, {0, 0, 4, 5, 1, 4, 1, 2, 1, 4, 2, 3, 1, 4, 3, 5}, {0, 0, 1, 5, 0, 1, 4, 5, 0, 1, 2, 4, 1, 0, 5, 3, 1, 5, 4, 3, 1, 4, 2, 3}, {1, 0, 1, 5, 1, 1, 4, 5, 1, 1, 2, 4, 0, 0, 5, 3, 0, 5, 4, 3, 0, 4, 2, 3}, {1, 0, 5, 4, 1, 0, 1, 5, 0, 0, 4, 3, 0, 4, 5, 3, 0, 5, 2, 3, 0, 1, 2, 5}};
 	}
 
 	SceneTileModel(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19) {

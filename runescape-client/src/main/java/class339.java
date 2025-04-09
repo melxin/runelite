@@ -3,35 +3,70 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nh")
+@ObfuscatedName("na")
 public class class339 {
-	@ObfuscatedName("mi")
-	@ObfuscatedSignature(
-		descriptor = "Ljs;"
-	)
-	@Export("textureProvider")
-	static TextureProvider textureProvider;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -172465173
+		intValue = -1251495641
 	)
-	int field3753;
-	@ObfuscatedName("ay")
+	public static int field3763;
+	@ObfuscatedName("jk")
 	@ObfuscatedSignature(
-		descriptor = "Lcd;"
+		descriptor = "Luw;"
 	)
-	class53 field3750;
+	@Export("loginType")
+	static LoginType loginType;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = 582761865
+	)
+	int field3764;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lcg;"
+	)
+	class53 field3762;
 
 	@ObfuscatedSignature(
-		descriptor = "(ILcd;)V"
+		descriptor = "(ILcg;)V"
 	)
 	class339(int var1, class53 var2) {
-		this.field3753 = var1;
-		this.field3750 = var2;
+		this.field3764 = var1;
+		this.field3762 = var2;
 	}
 
-	@ObfuscatedName("ax")
-	static final void method6784(long var0) {
-		ViewportMouse.ViewportMouse_entityTags[++ViewportMouse.ViewportMouse_entityCount - 1] = var0;
+	@ObfuscatedName("jy")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "508675109"
+	)
+	static void method6807() {
+		for (class269 var0 = (class269)Client.field622.last(); var0 != null; var0 = (class269)Client.field622.previous()) {
+			var0.remove();
+		}
+
+	}
+
+	@ObfuscatedName("ku")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIIIIZS)V",
+		garbageValue = "29783"
+	)
+	@Export("addTileItemToGroundItems")
+	static void addTileItemToGroundItems(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
+		TileItem var10 = new TileItem();
+		var10.id = var3;
+		var10.quantity = var4;
+		var10.setFlag(var5);
+		var10.visibleTime = Client.serverCycle + var6;
+		var10.despawnTime = var7 + Client.serverCycle;
+		var10.ownership = var8;
+		var10.isPrivate = var9;
+		if (DevicePcmPlayerProvider.worldView.groundItems[var0][var1][var2] == null) {
+			DevicePcmPlayerProvider.worldView.groundItems[var0][var1][var2] = new NodeDeque();
+		}
+
+		DevicePcmPlayerProvider.worldView.groundItems[var0][var1][var2].addFirst(var10);
+		WorldMapCacheName.updateItemPile(var0, var1, var2);
 	}
 }

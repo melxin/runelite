@@ -7,12 +7,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ei")
+@ObfuscatedName("es")
 @Implements("SecureUrlRequester")
 public class SecureUrlRequester extends UrlRequester {
-	@ObfuscatedName("ao")
-	static int[][] field1506;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@Export("secureHttps")
 	final boolean secureHttps;
 
@@ -21,10 +19,10 @@ public class SecureUrlRequester extends UrlRequester {
 		this.secureHttps = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ley;I)V",
-		garbageValue = "-2139590636"
+		descriptor = "(Lee;I)V",
+		garbageValue = "1399223766"
 	)
 	@Export("openConnection")
 	void openConnection(UrlRequest var1) throws IOException {
@@ -32,32 +30,32 @@ public class SecureUrlRequester extends UrlRequester {
 		boolean var9 = false;
 
 		HttpURLConnection var12;
-		label136: {
-			label128: {
+		label137: {
+			label129: {
 				try {
-					label131: {
+					label132: {
 						var9 = true;
-						String var3 = var1.field1509.getProtocol();
+						String var3 = var1.field1488.getProtocol();
 						if (var3.equals("http")) {
 							var2 = this.openHttpConnection(var1);
 						} else {
 							if (!var3.equals("https")) {
-								var1.field1512 = UrlRequest.field1510;
+								var1.field1487 = UrlRequest.field1490;
 								var9 = false;
-								break label131;
+								break label132;
 							}
 
 							var2 = this.openHttpsConnection(var1);
 						}
 
-						this.method3146(var2, var1);
+						this.method3149(var2, var1);
 						var9 = false;
-						break label136;
+						break label137;
 					}
 				} catch (IOException var10) {
-					var1.field1512 = UrlRequest.field1510;
+					var1.field1487 = UrlRequest.field1490;
 					var9 = false;
-					break label128;
+					break label129;
 				} finally {
 					if (var9) {
 						if (var2 != null && var2 instanceof HttpURLConnection) {
@@ -91,50 +89,71 @@ public class SecureUrlRequester extends UrlRequester {
 
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Ley;I)Ljava/net/URLConnection;",
-		garbageValue = "-1343505306"
+		descriptor = "(Lee;I)Ljava/net/URLConnection;",
+		garbageValue = "1245787519"
 	)
 	@Export("openHttpConnection")
 	URLConnection openHttpConnection(UrlRequest var1) throws IOException {
-		URLConnection var2 = var1.field1509.openConnection();
+		URLConnection var2 = var1.field1488.openConnection();
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Ley;I)Ljava/net/URLConnection;",
-		garbageValue = "-1550057756"
+		descriptor = "(Lee;I)Ljava/net/URLConnection;",
+		garbageValue = "-447572148"
 	)
 	@Export("openHttpsConnection")
 	URLConnection openHttpsConnection(UrlRequest var1) throws IOException {
-		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1509.openConnection();
+		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1488.openConnection();
 		if (!this.secureHttps) {
-			if (SecureRandomSSLSocketFactory.INSTANCE == null) {
-				SecureRandomSSLSocketFactory.INSTANCE = new SecureRandomSSLSocketFactory();
-			}
-
-			SecureRandomSSLSocketFactory var4 = SecureRandomSSLSocketFactory.INSTANCE;
-			var2.setSSLSocketFactory(var4);
+			var2.setSSLSocketFactory(SecureRandomSSLSocketFactory.method177());
 		}
 
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("ot")
+	@ObfuscatedName("hc")
 	@ObfuscatedSignature(
-		descriptor = "(IIIZB)V",
-		garbageValue = "46"
+		descriptor = "(Lnh;III)V",
+		garbageValue = "2096591294"
 	)
-	public static void method3159(int var0, int var1, int var2, boolean var3) {
-		PacketBufferNode var4 = class272.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
-		var4.packetBuffer.writeShort(var0);
-		var4.packetBuffer.writeByteAdd(var2);
-		var4.packetBuffer.writeShortAddLE(var1);
-		var4.packetBuffer.writeIntLE(var3 ? Client.revision : 0);
-		Client.packetWriter.addNode(var4);
+	@Export("checkIfMinimapClicked")
+	static final void checkIfMinimapClicked(Widget var0, int var1, int var2) {
+		if (Client.minimapState == 0 || Client.minimapState == 3) {
+			if (!Client.isMenuOpen && (MouseHandler.MouseHandler_lastButton == 1 || !Occluder.mouseCam && MouseHandler.MouseHandler_lastButton == 4)) {
+				SpriteMask var3 = var0.method7359(class232.widgetDefinition, true);
+				if (var3 == null) {
+					return;
+				}
+
+				int var4 = MouseHandler.MouseHandler_lastPressedX - var1;
+				int var5 = MouseHandler.MouseHandler_lastPressedY - var2;
+				if (var3.contains(var4, var5)) {
+					var4 -= var3.width / 2;
+					var5 -= var3.height / 2;
+					int var6 = Client.camAngleY & 2047;
+					int var7 = Rasterizer3D.Rasterizer3D_sine[var6];
+					int var8 = Rasterizer3D.Rasterizer3D_cosine[var6];
+					int var9 = var5 * var7 + var8 * var4 >> 11;
+					int var10 = var5 * var8 - var7 * var4 >> 11;
+					int var11 = var9 + Client.field696 >> 7;
+					int var12 = Client.field697 - var10 >> 7;
+					class505 var13 = Client.worldViewManager.method2578(-1);
+					if (var13 == class505.field5237) {
+						WorldMapAreaData.method6441(var11, var12, var4, var5);
+					} else if (var13 == class505.field5239) {
+						Client.field768 = WorldViewManager.method2616(var1, var2, var3);
+						Client.field785 = 30;
+						Language.method8021(Client.field768);
+					}
+				}
+			}
+
+		}
 	}
 }

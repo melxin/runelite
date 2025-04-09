@@ -1,88 +1,112 @@
 import java.util.ArrayList;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rb")
+@ObfuscatedName("ru")
 @Implements("ConcurrentMidiTask")
 public class ConcurrentMidiTask extends SongTask {
-	@ObfuscatedName("ab")
-	ArrayList field5034;
+	@ObfuscatedName("ao")
+	ArrayList field5043;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lrt;Ljava/util/ArrayList;)V"
+		descriptor = "(Lro;Ljava/util/ArrayList;)V"
 	)
 	public ConcurrentMidiTask(SongTask var1, ArrayList var2) {
 		super(var1);
-		this.field5034 = var2;
-		super.field5028 = "ConcurrentMidiTask";
+		this.field5043 = var2;
+		super.field5039 = "ConcurrentMidiTask";
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "2115930134"
+		garbageValue = "-1093204820"
 	)
-	public boolean vmethod8896() {
-		for (int var1 = 0; var1 < this.field5034.size(); ++var1) {
-			SongTask var2 = (SongTask)this.field5034.get(var1);
+	public boolean vmethod8938() {
+		for (int var1 = 0; var1 < this.field5043.size(); ++var1) {
+			SongTask var2 = (SongTask)this.field5043.get(var1);
 			if (var2 == null) {
-				this.field5034.remove(var1);
+				this.field5043.remove(var1);
 				--var1;
-			} else if (var2.vmethod8896()) {
-				if (var2.method8880()) {
-					this.method8875(var2.method8870());
-					this.field5034.clear();
+			} else if (var2.vmethod8938()) {
+				if (var2.method8916()) {
+					this.method8920(var2.method8918());
+					this.field5043.clear();
 					return true;
 				}
 
-				if (var2.method8874() != null) {
-					this.field5034.add(var2.method8874());
+				if (var2.method8930() != null) {
+					this.field5043.add(var2.method8930());
 				}
 
-				super.field5032 = var2.field5032;
-				this.field5034.remove(var1);
+				super.field5036 = var2.field5036;
+				this.field5043.remove(var1);
 				--var1;
 			}
 		}
 
-		if (this.field5034.isEmpty()) {
+		if (this.field5043.isEmpty()) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("jm")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lvh;",
-		garbageValue = "108"
+		descriptor = "(Lka;I)V",
+		garbageValue = "-785821470"
 	)
-	@Export("getDbTableType")
-	public static DbTableType getDbTableType(int var0) {
-		DbTableType var1 = (DbTableType)DbTableType.DBTableType_cache.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = DbTableType.field5505.takeFile(39, var0);
-			var1 = new DbTableType();
-			if (var2 != null) {
-				var1.method10093(new Buffer(var2));
+	static void method8936(class269 var0) {
+		if (var0 != null && var0.field3058 != null) {
+			if (var0.field3058.childIndex * -1626125685 >= 0) {
+				Widget var1 = class232.widgetDefinition.method6951(var0.field3058.parentId);
+				if (var1 == null || var1.children == null || var1.children.length == 0 || var0.field3058.childIndex * -1626125685 >= var1.children.length || var0.field3058 != var1.children[var0.field3058.childIndex * -1626125685]) {
+					return;
+				}
 			}
 
-			var1.method10091();
-			DbTableType.DBTableType_cache.put(var1, (long)var0);
-			return var1;
-		}
-	}
+			if (var0.field3058.type == 11 && var0.field3060 == 0) {
+				if (var0.field3058.method7446(var0.field3055, var0.field3056, 0, 0)) {
+					var0.field3058.method7373().method4719().method4847(1, var0.field3058.method7373().method4732());
+					switch(var0.field3058.method7369()) {
+					case 0:
+						RestClientThreadFactory.openURL(var0.field3058.method7371(), true, false);
+						break;
+					case 1:
+						int var2 = class31.getWidgetFlags(var0.field3058);
+						boolean var5 = (var2 >> 22 & 1) != 0;
+						if (var5) {
+							int[] var3 = var0.field3058.method7372();
+							if (var3 != null) {
+								PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.field3471, Client.packetWriter.isaacCipher);
+								var4.packetBuffer.writeIntME(var3[0]);
+								var4.packetBuffer.writeIntIME(var0.field3058.id);
+								var4.packetBuffer.writeIntIME(var3[2]);
+								var4.packetBuffer.writeInt(var0.field3058.method7339());
+								var4.packetBuffer.writeShortAddLE(var0.field3058.childIndex * -1626125685);
+								var4.packetBuffer.writeIntIME(var3[1]);
+								Client.packetWriter.addNode(var4);
+							}
+						}
+					}
+				}
+			} else if (var0.field3058.type == 12) {
+				class361 var6 = var0.field3058.method7377();
+				if (var6 != null && var6.method7240()) {
+					switch(var0.field3060) {
+					case 0:
+						Client.field654.method5635(var0.field3058);
+						var6.method7111(true);
+						var6.method7101(var0.field3055, var0.field3056, Client.indexCheck.isValidIndexInRange(82), Client.indexCheck.isValidIndexInRange(81));
+						break;
+					case 1:
+						var6.method7102(var0.field3055, var0.field3056);
+					}
+				}
+			}
 
-	@ObfuscatedName("nz")
-	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-5483"
-	)
-	static final void method8890() {
-		Client.field714 = Client.cycleCntr;
+		}
 	}
 }

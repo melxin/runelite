@@ -3,33 +3,33 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("aa")
 public class class8 {
-	@ObfuscatedName("ab")
-	final int field32;
-	@ObfuscatedName("ay")
-	final int field31;
-	@ObfuscatedName("au")
-	final String field33;
+	@ObfuscatedName("ao")
+	final int field28;
+	@ObfuscatedName("an")
+	final int field27;
+	@ObfuscatedName("ae")
+	final String field29;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvy;)V"
+		descriptor = "(Lve;)V"
 	)
 	class8(Buffer var1) {
 		this(var1.readUnsignedByte(), var1.readUnsignedByte(), var1.readStringCp1252NullTerminated());
 	}
 
 	class8(int var1, int var2, String var3) {
-		this.field32 = var1;
-		this.field31 = var2;
-		this.field33 = var3;
+		this.field28 = var1;
+		this.field27 = var2;
+		this.field29 = var3;
 	}
 
-	@ObfuscatedName("ab")
-	String method55() {
-		return Integer.toHexString(this.field32) + Integer.toHexString(this.field31) + this.field33;
+	@ObfuscatedName("ao")
+	String method57() {
+		return Integer.toHexString(this.field28) + Integer.toHexString(this.field27) + this.field29;
 	}
 
-	@ObfuscatedName("ay")
-	int method56() {
-		return this.field31;
+	@ObfuscatedName("an")
+	int method59() {
+		return this.field27;
 	}
 }

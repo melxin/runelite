@@ -1,72 +1,67 @@
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("bi")
+@ObfuscatedName("bt")
 @Implements("SoundCache")
 public class SoundCache {
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lwg;"
+		descriptor = "Lnh;"
 	)
-	@Export("leftTitleSprite")
-	static SpritePixels leftTitleSprite;
-	@ObfuscatedName("ix")
-	@ObfuscatedGetter(
-		intValue = -1998519921
-	)
-	static int field309;
-	@ObfuscatedName("mk")
-	@ObfuscatedSignature(
-		descriptor = "Lol;"
-	)
-	static class377 field311;
-	@ObfuscatedName("vq")
-	@ObfuscatedSignature(
-		descriptor = "Lce;"
-	)
-	@Export("friendSystem")
-	public static FriendSystem friendSystem;
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lpl;"
-	)
-	@Export("soundEffectIndex")
-	AbstractArchive soundEffectIndex;
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lpl;"
-	)
-	AbstractArchive field312;
-	@ObfuscatedName("au")
+	static Widget field295;
+	@ObfuscatedName("bo")
 	@ObfuscatedSignature(
 		descriptor = "Lqs;"
 	)
-	NodeHashTable field308;
+	static Bounds field299;
+	@ObfuscatedName("hi")
+	@ObfuscatedSignature(
+		descriptor = "Lso;"
+	)
+	@Export("friendsChat")
+	static FriendsChat friendsChat;
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lph;"
+	)
+	@Export("soundEffectIndex")
+	AbstractArchive soundEffectIndex;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lph;"
+	)
+	AbstractArchive field292;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lqb;"
+	)
+	NodeHashTable field293;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpl;Lpl;)V"
+		descriptor = "(Lph;Lph;)V"
 	)
 	public SoundCache(AbstractArchive var1, AbstractArchive var2) {
 		new NodeHashTable(256);
-		this.field308 = new NodeHashTable(256);
+		this.field293 = new NodeHashTable(256);
 		this.soundEffectIndex = var1;
-		this.field312 = var2;
+		this.field292 = var2;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(II[IB)Lbq;",
-		garbageValue = "-79"
+		descriptor = "(II[II)Lbj;",
+		garbageValue = "624892547"
 	)
 	@Export("getSoundEffect0")
 	RawSound getSoundEffect0(int var1, int var2, int[] var3) {
-		long var4 = this.method835(var1, var2, false);
-		class53 var6 = (class53)this.field308.get(var4);
+		long var4 = this.method869(var1, var2, false);
+		class53 var6 = (class53)this.field293.get(var4);
 		if (var6 != null) {
-			return var6.method1065();
+			return var6.method1089();
 		} else if (var3 != null && var3[0] <= 0) {
 			return null;
 		} else {
@@ -75,9 +70,9 @@ public class SoundCache {
 				return null;
 			} else {
 				RawSound var8 = var7.toRawSound();
-				this.field308.put(new class53(var8), var4);
+				this.field293.put(new class53(var8), var4);
 				if (var3 != null) {
-					var3[0] -= var8.samples.length;
+					var3[0] -= var8.field240.length;
 				}
 
 				return var8;
@@ -85,32 +80,32 @@ public class SoundCache {
 		}
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Lcd;",
-		garbageValue = "80"
+		descriptor = "(III)Lcg;",
+		garbageValue = "563861007"
 	)
-	class53 method846(int var1, int var2) {
-		long var3 = this.method835(var1, var2, true);
-		class53 var5 = (class53)this.field308.get(var3);
+	class53 method880(int var1, int var2) {
+		long var3 = this.method869(var1, var2, true);
+		class53 var5 = (class53)this.field293.get(var3);
 		if (var5 != null) {
 			return var5;
 		} else {
-			VorbisSample var6 = VorbisSample.readMusicSample(this.field312, var1, var2);
+			VorbisSample var6 = VorbisSample.readMusicSample(this.field292, var1, var2);
 			if (var6 == null) {
 				return new class53();
 			} else {
 				class53 var7 = new class53(var6);
-				this.field308.put(var7, var3);
+				this.field293.put(var7, var3);
 				return var7;
 			}
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I[II)Lbq;",
-		garbageValue = "39731668"
+		descriptor = "(I[II)Lbj;",
+		garbageValue = "318454101"
 	)
 	@Export("getSoundEffect")
 	RawSound getSoundEffect(int var1, int[] var2) {
@@ -123,38 +118,148 @@ public class SoundCache {
 		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lcd;",
-		garbageValue = "32327301"
+		descriptor = "(IB)Lcg;",
+		garbageValue = "84"
 	)
-	public class53 method853(int var1) {
-		if (this.field312.getGroupCount() == 1) {
-			return this.method846(0, var1);
-		} else if (this.field312.getGroupFileCount(var1) == 1) {
-			return this.method846(var1, 0);
+	public class53 method870(int var1) {
+		if (this.field292.getGroupCount() == 1) {
+			return this.method880(0, var1);
+		} else if (this.field292.getGroupFileCount(var1) == 1) {
+			return this.method880(var1, 0);
 		} else {
 			throw new RuntimeException();
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lbq;",
-		garbageValue = "-2138216227"
+		descriptor = "(II)Lbj;",
+		garbageValue = "-148864622"
 	)
-	public RawSound method839(int var1) {
+	public RawSound method868(int var1) {
 		return this.getSoundEffect(var1, (int[])null);
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(IIZI)J",
-		garbageValue = "-1877958709"
+		garbageValue = "1391685606"
 	)
-	long method835(int var1, int var2, boolean var3) {
+	long method869(int var1, int var2, boolean var3) {
 		int var4 = var2 ^ (var1 << 4 & 65535 | var1 >> 12);
 		var4 |= var1 << 16;
 		return var3 ? (long)var4 ^ 4294967296L : (long)var4;
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(III)I",
+		garbageValue = "2062827274"
+	)
+	static int method879(int var0, int var1) {
+		if (var0 == -2) {
+			return 12345678;
+		} else if (var0 == -1) {
+			if (var1 < 0) {
+				var1 = 0;
+			} else if (var1 > 127) {
+				var1 = 127;
+			}
+
+			var1 = 127 - var1;
+			return var1;
+		} else {
+			var1 = (var0 & 127) * var1 / 128;
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
+			}
+
+			return (var0 & 65408) + var1;
+		}
+	}
+
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-76"
+	)
+	public static void method864() {
+		Iterator var0 = class335.midiRequests.iterator();
+
+		while (var0.hasNext()) {
+			MidiRequest var1 = (MidiRequest)var0.next();
+			if (var1 != null) {
+				var1.midiPcmStream.clear();
+				var1.midiPcmStream.method6637();
+				var1.midiPcmStream.setPcmStreamVolume(0);
+				var1.midiPcmStream.field3708 = 0;
+				class359.method6985(var1.musicTrackGroupId, var1.musicTrackFileId);
+			}
+		}
+
+		class335.midiRequests.clear();
+	}
+
+	@ObfuscatedName("bj")
+	@ObfuscatedSignature(
+		descriptor = "(ILdb;ZI)I",
+		garbageValue = "-167538467"
+	)
+	static int method884(int var0, Script var1, boolean var2) {
+		int var3;
+		if (var0 == ScriptOpcodes.CAM_FORCEANGLE) {
+			AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+			var3 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
+			int var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+			if (!Client.isCameraLocked) {
+				Client.camAngleX = var3;
+				Client.camAngleY = var4;
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_XA) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = Client.camAngleX;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_YA) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = Client.camAngleY;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CAM_SETFOLLOWHEIGHT) {
+			var3 = Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize];
+			if (var3 < 0) {
+				var3 = 0;
+			}
+
+			Client.camFollowHeight = var3;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CAM_GETFOLLOWHEIGHT) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = Client.camFollowHeight;
+			return 1;
+		} else {
+			return 2;
+		}
+	}
+
+	@ObfuscatedName("nf")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "67"
+	)
+	@Export("FriendSystem_invalidateIgnoreds")
+	static final void FriendSystem_invalidateIgnoreds() {
+		Iterator var0 = Messages.Messages_hashTable.iterator();
+
+		while (var0.hasNext()) {
+			Message var1 = (Message)var0.next();
+			var1.clearIsFromIgnored();
+		}
+
+		if (friendsChat != null) {
+			friendsChat.invalidateIgnoreds();
+		}
+
 	}
 }

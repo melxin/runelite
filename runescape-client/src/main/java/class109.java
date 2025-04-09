@@ -2,79 +2,63 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("er")
+@ObfuscatedName("em")
 final class class109 implements class353 {
-	@ObfuscatedName("dh")
-	@ObfuscatedSignature(
-		descriptor = "Lws;"
-	)
-	@Export("worldSelectLeftSprite")
-	static IndexedSprite worldSelectLeftSprite;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lnz;"
+		descriptor = "Lnh;"
 	)
 	final Widget val$item;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lnz;)V"
+		descriptor = "(Lnh;)V"
 	)
 	class109(Widget var1) {
 		this.val$item = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "66"
+		descriptor = "(I)V",
+		garbageValue = "-647156657"
 	)
-	public void vmethod6917() {
-		if (this.val$item.method7334().field3860 != null) {
+	public void vmethod6948() {
+		if (this.val$item.method7380().field3867 != null) {
 			ScriptEvent var1 = new ScriptEvent();
-			var1.method2439(this.val$item);
-			var1.setArgs(this.val$item.method7334().field3860);
-			class60.method1154().addFirst(var1);
+			var1.method2471(this.val$item);
+			var1.setArgs(this.val$item.method7380().field3867);
+			class143.method3438().addFirst(var1);
 		}
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ip")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-1902868847"
+		descriptor = "(Ldu;III)V",
+		garbageValue = "-2053796808"
 	)
-	static int method2980(int var0, int var1) {
-		FloorOverlayDefinition var2 = Canvas.method284(var0);
-		if (var2 == null) {
-			return var1;
-		} else {
-			int var3;
-			int var4;
-			if (var2.secondaryRgb >= 0) {
-				var3 = class87.method2430(var2.secondaryHue, var2.secondarySaturation, var2.secondaryLightness);
-				var4 = Actor.method2660(var3, 96);
-				return Rasterizer3D.Rasterizer3D_colorPalette[var4] | -16777216;
-			} else if (var2.texture >= 0) {
-				var3 = Actor.method2660(Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.texture), 96);
-				return Rasterizer3D.Rasterizer3D_colorPalette[var3] | -16777216;
-			} else if (var2.primaryRgb == 16711935) {
-				return var1;
-			} else {
-				var3 = class87.method2430(var2.hue, var2.saturation, var2.lightness);
-				var4 = Actor.method2660(var3, 96);
-				return Rasterizer3D.Rasterizer3D_colorPalette[var4] | -16777216;
+	@Export("performPlayerAnimation")
+	static void performPlayerAnimation(Player var0, int var1, int var2) {
+		if (var0.sequence == var1 && var1 != -1) {
+			int var3 = class91.SequenceDefinition_get(var1).restartMode;
+			if (var3 == 1) {
+				var0.sequenceFrame = 0;
+				var0.sequenceFrameCycle = 0;
+				var0.sequenceDelay = var2;
+				var0.field1265 = 0;
 			}
-		}
-	}
 
-	@ObfuscatedName("hf")
-	@ObfuscatedSignature(
-		descriptor = "(Lpn;Ljava/lang/String;B)V",
-		garbageValue = "-9"
-	)
-	static void method2978(Archive var0, String var1) {
-		ArchiveLoader var2 = new ArchiveLoader(var0, var1);
-		Client.archiveLoaders.add(var2);
-		Client.field708 += var2.groupCount;
+			if (var3 == 2) {
+				var0.field1265 = 0;
+			}
+		} else if (var1 == -1 || var0.sequence == -1 || class91.SequenceDefinition_get(var1).field3022 >= class91.SequenceDefinition_get(var0.sequence).field3022) {
+			var0.sequence = var1;
+			var0.sequenceFrame = 0;
+			var0.sequenceFrameCycle = 0;
+			var0.sequenceDelay = var2;
+			var0.field1265 = 0;
+			var0.field1284 = var0.pathLength;
+		}
+
 	}
 }

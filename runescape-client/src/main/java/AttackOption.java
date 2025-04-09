@@ -1,44 +1,48 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ep")
+@ObfuscatedName("eg")
 @Implements("AttackOption")
 public enum AttackOption implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lep;"
+		descriptor = "Leg;"
 	)
 	@Export("AttackOption_dependsOnCombatLevels")
 	AttackOption_dependsOnCombatLevels(0),
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lep;"
+		descriptor = "Leg;"
 	)
 	@Export("AttackOption_alwaysRightClick")
 	AttackOption_alwaysRightClick(1),
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lep;"
+		descriptor = "Leg;"
 	)
-	field1404(2),
-	@ObfuscatedName("ad")
+	field1389(2),
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lep;"
+		descriptor = "Leg;"
 	)
 	@Export("AttackOption_hidden")
 	AttackOption_hidden(3),
-	@ObfuscatedName("ah")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lep;"
+		descriptor = "Leg;"
 	)
-	field1407(4);
+	field1388(4);
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -62437479
+		intValue = 141633429
 	)
 	@Export("id")
 	final int id;
@@ -47,86 +51,38 @@ public enum AttackOption implements Enum {
 		this.id = var3;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "32"
+		descriptor = "(I)I",
+		garbageValue = "1746725635"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "([BILjava/lang/CharSequence;I)I",
-		garbageValue = "-1613605709"
+		descriptor = "(I)Ljava/util/Date;",
+		garbageValue = "-902005713"
 	)
-	public static int method2952(byte[] var0, int var1, CharSequence var2) {
-		int var3 = var2.length();
-		int var4 = var1;
+	static Date method2972() throws ParseException {
+		SimpleDateFormat var0 = new SimpleDateFormat("ddMMyyyyHH", Locale.ENGLISH);
+		var0.setLenient(false);
+		StringBuilder var1 = new StringBuilder();
+		String[] var2 = Login.field933;
 
-		for (int var5 = 0; var5 < var3; ++var5) {
-			char var6 = var2.charAt(var5);
-			if (var6 <= 127) {
-				var0[var4++] = (byte)var6;
-			} else if (var6 <= 2047) {
-				var0[var4++] = (byte)(192 | var6 >> 6);
-				var0[var4++] = (byte)(128 | var6 & '?');
-			} else {
-				var0[var4++] = (byte)(224 | var6 >> '\f');
-				var0[var4++] = (byte)(128 | var6 >> 6 & 63);
-				var0[var4++] = (byte)(128 | var6 & '?');
-			}
-		}
-
-		return var4 - var1;
-	}
-
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-687064702"
-	)
-	static void method2950(int var0) {
-		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var1 != null) {
-			var1.remove();
-		}
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(Lnz;I[B[BB)V",
-		garbageValue = "120"
-	)
-	@Export("Widget_setKey")
-	static final void Widget_setKey(Widget var0, int var1, byte[] var2, byte[] var3) {
-		if (var0.field3939 == null) {
-			if (var2 == null) {
-				return;
+		for (int var3 = 0; var3 < var2.length; ++var3) {
+			String var4 = var2[var3];
+			if (var4 == null) {
+				class251.method5232("Date not valid.", "Please ensure all characters are populated.", "");
+				return null;
 			}
 
-			var0.field3939 = new byte[11][];
-			var0.field4012 = new byte[11][];
-			var0.field4011 = new int[11];
-			var0.field4014 = new int[11];
+			var1.append(var4);
 		}
 
-		var0.field3939[var1] = var2;
-		if (var2 != null) {
-			var0.field3976 = true;
-		} else {
-			var0.field3976 = false;
-
-			for (int var4 = 0; var4 < var0.field3939.length; ++var4) {
-				if (var0.field3939[var4] != null) {
-					var0.field3976 = true;
-					break;
-				}
-			}
-		}
-
-		var0.field4012[var1] = var3;
+		var1.append("12");
+		return var0.parse(var1.toString());
 	}
 }

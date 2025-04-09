@@ -4,30 +4,30 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pj")
+@ObfuscatedName("pd")
 @Implements("IndexedObjectSet")
 public final class IndexedObjectSet implements Iterable {
-	@ObfuscatedName("ab")
-	@Export("size")
-	int size;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "[Lut;"
-	)
-	@Export("nodes")
-	IndexedObjectNode[] nodes;
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lut;"
-	)
-	@Export("currentNode")
-	IndexedObjectNode currentNode;
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lqm;"
+		descriptor = "Lqe;"
 	)
 	@Export("iterator")
 	final IndexedObjectSetIterator iterator;
+	@ObfuscatedName("an")
+	@Export("size")
+	int size;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "[Luj;"
+	)
+	@Export("nodes")
+	IndexedObjectNode[] nodes;
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Luj;"
+	)
+	@Export("currentNode")
+	IndexedObjectNode currentNode;
 
 	public IndexedObjectSet(int var1) {
 		this.size = var1;
@@ -42,9 +42,9 @@ public final class IndexedObjectSet implements Iterable {
 		this.iterator = new IndexedObjectSetIterator(this);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(J)Lut;"
+		descriptor = "(J)Luj;"
 	)
 	@Export("get")
 	public IndexedObjectNode get(long var1) {
@@ -62,9 +62,9 @@ public final class IndexedObjectSet implements Iterable {
 		return null;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lut;J)V"
+		descriptor = "(Luj;J)V"
 	)
 	@Export("add")
 	public void add(IndexedObjectNode var1, long var2) {
@@ -80,7 +80,7 @@ public final class IndexedObjectSet implements Iterable {
 		var1.idx = var2;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@Export("clear")
 	public void clear() {
 		for (int var1 = 0; var1 < this.size; ++var1) {
@@ -100,7 +100,7 @@ public final class IndexedObjectSet implements Iterable {
 	}
 
 	public Iterator iterator() {
-		this.iterator.method7943();
+		this.iterator.method7968();
 		return this.iterator;
 	}
 }

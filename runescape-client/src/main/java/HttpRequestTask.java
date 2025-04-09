@@ -1,18 +1,19 @@
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.concurrent.Callable;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("am")
+@ObfuscatedName("ag")
 @Implements("HttpRequestTask")
 public class HttpRequestTask implements Callable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lae;"
+		descriptor = "Lax;"
 	)
-	final HttpRequest field78;
+	final HttpRequest field68;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
 		descriptor = "Laj;"
@@ -20,84 +21,100 @@ public class HttpRequestTask implements Callable {
 	final AsyncRestClient this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Laj;Lae;)V"
+		descriptor = "(Laj;Lax;)V"
 	)
 	HttpRequestTask(AsyncRestClient var1, HttpRequest var2) {
 		this.this$0 = var1;
-		this.field78 = var2;
+		this.field68 = var2;
 	}
 
 	public Object call() throws Exception {
 		try {
-			while (this.field78.connect()) {
-				IntProjection.method4837(10L);
+			while (this.field68.connect()) {
+				WorldMapRectangle.method6331(10L);
 			}
 		} catch (IOException var2) {
 			return new HttpResponse("Error servicing REST query: " + var2.getMessage());
 		}
 
-		return this.field78.getResponse();
+		return this.field68.getResponse();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "822542457"
+		descriptor = "(Lph;Ljava/lang/String;Ljava/lang/String;I)[Lws;",
+		garbageValue = "1558197257"
 	)
-	static void method246() {
-		Tiles.Tiles_minPlane = 99;
-		Tiles.Tiles_underlays = new short[4][104][104];
-		Tiles.Tiles_overlays = new short[4][104][104];
-		Tiles.Tiles_shapes = new byte[4][104][104];
-		Tiles.field1047 = new byte[4][104][104];
-		Canvas.field98 = new int[4][105][105];
-		SpriteMask.Tiles_underlays2 = new byte[4][105][105];
-		SecureUrlRequester.field1506 = new int[105][105];
-		Tiles.Tiles_hue = new int[104];
-		class592.Tiles_saturation = new int[104];
-		class447.Tiles_lightness = new int[104];
-		class330.Tiles_hueMultiplier = new int[104];
-		BoundaryObject.field3005 = new int[104];
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-354962834"
-	)
-	public static void method248() {
-		FileSystem.FileSystem_cacheFiles.clear();
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(IIIZIII)J",
-		garbageValue = "1486707715"
-	)
-	@Export("calculateTag")
-	public static long calculateTag(int var0, int var1, int var2, boolean var3, int var4, int var5) {
-		long var6 = (long)((var0 & 127) << 0 | (var1 & 127) << 7 | (var2 & 7) << 14) | ((long)var4 & 4294967295L) << 18 | ((long)var5 & 4095L) << 50;
-		if (var3) {
-			var6 |= 131072L;
-		}
-
-		return var6;
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lfb;",
-		garbageValue = "50"
-	)
-	static class144 method249(int var0) {
-		class144 var2 = class144.method3421(var0);
-		int var1;
-		if (var2 == null) {
-			var1 = 2;
+	@Export("getFont")
+	public static IndexedSprite[] getFont(AbstractArchive var0, String var1, String var2) {
+		if (!var0.isValidFileName(var1, var2)) {
+			return null;
 		} else {
-			var1 = var2.method3412() ? 0 : 1;
+			int var3 = var0.getGroupId(var1);
+			int var4 = var0.getFileId(var3, var2);
+			return class223.method4935(var0, var3, var4);
+		}
+	}
+
+	@ObfuscatedName("iv")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "1966406459"
+	)
+	static final void method287() {
+		int[] var0 = Client.playerUpdateManager.playerIndices;
+		Iterator var1 = Client.worldViewManager.iterator();
+
+		while (var1.hasNext()) {
+			WorldView var2 = (WorldView)var1.next();
+
+			for (int var3 = 0; var3 < Client.playerUpdateManager.playerCount; ++var3) {
+				Player var4 = (Player)var2.players.get((long)var0[var3]);
+				if (var4 != null && var4.overheadTextCyclesRemaining > 0) {
+					--var4.overheadTextCyclesRemaining;
+					if (var4.overheadTextCyclesRemaining == 0) {
+						var4.overheadText = null;
+					}
+				}
+			}
+
+			Iterator var5 = var2.npcs.iterator();
+
+			while (var5.hasNext()) {
+				NPC var6 = (NPC)var5.next();
+				if (var6 != null && var6.overheadTextCyclesRemaining > 0) {
+					--var6.overheadTextCyclesRemaining;
+					if (var6.overheadTextCyclesRemaining == 0) {
+						var6.overheadText = null;
+					}
+				}
+			}
 		}
 
-		return var1 != 0 ? null : class144.method3421(var0);
+	}
+
+	@ObfuscatedName("nv")
+	@ObfuscatedSignature(
+		descriptor = "(IIIILwc;Lne;B)V",
+		garbageValue = "63"
+	)
+	@Export("drawSpriteOnMinimap")
+	static final void drawSpriteOnMinimap(int var0, int var1, int var2, int var3, SpritePixels var4, SpriteMask var5) {
+		if (var4 != null) {
+			int var6 = Client.camAngleY & 2047;
+			int var7 = var3 * var3 + var2 * var2;
+			if (var7 <= 6400) {
+				int var8 = Rasterizer3D.Rasterizer3D_sine[var6];
+				int var9 = Rasterizer3D.Rasterizer3D_cosine[var6];
+				int var10 = var9 * var2 + var3 * var8 >> 16;
+				int var11 = var3 * var9 - var8 * var2 >> 16;
+				if (var7 > 2500) {
+					var4.method10777(var10 + var5.width / 2 - var4.width / 2, var5.height / 2 - var11 - var4.height / 2, var0, var1, var5.width, var5.height, var5.xStarts, var5.xWidths);
+				} else {
+					var4.drawTransBgAt(var0 + var10 + var5.width / 2 - var4.width / 2, var5.height / 2 + var1 - var11 - var4.height / 2);
+				}
+
+			}
+		}
 	}
 }

@@ -3,34 +3,32 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("lq")
+@ObfuscatedName("lm")
 @Implements("WorldMapDecoration")
 public class WorldMapDecoration {
-	@ObfuscatedName("ah")
-	@Export("ArchiveDiskActionHandler_thread")
-	static Thread ArchiveDiskActionHandler_thread;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("kw")
 	@ObfuscatedSignature(
-		descriptor = "Lws;"
+		descriptor = "Lpx;"
 	)
-	@Export("options_buttons_0Sprite")
-	static IndexedSprite options_buttons_0Sprite;
-	@ObfuscatedName("ab")
+	@Export("archive12")
+	static Archive archive12;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1402378187
+		intValue = -336595349
 	)
 	@Export("objectDefinitionId")
 	final int objectDefinitionId;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -795675999
+		intValue = -1847023617
 	)
 	@Export("decoration")
 	final int decoration;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -26992829
+		intValue = 1773160551
 	)
 	@Export("rotation")
 	final int rotation;
@@ -41,19 +39,45 @@ public class WorldMapDecoration {
 		this.rotation = var3;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lrp;B)Lrp;",
-		garbageValue = "84"
+		descriptor = "(I)Lcr;",
+		garbageValue = "-2138389610"
 	)
-	public static class442 method6284(class442 var0) {
-		synchronized(class442.field4894) {
-			if (class187.field1997 == 0) {
-				return new class442(var0);
+	@Export("worldListStart")
+	static World worldListStart() {
+		World.World_listCount = 0;
+		return class269.getNextWorldListWorld();
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(ILdb;ZB)I",
+		garbageValue = "-63"
+	)
+	static int method6337(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.field295;
+		if (var0 == ScriptOpcodes.CC_GETINVOBJECT) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.itemId;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETINVCOUNT) {
+			if (var3.itemId != -1) {
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.itemQuantity;
 			} else {
-				class442.field4894[--class187.field1997].method8309(var0);
-				return class442.field4894[class187.field1997];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
 			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETID) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.childIndex * -1626125685;
+			return 1;
+		} else if (var0 == 1707) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.method7366() ? 1 : 0;
+			return 1;
+		} else if (var0 == 1708) {
+			return Varps.method6884(var3);
+		} else {
+			return var0 == 1709 ? WorldMapData_1.method6203(var3) : 2;
 		}
 	}
 }

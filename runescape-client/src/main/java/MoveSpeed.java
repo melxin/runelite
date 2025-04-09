@@ -3,66 +3,76 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kn")
+@ObfuscatedName("kw")
 @Implements("MoveSpeed")
 public enum MoveSpeed implements Enum {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lkn;"
-	)
-	field3124((byte)-1, 0.0F),
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lkn;"
-	)
-	field3128((byte)0, 0.5F),
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lkn;"
-	)
-	field3122((byte)1, 1.0F),
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lkn;"
-	)
-	field3123((byte)2, 2.0F),
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lkn;"
-	)
-	field3121((byte)3, 1.5F),
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lkn;"
-	)
-	field3125((byte)4, 2.5F),
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lkn;"
+		descriptor = "Lkw;"
 	)
-	field3126((byte)5, 3.0F),
-	@ObfuscatedName("af")
+	field3128((byte)-1, 0.0F),
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lkn;"
+		descriptor = "Lkw;"
 	)
-	field3127((byte)6, 3.5F),
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "Lkn;"
-	)
-	field3120((byte)7, 4.0F);
-
+	field3133((byte)0, 0.5F),
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "[Lkn;"
+		descriptor = "Lkw;"
 	)
-	static MoveSpeed[] field3130 = class268.method5587();
+	field3126((byte)1, 1.0F),
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lkw;"
+	)
+	field3127((byte)2, 2.0F),
 	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "Lkw;"
+	)
+	field3132((byte)3, 1.5F),
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "Lkw;"
+	)
+	field3129((byte)4, 2.5F),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lkw;"
+	)
+	field3130((byte)5, 3.0F),
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Lkw;"
+	)
+	field3125((byte)6, 3.5F),
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "Lkw;"
+	)
+	field3124((byte)7, 4.0F);
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "[Lkw;"
+	)
+	static MoveSpeed[] field3131 = class7.method47();
+	@ObfuscatedName("ax")
 	@Export("id")
 	final byte id;
 
 	static {
-		class386.method7526();
+		StringBuilder var0 = new StringBuilder();
+		MoveSpeed[] var1 = field3131;
+
+		for (int var2 = 0; var2 < var1.length; ++var2) {
+			MoveSpeed var3 = var1[var2];
+			var0.append(var3.id);
+			var0.append(", ");
+		}
+
+		String var4 = var0.toString();
+		var4.substring(0, var4.length() - 2);
 	}
 
 	@ObfuscatedSignature(
@@ -73,69 +83,25 @@ public enum MoveSpeed implements Enum {
 		this.id = var3;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "32"
+		descriptor = "(I)I",
+		garbageValue = "1746725635"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("mx")
 	@ObfuscatedSignature(
-		descriptor = "([FB)V",
-		garbageValue = "126"
+		descriptor = "(III)V",
+		garbageValue = "325199394"
 	)
-	static void method5792(float[] var0) {
-		var0[1] = 1.0F - var0[1];
-		if (var0[0] < 0.0F) {
-			var0[0] = 0.0F;
+	@Export("runIntfCloseListeners")
+	static final void runIntfCloseListeners(int var0, int var1) {
+		if (class232.widgetDefinition.loadInterface(var0)) {
+			class28.runComponentCloseListeners(class232.widgetDefinition.Widget_interfaceComponents[var0], var1);
 		}
-
-		if (var0[1] < 0.0F) {
-			var0[1] = 0.0F;
-		}
-
-		if (var0[0] > 1.0F || var0[1] > 1.0F) {
-			float var1 = (var0[1] + (var0[0] - 2.0F)) * var0[0] + (var0[1] - 2.0F) * var0[1] + 1.0F;
-			if (class132.field1572 + var1 > 0.0F) {
-				if (var0[0] + class132.field1572 < 1.3333334F) {
-					float var2 = var0[0] - 2.0F;
-					float var3 = var0[0] - 1.0F;
-					float var4 = (float)Math.sqrt((double)(var2 * var2 - var3 * 4.0F * var3));
-					float var5 = (-var2 + var4) * 0.5F;
-					if (var0[1] + class132.field1572 > var5) {
-						var0[1] = var5 - class132.field1572;
-					} else {
-						var5 = 0.5F * (-var2 - var4);
-						if (var0[1] < class132.field1572 + var5) {
-							var0[1] = var5 + class132.field1572;
-						}
-					}
-				} else {
-					var0[0] = 1.3333334F - class132.field1572;
-					var0[1] = 0.33333334F - class132.field1572;
-				}
-			}
-		}
-
-		var0[1] = 1.0F - var0[1];
-	}
-
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "63"
-	)
-	public static int method5791(int var0) {
-		--var0;
-		var0 |= var0 >>> 1;
-		var0 |= var0 >>> 2;
-		var0 |= var0 >>> 4;
-		var0 |= var0 >>> 8;
-		var0 |= var0 >>> 16;
-		return var0 + 1;
 	}
 }

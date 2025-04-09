@@ -4,71 +4,71 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cw")
+@ObfuscatedName("cr")
 @Implements("World")
 public class World {
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "[Lcr;"
+	)
+	@Export("World_worlds")
+	static World[] World_worlds;
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1052883307
+		intValue = 1082022117
 	)
 	@Export("World_count")
 	static int World_count;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 181984891
+		intValue = -869572751
 	)
 	@Export("World_listCount")
 	static int World_listCount;
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@Export("World_sortOption2")
 	static int[] World_sortOption2;
 	@ObfuscatedName("aa")
 	@Export("World_sortOption1")
 	static int[] World_sortOption1;
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Ley;"
-	)
-	@Export("World_request")
-	static UrlRequest World_request;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -590058237
+		intValue = -538659269
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -523959329
+		intValue = 979800473
 	)
 	@Export("properties")
 	int properties;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 604347655
+		intValue = 391914251
 	)
 	@Export("population")
 	int population;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("au")
 	@Export("host")
 	String host;
 	@ObfuscatedName("aj")
 	@Export("activity")
 	String activity;
-	@ObfuscatedName("av")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -1097775933
+		intValue = 659280259
 	)
 	@Export("location")
 	int location;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1062506993
+		intValue = 1579590005
 	)
 	@Export("index")
 	int index;
-	@ObfuscatedName("ag")
-	String field836;
+	@ObfuscatedName("ay")
+	String field827;
 
 	static {
 		World_count = 0;
@@ -83,131 +83,188 @@ public class World {
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "246613437"
+		garbageValue = "-1675784815"
 	)
 	@Export("isMembersOnly")
 	boolean isMembersOnly() {
-		return (class563.field5538.rsOrdinal() & this.properties) != 0;
+		return (class563.field5585.rsOrdinal() & this.properties) != 0;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-264302643"
+		garbageValue = "1329010117"
 	)
 	@Export("isDeadman")
 	boolean isDeadman() {
-		return (class563.field5536.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "187636436"
-	)
-	boolean method1880() {
-		return (class563.field5521.rsOrdinal() & this.properties) != 0;
+		return (class563.field5569.rsOrdinal() & this.properties) != 0;
 	}
 
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "124"
+	)
+	boolean method1867() {
+		return (class563.field5554.rsOrdinal() & this.properties) != 0;
+	}
+
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "594723083"
+		garbageValue = "-2100109733"
 	)
 	@Export("isPvp")
 	boolean isPvp() {
-		return (class563.field5549.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1836304183"
-	)
-	boolean method1840() {
-		return (class563.field5522.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-436978703"
-	)
-	boolean method1838() {
-		return (class563.field5529.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1246777390"
-	)
-	@Export("isBeta")
-	boolean isBeta() {
-		return (class563.field5533.rsOrdinal() & this.properties) != 0;
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-549315627"
-	)
-	boolean method1877() {
-		return (class563.field5550.rsOrdinal() & this.properties) != 0;
+		return (class563.field5555.rsOrdinal() & this.properties) != 0;
 	}
 
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "0"
+		descriptor = "(I)Z",
+		garbageValue = "-459274846"
 	)
-	boolean method1851() {
-		return (class563.field5528.rsOrdinal() & this.properties) != 0;
+	boolean method1872() {
+		return (class563.field5556.rsOrdinal() & this.properties) != 0;
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(I)Z",
+		garbageValue = "2117332431"
+	)
+	boolean method1873() {
+		return (class563.field5582.rsOrdinal() & this.properties) != 0;
+	}
+
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(B)Z",
-		garbageValue = "84"
+		garbageValue = "-86"
 	)
-	boolean method1841() {
-		return (class563.field5540.rsOrdinal() & this.properties) != 0;
+	@Export("isBeta")
+	boolean isBeta() {
+		return (class563.field5578.rsOrdinal() & this.properties) != 0;
 	}
 
-	@ObfuscatedName("bx")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-470359150"
+		descriptor = "(I)Z",
+		garbageValue = "2135994457"
 	)
-	static int method1850(int var0) {
-		return (int)((Math.log((double)var0) / Interpreter.field885 - 7.0D) * 256.0D);
+	boolean method1885() {
+		return (class563.field5575.rsOrdinal() & this.properties) != 0;
 	}
 
-	@ObfuscatedName("oz")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZB)Ljava/lang/String;",
-		garbageValue = "93"
+		descriptor = "(B)Z",
+		garbageValue = "3"
 	)
-	static String method1887(String var0, boolean var1) {
-		String var2 = var1 ? "https://" : "http://";
-		if (Client.gameBuild == 1) {
-			var0 = var0 + "-wtrc";
-		} else if (Client.gameBuild == 2) {
-			var0 = var0 + "-wtqa";
-		} else if (Client.gameBuild == 3) {
-			var0 = var0 + "-wtwip";
-		} else if (Client.gameBuild == 5) {
-			var0 = var0 + "-wti";
-		} else if (Client.gameBuild == 4) {
-			var0 = "local";
+	boolean method1876() {
+		return (class563.field5565.rsOrdinal() & this.properties) != 0;
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(I)Z",
+		garbageValue = "-1785779153"
+	)
+	boolean method1877() {
+		return (class563.field5580.rsOrdinal() & this.properties) != 0;
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "([BI)Ldb;",
+		garbageValue = "-1759981266"
+	)
+	@Export("newScript")
+	static Script newScript(byte[] var0) {
+		Script var1 = new Script();
+		Buffer var2 = new Buffer(var0);
+		var2.offset = (var2.array.length - 2) * 29699747;
+		int var3 = var2.readUnsignedShort();
+		int var4 = var2.array.length - 2 - var3 - 12;
+		var2.offset = var4 * 29699747;
+		int var5 = var2.readInt();
+		var1.localIntCount = var2.readUnsignedShort();
+		var1.localStringCount = var2.readUnsignedShort();
+		var1.intArgumentCount = var2.readUnsignedShort();
+		var1.stringArgumentCount = var2.readUnsignedShort();
+		int var6 = var2.readUnsignedByte();
+		int var7;
+		int var8;
+		if (var6 > 0) {
+			var1.switches = var1.newIterableNodeHashTable(var6);
+
+			for (var7 = 0; var7 < var6; ++var7) {
+				var8 = var2.readUnsignedShort();
+				IterableNodeHashTable var9 = new IterableNodeHashTable(var8 > 0 ? WorldMapLabelSize.method5922(var8) : 1);
+				var1.switches[var7] = var9;
+
+				while (var8-- > 0) {
+					int var10 = var2.readInt();
+					int var11 = var2.readInt();
+					var9.put(new IntegerNode(var11), (long)var10);
+				}
+			}
 		}
 
-		String var3 = "";
-		if (Sound.field1770 != null) {
-			var3 = "/p=" + Sound.field1770;
+		var2.offset = 0;
+		var1.field1008 = var2.readStringCp1252NullTerminatedOrNull();
+		var1.opcodes = new int[var5];
+		var1.intOperands = new int[var5];
+		var1.stringOperands = new String[var5];
+
+		for (var7 = 0; var2.offset * -2066221813 < var4; var1.opcodes[var7++] = var8) {
+			var8 = var2.readUnsignedShort();
+			if (var8 == 3) {
+				var1.stringOperands[var7] = var2.readStringCp1252NullTerminated();
+			} else if (var8 < 100 && var8 != 21 && var8 != 38 && var8 != 39) {
+				var1.intOperands[var7] = var2.readInt();
+			} else {
+				var1.intOperands[var7] = var2.readUnsignedByte();
+			}
 		}
 
-		String var4 = "runescape.com";
-		return var2 + var0 + "." + var4 + "/l=" + class144.clientLanguage + "/a=" + class535.field5358 + var3 + "/";
+		return var1;
+	}
+
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "([F[IIII)V",
+		garbageValue = "-219781331"
+	)
+	static void method1875(float[] var0, int[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var4 = (var3 + var2) / 2;
+			int var5 = var2;
+			float var6 = var0[var4];
+			var0[var4] = var0[var3];
+			var0[var3] = var6;
+			int var7 = var1[var4];
+			var1[var4] = var1[var3];
+			var1[var3] = var7;
+
+			for (int var8 = var2; var8 < var3; ++var8) {
+				if (var0[var8] < var6) {
+					float var9 = var0[var8];
+					var0[var8] = var0[var5];
+					var0[var5] = var9;
+					int var10 = var1[var8];
+					var1[var8] = var1[var5];
+					var1[var5++] = var10;
+				}
+			}
+
+			var0[var3] = var0[var5];
+			var0[var5] = var6;
+			var1[var3] = var1[var5];
+			var1[var5] = var7;
+			method1875(var0, var1, var2, var5 - 1);
+			method1875(var0, var1, var5 + 1, var3);
+		}
+
 	}
 }

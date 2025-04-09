@@ -3,69 +3,69 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kb")
+@ObfuscatedName("hm")
 @Implements("Clips")
 public class Clips {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Lhv;"
+	)
+	final ModelColorOverride field2344;
+	@ObfuscatedName("aa")
 	@Export("clipping")
 	boolean clipping;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ap")
 	@Export("rasterGouraudLowRes")
 	public boolean rasterGouraudLowRes;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ax")
 	@Export("currentFaceAlpha")
 	int currentFaceAlpha;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aw")
 	@Export("zoom")
 	public int zoom;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lkg;"
+		descriptor = "Lhj;"
 	)
 	@Export("Rasterizer3D_textureLoader")
 	public TextureLoader Rasterizer3D_textureLoader;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("au")
 	@Export("clipMidX")
 	int clipMidX;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("aj")
 	@Export("clipMidY")
 	int clipMidY;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("al")
 	@Export("clipX")
 	int clipX;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@Export("clipY")
 	int clipY;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ay")
 	@Export("clipNegativeMidX")
 	int clipNegativeMidX;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ak")
 	@Export("clipCenterX")
 	int clipCenterX;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ag")
 	@Export("clipNegativeMidY")
 	int clipNegativeMidY;
-	@ObfuscatedName("am")
-	int field2998;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ai")
+	int field2357;
+	@ObfuscatedName("ad")
 	@Export("Rasterizer3D_rowOffsets")
 	int[] Rasterizer3D_rowOffsets;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Ljb;"
-	)
-	final ModelColorOverride field3000;
 
 	Clips() {
+		this.field2344 = new ModelColorOverride();
 		this.clipping = false;
 		this.rasterGouraudLowRes = true;
 		this.currentFaceAlpha = 0;
 		this.zoom = 512;
 		this.Rasterizer3D_rowOffsets = new int[1024];
-		this.field3000 = new ModelColorOverride();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@Export("setClipBounds")
 	void setClipBounds() {
 		this.clipMidX = this.clipX / 2;
@@ -73,10 +73,10 @@ public class Clips {
 		this.clipNegativeMidX = -this.clipMidX;
 		this.clipCenterX = this.clipX - this.clipMidX;
 		this.clipNegativeMidY = -this.clipMidY;
-		this.field2998 = this.clipY - this.clipMidY;
+		this.field2357 = this.clipY - this.clipMidY;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@Export("setCustomClipBounds")
 	void setCustomClipBounds(int var1, int var2, int var3, int var4) {
 		this.clipMidX = var1 - var2;
@@ -84,10 +84,10 @@ public class Clips {
 		this.clipNegativeMidX = -this.clipMidX;
 		this.clipCenterX = this.clipX - this.clipMidX;
 		this.clipNegativeMidY = -this.clipMidY;
-		this.field2998 = this.clipY - this.clipMidY;
+		this.field2357 = this.clipY - this.clipMidY;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@Export("setClipping")
 	void setClipping(int var1, int var2, int var3) {
 		this.clipping = var1 < 0 || var1 > this.clipX || var2 < 0 || var2 > this.clipX || var3 < 0 || var3 > this.clipX;

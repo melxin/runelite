@@ -1,18 +1,14 @@
-import java.awt.Desktop;
-import java.awt.Desktop.Action;
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("em")
+@ObfuscatedName("ez")
 @Implements("UserComparator3")
 public class UserComparator3 extends AbstractUserComparator {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -20,10 +16,10 @@ public class UserComparator3 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lst;Lst;I)I",
-		garbageValue = "-2147478082"
+		descriptor = "(Lse;Lse;B)I",
+		garbageValue = "19"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -38,131 +34,59 @@ public class UserComparator3 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)Lwg;",
-		garbageValue = "-2145729549"
+		descriptor = "(IB)Lir;",
+		garbageValue = "-35"
 	)
-	static SpritePixels method3220(int var0, int var1, int var2) {
-		DemotingHashTable var3 = WorldMapRegion.WorldMapRegion_cachedSprites;
-		long var4 = (long)(var2 << 16 | var0 << 8 | var1);
-		return (SpritePixels)var3.get(var4);
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZLjava/lang/String;ZB)V",
-		garbageValue = "-124"
-	)
-	static void method3214(String var0, boolean var1, String var2, boolean var3) {
-		if (var1) {
-			if (!var3 && Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
-				try {
-					Desktop.getDesktop().browse(new URI(var0));
-					return;
-				} catch (Exception var5) {
-				}
-			}
-
-			if (class31.field144.startsWith("win") && !var3) {
-				SoundSystem.method829(var0, 0);
-				return;
-			}
-
-			if (class31.field144.startsWith("mac")) {
-				class178.method3767(var0, 1, var2);
-				return;
-			}
-
-			SoundSystem.method829(var0, 2);
+	@Export("getInvDefinition")
+	public static InvDefinition getInvDefinition(int var0) {
+		InvDefinition var1 = (InvDefinition)InvDefinition.InvDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
 		} else {
-			SoundSystem.method829(var0, 3);
-		}
+			byte[] var2 = InvDefinition.InvDefinition_archive.takeFile(5, var0);
+			var1 = new InvDefinition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
 
+			InvDefinition.InvDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;ZB)Lvm;",
-		garbageValue = "-1"
+		descriptor = "(I)Z",
+		garbageValue = "1780700865"
 	)
-	@Export("getPreferencesFile")
-	public static AccessFile getPreferencesFile(String var0, String var1, boolean var2) {
-		File var3 = new File(VarcInt.cacheDir, "preferences" + var0 + ".dat");
-		if (var3.exists()) {
-			try {
-				AccessFile var10 = new AccessFile(var3, "rw", 10000L);
-				return var10;
-			} catch (IOException var9) {
-			}
-		}
-
-		String var4 = "";
-		if (class47.cacheGamebuild == 33) {
-			var4 = "_rc";
-		} else if (class47.cacheGamebuild == 34) {
-			var4 = "_wip";
-		}
-
-		File var5 = new File(class321.userHomeDirectory, "jagex_" + var1 + "_preferences" + var0 + var4 + ".dat");
-		AccessFile var6;
-		if (!var2 && var5.exists()) {
-			try {
-				var6 = new AccessFile(var5, "rw", 10000L);
-				return var6;
-			} catch (IOException var8) {
-			}
-		}
-
+	static boolean method3233() {
+		Date var0;
 		try {
-			var6 = new AccessFile(var3, "rw", 10000L);
-			return var6;
-		} catch (IOException var7) {
-			throw new RuntimeException();
+			var0 = AttackOption.method2972();
+		} catch (ParseException var4) {
+			class251.method5232("Date not valid.", "Please ensure date follows the format", "DD/MM/YYYY and is after 01/01/1900");
+			return false;
 		}
-	}
 
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/ArrayList;IIIIZI)V",
-		garbageValue = "769818369"
-	)
-	public static void method3219(ArrayList var0, int var1, int var2, int var3, int var4, boolean var5) {
-		if (!var0.isEmpty()) {
-			class335.field3687.clear();
-			class335.field3694.clear();
-			class59.method1136(var5);
-			class400.method7627(var0, var5);
-			if (!class335.field3687.isEmpty()) {
-				ClientPreferences.method2821(var1, var2, var3, var4);
-				class335.field3694.add(new AddRequestTask((SongTask)null));
-				class335.field3694.add(new class466((SongTask)null, class335.field3686, AbstractByteArrayCopier.field4097, class335.field3685));
-				ArrayList var6 = new ArrayList();
-				var6.add(new class461(new FadeInTask((SongTask)null, 0, true, class335.field3684)));
-				if (!class335.midiRequests.isEmpty()) {
-					ArrayList var7 = new ArrayList();
-					var7.add(new DelayFadeTask(new ConcurrentMidiTask((SongTask)null, var6), class335.field3690));
-					ArrayList var8 = AbstractWorldMapData.method6246();
-					var7.add(new DelayFadeTask(new FadeOutTask(new class459((SongTask)null, var8), 0, false, class335.field3693), class335.musicPlayerStatus));
-					class335.field3694.add(new ConcurrentMidiTask((SongTask)null, var7));
+		if (var0 == null) {
+			return false;
+		} else {
+			boolean var3 = class165.method3681(var0);
+			boolean var2 = class521.method9684(var0);
+			if (!var2) {
+				class251.method5232("Date not valid.", "Please ensure date follows the format", "DD/MM/YYYY and is after 01/01/1900");
+				return false;
+			} else {
+				if (!var3) {
+					class387.field4577 = 8388607;
 				} else {
-					class335.field3694.add(new DelayFadeTask((SongTask)null, class335.field3690));
-					class335.field3694.add(new ConcurrentMidiTask((SongTask)null, var6));
+					class387.field4577 = (int)(var0.getTime() / 86400000L - 11745L);
 				}
 
+				return true;
 			}
 		}
-	}
-
-	@ObfuscatedName("io")
-	@ObfuscatedSignature(
-		descriptor = "(Ldp;I)V",
-		garbageValue = "-2140166655"
-	)
-	static void method3217(WorldView var0) {
-		if (Client.renderSelf) {
-			VarbitComposition.addPlayerToScene(var0, Client.localPlayerIndex, false);
-		}
-
 	}
 }

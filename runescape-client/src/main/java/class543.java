@@ -5,60 +5,62 @@ import java.util.Map;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("us")
+@ObfuscatedName("uf")
 public class class543 implements class542 {
-	@ObfuscatedName("ab")
-	Map field5448;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("al")
+	static int[][] field5472;
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lwr;"
+		descriptor = "Lwf;"
 	)
-	final class577 field5447;
+	final class577 field5469;
+	@ObfuscatedName("an")
+	Map field5470;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwr;)V"
+		descriptor = "(Lwf;)V"
 	)
 	public class543(class577 var1) {
-		this.field5447 = var1;
+		this.field5469 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "-1956256978"
+		garbageValue = "-976759473"
 	)
-	public int vmethod9939(int var1) {
-		if (this.field5448 != null) {
-			class578 var2 = (class578)this.field5448.get(var1);
+	public int vmethod10021(int var1) {
+		if (this.field5470 != null) {
+			class578 var2 = (class578)this.field5470.get(var1);
 			if (var2 != null) {
-				return (Integer)var2.field5638;
+				return (Integer)var2.field5662;
 			}
 		}
 
-		return (Integer)this.field5447.vmethod10577(var1);
+		return (Integer)this.field5469.vmethod10633(var1);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/Object;B)V",
-		garbageValue = "85"
+		descriptor = "(ILjava/lang/Object;I)V",
+		garbageValue = "-31998852"
 	)
-	public void vmethod9940(int var1, Object var2) {
-		if (this.field5448 == null) {
-			this.field5448 = new HashMap();
-			this.field5448.put(var1, new class578(var1, var2));
+	public void vmethod10026(int var1, Object var2) {
+		if (this.field5470 == null) {
+			this.field5470 = new HashMap();
+			this.field5470.put(var1, new class578(var1, var2));
 		} else {
-			class578 var3 = (class578)this.field5448.get(var1);
+			class578 var3 = (class578)this.field5470.get(var1);
 			if (var3 == null) {
-				this.field5448.put(var1, new class578(var1, var2));
+				this.field5470.put(var1, new class578(var1, var2));
 			} else {
-				var3.field5638 = var2;
+				var3.field5662 = var2;
 			}
 		}
 
 	}
 
 	public Iterator iterator() {
-		return this.field5448 == null ? Collections.emptyList().iterator() : this.field5448.values().iterator();
+		return this.field5470 == null ? Collections.emptyList().iterator() : this.field5470.values().iterator();
 	}
 }

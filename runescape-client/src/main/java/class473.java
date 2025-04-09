@@ -1,76 +1,54 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("se")
+@ObfuscatedName("sw")
 public class class473 {
-	@ObfuscatedName("ab")
-	final int[] field5071;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ao")
+	final int[] field5086;
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -789887503
+		intValue = 1140352431
 	)
-	int field5072;
+	int field5085;
 
 	public class473(int var1) {
-		this.field5071 = new int[var1];
+		this.field5086 = new int[var1];
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "-1109114007"
+		garbageValue = "-1775452516"
 	)
-	public void method9006(int var1) {
-		this.field5071[++this.field5072 - 1] = var1;
+	public void method9064(int var1) {
+		this.field5086[++this.field5085 - 1] = var1;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IS)I",
-		garbageValue = "15163"
+		descriptor = "(IB)I",
+		garbageValue = "98"
 	)
-	public int method9007(int var1) {
-		return this.field5071[var1];
+	public int method9056(int var1) {
+		return this.field5086[var1];
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1383393403"
+		garbageValue = "-219139390"
 	)
-	public int method9005() {
-		return this.field5072;
+	public int method9060() {
+		return this.field5085;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1828255679"
+		descriptor = "(B)V",
+		garbageValue = "-15"
 	)
-	public void method9009() {
-		this.field5072 = 0;
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Ljt;",
-		garbageValue = "-97"
-	)
-	@Export("getFrames")
-	static Frames getFrames(int var0) {
-		Frames var1 = (Frames)SequenceDefinition.SequenceDefinition_cachedFrames.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			var1 = AABB.method5176(SequenceDefinition.SequenceDefinition_animationsArchive, class194.SpotAnimationDefinition_archive, var0);
-			if (var1 != null) {
-				SequenceDefinition.SequenceDefinition_cachedFrames.put(var1, (long)var0);
-			}
-
-			return var1;
-		}
+	public void method9058() {
+		this.field5085 = 0;
 	}
 }

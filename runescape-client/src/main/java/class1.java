@@ -2,231 +2,215 @@ import java.util.concurrent.Callable;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ay")
+@ObfuscatedName("an")
 public class class1 implements Callable {
-	@ObfuscatedName("fe")
+	@ObfuscatedName("vq")
 	@ObfuscatedSignature(
-		descriptor = "Lpn;"
+		descriptor = "Lbe;"
 	)
-	static Archive field3;
-	@ObfuscatedName("ab")
+	@Export("pcmPlayer1")
+	static PcmPlayer pcmPlayer1;
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lvy;"
+		descriptor = "Lve;"
 	)
-	final Buffer field0;
-	@ObfuscatedName("ay")
+	final Buffer field3;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lad;"
+		descriptor = "Laf;"
 	)
 	final class3 field1;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Laf;"
+		descriptor = "Lam;"
 	)
 	final class7 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Laf;Lvy;Lad;)V"
+		descriptor = "(Lam;Lve;Laf;)V"
 	)
 	class1(class7 var1, Buffer var2, class3 var3) {
 		this.this$0 = var1;
-		this.field0 = var2;
+		this.field3 = var2;
 		this.field1 = var3;
 	}
 
 	public Object call() {
-		return this.field1.vmethod15(this.field0);
+		return this.field1.vmethod14(this.field3);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhq;",
-		garbageValue = "350736328"
+		descriptor = "(IIIIIZB)Lwc;",
+		garbageValue = "-3"
 	)
-	@Export("getEnum")
-	public static EnumComposition getEnum(int var0) {
-		EnumComposition var1 = (EnumComposition)EnumComposition.EnumDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	@Export("getItemSprite")
+	public static final SpritePixels getItemSprite(int var0, int var1, int var2, int var3, int var4, boolean var5) {
+		if (var1 == -1) {
+			var4 = 0;
+		} else if (var4 == 2 && var1 != 1) {
+			var4 = 1;
+		}
+
+		long var6 = ((long)var2 << 38) + ((long)var1 << 16) + (long)var0 + ((long)var4 << 40) + ((long)var3 << 42);
+		SpritePixels var8;
+		if (!var5) {
+			var8 = (SpritePixels)ItemComposition.ItemDefinition_cachedSprites.get(var6);
+			if (var8 != null) {
+				return var8;
+			}
+		}
+
+		ItemComposition var9 = class231.ItemDefinition_get(var0);
+		if (var1 > 1 && var9.countobj != null) {
+			int var10 = -1;
+
+			for (int var11 = 0; var11 < 10; ++var11) {
+				if (var1 >= var9.countco[var11] && var9.countco[var11] != 0) {
+					var10 = var9.countobj[var11];
+				}
+			}
+
+			if (var10 != -1) {
+				var9 = class231.ItemDefinition_get(var10);
+			}
+		}
+
+		Model var20 = var9.getModel(1);
+		if (var20 == null) {
+			return null;
 		} else {
-			byte[] var2 = class593.EnumDefinition_archive.takeFile(8, var0);
-			var1 = new EnumComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+			SpritePixels var21 = null;
+			if (var9.noteTemplate != -1) {
+				var21 = getItemSprite(var9.note, 10, 1, 0, 0, true);
+				if (var21 == null) {
+					return null;
+				}
+			} else if (var9.notedId != -1) {
+				var21 = getItemSprite(var9.unnotedId, var1, var2, var3, 0, false);
+				if (var21 == null) {
+					return null;
+				}
+			} else if (var9.placeholderTemplate != -1) {
+				var21 = getItemSprite(var9.placeholder, var1, 0, 0, 0, false);
+				if (var21 == null) {
+					return null;
+				}
 			}
 
-			EnumComposition.EnumDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1363786104"
-	)
-	public static void method14() {
-		if (MouseHandler.MouseHandler_instance != null) {
-			synchronized(MouseHandler.MouseHandler_instance) {
-				MouseHandler.MouseHandler_instance = null;
+			int[] var12 = Rasterizer2D.Rasterizer2D_pixels;
+			int var13 = Rasterizer2D.Rasterizer2D_width;
+			int var14 = Rasterizer2D.Rasterizer2D_height;
+			float[] var15 = Rasterizer2D.Rasterizer2D_brightness;
+			int[] var16 = new int[4];
+			Rasterizer2D.Rasterizer2D_getClipArray(var16);
+			var8 = new SpritePixels(36, 32);
+			Rasterizer3D.method3900(var8.pixels, 36, 32, (float[])null);
+			Rasterizer2D.Rasterizer2D_clear();
+			Rasterizer3D.resetRasterClipping();
+			Rasterizer3D.setCustomClipBounds(16, 16);
+			Rasterizer3D.clips.rasterGouraudLowRes = false;
+			if (var9.placeholderTemplate != -1) {
+				var21.drawTransBgAt(0, 0);
 			}
-		}
 
+			int var17 = var9.zoom2d;
+			if (var5) {
+				var17 = (int)(1.5D * (double)var17);
+			} else if (var2 == 2) {
+				var17 = (int)((double)var17 * 1.04D);
+			}
+
+			int var18 = var17 * Rasterizer3D.Rasterizer3D_sine[var9.xan2d] >> 16;
+			int var19 = var17 * Rasterizer3D.Rasterizer3D_cosine[var9.xan2d] >> 16;
+			var20.calculateBoundsCylinder();
+			var20.drawFrustum(0, var9.yan2d, var9.zan2d, var9.xan2d, var9.offsetX2d, var20.height / 2 + var18 + var9.offsetY2d, var19 + var9.offsetY2d);
+			if (var9.notedId != -1) {
+				var21.drawTransBgAt(0, 0);
+			}
+
+			if (var2 >= 1) {
+				var8.outline(1);
+			}
+
+			if (var2 >= 2) {
+				var8.outline(16777215);
+			}
+
+			if (var3 != 0) {
+				var8.shadow(var3);
+			}
+
+			Rasterizer3D.method3900(var8.pixels, 36, 32, (float[])null);
+			if (var9.noteTemplate != -1) {
+				var21.drawTransBgAt(0, 0);
+			}
+
+			if (var4 == 1 || var4 == 2 && var9.isStackable == 1) {
+				WorldMapAreaData.ItemDefinition_fontPlain11.draw(WorldMapData_1.method6224(var1), 0, 9, 16776960, 1);
+			}
+
+			if (!var5) {
+				ItemComposition.ItemDefinition_cachedSprites.put(var8, var6);
+			}
+
+			Rasterizer3D.method3900(var12, var13, var14, var15);
+			Rasterizer2D.Rasterizer2D_setClipArray(var16);
+			Rasterizer3D.resetRasterClipping();
+			Rasterizer3D.clips.rasterGouraudLowRes = true;
+			return var8;
+		}
 	}
 
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(ILdy;ZS)I",
-		garbageValue = "241"
+		descriptor = "(B)V",
+		garbageValue = "100"
 	)
-	static int method13(int var0, Script var1, boolean var2) {
-		Widget var3;
-		if (var0 >= 2000) {
-			var0 -= 1000;
-			var3 = class376.widgetDefinition.method6918(Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize]);
-		} else {
-			var3 = var2 ? class132.scriptDotWidget : PlayerCompositionColorTextureOverride.scriptActiveWidget;
-		}
-
-		MilliClock.invalidateWidget(var3);
-		int var4;
-		int var5;
-		if (var0 != ScriptOpcodes.CC_SETOBJECT && var0 != ScriptOpcodes.CC_SETOBJECT_NONUM && var0 != ScriptOpcodes.CC_SETOBJECT_ALWAYS_NUM) {
-			if (var0 == ScriptOpcodes.CC_SETNPCHEAD) {
-				var3.modelType = 2;
-				var3.modelId = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-				return 1;
-			} else if (var0 == ScriptOpcodes.CC_SETPLAYERHEAD_SELF) {
-				var3.modelType = 3;
-				var3.modelId = class132.localPlayer.appearance.getChatHeadId();
-				return 1;
-			} else if (var0 == 1207) {
-				boolean var7 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize] == 1;
-				var3.method7337(class132.localPlayer.appearance, var7);
-				return 1;
-			} else if (var0 == 1208) {
-				var4 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-				if (var3.field3981 == null) {
-					throw new RuntimeException("");
-				} else {
-					var3.field3981.method6957(var4);
-					return 1;
-				}
-			} else if (var0 == 1209) {
-				HealthBarConfig.Interpreter_intStackSize -= 2;
-				var4 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize];
-				var5 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1];
-				if (var3.field3981 == null) {
-					throw new RuntimeException("");
-				} else {
-					var3.field3981.method6963(var4, var5);
-					return 1;
-				}
-			} else if (var0 == 1210) {
-				var4 = Interpreter.Interpreter_intStack[--HealthBarConfig.Interpreter_intStackSize];
-				if (var3.field3981 == null) {
-					throw new RuntimeException("");
-				} else {
-					var3.field3981.method6974(class132.localPlayer.appearance.gender, var4);
-					return 1;
-				}
-			} else {
-				return 2;
-			}
-		} else {
-			HealthBarConfig.Interpreter_intStackSize -= 2;
-			var4 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize];
-			var5 = Interpreter.Interpreter_intStack[HealthBarConfig.Interpreter_intStackSize + 1];
-			var3.itemId = var4;
-			var3.itemQuantity = var5;
-			ItemComposition var6 = class138.ItemDefinition_get(var4);
-			var3.modelAngleX = var6.xan2d;
-			var3.modelAngleY = var6.yan2d;
-			var3.modelAngleZ = var6.zan2d;
-			var3.modelOffsetX = var6.offsetX2d;
-			var3.modelOffsetY = var6.offsetY2d;
-			var3.modelZoom = var6.zoom2d;
-			if (var0 == ScriptOpcodes.CC_SETOBJECT_NONUM) {
-				var3.itemQuantityMode = 0;
-			} else if (var0 == ScriptOpcodes.CC_SETOBJECT_ALWAYS_NUM | 1 == var6.isStackable) {
-				var3.itemQuantityMode = 1;
-			} else {
-				var3.itemQuantityMode = 2;
-			}
-
-			if (var3.field3987 > 0) {
-				var3.modelZoom = var3.modelZoom * 32 / var3.field3987;
-			} else if (var3.rawWidth > 0) {
-				var3.modelZoom = var3.modelZoom * 32 / var3.rawWidth;
-			}
-
-			return 1;
-		}
+	static final void method8() {
+		ClanSettings.method3631("You can't add yourself to your own friend list");
 	}
 
-	@ObfuscatedName("jo")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Ldp;I)V",
-		garbageValue = "407744035"
+		descriptor = "(Ldj;[BIIIII)V",
+		garbageValue = "576694650"
 	)
-	static final void method12(WorldView var0) {
-		for (Projectile var1 = (Projectile)var0.projectiles.last(); var1 != null; var1 = (Projectile)var0.projectiles.previous()) {
-			if (var0.plane == var1.plane && Client.cycle <= var1.cycleEnd) {
-				if (Client.cycle >= var1.cycleStart) {
-					NPC var2;
-					int var3;
-					Player var4;
-					if (!var1.isMoving && var1.field994 != 0) {
-						if (var1.field994 > 0) {
-							var2 = (NPC)class376.worldView.npcs.get((long)(var1.field994 - 1));
-							if (var2 != null && 0 <= var2.x && var2.x < 13312 && 0 <= var2.y && var2.y < 13312) {
-								var1.sourceX = var2.x;
-								var1.sourceY = var2.y;
-								var1.setDestination(var1.field987, var1.field988, var1.field989, Client.cycle);
-							}
-						} else {
-							var3 = -var1.field994 - 1;
-							if (var3 == Client.localPlayerIndex) {
-								var4 = class132.localPlayer;
-							} else {
-								var4 = (Player)class376.worldView.players.get((long)var3);
-							}
+	static final void method12(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5) {
+		int var7;
+		int var8;
+		int var9;
+		int var10;
+		int var11;
+		if (var0.collisionMaps != null) {
+			for (int var6 = 0; var6 < 4; ++var6) {
+				var7 = var2 - var0.collisionMaps[var6].xInset;
+				var8 = var3 - var0.collisionMaps[var6].yInset;
 
-							if (var4 != null && 0 <= var4.x && var4.x < 13312 && 0 <= var4.y && var4.y < 13312) {
-								var1.sourceX = var4.x;
-								var1.sourceY = var4.y;
-								var1.setDestination(var1.field987, var1.field988, var1.field989, Client.cycle);
-							}
+				for (var9 = 0; var9 < 64; ++var9) {
+					var10 = var7 + var9;
+
+					for (var11 = 0; var11 < 64; ++var11) {
+						int var12 = var11 + var8;
+						if (var10 > 0 && var10 < var0.collisionMaps[var6].flags.length && var12 > 0 && var12 < var0.collisionMaps[var6].flags[var10].length) {
+							int[] var10000 = var0.collisionMaps[var6].flags[var10];
+							var10000[var12] &= -1073741825;
 						}
 					}
-
-					if (var1.targetIndex > 0) {
-						var2 = (NPC)var0.npcs.get((long)(var1.targetIndex - 1));
-						if (var2 != null && 0 <= var2.x && var2.x < 13312 && 0 <= var2.y && var2.y < 13312) {
-							var1.setDestination(var2.x, var2.y, DevicePcmPlayerProvider.getTileHeight(var0, var2.x, var2.y, var1.plane) - var1.endHeight, Client.cycle);
-						}
-					}
-
-					if (var1.targetIndex < 0) {
-						var3 = -var1.targetIndex - 1;
-						if (var3 == Client.localPlayerIndex) {
-							var4 = class132.localPlayer;
-						} else {
-							var4 = (Player)var0.players.get((long)var3);
-						}
-
-						if (var4 != null && 0 <= var4.x && var4.x < 13312 && 0 <= var4.y && var4.y < 13312) {
-							var1.setDestination(var4.x, var4.y, DevicePcmPlayerProvider.getTileHeight(var0, var4.x, var4.y, var1.plane) - var1.endHeight, Client.cycle);
-						}
-					}
-
-					var1.advance(Client.graphicsCycle);
-					var0.scene.drawEntity(var0.plane, (int)var1.x, (int)var1.y, (int)var1.z, 60, var1, var1.yaw, -1L, false);
 				}
-			} else {
-				var1.remove();
+			}
+		}
+
+		Buffer var13 = new Buffer(var1);
+
+		for (var7 = 0; var7 < 4; ++var7) {
+			for (var8 = 0; var8 < 64; ++var8) {
+				for (var9 = 0; var9 < 64; ++var9) {
+					var10 = var8 + var2;
+					var11 = var3 + var9;
+					class232.loadTerrain(var0, var13, var7, var10, var11, var10 + var4, var5 + var11, 0);
+				}
 			}
 		}
 

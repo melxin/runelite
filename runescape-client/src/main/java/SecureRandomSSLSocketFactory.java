@@ -14,17 +14,17 @@ import net.runelite.mapping.ObfuscatedSignature;
 import org.bouncycastle.crypto.tls.TlsClientProtocol;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-@ObfuscatedName("av")
+@ObfuscatedName("al")
 @Implements("SecureRandomSSLSocketFactory")
 public class SecureRandomSSLSocketFactory extends SSLSocketFactory {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lav;"
+		descriptor = "Lal;"
 	)
 	@Export("INSTANCE")
-	public static SecureRandomSSLSocketFactory INSTANCE;
-	@ObfuscatedName("ab")
-	SecureRandom field64;
+	static SecureRandomSSLSocketFactory INSTANCE;
+	@ObfuscatedName("an")
+	SecureRandom field56;
 
 	static {
 		if (Security.getProvider("BC") == null) {
@@ -33,14 +33,14 @@ public class SecureRandomSSLSocketFactory extends SSLSocketFactory {
 
 	}
 
-	public SecureRandomSSLSocketFactory() {
-		this.field64 = new SecureRandom();
+	SecureRandomSSLSocketFactory() {
+		this.field56 = new SecureRandom();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;Lorg/bouncycastle/crypto/tls/TlsClientProtocol;I)Ljavax/net/ssl/SSLSocket;",
-		garbageValue = "71677003"
+		garbageValue = "895276308"
 	)
 	@Export("createSocket")
 	SSLSocket createSocket(String var1, TlsClientProtocol var2) {
@@ -56,11 +56,11 @@ public class SecureRandomSSLSocketFactory extends SSLSocketFactory {
 			var1.connect(new InetSocketAddress(var2, var3));
 		}
 
-		TlsClientProtocol var5 = new TlsClientProtocol(var1.getInputStream(), var1.getOutputStream(), this.field64);
+		TlsClientProtocol var5 = new TlsClientProtocol(var1.getInputStream(), var1.getOutputStream(), this.field56);
 		return this.createSocket(var2, var5);
 	}
 
-	public Socket createSocket(InetAddress var1, int var2) throws IOException {
+	public String[] getDefaultCipherSuites() {
 		return null;
 	}
 
@@ -76,11 +76,24 @@ public class SecureRandomSSLSocketFactory extends SSLSocketFactory {
 		return null;
 	}
 
-	public String[] getDefaultCipherSuites() {
+	public Socket createSocket(InetAddress var1, int var2, InetAddress var3, int var4) throws IOException {
 		return null;
 	}
 
-	public Socket createSocket(InetAddress var1, int var2, InetAddress var3, int var4) throws IOException {
+	public Socket createSocket(InetAddress var1, int var2) throws IOException {
 		return null;
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lal;",
+		garbageValue = "315995621"
+	)
+	public static SecureRandomSSLSocketFactory method177() {
+		if (INSTANCE == null) {
+			INSTANCE = new SecureRandomSSLSocketFactory();
+		}
+
+		return INSTANCE;
 	}
 }

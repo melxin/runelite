@@ -1,39 +1,36 @@
-import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dk")
+@ObfuscatedName("dc")
 @Implements("ArchiveLoader")
 public class ArchiveLoader {
-	@ObfuscatedName("fl")
+	@ObfuscatedName("pv")
+	@Export("regionMapArchiveIds")
+	static int[] regionMapArchiveIds;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lpn;"
-	)
-	static Archive field1065;
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lpn;"
+		descriptor = "Lpx;"
 	)
 	@Export("archive")
 	final Archive archive;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1986638769
+		intValue = -2052018743
 	)
 	@Export("groupCount")
 	final int groupCount;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1086606507
+		intValue = 220117271
 	)
 	@Export("loadedCount")
 	int loadedCount;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpn;Ljava/lang/String;)V"
+		descriptor = "(Lpx;Ljava/lang/String;)V"
 	)
 	ArchiveLoader(Archive var1, String var2) {
 		this.loadedCount = 0;
@@ -41,17 +38,17 @@ public class ArchiveLoader {
 		this.groupCount = var1.getGroupCount();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1397484392"
+		descriptor = "(B)Z",
+		garbageValue = "10"
 	)
 	@Export("isLoaded")
 	boolean isLoaded() {
 		this.loadedCount = 0;
 
 		for (int var1 = 0; var1 < this.groupCount; ++var1) {
-			if (!this.archive.method7592(var1) || this.archive.method7595(var1)) {
+			if (!this.archive.method7664(var1) || this.archive.method7639(var1)) {
 				++this.loadedCount;
 			}
 		}
@@ -59,130 +56,74 @@ public class ArchiveLoader {
 		return this.loadedCount >= this.groupCount;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)Z",
-		garbageValue = "1949762729"
+		descriptor = "(II)Ljd;",
+		garbageValue = "-1298104059"
 	)
-	static final boolean method2415(byte[] var0, int var1, int var2) {
-		boolean var3 = true;
-		Buffer var4 = new Buffer(var0);
-		int var5 = -1;
-
-		label70:
-		while (true) {
-			int var6 = var4.readIncrSmallSmart();
-			if (var6 == 0) {
-				return var3;
+	@Export("SpotAnimationDefinition_get")
+	public static SpotAnimationDefinition SpotAnimationDefinition_get(int var0) {
+		SpotAnimationDefinition var1 = (SpotAnimationDefinition)SpotAnimationDefinition.SpotAnimationDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = GrandExchangeOfferNameComparator.field4771.takeFile(13, var0);
+			var1 = new SpotAnimationDefinition();
+			var1.id = var0;
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
 			}
 
-			var5 += var6;
-			int var7 = 0;
-			boolean var8 = false;
+			SpotAnimationDefinition.SpotAnimationDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
+	}
 
-			while (true) {
-				int var9;
-				while (!var8) {
-					var9 = var4.readUShortSmart();
-					if (var9 == 0) {
-						continue label70;
-					}
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(II)[B",
+		garbageValue = "-1992829917"
+	)
+	public static byte[] method2432(int var0) {
+		return WorldMapIcon_1.ByteArrayPool_getArrayBool(var0, false);
+	}
 
-					var7 += var9 - 1;
-					int var10 = var7 & 63;
-					int var11 = var7 >> 6 & 63;
-					int var12 = var4.readUnsignedByte() >> 2;
-					int var13 = var11 + var1;
-					int var14 = var10 + var2;
-					if (var13 > 0 && var14 > 0 && var13 < 103 && var14 < 103) {
-						ObjectComposition var15 = class177.getObjectDefinition(var5);
-						if (var12 != 22 || !Client.isLowDetail || var15.int1 != 0 || var15.interactType == 1 || var15.boolean2) {
-							if (!var15.needsModelFiles()) {
-								++Client.field583;
-								var3 = false;
-							}
-
-							var8 = true;
-						}
-					}
-				}
-
-				var9 = var4.readUShortSmart();
-				if (var9 == 0) {
-					break;
-				}
-
-				var4.readUnsignedByte();
+	@ObfuscatedName("bo")
+	@ObfuscatedSignature(
+		descriptor = "(ILdb;ZB)I",
+		garbageValue = "16"
+	)
+	static int method2437(int var0, Script var1, boolean var2) {
+		if (var0 == 6754) {
+			int var5 = Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize];
+			NPCComposition var6 = class232.getNpcDefinition(var5);
+			Interpreter.Interpreter_stringStack[++class338.Interpreter_stringStackSize - 1] = var6 != null ? var6.name : "";
+			return 1;
+		} else {
+			NPCComposition var3;
+			if (var0 == 6764) {
+				AbstractByteArrayCopier.Interpreter_intStackSize -= 2;
+				var3 = class232.getNpcDefinition(Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize]);
+				int var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.method5184(var4);
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.method5186(var4);
+				return 1;
+			} else if (var0 == 6765) {
+				var3 = class232.getNpcDefinition(Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize]);
+				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3 != null ? var3.combatLevel : 0;
+				return 1;
+			} else {
+				return 2;
 			}
 		}
 	}
 
-	@ObfuscatedName("gj")
+	@ObfuscatedName("is")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-6"
+		descriptor = "(II)I",
+		garbageValue = "-1311198736"
 	)
-	static void method2416() {
-		Client.field575 = true;
-		if (class322.varcs != null && class322.varcs.hasUnwrittenChanges()) {
-			class322.varcs.write();
-		}
-
-		ApproximateRouteStrategy.method1212();
-		WorldMapRectangle.method6283();
-		if (class178.mouseRecorder != null) {
-			class178.mouseRecorder.isRunning = false;
-		}
-
-		class178.mouseRecorder = null;
-		Client.packetWriter.close();
-		if (class332.taskHandler != null) {
-			try {
-				class332.taskHandler.close();
-			} catch (Exception var2) {
-			}
-		}
-
-		class332.taskHandler = null;
-		class105.clear();
-		class152.method3503();
-		Client.worldViewManager.clear();
-		class541.worldMap = null;
-		class177.method3764(0, 0);
-		class47.method860();
-		Client.playingJingle = false;
-		RouteStrategy.method5690();
-		if (FloorDecoration.pcmPlayer1 != null) {
-			FloorDecoration.pcmPlayer1.shutdown();
-		}
-
-		AsyncHttpResponse.field77.method7743();
-		VertexNormal.method5432();
-		if (Tiles.urlRequester != null) {
-			Tiles.urlRequester.close();
-		}
-
-		Renderable.method5187();
-		JagexCache.JagexCache_dat2File = null;
-		JagexCache.JagexCache_idx255File = null;
-		class379.JagexCache_idxFiles = null;
-		HttpRequestTask.method248();
-		RouteStrategy.masterDisk = null;
-		Client.archiveLoaders.clear();
-		Client.field708 = 0;
-		AsyncHttpResponse.field77 = new JagNetThread();
-		Tiles.urlRequester = new SecureUrlRequester(class569.client.https, 229);
-
-		try {
-			Varps.method6860("oldschool", class154.field1752, class241.field2662.name, 0, 25);
-		} catch (IOException var1) {
-			throw new RuntimeException(var1);
-		}
-
-		RouteStrategy.masterDisk = new ArchiveDisk(255, JagexCache.JagexCache_dat2File, JagexCache.JagexCache_idx255File, 500000);
-		class332.taskHandler = new TaskHandler();
-		class569.client.method606();
-		WorldMapIcon_0.method6208(class94.field1161);
-		class511.updateGameState(0);
+	static final int method2433(int var0) {
+		return Math.min(Math.max(var0, 128), 383);
 	}
 }

@@ -3,33 +3,28 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nd")
+@ObfuscatedName("np")
 public class class346 implements Comparator {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("vz")
 	@ObfuscatedGetter(
-		intValue = 1975425553
+		intValue = 1639087159
 	)
-	public static int field3798;
-	@ObfuscatedName("us")
-	@ObfuscatedGetter(
-		intValue = 380414627
-	)
-	static int field3797;
+	static int field3809;
 
 	class346() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lnh;Lnh;B)I",
-		garbageValue = "59"
+		descriptor = "(Lna;Lna;I)I",
+		garbageValue = "-1772614296"
 	)
-	int method6840(class339 var1, class339 var2) {
-		return var1.field3753 - var2.field3753;
+	int method6860(class339 var1, class339 var2) {
+		return var1.field3764 - var2.field3764;
 	}
 
 	public int compare(Object var1, Object var2) {
-		return this.method6840((class339)var1, (class339)var2);
+		return this.method6860((class339)var1, (class339)var2);
 	}
 
 	public boolean equals(Object var1) {

@@ -4,30 +4,32 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jy")
+@ObfuscatedName("hh")
 @Implements("VertexNormal")
 public class VertexNormal {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ad")
+	static String[] field2318;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -781146027
+		intValue = -68809871
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 361732789
+		intValue = 188736505
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1794956465
+		intValue = -1308669255
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1010980195
+		intValue = 1754821321
 	)
 	@Export("magnitude")
 	int magnitude;
@@ -36,35 +38,12 @@ public class VertexNormal {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljy;)V"
+		descriptor = "(Lhh;)V"
 	)
 	VertexNormal(VertexNormal var1) {
 		this.x = var1.x;
 		this.y = var1.y;
 		this.z = var1.z;
 		this.magnitude = var1.magnitude;
-	}
-
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1931190339"
-	)
-	public static void method5432() {
-		synchronized(ArchiveDiskActionHandler.field4639) {
-			if (ArchiveDiskActionHandler.field4637 != 0) {
-				ArchiveDiskActionHandler.field4637 = 1;
-
-				try {
-					ArchiveDiskActionHandler.field4639.wait();
-				} catch (InterruptedException var5) {
-				}
-			}
-		}
-
-		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.clear();
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.clear();
-		}
 	}
 }

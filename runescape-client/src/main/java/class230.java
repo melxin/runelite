@@ -1,55 +1,91 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ih")
-public abstract class class230 {
-	@ObfuscatedName("ad")
-	String field2509;
-	// $FF: synthetic field
+@ObfuscatedName("ia")
+public class class230 extends DualNode {
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lix;"
+		descriptor = "Lmj;"
 	)
-	final class227 this$0;
+	@Export("field1842")
+	public static EvictingDualNodeHashTable field1842;
 
-	@ObfuscatedSignature(
-		descriptor = "(Lix;Ljava/lang/String;)V"
-	)
-	class230(class227 var1, String var2) {
-		this.this$0 = var1;
-		this.field2509 = var2;
+	static {
+		field1842 = new EvictingDualNodeHashTable(64);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-112"
+		descriptor = "(Ljava/lang/String;B)V",
+		garbageValue = "83"
 	)
-	public abstract int vmethod4622();
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1526672975"
-	)
-	public int vmethod4616() {
-		return -1;
+	static final void method5023(String var0) {
+		ClanSettings.method3631("Please remove " + var0 + " from your friend list first");
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1978748075"
+		descriptor = "(Lph;Lph;Ljava/lang/String;Ljava/lang/String;I)Lrk;",
+		garbageValue = "1126247432"
 	)
-	public String vmethod4620() {
-		return null;
+	public static Font method5024(AbstractArchive var0, AbstractArchive var1, String var2, String var3) {
+		if (!var0.isValidFileName(var2, var3)) {
+			return null;
+		} else {
+			int var4 = var0.getGroupId(var2);
+			int var5 = var0.getFileId(var4, var3);
+			return class255.method5320(var0, var1, var4, var5);
+		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "687665258"
+		descriptor = "(Lph;IB)V",
+		garbageValue = "15"
 	)
-	public String method4614() {
-		return this.field2509;
+	public static void method5022(AbstractArchive var0, int var1) {
+		if (!class335.field3698.isEmpty()) {
+			ArrayList var2 = new ArrayList();
+			Iterator var3 = class335.field3698.iterator();
+
+			while (var3.hasNext()) {
+				MidiRequest var4 = (MidiRequest)var3.next();
+				var4.field3818 = false;
+				var4.field3820 = false;
+				var4.field3819 = false;
+				var4.field3814 = false;
+				var4.musicTrackArchive = var0;
+				var4.musicTrackVolume = var1;
+				var4.field3815 = 0.0F;
+				var2.add(var4);
+			}
+
+			MouseHandler.method665(var2, class335.musicPlayerStatus, class335.field3692, class335.field3702, class335.field3693, false);
+		}
+	}
+
+	@ObfuscatedName("iy")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1899824822"
+	)
+	static final void method5021() {
+		Iterator var0 = Client.worldViewManager.iterator();
+
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
+			Iterator var2 = var1.npcs.iterator();
+
+			while (var2.hasNext()) {
+				NPC var3 = (NPC)var2.next();
+				if (var3 != null) {
+					class244.updateActorSequence(var1, var3, var3.definition.size);
+				}
+			}
+		}
+
 	}
 }

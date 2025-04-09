@@ -3,19 +3,20 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("dr")
+@ObfuscatedName("ds")
 @Implements("ChatChannel")
 public class ChatChannel {
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "[Lck;"
+		descriptor = "[Lcu;"
 	)
 	@Export("messages")
 	Message[] messages;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -842935601
+		intValue = 1693887289
 	)
 	@Export("count")
 	int count;
@@ -24,10 +25,10 @@ public class ChatChannel {
 		this.messages = new Message[100];
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;B)Lck;",
-		garbageValue = "-111"
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;S)Lcu;",
+		garbageValue = "1650"
 	)
 	@Export("addMessage")
 	Message addMessage(int var1, String var2, String var3, String var4) {
@@ -55,66 +56,68 @@ public class ChatChannel {
 		return var5;
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lck;",
-		garbageValue = "1661282114"
+		descriptor = "(IB)Lcu;",
+		garbageValue = "8"
 	)
 	@Export("getMessage")
 	Message getMessage(int var1) {
 		return var1 >= 0 && var1 < this.count ? this.messages[var1] : null;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-2004839987"
+		descriptor = "(B)I",
+		garbageValue = "-26"
 	)
 	@Export("size")
 	int size() {
 		return this.count;
 	}
 
-	@ObfuscatedName("kv")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Ldp;Ldt;IILkn;B)V",
-		garbageValue = "88"
+		descriptor = "(B)V",
+		garbageValue = "60"
 	)
-	static final void method2343(WorldView var0, Player var1, int var2, int var3, MoveSpeed var4) {
-		int var5 = var1.pathX[0];
-		int var6 = var1.pathY[0];
-		int var7 = var1.size;
-		CollisionMap var8 = var0.collisionMaps[var0.plane];
-		if (var5 >= var7 && var5 < var8.xSize - var7 && var6 >= var7 && var6 < var8.ySize - var7) {
-			if (var2 >= var7 && var2 < var8.xSize - var7 && var3 >= var7 && var3 < var8.ySize - var7) {
-				int var9 = Client.field572.method5808(var5, var6, var7, ClientPreferences.method2700(var2, var3), var8, true, Client.field711, Client.field650);
-				if (var9 >= 1) {
-					for (int var10 = 0; var10 < var9 - 1; ++var10) {
-						var1.method2590(Client.field711[var10], Client.field650[var10], var4);
-					}
-
-				}
-			}
+	@Export("focusPasswordWhenUsernameFilled")
+	static void focusPasswordWhenUsernameFilled() {
+		if (Client.Login_isUsernameRemembered && Login.Login_username != null && !Login.Login_username.isEmpty()) {
+			Login.currentLoginField = 1;
+		} else {
+			Login.currentLoginField = 0;
 		}
+
 	}
 
-	@ObfuscatedName("ow")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IIZI)V",
-		garbageValue = "-1717992490"
+		descriptor = "(ILdb;ZI)I",
+		garbageValue = "-111229305"
 	)
-	static final void method2352(int var0, int var1, boolean var2) {
-		if (Client.currentClanChannels[var0] != null) {
-			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3665()) {
-				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
-				PacketBufferNode var4 = class272.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
-				var4.packetBuffer.writeByte(4 + AsyncRestClient.stringCp1252NullTerminatedByteSize(var3.username.getName()));
-				var4.packetBuffer.writeByte(var0);
-				var4.packetBuffer.writeShort(var1);
-				var4.packetBuffer.writeBoolean(var2);
-				var4.packetBuffer.writeStringCp1252NullTerminated(var3.username.getName());
-				Client.packetWriter.addNode(var4);
-			}
+	static int method2383(int var0, Script var1, boolean var2) {
+		Widget var3 = class232.widgetDefinition.method6951(Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize]);
+		if (var0 == ScriptOpcodes.IF_GETX) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.x;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETY) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.y;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETWIDTH) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.width * 624892547;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETHEIGHT) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.height * 1265510039;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETHIDE) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.isHidden ? 1 : 0;
+			return 1;
+		} else if (var0 == ScriptOpcodes.IF_GETLAYER) {
+			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.parentId;
+			return 1;
+		} else {
+			return 2;
 		}
 	}
 }

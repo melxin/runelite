@@ -1,50 +1,42 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("je")
+@ObfuscatedName("ha")
 @Implements("FloatProjection")
 public class FloatProjection extends Projection {
-	@ObfuscatedName("si")
-	static boolean field2787;
-	@ObfuscatedName("um")
-	@ObfuscatedGetter(
-		intValue = 124017645
-	)
-	static int field2789;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lro;"
+		descriptor = "Lrm;"
 	)
 	@Export("transformationMatrix")
 	TransformationMatrix transformationMatrix;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@Export("projection")
 	float[] projection;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lro;)V"
+		descriptor = "(Lrm;)V"
 	)
 	FloatProjection(TransformationMatrix var1) {
 		this.projection = new float[3];
 		this.transformationMatrix = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljc;IIIIJ)V"
+		descriptor = "(Lhy;IIIIJ)V"
 	)
 	@Export("draw")
 	void draw(Renderable var1, int var2, int var3, int var4, int var5, long var6) {
 		var1.draw(var2, this.transformationMatrix, var3, var4, var5, var6);
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;Ljh;IIII)V",
-		garbageValue = "-1468794048"
+		descriptor = "(Lho;Lhp;IIIB)V",
+		garbageValue = "-94"
 	)
 	@Export("drawTileUnderlay")
 	void drawTileUnderlay(Scene var1, SceneTilePaint var2, int var3, int var4, int var5) {
@@ -79,10 +71,10 @@ public class FloatProjection extends Projection {
 		this.drawSceneTilePaint(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var17, var9, var8, var13, var12);
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;Lji;III)V",
-		garbageValue = "-2141053540"
+		descriptor = "(Lho;Lht;III)V",
+		garbageValue = "2016350808"
 	)
 	@Export("drawTileOverlay")
 	void drawTileOverlay(Scene var1, SceneTileModel var2, int var3, int var4) {
@@ -105,27 +97,9 @@ public class FloatProjection extends Projection {
 			var9 |= 1;
 			SceneTileModel.verticesX[var6] = Rasterizer3D.getClipMidX() + var7 * Rasterizer3D.get3dZoom() / var9;
 			SceneTileModel.verticesY[var6] = Rasterizer3D.getClipMidY() + var8 * Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.verticesZ[var6] = class148.method3471(var9);
+			SceneTileModel.verticesZ[var6] = class503.method9561(var9);
 		}
 
 		this.drawSceneTileModel(var1, var2, var3, var4);
-	}
-
-	@ObfuscatedName("bs")
-	@ObfuscatedSignature(
-		descriptor = "(Lbr;B)V",
-		garbageValue = "89"
-	)
-	@Export("PcmStream_disable")
-	static final void PcmStream_disable(PcmStream var0) {
-		var0.active = false;
-		if (var0.sound != null) {
-			var0.sound.position = 0;
-		}
-
-		for (PcmStream var1 = var0.firstSubStream(); var1 != null; var1 = var0.nextSubStream()) {
-			PcmStream_disable(var1);
-		}
-
 	}
 }
