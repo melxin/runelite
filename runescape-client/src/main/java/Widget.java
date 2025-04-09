@@ -23,6 +23,9 @@ public class Widget extends Node {
 	@Export("id")
 	public int id;
 	@ObfuscatedName("bk")
+	@ObfuscatedGetter(
+		intValue = -1626125685
+	)
 	@Export("childIndex")
 	public int childIndex;
 	@ObfuscatedName("bd")
