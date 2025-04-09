@@ -334,7 +334,7 @@ public class class268 implements class29 {
 	)
 	@Export("Clan_leaveChat")
 	static final void Clan_leaveChat() {
-		PacketBufferNode var0 = FloorDecoration.getPacketBufferNode(ClientPacket.field3421, Client.packetWriter.isaacCipher);
+		PacketBufferNode var0 = FloorDecoration.getPacketBufferNode(ClientPacket.FRIEND_CHAT_JOIN_LEAVE, Client.packetWriter.isaacCipher);
 		var0.packetBuffer.writeByte(0);
 		Client.packetWriter.addNode(var0);
 	}

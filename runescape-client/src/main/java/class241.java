@@ -32,7 +32,7 @@ public class class241 extends DualNode {
 		garbageValue = "788012419"
 	)
 	static final void method5143(String var0, int var1) {
-		PacketBufferNode var2 = FloorDecoration.getPacketBufferNode(ClientPacket.field3396, Client.packetWriter.isaacCipher);
+		PacketBufferNode var2 = FloorDecoration.getPacketBufferNode(ClientPacket.FRIEND_CHAT_SETRANK, Client.packetWriter.isaacCipher);
 		var2.packetBuffer.writeByte(class466.stringCp1252NullTerminatedByteSize(var0) + 1);
 		var2.packetBuffer.writeStringCp1252NullTerminated(var0);
 		var2.packetBuffer.writeByte(var1);

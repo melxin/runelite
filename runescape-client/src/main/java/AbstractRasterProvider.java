@@ -69,7 +69,7 @@ public abstract class AbstractRasterProvider {
 		garbageValue = "-71127796"
 	)
 	public static PacketBufferNode method10739(int var0, String var1, Language var2, int var3) {
-		PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.field3385, Client.packetWriter.isaacCipher);
+		PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.MESSAGE_PUBLIC, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(0);
 		int var5 = var4.packetBuffer.offset * -2066221813;
 		var4.packetBuffer.writeByte(var0);

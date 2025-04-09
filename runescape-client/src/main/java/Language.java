@@ -178,7 +178,7 @@ public class Language implements Enum {
 		garbageValue = "-4436"
 	)
 	static void method8021(int var0) {
-		PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.field3383, Client.packetWriter.isaacCipher);
+		PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.SET_HEADING, Client.packetWriter.isaacCipher);
 		var1.packetBuffer.writeByte(var0);
 		Client.packetWriter.addNode(var1);
 	}
@@ -192,7 +192,7 @@ public class Language implements Enum {
 		if (Client.currentClanChannels[var0] != null) {
 			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3704()) {
 				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
-				PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.field3470, Client.packetWriter.isaacCipher);
+				PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
 				var4.packetBuffer.writeByte(4 + class466.stringCp1252NullTerminatedByteSize(var3.username.getName()));
 				var4.packetBuffer.writeByte(var0);
 				var4.packetBuffer.writeShort(var1);

@@ -111,7 +111,7 @@ public class WorldMapAreaData extends WorldMapArea {
 		garbageValue = "0"
 	)
 	static void method6441(int var0, int var1, int var2, int var3) {
-		PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.field3446, Client.packetWriter.isaacCipher);
+		PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(18);
 		var4.packetBuffer.writeShortAdd(var0 + class509.topLevelWorldView.baseX);
 		var4.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);

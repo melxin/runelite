@@ -302,7 +302,7 @@ public class FriendsList extends UserList {
 			var18 = Script.localPlayer.plane;
 			var19 = (ReflectionCheck.oculusOrbFocalPointX >> 7) + class509.topLevelWorldView.baseX;
 			var20 = (KeyHandler.oculusOrbFocalPointY >> 7) + class509.topLevelWorldView.baseY;
-			PacketBufferNode var36 = FloorDecoration.getPacketBufferNode(ClientPacket.field3386, Client.packetWriter.isaacCipher);
+			PacketBufferNode var36 = FloorDecoration.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
 			var36.packetBuffer.writeShortAdd(var20);
 			var36.packetBuffer.writeByteAdd(var18);
 			var36.packetBuffer.writeIntME(Client.revision);

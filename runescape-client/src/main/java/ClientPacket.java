@@ -11,107 +11,107 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3473;
+	public static final ClientPacket NO_TIMEOUT;
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3382;
+	public static final ClientPacket OPOBJ5;
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3383;
+	public static final ClientPacket SET_HEADING;
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3384;
+	public static final ClientPacket EVENT_APPLET_FOCUS;
 	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3385;
+	public static final ClientPacket MESSAGE_PUBLIC;
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3386;
+	public static final ClientPacket TELEPORT;
 	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3387;
+	public static final ClientPacket IF_BUTTON7;
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3388;
+	public static final ClientPacket CLAN_CHANNEL_KICK_USER;
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3389;
+	public static final ClientPacket EVENT_CAMERA_POSITION;
 	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3390;
+	public static final ClientPacket RESUME_STRINGDIALOG;
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3391;
+	public static final ClientPacket EVENT_WINDOW_SETTING;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3470;
+	public static final ClientPacket CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL;
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3444;
+	public static final ClientPacket MUSIC_PLAYING;
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3392;
+	public static final ClientPacket LOGIN_TIMINGS;
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3425;
+	public static final ClientPacket OPLOC1;
 	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3396;
+	public static final ClientPacket FRIEND_CHAT_SETRANK;
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3397;
+	public static final ClientPacket OPPLAYER7;
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3398;
+	public static final ClientPacket PING_STATISTICS;
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3426;
+	public static final ClientPacket OPPLAYERT;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3400;
+	public static final ClientPacket OPLOCU;
 	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3401;
+	public static final ClientPacket REFLECTION_CHECK_REPLY;
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -121,57 +121,57 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3403;
+	public static final ClientPacket OPOBJ1;
 	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3435;
+	public static final ClientPacket BUG_REPORT;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3405;
+	public static final ClientPacket IF_BUTTON9;
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3406;
+	public static final ClientPacket IF_BUTTON6;
 	@ObfuscatedName("br")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3407;
+	public static final ClientPacket IF_BUTTON10;
 	@ObfuscatedName("bp")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3480;
+	public static final ClientPacket OPLOCE;
 	@ObfuscatedName("bz")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3409;
+	public static final ClientPacket IF_BUTTONT;
 	@ObfuscatedName("bb")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3410;
+	public static final ClientPacket IF_BUTTON5;
 	@ObfuscatedName("bl")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3415;
+	public static final ClientPacket CLAN_SETTINGS_FULL_REQUEST;
 	@ObfuscatedName("bw")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3412;
+	public static final ClientPacket OPOBJU;
 	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3413;
+	public static final ClientPacket OPOBJE;
 	@ObfuscatedName("ba")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -181,22 +181,22 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3433;
+	public static final ClientPacket OPLOC4;
 	@ObfuscatedName("bd")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3416;
+	public static final ClientPacket WIDGET_TYPE;
 	@ObfuscatedName("bu")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3417;
+	public static final ClientPacket EVENT_MOUSE_CLICK;
 	@ObfuscatedName("bc")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3418;
+	public static final ClientPacket OPOBJ4;
 	@ObfuscatedName("bs")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -206,32 +206,32 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3420;
+	public static final ClientPacket OPOBJT;
 	@ObfuscatedName("bj")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3421;
+	public static final ClientPacket FRIEND_CHAT_JOIN_LEAVE;
 	@ObfuscatedName("bv")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3422;
+	public static final ClientPacket OPNPCU;
 	@ObfuscatedName("be")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3423;
+	public static final ClientPacket OPLOC5;
 	@ObfuscatedName("bm")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3424;
+	public static final ClientPacket OPOBJ3;
 	@ObfuscatedName("bq")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3432;
+	public static final ClientPacket OPNPC3;
 	@ObfuscatedName("bt")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -241,77 +241,77 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3427;
+	public static final ClientPacket EVENT_MOUSE_IDLE;
 	@ObfuscatedName("bo")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3443;
+	public static final ClientPacket OPPLAYER4;
 	@ObfuscatedName("bg")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3393;
+	public static final ClientPacket OPPLAYER5;
 	@ObfuscatedName("by")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3440;
+	public static final ClientPacket IGNORE_LIST_ADD;
 	@ObfuscatedName("bf")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3431;
+	public static final ClientPacket CHAT_SENDABUSEREPORT;
 	@ObfuscatedName("bi")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3464;
+	public static final ClientPacket OPPLAYER8;
 	@ObfuscatedName("ci")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3434;
+	public static final ClientPacket CLAN_CHANNEL_FULL_REQUEST;
 	@ObfuscatedName("cg")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3408;
+	public static final ClientPacket OPNPC4;
 	@ObfuscatedName("cq")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3429;
+	public static final ClientPacket MAP_BUILD_COMPLETE;
 	@ObfuscatedName("cp")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3446;
+	public static final ClientPacket MINIMAP_CLICK;
 	@ObfuscatedName("cs")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3437;
+	public static final ClientPacket RESUME_NAMEDIALOG;
 	@ObfuscatedName("cc")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3381;
+	public static final ClientPacket OPNPC1;
 	@ObfuscatedName("cd")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3439;
+	public static final ClientPacket EVENT_KEYBOARD;
 	@ObfuscatedName("ca")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3451;
+	public static final ClientPacket FRIEND_DELUSER;
 	@ObfuscatedName("cl")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3441;
+	public static final ClientPacket OPNPC5;
 	@ObfuscatedName("cf")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -321,32 +321,32 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3450;
+	public static final ClientPacket RESUME_PAUSEBUTTON;
 	@ObfuscatedName("cv")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3482;
+	public static final ClientPacket OPOBJ2;
 	@ObfuscatedName("cu")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3445;
+	public static final ClientPacket CLICK_WORLD_MAP;
 	@ObfuscatedName("ct")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3463;
+	public static final ClientPacket OPPLAYER3;
 	@ObfuscatedName("ck")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3447;
+	public static final ClientPacket CLAN_KICKUSER;
 	@ObfuscatedName("cj")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3448;
+	public static final ClientPacket DETECT_MODIFIED_CLIENT;
 	@ObfuscatedName("cr")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -356,32 +356,32 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3428;
+	public static final ClientPacket IGNORE_DELUSER;
 	@ObfuscatedName("cx")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3411;
+	public static final ClientPacket RESUME_COUNTDIALOG;
 	@ObfuscatedName("co")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3452;
+	public static final ClientPacket OPNPCT;
 	@ObfuscatedName("cz")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3453;
+	public static final ClientPacket OPPLAYER2;
 	@ObfuscatedName("cm")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3454;
+	public static final ClientPacket OPPLAYER1;
 	@ObfuscatedName("cn")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3475;
+	public static final ClientPacket OPPLAYER6;
 	@ObfuscatedName("ch")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -391,122 +391,122 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3457;
+	public static final ClientPacket IF_BUTTON4;
 	@ObfuscatedName("cy")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3458;
+	public static final ClientPacket FRIEND_ADDUSER;
 	@ObfuscatedName("dm")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3459;
+	public static final ClientPacket IF_BUTTON2;
 	@ObfuscatedName("dr")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3460;
+	public static final ClientPacket CLAN_SETTINGS_ADD_BANNED_FROM_CHANNEL;
 	@ObfuscatedName("db")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3461;
+	public static final ClientPacket IF_SUBOP;
 	@ObfuscatedName("dp")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3462;
+	public static final ClientPacket UPDATE_PLAYER_MODEL;
 	@ObfuscatedName("ds")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3455;
+	public static final ClientPacket MOUSE_WHEEL;
 	@ObfuscatedName("dz")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3430;
+	public static final ClientPacket OPPLAYERU;
 	@ObfuscatedName("do")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3465;
+	public static final ClientPacket OPLOC3;
 	@ObfuscatedName("dc")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3466;
+	public static final ClientPacket OPLOC2;
 	@ObfuscatedName("dh")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3438;
+	public static final ClientPacket MOVE_GAMECLICK;
 	@ObfuscatedName("dl")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3468;
+	public static final ClientPacket IF_BUTTON3;
 	@ObfuscatedName("dd")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3469;
+	public static final ClientPacket OPLOCT;
 	@ObfuscatedName("dt")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3436;
+	public static final ClientPacket IF_BUTTON8;
 	@ObfuscatedName("da")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3471;
+	public static final ClientPacket IF_CRMVIEW;
 	@ObfuscatedName("dg")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3472;
+	public static final ClientPacket OPNPCE;
 	@ObfuscatedName("de")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3395;
+	public static final ClientPacket IF_BUTTON1;
 	@ObfuscatedName("du")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3474;
+	public static final ClientPacket RESUME_OBJDIALOG;
 	@ObfuscatedName("dv")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3404;
+	public static final ClientPacket MOUSE_MOVE;
 	@ObfuscatedName("dq")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3476;
+	public static final ClientPacket CHAT_SETFILTER;
 	@ObfuscatedName("dx")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3477;
+	public static final ClientPacket CHAT_SENDPRIVATE;
 	@ObfuscatedName("dk")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3478;
+	public static final ClientPacket OPNPC2;
 	@ObfuscatedName("dy")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3479;
+	public static final ClientPacket CLOSE_MODAL;
 	@ObfuscatedName("dw")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3399;
+	public static final ClientPacket OPHELDD;
 	@ObfuscatedName("kg")
 	@ObfuscatedSignature(
 		descriptor = "Lpx;"
@@ -526,106 +526,106 @@ public class ClientPacket implements class323 {
 	final int length;
 
 	static {
-		field3473 = new ClientPacket(0, 0);
-		field3382 = new ClientPacket(1, 7);
-		field3383 = new ClientPacket(2, 1);
-		field3384 = new ClientPacket(3, 1);
-		field3385 = new ClientPacket(4, -1);
-		field3386 = new ClientPacket(5, 9);
-		field3387 = new ClientPacket(6, 8);
-		field3388 = new ClientPacket(7, -1);
-		field3389 = new ClientPacket(8, 4);
-		field3390 = new ClientPacket(9, -1);
-		field3391 = new ClientPacket(10, 5);
-		field3470 = new ClientPacket(11, -1);
-		field3444 = new ClientPacket(12, 4);
-		field3392 = new ClientPacket(13, -1);
-		field3425 = new ClientPacket(14, 7);
-		field3396 = new ClientPacket(15, -1);
-		field3397 = new ClientPacket(16, 3);
-		field3398 = new ClientPacket(17, 10);
-		field3426 = new ClientPacket(18, 11);
-		field3400 = new ClientPacket(19, 15);
-		field3401 = new ClientPacket(20, -1);
+		NO_TIMEOUT = new ClientPacket(0, 0);
+		OPOBJ5 = new ClientPacket(1, 7);
+		SET_HEADING = new ClientPacket(2, 1);
+		EVENT_APPLET_FOCUS = new ClientPacket(3, 1);
+		MESSAGE_PUBLIC = new ClientPacket(4, -1);
+		TELEPORT = new ClientPacket(5, 9);
+		IF_BUTTON7 = new ClientPacket(6, 8);
+		CLAN_CHANNEL_KICK_USER = new ClientPacket(7, -1);
+		EVENT_CAMERA_POSITION = new ClientPacket(8, 4);
+		RESUME_STRINGDIALOG = new ClientPacket(9, -1);
+		EVENT_WINDOW_SETTING = new ClientPacket(10, 5);
+		CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL = new ClientPacket(11, -1);
+		MUSIC_PLAYING = new ClientPacket(12, 4);
+		LOGIN_TIMINGS = new ClientPacket(13, -1);
+		OPLOC1 = new ClientPacket(14, 7);
+		FRIEND_CHAT_SETRANK = new ClientPacket(15, -1);
+		OPPLAYER7 = new ClientPacket(16, 3);
+		PING_STATISTICS = new ClientPacket(17, 10);
+		OPPLAYERT = new ClientPacket(18, 11);
+		OPLOCU = new ClientPacket(19, 15);
+		REFLECTION_CHECK_REPLY = new ClientPacket(20, -1);
 		field3402 = new ClientPacket(21, 7);
-		field3403 = new ClientPacket(22, 7);
-		field3435 = new ClientPacket(23, -2);
-		field3405 = new ClientPacket(24, 8);
-		field3406 = new ClientPacket(25, 8);
-		field3407 = new ClientPacket(26, 8);
-		field3480 = new ClientPacket(27, 2);
-		field3409 = new ClientPacket(28, 16);
-		field3410 = new ClientPacket(29, 8);
-		field3415 = new ClientPacket(30, 1);
-		field3412 = new ClientPacket(31, 15);
-		field3413 = new ClientPacket(32, 6);
+		OPOBJ1 = new ClientPacket(22, 7);
+		BUG_REPORT = new ClientPacket(23, -2);
+		IF_BUTTON9 = new ClientPacket(24, 8);
+		IF_BUTTON6 = new ClientPacket(25, 8);
+		IF_BUTTON10 = new ClientPacket(26, 8);
+		OPLOCE = new ClientPacket(27, 2);
+		IF_BUTTONT = new ClientPacket(28, 16);
+		IF_BUTTON5 = new ClientPacket(29, 8);
+		CLAN_SETTINGS_FULL_REQUEST = new ClientPacket(30, 1);
+		OPOBJU = new ClientPacket(31, 15);
+		OPOBJE = new ClientPacket(32, 6);
 		field3414 = new ClientPacket(33, 1);
-		field3433 = new ClientPacket(34, 7);
-		field3416 = new ClientPacket(35, 4);
-		field3417 = new ClientPacket(36, 6);
-		field3418 = new ClientPacket(37, 7);
+		OPLOC4 = new ClientPacket(34, 7);
+		WIDGET_TYPE = new ClientPacket(35, 4);
+		EVENT_MOUSE_CLICK = new ClientPacket(36, 6);
+		OPOBJ4 = new ClientPacket(37, 7);
 		field3419 = new ClientPacket(38, 2);
-		field3420 = new ClientPacket(39, 15);
-		field3421 = new ClientPacket(40, -1);
-		field3422 = new ClientPacket(41, 11);
-		field3423 = new ClientPacket(42, 7);
-		field3424 = new ClientPacket(43, 7);
-		field3432 = new ClientPacket(44, 3);
+		OPOBJT = new ClientPacket(39, 15);
+		FRIEND_CHAT_JOIN_LEAVE = new ClientPacket(40, -1);
+		OPNPCU = new ClientPacket(41, 11);
+		OPLOC5 = new ClientPacket(42, 7);
+		OPOBJ3 = new ClientPacket(43, 7);
+		OPNPC3 = new ClientPacket(44, 3);
 		field3467 = new ClientPacket(45, 0);
-		field3427 = new ClientPacket(46, 0);
-		field3443 = new ClientPacket(47, 3);
-		field3393 = new ClientPacket(48, 3);
-		field3440 = new ClientPacket(49, -1);
-		field3431 = new ClientPacket(50, -1);
-		field3464 = new ClientPacket(51, 3);
-		field3434 = new ClientPacket(52, 1);
-		field3408 = new ClientPacket(53, 3);
-		field3429 = new ClientPacket(54, 0);
-		field3446 = new ClientPacket(55, -1);
-		field3437 = new ClientPacket(56, -1);
-		field3381 = new ClientPacket(57, 3);
-		field3439 = new ClientPacket(58, -2);
-		field3451 = new ClientPacket(59, -1);
-		field3441 = new ClientPacket(60, 3);
+		EVENT_MOUSE_IDLE = new ClientPacket(46, 0);
+		OPPLAYER4 = new ClientPacket(47, 3);
+		OPPLAYER5 = new ClientPacket(48, 3);
+		IGNORE_LIST_ADD = new ClientPacket(49, -1);
+		CHAT_SENDABUSEREPORT = new ClientPacket(50, -1);
+		OPPLAYER8 = new ClientPacket(51, 3);
+		CLAN_CHANNEL_FULL_REQUEST = new ClientPacket(52, 1);
+		OPNPC4 = new ClientPacket(53, 3);
+		MAP_BUILD_COMPLETE = new ClientPacket(54, 0);
+		MINIMAP_CLICK = new ClientPacket(55, -1);
+		RESUME_NAMEDIALOG = new ClientPacket(56, -1);
+		OPNPC1 = new ClientPacket(57, 3);
+		EVENT_KEYBOARD = new ClientPacket(58, -2);
+		FRIEND_DELUSER = new ClientPacket(59, -1);
+		OPNPC5 = new ClientPacket(60, 3);
 		field3442 = new ClientPacket(61, -1);
-		field3450 = new ClientPacket(62, 6);
-		field3482 = new ClientPacket(63, 7);
-		field3445 = new ClientPacket(64, 4);
-		field3463 = new ClientPacket(65, 3);
-		field3447 = new ClientPacket(66, -1);
-		field3448 = new ClientPacket(67, 4);
+		RESUME_PAUSEBUTTON = new ClientPacket(62, 6);
+		OPOBJ2 = new ClientPacket(63, 7);
+		CLICK_WORLD_MAP = new ClientPacket(64, 4);
+		OPPLAYER3 = new ClientPacket(65, 3);
+		CLAN_KICKUSER = new ClientPacket(66, -1);
+		DETECT_MODIFIED_CLIENT = new ClientPacket(67, 4);
 		field3449 = new ClientPacket(68, -1);
-		field3428 = new ClientPacket(69, -1);
-		field3411 = new ClientPacket(70, 4);
-		field3452 = new ClientPacket(71, 11);
-		field3453 = new ClientPacket(72, 3);
-		field3454 = new ClientPacket(73, 3);
-		field3475 = new ClientPacket(74, 3);
+		IGNORE_DELUSER = new ClientPacket(69, -1);
+		RESUME_COUNTDIALOG = new ClientPacket(70, 4);
+		OPNPCT = new ClientPacket(71, 11);
+		OPPLAYER2 = new ClientPacket(72, 3);
+		OPPLAYER1 = new ClientPacket(73, 3);
+		OPPLAYER6 = new ClientPacket(74, 3);
 		field3456 = new ClientPacket(75, -1);
-		field3457 = new ClientPacket(76, 8);
-		field3458 = new ClientPacket(77, -1);
-		field3459 = new ClientPacket(78, 8);
-		field3460 = new ClientPacket(79, -1);
-		field3461 = new ClientPacket(80, 10);
-		field3462 = new ClientPacket(81, 26);
-		field3455 = new ClientPacket(82, 2);
-		field3430 = new ClientPacket(83, 11);
-		field3465 = new ClientPacket(84, 7);
-		field3466 = new ClientPacket(85, 7);
-		field3438 = new ClientPacket(86, -1);
-		field3468 = new ClientPacket(87, 8);
-		field3469 = new ClientPacket(88, 15);
-		field3436 = new ClientPacket(89, 8);
-		field3471 = new ClientPacket(90, 22);
-		field3472 = new ClientPacket(91, 2);
-		field3395 = new ClientPacket(92, 8);
-		field3474 = new ClientPacket(93, 2);
-		field3404 = new ClientPacket(94, -1);
-		field3476 = new ClientPacket(95, 3);
-		field3477 = new ClientPacket(96, -2);
-		field3478 = new ClientPacket(97, 3);
-		field3479 = new ClientPacket(98, 0);
-		field3399 = new ClientPacket(99, 16);
+		IF_BUTTON4 = new ClientPacket(76, 8);
+		FRIEND_ADDUSER = new ClientPacket(77, -1);
+		IF_BUTTON2 = new ClientPacket(78, 8);
+		CLAN_SETTINGS_ADD_BANNED_FROM_CHANNEL = new ClientPacket(79, -1);
+		IF_SUBOP = new ClientPacket(80, 10);
+		UPDATE_PLAYER_MODEL = new ClientPacket(81, 26);
+		MOUSE_WHEEL = new ClientPacket(82, 2);
+		OPPLAYERU = new ClientPacket(83, 11);
+		OPLOC3 = new ClientPacket(84, 7);
+		OPLOC2 = new ClientPacket(85, 7);
+		MOVE_GAMECLICK = new ClientPacket(86, -1);
+		IF_BUTTON3 = new ClientPacket(87, 8);
+		OPLOCT = new ClientPacket(88, 15);
+		IF_BUTTON8 = new ClientPacket(89, 8);
+		IF_CRMVIEW = new ClientPacket(90, 22);
+		OPNPCE = new ClientPacket(91, 2);
+		IF_BUTTON1 = new ClientPacket(92, 8);
+		RESUME_OBJDIALOG = new ClientPacket(93, 2);
+		MOUSE_MOVE = new ClientPacket(94, -1);
+		CHAT_SETFILTER = new ClientPacket(95, 3);
+		CHAT_SENDPRIVATE = new ClientPacket(96, -2);
+		OPNPC2 = new ClientPacket(97, 3);
+		CLOSE_MODAL = new ClientPacket(98, 0);
+		OPHELDD = new ClientPacket(99, 16);
 	}
 
 	ClientPacket(int var1, int var2) {

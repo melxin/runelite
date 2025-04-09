@@ -114,7 +114,7 @@ public class class153 extends class148 {
 				if (var9) {
 					PacketBufferNode var12;
 					if (var0 == 1) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3395, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON1, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -122,7 +122,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 2) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3459, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON2, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -130,7 +130,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 3) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3468, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON3, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -138,7 +138,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 4) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3457, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON4, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -146,7 +146,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 5) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3410, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON5, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -154,7 +154,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 6) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3406, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON6, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -162,7 +162,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 7) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3387, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON7, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -170,7 +170,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 8) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3436, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON8, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -178,7 +178,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 9) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3405, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON9, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -186,7 +186,7 @@ public class class153 extends class148 {
 					}
 
 					if (var0 == 10) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3407, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTON10, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);
@@ -194,7 +194,7 @@ public class class153 extends class148 {
 					}
 
 					if (var5 != 0) {
-						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.field3461, Client.packetWriter.isaacCipher);
+						var12 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_SUBOP, Client.packetWriter.isaacCipher);
 						var12.packetBuffer.writeInt(var1);
 						var12.packetBuffer.writeShort(var2);
 						var12.packetBuffer.writeShort(var3);

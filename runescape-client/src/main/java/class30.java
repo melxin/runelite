@@ -74,7 +74,7 @@ public class class30 {
 	@Export("Clan_joinChat")
 	static final void Clan_joinChat(String var0) {
 		if (!var0.equals("")) {
-			PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.field3421, Client.packetWriter.isaacCipher);
+			PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.FRIEND_CHAT_JOIN_LEAVE, Client.packetWriter.isaacCipher);
 			var1.packetBuffer.writeByte(class466.stringCp1252NullTerminatedByteSize(var0));
 			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
 			Client.packetWriter.addNode(var1);

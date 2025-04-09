@@ -96,7 +96,7 @@ public class UserComparator9 extends AbstractUserComparator {
 			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1);
 			if (var3.rank == -1) {
 				String var4 = var3.username.getName();
-				PacketBufferNode var5 = FloorDecoration.getPacketBufferNode(ClientPacket.field3388, Client.packetWriter.isaacCipher);
+				PacketBufferNode var5 = FloorDecoration.getPacketBufferNode(ClientPacket.CLAN_CHANNEL_KICK_USER, Client.packetWriter.isaacCipher);
 				var5.packetBuffer.writeByte(3 + class466.stringCp1252NullTerminatedByteSize(var4));
 				var5.packetBuffer.writeByte(var0);
 				var5.packetBuffer.writeShort(var1);

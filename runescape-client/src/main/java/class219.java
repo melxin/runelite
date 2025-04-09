@@ -82,7 +82,7 @@ public class class219 extends class225 {
 			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3704()) {
 				ClanChannelMember var2 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
 				if (var2.rank == -1) {
-					PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.field3460, Client.packetWriter.isaacCipher);
+					PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_ADD_BANNED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
 					var3.packetBuffer.writeByte(3 + class466.stringCp1252NullTerminatedByteSize(var2.username.getName()));
 					var3.packetBuffer.writeByte(var0);
 					var3.packetBuffer.writeShort(var1);

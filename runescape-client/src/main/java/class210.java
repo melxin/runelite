@@ -112,7 +112,7 @@ public class class210 extends class225 {
 			}
 
 			if (var1 == 326) {
-				PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.field3462, Client.packetWriter.isaacCipher);
+				PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.UPDATE_PLAYER_MODEL, Client.packetWriter.isaacCipher);
 				Client.playerAppearance.write(var4.packetBuffer);
 				Client.packetWriter.addNode(var4);
 				return true;

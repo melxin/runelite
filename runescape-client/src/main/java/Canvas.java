@@ -246,7 +246,7 @@ public final class Canvas extends java.awt.Canvas {
 									}
 								}
 
-								label1419:
+								label1421:
 								while (true) {
 									Transferable var52;
 									do {
@@ -318,7 +318,7 @@ public final class Canvas extends java.awt.Canvas {
 
 											var45 = var25.field3066;
 											if ((var45 < ' ' || var45 >= 127) && (var45 <= 127 || var45 >= 160) && (var45 <= 160 || var45 > 255)) {
-												label1568: {
+												label1571: {
 													if (var45 != 0) {
 														char[] var53 = class433.cp1252AsciiExtension;
 
@@ -326,7 +326,7 @@ public final class Canvas extends java.awt.Canvas {
 															char var17 = var53[var30];
 															if (var17 == var45) {
 																var43 = true;
-																break label1568;
+																break label1571;
 															}
 														}
 													}
@@ -355,12 +355,14 @@ public final class Canvas extends java.awt.Canvas {
 										while (true) {
 											if (var48 >= var47) {
 												Login.Login_password = Login.Login_password + var16.substring(0, var47);
-												continue label1419;
+												continue label1421;
 											}
 
 											char var20 = var16.charAt(var48);
-											if ((var20 < ' ' || var20 >= 127) && (var20 <= 127 || var20 >= 160) && (var20 <= 160 || var20 > 255)) {
-												label1571: {
+											if (var20 >= ' ' && var20 < 127 || var20 > 127 && var20 < 160 || var20 > 160 && var20 <= 255) {
+												var19 = true;
+											} else {
+												label1589: {
 													if (var20 != 0) {
 														char[] var21 = class433.cp1252AsciiExtension;
 
@@ -368,15 +370,13 @@ public final class Canvas extends java.awt.Canvas {
 															char var23 = var21[var22];
 															if (var20 == var23) {
 																var19 = true;
-																break label1571;
+																break label1589;
 															}
 														}
 													}
 
 													var19 = false;
 												}
-											} else {
-												var19 = true;
 											}
 
 											if (!var19) {

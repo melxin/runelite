@@ -630,7 +630,7 @@ public class JagNetThread {
 		garbageValue = "40"
 	)
 	static final void method7815() {
-		PacketBufferNode var0 = FloorDecoration.getPacketBufferNode(ClientPacket.field3479, Client.packetWriter.isaacCipher);
+		PacketBufferNode var0 = FloorDecoration.getPacketBufferNode(ClientPacket.CLOSE_MODAL, Client.packetWriter.isaacCipher);
 		Client.packetWriter.addNode(var0);
 		Interpreter.field868 = true;
 

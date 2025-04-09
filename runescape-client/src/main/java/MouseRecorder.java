@@ -121,7 +121,7 @@ public class MouseRecorder implements Runnable {
 		}
 
 		if (Client.gameState >= 25 && Client.packetWriter != null && Client.packetWriter.isaacCipher != null) {
-			PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.field3391, Client.packetWriter.isaacCipher);
+			PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.EVENT_WINDOW_SETTING, Client.packetWriter.isaacCipher);
 			var1.packetBuffer.writeByte(class171.getWindowedMode());
 			var1.packetBuffer.writeShort(GameEngine.canvasWidth);
 			var1.packetBuffer.writeShort(class141.canvasHeight);

@@ -75,8 +75,8 @@ public class HealthBarUpdate extends Node {
 		int var10 = 0;
 		boolean var29 = false;
 
-		label901: {
-			label902: {
+		label905: {
+			label906: {
 				try {
 					int var13;
 					try {
@@ -144,7 +144,7 @@ public class HealthBarUpdate extends Node {
 
 						Interpreter.field870 = var0.field1094;
 
-						label889:
+						label892:
 						while (true) {
 							++var10;
 							if (var10 > var2) {
@@ -190,7 +190,7 @@ public class HealthBarUpdate extends Node {
 								} else if (var32 == 21) {
 									if (Interpreter.Interpreter_frameDepth == 0) {
 										var29 = false;
-										break label902;
+										break label906;
 									}
 
 									ScriptFrame var39 = Interpreter.Interpreter_frames[--Interpreter.Interpreter_frameDepth];
@@ -341,7 +341,7 @@ public class HealthBarUpdate extends Node {
 								switch(var14) {
 								case 0:
 									var29 = false;
-									break label889;
+									break label892;
 								case 1:
 								default:
 									break;
@@ -362,7 +362,7 @@ public class HealthBarUpdate extends Node {
 						var26.append("").append(var8);
 						class290.RunException_sendStackTrace(var26.toString(), var30);
 						var29 = false;
-						break label901;
+						break label905;
 					}
 				} finally {
 					if (var29) {

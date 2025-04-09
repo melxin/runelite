@@ -525,22 +525,22 @@ public class CollisionMap {
 				if (var8 != null && var8 != Script.localPlayer && var8.username != null && var8.username.equals(var5)) {
 					PacketBufferNode var9;
 					if (var0 == 1) {
-						var9 = FloorDecoration.getPacketBufferNode(ClientPacket.field3454, Client.packetWriter.isaacCipher);
+						var9 = FloorDecoration.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
 						var9.packetBuffer.writeShortAdd(var3[var7]);
 						var9.packetBuffer.writeByteNeg(0);
 						Client.packetWriter.addNode(var9);
 					} else if (var0 == 4) {
-						var9 = FloorDecoration.getPacketBufferNode(ClientPacket.field3443, Client.packetWriter.isaacCipher);
+						var9 = FloorDecoration.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
 						var9.packetBuffer.writeShortAdd(var3[var7]);
 						var9.packetBuffer.writeByteAdd(0);
 						Client.packetWriter.addNode(var9);
 					} else if (var0 == 6) {
-						var9 = FloorDecoration.getPacketBufferNode(ClientPacket.field3475, Client.packetWriter.isaacCipher);
+						var9 = FloorDecoration.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
 						var9.packetBuffer.writeShort(var3[var7]);
 						var9.packetBuffer.writeByteAdd(0);
 						Client.packetWriter.addNode(var9);
 					} else if (var0 == 7) {
-						var9 = FloorDecoration.getPacketBufferNode(ClientPacket.field3397, Client.packetWriter.isaacCipher);
+						var9 = FloorDecoration.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
 						var9.packetBuffer.writeShortAdd(var3[var7]);
 						var9.packetBuffer.writeByteAdd(0);
 						Client.packetWriter.addNode(var9);

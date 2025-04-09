@@ -289,7 +289,7 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 		}
 
 		if (Client.packetWriter != null && Client.packetWriter.isaacCipher != null) {
-			PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.field3391, Client.packetWriter.isaacCipher);
+			PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.EVENT_WINDOW_SETTING, Client.packetWriter.isaacCipher);
 			var3.packetBuffer.writeByte(class171.getWindowedMode());
 			var3.packetBuffer.writeShort(GameEngine.canvasWidth);
 			var3.packetBuffer.writeShort(class141.canvasHeight);

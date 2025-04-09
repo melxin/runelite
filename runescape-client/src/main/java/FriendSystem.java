@@ -161,7 +161,7 @@ public class FriendSystem {
 				} else if (this.isIgnored(var2)) {
 					class251.method5230(var1);
 				} else {
-					PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.field3458, Client.packetWriter.isaacCipher);
+					PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.FRIEND_ADDUSER, Client.packetWriter.isaacCipher);
 					var3.packetBuffer.writeByte(class466.stringCp1252NullTerminatedByteSize(var1));
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1);
 					Client.packetWriter.addNode(var3);
@@ -199,7 +199,7 @@ public class FriendSystem {
 				} else if (this.isFriended(var2, false)) {
 					class230.method5023(var1);
 				} else {
-					PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.field3440, Client.packetWriter.isaacCipher);
+					PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.IGNORE_LIST_ADD, Client.packetWriter.isaacCipher);
 					var3.packetBuffer.writeByte(class466.stringCp1252NullTerminatedByteSize(var1));
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1);
 					Client.packetWriter.addNode(var3);
@@ -230,7 +230,7 @@ public class FriendSystem {
 			if (var2.hasCleanName()) {
 				if (this.friendsList.removeByUsername(var2)) {
 					FontName.method10006();
-					PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.field3451, Client.packetWriter.isaacCipher);
+					PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.FRIEND_DELUSER, Client.packetWriter.isaacCipher);
 					var3.packetBuffer.writeByte(class466.stringCp1252NullTerminatedByteSize(var1));
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1);
 					Client.packetWriter.addNode(var3);
@@ -254,7 +254,7 @@ public class FriendSystem {
 				if (this.ignoreList.removeByUsername(var3)) {
 					FontName.method10006();
 					if (var2) {
-						PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.field3428, Client.packetWriter.isaacCipher);
+						PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.IGNORE_DELUSER, Client.packetWriter.isaacCipher);
 						var4.packetBuffer.writeByte(class466.stringCp1252NullTerminatedByteSize(var1));
 						var4.packetBuffer.writeStringCp1252NullTerminated(var1);
 						Client.packetWriter.addNode(var4);

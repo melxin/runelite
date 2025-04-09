@@ -786,7 +786,7 @@ public final class Player extends Actor {
 				ObjectComposition.ObjectDefinition_cachedModelData.clear();
 				PacketBufferNode var19;
 				if (SecureRandomCallable.client.hasFrame()) {
-					var19 = FloorDecoration.getPacketBufferNode(ClientPacket.field3448, Client.packetWriter.isaacCipher);
+					var19 = FloorDecoration.getPacketBufferNode(ClientPacket.DETECT_MODIFIED_CLIENT, Client.packetWriter.isaacCipher);
 					var19.packetBuffer.writeInt(1057001181);
 					Client.packetWriter.addNode(var19);
 				}
@@ -809,7 +809,7 @@ public final class Player extends Actor {
 
 				class362.method7337();
 				Widget.method7392();
-				var19 = FloorDecoration.getPacketBufferNode(ClientPacket.field3429, Client.packetWriter.isaacCipher);
+				var19 = FloorDecoration.getPacketBufferNode(ClientPacket.MAP_BUILD_COMPLETE, Client.packetWriter.isaacCipher);
 				Client.packetWriter.addNode(var19);
 				WorldMapRectangle.method6333();
 				Client.field706 = false;

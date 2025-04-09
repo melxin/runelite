@@ -692,7 +692,7 @@ public class class157 extends class148 {
 		if (Client.packetWriter.pendingWrites >= 50 || var0) {
 			Client.packetWriter.pendingWrites = 0;
 			if (!Client.hadNetworkError && Client.packetWriter.getSocket() != null) {
-				PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.field3473, Client.packetWriter.isaacCipher);
+				PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.NO_TIMEOUT, Client.packetWriter.isaacCipher);
 				Client.packetWriter.addNode(var1);
 
 				try {

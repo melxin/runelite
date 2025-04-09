@@ -349,7 +349,7 @@ public class class142 extends DualNode {
 	@Export("clanKickUser")
 	static final void clanKickUser(String var0) {
 		if (SoundCache.friendsChat != null) {
-			PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.field3447, Client.packetWriter.isaacCipher);
+			PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.CLAN_KICKUSER, Client.packetWriter.isaacCipher);
 			var1.packetBuffer.writeByte(class466.stringCp1252NullTerminatedByteSize(var0));
 			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
 			Client.packetWriter.addNode(var1);

@@ -920,7 +920,7 @@ public class HttpRequest {
 									Client.scriptEvents.addFirst(var25);
 								}
 
-								if (Client.field745 > var12.field4013 && var12.field4015 != null) {
+								if (Client.field531 > var12.field4013 && var12.field4015 != null) {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
 									var25.args = var12.field4015;

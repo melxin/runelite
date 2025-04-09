@@ -80,7 +80,7 @@ public class ConcurrentMidiTask extends SongTask {
 						if (var5) {
 							int[] var3 = var0.field3058.method7372();
 							if (var3 != null) {
-								PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.field3471, Client.packetWriter.isaacCipher);
+								PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_CRMVIEW, Client.packetWriter.isaacCipher);
 								var4.packetBuffer.writeIntME(var3[0]);
 								var4.packetBuffer.writeIntIME(var0.field3058.id);
 								var4.packetBuffer.writeIntIME(var3[2]);

@@ -80,7 +80,7 @@ public class class359 {
 					var15 = HttpQueryParams.method9661(var7);
 				}
 
-				PacketBufferNode var13 = FloorDecoration.getPacketBufferNode(ClientPacket.field3411, Client.packetWriter.isaacCipher);
+				PacketBufferNode var13 = FloorDecoration.getPacketBufferNode(ClientPacket.RESUME_COUNTDIALOG, Client.packetWriter.isaacCipher);
 				var13.packetBuffer.writeInt(var15);
 				Client.packetWriter.addNode(var13);
 				return 1;
@@ -88,14 +88,14 @@ public class class359 {
 				PacketBufferNode var11;
 				if (var0 == ScriptOpcodes.RESUME_NAMEDIALOG) {
 					var7 = Interpreter.Interpreter_stringStack[--class338.Interpreter_stringStackSize];
-					var11 = FloorDecoration.getPacketBufferNode(ClientPacket.field3437, Client.packetWriter.isaacCipher);
+					var11 = FloorDecoration.getPacketBufferNode(ClientPacket.RESUME_NAMEDIALOG, Client.packetWriter.isaacCipher);
 					var11.packetBuffer.writeByte(var7.length() + 1);
 					var11.packetBuffer.writeStringCp1252NullTerminated(var7);
 					Client.packetWriter.addNode(var11);
 					return 1;
 				} else if (var0 == ScriptOpcodes.RESUME_STRINGDIALOG) {
 					var7 = Interpreter.Interpreter_stringStack[--class338.Interpreter_stringStackSize];
-					var11 = FloorDecoration.getPacketBufferNode(ClientPacket.field3390, Client.packetWriter.isaacCipher);
+					var11 = FloorDecoration.getPacketBufferNode(ClientPacket.RESUME_STRINGDIALOG, Client.packetWriter.isaacCipher);
 					var11.packetBuffer.writeByte(var7.length() + 1);
 					var11.packetBuffer.writeStringCp1252NullTerminated(var7);
 					Client.packetWriter.addNode(var11);
@@ -139,7 +139,7 @@ public class class359 {
 						return 1;
 					} else if (var0 == ScriptOpcodes.RESUME_OBJDIALOG) {
 						var3 = Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize];
-						var11 = FloorDecoration.getPacketBufferNode(ClientPacket.field3474, Client.packetWriter.isaacCipher);
+						var11 = FloorDecoration.getPacketBufferNode(ClientPacket.RESUME_OBJDIALOG, Client.packetWriter.isaacCipher);
 						var11.packetBuffer.writeShort(var3);
 						Client.packetWriter.addNode(var11);
 						return 1;
@@ -153,7 +153,7 @@ public class class359 {
 						} else if (var5.length() > 500) {
 							return 1;
 						} else {
-							PacketBufferNode var6 = FloorDecoration.getPacketBufferNode(ClientPacket.field3435, Client.packetWriter.isaacCipher);
+							PacketBufferNode var6 = FloorDecoration.getPacketBufferNode(ClientPacket.BUG_REPORT, Client.packetWriter.isaacCipher);
 							var6.packetBuffer.writeShort(1 + class466.stringCp1252NullTerminatedByteSize(var4) + class466.stringCp1252NullTerminatedByteSize(var5));
 							var6.packetBuffer.writeStringCp1252NullTerminated(var5);
 							var6.packetBuffer.writeByteSub(var3);
