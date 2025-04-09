@@ -37,6 +37,7 @@ import lombok.Getter;
  */
 @AllArgsConstructor
 @Getter
+@Deprecated
 public enum VarPlayer
 {
 	POUCH_STATUS(261),
@@ -198,7 +199,7 @@ public enum VarPlayer
 	MOUSE_BUTTONS(170),
 
 	/**
-	 * {@link NpcID} for the HP HUD
+	 * {@link net.runelite.api.gameval.NpcID} for the HP HUD
 	 */
 	HP_HUD_NPC_ID(1683),
 

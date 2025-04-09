@@ -84,8 +84,7 @@ public interface TileObject extends Locatable
 	/**
 	 * Gets the ID of the object.
 	 *
-	 * @see ObjectID
-	 * @see NullObjectID
+	 * @see net.runelite.api.gameval.ObjectID
 	 */
 	int getId();
 

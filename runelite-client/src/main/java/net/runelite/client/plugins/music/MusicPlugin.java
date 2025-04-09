@@ -57,10 +57,9 @@ import net.runelite.api.SpriteID;
 import net.runelite.api.StructComposition;
 import net.runelite.api.StructID;
 import net.runelite.api.VarClientInt;
-import net.runelite.api.VarPlayer;
-import net.runelite.api.Varbits;
 import net.runelite.api.annotations.Component;
 import net.runelite.api.annotations.Varbit;
+import net.runelite.api.annotations.Varp;
 import net.runelite.api.events.AmbientSoundEffectCreated;
 import net.runelite.api.events.AreaSoundEffectPlayed;
 import net.runelite.api.events.BeforeRender;
@@ -72,8 +71,9 @@ import net.runelite.api.events.SoundEffectPlayed;
 import net.runelite.api.events.VarClientIntChanged;
 import net.runelite.api.events.VolumeChanged;
 import net.runelite.api.events.WidgetLoaded;
-import net.runelite.api.widgets.ComponentID;
-import net.runelite.api.widgets.InterfaceID;
+import net.runelite.api.gameval.InterfaceID;
+import net.runelite.api.gameval.VarPlayerID;
+import net.runelite.api.gameval.VarbitID;
 import net.runelite.api.widgets.JavaScriptCallback;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetConfig;
@@ -176,20 +176,20 @@ public class MusicPlugin extends Plugin
 
 			Preferences preferences = client.getPreferences();
 			musicChannel = new Channel("Music",
-				VarPlayer.MUSIC_VOLUME, Varbits.MUTED_MUSIC_VOLUME,
+				VarPlayerID.OPTION_MUSIC, VarbitID.OPTION_MUSIC_SAVED,
 				musicConfig::getMusicVolume, musicConfig::setMusicVolume,
 				client::setMusicVolume, 255,
-				ComponentID.SETTINGS_SIDE_MUSIC_SLIDER);
+				InterfaceID.SettingsSide.MUSIC_HOLDER);
 			effectChannel = new Channel("Sound Effects",
-				VarPlayer.SOUND_EFFECT_VOLUME, Varbits.MUTED_SOUND_EFFECT_VOLUME,
+				VarPlayerID.OPTION_SOUNDS, VarbitID.OPTION_SOUNDS_SAVED,
 				musicConfig::getSoundEffectVolume, musicConfig::setSoundEffectVolume,
 				preferences::setSoundEffectVolume, 127,
-				ComponentID.SETTINGS_SIDE_SOUND_EFFECT_SLIDER);
+				InterfaceID.SettingsSide.SOUND_HOLDER);
 			areaChannel = new Channel("Area Sounds",
-				VarPlayer.AREA_EFFECT_VOLUME, Varbits.MUTED_AREA_EFFECT_VOLUME,
+				VarPlayerID.OPTION_AREASOUNDS, VarbitID.OPTION_AREASOUNDS_SAVED,
 				musicConfig::getAreaSoundEffectVolume, musicConfig::setAreaSoundEffectVolume,
 				preferences::setAreaSoundEffectVolume, 127,
-				ComponentID.SETTINGS_SIDE_AREA_SOUND_SLIDER);
+				InterfaceID.SettingsSide.AREASOUNDS_HOLDER);
 			channels = new Channel[]{musicChannel, effectChannel, areaChannel};
 
 			addMusicButtons();
@@ -213,7 +213,7 @@ public class MusicPlugin extends Plugin
 	@Override
 	protected void shutDown()
 	{
-		Widget header = client.getWidget(ComponentID.MUSIC_CONTAINER);
+		Widget header = client.getWidget(InterfaceID.Music.UNIVERSE);
 		if (header != null)
 		{
 			header.deleteAllChildren();
@@ -283,7 +283,7 @@ public class MusicPlugin extends Plugin
 
 	private void addMusicButtons()
 	{
-		Widget header = client.getWidget(ComponentID.MUSIC_CONTAINER);
+		Widget header = client.getWidget(InterfaceID.Music.UNIVERSE);
 
 		if (header == null)
 		{
@@ -425,9 +425,9 @@ public class MusicPlugin extends Plugin
 
 	private void updateFilter(String input)
 	{
-		final Widget container = client.getWidget(ComponentID.MUSIC_CONTAINER);
-		final Widget musicList = client.getWidget(ComponentID.MUSIC_LIST);
-		final Widget scrollContainer = client.getWidget(ComponentID.MUSIC_SCROLL_CONTAINER);
+		final Widget container = client.getWidget(InterfaceID.Music.UNIVERSE);
+		final Widget musicList = client.getWidget(InterfaceID.Music.JUKEBOX);
+		final Widget scrollContainer = client.getWidget(InterfaceID.Music.SCROLLABLE);
 
 		if (container == null || musicList == null)
 		{
@@ -480,8 +480,8 @@ public class MusicPlugin extends Plugin
 
 		client.runScript(
 			ScriptID.UPDATE_SCROLLBAR,
-			ComponentID.MUSIC_SCROLLBAR,
-			ComponentID.MUSIC_SCROLL_CONTAINER,
+			InterfaceID.Music.SCROLLBAR,
+			InterfaceID.Music.SCROLLABLE,
 			newHeight
 		);
 	}
@@ -810,7 +810,8 @@ public class MusicPlugin extends Plugin
 	{
 		@Getter
 		private final String name;
-		private final VarPlayer var;
+		@Varp
+		private final int var;
 		@Varbit
 		private final int mutedVarbitId;
 		private final IntSupplier getter;
@@ -826,10 +827,10 @@ public class MusicPlugin extends Plugin
 		private Slider windowSlider;
 
 		Channel(String name,
-			VarPlayer var, @Varbit int mutedVarbitId,
-			IntSupplier getter, Consumer<Integer> setter,
-			IntConsumer volumeChanger, int max,
-			@Component int sideRoot)
+				@Varp int var, @Varbit int mutedVarbitId,
+				IntSupplier getter, Consumer<Integer> setter,
+				IntConsumer volumeChanger, int max,
+				@Component int sideRoot)
 		{
 			this.name = name;
 			this.var = var;
@@ -908,8 +909,8 @@ public class MusicPlugin extends Plugin
 		public void updateVar()
 		{
 			int val = getValue();
-			int varVal = Math.round((float) val / (max / 100.f));
-			client.getVarps()[this.var.getId()] = varVal;
+			int varVal = Math.round(val / (max / 100.f));
+			client.getVarps()[this.var] = varVal;
 		}
 
 		public void shutDown()
@@ -949,7 +950,7 @@ public class MusicPlugin extends Plugin
 	{
 		client.getStructCompositionCache().reset();
 
-		Widget init = client.getWidget(ComponentID.SETTINGS_INIT);
+		Widget init = client.getWidget(InterfaceID.Settings.UNIVERSE);
 		if (init != null)
 		{
 			// [clientscript, settings_init]

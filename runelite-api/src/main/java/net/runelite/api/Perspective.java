@@ -37,6 +37,7 @@ import javax.annotation.Nullable;
 import static net.runelite.api.Constants.TILE_FLAG_BRIDGE;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
+import net.runelite.api.gameval.VarbitID;
 import net.runelite.api.geometry.RectangleUnion;
 import net.runelite.api.geometry.Shapes;
 import net.runelite.api.geometry.SimplePolygon;
@@ -341,7 +342,7 @@ public class Perspective
 			Widget minimapDrawWidget;
 			if (client.isResized())
 			{
-				if (client.getVarbitValue(Varbits.SIDE_PANELS) == 1)
+				if (client.getVarbitValue(VarbitID.RESIZABLE_STONE_ARRANGEMENT) == 1)
 				{
 					minimapDrawWidget = client.getWidget(WidgetInfo.RESIZABLE_MINIMAP_DRAW_AREA);
 				}

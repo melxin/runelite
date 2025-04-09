@@ -40,6 +40,7 @@ import net.runelite.api.annotations.Interface;
 import net.runelite.api.annotations.VarCInt;
 import net.runelite.api.annotations.VarCStr;
 import net.runelite.api.annotations.Varbit;
+import net.runelite.api.annotations.Varp;
 import net.runelite.api.annotations.VisibleForDevtools;
 import net.runelite.api.clan.ClanChannel;
 import net.runelite.api.clan.ClanID;
@@ -53,6 +54,7 @@ import net.runelite.api.hooks.DrawCallbacks;
 import net.runelite.api.vars.AccountType;
 import net.runelite.api.widgets.ItemQuantityMode;
 import net.runelite.api.widgets.Widget;
+import net.runelite.api.widgets.WidgetConfig;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.api.widgets.WidgetModalMode;
 import net.runelite.api.worldmap.MapElementConfig;
@@ -392,7 +394,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param id the item ID
 	 * @return the corresponding item composition
-	 * @see ItemID
+	 * @see net.runelite.api.gameval.ItemID
 	 */
 	@Nonnull
 	ItemComposition getItemDefinition(int id);
@@ -845,7 +847,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * @param varpId the VarPlayer id
 	 * @return the value
 	 */
-	int getVarpValue(int varpId);
+	int getVarpValue(@Varp int varpId);
 
 	/**
 	 * Gets the value of a given VarPlayer.
@@ -856,7 +858,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * @param varpId the VarPlayer id
 	 * @return the value
 	 */
-	int getServerVarpValue(int varpId);
+	int getServerVarpValue(@Varp int varpId);
 
 	/**
 	 * Gets the value of a given VarClientInt
@@ -894,7 +896,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * Sets the value of a varbit
 	 *
 	 * @param varbit the varbit id
-	 * @param value  the new value
+	 * @param value the new value
 	 */
 	void setVarbit(@Varbit int varbit, int value);
 
@@ -910,10 +912,10 @@ public interface Client extends OAuthApi, GameEngine
 	/**
 	 * Gets the value of a given variable.
 	 *
-	 * @param varps    passed varbits
+	 * @param varps passed varbits
 	 * @param varbitId the variable ID
 	 * @return the value
-	 * @see Varbits
+	 * @see net.runelite.api.gameval.VarbitID
 	 */
 	int getVarbitValue(int[] varps, @Varbit int varbitId);
 
@@ -930,10 +932,10 @@ public interface Client extends OAuthApi, GameEngine
 	/**
 	 * Sets the value of a given variable.
 	 *
-	 * @param varps  passed varbits
+	 * @param varps passed varbits
 	 * @param varbit the variable
-	 * @param value  the value
-	 * @see Varbits
+	 * @param value the value
+	 * @see net.runelite.api.gameval.VarbitID
 	 */
 	void setVarbitValue(int[] varps, @Varbit int varbit, int value);
 
@@ -942,7 +944,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * triggered next tick
 	 * @param varp
 	 */
-	void queueChangedVarp(int varp);
+	void queueChangedVarp(@Varp int varp);
 
 	/**
 	 * Open an interface.
@@ -1033,7 +1035,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param objectId the object ID
 	 * @return the corresponding object composition
-	 * @see ObjectID
+	 * @see net.runelite.api.gameval.ObjectID
 	 */
 	ObjectComposition getObjectDefinition(int objectId);
 
@@ -1042,7 +1044,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param npcId the npc ID
 	 * @return the corresponding NPC composition
-	 * @see NpcID
+	 * @see net.runelite.api.gameval.NpcID
 	 */
 	NPCComposition getNpcDefinition(int npcId);
 
@@ -1218,7 +1220,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * Loads an animation from the cache
 	 *
 	 * @param id the ID of the animation. Any int is allowed, but implementations in the client
-	 * should be defined in {@link AnimationID}
+	 * should be defined in {@link net.runelite.api.gameval.AnimationID}
 	 */
 	Animation loadAnimation(int id);
 
@@ -1349,7 +1351,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param inventory the inventory type
 	 * @return the item container
-	 * @see InventoryID
+	 * @see net.runelite.api.gameval.InventoryID
 	 */
 	@Nullable
 	ItemContainer getItemContainer(InventoryID inventory);
@@ -1359,7 +1361,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param id the inventory id
 	 * @return the item container
-	 * @see InventoryID
+	 * @see net.runelite.api.gameval.InventoryID
 	 */
 	@Nullable
 	ItemContainer getItemContainer(int id);

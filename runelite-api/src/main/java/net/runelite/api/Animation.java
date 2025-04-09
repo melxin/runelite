@@ -59,7 +59,7 @@ public interface Animation
 
 	/**
 	 * Get the id for this animation
-	 * @see AnimationID
+	 * @see net.runelite.api.gameval.AnimationID
 	 * @return
 	 */
 	int getId();
