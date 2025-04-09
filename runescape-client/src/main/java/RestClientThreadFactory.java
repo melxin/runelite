@@ -99,29 +99,29 @@ public class RestClientThreadFactory implements ThreadFactory {
 		garbageValue = "70"
 	)
 	static void method207(PacketBufferNode var0) {
-		var0.packetBuffer.writeIntME(class456.field5014.hash);
-		var0.packetBuffer.method10279(WorldMapDecoration.archive12.hash);
-		var0.packetBuffer.method10279(AsyncHttpResponse.field66.hash);
+		var0.packetBuffer.writeIntLE(class456.field5014.hash);
+		var0.packetBuffer.writeIntIME(WorldMapDecoration.archive12.hash);
+		var0.packetBuffer.writeIntIME(AsyncHttpResponse.field66.hash);
 		var0.packetBuffer.writeInt(class231.field2558.hash);
 		var0.packetBuffer.writeInt(FloorDecoration.archive10.hash);
-		var0.packetBuffer.writeIntME(class161.archive9.hash);
-		var0.packetBuffer.writeIntME(class357.archive8.hash);
-		var0.packetBuffer.method10279(0);
+		var0.packetBuffer.writeIntLE(class161.archive9.hash);
+		var0.packetBuffer.writeIntLE(class357.archive8.hash);
+		var0.packetBuffer.writeIntIME(0);
 		var0.packetBuffer.writeInt(class342.field3779.hash);
-		var0.packetBuffer.writeIntME(UserComparator6.field1532.hash);
+		var0.packetBuffer.writeIntLE(UserComparator6.field1532.hash);
 		var0.packetBuffer.writeInt(class147.archive4.hash);
-		var0.packetBuffer.writeIntME(SongTask.field5037.hash);
+		var0.packetBuffer.writeIntLE(SongTask.field5037.hash);
 		var0.packetBuffer.writeInt(class133.field1576.hash);
-		var0.packetBuffer.method10279(class521.archive2.hash);
-		var0.packetBuffer.method10279(class171.field1872.hash);
-		var0.packetBuffer.writeIntIME(class140.field1650.hash);
+		var0.packetBuffer.writeIntIME(class521.archive2.hash);
+		var0.packetBuffer.writeIntIME(class171.field1872.hash);
+		var0.packetBuffer.writeIntME(class140.field1650.hash);
 		var0.packetBuffer.writeInt(class33.field150.hash);
-		var0.packetBuffer.writeIntIME(class330.field3665.hash);
-		var0.packetBuffer.method10279(MouseHandler.archive13.hash);
+		var0.packetBuffer.writeIntME(class330.field3665.hash);
+		var0.packetBuffer.writeIntIME(MouseHandler.archive13.hash);
 		var0.packetBuffer.writeInt(class145.field1696.hash);
-		var0.packetBuffer.writeIntIME(HttpMethod.field39.hash);
+		var0.packetBuffer.writeIntME(HttpMethod.field39.hash);
 		var0.packetBuffer.writeInt(ClientPacket.field3483.hash);
-		var0.packetBuffer.writeIntIME(class143.archive6.hash);
+		var0.packetBuffer.writeIntME(class143.archive6.hash);
 	}
 
 	@ObfuscatedName("jn")

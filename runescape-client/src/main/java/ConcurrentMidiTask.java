@@ -81,12 +81,12 @@ public class ConcurrentMidiTask extends SongTask {
 							int[] var3 = var0.field3058.method7372();
 							if (var3 != null) {
 								PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_CRMVIEW, Client.packetWriter.isaacCipher);
-								var4.packetBuffer.writeIntME(var3[0]);
-								var4.packetBuffer.writeIntIME(var0.field3058.id);
-								var4.packetBuffer.writeIntIME(var3[2]);
+								var4.packetBuffer.writeIntLE(var3[0]);
+								var4.packetBuffer.writeIntME(var0.field3058.id);
+								var4.packetBuffer.writeIntME(var3[2]);
 								var4.packetBuffer.writeInt(var0.field3058.method7339());
 								var4.packetBuffer.writeShortAddLE(var0.field3058.childIndex * -1626125685);
-								var4.packetBuffer.writeIntIME(var3[1]);
+								var4.packetBuffer.writeIntME(var3[1]);
 								Client.packetWriter.addNode(var4);
 							}
 						}

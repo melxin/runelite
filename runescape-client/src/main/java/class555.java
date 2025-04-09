@@ -172,9 +172,9 @@ public class class555 implements Enum {
 		int var27;
 		int var31;
 		if (class325.field3491 == var0) {
-			var2 = var1.readUnsignedIntME();
+			var2 = var1.method10324();
 			var3 = var1.readUnsignedShort();
-			var4 = var1.readUnsignedIntIME();
+			var4 = var1.method10282();
 			var5 = var1.readUnsignedByteNeg() * 4;
 			var6 = var1.readUnsignedShortLE();
 			var7 = var1.readUnsignedShortAddLE();
@@ -259,7 +259,7 @@ public class class555 implements Enum {
 				var5 = (var3 & 7) + class300.field3306;
 				var6 = var1.readUnsignedByte();
 				var7 = var1.readUnsignedShortAddLE();
-				var20 = var1.method10372();
+				var20 = var1.readUnsignedIntLE();
 				boolean var32 = var1.readUnsignedByte() == 1;
 				var27 = var1.readUnsignedShortAddLE();
 				var11 = var1.readUnsignedShort();
@@ -302,7 +302,7 @@ public class class555 implements Enum {
 					var2 = var1.readUnsignedByteSub();
 					var3 = (var2 >> 4 & 7) + class251.field2775;
 					var4 = (var2 & 7) + class300.field3306;
-					var5 = var1.method10372();
+					var5 = var1.readUnsignedIntLE();
 					var6 = var1.readUnsignedShortLE();
 					var7 = DevicePcmPlayerProvider.worldView.plane;
 					if (0 <= var3 && var3 < 104 && 0 <= var4 && var4 < 104) {
@@ -311,12 +311,12 @@ public class class555 implements Enum {
 					}
 
 				} else if (class325.field3488 == var0) {
-					var2 = var1.method10378();
+					var2 = var1.readUnsignedIntIME();
 					var3 = var1.readUnsignedByte();
 					var4 = (var3 >> 4 & 7) + class251.field2775;
 					var5 = (var3 & 7) + class300.field3306;
 					var6 = var1.readUnsignedShortLE();
-					var7 = var1.method10372();
+					var7 = var1.readUnsignedIntLE();
 					if (var4 >= 0 && var5 >= 0 && var4 < DevicePcmPlayerProvider.worldView.sizeX && var5 < DevicePcmPlayerProvider.worldView.sizeY) {
 						var20 = Client.field660 == -1 ? DevicePcmPlayerProvider.worldView.plane : Client.field660;
 						StructComposition.method5379(var20, var4, var5, var6, var2, var7);
@@ -380,7 +380,7 @@ public class class555 implements Enum {
 					var6 = (var5 >> 4 & 7) + class251.field2775;
 					var7 = (var5 & 7) + class300.field3306;
 					short var33 = (short)var1.readShort();
-					var31 = var1.method10352();
+					var31 = var1.readUnsignedIntME();
 					var27 = var1.readShort();
 					short var28 = (short)var1.readShortLE();
 					if (var6 >= 0 && var7 >= 0 && var6 < 104 && var7 < 104) {
@@ -391,7 +391,7 @@ public class class555 implements Enum {
 				} else if (class325.field3487 != var0) {
 					if (class325.field3485 == var0) {
 						var2 = var1.readUnsignedShortAddLE();
-						var3 = var1.method10372();
+						var3 = var1.readUnsignedIntLE();
 						var4 = var1.readUnsignedByteSub();
 						var5 = (var4 >> 4 & 7) + class251.field2775;
 						var6 = (var4 & 7) + class300.field3306;

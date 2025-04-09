@@ -141,7 +141,7 @@ public class class291 {
 
 				if ((var6 & 4) != 0) {
 					var2.readUnsignedShortAdd();
-					var2.method10378();
+					var2.readUnsignedIntIME();
 				}
 
 				if ((var6 & 16) != 0) {
@@ -192,7 +192,7 @@ public class class291 {
 				}
 
 				if ((var6 & 16384) != 0) {
-					var5.field1285 = var2.method10372();
+					var5.field1285 = var2.readUnsignedIntLE();
 				}
 
 				int[] var15;

@@ -305,7 +305,7 @@ public class FriendsList extends UserList {
 			PacketBufferNode var36 = FloorDecoration.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
 			var36.packetBuffer.writeShortAdd(var20);
 			var36.packetBuffer.writeByteAdd(var18);
-			var36.packetBuffer.writeIntME(Client.revision);
+			var36.packetBuffer.writeIntLE(Client.revision);
 			var36.packetBuffer.writeShortLE(var19);
 			Client.packetWriter.addNode(var36);
 		}

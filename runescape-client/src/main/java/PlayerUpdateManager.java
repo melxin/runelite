@@ -698,7 +698,7 @@ public class PlayerUpdateManager {
 			for (var7 = 0; var7 < var6; ++var7) {
 				var16 = var1.readUnsignedByteNeg();
 				var9 = var1.readUnsignedShort();
-				var10 = var1.method10352();
+				var10 = var1.readUnsignedIntME();
 				var4.method2188(var16, var9, var10 >> 16, var10 & 65535);
 			}
 		}

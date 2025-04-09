@@ -58,7 +58,7 @@ public class class76 {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = FloorDecoration.getPacketBufferNode(ClientPacket.OPLOCU, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.method10279(class325.field3498);
+				var15.packetBuffer.writeIntIME(class325.field3498);
 				var15.packetBuffer.writeShortAdd(var12 + var1);
 				var15.packetBuffer.writeShortAddLE(var3);
 				var15.packetBuffer.writeShort(class320.Players_count);
@@ -79,7 +79,7 @@ public class class76 {
 				var15.packetBuffer.writeShortAdd(var0 + var11);
 				var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 				var15.packetBuffer.writeShort(var12 + var1);
-				var15.packetBuffer.writeIntIME(AABB.selectedSpellWidget);
+				var15.packetBuffer.writeIntME(AABB.selectedSpellWidget);
 				var15.packetBuffer.writeShortAddLE(var3);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 3) {
@@ -150,7 +150,7 @@ public class class76 {
 						var16.packetBuffer.writeShortAddLE(class320.Players_count);
 						var16.packetBuffer.writeShortAddLE(class156.field1756);
 						var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var16.packetBuffer.writeIntIME(class325.field3498);
+						var16.packetBuffer.writeIntME(class325.field3498);
 						var16.packetBuffer.writeShortLE(var3);
 						Client.packetWriter.addNode(var16);
 					}
@@ -255,7 +255,7 @@ public class class76 {
 							var16 = FloorDecoration.getPacketBufferNode(ClientPacket.OPPLAYERU, Client.packetWriter.isaacCipher);
 							var16.packetBuffer.writeShort(class156.field1756);
 							var16.packetBuffer.writeShortAdd(var3);
-							var16.packetBuffer.writeIntME(class325.field3498);
+							var16.packetBuffer.writeIntLE(class325.field3498);
 							var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 							var16.packetBuffer.writeShort(class320.Players_count);
 							Client.packetWriter.addNode(var16);
@@ -270,7 +270,7 @@ public class class76 {
 							Client.destinationX = var0;
 							Client.destinationY = var1;
 							var16 = FloorDecoration.getPacketBufferNode(ClientPacket.OPPLAYERT, Client.packetWriter.isaacCipher);
-							var16.packetBuffer.method10279(AABB.selectedSpellWidget);
+							var16.packetBuffer.writeIntIME(AABB.selectedSpellWidget);
 							var16.packetBuffer.writeShortLE(Client.selectedSpellChildIndex);
 							var16.packetBuffer.writeShort(Client.selectedSpellItemId);
 							var16.packetBuffer.writeShortAddLE(var3);
@@ -288,7 +288,7 @@ public class class76 {
 						var15.packetBuffer.writeShort(var12 + var1);
 						var15.packetBuffer.writeShort(class156.field1756);
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeIntIME(class325.field3498);
+						var15.packetBuffer.writeIntME(class325.field3498);
 						var15.packetBuffer.writeShortAddLE(var0 + var11);
 						var15.packetBuffer.writeShortAdd(class320.Players_count);
 						var15.packetBuffer.writeShortAdd(var3);
@@ -581,9 +581,9 @@ public class class76 {
 
 													var16 = FloorDecoration.getPacketBufferNode(ClientPacket.IF_BUTTONT, Client.packetWriter.isaacCipher);
 													var16.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
-													var16.packetBuffer.method10279(var1);
+													var16.packetBuffer.writeIntIME(var1);
 													var16.packetBuffer.writeShortLE(var4);
-													var16.packetBuffer.writeIntIME(AABB.selectedSpellWidget);
+													var16.packetBuffer.writeIntME(AABB.selectedSpellWidget);
 													var16.packetBuffer.writeShort(var0);
 													var16.packetBuffer.writeShortAdd(Client.selectedSpellItemId);
 													Client.packetWriter.addNode(var16);
