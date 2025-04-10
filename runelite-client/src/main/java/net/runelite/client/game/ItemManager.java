@@ -359,7 +359,7 @@ public class ItemManager
 
 		if (b != null)
 		{
-			if (fullValue || b.getItemID() == ItemID.BR_GRANITE_MAUL || b.getItemID() == ItemID.GRANITE_MAUL_UPGRADE)
+			if (fullValue || b.getItemID() == ItemID.GRANITE_MAUL_PLUS || b.getItemID() == ItemID.GRANITE_MAUL_PRETTY_PLUS)
 			{
 				return b.getValue();
 			}
