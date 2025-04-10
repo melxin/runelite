@@ -181,7 +181,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lms;"
 	)
-	public static final ServerPacket field3545;
+	public static final ServerPacket CHAT_FILTER_SETTINGS;
 	@ObfuscatedName("bd")
 	@ObfuscatedSignature(
 		descriptor = "Lms;"
@@ -406,7 +406,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lms;"
 	)
-	public static final ServerPacket field3620;
+	public static final ServerPacket IF_SETHIDE;
 	@ObfuscatedName("db")
 	@ObfuscatedSignature(
 		descriptor = "Lms;"
@@ -591,7 +591,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lms;"
 	)
-	public static final ServerPacket field3627;
+	public static final ServerPacket MESSAGE_PRIVATE_ECHO;
 	@ObfuscatedName("ep")
 	@ObfuscatedSignature(
 		descriptor = "Lms;"
@@ -736,7 +736,7 @@ public class ServerPacket {
 		UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1 = new ServerPacket(31, -2);
 		REBUILD_WORLDENTITY = new ServerPacket(32, -2);
 		field3544 = new ServerPacket(33, -2);
-		field3545 = new ServerPacket(34, 2);
+		CHAT_FILTER_SETTINGS = new ServerPacket(34, 2);
 		VARP_SMALL = new ServerPacket(35, 3);
 		IF_CLOSESUB = new ServerPacket(36, 4);
 		UPDATE_INV_PARTIAL = new ServerPacket(37, -2);
@@ -781,7 +781,7 @@ public class ServerPacket {
 		HINT_ARROW = new ServerPacket(76, 6);
 		field3511 = new ServerPacket(77, 2);
 		IF_SETNPCHEAD_ACTIVE = new ServerPacket(78, 6);
-		field3620 = new ServerPacket(79, 5);
+		IF_SETHIDE = new ServerPacket(79, 5);
 		UPDATE_INV_STOP_TRANSIT = new ServerPacket(80, 2);
 		MIDI_JINGLE = new ServerPacket(81, 5);
 		VARP_LARGE = new ServerPacket(82, 6);
@@ -818,7 +818,7 @@ public class ServerPacket {
 		OBJ_COUNT = new ServerPacket(113, 11);
 		UPDATE_STAT = new ServerPacket(114, 7);
 		UPDATE_SITE_SETTINGS = new ServerPacket(115, -1);
-		field3627 = new ServerPacket(116, -2);
+		MESSAGE_PRIVATE_ECHO = new ServerPacket(116, -2);
 		RESET_ANIMS = new ServerPacket(117, 0);
 		UPDATE_UID192 = new ServerPacket(118, 28);
 		CLAN_SETTINGS_DELTA = new ServerPacket(119, -2);

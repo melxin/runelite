@@ -236,7 +236,7 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3467;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("bn")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -351,7 +351,7 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
 	)
-	public static final ClientPacket field3449;
+	public static final ClientPacket DOCHEAT;
 	@ObfuscatedName("cb")
 	@ObfuscatedSignature(
 		descriptor = "Lmq;"
@@ -571,7 +571,7 @@ public class ClientPacket implements class323 {
 		OPLOC5 = new ClientPacket(42, 7);
 		OPOBJ3 = new ClientPacket(43, 7);
 		OPNPC3 = new ClientPacket(44, 3);
-		field3467 = new ClientPacket(45, 0);
+		FREECAM_EXIT = new ClientPacket(45, 0);
 		EVENT_MOUSE_IDLE = new ClientPacket(46, 0);
 		OPPLAYER4 = new ClientPacket(47, 3);
 		OPPLAYER5 = new ClientPacket(48, 3);
@@ -594,7 +594,7 @@ public class ClientPacket implements class323 {
 		OPPLAYER3 = new ClientPacket(65, 3);
 		CLAN_KICKUSER = new ClientPacket(66, -1);
 		DETECT_MODIFIED_CLIENT = new ClientPacket(67, 4);
-		field3449 = new ClientPacket(68, -1);
+		DOCHEAT = new ClientPacket(68, -1);
 		IGNORE_DELUSER = new ClientPacket(69, -1);
 		RESUME_COUNTDIALOG = new ClientPacket(70, 4);
 		OPNPCT = new ClientPacket(71, 11);

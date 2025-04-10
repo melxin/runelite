@@ -707,7 +707,7 @@ public class class278 {
 			}
 		}
 
-		PacketBufferNode var9 = FloorDecoration.getPacketBufferNode(ClientPacket.field3449, Client.packetWriter.isaacCipher);
+		PacketBufferNode var9 = FloorDecoration.getPacketBufferNode(ClientPacket.DOCHEAT, Client.packetWriter.isaacCipher);
 		var9.packetBuffer.writeByte(var0.length() + 1);
 		var9.packetBuffer.writeStringCp1252NullTerminated(var0);
 		Client.packetWriter.addNode(var9);
