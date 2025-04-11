@@ -116,15 +116,16 @@ public class MissingMultiplicationTransformer implements Transformer
 							Field targetField = ((GetField) in).getMyField();
 							ClassFile targetClassFile = targetField.getClassFile();
 
-							if (targetClassFile.getName().equals("Widget") || targetClassFile.getName().equals("Menu"))
+							if (targetClassFile.getName().equals("Widget") || targetClassFile.getName().equals("Menu") || targetClassFile.getName().equals("Buffer"))
 							{
 								Number constant = ((LDC) multiplication).getNumber();
 
-								Annotation exportAnnotation = targetField.getAnnotations().get(DeobAnnotations.EXPORT);
-								targetField.getAnnotations().remove(DeobAnnotations.EXPORT);
+								/*if (!targetField.getName().startsWith("field"))
+								{
+									targetField.findAnnotation(DeobAnnotations.EXPORT, true).setElement(targetField.getName());
+								}*/
 
 								targetField.addAnnotation(DeobAnnotations.OBFUSCATED_GETTER, targetField.getType().equals(Type.INT) ? "intValue" : "longValue", constant);
-								targetField.addAnnotation(exportAnnotation);
 
 								logger.info("Added missing obfuscatedGetter: {} for field: {}.{}", constant, targetClassFile.getName(), targetField.getName());
 								missingObfuscatedGetters.remove(targetField);

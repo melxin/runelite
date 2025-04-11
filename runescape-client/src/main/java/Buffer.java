@@ -1,6 +1,7 @@
 import java.math.BigInteger;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,6 +16,9 @@ public class Buffer extends Node {
 	@Export("array")
 	public byte[] array;
 	@ObfuscatedName("ar")
+	@ObfuscatedGetter(
+		intValue = -2066221813
+	)
 	@Export("offset")
 	public int offset;
 
