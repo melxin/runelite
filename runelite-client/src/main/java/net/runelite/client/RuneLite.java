@@ -349,7 +349,7 @@ public class RuneLite
 		injector.injectMembers(client);
 
 		setupSystemProps();
-		setupCompilerControl();
+		//setupCompilerControl();
 
 		// Start the applet
 		copyJagexCache();
