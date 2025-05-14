@@ -439,6 +439,12 @@ class PluginHubPanel extends PluginPanel
 		{
 			return manifest.getDisplayName();
 		}
+
+		@Override
+		public int installs()
+		{
+			return userCount;
+		}
 	}
 
 	private final PluginListPanel pluginListPanel;

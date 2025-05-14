@@ -31,13 +31,13 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import javax.inject.Inject;
 import javax.inject.Singleton;
-import com.openosrs.client.config.OpenOSRSConfig;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ClientShutdown;
 import net.runelite.client.util.RunnableExceptionLogger;
+import com.openosrs.client.config.OpenOSRSConfig;
 
 @Singleton
 @Slf4j
@@ -135,12 +135,8 @@ public class ClientSessionManager
 			return;
 		}
 
-		boolean loggedIn = false;
-		if (client != null)
-		{
-			GameState gameState = client.getGameState();
-			loggedIn = gameState.getState() >= GameState.LOADING.getState();
-		}
+		GameState gameState = client.getGameState();
+		boolean loggedIn = gameState.getState() >= GameState.LOADING.getState();
 
 		try
 		{

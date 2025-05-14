@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Jack Hodkinson <https://github.com/jrhodkinson>
+ * Copyright (c) 2016-2018, Adam <Adam@sigterm.info>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,23 +22,16 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.config;
+package net.runelite.client.plugins.itemstats;
 
-import java.util.List;
+import org.junit.Test;
 
-interface SearchablePlugin
+public class ItemStatChangesTest
 {
-	String getSearchableName();
-
-	List<String> getKeywords();
-
-	default boolean isPinned()
+	@Test
+	public void testInit()
 	{
-		return false;
+		new ItemStatChanges();
 	}
 
-	default int installs()
-	{
-		return 0;
-	}
 }

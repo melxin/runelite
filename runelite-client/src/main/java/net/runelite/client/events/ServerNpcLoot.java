@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Jack Hodkinson <https://github.com/jrhodkinson>
+ * Copyright (c) 2025, Adam <Adam@sigterm.info>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,23 +22,19 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.config;
+package net.runelite.client.events;
 
-import java.util.List;
+import java.util.Collection;
+import lombok.Value;
+import net.runelite.api.NPCComposition;
+import net.runelite.client.game.ItemStack;
 
-interface SearchablePlugin
+/**
+ * NPC loot received from the in-game loot tracker.
+ */
+@Value
+public class ServerNpcLoot
 {
-	String getSearchableName();
-
-	List<String> getKeywords();
-
-	default boolean isPinned()
-	{
-		return false;
-	}
-
-	default int installs()
-	{
-		return 0;
-	}
+	NPCComposition composition;
+	Collection<ItemStack> items;
 }

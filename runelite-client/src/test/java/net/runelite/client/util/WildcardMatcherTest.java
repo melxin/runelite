@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Jack Hodkinson <https://github.com/jrhodkinson>
+ * Copyright (c) 2018, Adam <Adam@sigterm.info>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,23 +22,23 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.config;
+package net.runelite.client.util;
 
-import java.util.List;
+import static net.runelite.client.util.WildcardMatcher.matches;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
 
-interface SearchablePlugin
+public class WildcardMatcherTest
 {
-	String getSearchableName();
-
-	List<String> getKeywords();
-
-	default boolean isPinned()
+	@Test
+	public void testMatches()
 	{
-		return false;
-	}
-
-	default int installs()
-	{
-		return 0;
+		assertTrue(matches("rune*", "rune pouch"));
+		assertTrue(matches("rune*", "Rune pouch"));
+		assertFalse(matches("Abyssal whip", "Adamant dagger"));
+		assertTrue(matches("rune*", "Runeite Ore"));
+		assertTrue(matches("Abyssal whip", "Abyssal whip"));
+		assertTrue(matches("string $ with special character", "string $ with special character"));
 	}
 }
