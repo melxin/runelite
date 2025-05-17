@@ -36,7 +36,8 @@ public final class NPC extends Actor {
 	@ObfuscatedSignature(
 		descriptor = "Lvx;"
 	)
-	class569 field1369;
+	@Export("npcOverheadIcons")
+	NPCOverheadIcons npcOverheadIcons;
 	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "Lja;"
@@ -234,7 +235,7 @@ public final class NPC extends Actor {
 		garbageValue = "-1895280440"
 	)
 	int[] method2923() {
-		return this.field1369 != null ? this.field1369.method10557() : this.definition.method5183();
+		return this.npcOverheadIcons != null ? this.npcOverheadIcons.method10557() : this.definition.method5183();
 	}
 
 	@ObfuscatedName("ap")
@@ -243,7 +244,7 @@ public final class NPC extends Actor {
 		garbageValue = "1253794886"
 	)
 	short[] method2901() {
-		return this.field1369 != null ? this.field1369.method10558() : this.definition.method5172();
+		return this.npcOverheadIcons != null ? this.npcOverheadIcons.method10558() : this.definition.method5172();
 	}
 
 	@ObfuscatedName("ax")
@@ -252,11 +253,11 @@ public final class NPC extends Actor {
 		garbageValue = "-29413"
 	)
 	void method2902(int var1, int var2, short var3) {
-		if (this.field1369 == null) {
-			this.field1369 = new class569(this.definition);
+		if (this.npcOverheadIcons == null) {
+			this.npcOverheadIcons = new NPCOverheadIcons(this.definition);
 		}
 
-		this.field1369.method10559(var1, var2, var3);
+		this.npcOverheadIcons.method10559(var1, var2, var3);
 	}
 
 	@ObfuscatedName("aw")
@@ -265,11 +266,11 @@ public final class NPC extends Actor {
 		garbageValue = "-19477797"
 	)
 	void method2903(int[] var1, short[] var2) {
-		if (this.field1369 == null) {
-			this.field1369 = new class569(this.definition);
+		if (this.npcOverheadIcons == null) {
+			this.npcOverheadIcons = new NPCOverheadIcons(this.definition);
 		}
 
-		this.field1369.method10560(var1, var2);
+		this.npcOverheadIcons.method10560(var1, var2);
 	}
 
 	@ObfuscatedName("ar")
@@ -278,7 +279,7 @@ public final class NPC extends Actor {
 		garbageValue = "704883236"
 	)
 	void method2904() {
-		this.field1369 = null;
+		this.npcOverheadIcons = null;
 	}
 
 	@ObfuscatedName("au")

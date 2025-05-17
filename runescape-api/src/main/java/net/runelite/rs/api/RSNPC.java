@@ -20,4 +20,7 @@ public interface RSNPC extends RSActor, NPC
 	@Import("chatheadOverrides")
 	@Override
 	NpcOverrides getChatheadOverrides();
+
+	@Import("npcOverheadIcons")
+	RSNPCOverheadIcons getNpcOverheadIcons();
 }

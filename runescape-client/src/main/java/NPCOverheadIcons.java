@@ -1,29 +1,34 @@
+import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("vx")
-public class class569 {
+@Implements("NPCOverheadIcons")
+public class NPCOverheadIcons {
 	@ObfuscatedName("ao")
-	int[] field5603;
+	@Export("overheadArchiveIds")
+	int[] overheadArchiveIds;
 	@ObfuscatedName("an")
-	short[] field5604;
+	@Export("overheadSpriteIds")
+	short[] overheadSpriteIds;
 
 	@ObfuscatedSignature(
 		descriptor = "(Ljn;)V"
 	)
-	public class569(NPCComposition var1) {
-		this.field5603 = new int[8];
-		this.field5604 = new short[8];
+	public NPCOverheadIcons(NPCComposition var1) {
+		this.overheadArchiveIds = new int[8];
+		this.overheadSpriteIds = new short[8];
 		int var2 = 0;
 		if (var1.method5182()) {
 			var2 = var1.method5183().length;
-			System.arraycopy(var1.method5183(), 0, this.field5603, 0, var2);
-			System.arraycopy(var1.method5172(), 0, this.field5604, 0, var2);
+			System.arraycopy(var1.method5183(), 0, this.overheadArchiveIds, 0, var2);
+			System.arraycopy(var1.method5172(), 0, this.overheadSpriteIds, 0, var2);
 		}
 
 		for (int var3 = var2; var3 < 8; ++var3) {
-			this.field5603[var3] = -1;
-			this.field5604[var3] = -1;
+			this.overheadArchiveIds[var3] = -1;
+			this.overheadSpriteIds[var3] = -1;
 		}
 
 	}
@@ -34,7 +39,7 @@ public class class569 {
 		garbageValue = "-310876704"
 	)
 	public int[] method10557() {
-		return this.field5603;
+		return this.overheadArchiveIds;
 	}
 
 	@ObfuscatedName("an")
@@ -43,7 +48,7 @@ public class class569 {
 		garbageValue = "1765397739"
 	)
 	public short[] method10558() {
-		return this.field5604;
+		return this.overheadSpriteIds;
 	}
 
 	@ObfuscatedName("ae")
@@ -52,8 +57,8 @@ public class class569 {
 		garbageValue = "842558199"
 	)
 	public void method10559(int var1, int var2, short var3) {
-		this.field5603[var1] = var2;
-		this.field5604[var1] = var3;
+		this.overheadArchiveIds[var1] = var2;
+		this.overheadSpriteIds[var1] = var3;
 	}
 
 	@ObfuscatedName("af")
@@ -62,7 +67,7 @@ public class class569 {
 		garbageValue = "818633975"
 	)
 	public void method10560(int[] var1, short[] var2) {
-		this.field5603 = var1;
-		this.field5604 = var2;
+		this.overheadArchiveIds = var1;
+		this.overheadSpriteIds = var2;
 	}
 }

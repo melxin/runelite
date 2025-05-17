@@ -223,4 +223,34 @@ public abstract class RSNPCMixin implements RSNPC
 
 		return model.getConvexHull(getX(), getY(), getCurrentOrientation(), tileHeight);
 	}
+
+	@Inject
+	@Override
+	public int[] getOverheadArchiveIds()
+	{
+		if (this.getNpcOverheadIcons() != null)
+		{
+			return (int[]) this.getNpcOverheadIcons().getOverheadArchiveIds().clone();
+		}
+		else
+		{
+			RSNPCComposition composition = this.getComposition();
+			return composition != null && composition.getModels() != null ? (int[]) composition.getModels().clone() : null;
+		}
+	}
+
+	@Inject
+	@Override
+	public short[] getOverheadSpriteIds()
+	{
+		if (this.getNpcOverheadIcons() != null)
+		{
+			return (short[]) this.getNpcOverheadIcons().getOverheadSpriteIds().clone();
+		}
+		else
+		{
+			RSNPCComposition composition = this.getComposition();
+			return composition != null && composition.getTextureToReplace() != null ? (short[]) composition.getTextureToReplace().clone() : null;
+		}
+	}
 }

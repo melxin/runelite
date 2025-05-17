@@ -68,6 +68,12 @@ public interface RSNPCComposition extends NPCComposition
 	@Override
 	short[] getColorToReplaceWith();
 
+	@Import("retextureFrom")
+	short[] getTextureToReplace();
+
+	@Import("retextureFrom")
+	void setTextureToReplace(short[] texture);
+
 	@Import("widthScale")
 	@Override
 	int getWidthScale();
