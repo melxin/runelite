@@ -1,6 +1,5 @@
 // Generated from net/runelite/cache/script/assembler/rs2asm.g4 by ANTLR 4.13.1
 package net.runelite.cache.script.assembler;
-
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -52,60 +51,32 @@ public interface rs2asmListener extends ParseTreeListener
 	void exitId(rs2asmParser.IdContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link rs2asmParser#int_stack_count}.
+	 * Enter a parse tree produced by {@link rs2asmParser#int_arg_count}.
 	 *
 	 * @param ctx the parse tree
 	 */
-	void enterInt_stack_count(rs2asmParser.Int_stack_countContext ctx);
+	void enterInt_arg_count(rs2asmParser.Int_arg_countContext ctx);
 
 	/**
-	 * Exit a parse tree produced by {@link rs2asmParser#int_stack_count}.
+	 * Exit a parse tree produced by {@link rs2asmParser#int_arg_count}.
 	 *
 	 * @param ctx the parse tree
 	 */
-	void exitInt_stack_count(rs2asmParser.Int_stack_countContext ctx);
+	void exitInt_arg_count(rs2asmParser.Int_arg_countContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link rs2asmParser#string_stack_count}.
+	 * Enter a parse tree produced by {@link rs2asmParser#obj_arg_count}.
 	 *
 	 * @param ctx the parse tree
 	 */
-	void enterString_stack_count(rs2asmParser.String_stack_countContext ctx);
+	void enterObj_arg_count(rs2asmParser.Obj_arg_countContext ctx);
 
 	/**
-	 * Exit a parse tree produced by {@link rs2asmParser#string_stack_count}.
+	 * Exit a parse tree produced by {@link rs2asmParser#obj_arg_count}.
 	 *
 	 * @param ctx the parse tree
 	 */
-	void exitString_stack_count(rs2asmParser.String_stack_countContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link rs2asmParser#int_var_count}.
-	 *
-	 * @param ctx the parse tree
-	 */
-	void enterInt_var_count(rs2asmParser.Int_var_countContext ctx);
-
-	/**
-	 * Exit a parse tree produced by {@link rs2asmParser#int_var_count}.
-	 *
-	 * @param ctx the parse tree
-	 */
-	void exitInt_var_count(rs2asmParser.Int_var_countContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link rs2asmParser#string_var_count}.
-	 *
-	 * @param ctx the parse tree
-	 */
-	void enterString_var_count(rs2asmParser.String_var_countContext ctx);
-
-	/**
-	 * Exit a parse tree produced by {@link rs2asmParser#string_var_count}.
-	 *
-	 * @param ctx the parse tree
-	 */
-	void exitString_var_count(rs2asmParser.String_var_countContext ctx);
+	void exitObj_arg_count(rs2asmParser.Obj_arg_countContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link rs2asmParser#id_value}.
@@ -122,60 +93,32 @@ public interface rs2asmListener extends ParseTreeListener
 	void exitId_value(rs2asmParser.Id_valueContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link rs2asmParser#int_stack_value}.
+	 * Enter a parse tree produced by {@link rs2asmParser#int_arg_value}.
 	 *
 	 * @param ctx the parse tree
 	 */
-	void enterInt_stack_value(rs2asmParser.Int_stack_valueContext ctx);
+	void enterInt_arg_value(rs2asmParser.Int_arg_valueContext ctx);
 
 	/**
-	 * Exit a parse tree produced by {@link rs2asmParser#int_stack_value}.
+	 * Exit a parse tree produced by {@link rs2asmParser#int_arg_value}.
 	 *
 	 * @param ctx the parse tree
 	 */
-	void exitInt_stack_value(rs2asmParser.Int_stack_valueContext ctx);
+	void exitInt_arg_value(rs2asmParser.Int_arg_valueContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link rs2asmParser#string_stack_value}.
+	 * Enter a parse tree produced by {@link rs2asmParser#obj_arg_value}.
 	 *
 	 * @param ctx the parse tree
 	 */
-	void enterString_stack_value(rs2asmParser.String_stack_valueContext ctx);
+	void enterObj_arg_value(rs2asmParser.Obj_arg_valueContext ctx);
 
 	/**
-	 * Exit a parse tree produced by {@link rs2asmParser#string_stack_value}.
+	 * Exit a parse tree produced by {@link rs2asmParser#obj_arg_value}.
 	 *
 	 * @param ctx the parse tree
 	 */
-	void exitString_stack_value(rs2asmParser.String_stack_valueContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link rs2asmParser#int_var_value}.
-	 *
-	 * @param ctx the parse tree
-	 */
-	void enterInt_var_value(rs2asmParser.Int_var_valueContext ctx);
-
-	/**
-	 * Exit a parse tree produced by {@link rs2asmParser#int_var_value}.
-	 *
-	 * @param ctx the parse tree
-	 */
-	void exitInt_var_value(rs2asmParser.Int_var_valueContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link rs2asmParser#string_var_value}.
-	 *
-	 * @param ctx the parse tree
-	 */
-	void enterString_var_value(rs2asmParser.String_var_valueContext ctx);
-
-	/**
-	 * Exit a parse tree produced by {@link rs2asmParser#string_var_value}.
-	 *
-	 * @param ctx the parse tree
-	 */
-	void exitString_var_value(rs2asmParser.String_var_valueContext ctx);
+	void exitObj_arg_value(rs2asmParser.Obj_arg_valueContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link rs2asmParser#line}.

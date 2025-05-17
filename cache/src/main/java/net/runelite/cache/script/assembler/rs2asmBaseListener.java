@@ -21,6 +21,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterProg(rs2asmParser.ProgContext ctx)
 	{
+
 	}
 
 	/**
@@ -31,6 +32,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitProg(rs2asmParser.ProgContext ctx)
 	{
+
 	}
 
 	/**
@@ -41,6 +43,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterHeader(rs2asmParser.HeaderContext ctx)
 	{
+
 	}
 
 	/**
@@ -51,6 +54,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitHeader(rs2asmParser.HeaderContext ctx)
 	{
+
 	}
 
 	/**
@@ -61,6 +65,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterId(rs2asmParser.IdContext ctx)
 	{
+
 	}
 
 	/**
@@ -71,6 +76,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitId(rs2asmParser.IdContext ctx)
 	{
+
 	}
 
 	/**
@@ -79,8 +85,9 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
-	public void enterInt_stack_count(rs2asmParser.Int_stack_countContext ctx)
+	public void enterInt_arg_count(rs2asmParser.Int_arg_countContext ctx)
 	{
+
 	}
 
 	/**
@@ -89,8 +96,9 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
-	public void exitInt_stack_count(rs2asmParser.Int_stack_countContext ctx)
+	public void exitInt_arg_count(rs2asmParser.Int_arg_countContext ctx)
 	{
+
 	}
 
 	/**
@@ -99,8 +107,9 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
-	public void enterString_stack_count(rs2asmParser.String_stack_countContext ctx)
+	public void enterObj_arg_count(rs2asmParser.Obj_arg_countContext ctx)
 	{
+
 	}
 
 	/**
@@ -109,48 +118,9 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
-	public void exitString_stack_count(rs2asmParser.String_stack_countContext ctx)
+	public void exitObj_arg_count(rs2asmParser.Obj_arg_countContext ctx)
 	{
-	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override
-	public void enterInt_var_count(rs2asmParser.Int_var_countContext ctx)
-	{
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override
-	public void exitInt_var_count(rs2asmParser.Int_var_countContext ctx)
-	{
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override
-	public void enterString_var_count(rs2asmParser.String_var_countContext ctx)
-	{
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override
-	public void exitString_var_count(rs2asmParser.String_var_countContext ctx)
-	{
 	}
 
 	/**
@@ -161,6 +131,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterId_value(rs2asmParser.Id_valueContext ctx)
 	{
+
 	}
 
 	/**
@@ -171,6 +142,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitId_value(rs2asmParser.Id_valueContext ctx)
 	{
+
 	}
 
 	/**
@@ -179,8 +151,9 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
-	public void enterInt_stack_value(rs2asmParser.Int_stack_valueContext ctx)
+	public void enterInt_arg_value(rs2asmParser.Int_arg_valueContext ctx)
 	{
+
 	}
 
 	/**
@@ -189,8 +162,9 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
-	public void exitInt_stack_value(rs2asmParser.Int_stack_valueContext ctx)
+	public void exitInt_arg_value(rs2asmParser.Int_arg_valueContext ctx)
 	{
+
 	}
 
 	/**
@@ -199,8 +173,9 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
-	public void enterString_stack_value(rs2asmParser.String_stack_valueContext ctx)
+	public void enterObj_arg_value(rs2asmParser.Obj_arg_valueContext ctx)
 	{
+
 	}
 
 	/**
@@ -209,48 +184,9 @@ public class rs2asmBaseListener implements rs2asmListener
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override
-	public void exitString_stack_value(rs2asmParser.String_stack_valueContext ctx)
+	public void exitObj_arg_value(rs2asmParser.Obj_arg_valueContext ctx)
 	{
-	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override
-	public void enterInt_var_value(rs2asmParser.Int_var_valueContext ctx)
-	{
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override
-	public void exitInt_var_value(rs2asmParser.Int_var_valueContext ctx)
-	{
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override
-	public void enterString_var_value(rs2asmParser.String_var_valueContext ctx)
-	{
-	}
-
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override
-	public void exitString_var_value(rs2asmParser.String_var_valueContext ctx)
-	{
 	}
 
 	/**
@@ -261,6 +197,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterLine(rs2asmParser.LineContext ctx)
 	{
+
 	}
 
 	/**
@@ -271,6 +208,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitLine(rs2asmParser.LineContext ctx)
 	{
+
 	}
 
 	/**
@@ -281,6 +219,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterInstruction(rs2asmParser.InstructionContext ctx)
 	{
+
 	}
 
 	/**
@@ -291,6 +230,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitInstruction(rs2asmParser.InstructionContext ctx)
 	{
+
 	}
 
 	/**
@@ -301,6 +241,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterLabel(rs2asmParser.LabelContext ctx)
 	{
+
 	}
 
 	/**
@@ -311,6 +252,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitLabel(rs2asmParser.LabelContext ctx)
 	{
+
 	}
 
 	/**
@@ -321,6 +263,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterInstruction_name(rs2asmParser.Instruction_nameContext ctx)
 	{
+
 	}
 
 	/**
@@ -331,6 +274,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitInstruction_name(rs2asmParser.Instruction_nameContext ctx)
 	{
+
 	}
 
 	/**
@@ -341,6 +285,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterName_string(rs2asmParser.Name_stringContext ctx)
 	{
+
 	}
 
 	/**
@@ -351,6 +296,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitName_string(rs2asmParser.Name_stringContext ctx)
 	{
+
 	}
 
 	/**
@@ -361,6 +307,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterName_opcode(rs2asmParser.Name_opcodeContext ctx)
 	{
+
 	}
 
 	/**
@@ -371,6 +318,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitName_opcode(rs2asmParser.Name_opcodeContext ctx)
 	{
+
 	}
 
 	/**
@@ -381,6 +329,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterInstruction_operand(rs2asmParser.Instruction_operandContext ctx)
 	{
+
 	}
 
 	/**
@@ -391,6 +340,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitInstruction_operand(rs2asmParser.Instruction_operandContext ctx)
 	{
+
 	}
 
 	/**
@@ -401,6 +351,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterOperand_int(rs2asmParser.Operand_intContext ctx)
 	{
+
 	}
 
 	/**
@@ -411,6 +362,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitOperand_int(rs2asmParser.Operand_intContext ctx)
 	{
+
 	}
 
 	/**
@@ -421,6 +373,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterOperand_qstring(rs2asmParser.Operand_qstringContext ctx)
 	{
+
 	}
 
 	/**
@@ -431,6 +384,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitOperand_qstring(rs2asmParser.Operand_qstringContext ctx)
 	{
+
 	}
 
 	/**
@@ -441,6 +395,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterOperand_label(rs2asmParser.Operand_labelContext ctx)
 	{
+
 	}
 
 	/**
@@ -451,6 +406,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitOperand_label(rs2asmParser.Operand_labelContext ctx)
 	{
+
 	}
 
 	/**
@@ -461,6 +417,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterOperand_symbol(rs2asmParser.Operand_symbolContext ctx)
 	{
+
 	}
 
 	/**
@@ -471,6 +428,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitOperand_symbol(rs2asmParser.Operand_symbolContext ctx)
 	{
+
 	}
 
 	/**
@@ -481,6 +439,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterSwitch_lookup(rs2asmParser.Switch_lookupContext ctx)
 	{
+
 	}
 
 	/**
@@ -491,6 +450,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitSwitch_lookup(rs2asmParser.Switch_lookupContext ctx)
 	{
+
 	}
 
 	/**
@@ -501,6 +461,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterSwitch_key(rs2asmParser.Switch_keyContext ctx)
 	{
+
 	}
 
 	/**
@@ -511,6 +472,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitSwitch_key(rs2asmParser.Switch_keyContext ctx)
 	{
+
 	}
 
 	/**
@@ -521,6 +483,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterSwitch_value(rs2asmParser.Switch_valueContext ctx)
 	{
+
 	}
 
 	/**
@@ -531,6 +494,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitSwitch_value(rs2asmParser.Switch_valueContext ctx)
 	{
+
 	}
 
 	/**
@@ -541,6 +505,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void enterEveryRule(ParserRuleContext ctx)
 	{
+
 	}
 
 	/**
@@ -551,6 +516,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void exitEveryRule(ParserRuleContext ctx)
 	{
+
 	}
 
 	/**
@@ -561,6 +527,7 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void visitTerminal(TerminalNode node)
 	{
+
 	}
 
 	/**
@@ -571,5 +538,6 @@ public class rs2asmBaseListener implements rs2asmListener
 	@Override
 	public void visitErrorNode(ErrorNode node)
 	{
+
 	}
 }
