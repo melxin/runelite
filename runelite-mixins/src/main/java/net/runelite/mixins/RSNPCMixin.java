@@ -26,6 +26,7 @@ package net.runelite.mixins;
 
 import java.awt.Polygon;
 import java.awt.Shape;
+import java.util.Arrays;
 import java.util.Iterator;
 import net.runelite.api.ActorSpotAnim;
 import net.runelite.api.NPCComposition;
@@ -230,12 +231,13 @@ public abstract class RSNPCMixin implements RSNPC
 	{
 		if (this.getNpcOverheadIcons() != null)
 		{
-			return (int[]) this.getNpcOverheadIcons().getOverheadArchiveIds().clone();
+			int[] overheadArchiveIds = this.getNpcOverheadIcons().getOverheadArchiveIds();
+			return (int[]) Arrays.copyOf(overheadArchiveIds, overheadArchiveIds.length);
 		}
 		else
 		{
 			RSNPCComposition composition = this.getComposition();
-			return composition != null && composition.getModels() != null ? (int[]) composition.getModels().clone() : null;
+			return composition != null && composition.getModels() != null ? (int[]) Arrays.copyOf(composition.getModels(), composition.getModels().length) : null;
 		}
 	}
 
@@ -245,12 +247,13 @@ public abstract class RSNPCMixin implements RSNPC
 	{
 		if (this.getNpcOverheadIcons() != null)
 		{
-			return (short[]) this.getNpcOverheadIcons().getOverheadSpriteIds().clone();
+			short[] overheadSpriteIds = this.getNpcOverheadIcons().getOverheadSpriteIds();
+			return (short[]) Arrays.copyOf(overheadSpriteIds, overheadSpriteIds.length);
 		}
 		else
 		{
 			RSNPCComposition composition = this.getComposition();
-			return composition != null && composition.getTextureToReplace() != null ? (short[]) composition.getTextureToReplace().clone() : null;
+			return composition != null && composition.getTextureToReplace() != null ? (short[]) Arrays.copyOf(composition.getTextureToReplace(), composition.getTextureToReplace().length) : null;
 		}
 	}
 }
