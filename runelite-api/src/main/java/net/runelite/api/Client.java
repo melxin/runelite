@@ -88,6 +88,8 @@ public interface Client extends OAuthApi, GameEngine
 
 	String getBuildID();
 
+	int getEnvironment();
+
 	/**
 	 * Gets the current modified level of a skill.
 	 *
