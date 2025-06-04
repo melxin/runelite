@@ -40,6 +40,10 @@ import net.runelite.mapping.Import;
 
 public interface RSClient extends RSGameEngine, Client
 {
+	@Import("gameBuild")
+	@Override
+	int getEnvironment();
+
 	@Import("cameraX")
 	@Override
 	int getCameraX();
