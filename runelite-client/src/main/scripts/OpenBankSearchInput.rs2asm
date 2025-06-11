@@ -18,12 +18,12 @@ LABEL5:
    sconst                 ""
    invoke                 222
    sconst                 ""
-   sstore                 0
+   ostore                 0
    iconst                 112
    iconst                 -2147483640
    iconst                 -2147483639
-   sload                  0
-   sconst                 "izs"
+   oload                  0
+   sconst                 "iis"
    iconst                 10616875
    if_setonkey           
    iconst                 138

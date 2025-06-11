@@ -114,6 +114,12 @@ public interface Player extends Actor
 	void setSkullIcon(@MagicConstant(valuesFromClass = SkullIcon.class) int skullIcon);
 
 	/**
+	 * Get the player footprint size
+	 * @return
+	 */
+	int getFootprintSize();
+
+	/**
 	 * This is almost always not what you want
 	 * @return literal 0
 	 */
