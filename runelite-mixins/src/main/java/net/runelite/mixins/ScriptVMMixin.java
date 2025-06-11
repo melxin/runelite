@@ -89,15 +89,15 @@ public abstract class ScriptVMMixin implements RSClient
 			case RUNELITE_EXECUTE:
 				assert currentScript.getInstructions()[currentScriptPC] == RUNELITE_EXECUTE;
 
-				int stringStackSize = client.getStringStackSize();
-				String stringOp = client.getStringStack()[--stringStackSize];
-				client.setStringStackSize(stringStackSize);
+				int stringStackSize = client.getObjectStackSize();
+				String stringOp = (String) client.getObjectStack()[--stringStackSize];
+				client.setObjectStackSize(stringStackSize);
 
 				if ("debug".equals(stringOp))
 				{
 					int intStackSize = client.getIntStackSize();
 
-					String fmt = client.getStringStack()[--stringStackSize];
+					String fmt = (String) client.getObjectStack()[--stringStackSize];
 					StringBuffer out = new StringBuffer();
 					Matcher m = Pattern.compile("%(.)").matcher(fmt);
 					while (m.find())
@@ -110,7 +110,7 @@ public abstract class ScriptVMMixin implements RSClient
 								out.append(client.getIntStack()[--intStackSize]);
 								break;
 							case 's':
-								out.append(client.getStringStack()[--stringStackSize]);
+								out.append(client.getObjectStack()[--stringStackSize]);
 								break;
 							default:
 								out.append(m.group(0)).append("=unknown");
@@ -120,7 +120,7 @@ public abstract class ScriptVMMixin implements RSClient
 
 					client.getLogger().debug(out.toString());
 
-					client.setStringStackSize(stringStackSize);
+					client.setObjectStackSize(stringStackSize);
 					client.setIntStackSize(intStackSize);
 					return true;
 				}
@@ -128,8 +128,8 @@ public abstract class ScriptVMMixin implements RSClient
 				{
 					int intStackSize = client.getIntStackSize();
 					int messageType = client.getIntStack()[--intStackSize];
-					String message = client.getStringStack()[--stringStackSize];
-					client.setStringStackSize(stringStackSize);
+					String message = (String) client.getObjectStack()[--stringStackSize];
+					client.setObjectStackSize(stringStackSize);
 					client.setIntStackSize(intStackSize);
 					client.addChatMessage(ChatMessageType.of(messageType), "", message, null, true);
 					return true;

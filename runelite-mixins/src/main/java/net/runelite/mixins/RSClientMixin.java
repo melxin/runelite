@@ -58,7 +58,6 @@ import net.runelite.api.HintArrowType;
 import net.runelite.api.Ignore;
 import net.runelite.api.IndexDataBase;
 import net.runelite.api.IndexedSprite;
-import net.runelite.api.IntegerNode;
 import net.runelite.api.InventoryID;
 import net.runelite.api.ItemComposition;
 import net.runelite.api.MenuAction;
@@ -91,7 +90,6 @@ import net.runelite.api.clan.ClanSettings;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.AccountHashChanged;
-import net.runelite.api.events.AmbientSoundEffectCreated;
 import net.runelite.api.events.BeforeMenuRender;
 import net.runelite.api.events.CanvasSizeChanged;
 import net.runelite.api.events.ChatMessage;
@@ -130,6 +128,7 @@ import net.runelite.api.overlay.OverlayIndex;
 import net.runelite.api.vars.AccountType;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetConfig;
+import net.runelite.api.widgets.WidgetConfigNode;
 import net.runelite.api.widgets.WidgetID;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.api.widgets.WidgetItem;
@@ -163,7 +162,6 @@ import net.runelite.rs.api.RSNPC;
 import net.runelite.rs.api.RSNode;
 import net.runelite.rs.api.RSNodeDeque;
 import net.runelite.rs.api.RSNodeHashTable;
-import net.runelite.rs.api.RSObjectSound;
 import net.runelite.rs.api.RSPacketBuffer;
 import net.runelite.rs.api.RSPlayer;
 import net.runelite.rs.api.RSRuneLiteClanMember;
@@ -2548,17 +2546,17 @@ public abstract class RSClientMixin implements RSClient
 	@Replace("getWidgetFlags")
 	public static int getWidgetFlags(Widget widget)
 	{
-		IntegerNode integerNode = (IntegerNode) client.getWidgetFlags().get(((long) widget.getId() << 32) + (long) widget.getIndex());
+		WidgetConfigNode widgetConfigNode = (WidgetConfigNode) client.getWidgetFlags().get(((long) widget.getId() << 32) + (long) widget.getIndex());
 
 		int widgetClickMask;
 
-		if (integerNode == null)
+		if (widgetConfigNode == null)
 		{
 			widgetClickMask = widget.getClickMask();
 		}
 		else
 		{
-			widgetClickMask = integerNode.getValue();
+			widgetClickMask = widgetConfigNode.getClickMask();
 		}
 
 		if (allWidgetsAreOpTargetable)
@@ -3484,15 +3482,6 @@ public abstract class RSClientMixin implements RSClient
 		return expandedMapLoadingChunks;
 	}
 
-	@Inject
-	@MethodHook(value = "createObjectSound", end = true)
-	public static void onAmbientSoundEffect(int var0, int var1, int var2, ObjectComposition var3, int var4)
-	{
-		RSObjectSound ambientSoundEffect = (RSObjectSound) client.getAmbientSoundEffects().last();
-		AmbientSoundEffectCreated ambientSoundEffectCreated = new AmbientSoundEffectCreated(ambientSoundEffect);
-		client.getCallbacks().post(ambientSoundEffectCreated);
-	}
-
 	@Copy("openURL")
 	@Replace("openURL")
 	public static void copy$openURL(String url, boolean var1, boolean var2)
@@ -3506,6 +3495,26 @@ public abstract class RSClientMixin implements RSClient
 			client.getLogger().error("unable to open url {}", url, e);
 		}
 	}
+
+	/*@Inject
+	@Override
+	public Projectile createProjectile(int id, int plane, int startX, int startY, int startZ, int startCycle, int endCycle, int slope, int startHeight, int endHeight, Actor target, int targetX, int targetY)
+	{
+		int targetIndex = 0;
+		if (target instanceof NPC)
+		{
+			targetIndex = ((NPC) target).getIndex() + 1;
+		}
+		else if (target instanceof Player)
+		{
+			targetIndex = -(((Player) target).getId() + 1);
+		}
+
+		RSProjectile projectile = this.newProjectile(id, plane, startX, startY, startZ, startCycle, endCycle, slope, startHeight, targetIndex, endHeight);
+		//projectile.setWorldView(getTopLevelWorldView());
+		//projectile.setDestination(targetX, targetY, Perspective.getTileHeight(client, new LocalPoint(targetX, targetY, this), plane), startCycle);
+		return projectile;
+	}*/
 
 	@Inject
 	@Override

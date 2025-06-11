@@ -35,6 +35,7 @@ import net.runelite.api.mixins.Shadow;
 import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSProjectile;
 import net.runelite.rs.api.RSWorldView;
+import net.runelite.rs.api.RSWorldViewManager;
 
 @Mixin(RSProjectile.class)
 public abstract class RSProjectileMixin implements RSProjectile
@@ -43,17 +44,26 @@ public abstract class RSProjectileMixin implements RSProjectile
 	private static RSClient client;
 
 	@Inject
-	private int targetX;
-
-	@Inject
-	private int targetY;
-
-	@Inject
 	RSProjectileMixin()
 	{
 		final ProjectileSpawned projectileSpawned = new ProjectileSpawned();
 		projectileSpawned.setProjectile(this);
 		client.getCallbacks().post(projectileSpawned);
+	}
+
+	@Inject
+	@MethodHook("setDestination")
+	public void projectileMoved(RSWorldViewManager var1, int var2, int var3)
+	{
+		if (var2 >= this.getStartCycle())
+		{
+			LocalPoint position = new LocalPoint(this.getTargetX(), this.getTargetY(), client.getTopLevelWorldView());
+			ProjectileMoved projectileMoved = new ProjectileMoved();
+			projectileMoved.setProjectile(this);
+			projectileMoved.setPosition(position);
+			projectileMoved.setZ(this.getEndHeight());
+			client.getCallbacks().post(projectileMoved);
+		}
 	}
 
 	@Inject
@@ -67,23 +77,35 @@ public abstract class RSProjectileMixin implements RSProjectile
 
 	@Inject
 	@Override
-	public Actor getInteracting()
+	public LocalPoint getSourcePoint()
 	{
-		int interactingIndex = getRsInteracting();
-		if (interactingIndex == 0)
+		return new LocalPoint((this.getSourceX() << 7) + 64, (this.getSourceY() << 7) + 64, client.getTopLevelWorldView());
+	}
+
+	public LocalPoint getTargetPoint()
+	{
+		return new LocalPoint((this.getTargetX() << 7) + 64, (this.getTargetY() << 7) + 64, client.getTopLevelWorldView());
+	}
+
+	@Inject
+	@Override
+	public Actor getSourceActor()
+	{
+		final int sourceIndex = this.getSourceIndex();
+		if (sourceIndex == 0)
 		{
 			return null;
 		}
 
-		RSWorldView wv = client.getTopLevelWorldView();
-		if (interactingIndex > 0)
+		final RSWorldView wv = client.getTopLevelWorldView();
+		if (sourceIndex > 0)
 		{
-			int idx = interactingIndex - 1;
+			int idx = sourceIndex - 1;
 			return (Actor) wv.getRSNpcs().get(idx);
 		}
 		else
 		{
-			int idx = -interactingIndex - 1;
+			int idx = -sourceIndex - 1;
 
 			if (idx == client.getLocalPlayerIndex())
 			{
@@ -94,35 +116,34 @@ public abstract class RSProjectileMixin implements RSProjectile
 		}
 	}
 
+
 	@Inject
 	@Override
-	public LocalPoint getTarget()
+	public Actor getTargetActor()
 	{
-		return new LocalPoint(this.targetX, this.targetY);
-	}
+		final int interactingIndex = this.getRsInteracting();
+		if (interactingIndex == 0)
+		{
+			return null;
+		}
 
-	/**
-	 * Called when a projectile is set to move towards a point. For
-	 * projectiles that target the ground, like AoE projectiles from
-	 * Lizardman Shamans, this is only called once
-	 *
-	 * @param targetX X position of where the projectile is being moved to
-	 * @param targetY Y position of where the projectile is being moved to
-	 * @param targetZ Z position of where the projectile is being moved to
-	 * @param cycle
-	 */
-	@Inject
-	@MethodHook("setDestination")
-	public void projectileMoved(int targetX, int targetY, int targetZ, int cycle)
-	{
-		this.targetX = targetX;
-		this.targetY = targetY;
-		final LocalPoint position = new LocalPoint(targetX, targetY);
-		final ProjectileMoved projectileMoved = new ProjectileMoved();
-		projectileMoved.setProjectile(this);
-		projectileMoved.setPosition(position);
-		projectileMoved.setZ(targetZ);
-		client.getCallbacks().post(projectileMoved);
+		final RSWorldView wv = client.getTopLevelWorldView();
+		if (interactingIndex > 0)
+		{
+			final int idx = interactingIndex - 1;
+			return (Actor) wv.getRSNpcs().get(idx);
+		}
+		else
+		{
+			final int idx = -interactingIndex - 1;
+
+			if (idx == client.getLocalPlayerIndex())
+			{
+				return client.getLocalPlayer();
+			}
+
+			return (Actor) wv.getRSPlayers().get(idx);
+		}
 	}
 
 	@Inject

@@ -2,7 +2,6 @@ package net.runelite.rs.api;
 
 import net.runelite.api.CollisionData;
 import net.runelite.api.WorldView;
-import net.runelite.mapping.Construct;
 import net.runelite.mapping.Import;
 
 public interface RSWorldView extends WorldView
@@ -33,12 +32,11 @@ public interface RSWorldView extends WorldView
 	@Import("groundItems")
 	RSNodeDeque[][][] getGroundItems();
 
-	@Construct
-	RSProjectile newProjectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11);
+	//@Construct
+	//RSProjectile newProjectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11);
 
-	@Import("projectiles")
-	@Override
-	RSNodeDeque getProjectiles();
+	@Import("objectSounds")
+	RSNodeDeque getObjectSounds();
 
 	@Import("graphicsObjects")
 	@Override

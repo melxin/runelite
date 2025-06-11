@@ -37,10 +37,7 @@ public interface RSProjectile extends RSRenderable, Projectile
 	@Override
 	int getId();
 
-	@Import("targetIndex")
-	int getRsInteracting();
-
-	@Import("sourceZ")
+	@Import("startHeight")
 	@Override
 	int getHeight();
 
@@ -48,17 +45,31 @@ public interface RSProjectile extends RSRenderable, Projectile
 	@Override
 	int getEndHeight();
 
-	@Import("sourceX")
+	@Import("sourceLevel")
 	@Override
-	int getX1();
+	int getSourceLevel();
+
+	@Import("sourceX")
+	int getSourceX();
 
 	@Import("sourceY")
-	@Override
-	int getY1();
+	int getSourceY();
 
-	@Import("plane")
+	@Import("targetLevel")
 	@Override
-	int getFloor();
+	int getTargetLevel();
+
+	@Import("targetX")
+	int getTargetX();
+
+	@Import("targetY")
+	int getTargetY();
+
+	@Import("sourceIndex")
+	int getSourceIndex();
+
+	@Import("targetIndex")
+	int getRsInteracting();
 
 	@Import("cycleStart")
 	@Override
@@ -92,24 +103,12 @@ public interface RSProjectile extends RSRenderable, Projectile
 	@Override
 	double getZ();
 
-	@Import("speed")
+	@Import("orientation")
 	@Override
-	double getScalar();
-
-	@Import("speedX")
-	@Override
-	double getVelocityX();
-
-	@Import("speedY")
-	@Override
-	double getVelocityY();
-
-	@Import("speedZ")
-	@Override
-	double getVelocityZ();
+	int getOrientation();
 
 	@Import("setDestination")
-	void setDestination(int targetX, int targetY, int targetZ, int cycle);
+	void setDestination(RSWorldViewManager var1, int var2, int var3);
 
 	RSWorldView getWorldView();
 	void setWorldView(RSWorldView worldView);

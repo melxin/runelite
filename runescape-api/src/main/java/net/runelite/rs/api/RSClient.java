@@ -658,17 +658,17 @@ public interface RSClient extends RSGameEngine, Client
 	@Override
 	int[] getIntStack();
 
-	@Import("Interpreter_stringStackSize")
+	@Import("Interpreter_objectStackSize")
 	@Override
-	int getStringStackSize();
+	int getObjectStackSize();
 
-	@Import("Interpreter_stringStackSize")
+	@Import("Interpreter_objectStackSize")
 	@Override
-	void setStringStackSize(int stackSize);
+	void setObjectStackSize(int stackSize);
 
-	@Import("Interpreter_stringStack")
+	@Import("Interpreter_objectStack")
 	@Override
-	String[] getStringStack();
+	Object[] getObjectStack();
 
 	@Import("Interpreter_arrayLengths")
 	int[] getArraySizes();
@@ -1396,9 +1396,11 @@ public interface RSClient extends RSGameEngine, Client
 
 	void posToCameraAngle(int var0, int var1);
 
-	@Import("objectSounds")
 	@Override
-	RSNodeDeque getAmbientSoundEffects();
+	default RSNodeDeque getAmbientSoundEffects()
+	{
+		return getTopLevelWorldView().getObjectSounds();
+	}
 
 	@Import("FloorOverlayDefinition_archive")
 	RSAbstractArchive getFloorOverlayDefinitionArchive();
@@ -1438,8 +1440,12 @@ public interface RSClient extends RSGameEngine, Client
 	@Construct
 	RSRuneLiteClanMember runeliteClanMember(ClanSettings var1, int var2);
 
-	@Construct
-	RSProjectile newProjectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11);
+	@Import("projectiles")
+	@Override
+	RSNodeDeque getProjectiles();
+
+	//@Construct
+	//RSProjectile newProjectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11);
 
 	@Construct
 	RSModelData newModelData(ModelData[] var1, int var2);

@@ -601,4 +601,12 @@ public interface RSWidget extends Widget
 	RSWidget setLineHeight(int height);
 
 	void broadcastHidden(boolean hidden);
+
+	@Import("targetPriority")
+	@Override
+	int getTargetPriority();
+
+	@Import("targetPriority")
+	@Override
+	void setTargetPriority(int priority);
 }

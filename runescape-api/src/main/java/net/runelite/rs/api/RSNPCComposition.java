@@ -96,4 +96,8 @@ public interface RSNPCComposition extends NPCComposition
 
 	@Import("params")
 	void setParams(RSIterableNodeHashTable params);
+
+	@Import("footprintSize")
+	@Override
+	int getFootprintSize();
 }
