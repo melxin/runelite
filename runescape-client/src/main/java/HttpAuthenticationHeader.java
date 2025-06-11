@@ -88,7 +88,7 @@ public class HttpAuthenticationHeader {
 			int var7 = 0;
 
 			while (true) {
-				int var8 = var4.readShortSmartSub();
+				int var8 = var4.readUShortSmart();
 				if (var8 == 0) {
 					break;
 				}

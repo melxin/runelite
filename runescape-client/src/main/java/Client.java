@@ -4330,7 +4330,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 
 				String var73;
 				if (ServerPacket.MESSAGE_GAME == var1.serverPacket) {
-					var22 = var3.readShortSmartSub();
+					var22 = var3.readUShortSmart();
 					boolean var97 = var3.readUnsignedByte() == 1;
 					var73 = "";
 					boolean var70 = false;
@@ -4588,7 +4588,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					byte var66 = var3.readByteSub();
 					var14 = var3.readUnsignedByteSub() * 4;
 					var65 = var3.readUnsignedByteAdd() * 4;
-					var19 = var3.readShortSmart();
+					var19 = var3.method3945();
 					var18 = var3.readUnsignedShortAddLE();
 					var6 = var3.method10903();
 					var22 = var6 >> 16;
@@ -5137,7 +5137,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				if (ServerPacket.IF_SETPOSITION == var1.serverPacket) {
 					var22 = var3.readShortLE();
 					var5 = var3.readUnsignedIntLE();
-					var6 = var3.method10899();
+					var6 = var3.readSignedShort();
 					var99 = ClientPreferences.widgetDefinition.method7286(var5);
 					if (var6 != var99.rawX || var22 != var99.rawY || var99.xAlignment != 0 || var99.yAlignment != 0) {
 						var99.rawX = var6;
@@ -6362,7 +6362,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					}
 
 					for (; var3.offset < var1.serverPacketLength; UserComparator9.itemContainerSetItem(var5, var7, var8 - 1, var9)) {
-						var7 = var3.readShortSmartSub();
+						var7 = var3.readUShortSmart();
 						var8 = var3.readUnsignedShort();
 						var9 = 0;
 						if (var8 != 0) {

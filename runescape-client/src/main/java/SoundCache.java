@@ -201,7 +201,7 @@ public class SoundCache {
 		int var6;
 		int var7;
 		if (!Client.isInInstance) {
-			var1.readSignedShort();
+			var1.method10280();
 			int var2 = var1.readUnsignedShortAddLE();
 			var3 = var1.readUnsignedShortAdd();
 			var4 = var1.readUnsignedShort();

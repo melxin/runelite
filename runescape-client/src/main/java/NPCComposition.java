@@ -425,8 +425,8 @@ public class NPCComposition extends DualNode {
 						this.headIconArchiveIds[var6] = -1;
 						this.headIconSpriteIndex[var6] = -1;
 					} else {
-						this.headIconArchiveIds[var6] = var1.method10873();
-						this.headIconSpriteIndex[var6] = (short)var1.readLargeSmart();
+						this.headIconArchiveIds[var6] = var1.readNullableLargeSmart();
+						this.headIconSpriteIndex[var6] = (short)var1.readShortSmartSub();
 					}
 				}
 			} else if (var2 == 103) {

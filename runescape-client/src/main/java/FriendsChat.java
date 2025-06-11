@@ -100,7 +100,7 @@ public class FriendsChat extends UserList {
 		long var2 = var1.readLong();
 		this.method9525(WorldMapID.method6627(var2));
 		this.minKick = var1.readByte();
-		int var4 = var1.readLargeSmart();
+		int var4 = var1.readShortSmartSub();
 		if (var4 != -1) {
 			this.clear();
 

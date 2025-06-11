@@ -77,11 +77,11 @@ public class DbRowType extends DualNode {
 				int[] var6 = new int[var5];
 
 				for (int var7 = 0; var7 < var5; ++var7) {
-					var6[var7] = var1.readShortSmartSub();
+					var6[var7] = var1.readUShortSmart();
 				}
 
 				Object[][] var16 = this.columnTypes;
-				int var10 = var1.readShortSmartSub();
+				int var10 = var1.readUShortSmart();
 				Object[] var11 = new Object[var6.length * var10];
 
 				for (int var12 = 0; var12 < var10; ++var12) {

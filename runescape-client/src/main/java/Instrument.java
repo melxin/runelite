@@ -406,18 +406,18 @@ public class Instrument {
 		}
 
 		for (int var3 = 0; var3 < 10; ++var3) {
-			int var4 = var1.readShortSmartSub();
+			int var4 = var1.readUShortSmart();
 			if (var4 == 0) {
 				break;
 			}
 
 			this.oscillatorVolume[var3] = var4;
-			this.oscillatorPitch[var3] = var1.readUShortSmart();
-			this.oscillatorDelays[var3] = var1.readShortSmartSub();
+			this.oscillatorPitch[var3] = var1.readShortSmart();
+			this.oscillatorDelays[var3] = var1.readUShortSmart();
 		}
 
-		this.delayTime = var1.readShortSmartSub();
-		this.delayDecay = var1.readShortSmartSub();
+		this.delayTime = var1.readUShortSmart();
+		this.delayDecay = var1.readUShortSmart();
 		this.duration = var1.readUnsignedShort();
 		this.offset = var1.readUnsignedShort();
 		this.filter = new AudioFilter();

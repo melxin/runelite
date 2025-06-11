@@ -65,7 +65,7 @@ public class DbTableType extends DualNode {
 				int[] var7 = new int[var1.readUnsignedByte()];
 
 				for (int var8 = 0; var8 < var7.length; ++var8) {
-					var7[var8] = var1.readShortSmartSub();
+					var7[var8] = var1.readUShortSmart();
 				}
 
 				this.types[var5] = var7;
@@ -75,7 +75,7 @@ public class DbTableType extends DualNode {
 					}
 
 					Object[][] var17 = this.defaultValues;
-					int var11 = var1.readShortSmartSub();
+					int var11 = var1.readUShortSmart();
 					Object[] var12 = new Object[var7.length * var11];
 
 					for (int var13 = 0; var13 < var11; ++var13) {

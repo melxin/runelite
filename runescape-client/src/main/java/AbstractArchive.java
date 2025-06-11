@@ -150,7 +150,7 @@ public abstract class AbstractArchive {
 				throw new UnsupportedOperationException("");
 			} else {
 				if (var3 >= 7) {
-					this.groupCount = var2.readNullableLargeSmart();
+					this.groupCount = var2.readLargeSmart();
 				} else {
 					this.groupCount = var2.readUnsignedShort();
 				}
@@ -161,7 +161,7 @@ public abstract class AbstractArchive {
 				int var11;
 				if (var3 >= 7) {
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.groupIds[var11] = var9 += var2.readNullableLargeSmart();
+						this.groupIds[var11] = var9 += var2.readLargeSmart();
 						if (this.groupIds[var11] > var10) {
 							var10 = this.groupIds[var11];
 						}
@@ -218,7 +218,7 @@ public abstract class AbstractArchive {
 				int var16;
 				if (var3 >= 7) {
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.fileCounts[this.groupIds[var11]] = var2.readNullableLargeSmart();
+						this.fileCounts[this.groupIds[var11]] = var2.readLargeSmart();
 					}
 
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
@@ -229,7 +229,7 @@ public abstract class AbstractArchive {
 						this.fileIds[var12] = new int[var13];
 
 						for (var15 = 0; var15 < var13; ++var15) {
-							var16 = this.fileIds[var12][var15] = var9 += var2.readNullableLargeSmart();
+							var16 = this.fileIds[var12][var15] = var9 += var2.readLargeSmart();
 							if (var16 > var14) {
 								var14 = var16;
 							}

@@ -726,19 +726,19 @@ public class PlayerUpdateManager {
 					var18 = -1;
 					var23 = -1;
 					var11 = -1;
-					var8 = var1.readShortSmartSub();
+					var8 = var1.readUShortSmart();
 					if (var8 == 32767) {
-						var8 = var1.readShortSmartSub();
-						var23 = var1.readShortSmartSub();
-						var18 = var1.readShortSmartSub();
-						var11 = var1.readShortSmartSub();
+						var8 = var1.readUShortSmart();
+						var23 = var1.readUShortSmart();
+						var18 = var1.readUShortSmart();
+						var11 = var1.readUShortSmart();
 					} else if (var8 != 32766) {
-						var23 = var1.readShortSmartSub();
+						var23 = var1.readUShortSmart();
 					} else {
 						var8 = -1;
 					}
 
-					var19 = var1.readShortSmartSub();
+					var19 = var1.readUShortSmart();
 					var4.method1831(var8, var23, var18, var11, var19);
 				}
 			}
@@ -746,10 +746,10 @@ public class PlayerUpdateManager {
 			var7 = var1.readUnsignedByteNeg();
 			if (var7 > 0) {
 				for (var8 = 0; var8 < var7; ++var8) {
-					var18 = var1.readShortSmartSub();
-					var23 = var1.readShortSmartSub();
+					var18 = var1.readUShortSmart();
+					var23 = var1.readUShortSmart();
 					if (var23 != 32767) {
-						var11 = var1.readShortSmartSub();
+						var11 = var1.readUShortSmart();
 						var19 = var1.readUnsignedByteSub();
 						int var20 = var23 > 0 ? var1.readUnsignedByte() : var19;
 						var4.method1777(var18, var23, var11, var19, var20);

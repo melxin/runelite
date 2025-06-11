@@ -72,7 +72,7 @@ public class ReflectionCheck extends Node {
 			while (true) {
 				int var9;
 				while (!var8) {
-					var9 = var4.readShortSmartSub();
+					var9 = var4.readUShortSmart();
 					if (var9 == 0) {
 						continue label69;
 					}
@@ -96,7 +96,7 @@ public class ReflectionCheck extends Node {
 					}
 				}
 
-				var9 = var4.readShortSmartSub();
+				var9 = var4.readUShortSmart();
 				if (var9 == 0) {
 					break;
 				}

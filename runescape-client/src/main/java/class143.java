@@ -90,7 +90,7 @@ public class class143 extends DualNode {
 		int var7;
 		for (var5 = 0; var5 < var3; ++var5) {
 			class137 var12 = class182.method3993(var1.readUnsignedByte());
-			var7 = var1.readUShortSmart();
+			var7 = var1.readShortSmart();
 			class138 var13 = class321.method6828(var1.readUnsignedByte());
 			class136 var14 = new class136();
 			var14.method3527(var1, var2);

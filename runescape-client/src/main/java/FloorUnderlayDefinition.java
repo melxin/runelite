@@ -263,19 +263,19 @@ public class FloorUnderlayDefinition extends DualNode {
 						var22 = -1;
 						var10 = -1;
 						var11 = -1;
-						var21 = var1.readShortSmartSub();
+						var21 = var1.readUShortSmart();
 						if (var21 == 32767) {
-							var21 = var1.readShortSmartSub();
-							var10 = var1.readShortSmartSub();
-							var22 = var1.readShortSmartSub();
-							var11 = var1.readShortSmartSub();
+							var21 = var1.readUShortSmart();
+							var10 = var1.readUShortSmart();
+							var22 = var1.readUShortSmart();
+							var11 = var1.readUShortSmart();
 						} else if (var21 != 32766) {
-							var10 = var1.readShortSmartSub();
+							var10 = var1.readUShortSmart();
 						} else {
 							var21 = -1;
 						}
 
-						var12 = var1.readShortSmartSub();
+						var12 = var1.readUShortSmart();
 						var4.addHitSplat(var21, var10, var22, var11, Client.cycle, var12);
 					}
 				}
@@ -283,10 +283,10 @@ public class FloorUnderlayDefinition extends DualNode {
 				var20 = var1.readUnsignedByte();
 				if (var20 > 0) {
 					for (var21 = 0; var21 < var20; ++var21) {
-						var22 = var1.readShortSmartSub();
-						var10 = var1.readShortSmartSub();
+						var22 = var1.readUShortSmart();
+						var10 = var1.readUShortSmart();
 						if (var10 != 32767) {
-							var11 = var1.readShortSmartSub();
+							var11 = var1.readUShortSmart();
 							var12 = var1.readUnsignedByte();
 							int var13 = var10 > 0 ? var1.readUnsignedByte() : var12;
 							var4.addHealthBar(var22, Client.cycle, var10, var11, var12, var13);
@@ -381,8 +381,8 @@ public class FloorUnderlayDefinition extends DualNode {
 
 					for (var22 = 0; var22 < 8; ++var22) {
 						if ((var6 & 1 << var22) != 0) {
-							var14[var22] = var1.method10873();
-							var15[var22] = (short)var1.readLargeSmart();
+							var14[var22] = var1.readNullableLargeSmart();
+							var15[var22] = (short)var1.readShortSmartSub();
 						} else {
 							var14[var22] = -1;
 							var15[var22] = -1;

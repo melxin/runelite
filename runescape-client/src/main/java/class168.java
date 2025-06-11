@@ -62,7 +62,7 @@ public class class168 extends class149 {
 	)
 	static String method3872(Buffer var0, int var1) {
 		try {
-			int var2 = var0.readShortSmartSub();
+			int var2 = var0.readUShortSmart();
 			if (var2 > var1) {
 				var2 = var1;
 			}

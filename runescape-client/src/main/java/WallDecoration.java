@@ -397,13 +397,13 @@ public final class WallDecoration {
 		} else if (class325.field3481 == var0) {
 			var2 = var1.readUnsignedShortAddLE();
 			var3 = var1.readUnsignedIntLE();
-			var4 = var1.method10899();
+			var4 = var1.readSignedShort();
 			var5 = var1.readUnsignedByteAdd();
 			var6 = (var5 >> 4 & 7) + Ignored.field5198;
 			var7 = (var5 & 7) + HitSplatDefinition.field2180;
 			short var37 = (short)var1.readShortLE();
 			var20 = var1.readShortLE();
-			short var31 = (short)var1.readSignedShort();
+			short var31 = (short)var1.method10280();
 			var11 = var1.readUnsignedShortAddLE();
 			if (var6 >= 0 && var7 >= 0 && var6 < 104 && var7 < 104) {
 				var12 = Client.field405 == -1 ? class330.worldView.plane : Client.field405;

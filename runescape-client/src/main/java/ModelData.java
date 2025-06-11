@@ -599,17 +599,17 @@ public class ModelData extends Renderable {
 			var54 = var2.readUnsignedByte();
 			var55 = 0;
 			if ((var54 & 1) != 0) {
-				var55 = var3.readUShortSmart();
+				var55 = var3.readShortSmart();
 			}
 
 			var56 = 0;
 			if ((var54 & 2) != 0) {
-				var56 = var4.readUShortSmart();
+				var56 = var4.readShortSmart();
 			}
 
 			var57 = 0;
 			if ((var54 & 4) != 0) {
-				var57 = var5.readUShortSmart();
+				var57 = var5.readShortSmart();
 			}
 
 			this.verticesX[var53] = var50 + var55;
@@ -682,9 +682,9 @@ public class ModelData extends Renderable {
 		for (var57 = 0; var57 < var10; ++var57) {
 			var58 = var3.readUnsignedByte();
 			if (var58 == 1) {
-				var53 = var2.readUShortSmart() + var56;
-				var54 = var2.readUShortSmart() + var53;
-				var55 = var2.readUShortSmart() + var54;
+				var53 = var2.readShortSmart() + var56;
+				var54 = var2.readShortSmart() + var53;
+				var55 = var2.readShortSmart() + var54;
 				var56 = var55;
 				this.indices1[var57] = var53;
 				this.indices2[var57] = var54;
@@ -693,7 +693,7 @@ public class ModelData extends Renderable {
 
 			if (var58 == 2) {
 				var54 = var55;
-				var55 = var2.readUShortSmart() + var56;
+				var55 = var2.readShortSmart() + var56;
 				var56 = var55;
 				this.indices1[var57] = var53;
 				this.indices2[var57] = var54;
@@ -702,7 +702,7 @@ public class ModelData extends Renderable {
 
 			if (var58 == 3) {
 				var53 = var55;
-				var55 = var2.readUShortSmart() + var56;
+				var55 = var2.readShortSmart() + var56;
 				var56 = var55;
 				this.indices1[var57] = var53;
 				this.indices2[var57] = var54;
@@ -713,7 +713,7 @@ public class ModelData extends Renderable {
 				int var59 = var53;
 				var53 = var54;
 				var54 = var59;
-				var55 = var2.readUShortSmart() + var56;
+				var55 = var2.readShortSmart() + var56;
 				var56 = var55;
 				this.indices1[var57] = var53;
 				this.indices2[var57] = var59;
@@ -874,17 +874,17 @@ public class ModelData extends Renderable {
 			var41 = var4.readUnsignedByte();
 			var42 = 0;
 			if ((var41 & 1) != 0) {
-				var42 = var5.readUShortSmart();
+				var42 = var5.readShortSmart();
 			}
 
 			var43 = 0;
 			if ((var41 & 2) != 0) {
-				var43 = var6.readUShortSmart();
+				var43 = var6.readShortSmart();
 			}
 
 			var44 = 0;
 			if ((var41 & 4) != 0) {
-				var44 = var7.readUShortSmart();
+				var44 = var7.readShortSmart();
 			}
 
 			this.verticesX[var40] = var37 + var42;
@@ -966,9 +966,9 @@ public class ModelData extends Renderable {
 		for (var44 = 0; var44 < var10; ++var44) {
 			var45 = var5.readUnsignedByte();
 			if (var45 == 1) {
-				var40 = var4.readUShortSmart() + var43;
-				var41 = var4.readUShortSmart() + var40;
-				var42 = var4.readUShortSmart() + var41;
+				var40 = var4.readShortSmart() + var43;
+				var41 = var4.readShortSmart() + var40;
+				var42 = var4.readShortSmart() + var41;
 				var43 = var42;
 				this.indices1[var44] = var40;
 				this.indices2[var44] = var41;
@@ -977,7 +977,7 @@ public class ModelData extends Renderable {
 
 			if (var45 == 2) {
 				var41 = var42;
-				var42 = var4.readUShortSmart() + var43;
+				var42 = var4.readShortSmart() + var43;
 				var43 = var42;
 				this.indices1[var44] = var40;
 				this.indices2[var44] = var41;
@@ -986,7 +986,7 @@ public class ModelData extends Renderable {
 
 			if (var45 == 3) {
 				var40 = var42;
-				var42 = var4.readUShortSmart() + var43;
+				var42 = var4.readShortSmart() + var43;
 				var43 = var42;
 				this.indices1[var44] = var40;
 				this.indices2[var44] = var41;
@@ -997,7 +997,7 @@ public class ModelData extends Renderable {
 				var46 = var40;
 				var40 = var41;
 				var41 = var46;
-				var42 = var4.readUShortSmart() + var43;
+				var42 = var4.readShortSmart() + var43;
 				var43 = var42;
 				this.indices1[var44] = var40;
 				this.indices2[var44] = var46;
@@ -1212,17 +1212,17 @@ public class ModelData extends Renderable {
 			var52 = var2.readUnsignedByte();
 			var53 = 0;
 			if ((var52 & 1) != 0) {
-				var53 = var3.readUShortSmart();
+				var53 = var3.readShortSmart();
 			}
 
 			var54 = 0;
 			if ((var52 & 2) != 0) {
-				var54 = var4.readUShortSmart();
+				var54 = var4.readShortSmart();
 			}
 
 			var55 = 0;
 			if ((var52 & 4) != 0) {
-				var55 = var5.readUShortSmart();
+				var55 = var5.readShortSmart();
 			}
 
 			this.verticesX[var51] = var48 + var53;
@@ -1282,9 +1282,9 @@ public class ModelData extends Renderable {
 		for (var55 = 0; var55 < var10; ++var55) {
 			var56 = var3.readUnsignedByte();
 			if (var56 == 1) {
-				var51 = var2.readUShortSmart() + var54;
-				var52 = var2.readUShortSmart() + var51;
-				var53 = var2.readUShortSmart() + var52;
+				var51 = var2.readShortSmart() + var54;
+				var52 = var2.readShortSmart() + var51;
+				var53 = var2.readShortSmart() + var52;
 				var54 = var53;
 				this.indices1[var55] = var51;
 				this.indices2[var55] = var52;
@@ -1293,7 +1293,7 @@ public class ModelData extends Renderable {
 
 			if (var56 == 2) {
 				var52 = var53;
-				var53 = var2.readUShortSmart() + var54;
+				var53 = var2.readShortSmart() + var54;
 				var54 = var53;
 				this.indices1[var55] = var51;
 				this.indices2[var55] = var52;
@@ -1302,7 +1302,7 @@ public class ModelData extends Renderable {
 
 			if (var56 == 3) {
 				var51 = var53;
-				var53 = var2.readUShortSmart() + var54;
+				var53 = var2.readShortSmart() + var54;
 				var54 = var53;
 				this.indices1[var55] = var51;
 				this.indices2[var55] = var52;
@@ -1313,7 +1313,7 @@ public class ModelData extends Renderable {
 				int var57 = var51;
 				var51 = var52;
 				var52 = var57;
-				var53 = var2.readUShortSmart() + var54;
+				var53 = var2.readShortSmart() + var54;
 				var54 = var53;
 				this.indices1[var55] = var51;
 				this.indices2[var55] = var57;
@@ -1470,17 +1470,17 @@ public class ModelData extends Renderable {
 			var39 = var4.readUnsignedByte();
 			var40 = 0;
 			if ((var39 & 1) != 0) {
-				var40 = var5.readUShortSmart();
+				var40 = var5.readShortSmart();
 			}
 
 			var41 = 0;
 			if ((var39 & 2) != 0) {
-				var41 = var6.readUShortSmart();
+				var41 = var6.readShortSmart();
 			}
 
 			var42 = 0;
 			if ((var39 & 4) != 0) {
-				var42 = var7.readUShortSmart();
+				var42 = var7.readShortSmart();
 			}
 
 			this.verticesX[var38] = var35 + var40;
@@ -1549,9 +1549,9 @@ public class ModelData extends Renderable {
 		for (var42 = 0; var42 < var10; ++var42) {
 			var43 = var5.readUnsignedByte();
 			if (var43 == 1) {
-				var38 = var4.readUShortSmart() + var41;
-				var39 = var4.readUShortSmart() + var38;
-				var40 = var4.readUShortSmart() + var39;
+				var38 = var4.readShortSmart() + var41;
+				var39 = var4.readShortSmart() + var38;
+				var40 = var4.readShortSmart() + var39;
 				var41 = var40;
 				this.indices1[var42] = var38;
 				this.indices2[var42] = var39;
@@ -1560,7 +1560,7 @@ public class ModelData extends Renderable {
 
 			if (var43 == 2) {
 				var39 = var40;
-				var40 = var4.readUShortSmart() + var41;
+				var40 = var4.readShortSmart() + var41;
 				var41 = var40;
 				this.indices1[var42] = var38;
 				this.indices2[var42] = var39;
@@ -1569,7 +1569,7 @@ public class ModelData extends Renderable {
 
 			if (var43 == 3) {
 				var38 = var40;
-				var40 = var4.readUShortSmart() + var41;
+				var40 = var4.readShortSmart() + var41;
 				var41 = var40;
 				this.indices1[var42] = var38;
 				this.indices2[var42] = var39;
@@ -1580,7 +1580,7 @@ public class ModelData extends Renderable {
 				var44 = var38;
 				var38 = var39;
 				var39 = var44;
-				var40 = var4.readUShortSmart() + var41;
+				var40 = var4.readShortSmart() + var41;
 				var41 = var40;
 				this.indices1[var42] = var38;
 				this.indices2[var42] = var44;

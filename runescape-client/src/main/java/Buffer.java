@@ -420,8 +420,7 @@ public class Buffer extends Node {
 		descriptor = "(I)I",
 		garbageValue = "-1275301079"
 	)
-	@Export("readShortSmart")
-	public int readShortSmart() {
+	public int method3945() {
 		this.offset += 3;
 		int var1 = ((this.array[this.offset - 3] & 255) << 16) + (this.array[this.offset - 1] & 255) + ((this.array[this.offset - 2] & 255) << 8);
 		if (var1 > 8388607) {
@@ -565,8 +564,8 @@ public class Buffer extends Node {
 		descriptor = "(I)I",
 		garbageValue = "-1632074922"
 	)
-	@Export("readUShortSmart")
-	public int readUShortSmart() {
+	@Export("readShortSmart")
+	public int readShortSmart() {
 		int var1 = this.array[this.offset] & 255;
 		return var1 < 128 ? this.readUnsignedByte() - 64 : this.readUnsignedShort() - 49152;
 	}
@@ -576,8 +575,8 @@ public class Buffer extends Node {
 		descriptor = "(I)I",
 		garbageValue = "-1039512213"
 	)
-	@Export("readShortSmartSub")
-	public int readShortSmartSub() {
+	@Export("readUShortSmart")
+	public int readUShortSmart() {
 		int var1 = this.array[this.offset] & 255;
 		return var1 < 128 ? this.readUnsignedByte() : this.readUnsignedShort() - 32768;
 	}
@@ -587,8 +586,8 @@ public class Buffer extends Node {
 		descriptor = "(B)I",
 		garbageValue = "-83"
 	)
-	@Export("readLargeSmart")
-	public int readLargeSmart() {
+	@Export("readShortSmartSub")
+	public int readShortSmartSub() {
 		int var1 = this.array[this.offset] & 255;
 		return var1 < 128 ? this.readUnsignedByte() - 1 : this.readUnsignedShort() - 32769;
 	}
@@ -603,7 +602,7 @@ public class Buffer extends Node {
 		int var1 = 0;
 
 		int var2;
-		for (var2 = this.readShortSmartSub(); var2 == 32767; var2 = this.readShortSmartSub()) {
+		for (var2 = this.readUShortSmart(); var2 == 32767; var2 = this.readUShortSmart()) {
 			var1 += 32767;
 		}
 
@@ -616,8 +615,8 @@ public class Buffer extends Node {
 		descriptor = "(S)I",
 		garbageValue = "-25217"
 	)
-	@Export("readNullableLargeSmart")
-	public int readNullableLargeSmart() {
+	@Export("readLargeSmart")
+	public int readLargeSmart() {
 		return this.array[this.offset] < 0 ? this.readInt() & Integer.MAX_VALUE : this.readUnsignedShort();
 	}
 
@@ -626,7 +625,8 @@ public class Buffer extends Node {
 		descriptor = "(I)I",
 		garbageValue = "-1509219925"
 	)
-	public int method10873() {
+	@Export("readNullableLargeSmart")
+	public int readNullableLargeSmart() {
 		if (this.array[this.offset] < 0) {
 			return this.readInt() & Integer.MAX_VALUE;
 		} else {
@@ -1028,7 +1028,8 @@ public class Buffer extends Node {
 		descriptor = "(I)I",
 		garbageValue = "1597744300"
 	)
-	public int method10899() {
+	@Export("readSignedShort")
+	public int readSignedShort() {
 		this.offset += 2;
 		int var1 = (this.array[this.offset - 1] - 128 & 255) + ((this.array[this.offset - 2] & 255) << 8);
 		if (var1 > 32767) {
@@ -1043,8 +1044,7 @@ public class Buffer extends Node {
 		descriptor = "(I)I",
 		garbageValue = "1970919917"
 	)
-	@Export("readSignedShort")
-	public int readSignedShort() {
+	public int method10280() {
 		this.offset += 2;
 		int var1 = ((this.array[this.offset - 1] & 255) << 8) + (this.array[this.offset - 2] - 128 & 255);
 		if (var1 > 32767) {
