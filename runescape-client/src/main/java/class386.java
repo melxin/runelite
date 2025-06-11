@@ -1,56 +1,53 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oc")
-public enum class386 implements Enum {
-	@ObfuscatedName("ao")
+@ObfuscatedName("ol")
+public class class386 {
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Loc;"
+		descriptor = "(IB)Lhp;",
+		garbageValue = "-27"
 	)
-	field4571(0, 0),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Loc;"
-	)
-	field4570(1, 1),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Loc;"
-	)
-	@Export("TOKEN")
-	TOKEN(2, 2);
+	@Export("SpotAnimationDefinition_get")
+	public static SpotAnimationDefinition SpotAnimationDefinition_get(int var0) {
+		SpotAnimationDefinition var1 = (SpotAnimationDefinition)SpotAnimationDefinition.SpotAnimationDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = SpotAnimationDefinition.field2117.takeFile(13, var0);
+			var1 = new SpotAnimationDefinition();
+			var1.id = var0;
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
 
-	@ObfuscatedName("av")
-	@Export("SpriteBuffer_spriteHeights")
-	static int[] SpriteBuffer_spriteHeights;
-	@ObfuscatedName("aj")
-	@Export("osName")
-	static String osName;
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = 1483723955
-	)
-	final int field4576;
-	@ObfuscatedName("as")
-	@ObfuscatedGetter(
-		intValue = -959440779
-	)
-	final int field4569;
-
-	class386(int var3, int var4) {
-		this.field4576 = var3;
-		this.field4569 = var4;
+			SpotAnimationDefinition.SpotAnimationDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("nb")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1746725635"
+		descriptor = "(I)V",
+		garbageValue = "-1004608485"
 	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field4569;
+	static final void method7953() {
+		PacketBufferNode var0 = class139.getPacketBufferNode(ClientPacket.CLOSE_MODAL, Client.packetWriter.isaacCipher);
+		Client.packetWriter.addNode(var0);
+		Interpreter.field665 = true;
+
+		for (InterfaceParent var1 = (InterfaceParent)Client.interfaceParents.first(); var1 != null; var1 = (InterfaceParent)Client.interfaceParents.next()) {
+			if (var1.type == 0 || var1.type == 3) {
+				ApproximateRouteStrategy.closeInterface(var1, true);
+			}
+		}
+
+		if (Client.meslayerContinueWidget != null) {
+			ScriptFrame.invalidateWidget(Client.meslayerContinueWidget);
+			Client.meslayerContinueWidget = null;
+		}
+
+		Interpreter.field665 = false;
 	}
 }

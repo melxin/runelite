@@ -6,43 +6,37 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("to")
+@ObfuscatedName("td")
 @Implements("BufferedSink")
 public class BufferedSink implements Runnable {
-	@ObfuscatedName("ne")
-	@ObfuscatedSignature(
-		descriptor = "Lbs;"
-	)
-	@Export("pcmStreamMixer")
-	static PcmStreamMixer pcmStreamMixer;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@Export("outputStream")
 	OutputStream outputStream;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 2059392839
+		intValue = 1636601361
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("buffer")
 	byte[] buffer;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -1568554255
+		intValue = -336769647
 	)
 	@Export("position")
 	int position;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -504993791
+		intValue = -2127472985
 	)
 	@Export("limit")
 	int limit;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@Export("exception")
 	IOException exception;
 	@ObfuscatedName("am")
@@ -60,10 +54,10 @@ public class BufferedSink implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1207646796"
+		garbageValue = "-1481832649"
 	)
 	@Export("isClosed")
 	boolean isClosed() {
@@ -85,10 +79,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "([BIII)V",
-		garbageValue = "1553183606"
+		garbageValue = "-594582294"
 	)
 	@Export("write")
 	void write(byte[] var1, int var2, int var3) throws IOException {
@@ -125,10 +119,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-37"
+		descriptor = "(I)V",
+		garbageValue = "354210365"
 	)
 	@Export("close")
 	void close() {

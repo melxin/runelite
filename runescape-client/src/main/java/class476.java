@@ -1,82 +1,78 @@
-import java.net.URL;
-import java.util.Comparator;
-import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sl")
-class class476 implements Comparator {
-	// $FF: synthetic field
-	@ObfuscatedSignature(
-		descriptor = "Lsc;"
+@ObfuscatedName("sw")
+public class class476 {
+	@ObfuscatedName("ap")
+	final int[] field5137;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = 586960285
 	)
-	final class477 this$0;
+	int field5138;
 
-	@ObfuscatedSignature(
-		descriptor = "(Lsc;)V"
-	)
-	class476(class477 var1) {
-		this.this$0 = var1;
+	public class476(int var1) {
+		this.field5137 = new int[var1];
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lsj;Lsj;B)I",
-		garbageValue = "93"
+		descriptor = "(II)V",
+		garbageValue = "1579062174"
 	)
-	int method9073(class478 var1, class478 var2) {
-		if (var1.field5104 > var2.field5104) {
+	public void method9428(int var1) {
+		this.field5137[++this.field5138 - 1] = var1;
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "-121"
+	)
+	public int method9430(int var1) {
+		return this.field5137[var1];
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(S)I",
+		garbageValue = "14485"
+	)
+	public int method9429() {
+		return this.field5138;
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "388884917"
+	)
+	public void method9432() {
+		this.field5138 = 0;
+	}
+
+	@ObfuscatedName("bo")
+	@ObfuscatedSignature(
+		descriptor = "(ILcr;ZI)I",
+		garbageValue = "1121677806"
+	)
+	static int method9446(int var0, Script var1, boolean var2) {
+		int var3;
+		if (var0 == 3500) {
+			var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.indexCheck.isValidIndexInRange(var3) ? 1 : 0;
+			return 1;
+		} else if (var0 == 3501) {
+			var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.indexCheck.method5891(var3) ? 1 : 0;
+			return 1;
+		} else if (var0 == 3502) {
+			var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.indexCheck.method5893(var3) ? 1 : 0;
 			return 1;
 		} else {
-			return var1.field5104 < var2.field5104 ? -1 : 0;
+			return 2;
 		}
-	}
-
-	public boolean equals(Object var1) {
-		return super.equals(var1);
-	}
-
-	public int compare(Object var1, Object var2) {
-		return this.method9073((class478)var1, (class478)var2);
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-70"
-	)
-	@Export("loadWorlds")
-	static boolean loadWorlds() {
-		try {
-			if (class33.World_request == null) {
-				class33.World_request = ParamComposition.urlRequester.request(new URL(class59.field405));
-			} else if (class33.World_request.isDone()) {
-				byte[] var0 = class33.World_request.getResponse();
-				Buffer var1 = new Buffer(var0);
-				var1.readInt();
-				World.World_count = var1.readUnsignedShort();
-				World.World_worlds = new World[World.World_count];
-
-				World var3;
-				for (int var2 = 0; var2 < World.World_count; var3.index = var2++) {
-					var3 = World.World_worlds[var2] = new World();
-					var3.id = var1.readUnsignedShort();
-					var3.properties = var1.readInt();
-					var3.host = var1.readStringCp1252NullTerminated();
-					var3.activity = var1.readStringCp1252NullTerminated();
-					var3.location = var1.readUnsignedByte();
-					var3.population = var1.readShort();
-				}
-
-				class171.sortWorlds(World.World_worlds, 0, World.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
-				class33.World_request = null;
-				return true;
-			}
-		} catch (Exception var4) {
-			var4.printStackTrace();
-			class33.World_request = null;
-		}
-
-		return false;
 	}
 }

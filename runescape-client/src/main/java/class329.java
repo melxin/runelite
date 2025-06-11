@@ -1,20 +1,18 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mg")
+@ObfuscatedName("mj")
 public class class329 {
-	@ObfuscatedName("oe")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Ltm;"
+		descriptor = "(I)V",
+		garbageValue = "1117025431"
 	)
-	static AbstractSocket field3664;
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "2097312958"
-	)
-	static final boolean method6565(int var0) {
-		return var0 == 14 || var0 == 15 || var0 >= 44 && var0 <= 51;
+	public static void method6845() {
+		ByteArrayPool.field5120.clear();
+		ByteArrayPool.field5120.add(100);
+		ByteArrayPool.field5120.add(5000);
+		ByteArrayPool.field5120.add(10000);
+		ByteArrayPool.field5120.add(30000);
 	}
 }

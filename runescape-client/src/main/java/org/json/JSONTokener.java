@@ -200,6 +200,25 @@ public class JSONTokener {
 		}
 	}
 
+	public char next(char var1) throws JSONException {
+		char var2 = this.next();
+		if (var2 != var1) {
+			throw this.syntaxError("Expected '" + var1 + "' and instead saw '" + var2 + "'");
+		} else {
+			return var2;
+		}
+	}
+
+	public boolean more() throws JSONException {
+		char var1 = this.next();
+		if (var1 == 0) {
+			return false;
+		} else {
+			this.back();
+			return true;
+		}
+	}
+
 	public String nextTo(char var1) throws JSONException {
 		StringBuffer var2 = new StringBuffer();
 
@@ -214,25 +233,6 @@ public class JSONTokener {
 			}
 
 			var2.append(var3);
-		}
-	}
-
-	public boolean more() throws JSONException {
-		char var1 = this.next();
-		if (var1 == 0) {
-			return false;
-		} else {
-			this.back();
-			return true;
-		}
-	}
-
-	public char next(char var1) throws JSONException {
-		char var2 = this.next();
-		if (var2 != var1) {
-			throw this.syntaxError("Expected '" + var1 + "' and instead saw '" + var2 + "'");
-		} else {
-			return var2;
 		}
 	}
 

@@ -3,37 +3,70 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ct")
+@ObfuscatedName("bs")
 @Implements("ApproximateRouteStrategy")
 public class ApproximateRouteStrategy extends RouteStrategy {
+	@ObfuscatedName("cf")
+	@ObfuscatedSignature(
+		descriptor = "Lwy;"
+	)
+	static IndexedSprite field270;
+	@ObfuscatedName("jb")
+	static String field267;
+
 	ApproximateRouteStrategy() {
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(IIILkd;I)Z",
-		garbageValue = "-1264400829"
+		descriptor = "(IIILkf;I)Z",
+		garbageValue = "-1878565050"
 	)
 	@Export("hasArrived")
 	protected boolean hasArrived(int var1, int var2, int var3, CollisionMap var4) {
 		return var2 == super.approxDestinationX && var3 == super.approxDestinationY;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ld")
 	@ObfuscatedSignature(
-		descriptor = "(Lbi;I)V",
-		garbageValue = "-411609902"
+		descriptor = "(Lbh;III)V",
+		garbageValue = "899467936"
 	)
-	public static final void method1230(class51 var0) {
-		GameEngine.pcmPlayerProvider = var0;
+	static final void method741(MenuAction var0, int var1, int var2) {
+		if (var0 != null) {
+			PlayerType.menuAction(var0.param0, var0.param1, var0.opcode, var0.identifier, var0.itemId, var0.worldViewId, var0.action, var0.target, var1, var2);
+		}
+
 	}
 
-	@ObfuscatedName("bf")
+	@ObfuscatedName("nr")
 	@ObfuscatedSignature(
-		descriptor = "(ILdb;ZB)I",
-		garbageValue = "-63"
+		descriptor = "(Lcz;ZB)V",
+		garbageValue = "0"
 	)
-	static int method1229(int var0, Script var1, boolean var2) {
-		return 2;
+	@Export("closeInterface")
+	static final void closeInterface(InterfaceParent var0, boolean var1) {
+		int var2 = var0.group;
+		int var3 = (int)var0.key;
+		var0.remove();
+		if (var1) {
+			ClientPreferences.widgetDefinition.method7289(var2);
+		}
+
+		for (class370 var4 = (class370)Client.widgetFlags.first(); var4 != null; var4 = (class370)Client.widgetFlags.next()) {
+			if ((long)var2 == (var4.key >> 48 & 65535L)) {
+				var4.remove();
+			}
+		}
+
+		Widget var5 = ClientPreferences.widgetDefinition.method7286(var3);
+		if (var5 != null) {
+			ScriptFrame.invalidateWidget(var5);
+		}
+
+		if (Client.rootInterface != -1) {
+			UserComparator10.runIntfCloseListeners(Client.rootInterface, 1);
+		}
+
 	}
 }

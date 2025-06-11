@@ -4,114 +4,114 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tl")
+@ObfuscatedName("tx")
 @Implements("GraphicsDefaults")
 public class GraphicsDefaults {
-	@ObfuscatedName("ao")
-	final int field5258;
+	@ObfuscatedName("ap")
+	final int field5318;
+	@ObfuscatedName("aj")
+	final int field5313;
 	@ObfuscatedName("an")
-	final int field5250;
-	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
 		intValue = -1431655765
 	)
-	final int field5247;
-	@ObfuscatedName("af")
+	final int field5314;
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
 		intValue = -1431655765
 	)
-	final int field5248;
-	@ObfuscatedName("as")
+	final int field5315;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
 		intValue = -858993459
 	)
-	final int field5261;
-	@ObfuscatedName("aq")
-	public final int[][] field5257;
-	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		intValue = -881216073
-	)
-	public int field5251;
-	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = 1167286517
-	)
-	public int field5252;
+	final int field5316;
+	@ObfuscatedName("ac")
+	public final int[][] field5317;
 	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 1520377445
+		intValue = 454829303
 	)
-	public int field5253;
-	@ObfuscatedName("ap")
+	public int field5325;
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -1760463217
+		intValue = 1494529275
 	)
-	public int field5254;
-	@ObfuscatedName("ax")
+	public int field5319;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1559085581
+		intValue = -1445050151
 	)
-	public int field5255;
-	@ObfuscatedName("aw")
+	public int field5322;
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 713389655
+		intValue = 1693420037
 	)
-	public int field5256;
-	@ObfuscatedName("ar")
-	@ObfuscatedGetter(
-		intValue = -1111737643
-	)
-	public int field5245;
+	public int field5320;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 1771711323
+		intValue = 1547157943
 	)
-	public int field5249;
-	@ObfuscatedName("aj")
+	public int field5312;
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 640035483
+		intValue = -686775403
 	)
-	public int field5259;
-	@ObfuscatedName("al")
+	public int field5323;
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 1801075787
+		intValue = -1399935551
 	)
-	public int field5260;
-	@ObfuscatedName("ac")
+	public int field5324;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 343375737
+		intValue = -98215633
 	)
-	public int field5246;
+	public int field5328;
+	@ObfuscatedName("ak")
+	@ObfuscatedGetter(
+		intValue = -93119203
+	)
+	public int field5326;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = 1503883711
+	)
+	public int field5327;
+	@ObfuscatedName("aw")
+	@ObfuscatedGetter(
+		intValue = -42548993
+	)
+	public int field5321;
 
 	public GraphicsDefaults() {
-		this.field5258 = 1;
-		this.field5250 = 2;
-		this.field5247 = 1;
-		this.field5248 = 1;
-		this.field5261 = 1;
-		this.field5257 = new int[3][5];
-		this.field5251 = -1;
-		this.field5252 = -1;
-		this.field5253 = -1;
-		this.field5254 = -1;
-		this.field5255 = -1;
-		this.field5256 = -1;
-		this.field5245 = -1;
-		this.field5249 = -1;
-		this.field5259 = -1;
-		this.field5260 = -1;
-		this.field5246 = -1;
+		this.field5318 = 1;
+		this.field5313 = 2;
+		this.field5314 = 1;
+		this.field5315 = 1;
+		this.field5316 = 1;
+		this.field5317 = new int[3][5];
+		this.field5325 = -1;
+		this.field5319 = -1;
+		this.field5322 = -1;
+		this.field5320 = -1;
+		this.field5312 = -1;
+		this.field5323 = -1;
+		this.field5324 = -1;
+		this.field5328 = -1;
+		this.field5326 = -1;
+		this.field5327 = -1;
+		this.field5321 = -1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lph;I)V",
-		garbageValue = "-211057514"
+		descriptor = "(Lps;I)V",
+		garbageValue = "784420122"
 	)
 	@Export("decode")
 	public void decode(AbstractArchive var1) {
-		byte[] var2 = var1.takeFileFlat(DefaultsGroup.field5243.group);
+		byte[] var2 = var1.takeFileFlat(DefaultsGroup.field5309.group);
 		Buffer var3 = new Buffer(var2);
 
 		while (true) {
@@ -126,40 +126,26 @@ public class GraphicsDefaults {
 					var3.readMedium();
 					break;
 				case 2:
-					this.field5251 = var3.readNullableLargeSmart();
-					this.field5252 = var3.readNullableLargeSmart();
-					this.field5253 = var3.readNullableLargeSmart();
-					this.field5254 = var3.readNullableLargeSmart();
-					this.field5255 = var3.readNullableLargeSmart();
-					this.field5256 = var3.readNullableLargeSmart();
-					this.field5245 = var3.readNullableLargeSmart();
-					this.field5249 = var3.readNullableLargeSmart();
-					this.field5259 = var3.readNullableLargeSmart();
-					this.field5260 = var3.readNullableLargeSmart();
-					this.field5246 = var3.readNullableLargeSmart();
+					this.field5325 = var3.method10873();
+					this.field5319 = var3.method10873();
+					this.field5322 = var3.method10873();
+					this.field5320 = var3.method10873();
+					this.field5312 = var3.method10873();
+					this.field5323 = var3.method10873();
+					this.field5324 = var3.method10873();
+					this.field5328 = var3.method10873();
+					this.field5326 = var3.method10873();
+					this.field5327 = var3.method10873();
+					this.field5321 = var3.method10873();
 					break;
 				case 3:
-					for (int var5 = 0; var5 < this.field5257.length; ++var5) {
-						for (int var6 = 0; var6 < this.field5257[var5].length; ++var6) {
-							this.field5257[var5][var6] = var3.readMedium();
+					for (int var5 = 0; var5 < this.field5317.length; ++var5) {
+						for (int var6 = 0; var6 < this.field5317[var5].length; ++var6) {
+							this.field5317[var5][var6] = var3.readMedium();
 						}
 					}
 				}
 			}
-		}
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(Lav;I)Laf;",
-		garbageValue = "684670561"
-	)
-	public static class3 method9571(class6 var0) {
-		switch(var0.field13) {
-		case 0:
-			return new class0();
-		default:
-			throw new IllegalArgumentException();
 		}
 	}
 }

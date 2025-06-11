@@ -8,64 +8,56 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("mz")
 public class class335 {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	public static final List field3695;
+	@ObfuscatedName("aj")
+	public static ArrayList field3694;
 	@ObfuscatedName("an")
-	public static ArrayList field3697;
-	@ObfuscatedName("ae")
-	public static LinkedList field3694;
-	@ObfuscatedName("af")
+	public static LinkedList field3704;
+	@ObfuscatedName("ai")
 	@Export("midiRequests")
 	public static ArrayList midiRequests;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lps;"
 	)
-	public static AbstractArchive field3696;
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lph;"
-	)
-	public static AbstractArchive field3703;
+	public static AbstractArchive field3693;
 	@ObfuscatedName("am")
 	public static ArrayList field3698;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	public static ArrayList field3699;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 966139945
+		intValue = -1560560503
 	)
 	@Export("musicPlayerStatus")
 	static int musicPlayerStatus;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1393237893
+		intValue = -1085459079
 	)
-	static int field3692;
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = 598120489
-	)
-	static int field3702;
+	static int field3697;
 	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 28300105
+		intValue = 274586177
 	)
-	static int field3693;
-	@ObfuscatedName("ly")
-	@Export("worldHost")
-	static String worldHost;
+	static int field3702;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = -201002495
+	)
+	static int field3703;
 
 	static {
 		field3695 = new ArrayList();
-		field3697 = null;
-		field3694 = new LinkedList();
+		field3694 = null;
+		field3704 = new LinkedList();
 		midiRequests = new ArrayList(3);
 		field3698 = new ArrayList(3);
 		field3699 = new ArrayList();
 		musicPlayerStatus = 0;
-		field3692 = 0;
+		field3697 = 0;
 		field3702 = 0;
-		field3693 = 0;
+		field3703 = 0;
 	}
 }

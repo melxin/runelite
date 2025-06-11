@@ -1,14 +1,31 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pv")
+@ObfuscatedName("pc")
 public class class393 {
-	@ObfuscatedName("br")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-2109408794"
+		descriptor = "(II)I",
+		garbageValue = "1473588291"
 	)
-	static void method7609(String var0) {
-		Login.displayName = WorldMapIcon_0.method6264(var0);
+	public static int method7981(int var0) {
+		return var0 >>> 12;
+	}
+
+	@ObfuscatedName("ks")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-126"
+	)
+	static final void method7980() {
+		for (PendingSpawn var0 = (PendingSpawn)Sound.topLevelWorldView.pendingSpawns.last(); var0 != null; var0 = (PendingSpawn)Sound.topLevelWorldView.pendingSpawns.previous()) {
+			if (var0.hitpoints == -1) {
+				var0.delay = 0;
+				BoundaryObject.method5841(Sound.topLevelWorldView, var0);
+			} else {
+				var0.remove();
+			}
+		}
+
 	}
 }

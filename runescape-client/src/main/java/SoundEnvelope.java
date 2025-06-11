@@ -3,40 +3,40 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bm")
+@ObfuscatedName("dj")
 @Implements("SoundEnvelope")
 public class SoundEnvelope {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@Export("start")
 	int start;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@Export("end")
 	int end;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("form")
 	int form;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("segments")
 	int segments;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("durations")
 	int[] durations;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("phases")
 	int[] phases;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@Export("ticks")
 	int ticks;
 	@ObfuscatedName("am")
 	@Export("phaseIndex")
 	int phaseIndex;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@Export("step")
 	int step;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@Export("amplitude")
 	int amplitude;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("au")
 	@Export("max")
 	int max;
 
@@ -50,9 +50,9 @@ public class SoundEnvelope {
 		this.phases[1] = 65535;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;)V"
+		descriptor = "(Lwt;)V"
 	)
 	@Export("decode")
 	final void decode(Buffer var1) {
@@ -62,9 +62,9 @@ public class SoundEnvelope {
 		this.decodeSegments(var1);
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;)V"
+		descriptor = "(Lwt;)V"
 	)
 	@Export("decodeSegments")
 	final void decodeSegments(Buffer var1) {
@@ -79,7 +79,7 @@ public class SoundEnvelope {
 
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("reset")
 	final void reset() {
 		this.ticks = 0;
@@ -89,7 +89,7 @@ public class SoundEnvelope {
 		this.max = 0;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("doStep")
 	final int doStep(int var1) {
 		if (this.max >= this.ticks) {

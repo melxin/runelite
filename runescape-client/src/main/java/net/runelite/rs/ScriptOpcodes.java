@@ -17,11 +17,11 @@ public class ScriptOpcodes {
 	public static final int IF_ICMPGE = 32;
 	public static final int ILOAD = 33;
 	public static final int ISTORE = 34;
-	public static final int SLOAD = 35;
-	public static final int SSTORE = 36;
+	public static final int OLOAD = 35;
+	public static final int OSTORE = 36;
 	public static final int JOIN_STRING = 37;
 	public static final int POP_INT = 38;
-	public static final int POP_STRING = 39;
+	public static final int POP_OBJECT = 39;
 	public static final int INVOKE = 40;
 	public static final int GET_VARC_INT = 42;
 	public static final int SET_VARC_INT = 43;
@@ -33,6 +33,7 @@ public class ScriptOpcodes {
 	public static final int GET_VARC_STRING = 49;
 	public static final int SET_VARC_STRING = 50;
 	public static final int SWITCH = 60;
+	public static final int PUSH_NULL = 63;
 	public static final int GET_VARCLANSETTING = 74;
 	public static final int GET_VARCLAN = 76;
 	public static final int CC_CREATE = 100;

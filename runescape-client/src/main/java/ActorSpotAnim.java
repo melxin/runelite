@@ -4,35 +4,35 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tz")
+@ObfuscatedName("te")
 @Implements("ActorSpotAnim")
 public class ActorSpotAnim extends Node {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1021878383
+		intValue = 265841997
 	)
 	@Export("spotAnimation")
 	public int spotAnimation;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -376121357
+		intValue = 779185927
 	)
 	@Export("spotAnimationFrame")
 	public int spotAnimationFrame;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -160350273
+		intValue = 539345293
 	)
 	@Export("spotAnimationFrameCycle")
 	public int spotAnimationFrameCycle;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -1147656679
+		intValue = -986443177
 	)
-	public int field5188;
-	@ObfuscatedName("as")
+	public int field5237;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 735736157
+		intValue = -19530335
 	)
 	@Export("spotAnimationHeight")
 	public int spotAnimationHeight;
@@ -41,63 +41,48 @@ public class ActorSpotAnim extends Node {
 		this.spotAnimation = -1;
 		this.spotAnimationFrame = 0;
 		this.spotAnimationFrameCycle = 0;
-		this.field5188 = 0;
+		this.field5237 = 0;
 		this.spotAnimationHeight = 0;
 		this.spotAnimation = var1;
 		this.spotAnimationHeight = var2;
-		this.field5188 = var3;
+		this.field5237 = var3;
 		this.spotAnimationFrame = var4;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-1293822778"
+		descriptor = "([F[IIII)V",
+		garbageValue = "-1214749373"
 	)
-	public static int method9428(int var0, int var1) {
-		int var2;
-		if (var1 > var0) {
-			var2 = var0;
-			var0 = var1;
-			var1 = var2;
-		}
+	static void method9799(float[] var0, int[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var4 = (var3 + var2) / 2;
+			int var5 = var2;
+			float var6 = var0[var4];
+			var0[var4] = var0[var3];
+			var0[var3] = var6;
+			int var7 = var1[var4];
+			var1[var4] = var1[var3];
+			var1[var3] = var7;
 
-		while (var1 != 0) {
-			var2 = var0 % var1;
-			var0 = var1;
-			var1 = var2;
-		}
-
-		return var0;
-	}
-
-	@ObfuscatedName("an")
-	static final void method9427(long var0) {
-		try {
-			Thread.sleep(var0);
-		} catch (InterruptedException var3) {
-		}
-
-	}
-
-	@ObfuscatedName("ly")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1894704939"
-	)
-	static void method9429() {
-		if (Client.isSpellSelected) {
-			Widget var0 = class232.widgetDefinition.getWidgetChild(AABB.selectedSpellWidget, Client.selectedSpellChildIndex);
-			if (var0 != null && var0.onTargetLeave != null) {
-				ScriptEvent var1 = new ScriptEvent();
-				var1.widget = var0;
-				var1.args = var0.onTargetLeave;
-				class60.runScriptEvent(var1);
+			for (int var8 = var2; var8 < var3; ++var8) {
+				if (var0[var8] < var6) {
+					float var9 = var0[var8];
+					var0[var8] = var0[var5];
+					var0[var5] = var9;
+					int var10 = var1[var8];
+					var1[var8] = var1[var5];
+					var1[var5++] = var10;
+				}
 			}
 
-			Client.selectedSpellItemId = -1;
-			Client.isSpellSelected = false;
-			class139.invalidateWidget(var0);
+			var0[var3] = var0[var5];
+			var0[var5] = var6;
+			var1[var3] = var1[var5];
+			var1[var5] = var7;
+			method9799(var0, var1, var2, var5 - 1);
+			method9799(var0, var1, var5 + 1, var3);
 		}
+
 	}
 }

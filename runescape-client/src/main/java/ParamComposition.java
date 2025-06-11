@@ -4,40 +4,34 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jl")
+@ObfuscatedName("hl")
 @Implements("ParamComposition")
 public class ParamComposition extends DualNode {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lps;"
 	)
 	@Export("ParamDefinition_archive")
-	public static AbstractArchive ParamDefinition_archive;
-	@ObfuscatedName("an")
+	static AbstractArchive ParamDefinition_archive;
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lmj;"
+		descriptor = "Lmr;"
 	)
 	@Export("ParamDefinition_cached")
 	public static EvictingDualNodeHashTable ParamDefinition_cached;
-	@ObfuscatedName("lf")
-	@ObfuscatedSignature(
-		descriptor = "Lep;"
-	)
-	@Export("urlRequester")
-	static UrlRequester urlRequester;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("type")
 	char type;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -1085890847
+		intValue = 116433547
 	)
 	@Export("defaultInt")
 	public int defaultInt;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("defaultStr")
 	public String defaultStr;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("autoDisable")
 	boolean autoDisable;
 
@@ -52,16 +46,16 @@ public class ParamComposition extends DualNode {
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1752185616"
+		garbageValue = "-1060451547"
 	)
 	@Export("postDecode")
 	void postDecode() {
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;I)V",
-		garbageValue = "974419571"
+		descriptor = "(Lwt;I)V",
+		garbageValue = "-522712173"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -75,15 +69,31 @@ public class ParamComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;IB)V",
-		garbageValue = "-101"
+		descriptor = "(Lwt;II)V",
+		garbageValue = "-1016018465"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 1) {
-			this.type = FriendLoginUpdate.method9179(var1.readByte());
+			byte var4 = var1.readByte();
+			int var5 = var4 & 255;
+			if (var5 == 0) {
+				throw new IllegalArgumentException("" + Integer.toString(var5, 16));
+			}
+
+			if (var5 >= 128 && var5 < 160) {
+				char var6 = class436.cp1252AsciiExtension[var5 - 128];
+				if (var6 == 0) {
+					var6 = '?';
+				}
+
+				var5 = var6;
+			}
+
+			char var3 = (char)var5;
+			this.type = var3;
 		} else if (var2 == 2) {
 			this.defaultInt = var1.readInt();
 		} else if (var2 == 4) {
@@ -94,10 +104,10 @@ public class ParamComposition extends DualNode {
 
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1845965721"
+		garbageValue = "-1089998298"
 	)
 	@Export("isString")
 	public boolean isString() {

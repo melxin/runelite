@@ -1,144 +1,154 @@
-import java.util.ArrayList;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ch")
+@ObfuscatedName("bh")
 @Implements("MenuAction")
 public class MenuAction {
-	@ObfuscatedName("cl")
-	@ObfuscatedSignature(
-		descriptor = "Lws;"
-	)
-	static IndexedSprite field917;
-	@ObfuscatedName("ql")
-	@ObfuscatedSignature(
-		descriptor = "[Lws;"
-	)
-	@Export("scrollBarSprites")
-	static IndexedSprite[] scrollBarSprites;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("lq")
 	@ObfuscatedGetter(
-		intValue = -461309019
+		intValue = -991701221
+	)
+	static int field724;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = -72210831
 	)
 	@Export("param0")
 	int param0;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1923048325
+		intValue = 1118476265
 	)
 	@Export("param1")
 	int param1;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -527611115
+		intValue = -550876181
 	)
 	@Export("opcode")
 	int opcode;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -1901286549
+		intValue = 1920339353
 	)
 	@Export("identifier")
 	int identifier;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -297951819
+		intValue = 1589067211
 	)
 	@Export("itemId")
 	int itemId;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1701848227
+		intValue = 1147961811
 	)
 	@Export("worldViewId")
 	int worldViewId;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@Export("action")
 	String action;
 	@ObfuscatedName("am")
 	@Export("target")
 	String target;
-	@ObfuscatedName("aa")
-	boolean field916;
+	@ObfuscatedName("ah")
+	boolean field723;
 
 	MenuAction() {
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lfm;FI)F",
-		garbageValue = "-840097113"
+		descriptor = "(Lfg;FI)F",
+		garbageValue = "-701902442"
 	)
-	static float method2256(class135 var0, float var1) {
+	static float method1866(class136 var0, float var1) {
 		if (var0 == null) {
 			return 0.0F;
 		} else {
-			float var2 = var1 - var0.field1590;
-			return (var2 * (var2 * var0.field1584 + var0.field1604) + var0.field1594) * var2 + var0.field1595;
-		}
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(Lve;IB)Ljava/lang/String;",
-		garbageValue = "-46"
-	)
-	static String method2253(Buffer var0, int var1) {
-		try {
-			int var2 = var0.readUShortSmart();
-			if (var2 > var1) {
-				var2 = var1;
+			float var2;
+			if (var0.field1600 == var1) {
+				var2 = 0.0F;
+			} else if (var0.field1597 == var1) {
+				var2 = 1.0F;
+			} else {
+				var2 = (var1 - var0.field1600) / (var0.field1597 - var0.field1600);
 			}
 
-			byte[] var3 = new byte[var2];
-			var0.offset += class366.huffman.decompress(var0.array, -2066221813 * var0.offset, var3, 0, var2) * 29699747;
-			String var4 = PlayerCompositionColorTextureOverride.decodeStringCp1252(var3, 0, var2);
-			return var4;
-		} catch (Exception var6) {
-			return "Cabbage";
+			float var3;
+			if (var0.field1592) {
+				var3 = var2;
+			} else {
+				float[] var4 = new float[]{var0.field1595 - var2, var0.field1601, var0.field1602, var0.field1603};
+				float[] var5 = new float[5];
+				int var6 = class444.method8685(var4, 3, 0.0F, true, 1.0F, true, var5);
+				if (var6 == 1) {
+					var3 = var5[0];
+				} else {
+					var3 = 0.0F;
+				}
+			}
+
+			return var3 * (var0.field1605 + (var0.field1607 * var3 + var0.field1594) * var3) + var0.field1612;
 		}
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "5"
+		descriptor = "(B)V",
+		garbageValue = "8"
 	)
-	public static void method2254(int var0, int var1) {
-		class335.musicPlayerStatus = var0;
-		class335.field3692 = var1;
-		class335.field3702 = 0;
-		class335.field3693 = 0;
-		class335.field3698.clear();
-		class335.field3699.clear();
-		if (class335.midiRequests.isEmpty() || var0 == 0 && var1 == 0) {
-			SoundCache.method864();
+	static void method1865() {
+		class82.otp.trim();
+		if (class82.otp.length() != 6) {
+			setLoginResponseString("", "Please enter a 6-digit PIN.", "");
 		} else {
-			class335.field3699.add(new DelayFadeTask((SongTask)null, class335.musicPlayerStatus));
-			class335.field3699.add(new FadeOutTask((SongTask)null, 0, false, class335.field3692));
-			ArrayList var3 = new ArrayList();
-			Iterator var4 = class335.midiRequests.iterator();
-
-			while (var4.hasNext()) {
-				MidiRequest var5 = (MidiRequest)var4.next();
-				var3.add(var5);
-			}
-
-			class335.field3699.add(new class459((SongTask)null, var3));
+			PcmPlayer.otpMedium = Integer.parseInt(class82.otp);
+			class82.otp = "";
+			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.TOKEN_REMEMBER : AuthenticationScheme.TOKEN;
+			setLoginResponseString("", "Connecting to server...", "");
+			HealthBarConfig.updateGameState(20);
 		}
-
 	}
 
-	@ObfuscatedName("lw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "34"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+		garbageValue = "-1269986009"
 	)
-	static final int method2255() {
-		return Client.menu.menuOptionsCount - 1;
+	@Export("setLoginResponseString")
+	static void setLoginResponseString(String var0, String var1, String var2) {
+		Login.Login_response1 = var0;
+		Login.Login_response2 = var1;
+		Login.Login_response3 = var2;
+	}
+
+	@ObfuscatedName("ia")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIB)V",
+		garbageValue = "66"
+	)
+	static void method1863(int var0, int var1, int var2, int var3) {
+		PacketBufferNode var4 = class139.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
+		var4.packetBuffer.writeByte(18);
+		var4.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
+		var4.packetBuffer.writeShortLE(var0 + Sound.topLevelWorldView.baseX);
+		var4.packetBuffer.writeShortAdd(var1 + Sound.topLevelWorldView.baseY);
+		var4.packetBuffer.writeByte(var2);
+		var4.packetBuffer.writeByte(var3);
+		var4.packetBuffer.writeShort(Client.camAngleY);
+		var4.packetBuffer.writeByte(57);
+		var4.packetBuffer.writeByte(0);
+		var4.packetBuffer.writeByte(0);
+		var4.packetBuffer.writeByte(89);
+		var4.packetBuffer.writeShort(class152.localPlayer.x);
+		var4.packetBuffer.writeShort(class152.localPlayer.y);
+		var4.packetBuffer.writeByte(63);
+		Client.packetWriter.addNode(var4);
+		Client.destinationX = var0;
+		Client.destinationY = var1;
 	}
 }

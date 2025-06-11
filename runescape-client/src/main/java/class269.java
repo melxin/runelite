@@ -1,97 +1,339 @@
-import java.util.Date;
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
+import java.awt.datatransfer.Clipboard;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import netscape.javascript.JSObject;
 
-@ObfuscatedName("ka")
-public class class269 extends Node {
-	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = -38709149
-	)
-	public int field3055;
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = 366055703
-	)
-	public int field3056;
-	@ObfuscatedName("as")
-	@ObfuscatedGetter(
-		intValue = -319439607
-	)
-	public int field3060;
-	@ObfuscatedName("aq")
+@ObfuscatedName("kp")
+public class class269 implements class29 {
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lnh;"
+		descriptor = "Lov;"
 	)
-	public Widget field3058;
+	Widget field3049;
+	@ObfuscatedName("aj")
+	boolean field3047;
+	@ObfuscatedName("an")
+	boolean field3048;
 
-	@ObfuscatedSignature(
-		descriptor = "(IIILnh;)V"
-	)
-	public class269(int var1, int var2, int var3, Widget var4) {
-		this.field3060 = var1;
-		this.field3055 = var2;
-		this.field3056 = var3;
-		this.field3058 = var4;
+	public class269() {
+		this.field3049 = null;
+		this.field3047 = false;
+		this.field3048 = false;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-1400526196"
+		descriptor = "(II)Z",
+		garbageValue = "1360488450"
 	)
-	public static int method5665(int var0) {
-		return class519.field5291[var0 & 16383];
-	}
-
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "(B)Lcr;",
-		garbageValue = "0"
-	)
-	@Export("getNextWorldListWorld")
-	static World getNextWorldListWorld() {
-		return World.World_listCount < World.World_count ? World.World_worlds[++World.World_listCount - 1] : null;
-	}
-
-	@ObfuscatedName("oj")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "889039084"
-	)
-	static void method5663(String var0) {
-		SecureRandomFuture.field1003 = var0;
-
-		try {
-			String var1 = SecureRandomCallable.client.getParameter(Integer.toString(18));
-			String var2 = SecureRandomCallable.client.getParameter(Integer.toString(13));
-			String var3 = var1 + "settings=" + var0 + "; version=1; path=/; domain=" + var2;
-			String var5;
-			if (var0.isEmpty()) {
-				var3 = var3 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
+	public boolean vmethod5884(int var1) {
+		if (this.field3049 == null) {
+			return false;
+		} else {
+			class27 var2 = this.field3049.method7775();
+			if (var2 == null) {
+				return false;
 			} else {
-				String var4 = var3 + "; Expires=";
-				long var6 = class282.method5908() + 94608000000L;
-				Calendar.Calendar_calendar.setTime(new Date(var6));
-				int var8 = Calendar.Calendar_calendar.get(7);
-				int var9 = Calendar.Calendar_calendar.get(5);
-				int var10 = Calendar.Calendar_calendar.get(2);
-				int var11 = Calendar.Calendar_calendar.get(1);
-				int var12 = Calendar.Calendar_calendar.get(11);
-				int var13 = Calendar.Calendar_calendar.get(12);
-				int var14 = Calendar.Calendar_calendar.get(13);
-				var5 = Calendar.DAYS_OF_THE_WEEK[var8 - 1] + ", " + var9 / 10 + var9 % 10 + "-" + Calendar.MONTH_NAMES_ENGLISH_GERMAN[0][var10] + "-" + var11 + " " + var12 / 10 + var12 % 10 + ":" + var13 / 10 + var13 % 10 + ":" + var14 / 10 + var14 % 10 + " GMT";
-				var3 = var4 + var5 + "; Max-Age=" + 94608000L;
+				if (var2.method393(var1)) {
+					switch(var1) {
+					case 81:
+						this.field3048 = true;
+						break;
+					case 82:
+						this.field3047 = true;
+						break;
+					default:
+						if (this.method5868(var1)) {
+							ScriptFrame.invalidateWidget(this.field3049);
+						}
+					}
+				}
+
+				return var2.method395(var1);
+			}
+		}
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "-918792953"
+	)
+	public boolean vmethod5912(int var1) {
+		switch(var1) {
+		case 81:
+			this.field3048 = false;
+			return false;
+		case 82:
+			this.field3047 = false;
+			return false;
+		default:
+			return false;
+		}
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(CI)Z",
+		garbageValue = "-1362136571"
+	)
+	public boolean vmethod5908(char var1) {
+		if (this.field3049 == null) {
+			return false;
+		} else if (!class198.method4233(var1)) {
+			return false;
+		} else {
+			class367 var2 = this.field3049.method7755();
+			if (var2 != null && var2.method7454()) {
+				class27 var3 = this.field3049.method7775();
+				if (var3 == null) {
+					return false;
+				} else {
+					if (var3.method398(var1) && var2.method7415(var1)) {
+						ScriptFrame.invalidateWidget(this.field3049);
+					}
+
+					return var3.method396(var1);
+				}
+			} else {
+				return false;
+			}
+		}
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(ZI)Z",
+		garbageValue = "-1328180320"
+	)
+	public boolean vmethod5888(boolean var1) {
+		return false;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lov;",
+		garbageValue = "-387080519"
+	)
+	public Widget method5862() {
+		return this.field3049;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(Lov;I)V",
+		garbageValue = "2103860837"
+	)
+	public void method5863(Widget var1) {
+		if (var1 != null) {
+			if (var1 != this.field3049) {
+				this.method5864();
+				this.field3049 = var1;
 			}
 
-			Client var16 = SecureRandomCallable.client;
-			var5 = "document.cookie=\"" + var3 + "\"";
-			JSObject.getWindow(var16).eval(var5);
-		} catch (Throwable var15) {
+			class365 var2 = var1.method7878();
+			if (var2 != null) {
+				if (!var2.field3897.method7449() && var2.field3899 != null) {
+					ScriptEvent var3 = new ScriptEvent();
+					var3.method2109(var1);
+					var3.setArgs(var2.field3899);
+					class7.method59().addFirst(var3);
+				}
+
+				var2.field3897.method7515(true);
+			}
+		} else {
+			this.method5864();
 		}
 
+	}
+
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1329465113"
+	)
+	public void method5864() {
+		if (this.field3049 != null) {
+			class365 var1 = this.field3049.method7878();
+			Widget var2 = this.field3049;
+			this.field3049 = null;
+			if (var1 != null) {
+				if (var1.field3897.method7449() && var1.field3899 != null) {
+					ScriptEvent var3 = new ScriptEvent();
+					var3.method2109(var2);
+					var3.setArgs(var1.field3899);
+					class7.method59().addFirst(var3);
+				}
+
+				var1.field3897.method7515(false);
+			}
+		}
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "384027461"
+	)
+	boolean method5868(int var1) {
+		if (this.field3049 == null) {
+			return false;
+		} else {
+			class367 var2 = this.field3049.method7755();
+			if (var2 != null && var2.method7454()) {
+				Clipboard var5;
+				switch(var1) {
+				case 13:
+					this.method5864();
+					return true;
+				case 48:
+					if (this.field3047) {
+						var2.method7532();
+					}
+
+					return true;
+				case 65:
+					if (this.field3047) {
+						var5 = class36.client.method571();
+						var2.method7403(var5);
+					}
+
+					return true;
+				case 66:
+					if (this.field3047) {
+						var5 = class36.client.method571();
+						var2.method7439(var5);
+					}
+
+					return true;
+				case 67:
+					if (this.field3047) {
+						var5 = class36.client.method571();
+						var2.method7619(var5);
+					}
+
+					return true;
+				case 84:
+					if (var2.method7617() == 0) {
+						var2.method7415(10);
+					} else if (this.field3048 && var2.method7570()) {
+						var2.method7415(10);
+					} else {
+						class365 var3 = this.field3049.method7878();
+						ScriptEvent var4 = new ScriptEvent();
+						var4.method2109(this.field3049);
+						var4.setArgs(var3.field3895);
+						class7.method59().addFirst(var4);
+						this.method5864();
+					}
+
+					return true;
+				case 85:
+					if (this.field3047) {
+						var2.method7418();
+					} else {
+						var2.method7611();
+					}
+
+					return true;
+				case 96:
+					if (this.field3047) {
+						var2.method7655(this.field3048);
+					} else {
+						var2.method7427(this.field3048);
+					}
+
+					return true;
+				case 97:
+					if (this.field3047) {
+						var2.method7430(this.field3048);
+					} else {
+						var2.method7428(this.field3048);
+					}
+
+					return true;
+				case 98:
+					if (this.field3047) {
+						var2.method7442();
+					} else {
+						var2.method7498(this.field3048);
+					}
+
+					return true;
+				case 99:
+					if (this.field3047) {
+						var2.method7443();
+					} else {
+						var2.method7432(this.field3048);
+					}
+
+					return true;
+				case 101:
+					if (this.field3047) {
+						var2.method7596();
+					} else {
+						var2.method7417();
+					}
+
+					return true;
+				case 102:
+					if (this.field3047) {
+						var2.method7425(this.field3048);
+					} else {
+						var2.method7423(this.field3048);
+					}
+
+					return true;
+				case 103:
+					if (this.field3047) {
+						var2.method7426(this.field3048);
+					} else {
+						var2.method7576(this.field3048);
+					}
+
+					return true;
+				case 104:
+					if (this.field3047) {
+						var2.method7685(this.field3048);
+					} else {
+						var2.method7478(this.field3048);
+					}
+
+					return true;
+				case 105:
+					if (this.field3047) {
+						var2.method7436(this.field3048);
+					} else {
+						var2.method7589(this.field3048);
+					}
+
+					return true;
+				default:
+					return false;
+				}
+			} else {
+				return false;
+			}
+		}
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1050665802"
+	)
+	static void method5881() {
+		AuthenticationScheme.Tiles_underlays = null;
+		class31.Tiles_overlays = null;
+		User.Tiles_shapes = null;
+		class518.field5341 = null;
+		SecureRandomCallable.field862 = null;
+		class462.Tiles_underlays2 = null;
+		Tiles.field846 = null;
+		class451.Tiles_hue = null;
+		WorldMapDecoration.Tiles_saturation = null;
+		GrandExchangeOfferNameComparator.Tiles_lightness = null;
+		GameEngine.Tiles_hueMultiplier = null;
+		World.field617 = null;
 	}
 }

@@ -4,45 +4,47 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mr")
+@ObfuscatedName("mk")
 @Implements("PacketBufferNode")
 public class PacketBufferNode extends Node {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "[Lmr;"
+		descriptor = "[Lmk;"
 	)
 	@Export("PacketBufferNode_packetBufferNodes")
 	static PacketBufferNode[] PacketBufferNode_packetBufferNodes;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -1749995417
+		intValue = 251904867
 	)
 	@Export("PacketBufferNode_packetBufferNodeCount")
 	static int PacketBufferNode_packetBufferNodeCount;
-	@ObfuscatedName("pq")
-	@Export("xteaKeys")
-	static int[][] xteaKeys;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("dl")
+	@ObfuscatedGetter(
+		intValue = -2008170471
+	)
+	static int field3497;
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lmq;"
+		descriptor = "Lmg;"
 	)
 	@Export("clientPacket")
-	ClientPacket clientPacket;
-	@ObfuscatedName("av")
+	public ClientPacket clientPacket;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 1791612557
+		intValue = -559764159
 	)
 	@Export("clientPacketLength")
-	int clientPacketLength;
+	public int clientPacketLength;
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lvu;"
+		descriptor = "Lwx;"
 	)
 	@Export("packetBuffer")
 	public PacketBuffer packetBuffer;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1711647789
+		intValue = 940379717
 	)
 	@Export("index")
 	public int index;
@@ -55,39 +57,15 @@ public class PacketBufferNode extends Node {
 	PacketBufferNode() {
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "10"
+		garbageValue = "107"
 	)
 	@Export("release")
 	public void release() {
 		if (PacketBufferNode_packetBufferNodeCount < PacketBufferNode_packetBufferNodes.length) {
 			PacketBufferNode_packetBufferNodes[++PacketBufferNode_packetBufferNodeCount - 1] = this;
-		}
-	}
-
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-461362733"
-	)
-	public static boolean method6559(char var0) {
-		if ((var0 <= 0 || var0 >= 128) && (var0 < 160 || var0 > 255)) {
-			if (var0 != 0) {
-				char[] var1 = class433.cp1252AsciiExtension;
-
-				for (int var2 = 0; var2 < var1.length; ++var2) {
-					char var3 = var1[var2];
-					if (var0 == var3) {
-						return true;
-					}
-				}
-			}
-
-			return false;
-		} else {
-			return true;
 		}
 	}
 }

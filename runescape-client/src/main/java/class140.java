@@ -1,84 +1,59 @@
-import java.io.File;
-import java.io.RandomAccessFile;
+import java.util.concurrent.Callable;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fs")
-public class class140 {
-	@ObfuscatedName("ks")
+@ObfuscatedName("fl")
+class class140 implements Callable {
+	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "Lfj;"
 	)
-	static Archive field1650;
-
-	@ObfuscatedName("ao")
+	final class143 this$0;
+	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)Ljava/io/File;",
-		garbageValue = "42"
+		descriptor = "Lwt;"
 	)
-	@Export("getFile")
-	static File getFile(String var0) {
-		if (!FileSystem.FileSystem_hasPermissions) {
-			throw new RuntimeException("");
-		} else {
-			File var1 = (File)FileSystem.FileSystem_cacheFiles.get(var0);
-			if (var1 != null) {
-				return var1;
-			} else {
-				File var2 = new File(FileSystem.FileSystem_cacheDir, var0);
-				RandomAccessFile var3 = null;
+	final Buffer val$p;
+	// $FF: synthetic field
+	final int val$version;
 
-				try {
-					File var4 = new File(var2.getParent());
-					if (!var4.exists()) {
-						throw new RuntimeException("");
-					} else {
-						var3 = new RandomAccessFile(var2, "rw");
-						int var5 = var3.read();
-						var3.seek(0L);
-						var3.write(var5);
-						var3.seek(0L);
-						var3.close();
-						FileSystem.FileSystem_cacheFiles.put(var0, var2);
-						return var2;
-					}
-				} catch (Exception var8) {
-					try {
-						if (var3 != null) {
-							var3.close();
-							var3 = null;
-						}
-					} catch (Exception var7) {
-					}
-
-					throw new RuntimeException();
-				}
-			}
-		}
+	@ObfuscatedSignature(
+		descriptor = "(Lfj;Lwt;I)V"
+	)
+	class140(class143 var1, Buffer var2, int var3) {
+		this.this$0 = var1;
+		this.val$p = var2;
+		this.val$version = var3;
 	}
 
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "3"
-	)
-	public static int method3389(int var0, int var1) {
-		return (int)Math.round(Math.atan2((double)var0, (double)var1) * 2607.5945876176133D) & 16383;
+	public Object call() {
+		this.this$0.method3608(this.val$p, this.val$version);
+		return null;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lph;II)Z",
-		garbageValue = "864580892"
+		descriptor = "(I)Z",
+		garbageValue = "798264099"
 	)
-	static boolean method3387(AbstractArchive var0, int var1) {
-		byte[] var2 = var0.takeFileFlat(var1);
-		if (var2 == null) {
-			return false;
-		} else {
-			GrandExchangeEvent.SpriteBuffer_decode(var2);
+	static final boolean method3589() {
+		return ViewportMouse.ViewportMouse_isInViewport;
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(CI)Z",
+		garbageValue = "-929572055"
+	)
+	@Export("isCharPrintable")
+	public static boolean isCharPrintable(char var0) {
+		if (var0 >= ' ' && var0 <= '~') {
 			return true;
+		} else if (var0 >= 160 && var0 <= 255) {
+			return true;
+		} else {
+			return var0 == 8364 || var0 == 338 || var0 == 8212 || var0 == 339 || var0 == 376;
 		}
 	}
 }

@@ -4,23 +4,17 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hy")
+@ObfuscatedName("jr")
 @Implements("Renderable")
 public abstract class Renderable extends IndexedObjectNode {
-	@ObfuscatedName("nu")
+	@ObfuscatedName("tl")
 	@ObfuscatedSignature(
-		descriptor = "Ldf;"
+		descriptor = "[Lov;"
 	)
-	@Export("clientPreferences")
-	static ClientPreferences clientPreferences;
-	@ObfuscatedName("vh")
+	static Widget[] field2813;
+	@ObfuscatedName("ei")
 	@ObfuscatedGetter(
-		intValue = -880588299
-	)
-	static int field2162;
-	@ObfuscatedName("eh")
-	@ObfuscatedGetter(
-		intValue = -1179879933
+		intValue = -1985311067
 	)
 	@Export("height")
 	public int height;
@@ -29,18 +23,18 @@ public abstract class Renderable extends IndexedObjectNode {
 		this.height = 1000;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lhe;",
-		garbageValue = "-1407261867"
+		descriptor = "(B)Ljm;",
+		garbageValue = "27"
 	)
 	@Export("getModel")
 	protected Model getModel() {
 		return null;
 	}
 
-	@ObfuscatedName("ep")
-	void vmethod4418(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, long var10, int var12, int var13, boolean var14) {
+	@ObfuscatedName("ed")
+	void vmethod5557(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, long var10, int var12, int var13, boolean var14) {
 		Model var15 = this.getModel();
 		if (var15 != null) {
 			this.height = var15.height;
@@ -53,9 +47,9 @@ public abstract class Renderable extends IndexedObjectNode {
 
 	}
 
-	@ObfuscatedName("ke")
+	@ObfuscatedName("jk")
 	@ObfuscatedSignature(
-		descriptor = "(ILrm;IIIJ)V"
+		descriptor = "(ILrz;IIIJ)V"
 	)
 	@Export("draw")
 	void draw(int var1, TransformationMatrix var2, int var3, int var4, int var5, long var6) {

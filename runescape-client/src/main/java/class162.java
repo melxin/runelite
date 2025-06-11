@@ -1,114 +1,118 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-@ObfuscatedName("ge")
-public class class162 extends class148 {
-	@ObfuscatedName("ao")
+@ObfuscatedName("gh")
+public class class162 extends class165 {
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1145051343
+		intValue = 1393182613
 	)
-	int field1821;
+	int field1817;
+	@ObfuscatedName("aj")
+	byte field1816;
+	@ObfuscatedName("an")
+	@ObfuscatedGetter(
+		intValue = -1615171389
+	)
+	int field1818;
+	@ObfuscatedName("ai")
+	String field1819;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfd;"
+		descriptor = "Lgg;"
 	)
-	final class151 this$0;
+	final class166 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfd;)V"
+		descriptor = "(Lgg;)V"
 	)
-	class162(class151 var1) {
+	class162(class166 var1) {
 		this.this$0 = var1;
-		this.field1821 = -1;
+		this.field1817 = -1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;B)V",
-		garbageValue = "53"
+		descriptor = "(Lwt;I)V",
+		garbageValue = "-830685594"
 	)
-	void vmethod3749(Buffer var1) {
-		this.field1821 = var1.readUnsignedShort();
+	void vmethod3902(Buffer var1) {
+		var1.readUnsignedByte();
+		this.field1817 = var1.readUnsignedShort();
+		this.field1816 = var1.readByte();
+		this.field1818 = var1.readUnsignedShort();
+		var1.readLong();
+		this.field1819 = var1.readStringCp1252NullTerminated();
+		var1.readUnsignedByte();
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lgw;I)V",
-		garbageValue = "1984465176"
+		descriptor = "(Lgd;B)V",
+		garbageValue = "0"
 	)
-	void vmethod3750(ClanSettings var1) {
-		var1.method3565(this.field1821);
+	void vmethod3908(ClanChannel var1) {
+		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1817);
+		var2.rank = this.field1816;
+		var2.world = this.field1818;
+		var2.username = new Username(this.field1819);
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lky;",
-		garbageValue = "-1253146871"
+		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;I)[F",
+		garbageValue = "534799523"
 	)
-	@Export("getObjectDefinition")
-	public static ObjectComposition getObjectDefinition(int var0) {
-		ObjectComposition var1 = (ObjectComposition)ObjectComposition.ObjectDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = ObjectComposition.ObjectDefinition_archive.takeFile(6, var0);
-			var1 = new ObjectComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
+	static float[] method3826(JSONObject var0, String var1) throws JSONException {
+		float[] var2 = new float[4];
 
-			var1.postDecode();
-			if (var1.isSolid) {
-				var1.interactType = 0;
-				var1.boolean1 = false;
-			}
-
-			ObjectComposition.ObjectDefinition_cached.put(var1, (long)var0);
-			return var1;
+		try {
+			JSONArray var3 = var0.getJSONArray(var1);
+			var2[0] = (float)var3.optDouble(0, 0.0D);
+			var2[1] = (float)var3.optDouble(1, 0.0D);
+			var2[2] = (float)var3.optDouble(2, 1.0D);
+			var2[3] = (float)var3.optDouble(3, 1.0D);
+		} catch (JSONException var4) {
+			var2[0] = 0.0F;
+			var2[1] = 0.0F;
+			var2[2] = 1.0F;
+			var2[3] = 1.0F;
 		}
+
+		return var2;
 	}
 
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)Ldb;",
-		garbageValue = "1068792685"
-	)
-	@Export("getWorldMapScript")
-	static Script getWorldMapScript(int var0, int var1, int var2) {
-		int var3 = WorldMapRenderer.method6198(var1, var0);
-		Script var4 = class421.getScript(var3, var0);
-		if (var4 != null) {
-			return var4;
-		} else {
-			int var5 = (-3 - var2 << 8) + var0;
-			var4 = class421.getScript(var5, var0);
-			if (var4 != null) {
-				return var4;
-			} else {
-				var3 = RouteStrategy.method5754(var0);
-				var4 = class421.getScript(var3, var0);
-				return var4 != null ? var4 : null;
-			}
-		}
-	}
-
-	@ObfuscatedName("kn")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1406486016"
+		garbageValue = "-1114820666"
 	)
-	static final void method3657() {
-		for (PendingSpawn var0 = (PendingSpawn)class509.topLevelWorldView.pendingSpawns.last(); var0 != null; var0 = (PendingSpawn)class509.topLevelWorldView.pendingSpawns.previous()) {
-			if (var0.hitpoints == -1) {
-				var0.delay = 0;
-				class157.method3545(class509.topLevelWorldView, var0);
-			} else {
-				var0.remove();
-			}
-		}
+	public static void method3823() {
+		FileSystem.FileSystem_cacheFiles.clear();
+	}
 
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(Lwt;B)Ljava/lang/String;",
+		garbageValue = "96"
+	)
+	public static String method3825(Buffer var0) {
+		return class168.method3872(var0, 32767);
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "11"
+	)
+	static void method3816() {
+		MenuAction.setLoginResponseString("", "Connecting to server...", "");
+		Client.field438 = class584.field5748;
+		Client.authenticationScheme = ClientPacket.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
+		HealthBarConfig.updateGameState(20);
 	}
 }

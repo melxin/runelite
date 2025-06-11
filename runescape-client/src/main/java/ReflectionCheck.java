@@ -6,52 +6,39 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bc")
+@ObfuscatedName("bj")
 @Implements("ReflectionCheck")
 public class ReflectionCheck extends Node {
-	@ObfuscatedName("jg")
-	@ObfuscatedSignature(
-		descriptor = "Lip;"
-	)
-	@Export("js5SocketTask")
-	static Task js5SocketTask;
-	@ObfuscatedName("ml")
-	@ObfuscatedSignature(
-		descriptor = "Liy;"
-	)
-	@Export("mouseWheel")
-	static MouseWheel mouseWheel;
-	@ObfuscatedName("qm")
+	@ObfuscatedName("vu")
 	@ObfuscatedGetter(
-		intValue = 1954190523
+		intValue = 594948283
 	)
-	@Export("oculusOrbFocalPointX")
-	static int oculusOrbFocalPointX;
-	@ObfuscatedName("ao")
+	static int field248;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1704967697
+		intValue = 1193523613
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 213130435
+		intValue = 963250083
 	)
 	@Export("size")
 	int size;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("operations")
 	int[] operations;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("creationErrors")
 	int[] creationErrors;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("fields")
 	Field[] fields;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("intReplaceValues")
 	int[] intReplaceValues;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@Export("methods")
 	Method[] methods;
 	@ObfuscatedName("am")
@@ -61,46 +48,61 @@ public class ReflectionCheck extends Node {
 	ReflectionCheck() {
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Lph;B)I",
-		garbageValue = "-115"
+		descriptor = "([BIIB)Z",
+		garbageValue = "16"
 	)
-	static int method712(AbstractArchive var0) {
-		int var1 = Login.field964.length + Login.field948.length;
-		String[] var2 = Login.field965;
+	static final boolean method706(byte[] var0, int var1, int var2) {
+		boolean var3 = true;
+		Buffer var4 = new Buffer(var0);
+		int var5 = -1;
 
-		for (int var3 = 0; var3 < var2.length; ++var3) {
-			String var4 = var2[var3];
-			if (var0.getGroupId(var4) != -1) {
-				++var1;
+		label69:
+		while (true) {
+			int var6 = var4.readIncrSmallSmart();
+			if (var6 == 0) {
+				return var3;
 			}
-		}
 
-		return var1;
-	}
+			var5 += var6;
+			int var7 = 0;
+			boolean var8 = false;
 
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(ILti;Lpx;I)V",
-		garbageValue = "1245571013"
-	)
-	static void method713(int var0, ArchiveDisk var1, Archive var2) {
-		byte[] var3 = null;
-		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-			for (ArchiveDiskAction var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.last(); var5 != null; var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.previous()) {
-				if (var5.key == (long)var0 && var1 == var5.archiveDisk && var5.type == 0) {
-					var3 = var5.data;
+			while (true) {
+				int var9;
+				while (!var8) {
+					var9 = var4.readShortSmartSub();
+					if (var9 == 0) {
+						continue label69;
+					}
+
+					var7 += var9 - 1;
+					int var10 = var7 & 63;
+					int var11 = var7 >> 6 & 63;
+					int var12 = var4.readUnsignedByte() >> 2;
+					int var13 = var11 + var1;
+					int var14 = var10 + var2;
+					if (var13 > 0 && var14 > 0 && var13 < 103 && var14 < 103) {
+						ObjectComposition var15 = HealthBarConfig.getObjectDefinition(var5);
+						if (var12 != 22 || !Client.isLowDetail || var15.int1 != 0 || var15.interactType == 1 || var15.boolean2) {
+							if (!var15.needsModelFiles()) {
+								++Client.field576;
+								var3 = false;
+							}
+
+							var8 = true;
+						}
+					}
+				}
+
+				var9 = var4.readShortSmartSub();
+				if (var9 == 0) {
 					break;
 				}
-			}
-		}
 
-		if (var3 != null) {
-			var2.load(var1, var0, var3, true);
-		} else {
-			byte[] var4 = var1.read(var0);
-			var2.load(var1, var0, var4, true);
+				var4.readUnsignedByte();
+			}
 		}
 	}
 }

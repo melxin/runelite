@@ -2,33 +2,30 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ov")
+@ObfuscatedName("ot")
 public class class381 {
-	@ObfuscatedName("ns")
+	@ObfuscatedName("nc")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)Ldd;",
-		garbageValue = "500239090"
+		descriptor = "(IIIILwd;Lnr;I)V",
+		garbageValue = "1326736334"
 	)
-	@Export("openInterface")
-	static final InterfaceParent openInterface(int var0, int var1, int var2) {
-		InterfaceParent var3 = new InterfaceParent();
-		var3.group = var1;
-		var3.type = var2;
-		Client.interfaceParents.put(var3, (long)var0);
-		JagexCache.method4818(var1);
-		Widget var4 = class232.widgetDefinition.method6951(var0);
-		class139.invalidateWidget(var4);
-		if (Client.meslayerContinueWidget != null) {
-			class139.invalidateWidget(Client.meslayerContinueWidget);
-			Client.meslayerContinueWidget = null;
-		}
+	@Export("drawSpriteOnMinimap")
+	static final void drawSpriteOnMinimap(int var0, int var1, int var2, int var3, SpritePixels var4, SpriteMask var5) {
+		if (var4 != null) {
+			int var6 = Client.camAngleY & 2047;
+			int var7 = var3 * var3 + var2 * var2;
+			if (var7 <= 6400) {
+				int var8 = Rasterizer3D.Rasterizer3D_sine[var6];
+				int var9 = Rasterizer3D.Rasterizer3D_cosine[var6];
+				int var10 = var9 * var2 + var3 * var8 >> 16;
+				int var11 = var3 * var9 - var8 * var2 >> 16;
+				if (var7 > 2500) {
+					var4.method11322(var10 + var5.width / 2 - var4.width / 2, var5.height / 2 - var11 - var4.height / 2, var0, var1, var5.width, var5.height, var5.xStarts, var5.xWidths);
+				} else {
+					var4.drawTransBgAt(var0 + var10 + var5.width / 2 - var4.width / 2, var5.height / 2 + var1 - var11 - var4.height / 2);
+				}
 
-		class170.revalidateWidgetScroll(class232.widgetDefinition.Widget_interfaceComponents[var0 >> 16], var4, false);
-		class161.runWidgetOnLoadListener(var1);
-		if (Client.rootInterface != -1) {
-			MoveSpeed.runIntfCloseListeners(Client.rootInterface, 1);
+			}
 		}
-
-		return var3;
 	}
 }

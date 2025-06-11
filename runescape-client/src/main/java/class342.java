@@ -1,32 +1,22 @@
 import java.util.PriorityQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicBoolean;
-import net.runelite.mapping.ObfuscatedGetter;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ns")
+@ObfuscatedName("nt")
 class class342 implements Callable {
-	@ObfuscatedName("kc")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	static Archive field3779;
-	@ObfuscatedName("vy")
-	@ObfuscatedGetter(
-		intValue = 986343993
-	)
-	static int field3777;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lmv;"
+		descriptor = "Lmt;"
 	)
 	final MidiPcmStream this$0;
 	// $FF: synthetic field
 	final AtomicBoolean val$cancelled;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lmv;Ljava/util/concurrent/atomic/AtomicBoolean;)V"
+		descriptor = "(Lmt;Ljava/util/concurrent/atomic/AtomicBoolean;)V"
 	)
 	class342(MidiPcmStream var1, AtomicBoolean var2) {
 		this.this$0 = var1;
@@ -46,44 +36,33 @@ class class342 implements Callable {
 				var2 = (class339)var1.remove();
 			}
 
-			var2.field3762.method1083();
+			var2.field3760.method3227();
 		}
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "-1655751777"
+		descriptor = "(Lwt;BII)I",
+		garbageValue = "-2130424302"
 	)
-	public static String method6831(String var0) {
-		StringBuilder var1 = new StringBuilder(var0.length());
-		int var2 = 0;
-		int var3 = -1;
-
-		for (int var4 = 0; var4 < var0.length(); ++var4) {
-			char var5 = var0.charAt(var4);
-			if (var5 == '<') {
-				var1.append(var0.substring(var2, var4));
-				var3 = var4;
-			} else if (var5 == '>' && var3 != -1) {
-				String var6 = var0.substring(var3 + 1, var4);
-				var3 = -1;
-				if (var6.equals("lt")) {
-					var1.append("<");
-				} else if (var6.equals("gt")) {
-					var1.append(">");
-				} else if (var6.equals("br")) {
-					var1.append("\n");
-				}
-
-				var2 = var4 + 1;
-			}
+	public static int method7116(Buffer var0, byte var1, int var2) {
+		int var3 = var1 >> var2 & 3;
+		if (var3 == 3) {
+			return var0.readInt();
+		} else if (var3 == 2) {
+			return var0.readShort();
+		} else {
+			return var3 == 1 ? var0.readByte() : 0;
 		}
+	}
 
-		if (var2 < var0.length()) {
-			var1.append(var0.substring(var2, var0.length()));
-		}
-
-		return var1.toString();
+	@ObfuscatedName("ms")
+	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "1"
+	)
+	@Export("getTapToDrop")
+	static boolean getTapToDrop() {
+		return Client.tapToDrop;
 	}
 }

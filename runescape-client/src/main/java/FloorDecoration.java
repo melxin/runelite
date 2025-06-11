@@ -1,51 +1,46 @@
+import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gd")
+@ObfuscatedName("jd")
 @Implements("FloorDecoration")
 public final class FloorDecoration {
-	@ObfuscatedName("kf")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	@Export("archive10")
-	static Archive archive10;
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lhy;"
+		descriptor = "Ljr;"
 	)
 	@Export("renderable")
 	public Renderable renderable;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		longValue = 6652514834654138687L
+		longValue = 4010746377285225209L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1138829483
+		intValue = 1210278711
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -183026805
+		intValue = 2127434873
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -635857965
+		intValue = 108491785
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1048877089
+		intValue = 1480057111
 	)
 	@Export("flags")
 	int flags;
@@ -53,60 +48,25 @@ public final class FloorDecoration {
 	FloorDecoration() {
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lmq;Lwl;B)Lmr;",
-		garbageValue = "44"
+		descriptor = "(IIIIB)V",
+		garbageValue = "103"
 	)
-	@Export("getPacketBufferNode")
-	public static PacketBufferNode getPacketBufferNode(ClientPacket var0, IsaacCipher var1) {
-		PacketBufferNode var2;
-		if (PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0) {
-			var2 = new PacketBufferNode();
-		} else {
-			var2 = PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
-		}
-
-		var2.clientPacket = var0;
-		var2.clientPacketLength = var0.length;
-		if (var2.clientPacketLength == -1) {
-			var2.packetBuffer = new PacketBuffer(260);
-		} else if (var2.clientPacketLength == -2) {
-			var2.packetBuffer = new PacketBuffer(10000);
-		} else if (var2.clientPacketLength <= 18) {
-			var2.packetBuffer = new PacketBuffer(20);
-		} else if (var2.clientPacketLength <= 98) {
-			var2.packetBuffer = new PacketBuffer(100);
-		} else {
-			var2.packetBuffer = new PacketBuffer(260);
-		}
-
-		var2.packetBuffer.setIsaacCipher(var1);
-		var2.packetBuffer.writeByteIsaac(var2.clientPacket.id);
-		var2.index = 0;
-		return var2;
-	}
-
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lvc;",
-		garbageValue = "2069196071"
-	)
-	@Export("getDbRowType")
-	public static DbRowType getDbRowType(int var0) {
-		DbRowType var1 = (DbRowType)DbRowType.DBRowType_cache.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = class222.field2495.takeFile(38, var0);
-			var1 = new DbRowType();
-			if (var2 != null) {
-				var1.method10212(new Buffer(var2));
+	public static void method4979(int var0, int var1, int var2, int var3) {
+		if (class335.midiRequests.size() > 1 && class335.midiRequests.get(0) != null && ((MidiRequest)class335.midiRequests.get(0)).midiPcmStream.isReady() && class335.midiRequests.get(1) != null && ((MidiRequest)class335.midiRequests.get(1)).midiPcmStream.isReady()) {
+			class175.method3946(var0, var1, var2, var3);
+			class335.field3699.add(new SwapSongTask((SongTask)null));
+			ArrayList var4 = new ArrayList();
+			var4.add(new DelayFadeTask(new FadeInTask((SongTask)null, 1, false, class335.field3703), class335.field3702));
+			var4.add(new DelayFadeTask(new FadeOutTask((SongTask)null, 0, false, class335.field3697), class335.musicPlayerStatus));
+			class335.field3699.add(new ConcurrentMidiTask((SongTask)null, var4));
+			if (class335.field3698.get(0) != null && class335.field3698.get(1) != null) {
+				MidiRequest var5 = (MidiRequest)class335.field3698.get(0);
+				class335.field3698.set(0, class335.midiRequests.get(1));
+				class335.field3698.set(1, var5);
 			}
-
-			var1.method10211();
-			DbRowType.DBRowType_cache.put(var1, (long)var0);
-			return var1;
 		}
+
 	}
 }

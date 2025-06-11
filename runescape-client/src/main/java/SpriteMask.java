@@ -4,25 +4,25 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ne")
+@ObfuscatedName("nr")
 @Implements("SpriteMask")
 public class SpriteMask extends DualNode {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1833279057
+		intValue = 1125397623
 	)
 	@Export("width")
 	public final int width;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -463817013
+		intValue = 2137417273
 	)
 	@Export("height")
 	public final int height;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("xWidths")
 	public final int[] xWidths;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("xStarts")
 	public final int[] xStarts;
 
@@ -33,10 +33,10 @@ public class SpriteMask extends DualNode {
 		this.xStarts = var4;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(III)Z",
-		garbageValue = "932777880"
+		garbageValue = "-1157994802"
 	)
 	@Export("contains")
 	public boolean contains(int var1, int var2) {
@@ -50,34 +50,12 @@ public class SpriteMask extends DualNode {
 		return false;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lph;Lph;I)V",
-		garbageValue = "-556174471"
+		descriptor = "(II)I",
+		garbageValue = "-2105783114"
 	)
-	public static void method6879(AbstractArchive var0, AbstractArchive var1) {
-		KitDefinition.KitDefinition_archive = var0;
-		class435.KitDefinition_modelsArchive = var1;
-		KitDefinition.KitDefinition_fileCount = KitDefinition.KitDefinition_archive.getGroupFileCount(3);
-	}
-
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(Lrz;Lrz;I)Lrz;",
-		garbageValue = "-924095736"
-	)
-	public static final class442 method6872(class442 var0, class442 var1) {
-		class442 var2;
-		synchronized(class442.field4917) {
-			if (class442.field4920 == 0) {
-				var2 = new class442(var0);
-			} else {
-				class442.field4917[--class442.field4920].method8341(var0);
-				var2 = class442.field4917[class442.field4920];
-			}
-		}
-
-		var2.method8346(var1);
-		return var2;
+	public static int method7212(int var0) {
+		return var0 >> 14 & 1023;
 	}
 }

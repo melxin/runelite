@@ -3,24 +3,24 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sd")
+@ObfuscatedName("tc")
 @Implements("TriBool")
 public class TriBool {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lsd;"
+		descriptor = "Ltc;"
 	)
 	@Export("TriBool_unknown")
 	public static final TriBool TriBool_unknown;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lsd;"
+		descriptor = "Ltc;"
 	)
 	@Export("TriBool_true")
 	public static final TriBool TriBool_true;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lsd;"
+		descriptor = "Ltc;"
 	)
 	@Export("TriBool_false")
 	public static final TriBool TriBool_false;
@@ -32,14 +32,5 @@ public class TriBool {
 	}
 
 	TriBool() {
-	}
-
-	@ObfuscatedName("ol")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "110"
-	)
-	static boolean method9327() {
-		return Renderable.clientPreferences.getEULA() >= Client.field791;
 	}
 }

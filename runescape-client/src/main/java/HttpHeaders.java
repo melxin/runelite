@@ -14,13 +14,13 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("sx")
 @Implements("HttpHeaders")
 public class HttpHeaders {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("headers")
 	final Map headers;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("acceptHeaderValues")
 	final Map acceptHeaderValues;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("decimalFormat")
 	final DecimalFormat decimalFormat;
 
@@ -31,10 +31,10 @@ public class HttpHeaders {
 		this.decimalFormat.setMaximumFractionDigits(2);
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(Ljavax/net/ssl/HttpsURLConnection;I)V",
-		garbageValue = "1635899614"
+		garbageValue = "1913214346"
 	)
 	@Export("setRequestProperties")
 	public void setRequestProperties(HttpsURLConnection var1) {
@@ -47,20 +47,20 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(B)Ljava/util/Map;",
-		garbageValue = "69"
+		garbageValue = "-40"
 	)
 	@Export("getHeaders")
 	public Map getHeaders() {
 		return this.headers;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;B)V",
-		garbageValue = "-118"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;I)V",
+		garbageValue = "1881492234"
 	)
 	@Export("header")
 	public void header(String var1, String var2) {
@@ -70,10 +70,10 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-2123564373"
+		garbageValue = "-176325771"
 	)
 	@Export("removeHeader")
 	public void removeHeader(String var1) {
@@ -83,10 +83,10 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lsf;Ljava/lang/String;I)V",
-		garbageValue = "50221519"
+		descriptor = "(Lsn;Ljava/lang/String;B)V",
+		garbageValue = "31"
 	)
 	@Export("authenticationHeader")
 	void authenticationHeader(HttpAuthenticationHeader var1, String var2) {
@@ -94,20 +94,20 @@ public class HttpHeaders {
 		this.header("Authorization", var3);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-1873482187"
+		descriptor = "(Ljava/lang/String;S)V",
+		garbageValue = "-7020"
 	)
 	@Export("basicAuthentication")
 	public void basicAuthentication(String var1) {
 		this.authenticationHeader(HttpAuthenticationHeader.BASIC, var1);
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-1386376122"
+		garbageValue = "142155465"
 	)
 	@Export("bearerToken")
 	public void bearerToken(String var1) {
@@ -116,38 +116,38 @@ public class HttpHeaders {
 
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Ltw;I)V",
-		garbageValue = "-2060620340"
+		descriptor = "(Lup;I)V",
+		garbageValue = "-1311761417"
 	)
 	@Export("contentType")
 	public void contentType(HttpContentType var1) {
 		this.headers.put("Content-Type", var1.getValue());
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-87437049"
+		garbageValue = "-1932829702"
 	)
 	@Export("removeContentType")
 	public void removeContentType() {
 		this.headers.remove("Content-Type");
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Ltw;B)V",
-		garbageValue = "-54"
+		descriptor = "(Lup;S)V",
+		garbageValue = "-6038"
 	)
 	@Export("accept")
 	public void accept(HttpContentType var1) {
 		this.acceptWithFactor(var1, 1.0F);
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Ltw;FB)V",
-		garbageValue = "-5"
+		descriptor = "(Lup;FS)V",
+		garbageValue = "32086"
 	)
 	@Export("acceptWithFactor")
 	void acceptWithFactor(HttpContentType var1, float var2) {
@@ -155,10 +155,10 @@ public class HttpHeaders {
 		this.updateAcceptHeader();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1841540176"
+		descriptor = "(B)V",
+		garbageValue = "-121"
 	)
 	@Export("updateAcceptHeader")
 	void updateAcceptHeader() {
@@ -169,15 +169,15 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1516183525"
+		garbageValue = "-1099128642"
 	)
 	@Export("getAcceptHeaderValue")
 	String getAcceptHeaderValue() {
 		ArrayList var1 = new ArrayList(this.acceptHeaderValues.entrySet());
-		Collections.sort(var1, new class472(this));
+		Collections.sort(var1, new class475(this));
 		StringBuilder var2 = new StringBuilder();
 		Iterator var3 = var1.iterator();
 
@@ -198,173 +198,29 @@ public class HttpHeaders {
 		return var2.toString();
 	}
 
-	@ObfuscatedName("na")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "-20"
+		descriptor = "(III)V",
+		garbageValue = "-2141398380"
 	)
-	@Export("changeGameOptions")
-	static final void changeGameOptions(int var0) {
-		RouteStrategy.method5755();
+	@Export("changeWorldSelectSorting")
+	static void changeWorldSelectSorting(int var0, int var1) {
+		int[] var2 = new int[4];
+		int[] var3 = new int[4];
+		var2[0] = var0;
+		var3[0] = var1;
+		int var4 = 1;
 
-		for (ObjectSound var1 = (ObjectSound)ObjectSound.objectSounds.last(); var1 != null; var1 = (ObjectSound)ObjectSound.objectSounds.previous()) {
-			if (var1.obj != null) {
-				var1.set();
+		for (int var5 = 0; var5 < 4; ++var5) {
+			if (World.World_sortOption1[var5] != var0) {
+				var2[var4] = World.World_sortOption1[var5];
+				var3[var4] = World.World_sortOption2[var5];
+				++var4;
 			}
 		}
 
-		int var3 = class139.VarpDefinition_get(var0).type;
-		if (var3 != 0) {
-			int var2 = Varps.Varps_main[var0];
-			if (var3 == 1) {
-				if (var2 == 1) {
-					Rasterizer3D.buildPalette(0.9D);
-					((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness(0.9D);
-					if (GameBuild.worldMap != null) {
-						GameBuild.worldMap.method9818();
-					}
-
-					ItemComposition.ItemDefinition_cachedSprites.clear();
-					Renderable.clientPreferences.updateBrightness(0.9D);
-				}
-
-				if (var2 == 2) {
-					Rasterizer3D.buildPalette(0.8D);
-					((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness(0.8D);
-					if (GameBuild.worldMap != null) {
-						GameBuild.worldMap.method9818();
-					}
-
-					ItemComposition.ItemDefinition_cachedSprites.clear();
-					Renderable.clientPreferences.updateBrightness(0.8D);
-				}
-
-				if (var2 == 3) {
-					Rasterizer3D.buildPalette(0.7D);
-					((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness(0.7D);
-					if (GameBuild.worldMap != null) {
-						GameBuild.worldMap.method9818();
-					}
-
-					ItemComposition.ItemDefinition_cachedSprites.clear();
-					Renderable.clientPreferences.updateBrightness(0.7D);
-				}
-
-				if (var2 == 4) {
-					Rasterizer3D.buildPalette(0.6D);
-					((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness(0.6D);
-					if (GameBuild.worldMap != null) {
-						GameBuild.worldMap.method9818();
-					}
-
-					ItemComposition.ItemDefinition_cachedSprites.clear();
-					Renderable.clientPreferences.updateBrightness(0.6D);
-				}
-			}
-
-			if (var3 == 3) {
-				if (var2 == 0) {
-					class212.setMusicVolume(255);
-				}
-
-				if (var2 == 1) {
-					class212.setMusicVolume(192);
-				}
-
-				if (var2 == 2) {
-					class212.setMusicVolume(128);
-				}
-
-				if (var2 == 3) {
-					class212.setMusicVolume(64);
-				}
-
-				if (var2 == 4) {
-					class212.setMusicVolume(0);
-				}
-			}
-
-			if (var3 == 4) {
-				if (var2 == 0) {
-					FontName.method10003(127);
-				}
-
-				if (var2 == 1) {
-					FontName.method10003(96);
-				}
-
-				if (var2 == 2) {
-					FontName.method10003(64);
-				}
-
-				if (var2 == 3) {
-					FontName.method10003(32);
-				}
-
-				if (var2 == 4) {
-					FontName.method10003(0);
-				}
-			}
-
-			if (var3 == 5) {
-				Client.leftClickOpensMenu = var2 == 1;
-			}
-
-			if (var3 == 6) {
-				Client.chatEffects = var2;
-			}
-
-			if (var3 == 9) {
-			}
-
-			if (var3 == 10) {
-				if (var2 == 0) {
-					MilliClock.method4830(127);
-				}
-
-				if (var2 == 1) {
-					MilliClock.method4830(96);
-				}
-
-				if (var2 == 2) {
-					MilliClock.method4830(64);
-				}
-
-				if (var2 == 3) {
-					MilliClock.method4830(32);
-				}
-
-				if (var2 == 4) {
-					MilliClock.method4830(0);
-				}
-			}
-
-			if (var3 == 17) {
-				Client.followerIndex = var2 & 65535;
-			}
-
-			if (var3 == 18) {
-				Client.playerAttackOption = (AttackOption)ArchiveDiskActionHandler.findEnumerated(class94.method2562(), var2);
-				if (Client.playerAttackOption == null) {
-					Client.playerAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
-				}
-			}
-
-			if (var3 == 19) {
-				if (var2 == -1) {
-					Client.combatTargetPlayerIndex = -1;
-				} else {
-					Client.combatTargetPlayerIndex = var2 & 2047;
-				}
-			}
-
-			if (var3 == 22) {
-				Client.npcAttackOption = (AttackOption)ArchiveDiskActionHandler.findEnumerated(class94.method2562(), var2);
-				if (Client.npcAttackOption == null) {
-					Client.npcAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
-				}
-			}
-
-		}
+		World.World_sortOption1 = var2;
+		World.World_sortOption2 = var3;
+		class86.sortWorlds(class547.World_worlds, 0, class547.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
 	}
 }

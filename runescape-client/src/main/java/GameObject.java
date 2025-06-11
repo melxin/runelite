@@ -4,89 +4,95 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("iv")
+@ObfuscatedName("kg")
 @Implements("GameObject")
 public final class GameObject {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ij")
+	@ObfuscatedGetter(
+		intValue = 1573431341
+	)
+	@Export("foundItemIndex")
+	static int foundItemIndex;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lhy;"
+		descriptor = "Ljr;"
 	)
 	@Export("renderable")
 	public Renderable renderable;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		longValue = 8730349907772508289L
-	)
-	@Export("tag")
-	public long tag;
-	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = -1281443653
+		intValue = -1227629273
 	)
 	@Export("orientation")
 	int orientation;
-	@ObfuscatedName("af")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1455183137
+		longValue = -2880859857278335301L
+	)
+	@Export("tag")
+	public long tag;
+	@ObfuscatedName("ai")
+	@ObfuscatedGetter(
+		intValue = 1568296557
 	)
 	@Export("plane")
 	int plane;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -161025593
+		intValue = -2072549767
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -641925033
+		intValue = -1459476017
 	)
 	@Export("centerX")
 	int centerX;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 690451417
+		intValue = 346610267
 	)
 	@Export("centerY")
 	int centerY;
 	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -384087039
+		intValue = -392628845
 	)
 	@Export("startX")
 	int startX;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 728270709
+		intValue = 1979677587
 	)
 	@Export("endX")
 	int endX;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -999754695
+		intValue = 1499680739
 	)
 	@Export("startY")
 	int startY;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 77909563
+		intValue = 315127403
 	)
 	@Export("endY")
 	int endY;
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = 414315947
-	)
-	int field2389;
 	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 2139496603
+		intValue = -863775835
+	)
+	int field3038;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = 137646659
 	)
 	@Export("lastDrawn")
 	int lastDrawn;
-	@ObfuscatedName("au")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1690867509
+		intValue = -1457901723
 	)
 	@Export("flags")
 	int flags;
@@ -94,14 +100,5 @@ public final class GameObject {
 	GameObject() {
 		this.tag = 0L;
 		this.flags = 0;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "37"
-	)
-	static final void method4700(String var0) {
-		ClanSettings.method3631(var0 + " is already on your ignore list");
 	}
 }

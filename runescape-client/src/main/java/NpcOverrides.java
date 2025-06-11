@@ -4,69 +4,102 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ja")
+@ObfuscatedName("ht")
 @Implements("NpcOverrides")
 public class NpcOverrides {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("vt")
 	@ObfuscatedGetter(
-		longValue = 8321521740653857443L
+		intValue = 934735983
 	)
-	public long field2690;
-	@ObfuscatedName("an")
+	static int field2022;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		longValue = 1697668634574992809L
+	)
+	public long field2018;
+	@ObfuscatedName("aj")
 	@Export("modelIds")
 	int[] modelIds;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("recolorTo")
 	short[] recolorTo;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("retextureTo")
 	short[] retextureTo;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("useLocalPlayer")
 	public boolean useLocalPlayer;
 
 	public NpcOverrides(long var1, int[] var3, short[] var4, short[] var5, boolean var6) {
 		this.useLocalPlayer = false;
-		this.field2690 = var1;
+		this.field2018 = var1;
 		this.modelIds = var3;
 		this.recolorTo = var4;
 		this.retextureTo = var5;
 		this.useLocalPlayer = var6;
 	}
 
-	@ObfuscatedName("ih")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZS)V",
-		garbageValue = "13610"
+		descriptor = "(II)V",
+		garbageValue = "-283722608"
 	)
-	@Export("drawLoadingMessage")
-	static final void drawLoadingMessage(String var0, boolean var1) {
-		if (Client.showLoadingMessages) {
-			byte var2 = 4;
-			int var3 = var2 + 6;
-			int var4 = var2 + 6;
-			int var5 = HorizontalAlignment.fontPlain12.lineWidth(var0, 250);
-			int var6 = HorizontalAlignment.fontPlain12.lineCount(var0, 250) * 13;
-			Rasterizer2D.Rasterizer2D_fillRectangle(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var6 + var2, 0);
-			Rasterizer2D.Rasterizer2D_drawRectangle(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var6 + var2, 16777215);
-			HorizontalAlignment.fontPlain12.drawLines(var0, var3, var4, var5, var6, 16777215, -1, 1, 1, 0);
-			int var7 = var3 - var2;
-			int var8 = var4 - var2;
-			int var9 = var2 + var5 + var2;
-			int var10 = var2 + var6 + var2;
+	static void method4147(int var0) {
+		class445.field4966 = var0;
+		class445.field4963 = new class445[var0];
+		GrandExchangeOfferNameComparator.field4812 = 0;
+	}
 
-			for (int var11 = 0; var11 < Client.rootWidgetCount; ++var11) {
-				if (Client.rootWidgetWidths[var11] + Client.rootWidgetXs[var11] > var7 && Client.rootWidgetXs[var11] < var7 + var9 && Client.rootWidgetHeights[var11] + Client.rootWidgetYs[var11] > var8 && Client.rootWidgetYs[var11] < var8 + var10) {
-					Client.validRootWidgets[var11] = true;
+	@ObfuscatedName("ki")
+	@ObfuscatedSignature(
+		descriptor = "(Ldl;IIII)V",
+		garbageValue = "2052648065"
+	)
+	@Export("updateItemPile2")
+	static final void updateItemPile2(WorldView var0, int var1, int var2, int var3) {
+		NodeDeque var4 = var0.groundItems[var1][var2][var3];
+		if (var4 == null) {
+			var0.scene.removeGroundItemPile(var1, var2, var3);
+		} else {
+			long var5 = -99999999L;
+			TileItem var7 = null;
+
+			TileItem var8;
+			for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
+				ItemComposition var9 = SceneTilePaint.ItemDefinition_get(var8.id);
+				long var13 = (long)var9.price;
+				if (var9.isStackable == 1) {
+					var13 *= var8.quantity < Integer.MAX_VALUE ? (long)(var8.quantity + 1) : (long)var8.quantity;
+				}
+
+				if (var13 > var5) {
+					var5 = var13;
+					var7 = var8;
 				}
 			}
 
-			if (var1) {
-				GameEngine.rasterProvider.drawFull(0, 0);
+			if (var7 == null) {
+				var0.scene.removeGroundItemPile(var1, var2, var3);
 			} else {
-				class225.method4972(var3, var4, var5, var6);
-			}
+				var4.addLast(var7);
+				TileItem var15 = null;
+				TileItem var10 = null;
 
+				for (var8 = (TileItem)var4.last(); var8 != null; var8 = (TileItem)var4.previous()) {
+					if (var8.id != var7.id) {
+						if (var15 == null) {
+							var15 = var8;
+						}
+
+						if (var15.id != var8.id && var10 == null) {
+							var10 = var8;
+						}
+					}
+				}
+
+				long var11 = class275.calculateTag(var1, var2, var3, 3, false, 0, var0.id);
+				var0.scene.newGroundItemPile(var1, var2, var3, DevicePcmPlayerProvider.method329(var0, Coord.method7242(var2), Coord.method7242(var3), var1), var7, var11, var15, var10);
+			}
 		}
 	}
 }

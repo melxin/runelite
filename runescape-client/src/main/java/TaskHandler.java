@@ -2,41 +2,49 @@ import java.io.DataInputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("im")
+@ObfuscatedName("in")
 @Implements("TaskHandler")
 public class TaskHandler implements Runnable {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("javaVendor")
 	public static String javaVendor;
-	@ObfuscatedName("mk")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -1412620743
+		intValue = -353395503
 	)
-	@Export("cameraY")
-	static int cameraY;
-	@ObfuscatedName("aq")
+	public static int field2409;
+	@ObfuscatedName("by")
 	@ObfuscatedSignature(
-		descriptor = "Lip;"
+		descriptor = "Lrv;"
+	)
+	static Bounds field2419;
+	@ObfuscatedName("lt")
+	@ObfuscatedSignature(
+		descriptor = "[Lwy;"
+	)
+	static IndexedSprite[] field2417;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lii;"
 	)
 	@Export("current")
 	Task current;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lip;"
+		descriptor = "Lii;"
 	)
 	@Export("task")
 	Task task;
 	@ObfuscatedName("am")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@Export("isClosed")
 	boolean isClosed;
 
@@ -45,11 +53,11 @@ public class TaskHandler implements Runnable {
 		this.task = null;
 		this.isClosed = false;
 		javaVendor = "Unknown";
-		class447.javaVersion = "1.6";
+		class332.javaVersion = "1.6";
 
 		try {
 			javaVendor = System.getProperty("java.vendor");
-			class447.javaVersion = System.getProperty("java.version");
+			class332.javaVersion = System.getProperty("java.version");
 		} catch (Exception var2) {
 		}
 
@@ -60,10 +68,10 @@ public class TaskHandler implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1454106467"
+		garbageValue = "-1131278587"
 	)
 	@Export("close")
 	public final void close() {
@@ -79,10 +87,10 @@ public class TaskHandler implements Runnable {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IIILjava/lang/Object;B)Lip;",
-		garbageValue = "-70"
+		descriptor = "(IIILjava/lang/Object;B)Lii;",
+		garbageValue = "27"
 	)
 	@Export("newTask")
 	final Task newTask(int var1, int var2, int var3, Object var4) {
@@ -103,20 +111,20 @@ public class TaskHandler implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;IB)Lip;",
-		garbageValue = "49"
+		descriptor = "(Ljava/lang/String;IS)Lii;",
+		garbageValue = "3594"
 	)
 	@Export("newSocketTask")
 	public final Task newSocketTask(String var1, int var2) {
 		return this.newTask(1, var2, 0, var1);
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Runnable;IB)Lip;",
-		garbageValue = "-16"
+		descriptor = "(Ljava/lang/Runnable;II)Lii;",
+		garbageValue = "-915317113"
 	)
 	@Export("newThreadTask")
 	public final Task newThreadTask(Runnable var1, int var2) {
@@ -171,46 +179,59 @@ public class TaskHandler implements Runnable {
 		}
 	}
 
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Lhl;",
+		garbageValue = "8"
+	)
+	@Export("getParamDefinition")
+	public static ParamComposition getParamDefinition(int var0) {
+		ParamComposition var1 = (ParamComposition)ParamComposition.ParamDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = ParamComposition.ParamDefinition_archive.takeFile(11, var0);
+			var1 = new ParamComposition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
+
+			var1.postDecode();
+			ParamComposition.ParamDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
+	}
+
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "16"
+		descriptor = "(Lqp;ILjava/lang/String;I)Ljava/lang/String;",
+		garbageValue = "-1889445693"
 	)
-	public static void method4803() {
-		VarcInt.VarcInt_cached.clear();
+	static String method4701(IterableNodeHashTable var0, int var1, String var2) {
+		if (var0 == null) {
+			return var2;
+		} else {
+			ObjectNode var3 = (ObjectNode)var0.get((long)var1);
+			return var3 == null ? var2 : (String)var3.obj;
+		}
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(CB)C",
+		garbageValue = "-1"
+	)
+	static char method4700(char var0) {
+		return var0 != 181 && var0 != 402 ? Character.toTitleCase(var0) : var0;
 	}
 
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-964431882"
+		descriptor = "(CB)Z",
+		garbageValue = "-24"
 	)
-	static void method4790() {
-		Iterator var0 = Messages.Messages_hashTable.iterator();
-
-		while (var0.hasNext()) {
-			Message var1 = (Message)var0.next();
-			var1.clearIsFromFriend();
-		}
-
-	}
-
-	@ObfuscatedName("oz")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "125"
-	)
-	static void method4791() {
-		if (class224.field2524 != null) {
-			Client.field569 = Client.cycle;
-			class224.field2524.method7907();
-			Iterator var0 = class509.topLevelWorldView.players.iterator();
-
-			while (var0.hasNext()) {
-				Player var1 = (Player)var0.next();
-				class224.field2524.method7906((var1.x >> 7) + class509.topLevelWorldView.baseX, (var1.y >> 7) + class509.topLevelWorldView.baseY);
-			}
-		}
-
+	@Export("isCharAlphabetic")
+	public static boolean isCharAlphabetic(char var0) {
+		return var0 >= 'A' && var0 <= 'Z' || var0 >= 'a' && var0 <= 'z';
 	}
 }

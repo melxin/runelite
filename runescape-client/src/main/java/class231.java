@@ -2,103 +2,86 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("iz")
-public class class231 extends DualNode {
-	@ObfuscatedName("ao")
+@ObfuscatedName("ie")
+public abstract class class231 {
+	@ObfuscatedName("ai")
+	String field2518;
+	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lmj;"
+		descriptor = "Lio;"
 	)
-	@Export("field1913")
-	public static EvictingDualNodeHashTable field1913;
-	@ObfuscatedName("aa")
-	@Export("hasFocus")
-	protected static boolean hasFocus;
-	@ObfuscatedName("kv")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	static Archive field2558;
+	final class228 this$0;
 
-	static {
-		field1913 = new EvictingDualNodeHashTable(64);
+	@ObfuscatedSignature(
+		descriptor = "(Lio;Ljava/lang/String;)V"
+	)
+	class231(class228 var1, String var2) {
+		this.this$0 = var1;
+		this.field2518 = var2;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lkv;",
-		garbageValue = "-1695630357"
+		descriptor = "(I)I",
+		garbageValue = "1702909446"
 	)
-	@Export("ItemDefinition_get")
-	public static ItemComposition ItemDefinition_get(int var0) {
-		ItemComposition var1 = (ItemComposition)ItemComposition.ItemDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	public abstract int vmethod4851();
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "1519037099"
+	)
+	public int vmethod4853() {
+		return -1;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "1383799233"
+	)
+	public String vmethod4852() {
+		return null;
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(S)Ljava/lang/String;",
+		garbageValue = "-25375"
+	)
+	public String method4850() {
+		return this.field2518;
+	}
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lrz;",
+		garbageValue = "-1473246040"
+	)
+	public static TransformationMatrix method4854() {
+		synchronized(TransformationMatrix.field4981) {
+			if (TransformationMatrix.field4980 == 0) {
+				return new TransformationMatrix();
+			} else {
+				TransformationMatrix.field4981[--TransformationMatrix.field4980].method8776();
+				return TransformationMatrix.field4981[TransformationMatrix.field4980];
+			}
+		}
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "-2"
+	)
+	@Export("Messages_getLastChatID")
+	static int Messages_getLastChatID(int var0) {
+		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
+		if (var1 == null) {
+			return -1;
 		} else {
-			byte[] var2 = UserComparator8.ItemDefinition_archive.takeFile(10, var0);
-			var1 = new ItemComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.post();
-			if (var1.noteTemplate != -1) {
-				var1.genCert(ItemDefinition_get(var1.noteTemplate), ItemDefinition_get(var1.note));
-			}
-
-			if (var1.notedId != -1) {
-				var1.genBought(ItemDefinition_get(var1.notedId), ItemDefinition_get(var1.unnotedId));
-			}
-
-			if (var1.placeholderTemplate != -1) {
-				var1.genPlaceholder(ItemDefinition_get(var1.placeholderTemplate), ItemDefinition_get(var1.placeholder));
-			}
-
-			if (!ItemComposition.ItemDefinition_inMembersWorld && var1.isMembersOnly) {
-				if (var1.noteTemplate == -1 && var1.notedId == -1 && var1.placeholderTemplate == -1) {
-					var1.name = var1.name + " (Members)";
-				}
-
-				var1.examine = "Login to a members' server to use this object.";
-				var1.isTradable = false;
-
-				int var3;
-				for (var3 = 0; var3 < var1.groundActions.length; ++var3) {
-					var1.groundActions[var3] = null;
-				}
-
-				for (var3 = 0; var3 < var1.inventoryActions.length; ++var3) {
-					if (var3 != 4) {
-						if (var1.subOps != null) {
-							var1.subOps[var3] = null;
-						}
-
-						var1.inventoryActions[var3] = null;
-					}
-				}
-
-				var1.shiftClickIndex = -2;
-				var1.team = 0;
-				if (var1.params != null) {
-					boolean var6 = false;
-
-					for (Node var4 = var1.params.first(); var4 != null; var4 = var1.params.next()) {
-						ParamComposition var5 = WorldMapRectangle.getParamDefinition((int)var4.key);
-						if (var5.autoDisable) {
-							var4.remove();
-						} else {
-							var6 = true;
-						}
-					}
-
-					if (!var6) {
-						var1.params = null;
-					}
-				}
-			}
-
-			ItemComposition.ItemDefinition_cached.put(var1, (long)var0);
-			return var1;
+			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count;
 		}
 	}
 }

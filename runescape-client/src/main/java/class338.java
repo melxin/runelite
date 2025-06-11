@@ -3,28 +3,30 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("nx")
+@ObfuscatedName("nl")
 class class338 implements ThreadFactory {
-	@ObfuscatedName("ac")
+	@ObfuscatedName("lo")
 	@ObfuscatedGetter(
-		intValue = -710402881
+		intValue = 1272218955
 	)
-	@Export("Interpreter_stringStackSize")
-	static int Interpreter_stringStackSize;
-	@ObfuscatedName("iq")
-	@ObfuscatedGetter(
-		longValue = -3212592941333384525L
+	@Export("js5Port")
+	static int js5Port;
+	@ObfuscatedName("ws")
+	@ObfuscatedSignature(
+		descriptor = "Luy;"
 	)
-	static long field3757;
+	@Export("worldMap")
+	static WorldMap worldMap;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lmv;"
+		descriptor = "Lmt;"
 	)
 	final MidiPcmStream this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lmv;)V"
+		descriptor = "(Lmt;)V"
 	)
 	class338(MidiPcmStream var1) {
 		this.this$0 = var1;
@@ -34,19 +36,38 @@ class class338 implements ThreadFactory {
 		return new Thread(var1, "OSRS WAV Load");
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-1436558078"
+		descriptor = "(ILcr;ZI)I",
+		garbageValue = "584657797"
 	)
-	@Export("isCharPrintable")
-	public static boolean isCharPrintable(char var0) {
-		if (var0 >= ' ' && var0 <= '~') {
-			return true;
-		} else if (var0 >= 160 && var0 <= 255) {
-			return true;
+	static int method7098(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? class539.scriptDotWidget : Huffman.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
+			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class187.method4098(class255.method5526(var3));
+			return 1;
+		} else if (var0 != ScriptOpcodes.CC_GETOP) {
+			if (var0 == ScriptOpcodes.CC_GETOPBASE) {
+				if (var3.dataText == null) {
+					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+				} else {
+					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var3.dataText;
+				}
+
+				return 1;
+			} else {
+				return 2;
+			}
 		} else {
-			return var0 == 8364 || var0 == 338 || var0 == 8212 || var0 == 339 || var0 == 376;
+			int var4 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
+			--var4;
+			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
+				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var3.actions[var4];
+			} else {
+				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+			}
+
+			return 1;
 		}
 	}
 }

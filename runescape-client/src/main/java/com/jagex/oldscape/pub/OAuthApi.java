@@ -10,7 +10,7 @@ public interface OAuthApi {
 
 	void setClient(int var1);
 
-	void setOtlTokenRequester(OtlTokenRequester var1);
-
 	boolean isOnLoginScreen();
+
+	void setOtlTokenRequester(OtlTokenRequester var1);
 }

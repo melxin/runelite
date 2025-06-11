@@ -3,32 +3,31 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("lm")
+@ObfuscatedName("ld")
 @Implements("WorldMapDecoration")
 public class WorldMapDecoration {
-	@ObfuscatedName("kw")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	@Export("archive12")
-	static Archive archive12;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("at")
+	@Export("Tiles_saturation")
+	static int[] Tiles_saturation;
+	@ObfuscatedName("ae")
+	@Export("ByteArrayPool_altSizeArrayCounts")
+	public static int[] ByteArrayPool_altSizeArrayCounts;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -336595349
+		intValue = -1095827275
 	)
 	@Export("objectDefinitionId")
 	final int objectDefinitionId;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1847023617
+		intValue = -1793932931
 	)
 	@Export("decoration")
 	final int decoration;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1773160551
+		intValue = -1126546759
 	)
 	@Export("rotation")
 	final int rotation;
@@ -39,45 +38,36 @@ public class WorldMapDecoration {
 		this.rotation = var3;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lcr;",
-		garbageValue = "-2138389610"
+		descriptor = "(IB)F",
+		garbageValue = "40"
 	)
-	@Export("worldListStart")
-	static World worldListStart() {
-		World.World_listCount = 0;
-		return class269.getNextWorldListWorld();
+	public static float method6615(int var0) {
+		var0 &= 16383;
+		return (float)(3.834951969714103E-4D * (double)((float)var0));
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("kr")
 	@ObfuscatedSignature(
-		descriptor = "(ILdb;ZB)I",
-		garbageValue = "-63"
+		descriptor = "(IIIIIIIIIZI)V",
+		garbageValue = "1866450658"
 	)
-	static int method6337(int var0, Script var1, boolean var2) {
-		Widget var3 = var2 ? class156.scriptDotWidget : SoundCache.scriptActiveWidget;
-		if (var0 == ScriptOpcodes.CC_GETINVOBJECT) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.itemId;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_GETINVCOUNT) {
-			if (var3.itemId != -1) {
-				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.itemQuantity;
-			} else {
-				Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = 0;
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CC_GETID) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.childIndex * -1626125685;
-			return 1;
-		} else if (var0 == 1707) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.method7366() ? 1 : 0;
-			return 1;
-		} else if (var0 == 1708) {
-			return Varps.method6884(var3);
-		} else {
-			return var0 == 1709 ? WorldMapData_1.method6203(var3) : 2;
+	@Export("addTileItemToGroundItems")
+	static void addTileItemToGroundItems(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
+		TileItem var10 = new TileItem();
+		var10.id = var3;
+		var10.quantity = var4;
+		var10.setFlag(var5);
+		var10.visibleTime = Client.serverCycle + var6;
+		var10.despawnTime = var7 + Client.serverCycle;
+		var10.ownership = var8;
+		var10.isPrivate = var9;
+		if (class330.worldView.groundItems[var0][var1][var2] == null) {
+			class330.worldView.groundItems[var0][var1][var2] = new NodeDeque();
 		}
+
+		class330.worldView.groundItems[var0][var1][var2].addFirst(var10);
+		WorldMapRectangle.updateItemPile(var0, var1, var2);
 	}
 }

@@ -5,88 +5,84 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("si")
+@ObfuscatedName("sj")
 @Implements("ByteArrayPool")
 public class ByteArrayPool {
-	@ObfuscatedName("as")
-	static final Object field5056;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("al")
+	static final Object field5107;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -754181821
+		intValue = -1650397127
 	)
 	@Export("ByteArrayPool_smallCount")
 	static int ByteArrayPool_smallCount;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -737040499
+		intValue = -1068326063
 	)
 	@Export("ByteArrayPool_mediumCount")
 	static int ByteArrayPool_mediumCount;
 	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 1841325841
+		intValue = 296986553
 	)
 	@Export("ByteArrayPool_largeCount")
 	static int ByteArrayPool_largeCount;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1432711337
+		intValue = 1218932761
 	)
-	static int field5059;
-	@ObfuscatedName("ap")
+	static int field5111;
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1489306665
+		intValue = 1599303199
 	)
-	static int field5061;
-	@ObfuscatedName("ax")
+	static int field5109;
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 646134101
+		intValue = -1689755879
 	)
-	static int field5063;
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = -65551583
-	)
-	static int field5060;
+	static int field5121;
 	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -110394135
+		intValue = -1508534143
 	)
-	static int field5064;
-	@ObfuscatedName("au")
+	static int field5112;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = 2114509807
+	)
+	static int field5115;
+	@ObfuscatedName("af")
 	@Export("ByteArrayPool_small")
 	static byte[][] ByteArrayPool_small;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ak")
 	@Export("ByteArrayPool_medium")
 	static byte[][] ByteArrayPool_medium;
-	@ObfuscatedName("al")
+	@ObfuscatedName("az")
 	@Export("ByteArrayPool_large")
 	static byte[][] ByteArrayPool_large;
-	@ObfuscatedName("ac")
-	static byte[][] field5068;
-	@ObfuscatedName("ai")
-	static ArrayList field5069;
+	@ObfuscatedName("aw")
+	static byte[][] field5119;
+	@ObfuscatedName("ao")
+	public static ArrayList field5120;
 
 	static {
-		field5056 = new Object();
+		field5107 = new Object();
 		ByteArrayPool_smallCount = 0;
 		ByteArrayPool_mediumCount = 0;
 		ByteArrayPool_largeCount = 0;
-		field5059 = 0;
-		field5061 = 1000;
-		field5063 = 250;
-		field5060 = 100;
-		field5064 = 50;
+		field5111 = 0;
+		field5109 = 1000;
+		field5121 = 250;
+		field5112 = 100;
+		field5115 = 50;
 		ByteArrayPool_small = new byte[1000][];
 		ByteArrayPool_medium = new byte[250][];
 		ByteArrayPool_large = new byte[100][];
-		field5068 = new byte[50][];
-		field5069 = new ArrayList();
+		field5119 = new byte[50][];
+		field5120 = new ArrayList();
 		new HashMap();
-		field5069.clear();
-		field5069.add(100);
-		field5069.add(5000);
-		field5069.add(10000);
-		field5069.add(30000);
+		class329.method6845();
 	}
 }

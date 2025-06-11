@@ -4,60 +4,59 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hq")
+@ObfuscatedName("jz")
 @Implements("AABB")
 public class AABB {
-	@ObfuscatedName("sy")
+	@ObfuscatedName("vr")
 	@ObfuscatedGetter(
-		intValue = 278861595
+		intValue = -2056924463
 	)
-	@Export("selectedSpellWidget")
-	static int selectedSpellWidget;
-	@ObfuscatedName("ao")
+	static int field2811;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1648127823
+		intValue = -1994869327
 	)
 	@Export("orientation")
 	final int orientation;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -175871675
+		intValue = 513748147
 	)
 	@Export("xMid")
 	int xMid;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 354217903
+		intValue = 934249539
 	)
 	@Export("yMid")
 	int yMid;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 620147901
+		intValue = -391804225
 	)
 	@Export("zMid")
 	int zMid;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1000135391
+		intValue = 834848893
 	)
 	@Export("xMidOffset")
 	int xMidOffset;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -2090029763
+		intValue = 1653333789
 	)
 	@Export("yMidOffset")
 	int yMidOffset;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -1835153565
+		intValue = -1902189619
 	)
 	@Export("zMidOffset")
 	int zMidOffset;
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lhq;"
+		descriptor = "Ljz;"
 	)
 	@Export("aabb")
 	AABB aabb;
@@ -72,82 +71,60 @@ public class AABB {
 		this.zMidOffset = var7;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1648277883"
+		descriptor = "(ILtb;Lpu;I)V",
+		garbageValue = "-1368267450"
 	)
-	@Export("clearItemContainer")
-	static void clearItemContainer(int var0) {
-		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var1 != null) {
-			for (int var2 = 0; var2 < var1.ids.length; ++var2) {
-				var1.ids[var2] = -1;
-				var1.quantities[var2] = 0;
-			}
-
-		}
-	}
-
-	@ObfuscatedName("by")
-	@ObfuscatedSignature(
-		descriptor = "([BI)[B",
-		garbageValue = "240537341"
-	)
-	@Export("decompressBytes")
-	static final byte[] decompressBytes(byte[] var0) {
-		Buffer var1 = new Buffer(var0);
-		int var2 = var1.readUnsignedByte();
-		int var3 = var1.readInt();
-		if (var3 < 0 || AbstractArchive.field4735 != 0 && var3 > AbstractArchive.field4735) {
-			throw new RuntimeException();
-		} else if (var2 == 0) {
-			byte[] var6 = new byte[var3];
-			var1.readBytes(var6, 0, var3);
-			return var6;
-		} else {
-			int var4 = var1.readInt();
-			if (var4 >= 0 && (AbstractArchive.field4735 == 0 || var4 <= AbstractArchive.field4735)) {
-				byte[] var5 = new byte[var4];
-				if (var2 == 1) {
-					BZip2Decompressor.BZip2Decompressor_decompress(var5, var4, var0, var3, 9);
-				} else {
-					AbstractArchive.gzipDecompressor.decompress(var1, var5);
+	static void method5442(int var0, ArchiveDisk var1, Archive var2) {
+		byte[] var3 = null;
+		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
+			for (ArchiveDiskAction var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.last(); var5 != null; var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.previous()) {
+				if (var5.key == (long)var0 && var1 == var5.archiveDisk && var5.type == 0) {
+					var3 = var5.data;
+					break;
 				}
-
-				return var5;
-			} else {
-				throw new RuntimeException();
 			}
+		}
+
+		if (var3 != null) {
+			var2.load(var1, var0, var3, true);
+		} else {
+			byte[] var4 = var1.read(var0);
+			var2.load(var1, var0, var4, true);
 		}
 	}
 
-	@ObfuscatedName("ks")
+	@ObfuscatedName("jf")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;Ldu;IILkw;B)V",
-		garbageValue = "3"
+		descriptor = "(Ldl;ZB)V",
+		garbageValue = "5"
 	)
-	static final void method4317(WorldView var0, Player var1, int var2, int var3, MoveSpeed var4) {
-		int var5 = var1.pathX[0];
-		int var6 = var1.pathY[0];
-		int var7 = var1.size * -145616896;
-		CollisionMap var8 = var0.collisionMaps[var0.plane];
-		if (var5 >= var7 && var5 < var8.xSize - var7 && var6 >= var7 && var6 < var8.ySize - var7) {
-			if (var2 >= var7 && var2 < var8.xSize - var7 && var3 >= var7 && var3 < var8.ySize - var7) {
-				class278 var9 = Client.field501;
-				Client.field508.approxDestinationX = var2;
-				Client.field508.approxDestinationY = var3;
-				Client.field508.approxDestinationSizeX = 1;
-				Client.field508.approxDestinationSizeY = 1;
-				ApproximateRouteStrategy var13 = Client.field508;
-				int var14 = var9.method5858(var5, var6, var7, var13, var8, true, Client.field795, Client.field796);
-				if (var14 >= 1) {
-					for (int var15 = 0; var15 < var14 - 1; ++var15) {
-						var1.method2639(Client.field795[var15], Client.field796[var15], var4);
+	@Export("addNpcsToScene")
+	static final void addNpcsToScene(WorldView var0, boolean var1) {
+		for (int var2 = 0; var2 < var0.field1147.method9429(); ++var2) {
+			NPC var3 = (NPC)var0.npcs.get((long)var0.field1147.method9430(var2));
+			if (var3 != null && var3.isVisible() && var3.definition.isVisible == var1 && var3.definition.transformIsVisible()) {
+				int var4 = var0.plane;
+				int var5 = var3.x >> 7;
+				int var6 = var3.y >> 7;
+				if (var5 >= 0 && var5 < var0.sizeX && var6 >= 0 && var6 < var0.sizeY) {
+					if (var3.size * -5369856 == 1 && (var3.x & 127) == 64 && (var3.y & 127) == 64) {
+						if (var0.tileLastDrawnActor[var5][var6] == Client.viewportDrawCount) {
+							continue;
+						}
+
+						var0.tileLastDrawnActor[var5][var6] = Client.viewportDrawCount;
 					}
 
+					long var7 = class275.calculateTag(0, 0, 0, 1, !var3.definition.isInteractable, var3.index, var0.id);
+					var3.playerCycle = Client.cycle;
+					int var9 = GrandExchangeOfferTotalQuantityComparator.method8203(var0, var3.x, var3.y, var4, var3.definition.method4165());
+					int var10 = var3.size * -343670784 - 64 + 60;
+					var0.scene.drawEntity(var4, var3.x, var3.y, var9, var10, var3, var3.rotation, var7, var3.isWalking);
 				}
 			}
 		}
+
 	}
 }

@@ -7,15 +7,13 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dr")
+@ObfuscatedName("ca")
 @Implements("SecureRandomFuture")
 public class SecureRandomFuture {
-	@ObfuscatedName("jf")
-	static String field1003;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@Export("executor")
 	ExecutorService executor;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@Export("future")
 	Future future;
 
@@ -24,10 +22,10 @@ public class SecureRandomFuture {
 		this.future = this.executor.submit(new SecureRandomCallable());
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-631465104"
+		garbageValue = "1768744173"
 	)
 	@Export("shutdown")
 	void shutdown() {
@@ -35,36 +33,29 @@ public class SecureRandomFuture {
 		this.executor = null;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "308944872"
+		garbageValue = "672314543"
 	)
 	@Export("isDone")
 	boolean isDone() {
 		return this.future.isDone();
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/security/SecureRandom;",
-		garbageValue = "189818166"
+		garbageValue = "1011430894"
 	)
 	@Export("get")
 	SecureRandom get() {
 		try {
 			return (SecureRandom)this.future.get();
-		} catch (Exception var2) {
-			return class132.method3297();
+		} catch (Exception var4) {
+			SecureRandom var3 = new SecureRandom();
+			var3.nextInt();
+			return var3;
 		}
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(Lph;I)V",
-		garbageValue = "-212961757"
-	)
-	public static void method2337(AbstractArchive var0) {
-		InvDefinition.InvDefinition_archive = var0;
 	}
 }

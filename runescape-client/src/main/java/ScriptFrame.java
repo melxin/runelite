@@ -4,63 +4,57 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cv")
+@ObfuscatedName("bt")
 @Implements("ScriptFrame")
 public class ScriptFrame {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("qr")
 	@ObfuscatedSignature(
-		descriptor = "Ldb;"
+		descriptor = "[Lwd;"
+	)
+	@Export("crossSprites")
+	static SpritePixels[] crossSprites;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lcr;"
 	)
 	@Export("script")
 	Script script;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 187401251
+		intValue = 44048889
 	)
 	@Export("pc")
 	int pc;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("intLocals")
 	int[] intLocals;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("stringLocals")
-	String[] stringLocals;
+	Object[] stringLocals;
 
 	ScriptFrame() {
 		this.pc = -1;
 	}
 
-	@ObfuscatedName("ao")
-	public static int method1191(int var0, double var1) {
-		double var3 = (double)(var0 >> 16 & 255) / 256.0D;
-		double var5 = (double)(var0 >> 8 & 255) / 256.0D;
-		double var7 = (double)(var0 & 255) / 256.0D;
-		var3 = Math.pow(var3, var1);
-		var5 = Math.pow(var5, var1);
-		var7 = Math.pow(var7, var1);
-		int var9 = (int)(var3 * 256.0D);
-		int var10 = (int)(var5 * 256.0D);
-		int var11 = (int)(256.0D * var7);
-		return var11 + (var10 << 8) + (var9 << 16) + -16777216;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(Lna;I)V",
+		garbageValue = "-1336494519"
+	)
+	public static void method708(Huffman var0) {
+		class351.huffman = var0;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("nz")
 	@ObfuscatedSignature(
-		descriptor = "(Lph;Lph;ZI)V",
-		garbageValue = "-1284364629"
+		descriptor = "(Lov;I)V",
+		garbageValue = "-1391817524"
 	)
-	public static void method1192(AbstractArchive var0, AbstractArchive var1, boolean var2) {
-		ObjectComposition.ObjectDefinition_archive = var0;
-		class154.ObjectDefinition_modelsArchive = var1;
-		ObjectComposition.ObjectDefinition_isLowDetail = var2;
-	}
+	@Export("invalidateWidget")
+	public static void invalidateWidget(Widget var0) {
+		if (var0 != null && var0.cycle == Client.field556) {
+			Client.validRootWidgets[var0.rootIndex] = true;
+		}
 
-	@ObfuscatedName("oi")
-	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "-201478541"
-	)
-	static void method1190(boolean var0) {
-		Client.leftClickOpensMenu = var0;
 	}
 }

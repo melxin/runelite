@@ -1,32 +1,70 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qg")
+@ObfuscatedName("qi")
 public class class441 {
-	@ObfuscatedName("au")
+	@ObfuscatedName("db")
 	@ObfuscatedGetter(
-		intValue = -1951797191
+		intValue = -1078559373
 	)
-	@Export("gameCyclesToDo")
-	static int gameCyclesToDo;
-
+	static int field4947;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lrw;"
+	)
+	public class446 field4951;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lre;"
+	)
+	public class445 field4946;
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "1257042530"
+		descriptor = "Lre;"
 	)
-	static int method8336(int var0, int var1, int var2) {
-		int var3 = var0 >> 16 & 255;
-		int var4 = var0 >> 8 & 255;
-		int var5 = var0 & 255;
-		int var6 = var1 >> 16 & 255;
-		int var7 = var1 >> 8 & 255;
-		int var8 = var1 & 255;
-		int var9 = (var6 - var3 + 1) * var2 / 64 + var3 & 255;
-		int var10 = (var7 - var4 + 1) * var2 / 64 + var4 & 255;
-		int var11 = var5 + (var8 - var5 + 1) * var2 / 64 & 255;
-		return var9 << 16 | var10 << 8 | var11;
+	public class445 field4948;
+
+	public class441() {
+		this.field4951 = GrandExchangeEvent.method8240();
+		this.field4946 = class70.method2210();
+		this.field4948 = class47.method1781(1.0F, 1.0F, 1.0F);
+	}
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "805917751"
+	)
+	public void method8634() {
+		this.field4951.method8769();
+		this.field4946.method8687();
+		this.field4948.method8687();
+	}
+
+	public String toString() {
+		return "[" + this.field4951.toString() + "|" + this.field4946.toString() + "|" + this.field4948.toString() + "]";
+	}
+
+	public boolean equals(Object var1) {
+		if (var1 == null) {
+			return false;
+		} else if (this == var1) {
+			return true;
+		} else if (!(var1 instanceof class441)) {
+			return false;
+		} else {
+			class441 var2 = (class441)var1;
+			return this.field4951.equals(var2.field4951) && this.field4946.method8691(var2.field4946) && this.field4948.method8691(var2.field4948);
+		}
+	}
+
+	public int hashCode() {
+		boolean var1 = true;
+		byte var2 = 1;
+		int var3 = var2 * 31 + this.field4951.hashCode();
+		var3 = var3 * 31 + this.field4946.hashCode();
+		var3 = 31 * var3 + this.field4948.hashCode();
+		return var3;
 	}
 }

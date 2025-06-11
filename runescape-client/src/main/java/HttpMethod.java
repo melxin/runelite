@@ -4,59 +4,61 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ap")
+@ObfuscatedName("ag")
 @Implements("HttpMethod")
 public class HttpMethod implements Enum {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lap;"
+		descriptor = "Lag;"
 	)
 	@Export("POST")
 	public static final HttpMethod POST;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lap;"
+		descriptor = "Lag;"
 	)
 	@Export("GET")
 	public static final HttpMethod GET;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lap;"
+		descriptor = "Lag;"
 	)
 	@Export("PUT")
 	static final HttpMethod PUT;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lap;"
+		descriptor = "Lag;"
 	)
 	@Export("PATCH")
 	static final HttpMethod PATCH;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lap;"
+		descriptor = "Lag;"
 	)
 	@Export("DELETE")
 	static final HttpMethod DELETE;
-	@ObfuscatedName("kh")
+	@ObfuscatedName("dp")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "Lwy;"
 	)
-	static Archive field39;
-	@ObfuscatedName("uo")
-	@Export("ClanChat_inClanChat")
-	static boolean ClanChat_inClanChat;
-	@ObfuscatedName("aq")
+	static IndexedSprite field43;
+	@ObfuscatedName("iz")
 	@ObfuscatedGetter(
-		intValue = -1724406643
+		intValue = 1559372579
 	)
-	int field35;
-	@ObfuscatedName("av")
+	static int field42;
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = 968537279
+	)
+	int field32;
+	@ObfuscatedName("aa")
 	@Export("name")
 	String name;
 	@ObfuscatedName("am")
-	boolean field37;
-	@ObfuscatedName("aa")
-	boolean field38;
+	boolean field39;
+	@ObfuscatedName("ah")
+	boolean field40;
 
 	static {
 		POST = new HttpMethod(0, "POST", true, true);
@@ -67,239 +69,127 @@ public class HttpMethod implements Enum {
 	}
 
 	HttpMethod(int var1, String var2, boolean var3, boolean var4) {
-		this.field35 = var1;
+		this.field32 = var1;
 		this.name = var2;
-		this.field37 = var3;
-		this.field38 = var4;
+		this.field39 = var3;
+		this.field40 = var4;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1746725635"
+		descriptor = "(I)Z",
+		garbageValue = "77197743"
+	)
+	boolean method81() {
+		return this.field39;
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(B)I",
+		garbageValue = "26"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field35;
+		return this.field32;
 	}
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-953554784"
-	)
-	boolean method64() {
-		return this.field37;
-	}
-
-	@ObfuscatedName("as")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1798000015"
+		garbageValue = "1238252449"
 	)
 	@Export("getName")
 	public String getName() {
 		return this.name;
 	}
 
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "72"
-	)
-	boolean method66() {
-		return this.field38;
-	}
-
-	@ObfuscatedName("am")
-	@Export("Entity_unpackID")
-	public static int Entity_unpackID(long var0) {
-		return (int)(var0 >>> 20 & 4294967295L);
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "-13"
-	)
-	static final int method71(int var0, int var1) {
-		if (var0 == -2) {
-			return 12345678;
-		} else if (var0 == -1) {
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
-			}
-
-			return var1;
-		} else {
-			var1 = (var0 & 127) * var1 / 128;
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
-			}
-
-			return (var0 & 65408) + var1;
-		}
-	}
-
-	@ObfuscatedName("hf")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-262096386"
-	)
-	@Export("getLoginError")
-	static void getLoginError(int var0) {
-		int var1 = Login.loginIndex;
-		if (var0 == -3) {
-			TileItem.setLoginResponseString("Connection timed out.", "Please try using a different world.", "");
-		} else if (var0 == -2) {
-			TileItem.setLoginResponseString("Error connecting to server.", "Please try using a different world.", "");
-		} else if (var0 == -1) {
-			TileItem.setLoginResponseString("No response from server.", "Please try using a different world.", "");
-		} else if (var0 == 3) {
-			class137.method3379(3);
-			Login.field956 = 1;
-		} else if (var0 == 4) {
-			class94.method2565(0);
-		} else if (var0 == 5) {
-			Login.field956 = 2;
-			TileItem.setLoginResponseString("Either your account is still logged in, or the last", "world you were using has become unavailable.", "Please try again later.");
-		} else if (var0 == 68) {
-			if (!Client.field638) {
-				Client.field638 = true;
-				class106.method2966();
-				return;
-			}
-
-			TileItem.setLoginResponseString("RuneScape has been updated!", "Please restart your client.", "");
-		} else if (!Client.onMobile && var0 == 6) {
-			TileItem.setLoginResponseString("RuneScape has been updated!", "Please restart your client.", "");
-		} else if (var0 == 7) {
-			TileItem.setLoginResponseString("This world is full.", "Please use a different world.", "");
-		} else if (var0 == 8) {
-			TileItem.setLoginResponseString("Unable to connect.", "Login server offline.", "");
-		} else if (var0 == 9) {
-			TileItem.setLoginResponseString("Login limit exceeded.", "Too many connections from your address.", "");
-		} else if (var0 == 10) {
-			TileItem.setLoginResponseString("Unable to connect.", "Bad session id.", "");
-		} else if (var0 == 11) {
-			TileItem.setLoginResponseString("We suspect someone knows your password.", "Press 'change your password' on front page.", "");
-		} else if (var0 == 12) {
-			class325.updateGameState(10);
-			TileItem.setLoginResponseString("You need a members' account to use this world.", "Please subscribe to login to this world,", "or use a different world.");
-			class137.method3379(34);
-		} else if (var0 == 13) {
-			TileItem.setLoginResponseString("Could not complete login.", "Please try using a different world.", "");
-		} else if (var0 == 14) {
-			TileItem.setLoginResponseString("The server is being updated.", "Please wait a few minutes", "before trying again.");
-		} else if (var0 == 16) {
-			TileItem.setLoginResponseString("Too many login attempts.", "You can use the Jagex Launcher to continue playing.", "Press the button below to download it now.");
-			class137.method3379(33);
-		} else if (var0 == 17) {
-			TileItem.setLoginResponseString("To access this free world, log into a", "members world and move your character", "to a non-members area.");
-		} else if (var0 == 18) {
-			class94.method2565(1);
-		} else if (var0 == 19) {
-			TileItem.setLoginResponseString("This world is running a", "closed Beta. Please ", "use a different world.");
-		} else if (var0 == 20) {
-			TileItem.setLoginResponseString("Invalid loginserver requested.", "Please try using a different world.", "");
-		} else if (var0 == 22) {
-			TileItem.setLoginResponseString("Malformed login packet.", "Please try again.", "");
-		} else if (var0 == 23) {
-			TileItem.setLoginResponseString("No reply from loginserver.", "Please wait 1 minute and try again.", "");
-		} else if (var0 == 24) {
-			TileItem.setLoginResponseString("Error loading your profile.", "Please contact customer support.", "");
-		} else if (var0 == 25) {
-			TileItem.setLoginResponseString("Unexpected loginserver response.", "Please try using a different world.", "");
-		} else if (var0 == 26) {
-			TileItem.setLoginResponseString("This computers address has been blocked", "as it was used to break our rules.", "");
-		} else if (var0 == 27) {
-			TileItem.setLoginResponseString("", "Service unavailable.", "");
-		} else if (var0 == 31) {
-			TileItem.setLoginResponseString("Your account must have a displayname set", "in order to play the game.  Please set it", "via the website, or the main game.");
-		} else if (var0 == 32) {
-			class94.method2565(2);
-		} else if (var0 == 37) {
-			TileItem.setLoginResponseString("Your account is currently inaccessible.", "Please try again in a few minutes.", "");
-		} else if (var0 == 38) {
-			TileItem.setLoginResponseString("You need to vote to play!", "Visit runescape.com and vote,", "and then come back here!");
-		} else if (var0 == 74) {
-			TileItem.setLoginResponseString("Access to this world is", "restricted. Please use", "a different world.");
-		} else if (var0 == 55) {
-			class137.method3379(8);
-		} else {
-			if (var0 == 56) {
-				TileItem.setLoginResponseString("Enter the 6-digit code generated by your", "authenticator app.", "");
-				class325.updateGameState(11);
-				return;
-			}
-
-			if (var0 == 57) {
-				TileItem.setLoginResponseString("The code you entered was incorrect.", "Please try again.", "");
-				class325.updateGameState(11);
-				return;
-			}
-
-			if (var0 == 61) {
-				TileItem.setLoginResponseString("", "Please enter your date of birth (DD/MM/YYYY)", "");
-				class137.method3379(7);
-			} else {
-				if (var0 == 62) {
-					class325.updateGameState(10);
-					class137.method3379(9);
-					TileItem.setLoginResponseString("Login attempt timed out.", "Please try again.", "");
-					return;
-				}
-
-				if (var0 == 63) {
-					class325.updateGameState(10);
-					class137.method3379(9);
-					TileItem.setLoginResponseString("You were signed out.", "Please sign in again.", "");
-					return;
-				}
-
-				if (var0 == 65 || var0 == 67) {
-					class325.updateGameState(10);
-					class137.method3379(9);
-					TileItem.setLoginResponseString("Failed to login.", "Please try again.", "");
-					return;
-				}
-
-				if (var0 == 71) {
-					class325.updateGameState(10);
-					class137.method3379(7);
-					TileItem.setLoginResponseString("There was a problem updating your DOB.", "Please try again later. If the problem ", "persists, please contact Jagex Support.");
-				} else if (var0 == 73) {
-					class325.updateGameState(10);
-					class137.method3379(6);
-					TileItem.setLoginResponseString("Your date of birth information is waiting", "to be reviewed by our staff.", "It will be processed shortly.");
-				} else if (var0 == 72) {
-					class325.updateGameState(10);
-					class137.method3379(32);
-				} else {
-					TileItem.setLoginResponseString("Unexpected server response", "Please try using a different world.", "");
-				}
-			}
-		}
-
-		class325.updateGameState(10);
-		int var4 = Login.loginIndex;
-		boolean var5 = var4 != var1;
-		if (!var5 && Client.field515.method10602()) {
-			class137.method3379(9);
-		}
-
-	}
-
-	@ObfuscatedName("og")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "883300482"
+		garbageValue = "1334592352"
 	)
-	public static boolean method79() {
-		return Client.clickedWidget != null;
+	boolean method69() {
+		return this.field40;
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(Ldl;[BIIIII)V",
+		garbageValue = "-1862927163"
+	)
+	static final void method80(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5) {
+		int var8;
+		int var9;
+		if (var0.collisionMaps != null) {
+			for (int var6 = 0; var6 < 4; ++var6) {
+				CollisionMap var13 = var0.collisionMaps[var6];
+
+				for (var8 = var2; var8 < var2 + 64; ++var8) {
+					for (var9 = var3; var9 < var3 + 64; ++var9) {
+						if (var13.method5960(var8, var9)) {
+							var13.method5933(var8, var9, 1073741824);
+						}
+					}
+				}
+			}
+		}
+
+		Buffer var12 = new Buffer(var1);
+
+		for (int var7 = 0; var7 < 4; ++var7) {
+			for (var8 = 0; var8 < 64; ++var8) {
+				for (var9 = 0; var9 < 64; ++var9) {
+					int var10 = var8 + var2;
+					int var11 = var3 + var9;
+					FriendSystem.loadTerrain(var0, var12, var7, var10, var11, var10 + var4, var5 + var11, 0);
+				}
+			}
+		}
+
+	}
+
+	@ObfuscatedName("nd")
+	@ObfuscatedSignature(
+		descriptor = "(Lov;I)Z",
+		garbageValue = "-2019078946"
+	)
+	static final boolean method75(Widget var0) {
+		int var1 = var0.contentType;
+		if (var1 == 205) {
+			Client.logoutTimer = 250;
+			return true;
+		} else {
+			int var2;
+			int var3;
+			if (var1 >= 300 && var1 <= 313) {
+				var2 = (var1 - 300) / 2;
+				var3 = var1 & 1;
+				Client.playerAppearance.changeAppearance(var2, var3 == 1);
+			}
+
+			if (var1 >= 314 && var1 <= 323) {
+				var2 = (var1 - 314) / 2;
+				var3 = var1 & 1;
+				Client.playerAppearance.method7321(var2, var3 == 1);
+			}
+
+			if (var1 == 324) {
+				Client.playerAppearance.method7322(0);
+			}
+
+			if (var1 == 325) {
+				Client.playerAppearance.method7322(1);
+			}
+
+			if (var1 == 326) {
+				PacketBufferNode var4 = class139.getPacketBufferNode(ClientPacket.UPDATE_PLAYER_MODEL, Client.packetWriter.isaacCipher);
+				Client.playerAppearance.write(var4.packetBuffer);
+				Client.packetWriter.addNode(var4);
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
 }

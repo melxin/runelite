@@ -1,127 +1,106 @@
-import net.runelite.mapping.ObfuscatedGetter;
+import java.util.Iterator;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hs")
-public class class182 {
-	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = -283462333
-	)
-	static int field2016;
-	@ObfuscatedName("an")
+@ObfuscatedName("hj")
+public class class182 extends DualNode {
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "[Lfv;"
+		descriptor = "Lmr;"
 	)
-	class132[] field2018;
-	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = -2115036993
-	)
-	int field2017;
+	@Export("field1864")
+	public static EvictingDualNodeHashTable field1864;
 
-	@ObfuscatedSignature(
-		descriptor = "(Lve;I)V"
-	)
-	class182(Buffer var1, int var2) {
-		this.field2018 = new class132[var2];
-		this.field2017 = var1.readUnsignedByte();
-
-		for (int var3 = 0; var3 < this.field2018.length; ++var3) {
-			class132 var4 = new class132(this.field2017, var1, false);
-			this.field2018[var3] = var4;
-		}
-
-		this.method3974();
+	static {
+		field1864 = new EvictingDualNodeHashTable(64);
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Lfi;",
+		garbageValue = "-87"
+	)
+	static class137 method3993(int var0) {
+		class137 var1 = (class137)class175.findEnumerated(SecureUrlRequester.method3358(), var0);
+		if (var1 == null) {
+			var1 = class137.field1620;
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "780282081"
+		garbageValue = "1677146219"
 	)
-	void method3974() {
-		class132[] var1 = this.field2018;
+	static void method3994() {
+		Iterator var0 = Messages.Messages_hashTable.iterator();
 
-		for (int var2 = 0; var2 < var1.length; ++var2) {
-			class132 var3 = var1[var2];
-			if (var3.field1557 >= 0) {
-				var3.field1560 = this.field2018[var3.field1557];
+		while (var0.hasNext()) {
+			Message var1 = (Message)var0.next();
+			var1.clearIsFromIgnored();
+		}
+
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "([IIIB)V",
+		garbageValue = "-58"
+	)
+	static void method3997(int[] var0, int var1, int var2) {
+		while (var1 < var2) {
+			int var3 = var0[var1];
+			var0[var1] = var0[var2];
+			var0[var2] = var3;
+			++var1;
+			--var2;
+		}
+
+	}
+
+	@ObfuscatedName("cg")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "1555809520"
+	)
+	@Export("runWidgetOnLoadListener")
+	static void runWidgetOnLoadListener(int var0) {
+		if (var0 != -1) {
+			if (ClientPreferences.widgetDefinition.loadInterface(var0)) {
+				Widget[] var1 = ClientPreferences.widgetDefinition.Widget_interfaceComponents[var0];
+
+				for (int var2 = 0; var2 < var1.length; ++var2) {
+					Widget var3 = var1[var2];
+					if (var3.onLoad != null) {
+						ScriptEvent var4 = new ScriptEvent();
+						var4.widget = var3;
+						var4.args = var3.onLoad;
+						GrandExchangeOfferAgeComparator.runScript(var4, 5000000, 0);
+					}
+				}
+
 			}
 		}
-
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("nw")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1535587173"
+		descriptor = "(IB)V",
+		garbageValue = "-91"
 	)
-	public int method3975() {
-		return this.field2018.length;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lfv;",
-		garbageValue = "785026374"
-	)
-	class132 method3995(int var1) {
-		return var1 >= this.method3975() ? null : this.field2018[var1];
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(I)[Lfv;",
-		garbageValue = "880956443"
-	)
-	class132[] method3976() {
-		return this.field2018;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(Lfy;II)V",
-		garbageValue = "737453688"
-	)
-	void method3982(class142 var1, int var2) {
-		this.method3978(var1, var2, (boolean[])null, false);
-	}
-
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(Lfy;I[ZZI)V",
-		garbageValue = "-1282492777"
-	)
-	void method3978(class142 var1, int var2, boolean[] var3, boolean var4) {
-		int var5 = var1.method3421();
-		int var6 = 0;
-		class132[] var7 = this.method3976();
-
-		for (int var8 = 0; var8 < var7.length; ++var8) {
-			class132 var9 = var7[var8];
-			if (var3 == null || var4 == var3[var6]) {
-				var1.method3400(var2, var9, var6, var5);
-			}
-
-			++var6;
-		}
-
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(Lph;Lph;IB)Z",
-		garbageValue = "-96"
-	)
-	public static boolean method3997(AbstractArchive var0, AbstractArchive var1, int var2) {
-		byte[] var3 = var0.getFile(var2 >> 16 & 65535, var2 & 65535);
-		if (var3 == null) {
-			return false;
-		} else {
-			int var4 = (var3[1] & 255) << 8 | var3[2] & 255;
-			byte[] var5 = var1.getFile(var4, 0);
-			return var5 != null;
-		}
+	static void method3995(int var0) {
+		class31.tempMenuAction = new MenuAction();
+		class31.tempMenuAction.param0 = Client.menu.menuArguments1[var0];
+		class31.tempMenuAction.param1 = Client.menu.menuArguments2[var0];
+		class31.tempMenuAction.opcode = Client.menu.menuOpcodes[var0];
+		class31.tempMenuAction.identifier = Client.menu.menuIdentifiers[var0];
+		class31.tempMenuAction.itemId = Client.menu.menuItemIds[var0];
+		class31.tempMenuAction.action = Client.menu.menuActions[var0];
+		class31.tempMenuAction.target = Client.menu.menuTargets[var0];
+		class31.tempMenuAction.worldViewId = Client.menu.menuWorldViewIds[var0];
+		class31.tempMenuAction.field723 = Client.menu.menuShiftClick[var0];
 	}
 }

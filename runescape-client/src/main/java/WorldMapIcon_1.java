@@ -1,55 +1,56 @@
-import java.util.Arrays;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.Locale;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kj")
+@ObfuscatedName("kx")
 @Implements("WorldMapIcon_1")
 public class WorldMapIcon_1 extends AbstractWorldMapIcon {
-	@ObfuscatedName("cp")
-	@Export("otp")
-	static String otp;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1588387937
+		intValue = 864766503
 	)
 	@Export("objectDefId")
 	final int objectDefId;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lla;"
+		descriptor = "Lle;"
 	)
 	@Export("region")
 	final WorldMapRegion region;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 922235231
+		intValue = 1509856945
 	)
 	@Export("element")
 	int element;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Llw;"
+		descriptor = "Llp;"
 	)
 	@Export("label")
 	WorldMapLabel label;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1530274509
+		intValue = -2105074555
 	)
 	@Export("subWidth")
 	int subWidth;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 903122851
+		intValue = -198317875
 	)
 	@Export("subHeight")
 	int subHeight;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lnt;Lnt;ILla;)V"
+		descriptor = "(Lnp;Lnp;ILle;)V"
 	)
 	WorldMapIcon_1(Coord var1, Coord var2, int var3, WorldMapRegion var4) {
 		super(var1, var2);
@@ -58,16 +59,16 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 		this.init();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1284851473"
+		descriptor = "(B)V",
+		garbageValue = "1"
 	)
 	@Export("init")
 	void init() {
-		this.element = class162.getObjectDefinition(this.objectDefId).transform().mapIconId;
-		this.label = this.region.createMapLabel(ArchiveDiskAction.WorldMapElement_get(this.element));
-		WorldMapElement var1 = ArchiveDiskAction.WorldMapElement_get(this.getElement());
+		this.element = HealthBarConfig.getObjectDefinition(this.objectDefId).transform().mapIconId;
+		this.label = this.region.createMapLabel(InvDefinition.WorldMapElement_get(this.element));
+		WorldMapElement var1 = InvDefinition.WorldMapElement_get(this.getElement());
 		SpritePixels var2 = var1.getSpriteBool(false);
 		if (var2 != null) {
 			this.subWidth = var2.subWidth;
@@ -79,237 +80,159 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1723335551"
+		garbageValue = "-2005636344"
 	)
 	@Export("getElement")
 	public int getElement() {
 		return this.element;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)Llw;",
-		garbageValue = "115"
+		descriptor = "(I)Llp;",
+		garbageValue = "111016802"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
 		return this.label;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "747885801"
+		garbageValue = "-963913416"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
 		return this.subWidth;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1535434695"
+		garbageValue = "-341446402"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
 		return this.subHeight;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "18"
+		descriptor = "(B)Ljava/util/Date;",
+		garbageValue = "-76"
 	)
-	@Export("Widget_unpackTargetMask")
-	public static int Widget_unpackTargetMask(int var0) {
-		return var0 >> 11 & 63;
-	}
+	static Date method6196() throws ParseException {
+		SimpleDateFormat var0 = new SimpleDateFormat("ddMMyyyyHH", Locale.ENGLISH);
+		var0.setLenient(false);
+		StringBuilder var1 = new StringBuilder();
+		String[] var2 = Login.field757;
 
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(IZS)[B",
-		garbageValue = "-31804"
-	)
-	@Export("ByteArrayPool_getArrayBool")
-	public static byte[] ByteArrayPool_getArrayBool(int var0, boolean var1) {
-		synchronized(ByteArrayPool.field5056) {
-			byte[] var3;
-			if ((var0 == 100 || var0 < 100 && var1) && ByteArrayPool.ByteArrayPool_smallCount > 0) {
-				var3 = ByteArrayPool.ByteArrayPool_small[--ByteArrayPool.ByteArrayPool_smallCount];
-				ByteArrayPool.ByteArrayPool_small[ByteArrayPool.ByteArrayPool_smallCount] = null;
-				return var3;
+		for (int var3 = 0; var3 < var2.length; ++var3) {
+			String var4 = var2[var3];
+			if (var4 == null) {
+				class113.method3292("Date not valid.", "Please ensure all characters are populated.", "");
+				return null;
 			}
 
-			if ((var0 == 5000 || var0 < 5000 && var1) && ByteArrayPool.ByteArrayPool_mediumCount > 0) {
-				var3 = ByteArrayPool.ByteArrayPool_medium[--ByteArrayPool.ByteArrayPool_mediumCount];
-				ByteArrayPool.ByteArrayPool_medium[ByteArrayPool.ByteArrayPool_mediumCount] = null;
-				return var3;
-			}
-
-			if ((var0 == 10000 || var0 < 10000 && var1) && ByteArrayPool.ByteArrayPool_largeCount > 0) {
-				var3 = ByteArrayPool.ByteArrayPool_large[--ByteArrayPool.ByteArrayPool_largeCount];
-				ByteArrayPool.ByteArrayPool_large[ByteArrayPool.ByteArrayPool_largeCount] = null;
-				return var3;
-			}
-
-			if ((var0 == 30000 || var0 < 30000 && var1) && ByteArrayPool.field5059 > 0) {
-				var3 = ByteArrayPool.field5068[--ByteArrayPool.field5059];
-				ByteArrayPool.field5068[ByteArrayPool.field5059] = null;
-				return var3;
-			}
-
-			int var6;
-			if (class240.ByteArrayPool_arrays != null) {
-				for (var6 = 0; var6 < WorldEntityCoord.ByteArrayPool_alternativeSizes.length; ++var6) {
-					if ((WorldEntityCoord.ByteArrayPool_alternativeSizes[var6] == var0 || var0 < WorldEntityCoord.ByteArrayPool_alternativeSizes[var6] && var1) && class149.ByteArrayPool_altSizeArrayCounts[var6] > 0) {
-						byte[] var4 = class240.ByteArrayPool_arrays[var6][--class149.ByteArrayPool_altSizeArrayCounts[var6]];
-						class240.ByteArrayPool_arrays[var6][class149.ByteArrayPool_altSizeArrayCounts[var6]] = null;
-						return var4;
-					}
-				}
-			}
-
-			if (var1 && WorldEntityCoord.ByteArrayPool_alternativeSizes != null) {
-				for (var6 = 0; var6 < WorldEntityCoord.ByteArrayPool_alternativeSizes.length; ++var6) {
-					if (var0 <= WorldEntityCoord.ByteArrayPool_alternativeSizes[var6] && class149.ByteArrayPool_altSizeArrayCounts[var6] < class240.ByteArrayPool_arrays[var6].length) {
-						return new byte[WorldEntityCoord.ByteArrayPool_alternativeSizes[var6]];
-					}
-				}
-			}
+			var1.append(var4);
 		}
 
-		return new byte[var0];
+		var1.append("12");
+		return var0.parse(var1.toString());
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-2120704028"
+		descriptor = "([J[Ljava/lang/Object;III)V",
+		garbageValue = "-301953778"
 	)
-	public static boolean method5940(int var0) {
-		return (var0 >> 20 & 1) != 0;
+	public static void method6195(long[] var0, Object[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var4 = (var3 + var2) / 2;
+			int var5 = var2;
+			long var6 = var0[var4];
+			var0[var4] = var0[var3];
+			var0[var3] = var6;
+			Object var8 = var1[var4];
+			var1[var4] = var1[var3];
+			var1[var3] = var8;
+			int var9 = var6 == Long.MAX_VALUE ? 0 : 1;
+
+			for (int var10 = var2; var10 < var3; ++var10) {
+				if (var0[var10] < var6 + (long)(var10 & var9)) {
+					long var11 = var0[var10];
+					var0[var10] = var0[var5];
+					var0[var5] = var11;
+					Object var13 = var1[var10];
+					var1[var10] = var1[var5];
+					var1[var5++] = var13;
+				}
+			}
+
+			var0[var3] = var0[var5];
+			var0[var5] = var6;
+			var1[var3] = var1[var5];
+			var1[var5] = var8;
+			method6195(var0, var1, var2, var5 - 1);
+			method6195(var0, var1, var5 + 1, var3);
+		}
+
 	}
 
-	@ObfuscatedName("hy")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1482421850"
+		garbageValue = "-39130042"
 	)
-	static void method5942() {
-		Client.mouseLastLastPressedTimeMillis = -1L;
-		if (class433.mouseRecorder != null) {
-			class433.mouseRecorder.index = 0;
-		}
+	static void method6192() {
+		Iterator var0 = class335.midiRequests.iterator();
 
-		class231.hasFocus = true;
-		Client.hadFocus = true;
-		Client.field564 = -1L;
-		class94.method2564();
-		Client.packetWriter.clearBuffer();
-		Client.packetWriter.field1471 = 0;
-		Client.packetWriter.packetBuffer.offset = 0;
-		Client.packetWriter.serverPacket = null;
-		Client.packetWriter.field1461 = null;
-		Client.packetWriter.field1474 = null;
-		Client.packetWriter.field1463 = null;
-		Client.packetWriter.serverPacketLength = 0;
-		Client.packetWriter.field1475 = 0;
-		Client.rebootTimer = 0;
-		Client.logoutTimer = 0;
-		Client.hintArrowType = 0;
-		WorldMapIcon_0.method6266();
-		class256.method5322(0);
-		Interpreter.method2161();
-		Client.isItemSelected = 0;
-		Client.isSpellSelected = false;
-		Client.soundEffectCount = 0;
-		Client.camAngleY = 0;
-		Client.oculusOrbState = 0;
-		class224.field2524 = null;
-		Client.minimapState = 0;
-		Client.field761 = -1;
-		Client.destinationX = 0;
-		Client.destinationY = 0;
-		Client.playerAttackOption = AttackOption.AttackOption_hidden;
-		Client.npcAttackOption = AttackOption.AttackOption_hidden;
-		Client.worldViewManager.clear();
-		Client.field530 = -1;
-		Client.playerUpdateManager.method3011();
-		class223.friendSystem.clear();
-		if (VarpDefinition.field2569 > 5000) {
-		}
-
-		int var0;
-		if (Client.field639) {
-			Arrays.fill(Varps.Varps_temp, 0);
-			Arrays.fill(Varps.Varps_main, 0);
-		} else {
-			for (var0 = 0; var0 < VarpDefinition.field2569; ++var0) {
-				VarpDefinition var1 = class139.VarpDefinition_get(var0);
-				if (var1 != null) {
-					Varps.Varps_temp[var0] = 0;
-					Varps.Varps_main[var0] = 0;
-				}
+		while (var0.hasNext()) {
+			MidiRequest var1 = (MidiRequest)var0.next();
+			if (var1 != null) {
+				var1.midiPcmStream.clear();
+				var1.midiPcmStream.method6981();
+				var1.midiPcmStream.setPcmStreamVolume(0);
+				var1.midiPcmStream.field3739 = 0;
+				GameEngine.method578(var1.musicTrackGroupId, var1.musicTrackFileId);
 			}
 		}
 
-		if (NPCComposition.varcs != null) {
-			NPCComposition.varcs.clearTransient();
+		class335.midiRequests.clear();
+	}
+
+	@ObfuscatedName("hc")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-1785959251"
+	)
+	static int method6194() {
+		if (Client.archiveLoaders != null && Client.archiveLoadersDone < Client.archiveLoaders.size()) {
+			int var0 = 0;
+
+			for (int var1 = 0; var1 <= Client.archiveLoadersDone; ++var1) {
+				var0 += ((ArchiveLoader)Client.archiveLoaders.get(var1)).loadedCount;
+			}
+
+			return var0 * 10000 / Client.field309;
+		} else {
+			return 10000;
 		}
+	}
 
-		Client.followerIndex = -1;
-		if (Client.rootInterface != -1) {
-			class232.widgetDefinition.method6954(Client.rootInterface);
+	@ObfuscatedName("pb")
+	@ObfuscatedSignature(
+		descriptor = "(Lbc;I)V",
+		garbageValue = "-447441409"
+	)
+	@Export("updateLoginState")
+	static void updateLoginState(LoginState var0) {
+		if (class172.loginState != var0) {
+			class172.loginState = var0;
 		}
-
-		for (InterfaceParent var2 = (InterfaceParent)Client.interfaceParents.first(); var2 != null; var2 = (InterfaceParent)Client.interfaceParents.next()) {
-			class220.closeInterface(var2, true);
-		}
-
-		Client.rootInterface = -1;
-		Client.interfaceParents = new NodeHashTable(8);
-		Client.meslayerContinueWidget = null;
-		WorldMapIcon_0.method6266();
-		Client.playerAppearance.method6990((int[])null, (int[])null, new int[]{0, 0, 0, 0, 0}, 0, -1);
-
-		for (var0 = 0; var0 < 8; ++var0) {
-			Client.playerMenuActions[var0] = null;
-			Client.playerOptionsPriorities[var0] = false;
-		}
-
-		class267.method5632();
-		Client.isLoading = true;
-
-		for (var0 = 0; var0 < 100; ++var0) {
-			Client.validRootWidgets[var0] = true;
-		}
-
-		if (Client.packetWriter != null && Client.packetWriter.isaacCipher != null) {
-			PacketBufferNode var3 = FloorDecoration.getPacketBufferNode(ClientPacket.EVENT_WINDOW_SETTING, Client.packetWriter.isaacCipher);
-			var3.packetBuffer.writeByte(class171.getWindowedMode());
-			var3.packetBuffer.writeShort(GameEngine.canvasWidth);
-			var3.packetBuffer.writeShort(class141.canvasHeight);
-			Client.packetWriter.addNode(var3);
-		}
-
-		SoundCache.friendsChat = null;
-		class331.guestClanSettings = null;
-		Arrays.fill(Client.currentClanSettings, (Object)null);
-		class92.guestClanChannel = null;
-		Arrays.fill(Client.currentClanChannels, (Object)null);
-
-		for (var0 = 0; var0 < 8; ++var0) {
-			Client.grandExchangeOffers[var0] = new GrandExchangeOffer();
-		}
-
-		VarcInt.grandExchangeEvents = null;
-		Client.viewportOffsetX = 0;
-		Client.viewportOffsetY = 0;
-		Client.viewportWidth = 0;
-		Client.viewportHeight = 0;
 	}
 }

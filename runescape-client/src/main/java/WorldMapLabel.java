@@ -4,43 +4,47 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lw")
+@ObfuscatedName("lp")
 @Implements("WorldMapLabel")
 public class WorldMapLabel {
-	@ObfuscatedName("te")
-	@ObfuscatedSignature(
-		descriptor = "[Lnh;"
-	)
-	static Widget[] field3304;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@Export("text")
 	String text;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1179207711
+		intValue = -254153767
 	)
 	@Export("width")
 	int width;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1762444229
+		intValue = 1793098319
 	)
 	@Export("height")
 	int height;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lkh;"
+		descriptor = "Lki;"
 	)
 	@Export("size")
 	WorldMapLabelSize size;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;IILkh;)V"
+		descriptor = "(Ljava/lang/String;IILki;)V"
 	)
 	WorldMapLabel(String var1, int var2, int var3, WorldMapLabelSize var4) {
 		this.text = var1;
 		this.width = var2;
 		this.height = var3;
 		this.size = var4;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "([F[II)V",
+		garbageValue = "1240421715"
+	)
+	public static void method6622(float[] var0, int[] var1) {
+		ActorSpotAnim.method9799(var0, var1, 0, var0.length - 1);
 	}
 }

@@ -1,69 +1,66 @@
-import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sp")
+@ObfuscatedName("sk")
 @Implements("IgnoreList")
 public class IgnoreList extends UserList {
-	@ObfuscatedName("ip")
-	static List field5105;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Luw;"
+		descriptor = "Lvf;"
 	)
-	final LoginType field5107;
+	final LoginType field5163;
 
 	@ObfuscatedSignature(
-		descriptor = "(Luw;)V"
+		descriptor = "(Lvf;)V"
 	)
 	public IgnoreList(LoginType var1) {
 		super(400);
-		this.field5107 = var1;
+		this.field5163 = var1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lsh;",
-		garbageValue = "-1223410224"
+		descriptor = "(B)Lsi;",
+		garbageValue = "1"
 	)
 	@Export("newInstance")
 	User newInstance() {
 		return new Ignored();
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IB)[Lsh;",
-		garbageValue = "11"
+		descriptor = "(II)[Lsi;",
+		garbageValue = "-308089342"
 	)
 	@Export("newTypedArray")
 	User[] newTypedArray(int var1) {
 		return new Ignored[var1];
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;II)V",
-		garbageValue = "-1564274723"
+		descriptor = "(Lwt;II)V",
+		garbageValue = "-197016394"
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
-		while (var1.offset * -2066221813 < var2) {
+		while (var1.offset < var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 == 4) {
-				Username var10 = new Username(var1.readStringCp1252NullTerminated(), this.field5107);
+				Username var10 = new Username(var1.readStringCp1252NullTerminated(), this.field5163);
 				if (!var10.hasCleanName()) {
 					throw new IllegalStateException();
 				}
 
 				boolean var11 = false;
-				class223.friendSystem.removeIgnore(var10.getName(), var11);
+				Actor.friendSystem.removeIgnore(var10.getName(), var11);
 			} else {
 				boolean var4 = (var3 & 1) != 0;
-				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.field5107);
-				Username var6 = new Username(var1.readStringCp1252NullTerminated(), this.field5107);
+				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.field5163);
+				Username var6 = new Username(var1.readStringCp1252NullTerminated(), this.field5163);
 				var1.readStringCp1252NullTerminated();
 				if (!var5.hasCleanName()) {
 					throw new IllegalStateException();
@@ -72,7 +69,7 @@ public class IgnoreList extends UserList {
 				Ignored var7 = (Ignored)this.getByCurrentUsername(var5);
 				if (var4) {
 					Ignored var8 = (Ignored)this.getByCurrentUsername(var6);
-					if (var8 != null && var8 != var7) {
+					if (var8 != null && var7 != var8) {
 						if (var7 != null) {
 							this.remove(var8);
 						} else {
@@ -93,12 +90,17 @@ public class IgnoreList extends UserList {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("is")
 	@ObfuscatedSignature(
-		descriptor = "(Lph;B)V",
-		garbageValue = "85"
+		descriptor = "(Ldl;IIB)Lre;",
+		garbageValue = "63"
 	)
-	public static void method9127(AbstractArchive var0) {
-		StructComposition.StructDefinition_archive = var0;
+	static class445 method9505(WorldView var0, int var1, int var2) {
+		if (var0 != null && Sound.topLevelWorldView != var0) {
+			WorldEntity var3 = (WorldEntity)Sound.topLevelWorldView.worldEntities.get((long)var0.id);
+			return var3 == null ? class47.method1781((float)var1, 0.0F, (float)var2) : var3.method9718(var1, var2);
+		} else {
+			return class47.method1781((float)var1, 0.0F, (float)var2);
+		}
 	}
 }

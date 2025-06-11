@@ -3,62 +3,47 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tf")
+@ObfuscatedName("tz")
 public enum class508 implements Enum {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Ltf;"
+		descriptor = "Ltz;"
 	)
-	field5266(0, 1),
+	field5285(0, 0),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Ltz;"
+	)
+	field5283(1, 1),
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Ltf;"
+		descriptor = "Ltz;"
 	)
-	field5263(1, 2),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Ltf;"
-	)
-	field5262(2, 3),
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Ltf;"
-	)
-	field5265(3, 10);
+	field5284(2, 2);
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -346643375
+		intValue = -1859438597
 	)
-	final int field5267;
-	@ObfuscatedName("aq")
+	final int field5282;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1652712379
+		intValue = 1177417485
 	)
-	final int field5264;
+	final int field5286;
 
 	class508(int var3, int var4) {
-		this.field5267 = var3;
-		this.field5264 = var4;
+		this.field5282 = var3;
+		this.field5286 = var4;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1746725635"
+		descriptor = "(B)I",
+		garbageValue = "26"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field5264;
-	}
-
-	@ObfuscatedName("mc")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-29"
-	)
-	@Export("getTapToDrop")
-	static boolean getTapToDrop() {
-		return Client.tapToDrop;
+		return this.field5286;
 	}
 }

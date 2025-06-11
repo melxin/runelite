@@ -4,57 +4,52 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oi")
+@ObfuscatedName("on")
 @Implements("StudioGame")
 public enum StudioGame implements Enum {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Loi;"
+		descriptor = "Lon;"
 	)
 	@Export("runescape")
 	runescape("runescape", "RuneScape", 0),
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Loi;"
+		descriptor = "Lon;"
 	)
 	@Export("stellardawn")
 	stellardawn("stellardawn", "Stellar Dawn", 1),
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Loi;"
+		descriptor = "Lon;"
 	)
 	@Export("game3")
 	game3("game3", "Game 3", 2),
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Loi;"
+		descriptor = "Lon;"
 	)
 	@Export("game4")
 	game4("game4", "Game 4", 3),
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Loi;"
+		descriptor = "Lon;"
 	)
 	@Export("game5")
 	game5("game5", "Game 5", 4),
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Loi;"
+		descriptor = "Lon;"
 	)
 	@Export("oldscape")
 	oldscape("oldscape", "RuneScape 2007", 5);
 
-	@ObfuscatedName("lx")
-	@ObfuscatedSignature(
-		descriptor = "[Lws;"
-	)
-	static IndexedSprite[] field4210;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@Export("name")
 	public final String name;
 	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -523599407
+		intValue = -785234773
 	)
 	@Export("id")
 	final int id;
@@ -64,13 +59,28 @@ public enum StudioGame implements Enum {
 		this.id = var5;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1746725635"
+		descriptor = "(B)I",
+		garbageValue = "26"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
+	}
+
+	@ObfuscatedName("mt")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "399227565"
+	)
+	static boolean method7935(int var0) {
+		for (int var1 = 0; var1 < Client.field432; ++var1) {
+			if (Client.field425[var1] == var0) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

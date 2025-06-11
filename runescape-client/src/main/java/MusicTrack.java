@@ -3,24 +3,24 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nn")
+@ObfuscatedName("nh")
 @Implements("MusicTrack")
 public class MusicTrack extends Node {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lqb;"
+		descriptor = "Lqq;"
 	)
-	NodeHashTable field3786;
-	@ObfuscatedName("an")
+	NodeHashTable field3782;
+	@ObfuscatedName("aj")
 	@Export("midi")
 	byte[] midi;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lve;)V"
+		descriptor = "(Lwt;)V"
 	)
 	MusicTrack(Buffer var1) {
-		this.field3786 = new NodeHashTable(16);
-		var1.offset = (var1.array.length - 3) * 29699747;
+		this.field3782 = new NodeHashTable(16);
+		var1.offset = var1.array.length - 3;
 		int var2 = var1.readUnsignedByte();
 		int var3 = var1.readUnsignedShort();
 		int var4 = var2 * 10 + 14;
@@ -78,15 +78,15 @@ public class MusicTrack extends Node {
 		var4 += var5 * 5;
 		var4 += (var7 + var8 + var6 + var9 + var11) * 2;
 		var4 = var4 + var10 + var12;
-		var13 = var1.offset * -2066221813;
+		var13 = var1.offset;
 		var14 = var2 + var5 + var6 + var7 + var8 + var9 + var10 + var11 + var12;
 
 		for (var15 = 0; var15 < var14; ++var15) {
 			var1.readVarInt();
 		}
 
-		var4 += var1.offset * -2066221813 - var13;
-		var15 = var1.offset * -2066221813;
+		var4 += var1.offset - var13;
+		var15 = var1.offset;
 		int var16 = 0;
 		int var17 = 0;
 		int var18 = 0;
@@ -136,48 +136,48 @@ public class MusicTrack extends Node {
 		}
 
 		var29 = 0;
-		int var30 = var1.offset * -2066221813;
-		var1.offset += var26 * 29699747;
-		int var31 = var1.offset * -2066221813;
-		var1.offset += var11 * 29699747;
-		int var32 = var1.offset * -2066221813;
-		var1.offset += var10 * 29699747;
-		int var33 = var1.offset * -2066221813;
-		var1.offset += var9 * 29699747;
-		int var34 = var1.offset * -2066221813;
-		var1.offset += var16 * 29699747;
-		int var35 = var1.offset * -2066221813;
-		var1.offset += var18 * 29699747;
-		int var36 = var1.offset * -2066221813;
-		var1.offset += var20 * 29699747;
-		int var37 = var1.offset * -2066221813;
-		var1.offset += (var7 + var8 + var11) * 29699747;
-		int var38 = var1.offset * -2066221813;
-		var1.offset += var7 * 29699747;
-		int var39 = var1.offset * -2066221813;
-		var1.offset += var27 * 29699747;
-		int var40 = var1.offset * -2066221813;
-		var1.offset += var8 * 29699747;
-		int var41 = var1.offset * -2066221813;
-		var1.offset += var17 * 29699747;
-		int var42 = var1.offset * -2066221813;
-		var1.offset += var19 * 29699747;
-		int var43 = var1.offset * -2066221813;
-		var1.offset += var21 * 29699747;
-		int var44 = var1.offset * -2066221813;
-		var1.offset += var12 * 29699747;
-		int var45 = var1.offset * -2066221813;
-		var1.offset += var9 * 29699747;
-		int var46 = var1.offset * -2066221813;
-		var1.offset += var22 * 29699747;
-		int var47 = var1.offset * -2066221813;
-		var1.offset += var23 * 29699747;
-		int var48 = var1.offset * -2066221813;
-		var1.offset += var24 * 29699747;
-		int var49 = var1.offset * -2066221813;
-		var1.offset += var25 * 29699747;
-		int var50 = var1.offset * -2066221813;
-		var1.offset += var5 * 89099241;
+		int var30 = var1.offset;
+		var1.offset += var26;
+		int var31 = var1.offset;
+		var1.offset += var11;
+		int var32 = var1.offset;
+		var1.offset += var10;
+		int var33 = var1.offset;
+		var1.offset += var9;
+		int var34 = var1.offset;
+		var1.offset += var16;
+		int var35 = var1.offset;
+		var1.offset += var18;
+		int var36 = var1.offset;
+		var1.offset += var20;
+		int var37 = var1.offset;
+		var1.offset += var7 + var8 + var11;
+		int var38 = var1.offset;
+		var1.offset += var7;
+		int var39 = var1.offset;
+		var1.offset += var27;
+		int var40 = var1.offset;
+		var1.offset += var8;
+		int var41 = var1.offset;
+		var1.offset += var17;
+		int var42 = var1.offset;
+		var1.offset += var19;
+		int var43 = var1.offset;
+		var1.offset += var21;
+		int var44 = var1.offset;
+		var1.offset += var12;
+		int var45 = var1.offset;
+		var1.offset += var9;
+		int var46 = var1.offset;
+		var1.offset += var22;
+		int var47 = var1.offset;
+		var1.offset += var23;
+		int var48 = var1.offset;
+		var1.offset += var24;
+		int var49 = var1.offset;
+		var1.offset += var25;
+		int var50 = var1.offset;
+		var1.offset += var5 * 3;
 		this.midi = new byte[var4];
 		Buffer var51 = new Buffer(this.midi);
 		var51.writeInt(1297377380);
@@ -185,7 +185,7 @@ public class MusicTrack extends Node {
 		var51.writeShort(var2 > 1 ? 1 : 0);
 		var51.writeShort(var2);
 		var51.writeShort(var3);
-		var1.offset = var13 * 29699747;
+		var1.offset = var13;
 		int var52 = 0;
 		int var53 = 0;
 		int var54 = 0;
@@ -203,8 +203,8 @@ public class MusicTrack extends Node {
 		label277:
 		for (int var63 = 0; var63 < var2; ++var63) {
 			var51.writeInt(1297379947);
-			var51.offset += 118798988;
-			int var64 = var51.offset * -2066221813;
+			var51.offset += 4;
+			int var64 = var51.offset;
 			int var65 = var64;
 			int var66 = -1;
 
@@ -223,7 +223,7 @@ public class MusicTrack extends Node {
 
 						var51.writeByte(47);
 						var51.writeByte(0);
-						var51.writeLengthInt(var51.offset * -2066221813 - var64);
+						var51.writeLengthInt(var51.offset - var64);
 						continue label277;
 					}
 
@@ -254,13 +254,13 @@ public class MusicTrack extends Node {
 							var51.writeByte(var71);
 							if (var71 > 0) {
 								int var72 = var61[var52];
-								class348 var73 = (class348)this.field3786.get((long)var72);
+								class348 var73 = (class348)this.field3782.get((long)var72);
 								if (var73 == null) {
 									var73 = new class348(var65);
-									this.field3786.put(var73, (long)var72);
+									this.field3782.put(var73, (long)var72);
 								}
 
-								var73.field3827.set(var74);
+								var73.field3826.set(var74);
 							}
 						} else if (var66 == 1) {
 							if (var69) {
@@ -367,9 +367,9 @@ public class MusicTrack extends Node {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lph;II)Lnn;"
+		descriptor = "(Lps;II)Lnh;"
 	)
 	@Export("readTrack")
 	public static MusicTrack readTrack(AbstractArchive var0, int var1, int var2) {

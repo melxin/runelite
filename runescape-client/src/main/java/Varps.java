@@ -3,20 +3,33 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nf")
+@ObfuscatedName("nd")
 @Implements("Varps")
 public class Varps {
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@Export("Varps_temp")
 	public static int[] Varps_temp;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("Varps_main")
 	public static int[] Varps_main;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("Varps_masks")
 	static int[] Varps_masks;
-	@ObfuscatedName("ad")
-	static int[][][] field3836;
+	@ObfuscatedName("al")
+	@Export("SpriteBuffer_yOffsets")
+	static int[] SpriteBuffer_yOffsets;
+	@ObfuscatedName("ql")
+	@ObfuscatedSignature(
+		descriptor = "[Lwd;"
+	)
+	@Export("headIconHintSprites")
+	static SpritePixels[] headIconHintSprites;
+	@ObfuscatedName("wt")
+	@ObfuscatedSignature(
+		descriptor = "Ltb;"
+	)
+	@Export("masterDisk")
+	static ArchiveDisk masterDisk;
 
 	static {
 		Varps_temp = new int[5000];
@@ -31,33 +44,22 @@ public class Varps {
 
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lnh;I)I",
-		garbageValue = "377639309"
+		descriptor = "(IIB)V",
+		garbageValue = "1"
 	)
-	static int method6884(Widget var0) {
-		if (var0.type != 11) {
-			--class338.Interpreter_stringStackSize;
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = -1;
-			return 1;
-		} else {
-			String var1 = Interpreter.Interpreter_stringStack[--class338.Interpreter_stringStackSize];
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var0.method7435(var1);
-			return 1;
+	public static void method7213(int var0, int var1) {
+		VarbitComposition var2 = Interpreter.method1757(var0);
+		int var3 = var2.baseVar;
+		int var4 = var2.startBit;
+		int var5 = var2.endBit;
+		int var6 = Varps_masks[var5 - var4];
+		if (var1 < 0 || var1 > var6) {
+			var1 = 0;
 		}
-	}
 
-	@ObfuscatedName("gp")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1863212373"
-	)
-	static void method6885() {
-		WorldMapEvent.accessToken = System.getenv("JX_ACCESS_TOKEN");
-		DynamicObject.refreshToken = System.getenv("JX_REFRESH_TOKEN");
-		class320.sessionId = System.getenv("JX_SESSION_ID");
-		class134.characterId = System.getenv("JX_CHARACTER_ID");
-		class393.method7609(System.getenv("JX_DISPLAY_NAME"));
+		var6 <<= var4;
+		Varps_main[var3] = Varps_main[var3] & ~var6 | var1 << var4 & var6;
 	}
 }

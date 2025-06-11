@@ -7,13 +7,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@ObfuscatedName("tp")
+@ObfuscatedName("uq")
 @Implements("HttpJsonRequestBody")
 public class HttpJsonRequestBody implements HttpPayload {
-	@ObfuscatedName("ac")
-	@Export("Tiles_hue")
-	static int[] Tiles_hue;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@Export("body")
 	@ObfuscatedSignature(
 		descriptor = "Lorg/json/JSONObject;"
@@ -35,30 +32,30 @@ public class HttpJsonRequestBody implements HttpPayload {
 		this.setBodyFromString(var1);
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltw;",
-		garbageValue = "-1690276926"
+		descriptor = "(I)Lup;",
+		garbageValue = "329585455"
 	)
 	@Export("getContentType")
 	public HttpContentType getContentType() {
 		return HttpContentType.APPLICATION_JSON;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)[B",
-		garbageValue = "-620592685"
+		garbageValue = "2037324047"
 	)
 	@Export("toBytes")
 	public byte[] toBytes() throws UnsupportedEncodingException {
 		return this.body == null ? new byte[0] : this.body.toString().getBytes("UTF-8");
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "([BI)V",
-		garbageValue = "-1863500286"
+		garbageValue = "1684624962"
 	)
 	@Export("bodyFromBytes")
 	void bodyFromBytes(byte[] var1) throws UnsupportedEncodingException {
@@ -66,10 +63,10 @@ public class HttpJsonRequestBody implements HttpPayload {
 		this.setBodyFromString(var2);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "12"
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "1130554091"
 	)
 	@Export("setBodyFromString")
 	void setBodyFromString(String var1) throws UnsupportedEncodingException {
@@ -91,10 +88,10 @@ public class HttpJsonRequestBody implements HttpPayload {
 		}
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lorg/json/JSONObject;",
-		garbageValue = "494467999"
+		descriptor = "(B)Lorg/json/JSONObject;",
+		garbageValue = "-114"
 	)
 	@Export("getBody")
 	public JSONObject getBody() {

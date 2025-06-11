@@ -3,18 +3,24 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hf")
+@ObfuscatedName("jk")
 @Implements("Frames")
 public class Frames extends DualNode {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("pa")
 	@ObfuscatedSignature(
-		descriptor = "[Lgk;"
+		descriptor = "[Lwd;"
+	)
+	@Export("headIconPkSprites")
+	static SpritePixels[] headIconPkSprites;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "[Ljf;"
 	)
 	@Export("frames")
 	Animation[] frames;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lph;Lph;I)V"
+		descriptor = "(Lps;Lps;I)V"
 	)
 	public Frames(AbstractArchive var1, AbstractArchive var2, int var3) {
 		int var4 = var1.getGroupFileCount(var3);
@@ -35,36 +41,28 @@ public class Frames extends DualNode {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-1060300691"
+		descriptor = "(IB)Z",
+		garbageValue = "-119"
 	)
 	@Export("hasAlphaTransform")
 	public boolean hasAlphaTransform(int var1) {
 		return this.frames[var1].hasAlphaTransform;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("hv")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)I",
-		garbageValue = "-55"
+		descriptor = "(IZZZZI)Lpu;",
+		garbageValue = "-534466592"
 	)
-	static final int method4329(int var0, int var1, int var2) {
-		int var3 = var0 / var2;
-		int var4 = var0 & var2 - 1;
-		int var5 = var1 / var2;
-		int var6 = var1 & var2 - 1;
-		int var7 = WorldMapLabelSize.method5914(var3, var5);
-		int var8 = WorldMapLabelSize.method5914(var3 + 1, var5);
-		int var9 = WorldMapLabelSize.method5914(var3, var5 + 1);
-		int var10 = WorldMapLabelSize.method5914(var3 + 1, var5 + 1);
-		int var12 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var4 * 1024 / var2] >> 1;
-		int var11 = ((65536 - var12) * var7 >> 16) + (var8 * var12 >> 16);
-		int var14 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var4 * 1024 / var2] >> 1;
-		int var13 = ((65536 - var14) * var9 >> 16) + (var14 * var10 >> 16);
-		int var16 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var6 * 1024 / var2] >> 1;
-		int var15 = ((65536 - var16) * var11 >> 16) + (var13 * var16 >> 16);
-		return var15;
+	@Export("newArchive")
+	static Archive newArchive(int var0, boolean var1, boolean var2, boolean var3, boolean var4) {
+		ArchiveDisk var5 = null;
+		if (JagexCache.JagexCache_dat2File != null) {
+			var5 = new ArchiveDisk(var0, JagexCache.JagexCache_dat2File, JagexCache.JagexCache_idxFiles[var0], 1000000);
+		}
+
+		return new Archive(var5, Varps.masterDisk, class330.field3669, var0, var1, var2, var3, var4, false);
 	}
 }

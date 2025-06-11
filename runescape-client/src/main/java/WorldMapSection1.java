@@ -4,55 +4,54 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lb")
+@ObfuscatedName("lw")
 @Implements("WorldMapSection1")
 public class WorldMapSection1 implements WorldMapSection {
-	@ObfuscatedName("pz")
-	@Export("regionMapArchives")
-	static byte[][] regionMapArchives;
-	@ObfuscatedName("qj")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "[Lwc;"
+		descriptor = "Lps;"
 	)
-	static SpritePixels[] field3325;
-	@ObfuscatedName("vb")
-	@ObfuscatedGetter(
-		intValue = 1988153033
+	@Export("SpotAnimationDefinition_archive")
+	static AbstractArchive SpotAnimationDefinition_archive;
+	@ObfuscatedName("cs")
+	@ObfuscatedSignature(
+		descriptor = "[Lwy;"
 	)
-	static int field3326;
-	@ObfuscatedName("ao")
+	@Export("title_muteSprite")
+	static IndexedSprite[] title_muteSprite;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1810341533
+		intValue = 199885927
 	)
 	@Export("minPlane")
 	int minPlane;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1313466367
+		intValue = -297089101
 	)
 	@Export("planes")
 	int planes;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -621586663
+		intValue = -468947501
 	)
 	@Export("regionStartX")
 	int regionStartX;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -576936563
+		intValue = 1020232931
 	)
 	@Export("regionStartY")
 	int regionStartY;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -1873948687
+		intValue = 1335755497
 	)
 	@Export("regionEndX")
 	int regionEndX;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 946119287
+		intValue = -565393837
 	)
 	@Export("regionEndY")
 	int regionEndY;
@@ -60,10 +59,10 @@ public class WorldMapSection1 implements WorldMapSection {
 	WorldMapSection1() {
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lli;B)V",
-		garbageValue = "121"
+		descriptor = "(Lla;I)V",
+		garbageValue = "-1851402279"
 	)
 	@Export("expandBounds")
 	public void expandBounds(WorldMapArea var1) {
@@ -85,10 +84,10 @@ public class WorldMapSection1 implements WorldMapSection {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)Z",
-		garbageValue = "51"
+		descriptor = "(IIII)Z",
+		garbageValue = "-1948636213"
 	)
 	@Export("containsCoord")
 	public boolean containsCoord(int var1, int var2, int var3) {
@@ -99,20 +98,20 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(III)Z",
-		garbageValue = "1479617515"
+		garbageValue = "1741175838"
 	)
 	@Export("containsPosition")
 	public boolean containsPosition(int var1, int var2) {
 		return var1 >> 6 == this.regionEndX && var2 >> 6 == this.regionEndY;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)[I",
-		garbageValue = "1854006794"
+		garbageValue = "668393896"
 	)
 	@Export("getBorderTileLengths")
 	public int[] getBorderTileLengths(int var1, int var2, int var3) {
@@ -124,10 +123,10 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lnt;",
-		garbageValue = "1321767121"
+		descriptor = "(III)Lnp;",
+		garbageValue = "1118968187"
 	)
 	@Export("coord")
 	public Coord coord(int var1, int var2) {
@@ -140,10 +139,10 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;I)V",
-		garbageValue = "1096753286"
+		descriptor = "(Lwt;I)V",
+		garbageValue = "2137904343"
 	)
 	@Export("read")
 	public void read(Buffer var1) {
@@ -156,10 +155,10 @@ public class WorldMapSection1 implements WorldMapSection {
 		this.postRead();
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1062625591"
+		garbageValue = "1271030023"
 	)
 	@Export("postRead")
 	void postRead() {

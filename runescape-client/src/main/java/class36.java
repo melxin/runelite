@@ -3,96 +3,93 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bu")
+@ObfuscatedName("bf")
 public class class36 {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lqi;"
+		descriptor = "Lqh;"
 	)
 	@Export("reflectionChecks")
-	static IterableNodeDeque reflectionChecks;
-	@ObfuscatedName("ac")
-	static File field217;
+	public static IterableNodeDeque reflectionChecks;
+	@ObfuscatedName("aj")
+	@Export("FileSystem_cacheDir")
+	static File FileSystem_cacheDir;
+	@ObfuscatedName("fg")
+	@Export("client")
+	@ObfuscatedSignature(
+		descriptor = "Lclient;"
+	)
+	public static Client client;
 
 	static {
 		reflectionChecks = new IterableNodeDeque();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-35"
+		descriptor = "(B)[Ldv;",
+		garbageValue = "-72"
 	)
-	static void method710() {
-		Tiles.Tiles_minPlane = 99;
-		DirectByteArrayCopier.Tiles_underlays = new short[4][104][104];
-		WorldEntityCoord.Tiles_overlays = new short[4][104][104];
-		class195.Tiles_shapes = new byte[4][104][104];
-		class302.field3316 = new byte[4][104][104];
-		Varps.field3836 = new int[4][105][105];
-		DevicePcmPlayerProvider.Tiles_underlays2 = new byte[4][105][105];
-		class543.field5472 = new int[105][105];
-		HttpJsonRequestBody.Tiles_hue = new int[104];
-		class235.Tiles_saturation = new int[104];
-		ScriptEvent.Tiles_lightness = new int[104];
-		class28.Tiles_hueMultiplier = new int[104];
-		class272.field3094 = new int[104];
+	static AttackOption[] method697() {
+		return new AttackOption[]{AttackOption.field1192, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.AttackOption_hidden, AttackOption.field1195, AttackOption.AttackOption_alwaysRightClick};
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "238111526"
+		garbageValue = "514941940"
 	)
-	public static void method711() {
-		SpotAnimationDefinition.SpotAnimationDefinition_cached.clear();
-		SpotAnimationDefinition.SpotAnimationDefinition_cachedModels.clear();
+	public static void method705() {
+		EnumComposition.EnumDefinition_cached.clear();
 	}
 
-	@ObfuscatedName("os")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZB)V",
-		garbageValue = "1"
+		descriptor = "(IB)I",
+		garbageValue = "16"
 	)
-	@Export("findItemDefinitions")
-	static void findItemDefinitions(String var0, boolean var1) {
-		var0 = var0.toLowerCase();
-		short[] var2 = new short[16];
-		int var3 = 0;
+	public static int method700(int var0) {
+		class143 var1 = UserComparator4.method3387(var0);
+		if (var1 == null) {
+			return 2;
+		} else {
+			return var1.method3594() ? 0 : 1;
+		}
+	}
 
-		for (int var4 = 0; var4 < class472.ItemDefinition_fileCount; ++var4) {
-			ItemComposition var9 = class231.ItemDefinition_get(var4);
-			if ((!var1 || var9.isTradable) && var9.noteTemplate == -1 && var9.name.toLowerCase().indexOf(var0) != -1) {
-				if (var3 >= 250) {
-					class110.foundItemIdCount = -1;
-					class165.foundItemIds = null;
-					return;
-				}
+	@ObfuscatedName("kn")
+	@ObfuscatedSignature(
+		descriptor = "(Ldl;IIIIIIII[Ljava/lang/String;III)V",
+		garbageValue = "2046012377"
+	)
+	static void method703(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, String[] var9, int var10, int var11) {
+		NodeDeque var12 = var0.pendingSpawns;
+		PendingSpawn var13 = null;
 
-				if (var3 >= var2.length) {
-					short[] var6 = new short[var2.length * 2];
-
-					for (int var7 = 0; var7 < var3; ++var7) {
-						var6[var7] = var2[var7];
-					}
-
-					var2 = var6;
-				}
-
-				var2[var3++] = (short)var4;
+		for (PendingSpawn var14 = (PendingSpawn)var12.last(); var14 != null; var14 = (PendingSpawn)var12.previous()) {
+			if (var14.plane == var1 && var2 == var14.x && var3 == var14.y && var4 == var14.type) {
+				var13 = var14;
+				break;
 			}
 		}
 
-		class165.foundItemIds = var2;
-		LoginPacket.foundItemIndex = 0;
-		class110.foundItemIdCount = var3;
-		String[] var8 = new String[class110.foundItemIdCount];
-
-		for (int var5 = 0; var5 < class110.foundItemIdCount; ++var5) {
-			var8[var5] = class231.ItemDefinition_get(var2[var5]).name;
+		if (var13 == null) {
+			var13 = new PendingSpawn();
+			var13.plane = var1;
+			var13.type = var4;
+			var13.x = var2;
+			var13.y = var3;
+			var13.field1003 = -1;
+			BoundaryObject.method5841(var0, var13);
+			var12.addFirst(var13);
 		}
 
-		short[] var10 = class165.foundItemIds;
-		class330.sortItemsByName(var8, var10, 0, var8.length - 1);
+		var13.field1008 = var5;
+		var13.field1002 = var6;
+		var13.field1001 = var7;
+		var13.delay = var10;
+		var13.hitpoints = var11;
+		var13.method2278(var8);
+		var13.method2292(var9);
 	}
 }

@@ -1,54 +1,69 @@
 import java.applet.Applet;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bw")
+@ObfuscatedName("bq")
 public class class31 {
-	@ObfuscatedName("as")
-	public static Applet field136;
-	@ObfuscatedName("aq")
-	public static String field137;
-	@ObfuscatedName("sh")
-	@ObfuscatedGetter(
-		intValue = -2079809159
+	@ObfuscatedName("al")
+	public static Applet field151;
+	@ObfuscatedName("ac")
+	public static String field155;
+	@ObfuscatedName("ar")
+	@Export("Tiles_overlays")
+	static short[][][] Tiles_overlays;
+	@ObfuscatedName("sw")
+	@ObfuscatedSignature(
+		descriptor = "Lbh;"
 	)
-	@Export("selectedSpellFlags")
-	static int selectedSpellFlags;
+	@Export("tempMenuAction")
+	static MenuAction tempMenuAction;
 
 	static {
-		field136 = null;
-		field137 = "";
+		field151 = null;
+		field155 = "";
 	}
 
-	@ObfuscatedName("mz")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1174795376"
+		descriptor = "(IB)Lgq;",
+		garbageValue = "-86"
 	)
-	static final void method474(int var0) {
-		var0 = Math.max(Math.min(var0, 100), 0);
-		var0 = 100 - var0;
-		float var1 = (float)var0 / 200.0F + 0.5F;
-		Rasterizer3D.buildPalette((double)var1);
-		((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness((double)var1);
-		if (GameBuild.worldMap != null) {
-			GameBuild.worldMap.method9818();
+	@Export("getInvDefinition")
+	public static InvDefinition getInvDefinition(int var0) {
+		InvDefinition var1 = (InvDefinition)InvDefinition.InvDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = InvDefinition.InvDefinition_archive.takeFile(5, var0);
+			var1 = new InvDefinition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
+
+			InvDefinition.InvDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "-1342978777"
+	)
+	public static int method456(int var0) {
+		return var0 >> 1 & 1023;
+	}
+
+	@ObfuscatedName("jx")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-510830099"
+	)
+	static void method461() {
+		for (class270 var0 = (class270)Client.field427.last(); var0 != null; var0 = (class270)Client.field427.previous()) {
+			var0.remove();
 		}
 
-		ItemComposition.ItemDefinition_cachedSprites.clear();
-		Renderable.clientPreferences.updateBrightness((double)var1);
-	}
-
-	@ObfuscatedName("ny")
-	@ObfuscatedSignature(
-		descriptor = "(Lnh;B)I",
-		garbageValue = "-17"
-	)
-	@Export("getWidgetFlags")
-	static int getWidgetFlags(Widget var0) {
-		IntegerNode var1 = (IntegerNode)Client.widgetFlags.get(((long)var0.id << 32) + (long)(var0.childIndex * -1626125685));
-		return var1 != null ? var1.integer : var0.flags;
 	}
 }

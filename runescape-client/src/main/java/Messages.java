@@ -6,36 +6,40 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("er")
+@ObfuscatedName("dp")
 @Implements("Messages")
 public class Messages {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@Export("Messages_channels")
 	static final Map Messages_channels;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lqf;"
+		descriptor = "Lqp;"
 	)
 	@Export("Messages_hashTable")
 	static final IterableNodeHashTable Messages_hashTable;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lqq;"
+		descriptor = "Lqa;"
 	)
 	@Export("Messages_queue")
 	static final IterableDualNodeQueue Messages_queue;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -1230698183
+		intValue = -1396666983
 	)
 	@Export("Messages_count")
 	static int Messages_count;
-	@ObfuscatedName("ki")
+	@ObfuscatedName("qp")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "[Lwd;"
 	)
-	@Export("soundEffectsArchive")
-	static Archive soundEffectsArchive;
+	static SpritePixels[] field1257;
+	@ObfuscatedName("vh")
+	@ObfuscatedGetter(
+		intValue = -1994986839
+	)
+	static int field1260;
 
 	static {
 		Messages_channels = new HashMap();
@@ -44,70 +48,68 @@ public class Messages {
 		Messages_count = 0;
 	}
 
-	@ObfuscatedName("lb")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Ldu;IIIIB)V",
-		garbageValue = "61"
+		descriptor = "(I)V",
+		garbageValue = "-1202934909"
 	)
-	@Export("addPlayerToMenu")
-	static final void addPlayerToMenu(Player var0, int var1, int var2, int var3, int var4) {
-		if (var0.index != Client.localPlayerIndex) {
-			if (Client.menu.menuOptionsCount < 400) {
-				String var5;
-				if (var0.skillLevel == 0) {
-					var5 = var0.actions[0] + var0.username + var0.actions[1] + class322.method6541(var0.combatLevel, Script.localPlayer.combatLevel) + " " + " (" + "level-" + var0.combatLevel + ")" + var0.actions[2];
-				} else {
-					var5 = var0.actions[0] + var0.username + var0.actions[1] + " " + " (" + "skill-" + var0.skillLevel + ")" + var0.actions[2];
-				}
+	@Export("savePreferences")
+	static void savePreferences() {
+		AccessFile var0 = null;
 
-				int var6;
-				if (Client.isItemSelected == 1) {
-					UserComparator6.insertMenuItem("Use", Client.field713 + " " + "->" + " " + Decimator.colorStartTag(16777215) + var5, 14, var1, var2, var3, -1, false, var4);
-				} else if (Client.isSpellSelected) {
-					if ((class31.selectedSpellFlags & 8) == 8) {
-						UserComparator6.insertMenuItem(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + Decimator.colorStartTag(16777215) + var5, 15, var1, var2, var3, -1, false, var4);
-					}
-				} else {
-					for (var6 = 7; var6 >= 0; --var6) {
-						if (Client.playerMenuActions[var6] != null) {
-							short var7 = 0;
-							if (Client.playerMenuActions[var6].equalsIgnoreCase("Attack")) {
-								if (Client.playerAttackOption == AttackOption.AttackOption_hidden) {
-									continue;
-								}
+		try {
+			var0 = HealthBarConfig.getPreferencesFile("", FontName.field5530.name, true);
+			Buffer var1 = ClientPacket.clientPreferences.toBuffer();
+			var0.write(var1.array, 0, var1.offset);
+		} catch (Exception var3) {
+		}
 
-								if (AttackOption.AttackOption_alwaysRightClick == Client.playerAttackOption || AttackOption.AttackOption_dependsOnCombatLevels == Client.playerAttackOption && var0.combatLevel > Script.localPlayer.combatLevel) {
-									var7 = 2000;
-								}
-
-								if (Script.localPlayer.team != 0 && var0.team != 0) {
-									if (var0.team == Script.localPlayer.team) {
-										var7 = 2000;
-									} else {
-										var7 = 0;
-									}
-								} else if (Client.playerAttackOption == AttackOption.field1388 && var0.isClanMember()) {
-									var7 = 2000;
-								}
-							} else if (Client.playerOptionsPriorities[var6]) {
-								var7 = 2000;
-							}
-
-							boolean var8 = false;
-							int var9 = Client.playerMenuOpcodes[var6] + var7;
-							UserComparator6.insertMenuItem(Client.playerMenuActions[var6], Decimator.colorStartTag(16777215) + var5, var9, var1, var2, var3, -1, false, var4);
-						}
-					}
-				}
-
-				for (var6 = 0; var6 < Client.menu.menuOptionsCount; ++var6) {
-					if (Client.menu.menuOpcodes[var6] == 23) {
-						Client.menu.menuTargets[var6] = Decimator.colorStartTag(16777215) + var5;
-						break;
-					}
-				}
-
+		try {
+			if (var0 != null) {
+				var0.closeSync(true);
 			}
+		} catch (Exception var2) {
+		}
+
+	}
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(Lps;I)V",
+		garbageValue = "-1010700983"
+	)
+	public static void method2787(AbstractArchive var0) {
+		FloorOverlayDefinition.FloorOverlayDefinition_archive = var0;
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(Ljm;IIIII)Z",
+		garbageValue = "-916934984"
+	)
+	static boolean method2806(Model var0, int var1, int var2, int var3, int var4) {
+		AABB var5 = var0.getAABB(var1);
+		int var6 = var2 + var5.xMid;
+		int var7 = var3 + var5.yMid;
+		int var8 = var4 + var5.zMid;
+		int var9 = var5.xMidOffset;
+		int var10 = var5.yMidOffset;
+		int var11 = var5.zMidOffset;
+		int var12 = class150.field1719 - var6;
+		int var13 = IntHashTable.field5140 - var7;
+		int var14 = class168.field1846 - var8;
+		if (Math.abs(var12) > var9 + class159.field1777) {
+			return false;
+		} else if (Math.abs(var13) > var10 + class218.field2407) {
+			return false;
+		} else if (Math.abs(var14) > var11 + Interpreter.field680) {
+			return false;
+		} else if (Math.abs(var14 * Message.field257 - var13 * EnumComposition.field1991) > var10 * Interpreter.field680 + var11 * class218.field2407) {
+			return false;
+		} else if (Math.abs(var12 * EnumComposition.field1991 - var14 * JagexCache.field2431) > var9 * Interpreter.field680 + var11 * class159.field1777) {
+			return false;
+		} else {
+			return Math.abs(var13 * JagexCache.field2431 - var12 * Message.field257) <= var10 * class159.field1777 + var9 * class218.field2407;
 		}
 	}
 }

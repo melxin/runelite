@@ -1,30 +1,12 @@
-import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ev")
+@ObfuscatedName("ex")
 @Implements("UserComparator9")
 public class UserComparator9 extends AbstractUserComparator {
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lph;"
-	)
-	static AbstractArchive field1513;
-	@ObfuscatedName("dd")
-	@ObfuscatedSignature(
-		descriptor = "[Lws;"
-	)
-	@Export("worldSelectArrows")
-	static IndexedSprite[] worldSelectArrows;
-	@ObfuscatedName("pw")
-	@ObfuscatedSignature(
-		descriptor = "Lwc;"
-	)
-	@Export("compass")
-	static SpritePixels compass;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -32,10 +14,10 @@ public class UserComparator9 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lse;Lse;I)I",
-		garbageValue = "-670141518"
+		descriptor = "(Lsl;Lsl;I)I",
+		garbageValue = "-1725306701"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -50,59 +32,54 @@ public class UserComparator9 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldf;",
-		garbageValue = "-1180313644"
+		descriptor = "(IIIII)V",
+		garbageValue = "1037976090"
 	)
-	static ClientPreferences method3234() {
-		AccessFile var0 = null;
-		ClientPreferences var1 = new ClientPreferences();
-
-		try {
-			var0 = UrlRequester.getPreferencesFile("", class496.field5187.name, false);
-			byte[] var2 = new byte[(int)var0.length()];
-
-			int var4;
-			for (int var3 = 0; var3 < var2.length; var3 += var4) {
-				var4 = var0.read(var2, var3, var2.length - var3);
-				if (var4 == -1) {
-					throw new IOException();
-				}
-			}
-
-			var1 = new ClientPreferences(new Buffer(var2));
-		} catch (Exception var6) {
+	@Export("itemContainerSetItem")
+	static void itemContainerSetItem(int var0, int var1, int var2, int var3) {
+		ItemContainer var4 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+		if (var4 == null) {
+			var4 = new ItemContainer();
+			ItemContainer.itemContainers.put(var4, (long)var0);
 		}
 
-		try {
-			if (var0 != null) {
-				var0.close();
+		if (var4.ids.length <= var1) {
+			int[] var5 = new int[var1 + 1];
+			int[] var6 = new int[var1 + 1];
+
+			int var7;
+			for (var7 = 0; var7 < var4.ids.length; ++var7) {
+				var5[var7] = var4.ids[var7];
+				var6[var7] = var4.quantities[var7];
 			}
-		} catch (Exception var5) {
+
+			for (var7 = var4.ids.length; var7 < var1; ++var7) {
+				var5[var7] = -1;
+				var6[var7] = 0;
+			}
+
+			var4.ids = var5;
+			var4.quantities = var6;
 		}
 
-		return var1;
+		var4.ids[var1] = var2;
+		var4.quantities[var1] = var3;
 	}
 
-	@ObfuscatedName("nk")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "6"
+		descriptor = "(IZIB)V",
+		garbageValue = "-128"
 	)
-	static final void method3238(int var0, int var1) {
-		ClanChannel var2 = var0 >= 0 ? Client.currentClanChannels[var0] : class92.guestClanChannel;
-		if (var2 != null && var1 >= 0 && var1 < var2.method3704()) {
-			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1);
-			if (var3.rank == -1) {
-				String var4 = var3.username.getName();
-				PacketBufferNode var5 = FloorDecoration.getPacketBufferNode(ClientPacket.CLAN_CHANNEL_KICK_USER, Client.packetWriter.isaacCipher);
-				var5.packetBuffer.writeByte(3 + class466.stringCp1252NullTerminatedByteSize(var4));
-				var5.packetBuffer.writeByte(var0);
-				var5.packetBuffer.writeShort(var1);
-				var5.packetBuffer.writeStringCp1252NullTerminated(var4);
-				Client.packetWriter.addNode(var5);
-			}
+	public static final void method3427(int var0, boolean var1, int var2) {
+		if (var0 >= 8000 && var0 <= 48000) {
+			UserComparator3.field1521 = var0;
+			PcmPlayer.PcmPlayer_stereo = var1;
+			Language.field4892 = var2;
+		} else {
+			throw new IllegalArgumentException();
 		}
 	}
 }

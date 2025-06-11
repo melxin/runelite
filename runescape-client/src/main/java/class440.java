@@ -2,59 +2,67 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qr")
-public class class440 {
-	@ObfuscatedName("fd")
-	@ObfuscatedSignature(
-		descriptor = "Lrk;"
-	)
-	@Export("fontBold12")
-	public static Font fontBold12;
+@ObfuscatedName("qy")
+public final class class440 {
+	@ObfuscatedName("ap")
+	@Export("base37Table")
+	static final char[] base37Table;
+	@ObfuscatedName("aj")
+	static long[] field4943;
 
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-954162307"
-	)
-	static int method8335(int var0, int var1) {
-		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var2 == null) {
-			return 0;
-		} else if (var1 == -1) {
-			return 0;
-		} else {
-			int var3 = 0;
+	static {
+		base37Table = new char[]{'_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+		field4943 = new long[12];
 
-			for (int var4 = 0; var4 < var2.quantities.length; ++var4) {
-				if (var2.ids[var4] == var1) {
-					var3 += var2.quantities[var4];
-				}
-			}
-
-			return var3;
+		for (int var0 = 0; var0 < field4943.length; ++var0) {
+			field4943[var0] = (long)Math.pow(37.0D, (double)var0);
 		}
+
 	}
 
-	@ObfuscatedName("hw")
+	@ObfuscatedName("oa")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "435788540"
+		descriptor = "(Ljava/lang/String;ZI)V",
+		garbageValue = "1464100876"
 	)
-	@Export("logOut")
-	static final void logOut() {
-		Client.packetWriter.close();
-		class279.clear();
-		Client.worldViewManager.clear();
-		Client.playerUpdateManager.method3011();
-		Client.field654.method5641();
-		System.gc();
-		MenuAction.method2254(0, 0);
-		class438.method8301();
-		Client.playingJingle = false;
-		class521.method9686();
-		class325.updateGameState(10);
-		Client.serverCycle = 0;
-		BoundaryObject.method4686().method4850();
-		BoundaryObject.method4686().method4882();
+	@Export("findItemDefinitions")
+	static void findItemDefinitions(String var0, boolean var1) {
+		var0 = var0.toLowerCase();
+		short[] var2 = new short[16];
+		int var3 = 0;
+
+		for (int var4 = 0; var4 < class550.ItemDefinition_fileCount; ++var4) {
+			ItemComposition var9 = SceneTilePaint.ItemDefinition_get(var4);
+			if ((!var1 || var9.isTradable) && var9.noteTemplate == -1 && var9.name.toLowerCase().indexOf(var0) != -1) {
+				if (var3 >= 250) {
+					class518.foundItemIdCount = -1;
+					class226.foundItemIds = null;
+					return;
+				}
+
+				if (var3 >= var2.length) {
+					short[] var6 = new short[var2.length * 2];
+
+					for (int var7 = 0; var7 < var3; ++var7) {
+						var6[var7] = var2[var7];
+					}
+
+					var2 = var6;
+				}
+
+				var2[var3++] = (short)var4;
+			}
+		}
+
+		class226.foundItemIds = var2;
+		GameObject.foundItemIndex = 0;
+		class518.foundItemIdCount = var3;
+		String[] var8 = new String[class518.foundItemIdCount];
+
+		for (int var5 = 0; var5 < class518.foundItemIdCount; ++var5) {
+			var8[var5] = SceneTilePaint.ItemDefinition_get(var2[var5]).name;
+		}
+
+		GraphicsObject.method1854(var8, class226.foundItemIds);
 	}
 }

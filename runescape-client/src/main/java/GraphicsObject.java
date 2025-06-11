@@ -4,91 +4,97 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cm")
+@ObfuscatedName("br")
 @Implements("GraphicsObject")
 public class GraphicsObject extends Renderable {
-	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = 1875664871
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Ldl;"
 	)
-	@Export("cycleStart")
-	int cycleStart;
+	final WorldView field700;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = 1242994835
+	)
+	int field694;
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -2141960109
+		intValue = -1342436349
 	)
-	@Export("plane")
-	int plane;
-	@ObfuscatedName("ae")
+	int field706;
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 1713498473
+		intValue = 970777365
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("af")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 2090204447
+		intValue = -164806355
 	)
-	@Export("y")
-	int y;
-	@ObfuscatedName("as")
+	int field697;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -726395587
+		intValue = -1188767781
 	)
-	@Export("z")
-	int z;
-	@ObfuscatedName("aq")
+	@Export("cycleStart")
+	int cycleStart;
+	@ObfuscatedName("aa")
 	@Export("isFinished")
 	boolean isFinished;
-	@ObfuscatedName("av")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 1052289895
+		intValue = 1625796813
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lkm;"
+		descriptor = "Lip;"
 	)
 	@Export("sequenceDefinition")
 	SequenceDefinition sequenceDefinition;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1334387567
+		intValue = -513314587
 	)
 	@Export("frame")
 	int frame;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 1440325189
+		intValue = -1393685745
 	)
 	@Export("frameCycle")
 	int frameCycle;
 
-	GraphicsObject(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+	@ObfuscatedSignature(
+		descriptor = "(Ldl;IIIIIII)V"
+	)
+	GraphicsObject(WorldView var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		this.isFinished = false;
 		this.frame = 0;
 		this.frameCycle = 0;
-		this.id = var1;
-		this.plane = var2;
-		this.x = var3;
-		this.y = var4;
-		this.z = var5;
-		this.cycleStart = var7 + var6;
-		int var8 = ArchiveLoader.SpotAnimationDefinition_get(this.id).sequence;
-		if (var8 != -1) {
+		this.field700 = var1;
+		this.id = var2;
+		this.field706 = var3;
+		this.x = var4;
+		this.field697 = var5;
+		this.cycleStart = var6;
+		this.field694 = var8 + var7;
+		int var9 = class386.SpotAnimationDefinition_get(this.id).sequence;
+		if (var9 != -1) {
 			this.isFinished = false;
-			this.sequenceDefinition = class91.SequenceDefinition_get(var8);
+			this.sequenceDefinition = VarpDefinition.SequenceDefinition_get(var9);
 		} else {
 			this.isFinished = true;
 		}
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "-1376332092"
+		garbageValue = "65536"
 	)
 	@Export("advance")
 	final void advance(int var1) {
@@ -103,28 +109,28 @@ public class GraphicsObject extends Renderable {
 						break;
 					}
 
-					GrandExchangeEvents.method7827(this.sequenceDefinition, this.frame, this.x, this.y, false);
+					class203.method4299(this.field700, this.sequenceDefinition, this.frame, this.x, this.field697, false);
 				}
 			} else {
 				this.frame += var1;
 				if (this.frame >= this.sequenceDefinition.getMayaAnimFrame()) {
 					this.isFinished = true;
 				} else {
-					GrandExchangeEvents.method7827(this.sequenceDefinition, this.frame, this.x, this.y, false);
+					class203.method4299(this.field700, this.sequenceDefinition, this.frame, this.x, this.field697, false);
 				}
 			}
 
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lhe;",
-		garbageValue = "-1407261867"
+		descriptor = "(B)Ljm;",
+		garbageValue = "27"
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		SpotAnimationDefinition var1 = ArchiveLoader.SpotAnimationDefinition_get(this.id);
+		SpotAnimationDefinition var1 = class386.SpotAnimationDefinition_get(this.id);
 		Model var2;
 		if (!this.isFinished) {
 			var2 = var1.getModel(this.frame);
@@ -135,28 +141,77 @@ public class GraphicsObject extends Renderable {
 		return var2 == null ? null : var2;
 	}
 
-	@ObfuscatedName("ja")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;IIII)I",
-		garbageValue = "1945688569"
+		descriptor = "([Ljava/lang/String;[SI)V",
+		garbageValue = "1255062600"
 	)
-	@Export("getTileHeight")
-	static final int getTileHeight(WorldView var0, int var1, int var2, int var3) {
-		int var4 = var1 >> 7;
-		int var5 = var2 >> 7;
-		if (var4 >= 0 && var5 >= 0 && var4 < var0.tileSettings[0].length && var5 < var0.tileSettings[0][0].length) {
-			int var6 = var3;
-			if (var3 < 3 && (var0.tileSettings[1][var4][var5] & 2) == 2) {
-				var6 = var3 + 1;
+	public static void method1854(String[] var0, short[] var1) {
+		class368.sortItemsByName(var0, var1, 0, var0.length - 1);
+	}
+
+	@ObfuscatedName("ic")
+	@ObfuscatedSignature(
+		descriptor = "(Lcp;IIB)V",
+		garbageValue = "103"
+	)
+	@Export("performPlayerAnimation")
+	static void performPlayerAnimation(Player var0, int var1, int var2) {
+		if (var0.sequence == var1 && var1 != -1) {
+			int var3 = VarpDefinition.SequenceDefinition_get(var1).restartMode;
+			if (var3 == 1) {
+				var0.sequenceFrame = 0;
+				var0.sequenceFrameCycle = 0;
+				var0.sequenceDelay = var2;
+				var0.field1066 = 0;
 			}
 
-			int var7 = var1 & 127;
-			int var8 = var2 & 127;
-			int var9 = var7 * var0.tileHeights[var6][var4 + 1][var5] + var0.tileHeights[var6][var4][var5] * (128 - var7) >> 7;
-			int var10 = var7 * var0.tileHeights[var6][var4 + 1][var5 + 1] + var0.tileHeights[var6][var4][var5 + 1] * (128 - var7) >> 7;
-			return var9 * (128 - var8) + var8 * var10 >> 7;
+			if (var3 == 2) {
+				var0.field1066 = 0;
+			}
+		} else if (var1 == -1 || var0.sequence == -1 || VarpDefinition.SequenceDefinition_get(var1).field2360 >= VarpDefinition.SequenceDefinition_get(var0.sequence).field2360) {
+			var0.sequence = var1;
+			var0.sequenceFrame = 0;
+			var0.sequenceFrameCycle = 0;
+			var0.sequenceDelay = var2;
+			var0.field1066 = 0;
+			var0.field1048 = var0.pathLength;
+		}
+
+	}
+
+	@ObfuscatedName("jh")
+	@ObfuscatedSignature(
+		descriptor = "(Ldl;IIIIIB)V",
+		garbageValue = "0"
+	)
+	@Export("worldToScreen")
+	static void worldToScreen(WorldView var0, int var1, int var2, int var3, int var4, int var5) {
+		if (var1 >= 128 && 13056 >= var1 && var2 >= 128 && 13056 >= var2) {
+			int var6 = DevicePcmPlayerProvider.method329(var0, var3, var4, var0.plane) - var5;
+			var1 -= class6.cameraX;
+			var6 -= ClientPreferences.cameraY;
+			var2 -= GrandExchangeOfferAgeComparator.cameraZ;
+			int var7 = Rasterizer3D.Rasterizer3D_sine[WorldMapData_1.cameraPitch];
+			int var8 = Rasterizer3D.Rasterizer3D_cosine[WorldMapData_1.cameraPitch];
+			int var9 = Rasterizer3D.Rasterizer3D_sine[class455.cameraYaw];
+			int var10 = Rasterizer3D.Rasterizer3D_cosine[class455.cameraYaw];
+			int var11 = var9 * var2 + var10 * var1 >> 16;
+			var2 = var10 * var2 - var9 * var1 >> 16;
+			var1 = var11;
+			var11 = var8 * var6 - var7 * var2 >> 16;
+			var2 = var7 * var6 + var8 * var2 >> 16;
+			if (var2 >= 50) {
+				Client.viewportTempX = Client.viewportWidth / 2 + Client.viewportZoom * var1 / var2;
+				Client.viewportTempY = Client.viewportHeight / 2 + var11 * Client.viewportZoom / var2;
+			} else {
+				Client.viewportTempX = -1;
+				Client.viewportTempY = -1;
+			}
+
 		} else {
-			return 0;
+			Client.viewportTempX = -1;
+			Client.viewportTempY = -1;
 		}
 	}
 

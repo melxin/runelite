@@ -4,60 +4,60 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hc")
+@ObfuscatedName("ko")
 @Implements("BoundaryObject")
 public final class BoundaryObject {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lhy;"
+		descriptor = "Ljr;"
 	)
 	@Export("renderable1")
 	public Renderable renderable1;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lhy;"
+		descriptor = "Ljr;"
 	)
 	@Export("renderable2")
 	public Renderable renderable2;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		longValue = -4732346877224747441L
+		longValue = 2401494802445669407L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 544254391
+		intValue = 754275415
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1410318419
+		intValue = 1152331983
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 178073435
+		intValue = 1284909137
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 1788351575
+		intValue = -1367703823
 	)
 	@Export("orientationA")
 	int orientationA;
 	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -1339709725
+		intValue = 1490093769
 	)
 	@Export("orientationB")
 	int orientationB;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1644910475
+		intValue = -115667083
 	)
 	@Export("flags")
 	int flags;
@@ -67,65 +67,60 @@ public final class BoundaryObject {
 		this.flags = 0;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lik;",
-		garbageValue = "1308195939"
+		descriptor = "(Lps;I)V",
+		garbageValue = "-610796991"
 	)
-	public static class220 method4686() {
-		return class220.field2472;
+	public static void method5842(AbstractArchive var0) {
+		class559.field5585 = var0;
 	}
 
-	@ObfuscatedName("im")
+	@ObfuscatedName("hq")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "1342351555"
+		descriptor = "(I)V",
+		garbageValue = "2104549399"
 	)
-	static final void method4685(int var0, int var1) {
-		if (var0 < 128) {
-			var0 = 128;
-		} else if (var0 > 383) {
-			var0 = 383;
+	static final void method5840() {
+		ConcurrentMidiTask.method9288();
+	}
+
+	@ObfuscatedName("kt")
+	@ObfuscatedSignature(
+		descriptor = "(Ldl;Lcc;S)V",
+		garbageValue = "-6519"
+	)
+	static final void method5841(WorldView var0, PendingSpawn var1) {
+		Scene var2 = var0.scene;
+		long var3 = 0L;
+		int var5 = -1;
+		int var6 = 0;
+		int var7 = 0;
+		if (var1.type == 0) {
+			var3 = var2.getBoundaryObjectTag(var1.plane, var1.x, var1.y);
 		}
 
-		if (class258.cameraPitch < var0) {
-			class258.cameraPitch = (var0 - class258.cameraPitch) * Timer.field4632 / 1000 + class258.cameraPitch + GameBuild.field4198;
-			if (class258.cameraPitch > var0) {
-				class258.cameraPitch = var0;
-			}
-		} else if (class258.cameraPitch > var0) {
-			class258.cameraPitch -= (class258.cameraPitch - var0) * Timer.field4632 / 1000 + GameBuild.field4198;
-			if (class258.cameraPitch < var0) {
-				class258.cameraPitch = var0;
-			}
+		if (var1.type == 1) {
+			var3 = var2.getWallDecorationTag(var1.plane, var1.x, var1.y);
 		}
 
-		var1 &= 2047;
-		int var2 = var1 - AsyncHttpResponse.cameraYaw;
-		if (var2 > 1024) {
-			var2 -= 2048;
-		} else if (var2 < -1024) {
-			var2 += 2048;
+		if (var1.type == 2) {
+			var3 = var2.getGameObjectTag(var1.plane, var1.x, var1.y);
 		}
 
-		if (var2 > 0) {
-			AsyncHttpResponse.cameraYaw = var2 * Timer.field4632 / 1000 + AsyncHttpResponse.cameraYaw + GameBuild.field4198;
-			AsyncHttpResponse.cameraYaw &= 2047;
-		} else if (var2 < 0) {
-			AsyncHttpResponse.cameraYaw -= GameBuild.field4198 + -var2 * Timer.field4632 / 1000;
-			AsyncHttpResponse.cameraYaw &= 2047;
+		if (var1.type == 3) {
+			var3 = var2.getFloorDecorationTag(var1.plane, var1.x, var1.y);
 		}
 
-		int var3 = var1 - AsyncHttpResponse.cameraYaw;
-		if (var3 > 1024) {
-			var3 -= 2048;
-		} else if (var3 < -1024) {
-			var3 += 2048;
+		if (var3 != 0L) {
+			int var8 = var2.getObjectFlags(var1.plane, var1.x, var1.y, var3);
+			var5 = DirectByteArrayCopier.Entity_unpackID(var3);
+			var6 = var8 & 31;
+			var7 = var8 >> 6 & 3;
 		}
 
-		if (var3 < 0 && var2 > 0 || var3 > 0 && var2 < 0) {
-			AsyncHttpResponse.cameraYaw = var1;
-		}
-
+		var1.objectId = var5;
+		var1.field999 = var6;
+		var1.field1000 = var7;
 	}
 }

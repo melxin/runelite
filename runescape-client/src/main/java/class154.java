@@ -1,66 +1,62 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fo")
-public class class154 extends class164 {
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lph;"
-	)
-	@Export("ObjectDefinition_modelsArchive")
-	static AbstractArchive ObjectDefinition_modelsArchive;
-	@ObfuscatedName("ao")
+@ObfuscatedName("fr")
+public class class154 extends class149 {
+	@ObfuscatedName("lp")
+	static String field1749;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1435550419
+		intValue = -337065149
 	)
-	int field1748;
+	int field1750;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = -1771614471
+	)
+	int field1754;
 	@ObfuscatedName("an")
-	byte field1743;
-	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 104136101
+		intValue = 1292494811
 	)
-	int field1747;
-	@ObfuscatedName("af")
-	String field1745;
+	int field1753;
+	@ObfuscatedName("ai")
+	@ObfuscatedGetter(
+		intValue = -199953475
+	)
+	int field1752;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lgo;"
+		descriptor = "Lfp;"
 	)
-	final class165 this$0;
+	final class152 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lgo;)V"
+		descriptor = "(Lfp;)V"
 	)
-	class154(class165 var1) {
+	class154(class152 var1) {
 		this.this$0 = var1;
-		this.field1748 = -1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;I)V",
-		garbageValue = "-1341652344"
+		descriptor = "(Lwt;I)V",
+		garbageValue = "-1635342078"
 	)
-	void vmethod3736(Buffer var1) {
-		this.field1748 = var1.readUnsignedShort();
-		this.field1743 = var1.readByte();
-		this.field1747 = var1.readUnsignedShort();
-		var1.readLong();
-		this.field1745 = var1.readStringCp1252NullTerminated();
+	void vmethod3913(Buffer var1) {
+		this.field1750 = var1.readInt();
+		this.field1752 = var1.readInt();
+		this.field1754 = var1.readUnsignedByte();
+		this.field1753 = var1.readUnsignedByte();
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lgb;I)V",
-		garbageValue = "992088037"
+		descriptor = "(Lgu;I)V",
+		garbageValue = "-1572789515"
 	)
-	void vmethod3737(ClanChannel var1) {
-		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1748);
-		var2.rank = this.field1743;
-		var2.world = this.field1747;
-		var2.username = new Username(this.field1745);
+	void vmethod3914(ClanSettings var1) {
+		var1.method3805(this.field1750, this.field1752, this.field1754, this.field1753);
 	}
 }

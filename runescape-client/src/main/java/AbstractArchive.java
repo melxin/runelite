@@ -1,94 +1,93 @@
 import java.util.Arrays;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ph")
+@ObfuscatedName("ps")
 @Implements("AbstractArchive")
 public abstract class AbstractArchive {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1078401577
+		intValue = -902707759
 	)
-	static int field4735;
-	@ObfuscatedName("br")
+	static int field4752;
+	@ObfuscatedName("ba")
 	@ObfuscatedSignature(
-		descriptor = "Lwa;"
+		descriptor = "Lxg;"
 	)
 	@Export("gzipDecompressor")
 	static GZipDecompressor gzipDecompressor;
-	@ObfuscatedName("bp")
+	@ObfuscatedName("bx")
 	@ObfuscatedGetter(
-		intValue = -643373277
+		intValue = -915044739
 	)
 	@Export("hash")
 	public int hash;
-	@ObfuscatedName("bz")
+	@ObfuscatedName("bl")
 	@Export("releaseGroups")
 	boolean releaseGroups;
-	@ObfuscatedName("bb")
+	@ObfuscatedName("bi")
 	@Export("shallowFiles")
 	boolean shallowFiles;
-	@ObfuscatedName("bl")
+	@ObfuscatedName("bv")
 	@ObfuscatedGetter(
-		intValue = 1582611665
+		intValue = 1059772769
 	)
 	@Export("groupCount")
 	int groupCount;
-	@ObfuscatedName("bw")
+	@ObfuscatedName("bq")
 	@Export("groupIds")
 	int[] groupIds;
-	@ObfuscatedName("bh")
+	@ObfuscatedName("bm")
 	@Export("groupNameHashes")
 	int[] groupNameHashes;
-	@ObfuscatedName("ba")
+	@ObfuscatedName("be")
 	@ObfuscatedSignature(
 		descriptor = "Lsz;"
 	)
 	@Export("groupNameHashTable")
 	IntHashTable groupNameHashTable;
-	@ObfuscatedName("bk")
-	int[] field4725;
-	@ObfuscatedName("bd")
-	int[] field4718;
-	@ObfuscatedName("bu")
+	@ObfuscatedName("bo")
+	int[] field4761;
+	@ObfuscatedName("bw")
+	int[] field4762;
+	@ObfuscatedName("bf")
 	@ObfuscatedGetter(
-		intValue = 733017099
+		intValue = 2055100273
 	)
-	int field4727;
-	@ObfuscatedName("bc")
+	int field4763;
+	@ObfuscatedName("bj")
 	@Export("groupCrcs")
 	int[] groupCrcs;
-	@ObfuscatedName("bs")
+	@ObfuscatedName("bt")
 	@Export("groupVersions")
 	int[] groupVersions;
-	@ObfuscatedName("bx")
+	@ObfuscatedName("bd")
 	@Export("fileCounts")
 	int[] fileCounts;
-	@ObfuscatedName("bj")
+	@ObfuscatedName("bs")
 	@Export("fileIds")
 	int[][] fileIds;
-	@ObfuscatedName("bv")
+	@ObfuscatedName("bn")
 	@Export("fileNameHashes")
 	int[][] fileNameHashes;
-	@ObfuscatedName("be")
+	@ObfuscatedName("bc")
 	@ObfuscatedSignature(
 		descriptor = "[Lsz;"
 	)
 	@Export("fileNameHashTables")
 	IntHashTable[] fileNameHashTables;
-	@ObfuscatedName("bm")
+	@ObfuscatedName("bg")
 	@Export("groups")
 	Object[] groups;
-	@ObfuscatedName("bq")
+	@ObfuscatedName("bb")
 	@Export("files")
 	Object[][] files;
 
 	static {
-		field4735 = 0;
+		field4752 = 0;
 		gzipDecompressor = new GZipDecompressor();
 	}
 
@@ -97,43 +96,43 @@ public abstract class AbstractArchive {
 		this.shallowFiles = var2;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(IB)V",
-		garbageValue = "112"
+		garbageValue = "54"
 	)
 	@Export("loadRegionFromGroup")
 	void loadRegionFromGroup(int var1) {
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-184654211"
+		descriptor = "(IS)V",
+		garbageValue = "24291"
 	)
 	@Export("loadGroup")
 	void loadGroup(int var1) {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "-799870731"
+		garbageValue = "-1136974801"
 	)
 	@Export("groupLoadPercent")
 	int groupLoadPercent(int var1) {
 		return this.groups[var1] != null ? 100 : 0;
 	}
 
-	@ObfuscatedName("bf")
+	@ObfuscatedName("bk")
 	@ObfuscatedSignature(
 		descriptor = "([BI)V",
-		garbageValue = "-558457495"
+		garbageValue = "-25227767"
 	)
 	@Export("decodeIndex")
 	void decodeIndex(byte[] var1) {
-		this.hash = AbstractUserComparator.method9226(var1, var1.length);
-		Buffer var2 = new Buffer(AABB.decompressBytes(var1));
+		this.hash = class339.method7103(var1, var1.length);
+		Buffer var2 = new Buffer(Occluder.decompressBytes(var1));
 		int var3 = var2.readUnsignedByte();
 		if (var3 >= 5 && var3 <= 7) {
 			if (var3 >= 6) {
@@ -151,7 +150,7 @@ public abstract class AbstractArchive {
 				throw new UnsupportedOperationException("");
 			} else {
 				if (var3 >= 7) {
-					this.groupCount = var2.readLargeSmart();
+					this.groupCount = var2.readNullableLargeSmart();
 				} else {
 					this.groupCount = var2.readUnsignedShort();
 				}
@@ -162,7 +161,7 @@ public abstract class AbstractArchive {
 				int var11;
 				if (var3 >= 7) {
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.groupIds[var11] = var9 += var2.readLargeSmart();
+						this.groupIds[var11] = var9 += var2.readNullableLargeSmart();
 						if (this.groupIds[var11] > var10) {
 							var10 = this.groupIds[var11];
 						}
@@ -176,15 +175,15 @@ public abstract class AbstractArchive {
 					}
 				}
 
-				this.field4727 = var10 + 1;
-				this.groupCrcs = new int[this.field4727];
-				this.groupVersions = new int[this.field4727];
-				this.fileCounts = new int[this.field4727];
-				this.fileIds = new int[this.field4727][];
-				this.groups = new Object[this.field4727];
-				this.files = new Object[this.field4727][];
+				this.field4763 = var10 + 1;
+				this.groupCrcs = new int[this.field4763];
+				this.groupVersions = new int[this.field4763];
+				this.fileCounts = new int[this.field4763];
+				this.fileIds = new int[this.field4763][];
+				this.groups = new Object[this.field4763];
+				this.files = new Object[this.field4763][];
 				if (var5) {
-					this.groupNameHashes = new int[this.field4727];
+					this.groupNameHashes = new int[this.field4763];
 					Arrays.fill(this.groupNameHashes, -1);
 
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
@@ -199,12 +198,12 @@ public abstract class AbstractArchive {
 				}
 
 				if (var7) {
-					this.field4725 = new int[this.field4727];
-					this.field4718 = new int[this.field4727];
+					this.field4761 = new int[this.field4763];
+					this.field4762 = new int[this.field4763];
 
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.field4725[this.groupIds[var11]] = var2.readInt();
-						this.field4718[this.groupIds[var11]] = var2.readInt();
+						this.field4761[this.groupIds[var11]] = var2.readInt();
+						this.field4762[this.groupIds[var11]] = var2.readInt();
 					}
 				}
 
@@ -219,7 +218,7 @@ public abstract class AbstractArchive {
 				int var16;
 				if (var3 >= 7) {
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.fileCounts[this.groupIds[var11]] = var2.readLargeSmart();
+						this.fileCounts[this.groupIds[var11]] = var2.readNullableLargeSmart();
 					}
 
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
@@ -230,7 +229,7 @@ public abstract class AbstractArchive {
 						this.fileIds[var12] = new int[var13];
 
 						for (var15 = 0; var15 < var13; ++var15) {
-							var16 = this.fileIds[var12][var15] = var9 += var2.readLargeSmart();
+							var16 = this.fileIds[var12][var15] = var9 += var2.readNullableLargeSmart();
 							if (var16 > var14) {
 								var14 = var16;
 							}
@@ -286,20 +285,20 @@ public abstract class AbstractArchive {
 		}
 	}
 
-	@ObfuscatedName("bi")
+	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)[B",
-		garbageValue = "14"
+		descriptor = "(III)[B",
+		garbageValue = "-138984167"
 	)
 	@Export("takeFile")
 	public byte[] takeFile(int var1, int var2) {
 		return this.takeFileEncrypted(var1, var2, (int[])null);
 	}
 
-	@ObfuscatedName("ci")
+	@ObfuscatedName("bp")
 	@ObfuscatedSignature(
 		descriptor = "(II[IB)[B",
-		garbageValue = "-43"
+		garbageValue = "-32"
 	)
 	@Export("takeFileEncrypted")
 	public byte[] takeFileEncrypted(int var1, int var2, int[] var3) {
@@ -315,7 +314,7 @@ public abstract class AbstractArchive {
 				}
 			}
 
-			byte[] var5 = class169.method3724(this.files[var1][var2], false);
+			byte[] var5 = StructComposition.method4358(this.files[var1][var2], false);
 			if (this.shallowFiles) {
 				this.files[var1][var2] = null;
 			}
@@ -326,10 +325,10 @@ public abstract class AbstractArchive {
 		}
 	}
 
-	@ObfuscatedName("cg")
+	@ObfuscatedName("ck")
 	@ObfuscatedSignature(
 		descriptor = "(III)Z",
-		garbageValue = "-1056237263"
+		garbageValue = "-125534129"
 	)
 	@Export("tryLoadFile")
 	public boolean tryLoadFile(int var1, int var2) {
@@ -347,12 +346,12 @@ public abstract class AbstractArchive {
 		}
 	}
 
-	@ObfuscatedName("cq")
+	@ObfuscatedName("cy")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "133065641"
+		descriptor = "(IB)Z",
+		garbageValue = "0"
 	)
-	public boolean method7688(int var1) {
+	public boolean method8075(int var1) {
 		if (this.files.length == 1) {
 			return this.tryLoadFile(0, var1);
 		} else if (this.files[var1].length == 1) {
@@ -362,10 +361,10 @@ public abstract class AbstractArchive {
 		}
 	}
 
-	@ObfuscatedName("cp")
+	@ObfuscatedName("ca")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "-455615444"
+		garbageValue = "-1023999147"
 	)
 	@Export("tryLoadGroup")
 	public boolean tryLoadGroup(int var1) {
@@ -377,10 +376,10 @@ public abstract class AbstractArchive {
 		}
 	}
 
-	@ObfuscatedName("cs")
+	@ObfuscatedName("cr")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "587361721"
+		garbageValue = "-1394886153"
 	)
 	@Export("isFullyLoaded")
 	public boolean isFullyLoaded() {
@@ -399,10 +398,10 @@ public abstract class AbstractArchive {
 		return var1;
 	}
 
-	@ObfuscatedName("cc")
+	@ObfuscatedName("cu")
 	@ObfuscatedSignature(
-		descriptor = "(IB)[B",
-		garbageValue = "-20"
+		descriptor = "(II)[B",
+		garbageValue = "-336057916"
 	)
 	@Export("takeFileFlat")
 	public byte[] takeFileFlat(int var1) {
@@ -417,8 +416,8 @@ public abstract class AbstractArchive {
 
 	@ObfuscatedName("cd")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)[B",
-		garbageValue = "-96"
+		descriptor = "(III)[B",
+		garbageValue = "-1626650413"
 	)
 	@Export("getFile")
 	public byte[] getFile(int var1, int var2) {
@@ -434,17 +433,17 @@ public abstract class AbstractArchive {
 				}
 			}
 
-			byte[] var4 = class169.method3724(this.files[var1][var2], false);
+			byte[] var4 = StructComposition.method4358(this.files[var1][var2], false);
 			return var4;
 		} else {
 			return null;
 		}
 	}
 
-	@ObfuscatedName("ca")
+	@ObfuscatedName("cl")
 	@ObfuscatedSignature(
 		descriptor = "(II)[B",
-		garbageValue = "1778638157"
+		garbageValue = "-995109373"
 	)
 	@Export("getFileFlat")
 	public byte[] getFileFlat(int var1) {
@@ -457,40 +456,40 @@ public abstract class AbstractArchive {
 		}
 	}
 
-	@ObfuscatedName("cl")
+	@ObfuscatedName("cq")
 	@ObfuscatedSignature(
-		descriptor = "(II)[I",
-		garbageValue = "-2073377830"
+		descriptor = "(IB)[I",
+		garbageValue = "96"
 	)
 	@Export("getGroupFileIds")
 	public int[] getGroupFileIds(int var1) {
 		return var1 >= 0 && var1 < this.fileIds.length ? this.fileIds[var1] : null;
 	}
 
-	@ObfuscatedName("cf")
+	@ObfuscatedName("ci")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "1947574579"
+		garbageValue = "-1777475009"
 	)
 	@Export("getGroupFileCount")
 	public int getGroupFileCount(int var1) {
 		return this.files != null && var1 < this.files.length && this.files[var1] != null ? this.files[var1].length : 0;
 	}
 
-	@ObfuscatedName("cw")
+	@ObfuscatedName("cg")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1844157442"
+		descriptor = "(B)I",
+		garbageValue = "10"
 	)
 	@Export("getGroupCount")
 	public int getGroupCount() {
-		return this.field4727;
+		return this.field4763;
 	}
 
-	@ObfuscatedName("cv")
+	@ObfuscatedName("cx")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "22"
+		descriptor = "(I)V",
+		garbageValue = "-331710576"
 	)
 	@Export("clearGroups")
 	public void clearGroups() {
@@ -500,10 +499,10 @@ public abstract class AbstractArchive {
 
 	}
 
-	@ObfuscatedName("cu")
+	@ObfuscatedName("cw")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "1010033698"
+		garbageValue = "2059199031"
 	)
 	@Export("clearFilesGroup")
 	public void clearFilesGroup(int var1) {
@@ -513,10 +512,10 @@ public abstract class AbstractArchive {
 
 	}
 
-	@ObfuscatedName("ct")
+	@ObfuscatedName("cz")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1928012816"
+		garbageValue = "-1164779088"
 	)
 	@Export("clearFiles")
 	public void clearFiles() {
@@ -530,10 +529,10 @@ public abstract class AbstractArchive {
 
 	}
 
-	@ObfuscatedName("ck")
+	@ObfuscatedName("cs")
 	@ObfuscatedSignature(
 		descriptor = "(I[II)Z",
-		garbageValue = "-1169527680"
+		garbageValue = "988786160"
 	)
 	@Export("buildFiles")
 	boolean buildFiles(int var1, int[] var2) {
@@ -555,29 +554,28 @@ public abstract class AbstractArchive {
 			if (var6) {
 				return true;
 			} else {
-				byte[] var21;
-				if (var2 != null && (var2[0] != 0 || var2[1] != 0 || var2[2] != 0 || var2[3] != 0)) {
-					var21 = class169.method3724(this.groups[var1], true);
-					Buffer var8 = new Buffer(var21);
-					var8.xteaDecrypt(var2, 5, var8.array.length);
+				byte[] var18;
+				if (var2 == null || var2[0] == 0 && var2[1] == 0 && var2[2] == 0 && var2[3] == 0) {
+					var18 = StructComposition.method4358(this.groups[var1], false);
 				} else {
-					var21 = class169.method3724(this.groups[var1], false);
+					var18 = StructComposition.method4358(this.groups[var1], true);
+					Buffer var8 = new Buffer(var18);
+					var8.xteaDecrypt(var2, 5, var8.array.length);
 				}
 
-				byte[] var25 = AABB.decompressBytes(var21);
+				byte[] var20 = Occluder.decompressBytes(var18);
 				if (this.releaseGroups) {
 					this.groups[var1] = null;
 				}
 
-				int var10;
 				if (var3 > 1) {
-					int var22 = var25.length;
-					--var22;
-					var10 = var25[var22] & 255;
-					var22 -= var3 * var10 * 4;
-					Buffer var11 = new Buffer(var25);
+					int var9 = var20.length;
+					--var9;
+					int var10 = var20[var9] & 255;
+					var9 -= var3 * var10 * 4;
+					Buffer var11 = new Buffer(var20);
 					int[] var12 = new int[var3];
-					var11.offset = var22 * 29699747;
+					var11.offset = var9;
 
 					int var14;
 					int var15;
@@ -590,64 +588,38 @@ public abstract class AbstractArchive {
 						}
 					}
 
-					byte[][] var23 = new byte[var3][];
+					byte[][] var19 = new byte[var3][];
 
 					for (var14 = 0; var14 < var3; ++var14) {
-						var23[var14] = new byte[var12[var14]];
+						var19[var14] = new byte[var12[var14]];
 						var12[var14] = 0;
 					}
 
-					var11.offset = var22 * 29699747;
+					var11.offset = var9;
 					var14 = 0;
 
-					int var17;
 					for (var15 = 0; var15 < var10; ++var15) {
-						int var24 = 0;
+						int var16 = 0;
 
-						for (var17 = 0; var17 < var3; ++var17) {
-							var24 += var11.readInt();
-							System.arraycopy(var25, var14, var23[var17], var12[var17], var24);
-							var12[var17] += var24;
-							var14 += var24;
+						for (int var17 = 0; var17 < var3; ++var17) {
+							var16 += var11.readInt();
+							System.arraycopy(var20, var14, var19[var17], var12[var17], var16);
+							var12[var17] += var16;
+							var14 += var16;
 						}
 					}
 
 					for (var15 = 0; var15 < var3; ++var15) {
 						if (!this.shallowFiles) {
-							var17 = var4[var15];
-							byte[] var19 = var23[var15];
-							Object var18;
-							if (var19 == null) {
-								var18 = null;
-							} else if (var19.length > 136) {
-								DirectByteArrayCopier var20 = new DirectByteArrayCopier();
-								var20.set(var19);
-								var18 = var20;
-							} else {
-								var18 = var19;
-							}
-
-							var5[var17] = var18;
+							var5[var4[var15]] = LoginScreenAnimation.method2400(var19[var15], false);
 						} else {
-							var5[var4[var15]] = var23[var15];
+							var5[var4[var15]] = var19[var15];
 						}
 					}
 				} else if (!this.shallowFiles) {
-					var10 = var4[0];
-					Object var26;
-					if (var25 == null) {
-						var26 = null;
-					} else if (var25.length > 136) {
-						DirectByteArrayCopier var27 = new DirectByteArrayCopier();
-						var27.set(var25);
-						var26 = var27;
-					} else {
-						var26 = var25;
-					}
-
-					var5[var10] = var26;
+					var5[var4[0]] = LoginScreenAnimation.method2400(var20, false);
 				} else {
-					var5[var4[0]] = var25;
+					var5[var4[0]] = var20;
 				}
 
 				return true;
@@ -655,134 +627,290 @@ public abstract class AbstractArchive {
 		}
 	}
 
-	@ObfuscatedName("cj")
+	@ObfuscatedName("ct")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;S)I",
-		garbageValue = "9795"
+		descriptor = "(Ljava/lang/String;B)I",
+		garbageValue = "-78"
 	)
 	@Export("getGroupId")
 	public int getGroupId(String var1) {
 		var1 = var1.toLowerCase();
-		return this.groupNameHashTable.get(LoginScreenAnimation.hashString(var1));
+		return this.groupNameHashTable.get(class191.hashString(var1));
 	}
 
-	@ObfuscatedName("cr")
+	@ObfuscatedName("cf")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;B)I",
-		garbageValue = "-85"
+		descriptor = "(ILjava/lang/String;I)I",
+		garbageValue = "-1344474253"
 	)
 	@Export("getFileId")
 	public int getFileId(int var1, String var2) {
 		var2 = var2.toLowerCase();
-		return this.fileNameHashTables[var1].get(LoginScreenAnimation.hashString(var2));
+		return this.fileNameHashTables[var1].get(class191.hashString(var2));
 	}
 
-	@ObfuscatedName("cb")
+	@ObfuscatedName("ch")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;B)Z",
-		garbageValue = "55"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;I)Z",
+		garbageValue = "2005102300"
 	)
 	@Export("isValidFileName")
 	public boolean isValidFileName(String var1, String var2) {
 		var1 = var1.toLowerCase();
 		var2 = var2.toLowerCase();
-		int var3 = this.groupNameHashTable.get(LoginScreenAnimation.hashString(var1));
+		int var3 = this.groupNameHashTable.get(class191.hashString(var1));
 		if (var3 < 0) {
 			return false;
 		} else {
-			int var4 = this.fileNameHashTables[var3].get(LoginScreenAnimation.hashString(var2));
+			int var4 = this.fileNameHashTables[var3].get(class191.hashString(var2));
 			return var4 >= 0;
 		}
 	}
 
-	@ObfuscatedName("cx")
+	@ObfuscatedName("cp")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;Ljava/lang/String;I)[B",
-		garbageValue = "1262325026"
+		garbageValue = "-841497815"
 	)
 	@Export("takeFileByNames")
 	public byte[] takeFileByNames(String var1, String var2) {
 		var1 = var1.toLowerCase();
 		var2 = var2.toLowerCase();
-		int var3 = this.groupNameHashTable.get(LoginScreenAnimation.hashString(var1));
-		int var4 = this.fileNameHashTables[var3].get(LoginScreenAnimation.hashString(var2));
+		int var3 = this.groupNameHashTable.get(class191.hashString(var1));
+		int var4 = this.fileNameHashTables[var3].get(class191.hashString(var2));
 		return this.takeFile(var3, var4);
 	}
 
-	@ObfuscatedName("co")
+	@ObfuscatedName("ce")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;Ljava/lang/String;I)Z",
-		garbageValue = "1499413029"
+		garbageValue = "-1066816098"
 	)
 	@Export("tryLoadFileByNames")
 	public boolean tryLoadFileByNames(String var1, String var2) {
 		var1 = var1.toLowerCase();
 		var2 = var2.toLowerCase();
-		int var3 = this.groupNameHashTable.get(LoginScreenAnimation.hashString(var1));
-		int var4 = this.fileNameHashTables[var3].get(LoginScreenAnimation.hashString(var2));
+		int var3 = this.groupNameHashTable.get(class191.hashString(var1));
+		int var4 = this.fileNameHashTables[var3].get(class191.hashString(var2));
 		return this.tryLoadFile(var3, var4);
 	}
 
-	@ObfuscatedName("cz")
+	@ObfuscatedName("co")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Z",
-		garbageValue = "1953855257"
+		descriptor = "(Ljava/lang/String;B)Z",
+		garbageValue = "-4"
 	)
 	@Export("tryLoadGroupByName")
 	public boolean tryLoadGroupByName(String var1) {
 		var1 = var1.toLowerCase();
-		int var2 = this.groupNameHashTable.get(LoginScreenAnimation.hashString(var1));
+		int var2 = this.groupNameHashTable.get(class191.hashString(var1));
 		return this.tryLoadGroup(var2);
 	}
 
-	@ObfuscatedName("cm")
+	@ObfuscatedName("cj")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-1773901011"
+		descriptor = "(Ljava/lang/String;B)V",
+		garbageValue = "45"
 	)
 	@Export("loadRegionFromName")
 	public void loadRegionFromName(String var1) {
 		var1 = var1.toLowerCase();
-		int var2 = this.groupNameHashTable.get(LoginScreenAnimation.hashString(var1));
+		int var2 = this.groupNameHashTable.get(class191.hashString(var1));
 		if (var2 >= 0) {
 			this.loadRegionFromGroup(var2);
 		}
 	}
 
-	@ObfuscatedName("cn")
+	@ObfuscatedName("cc")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;S)I",
-		garbageValue = "-15002"
+		descriptor = "(Ljava/lang/String;I)I",
+		garbageValue = "-11615509"
 	)
 	@Export("groupLoadPercentByName")
 	public int groupLoadPercentByName(String var1) {
 		var1 = var1.toLowerCase();
-		int var2 = this.groupNameHashTable.get(LoginScreenAnimation.hashString(var1));
+		int var2 = this.groupNameHashTable.get(class191.hashString(var1));
 		return this.groupLoadPercent(var2);
 	}
 
-	@ObfuscatedName("hd")
+	@ObfuscatedName("iy")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1191268157"
+		descriptor = "(Lcn;I)V",
+		garbageValue = "-860879115"
 	)
-	static final void method7783() {
-		if (class443.field4925) {
-			Iterator var0 = Client.worldViewManager.iterator();
+	static final void method8164(Actor var0) {
+		var0.movementSequence = var0.idleSequence;
+		if (var0.pathLength == 0) {
+			var0.field1085 = 0;
+		} else {
+			if (var0.sequence != -1 && var0.sequenceDelay == 0) {
+				SequenceDefinition var1 = VarpDefinition.SequenceDefinition_get(var0.sequence);
+				if (var0.field1048 > 0 && var1.field2341 == 0) {
+					++var0.field1085;
+					return;
+				}
 
-			while (var0.hasNext()) {
-				WorldView var1 = (WorldView)var0.next();
-
-				for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
-					Player var3 = (Player)class509.topLevelWorldView.players.get((long)Client.playerUpdateManager.playerIndices[var2]);
-					if (var3 != null) {
-						var3.method2509();
-					}
+				if (var0.field1048 <= 0 && var1.field2366 == 0) {
+					++var0.field1085;
+					return;
 				}
 			}
 
-			class443.field4925 = false;
-		}
+			int var10 = var0.x;
+			int var2 = var0.y;
+			int var3 = var0.size * -343670784 + var0.pathX[var0.pathLength - 1] * 128;
+			int var4 = var0.size * -343670784 + var0.pathY[var0.pathLength - 1] * 128;
+			if (var10 < var3) {
+				if (var2 < var4) {
+					var0.orientation = 1280;
+				} else if (var2 > var4) {
+					var0.orientation = 1792;
+				} else {
+					var0.orientation = 1536;
+				}
+			} else if (var10 > var3) {
+				if (var2 < var4) {
+					var0.orientation = 768;
+				} else if (var2 > var4) {
+					var0.orientation = 256;
+				} else {
+					var0.orientation = 512;
+				}
+			} else if (var2 < var4) {
+				var0.orientation = 1024;
+			} else if (var2 > var4) {
+				var0.orientation = 0;
+			}
 
+			MoveSpeed var5 = var0.pathTraversed[var0.pathLength - 1];
+			if (var3 - var10 <= 256 && var3 - var10 >= -256 && var4 - var2 <= 256 && var4 - var2 >= -256) {
+				int var6 = var0.orientation - var0.rotation & 2047;
+				if (var6 > 1024) {
+					var6 -= 2048;
+				}
+
+				int var7 = var0.walkBackSequence;
+				if (var6 >= -256 && var6 <= 256) {
+					var7 = var0.walkSequence;
+				} else if (var6 >= 256 && var6 < 768) {
+					var7 = var0.walkRightSequence;
+				} else if (var6 >= -768 && var6 <= -256) {
+					var7 = var0.walkLeftSequence;
+				}
+
+				if (var7 == -1) {
+					var7 = var0.walkSequence;
+				}
+
+				var0.movementSequence = var7;
+				int var8 = 4;
+				boolean var9 = true;
+				if (var0 instanceof NPC) {
+					var9 = ((NPC)var0).definition.isClipped;
+				}
+
+				if (var9) {
+					if (var0.rotation != var0.orientation && var0.targetIndex == -1 && var0.field1079 != 0) {
+						var8 = 2;
+					}
+
+					if (var0.pathLength > 2) {
+						var8 = 6;
+					}
+
+					if (var0.pathLength > 3) {
+						var8 = 8;
+					}
+
+					if (var0.field1085 > 0 && var0.pathLength > 1) {
+						var8 = 8;
+						--var0.field1085;
+					}
+				} else {
+					if (var0.pathLength > 1) {
+						var8 = 6;
+					}
+
+					if (var0.pathLength > 2) {
+						var8 = 8;
+					}
+
+					if (var0.field1085 > 0 && var0.pathLength > 1) {
+						var8 = 8;
+						--var0.field1085;
+					}
+				}
+
+				if (var5 == MoveSpeed.field3119) {
+					var8 <<= 1;
+				} else if (var5 == MoveSpeed.field3117) {
+					var8 >>= 1;
+				}
+
+				if (var8 >= 8) {
+					if (var0.walkSequence == var0.movementSequence && var0.runSequence != -1) {
+						var0.movementSequence = var0.runSequence;
+					} else if (var0.movementSequence == var0.walkBackSequence && var0.field1043 != -1) {
+						var0.movementSequence = var0.field1043;
+					} else if (var0.movementSequence == var0.walkLeftSequence && var0.field1052 != -1) {
+						var0.movementSequence = var0.field1052;
+					} else if (var0.walkRightSequence == var0.movementSequence && var0.field1045 != -1) {
+						var0.movementSequence = var0.field1045;
+					}
+				} else if (var8 <= 2) {
+					if (var0.movementSequence == var0.walkSequence && var0.field1046 != -1) {
+						var0.movementSequence = var0.field1046;
+					} else if (var0.movementSequence == var0.walkBackSequence && var0.field1047 != -1) {
+						var0.movementSequence = var0.field1047;
+					} else if (var0.movementSequence == var0.walkLeftSequence && var0.field1074 != -1) {
+						var0.movementSequence = var0.field1074;
+					} else if (var0.movementSequence == var0.walkRightSequence && var0.field1038 != -1) {
+						var0.movementSequence = var0.field1038;
+					}
+				}
+
+				if (var10 != var3 || var2 != var4) {
+					if (var10 < var3) {
+						var0.x += var8;
+						if (var0.x > var3) {
+							var0.x = var3;
+						}
+					} else if (var10 > var3) {
+						var0.x -= var8;
+						if (var0.x < var3) {
+							var0.x = var3;
+						}
+					}
+
+					if (var2 < var4) {
+						var0.y += var8;
+						if (var0.y > var4) {
+							var0.y = var4;
+						}
+					} else if (var2 > var4) {
+						var0.y -= var8;
+						if (var0.y < var4) {
+							var0.y = var4;
+						}
+					}
+				}
+
+				if (var3 == var0.x && var4 == var0.y) {
+					--var0.pathLength;
+					if (var0.field1048 > 0) {
+						--var0.field1048;
+					}
+				}
+
+			} else {
+				var0.x = var3;
+				var0.y = var4;
+				--var0.pathLength;
+				if (var0.field1048 > 0) {
+					--var0.field1048;
+				}
+
+			}
+		}
 	}
 }

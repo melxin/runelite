@@ -1,48 +1,110 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qy")
-public final class class437 {
-	@ObfuscatedName("ao")
-	@Export("base37Table")
-	public static final char[] base37Table;
+@ObfuscatedName("qu")
+public class class437 {
+	@ObfuscatedName("ap")
+	public static char[] field4937;
+	@ObfuscatedName("aj")
+	static char[] field4933;
 	@ObfuscatedName("an")
-	static long[] field4897;
+	static char[] field4934;
+	@ObfuscatedName("ai")
+	static int[] field4936;
 
 	static {
-		base37Table = new char[]{'_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-		field4897 = new long[12];
+		field4937 = new char[64];
 
-		for (int var0 = 0; var0 < field4897.length; ++var0) {
-			field4897[var0] = (long)Math.pow(37.0D, (double)var0);
+		int var0;
+		for (var0 = 0; var0 < 26; ++var0) {
+			field4937[var0] = (char)(var0 + 65);
 		}
 
+		for (var0 = 26; var0 < 52; ++var0) {
+			field4937[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field4937[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field4937[62] = '+';
+		field4937[63] = '/';
+		field4933 = new char[64];
+
+		for (var0 = 0; var0 < 26; ++var0) {
+			field4933[var0] = (char)(var0 + 65);
+		}
+
+		for (var0 = 26; var0 < 52; ++var0) {
+			field4933[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field4933[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field4933[62] = '*';
+		field4933[63] = '-';
+		field4934 = new char[64];
+
+		for (var0 = 0; var0 < 26; ++var0) {
+			field4934[var0] = (char)(var0 + 65);
+		}
+
+		for (var0 = 26; var0 < 52; ++var0) {
+			field4934[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field4934[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field4934[62] = '-';
+		field4934[63] = '_';
+		field4936 = new int[128];
+
+		for (var0 = 0; var0 < field4936.length; ++var0) {
+			field4936[var0] = -1;
+		}
+
+		for (var0 = 65; var0 <= 90; ++var0) {
+			field4936[var0] = var0 - 65;
+		}
+
+		for (var0 = 97; var0 <= 122; ++var0) {
+			field4936[var0] = var0 - 97 + 26;
+		}
+
+		for (var0 = 48; var0 <= 57; ++var0) {
+			field4936[var0] = var0 - 48 + 52;
+		}
+
+		int[] var2 = field4936;
+		field4936[43] = 62;
+		var2[42] = 62;
+		int[] var1 = field4936;
+		field4936[47] = 63;
+		var1[45] = 63;
 	}
 
-	@ObfuscatedName("lo")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(ILsq;Ldj;I)I",
-		garbageValue = "-1831554485"
+		descriptor = "(IIB)I",
+		garbageValue = "15"
 	)
-	static int method8290(int var0, WorldEntity var1, WorldView var2) {
-		int var3 = -1;
-		if (var0 == Client.field530) {
-			var3 = var2.plane;
-		} else if (Client.field530 == -1) {
-			var3 = var1.field5163.method5312();
+	static final int method8576(int var0, int var1) {
+		if (var0 == -1) {
+			return 12345678;
 		} else {
-			WorldEntity var4 = (WorldEntity)class509.topLevelWorldView.worldEntities.get((long)Client.field530);
-			WorldView var5 = var4.worldView;
-			if (var5.plane == var4.field5163.method5312()) {
-				if (var0 == -1) {
-					var3 = ((WorldEntity)class509.topLevelWorldView.worldEntities.get((long)Client.field530)).getX();
-				} else {
-					var3 = var1.field5163.method5312();
-				}
+			var1 = (var0 & 127) * var1 / 128;
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
 			}
-		}
 
-		return var3;
+			return (var0 & 65408) + var1;
+		}
 	}
 }

@@ -1,217 +1,150 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rx")
-public class class446 {
-	@ObfuscatedName("ao")
-	float[] field4950;
+@ObfuscatedName("rw")
+public final class class446 {
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "[Lrw;"
+	)
+	static class446[] field4979;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = -1454620925
+	)
+	static int field4973;
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 780578735
+		intValue = 1880340437
 	)
-	int field4951;
+	static int field4978;
+	@ObfuscatedName("ai")
+	float field4975;
+	@ObfuscatedName("al")
+	float field4976;
+	@ObfuscatedName("ac")
+	float field4977;
+	@ObfuscatedName("aa")
+	float field4972;
 
-	class446(float[] var1, int var2) {
-		this.field4950 = var1;
-		this.field4951 = var2;
+	static {
+		new class446();
+		field4979 = new class446[0];
+		field4973 = 16;
+		field4979 = new class446[16];
+		field4978 = 0;
+	}
+
+	class446() {
+		this.method8744();
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-655322342"
+	)
+	public void method8769() {
+		synchronized(field4979) {
+			if (field4978 < field4973) {
+				field4979[++field4978 - 1] = this;
+			}
+
+		}
 	}
 
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-1834769553"
+		descriptor = "(FFFFI)V",
+		garbageValue = "-1695580763"
 	)
-	@Export("ItemContainer_getCount")
-	static int ItemContainer_getCount(int var0, int var1) {
-		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var2 == null) {
-			return 0;
+	void method8741(float var1, float var2, float var3, float var4) {
+		this.field4975 = var1;
+		this.field4976 = var2;
+		this.field4977 = var3;
+		this.field4972 = var4;
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(FFFFI)V",
+		garbageValue = "1795429539"
+	)
+	public void method8770(float var1, float var2, float var3, float var4) {
+		float var5 = (float)Math.sin((double)(0.5F * var4));
+		float var6 = (float)Math.cos((double)(var4 * 0.5F));
+		this.field4975 = var5 * var1;
+		this.field4976 = var2 * var5;
+		this.field4977 = var3 * var5;
+		this.field4972 = var6;
+	}
+
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(FFFI)V",
+		garbageValue = "-495368862"
+	)
+	public void method8740(float var1, float var2, float var3) {
+		this.method8770(0.0F, 1.0F, 0.0F, var1);
+		class446 var4 = GrandExchangeEvent.method8240();
+		var4.method8770(1.0F, 0.0F, 0.0F, var2);
+		this.method8743(var4);
+		var4.method8770(0.0F, 0.0F, 1.0F, var3);
+		this.method8743(var4);
+		var4.method8769();
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "2085242843"
+	)
+	final void method8744() {
+		this.field4977 = 0.0F;
+		this.field4976 = 0.0F;
+		this.field4975 = 0.0F;
+		this.field4972 = 1.0F;
+	}
+
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(Lrw;I)V",
+		garbageValue = "-1952176513"
+	)
+	public final void method8743(class446 var1) {
+		this.method8741(this.field4977 * var1.field4976 + var1.field4975 * this.field4972 + this.field4975 * var1.field4972 - var1.field4977 * this.field4976, var1.field4972 * this.field4976 - var1.field4975 * this.field4977 + var1.field4976 * this.field4972 + this.field4975 * var1.field4977, var1.field4977 * this.field4972 + (this.field4976 * var1.field4975 + this.field4977 * var1.field4972 - this.field4975 * var1.field4976), this.field4972 * var1.field4972 - var1.field4975 * this.field4975 - var1.field4976 * this.field4976 - this.field4977 * var1.field4977);
+	}
+
+	public int hashCode() {
+		boolean var1 = true;
+		float var2 = 1.0F;
+		var2 = 31.0F * var2 + this.field4975;
+		var2 = var2 * 31.0F + this.field4976;
+		var2 = this.field4977 + 31.0F * var2;
+		var2 = this.field4972 + var2 * 31.0F;
+		return (int)var2;
+	}
+
+	public String toString() {
+		return this.field4975 + "," + this.field4976 + "," + this.field4977 + "," + this.field4972;
+	}
+
+	public boolean equals(Object var1) {
+		if (!(var1 instanceof class446)) {
+			return false;
 		} else {
-			return var1 >= 0 && var1 < var2.quantities.length ? var2.quantities[var1] : 0;
+			class446 var2 = (class446)var1;
+			return this.field4975 == var2.field4975 && var2.field4976 == this.field4976 && this.field4977 == var2.field4977 && var2.field4972 == this.field4972;
 		}
 	}
 
-	@ObfuscatedName("cs")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(ILdb;ZS)I",
-		garbageValue = "-8828"
+		descriptor = "(II)I",
+		garbageValue = "-1467820326"
 	)
-	static int method8526(int var0, Script var1, boolean var2) {
-		int var3;
-		int var4;
-		if (var0 == 8000) {
-			--AbstractByteArrayCopier.Interpreter_intStackSize;
-			var3 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
-			var4 = Interpreter.Interpreter_arrayLengths[var3];
-			class282.method5910(Interpreter.Interpreter_arrays[var3], new int[var4], 0, var4 - 1);
-			return 1;
-		} else if (var0 == 8001) {
-			AbstractByteArrayCopier.Interpreter_intStackSize -= 3;
-			var3 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize];
-			var4 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 1];
-			int var5 = Interpreter.Interpreter_intStack[AbstractByteArrayCopier.Interpreter_intStackSize + 2];
-			int var6 = Interpreter.Interpreter_arrayLengths[var3];
-			if (var6 <= 1) {
-				return 1;
-			} else {
-				class467.method8953(Interpreter.Interpreter_arrays[var3], var6, var4, var5);
-				return 1;
-			}
-		} else {
-			return 2;
-		}
-	}
-
-	@ObfuscatedName("jo")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIII)V",
-		garbageValue = "1638569735"
-	)
-	@Export("drawObject")
-	static final void drawObject(int var0, int var1, int var2, int var3, int var4) {
-		Scene var5 = class509.topLevelWorldView.scene;
-		long var6 = var5.getBoundaryObjectTag(var0, var1, var2);
-		int var8;
-		int var9;
-		int var10;
-		int var11;
-		int var13;
-		int var14;
-		if (var6 != 0L) {
-			var8 = var5.getObjectFlags(var0, var1, var2, var6);
-			var9 = var8 >> 6 & 3;
-			var10 = var8 & 31;
-			var11 = var3;
-			if (class241.method5142(var6)) {
-				var11 = var4;
-			}
-
-			int[] var12 = InterfaceParent.sceneMinimapSprite.pixels;
-			var13 = var1 * 4 + (103 - var2) * 2048 + 24624;
-			var14 = HttpMethod.Entity_unpackID(var6);
-			ObjectComposition var15 = class162.getObjectDefinition(var14);
-			if (var15.mapSceneId != -1) {
-				IndexedSprite var16 = class377.mapSceneSprites[var15.mapSceneId];
-				if (var16 != null) {
-					int var17 = (var15.sizeX * 4 - var16.subWidth) / 2;
-					int var18 = (var15.sizeY * 4 - var16.subHeight) / 2;
-					var16.drawAt(var17 + var1 * 4 + 48, (104 - var2 - var15.sizeY) * 4 + var18 + 48);
-				}
-			} else {
-				if (var10 == 0 || var10 == 2) {
-					if (var9 == 0) {
-						var12[var13] = var11;
-						var12[var13 + 512] = var11;
-						var12[var13 + 1024] = var11;
-						var12[var13 + 1536] = var11;
-					} else if (var9 == 1) {
-						var12[var13] = var11;
-						var12[var13 + 1] = var11;
-						var12[var13 + 2] = var11;
-						var12[var13 + 3] = var11;
-					} else if (var9 == 2) {
-						var12[var13 + 3] = var11;
-						var12[var13 + 512 + 3] = var11;
-						var12[var13 + 1024 + 3] = var11;
-						var12[var13 + 1536 + 3] = var11;
-					} else if (var9 == 3) {
-						var12[var13 + 1536] = var11;
-						var12[var13 + 1536 + 1] = var11;
-						var12[var13 + 1536 + 2] = var11;
-						var12[var13 + 1536 + 3] = var11;
-					}
-				}
-
-				if (var10 == 3) {
-					if (var9 == 0) {
-						var12[var13] = var11;
-					} else if (var9 == 1) {
-						var12[var13 + 3] = var11;
-					} else if (var9 == 2) {
-						var12[var13 + 1536 + 3] = var11;
-					} else if (var9 == 3) {
-						var12[var13 + 1536] = var11;
-					}
-				}
-
-				if (var10 == 2) {
-					if (var9 == 3) {
-						var12[var13] = var11;
-						var12[var13 + 512] = var11;
-						var12[var13 + 1024] = var11;
-						var12[var13 + 1536] = var11;
-					} else if (var9 == 0) {
-						var12[var13] = var11;
-						var12[var13 + 1] = var11;
-						var12[var13 + 2] = var11;
-						var12[var13 + 3] = var11;
-					} else if (var9 == 1) {
-						var12[var13 + 3] = var11;
-						var12[var13 + 512 + 3] = var11;
-						var12[var13 + 1024 + 3] = var11;
-						var12[var13 + 1536 + 3] = var11;
-					} else if (var9 == 2) {
-						var12[var13 + 1536] = var11;
-						var12[var13 + 1536 + 1] = var11;
-						var12[var13 + 1536 + 2] = var11;
-						var12[var13 + 1536 + 3] = var11;
-					}
-				}
-			}
-		}
-
-		var6 = var5.getGameObjectTag(var0, var1, var2);
-		if (0L != var6) {
-			var8 = var5.getObjectFlags(var0, var1, var2, var6);
-			var9 = var8 >> 6 & 3;
-			var10 = var8 & 31;
-			var11 = HttpMethod.Entity_unpackID(var6);
-			ObjectComposition var25 = class162.getObjectDefinition(var11);
-			int var20;
-			if (var25.mapSceneId != -1) {
-				IndexedSprite var21 = class377.mapSceneSprites[var25.mapSceneId];
-				if (var21 != null) {
-					var14 = (var25.sizeX * 4 - var21.subWidth) / 2;
-					var20 = (var25.sizeY * 4 - var21.subHeight) / 2;
-					var21.drawAt(var14 + var1 * 4 + 48, (104 - var2 - var25.sizeY) * 4 + var20 + 48);
-				}
-			} else if (var10 == 9) {
-				var13 = 15658734;
-				if (class241.method5142(var6)) {
-					var13 = 15597568;
-				}
-
-				int[] var19 = InterfaceParent.sceneMinimapSprite.pixels;
-				var20 = var1 * 4 + (103 - var2) * 2048 + 24624;
-				if (var9 != 0 && var9 != 2) {
-					var19[var20] = var13;
-					var19[var20 + 1 + 512] = var13;
-					var19[var20 + 1024 + 2] = var13;
-					var19[var20 + 1536 + 3] = var13;
-				} else {
-					var19[var20 + 1536] = var13;
-					var19[var20 + 1 + 1024] = var13;
-					var19[var20 + 512 + 2] = var13;
-					var19[var20 + 3] = var13;
-				}
-			}
-		}
-
-		var6 = var5.getFloorDecorationTag(var0, var1, var2);
-		if (0L != var6) {
-			var8 = HttpMethod.Entity_unpackID(var6);
-			ObjectComposition var22 = class162.getObjectDefinition(var8);
-			if (var22.mapSceneId != -1) {
-				IndexedSprite var23 = class377.mapSceneSprites[var22.mapSceneId];
-				if (var23 != null) {
-					var11 = (var22.sizeX * 4 - var23.subWidth) / 2;
-					int var24 = (var22.sizeY * 4 - var23.subHeight) / 2;
-					var23.drawAt(var1 * 4 + var11 + 48, var24 + (104 - var2 - var22.sizeY) * 4 + 48);
-				}
-			}
-		}
-
+	static int method8755(int var0) {
+		return var0 - 1;
 	}
 }

@@ -3,24 +3,24 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bx")
+@ObfuscatedName("dt")
 @Implements("SoundEffect")
 public class SoundEffect {
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "[Lcf;"
+		descriptor = "[Ley;"
 	)
 	@Export("instruments")
 	final Instrument[] instruments;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("start")
 	int start;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("end")
 	int end;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lve;)V"
+		descriptor = "(Lwt;)V"
 	)
 	SoundEffect(Buffer var1) {
 		this.instruments = new Instrument[10];
@@ -28,7 +28,7 @@ public class SoundEffect {
 		for (int var2 = 0; var2 < 10; ++var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 != 0) {
-				var1.offset -= 29699747;
+				--var1.offset;
 				this.instruments[var2] = new Instrument();
 				this.instruments[var2].decode(var1);
 			}
@@ -38,26 +38,26 @@ public class SoundEffect {
 		this.end = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Z)Lbj;"
+		descriptor = "(Z)Lds;"
 	)
-	public RawSound method755(boolean var1) {
+	public RawSound method2874(boolean var1) {
 		short[] var2 = this.mix(var1);
 		RawSound var3 = new RawSound(22050, var2, this.start * 22050 / 1000, this.end * 22050 / 1000, false, var1);
 		return var3;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "()Lbj;"
+		descriptor = "()Lds;"
 	)
 	@Export("toRawSound")
-	RawSound toRawSound() {
-		return this.method755(false);
+	public RawSound toRawSound() {
+		return this.method2874(false);
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("calculateDelay")
 	public final int calculateDelay() {
 		int var1 = 9999999;
@@ -92,7 +92,7 @@ public class SoundEffect {
 		}
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("mix")
 	final short[] mix(boolean var1) {
 		int var2 = 0;
@@ -138,9 +138,9 @@ public class SoundEffect {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lph;II)Lbx;"
+		descriptor = "(Lps;II)Ldt;"
 	)
 	@Export("readSoundEffect")
 	public static SoundEffect readSoundEffect(AbstractArchive var0, int var1, int var2) {

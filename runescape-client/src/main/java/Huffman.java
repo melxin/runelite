@@ -3,16 +3,22 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ob")
+@ObfuscatedName("na")
 @Implements("Huffman")
 public class Huffman {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	@Export("scriptActiveWidget")
+	static Widget scriptActiveWidget;
+	@ObfuscatedName("ap")
 	@Export("masks")
 	int[] masks;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@Export("bits")
 	byte[] bits;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("keys")
 	int[] keys;
 
@@ -41,7 +47,7 @@ public class Huffman {
 
 					for (var10 = var6 - 1; var10 >= 1; --var10) {
 						var11 = var3[var10];
-						if (var11 != var8) {
+						if (var8 != var11) {
 							break;
 						}
 
@@ -99,10 +105,10 @@ public class Huffman {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "([BII[BII)I",
-		garbageValue = "339883674"
+		garbageValue = "1794692037"
 	)
 	@Export("compress")
 	int compress(byte[] var1, int var2, int var3, byte[] var4, int var5) {
@@ -150,10 +156,10 @@ public class Huffman {
 		return (var7 + 7 >> 3) - var5;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "([BI[BIII)I",
-		garbageValue = "1356949871"
+		garbageValue = "1731859669"
 	)
 	@Export("decompress")
 	int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {
@@ -292,5 +298,53 @@ public class Huffman {
 
 			return var7 + 1 - var2;
 		}
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(S)Z",
+		garbageValue = "-28018"
+	)
+	public static boolean method7174() {
+		boolean var0 = false;
+		boolean var1 = false;
+		if (!class335.field3699.isEmpty()) {
+			SongTask var2 = (SongTask)class335.field3699.get(0);
+			if (var2 == null) {
+				class335.field3699.remove(0);
+			} else if (var2.vmethod9290()) {
+				if (var2.method9265()) {
+					System.out.println("Error in midimanager.service: " + var2.method9266());
+					var0 = true;
+				} else {
+					if (var2.method9267() != null) {
+						class335.field3699.add(1, var2.method9267());
+					}
+
+					var1 = var2.method9283();
+				}
+
+				class335.field3699.remove(0);
+			} else {
+				var1 = var2.method9283();
+			}
+		}
+
+		if (var0) {
+			class335.field3699.clear();
+			WorldMapIcon_1.method6192();
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("gb")
+	@ObfuscatedSignature(
+		descriptor = "(I)Luy;",
+		garbageValue = "4194304"
+	)
+	@Export("getWorldMap")
+	static WorldMap getWorldMap() {
+		return class338.worldMap;
 	}
 }

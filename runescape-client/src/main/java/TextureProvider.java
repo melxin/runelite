@@ -4,51 +4,51 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hu")
+@ObfuscatedName("jv")
 @Implements("TextureProvider")
 public class TextureProvider implements TextureLoader {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "[Lgs;"
+		descriptor = "[Ljq;"
 	)
 	@Export("textures")
 	Texture[] textures;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lqx;"
+		descriptor = "Lqk;"
 	)
 	@Export("deque")
 	NodeDeque deque;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -2077997629
+		intValue = 1128153515
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -669948463
+		intValue = 1690358439
 	)
 	@Export("remaining")
 	int remaining;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("brightness")
 	double brightness;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1160667105
+		intValue = 1645089557
 	)
 	@Export("textureSize")
 	int textureSize;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lps;"
 	)
 	@Export("archive")
 	AbstractArchive archive;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lph;Lph;IDI)V"
+		descriptor = "(Lps;Lps;IDI)V"
 	)
 	public TextureProvider(AbstractArchive var1, AbstractArchive var2, int var3, double var4, int var6) {
 		this.deque = new NodeDeque();
@@ -75,10 +75,10 @@ public class TextureProvider implements TextureLoader {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "7"
+		descriptor = "(I)I",
+		garbageValue = "-1149354793"
 	)
 	@Export("getLoadedPercentage")
 	public int getLoadedPercentage() {
@@ -97,7 +97,7 @@ public class TextureProvider implements TextureLoader {
 
 					for (int var7 = 0; var7 < var6.length; ++var7) {
 						int var8 = var6[var7];
-						if (this.archive.method7688(var8)) {
+						if (this.archive.method8075(var8)) {
 							++var2;
 						}
 					}
@@ -112,17 +112,17 @@ public class TextureProvider implements TextureLoader {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@Export("setBrightness")
 	public void setBrightness(double var1) {
 		this.brightness = var1;
 		this.clear();
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(II)[I",
-		garbageValue = "2121605786"
+		garbageValue = "1086905002"
 	)
 	@Export("getTexturePixels")
 	public int[] getTexturePixels(int var1) {
@@ -152,39 +152,39 @@ public class TextureProvider implements TextureLoader {
 		return null;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "1615037448"
+		garbageValue = "1205864267"
 	)
 	@Export("getAverageTextureRGB")
 	public int getAverageTextureRGB(int var1) {
 		return this.textures[var1] != null ? this.textures[var1].averageRGB : 0;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(IS)Z",
-		garbageValue = "1824"
+		descriptor = "(II)Z",
+		garbageValue = "973328106"
 	)
-	public boolean vmethod4697(int var1) {
-		return this.textures[var1].field1946;
+	public boolean vmethod5847(int var1) {
+		return this.textures[var1].field2593;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "18"
+		descriptor = "(II)Z",
+		garbageValue = "2032088871"
 	)
 	@Export("isLowDetail")
 	public boolean isLowDetail(int var1) {
 		return this.textureSize == 64;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1974404543"
+		garbageValue = "-1338366436"
 	)
 	@Export("clear")
 	public void clear() {
@@ -201,7 +201,7 @@ public class TextureProvider implements TextureLoader {
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(IB)V",
-		garbageValue = "4"
+		garbageValue = "102"
 	)
 	@Export("animate")
 	public void animate(int var1) {
@@ -215,87 +215,12 @@ public class TextureProvider implements TextureLoader {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)[B",
-		garbageValue = "2"
+		descriptor = "(IB)Ljava/lang/String;",
+		garbageValue = "-75"
 	)
-	static byte[] method4360(String var0) {
-		boolean var1 = true;
-		boolean var2 = true;
-		int var3 = "pattern".length();
-		int var4 = 0;
-		byte[] var5 = new byte[8];
-
-		while (true) {
-			int var6 = var3 + var4;
-			if (var6 >= var0.length()) {
-				return null;
-			}
-
-			char var7 = var0.charAt(var6);
-			if (var7 == ':') {
-				if (var4 == 0) {
-					return null;
-				}
-
-				byte[] var8 = new byte[var4];
-				System.arraycopy(var5, 0, var8, 0, var4);
-				return var8;
-			}
-
-			if (var5.length == var4) {
-				return null;
-			}
-
-			if (var7 >= '0' && var7 <= '9') {
-				var7 = (char)(var7 - '0');
-			} else {
-				if (var7 < 'a' || var7 > 'z') {
-					return null;
-				}
-
-				var7 = (char)(var7 - 'W');
-			}
-
-			var5[var4++] = (byte)var7;
-		}
-	}
-
-	@ObfuscatedName("mw")
-	@ObfuscatedSignature(
-		descriptor = "(Lnh;IIB)V",
-		garbageValue = "32"
-	)
-	@Export("alignWidgetPosition")
-	static void alignWidgetPosition(Widget var0, int var1, int var2) {
-		if (var0.xAlignment == 0) {
-			var0.x = var0.rawX;
-		} else if (var0.xAlignment == 1) {
-			var0.x = (var1 - var0.width * 624892547) / 2 + var0.rawX;
-		} else if (var0.xAlignment == 2) {
-			var0.x = var1 - var0.width * 624892547 - var0.rawX;
-		} else if (var0.xAlignment == 3) {
-			var0.x = var0.rawX * var1 >> 14;
-		} else if (var0.xAlignment == 4) {
-			var0.x = (var0.rawX * var1 >> 14) + (var1 - var0.width * 624892547) / 2;
-		} else {
-			var0.x = var1 - var0.width * 624892547 - (var0.rawX * var1 >> 14);
-		}
-
-		if (var0.yAlignment == 0) {
-			var0.y = var0.rawY;
-		} else if (var0.yAlignment == 1) {
-			var0.y = (var2 - var0.height * 1265510039) / 2 + var0.rawY;
-		} else if (var0.yAlignment == 2) {
-			var0.y = var2 - var0.height * 1265510039 - var0.rawY;
-		} else if (var0.yAlignment == 3) {
-			var0.y = var2 * var0.rawY >> 14;
-		} else if (var0.yAlignment == 4) {
-			var0.y = (var2 * var0.rawY >> 14) + (var2 - var0.height * 1265510039) / 2;
-		} else {
-			var0.y = var2 - var0.height * 1265510039 - (var2 * var0.rawY >> 14);
-		}
-
+	static String method5483(int var0) {
+		return "<img=" + var0 + ">";
 	}
 }

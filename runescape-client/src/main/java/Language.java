@@ -5,97 +5,102 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qa")
+@ObfuscatedName("qt")
 @Implements("Language")
 public class Language implements Enum {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lqa;"
+		descriptor = "Lqt;"
 	)
 	@Export("Language_EN")
 	public static final Language Language_EN;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lqa;"
+		descriptor = "Lqt;"
 	)
 	@Export("Language_DE")
 	static final Language Language_DE;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lqa;"
+		descriptor = "Lqt;"
 	)
 	@Export("Language_FR")
 	public static final Language Language_FR;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lqa;"
+		descriptor = "Lqt;"
 	)
 	@Export("Language_PT")
 	static final Language Language_PT;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lqa;"
+		descriptor = "Lqt;"
 	)
 	@Export("Language_NL")
 	static final Language Language_NL;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lqa;"
+		descriptor = "Lqt;"
 	)
 	@Export("Language_ES")
 	public static final Language Language_ES;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lqa;"
+		descriptor = "Lqt;"
 	)
 	@Export("Language_ES_MX")
 	static final Language Language_ES_MX;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "[Lqa;"
+		descriptor = "[Lqt;"
 	)
 	@Export("Language_valuesOrdered")
 	public static final Language[] Language_valuesOrdered;
-	@ObfuscatedName("am")
-	final String field4842;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -1310262515
+		intValue = -1685787363
+	)
+	static int field4892;
+	@ObfuscatedName("am")
+	final String field4887;
+	@ObfuscatedName("ag")
+	@ObfuscatedGetter(
+		intValue = -433478557
 	)
 	@Export("id")
 	final int id;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("au")
 	@Export("language")
 	final String language;
 
 	static {
-		Language_EN = new Language("EN", "en", "English", ModeWhere.field4858, 0, "GB");
-		Language_DE = new Language("DE", "de", "German", ModeWhere.field4858, 1, "DE");
-		Language_FR = new Language("FR", "fr", "French", ModeWhere.field4858, 2, "FR");
-		Language_PT = new Language("PT", "pt", "Portuguese", ModeWhere.field4858, 3, "BR");
-		Language_NL = new Language("NL", "nl", "Dutch", ModeWhere.field4849, 4, "NL");
-		Language_ES = new Language("ES", "es", "Spanish", ModeWhere.field4849, 5, "ES");
-		Language_ES_MX = new Language("ES_MX", "es-mx", "Spanish (Latin American)", ModeWhere.field4858, 6, "MX");
-		Language[] var0 = new Language[]{Language_ES, Language_ES_MX, Language_FR, Language_DE, Language_PT, Language_EN, Language_NL};
+		Language_EN = new Language("EN", "en", "English", ModeWhere.field4909, 0, "GB");
+		Language_DE = new Language("DE", "de", "German", ModeWhere.field4909, 1, "DE");
+		Language_FR = new Language("FR", "fr", "French", ModeWhere.field4909, 2, "FR");
+		Language_PT = new Language("PT", "pt", "Portuguese", ModeWhere.field4909, 3, "BR");
+		Language_NL = new Language("NL", "nl", "Dutch", ModeWhere.field4896, 4, "NL");
+		Language_ES = new Language("ES", "es", "Spanish", ModeWhere.field4896, 5, "ES");
+		Language_ES_MX = new Language("ES_MX", "es-mx", "Spanish (Latin American)", ModeWhere.field4909, 6, "MX");
+		Language[] var0 = method8377();
 		Language_valuesOrdered = new Language[var0.length];
-		Language[] var2 = var0;
+		Language[] var1 = var0;
 
-		for (int var3 = 0; var3 < var2.length; ++var3) {
-			Language var4 = var2[var3];
-			if (Language_valuesOrdered[var4.id] != null) {
+		for (int var2 = 0; var2 < var1.length; ++var2) {
+			Language var3 = var1[var2];
+			if (Language_valuesOrdered[var3.id] != null) {
 				throw new IllegalStateException();
 			}
 
-			Language_valuesOrdered[var4.id] = var4;
+			Language_valuesOrdered[var3.id] = var3;
 		}
 
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lqp;ILjava/lang/String;)V"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lqm;ILjava/lang/String;)V"
 	)
 	Language(String var1, String var2, String var3, ModeWhere var4, int var5, String var6) {
-		this.field4842 = var1;
+		this.field4887 = var1;
 		this.language = var2;
 		this.id = var5;
 		if (var6 != null) {
@@ -106,20 +111,20 @@ public class Language implements Enum {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1746725635"
+		descriptor = "(B)I",
+		garbageValue = "26"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-539879048"
+		garbageValue = "1662937496"
 	)
 	@Export("getLanguage")
 	String getLanguage() {
@@ -130,76 +135,35 @@ public class Language implements Enum {
 		return this.getLanguage().toLowerCase(Locale.ENGLISH);
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)J",
-		garbageValue = "1668335288"
+		descriptor = "(B)[Lqt;",
+		garbageValue = "-16"
 	)
-	static long method8011(CharSequence var0) {
-		long var1 = 0L;
-		int var3 = var0.length();
-
-		for (int var4 = 0; var4 < var3; ++var4) {
-			var1 *= 37L;
-			char var5 = var0.charAt(var4);
-			if (var5 >= 'A' && var5 <= 'Z') {
-				var1 += (long)(var5 + 1 - 65);
-			} else if (var5 >= 'a' && var5 <= 'z') {
-				var1 += (long)(var5 + 1 - 97);
-			} else if (var5 >= '0' && var5 <= '9') {
-				var1 += (long)(var5 + 27 - 48);
-			}
-
-			if (var1 >= 177917621779460413L) {
-				break;
-			}
-		}
-
-		while (0L == var1 % 37L && var1 != 0L) {
-			var1 /= 37L;
-		}
-
-		return var1;
+	static Language[] method8377() {
+		return new Language[]{Language_FR, Language_DE, Language_ES_MX, Language_EN, Language_PT, Language_ES, Language_NL};
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("cl")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "118"
+		descriptor = "(ILcr;ZB)I",
+		garbageValue = "-1"
 	)
-	static void method8020() {
-		class137.method3379(24);
-		TileItem.setLoginResponseString("The game servers are currently being updated.", "Please wait a few minutes and try again.", "");
+	static int method8369(int var0, Script var1, boolean var2) {
+		return 2;
 	}
 
-	@ObfuscatedName("hk")
+	@ObfuscatedName("lq")
 	@ObfuscatedSignature(
-		descriptor = "(IS)V",
-		garbageValue = "-4436"
+		descriptor = "(IIIII)V",
+		garbageValue = "659903836"
 	)
-	static void method8021(int var0) {
-		PacketBufferNode var1 = FloorDecoration.getPacketBufferNode(ClientPacket.SET_HEADING, Client.packetWriter.isaacCipher);
-		var1.packetBuffer.writeByte(var0);
-		Client.packetWriter.addNode(var1);
-	}
-
-	@ObfuscatedName("nz")
-	@ObfuscatedSignature(
-		descriptor = "(IIZI)V",
-		garbageValue = "-813604357"
-	)
-	static final void method8019(int var0, int var1, boolean var2) {
-		if (Client.currentClanChannels[var0] != null) {
-			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3704()) {
-				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
-				PacketBufferNode var4 = FloorDecoration.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
-				var4.packetBuffer.writeByte(4 + class466.stringCp1252NullTerminatedByteSize(var3.username.getName()));
-				var4.packetBuffer.writeByte(var0);
-				var4.packetBuffer.writeShort(var1);
-				var4.packetBuffer.writeBoolean(var2);
-				var4.packetBuffer.writeStringCp1252NullTerminated(var3.username.getName());
-				Client.packetWriter.addNode(var4);
+	public static final void method8379(int var0, int var1, int var2, int var3) {
+		for (int var4 = 0; var4 < Client.rootWidgetCount; ++var4) {
+			if (Client.rootWidgetXs[var4] + Client.rootWidgetWidths[var4] > var0 && Client.rootWidgetXs[var4] < var0 + var2 && Client.rootWidgetHeights[var4] + Client.rootWidgetYs[var4] > var1 && Client.rootWidgetYs[var4] < var3 + var1) {
+				Client.validRootWidgets[var4] = true;
 			}
 		}
+
 	}
 }

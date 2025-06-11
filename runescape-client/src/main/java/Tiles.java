@@ -4,57 +4,94 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dz")
+@ObfuscatedName("cq")
 @Implements("Tiles")
 public final class Tiles {
-	@ObfuscatedName("af")
-	static final int[] field1037;
-	@ObfuscatedName("as")
-	static final int[] field1035;
-	@ObfuscatedName("aq")
-	static final int[] field1038;
-	@ObfuscatedName("av")
-	static final int[] field1041;
-	@ObfuscatedName("am")
-	static final int[] field1039;
+	@ObfuscatedName("ai")
+	static final int[] field861;
+	@ObfuscatedName("al")
+	static final int[] field850;
+	@ObfuscatedName("ac")
+	static final int[] field851;
 	@ObfuscatedName("aa")
-	static final int[] field1040;
-	@ObfuscatedName("ap")
+	static final int[] field852;
+	@ObfuscatedName("am")
+	static final int[] field856;
+	@ObfuscatedName("ah")
+	static final int[] field854;
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1494199719
+		intValue = 321698633
 	)
 	@Export("Tiles_minPlane")
 	static int Tiles_minPlane;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("az")
+	static int[][] field846;
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -921542273
+		intValue = -1882252805
 	)
 	@Export("rndHue")
 	static int rndHue;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1903035109
+		intValue = -1801395523
 	)
 	@Export("rndLightness")
 	static int rndLightness;
 
 	static {
-		field1037 = new int[]{1, 2, 4, 8};
-		field1035 = new int[]{16, 32, 64, 128};
-		field1038 = new int[]{1, 0, -1, 0};
-		field1041 = new int[]{0, -1, 0, 1};
-		field1039 = new int[]{1, -1, -1, 1};
-		field1040 = new int[]{-1, -1, 1, 1};
+		field861 = new int[]{1, 2, 4, 8};
+		field850 = new int[]{16, 32, 64, 128};
+		field851 = new int[]{1, 0, -1, 0};
+		field852 = new int[]{0, -1, 0, 1};
+		field856 = new int[]{1, -1, -1, 1};
+		field854 = new int[]{-1, -1, 1, 1};
 		Tiles_minPlane = 99;
 		rndHue = (int)(Math.random() * 17.0D) - 8;
 		rndLightness = (int)(Math.random() * 33.0D) - 16;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;[BIIIIIII)V"
+		descriptor = "(Ldl;IIIII)V",
+		garbageValue = "1834839102"
 	)
-	static final void method2385(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+	static final void method2077(WorldView var0, int var1, int var2, int var3, int var4) {
+		int[][][] var5 = var0.tileHeights;
+		int var6 = var0.sizeX - 1;
+		int var7 = var0.sizeY - 1;
+
+		for (int var8 = var2; var8 <= var2 + var4; ++var8) {
+			for (int var9 = var1; var9 <= var3 + var1; ++var9) {
+				if (var9 >= 0 && var9 < var5[0].length - 1 && var8 >= 0 && var8 < var5[0][0].length - 1) {
+					class462.Tiles_underlays2[0][var9][var8] = 127;
+					if (var9 == var1 && var9 > 0) {
+						var5[0][var9][var8] = var5[0][var9 - 1][var8];
+					}
+
+					if (var9 == var3 + var1 && var9 < var6) {
+						var5[0][var9][var8] = var5[0][var9 + 1][var8];
+					}
+
+					if (var8 == var2 && var8 > 0) {
+						var5[0][var9][var8] = var5[0][var9][var8 - 1];
+					}
+
+					if (var2 + var4 == var8 && var8 < var7) {
+						var5[0][var9][var8] = var5[0][var9][var8 + 1];
+					}
+				}
+			}
+		}
+
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(Ldl;[BIIIIIII)V"
+	)
+	static final void method2024(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		Buffer var9 = new Buffer(var1);
 		int var10 = -1;
 
@@ -68,7 +105,7 @@ public final class Tiles {
 			int var12 = 0;
 
 			while (true) {
-				int var13 = var9.readUShortSmart();
+				int var13 = var9.readShortSmartSub();
 				if (var13 == 0) {
 					break;
 				}
@@ -81,7 +118,7 @@ public final class Tiles {
 				int var18 = var17 >> 2;
 				int var19 = var17 & 3;
 				if (var5 == var16 && var15 >= var6 && var15 < var6 + 8 && var14 >= var7 && var14 < var7 + 8) {
-					ObjectComposition var20 = class162.getObjectDefinition(var10);
+					ObjectComposition var20 = HealthBarConfig.getObjectDefinition(var10);
 					int var23 = var15 & 7;
 					int var24 = var14 & 7;
 					int var26 = var20.sizeX;
@@ -106,7 +143,7 @@ public final class Tiles {
 					}
 
 					var28 = var3 + var22;
-					int var29 = var4 + VarbitComposition.method5336(var15 & 7, var14 & 7, var8, var20.sizeX, var20.sizeY, var19);
+					int var29 = var4 + DevicePcmPlayerProvider.method328(var15 & 7, var14 & 7, var8, var20.sizeX, var20.sizeY, var19);
 					if (var28 > 0 && var29 > 0 && var28 < var0.sizeX - 1 && var29 < var0.sizeY - 1) {
 						int var30 = var2;
 						if ((var0.tileSettings[1][var28][var29] & 2) == 2) {
@@ -118,7 +155,7 @@ public final class Tiles {
 							var31 = var0.collisionMaps[var30];
 						}
 
-						class361.addObjects(var0, var2, var28, var29, var10, var19 + var8 & 3, var18, var31);
+						class86.addObjects(var0, var2, var28, var29, var10, var19 + var8 & 3, var18, var31);
 					}
 				}
 			}

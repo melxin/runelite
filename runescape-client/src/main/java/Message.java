@@ -4,51 +4,56 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cu")
+@ObfuscatedName("bd")
 @Implements("Message")
 public class Message extends DualNode {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("bf")
 	@ObfuscatedGetter(
-		intValue = 83124477
+		intValue = -1200949965
+	)
+	static int field257;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = 1352901255
 	)
 	@Export("count")
 	int count;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 717380949
+		intValue = -370937945
 	)
 	@Export("cycle")
 	int cycle;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1466319835
+		intValue = -742473955
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("sender")
 	String sender;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lwp;"
+		descriptor = "Lxm;"
 	)
 	@Export("senderUsername")
 	Username senderUsername;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@Export("prefix")
 	String prefix;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@Export("text")
 	String text;
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lsd;"
+		descriptor = "Ltc;"
 	)
 	@Export("isFromFriend0")
 	TriBool isFromFriend0;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lsd;"
+		descriptor = "Ltc;"
 	)
 	@Export("isFromIgnored0")
 	TriBool isFromIgnored0;
@@ -59,14 +64,14 @@ public class Message extends DualNode {
 		this.set(var1, var2, var3, var4);
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
-		garbageValue = "-356390334"
+		garbageValue = "1239697184"
 	)
 	@Export("set")
 	void set(int var1, String var2, String var3, String var4) {
-		this.count = class211.method4779();
+		this.count = SoundSystem.method2980();
 		this.cycle = Client.cycle;
 		this.type = var1;
 		this.sender = var2;
@@ -77,20 +82,20 @@ public class Message extends DualNode {
 		this.clearIsFromIgnored();
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "75"
+		descriptor = "(I)V",
+		garbageValue = "-480321233"
 	)
 	@Export("clearIsFromFriend")
 	void clearIsFromFriend() {
 		this.isFromFriend0 = TriBool.TriBool_unknown;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(B)Z",
-		garbageValue = "-81"
+		garbageValue = "13"
 	)
 	@Export("isFromFriend")
 	final boolean isFromFriend() {
@@ -101,30 +106,30 @@ public class Message extends DualNode {
 		return this.isFromFriend0 == TriBool.TriBool_true;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-62"
+		descriptor = "(I)V",
+		garbageValue = "1605021692"
 	)
 	@Export("fillIsFromFriend")
 	void fillIsFromFriend() {
-		this.isFromFriend0 = class223.friendSystem.friendsList.contains(this.senderUsername) ? TriBool.TriBool_true : TriBool.TriBool_false;
+		this.isFromFriend0 = Actor.friendSystem.friendsList.contains(this.senderUsername) ? TriBool.TriBool_true : TriBool.TriBool_false;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "901059465"
+		garbageValue = "-1758498810"
 	)
 	@Export("clearIsFromIgnored")
 	void clearIsFromIgnored() {
 		this.isFromIgnored0 = TriBool.TriBool_unknown;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "2"
+		descriptor = "(I)Z",
+		garbageValue = "2146226873"
 	)
 	@Export("isFromIgnored")
 	final boolean isFromIgnored() {
@@ -135,124 +140,131 @@ public class Message extends DualNode {
 		return this.isFromIgnored0 == TriBool.TriBool_true;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1101714900"
+		garbageValue = "-1681697546"
 	)
 	@Export("fillIsFromIgnored")
 	void fillIsFromIgnored() {
-		this.isFromIgnored0 = class223.friendSystem.ignoreList.contains(this.senderUsername) ? TriBool.TriBool_true : TriBool.TriBool_false;
+		this.isFromIgnored0 = Actor.friendSystem.ignoreList.contains(this.senderUsername) ? TriBool.TriBool_true : TriBool.TriBool_false;
 	}
 
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-379431246"
+		garbageValue = "-762029701"
 	)
 	@Export("fillSenderUsername")
 	final void fillSenderUsername() {
 		if (this.sender != null) {
-			this.senderUsername = new Username(Script.method2362(this.sender), class339.loginType);
+			this.senderUsername = new Username(class332.method6860(this.sender), AbstractUserComparator.loginType);
 		} else {
 			this.senderUsername = null;
 		}
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(ILve;I)Lie;",
-		garbageValue = "-872826664"
+		descriptor = "(I)[Lch;",
+		garbageValue = "-1911339395"
 	)
-	public static PlayerCompositionColorTextureOverride method1223(int var0, Buffer var1) {
-		int var2 = var1.readUnsignedByte();
-		boolean var3 = (var2 & 1) != 0;
-		boolean var4 = (var2 & 2) != 0;
-		boolean var5 = (var2 & 4) != 0;
-		boolean var6 = (var2 & 8) != 0;
-		PlayerCompositionColorTextureOverride var7 = new PlayerCompositionColorTextureOverride(var0);
-		int var8;
-		int[] var9;
-		boolean var10;
-		int var11;
-		short var12;
-		if (var3) {
-			var8 = var1.readUnsignedByte();
-			var9 = new int[]{var8 & 15, var8 >> 4 & 15};
-			var10 = var7.playerCompositionRecolorTo != null && var9.length == var7.playerCompositionRecolorTo.length;
+	static class68[] method739() {
+		return new class68[]{class68.field926, class68.field929, class68.field925, class68.field928, class68.field924, class68.field927, class68.field930};
+	}
 
-			for (var11 = 0; var11 < 2; ++var11) {
-				if (var9[var11] != 15) {
-					var12 = (short)var1.readUnsignedShort();
-					if (var10) {
-						var7.playerCompositionRecolorTo[var9[var11]] = var12;
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(IIIII)I",
+		garbageValue = "-1879055796"
+	)
+	static final int method738(int var0, int var1, int var2, int var3) {
+		return var0 * var2 + var3 * var1 >> 16;
+	}
+
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(II)J",
+		garbageValue = "-83691962"
+	)
+	public static long method740(int var0) {
+		if (var0 > 63) {
+			throw new class450("Cannot generate max unsigned value for more than 63 bits as this is greater than the boundaries of a java long. Value provided: %d", new Object[]{var0});
+		} else {
+			return (long)Math.pow(2.0D, (double)var0) - 1L;
+		}
+	}
+
+	@ObfuscatedName("jg")
+	@ObfuscatedSignature(
+		descriptor = "(Lke;I)V",
+		garbageValue = "-1042849476"
+	)
+	static void method710(class270 var0) {
+		if (var0 != null && var0.field3051 != null) {
+			if (var0.field3051.childIndex * -744024149 >= 0) {
+				Widget var1 = ClientPreferences.widgetDefinition.method7286(var0.field3051.parentId);
+				if (var1 == null || var1.children == null || var1.children.length == 0 || var0.field3051.childIndex * -744024149 >= var1.children.length || var0.field3051 != var1.children[var0.field3051.childIndex * -744024149]) {
+					return;
+				}
+			}
+
+			if (var0.field3051.type == 11 && var0.field3055 == 0) {
+				if (var0.field3051.method7761(var0.field3053, var0.field3054, 0, 0)) {
+					var0.field3051.method7758().method4636().method4767(1, var0.field3051.method7758().method4678());
+					switch(var0.field3051.method7765()) {
+					case 0:
+						Calendar.openURL(var0.field3051.method7767(), true, false);
+						break;
+					case 1:
+						int var2 = class255.method5526(var0.field3051);
+						boolean var5 = (var2 >> 22 & 1) != 0;
+						if (var5) {
+							int[] var3 = var0.field3051.method7772();
+							if (var3 != null) {
+								PacketBufferNode var4 = class139.getPacketBufferNode(ClientPacket.IF_CRMVIEW, Client.packetWriter.isaacCipher);
+								var4.packetBuffer.writeIntIME(var0.field3051.method7766());
+								var4.packetBuffer.writeInt(var3[2]);
+								var4.packetBuffer.writeIntIME(var0.field3051.id);
+								var4.packetBuffer.writeShort(var0.field3051.childIndex * -744024149);
+								var4.packetBuffer.writeIntLE(var3[0]);
+								var4.packetBuffer.writeIntME(var3[1]);
+								Client.packetWriter.addNode(var4);
+							}
+						}
+					}
+				}
+			} else if (var0.field3051.type == 12) {
+				class367 var6 = var0.field3051.method7755();
+				if (var6 != null && var6.method7450()) {
+					switch(var0.field3055) {
+					case 0:
+						Client.field491.method5863(var0.field3051);
+						var6.method7515(true);
+						var6.method7467(var0.field3053, var0.field3054, Client.indexCheck.isValidIndexInRange(82), Client.indexCheck.isValidIndexInRange(81));
+						break;
+					case 1:
+						var6.method7438(var0.field3053, var0.field3054);
 					}
 				}
 			}
+
 		}
+	}
 
-		if (var4) {
-			var8 = var1.readUnsignedByte();
-			var9 = new int[]{var8 & 15, var8 >> 4 & 15};
-			var10 = var7.playerCompositionRetextureTo != null && var9.length == var7.playerCompositionRetextureTo.length;
-
-			for (var11 = 0; var11 < 2; ++var11) {
-				if (var9[var11] != 15) {
-					var12 = (short)var1.readUnsignedShort();
-					if (var10) {
-						var7.playerCompositionRetextureTo[var9[var11]] = var12;
-					}
-				}
+	@ObfuscatedName("km")
+	@ObfuscatedSignature(
+		descriptor = "(Ldl;IIIIB)Lcc;",
+		garbageValue = "8"
+	)
+	static final PendingSpawn method709(WorldView var0, int var1, int var2, int var3, int var4) {
+		for (PendingSpawn var5 = (PendingSpawn)var0.pendingSpawns.last(); var5 != null; var5 = (PendingSpawn)var0.pendingSpawns.previous()) {
+			if (var5.plane == var1 && var2 == var5.x && var3 == var5.y && var4 == var5.type) {
+				return var5;
 			}
 		}
 
-		if (var5) {
-			var7.field2538 = var1.readUnsignedShort();
-			var7.field2539 = var1.readUnsignedShort();
-		}
-
-		if (var6) {
-			var7.field2545 = var1.readUnsignedShort();
-			var7.field2544 = var1.readUnsignedShort();
-		}
-
-		return var7;
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(Lph;Lph;B)V",
-		garbageValue = "0"
-	)
-	public static void method1224(AbstractArchive var0, AbstractArchive var1) {
-		WorldMapElement.WorldMapElement_archive = var1;
-		WorldMapElement.WorldMapElement_count = var0.getGroupFileCount(35);
-		WorldMapElement.WorldMapElement_cached = new WorldMapElement[WorldMapElement.WorldMapElement_count];
-
-		for (int var2 = 0; var2 < WorldMapElement.WorldMapElement_count; ++var2) {
-			byte[] var3 = var0.takeFile(35, var2);
-			WorldMapElement.WorldMapElement_cached[var2] = new WorldMapElement(var2);
-			if (var3 != null) {
-				WorldMapElement.WorldMapElement_cached[var2].decode(new Buffer(var3));
-				WorldMapElement.WorldMapElement_cached[var2].method5052();
-			}
-		}
-
-	}
-
-	@ObfuscatedName("kp")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIIIIIIIB)V",
-		garbageValue = "51"
-	)
-	static void method1225(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13) {
-		var1 = var1 * 128 + 64;
-		var2 = var2 * 128 + 64;
-		var3 = var3 * 128 + 64;
-		var4 = var4 * 128 + 64;
-		Projectile var14 = new Projectile(var6, var0, var1, var2, GraphicsObject.getTileHeight(DevicePcmPlayerProvider.worldView, var1, var2, var0) - var7, var9 + Client.cycle, var10 + Client.cycle, var11, var12, var13, var5, var8);
-		var14.setDestination(var3, var4, GraphicsObject.getTileHeight(DevicePcmPlayerProvider.worldView, var3, var4, var0) - var8, var9 + Client.cycle);
-		DevicePcmPlayerProvider.worldView.projectiles.addFirst(var14);
+		return null;
 	}
 }

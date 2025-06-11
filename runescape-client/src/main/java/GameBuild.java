@@ -4,53 +4,42 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oy")
+@ObfuscatedName("oa")
 @Implements("GameBuild")
 public class GameBuild {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Loa;"
 	)
 	@Export("LIVE")
 	static final GameBuild LIVE;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Loa;"
 	)
 	@Export("BUILDLIVE")
 	static final GameBuild BUILDLIVE;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Loa;"
 	)
 	@Export("RC")
 	static final GameBuild RC;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Loa;"
 	)
 	@Export("WIP")
 	static final GameBuild WIP;
-	@ObfuscatedName("vp")
-	@ObfuscatedGetter(
-		intValue = -1069164939
-	)
-	static int field4198;
-	@ObfuscatedName("wd")
-	@ObfuscatedSignature(
-		descriptor = "Luy;"
-	)
-	@Export("worldMap")
-	static WorldMap worldMap;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("name")
 	public final String name;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 250730267
+		intValue = -1227870063
 	)
 	@Export("buildId")
-	final int buildId;
+	public final int buildId;
 
 	static {
 		LIVE = new GameBuild("LIVE", 0);
@@ -64,18 +53,21 @@ public class GameBuild {
 		this.buildId = var2;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1093681776"
+		descriptor = "(IIIII)Lrv;",
+		garbageValue = "-1376096067"
 	)
-	@Export("Messages_getLastChatID")
-	static int Messages_getLastChatID(int var0) {
-		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
-		if (var1 == null) {
-			return -1;
-		} else {
-			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count;
+	public static Bounds method7927(int var0, int var1, int var2, int var3) {
+		synchronized(Bounds.field4953) {
+			if (Bounds.field4954 == 0) {
+				return new Bounds(var0, var1, var2, var3);
+			} else {
+				--Bounds.field4954;
+				Bounds.field4953[Bounds.field4954].setLow(var0, var1);
+				Bounds.field4953[Bounds.field4954].setHigh(var2, var3);
+				return Bounds.field4953[Bounds.field4954];
+			}
 		}
 	}
 }

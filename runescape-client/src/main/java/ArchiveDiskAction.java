@@ -4,27 +4,32 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pz")
+@ObfuscatedName("pe")
 @Implements("ArchiveDiskAction")
 public class ArchiveDiskAction extends Node {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ky")
+	@ObfuscatedSignature(
+		descriptor = "Lpu;"
+	)
+	static Archive field4689;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -2008589591
+		intValue = 960110547
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@Export("data")
 	public byte[] data;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lti;"
+		descriptor = "Ltb;"
 	)
 	@Export("archiveDisk")
 	public ArchiveDisk archiveDisk;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "Lpu;"
 	)
 	@Export("archive")
 	public Archive archive;
@@ -32,22 +37,23 @@ public class ArchiveDiskAction extends Node {
 	ArchiveDiskAction() {
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("cw")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ljk;",
-		garbageValue = "-874653325"
+		descriptor = "(Lve;B)Ljava/lang/Object;",
+		garbageValue = "-110"
 	)
-	@Export("WorldMapElement_get")
-	public static WorldMapElement WorldMapElement_get(int var0) {
-		return var0 >= 0 && var0 < WorldMapElement.WorldMapElement_cached.length && WorldMapElement.WorldMapElement_cached[var0] != null ? WorldMapElement.WorldMapElement_cached[var0] : new WorldMapElement(var0);
-	}
-
-	@ObfuscatedName("gz")
-	@ObfuscatedSignature(
-		descriptor = "(B)Lkl;",
-		garbageValue = "4"
-	)
-	public static IndexCheck method7614() {
-		return Client.indexCheck;
+	static Object method8009(class563 var0) {
+		if (var0 == null) {
+			throw new IllegalStateException("popValueOfType() failure - null baseVarType");
+		} else {
+			switch(var0.field5596) {
+			case 0:
+				return Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+			case 3:
+				return Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
+			default:
+				throw new IllegalStateException("popValueOfType() failure - unsupported type");
+			}
+		}
 	}
 }

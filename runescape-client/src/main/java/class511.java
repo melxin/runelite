@@ -1,17 +1,14 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tx")
-public class class511 extends class512 {
-	public class511(int var1) {
-		super(var1);
-	}
-
-	@ObfuscatedName("ao")
+@ObfuscatedName("tw")
+public class class511 {
+	@ObfuscatedName("bz")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;II)V",
-		garbageValue = "2117475033"
+		descriptor = "(IB)I",
+		garbageValue = "120"
 	)
-	void vmethod9606(Buffer var1, int var2) {
+	static int method10047(int var0) {
+		return (int)Math.pow(2.0D, (double)((float)var0 / 256.0F + 7.0F));
 	}
 }

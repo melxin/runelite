@@ -1,61 +1,75 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ol")
+@ObfuscatedName("oc")
 public class class376 {
-	static {
-		Math.sqrt(8192.0D);
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-704424996"
-	)
-	public static int method7547(int var0, int var1) {
-		int var2;
-		for (var2 = 0; var1 > 0; --var1) {
-			var2 = var2 << 1 | var0 & 1;
-			var0 >>>= 1;
-		}
-
-		return var2;
-	}
-
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "-1851165126"
+		descriptor = "(IZB)[B",
+		garbageValue = "8"
 	)
-	public static final void method7548(int var0, int var1, int var2, int var3) {
-		if (!ViewportMouse.ViewportMouse_false0) {
-			byte var8 = 50;
-			int var9 = AbstractRasterizer.method4001();
-			int var10 = (ViewportMouse.ViewportMouse_x - Rasterizer3D.getClipMidX()) * var8 / Rasterizer3D.get3dZoom();
-			int var11 = (ViewportMouse.ViewportMouse_y - Rasterizer3D.getClipMidY()) * var8 / Rasterizer3D.get3dZoom();
-			int var12 = (ViewportMouse.ViewportMouse_x - Rasterizer3D.getClipMidX()) * var9 / Rasterizer3D.get3dZoom();
-			int var13 = (ViewportMouse.ViewportMouse_y - Rasterizer3D.getClipMidY()) * var9 / Rasterizer3D.get3dZoom();
-			int var15 = var1 * var11 + var0 * var8 >> 16;
-			int var19 = HttpResponse.method305(var11, var8, var1, var0);
-			int var16 = var1 * var13 + var9 * var0 >> 16;
-			var9 = HttpResponse.method305(var13, var9, var1, var0);
-			int var14 = class152.method3502(var10, var19, var3, var2);
-			int var17 = var10 * var2 + var19 * var3 >> 16;
-			var10 = var14;
-			var14 = class152.method3502(var12, var9, var3, var2);
-			int var18 = var12 * var2 + var3 * var9 >> 16;
-			WorldMapData_0.field3149 = (var14 + var10) / 2;
-			class214.field2434 = (var16 + var15) / 2;
-			class110.field1408 = (var17 + var18) / 2;
-			class504.field5236 = (var14 - var10) / 2;
-			Login.field963 = (var16 - var15) / 2;
-			class72.field886 = (var18 - var17) / 2;
-			class169.field1861 = Math.abs(class504.field5236);
-			class74.field907 = Math.abs(Login.field963);
-			HorizontalAlignment.field2685 = Math.abs(class72.field886);
-			ViewportMouse.field2299.method8340((float)(var14 - var10), (float)(var16 - var15), (float)(var18 - var17));
-			ViewportMouse.field2299.method8344();
-			ViewportMouse.ViewportMouse_false0 = true;
+	@Export("ByteArrayPool_getArrayBool")
+	public static byte[] ByteArrayPool_getArrayBool(int var0, boolean var1) {
+		synchronized(ByteArrayPool.field5107) {
+			byte[] var3;
+			if ((var0 == 100 || var0 < 100 && var1) && ByteArrayPool.ByteArrayPool_smallCount > 0) {
+				var3 = ByteArrayPool.ByteArrayPool_small[--ByteArrayPool.ByteArrayPool_smallCount];
+				ByteArrayPool.ByteArrayPool_small[ByteArrayPool.ByteArrayPool_smallCount] = null;
+				return var3;
+			}
+
+			if ((var0 == 5000 || var0 < 5000 && var1) && ByteArrayPool.ByteArrayPool_mediumCount > 0) {
+				var3 = ByteArrayPool.ByteArrayPool_medium[--ByteArrayPool.ByteArrayPool_mediumCount];
+				ByteArrayPool.ByteArrayPool_medium[ByteArrayPool.ByteArrayPool_mediumCount] = null;
+				return var3;
+			}
+
+			if ((var0 == 10000 || var0 < 10000 && var1) && ByteArrayPool.ByteArrayPool_largeCount > 0) {
+				var3 = ByteArrayPool.ByteArrayPool_large[--ByteArrayPool.ByteArrayPool_largeCount];
+				ByteArrayPool.ByteArrayPool_large[ByteArrayPool.ByteArrayPool_largeCount] = null;
+				return var3;
+			}
+
+			if ((var0 == 30000 || var0 < 30000 && var1) && ByteArrayPool.field5111 > 0) {
+				var3 = ByteArrayPool.field5119[--ByteArrayPool.field5111];
+				ByteArrayPool.field5119[ByteArrayPool.field5111] = null;
+				return var3;
+			}
+
+			int var6;
+			if (PlayerUpdateManager.ByteArrayPool_arrays != null) {
+				for (var6 = 0; var6 < class63.ByteArrayPool_alternativeSizes.length; ++var6) {
+					if ((class63.ByteArrayPool_alternativeSizes[var6] == var0 || var0 < class63.ByteArrayPool_alternativeSizes[var6] && var1) && WorldMapDecoration.ByteArrayPool_altSizeArrayCounts[var6] > 0) {
+						byte[] var4 = PlayerUpdateManager.ByteArrayPool_arrays[var6][--WorldMapDecoration.ByteArrayPool_altSizeArrayCounts[var6]];
+						PlayerUpdateManager.ByteArrayPool_arrays[var6][WorldMapDecoration.ByteArrayPool_altSizeArrayCounts[var6]] = null;
+						return var4;
+					}
+				}
+			}
+
+			if (var1 && class63.ByteArrayPool_alternativeSizes != null) {
+				for (var6 = 0; var6 < class63.ByteArrayPool_alternativeSizes.length; ++var6) {
+					if (var0 <= class63.ByteArrayPool_alternativeSizes[var6] && WorldMapDecoration.ByteArrayPool_altSizeArrayCounts[var6] < PlayerUpdateManager.ByteArrayPool_arrays[var6].length) {
+						return new byte[class63.ByteArrayPool_alternativeSizes[var6]];
+					}
+				}
+			}
+		}
+
+		return new byte[var0];
+	}
+
+	@ObfuscatedName("ch")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/Object;Ljava/lang/String;I)Ltp;",
+		garbageValue = "1985635628"
+	)
+	static class509 method7915(Object var0, String var1) {
+		if (var0 == null) {
+			throw new RuntimeException();
+		} else {
+			return (class509)var0;
 		}
 	}
 }

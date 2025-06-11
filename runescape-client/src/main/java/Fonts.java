@@ -4,27 +4,29 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ue")
+@ObfuscatedName("uo")
 @Implements("Fonts")
 public class Fonts {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("pu")
+	static byte[][] field5525;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lps;"
 	)
 	@Export("spritesArchive")
 	AbstractArchive spritesArchive;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lps;"
 	)
 	@Export("fontsArchive")
 	AbstractArchive fontsArchive;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("map")
 	HashMap map;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lph;Lph;)V"
+		descriptor = "(Lps;Lps;)V"
 	)
 	public Fonts(AbstractArchive var1, AbstractArchive var2) {
 		this.spritesArchive = var1;
@@ -32,10 +34,10 @@ public class Fonts {
 		this.map = new HashMap();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "([Lux;I)Ljava/util/HashMap;",
-		garbageValue = "936595554"
+		descriptor = "([Lvz;I)Ljava/util/HashMap;",
+		garbageValue = "1975308889"
 	)
 	@Export("createMap")
 	public HashMap createMap(FontName[] var1) {
@@ -47,7 +49,18 @@ public class Fonts {
 			if (this.map.containsKey(var5)) {
 				var2.put(var5, this.map.get(var5));
 			} else {
-				Font var6 = class230.method5024(this.spritesArchive, this.fontsArchive, var5.name, "");
+				AbstractArchive var7 = this.spritesArchive;
+				AbstractArchive var8 = this.fontsArchive;
+				String var9 = var5.name;
+				Font var6;
+				if (!var7.isValidFileName(var9, "")) {
+					var6 = null;
+				} else {
+					int var10 = var7.getGroupId(var9);
+					int var11 = var7.getFileId(var10, "");
+					var6 = class384.method7944(var7, var8, var10, var11);
+				}
+
 				if (var6 != null) {
 					this.map.put(var5, var6);
 					var2.put(var5, var6);

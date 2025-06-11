@@ -1,22 +1,29 @@
+import java.security.SecureRandom;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ds")
+@ObfuscatedName("cd")
 @Implements("ChatChannel")
 public class ChatChannel {
-	@ObfuscatedName("an")
+	@ObfuscatedName("ot")
+	static SecureRandom field831;
+	@ObfuscatedName("vn")
+	@ObfuscatedGetter(
+		intValue = -487327443
+	)
+	static int field830;
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "[Lcu;"
+		descriptor = "[Lbd;"
 	)
 	@Export("messages")
 	Message[] messages;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1693887289
+		intValue = -1886364519
 	)
 	@Export("count")
 	int count;
@@ -25,10 +32,10 @@ public class ChatChannel {
 		this.messages = new Message[100];
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;S)Lcu;",
-		garbageValue = "1650"
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;B)Lbd;",
+		garbageValue = "105"
 	)
 	@Export("addMessage")
 	Message addMessage(int var1, String var2, String var3, String var4) {
@@ -56,68 +63,45 @@ public class ChatChannel {
 		return var5;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lcu;",
-		garbageValue = "8"
+		descriptor = "(IB)Lbd;",
+		garbageValue = "21"
 	)
 	@Export("getMessage")
 	Message getMessage(int var1) {
 		return var1 >= 0 && var1 < this.count ? this.messages[var1] : null;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "-26"
+		garbageValue = "-35"
 	)
 	@Export("size")
 	int size() {
 		return this.count;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "60"
+		descriptor = "(I)V",
+		garbageValue = "-1523037483"
 	)
-	@Export("focusPasswordWhenUsernameFilled")
-	static void focusPasswordWhenUsernameFilled() {
-		if (Client.Login_isUsernameRemembered && Login.Login_username != null && !Login.Login_username.isEmpty()) {
-			Login.currentLoginField = 1;
-		} else {
-			Login.currentLoginField = 0;
-		}
-
+	public static void method1995() {
+		FloorUnderlayDefinition.FloorUnderlayDefinition_cached.clear();
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(ILdb;ZI)I",
-		garbageValue = "-111229305"
+		descriptor = "([Ljava/lang/String;I)Ltp;",
+		garbageValue = "954628671"
 	)
-	static int method2383(int var0, Script var1, boolean var2) {
-		Widget var3 = class232.widgetDefinition.method6951(Interpreter.Interpreter_intStack[--AbstractByteArrayCopier.Interpreter_intStackSize]);
-		if (var0 == ScriptOpcodes.IF_GETX) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.x;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETY) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.y;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETWIDTH) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.width * 624892547;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETHEIGHT) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.height * 1265510039;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETHIDE) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.isHidden ? 1 : 0;
-			return 1;
-		} else if (var0 == ScriptOpcodes.IF_GETLAYER) {
-			Interpreter.Interpreter_intStack[++AbstractByteArrayCopier.Interpreter_intStackSize - 1] = var3.parentId;
-			return 1;
-		} else {
-			return 2;
-		}
+	public static class509 method2005(String[] var0) {
+		class509 var1 = new class509(class563.field5595, false);
+		var1.field5295 = var0;
+		var1.field5287 = var0.length * 1090132113;
+		var1.field5291 = var0.length;
+		return var1;
 	}
 }

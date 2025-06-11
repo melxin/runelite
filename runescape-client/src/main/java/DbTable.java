@@ -7,51 +7,51 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vm")
+@ObfuscatedName("vu")
 @Implements("DbTable")
 public class DbTable extends DualNode {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "[Lvh;"
+		descriptor = "[Lve;"
 	)
-	class555[] field5540;
-	@ObfuscatedName("as")
+	class563[] field5617;
+	@ObfuscatedName("al")
 	@Export("columns")
 	List columns;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lph;I)V"
+		descriptor = "(Lps;I)V"
 	)
 	public DbTable(AbstractArchive var1, int var2) {
 		byte[] var3 = var1.takeFile(var2, 0);
-		this.method10194(new Buffer(var3));
+		this.method10683(new Buffer(var3));
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lph;II)V"
+		descriptor = "(Lps;II)V"
 	)
 	public DbTable(AbstractArchive var1, int var2, int var3) {
 		byte[] var4 = var1.takeFile(var2, var3 + 1);
-		this.method10194(new Buffer(var4));
+		this.method10683(new Buffer(var4));
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;I)V",
-		garbageValue = "-1696761897"
+		descriptor = "(Lwt;B)V",
+		garbageValue = "23"
 	)
-	void method10194(Buffer var1) {
+	void method10683(Buffer var1) {
 		int var2 = var1.packBytesToInt();
-		this.field5540 = new class555[var2];
+		this.field5617 = new class563[var2];
 		this.columns = new ArrayList(var2);
 
 		for (int var3 = 0; var3 < var2; ++var3) {
-			this.field5540[var3] = (class555)ArchiveDiskActionHandler.findEnumerated(class555.method10145(), var1.readUnsignedByte());
+			this.field5617[var3] = (class563)class175.findEnumerated(class563.method10641(), var1.readUnsignedByte());
 			int var4 = var1.packBytesToInt();
 			HashMap var5 = new HashMap(var4);
 
 			while (var4-- > 0) {
-				Object var6 = this.field5540[var3].method10144(var1);
+				Object var6 = this.field5617[var3].method10636(var1);
 				int var7 = var1.packBytesToInt();
 				ArrayList var8 = new ArrayList();
 
@@ -68,17 +68,30 @@ public class DbTable extends DualNode {
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Object;II)Ljava/util/List;",
-		garbageValue = "-1954527026"
+		descriptor = "(Ljava/lang/Object;IB)Ljava/util/List;",
+		garbageValue = "94"
 	)
-	public List method10189(Object var1, int var2) {
+	public List method10684(Object var1, int var2) {
 		if (var2 < 0) {
 			var2 = 0;
 		}
 
 		Map var3 = (Map)this.columns.get(var2);
 		return (List)var3.get(var1);
+	}
+
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(III)V",
+		garbageValue = "1724326131"
+	)
+	public static final void method10688(int var0, int var1) {
+		ViewportMouse.ViewportMouse_x = var0;
+		ViewportMouse.ViewportMouse_y = var1;
+		ViewportMouse.ViewportMouse_isInViewport = true;
+		ViewportMouse.ViewportMouse_entityCount = 0;
+		ViewportMouse.ViewportMouse_false0 = false;
 	}
 }

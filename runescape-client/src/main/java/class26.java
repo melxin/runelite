@@ -3,23 +3,23 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import netscape.javascript.JSObject;
 
-@ObfuscatedName("br")
+@ObfuscatedName("ba")
 public class class26 {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/applet/Applet;Ljava/lang/String;B)Ljava/lang/Object;",
-		garbageValue = "-43"
+		descriptor = "(Ljava/applet/Applet;Ljava/lang/String;I)V",
+		garbageValue = "1967870338"
 	)
-	public static Object method393(Applet var0, String var1) throws Throwable {
-		return JSObject.getWindow(var0).call(var1, (Object[])null);
+	public static void method389(Applet var0, String var1) throws Throwable {
+		JSObject.getWindow(var0).eval(var1);
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/applet/Applet;Ljava/lang/String;[Ljava/lang/Object;I)Ljava/lang/Object;",
-		garbageValue = "-1491461486"
+		descriptor = "(Ljava/applet/Applet;Ljava/lang/String;I)Ljava/lang/Object;",
+		garbageValue = "269207742"
 	)
-	public static Object method389(Applet var0, String var1, Object[] var2) throws Throwable {
-		return JSObject.getWindow(var0).call(var1, var2);
+	public static Object method387(Applet var0, String var1) throws Throwable {
+		return JSObject.getWindow(var0).call(var1, (Object[])null);
 	}
 }

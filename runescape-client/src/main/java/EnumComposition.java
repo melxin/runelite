@@ -1,59 +1,69 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringReader;
-import java.io.StringWriter;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("js")
+@ObfuscatedName("hy")
 @Implements("EnumComposition")
 public class EnumComposition extends DualNode {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lph;"
+		descriptor = "Lps;"
 	)
 	@Export("EnumDefinition_archive")
 	public static AbstractArchive EnumDefinition_archive;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lmj;"
+		descriptor = "Lmr;"
 	)
 	@Export("EnumDefinition_cached")
-	public static EvictingDualNodeHashTable EnumDefinition_cached;
-	@ObfuscatedName("ae")
+	static EvictingDualNodeHashTable EnumDefinition_cached;
+	@ObfuscatedName("bj")
+	@ObfuscatedGetter(
+		intValue = -1618932575
+	)
+	static int field1991;
+	@ObfuscatedName("an")
 	@Export("inputType")
 	public char inputType;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("outputType")
 	public char outputType;
-	@ObfuscatedName("as")
+	@ObfuscatedName("al")
 	@Export("defaultStr")
 	public String defaultStr;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -854765051
+		intValue = -311000709
 	)
 	@Export("defaultInt")
 	public int defaultInt;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -28352021
+		intValue = 1232725907
 	)
 	@Export("outputCount")
 	public int outputCount;
 	@ObfuscatedName("am")
 	@Export("keys")
 	public int[] keys;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@Export("intVals")
 	public int[] intVals;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@Export("strVals")
 	public String[] strVals;
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Ltp;"
+	)
+	class509 field1998;
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Ltp;"
+	)
+	class509 field1988;
 
 	static {
 		EnumDefinition_cached = new EvictingDualNodeHashTable(64);
@@ -66,8 +76,8 @@ public class EnumComposition extends DualNode {
 
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;I)V",
-		garbageValue = "984264039"
+		descriptor = "(Lwt;I)V",
+		garbageValue = "-1088034478"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -81,10 +91,10 @@ public class EnumComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Lve;II)V",
-		garbageValue = "-792304334"
+		descriptor = "(Lwt;II)V",
+		garbageValue = "436526466"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -121,116 +131,69 @@ public class EnumComposition extends DualNode {
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1820882189"
+		garbageValue = "599549872"
 	)
 	@Export("size")
 	public int size() {
 		return this.outputCount;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Throwable;B)Ljava/lang/String;",
-		garbageValue = "31"
+		descriptor = "(I)Ltp;",
+		garbageValue = "-1741019282"
 	)
-	static String method5160(Throwable var0) throws IOException {
-		String var1;
-		if (var0 instanceof RunException) {
-			RunException var2 = (RunException)var0;
-			var1 = var2.message + " | ";
-			var0 = var2.throwable;
-		} else {
-			var1 = "";
+	public class509 method4107() {
+		if (this.field1998 == null) {
+			int[] var2 = this.keys;
+			class509 var3 = new class509(class563.field5600, false);
+			var3.field5294 = var2;
+			var3.field5287 = var2.length * 1090132113;
+			var3.field5291 = var2.length;
+			this.field1998 = var3;
 		}
 
-		StringWriter var12 = new StringWriter();
-		PrintWriter var3 = new PrintWriter(var12);
-		var0.printStackTrace(var3);
-		var3.close();
-		String var4 = var12.toString();
-		BufferedReader var5 = new BufferedReader(new StringReader(var4));
-		String var6 = var5.readLine();
-
-		while (true) {
-			while (true) {
-				String var7 = var5.readLine();
-				if (var7 == null) {
-					var1 = var1 + "| " + var6;
-					return var1;
-				}
-
-				int var8 = var7.indexOf(40);
-				int var9 = var7.indexOf(41, var8 + 1);
-				if (var8 >= 0 && var9 >= 0) {
-					String var10 = var7.substring(var8 + 1, var9);
-					int var11 = var10.indexOf(".java:");
-					if (var11 >= 0) {
-						var10 = var10.substring(0, var11) + var10.substring(var11 + 5);
-						var1 = var1 + var10 + ' ';
-						continue;
-					}
-
-					var7 = var7.substring(0, var8);
-				}
-
-				var7 = var7.trim();
-				var7 = var7.substring(var7.lastIndexOf(32) + 1);
-				var7 = var7.substring(var7.lastIndexOf(9) + 1);
-				var1 = var1 + var7 + ' ';
-			}
-		}
+		return this.field1998;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(IIILky;II)V",
-		garbageValue = "823043590"
+		descriptor = "(I)Ltp;",
+		garbageValue = "-957403934"
 	)
-	static void method5159(int var0, int var1, int var2, ObjectComposition var3, int var4) {
-		if (var3 != null && var3.hasSound()) {
-			int var5 = var3.sizeX;
-			int var6 = var3.sizeY;
-			if (var4 == 1 || var4 == 3) {
-				var5 = var3.sizeY;
-				var6 = var3.sizeX;
-			}
-
-			int var7 = (var5 + var1) * 128;
-			int var8 = (var6 + var2) * 128;
-			var1 *= 128;
-			var2 *= 128;
-			int var9 = var3.ambientSoundId;
-			int var10 = var3.int7 * 16384;
-			int var11 = var3.int8 * 128;
-			if (var3.transforms != null) {
-				ObjectComposition var12 = var3.transform();
-				if (var12 != null) {
-					var9 = var12.ambientSoundId;
-					var10 = var12.int7 * 16384;
-					var11 = var12.int8 * 128;
-				}
-			}
-
-			for (ObjectSound var13 = (ObjectSound)ObjectSound.objectSounds.last(); var13 != null; var13 = (ObjectSound)ObjectSound.objectSounds.previous()) {
-				if (var0 == var13.plane && var13.x * 16384 == var1 && var2 == var13.y * 16384 && var7 == var13.maxX * 16384 && var8 == var13.maxY * 16384 && var9 == var13.soundEffectId && var10 == var13.field844 && var11 == var13.field838) {
-					if (var13.stream1 != null) {
-						BufferedSink.pcmStreamMixer.removeSubStream(var13.stream1);
-						var13.stream1 = null;
-					}
-
-					if (var13.stream2 != null) {
-						BufferedSink.pcmStreamMixer.removeSubStream(var13.stream2);
-						var13.stream2 = null;
-					}
-
-					var13.remove();
-					break;
-				}
+	public class509 method4112() {
+		if (this.field1988 == null) {
+			if (this.outputType == 's') {
+				this.field1988 = ChatChannel.method2005(this.strVals);
+			} else {
+				int[] var2 = this.intVals;
+				class509 var3 = new class509(class563.field5600, false);
+				var3.field5294 = var2;
+				var3.field5287 = var2.length * 1090132113;
+				var3.field5291 = var2.length;
+				this.field1988 = var3;
 			}
 		}
 
+		return this.field1988;
+	}
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(Lps;Lps;II)Z",
+		garbageValue = "-714407408"
+	)
+	public static boolean method4121(AbstractArchive var0, AbstractArchive var1, int var2) {
+		byte[] var3 = var0.getFile(var2 >> 16 & 65535, var2 & 65535);
+		if (var3 == null) {
+			return false;
+		} else {
+			int var4 = (var3[1] & 255) << 8 | var3[2] & 255;
+			byte[] var5 = var1.getFile(var4, 0);
+			return var5 != null;
+		}
 	}
 }

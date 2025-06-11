@@ -4,31 +4,32 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hl")
+@ObfuscatedName("jx")
 @Implements("Skeleton")
 public class Skeleton extends Node {
-	@ObfuscatedName("lm")
-	@ObfuscatedGetter(
-		intValue = -1503822345
+	@ObfuscatedName("dy")
+	@ObfuscatedSignature(
+		descriptor = "[Lwd;"
 	)
-	static int field2034;
-	@ObfuscatedName("aq")
+	@Export("worldSelectBackSprites")
+	static SpritePixels[] worldSelectBackSprites;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 974602179
+		intValue = 1997181401
 	)
 	@Export("count")
 	int count;
-	@ObfuscatedName("av")
+	@ObfuscatedName("aa")
 	@Export("transformTypes")
 	int[] transformTypes;
 	@ObfuscatedName("am")
 	@Export("labels")
 	int[][] labels;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lhs;"
+		descriptor = "Ljp;"
 	)
-	class182 field2035;
+	class242 field2684;
 
 	public Skeleton(int var1, byte[] var2) {
 		Buffer var3 = new Buffer(var2);
@@ -51,62 +52,55 @@ public class Skeleton extends Node {
 			}
 		}
 
-		if (var3.offset * -2066221813 < var3.array.length) {
+		if (var3.offset < var3.array.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
-				this.field2035 = new class182(var3, var4);
+				this.field2684 = new class242(var3, var4);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1046596733"
+		garbageValue = "654571513"
 	)
-	public int method4041() {
+	public int method5172() {
 		return this.count;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lhs;",
-		garbageValue = "16"
+		descriptor = "(I)Ljp;",
+		garbageValue = "-1523283031"
 	)
-	public class182 method4046() {
-		return this.field2035;
+	public class242 method5173() {
+		return this.field2684;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("lg")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lkp;",
-		garbageValue = "-111"
+		descriptor = "(Ldk;I)V",
+		garbageValue = "-1728643350"
 	)
-	@Export("StructDefinition_getStructDefinition")
-	public static StructComposition StructDefinition_getStructDefinition(int var0) {
-		StructComposition var1 = (StructComposition)StructComposition.StructDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = StructComposition.StructDefinition_archive.takeFile(34, var0);
-			var1 = new StructComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.postDecode();
-			StructComposition.StructDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(I)[Ldg;",
-		garbageValue = "-1240838613"
-	)
-	static class91[] method4040() {
-		return new class91[]{class91.field1107, class91.field1108, class91.field1110, class91.field1112, class91.field1105};
+	static void method5174(NPC var0) {
+		var0.size = var0.definition.size;
+		var0.field1079 = var0.definition.rotation;
+		var0.walkSequence = var0.definition.walkSequence;
+		var0.walkBackSequence = var0.definition.walkBackSequence;
+		var0.walkLeftSequence = var0.definition.walkLeftSequence;
+		var0.walkRightSequence = var0.definition.walkRightSequence;
+		var0.idleSequence = var0.definition.idleSequence;
+		var0.turnLeftSequence = var0.definition.turnLeftSequence;
+		var0.turnRightSequence = var0.definition.turnRightSequence;
+		var0.runSequence = var0.definition.field2047;
+		var0.field1043 = var0.definition.field2042;
+		var0.field1052 = var0.definition.field2043;
+		var0.field1045 = var0.definition.field2044;
+		var0.field1046 = var0.definition.field2049;
+		var0.field1047 = var0.definition.field2046;
+		var0.field1074 = var0.definition.field2029;
+		var0.field1038 = var0.definition.field2048;
 	}
 }

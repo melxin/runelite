@@ -2,28 +2,31 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pj")
+@ObfuscatedName("pq")
 public class class396 {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(ZB)V",
-		garbageValue = "-86"
+		descriptor = "Lps;"
 	)
-	@Export("Login_promptCredentials")
-	static void Login_promptCredentials(boolean var0) {
-		if (!SecureRandomCallable.client.containsAccessAndRefreshToken() && !SecureRandomCallable.client.otlTokenRequesterInitialized() && !SecureRandomCallable.client.containsSessionAndCharacterId()) {
-			Login.Login_response1 = "";
-			Login.Login_response2 = "Enter your username/email & password.";
-			Login.Login_response3 = "";
-			class137.method3379(2);
-			if (var0) {
-				Login.Login_password = "";
-			}
+	@Export("ObjectDefinition_modelsArchive")
+	public static AbstractArchive ObjectDefinition_modelsArchive;
 
-			TileItem.method2992();
-			ChatChannel.focusPasswordWhenUsernameFilled();
-		} else {
-			class137.method3379(10);
-		}
+	@ObfuscatedName("hm")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "719814332"
+	)
+	static void method8006() {
+		MilliClock.compass = null;
+		AsyncRestClient.redHintArrowSprite = null;
+		class403.mapSceneSprites = null;
+		Frames.headIconPkSprites = null;
+		MouseHandler.headIconPrayerSprites = null;
+		Varps.headIconHintSprites = null;
+		class152.mapDotSprites = null;
+		ScriptFrame.crossSprites = null;
+		Messages.field1257 = null;
+		ClanChannelMember.scrollBarSprites = null;
+		TaskHandler.field2417 = null;
 	}
 }

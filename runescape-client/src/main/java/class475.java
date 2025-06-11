@@ -1,31 +1,46 @@
-import net.runelite.mapping.ObfuscatedGetter;
+import java.util.Comparator;
+import java.util.Map.Entry;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sv")
-public class class475 {
-	@ObfuscatedName("ao")
+@ObfuscatedName("sp")
+class class475 implements Comparator {
+	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lsv;"
+		descriptor = "Lsx;"
 	)
-	public static final class475 field5090;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lsv;"
-	)
-	static final class475 field5088;
-	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = 504535391
-	)
-	final int field5089;
+	final HttpHeaders this$0;
 
-	static {
-		field5090 = new class475(1);
-		field5088 = new class475(0);
+	@ObfuscatedSignature(
+		descriptor = "(Lsx;)V"
+	)
+	class475(HttpHeaders var1) {
+		this.this$0 = var1;
 	}
 
-	class475(int var1) {
-		this.field5089 = var1;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/util/Map$Entry;Ljava/util/Map$Entry;S)I",
+		garbageValue = "-4610"
+	)
+	int method9424(Entry var1, Entry var2) {
+		return ((Float)var2.getValue()).compareTo((Float)var1.getValue());
+	}
+
+	public int compare(Object var1, Object var2) {
+		return this.method9424((Entry)var1, (Entry)var2);
+	}
+
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
+
+	@ObfuscatedName("ip")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "-1663738721"
+	)
+	static final int method9427(int var0) {
+		return Math.abs(var0 - class455.cameraYaw) > 1024 ? var0 + (var0 < class455.cameraYaw ? 1 : -1) * 2048 : var0;
 	}
 }

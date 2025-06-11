@@ -3,79 +3,79 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ci")
+@ObfuscatedName("ep")
 @Implements("VorbisCodebook")
 public class VorbisCodebook {
-	@ObfuscatedName("ao")
-	int field340;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ap")
+	int field1381;
+	@ObfuscatedName("aj")
 	@Export("entries")
 	int entries;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@Export("lengthMap")
 	int[] lengthMap;
-	@ObfuscatedName("af")
-	int[] field343;
-	@ObfuscatedName("as")
-	float[][] field339;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ai")
+	int[] field1383;
+	@ObfuscatedName("al")
+	float[][] field1384;
+	@ObfuscatedName("ac")
 	@Export("keys")
 	int[] keys;
 
 	VorbisCodebook() {
-		class60 var1 = VorbisSample.field365;
-		var1.method1173(24);
-		this.field340 = var1.method1173(16);
-		this.entries = var1.method1173(24);
+		class114 var1 = VorbisSample.field1422;
+		var1.method3296(24);
+		this.field1381 = var1.method3296(16);
+		this.entries = var1.method3296(24);
 		this.lengthMap = new int[this.entries];
-		boolean var2 = var1.method1176() != 0;
+		boolean var2 = var1.method3295() != 0;
 		int var3;
 		int var4;
 		int var6;
 		if (var2) {
 			var3 = 0;
 
-			for (var4 = var1.method1173(5) + 1; var3 < this.entries; ++var4) {
-				int var5 = var1.method1173(class27.iLog(this.entries - var3));
+			for (var4 = var1.method3296(5) + 1; var3 < this.entries; ++var4) {
+				int var5 = var1.method3296(class203.iLog(this.entries - var3));
 
 				for (var6 = 0; var6 < var5; ++var6) {
 					this.lengthMap[var3++] = var4;
 				}
 			}
 		} else {
-			boolean var15 = var1.method1176() != 0;
+			boolean var15 = var1.method3295() != 0;
 
 			for (var4 = 0; var4 < this.entries; ++var4) {
-				if (var15 && var1.method1176() == 0) {
+				if (var15 && var1.method3295() == 0) {
 					this.lengthMap[var4] = 0;
 				} else {
-					this.lengthMap[var4] = var1.method1173(5) + 1;
+					this.lengthMap[var4] = var1.method3296(5) + 1;
 				}
 			}
 		}
 
-		this.method1077();
-		var3 = var1.method1173(4);
+		this.method3205();
+		var3 = var1.method3296(4);
 		if (var3 > 0) {
-			float var16 = VorbisSample.float32Unpack(var1.method1173(32));
-			float var17 = VorbisSample.float32Unpack(var1.method1173(32));
-			var6 = var1.method1173(4) + 1;
-			boolean var7 = var1.method1176() != 0;
+			float var16 = VorbisSample.float32Unpack(var1.method3296(32));
+			float var17 = VorbisSample.float32Unpack(var1.method3296(32));
+			var6 = var1.method3296(4) + 1;
+			boolean var7 = var1.method3295() != 0;
 			int var8;
 			if (var3 == 1) {
-				var8 = mapType1QuantValues(this.entries, this.field340);
+				var8 = mapType1QuantValues(this.entries, this.field1381);
 			} else {
-				var8 = this.entries * this.field340;
+				var8 = this.entries * this.field1381;
 			}
 
-			this.field343 = new int[var8];
+			this.field1383 = new int[var8];
 
 			int var9;
 			for (var9 = 0; var9 < var8; ++var9) {
-				this.field343[var9] = var1.method1173(var6);
+				this.field1383[var9] = var1.method3296(var6);
 			}
 
-			this.field339 = new float[this.entries][this.field340];
+			this.field1384 = new float[this.entries][this.field1381];
 			float var10;
 			int var11;
 			int var12;
@@ -84,10 +84,10 @@ public class VorbisCodebook {
 					var10 = 0.0F;
 					var11 = 1;
 
-					for (var12 = 0; var12 < this.field340; ++var12) {
+					for (var12 = 0; var12 < this.field1381; ++var12) {
 						int var13 = var9 / var11 % var8;
-						float var14 = (float)this.field343[var13] * var17 + var16 + var10;
-						this.field339[var9][var12] = var14;
+						float var14 = (float)this.field1383[var13] * var17 + var16 + var10;
+						this.field1384[var9][var12] = var14;
 						if (var7) {
 							var10 = var14;
 						}
@@ -98,11 +98,11 @@ public class VorbisCodebook {
 			} else {
 				for (var9 = 0; var9 < this.entries; ++var9) {
 					var10 = 0.0F;
-					var11 = var9 * this.field340;
+					var11 = var9 * this.field1381;
 
-					for (var12 = 0; var12 < this.field340; ++var12) {
-						float var18 = (float)this.field343[var11] * var17 + var16 + var10;
-						this.field339[var9][var12] = var18;
+					for (var12 = 0; var12 < this.field1381; ++var12) {
+						float var18 = (float)this.field1383[var11] * var17 + var16 + var10;
+						this.field1384[var9][var12] = var18;
 						if (var7) {
 							var10 = var18;
 						}
@@ -115,8 +115,8 @@ public class VorbisCodebook {
 
 	}
 
-	@ObfuscatedName("an")
-	void method1077() {
+	@ObfuscatedName("aj")
+	void method3205() {
 		int[] var1 = new int[this.entries];
 		int[] var2 = new int[33];
 
@@ -209,33 +209,56 @@ public class VorbisCodebook {
 
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lcl;)I"
+		descriptor = "(Lef;)I"
 	)
-	int method1069(class60 var1) {
+	int method3206(class114 var1) {
 		int var2;
-		for (var2 = 0; this.keys[var2] >= 0; var2 = var1.method1176() != 0 ? this.keys[var2] : var2 + 1) {
+		for (var2 = 0; this.keys[var2] >= 0; var2 = var1.method3295() != 0 ? this.keys[var2] : var2 + 1) {
 		}
 
 		return ~this.keys[var2];
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Lcl;)[F"
+		descriptor = "(Lef;)[F"
 	)
-	float[] method1074(class60 var1) {
-		return this.field339[this.method1069(var1)];
+	float[] method3207(class114 var1) {
+		return this.field1384[this.method3206(var1)];
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@Export("mapType1QuantValues")
 	static int mapType1QuantValues(int var0, int var1) {
-		int var2;
-		for (var2 = (int)Math.pow((double)var0, 1.0D / (double)var1) + 1; class244.method5163(var2, var1) > var0; --var2) {
-		}
+		int var2 = (int)Math.pow((double)var0, 1.0D / (double)var1) + 1;
 
-		return var2;
+		while (true) {
+			int var4 = var2;
+			int var5 = var1;
+
+			int var6;
+			for (var6 = 1; var5 > 1; var5 >>= 1) {
+				if ((var5 & 1) != 0) {
+					var6 *= var4;
+				}
+
+				var4 *= var4;
+			}
+
+			int var3;
+			if (var5 == 1) {
+				var3 = var6 * var4;
+			} else {
+				var3 = var6;
+			}
+
+			if (var3 <= var0) {
+				return var2;
+			}
+
+			--var2;
+		}
 	}
 }

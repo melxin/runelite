@@ -8,45 +8,45 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("td")
+@ObfuscatedName("uh")
 @Implements("HttpQueryParams")
 public class HttpQueryParams implements HttpPayload {
-	@ObfuscatedName("ao")
-	final Map field5284;
+	@ObfuscatedName("ap")
+	final Map field5352;
 
 	public HttpQueryParams(Map var1) {
-		this.field5284 = var1;
+		this.field5352 = var1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltw;",
-		garbageValue = "-1690276926"
+		descriptor = "(I)Lup;",
+		garbageValue = "329585455"
 	)
 	@Export("getContentType")
 	public HttpContentType getContentType() {
 		return null;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)[B",
-		garbageValue = "-620592685"
+		garbageValue = "2037324047"
 	)
 	@Export("toBytes")
 	public byte[] toBytes() throws UnsupportedEncodingException {
 		return this.encode().getBytes("UTF-8");
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "504255854"
+		garbageValue = "421839214"
 	)
 	@Export("encode")
 	public String encode() throws UnsupportedEncodingException {
 		StringBuilder var1 = new StringBuilder();
-		Iterator var2 = this.field5284.entrySet().iterator();
+		Iterator var2 = this.field5352.entrySet().iterator();
 
 		while (var2.hasNext()) {
 			Entry var3 = (Entry)var2.next();
@@ -62,14 +62,5 @@ public class HttpQueryParams implements HttpPayload {
 			var1.insert(0, "?");
 			return var1.toString();
 		}
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)I",
-		garbageValue = "-1251258966"
-	)
-	public static int method9661(CharSequence var0) {
-		return GrandExchangeOfferOwnWorldComparator.method1231(var0, 10, true);
 	}
 }
