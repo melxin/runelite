@@ -272,7 +272,7 @@ public class class190 extends DualNode {
 									class155.method3705(MusicPatchPcmStream.archive2, WorldMapArea.field3181);
 									Archive var5 = MusicPatchPcmStream.archive2;
 									StructComposition.StructDefinition_archive = var5;
-									class370.method7730(MusicPatchPcmStream.archive2, WorldMapArea.field3181, Client.isMembersWorld, class290.fontPlain11);
+									WidgetConfigNode.method7730(MusicPatchPcmStream.archive2, WorldMapArea.field3181, Client.isMembersWorld, class290.fontPlain11);
 									MidiRequest.method7163(MusicPatchPcmStream.archive2, class226.field2467, class51.field728, SoundCache.field1342);
 									Archive var6 = MusicPatchPcmStream.archive2;
 									Archive var7 = WorldMapArea.field3181;

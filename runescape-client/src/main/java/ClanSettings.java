@@ -803,7 +803,7 @@ public class ClanSettings {
 		if (var0 == 6754) {
 			int var5 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 			NPCComposition var6 = UserComparator3.getNpcDefinition(var5);
-			Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var6 != null ? var6.name : "";
+			Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var6 != null ? var6.name : "";
 			return 1;
 		} else {
 			NPCComposition var3;

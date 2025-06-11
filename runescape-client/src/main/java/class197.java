@@ -23,9 +23,9 @@ public class class197 extends DualNode {
 	static void method4230(int var0) {
 		WorldView var1 = Client.worldViewManager.getWorldView(var0);
 		if (var1 != null) {
-			for (int var2 = 0; var2 < Client.field326.playerCount; ++var2) {
-				int var3 = Client.field326.playerIndices[var2];
-				Client.field326.method2708((Player)var1.players.get((long)var3));
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				int var3 = Client.playerUpdateManager.playerIndices[var2];
+				Client.playerUpdateManager.method2708((Player)var1.players.get((long)var3));
 			}
 
 			Client.worldViewManager.method2272(var0);

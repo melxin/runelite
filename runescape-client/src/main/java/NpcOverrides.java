@@ -98,7 +98,7 @@ public class NpcOverrides {
 				}
 
 				long var11 = class275.calculateTag(var1, var2, var3, 3, false, 0, var0.id);
-				var0.scene.newGroundItemPile(var1, var2, var3, DevicePcmPlayerProvider.method329(var0, Coord.method7242(var2), Coord.method7242(var3), var1), var7, var11, var15, var10);
+				var0.scene.newGroundItemPile(var1, var2, var3, DevicePcmPlayerProvider.getTileHeight(var0, Coord.method7242(var2), Coord.method7242(var3), var1), var7, var11, var15, var10);
 			}
 		}
 	}

@@ -273,7 +273,7 @@ public enum AuthenticationScheme implements Enum {
 							Client.destinationY -= var6;
 						}
 
-						for (Projectile var17 = (Projectile)Client.playerUpdateManager.last(); var17 != null; var17 = (Projectile)Client.playerUpdateManager.previous()) {
+						for (Projectile var17 = (Projectile)Client.projectiles.last(); var17 != null; var17 = (Projectile)Client.projectiles.previous()) {
 							var17.method1940(-var5, -var6);
 						}
 
@@ -284,7 +284,7 @@ public enum AuthenticationScheme implements Enum {
 						UserComparator5.oculusOrbFocalPointX -= var5 << 7;
 						class198.oculusOrbFocalPointY -= var6 << 7;
 						Client.field347 = -1;
-						Sound.topLevelWorldView.projectiles.method8404();
+						Sound.topLevelWorldView.graphicsObjects.clear();
 
 						for (var18 = 0; var18 < 4; ++var18) {
 							Sound.topLevelWorldView.collisionMaps[var18].clear();

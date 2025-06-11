@@ -322,8 +322,8 @@ public class WidgetDefinition {
 				}
 			}
 
-			int var76 = Client.field326.playerCount;
-			int[] var8 = Client.field326.playerIndices;
+			int var76 = Client.playerUpdateManager.playerCount;
+			int[] var8 = Client.playerUpdateManager.playerIndices;
 			boolean var9 = var2 < var76;
 			int var10 = -2;
 			if (var1.overheadText != null && (!var9 || !var1.field1041 && (Client.publicChatMode == 4 || !var1.field1035 && (Client.publicChatMode == 0 || Client.publicChatMode == 3 || Client.publicChatMode == 1 && ((Player)var1).isFriend())))) {

@@ -736,7 +736,7 @@ public class class47 {
 				var16 = class6.cameraX >> 7;
 				var17 = GrandExchangeOfferAgeComparator.cameraZ >> 7;
 				if (var16 >= 0 && 104 > var16 && var17 >= 0 && 104 > var17) {
-					var18 = DevicePcmPlayerProvider.method329(Sound.topLevelWorldView, class6.cameraX, GrandExchangeOfferAgeComparator.cameraZ, Sound.topLevelWorldView.plane);
+					var18 = DevicePcmPlayerProvider.getTileHeight(Sound.topLevelWorldView, class6.cameraX, GrandExchangeOfferAgeComparator.cameraZ, Sound.topLevelWorldView.plane);
 					if (var18 - ClientPreferences.cameraY < 800 && (Sound.topLevelWorldView.tileSettings[Sound.topLevelWorldView.plane][var16][var17] & 4) != 0) {
 						var15 = Sound.topLevelWorldView.plane;
 					} else {

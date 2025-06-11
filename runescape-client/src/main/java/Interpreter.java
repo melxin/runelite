@@ -32,8 +32,8 @@ public class Interpreter {
 	@Export("Interpreter_intStackSize")
 	static int Interpreter_intStackSize;
 	@ObfuscatedName("az")
-	@Export("Interpreter_stringStack")
-	static Object[] Interpreter_stringStack;
+	@Export("Interpreter_objectStack")
+	static Object[] Interpreter_objectStack;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
 		intValue = -492415237
@@ -82,7 +82,7 @@ public class Interpreter {
 		Interpreter_arrayLengths = new int[5];
 		Interpreter_arrays = new int[5][5000];
 		Interpreter_intStack = new int[1000];
-		Interpreter_stringStack = new Object[1000];
+		Interpreter_objectStack = new Object[1000];
 		Interpreter_frameDepth = 0;
 		Interpreter_frames = new ScriptFrame[50];
 		field672 = new class369();

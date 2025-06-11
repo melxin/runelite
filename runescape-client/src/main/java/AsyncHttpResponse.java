@@ -424,7 +424,7 @@ public class AsyncHttpResponse {
 								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Interpreter.field672.method7705();
 								return 1;
 							} else if (var0 == 215) {
-								Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = AddRequestTask.method9231(Interpreter.field672.method7700());
+								Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = AddRequestTask.method9231(Interpreter.field672.method7700());
 								return 1;
 							} else if (var0 == 216) {
 								var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];

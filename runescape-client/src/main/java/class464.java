@@ -6,7 +6,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("ra")
 public class class464 extends SongTask {
 	@ObfuscatedName("lj")
-	static String field5081;
+	@Export("authServiceBaseUrl")
+	static String authServiceBaseUrl;
 
 	@ObfuscatedSignature(
 		descriptor = "(Lrh;)V"

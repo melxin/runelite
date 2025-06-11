@@ -640,7 +640,7 @@ public class ClientPreferences {
 		if (var0 == 6809) {
 			int var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 			ObjectComposition var4 = HealthBarConfig.getObjectDefinition(var3);
-			Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4 != null ? var4.name : "";
+			Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4 != null ? var4.name : "";
 			return 1;
 		} else {
 			return 2;

@@ -76,8 +76,8 @@ public class FriendSystem {
 		while (var3.hasNext()) {
 			WorldView var4 = (WorldView)var3.next();
 
-			for (int var5 = 0; var5 < Client.field326.playerCount; ++var5) {
-				Player var6 = (Player)var4.players.get((long)Client.field326.playerIndices[var5]);
+			for (int var5 = 0; var5 < Client.playerUpdateManager.playerCount; ++var5) {
+				Player var6 = (Player)var4.players.get((long)Client.playerUpdateManager.playerIndices[var5]);
 				if (var6 != null) {
 					var6.clearIsFriend();
 				}
@@ -260,8 +260,8 @@ public class FriendSystem {
 				while (var7.hasNext()) {
 					WorldView var4 = (WorldView)var7.next();
 
-					for (int var5 = 0; var5 < Client.field326.playerCount; ++var5) {
-						Player var6 = (Player)var4.players.get((long)Client.field326.playerIndices[var5]);
+					for (int var5 = 0; var5 < Client.playerUpdateManager.playerCount; ++var5) {
+						Player var6 = (Player)var4.players.get((long)Client.playerUpdateManager.playerIndices[var5]);
 						if (var6 != null) {
 							var6.clearIsFriend();
 						}
@@ -324,7 +324,8 @@ public class FriendSystem {
 		descriptor = "(II)Lgf;",
 		garbageValue = "-1333180455"
 	)
-	public static VarpDefinition method1550(int var0) {
+	@Export("VarpDefinition_get")
+	public static VarpDefinition VarpDefinition_get(int var0) {
 		VarpDefinition var1 = (VarpDefinition)VarpDefinition.VarpDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;

@@ -114,7 +114,7 @@ public class class362 {
 			String var15;
 			class367 var21;
 			if (var0 == ScriptOpcodes.CC_SETTEXT) {
-				var15 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+				var15 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 				if (var3.type == 12) {
 					var21 = var3.method7755();
 					if (var21 != null && var21.method7454()) {
@@ -226,18 +226,18 @@ public class class362 {
 						var3.modelTransparency = var14;
 						return 1;
 					} else if (var0 == 1129) {
-						var3.field4020 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+						var3.field4020 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 						ScriptFrame.invalidateWidget(var3);
 						return 1;
 					} else if (var0 == 1130) {
-						var3.method7776((String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize], "", class167.urlRequester, AsyncRestClient.getUserId());
+						var3.method7776((String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize], "", class167.urlRequester, AsyncRestClient.getUserId());
 						return 1;
 					} else if (var0 == 1131) {
 						Interpreter.Interpreter_intStackSize -= 2;
 						var3.method7759(Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize], Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1]);
 						return 1;
 					} else if (var0 == 1132) {
-						var3.method7760((String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize], Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize]);
+						var3.method7760((String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize], Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize]);
 						return 1;
 					} else {
 						class361 var20;
@@ -260,10 +260,10 @@ public class class362 {
 
 							return 1;
 						} else if (var0 == 1135) {
-							--class175.Interpreter_stringStackSize;
+							--class175.Interpreter_objectStackSize;
 							var19 = var3.method7755();
 							if (var19 != null) {
-								var3.text2 = (String)Interpreter.Interpreter_stringStack[class175.Interpreter_stringStackSize];
+								var3.text2 = (String)Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize];
 							}
 
 							return 1;
@@ -395,13 +395,13 @@ public class class362 {
 
 								return 1;
 							} else if (var0 == 1150) {
-								var3.method7757((String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize], class167.urlRequester);
+								var3.method7757((String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize], class167.urlRequester);
 								return 1;
 							} else if (var0 == 1151) {
-								class175.Interpreter_stringStackSize -= 3;
-								var15 = (String)Interpreter.Interpreter_stringStack[class175.Interpreter_stringStackSize];
-								String var13 = (String)Interpreter.Interpreter_stringStack[class175.Interpreter_stringStackSize + 1];
-								String var7 = (String)Interpreter.Interpreter_stringStack[class175.Interpreter_stringStackSize + 2];
+								class175.Interpreter_objectStackSize -= 3;
+								var15 = (String)Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize];
+								String var13 = (String)Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize + 1];
+								String var7 = (String)Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize + 2];
 								long var8 = AsyncRestClient.getUserId();
 								long var10 = WorldMapSectionType.getUserHash();
 								String var12 = class144.getPlatformInfo().getDeviceId(class144.getPlatformInfo().os);

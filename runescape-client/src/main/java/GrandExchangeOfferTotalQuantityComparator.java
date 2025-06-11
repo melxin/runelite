@@ -48,15 +48,15 @@ final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
 
 		for (int var19 = var11; var19 <= var15; ++var19) {
 			for (int var20 = var13; var20 <= var17; ++var20) {
-				var18 = Math.min(var18, DevicePcmPlayerProvider.method329(var0, Coord.method7228(var19), Coord.method7228(var20), var3));
+				var18 = Math.min(var18, DevicePcmPlayerProvider.getTileHeight(var0, Coord.method7228(var19), Coord.method7228(var20), var3));
 			}
 		}
 
-		var18 = Math.min(var18, DevicePcmPlayerProvider.method329(var0, var1, var2, var3));
-		var18 = Math.min(var18, DevicePcmPlayerProvider.method329(var0, var1 - var5, var2 - var5, var3));
-		var18 = Math.min(var18, DevicePcmPlayerProvider.method329(var0, var1 - var5, var5 + var2, var3));
-		var18 = Math.min(var18, DevicePcmPlayerProvider.method329(var0, var5 + var1, var2 - var5, var3));
-		var18 = Math.min(var18, DevicePcmPlayerProvider.method329(var0, var5 + var1, var5 + var2, var3));
+		var18 = Math.min(var18, DevicePcmPlayerProvider.getTileHeight(var0, var1, var2, var3));
+		var18 = Math.min(var18, DevicePcmPlayerProvider.getTileHeight(var0, var1 - var5, var2 - var5, var3));
+		var18 = Math.min(var18, DevicePcmPlayerProvider.getTileHeight(var0, var1 - var5, var5 + var2, var3));
+		var18 = Math.min(var18, DevicePcmPlayerProvider.getTileHeight(var0, var5 + var1, var2 - var5, var3));
+		var18 = Math.min(var18, DevicePcmPlayerProvider.getTileHeight(var0, var5 + var1, var5 + var2, var3));
 		return var18;
 	}
 }

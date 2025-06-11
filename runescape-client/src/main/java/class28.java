@@ -32,9 +32,9 @@ public class class28 {
 	)
 	static final void method437(WorldView var0, int var1, int var2) {
 		if (Client.hintArrowType == 2) {
-			int var3 = Client.field504 * 4096 + (Client.field575 - var0.baseX << 7);
-			int var4 = Client.field313 * 64 + (Client.field602 - var0.baseY << 7);
-			GraphicsObject.worldToScreen(var0, var3, var4, var3, var4, Client.field450 * 4);
+			int var3 = Client.hintArrowSubX * 4096 + (Client.hintArrowX - var0.baseX << 7);
+			int var4 = Client.hintArrowSubY * 64 + (Client.hintArrowY - var0.baseY << 7);
+			GraphicsObject.worldToScreen(var0, var3, var4, var3, var4, Client.hintArrowHeight * 4);
 			if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
 				Varps.headIconHintSprites[0].drawTransBgAt(Client.viewportTempX + var1 - 12, var2 + Client.viewportTempY - 28);
 			}

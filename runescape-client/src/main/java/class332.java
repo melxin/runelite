@@ -22,8 +22,8 @@ public class class332 {
 
 			for (ObjectSound var7 = (ObjectSound)var6.method2533().last(); var7 != null; var7 = (ObjectSound)var6.method2533().previous()) {
 				if (var7.soundEffectId != -1 || var7.soundEffectIds != null) {
-					WorldEntity var8 = Client.worldViewManager.method2261(var7.field655);
-					int var10 = var7.field640;
+					WorldEntity var8 = Client.worldViewManager.method2261(var7.plane);
+					int var10 = var7.x;
 					boolean var9;
 					if (var8 == var0) {
 						var9 = var10 == var1;
@@ -37,9 +37,9 @@ public class class332 {
 						var7.method1593();
 						var7.method1555();
 					} else {
-						WorldView var11 = Client.worldViewManager.getWorldView(var7.field655);
-						class445 var12 = IgnoreList.method9505(var11, var7.field641, var7.field642);
-						class445 var13 = IgnoreList.method9505(var11, var7.field649, var7.field645);
+						WorldView var11 = Client.worldViewManager.getWorldView(var7.plane);
+						class445 var12 = IgnoreList.method9505(var11, var7.y, var7.maxX);
+						class445 var13 = IgnoreList.method9505(var11, var7.maxY, var7.field645);
 						int var14 = (int)var12.field4967;
 						int var15 = (int)var12.field4969;
 						int var16 = (int)var13.field4967;
@@ -63,7 +63,7 @@ public class class332 {
 						if (var18 < var7.field646 && ClientPacket.clientPreferences.getAreaSoundEffectsVolume() != 0) {
 							float var19 = var7.field647 < var7.field646 ? Math.min(Math.max((float)(var7.field646 - var18) / (float)(var7.field646 - var7.field647), 0.0F), 1.0F) : 1.0F;
 							int var20 = (int)(var19 * (float)ClientPacket.clientPreferences.getAreaSoundEffectsVolume());
-							if (var7.field644 == null) {
+							if (var7.stream1 == null) {
 								if (var7.soundEffectId >= 0) {
 									SoundEffect var21 = SoundEffect.readSoundEffect(WorldMapRectangle.field3283, var7.soundEffectId, 0);
 									if (var21 != null) {
@@ -71,14 +71,14 @@ public class class332 {
 										RawPcmStream var23 = RawPcmStream.createRawPcmStream(var22, 100, var20);
 										var23.setNumLoops(-1);
 										UserComparator6.pcmStreamMixer.addSubStream(var23);
-										var7.field644 = var23;
+										var7.stream1 = var23;
 									}
 								}
 							} else {
-								var7.field644.method3039(var20);
+								var7.stream1.method3039(var20);
 							}
 
-							if (var7.field654 == null) {
+							if (var7.stream2 == null) {
 								if (var7.soundEffectIds != null && (var7.field650 -= var4) <= 0) {
 									int var25 = (int)(Math.random() * (double)var7.soundEffectIds.length);
 									SoundEffect var26 = SoundEffect.readSoundEffect(WorldMapRectangle.field3283, var7.soundEffectIds[var25], 0);
@@ -87,14 +87,14 @@ public class class332 {
 										RawPcmStream var24 = RawPcmStream.createRawPcmStream(var27, 100, var20);
 										var24.setNumLoops(0);
 										UserComparator6.pcmStreamMixer.addSubStream(var24);
-										var7.field654 = var24;
+										var7.stream2 = var24;
 										var7.field650 = var7.field643 + (int)(Math.random() * (double)(var7.field651 - var7.field643));
 									}
 								}
 							} else {
-								var7.field654.method3039(var20);
-								if (!var7.field654.hasNext()) {
-									var7.field654 = null;
+								var7.stream2.method3039(var20);
+								if (!var7.stream2.hasNext()) {
+									var7.stream2 = null;
 								}
 							}
 						} else {

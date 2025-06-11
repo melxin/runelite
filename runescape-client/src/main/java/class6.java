@@ -216,8 +216,8 @@ public enum class6 implements Enum {
 		Client.npcAttackOption = AttackOption.AttackOption_hidden;
 		Client.worldViewManager.clear();
 		Client.field337 = -1;
-		Client.playerUpdateManager.method8404();
-		Client.field326.clear();
+		Client.projectiles.clear();
+		Client.playerUpdateManager.clear();
 		Actor.friendSystem.method1523();
 		if (VarpDefinition.field1910 > 5000) {
 		}
@@ -228,7 +228,7 @@ public enum class6 implements Enum {
 			Arrays.fill(Varps.Varps_main, 0);
 		} else {
 			for (var0 = 0; var0 < VarpDefinition.field1910; ++var0) {
-				VarpDefinition var1 = FriendSystem.method1550(var0);
+				VarpDefinition var1 = FriendSystem.VarpDefinition_get(var0);
 				if (var1 != null) {
 					Varps.Varps_temp[var0] = 0;
 					Varps.Varps_main[var0] = 0;

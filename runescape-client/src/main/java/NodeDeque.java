@@ -26,7 +26,8 @@ public class NodeDeque {
 	}
 
 	@ObfuscatedName("aj")
-	public void method8404() {
+	@Export("clear")
+	public void clear() {
 		while (true) {
 			Node var1 = this.sentinel.previous;
 			if (var1 == this.sentinel) {

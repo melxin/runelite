@@ -94,7 +94,7 @@ public class class177 extends DualNode {
 	)
 	static Widget method3963(Widget var0) {
 		Widget var2 = var0;
-		int var4 = class255.method5526(var0);
+		int var4 = class255.getWidgetFlags(var0);
 		int var3 = var4 >> 17 & 7;
 		int var5 = var3;
 		Widget var1;

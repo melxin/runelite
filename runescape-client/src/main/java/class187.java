@@ -16,7 +16,8 @@ public class class187 {
 		descriptor = "(II)I",
 		garbageValue = "1654077773"
 	)
-	public static int method4098(int var0) {
+	@Export("Widget_unpackTargetMask")
+	public static int Widget_unpackTargetMask(int var0) {
 		return var0 >> 11 & 63;
 	}
 }

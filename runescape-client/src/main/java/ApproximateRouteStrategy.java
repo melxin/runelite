@@ -53,7 +53,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 			ClientPreferences.widgetDefinition.method7289(var2);
 		}
 
-		for (class370 var4 = (class370)Client.widgetFlags.first(); var4 != null; var4 = (class370)Client.widgetFlags.next()) {
+		for (WidgetConfigNode var4 = (WidgetConfigNode)Client.widgetFlags.first(); var4 != null; var4 = (WidgetConfigNode)Client.widgetFlags.next()) {
 			if ((long)var2 == (var4.key >> 48 & 65535L)) {
 				var4.remove();
 			}

@@ -94,8 +94,9 @@ public class GrandExchangeOfferOwnWorldComparator implements Comparator {
 		descriptor = "(Lov;I)I",
 		garbageValue = "1390735869"
 	)
-	static int method757(Widget var0) {
-		class370 var1 = (class370)Client.widgetFlags.get(((long)var0.id << 32) + (long)(var0.childIndex * -744024149));
+	@Export("getWidgetFlags2")
+	static int getWidgetFlags2(Widget var0) {
+		WidgetConfigNode var1 = (WidgetConfigNode)Client.widgetFlags.get(((long)var0.id << 32) + (long)(var0.childIndex * -744024149));
 		return var1 != null ? var1.method7726() : class31.method456(var0.flags);
 	}
 }

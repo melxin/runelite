@@ -32,7 +32,8 @@ public class CollisionMap {
 	@Export("ySize")
 	int ySize;
 	@ObfuscatedName("bn")
-	final int[][] field3085;
+	@Export("flags")
+	final int[][] flags;
 
 	public CollisionMap(int var1, int var2, boolean var3) {
 		if (var3) {
@@ -41,7 +42,7 @@ public class CollisionMap {
 			this.method5926(0, 0, var1, var2);
 		}
 
-		this.field3085 = new int[this.xSize][this.ySize];
+		this.flags = new int[this.xSize][this.ySize];
 		this.clear();
 	}
 
@@ -103,9 +104,9 @@ public class CollisionMap {
 		for (int var1 = 0; var1 < this.xSize; ++var1) {
 			for (int var2 = 0; var2 < this.ySize; ++var2) {
 				if (var1 >= 1 && var2 >= 1 && var1 < this.xSize - 5 && var2 < this.ySize - 5) {
-					this.field3085[var1][var2] = 1073741824;
+					this.flags[var1][var2] = 1073741824;
 				} else {
-					this.field3085[var1][var2] = 16777215;
+					this.flags[var1][var2] = 16777215;
 				}
 			}
 		}
@@ -118,7 +119,7 @@ public class CollisionMap {
 		garbageValue = "20720"
 	)
 	boolean method5925(int var1, int var2, int var3) {
-		return (this.field3085[var1][var2] & var3) != 0;
+		return (this.flags[var1][var2] & var3) != 0;
 	}
 
 	@ObfuscatedName("am")
@@ -128,7 +129,7 @@ public class CollisionMap {
 	)
 	@Export("setFlag")
 	void setFlag(int var1, int var2, int var3) {
-		int[] var10000 = this.field3085[var1];
+		int[] var10000 = this.flags[var1];
 		var10000[var2] |= var3;
 	}
 
@@ -139,7 +140,7 @@ public class CollisionMap {
 	)
 	@Export("setFlagOff")
 	void setFlagOff(int var1, int var2, int var3) {
-		int[] var10000 = this.field3085[var1];
+		int[] var10000 = this.flags[var1];
 		var10000[var2] &= ~var3;
 	}
 
@@ -374,7 +375,7 @@ public class CollisionMap {
 	public void setBlockedByFloor(int var1, int var2) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
-		int[] var10000 = this.field3085[var1];
+		int[] var10000 = this.flags[var1];
 		var10000[var2] |= 2097152;
 	}
 
@@ -387,7 +388,7 @@ public class CollisionMap {
 	public void setBlockedByFloorDec(int var1, int var2) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
-		int[] var10000 = this.field3085[var1];
+		int[] var10000 = this.flags[var1];
 		var10000[var2] |= 262144;
 	}
 
@@ -583,7 +584,7 @@ public class CollisionMap {
 	public void method5943(int var1, int var2) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
-		int[] var10000 = this.field3085[var1];
+		int[] var10000 = this.flags[var1];
 		var10000[var2] &= -262145;
 	}
 

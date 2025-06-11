@@ -60,7 +60,7 @@ public class class205 extends DualNode {
 		if (var5 || var6 != null) {
 			int var8;
 			if (!var5) {
-				var8 = class255.method5526(var6);
+				var8 = class255.getWidgetFlags(var6);
 				boolean var7 = (var8 >> 23 & 1) != 0;
 				if (!var7) {
 					return;

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
@@ -11,7 +12,8 @@ public class ConcurrentMidiTask extends SongTask {
 	@ObfuscatedGetter(
 		intValue = 2069856621
 	)
-	static int field5095;
+	@Export("Players_count")
+	static int Players_count;
 	@ObfuscatedName("ap")
 	ArrayList field5093;
 

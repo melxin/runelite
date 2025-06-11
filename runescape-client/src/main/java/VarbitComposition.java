@@ -130,7 +130,7 @@ public class VarbitComposition extends DualNode {
 			}
 
 			if (var10) {
-				if (class138.method3579(GrandExchangeOfferOwnWorldComparator.method757(var7), var6 - 1)) {
+				if (class138.method3579(GrandExchangeOfferOwnWorldComparator.getWidgetFlags2(var7), var6 - 1)) {
 					PacketBufferNode var9;
 					if (class574.field5666 <= 230) {
 						if (var0 == 1) {

@@ -123,10 +123,10 @@ public class class364 {
 		garbageValue = "43"
 	)
 	static int method7313(WorldView var0, int var1, int var2, int var3) {
-		int var4 = DevicePcmPlayerProvider.method329(var0, var1, var2, var3);
+		int var4 = DevicePcmPlayerProvider.getTileHeight(var0, var1, var2, var3);
 		WorldEntity var5 = (WorldEntity)Sound.topLevelWorldView.worldEntities.get((long)var0.id);
 		if (var5 != null) {
-			var4 += DevicePcmPlayerProvider.method329(Sound.topLevelWorldView, var5.getY(), var5.getPlane(), var5.getX());
+			var4 += DevicePcmPlayerProvider.getTileHeight(Sound.topLevelWorldView, var5.getY(), var5.getPlane(), var5.getX());
 		}
 
 		return var4;

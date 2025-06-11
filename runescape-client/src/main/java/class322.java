@@ -11,7 +11,7 @@ public class class322 {
 	)
 	@Export("Widget_getSpellActionName")
 	static String Widget_getSpellActionName(Widget var0) {
-		if (class187.method4098(class255.method5526(var0)) == 0) {
+		if (class187.Widget_unpackTargetMask(class255.getWidgetFlags(var0)) == 0) {
 			return null;
 		} else {
 			return var0.spellActionName != null && !var0.spellActionName.trim().isEmpty() ? var0.spellActionName : null;

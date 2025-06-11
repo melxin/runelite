@@ -171,8 +171,8 @@ public final class Canvas extends java.awt.Canvas {
 											}
 										}
 
-										var35 = Client.field326.playerCount;
-										var44 = Client.field326.playerIndices;
+										var35 = Client.playerUpdateManager.playerCount;
+										var44 = Client.playerUpdateManager.playerIndices;
 
 										for (var29 = 0; var29 < var35; ++var29) {
 											var46 = (Player)var24.players.get((long)var44[var29]);
@@ -199,8 +199,8 @@ public final class Canvas extends java.awt.Canvas {
 											}
 										}
 
-										var35 = Client.field326.playerCount;
-										var44 = Client.field326.playerIndices;
+										var35 = Client.playerUpdateManager.playerCount;
+										var44 = Client.playerUpdateManager.playerIndices;
 
 										for (var29 = 0; var29 < var35; ++var29) {
 											var46 = (Player)var24.players.get((long)var44[var29]);

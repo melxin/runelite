@@ -12,7 +12,8 @@ public class WorldView extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Lqk;"
 	)
-	final NodeDeque field1154;
+	@Export("objectSounds")
+	final NodeDeque objectSounds;
 	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
 		intValue = -139155621
@@ -104,8 +105,8 @@ public class WorldView extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Lqk;"
 	)
-	@Export("projectiles")
-	NodeDeque projectiles;
+	@Export("graphicsObjects")
+	NodeDeque graphicsObjects;
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "Lsw;"
@@ -121,10 +122,10 @@ public class WorldView extends Node {
 		descriptor = "(IIIILiz;)V"
 	)
 	WorldView(int var1, int var2, int var3, int var4, class233 var5) {
-		this.field1154 = new NodeDeque();
+		this.objectSounds = new NodeDeque();
 		this.collisionMaps = new CollisionMap[4];
 		this.pendingSpawns = new NodeDeque();
-		this.projectiles = new NodeDeque();
+		this.graphicsObjects = new NodeDeque();
 		this.field1147 = new class476(149);
 		this.field1159 = new class476(25);
 		this.id = var1;
@@ -166,7 +167,7 @@ public class WorldView extends Node {
 		this.players.clear();
 		this.npcs.clear();
 		this.worldEntities.clear();
-		this.projectiles.method8404();
+		this.graphicsObjects.clear();
 		this.pendingSpawns = new NodeDeque();
 
 		int var1;
@@ -217,7 +218,7 @@ public class WorldView extends Node {
 		garbageValue = "-1284270171"
 	)
 	NodeDeque method2533() {
-		return this.field1154;
+		return this.objectSounds;
 	}
 
 	@ObfuscatedName("ac")
@@ -225,9 +226,10 @@ public class WorldView extends Node {
 		descriptor = "(IIILik;II)V",
 		garbageValue = "-736940831"
 	)
-	void method2541(int var1, int var2, int var3, ObjectComposition var4, int var5) {
+	@Export("createObjectSound")
+	void createObjectSound(int var1, int var2, int var3, ObjectComposition var4, int var5) {
 		ObjectSound var6 = new ObjectSound(this.id, var1, var2, var3, var5, var4);
-		this.field1154.addFirst(var6);
+		this.objectSounds.addFirst(var6);
 	}
 
 	@ObfuscatedName("aa")
@@ -260,7 +262,7 @@ public class WorldView extends Node {
 				}
 			}
 
-			for (ObjectSound var14 = (ObjectSound)this.field1154.last(); var14 != null; var14 = (ObjectSound)this.field1154.previous()) {
+			for (ObjectSound var14 = (ObjectSound)this.objectSounds.last(); var14 != null; var14 = (ObjectSound)this.objectSounds.previous()) {
 				if (var14.method1561() == var1 && var14.method1557() == var2 && var14.method1559() == var3 && var14.method1558() == var8 && var14.method1560() == var9 && var14.method1556() == var10 && var14.method1562() == var11 && var14.method1565() == var12) {
 					var14.method1593();
 					var14.method1555();

@@ -157,7 +157,8 @@ public final class Player extends Actor {
 	@ObfuscatedGetter(
 		intValue = 194570827
 	)
-	int field947;
+	@Export("footprintSize")
+	int footprintSize;
 
 	Player(int var1) {
 		super(var1);
@@ -174,7 +175,7 @@ public final class Player extends Actor {
 		this.isFriendTriBool = TriBool.TriBool_unknown;
 		this.isInFriendsChat = TriBool.TriBool_unknown;
 		this.isInClanChat = TriBool.TriBool_unknown;
-		this.field947 = 0;
+		this.footprintSize = 0;
 
 		for (int var2 = 0; var2 < 3; ++var2) {
 			this.actions[var2] = "";
@@ -463,7 +464,7 @@ public final class Player extends Actor {
 			super.size = 1;
 		}
 
-		this.field947 = (int)((float)(super.size * -687341568) * 0.4F);
+		this.footprintSize = (int)((float)(super.size * -687341568) * 0.4F);
 	}
 
 	@ObfuscatedName("ai")
@@ -660,7 +661,7 @@ public final class Player extends Actor {
 		garbageValue = "-63164875"
 	)
 	int method2196() {
-		return this.field947;
+		return this.footprintSize;
 	}
 
 	@ObfuscatedName("ad")

@@ -191,7 +191,7 @@ public class WorldEntityCoord {
 		if (var3 != null && var3.isVisible() && !var3.isHidden) {
 			int var4 = var3.plane;
 			var3.isUnanimated = false;
-			if ((Client.isLowDetail && Client.field326.playerCount > 50 || Client.field326.playerCount > 200) && var2 && var3.movementSequence == var3.idleSequence) {
+			if ((Client.isLowDetail && Client.playerUpdateManager.playerCount > 50 || Client.playerUpdateManager.playerCount > 200) && var2 && var3.movementSequence == var3.idleSequence) {
 				var3.isUnanimated = true;
 			}
 
@@ -232,8 +232,8 @@ public class WorldEntityCoord {
 		boolean var5 = false;
 		int var6 = -1;
 		int var7 = -1;
-		int var8 = Client.field326.playerCount;
-		int[] var9 = Client.field326.playerIndices;
+		int var8 = Client.playerUpdateManager.playerCount;
+		int[] var9 = Client.playerUpdateManager.playerIndices;
 
 		int var10;
 		for (var10 = 0; var10 < var8 + var0.field1147.method9429(); ++var10) {

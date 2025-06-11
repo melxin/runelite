@@ -617,7 +617,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmv;"
 	)
-	public static final ServerPacket UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1;
+	public static final ServerPacket UPDATE_FRIEND_CHAT_CHANNEL_FULL_V2;
 	@ObfuscatedName("eu")
 	@ObfuscatedSignature(
 		descriptor = "Lmv;"
@@ -828,7 +828,7 @@ public class ServerPacket {
 		GRAPHICSOBJECT_SPAWN = new ServerPacket(118, 8);
 		UPDATE_STOCKMARKET_SLOT = new ServerPacket(119, 20);
 		DYNAMICOBJECT_SPAWN = new ServerPacket(120, 6);
-		UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1 = new ServerPacket(121, -2);
+		UPDATE_FRIEND_CHAT_CHANNEL_FULL_V2 = new ServerPacket(121, -2);
 		MIDI_SONG_WITH_SECONDARY = new ServerPacket(122, 12);
 		field3630 = new ServerPacket(123, -1);
 		PROJECTILE_SPAWN = new ServerPacket(124, 22);

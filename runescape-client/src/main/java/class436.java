@@ -55,8 +55,8 @@ public class class436 {
 		Tile.method4989(Sound.topLevelWorldView, class389.field4605);
 		AABB.addNpcsToScene(Sound.topLevelWorldView, true);
 		WorldView var19 = Sound.topLevelWorldView;
-		int var20 = Client.field326.playerCount;
-		int[] var21 = Client.field326.playerIndices;
+		int var20 = Client.playerUpdateManager.playerCount;
+		int[] var21 = Client.playerUpdateManager.playerIndices;
 
 		for (var5 = 0; var5 < var20; ++var5) {
 			if (var21[var5] != Client.combatTargetPlayerIndex && var21[var5] != Client.localPlayerIndex) {
@@ -66,25 +66,25 @@ public class class436 {
 
 		AABB.addNpcsToScene(Sound.topLevelWorldView, false);
 
-		for (Projectile var22 = (Projectile)Client.playerUpdateManager.last(); var22 != null; var22 = (Projectile)Client.playerUpdateManager.previous()) {
-			if (Client.cycle > var22.field783) {
+		for (Projectile var22 = (Projectile)Client.projectiles.last(); var22 != null; var22 = (Projectile)Client.projectiles.previous()) {
+			if (Client.cycle > var22.cycleEnd) {
 				var22.remove();
-			} else if (Client.cycle >= var22.field782) {
-				var22.method1951(Client.worldViewManager, Client.cycle, Client.graphicsCycle);
-				Sound.topLevelWorldView.scene.drawEntity(var22.plane, (int)var22.speedX, (int)var22.field787, (int)var22.field788, 60, var22, var22.yaw, -1L, false);
+			} else if (Client.cycle >= var22.cycleStart) {
+				var22.setDestination(Client.worldViewManager, Client.cycle, Client.graphicsCycle);
+				Sound.topLevelWorldView.scene.drawEntity(var22.sourceLevel, (int)var22.x, (int)var22.y, (int)var22.z, 60, var22, var22.orientation, -1L, false);
 			}
 		}
 
 		WorldView var23 = Sound.topLevelWorldView;
 
-		for (GraphicsObject var24 = (GraphicsObject)var23.projectiles.last(); var24 != null; var24 = (GraphicsObject)var23.projectiles.previous()) {
-			if (var23.plane == var24.field706 && !var24.isFinished) {
-				if (Client.cycle >= var24.field694) {
+		for (GraphicsObject var24 = (GraphicsObject)var23.graphicsObjects.last(); var24 != null; var24 = (GraphicsObject)var23.graphicsObjects.previous()) {
+			if (var23.plane == var24.plane && !var24.isFinished) {
+				if (Client.cycle >= var24.cycleStart) {
 					var24.advance(Client.graphicsCycle);
 					if (var24.isFinished) {
 						var24.remove();
 					} else {
-						var23.scene.drawEntity(var24.field706, var24.x, var24.field697, var24.cycleStart, 60, var24, 0, -1L, false);
+						var23.scene.drawEntity(var24.plane, var24.x, var24.y, var24.z, 60, var24, 0, -1L, false);
 					}
 				}
 			} else {

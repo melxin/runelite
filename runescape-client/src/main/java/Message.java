@@ -218,7 +218,7 @@ public class Message extends DualNode {
 						Calendar.openURL(var0.field3051.method7767(), true, false);
 						break;
 					case 1:
-						int var2 = class255.method5526(var0.field3051);
+						int var2 = class255.getWidgetFlags(var0.field3051);
 						boolean var5 = (var2 >> 22 & 1) != 0;
 						if (var5) {
 							int[] var3 = var0.field3051.method7772();

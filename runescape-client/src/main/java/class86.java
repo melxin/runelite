@@ -235,7 +235,7 @@ final class class86 implements class359 {
 			}
 
 			if (var8.hasSound()) {
-				var0.method2541(var1, var2, var3, var8, var5);
+				var0.createObjectSound(var1, var2, var3, var8, var5);
 			}
 
 			Scene var22 = var0.scene;

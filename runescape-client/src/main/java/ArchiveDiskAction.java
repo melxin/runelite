@@ -48,7 +48,7 @@ public class ArchiveDiskAction extends Node {
 		} else {
 			switch(var0.field5596) {
 			case 0:
-				return Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+				return Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 			case 3:
 				return Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 			default:

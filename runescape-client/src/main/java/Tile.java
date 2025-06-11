@@ -202,8 +202,8 @@ public final class Tile extends Node {
 						boolean var7;
 						label118: {
 							int var9;
-							for (var9 = 0; var9 < Client.field326.playerCount; ++var9) {
-								Player var10 = (Player)var0.players.get((long)Client.field326.playerIndices[var9]);
+							for (var9 = 0; var9 < Client.playerUpdateManager.playerCount; ++var9) {
+								Player var10 = (Player)var0.players.get((long)Client.playerUpdateManager.playerIndices[var9]);
 								if (var10 != null && var8.method8644(var10.x, var10.y)) {
 									var8.method8642();
 									var7 = true;

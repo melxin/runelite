@@ -891,7 +891,7 @@ public enum HorizontalAlignment implements Enum {
 					var16 = var9.getExternalName();
 				}
 
-				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var16;
+				Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var16;
 				return 1;
 			} else if (var0 == ScriptOpcodes.WORLDMAP_SETMAP) {
 				var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
@@ -1171,9 +1171,9 @@ public enum HorizontalAlignment implements Enum {
 												var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 												var4 = InvDefinition.WorldMapElement_get(var3);
 												if (var4.name == null) {
-													Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+													Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 												} else {
-													Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.name;
+													Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.name;
 												}
 
 												return 1;

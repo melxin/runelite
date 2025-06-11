@@ -189,7 +189,7 @@ public enum PlayerType implements Enum {
 				Client.destinationY = var1;
 				var15 = class139.getPacketBufferNode(ClientPacket.OPLOCU, Client.packetWriter.isaacCipher);
 				var15.packetBuffer.writeShortLE(var12 + var1);
-				var15.packetBuffer.writeShortAddLE(ConcurrentMidiTask.field5095);
+				var15.packetBuffer.writeShortAddLE(ConcurrentMidiTask.Players_count);
 				var15.packetBuffer.writeShortLE(HttpMethod.field42);
 				var15.packetBuffer.writeShortAdd(var3);
 				var15.packetBuffer.writeShortAddLE(var0 + var11);
@@ -277,7 +277,7 @@ public enum PlayerType implements Enum {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var16 = class139.getPacketBufferNode(ClientPacket.OPNPCU, Client.packetWriter.isaacCipher);
-						var16.packetBuffer.writeShort(ConcurrentMidiTask.field5095);
+						var16.packetBuffer.writeShort(ConcurrentMidiTask.Players_count);
 						var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var16.packetBuffer.writeInt(Login.field771);
 						var16.packetBuffer.writeShortAdd(var3);
@@ -387,7 +387,7 @@ public enum PlayerType implements Enum {
 							var16.packetBuffer.writeShort(var3);
 							var16.packetBuffer.writeShortAddLE(HttpMethod.field42);
 							var16.packetBuffer.writeInt(Login.field771);
-							var16.packetBuffer.writeShort(ConcurrentMidiTask.field5095);
+							var16.packetBuffer.writeShort(ConcurrentMidiTask.Players_count);
 							Client.packetWriter.addNode(var16);
 						}
 					} else if (var2 == 15) {
@@ -416,7 +416,7 @@ public enum PlayerType implements Enum {
 						Client.destinationY = var1;
 						var15 = class139.getPacketBufferNode(ClientPacket.OPOBJU, Client.packetWriter.isaacCipher);
 						var15.packetBuffer.writeShortAddLE(var3);
-						var15.packetBuffer.writeShortAdd(ConcurrentMidiTask.field5095);
+						var15.packetBuffer.writeShortAdd(ConcurrentMidiTask.Players_count);
 						var15.packetBuffer.writeInt(Login.field771);
 						var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var15.packetBuffer.writeShortAddLE(var12 + var1);
@@ -532,7 +532,7 @@ public enum PlayerType implements Enum {
 								var23 = ClientPreferences.widgetDefinition.getWidgetChild(var1, var0);
 								if (var23 != null) {
 									WorldMapSectionType.method6573();
-									class564.method10658(var1, var0, class187.method4098(class255.method5526(var23)), var4);
+									class564.method10658(var1, var0, class187.Widget_unpackTargetMask(class255.getWidgetFlags(var23)), var4);
 									Client.isItemSelected = 0;
 									Client.selectedSpellActionName = class322.Widget_getSpellActionName(var23);
 									if (Client.selectedSpellActionName == null) {

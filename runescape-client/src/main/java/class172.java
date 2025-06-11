@@ -108,7 +108,7 @@ public class class172 extends class165 {
 			}
 		}
 
-		int var4 = FriendSystem.method1550(var0).type;
+		int var4 = FriendSystem.VarpDefinition_get(var0).type;
 		if (var4 != 0) {
 			int var2 = Varps.Varps_main[var0];
 			if (var4 == 1) {

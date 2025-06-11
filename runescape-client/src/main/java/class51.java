@@ -66,14 +66,14 @@ public class class51 {
 
 			for (var6 = 0; var6 < var10.outputCount; ++var6) {
 				if (var9 == var10.keys[var6]) {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var10.strVals[var6];
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var10.strVals[var6];
 					var10 = null;
 					break;
 				}
 			}
 
 			if (var10 != null) {
-				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var10.defaultStr;
+				Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var10.defaultStr;
 			}
 
 			return 1;
@@ -97,7 +97,7 @@ public class class51 {
 				for (int var8 = 0; var8 < var7.outputCount; ++var8) {
 					if (var6 == var7.keys[var8]) {
 						if (var9 == 115) {
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7.strVals[var8];
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7.strVals[var8];
 						} else {
 							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.intVals[var8];
 						}
@@ -109,7 +109,7 @@ public class class51 {
 
 				if (var7 != null) {
 					if (var9 == 115) {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7.defaultStr;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7.defaultStr;
 					} else {
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.defaultInt;
 					}
@@ -118,7 +118,7 @@ public class class51 {
 				return 1;
 			} else {
 				if (var9 == 115) {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "null";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "null";
 				} else {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 				}

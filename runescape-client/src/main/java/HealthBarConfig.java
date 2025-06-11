@@ -393,7 +393,7 @@ public class HealthBarConfig extends Node {
 						var16 = var28[var15];
 						class563 var22 = class282.method6156(var16);
 						if (var22 == class563.field5595) {
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 						} else {
 							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class217.method4697(var16);
 						}
@@ -407,7 +407,7 @@ public class HealthBarConfig extends Node {
 							int var17 = var16 + var28.length * var5;
 							class563 var18 = class282.method6156(var28[var16]);
 							if (var18 == class563.field5595) {
-								Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var14[var17];
+								Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var14[var17];
 							} else {
 								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = (Integer)var14[var17];
 							}
@@ -593,8 +593,8 @@ public class HealthBarConfig extends Node {
 		garbageValue = "1304785428"
 	)
 	static final void method2564() {
-		int var0 = Client.field326.playerCount;
-		int[] var1 = Client.field326.playerIndices;
+		int var0 = Client.playerUpdateManager.playerCount;
+		int[] var1 = Client.playerUpdateManager.playerIndices;
 		Iterator var2 = Client.worldViewManager.iterator();
 
 		while (var2.hasNext()) {

@@ -206,7 +206,7 @@ public final class class330 {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.field345[var3];
 					return 1;
 				} else if (var0 == 3333) {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = Client.field336;
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = Client.field336;
 					return 1;
 				} else {
 					return 2;

@@ -139,8 +139,8 @@ public class class300 {
 		}
 
 		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.method8404();
-			ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.method8404();
+			ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.clear();
+			ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.clear();
 		}
 	}
 }

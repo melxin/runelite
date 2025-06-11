@@ -165,7 +165,7 @@ public class class563 implements Enum {
 				Widget var8 = ClientPreferences.widgetDefinition.getWidgetChild(Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1], Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 2]);
 				ParamComposition var9 = TaskHandler.getParamDefinition(var7);
 				if (var9.isString()) {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var8.method7752(var7, var9.defaultStr);
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var8.method7752(var7, var9.defaultStr);
 				} else {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var8.method7753(var7, var9.defaultInt);
 				}

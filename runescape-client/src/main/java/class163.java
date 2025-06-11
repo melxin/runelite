@@ -70,7 +70,7 @@ public class class163 extends class149 {
 				var4 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 				ParamComposition var7 = TaskHandler.getParamDefinition(var4);
 				if (var7.isString()) {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var3.method7752(var4, var7.defaultStr);
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var3.method7752(var4, var7.defaultStr);
 				} else {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var3.method7753(var4, var7.defaultInt);
 				}

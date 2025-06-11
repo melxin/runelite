@@ -117,7 +117,7 @@ public class class33 {
 			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var3.scrollY;
 			return 1;
 		} else if (var0 == ScriptOpcodes.IF_GETTEXT) {
-			Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var3.text;
+			Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var3.text;
 			return 1;
 		} else if (var0 == ScriptOpcodes.IF_GETSCROLLWIDTH) {
 			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var3.scrollWidth;
@@ -170,7 +170,7 @@ public class class33 {
 				class367 var7;
 				if (var0 == 2619) {
 					var7 = var3.method7755();
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7 != null ? var7.method7447().method9021() : "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7 != null ? var7.method7447().method9021() : "";
 					return 1;
 				} else if (var0 == 2620) {
 					var4 = var3.method7774();
@@ -195,7 +195,7 @@ public class class33 {
 				} else if (var0 != 2625) {
 					if (var0 == 2626) {
 						var7 = var3.method7755();
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7 != null ? var7.method7421().method9215() : "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7 != null ? var7.method7421().method9215() : "";
 						return 1;
 					} else if (var0 == 2627) {
 						var7 = var3.method7755();

@@ -88,7 +88,7 @@ public enum class134 implements Enum {
 		if (!Client.field578) {
 			var0 = Coord.method7242(Interpreter.field676);
 			var1 = Coord.method7242(AABB.field2811);
-			var2 = DevicePcmPlayerProvider.method329(Sound.topLevelWorldView, var0, var1, Sound.topLevelWorldView.plane) - class242.field2663;
+			var2 = DevicePcmPlayerProvider.getTileHeight(Sound.topLevelWorldView, var0, var1, Sound.topLevelWorldView.plane) - class242.field2663;
 			class163.method3834(var0, var2, var1);
 		} else if (Client.field581 != null) {
 			class6.cameraX = Client.field581.vmethod10247();
@@ -96,7 +96,7 @@ public enum class134 implements Enum {
 			if (Client.field580) {
 				ClientPreferences.cameraY = Client.field581.vmethod10249();
 			} else {
-				ClientPreferences.cameraY = DevicePcmPlayerProvider.method329(Sound.topLevelWorldView, class6.cameraX, GrandExchangeOfferAgeComparator.cameraZ, Sound.topLevelWorldView.plane) - Client.field581.vmethod10249();
+				ClientPreferences.cameraY = DevicePcmPlayerProvider.getTileHeight(Sound.topLevelWorldView, class6.cameraX, GrandExchangeOfferAgeComparator.cameraZ, Sound.topLevelWorldView.plane) - Client.field581.vmethod10249();
 			}
 
 			Client.field581.method10258();
@@ -105,7 +105,7 @@ public enum class134 implements Enum {
 		if (!Client.field543) {
 			var0 = Coord.method7242(Messages.field1260);
 			var1 = Coord.method7242(field1583);
-			var2 = DevicePcmPlayerProvider.method329(Sound.topLevelWorldView, var0, var1, Sound.topLevelWorldView.plane) - class27.field131;
+			var2 = DevicePcmPlayerProvider.getTileHeight(Sound.topLevelWorldView, var0, var1, Sound.topLevelWorldView.plane) - class27.field131;
 			int var3 = var0 - class6.cameraX;
 			int var4 = var2 - ClientPreferences.cameraY;
 			int var5 = var1 - GrandExchangeOfferAgeComparator.cameraZ;

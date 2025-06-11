@@ -257,7 +257,7 @@ public final class WallDecoration {
 			var18 = var1.method10896();
 			if (var21 != 65535) {
 				Projectile var19 = new Projectile(var30, var11, var12, var7, var18, var4, var5, var6, var2, var14, var21, var13 + Client.cycle, var35 + Client.cycle, var36, var26);
-				Client.playerUpdateManager.addFirst(var19);
+				Client.projectiles.addFirst(var19);
 			}
 
 		} else if (class325.field3484 == var0) {
@@ -338,8 +338,8 @@ public final class WallDecoration {
 				var3 = Coord.method7242(var3);
 				var4 = Coord.method7242(var4);
 				var21 = Client.field405 == -1 ? class330.worldView.plane : Client.field405;
-				GraphicsObject var29 = new GraphicsObject(class330.worldView, var7, var21, var3, var4, DevicePcmPlayerProvider.method329(class330.worldView, var3, var4, var21) - var6, var5, Client.cycle);
-				class330.worldView.projectiles.addFirst(var29);
+				GraphicsObject var29 = new GraphicsObject(class330.worldView, var7, var21, var3, var4, DevicePcmPlayerProvider.getTileHeight(class330.worldView, var3, var4, var21) - var6, var5, Client.cycle);
+				class330.worldView.graphicsObjects.addFirst(var29);
 			}
 
 		} else if (class325.field3490 == var0) {
@@ -391,7 +391,7 @@ public final class WallDecoration {
 				var5 = var28 + var3;
 				var11 = var33 + var4;
 				Projectile var24 = new Projectile(class330.worldView.plane, var3, var4, var6, var35, class330.worldView.plane, var5, var11, var30, var12, var7, var13 + Client.cycle, var14 + Client.cycle, var21, var20);
-				Client.playerUpdateManager.addFirst(var24);
+				Client.projectiles.addFirst(var24);
 			}
 
 		} else if (class325.field3481 == var0) {

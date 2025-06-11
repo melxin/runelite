@@ -149,7 +149,7 @@ public class HttpAuthenticationHeader {
 		UrlRequest.clear();
 		class396.method8006();
 		Client.worldViewManager.clear();
-		Client.playerUpdateManager.method8404();
+		Client.projectiles.clear();
 		class338.worldMap = null;
 		HttpResponse.method306(0, 0);
 		class153.method3696();

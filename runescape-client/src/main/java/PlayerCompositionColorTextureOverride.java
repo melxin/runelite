@@ -11,7 +11,7 @@ public class PlayerCompositionColorTextureOverride {
 	@ObfuscatedSignature(
 		descriptor = "Ldl;"
 	)
-	static WorldView field1879;
+	static WorldView field3434;
 	@ObfuscatedName("al")
 	@Export("playerCompositionRecolorTo")
 	public short[] playerCompositionRecolorTo;

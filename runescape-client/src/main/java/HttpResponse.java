@@ -161,7 +161,7 @@ public class HttpResponse {
 			var3 = var2 ? class539.scriptDotWidget : Huffman.scriptActiveWidget;
 		}
 
-		String var4 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+		String var4 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 		int[] var5 = null;
 		if (!var4.isEmpty() && var4.charAt(var4.length() - 1) == 'Y') {
 			int var6 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
@@ -181,7 +181,7 @@ public class HttpResponse {
 			case 'W':
 			case 'X':
 			case 's':
-				var9[var7] = Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+				var9[var7] = Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 				break;
 			default:
 				var9[var7] = new Integer(Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize]);

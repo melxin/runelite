@@ -11,17 +11,19 @@ public class GraphicsObject extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "Ldl;"
 	)
-	final WorldView field700;
+	/*final*/ WorldView field700;
 	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
 		intValue = 1242994835
 	)
-	int field694;
+	@Export("cycleStart")
+	int cycleStart;
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(
 		intValue = -1342436349
 	)
-	int field706;
+	@Export("plane")
+	int plane;
 	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
 		intValue = 970777365
@@ -32,13 +34,14 @@ public class GraphicsObject extends Renderable {
 	@ObfuscatedGetter(
 		intValue = -164806355
 	)
-	int field697;
+	@Export("y")
+	int y;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = -1188767781
 	)
-	@Export("cycleStart")
-	int cycleStart;
+	@Export("z")
+	int z;
 	@ObfuscatedName("aa")
 	@Export("isFinished")
 	boolean isFinished;
@@ -76,11 +79,11 @@ public class GraphicsObject extends Renderable {
 		this.frameCycle = 0;
 		this.field700 = var1;
 		this.id = var2;
-		this.field706 = var3;
+		this.plane = var3;
 		this.x = var4;
-		this.field697 = var5;
-		this.cycleStart = var6;
-		this.field694 = var8 + var7;
+		this.y = var5;
+		this.z = var6;
+		this.cycleStart = var8 + var7;
 		int var9 = class386.SpotAnimationDefinition_get(this.id).sequence;
 		if (var9 != -1) {
 			this.isFinished = false;
@@ -109,14 +112,14 @@ public class GraphicsObject extends Renderable {
 						break;
 					}
 
-					class203.method4299(this.field700, this.sequenceDefinition, this.frame, this.x, this.field697, false);
+					class203.method4299(this.field700, this.sequenceDefinition, this.frame, this.x, this.y, false);
 				}
 			} else {
 				this.frame += var1;
 				if (this.frame >= this.sequenceDefinition.getMayaAnimFrame()) {
 					this.isFinished = true;
 				} else {
-					class203.method4299(this.field700, this.sequenceDefinition, this.frame, this.x, this.field697, false);
+					class203.method4299(this.field700, this.sequenceDefinition, this.frame, this.x, this.y, false);
 				}
 			}
 
@@ -188,7 +191,7 @@ public class GraphicsObject extends Renderable {
 	@Export("worldToScreen")
 	static void worldToScreen(WorldView var0, int var1, int var2, int var3, int var4, int var5) {
 		if (var1 >= 128 && 13056 >= var1 && var2 >= 128 && 13056 >= var2) {
-			int var6 = DevicePcmPlayerProvider.method329(var0, var3, var4, var0.plane) - var5;
+			int var6 = DevicePcmPlayerProvider.getTileHeight(var0, var3, var4, var0.plane) - var5;
 			var1 -= class6.cameraX;
 			var6 -= ClientPreferences.cameraY;
 			var2 -= GrandExchangeOfferAgeComparator.cameraZ;

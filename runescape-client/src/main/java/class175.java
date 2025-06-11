@@ -10,8 +10,8 @@ final class class175 implements ThreadFactory {
 	@ObfuscatedGetter(
 		intValue = -486479365
 	)
-	@Export("Interpreter_stringStackSize")
-	static int Interpreter_stringStackSize;
+	@Export("Interpreter_objectStackSize")
+	static int Interpreter_objectStackSize;
 
 	public Thread newThread(Runnable var1) {
 		return new Thread(var1, "OSRS Maya Anim Load");

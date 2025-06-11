@@ -128,17 +128,17 @@ public class class30 {
 				if (var9 != null) {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var9.id;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var9.properties;
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var9.activity;
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var9.activity;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var9.location;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var9.population;
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var9.host;
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var9.host;
 				} else {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 				}
 
 				return 1;
@@ -147,17 +147,17 @@ public class class30 {
 				if (var9 != null) {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var9.id;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var9.properties;
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var9.activity;
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var9.activity;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var9.location;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var9.population;
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var9.host;
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var9.host;
 				} else {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 				}
 
 				return 1;
@@ -179,17 +179,17 @@ public class class30 {
 					if (var7 != null) {
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.id;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.properties;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7.activity;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7.activity;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.location;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.population;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7.host;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7.host;
 					} else {
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 					}
 
 					return 1;
@@ -214,7 +214,7 @@ public class class30 {
 							var4 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
 							var5 = TaskHandler.getParamDefinition(var4);
 							if (var5.isString()) {
-								Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = UserComparator3.getNpcDefinition(var3).getStringParam(var4, var5.defaultStr);
+								Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = UserComparator3.getNpcDefinition(var3).getStringParam(var4, var5.defaultStr);
 							} else {
 								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = UserComparator3.getNpcDefinition(var3).getIntParam(var4, var5.defaultInt);
 							}
@@ -226,7 +226,7 @@ public class class30 {
 							var4 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
 							var5 = TaskHandler.getParamDefinition(var4);
 							if (var5.isString()) {
-								Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = HealthBarConfig.getObjectDefinition(var3).getStringParam(var4, var5.defaultStr);
+								Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = HealthBarConfig.getObjectDefinition(var3).getStringParam(var4, var5.defaultStr);
 							} else {
 								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = HealthBarConfig.getObjectDefinition(var3).getIntParam(var4, var5.defaultInt);
 							}
@@ -238,7 +238,7 @@ public class class30 {
 							var4 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
 							var5 = TaskHandler.getParamDefinition(var4);
 							if (var5.isString()) {
-								Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = SceneTilePaint.ItemDefinition_get(var3).getStringParam(var4, var5.defaultStr);
+								Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = SceneTilePaint.ItemDefinition_get(var3).getStringParam(var4, var5.defaultStr);
 							} else {
 								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = SceneTilePaint.ItemDefinition_get(var3).getIntParam(var4, var5.defaultInt);
 							}
@@ -250,7 +250,7 @@ public class class30 {
 							var4 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
 							var5 = TaskHandler.getParamDefinition(var4);
 							if (var5.isString()) {
-								Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = ItemLayer.StructDefinition_getStructDefinition(var3).getStringParam(var4, var5.defaultStr);
+								Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = ItemLayer.StructDefinition_getStructDefinition(var3).getStringParam(var4, var5.defaultStr);
 							} else {
 								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = ItemLayer.StructDefinition_getStructDefinition(var3).getIntParam(var4, var5.defaultInt);
 							}
@@ -267,11 +267,11 @@ public class class30 {
 						} else if (var0 == ScriptOpcodes.MOBILE_KEYBOARDHIDE) {
 							return 1;
 						} else if (var0 == 6522) {
-							--class175.Interpreter_stringStackSize;
+							--class175.Interpreter_objectStackSize;
 							--Interpreter.Interpreter_intStackSize;
 							return 1;
 						} else if (var0 == 6523) {
-							--class175.Interpreter_stringStackSize;
+							--class175.Interpreter_objectStackSize;
 							--Interpreter.Interpreter_intStackSize;
 							return 1;
 						} else if (var0 == ScriptOpcodes.MOBILE_BATTERYLEVEL) {
@@ -296,17 +296,17 @@ public class class30 {
 						var7 = class547.World_worlds[var3];
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.id;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.properties;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7.activity;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7.activity;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.location;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var7.population;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7.host;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7.host;
 					} else {
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 					}
 
 					return 1;

@@ -30,7 +30,7 @@ public class RuneLiteObject extends Renderable {
 			if (active) {
 				this.frame = 0;
 				this.frameCycle = 0;
-				DevicePcmPlayerProvider.worldView.graphicsObjects.addFirst(this);
+				class330.worldView.graphicsObjects.addFirst(this);
 			} else {
 				remove();
 			}

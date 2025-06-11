@@ -1296,7 +1296,7 @@ public class class367 {
 		} else {
 			switch(var0.field5596) {
 			case 0:
-				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var1;
+				Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var1;
 				break;
 			case 3:
 				Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = (Integer)var1;

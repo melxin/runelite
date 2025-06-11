@@ -92,11 +92,11 @@ public class class114 {
 	)
 	static int method3308(Widget var0) {
 		if (var0.type != 11) {
-			Interpreter.Interpreter_stringStack[class175.Interpreter_stringStackSize - 1] = "";
+			Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize - 1] = "";
 			return 1;
 		} else {
-			String var1 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
-			Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var0.method7778(var1);
+			String var1 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
+			Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var0.method7778(var1);
 			return 1;
 		}
 	}

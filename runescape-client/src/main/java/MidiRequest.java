@@ -203,8 +203,8 @@ public class MidiRequest {
 					}
 				}
 
-				var8 = Client.field326.playerCount;
-				int[] var17 = Client.field326.playerIndices;
+				var8 = Client.playerUpdateManager.playerCount;
+				int[] var17 = Client.playerUpdateManager.playerIndices;
 
 				for (var10 = 0; var10 < var8; ++var10) {
 					Player var15 = (Player)Sound.topLevelWorldView.players.get((long)var17[var10]);
@@ -236,8 +236,8 @@ public class MidiRequest {
 					}
 
 					if (Client.hintArrowType == 2) {
-						var10 = Client.field575 * 4 - Sound.topLevelWorldView.baseX * 4 + 2 - Client.field527 / 32;
-						var11 = Client.field602 * 4 - Sound.topLevelWorldView.baseY * 4 + 2 - Client.field387 / 32;
+						var10 = Client.hintArrowX * 4 - Sound.topLevelWorldView.baseX * 4 + 2 - Client.field527 / 32;
+						var11 = Client.hintArrowY * 4 - Sound.topLevelWorldView.baseY * 4 + 2 - Client.field387 / 32;
 						WorldMapElement.worldToMinimap(var1, var2, var10, var11, class152.mapDotSprites[1], var4);
 					}
 

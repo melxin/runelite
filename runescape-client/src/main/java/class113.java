@@ -229,7 +229,7 @@ public class class113 {
 
 		HealthBarConfig.updateGameState(25);
 		Client.field442 = true;
-		PlayerCompositionColorTextureOverride.field1879 = var2;
+		PlayerCompositionColorTextureOverride.field3434 = var2;
 		class148.method3653(var2);
 	}
 }

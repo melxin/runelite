@@ -437,7 +437,11 @@ public class Widget extends Node {
 	@ObfuscatedName("ec")
 	public String[][] field4064;
 	@ObfuscatedName("eo")
-	public int field4055;
+	@ObfuscatedGetter(
+		intValue = -1196438339
+	)
+	@Export("targetPriority")
+	public int targetPriority;
 	@ObfuscatedName("ez")
 	@ObfuscatedSignature(
 		descriptor = "Lov;"
@@ -777,7 +781,7 @@ public class Widget extends Node {
 		this.flags = 0;
 		this.field4057 = false;
 		this.dataText = "";
-		this.field4055 = -209307052;
+		this.targetPriority = -209307052;
 		this.parent = null;
 		this.dragZoneSize = 0;
 		this.dragThreshold = 0;
@@ -880,7 +884,7 @@ public class Widget extends Node {
 		this.flags = 0;
 		this.field4057 = false;
 		this.dataText = "";
-		this.field4055 = -209307052;
+		this.targetPriority = -209307052;
 		this.parent = null;
 		this.dragZoneSize = 0;
 		this.dragThreshold = 0;
@@ -1033,7 +1037,7 @@ public class Widget extends Node {
 			}
 		}
 
-		this.field4055 = var1.field4055;
+		this.targetPriority = var1.targetPriority;
 		this.parent = var1.parent;
 		this.dragZoneSize = var1.dragZoneSize;
 		this.dragThreshold = var1.dragThreshold;

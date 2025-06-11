@@ -239,7 +239,8 @@ public class NPCComposition extends DualNode {
 	@ObfuscatedGetter(
 		intValue = -2074360995
 	)
-	int field2036;
+	@Export("footprintSize")
+	int footprintSize;
 
 	static {
 		NpcDefinition_cached = new EvictingDualNodeHashTable(64);
@@ -283,7 +284,7 @@ public class NPCComposition extends DualNode {
 		this.field2061 = new int[]{1, 1, 1, 1, 1, 1};
 		this.headIconArchiveIds = null;
 		this.headIconSpriteIndex = null;
-		this.field2036 = -1;
+		this.footprintSize = -1;
 	}
 
 	@ObfuscatedName("ai")
@@ -293,8 +294,8 @@ public class NPCComposition extends DualNode {
 	)
 	@Export("postDecode")
 	void postDecode() {
-		if (this.field2036 == -1) {
-			this.field2036 = (int)((float)(this.size * 128) * 0.4F);
+		if (this.footprintSize == -1) {
+			this.footprintSize = (int)((float)(this.size * 128) * 0.4F);
 		}
 
 	}
@@ -457,7 +458,7 @@ public class NPCComposition extends DualNode {
 				} else if (var2 == 124) {
 					this.field2069 = var1.readUnsignedShort();
 				} else if (var2 == 126) {
-					this.field2036 = var1.readUnsignedShort();
+					this.footprintSize = var1.readUnsignedShort();
 				} else if (var2 == 249) {
 					this.params = UrlRequester.readStringIntParameters(var1, this.params);
 				}
@@ -747,7 +748,7 @@ public class NPCComposition extends DualNode {
 		garbageValue = "20"
 	)
 	public int method4165() {
-		return this.field2036;
+		return this.footprintSize;
 	}
 
 	@ObfuscatedName("ap")

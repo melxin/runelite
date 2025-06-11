@@ -181,7 +181,7 @@ public class class506 implements Enum {
 		int var3;
 		if (var0 == ScriptOpcodes.OC_NAME) {
 			var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-			Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = SceneTilePaint.ItemDefinition_get(var3).name;
+			Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = SceneTilePaint.ItemDefinition_get(var3).name;
 			return 1;
 		} else {
 			int var8;
@@ -192,9 +192,9 @@ public class class506 implements Enum {
 				var8 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
 				var10 = SceneTilePaint.ItemDefinition_get(var3);
 				if (var8 >= 1 && var8 <= 5 && var10.groundActions[var8 - 1] != null) {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var10.groundActions[var8 - 1];
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var10.groundActions[var8 - 1];
 				} else {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 				}
 
 				return 1;
@@ -204,9 +204,9 @@ public class class506 implements Enum {
 				var8 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
 				var10 = SceneTilePaint.ItemDefinition_get(var3);
 				if (var8 >= 1 && var8 <= 5 && var10.inventoryActions[var8 - 1] != null) {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var10.inventoryActions[var8 - 1];
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var10.inventoryActions[var8 - 1];
 				} else {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 				}
 
 				return 1;
@@ -221,7 +221,7 @@ public class class506 implements Enum {
 					var7 = var6.subOps[var8 - 1][var5 - 1];
 				}
 
-				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7 != null ? var7 : "";
+				Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7 != null ? var7 : "";
 				return 1;
 			} else if (var0 == ScriptOpcodes.OC_COST) {
 				var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
@@ -278,7 +278,7 @@ public class class506 implements Enum {
 
 					return 1;
 				} else if (var0 == ScriptOpcodes.OC_FIND) {
-					String var9 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					String var9 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					var8 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 					class440.findItemDefinitions(var9, var8 == 1);
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class518.foundItemIdCount;
@@ -316,7 +316,7 @@ public class class506 implements Enum {
 						return 1;
 					} else if (var0 == 4218) {
 						var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = SceneTilePaint.ItemDefinition_get(var3).examine;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = SceneTilePaint.ItemDefinition_get(var3).examine;
 						return 1;
 					} else {
 						return 2;

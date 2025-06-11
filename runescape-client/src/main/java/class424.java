@@ -60,11 +60,11 @@ public class class424 {
 				var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 				if (Actor.friendSystem.method1531() && var3 >= 0 && var3 < Actor.friendSystem.friendsList.getSize()) {
 					Friend var8 = (Friend)Actor.friendSystem.friendsList.get(var3);
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var8.getName();
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var8.getPreviousName();
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var8.getName();
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var8.getPreviousName();
 				} else {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 				}
 
 				return 1;
@@ -89,37 +89,37 @@ public class class424 {
 			} else {
 				String var5;
 				if (var0 == ScriptOpcodes.FRIEND_SETRANK) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					int var9 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 					GameEngine.method653(var5, var9);
 					return 1;
 				} else if (var0 == ScriptOpcodes.FRIEND_ADD) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					Actor.friendSystem.addFriend(var5);
 					return 1;
 				} else if (var0 == ScriptOpcodes.FRIEND_DEL) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					Actor.friendSystem.removeFriend(var5);
 					return 1;
 				} else if (var0 == ScriptOpcodes.IGNORE_ADD) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					Actor.friendSystem.addIgnore(var5);
 					return 1;
 				} else if (var0 == ScriptOpcodes.IGNORE_DEL) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					boolean var6 = true;
 					Actor.friendSystem.removeIgnore(var5, var6);
 					return 1;
 				} else if (var0 == ScriptOpcodes.FRIEND_TEST) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					var5 = class332.method6860(var5);
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Actor.friendSystem.isFriended(new Username(var5, AbstractUserComparator.loginType), false) ? 1 : 0;
 					return 1;
 				} else if (var0 == ScriptOpcodes.CLAN_GETCHATDISPLAYNAME) {
 					if (class187.friendsChat != null) {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = class187.friendsChat.name;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = class187.friendsChat.name;
 					} else {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 					}
 
 					return 1;
@@ -134,9 +134,9 @@ public class class424 {
 				} else if (var0 == ScriptOpcodes.CLAN_GETCHATUSERNAME) {
 					var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 					if (class187.friendsChat != null && var3 < class187.friendsChat.getSize()) {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = class187.friendsChat.get(var3).getUsername().getName();
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = class187.friendsChat.get(var3).getUsername().getName();
 					} else {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 					}
 
 					return 1;
@@ -162,14 +162,14 @@ public class class424 {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class187.friendsChat != null ? class187.friendsChat.minKick : 0;
 					return 1;
 				} else if (var0 == ScriptOpcodes.CLAN_KICKUSER) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					class464.clanKickUser(var5);
 					return 1;
 				} else if (var0 == ScriptOpcodes.CLAN_GETCHATRANK) {
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class187.friendsChat != null ? class187.friendsChat.rank : 0;
 					return 1;
 				} else if (var0 == ScriptOpcodes.CLAN_JOINCHAT) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					GrandExchangeOfferOwnWorldComparator.Clan_joinChat(var5);
 					return 1;
 				} else if (var0 == ScriptOpcodes.CLAN_LEAVECHAT) {
@@ -187,16 +187,16 @@ public class class424 {
 					var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 					if (Actor.friendSystem.method1531() && var3 >= 0 && var3 < Actor.friendSystem.ignoreList.getSize()) {
 						Ignored var4 = (Ignored)Actor.friendSystem.ignoreList.get(var3);
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.getName();
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.getPreviousName();
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.getName();
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.getPreviousName();
 					} else {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 					}
 
 					return 1;
 				} else if (var0 == ScriptOpcodes.IGNORE_TEST) {
-					var5 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+					var5 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 					var5 = class332.method6860(var5);
 					Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Actor.friendSystem.isIgnored(new Username(var5, AbstractUserComparator.loginType)) ? 1 : 0;
 					return 1;
@@ -211,9 +211,9 @@ public class class424 {
 					return 1;
 				} else if (var0 == ScriptOpcodes.CLAN_GETCHATOWNERNAME) {
 					if (class187.friendsChat != null && class187.friendsChat.owner != null) {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = class187.friendsChat.owner;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = class187.friendsChat.owner;
 					} else {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 					}
 
 					return 1;

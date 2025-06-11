@@ -14,99 +14,109 @@ public final class Projectile extends Renderable {
 	@ObfuscatedGetter(
 		intValue = 1760636453
 	)
-	@Export("plane")
-	int plane;
+	@Export("sourceLevel")
+	int sourceLevel;
 	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
 		intValue = 122389861
 	)
-	int field774;
+	@Export("sourceX")
+	int sourceX;
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(
 		intValue = -982957147
 	)
-	int field773;
+	@Export("sourceY")
+	int sourceY;
 	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
 		intValue = -2046465727
 	)
-	int field775;
+	@Export("startHeight")
+	int startHeight;
 	@ObfuscatedName("al")
 	@ObfuscatedGetter(
 		intValue = -442517587
 	)
-	int field777;
+	@Export("sourceIndex")
+	int sourceIndex;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = 3329409
 	)
-	int field794;
+	@Export("targetLevel")
+	int targetLevel;
 	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
 		intValue = -89573569
 	)
-	int field778;
+	@Export("targetX")
+	int targetX;
 	@ObfuscatedName("am")
 	@ObfuscatedGetter(
 		intValue = -638285973
 	)
-	int field779;
+	@Export("targetY")
+	int targetY;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		intValue = -979611933
 	)
-	int field780;
+	@Export("endHeight")
+	int endHeight;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
 		intValue = -1072675713
 	)
-	int field781;
+	@Export("targetIndex")
+	int targetIndex;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = 599838015
 	)
-	int field782;
+	@Export("cycleStart")
+	int cycleStart;
 	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
 		intValue = -1528490365
 	)
-	int field783;
+	@Export("cycleEnd")
+	int cycleEnd;
 	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
 		intValue = 780683861
 	)
-	@Export("sourceX")
-	int sourceX;
+	@Export("slope")
+	int slope;
 	@ObfuscatedName("af")
 	@ObfuscatedGetter(
 		intValue = -1715101287
 	)
 	int field785;
 	@ObfuscatedName("ak")
-	@Export("speedX")
-	double speedX;
+	@Export("x")
+	double x;
 	@ObfuscatedName("az")
-	double field787;
+	@Export("y")
+	double y;
 	@ObfuscatedName("aw")
-	double field788;
+	double z;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
 		intValue = 2065503699
 	)
-	@Export("yaw")
-	int yaw;
+	@Export("orientation")
+	int orientation;
 	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
 		intValue = 523619617
 	)
-	@Export("pitch")
-	int pitch;
+	int field1343;
 	@ObfuscatedName("av")
 	@Export("isMoving")
 	boolean isMoving;
 	@ObfuscatedName("ao")
-	@Export("x")
-	double x;
+	double field3495;
 	@ObfuscatedName("as")
 	@ObfuscatedGetter(
 		intValue = 1279225121
@@ -128,26 +138,27 @@ public final class Projectile extends Renderable {
 	@ObfuscatedGetter(
 		intValue = 1728656389
 	)
-	int field792;
+	@Export("frameCycle")
+	int frameCycle;
 
 	Projectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15) {
 		this.isMoving = false;
 		this.frame = 0;
-		this.field792 = 0;
-		this.plane = var1;
-		this.field774 = var2;
-		this.field773 = var3;
-		this.field775 = var4;
-		this.field777 = var5;
-		this.field794 = var6;
-		this.field778 = var7;
-		this.field779 = var8;
-		this.field780 = var9;
-		this.field781 = var10;
+		this.frameCycle = 0;
+		this.sourceLevel = var1;
+		this.sourceX = var2;
+		this.sourceY = var3;
+		this.startHeight = var4;
+		this.sourceIndex = var5;
+		this.targetLevel = var6;
+		this.targetX = var7;
+		this.targetY = var8;
+		this.endHeight = var9;
+		this.targetIndex = var10;
 		this.id = var11;
-		this.field782 = var12;
-		this.field783 = var13;
-		this.sourceX = var14;
+		this.cycleStart = var12;
+		this.cycleEnd = var13;
+		this.slope = var14;
 		this.field785 = var15;
 		int var16 = class386.SpotAnimationDefinition_get(this.id).sequence;
 		if (var16 != -1) {
@@ -170,7 +181,7 @@ public final class Projectile extends Renderable {
 		if (var2 == null) {
 			return null;
 		} else {
-			var2.rotateZ(this.pitch);
+			var2.rotateZ(this.field1343);
 			return var2;
 		}
 	}
@@ -181,12 +192,12 @@ public final class Projectile extends Renderable {
 		garbageValue = "-65"
 	)
 	void method1940(int var1, int var2) {
-		this.field774 += var1;
-		this.field773 += var2;
-		this.field778 += var1;
-		this.field779 += var2;
-		this.speedX += (double)Coord.method7228(var1);
-		this.field787 += (double)Coord.method7228(var2);
+		this.sourceX += var1;
+		this.sourceY += var2;
+		this.targetX += var1;
+		this.targetY += var2;
+		this.x += (double)Coord.method7228(var1);
+		this.y += (double)Coord.method7228(var2);
 	}
 
 	@ObfuscatedName("al")
@@ -194,58 +205,59 @@ public final class Projectile extends Renderable {
 		descriptor = "(Lcj;III)V",
 		garbageValue = "38345978"
 	)
-	void method1951(WorldViewManager var1, int var2, int var3) {
-		if (var2 >= this.field782) {
-			class445 var4 = World.method1493(this.field781, this.field778, this.field779, this.field794, var1);
+	@Export("setDestination")
+	void setDestination(WorldViewManager var1, int var2, int var3) {
+		if (var2 >= this.cycleStart) {
+			class445 var4 = World.method1493(this.targetIndex, this.targetX, this.targetY, this.targetLevel, var1);
 			int var5 = (int)var4.field4967;
 			int var6 = (int)var4.field4969;
-			int var7 = (int)var4.field4971 - this.field780;
+			int var7 = (int)var4.field4971 - this.endHeight;
 			var4.method8687();
 			double var12;
 			double var14;
 			double var16;
 			if (!this.isMoving) {
-				class445 var8 = World.method1493(this.field777, this.field774, this.field773, this.plane, var1);
+				class445 var8 = World.method1493(this.sourceIndex, this.sourceX, this.sourceY, this.sourceLevel, var1);
 				int var9 = (int)var8.field4967;
 				int var10 = (int)var8.field4969;
-				int var11 = (int)var8.field4971 - this.field775;
+				int var11 = (int)var8.field4971 - this.startHeight;
 				var8.method8687();
 				var12 = (double)(var5 - var9);
 				var14 = (double)(var6 - var10);
 				var16 = Math.sqrt(var14 * var14 + var12 * var12);
-				this.speedX = Math.abs(var16) < 0.009999999776482582D ? (double)var9 : (double)var9 + (double)this.field785 * var12 / var16;
-				this.field787 = Math.abs(var16) < 0.009999999776482582D ? (double)var10 : (double)var10 + var14 * (double)this.field785 / var16;
-				this.field788 = (double)var11;
+				this.x = Math.abs(var16) < 0.009999999776482582D ? (double)var9 : (double)var9 + (double)this.field785 * var12 / var16;
+				this.y = Math.abs(var16) < 0.009999999776482582D ? (double)var10 : (double)var10 + var14 * (double)this.field785 / var16;
+				this.z = (double)var11;
 			}
 
-			double var19 = (double)(this.field783 + 1 - var2);
-			double var21 = ((double)var5 - this.speedX) / var19;
-			var12 = ((double)var6 - this.field787) / var19;
+			double var19 = (double)(this.cycleEnd + 1 - var2);
+			double var21 = ((double)var5 - this.x) / var19;
+			var12 = ((double)var6 - this.y) / var19;
 			var14 = Math.sqrt(var12 * var12 + var21 * var21);
 			if (!this.isMoving) {
-				this.x = -var14 * Math.tan(0.02454369D * (double)this.sourceX);
+				this.field3495 = -var14 * Math.tan(0.02454369D * (double)this.slope);
 			}
 
-			var16 = 2.0D * ((double)var7 - this.field788 - this.x * var19) / (var19 * var19);
+			var16 = 2.0D * ((double)var7 - this.z - this.field3495 * var19) / (var19 * var19);
 			this.isMoving = true;
-			this.speedX += (double)var3 * var21;
-			this.field787 += (double)var3 * var12;
-			this.field788 += (double)var3 * this.x + 0.5D * var16 * (double)var3 * (double)var3;
-			this.x += var16 * (double)var3;
-			this.yaw = (int)(Math.atan2(var21, var12) * 325.949D) + 1024 & 2047;
-			this.pitch = (int)(Math.atan2(this.x, var14) * 325.949D) & 2047;
+			this.x += (double)var3 * var21;
+			this.y += (double)var3 * var12;
+			this.z += (double)var3 * this.field3495 + 0.5D * var16 * (double)var3 * (double)var3;
+			this.field3495 += var16 * (double)var3;
+			this.orientation = (int)(Math.atan2(var21, var12) * 325.949D) + 1024 & 2047;
+			this.field1343 = (int)(Math.atan2(this.field3495, var14) * 325.949D) & 2047;
 			if (this.field784 != null) {
 				if (!this.field784.isCachedModelIdSet()) {
-					this.field792 += var3;
+					this.frameCycle += var3;
 
 					while (true) {
 						do {
 							do {
-								if (this.field792 <= this.field784.frameLengths[this.frame]) {
+								if (this.frameCycle <= this.field784.frameLengths[this.frame]) {
 									return;
 								}
 
-								this.field792 -= this.field784.frameLengths[this.frame];
+								this.frameCycle -= this.field784.frameLengths[this.frame];
 								++this.frame;
 							} while(this.frame < this.field784.frameIds.length);
 

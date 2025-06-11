@@ -56,8 +56,8 @@ public class class378 {
 		Client.packetWriter.close();
 		UrlRequest.clear();
 		Client.worldViewManager.clear();
-		Client.playerUpdateManager.method8404();
-		Client.field326.clear();
+		Client.projectiles.clear();
+		Client.playerUpdateManager.clear();
 		Client.field491.method5864();
 		System.gc();
 		HttpResponse.method306(0, 0);

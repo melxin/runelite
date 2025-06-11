@@ -49,11 +49,11 @@ public class DevicePcmPlayerProvider implements class105 {
 	)
 	static int method327(Widget var0) {
 		if (var0.type != 11) {
-			--class175.Interpreter_stringStackSize;
+			--class175.Interpreter_objectStackSize;
 			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 			return 1;
 		} else {
-			String var1 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+			String var1 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var0.method7763(var1);
 			return 1;
 		}
@@ -165,12 +165,12 @@ public class DevicePcmPlayerProvider implements class105 {
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERNAME) {
 						var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 						var4 = (GrandExchangeEvent)class143.grandExchangeEvents.events.get(var3);
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.getOfferName();
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.getOfferName();
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERPREVIOUSNAME) {
 						var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 						var4 = (GrandExchangeEvent)class143.grandExchangeEvents.events.get(var3);
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.getPreviousOfferName();
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.getPreviousOfferName();
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERAGE) {
 						var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
@@ -180,7 +180,7 @@ public class DevicePcmPlayerProvider implements class105 {
 						int var8 = (int)((var5 - (long)(var7 * 3600000)) / 60000L);
 						int var9 = (int)((var5 - (long)(var7 * 3600000) - (long)(var8 * 60000)) / 1000L);
 						String var10 = var7 + ":" + var8 / 10 + var8 % 10 + ":" + var9 / 10 + var9 % 10;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var10;
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var10;
 						return 1;
 					} else if (var0 == ScriptOpcodes.TRADINGPOST_GETOFFERCOUNT) {
 						var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
@@ -214,7 +214,8 @@ public class DevicePcmPlayerProvider implements class105 {
 		descriptor = "(Ldl;IIIS)I",
 		garbageValue = "206"
 	)
-	static final int method329(WorldView var0, int var1, int var2, int var3) {
+	@Export("getTileHeight")
+	static final int getTileHeight(WorldView var0, int var1, int var2, int var3) {
 		int var4 = var1 >> 7;
 		int var5 = var2 >> 7;
 		if (var4 >= 0 && var5 >= 0 && var4 < var0.tileSettings[0].length && var5 < var0.tileSettings[0][0].length) {

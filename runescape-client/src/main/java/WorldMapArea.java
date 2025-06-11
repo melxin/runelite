@@ -428,7 +428,7 @@ public class WorldMapArea {
 				var2.method1555();
 			}
 
-			var1.method2533().method8404();
+			var1.method2533().clear();
 		}
 
 	}

@@ -20,7 +20,7 @@ public class class561 {
 	static void runScriptLogic(ScriptEvent var0, Script var1, int var2, int var3) {
 		Object[] var4 = var0.args;
 		Interpreter.Interpreter_intStackSize = 0;
-		class175.Interpreter_stringStackSize = 0;
+		class175.Interpreter_objectStackSize = 0;
 		int var5 = -1;
 		int[] var6 = var1.opcodes;
 		int[] var7 = var1.intOperands;
@@ -121,7 +121,7 @@ public class class561 {
 									Varps.Varps_main[var13] = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 									class172.changeGameOptions(var13);
 								} else if (var32 == 3) {
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var1.stringOperands[var5];
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var1.stringOperands[var5];
 								} else if (var32 == 6) {
 									var5 += var7[var5];
 								} else if (var32 == 7) {
@@ -178,18 +178,18 @@ public class class561 {
 								} else if (var32 == 34) {
 									class351.Interpreter_intLocals[var7[var5]] = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 								} else if (var32 == 35) {
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = Interpreter.Interpreter_stringLocals[var7[var5]];
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = Interpreter.Interpreter_stringLocals[var7[var5]];
 								} else if (var32 == 36) {
-									Interpreter.Interpreter_stringLocals[var7[var5]] = Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+									Interpreter.Interpreter_stringLocals[var7[var5]] = Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 								} else if (var32 == 37) {
 									var13 = var7[var5];
-									class175.Interpreter_stringStackSize -= var13;
-									var20 = class33.method487(Interpreter.Interpreter_stringStack, class175.Interpreter_stringStackSize, var13);
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var20;
+									class175.Interpreter_objectStackSize -= var13;
+									var20 = class33.method487(Interpreter.Interpreter_objectStack, class175.Interpreter_objectStackSize, var13);
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var20;
 								} else if (var32 == 38) {
 									--Interpreter.Interpreter_intStackSize;
 								} else if (var32 == 39) {
-									--class175.Interpreter_stringStackSize;
+									--class175.Interpreter_objectStackSize;
 								} else if (var32 == 40) {
 									if (Interpreter.Interpreter_frameDepth == 50) {
 										throw new RuntimeException();
@@ -204,11 +204,11 @@ public class class561 {
 									}
 
 									if (var36.stringArgumentCount >= 0) {
-										System.arraycopy(Interpreter.Interpreter_stringStack, class175.Interpreter_stringStackSize - var36.stringArgumentCount + 0, var16, 0, var36.stringArgumentCount);
+										System.arraycopy(Interpreter.Interpreter_objectStack, class175.Interpreter_objectStackSize - var36.stringArgumentCount + 0, var16, 0, var36.stringArgumentCount);
 									}
 
 									Interpreter.Interpreter_intStackSize -= var36.intArgumentCount;
-									class175.Interpreter_stringStackSize -= var36.stringArgumentCount;
+									class175.Interpreter_objectStackSize -= var36.stringArgumentCount;
 									ScriptFrame var17 = new ScriptFrame();
 									var17.script = var1;
 									var17.pc = var5;
@@ -259,7 +259,7 @@ public class class561 {
 											if (var21.field5288 == class563.field5600) {
 												Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var21.method9965()[var14];
 											} else {
-												Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var21.method9936()[var14];
+												Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var21.method9936()[var14];
 											}
 										} else {
 											var13 = var7[var5];
@@ -285,7 +285,7 @@ public class class561 {
 											} else {
 												var14 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 												HttpRequestTask.method290(var21, var14);
-												var21.method9936()[var14] = Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+												var21.method9936()[var14] = Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 											}
 										} else {
 											var13 = var7[var5];
@@ -299,9 +299,9 @@ public class class561 {
 										}
 									} else if (var32 == 49) {
 										String var37 = class339.varcs.getString(var7[var5]);
-										Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var37;
+										Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var37;
 									} else if (var32 == 50) {
-										class339.varcs.setString(var7[var5], (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize]);
+										class339.varcs.setString(var7[var5], (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize]);
 									} else if (var32 == 60) {
 										IterableNodeHashTable var38 = var1.switches[var7[var5]];
 										IntegerNode var35 = (IntegerNode)var38.get((long)Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize]);
@@ -309,7 +309,7 @@ public class class561 {
 											var5 += var35.integer;
 										}
 									} else if (var32 == 63) {
-										Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = null;
+										Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = null;
 									} else {
 										Integer var39;
 										if (var32 == 74) {

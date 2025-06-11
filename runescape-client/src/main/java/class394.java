@@ -139,8 +139,8 @@ public class class394 {
 		while (var0.hasNext()) {
 			WorldView var1 = (WorldView)var0.next();
 
-			for (int var2 = 0; var2 < Client.field326.playerCount; ++var2) {
-				Player var3 = (Player)Sound.topLevelWorldView.players.get((long)Client.field326.playerIndices[var2]);
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				Player var3 = (Player)Sound.topLevelWorldView.players.get((long)Client.playerUpdateManager.playerIndices[var2]);
 				if (var3 != null) {
 					var3.method2154();
 				}

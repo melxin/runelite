@@ -210,8 +210,8 @@ public class PacketWriter {
 		garbageValue = "-2138041936"
 	)
 	static void method2834(int var0, String var1) {
-		int var2 = Client.field326.playerCount;
-		int[] var3 = Client.field326.playerIndices;
+		int var2 = Client.playerUpdateManager.playerCount;
+		int[] var3 = Client.playerUpdateManager.playerIndices;
 		boolean var4 = false;
 		Username var5 = new Username(var1, AbstractUserComparator.loginType);
 		WorldView var6 = class152.localPlayer.getWorldView();

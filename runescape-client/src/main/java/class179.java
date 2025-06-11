@@ -39,14 +39,14 @@ public class class179 extends DualNode {
 		garbageValue = "1391144491"
 	)
 	static Object[] method3970() {
-		String var0 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+		String var0 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 		Object[] var1 = new Object[var0.length()];
 
 		for (int var2 = var0.length() - 1; var2 >= 0; --var2) {
 			if (var0.charAt(var2) == 'i') {
 				var1[var2] = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 			} else {
-				var1[var2] = Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+				var1[var2] = Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 			}
 		}
 

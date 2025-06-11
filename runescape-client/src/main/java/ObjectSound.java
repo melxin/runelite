@@ -16,27 +16,32 @@ public final class ObjectSound extends Node {
 	@ObfuscatedGetter(
 		intValue = -1131180031
 	)
-	final int field655;
+	@Export("plane")
+	final int plane;
 	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
 		intValue = -275650299
 	)
-	final int field640;
+	@Export("x")
+	final int x;
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(
 		intValue = -2085882123
 	)
-	final int field641;
+	@Export("y")
+	final int y;
 	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
 		intValue = -1842172823
 	)
-	final int field642;
+	@Export("maxX")
+	final int maxX;
 	@ObfuscatedName("al")
 	@ObfuscatedGetter(
 		intValue = 1170668485
 	)
-	final int field649;
+	@Export("maxY")
+	final int maxY;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = 550171561
@@ -68,7 +73,8 @@ public final class ObjectSound extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Ldw;"
 	)
-	RawPcmStream field644;
+	@Export("stream1")
+	RawPcmStream stream1;
 	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
 		intValue = 106761089
@@ -91,16 +97,17 @@ public final class ObjectSound extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Ldw;"
 	)
-	RawPcmStream field654;
+	@Export("stream2")
+	RawPcmStream stream2;
 
 	@ObfuscatedSignature(
 		descriptor = "(IIIIILik;)V"
 	)
 	ObjectSound(int var1, int var2, int var3, int var4, int var5, ObjectComposition var6) {
-		this.field655 = var1;
-		this.field640 = var2;
-		this.field641 = Coord.method7228(var3);
-		this.field642 = Coord.method7228(var4);
+		this.plane = var1;
+		this.x = var2;
+		this.y = Coord.method7228(var3);
+		this.maxX = Coord.method7228(var4);
 		int var7 = var6.sizeX;
 		int var8 = var6.sizeY;
 		if (var5 == 1 || var5 == 3) {
@@ -108,7 +115,7 @@ public final class ObjectSound extends Node {
 			var8 = var6.sizeX;
 		}
 
-		this.field649 = Coord.method7228(var3 + var7);
+		this.maxY = Coord.method7228(var3 + var7);
 		this.field645 = Coord.method7228(var8 + var4);
 		this.soundEffectId = var6.ambientSoundId;
 		this.field646 = Coord.method7228(var6.int7);
@@ -166,9 +173,9 @@ public final class ObjectSound extends Node {
 		garbageValue = "1434439585"
 	)
 	void method1593() {
-		if (this.field644 != null) {
-			UserComparator6.pcmStreamMixer.removeSubStream(this.field644);
-			this.field644 = null;
+		if (this.stream1 != null) {
+			UserComparator6.pcmStreamMixer.removeSubStream(this.stream1);
+			this.stream1 = null;
 		}
 
 	}
@@ -179,9 +186,9 @@ public final class ObjectSound extends Node {
 		garbageValue = "567966176"
 	)
 	void method1555() {
-		if (this.field654 != null) {
-			UserComparator6.pcmStreamMixer.removeSubStream(this.field654);
-			this.field654 = null;
+		if (this.stream2 != null) {
+			UserComparator6.pcmStreamMixer.removeSubStream(this.stream2);
+			this.stream2 = null;
 		}
 
 	}
@@ -201,7 +208,7 @@ public final class ObjectSound extends Node {
 		garbageValue = "-51"
 	)
 	int method1557() {
-		return this.field641;
+		return this.y;
 	}
 
 	@ObfuscatedName("am")
@@ -210,7 +217,7 @@ public final class ObjectSound extends Node {
 		garbageValue = "16"
 	)
 	int method1558() {
-		return this.field649;
+		return this.maxY;
 	}
 
 	@ObfuscatedName("ah")
@@ -219,7 +226,7 @@ public final class ObjectSound extends Node {
 		garbageValue = "-2051945534"
 	)
 	int method1559() {
-		return this.field642;
+		return this.maxX;
 	}
 
 	@ObfuscatedName("ag")
@@ -237,7 +244,7 @@ public final class ObjectSound extends Node {
 		garbageValue = "-1276273555"
 	)
 	int method1561() {
-		return this.field640;
+		return this.x;
 	}
 
 	@ObfuscatedName("ar")

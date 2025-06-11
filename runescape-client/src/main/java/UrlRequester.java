@@ -292,7 +292,7 @@ public abstract class UrlRequester implements Runnable {
 			String var8;
 			int var9;
 			if (var0 == ScriptOpcodes.CHAT_SENDABUSEREPORT) {
-				var8 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+				var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 				Interpreter.Interpreter_intStackSize -= 2;
 				var7 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
 				var9 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
@@ -314,16 +314,16 @@ public abstract class UrlRequester implements Runnable {
 					if (var5 != null) {
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.count;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.cycle;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var5.sender != null ? var5.sender : "";
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var5.prefix != null ? var5.prefix : "";
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var5.text != null ? var5.text : "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.sender != null ? var5.sender : "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.prefix != null ? var5.prefix : "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.text != null ? var5.text : "";
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.isFromFriend() ? 1 : (var5.isFromIgnored() ? 2 : 0);
 					} else {
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 					}
 
@@ -336,16 +336,16 @@ public abstract class UrlRequester implements Runnable {
 						if (var4 != null) {
 							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.type;
 							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.cycle;
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.sender != null ? var4.sender : "";
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.prefix != null ? var4.prefix : "";
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.text != null ? var4.text : "";
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.sender != null ? var4.sender : "";
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.prefix != null ? var4.prefix : "";
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.text != null ? var4.text : "";
 							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.isFromFriend() ? 1 : (var4.isFromIgnored() ? 2 : 0);
 						} else {
 							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 						}
 
@@ -361,15 +361,15 @@ public abstract class UrlRequester implements Runnable {
 					} else {
 						PacketBufferNode var12;
 						if (var0 == ScriptOpcodes.CHAT_SENDPUBLIC) {
-							var8 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+							var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 							var7 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 							var12 = class538.method10225(var7, var8, class28.clientLanguage, -1);
 							Client.packetWriter.addNode(var12);
 							return 1;
 						} else if (var0 == ScriptOpcodes.CHAT_SENDPRIVATE) {
-							class175.Interpreter_stringStackSize -= 2;
-							var8 = (String)Interpreter.Interpreter_stringStack[class175.Interpreter_stringStackSize];
-							String var11 = (String)Interpreter.Interpreter_stringStack[class175.Interpreter_stringStackSize + 1];
+							class175.Interpreter_objectStackSize -= 2;
+							var8 = (String)Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize];
+							String var11 = (String)Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize + 1];
 							var12 = class139.getPacketBufferNode(ClientPacket.CHAT_SENDPRIVATE, Client.packetWriter.isaacCipher);
 							var12.packetBuffer.writeShort(0);
 							int var10 = var12.packetBuffer.offset;
@@ -379,7 +379,7 @@ public abstract class UrlRequester implements Runnable {
 							Client.packetWriter.addNode(var12);
 							return 1;
 						} else if (var0 == ScriptOpcodes.CHAT_SENDCLAN) {
-							var8 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+							var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 							Interpreter.Interpreter_intStackSize -= 2;
 							var7 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
 							var9 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
@@ -403,17 +403,17 @@ public abstract class UrlRequester implements Runnable {
 								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class150.method3676(var3);
 								return 1;
 							} else if (var0 == ScriptOpcodes.DOCHEAT) {
-								var8 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+								var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 								HttpResponse.doCheat(var8);
 								return 1;
 							} else if (var0 == ScriptOpcodes.CHAT_SETMESSAGEFILTER) {
-								Client.field431 = ((String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize]).toLowerCase().trim();
+								Client.field431 = ((String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize]).toLowerCase().trim();
 								return 1;
 							} else if (var0 == ScriptOpcodes.CHAT_GETMESSAGEFILTER) {
-								Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = Client.field431;
+								Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = Client.field431;
 								return 1;
 							} else if (var0 == ScriptOpcodes.WRITECONSOLE) {
-								var8 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+								var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 								System.out.println(var8);
 								return 1;
 							} else if (var0 == ScriptOpcodes.CHAT_GETHISTORYEX_BYTYPEANDLINE) {
@@ -424,20 +424,20 @@ public abstract class UrlRequester implements Runnable {
 								if (var5 != null) {
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.count;
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.cycle;
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var5.sender != null ? var5.sender : "";
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var5.prefix != null ? var5.prefix : "";
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var5.text != null ? var5.text : "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.sender != null ? var5.sender : "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.prefix != null ? var5.prefix : "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.text != null ? var5.text : "";
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.isFromFriend() ? 1 : (var5.isFromIgnored() ? 2 : 0);
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 								} else {
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 								}
 
@@ -448,20 +448,20 @@ public abstract class UrlRequester implements Runnable {
 								if (var4 != null) {
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.type;
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.cycle;
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.sender != null ? var4.sender : "";
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.prefix != null ? var4.prefix : "";
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var4.text != null ? var4.text : "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.sender != null ? var4.sender : "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.prefix != null ? var4.prefix : "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.text != null ? var4.text : "";
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.isFromFriend() ? 1 : (var4.isFromIgnored() ? 2 : 0);
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 								} else {
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-									Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
 								}
 
@@ -476,7 +476,7 @@ public abstract class UrlRequester implements Runnable {
 								var8 = "";
 							}
 
-							Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var8;
+							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var8;
 							return 1;
 						}
 					}

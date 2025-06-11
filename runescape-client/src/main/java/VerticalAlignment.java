@@ -102,7 +102,7 @@ public enum VerticalAlignment implements Enum {
 	static final void updateInterface(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
 		for (int var11 = var1; var11 <= var2; ++var11) {
 			Widget var12 = var0[var11];
-			if (var12 != null && var3 == var12.parentId && var4 == var12.field4127 && (var12.method7872() || class255.method5526(var12) != 0 || GrandExchangeOfferOwnWorldComparator.method757(var12) != 0 || var12 == Client.clickedWidgetParent)) {
+			if (var12 != null && var3 == var12.parentId && var4 == var12.field4127 && (var12.method7872() || class255.getWidgetFlags(var12) != 0 || GrandExchangeOfferOwnWorldComparator.getWidgetFlags2(var12) != 0 || var12 == Client.clickedWidgetParent)) {
 				if (var12.isIf3) {
 					if (class171.isComponentHidden(var12)) {
 						continue;
@@ -281,7 +281,7 @@ public enum VerticalAlignment implements Enum {
 										VarbitComposition.widgetDefaultMenuAction(var23 + 1, var12.id, var12.childIndex * -744024149, var12.itemId, "");
 									} else if (var23 == 10) {
 										WorldMapSectionType.method6573();
-										class564.method10658(var12.id, var12.childIndex * -744024149, class187.method4098(class255.method5526(var12)), var12.itemId);
+										class564.method10658(var12.id, var12.childIndex * -744024149, class187.Widget_unpackTargetMask(class255.getWidgetFlags(var12)), var12.itemId);
 										Client.selectedSpellActionName = class322.Widget_getSpellActionName(var12);
 										if (Client.selectedSpellActionName == null) {
 											Client.selectedSpellActionName = "null";
@@ -345,7 +345,7 @@ public enum VerticalAlignment implements Enum {
 								class338.worldMap.method10287(var20, var21, var38 & var39, var38 & var24);
 							}
 
-							if (Client.clickedWidget != null && var12 != Client.clickedWidget && var38 && ObjectComposition.method4443(class255.method5526(var12))) {
+							if (Client.clickedWidget != null && var12 != Client.clickedWidget && var38 && ObjectComposition.method4443(class255.getWidgetFlags(var12))) {
 								Client.draggedOnWidget = var12;
 							}
 
@@ -468,7 +468,7 @@ public enum VerticalAlignment implements Enum {
 									if (var12.varTransmitTriggers != null && Client.changedVarpCount - var12.field4125 <= 32) {
 										label831:
 										for (var42 = var12.field4125; var42 < Client.changedVarpCount; ++var42) {
-											var26 = Client.changedItemContainers[var42 & 31];
+											var26 = Client.changedVarps[var42 & 31];
 
 											for (var40 = 0; var40 < var12.varTransmitTriggers.length; ++var40) {
 												if (var26 == var12.varTransmitTriggers[var40]) {
@@ -490,11 +490,11 @@ public enum VerticalAlignment implements Enum {
 									var12.field4125 = Client.changedVarpCount;
 								}
 
-								if (var12.onInvTransmit != null && Client.changedSkillsCount > var12.field4126) {
-									if (var12.invTransmitTriggers != null && Client.changedSkillsCount - var12.field4126 <= 32) {
+								if (var12.onInvTransmit != null && Client.changedItemsCount > var12.field4126) {
+									if (var12.invTransmitTriggers != null && Client.changedItemsCount - var12.field4126 <= 32) {
 										label807:
-										for (var42 = var12.field4126; var42 < Client.changedSkillsCount; ++var42) {
-											var26 = Client.field374[var42 & 31];
+										for (var42 = var12.field4126; var42 < Client.changedItemsCount; ++var42) {
+											var26 = Client.changedItemContainers[var42 & 31];
 
 											for (var40 = 0; var40 < var12.invTransmitTriggers.length; ++var40) {
 												if (var26 == var12.invTransmitTriggers[var40]) {
@@ -513,14 +513,14 @@ public enum VerticalAlignment implements Enum {
 										Client.scriptEvents.addFirst(var25);
 									}
 
-									var12.field4126 = Client.changedSkillsCount;
+									var12.field4126 = Client.changedItemsCount;
 								}
 
-								if (var12.onStatTransmit != null && Client.field577 > var12.field4141) {
-									if (var12.statTransmitTriggers != null && Client.field577 - var12.field4141 <= 32) {
+								if (var12.onStatTransmit != null && Client.changedSkillsCount > var12.field4141) {
+									if (var12.statTransmitTriggers != null && Client.changedSkillsCount - var12.field4141 <= 32) {
 										label783:
-										for (var42 = var12.field4141; var42 < Client.field577; ++var42) {
-											var26 = Client.field470[var42 & 31];
+										for (var42 = var12.field4141; var42 < Client.changedSkillsCount; ++var42) {
+											var26 = Client.changedSkills[var42 & 31];
 
 											for (var40 = 0; var40 < var12.statTransmitTriggers.length; ++var40) {
 												if (var26 == var12.statTransmitTriggers[var40]) {
@@ -539,7 +539,7 @@ public enum VerticalAlignment implements Enum {
 										Client.scriptEvents.addFirst(var25);
 									}
 
-									var12.field4141 = Client.field577;
+									var12.field4141 = Client.changedSkillsCount;
 								}
 
 								if (Client.chatCycle > var12.field4124 && var12.onChatTransmit != null) {

@@ -275,14 +275,14 @@ public class class527 {
 	static int method10165(int var0, Script var1, boolean var2) {
 		Widget var3 = ClientPreferences.widgetDefinition.method7286(Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize]);
 		if (var0 == ScriptOpcodes.IF_GETTARGETMASK) {
-			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class187.method4098(class255.method5526(var3));
+			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class187.Widget_unpackTargetMask(class255.getWidgetFlags(var3));
 			return 1;
 		} else if (var0 != ScriptOpcodes.IF_GETOP) {
 			if (var0 == ScriptOpcodes.IF_GETOPBASE) {
 				if (var3.dataText == null) {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 				} else {
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var3.dataText;
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var3.dataText;
 				}
 
 				return 1;
@@ -293,9 +293,9 @@ public class class527 {
 			int var4 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 			--var4;
 			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
-				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var3.actions[var4];
+				Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var3.actions[var4];
 			} else {
-				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = "";
+				Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
 			}
 
 			return 1;

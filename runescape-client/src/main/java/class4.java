@@ -271,7 +271,7 @@ public final class class4 {
 				Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize - 1] = Math.abs(Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize - 1]);
 				return 1;
 			} else if (var0 == 4036) {
-				String var3 = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+				String var3 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 				var4 = -1;
 				if (class300.isNumber(var3)) {
 					var4 = class146.method3635(var3);
@@ -321,20 +321,20 @@ public final class class4 {
 
 		if (var0.isIf3) {
 			if (Client.isSpellSelected) {
-				if (class242.method5107(class255.method5526(var0)) && (class448.selectedSpellFlags & 32) == 32) {
+				if (class242.method5107(class255.getWidgetFlags(var0)) && (class448.selectedSpellFlags & 32) == 32) {
 					VertexNormal.method5709(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + var0.dataText, 58, 0, var0.childIndex * -744024149, var0.id, var0.itemId);
 				}
 			} else {
 				for (int var13 = 31; var13 >= 0; --var13) {
 					String var2;
-					if (var0.field4055 * -1196438339 == var13) {
+					if (var0.targetPriority * -1196438339 == var13) {
 						var2 = class322.Widget_getSpellActionName(var0);
 						if (var2 != null) {
 							VertexNormal.method5709(var2, var0.dataText, 25, 0, var0.childIndex * -744024149, var0.id, var0.itemId);
 						}
 					}
 
-					if (!class138.method3579(GrandExchangeOfferOwnWorldComparator.method757(var0), var13) && var0.onOp == null) {
+					if (!class138.method3579(GrandExchangeOfferOwnWorldComparator.getWidgetFlags2(var0), var13) && var0.onOp == null) {
 						var2 = null;
 					} else if (var0.actions != null && var0.actions.length > var13 && var0.actions[var13] != null && !var0.actions[var13].trim().isEmpty()) {
 						var2 = var0.actions[var13];
@@ -345,7 +345,7 @@ public final class class4 {
 					if (var2 != null) {
 						int var4;
 						short var5;
-						if (var13 > var0.field4055 * -1196438339) {
+						if (var13 > var0.targetPriority * -1196438339) {
 							var5 = 1007;
 							var4 = VertexNormal.method5709(var2, var0.dataText, var5, var13 + 1, var0.childIndex * -744024149, var0.id, var0.itemId);
 						} else {
@@ -376,7 +376,7 @@ public final class class4 {
 					}
 				}
 
-				if (class137.method3565(class255.method5526(var0))) {
+				if (class137.method3565(class255.getWidgetFlags(var0))) {
 					UserComparator3.insertMenuItemNoShift("Continue", "", 30, 0, var0.childIndex * -744024149, var0.id);
 				}
 			}

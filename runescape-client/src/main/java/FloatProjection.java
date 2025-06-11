@@ -304,12 +304,12 @@ public class FloatProjection extends Projection {
 				if (var3.type == 12) {
 					var7 = var3.method7755();
 					if (var7 != null) {
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7.method7446().method9021();
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7.method7446().method9021();
 						return 1;
 					}
 				}
 
-				Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var3.text;
+				Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var3.text;
 				return 1;
 			} else if (var0 == ScriptOpcodes.CC_GETSCROLLWIDTH) {
 				Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var3.scrollWidth;
@@ -360,7 +360,7 @@ public class FloatProjection extends Projection {
 					return 1;
 				} else if (var0 == 1619) {
 					var7 = var3.method7755();
-					Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7 != null ? var7.method7447().method9021() : "";
+					Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7 != null ? var7.method7447().method9021() : "";
 					return 1;
 				} else if (var0 == 1620) {
 					var4 = var3.method7774();
@@ -385,7 +385,7 @@ public class FloatProjection extends Projection {
 				} else if (var0 != 1625) {
 					if (var0 == 1626) {
 						var7 = var3.method7755();
-						Interpreter.Interpreter_stringStack[++class175.Interpreter_stringStackSize - 1] = var7 != null ? var7.method7421().method9215() : "";
+						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var7 != null ? var7.method7421().method9215() : "";
 						return 1;
 					} else if (var0 == 1627) {
 						var7 = var3.method7755();

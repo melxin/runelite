@@ -201,10 +201,10 @@ public class DynamicObject extends Renderable {
 		if (var0 == ScriptOpcodes.CC_SETOP) {
 			var11 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] - 1;
 			if (var11 >= 0 && var11 < 32) {
-				var4.setAction(var11, (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize]);
+				var4.setAction(var11, (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize]);
 				return 1;
 			} else {
-				--class175.Interpreter_stringStackSize;
+				--class175.Interpreter_objectStackSize;
 				return 1;
 			}
 		} else {
@@ -225,10 +225,10 @@ public class DynamicObject extends Renderable {
 				var4.dragThreshold = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 				return 1;
 			} else if (var0 == ScriptOpcodes.CC_SETOPBASE) {
-				var4.dataText = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+				var4.dataText = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 				return 1;
 			} else if (var0 == ScriptOpcodes.CC_SETTARGETVERB) {
-				var4.spellActionName = (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize];
+				var4.spellActionName = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
 				return 1;
 			} else if (var0 == ScriptOpcodes.CC_CLEAROPS) {
 				var4.actions = null;
@@ -252,7 +252,7 @@ public class DynamicObject extends Renderable {
 				var11 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] - 1;
 				var6 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] - 1;
 				if (var6 >= 0 && var6 <= 9 && var11 >= 0) {
-					var4.method7794(var6, var11, (String)Interpreter.Interpreter_stringStack[--class175.Interpreter_stringStackSize]);
+					var4.method7794(var6, var11, (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize]);
 					return 1;
 				} else {
 					throw new RuntimeException();
@@ -260,9 +260,9 @@ public class DynamicObject extends Renderable {
 			} else if (var0 == 1312) {
 				var11 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
 				if (var11 == -1) {
-					var4.field4055 = -209307052;
+					var4.targetPriority = -209307052;
 				} else if (var11 >= 1 && var11 <= 10) {
-					var4.field4055 = (var11 - 1) * -52326763;
+					var4.targetPriority = (var11 - 1) * -52326763;
 				}
 
 				return 1;
