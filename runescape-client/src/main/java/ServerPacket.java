@@ -107,7 +107,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmv;"
 	)
-	public static final ServerPacket field3526;
+	public static final ServerPacket CHAT_FILTER_SETTINGS;
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "Lmv;"
@@ -197,7 +197,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmv;"
 	)
-	public static final ServerPacket field3544;
+	public static final ServerPacket MESSAGE_PRIVATE_ECHO;
 	@ObfuscatedName("bt")
 	@ObfuscatedSignature(
 		descriptor = "Lmv;"
@@ -417,7 +417,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmv;"
 	)
-	public static final ServerPacket field3553;
+	public static final ServerPacket IF_SETHIDE;
 	@ObfuscatedName("du")
 	@ObfuscatedSignature(
 		descriptor = "Lmv;"
@@ -726,7 +726,7 @@ public class ServerPacket {
 		UPDATE_INV_STOP_TRANSIT = new ServerPacket(16, 2);
 		CAM_SMOOTH_RESET = new ServerPacket(17, 4);
 		CLAN_CHANNEL_DELTA = new ServerPacket(18, -2);
-		field3526 = new ServerPacket(19, 2);
+		CHAT_FILTER_SETTINGS = new ServerPacket(19, 2);
 		LOC_ADD_CHANGE = new ServerPacket(20, -2);
 		field3528 = new ServerPacket(21, 1);
 		OBJ_COUNT = new ServerPacket(22, 11);
@@ -744,7 +744,7 @@ public class ServerPacket {
 		IF_SET_PLAYERMODEL_BASECOLOUR = new ServerPacket(34, 6);
 		UPDATE_INV_PARTIAL = new ServerPacket(35, -2);
 		RUNCLIENTSCRIPT = new ServerPacket(36, -2);
-		field3544 = new ServerPacket(37, -2);
+		MESSAGE_PRIVATE_ECHO = new ServerPacket(37, -2);
 		UPDATE_STAT = new ServerPacket(38, 7);
 		CAM_LOOKAT_EASED_COORD = new ServerPacket(39, 7);
 		SERVER_TICK_END = new ServerPacket(40, 0);
@@ -788,7 +788,7 @@ public class ServerPacket {
 		CAM_MOVE_TO = new ServerPacket(78, 6);
 		IF_SET_EVENTS = new ServerPacket(79, 12);
 		IF_OPENTOP = new ServerPacket(80, 2);
-		field3553 = new ServerPacket(81, 5);
+		IF_SETHIDE = new ServerPacket(81, 5);
 		UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1 = new ServerPacket(82, -1);
 		IF_SET_PLAYERMODEL_BODYTYPE = new ServerPacket(83, 5);
 		IF_SET_PLAYERMODEL_OBJ = new ServerPacket(84, 8);

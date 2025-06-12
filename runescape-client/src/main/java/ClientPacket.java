@@ -256,7 +256,7 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
 	)
-	public static final ClientPacket field3424;
+	public static final ClientPacket MAP_BUILD_COMPLETE;
 	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
@@ -416,7 +416,7 @@ public class ClientPacket implements class323 {
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
 	)
-	public static final ClientPacket field3456;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("du")
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
@@ -586,7 +586,7 @@ public class ClientPacket implements class323 {
 		CLAN_SETTINGS_FULL_REQUEST = new ClientPacket(46, 1);
 		CLAN_SETTINGS_ADD_BANNED_FROM_CHANNEL = new ClientPacket(47, -1);
 		OPPLAYER5 = new ClientPacket(48, 3);
-		field3424 = new ClientPacket(49, 0);
+		MAP_BUILD_COMPLETE = new ClientPacket(49, 0);
 		CHAT_SENDPRIVATE = new ClientPacket(50, -2);
 		IF_BUTTONT = new ClientPacket(51, 16);
 		OPPLAYERU = new ClientPacket(52, 11);
@@ -618,7 +618,7 @@ public class ClientPacket implements class323 {
 		TELEPORT = new ClientPacket(78, 9);
 		CLAN_KICKUSER = new ClientPacket(79, -1);
 		IF_BUTTON1 = new ClientPacket(80, 8);
-		field3456 = new ClientPacket(81, 0);
+		FREECAM_EXIT = new ClientPacket(81, 0);
 		EVENT_APPLET_FOCUS = new ClientPacket(82, 1);
 		DOCHEAT = new ClientPacket(83, -1);
 		MOUSE_MOVE = new ClientPacket(84, -1);

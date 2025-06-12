@@ -349,7 +349,7 @@ public class class107 extends Node {
 
 				MusicPatchNode2.method6884();
 				class269.method5881();
-				var19 = class139.getPacketBufferNode(ClientPacket.field3424, Client.packetWriter.isaacCipher);
+				var19 = class139.getPacketBufferNode(ClientPacket.MAP_BUILD_COMPLETE, Client.packetWriter.isaacCipher);
 				Client.packetWriter.addNode(var19);
 				FontName.method10484();
 				Client.field441 = false;

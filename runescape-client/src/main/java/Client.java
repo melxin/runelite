@@ -3835,7 +3835,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 																		}
 
 																		if (indexCheck.isValidIndexInRange(13)) {
-																			packetWriter.addNode(class139.getPacketBufferNode(ClientPacket.field3456, packetWriter.isaacCipher));
+																			packetWriter.addNode(class139.getPacketBufferNode(ClientPacket.FREECAM_EXIT, packetWriter.isaacCipher));
 																			oculusOrbState = 0;
 																		}
 																	}
@@ -4386,7 +4386,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				}
 
 				String var55;
-				if (ServerPacket.field3544 == var1.serverPacket) {
+				if (ServerPacket.MESSAGE_PRIVATE_ECHO == var1.serverPacket) {
 					var55 = var3.readStringCp1252NullTerminated();
 					var25 = AbstractFont.escapeBrackets(MoveSpeed.method6102(class162.method3825(var3)));
 					GrandExchangeOfferWorldComparator.addGameMessage(6, var55, var25);
@@ -4963,7 +4963,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					return true;
 				}
 
-				if (ServerPacket.field3526 == var1.serverPacket) {
+				if (ServerPacket.CHAT_FILTER_SETTINGS == var1.serverPacket) {
 					publicChatMode = var3.readUnsignedByteAdd();
 					tradeChatMode = var3.readUnsignedByte();
 					var1.serverPacket = null;
@@ -5022,7 +5022,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				}
 
 				boolean var93;
-				if (ServerPacket.field3553 == var1.serverPacket) {
+				if (ServerPacket.IF_SETHIDE == var1.serverPacket) {
 					var93 = var3.readUnsignedByteAdd() == 1;
 					var5 = var3.readUnsignedIntME();
 					var23 = ClientPreferences.widgetDefinition.method7286(var5);
