@@ -1444,8 +1444,8 @@ public interface RSClient extends RSGameEngine, Client
 	@Override
 	RSNodeDeque getProjectiles();
 
-	//@Construct
-	//RSProjectile newProjectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11);
+	@Construct
+	RSProjectile newProjectile(int sourceLevel, int sourceX, int sourceY, int startHeight, int sourceIndex, int targetLevel, int targetX, int targetY, int endHeight, int targetIndex, int id, int cycleStart, int cycleEnd, int slope, int var15);
 
 	@Construct
 	RSModelData newModelData(ModelData[] var1, int var2);

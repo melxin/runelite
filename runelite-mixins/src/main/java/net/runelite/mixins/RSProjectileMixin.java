@@ -82,6 +82,8 @@ public abstract class RSProjectileMixin implements RSProjectile
 		return new LocalPoint((this.getSourceX() << 7) + 64, (this.getSourceY() << 7) + 64, client.getTopLevelWorldView());
 	}
 
+	@Inject
+	@Override
 	public LocalPoint getTargetPoint()
 	{
 		return new LocalPoint((this.getTargetX() << 7) + 64, (this.getTargetY() << 7) + 64, client.getTopLevelWorldView());

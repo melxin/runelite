@@ -48,6 +48,7 @@ import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import net.runelite.api.Actor;
 import net.runelite.api.Animation;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.EnumComposition;
@@ -74,6 +75,7 @@ import net.runelite.api.Perspective;
 import net.runelite.api.Player;
 import net.runelite.api.Point;
 import net.runelite.api.Prayer;
+import net.runelite.api.Projectile;
 import net.runelite.api.ScriptEvent;
 import net.runelite.api.Skill;
 import net.runelite.api.SpritePixels;
@@ -164,6 +166,7 @@ import net.runelite.rs.api.RSNodeDeque;
 import net.runelite.rs.api.RSNodeHashTable;
 import net.runelite.rs.api.RSPacketBuffer;
 import net.runelite.rs.api.RSPlayer;
+import net.runelite.rs.api.RSProjectile;
 import net.runelite.rs.api.RSRuneLiteClanMember;
 import net.runelite.rs.api.RSRuneLiteMenuEntry;
 import net.runelite.rs.api.RSScene;
@@ -3496,10 +3499,12 @@ public abstract class RSClientMixin implements RSClient
 		}
 	}
 
-	/*@Inject
+	@Inject
 	@Override
 	public Projectile createProjectile(int id, int plane, int startX, int startY, int startZ, int startCycle, int endCycle, int slope, int startHeight, int endHeight, Actor target, int targetX, int targetY)
 	{
+		assert this.isClientThread() : "createProjectile must be called on client thread";
+
 		int targetIndex = 0;
 		if (target instanceof NPC)
 		{
@@ -3510,11 +3515,11 @@ public abstract class RSClientMixin implements RSClient
 			targetIndex = -(((Player) target).getId() + 1);
 		}
 
-		RSProjectile projectile = this.newProjectile(id, plane, startX, startY, startZ, startCycle, endCycle, slope, startHeight, targetIndex, endHeight);
-		//projectile.setWorldView(getTopLevelWorldView());
-		//projectile.setDestination(targetX, targetY, Perspective.getTileHeight(client, new LocalPoint(targetX, targetY, this), plane), startCycle);
+		final RSProjectile projectile = this.newProjectile(plane, startX >> 7, startY >> 7, startZ, 0, plane, targetX >> 7, targetY >> 7, 0, targetIndex, id, startCycle, slope, startHeight, endHeight);
+		projectile.setWorldView(getTopLevelWorldView());
+		this.getProjectiles().addFirst(projectile);//projectile.setDestination(targetX, targetY, Perspective.getTileHeight(client, new LocalPoint(targetX, targetY, this), plane), startCycle);
 		return projectile;
-	}*/
+	}
 
 	@Inject
 	@Override

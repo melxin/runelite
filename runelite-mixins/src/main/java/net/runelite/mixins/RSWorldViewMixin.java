@@ -1,9 +1,11 @@
 package net.runelite.mixins;
 
+import net.runelite.api.Actor;
 import net.runelite.api.IndexedObjectSet;
 import net.runelite.api.NPC;
 import net.runelite.api.ObjectComposition;
 import net.runelite.api.Player;
+import net.runelite.api.Projectile;
 import net.runelite.api.WorldEntity;
 import net.runelite.api.events.AmbientSoundEffectCreated;
 import net.runelite.api.mixins.Inject;
@@ -63,25 +65,12 @@ public abstract class RSWorldViewMixin implements RSWorldView
 		return x != -1 && y != -1 ? scene.getTiles()[this.getPlane()][x][y] : null;
 	}
 
-	/*@Inject
+	@Inject
 	@Override
 	public Projectile createProjectile(int id, int plane, int startX, int startY, int startZ, int startCycle, int endCycle, int slope, int startHeight, int endHeight, Actor target, int targetX, int targetY)
 	{
-		int targetIndex = 0;
-		if (target instanceof NPC)
-		{
-			targetIndex = ((NPC) target).getIndex() + 1;
-		}
-		else if (target instanceof Player)
-		{
-			targetIndex = -(((Player) target).getId() + 1);
-		}
-
-		RSProjectile projectile = this.newProjectile(id, plane, startX, startY, startZ, startCycle, endCycle, slope, startHeight, targetIndex, endHeight);
-		projectile.setWorldView(this);
-		projectile.setDestination(targetX, targetY, Perspective.getTileHeight(client, new LocalPoint(targetX, targetY, this), plane), startCycle);
-		return projectile;
-	}*/
+		return client.createProjectile(id, plane, startX, startY, startZ, startCycle, endCycle, slope, startHeight, endHeight, target, targetX, targetY);
+	}
 
 	@Inject
 	@Override
