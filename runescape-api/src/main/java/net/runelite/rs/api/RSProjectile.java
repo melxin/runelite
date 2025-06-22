@@ -87,6 +87,10 @@ public interface RSProjectile extends RSRenderable, Projectile
 	@Override
 	int getSlope();
 
+	@Import("startPos")
+	@Override
+	int getStartPos();
+
 	@Import("startHeight")
 	@Override
 	int getStartHeight();

@@ -92,7 +92,8 @@ public final class Projectile extends Renderable {
 	@ObfuscatedGetter(
 		intValue = -1715101287
 	)
-	int field785;
+	@Export("startPos")
+	int startPos;
 	@ObfuscatedName("ak")
 	@Export("x")
 	double x;
@@ -159,7 +160,7 @@ public final class Projectile extends Renderable {
 		this.cycleStart = var12;
 		this.cycleEnd = var13;
 		this.slope = var14;
-		this.field785 = var15;
+		this.startPos = var15;
 		int var16 = class386.SpotAnimationDefinition_get(this.id).sequence;
 		if (var16 != -1) {
 			this.field784 = VarpDefinition.SequenceDefinition_get(var16);
@@ -225,8 +226,8 @@ public final class Projectile extends Renderable {
 				var12 = (double)(var5 - var9);
 				var14 = (double)(var6 - var10);
 				var16 = Math.sqrt(var14 * var14 + var12 * var12);
-				this.x = Math.abs(var16) < 0.009999999776482582D ? (double)var9 : (double)var9 + (double)this.field785 * var12 / var16;
-				this.y = Math.abs(var16) < 0.009999999776482582D ? (double)var10 : (double)var10 + var14 * (double)this.field785 / var16;
+				this.x = Math.abs(var16) < 0.009999999776482582D ? (double)var9 : (double)var9 + (double)this.startPos * var12 / var16;
+				this.y = Math.abs(var16) < 0.009999999776482582D ? (double)var10 : (double)var10 + var14 * (double)this.startPos / var16;
 				this.z = (double)var11;
 			}
 

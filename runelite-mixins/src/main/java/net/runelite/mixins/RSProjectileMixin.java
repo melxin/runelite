@@ -26,6 +26,7 @@ package net.runelite.mixins;
 
 import net.runelite.api.Actor;
 import net.runelite.api.coords.LocalPoint;
+import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ProjectileMoved;
 import net.runelite.api.events.ProjectileSpawned;
 import net.runelite.api.mixins.Inject;
@@ -57,10 +58,9 @@ public abstract class RSProjectileMixin implements RSProjectile
 	{
 		if (var2 >= this.getStartCycle())
 		{
-			LocalPoint position = new LocalPoint(this.getTargetX(), this.getTargetY(), client.getTopLevelWorldView());
 			ProjectileMoved projectileMoved = new ProjectileMoved();
 			projectileMoved.setProjectile(this);
-			projectileMoved.setPosition(position);
+			projectileMoved.setPosition(this.getTarget());
 			projectileMoved.setZ(this.getEndHeight());
 			client.getCallbacks().post(projectileMoved);
 		}
@@ -77,16 +77,16 @@ public abstract class RSProjectileMixin implements RSProjectile
 
 	@Inject
 	@Override
-	public LocalPoint getSourcePoint()
+	public WorldPoint getSourcePoint()
 	{
-		return new LocalPoint((this.getSourceX() << 7) + 64, (this.getSourceY() << 7) + 64, client.getTopLevelWorldView());
+		return new WorldPoint(this.getSourceX(), this.getSourceY(), this.getSourceLevel());
 	}
 
 	@Inject
 	@Override
-	public LocalPoint getTargetPoint()
+	public WorldPoint getTargetPoint()
 	{
-		return new LocalPoint((this.getTargetX() << 7) + 64, (this.getTargetY() << 7) + 64, client.getTopLevelWorldView());
+		return new WorldPoint(this.getTargetX(), this.getTargetY(), this.getTargetLevel());
 	}
 
 	@Inject
@@ -146,6 +146,34 @@ public abstract class RSProjectileMixin implements RSProjectile
 
 			return (Actor) wv.getRSPlayers().get(idx);
 		}
+	}
+
+	@Inject
+	@Override
+	public LocalPoint getTarget()
+	{
+		return LocalPoint.fromWorld(client.getTopLevelWorldView(), getTargetX(), getTargetY());
+	}
+
+	@Inject
+	@Override
+	public int getX1()
+	{
+		return LocalPoint.fromWorld(client.getTopLevelWorldView(), getSourceX(), getTargetY()).getX();
+	}
+
+	@Inject
+	@Override
+	public int getY1()
+	{
+		return LocalPoint.fromWorld(client.getTopLevelWorldView(), getSourceX(), getSourceY()).getY();
+	}
+
+	@Inject
+	@Override
+	public int getFloor()
+	{
+		return getSourceLevel();
 	}
 
 	@Inject
