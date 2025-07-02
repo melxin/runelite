@@ -28,6 +28,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Map;
 import net.runelite.api.Client;
+import net.runelite.api.Model;
 import net.runelite.api.ModelData;
 import net.runelite.api.SpritePixels;
 import net.runelite.api.WidgetNode;
@@ -1447,8 +1448,14 @@ public interface RSClient extends RSGameEngine, Client
 	@Construct
 	RSProjectile newProjectile(int sourceLevel, int sourceX, int sourceY, int startHeight, int sourceIndex, int targetLevel, int targetX, int targetY, int endHeight, int targetIndex, int id, int cycleStart, int cycleEnd, int slope, int var15);
 
+	@Import("modelDataArray")
+	RSModelData[] getModelDataArray();
+
 	@Construct
-	RSModelData newModelData(ModelData[] var1, int var2);
+	RSModelData newModelData(ModelData[] models, int length);
+
+	@Construct
+	RSModel newModel(Model[] models, int length);
 
 	@Construct
 	RSEvictingDualNodeHashTable newEvictingDualNodeHashTable(int var1);
@@ -1470,9 +1477,6 @@ public interface RSClient extends RSGameEngine, Client
 
 	@Import("clips")
 	RSClips getClips();
-
-	@Import("modelDataArray")
-	RSModelData[] getModelDataArray();
 
 	@Import("validRootWidgets")
 	boolean[] getValidRootWidgets();
