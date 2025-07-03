@@ -40,13 +40,12 @@ import net.runelite.api.SpritePixels;
 import net.runelite.api.Tile;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.events.GameStateChanged;
+import net.runelite.api.gameval.SpriteID;
 import net.runelite.client.game.SpriteManager;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.components.BackgroundComponent;
-import static net.runelite.api.SpriteID.WINDOW_CLOSE_BUTTON_RED_X;
-import static net.runelite.api.SpriteID.WINDOW_CLOSE_BUTTON_RED_X_HOVERED;
 
 @Singleton
 class InstanceMapOverlay extends Overlay
@@ -269,7 +268,7 @@ class InstanceMapOverlay extends Overlay
 	{
 		if (closeButtonImage == null)
 		{
-			closeButtonImage = spriteManager.getSprite(WINDOW_CLOSE_BUTTON_RED_X, 0);
+			closeButtonImage = spriteManager.getSprite(SpriteID.CloseButtons.RED_X, 0);
 		}
 		return closeButtonImage;
 	}
@@ -279,7 +278,7 @@ class InstanceMapOverlay extends Overlay
 	{
 		if (closeButtonHoveredImage == null)
 		{
-			closeButtonHoveredImage = spriteManager.getSprite(WINDOW_CLOSE_BUTTON_RED_X_HOVERED, 0);
+			closeButtonHoveredImage = spriteManager.getSprite(SpriteID.CloseButtons.RED_X_HOVERED, 0);
 		}
 		return closeButtonHoveredImage;
 	}

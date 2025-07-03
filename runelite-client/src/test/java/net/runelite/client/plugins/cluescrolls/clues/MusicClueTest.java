@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025, Adam <Adam@sigterm.info>
+ * Copyright (c) 2020, Jordan Atwood <jordan.atwood423@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,58 +22,30 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.xptracker;
+package net.runelite.client.plugins.cluescrolls.clues;
 
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
-import com.google.inject.Inject;
-import java.util.EnumSet;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Set;
-import net.runelite.api.Skill;
-import net.runelite.client.config.ConfigSerializer;
-import net.runelite.client.config.Serializer;
+import java.util.stream.Collectors;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import org.junit.Test;
 
-@ConfigSerializer(XpSaveSerializer.class)
-class XpSave
+public class MusicClueTest
 {
-	Map<Skill, XpSaveSingle> skills = new LinkedHashMap<>();
-	Set<Skill> compactViewSkills = EnumSet.noneOf(Skill.class);
-	XpSaveSingle overall;
-}
-
-class XpSaveSingle
-{
-	@SerializedName("s")
-	long startXp;
-	@SerializedName("br")
-	int xpGainedBeforeReset;
-	@SerializedName("ar")
-	int xpGainedSinceReset;
-	@SerializedName("t")
-	long time; // ms
-}
-
-class XpSaveSerializer implements Serializer<XpSave>
-{
-	private final Gson gson;
-
-	@Inject
-	private XpSaveSerializer(Gson gson)
+	@Test
+	public void forTextEmptyString()
 	{
-		this.gson = gson;
+		assertNull(MusicClue.forText(""));
 	}
 
-	@Override
-	public String serialize(XpSave value)
+	@Test
+	public void uniqueIds()
 	{
-		return gson.toJson(value);
-	}
+		final Set<Integer> clueIds = MusicClue.CLUES.stream()
+			.mapToInt(MusicClue::getItemId)
+			.boxed()
+			.collect(Collectors.toUnmodifiableSet());
 
-	@Override
-	public XpSave deserialize(String s)
-	{
-		return gson.fromJson(s, XpSave.class);
+		assertEquals(MusicClue.CLUES.size(), clueIds.size());
 	}
 }

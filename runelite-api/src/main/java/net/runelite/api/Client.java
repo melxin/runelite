@@ -1197,6 +1197,9 @@ public interface Client extends OAuthApi, GameEngine
 	ModelData mergeModels(ModelData[] models, int length);
 	ModelData mergeModels(ModelData ...models);
 
+	Model mergeModels(Model[] models, int length);
+	Model mergeModels(Model... models);
+
 	/**
 	 * Loads and lights a model from the cache
 	 *
