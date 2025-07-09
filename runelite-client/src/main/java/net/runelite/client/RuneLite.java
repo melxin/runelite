@@ -55,6 +55,7 @@ import java.security.cert.X509Certificate;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
@@ -182,6 +183,9 @@ public class RuneLite
 	@Inject
 	@Nullable
 	private TelemetryClient telemetryClient;
+
+	@Inject
+	private ScheduledExecutorService scheduledExecutorService;
 
 	public static void main(String[] args) throws Exception
 	{
@@ -438,8 +442,11 @@ public class RuneLite
 
 		if (telemetryClient != null)
 		{
-			telemetryClient.submitTelemetry();
-			telemetryClient.submitVmErrors(LOGS_DIR);
+			scheduledExecutorService.execute(() ->
+			{
+				telemetryClient.submitTelemetry();
+				telemetryClient.submitVmErrors(LOGS_DIR);
+			});
 		}
 
 		ReflectUtil.queueInjectorAnnotationCacheInvalidation(injector);
