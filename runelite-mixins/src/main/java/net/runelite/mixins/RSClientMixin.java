@@ -653,7 +653,7 @@ public abstract class RSClientMixin implements RSClient
 	}
 
 	@Inject
-	public MessageNode addChatMessage(ChatMessageType type, String name, String message, String sender, boolean postEvent)
+	public MessageNode addChatMessage(ChatMessageType type, @Nonnull String name, String message, String sender, boolean postEvent)
 	{
 		assert this.isClientThread() : "addChatMessage must be called on client thread";
 
@@ -695,7 +695,7 @@ public abstract class RSClientMixin implements RSClient
 
 	@Inject
 	@Override
-	public MessageNode addChatMessage(ChatMessageType type, String name, String message, String sender)
+	public MessageNode addChatMessage(ChatMessageType type, @Nonnull String name, String message, String sender)
 	{
 		return addChatMessage(type, name, message, sender, true);
 	}
