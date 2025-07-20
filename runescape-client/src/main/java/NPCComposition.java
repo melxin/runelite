@@ -228,7 +228,8 @@ public class NPCComposition extends DualNode {
 	@Export("params")
 	IterableNodeHashTable params;
 	@ObfuscatedName("br")
-	int[] field2061;
+	@Export("stats")
+	int[] stats;
 	@ObfuscatedName("bk")
 	@Export("headIconArchiveIds")
 	int[] headIconArchiveIds;
@@ -281,7 +282,7 @@ public class NPCComposition extends DualNode {
 		this.isFollower = false;
 		this.lowPriorityFollowerOps = false;
 		this.field2069 = -1;
-		this.field2061 = new int[]{1, 1, 1, 1, 1, 1};
+		this.stats = new int[]{1, 1, 1, 1, 1, 1};
 		this.headIconArchiveIds = null;
 		this.headIconSpriteIndex = null;
 		this.footprintSize = -1;
@@ -383,17 +384,17 @@ public class NPCComposition extends DualNode {
 				this.field2033[var4] = var1.readUnsignedShort();
 			}
 		} else if (var2 == 74) {
-			this.field2061[0] = var1.readUnsignedShort();
+			this.stats[0] = var1.readUnsignedShort();
 		} else if (var2 == 75) {
-			this.field2061[1] = var1.readUnsignedShort();
+			this.stats[1] = var1.readUnsignedShort();
 		} else if (var2 == 76) {
-			this.field2061[2] = var1.readUnsignedShort();
+			this.stats[2] = var1.readUnsignedShort();
 		} else if (var2 == 77) {
-			this.field2061[3] = var1.readUnsignedShort();
+			this.stats[3] = var1.readUnsignedShort();
 		} else if (var2 == 78) {
-			this.field2061[4] = var1.readUnsignedShort();
+			this.stats[4] = var1.readUnsignedShort();
 		} else if (var2 == 79) {
-			this.field2061[5] = var1.readUnsignedShort();
+			this.stats[5] = var1.readUnsignedShort();
 		} else if (var2 == 93) {
 			this.drawMapDot = false;
 		} else if (var2 == 95) {
