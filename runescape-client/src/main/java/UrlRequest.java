@@ -73,7 +73,7 @@ public class UrlRequest {
 		descriptor = "(Ljava/lang/String;Ljava/lang/String;I)Ltn;",
 		garbageValue = "-1138706445"
 	)
-	public static class515 method3470(String var0, String var1) {
+	public static DynamicArray method3470(String var0, String var1) {
 		if (var1 != null && !var1.isEmpty()) {
 			int var2 = var1.length();
 			int var3 = 1;
@@ -83,7 +83,7 @@ public class UrlRequest {
 				++var3;
 			}
 
-			class515 var5 = new class515(class570.field5718, (Object)null, var3, var3);
+			DynamicArray var5 = new DynamicArray(class570.field5718, (Object)null, var3, var3);
 			int var6 = 0;
 			var4 = 0;
 

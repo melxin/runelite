@@ -289,7 +289,8 @@ public class LoginScreenAnimation {
 		descriptor = "(IIII)I",
 		garbageValue = "-1485168736"
 	)
-	final int method2483(int var1, int var2, int var3) {
+	@Export("blendColors")
+	final int blendColors(int var1, int var2, int var3) {
 		int var4 = 256 - var3;
 		return (var3 * (var2 & 65280) + var4 * (var1 & 65280) & 16711680) + (var3 * (var2 & 16711935) + var4 * (var1 & 16711935) & -16711936) >> 8;
 	}
@@ -322,11 +323,11 @@ public class LoginScreenAnimation {
 
 		for (int var4 = 0; var4 < var3; ++var4) {
 			if (var1 > 768) {
-				this.field1103[var4] = this.method2483(this.field1098[var4], var2[var4], 1024 - var1);
+				this.field1103[var4] = this.blendColors(this.field1098[var4], var2[var4], 1024 - var1);
 			} else if (var1 > 256) {
 				this.field1103[var4] = var2[var4];
 			} else {
-				this.field1103[var4] = this.method2483(var2[var4], this.field1098[var4], 256 - var1);
+				this.field1103[var4] = this.blendColors(var2[var4], this.field1098[var4], 256 - var1);
 			}
 		}
 

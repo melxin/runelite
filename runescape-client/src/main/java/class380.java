@@ -17,7 +17,7 @@ public class class380 {
 	static final void updateInterface(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
 		for (int var11 = var1; var11 <= var2; ++var11) {
 			Widget var12 = var0[var11];
-			if (var12 != null && var3 == var12.parentId && var4 == var12.field4117 && (var12.method8047() || class516.getWidgetFlags(var12) != 0 || SequenceDefinition.method4771(var12) != 0 || var12 == Client.clickedWidgetParent)) {
+			if (var12 != null && var3 == var12.parentId && var4 == var12.field4117 && (var12.method8047() || class516.getWidgetFlags(var12) != 0 || SequenceDefinition.getWidgetFlags2(var12) != 0 || var12 == Client.clickedWidgetParent)) {
 				if (var12.isIf3) {
 					if (class187.isComponentHidden(var12)) {
 						continue;
@@ -117,13 +117,13 @@ public class class380 {
 							if (MouseHandler.MouseHandler_x >= var15 && MouseHandler.MouseHandler_y >= var16 && MouseHandler.MouseHandler_x < var17 && MouseHandler.MouseHandler_y < var18) {
 								for (var30 = (ScriptEvent)Client.scriptEvents.last(); var30 != null; var30 = (ScriptEvent)Client.scriptEvents.previous()) {
 									if (var30.field875) {
-										var30.vmethod10593();
+										var30.remove();
 										var30.widget.field4166 = false;
 									}
 								}
 
 								DynamicObject.method1984();
-								if (class465.widgetDragDuration == 0) {
+								if (AnimationSequence.widgetDragDuration == 0) {
 									Client.clickedWidget = null;
 									Client.clickedWidgetParent = null;
 								}
@@ -135,7 +135,7 @@ public class class380 {
 						} else if (var12.noScrollThrough && MouseHandler.MouseHandler_x >= var15 && MouseHandler.MouseHandler_y >= var16 && MouseHandler.MouseHandler_x < var17 && MouseHandler.MouseHandler_y < var18) {
 							for (var30 = (ScriptEvent)Client.scriptEvents.last(); var30 != null; var30 = (ScriptEvent)Client.scriptEvents.previous()) {
 								if (var30.field875 && var30.widget.onScroll == var30.args) {
-									var30.vmethod10593();
+									var30.remove();
 								}
 							}
 						}
@@ -202,7 +202,7 @@ public class class380 {
 									} else if (var23 == 10) {
 										class136.method3644();
 										class385.method8192(var12.id, var12.childIndex * -64977777, class255.Widget_unpackTargetMask(class516.getWidgetFlags(var12)), var12.itemId);
-										Client.selectedSpellActionName = class203.method4465(var12);
+										Client.selectedSpellActionName = class203.Widget_getSpellActionName(var12);
 										if (Client.selectedSpellActionName == null) {
 											Client.selectedSpellActionName = "null";
 										}
@@ -330,7 +330,7 @@ public class class380 {
 										var25.mouseX = MouseHandler.MouseHandler_x - var29;
 										var25.mouseY = MouseHandler.MouseHandler_y - var14;
 										var25.args = var12.onRelease;
-										Client.field415.addFirst(var25);
+										Client.scriptEvents3.addFirst(var25);
 									}
 								}
 
@@ -376,7 +376,7 @@ public class class380 {
 										var25.mouseX = MouseHandler.MouseHandler_x - var29;
 										var25.mouseY = MouseHandler.MouseHandler_y - var14;
 										var25.args = var12.onMouseLeave;
-										Client.field415.addFirst(var25);
+										Client.scriptEvents3.addFirst(var25);
 									}
 								}
 
@@ -384,17 +384,17 @@ public class class380 {
 									var25 = new ScriptEvent();
 									var25.widget = var12;
 									var25.args = var12.onTimer;
-									Client.field414.addFirst(var25);
+									Client.scriptEvents2.addFirst(var25);
 								}
 
 								ScriptEvent var28;
 								int var40;
 								int var42;
-								if (var12.onVarTransmit != null && Client.field527 > var12.field4212) {
-									if (var12.varTransmitTriggers != null && Client.field527 - var12.field4212 <= 32) {
+								if (var12.onVarTransmit != null && Client.changedVarpCount > var12.field4212) {
+									if (var12.varTransmitTriggers != null && Client.changedVarpCount - var12.field4212 <= 32) {
 										label841:
-										for (var42 = var12.field4212; var42 < Client.field527; ++var42) {
-											var26 = Client.field443[var42 & 31];
+										for (var42 = var12.field4212; var42 < Client.changedVarpCount; ++var42) {
+											var26 = Client.changedVarps[var42 & 31];
 
 											for (var40 = 0; var40 < var12.varTransmitTriggers.length; ++var40) {
 												if (var26 == var12.varTransmitTriggers[var40]) {
@@ -413,14 +413,14 @@ public class class380 {
 										Client.scriptEvents.addFirst(var25);
 									}
 
-									var12.field4212 = Client.field527;
+									var12.field4212 = Client.changedVarpCount;
 								}
 
 								if (var12.onInvTransmit != null && Client.changedItemsCount > var12.field4213) {
 									if (var12.invTransmitTriggers != null && Client.changedItemsCount - var12.field4213 <= 32) {
 										label817:
 										for (var42 = var12.field4213; var42 < Client.changedItemsCount; ++var42) {
-											var26 = Client.mapIconXs[var42 & 31];
+											var26 = Client.changedItemContainers[var42 & 31];
 
 											for (var40 = 0; var40 < var12.invTransmitTriggers.length; ++var40) {
 												if (var26 == var12.invTransmitTriggers[var40]) {
@@ -446,7 +446,7 @@ public class class380 {
 									if (var12.statTransmitTriggers != null && Client.changedSkillsCount - var12.field4214 <= 32) {
 										label793:
 										for (var42 = var12.field4214; var42 < Client.changedSkillsCount; ++var42) {
-											var26 = Client.defaultRotations[var42 & 31];
+											var26 = Client.changedSkills[var42 & 31];
 
 											for (var40 = 0; var40 < var12.statTransmitTriggers.length; ++var40) {
 												if (var26 == var12.statTransmitTriggers[var40]) {
@@ -598,12 +598,12 @@ public class class380 {
 									if (var32.type == 0 && MouseHandler.MouseHandler_x >= var15 && MouseHandler.MouseHandler_y >= var16 && MouseHandler.MouseHandler_x < var17 && MouseHandler.MouseHandler_y < var18 && !Client.isMenuOpen) {
 										for (ScriptEvent var33 = (ScriptEvent)Client.scriptEvents.last(); var33 != null; var33 = (ScriptEvent)Client.scriptEvents.previous()) {
 											if (var33.field875) {
-												var33.vmethod10593();
+												var33.remove();
 												var33.widget.field4166 = false;
 											}
 										}
 
-										if (class465.widgetDragDuration == 0) {
+										if (AnimationSequence.widgetDragDuration == 0) {
 											Client.clickedWidget = null;
 											Client.clickedWidgetParent = null;
 										}
@@ -613,7 +613,7 @@ public class class380 {
 										}
 									}
 
-									class465.updateRootInterface(var32.group, var15, var16, var17, var18, var29, var14);
+									AnimationSequence.updateRootInterface(var32.group, var15, var16, var17, var18, var29, var14);
 								}
 							}
 						}

@@ -58,7 +58,7 @@ public class class150 extends class149 {
 		descriptor = "(Ltn;Lvf;ZS)V",
 		garbageValue = "19307"
 	)
-	static void method3792(class515 var0, class570 var1, boolean var2) {
+	static void method3792(DynamicArray var0, class570 var1, boolean var2) {
 		if (var0 == null) {
 			throw new RuntimeException();
 		} else if (var1 != null && var0.field5399 != var1) {

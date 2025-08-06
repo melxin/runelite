@@ -37,7 +37,7 @@ public class class190 extends DualNode {
 			}
 
 			byte[] var3 = new byte[var2];
-			var0.field5818 += class374.huffman.decompress(var0.offset, var0.field5818, var3, 0, var2);
+			var0.offset += class374.huffman.decompress(var0.array, var0.offset, var3, 0, var2);
 			String var4 = WorldMapData_0.decodeStringCp1252(var3, 0, var2);
 			return var4;
 		} catch (Exception var6) {

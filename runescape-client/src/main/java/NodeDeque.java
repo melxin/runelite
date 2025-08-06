@@ -35,7 +35,7 @@ public class NodeDeque {
 				return;
 			}
 
-			var1.vmethod10593();
+			var1.remove();
 		}
 	}
 
@@ -46,7 +46,7 @@ public class NodeDeque {
 	@Export("addFirst")
 	public void addFirst(Node var1) {
 		if (var1.next != null) {
-			var1.vmethod10593();
+			var1.remove();
 		}
 
 		var1.next = this.sentinel.next;
@@ -62,7 +62,7 @@ public class NodeDeque {
 	@Export("addLast")
 	public void addLast(Node var1) {
 		if (var1.next != null) {
-			var1.vmethod10593();
+			var1.remove();
 		}
 
 		var1.next = this.sentinel;
@@ -81,7 +81,7 @@ public class NodeDeque {
 		if (var1 == this.sentinel) {
 			return null;
 		} else {
-			var1.vmethod10593();
+			var1.remove();
 			return var1;
 		}
 	}
@@ -96,7 +96,7 @@ public class NodeDeque {
 		if (var1 == this.sentinel) {
 			return null;
 		} else {
-			var1.vmethod10593();
+			var1.remove();
 			return var1;
 		}
 	}
@@ -172,7 +172,7 @@ public class NodeDeque {
 	@Export("NodeDeque_addBefore")
 	public static void NodeDeque_addBefore(Node var0, Node var1) {
 		if (var0.next != null) {
-			var0.vmethod10593();
+			var0.remove();
 		}
 
 		var0.next = var1.next;

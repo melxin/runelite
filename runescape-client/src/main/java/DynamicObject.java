@@ -54,17 +54,19 @@ public class DynamicObject extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "Lrk;"
 	)
-	final class465 field797;
+	final AnimationSequence field797;
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "Lrk;"
 	)
-	final class465 field794;
+	@Export("animationSequence")
+	final AnimationSequence animationSequence;
 	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
 		intValue = -1451529473
 	)
-	int field798;
+	@Export("cycleStart")
+	int cycleStart;
 
 	@ObfuscatedSignature(
 		descriptor = "(Ldj;IIIIIIIZLiq;)V"
@@ -77,30 +79,30 @@ public class DynamicObject extends Renderable {
 		this.plane = var5;
 		this.x = var6;
 		this.y = var7;
-		this.field797 = new class465();
-		this.field794 = new class465();
+		this.field797 = new AnimationSequence();
+		this.animationSequence = new AnimationSequence();
 		if (var8 != -1) {
-			this.field797.method9569(var8);
-			this.field794.method9569(var8);
-			SequenceDefinition var11 = this.field797.method9571();
-			this.field798 = Client.cycle - 1;
+			this.field797.setSequence(var8);
+			this.animationSequence.setSequence(var8);
+			SequenceDefinition var11 = this.field797.getSequenceDefinition();
+			this.cycleStart = Client.cycle - 1;
 			if (var9 && var11.frameCount != -1) {
 				this.field797.method9613();
 			}
 
 			if (var10 instanceof DynamicObject) {
 				DynamicObject var12 = (DynamicObject)var10;
-				if (var12.field797.method9595() == var8) {
+				if (var12.field797.getId() == var8) {
 					if (var11.restartMode == 0) {
-						this.field797.method9591(var12.field797);
-						this.field798 = var12.field798;
+						this.field797.setSequence(var12.field797);
+						this.cycleStart = var12.cycleStart;
 					}
 
-					this.field794.method9591(var12.field794);
+					this.animationSequence.setSequence(var12.animationSequence);
 				} else if (!var12.field797.method9581()) {
-					this.field794.method9591(var12.field794);
+					this.animationSequence.setSequence(var12.animationSequence);
 				} else {
-					this.field794.method9591(var12.field797);
+					this.animationSequence.setSequence(var12.field797);
 				}
 			}
 		}
@@ -140,30 +142,30 @@ public class DynamicObject extends Renderable {
 			int var9 = var8[var5][var7] + var8[var4][var6] + var8[var5][var6] + var8[var4][var7] >> 2;
 			int var10 = (this.x << 7) + (var2 << 6);
 			int var11 = (this.y << 7) + (var3 << 6);
-			int var12 = Client.cycle - this.field798;
-			this.field798 = Client.cycle;
+			int var12 = Client.cycle - this.cycleStart;
+			this.cycleStart = Client.cycle;
 			Client.field426.method10913(this.worldView, var10, var11, false);
 			int var13 = AttackOption.method2764(this.field797, var12, Client.field426);
 			Client.field426.method10914();
 			if ((var13 & 1) != 0 && (var13 & 8) != 0) {
-				this.field797.method9604();
+				this.field797.reset();
 			}
 
 			if (this.field797.method9601(30)) {
-				if (this.field794.method9570()) {
-					int var14 = AttackOption.method2764(this.field794, var12, (class464)null);
+				if (this.animationSequence.isActive()) {
+					int var14 = AttackOption.method2764(this.animationSequence, var12, (class464)null);
 					if ((var14 & 1) != 0 && (var14 & 8) != 0) {
-						this.field794.method9604();
+						this.animationSequence.reset();
 					}
 
-					if (!this.field794.method9601(30)) {
-						return var1.getModelDynamic(this.type, this.orientation, var8, var10, var9, var11, this.field794.method9571(), this.field794.method9573());
+					if (!this.animationSequence.method9601(30)) {
+						return var1.getModelDynamic(this.type, this.orientation, var8, var10, var9, var11, this.animationSequence.getSequenceDefinition(), this.animationSequence.getFrame());
 					}
 				}
 
 				return null;
 			} else {
-				return var1.getModelDynamic(this.type, this.orientation, var8, var10, var9, var11, this.field797.method9571(), this.field797.method9573());
+				return var1.getModelDynamic(this.type, this.orientation, var8, var10, var9, var11, this.field797.getSequenceDefinition(), this.field797.getFrame());
 			}
 		}
 	}
@@ -201,7 +203,7 @@ public class DynamicObject extends Renderable {
 	)
 	static void method1984() {
 		for (class271 var0 = (class271)Client.field416.last(); var0 != null; var0 = (class271)Client.field416.previous()) {
-			var0.vmethod10593();
+			var0.remove();
 		}
 
 	}

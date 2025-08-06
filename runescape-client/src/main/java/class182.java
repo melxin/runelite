@@ -68,7 +68,7 @@ public class class182 extends DualNode {
 
 			PacketBufferNode var16 = class291.getPacketBufferNode(ClientPacket.IF_RUNSCRIPT, Client.packetWriter.isaacCipher);
 			var16.packetBuffer.writeShort(0);
-			var8 = var16.packetBuffer.field5818;
+			var8 = var16.packetBuffer.offset;
 			var16.packetBuffer.writeShortLE(var1);
 			var16.packetBuffer.writeIntME(var0);
 			var16.packetBuffer.writeShort(var2);
@@ -81,8 +81,8 @@ public class class182 extends DualNode {
 					var16.packetBuffer.method11246((Integer)var11);
 				} else if (var11 instanceof String) {
 					var16.packetBuffer.writeStringCp1252NullTerminated((String)var11);
-				} else if (var11 instanceof class515) {
-					class515 var12 = (class515)var11;
+				} else if (var11 instanceof DynamicArray) {
+					DynamicArray var12 = (DynamicArray)var11;
 					int var13 = var12.method10351();
 					var16.packetBuffer.writeSmartByteShort(var13);
 					int var15;
@@ -104,7 +104,7 @@ public class class182 extends DualNode {
 				}
 			}
 
-			var16.packetBuffer.writeLengthShort(var16.packetBuffer.field5818 - var8);
+			var16.packetBuffer.writeLengthShort(var16.packetBuffer.offset - var8);
 			Client.packetWriter.addNode(var16);
 		}
 	}

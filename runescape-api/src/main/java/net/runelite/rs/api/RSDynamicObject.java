@@ -8,20 +8,23 @@ public interface RSDynamicObject extends RSRenderable, DynamicObject
 	@Import("id")
 	int getId();
 
-	@Import("frame")
-	@Override
-	int getAnimFrame();
+	@Import("animationSequence")
+	RSAnimationSequence getAnimationSequence();
 
-	@Import("frame")
+	//@Import("frame")
+	//@Override
+	//int getAnimFrame();
+
+	//@Import("frame")
 	void setAnimFrame(int frame);
 
-	@Import("cycleStart")
-	@Override
-	int getAnimCycle();
+	//@Import("cycleStart")
+	//@Override
+	//int getAnimCycle();
 
-	@Import("sequenceDefinition")
-	@Override
-	RSSequenceDefinition getAnimation();
+	//@Import("sequenceDefinition")
+	//@Override
+	//RSSequenceDefinition getAnimation();
 
 	@Import("worldView")
 	RSWorldView getWorldView();

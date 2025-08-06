@@ -43,7 +43,7 @@ public class class157 extends class165 {
 		this.field1793 = var1.readUnsignedShort();
 		var1.readUnsignedByte();
 		if (var1.readUnsignedByte() != 255) {
-			--var1.field5818;
+			--var1.offset;
 			var1.readLong();
 		}
 

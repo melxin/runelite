@@ -270,7 +270,7 @@ public class MidiPcmStream extends PcmStream {
 	public void method7134() {
 		synchronized(this.field3814) {
 			for (MusicPatch var2 = (MusicPatch)this.musicPatches.first(); var2 != null; var2 = (MusicPatch)this.musicPatches.next()) {
-				var2.remove();
+				var2._remove();
 			}
 
 		}
@@ -332,7 +332,7 @@ public class MidiPcmStream extends PcmStream {
 	public void method7210() {
 		synchronized(this.field3814) {
 			for (MusicPatch var2 = (MusicPatch)this.musicPatches.first(); var2 != null; var2 = (MusicPatch)this.musicPatches.next()) {
-				var2.vmethod10593();
+				var2.remove();
 			}
 
 		}
@@ -624,7 +624,7 @@ public class MidiPcmStream extends PcmStream {
 					this.field3825[var2.field3882][var2.field3887] = null;
 				}
 
-				var2.vmethod10593();
+				var2.remove();
 			}
 		}
 
@@ -1065,7 +1065,7 @@ public class MidiPcmStream extends PcmStream {
 	boolean method7166(MusicPatchNode var1) {
 		if (var1.stream == null) {
 			if (var1.field3902 >= 0) {
-				var1.vmethod10593();
+				var1.remove();
 				if (var1.field3886 > 0 && var1 == this.field3823[var1.field3882][var1.field3886]) {
 					this.field3823[var1.field3882][var1.field3886] = null;
 				}
@@ -1155,7 +1155,7 @@ public class MidiPcmStream extends PcmStream {
 
 				var1.method7349();
 				if (var1.field3902 >= 0) {
-					var1.vmethod10593();
+					var1.remove();
 					if (var1.field3886 > 0 && var1 == this.field3823[var1.field3882][var1.field3886]) {
 						this.field3823[var1.field3882][var1.field3886] = null;
 					}
@@ -1168,7 +1168,7 @@ public class MidiPcmStream extends PcmStream {
 			}
 		} else {
 			var1.method7349();
-			var1.vmethod10593();
+			var1.remove();
 			if (var1.field3886 > 0 && var1 == this.field3823[var1.field3882][var1.field3886]) {
 				this.field3823[var1.field3882][var1.field3886] = null;
 			}

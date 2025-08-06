@@ -1,3 +1,4 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -41,7 +42,8 @@ public class class477 {
 		descriptor = "(Ldj;IIIB)I",
 		garbageValue = "1"
 	)
-	static final int method9725(WorldView var0, int var1, int var2, int var3) {
+	@Export("getTileHeight")
+	static final int getTileHeight(WorldView var0, int var1, int var2, int var3) {
 		int var4 = var1 >> 7;
 		int var5 = var2 >> 7;
 		if (var4 >= 0 && var5 >= 0 && var4 < var0.tileSettings[0].length && var5 < var0.tileSettings[0][0].length) {

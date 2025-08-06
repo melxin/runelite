@@ -10,7 +10,7 @@ final class class567 implements class565 {
 		garbageValue = "-567180997"
 	)
 	public void vmethod11079(Object var1, Buffer var2) {
-		this.method11036((class515)var1, var2);
+		this.method11036((DynamicArray)var1, var2);
 	}
 
 	@ObfuscatedName("ab")
@@ -22,7 +22,7 @@ final class class567 implements class565 {
 		int var3 = var1.readUnsignedShort();
 		if (var3 >= 0 && var3 <= 5000) {
 			int var4 = var1.readUnsignedByte();
-			class515 var2;
+			DynamicArray var2;
 			int var6;
 			if (var4 == 0) {
 				int[] var5 = new int[var3];
@@ -65,7 +65,7 @@ final class class567 implements class565 {
 		descriptor = "(Ltn;Lwj;I)V",
 		garbageValue = "2098885611"
 	)
-	void method11036(class515 var1, Buffer var2) {
+	void method11036(DynamicArray var1, Buffer var2) {
 		var1.method10359(var2);
 	}
 

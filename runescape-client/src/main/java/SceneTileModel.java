@@ -12,19 +12,23 @@ public final class SceneTileModel {
 	@Export("faceIndices")
 	static final int[][] faceIndices;
 	@ObfuscatedName("ac")
-	static float[] field2808;
+	@Export("verticesX")
+	static float[] verticesX;
 	@ObfuscatedName("av")
-	static float[] field2795;
+	@Export("verticesY")
+	static float[] verticesY;
 	@ObfuscatedName("au")
-	static float[] field2806;
+	@Export("verticesZ")
+	static float[] verticesZ;
 	@ObfuscatedName("as")
 	@Export("triangleTexturesX")
 	static int[] triangleTexturesX;
 	@ObfuscatedName("ah")
-	static int[] field2799;
+	@Export("triangleTexturesY")
+	static int[] triangleTexturesY;
 	@ObfuscatedName("ap")
-	@Export("verticesX")
-	static int[] verticesX;
+	@Export("triangleTexturesZ")
+	static int[] triangleTexturesZ;
 	@ObfuscatedName("am")
 	@Export("vertexX")
 	int[] vertexX;
@@ -74,12 +78,12 @@ public final class SceneTileModel {
 	static {
 		triangleTextureIndices = new int[][]{{1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 6}, {1, 3, 5, 7, 2, 6}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 2, 8}, {1, 3, 5, 7, 11, 12}, {1, 3, 5, 7, 11, 12}, {1, 3, 5, 7, 13, 14}};
 		faceIndices = new int[][]{{0, 1, 2, 3, 0, 0, 1, 3}, {1, 1, 2, 3, 1, 0, 1, 3}, {0, 1, 2, 3, 1, 0, 1, 3}, {0, 0, 1, 2, 0, 0, 2, 4, 1, 0, 4, 3}, {0, 0, 1, 4, 0, 0, 4, 3, 1, 1, 2, 4}, {0, 0, 4, 3, 1, 0, 1, 2, 1, 0, 2, 4}, {0, 1, 2, 4, 1, 0, 1, 4, 1, 0, 4, 3}, {0, 4, 1, 2, 0, 4, 2, 5, 1, 0, 4, 5, 1, 0, 5, 3}, {0, 4, 1, 2, 0, 4, 2, 3, 0, 4, 3, 5, 1, 0, 4, 5}, {0, 0, 4, 5, 1, 4, 1, 2, 1, 4, 2, 3, 1, 4, 3, 5}, {0, 0, 1, 5, 0, 1, 4, 5, 0, 1, 2, 4, 1, 0, 5, 3, 1, 5, 4, 3, 1, 4, 2, 3}, {1, 0, 1, 5, 1, 1, 4, 5, 1, 1, 2, 4, 0, 0, 5, 3, 0, 5, 4, 3, 0, 4, 2, 3}, {1, 0, 5, 4, 1, 0, 1, 5, 0, 0, 4, 3, 0, 4, 5, 3, 0, 5, 2, 3, 0, 1, 2, 5}};
-		field2808 = new float[6];
-		field2795 = new float[6];
-		field2806 = new float[6];
+		verticesX = new float[6];
+		verticesY = new float[6];
+		verticesZ = new float[6];
 		triangleTexturesX = new int[6];
-		field2799 = new int[6];
-		verticesX = new int[6];
+		triangleTexturesY = new int[6];
+		triangleTexturesZ = new int[6];
 	}
 
 	SceneTileModel(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19) {

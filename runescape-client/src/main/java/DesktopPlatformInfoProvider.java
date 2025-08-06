@@ -249,7 +249,7 @@ public class DesktopPlatformInfoProvider implements class543 {
 
 		for (InterfaceParent var1 = (InterfaceParent)Client.interfaceParents.first(); var1 != null; var1 = (InterfaceParent)Client.interfaceParents.next()) {
 			if (var1.type == 0 || var1.type == 3) {
-				WorldMapCacheName.method6881(var1, true);
+				WorldMapCacheName.closeInterface(var1, true);
 			}
 		}
 

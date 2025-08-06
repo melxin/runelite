@@ -136,7 +136,7 @@ public class RawPcmStream extends PcmStream {
 			if (this.field1374 < 0) {
 				if (this.field1368 <= 0) {
 					this.method3137();
-					this.vmethod10593();
+					this.remove();
 					return;
 				}
 
@@ -146,7 +146,7 @@ public class RawPcmStream extends PcmStream {
 			if (this.field1374 >= var7) {
 				if (this.field1368 >= 0) {
 					this.method3137();
-					this.vmethod10593();
+					this.remove();
 					return;
 				}
 
@@ -283,14 +283,14 @@ public class RawPcmStream extends PcmStream {
 					if (this.field1374 < 0) {
 						this.field1374 = -1;
 						this.method3137();
-						this.vmethod10593();
+						this.remove();
 					}
 				} else {
 					this.method3150(var1, var9, var7, var3, 0);
 					if (this.field1374 >= var7) {
 						this.field1374 = var7;
 						this.method3137();
-						this.vmethod10593();
+						this.remove();
 					}
 				}
 
@@ -308,7 +308,7 @@ public class RawPcmStream extends PcmStream {
 					this.field1373 = 0;
 					this.field1372 = 0;
 					this.field1370 = 0;
-					this.vmethod10593();
+					this.remove();
 					var1 = this.field1378;
 				}
 
@@ -334,7 +334,7 @@ public class RawPcmStream extends PcmStream {
 		if (this.field1374 < 0) {
 			if (this.field1368 <= 0) {
 				this.method3137();
-				this.vmethod10593();
+				this.remove();
 				return;
 			}
 
@@ -344,7 +344,7 @@ public class RawPcmStream extends PcmStream {
 		if (this.field1374 >= var5) {
 			if (this.field1368 >= 0) {
 				this.method3137();
-				this.vmethod10593();
+				this.remove();
 				return;
 			}
 
@@ -463,12 +463,12 @@ public class RawPcmStream extends PcmStream {
 				if (this.field1374 < 0) {
 					this.field1374 = -1;
 					this.method3137();
-					this.vmethod10593();
+					this.remove();
 				}
 			} else if (this.field1374 >= var5) {
 				this.field1374 = var5;
 				this.method3137();
-				this.vmethod10593();
+				this.remove();
 			}
 
 		}
@@ -630,12 +630,12 @@ public class RawPcmStream extends PcmStream {
 	public synchronized void method3173(int var1) {
 		if (var1 == 0) {
 			this.method3132(0);
-			this.vmethod10593();
+			this.remove();
 		} else if (this.field1372 == 0 && this.field1373 == 0) {
 			this.field1378 = 0;
 			this.field1369 = 0;
 			this.field1370 = 0;
-			this.vmethod10593();
+			this.remove();
 		} else {
 			int var2 = -this.field1370;
 			if (this.field1370 > var2) {
@@ -815,7 +815,7 @@ public class RawPcmStream extends PcmStream {
 				this.field1373 = 0;
 				this.field1372 = 0;
 				this.field1370 = 0;
-				this.vmethod10593();
+				this.remove();
 				return true;
 			} else {
 				this.method3191();

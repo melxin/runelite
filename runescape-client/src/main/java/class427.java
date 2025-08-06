@@ -17,8 +17,8 @@ public class class427 {
 		descriptor = "(II)Lhk;",
 		garbageValue = "1754648988"
 	)
-	@Export("SpotAnimationDefinition_get")
-	public static FloorUnderlayDefinition SpotAnimationDefinition_get(int var0) {
+	@Export("FloorUnderlayDefinition_get")
+	public static FloorUnderlayDefinition FloorUnderlayDefinition_get(int var0) {
 		FloorUnderlayDefinition var1 = (FloorUnderlayDefinition)FloorUnderlayDefinition.FloorUnderlayDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;

@@ -96,16 +96,16 @@ public class class504 extends class503 {
 		descriptor = "(Ltn;ILjava/lang/Object;B)V",
 		garbageValue = "6"
 	)
-	public static void method10191(class515 var0, int var1, Object var2) {
+	public static void method10191(DynamicArray var0, int var1, Object var2) {
 		class150.method3792(var0, (class570)null, true);
-		if (var1 >= 0 && var1 <= var0.field5401 * -519676011) {
-			var0.method10398(var0.field5401 * -519676011 + 1);
-			if (var1 < var0.field5401 * -519676011) {
-				class401.method8272(var0, var1, var0, var1 + 1, var0.field5401 * -519676011 - var1);
+		if (var1 >= 0 && var1 <= var0.size * -519676011) {
+			var0.method10398(var0.size * -519676011 + 1);
+			if (var1 < var0.size * -519676011) {
+				class401.method8272(var0, var1, var0, var1 + 1, var0.size * -519676011 - var1);
 			}
 
 			var0.method10361(var1, var2);
-			var0.field5401 += 1527641021;
+			var0.size += 1527641021;
 		} else {
 			throw new RuntimeException();
 		}

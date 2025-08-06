@@ -49,7 +49,7 @@ public class ChatChannel {
 		if (var5 == null) {
 			var5 = new Message(var1, var2, var4, var3);
 		} else {
-			var5.vmethod10593();
+			var5.remove();
 			var5.removeDual();
 			var5.set(var1, var2, var4, var3);
 		}

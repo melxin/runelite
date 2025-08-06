@@ -44,7 +44,7 @@ public class class161 extends class165 {
 	)
 	void vmethod4076(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			--var1.field5818;
+			--var1.offset;
 			var1.readLong();
 		}
 
@@ -101,7 +101,7 @@ public class class161 extends class165 {
 		int var6;
 		int var7;
 		if (!Client.isInInstance) {
-			var1.method11273();
+			var1.readShortLE();
 			var2 = var1.readUnsignedShortLE();
 			int var3 = var1.readUnsignedShortAddLE();
 			var4 = var1.readUnsignedShort();

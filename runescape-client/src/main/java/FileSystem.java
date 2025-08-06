@@ -126,7 +126,7 @@ public class FileSystem {
 	static void method5908(WorldView var0, WorldEntity var1, boolean var2) {
 		boolean var3 = var1.field5320.field2178 && !var2;
 		long var4 = Skills.calculateTag(var1.getX(), Coord.method7394(var1.getY()), Coord.method7394(var1.getPlane()), 4, var3, var1.plane, var0.id);
-		var1.worldEntityCoord.setZ(class477.method9725(var0, var1.getY(), var1.getPlane(), var0.plane));
+		var1.worldEntityCoord.setZ(class477.getTileHeight(var0, var1.getY(), var1.getPlane(), var0.plane));
 		var1.worldView.scene.cycle = Client.cycle;
 		var1.initScenePlane(var2);
 		boolean var6 = var0.scene.drawEntity(var0.plane, var1.getY(), var1.getPlane(), var1.getZ(), 60, var1.worldView.scene, var1.method10098(), var4, false);

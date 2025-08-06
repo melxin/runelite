@@ -309,32 +309,38 @@ public class Rasterizer3D {
 	}
 
 	@ObfuscatedName("ad")
-	static void method4908(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11) {
-		field2583.vmethod5723(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
+	@Export("rasterGouraud")
+	static void rasterGouraud(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11) {
+		field2583.drawAlphaBlendedGraphics(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
 	}
 
 	@ObfuscatedName("aw")
-	public static void method4977(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9) {
+	@Export("rasterFlat")
+	public static void rasterFlat(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9) {
 		field2583.vmethod5725(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
 	}
 
 	@ObfuscatedName("af")
-	static void method4910(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21) {
-		field2583.vmethod5727(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18, var19, var20, var21);
+	@Export("rasterTextureWithShadingAndLighting")
+	static void rasterTextureWithShadingAndLighting(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21) {
+		field2583.drawGradientTriangle(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18, var19, var20, var21);
 	}
 
 	@ObfuscatedName("an")
-	static void method4964(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21) {
-		field2583.vmethod5729(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18, var19, var20, var21);
+	@Export("rasterTextureWithColors")
+	static void rasterTextureWithColors(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21) {
+		field2583.textureMapPolygons(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18, var19, var20, var21);
 	}
 
 	@ObfuscatedName("ae")
-	static void method4912(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11) {
+	@Export("rasterTriangleWithGradient")
+	static void rasterTriangleWithGradient(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11) {
 		field2583.method5031(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
 	}
 
 	@ObfuscatedName("bj")
-	static void method4923(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9) {
+	@Export("rasterTriangle")
+	static void rasterTriangle(float var0, float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, int var9) {
 		field2583.method5063(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
 	}
 }

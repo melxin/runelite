@@ -220,7 +220,7 @@ public class Language implements Enum {
 			} else {
 				label577: {
 					if (var1.method2386()) {
-						var3 = var1.field1065.method9571();
+						var3 = var1.animationSequence.getSequenceDefinition();
 						if (var1.field1086 > 0 && var3.field2438 == 0) {
 							++var1.field1085;
 							break label577;
@@ -553,15 +553,15 @@ public class Language implements Enum {
 		}
 
 		Client.field426.method10913(var0, var1.x, var1.y, var1 == class27.localPlayer);
-		var12 = AttackOption.method2764(var1.field1064, 1, Client.field426);
+		var12 = AttackOption.method2764(var1.poseAnimationSequence, 1, Client.field426);
 		if ((var12 & 2) != 0) {
-			var1.field1064.method9576();
+			var1.poseAnimationSequence.method9576();
 		}
 
-		var1.field1081.method9569(var1.idleSequence);
-		if (var1.field1064.method9597() > 0 && var1.field1081.method9597() < 30) {
-			if (var1.field1064.method9595() == var1.field1081.method9595()) {
-				var1.field1081.method9591(var1.field1064);
+		var1.field1081.setSequence(var1.idleSequence);
+		if (var1.poseAnimationSequence.method9597() > 0 && var1.field1081.method9597() < 30) {
+			if (var1.poseAnimationSequence.getId() == var1.field1081.getId()) {
+				var1.field1081.setSequence(var1.poseAnimationSequence);
 			} else {
 				var4 = AttackOption.method2764(var1.field1081, 1, (class464)null);
 				if ((var4 & 2) != 0) {
@@ -572,24 +572,24 @@ public class Language implements Enum {
 
 		IterableNodeHashTableIterator var26 = new IterableNodeHashTableIterator(var1.method2404());
 
-		for (class506 var20 = (class506)var26.method8621(); var20 != null; var20 = (class506)var26.next()) {
-			if (var20.field5342 != -1 && Client.cycle >= var20.field5339) {
-				class465 var32 = var20.field5340;
-				if (!var32.method9570()) {
-					var20.vmethod10593();
+		for (ActorSpotAnim var20 = (ActorSpotAnim)var26.method8621(); var20 != null; var20 = (ActorSpotAnim)var26.next()) {
+			if (var20.id != -1 && Client.cycle >= var20.field5339) {
+				AnimationSequence var32 = var20.animationSequence;
+				if (!var32.isActive()) {
+					var20.remove();
 					--var1.graphicsCount;
 				} else {
 					var18 = AttackOption.method2764(var32, 1, Client.field426);
 					if ((var18 & 1) != 0) {
-						var20.vmethod10593();
+						var20.remove();
 						--var1.graphicsCount;
 					}
 				}
 			}
 		}
 
-		if (var1.field1065.method9570() && var1.field1059 <= 1) {
-			SequenceDefinition var33 = var1.field1065.method9571();
+		if (var1.animationSequence.isActive() && var1.field1059 <= 1) {
+			SequenceDefinition var33 = var1.animationSequence.getSequenceDefinition();
 			if (var33.field2438 == 1 && var1.field1086 > 0 && var1.spotAnimation <= Client.cycle && var1.field1075 < Client.cycle) {
 				var1.field1059 = 1;
 				return;
@@ -599,13 +599,13 @@ public class Language implements Enum {
 		if (var1.field1059 > 0) {
 			--var1.field1059;
 		} else {
-			var5 = AttackOption.method2764(var1.field1065, 1, Client.field426);
+			var5 = AttackOption.method2764(var1.animationSequence, 1, Client.field426);
 			if ((var5 & 2) != 0) {
-				var1.field1065.method9604();
+				var1.animationSequence.reset();
 			}
 		}
 
-		var1.isWalking = var1.field1065.method9570() && var1.field1065.method9571().field2409;
+		var1.isWalking = var1.animationSequence.isActive() && var1.animationSequence.getSequenceDefinition().field2409;
 		Client.field426.method10914();
 	}
 }

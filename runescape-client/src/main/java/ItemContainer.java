@@ -59,7 +59,7 @@ public class ItemContainer extends Node {
 	public static void performReflectionCheck(PacketBuffer var0) {
 		ReflectionCheck var1 = (ReflectionCheck)class36.reflectionChecks.last();
 		if (var1 != null) {
-			int var2 = var0.field5818;
+			int var2 = var0.offset;
 			var0.writeInt(var1.id);
 
 			for (int var3 = 0; var3 < var1.size; ++var3) {
@@ -146,7 +146,7 @@ public class ItemContainer extends Node {
 			}
 
 			var0.writeCrc(var2);
-			var1.vmethod10593();
+			var1.remove();
 		}
 	}
 }

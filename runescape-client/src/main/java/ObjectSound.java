@@ -67,7 +67,8 @@ public final class ObjectSound extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Ldr;"
 	)
-	RawPcmStream field977;
+	@Export("stream1")
+	RawPcmStream stream1;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
 		intValue = 830634565
@@ -78,7 +79,8 @@ public final class ObjectSound extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Ldr;"
 	)
-	RawPcmStream field978;
+	@Export("stream2")
+	RawPcmStream stream2;
 	@ObfuscatedName("aa")
 	@Export("soundEffectIds")
 	int[] soundEffectIds;
@@ -193,7 +195,7 @@ public final class ObjectSound extends Node {
 		this.method2265(0, this.field968, this.field985);
 		this.method2289();
 		this.method2268();
-		RawPcmStream var2 = this.field977;
+		RawPcmStream var2 = this.stream1;
 		int var1;
 		if (var2 != null) {
 			var1 = var2.method3129();
@@ -202,7 +204,7 @@ public final class ObjectSound extends Node {
 		}
 
 		if (var1 == 0) {
-			RawPcmStream var4 = this.field978;
+			RawPcmStream var4 = this.stream2;
 			int var3;
 			if (var4 != null) {
 				var3 = var4.method3129();
@@ -213,7 +215,7 @@ public final class ObjectSound extends Node {
 			if (var3 == 0) {
 				this.method2293();
 				this.method2231();
-				this.vmethod10593();
+				this.remove();
 			}
 		}
 
@@ -232,7 +234,7 @@ public final class ObjectSound extends Node {
 			this.method2265(0, this.field968, this.field985);
 			this.method2289();
 			this.method2268();
-			RawPcmStream var27 = this.field977;
+			RawPcmStream var27 = this.stream1;
 			int var28;
 			if (var27 != null) {
 				var28 = var27.method3129();
@@ -241,7 +243,7 @@ public final class ObjectSound extends Node {
 			}
 
 			if (var28 == 0) {
-				RawPcmStream var29 = this.field978;
+				RawPcmStream var29 = this.stream2;
 				if (var29 != null) {
 					var9 = var29.method3129();
 				} else {
@@ -302,14 +304,14 @@ public final class ObjectSound extends Node {
 					}
 
 					var13 = (int)((double)var6 * var23);
-					RawPcmStream var25 = this.field977;
+					RawPcmStream var25 = this.stream1;
 					if (var25 != null) {
 						var14 = var25.method3129();
 					} else {
 						var14 = 0;
 					}
 
-					RawPcmStream var26 = this.field978;
+					RawPcmStream var26 = this.stream2;
 					int var17;
 					if (var26 != null) {
 						var17 = var26.method3129();
@@ -329,13 +331,13 @@ public final class ObjectSound extends Node {
 						this.method2265(var13, this.field968, this.field985);
 					}
 
-					if (this.field977 != null) {
+					if (this.stream1 != null) {
 						this.method2289();
 					} else if (this.soundEffectId >= 0 && var13 > 0) {
 						this.method2227(this.soundEffectId, 0);
 					}
 
-					if (this.field978 != null) {
+					if (this.stream2 != null) {
 						this.method2268();
 					} else if (this.soundEffectIds != null && (this.field983 -= var5) <= 0 && var13 > 0) {
 						this.method2228(this.soundEffectIds, var13);
@@ -360,12 +362,12 @@ public final class ObjectSound extends Node {
 		garbageValue = "806626143"
 	)
 	void method2223(int var1, int var2, class335 var3) {
-		if (this.field977 != null && this.field977.field1386 != var1) {
-			this.field977.field1384 = this.field977.method3129();
-			this.field977.field1382 = UserComparator7.method3496();
-			this.field977.field1386 = var1;
-			this.field977.field1385 = Tiles.method2075(var2, Math.abs(this.field977.field1384 - this.field977.field1386), FriendSystem.clientPreferences.getAreaSoundEffectsVolume());
-			this.field977.field1367 = var3;
+		if (this.stream1 != null && this.stream1.field1386 != var1) {
+			this.stream1.field1384 = this.stream1.method3129();
+			this.stream1.field1382 = UserComparator7.method3496();
+			this.stream1.field1386 = var1;
+			this.stream1.field1385 = Tiles.method2075(var2, Math.abs(this.stream1.field1384 - this.stream1.field1386), FriendSystem.clientPreferences.getAreaSoundEffectsVolume());
+			this.stream1.field1367 = var3;
 		}
 
 	}
@@ -376,13 +378,13 @@ public final class ObjectSound extends Node {
 		garbageValue = "-2013935430"
 	)
 	void method2265(int var1, int var2, class335 var3) {
-		if (this.field978 != null && this.field978.field1386 != var1) {
-			this.field978.field1384 = this.field978.method3129();
-			this.field978.field1382 = UserComparator7.method3496();
-			int var4 = Tiles.method2075(var2, Math.abs(this.field978.field1384 - var1), FriendSystem.clientPreferences.getAreaSoundEffectsVolume());
-			this.field978.field1385 = var4;
-			this.field978.field1386 = var1;
-			this.field978.field1367 = var3;
+		if (this.stream2 != null && this.stream2.field1386 != var1) {
+			this.stream2.field1384 = this.stream2.method3129();
+			this.stream2.field1382 = UserComparator7.method3496();
+			int var4 = Tiles.method2075(var2, Math.abs(this.stream2.field1384 - var1), FriendSystem.clientPreferences.getAreaSoundEffectsVolume());
+			this.stream2.field1385 = var4;
+			this.stream2.field1386 = var1;
+			this.stream2.field1367 = var3;
 		}
 
 	}
@@ -393,14 +395,14 @@ public final class ObjectSound extends Node {
 		garbageValue = "-100"
 	)
 	void method2289() {
-		if (this.field977 != null) {
-			int var1 = this.field977.method3129();
+		if (this.stream1 != null) {
+			int var1 = this.stream1.method3129();
 			long var2 = UserComparator7.method3496();
-			long var4 = var2 - this.field977.field1382;
-			int var7 = this.field977.field1384;
-			int var8 = this.field977.field1386;
-			class335 var9 = this.field977.field1367;
-			int var10 = this.field977.field1385;
+			long var4 = var2 - this.stream1.field1382;
+			int var7 = this.stream1.field1384;
+			int var8 = this.stream1.field1386;
+			class335 var9 = this.stream1.field1367;
+			int var10 = this.stream1.field1385;
 			int var6;
 			if (var8 == var1) {
 				var6 = var1;
@@ -419,7 +421,7 @@ public final class ObjectSound extends Node {
 			}
 
 			if (var6 != var1) {
-				this.field977.method3214(var6);
+				this.stream1.method3214(var6);
 			}
 		}
 
@@ -431,14 +433,14 @@ public final class ObjectSound extends Node {
 		garbageValue = "1080737913"
 	)
 	void method2268() {
-		if (this.field978 != null) {
-			int var1 = this.field978.method3129();
+		if (this.stream2 != null) {
+			int var1 = this.stream2.method3129();
 			long var2 = UserComparator7.method3496();
-			long var4 = var2 - this.field978.field1382;
-			int var7 = this.field978.field1384;
-			int var8 = this.field978.field1386;
-			class335 var9 = this.field978.field1367;
-			int var10 = this.field978.field1385;
+			long var4 = var2 - this.stream2.field1382;
+			int var7 = this.stream2.field1384;
+			int var8 = this.stream2.field1386;
+			class335 var9 = this.stream2.field1367;
+			int var10 = this.stream2.field1385;
 			int var6;
 			if (var8 == var1) {
 				var6 = var1;
@@ -457,11 +459,11 @@ public final class ObjectSound extends Node {
 			}
 
 			if (var1 != var6) {
-				this.field978.method3214(var6);
+				this.stream2.method3214(var6);
 			}
 
-			if (!this.field978.hasNext()) {
-				this.field978 = null;
+			if (!this.stream2.hasNext()) {
+				this.stream2 = null;
 			}
 		}
 
@@ -474,13 +476,13 @@ public final class ObjectSound extends Node {
 	)
 	void method2227(int var1, int var2) {
 		int var3 = class4.field6.getGroupFileCount(var1) - 1;
-		SoundEffect var4 = SoundEffect.method2972(class4.field6, var1, var3);
+		SoundEffect var4 = SoundEffect.readSoundEffect(class4.field6, var1, var3);
 		if (var4 != null) {
 			RawSound var5 = var4.method2969(FriendSystem.clientPreferences.method2548());
 			RawPcmStream var6 = RawPcmStream.createRawPcmStream(var5, 100, var2);
 			var6.setNumLoops(-1);
 			class366.pcmStreamMixer.addSubStream(var6);
-			this.field977 = var6;
+			this.stream1 = var6;
 		}
 
 	}
@@ -493,14 +495,14 @@ public final class ObjectSound extends Node {
 	void method2228(int[] var1, int var2) {
 		int var3 = var1[(int)(Math.random() * (double)var1.length)];
 		int var4 = class4.field6.getGroupFileCount(var3) - 1;
-		SoundEffect var5 = SoundEffect.method2972(class4.field6, var3, var4);
+		SoundEffect var5 = SoundEffect.readSoundEffect(class4.field6, var3, var4);
 		if (var5 != null) {
 			RawSound var6 = var5.method2969(FriendSystem.clientPreferences.method2548());
 			RawPcmStream var7 = RawPcmStream.createRawPcmStream(var6, 100, var2);
 			var7.setNumLoops(0);
 			class366.pcmStreamMixer.addSubStream(var7);
 			var7.method3225();
-			this.field978 = var7;
+			this.stream2 = var7;
 			int var9 = this.field981;
 			int var10 = this.field982;
 			int var8 = var9 + (int)(Math.random() * (double)(var10 - var9));
@@ -556,9 +558,9 @@ public final class ObjectSound extends Node {
 		garbageValue = "-1812537149"
 	)
 	void method2293() {
-		if (this.field977 != null) {
-			class366.pcmStreamMixer.removeSubStream(this.field977);
-			this.field977 = null;
+		if (this.stream1 != null) {
+			class366.pcmStreamMixer.removeSubStream(this.stream1);
+			this.stream1 = null;
 		}
 
 	}
@@ -569,9 +571,9 @@ public final class ObjectSound extends Node {
 		garbageValue = "0"
 	)
 	void method2231() {
-		if (this.field978 != null) {
-			class366.pcmStreamMixer.removeSubStream(this.field978);
-			this.field978 = null;
+		if (this.stream2 != null) {
+			class366.pcmStreamMixer.removeSubStream(this.stream2);
+			this.stream2 = null;
 		}
 
 	}
@@ -658,8 +660,8 @@ public final class ObjectSound extends Node {
 	}
 
 	@ObfuscatedName("cp")
-	public void vmethod10593() {
-		super.vmethod10593();
+	public void remove() {
+		super.remove();
 	}
 
 	public String toString() {

@@ -47,7 +47,7 @@ public class class570 implements Enum {
 		field5721 = new class570(0, 0, Integer.class, new class566());
 		field5724 = new class570(1, 1, Long.class, new class569());
 		field5718 = new class570(3, 2, String.class, new class571());
-		field5719 = new class570(2, 5, class515.class, new class567());
+		field5719 = new class570(2, 5, DynamicArray.class, new class567());
 	}
 
 	@ObfuscatedSignature(
@@ -235,7 +235,7 @@ public class class570 implements Enum {
 				}
 
 				long var11 = Skills.calculateTag(var1, var2, var3, 3, false, 0, var0.id);
-				var0.scene.newGroundItemPile(var1, var2, var3, class477.method9725(var0, Coord.method7396(var2), Coord.method7396(var3), var1), var7, var11, var15, var10);
+				var0.scene.newGroundItemPile(var1, var2, var3, class477.getTileHeight(var0, Coord.method7396(var2), Coord.method7396(var3), var1), var7, var11, var15, var10);
 			}
 		}
 	}

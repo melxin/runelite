@@ -69,7 +69,7 @@ public class SoundEffect {
 		for (int var2 = 0; var2 < 10; ++var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 != 0) {
-				--var1.field5818;
+				--var1.offset;
 				this.instruments[var2] = new Instrument();
 				this.instruments[var2].decode(var1);
 			}
@@ -182,7 +182,8 @@ public class SoundEffect {
 	@ObfuscatedSignature(
 		descriptor = "(Lpx;II)Ldn;"
 	)
-	public static SoundEffect method2972(AbstractArchive var0, int var1, int var2) {
+	@Export("readSoundEffect")
+	public static SoundEffect readSoundEffect(AbstractArchive var0, int var1, int var2) {
 		class108 var3 = new class108(field1291);
 		byte[] var4 = var0.takeFile(var1, var2);
 		if (var4 == null) {
@@ -199,7 +200,7 @@ public class SoundEffect {
 				field1294 = var5.readInt();
 				byte[] var6 = Arrays.copyOfRange(var4, 4, field1294 + 4);
 				var3.method3321(var6);
-				var5.field5818 = field1294 + 4;
+				var5.offset = field1294 + 4;
 			} else {
 				if (var2 != 0) {
 					System.out.println("[Red] invalid fileId.");

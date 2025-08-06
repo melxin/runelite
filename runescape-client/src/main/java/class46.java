@@ -249,7 +249,7 @@ public class class46 {
 	)
 	void method1838(int var1, int var2) {
 		for (int var3 = 0; var3 < this.field655.size(); ++var3) {
-			class399.method8268((Player)this.field655.get(var3), var1, var2);
+			class399.performPlayerAnimation((Player)this.field655.get(var3), var1, var2);
 		}
 
 	}
@@ -500,7 +500,7 @@ public class class46 {
 	public static PacketBufferNode method1841(int var0, String var1, Language var2, int var3) {
 		PacketBufferNode var4 = class291.getPacketBufferNode(ClientPacket.MESSAGE_PUBLIC, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(0);
-		int var5 = var4.packetBuffer.field5818;
+		int var5 = var4.packetBuffer.offset;
 		var4.packetBuffer.writeByte(var0);
 		String var6 = var1.toLowerCase();
 		int var7 = 0;
@@ -584,7 +584,7 @@ public class class46 {
 			var4.packetBuffer.writeByte(var3);
 		}
 
-		var4.packetBuffer.writeLengthByte(var4.packetBuffer.field5818 - var5);
+		var4.packetBuffer.writeLengthByte(var4.packetBuffer.offset - var5);
 		return var4;
 	}
 

@@ -153,7 +153,7 @@ public class Varcs {
 				int var17;
 				do {
 					if (!var28.hasNext()) {
-						var1.write(var27.offset, 0, var27.field5818);
+						var1.write(var27.array, 0, var27.offset);
 						break label146;
 					}
 
@@ -220,7 +220,7 @@ public class Varcs {
 			}
 
 			Buffer var14 = new Buffer(var2);
-			if (var14.offset.length - var14.field5818 < 1) {
+			if (var14.array.length - var14.offset < 1) {
 				return;
 			}
 
@@ -425,7 +425,7 @@ public class Varcs {
 			}
 		}
 
-		var13 = var25.field5818 < var25.offset.length ? var25.readUnsignedByte() : 0;
+		var13 = var25.offset < var25.array.length ? var25.readUnsignedByte() : 0;
 		boolean var26 = (var13 & 1) != 0;
 		if (var26) {
 			for (var15 = 0; var15 < 64; ++var15) {

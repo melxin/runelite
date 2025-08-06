@@ -178,7 +178,7 @@ public class JagNetThread {
 						var5 = new Buffer(4);
 						var5.writeByte(1);
 						var5.writeMedium((int)var4.key);
-						this.field4878.write(var5.offset, 0, 4);
+						this.field4878.write(var5.array, 0, 4);
 						this.field4883.put(var4, var4.key);
 						--this.field4882;
 						++this.field4872;
@@ -189,7 +189,7 @@ public class JagNetThread {
 						var5 = new Buffer(4);
 						var5.writeByte(0);
 						var5.writeMedium((int)var4.key);
-						this.field4878.write(var5.offset, 0, 4);
+						this.field4878.write(var5.array, 0, 4);
 						var4.removeDual();
 						this.field4888.put(var4, var4.key);
 						--this.field4900;
@@ -221,28 +221,28 @@ public class JagNetThread {
 						int var10001;
 						Buffer var22;
 						if (var6 > 0) {
-							var7 = var6 - this.field4887.field5818;
+							var7 = var6 - this.field4887.offset;
 							if (var7 > var17) {
 								var7 = var17;
 							}
 
-							this.field4878.read(this.field4887.offset, this.field4887.field5818, var7);
+							this.field4878.read(this.field4887.array, this.field4887.offset, var7);
 							if (this.field4886 != 0) {
 								for (var8 = 0; var8 < var7; ++var8) {
-									var10000 = this.field4887.offset;
-									var10001 = var8 + this.field4887.field5818;
+									var10000 = this.field4887.array;
+									var10001 = var8 + this.field4887.offset;
 									var10000[var10001] ^= this.field4886;
 								}
 							}
 
 							var22 = this.field4887;
-							var22.field5818 += var7;
-							if (this.field4887.field5818 < var6) {
+							var22.offset += var7;
+							if (this.field4887.offset < var6) {
 								break;
 							}
 
 							if (this.field4891 == null) {
-								this.field4887.field5818 = 0;
+								this.field4887.offset = 0;
 								var8 = this.field4887.readUnsignedByte();
 								var9 = this.field4887.readUnsignedShort();
 								int var10 = this.field4887.readUnsignedByte();
@@ -265,39 +265,39 @@ public class JagNetThread {
 								this.field4893.writeByte(var10);
 								this.field4893.writeInt(var11);
 								this.field4884 = 8;
-								this.field4887.field5818 = 0;
+								this.field4887.offset = 0;
 							} else if (this.field4884 == 0) {
-								if (this.field4887.offset[0] == -1) {
+								if (this.field4887.array[0] == -1) {
 									this.field4884 = 1;
-									this.field4887.field5818 = 0;
+									this.field4887.offset = 0;
 								} else {
 									this.field4891 = null;
 								}
 							}
 						} else {
-							var7 = this.field4893.offset.length - this.field4891.field4847;
+							var7 = this.field4893.array.length - this.field4891.field4847;
 							var8 = 512 - this.field4884;
-							if (var8 > var7 - this.field4893.field5818) {
-								var8 = var7 - this.field4893.field5818;
+							if (var8 > var7 - this.field4893.offset) {
+								var8 = var7 - this.field4893.offset;
 							}
 
 							if (var8 > var17) {
 								var8 = var17;
 							}
 
-							this.field4878.read(this.field4893.offset, this.field4893.field5818, var8);
+							this.field4878.read(this.field4893.array, this.field4893.offset, var8);
 							if (this.field4886 != 0) {
 								for (var9 = 0; var9 < var8; ++var9) {
-									var10000 = this.field4893.offset;
-									var10001 = var9 + this.field4893.field5818;
+									var10000 = this.field4893.array;
+									var10001 = var9 + this.field4893.offset;
 									var10000[var10001] ^= this.field4886;
 								}
 							}
 
 							var22 = this.field4893;
-							var22.field5818 += var8;
+							var22.offset += var8;
 							this.field4884 += var8;
-							if (this.field4893.field5818 == var7) {
+							if (this.field4893.offset == var7) {
 								if (16711935L == this.field4891.key) {
 									this.field4896 = this.field4893;
 
@@ -309,7 +309,7 @@ public class JagNetThread {
 									}
 								} else {
 									this.field4895.reset();
-									this.field4895.update(this.field4893.offset, 0, var7);
+									this.field4895.update(this.field4893.array, 0, var7);
 									var9 = (int)this.field4895.getValue();
 									if (this.field4891.field4846 != var9) {
 										try {
@@ -325,10 +325,10 @@ public class JagNetThread {
 
 									this.field4873 = 0;
 									this.field4877 = 0;
-									this.field4891.field4849.write((int)(this.field4891.key & 65535L), this.field4893.offset, 16711680L == (this.field4891.key & 16711680L), this.field4890);
+									this.field4891.field4849.write((int)(this.field4891.key & 65535L), this.field4893.array, 16711680L == (this.field4891.key & 16711680L), this.field4890);
 								}
 
-								this.field4891.vmethod10593();
+								this.field4891.remove();
 								if (this.field4890) {
 									--this.field4872;
 								} else {
@@ -374,7 +374,7 @@ public class JagNetThread {
 				Buffer var2 = new Buffer(4);
 				var2.writeByte(var1 ? 2 : 3);
 				var2.writeMedium(0);
-				this.field4878.write(var2.offset, 0, 4);
+				this.field4878.write(var2.array, 0, 4);
 			} catch (IOException var5) {
 				try {
 					this.field4878.close();
@@ -405,7 +405,7 @@ public class JagNetThread {
 
 		this.field4878 = var1;
 		this.method8447(var2);
-		this.field4887.field5818 = 0;
+		this.field4887.offset = 0;
 		this.field4891 = null;
 		this.field4893 = null;
 		this.field4884 = 0;
@@ -422,7 +422,7 @@ public class JagNetThread {
 								var8.writeByte(4);
 								var8.writeByte(this.field4886);
 								var8.writeShort(0);
-								this.field4878.write(var8.offset, 0, 4);
+								this.field4878.write(var8.array, 0, 4);
 							} catch (IOException var6) {
 								try {
 									this.field4878.close();
@@ -495,8 +495,8 @@ public class JagNetThread {
 		int var3 = var2 * 8 + 5;
 		int var4 = 0;
 		int var5 = 0;
-		if (var3 <= this.field4896.offset.length - 8) {
-			this.field4896.field5818 = var3;
+		if (var3 <= this.field4896.array.length - 8) {
+			this.field4896.offset = var3;
 			var4 = this.field4896.readInt();
 			var5 = this.field4896.readInt();
 		}
@@ -578,7 +578,7 @@ public class JagNetThread {
 	)
 	int method8482(int var1, int var2) {
 		long var3 = (long)((var1 << 16) + var2);
-		return this.field4891 != null && var3 == this.field4891.key ? this.field4893.field5818 * 99 / (this.field4893.offset.length - this.field4891.field4847) + 1 : 0;
+		return this.field4891 != null && var3 == this.field4891.key ? this.field4893.offset * 99 / (this.field4893.array.length - this.field4891.field4847) + 1 : 0;
 	}
 
 	@ObfuscatedName("am")

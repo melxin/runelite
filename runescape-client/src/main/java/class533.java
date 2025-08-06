@@ -270,11 +270,11 @@ public class class533 {
 		descriptor = "(Ljava/lang/Object;Ljava/lang/String;B)Ltn;",
 		garbageValue = "-70"
 	)
-	static class515 method10575(Object var0, String var1) {
+	static DynamicArray method10575(Object var0, String var1) {
 		if (var0 == null) {
 			throw new RuntimeException();
 		} else {
-			return (class515)var0;
+			return (DynamicArray)var0;
 		}
 	}
 }

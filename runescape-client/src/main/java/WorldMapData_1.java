@@ -217,7 +217,7 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 		descriptor = "(Ltn;Lvf;I)V",
 		garbageValue = "-1477532044"
 	)
-	static void method6678(class515 var0, class570 var1) {
+	static void method6678(DynamicArray var0, class570 var1) {
 		class150.method3792(var0, var1, true);
 	}
 
@@ -297,7 +297,7 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 					Client.clickedWidgetParent = var10;
 					Client.widgetClickX = var1;
 					Client.widgetClickY = var2;
-					class465.widgetDragDuration = 0;
+					AnimationSequence.widgetDragDuration = 0;
 					Client.isDraggingWidget = false;
 					int var11 = Client.menu.menuOptionsCount - 1;
 					if (var11 != -1) {

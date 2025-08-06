@@ -180,9 +180,9 @@ public class Login {
 		descriptor = "(Lnw;IB)Lnw;",
 		garbageValue = "-93"
 	)
-	public static class357 method1930(class357 var0, int var1) {
-		for (class357 var2 = var0; var2 != null; var2 = var2.field3959) {
-			if (var1 >= var2.field3956 && var1 <= var2.field3957) {
+	public static WidgetConfigNode method1930(WidgetConfigNode var0, int var1) {
+		for (WidgetConfigNode var2 = var0; var2 != null; var2 = var2.nextWidgetConfigNode) {
+			if (var1 >= var2.start && var1 <= var2.end) {
 				return var2;
 			}
 		}

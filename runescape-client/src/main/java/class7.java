@@ -312,7 +312,7 @@ public class class7 {
 			int var0 = Language.cameraX >> 7;
 			int var1 = class66.cameraZ >> 7;
 			if (var0 >= 0 && 104 > var0 && var1 >= 0 && 104 > var1) {
-				int var2 = class477.method9725(topLevelWorldView, Language.cameraX, class66.cameraZ, topLevelWorldView.plane);
+				int var2 = class477.getTileHeight(topLevelWorldView, Language.cameraX, class66.cameraZ, topLevelWorldView.plane);
 				return var2 - WorldMapCacheName.cameraY < 800 && (topLevelWorldView.tileSettings[topLevelWorldView.plane][var0][var1] & 4) != 0 ? topLevelWorldView.plane : 3;
 			} else {
 				return topLevelWorldView.plane;

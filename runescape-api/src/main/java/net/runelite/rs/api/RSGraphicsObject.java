@@ -42,39 +42,42 @@ public interface RSGraphicsObject extends GraphicsObject, RSRenderable
 	@Import("z")
 	void setZ(int height);
 
-	@Import("isFinished")
-	@Override
-	boolean finished();
+	@Import("animationSequence")
+	RSAnimationSequence getAnimationSequence();
 
-	@Import("isFinished")
-	void setFinished(boolean finished);
+	//@Import("isFinished")
+	//@Override
+	//boolean finished();
 
-	@Import("frame")
-	int getFrame();
+	//@Import("isFinished")
+	//void setFinished(boolean finished);
 
-	@Import("frame")
-	void setFrame(int frame);
+	//@Import("frame")
+	//int getFrame();
 
-	@Import("frameCycle")
-	int getFrameCycle();
+	//@Import("frame")
+	//void setFrame(int frame);
 
-	@Import("frameCycle")
-	void setFrameCycle(int frameCycle);
+	//@Import("frameCycle")
+	//int getFrameCycle();
 
-	@Import("sequenceDefinition")
-	RSSequenceDefinition getSequenceDefinition();
+	//@Import("frameCycle")
+	//void setFrameCycle(int frameCycle);
 
-	@Import("sequenceDefinition")
-	void setSequenceDefinition(RSSequenceDefinition sequenceDefinition);
+	//@Import("sequenceDefinition")
+	//RSSequenceDefinition getSequenceDefinition();
 
-	@Import("advance")
-	void advance(int var1);
+	//@Import("sequenceDefinition")
+	//void setSequenceDefinition(RSSequenceDefinition sequenceDefinition);
 
-	@Import("sequenceDefinition")
-	@Override
-	RSSequenceDefinition getAnimation();
+	//@Import("advance")
+	//void advance(int var1);
 
-	@Import("frame")
-	@Override
-	int getAnimationFrame();
+	//@Import("sequenceDefinition")
+	//@Override
+	//RSSequenceDefinition getAnimation();
+
+	//@Import("frame")
+	//@Override
+	//int getAnimationFrame();
 }

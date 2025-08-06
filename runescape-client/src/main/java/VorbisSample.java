@@ -29,7 +29,7 @@ public class VorbisSample extends Node {
 	@ObfuscatedSignature(
 		descriptor = "[Ldl;"
 	)
-	static class100[] field1447;
+	static VorbisResidue[] field1447;
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "[Lef;"
@@ -183,7 +183,7 @@ public class VorbisSample extends Node {
 
 		int var20;
 		for (var20 = 0; var20 < var15.field1393; ++var20) {
-			class100 var45 = field1447[var15.field1394[var20]];
+			VorbisResidue var45 = field1447[var15.field1394[var20]];
 			float[] var47 = this.field1464;
 			var45.method3096(var47, var5 >> 1, var19, var2, field1450);
 		}
@@ -530,10 +530,10 @@ public class VorbisSample extends Node {
 		}
 
 		var4 = var1.method3409(6) + 1;
-		field1447 = new class100[var4];
+		field1447 = new VorbisResidue[var4];
 
 		for (var5 = 0; var5 < var4; ++var5) {
-			field1447[var5] = new class100(field1463);
+			field1447[var5] = new VorbisResidue(field1463);
 		}
 
 		var5 = var1.method3409(6) + 1;

@@ -210,7 +210,7 @@ public class Widget extends Node {
 		descriptor = "Lxh;"
 	)
 	@Export("fillMode")
-	public class599 fillMode;
+	public FillMode fillMode;
 	@ObfuscatedName("ct")
 	@ObfuscatedGetter(
 		intValue = 1986507341
@@ -743,7 +743,7 @@ public class Widget extends Node {
 		this.mouseOverColor = 0;
 		this.mouseOverColor2 = 0;
 		this.fill = false;
-		this.fillMode = class599.SOLID;
+		this.fillMode = FillMode.SOLID;
 		this.transparencyTop = 0;
 		this.transparencyBot = 0;
 		this.lineWid = 1;
@@ -846,7 +846,7 @@ public class Widget extends Node {
 		this.mouseOverColor = 0;
 		this.mouseOverColor2 = 0;
 		this.fill = false;
-		this.fillMode = class599.SOLID;
+		this.fillMode = FillMode.SOLID;
 		this.transparencyTop = 0;
 		this.transparencyBot = 0;
 		this.lineWid = 1;
@@ -2367,7 +2367,7 @@ public class Widget extends Node {
 				var0.delay = 0;
 				VarbitComposition.method4480(class7.topLevelWorldView, var0);
 			} else {
-				var0.vmethod10593();
+				var0.remove();
 			}
 		}
 

@@ -368,7 +368,7 @@ public interface RSClient extends RSGameEngine, Client
 	RSItemComposition getRSItemDefinition(int itemId);
 
 	@Import("getItemSprite")
-	RSSpritePixels createRSItemSprite(int itemId, int quantity, int thickness, int borderColor, int stackable, boolean noted);
+	RSSpritePixels createRSItemSprite(int itemId, int quantity, int thickness, int borderColor, int stackable, boolean noted, int var6, int var7);
 
 	@Import("menuAction")
 	void sendMenuAction(int n2, int n3, int n4, int n5, int itemId, int worldViewId, String string, String string2, int n6, int n7);
@@ -671,11 +671,8 @@ public interface RSClient extends RSGameEngine, Client
 	@Override
 	Object[] getObjectStack();
 
-	@Import("Interpreter_arrayLengths")
-	int[] getArraySizes();
-
-	@Import("Interpreter_arrays")
-	int[][] getArrays();
+	@Import("Interpreter_objectLocals")
+	Object[] getObjectLocals();
 
 	@Import("friendSystem")
 	RSFriendSystem getFriendManager();
@@ -1068,8 +1065,8 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("soundEffectsArchive")
 	RSArchive getSoundEffectsIndexCache();
 
-	@Import("decimator")
-	RSDecimator getSoundEffectResampler();
+	//@Import("decimator")
+	//RSDecimator getSoundEffectResampler();
 
 	void playMusicTrack(int var0, RSAbstractArchive var1, int var2, int var3, int var4, boolean var5);
 

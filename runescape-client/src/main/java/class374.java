@@ -70,7 +70,7 @@ public class class374 {
 		garbageValue = "72"
 	)
 	static void method8127(Buffer var0, int var1) {
-		VarbitComposition.method4479(var0.offset, var1);
+		VarbitComposition.method4479(var0.array, var1);
 		class139.method3697(var0, var1);
 	}
 }

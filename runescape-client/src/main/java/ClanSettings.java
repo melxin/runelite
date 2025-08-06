@@ -513,7 +513,7 @@ public class ClanSettings {
 					return true;
 				}
 
-				var3.vmethod10593();
+				var3.remove();
 			}
 		} else {
 			this.parameters = new IterableNodeHashTable(4);
@@ -548,7 +548,7 @@ public class ClanSettings {
 					return true;
 				}
 
-				var8.vmethod10593();
+				var8.remove();
 			}
 		} else {
 			this.parameters = new IterableNodeHashTable(4);
@@ -573,7 +573,7 @@ public class ClanSettings {
 					return true;
 				}
 
-				var4.vmethod10593();
+				var4.remove();
 			}
 		} else {
 			this.parameters = new IterableNodeHashTable(4);
@@ -605,13 +605,13 @@ public class ClanSettings {
 							return false;
 						}
 
-						var4.vmethod10593();
+						var4.remove();
 						this.parameters.put(new ObjectNode(var2), var4.key);
 						return true;
 					}
 				}
 
-				var3.vmethod10593();
+				var3.remove();
 			}
 		} else {
 			this.parameters = new IterableNodeHashTable(4);

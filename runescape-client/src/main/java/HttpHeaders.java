@@ -203,15 +203,15 @@ public class HttpHeaders {
 		descriptor = "(Ltn;II)Ljava/lang/Object;",
 		garbageValue = "-970472589"
 	)
-	public static Object method9794(class515 var0, int var1) {
+	public static Object method9794(DynamicArray var0, int var1) {
 		class150.method3792(var0, (class570)null, true);
-		if (var1 >= 0 && var1 < var0.field5401 * -519676011) {
+		if (var1 >= 0 && var1 < var0.size * -519676011) {
 			Object var2 = var0.method10352(var1);
-			if (var1 < var0.field5401 * -519676011 - 1) {
-				class401.method8272(var0, var1 + 1, var0, var1, var0.field5401 * -519676011 - (var1 + 1));
+			if (var1 < var0.size * -519676011 - 1) {
+				class401.method8272(var0, var1 + 1, var0, var1, var0.size * -519676011 - (var1 + 1));
 			}
 
-			var0.method10358(var0.field5401 * -519676011 - 1);
+			var0.method10358(var0.size * -519676011 - 1);
 			return var2;
 		} else {
 			throw new RuntimeException();

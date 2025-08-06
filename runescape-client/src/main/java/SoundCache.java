@@ -47,7 +47,7 @@ public class SoundCache {
 		} else if (var3 != null && var3[0] <= 0) {
 			return null;
 		} else {
-			SoundEffect var7 = SoundEffect.method2972(this.soundEffectIndex, var1, var2);
+			SoundEffect var7 = SoundEffect.readSoundEffect(this.soundEffectIndex, var1, var2);
 			if (var7 == null) {
 				return null;
 			} else {
@@ -142,29 +142,29 @@ public class SoundCache {
 		descriptor = "(Lnw;IIIIB)Lnw;",
 		garbageValue = "-121"
 	)
-	public static class357 method3092(class357 var0, int var1, int var2, int var3, int var4) {
-		class357 var5 = var0;
+	public static WidgetConfigNode method3092(WidgetConfigNode var0, int var1, int var2, int var3, int var4) {
+		WidgetConfigNode var5 = var0;
 
-		class357 var6;
-		for (var6 = null; var5 != null; var5 = var5.field3959) {
-			if (var5.field3957 >= var1 && var5.field3956 <= var2) {
+		WidgetConfigNode var6;
+		for (var6 = null; var5 != null; var5 = var5.nextWidgetConfigNode) {
+			if (var5.end >= var1 && var5.start <= var2) {
 				if (var6 != null) {
-					var6.field3959 = var5.field3959;
+					var6.nextWidgetConfigNode = var5.nextWidgetConfigNode;
 				} else {
-					var0 = var5.field3959;
+					var0 = var5.nextWidgetConfigNode;
 				}
 
-				class357 var7;
-				if (var5.field3956 < var1) {
-					var7 = new class357(var5.field3956, var1 - 1, var5.field3958, var5.field3955);
+				WidgetConfigNode var7;
+				if (var5.start < var1) {
+					var7 = new WidgetConfigNode(var5.start, var1 - 1, var5.clickMask, var5.opMask);
 					if (var6 != null) {
-						var7.field3959 = var6.field3959;
+						var7.nextWidgetConfigNode = var6.nextWidgetConfigNode;
 					} else {
-						var7.field3959 = var0;
+						var7.nextWidgetConfigNode = var0;
 					}
 
 					if (var6 != null) {
-						var6.field3959 = var7;
+						var6.nextWidgetConfigNode = var7;
 					} else {
 						var0 = var7;
 					}
@@ -172,16 +172,16 @@ public class SoundCache {
 					var6 = var7;
 				}
 
-				if (var5.field3957 > var2) {
-					var7 = new class357(var2 + 1, var5.field3957, var5.field3958, var5.field3955);
+				if (var5.end > var2) {
+					var7 = new WidgetConfigNode(var2 + 1, var5.end, var5.clickMask, var5.opMask);
 					if (var6 != null) {
-						var7.field3959 = var6.field3959;
+						var7.nextWidgetConfigNode = var6.nextWidgetConfigNode;
 					} else {
-						var7.field3959 = var0;
+						var7.nextWidgetConfigNode = var0;
 					}
 
 					if (var6 != null) {
-						var6.field3959 = var7;
+						var6.nextWidgetConfigNode = var7;
 					} else {
 						var0 = var7;
 					}
@@ -193,19 +193,19 @@ public class SoundCache {
 
 		var5 = null;
 
-		for (var6 = var0; var6 != null && var6.field3956 <= var1; var6 = var6.field3959) {
+		for (var6 = var0; var6 != null && var6.start <= var1; var6 = var6.nextWidgetConfigNode) {
 			var5 = var6;
 		}
 
-		var6 = new class357(var1, var2, var3, var4);
+		var6 = new WidgetConfigNode(var1, var2, var3, var4);
 		if (var5 != null) {
-			var6.field3959 = var5.field3959;
+			var6.nextWidgetConfigNode = var5.nextWidgetConfigNode;
 		} else {
-			var6.field3959 = var0;
+			var6.nextWidgetConfigNode = var0;
 		}
 
 		if (var5 != null) {
-			var5.field3959 = var6;
+			var5.nextWidgetConfigNode = var6;
 		} else {
 			var0 = var6;
 		}

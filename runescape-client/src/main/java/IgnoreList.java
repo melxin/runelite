@@ -47,7 +47,7 @@ public class IgnoreList extends UserList {
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
-		while (var1.field5818 < var2) {
+		while (var1.offset < var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 == 4) {
 				Username var10 = new Username(var1.readStringCp1252NullTerminated(), this.field5263);
@@ -95,7 +95,8 @@ public class IgnoreList extends UserList {
 		descriptor = "(IIIIIZIIB)Lxv;",
 		garbageValue = "53"
 	)
-	public static final SpritePixels method9876(int var0, int var1, int var2, int var3, int var4, boolean var5, int var6, int var7) {
+	@Export("getItemSprite")
+	public static final SpritePixels getItemSprite(int var0, int var1, int var2, int var3, int var4, boolean var5, int var6, int var7) {
 		if (var6 == 36 && var7 == 32) {
 			if (var1 == -1) {
 				var4 = 0;
@@ -136,17 +137,17 @@ public class IgnoreList extends UserList {
 		} else {
 			SpritePixels var26 = null;
 			if (var11.noteTemplate != -1) {
-				var26 = method9876(var11.note, 10, 1, 0, 0, true, var6, var7);
+				var26 = getItemSprite(var11.note, 10, 1, 0, 0, true, var6, var7);
 				if (var26 == null) {
 					return null;
 				}
 			} else if (var11.notedId != -1) {
-				var26 = method9876(var11.unnotedId, var1, var2, var3, 0, false, var6, var7);
+				var26 = getItemSprite(var11.unnotedId, var1, var2, var3, 0, false, var6, var7);
 				if (var26 == null) {
 					return null;
 				}
 			} else if (var11.placeholderTemplate != -1) {
-				var26 = method9876(var11.placeholder, var1, 0, 0, 0, false, var6, var7);
+				var26 = getItemSprite(var11.placeholder, var1, 0, 0, 0, false, var6, var7);
 				if (var26 == null) {
 					return null;
 				}
@@ -206,7 +207,7 @@ public class IgnoreList extends UserList {
 			}
 
 			if (var4 == 1 || var4 == 2 && var11.isStackable == 1) {
-				Font var23 = class357.ItemDefinition_fontPlain11;
+				Font var23 = WidgetConfigNode.ItemDefinition_fontPlain11;
 				String var24;
 				if (var1 < 100000) {
 					var24 = "<col=ffff00>" + var1 + "</col>";

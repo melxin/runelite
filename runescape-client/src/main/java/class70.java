@@ -63,10 +63,10 @@ public class class70 {
 	static Script newScript(byte[] var0) {
 		Script var1 = new Script();
 		Buffer var2 = new Buffer(var0);
-		var2.field5818 = var2.offset.length - 2;
+		var2.offset = var2.array.length - 2;
 		int var3 = var2.readUnsignedShort();
-		int var4 = var2.offset.length - 2 - var3 - 12;
-		var2.field5818 = var4;
+		int var4 = var2.array.length - 2 - var3 - 12;
+		var2.offset = var4;
 		int var5 = var2.readInt();
 		var1.localIntCount = var2.readUnsignedShort();
 		var1.localStringCount = var2.readUnsignedShort();
@@ -91,13 +91,13 @@ public class class70 {
 			}
 		}
 
-		var2.field5818 = 0;
+		var2.offset = 0;
 		var1.field777 = var2.readStringCp1252NullTerminatedOrNull();
 		var1.opcodes = new int[var5];
 		var1.intOperands = new int[var5];
 		var1.stringOperands = new String[var5];
 
-		for (var7 = 0; var2.field5818 < var4; var1.opcodes[var7++] = var8) {
+		for (var7 = 0; var2.offset < var4; var1.opcodes[var7++] = var8) {
 			var8 = var2.readUnsignedShort();
 			switch(var8) {
 			case 3:

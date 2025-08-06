@@ -1,10 +1,12 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("rk")
-public class class465 {
+@Implements("AnimationSequence")
+public class AnimationSequence {
 	@ObfuscatedName("tz")
 	@ObfuscatedGetter(
 		intValue = 645005819
@@ -15,39 +17,45 @@ public class class465 {
 	@ObfuscatedGetter(
 		intValue = 1901052507
 	)
-	int field5159;
+	@Export("id")
+	int id;
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "Liz;"
 	)
-	SequenceDefinition field5160;
+	@Export("sequenceDefinition")
+	SequenceDefinition sequenceDefinition;
 	@ObfuscatedName("av")
 	@ObfuscatedGetter(
 		intValue = 2116322795
 	)
-	int field5158;
+	@Export("frameCycle")
+	int frameCycle;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = 1890024059
 	)
-	int field5162;
+	@Export("frame")
+	int frame;
 	@ObfuscatedName("as")
 	@ObfuscatedGetter(
 		intValue = -189665363
 	)
-	int field5166;
+	@Export("frameCount")
+	int frameCount;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		intValue = -1589498117
 	)
-	int field5161;
+	@Export("loopCount")
+	int loopCount;
 
-	public class465() {
-		this.field5159 = -1;
-		this.field5160 = null;
-		this.field5162 = -1;
-		this.field5166 = 0;
-		this.field5161 = 0;
+	public AnimationSequence() {
+		this.id = -1;
+		this.sequenceDefinition = null;
+		this.frame = -1;
+		this.frameCount = 0;
+		this.loopCount = 0;
 	}
 
 	@ObfuscatedName("al")
@@ -55,13 +63,14 @@ public class class465 {
 		descriptor = "(Lrk;B)V",
 		garbageValue = "0"
 	)
-	public void method9591(class465 var1) {
-		this.field5160 = var1.field5160;
-		this.field5159 = var1.field5159;
-		this.field5158 = var1.field5158;
-		this.field5162 = var1.field5162;
-		this.field5166 = var1.field5166;
-		this.field5161 = var1.field5161;
+	@Export("setSequence")
+	public void setSequence(AnimationSequence var1) {
+		this.sequenceDefinition = var1.sequenceDefinition;
+		this.id = var1.id;
+		this.frameCycle = var1.frameCycle;
+		this.frame = var1.frame;
+		this.frameCount = var1.frameCount;
+		this.loopCount = var1.loopCount;
 	}
 
 	@ObfuscatedName("ab")
@@ -69,8 +78,9 @@ public class class465 {
 		descriptor = "(B)V",
 		garbageValue = "69"
 	)
-	public void method9604() {
-		this.method9569(-1);
+	@Export("reset")
+	public void reset() {
+		this.setSequence(-1);
 	}
 
 	@ObfuscatedName("ac")
@@ -78,20 +88,21 @@ public class class465 {
 		descriptor = "(IS)V",
 		garbageValue = "1995"
 	)
-	public void method9569(int var1) {
+	@Export("setSequence")
+	public void setSequence(int var1) {
 		if (var1 >= 0) {
-			if (this.field5159 != var1) {
-				this.field5159 = var1;
-				this.field5160 = AsyncHttpResponse.SequenceDefinition_get(var1);
-				this.field5161 = 0;
-				if (this.field5162 == -1) {
-					this.field5162 = 0;
+			if (this.id != var1) {
+				this.id = var1;
+				this.sequenceDefinition = AsyncHttpResponse.SequenceDefinition_get(var1);
+				this.loopCount = 0;
+				if (this.frame == -1) {
+					this.frame = 0;
 				}
 			}
 		} else {
-			this.field5159 = -1;
-			this.field5160 = null;
-			this.field5162 = -1;
+			this.id = -1;
+			this.sequenceDefinition = null;
+			this.frame = -1;
 		}
 
 	}
@@ -101,8 +112,9 @@ public class class465 {
 		descriptor = "(I)Z",
 		garbageValue = "-315094390"
 	)
-	public boolean method9570() {
-		return this.field5160 != null;
+	@Export("isActive")
+	public boolean isActive() {
+		return this.sequenceDefinition != null;
 	}
 
 	@ObfuscatedName("au")
@@ -110,8 +122,9 @@ public class class465 {
 		descriptor = "(I)Liz;",
 		garbageValue = "-363043954"
 	)
-	public SequenceDefinition method9571() {
-		return this.field5160;
+	@Export("getSequenceDefinition")
+	public SequenceDefinition getSequenceDefinition() {
+		return this.sequenceDefinition;
 	}
 
 	@ObfuscatedName("as")
@@ -119,8 +132,9 @@ public class class465 {
 		descriptor = "(I)I",
 		garbageValue = "-114115329"
 	)
-	public int method9595() {
-		return this.field5159;
+	@Export("getId")
+	public int getId() {
+		return this.id;
 	}
 
 	@ObfuscatedName("ah")
@@ -128,8 +142,9 @@ public class class465 {
 		descriptor = "(I)I",
 		garbageValue = "-2097232936"
 	)
-	public int method9573() {
-		return this.field5162;
+	@Export("getFrame")
+	public int getFrame() {
+		return this.frame;
 	}
 
 	@ObfuscatedName("ap")
@@ -137,8 +152,9 @@ public class class465 {
 		descriptor = "(I)I",
 		garbageValue = "-862288814"
 	)
-	public int method9574() {
-		return this.field5158;
+	@Export("getFrameCycle")
+	public int getFrameCycle() {
+		return this.frameCycle;
 	}
 
 	@ObfuscatedName("am")
@@ -147,7 +163,7 @@ public class class465 {
 		garbageValue = "632496179"
 	)
 	int method9578() {
-		return this.field5166;
+		return this.frameCount;
 	}
 
 	@ObfuscatedName("aj")
@@ -156,9 +172,9 @@ public class class465 {
 		garbageValue = "-813460718"
 	)
 	public void method9576() {
-		this.field5162 = 0;
-		this.field5158 = 0;
-		this.field5166 = 0;
+		this.frame = 0;
+		this.frameCycle = 0;
+		this.frameCount = 0;
 	}
 
 	@ObfuscatedName("ag")
@@ -167,7 +183,7 @@ public class class465 {
 		garbageValue = "-1769156026"
 	)
 	public void method9577() {
-		this.field5166 = 0;
+		this.frameCount = 0;
 	}
 
 	@ObfuscatedName("ay")
@@ -176,7 +192,7 @@ public class class465 {
 		garbageValue = "-96"
 	)
 	public int method9597() {
-		return this.field5161;
+		return this.loopCount;
 	}
 
 	@ObfuscatedName("aa")
@@ -185,7 +201,7 @@ public class class465 {
 		garbageValue = "1988885143"
 	)
 	void method9579(int var1) {
-		this.field5161 = var1;
+		this.loopCount = var1;
 	}
 
 	@ObfuscatedName("ai")
@@ -194,7 +210,7 @@ public class class465 {
 		garbageValue = "231"
 	)
 	public boolean method9601(int var1) {
-		return this.method9570() && this.field5161 > 0 && this.field5161 < var1;
+		return this.isActive() && this.loopCount > 0 && this.loopCount < var1;
 	}
 
 	@ObfuscatedName("ak")
@@ -203,7 +219,7 @@ public class class465 {
 		garbageValue = "-195198945"
 	)
 	public boolean method9581() {
-		return this.field5160 == null || this.field5160.method4719();
+		return this.sequenceDefinition == null || this.sequenceDefinition.method4719();
 	}
 
 	@ObfuscatedName("ar")
@@ -212,9 +228,9 @@ public class class465 {
 		garbageValue = "-1822121600"
 	)
 	void method9582(int var1, int var2, int var3) {
-		this.field5162 = var1;
-		this.field5158 = var2;
-		this.field5166 = var3;
+		this.frame = var1;
+		this.frameCycle = var2;
+		this.frameCount = var3;
 	}
 
 	@ObfuscatedName("at")
@@ -223,8 +239,8 @@ public class class465 {
 		garbageValue = "45"
 	)
 	void method9583(int var1, int var2) {
-		this.field5162 = var1;
-		this.field5166 = var2;
+		this.frame = var1;
+		this.frameCount = var2;
 	}
 
 	@ObfuscatedName("ax")
@@ -233,12 +249,12 @@ public class class465 {
 		garbageValue = "-962847969"
 	)
 	public void method9613() {
-		if (this.field5160 != null) {
-			if (!this.field5160.isCachedModelIdSet()) {
-				this.field5162 = (int)(Math.random() * (double)this.field5160.frameIds.length);
-				this.field5158 = (int)(Math.random() * (double)this.field5160.frameLengths[this.field5162]);
+		if (this.sequenceDefinition != null) {
+			if (!this.sequenceDefinition.isCachedModelIdSet()) {
+				this.frame = (int)(Math.random() * (double)this.sequenceDefinition.frameIds.length);
+				this.frameCycle = (int)(Math.random() * (double)this.sequenceDefinition.frameLengths[this.frame]);
 			} else {
-				this.field5162 = (int)(Math.random() * (double)this.field5160.getMayaAnimFrame());
+				this.frame = (int)(Math.random() * (double)this.sequenceDefinition.getMayaAnimFrame());
 			}
 		}
 

@@ -42,7 +42,7 @@ public class class101 {
 		descriptor = "(Ltn;IIIII)V",
 		garbageValue = "154776791"
 	)
-	public static void method3098(class515 var0, int var1, int var2, int var3, int var4) {
+	public static void method3098(DynamicArray var0, int var1, int var2, int var3, int var4) {
 		WorldMapData_1.method6678(var0, class570.field5721);
 		if (var3 < 0) {
 			var3 = 0;
@@ -68,7 +68,7 @@ public class class101 {
 		descriptor = "(Ltn;Ltn;I)V",
 		garbageValue = "1578119241"
 	)
-	public static void method3100(class515 var0, class515 var1) {
+	public static void method3100(DynamicArray var0, DynamicArray var1) {
 		if (var0 != null && var0.method10351() > 1) {
 			class150.method3792(var0, (class570)null, true);
 			if (var1 != null) {

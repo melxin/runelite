@@ -38,7 +38,7 @@ public class class108 {
 	@ObfuscatedSignature(
 		descriptor = "[Ldl;"
 	)
-	class100[] field1411;
+	VorbisResidue[] field1411;
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "[Lef;"
@@ -230,7 +230,7 @@ public class class108 {
 
 		int var20;
 		for (var20 = 0; var20 < var15.field1393; ++var20) {
-			class100 var45 = this.field1411[var15.field1394[var20]];
+			VorbisResidue var45 = this.field1411[var15.field1394[var20]];
 			float[] var47 = this.field1414;
 			var45.method3096(var47, var5 >> 1, var19, var2, this.field1407);
 		}
@@ -519,10 +519,10 @@ public class class108 {
 		}
 
 		var5 = var2.method3409(6) + 1;
-		this.field1411 = new class100[var5];
+		this.field1411 = new VorbisResidue[var5];
 
 		for (var6 = 0; var6 < var5; ++var6) {
-			this.field1411[var6] = new class100(var2);
+			this.field1411[var6] = new VorbisResidue(var2);
 		}
 
 		var6 = var2.method3409(6) + 1;
@@ -602,7 +602,7 @@ public class class108 {
 				if (var1 == null) {
 					var2 = class4.field6.getGroupFileCount(class57.field815[var0]) - 1;
 					Object var10000 = null;
-					var1 = SoundEffect.method2972(class4.field6, class57.field815[var0], var2);
+					var1 = SoundEffect.readSoundEffect(class4.field6, class57.field815[var0], var2);
 					if (var1 == null) {
 						continue;
 					}

@@ -52,7 +52,7 @@ public class class36 {
 			}
 
 			class28.oculusOrbFocalPointX = class27.localPlayer.x;
-			int var2 = class477.method9725(class7.topLevelWorldView, class27.localPlayer.x, class27.localPlayer.y, class7.topLevelWorldView.plane) - Client.camFollowHeight;
+			int var2 = class477.getTileHeight(class7.topLevelWorldView, class27.localPlayer.x, class27.localPlayer.y, class7.topLevelWorldView.plane) - Client.camFollowHeight;
 			if (var2 < ClanChannelMember.oculusOrbFocalPointZ) {
 				ClanChannelMember.oculusOrbFocalPointZ = var2;
 			}

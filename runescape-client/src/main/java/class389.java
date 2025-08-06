@@ -38,7 +38,7 @@ public class class389 {
 		descriptor = "(Ltn;Ljava/lang/Object;IIS)V",
 		garbageValue = "4124"
 	)
-	public static void method8205(class515 var0, Object var1, int var2, int var3) {
+	public static void method8205(DynamicArray var0, Object var1, int var2, int var3) {
 		class150.method3792(var0, (class570)null, true);
 		if (var2 < 0) {
 			var2 = 0;

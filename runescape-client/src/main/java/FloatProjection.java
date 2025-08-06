@@ -74,7 +74,7 @@ public class FloatProjection extends Projection {
 					var17 = this.projection[1];
 					var12 = this.projection[2];
 					if (var12 >= 50.0F) {
-						this.method5401(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var17, var9, var8, var13, var12);
+						this.drawSceneTilePaint(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var17, var9, var8, var13, var12);
 					}
 				}
 			}
@@ -104,13 +104,13 @@ public class FloatProjection extends Projection {
 
 			if (var2.triangleTextureId != null) {
 				SceneTileModel.triangleTexturesX[var6] = (int)var7;
-				SceneTileModel.field2799[var6] = (int)var8;
-				SceneTileModel.verticesX[var6] = (int)var9;
+				SceneTileModel.triangleTexturesY[var6] = (int)var8;
+				SceneTileModel.triangleTexturesZ[var6] = (int)var9;
 			}
 
-			SceneTileModel.field2808[var6] = (float)Rasterizer3D.getClipMidX() + var7 * (float)Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.field2795[var6] = (float)Rasterizer3D.getClipMidY() + var8 * (float)Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.field2806[var6] = ClanSettings.method3890(var9);
+			SceneTileModel.verticesX[var6] = (float)Rasterizer3D.getClipMidX() + var7 * (float)Rasterizer3D.get3dZoom() / var9;
+			SceneTileModel.verticesY[var6] = (float)Rasterizer3D.getClipMidY() + var8 * (float)Rasterizer3D.get3dZoom() / var9;
+			SceneTileModel.verticesZ[var6] = ClanSettings.method3890(var9);
 		}
 
 		this.drawSceneTileModel(var1, var2, var3, var4);
@@ -126,7 +126,7 @@ public class FloatProjection extends Projection {
 		ItemComposition.ItemDefinition_modelArchive = var1;
 		ItemComposition.ItemDefinition_inMembersWorld = var2;
 		class142.ItemDefinition_fileCount = class329.ItemDefinition_archive.getGroupFileCount(10);
-		class357.ItemDefinition_fontPlain11 = var3;
+		WidgetConfigNode.ItemDefinition_fontPlain11 = var3;
 	}
 
 	@ObfuscatedName("af")

@@ -10,7 +10,8 @@ public class DelayFadeTask extends SongTask {
 	@ObfuscatedName("az")
 	static int[] field5175;
 	@ObfuscatedName("ld")
-	static String field5180;
+	@Export("authServiceBaseUrl")
+	static String authServiceBaseUrl;
 	@ObfuscatedName("al")
 	@ObfuscatedGetter(
 		longValue = 287224077443550231L

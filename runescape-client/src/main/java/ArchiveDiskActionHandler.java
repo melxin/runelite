@@ -55,7 +55,7 @@ public class ArchiveDiskActionHandler implements Runnable {
 					if (var1.type == 0) {
 						var1.archiveDisk.write((int)var1.key, var1.data, var1.data.length);
 						synchronized(ArchiveDiskActionHandler_requestQueue) {
-							var1.vmethod10593();
+							var1.remove();
 						}
 					} else if (var1.type == 1) {
 						var1.data = var1.archiveDisk.read((int)var1.key);

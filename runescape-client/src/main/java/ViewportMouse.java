@@ -127,7 +127,7 @@ public class ViewportMouse {
 			}
 
 			if (var10) {
-				if (AbstractWorldMapIcon.method6880(SequenceDefinition.method4771(var7), var6 - 1)) {
+				if (AbstractWorldMapIcon.method6880(SequenceDefinition.getWidgetFlags2(var7), var6 - 1)) {
 					PacketBufferNode var9;
 					if (var5 == 0) {
 						var9 = class291.getPacketBufferNode(ClientPacket.IF_BUTTONX, Client.packetWriter.isaacCipher);

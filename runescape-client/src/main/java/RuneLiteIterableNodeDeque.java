@@ -31,7 +31,7 @@ public class RuneLiteIterableNodeDeque implements Iterator {
 		if (node == this.nodeDeque.sentinel) {
 			throw new IllegalStateException();
 		} else {
-			node.remove();
+			//node.remove();
 		}
 	}
 }

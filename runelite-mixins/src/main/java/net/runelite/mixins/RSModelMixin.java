@@ -533,4 +533,32 @@ public abstract class RSModelMixin implements RSModel
 		calculateExtreme(orientation);
 		return getRSAABB(orientation);
 	}
+
+	@Inject
+	@Override
+	public byte getOverrideAmount()
+	{
+		return this.getModelColorOverride() != null ? this.getModelColorOverride().getOverrideAmount() : 0;
+	}
+
+	@Inject
+	@Override
+	public byte getOverrideHue()
+	{
+		return this.getModelColorOverride() != null ? this.getModelColorOverride().getOverrideHue() : 0;
+	}
+
+	@Inject
+	@Override
+	public byte getOverrideSaturation()
+	{
+		return this.getModelColorOverride() != null ? this.getModelColorOverride().getOverrideSaturation() : 0;
+	}
+
+	@Inject
+	@Override
+	public byte getOverrideLuminance()
+	{
+		return this.getModelColorOverride() != null ? this.getModelColorOverride().getOverrideLuminance() : 0;
+	}
 }

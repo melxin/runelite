@@ -12,4 +12,13 @@ public interface RSWidgetConfigNode extends WidgetConfigNode
 	@Import("opMask")
 	@Override
 	int getOpMask();
+
+	@Import("start")
+	int getStart();
+
+	@Import("end")
+	int getEnd();
+
+	@Import("nextWidgetConfigNode")
+	RSWidgetConfigNode getNextWidgetConfigNode();
 }

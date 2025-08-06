@@ -47,4 +47,7 @@ public interface RSSequenceDefinition extends RSNode, SequenceDefinition, Animat
 
 	@Import("applyTransformations")
 	RSModel applyTransformations(RSModel model, int actionFrame, RSSequenceDefinition poseSeq, int poseFrame);
+
+	@Import("animationHeightOffset")
+	int getAnimationHeightOffset();
 }

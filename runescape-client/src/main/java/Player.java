@@ -195,7 +195,7 @@ public final class Player extends Actor {
 	)
 	@Export("read")
 	final void read(Buffer var1) {
-		var1.field5818 = 0;
+		var1.offset = 0;
 		byte var2 = var1.readByte();
 		boolean var3 = true;
 		this.headIconPk = var1.readByte();
@@ -349,8 +349,8 @@ public final class Player extends Actor {
 		if (this.appearance == null) {
 			return null;
 		} else {
-			class465 var1 = this.method2427();
-			class465 var2 = this.isUnanimated ? null : this.method2407(var1);
+			AnimationSequence var1 = this.method2427();
+			AnimationSequence var2 = this.isUnanimated ? null : this.method2407(var1);
 			if (var1 == null && var2 == null) {
 				var2 = super.field1081;
 				if (super.field1081.method9601(30)) {
@@ -358,10 +358,10 @@ public final class Player extends Actor {
 				}
 			}
 
-			SequenceDefinition var3 = var1 == null ? null : var1.method9571();
-			SequenceDefinition var4 = var2 == null ? null : var2.method9571();
-			int var5 = var1 == null ? -1 : var1.method9573();
-			int var6 = var2 == null ? -1 : var2.method9573();
+			SequenceDefinition var3 = var1 == null ? null : var1.getSequenceDefinition();
+			SequenceDefinition var4 = var2 == null ? null : var2.getSequenceDefinition();
+			int var5 = var1 == null ? -1 : var1.getFrame();
+			int var6 = var2 == null ? -1 : var2.getFrame();
 			Model var7 = this.appearance.getModel(var3, var5, var4, var6);
 			if (var7 == null) {
 				return null;
@@ -535,7 +535,7 @@ public final class Player extends Actor {
 		garbageValue = "95"
 	)
 	final void method2161(WorldView var1, int var2, int var3, MoveSpeed var4) {
-		if (super.field1065.method9570() && super.field1065.method9571().field2439 == 1) {
+		if (super.animationSequence.isActive() && super.animationSequence.getSequenceDefinition().field2439 == 1) {
 			this.method2385();
 		}
 

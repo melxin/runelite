@@ -140,6 +140,10 @@ public interface RSModel extends RSRenderable, Model
 	@Override
 	short[] getFaceTextures();
 
+	@Import("faceBias")
+	@Override
+	byte[] getFaceBias();
+
 	@Import("xzRadius")
 	@Override
 	int getXYZMag();
@@ -174,21 +178,8 @@ public interface RSModel extends RSRenderable, Model
 	RSModel getUnskewedModel();
 	void setUnskewedModel(RSModel unskewedModel);
 
-	/*@Import("overrideAmount")
-	@Override
-	byte getOverrideAmount();
-
-	@Import("overrideHue")
-	@Override
-	byte getOverrideHue();
-
-	@Import("overrideSaturation")
-	@Override
-	byte getOverrideSaturation();
-
-	@Import("overrideLuminance")
-	@Override
-	byte getOverrideLuminance();*/
+	@Import("modelColorOverride")
+	RSModelColorOverride getModelColorOverride();
 
 	@Import("textureFaces")
 	@Override

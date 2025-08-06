@@ -30,7 +30,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	@Export("rsClear")
 	public void rsClear() {
 		while (this.sentinel.previous != this.sentinel) {
-			this.sentinel.previous.vmethod10593();
+			this.sentinel.previous.remove();
 		}
 
 	}
@@ -42,7 +42,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	@Export("addFirst")
 	public void addFirst(Node var1) {
 		if (var1.next != null) {
-			var1.vmethod10593();
+			var1.remove();
 		}
 
 		var1.next = this.sentinel.next;
@@ -58,7 +58,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	@Export("addLast")
 	public void addLast(Node var1) {
 		if (var1.next != null) {
-			var1.vmethod10593();
+			var1.remove();
 		}
 
 		var1.next = this.sentinel;
@@ -226,7 +226,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	@Export("IterableNodeDeque_addBefore")
 	public static void IterableNodeDeque_addBefore(Node var0, Node var1) {
 		if (var0.next != null) {
-			var0.vmethod10593();
+			var0.remove();
 		}
 
 		var0.next = var1;

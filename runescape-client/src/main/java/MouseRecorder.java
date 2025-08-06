@@ -71,7 +71,7 @@ public class MouseRecorder implements Runnable {
 		descriptor = "(Ltn;I)I",
 		garbageValue = "606029226"
 	)
-	public static int method2126(class515 var0) {
+	public static int method2126(DynamicArray var0) {
 		class281.method6335(var0);
 		byte var1 = 0;
 		int var2 = var0.method10351();

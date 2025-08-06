@@ -40,29 +40,29 @@ public interface RSIntProjection extends IntProjection
 
 	@Import("pitchSin")
 	@Override
-	int getPitchSin();
+	float getPitchSin();
 
 	@Import("pitchSin")
-	void setPitchSin(int pitchSin);
+	void setPitchSin(float pitchSin);
 
 	@Import("pitchCos")
 	@Override
-	int getPitchCos();
+	float getPitchCos();
 
 	@Import("pitchCos")
-	void setPitchCos(int pitchCos);
+	void setPitchCos(float pitchCos);
 
 	@Import("yawSin")
 	@Override
-	int getYawSin();
+	float getYawSin();
 
 	@Import("yawSin")
-	void setYawSin(int yawSin);
+	void setYawSin(float yawSin);
 
 	@Import("yawCos")
 	@Override
-	int getYawCos();
+	float getYawCos();
 
 	@Import("yawCos")
-	void setYawCos(int yawCos);
+	void setYawCos(float yawCos);
 }

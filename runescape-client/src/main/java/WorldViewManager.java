@@ -101,7 +101,7 @@ public class WorldViewManager implements Iterable {
 			this.field994.remove(var1.id);
 			this.field993.remove(var1.id);
 			var1.method2641();
-			var1.vmethod10593();
+			var1.remove();
 			--this.field999;
 		}
 

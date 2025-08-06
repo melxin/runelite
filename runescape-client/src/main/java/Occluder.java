@@ -205,7 +205,7 @@ public final class Occluder {
 			}
 		}
 
-		class506.method10193(UserComparator9.cacheDir);
+		ActorSpotAnim.method10193(UserComparator9.cacheDir);
 		UserComparator5.method3504();
 		JagexCache.JagexCache_dat2File = new AccessFile(Tiles.getFile("main_file_cache.dat2"), "rw", 1048576000L);
 		JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(Tiles.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
@@ -222,10 +222,10 @@ public final class Occluder {
 		descriptor = "([II)Ltn;",
 		garbageValue = "782923509"
 	)
-	public static class515 method5374(int[] var0) {
-		class515 var1 = new class515(class570.field5721, false);
-		var1.field5404 = var0;
-		var1.field5401 = var0.length * 1527641021;
+	public static DynamicArray method5374(int[] var0) {
+		DynamicArray var1 = new DynamicArray(class570.field5721, false);
+		var1.array = var0;
+		var1.size = var0.length * 1527641021;
 		var1.field5402 = var0.length;
 		return var1;
 	}

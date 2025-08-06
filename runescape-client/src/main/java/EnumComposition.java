@@ -52,12 +52,12 @@ public class EnumComposition extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Ltn;"
 	)
-	class515 field2048;
+	DynamicArray field2048;
 	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "Ltn;"
 	)
-	class515 field2040;
+	DynamicArray field2040;
 
 	static {
 		EnumDefinition_cached = new EvictingDualNodeHashTable(64);
@@ -140,7 +140,7 @@ public class EnumComposition extends DualNode {
 		descriptor = "(I)Ltn;",
 		garbageValue = "854540047"
 	)
-	public class515 method4288() {
+	public DynamicArray method4288() {
 		if (this.field2048 == null) {
 			this.field2048 = Occluder.method5374(this.keys);
 		}
@@ -153,7 +153,7 @@ public class EnumComposition extends DualNode {
 		descriptor = "(I)Ltn;",
 		garbageValue = "1460195907"
 	)
-	public class515 method4272() {
+	public DynamicArray method4272() {
 		if (this.field2040 == null) {
 			if (this.outputType == 's') {
 				this.field2040 = class458.method9410(this.strVals);

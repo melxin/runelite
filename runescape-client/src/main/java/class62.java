@@ -136,7 +136,7 @@ public class class62 {
 		class36.reflectionChecks = new IterableNodeDeque();
 		Client.packetWriter.clearBuffer();
 		Client.packetWriter.field1275 = 0;
-		Client.packetWriter.packetBuffer.field5818 = 0;
+		Client.packetWriter.packetBuffer.offset = 0;
 		Client.packetWriter.serverPacket = null;
 		Client.packetWriter.field1279 = null;
 		Client.packetWriter.field1276 = null;
@@ -156,7 +156,7 @@ public class class62 {
 		Client.oculusOrbState = 0;
 		class1.field2 = null;
 		Client.minimapState = 0;
-		Client.field555 = -1;
+		Client.field1340 = -1;
 		Client.destinationX = 0;
 		Client.destinationY = 0;
 		Client.playerAttackOption = AttackOption.AttackOption_hidden;
@@ -178,7 +178,7 @@ public class class62 {
 		}
 
 		for (InterfaceParent var0 = (InterfaceParent)Client.interfaceParents.first(); var0 != null; var0 = (InterfaceParent)Client.interfaceParents.next()) {
-			WorldMapCacheName.method6881(var0, true);
+			WorldMapCacheName.closeInterface(var0, true);
 		}
 
 		Client.rootInterface = -1;

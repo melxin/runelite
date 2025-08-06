@@ -58,7 +58,7 @@ public class HealthBarConfig extends Node {
 		} else {
 			IterableNodeDeque.IterableNodeDeque_addBefore(new HealthBarUpdate(var1, var2, var3, var4), var5);
 			if (var6 >= 4) {
-				this.updates.last().vmethod10593();
+				this.updates.last().remove();
 			}
 
 		}
@@ -74,14 +74,14 @@ public class HealthBarConfig extends Node {
 		HealthBarUpdate var2 = (HealthBarUpdate)this.updates.last();
 		if (var2 != null && var2.cycle <= var1) {
 			for (HealthBarUpdate var3 = (HealthBarUpdate)this.updates.previous(); var3 != null && var3.cycle <= var1; var3 = (HealthBarUpdate)this.updates.previous()) {
-				var2.vmethod10593();
+				var2.remove();
 				var2 = var3;
 			}
 
 			if (this.definition.int5 + var2.cycle + var2.cycleOffset > var1) {
 				return var2;
 			} else {
-				var2.vmethod10593();
+				var2.remove();
 				return null;
 			}
 		} else {

@@ -89,7 +89,7 @@ public class FontName {
 		descriptor = "(Ltn;Ljava/lang/String;I)Ljava/lang/String;",
 		garbageValue = "-1677319468"
 	)
-	public static String method10901(class515 var0, String var1) {
+	public static String method10901(DynamicArray var0, String var1) {
 		class267.method6013(var0, class570.field5718);
 		int var2 = var0.method10351();
 		String[] var3 = (String[])((String[])var0.method10393());

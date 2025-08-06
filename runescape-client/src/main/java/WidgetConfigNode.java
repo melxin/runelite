@@ -1,10 +1,12 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("nw")
-public class class357 extends Node {
+@Implements("WidgetConfigNode")
+public class WidgetConfigNode extends Node {
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "Lru;"
@@ -15,33 +17,38 @@ public class class357 extends Node {
 	@ObfuscatedGetter(
 		intValue = -84860095
 	)
-	final int field3956;
+	@Export("start")
+	final int start;
 	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
 		intValue = -1851820471
 	)
-	final int field3957;
+	@Export("end")
+	final int end;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = -2073771595
 	)
-	final int field3958;
+	@Export("clickMask")
+	final int clickMask;
 	@ObfuscatedName("av")
 	@ObfuscatedGetter(
 		intValue = -368810727
 	)
-	final int field3955;
+	@Export("opMask")
+	final int opMask;
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "Lnw;"
 	)
-	class357 field3959;
+	@Export("nextWidgetConfigNode")
+	WidgetConfigNode nextWidgetConfigNode;
 
-	class357(int var1, int var2, int var3, int var4) {
-		this.field3956 = var1;
-		this.field3957 = var2;
-		this.field3958 = var3;
-		this.field3955 = var4;
+	WidgetConfigNode(int var1, int var2, int var3, int var4) {
+		this.start = var1;
+		this.end = var2;
+		this.clickMask = var3;
+		this.opMask = var4;
 	}
 
 	@ObfuscatedName("al")
@@ -50,7 +57,7 @@ public class class357 extends Node {
 		garbageValue = "-970726199"
 	)
 	public int method7475() {
-		return this.field3958;
+		return this.clickMask;
 	}
 
 	@ObfuscatedName("ab")
@@ -59,6 +66,6 @@ public class class357 extends Node {
 		garbageValue = "40"
 	)
 	public int method7474() {
-		return this.field3955;
+		return this.opMask;
 	}
 }

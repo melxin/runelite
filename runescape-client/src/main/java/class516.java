@@ -19,9 +19,9 @@ public class class516 {
 	static final void method10473(Actor var0) {
 		boolean var1 = var0.field1075 == Client.cycle || !var0.method2386();
 		if (!var1) {
-			SequenceDefinition var2 = var0.field1065.method9571();
+			SequenceDefinition var2 = var0.animationSequence.getSequenceDefinition();
 			if (var2 != null && !var2.isCachedModelIdSet()) {
-				var1 = var0.field1065.method9574() + 1 > var2.frameLengths[var0.field1065.method9573()];
+				var1 = var0.animationSequence.getFrameCycle() + 1 > var2.frameLengths[var0.animationSequence.getFrame()];
 			} else {
 				var1 = true;
 			}
@@ -50,8 +50,8 @@ public class class516 {
 	)
 	@Export("getWidgetFlags")
 	static int getWidgetFlags(Widget var0) {
-		class357 var1 = (class357)Client.field417.get((long)var0.id);
-		class357 var2 = Login.method1930(var1, var0.childIndex * -64977777);
+		WidgetConfigNode var1 = (WidgetConfigNode)Client.widgetFlags.get((long)var0.id);
+		WidgetConfigNode var2 = Login.method1930(var1, var0.childIndex * -64977777);
 		return var2 != null ? var2.method7475() : var0.flags;
 	}
 }

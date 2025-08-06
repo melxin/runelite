@@ -118,10 +118,10 @@ public class WorldMapID {
 
 		for (Projectile var10 = (Projectile)Client.projectiles.last(); var10 != null; var10 = (Projectile)Client.projectiles.previous()) {
 			if (Client.cycle > var10.cycleEnd) {
-				var10.vmethod10593();
+				var10.remove();
 			} else if (Client.cycle >= var10.cycleStart) {
 				var10.setDestination(Client.worldViewManager, Client.cycle, Client.graphicsCycle);
-				class7.topLevelWorldView.scene.drawEntity(var10.sourceLevel, (int)var10.x, (int)var10.y, (int)var10.field760, 60, var10, var10.orientation, -1L, false);
+				class7.topLevelWorldView.scene.drawEntity(var10.sourceLevel, (int)var10.x, (int)var10.y, (int)var10.z, 60, var10, var10.orientation, -1L, false);
 			}
 		}
 

@@ -17,7 +17,7 @@ public class class292 {
 		descriptor = "(Ltn;Ljava/lang/Object;IIS)I",
 		garbageValue = "-23157"
 	)
-	public static int method6704(class515 var0, Object var1, int var2, int var3) {
+	public static int method6704(DynamicArray var0, Object var1, int var2, int var3) {
 		if (var2 < 0) {
 			var2 = 0;
 		}

@@ -64,10 +64,10 @@ public class class167 extends class149 {
 		descriptor = "([II)Ltn;",
 		garbageValue = "-1496702489"
 	)
-	public static class515 method4020(int[] var0) {
-		class515 var1 = new class515(class570.field5721, true);
-		var1.field5404 = var0;
-		var1.field5401 = var0.length * 1527641021;
+	public static DynamicArray method4020(int[] var0) {
+		DynamicArray var1 = new DynamicArray(class570.field5721, true);
+		var1.array = var0;
+		var1.size = var0.length * 1527641021;
 		var1.field5402 = var0.length;
 		return var1;
 	}

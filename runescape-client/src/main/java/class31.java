@@ -76,7 +76,7 @@ public class class31 {
 
 		var5.writeLong(var3.nextLong());
 		var5.writeLongMedium(var3.nextLong());
-		class323.method7012(var5);
+		class323.randomDatData2(var5);
 		var5.writeLong(var3.nextLong());
 		var5.encryptRsa(class48.field686, class48.field682);
 		var7 = class283.stringCp1252NullTerminatedByteSize(var2);
@@ -86,17 +86,17 @@ public class class31 {
 
 		Buffer var8 = new Buffer(var7);
 		var8.writeStringCp1252NullTerminated(var2);
-		var8.field5818 = var7;
+		var8.offset = var7;
 		var8.xteaEncryptAll(var6);
-		Buffer var9 = new Buffer(var8.field5818 + var4.field5818 + var5.field5818 + 5);
+		Buffer var9 = new Buffer(var8.offset + var4.offset + var5.offset + 5);
 		var9.writeByte(2);
-		var9.writeByte(var4.field5818);
-		var9.writeBytes(var4.offset, 0, var4.field5818);
-		var9.writeByte(var5.field5818);
-		var9.writeBytes(var5.offset, 0, var5.field5818);
-		var9.writeShort(var8.field5818);
-		var9.writeBytes(var8.offset, 0, var8.field5818);
-		String var10 = class70.method2218(var9.offset);
+		var9.writeByte(var4.offset);
+		var9.writeBytes(var4.array, 0, var4.offset);
+		var9.writeByte(var5.offset);
+		var9.writeBytes(var5.array, 0, var5.offset);
+		var9.writeShort(var8.offset);
+		var9.writeBytes(var8.array, 0, var8.offset);
+		String var10 = class70.method2218(var9.array);
 
 		try {
 			URL var11 = new URL(class365.method7850("services", false) + "m=accountappeal/login.ws");
@@ -111,11 +111,11 @@ public class class31 {
 			var9 = new Buffer(new byte[1000]);
 
 			do {
-				int var15 = var14.read(var9.offset, var9.field5818, 1000 - var9.field5818);
+				int var15 = var14.read(var9.array, var9.offset, 1000 - var9.offset);
 				if (var15 == -1) {
 					var13.close();
 					var14.close();
-					String var16 = new String(var9.offset);
+					String var16 = new String(var9.array);
 					if (var16.startsWith("OFFLINE")) {
 						return 4;
 					} else if (var16.startsWith("WRONG")) {
@@ -127,11 +127,11 @@ public class class31 {
 					} else {
 						var9.xteaDecryptAll(var6);
 
-						while (var9.field5818 > 0 && var9.offset[var9.field5818 - 1] == 0) {
-							--var9.field5818;
+						while (var9.offset > 0 && var9.array[var9.offset - 1] == 0) {
+							--var9.offset;
 						}
 
-						var16 = new String(var9.offset, 0, var9.field5818);
+						var16 = new String(var9.array, 0, var9.offset);
 						if (WorldMapSprite.method6810(var16)) {
 							class441.openURL(var16, true, false);
 							return 2;
@@ -141,8 +141,8 @@ public class class31 {
 					}
 				}
 
-				var9.field5818 += var15;
-			} while(var9.field5818 < 1000);
+				var9.offset += var15;
+			} while(var9.offset < 1000);
 
 			return 5;
 		} catch (Throwable var17) {

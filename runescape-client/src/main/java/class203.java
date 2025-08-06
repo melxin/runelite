@@ -56,7 +56,8 @@ public class class203 {
 		descriptor = "(Lox;I)Ljava/lang/String;",
 		garbageValue = "149675780"
 	)
-	static String method4465(Widget var0) {
+	@Export("Widget_getSpellActionName")
+	static String Widget_getSpellActionName(Widget var0) {
 		if (class255.Widget_unpackTargetMask(class516.getWidgetFlags(var0)) == 0) {
 			return null;
 		} else {

@@ -49,11 +49,12 @@ public class AudioFilter {
 	float method3374(int var1, int var2, float var3, int var4) {
 		float var5 = (float)this.field1474[var1][0][var2] + var3 * (float)(this.field1474[var1][1][var2] - this.field1474[var1][0][var2]);
 		var5 *= 1.2207031E-4F;
-		return method3364(var5, var4);
+		return normalize(var5, var4);
 	}
 
 	@ObfuscatedName("av")
-	int method3366(int var1, float var2, int var3) {
+	@Export("compute")
+	int compute(int var1, float var2, int var3) {
 		float var4;
 		if (var1 == 0) {
 			var4 = (float)this.field1473[0] + (float)(this.field1473[1] - this.field1473[0]) * var2;
@@ -150,7 +151,8 @@ public class AudioFilter {
 	}
 
 	@ObfuscatedName("al")
-	static float method3364(float var0, int var1) {
+	@Export("normalize")
+	static float normalize(float var0, int var1) {
 		float var2 = 32.703197F * (float)Math.pow(2.0D, (double)var0);
 		return var2 * 3.1415927F / (float)(var1 / 2);
 	}

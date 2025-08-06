@@ -593,7 +593,7 @@ public class WorldView extends Node {
 											}
 										} else {
 											if (var13.itemId != -1) {
-												var42 = IgnoreList.method9876(var13.itemId, var13.itemQuantity, var13.outline, var13.spriteShadow, var13.itemQuantityMode, false, Math.max(36, var13.width), Math.max(32, var13.height * -1326764757));
+												var42 = IgnoreList.getItemSprite(var13.itemId, var13.itemQuantity, var13.outline, var13.spriteShadow, var13.itemQuantityMode, false, Math.max(36, var13.width), Math.max(32, var13.height * -1326764757));
 											} else {
 												var42 = var13.getSprite(class167.widgetDefinition, false, class203.urlRequester);
 											}
@@ -676,7 +676,7 @@ public class WorldView extends Node {
 													var48 = class27.localPlayer.getModel();
 												}
 											} else if (var13.modelType == 7) {
-												var48 = var13.field4178.getModel((SequenceDefinition)null, -1, AsyncHttpResponse.SequenceDefinition_get(class27.localPlayer.idleSequence), class27.localPlayer.field1064.method9573());
+												var48 = var13.field4178.getModel((SequenceDefinition)null, -1, AsyncHttpResponse.SequenceDefinition_get(class27.localPlayer.idleSequence), class27.localPlayer.poseAnimationSequence.getFrame());
 											} else if (var13.modelType == 8) {
 												if (var13.modelId != -1) {
 													ObjectComposition var47 = SpriteMask.getObjectDefinition(var13.modelId);

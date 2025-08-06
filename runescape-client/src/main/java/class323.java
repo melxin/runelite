@@ -1,4 +1,5 @@
 import java.io.IOException;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,7 +10,8 @@ public class class323 {
 		descriptor = "(Lwj;I)V",
 		garbageValue = "-492694788"
 	)
-	static void method7012(Buffer var0) {
+	@Export("randomDatData2")
+	static void randomDatData2(Buffer var0) {
 		if (Client.randomDatData != null) {
 			var0.writeBytes(Client.randomDatData, 0, Client.randomDatData.length);
 		} else {

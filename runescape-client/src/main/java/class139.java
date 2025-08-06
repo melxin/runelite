@@ -167,7 +167,7 @@ public class class139 implements Enum {
 		if (JagexCache.JagexCache_randomDat != null) {
 			try {
 				JagexCache.JagexCache_randomDat.seek(0L);
-				JagexCache.JagexCache_randomDat.write(var0.offset, var1, 24);
+				JagexCache.JagexCache_randomDat.write(var0.array, var1, 24);
 			} catch (Exception var3) {
 			}
 		}

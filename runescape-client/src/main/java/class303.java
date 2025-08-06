@@ -81,7 +81,7 @@ public class class303 {
 						var27 = true;
 						Interpreter.Interpreter_intLocals = new int[var1.localIntCount];
 						int var11 = 0;
-						Interpreter.Interpreter_stringLocals = new Object[var1.localStringCount];
+						Interpreter.Interpreter_objectLocals = new Object[var1.localStringCount];
 						int var12 = 0;
 
 						int var14;
@@ -136,9 +136,9 @@ public class class303 {
 									var20 = var0.targetName;
 								}
 
-								Interpreter.Interpreter_stringLocals[var12++] = var20;
-							} else if (var4[var13] instanceof class515) {
-								Interpreter.Interpreter_stringLocals[var12++] = var4[var13];
+								Interpreter.Interpreter_objectLocals[var12++] = var20;
+							} else if (var4[var13] instanceof DynamicArray) {
+								Interpreter.Interpreter_objectLocals[var12++] = var4[var13];
 							}
 						}
 
@@ -198,7 +198,7 @@ public class class303 {
 									var7 = var1.intOperands;
 									var5 = var38.pc;
 									Interpreter.Interpreter_intLocals = var38.intLocals;
-									Interpreter.Interpreter_stringLocals = var38.stringLocals;
+									Interpreter.Interpreter_objectLocals = var38.stringLocals;
 								} else if (var30 == 25) {
 									var13 = var7[var5];
 									Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = SequenceDefinition.getVarbit(var13);
@@ -220,9 +220,9 @@ public class class303 {
 								} else if (var30 == 34) {
 									Interpreter.Interpreter_intLocals[var7[var5]] = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
 								} else if (var30 == 35) {
-									Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = Interpreter.Interpreter_stringLocals[var7[var5]];
+									Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = Interpreter.Interpreter_objectLocals[var7[var5]];
 								} else if (var30 == 36) {
-									Interpreter.Interpreter_stringLocals[var7[var5]] = Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
+									Interpreter.Interpreter_objectLocals[var7[var5]] = Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
 								} else if (var30 == 37) {
 									var13 = var7[var5];
 									SecureRandomFuture.Interpreter_objectStackSize -= var13;
@@ -255,14 +255,14 @@ public class class303 {
 									var17.script = var1;
 									var17.pc = var5;
 									var17.intLocals = Interpreter.Interpreter_intLocals;
-									var17.stringLocals = Interpreter.Interpreter_stringLocals;
+									var17.stringLocals = Interpreter.Interpreter_objectLocals;
 									Interpreter.Interpreter_frames[++Interpreter.Interpreter_frameDepth - 1] = var17;
 									var1 = var34;
 									var6 = var34.opcodes;
 									var7 = var34.intOperands;
 									var5 = -1;
 									Interpreter.Interpreter_intLocals = var15;
-									Interpreter.Interpreter_stringLocals = var16;
+									Interpreter.Interpreter_objectLocals = var16;
 								} else if (var30 == 42) {
 									Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = FloorDecoration.varcs.getInt(var7[var5]);
 								} else if (var30 == 43) {
@@ -276,16 +276,16 @@ public class class303 {
 									}
 
 									if (var14 == 115) {
-										Interpreter.Interpreter_stringLocals[var13] = new class515(class570.field5718, "", var22, var22);
+										Interpreter.Interpreter_objectLocals[var13] = new DynamicArray(class570.field5718, "", var22, var22);
 									} else if (var14 != 105 && var14 != 49) {
-										Interpreter.Interpreter_stringLocals[var13] = new class515(class570.field5721, -1, var22, var22);
+										Interpreter.Interpreter_objectLocals[var13] = new DynamicArray(class570.field5721, -1, var22, var22);
 									} else {
-										Interpreter.Interpreter_stringLocals[var13] = new class515(class570.field5721, 0, var22, var22);
+										Interpreter.Interpreter_objectLocals[var13] = new DynamicArray(class570.field5721, 0, var22, var22);
 									}
 								} else {
-									class515 var21;
+									DynamicArray var21;
 									if (var30 == 45) {
-										var21 = class548.method10667(var7[var5], Interpreter.Interpreter_stringLocals[var7[var5]]);
+										var21 = class548.method10667(var7[var5], Interpreter.Interpreter_objectLocals[var7[var5]]);
 										var14 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
 										class350.method7369(var21, var14);
 										if (var21.field5399 == class570.field5721) {
@@ -294,7 +294,7 @@ public class class303 {
 											Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = var21.method10393()[var14];
 										}
 									} else if (var30 == 46) {
-										var21 = class548.method10667(var7[var5], Interpreter.Interpreter_stringLocals[var7[var5]]);
+										var21 = class548.method10667(var7[var5], Interpreter.Interpreter_objectLocals[var7[var5]]);
 										if (!var21.field5400) {
 											throw new RuntimeException();
 										}

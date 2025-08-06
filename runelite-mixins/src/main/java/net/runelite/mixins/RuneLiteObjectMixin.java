@@ -24,8 +24,6 @@
  */
 package net.runelite.mixins;
 
-import net.runelite.api.Animation;
-import net.runelite.api.Model;
 import net.runelite.api.Perspective;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.mixins.Inject;
@@ -34,7 +32,6 @@ import net.runelite.api.mixins.Shadow;
 import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSModel;
 import net.runelite.rs.api.RSRuneLiteObject;
-import net.runelite.rs.api.RSSequenceDefinition;
 
 @Mixin(RSRuneLiteObject.class)
 public abstract class RuneLiteObjectMixin implements RSRuneLiteObject
@@ -54,7 +51,7 @@ public abstract class RuneLiteObjectMixin implements RSRuneLiteObject
 		setZ(Perspective.getTileHeight(client, localPoint, plane));
 	}
 
-	@Inject
+	/*@Inject
 	public void setAnimation(Animation var1)
 	{
 		setFrame(0);
@@ -96,5 +93,5 @@ public abstract class RuneLiteObjectMixin implements RSRuneLiteObject
 		}
 
 		return model;
-	}
+	}*/
 }

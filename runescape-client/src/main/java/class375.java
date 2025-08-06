@@ -57,7 +57,7 @@ public enum class375 implements Enum {
 		descriptor = "(Ltn;Ljava/lang/Object;III)I",
 		garbageValue = "-919717631"
 	)
-	public static int method8135(class515 var0, Object var1, int var2, int var3) {
+	public static int method8135(DynamicArray var0, Object var1, int var2, int var3) {
 		if (var2 < 0) {
 			var2 = 0;
 		}

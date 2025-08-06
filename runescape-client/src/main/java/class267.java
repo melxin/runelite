@@ -176,7 +176,7 @@ public class class267 {
 		descriptor = "(Ltn;Lvf;I)V",
 		garbageValue = "-800452869"
 	)
-	static void method6013(class515 var0, class570 var1) {
+	static void method6013(DynamicArray var0, class570 var1) {
 		class150.method3792(var0, var1, false);
 	}
 }

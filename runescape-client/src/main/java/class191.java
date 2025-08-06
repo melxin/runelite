@@ -70,8 +70,8 @@ public class class191 extends DualNode {
 				int var10;
 				int var32;
 				for (var8 = 0; var8 < Client.mapIconCount; ++var8) {
-					var32 = Client.changedSkills[var8] * 4 + 2 - Client.field581 / 32;
-					var10 = Client.field558[var8] * 4 + 2 - Client.field492 / 32;
+					var32 = Client.mapIconXs[var8] * 4 + 2 - Client.field581 / 32;
+					var10 = Client.mapIconYs[var8] * 4 + 2 - Client.field492 / 32;
 					NPC.drawSpriteOnMinimap(var1, var2, var32, var10, Client.mapIcons[var8], var4);
 				}
 

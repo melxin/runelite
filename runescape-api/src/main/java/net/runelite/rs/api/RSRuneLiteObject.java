@@ -6,7 +6,7 @@ public interface RSRuneLiteObject extends RuneLiteObject, RSGraphicsObject
 {
 	boolean isLooping();
 
-	void advanceRL(int var1);
+	//void advanceRL(int var1);
 
-	RSModel getModelRl();
+	//RSModel getModelRl();
 }

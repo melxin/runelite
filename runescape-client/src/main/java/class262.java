@@ -47,14 +47,14 @@ public class class262 extends class268 {
 	@Export("SpriteBuffer_decode")
 	public static void SpriteBuffer_decode(byte[] var0) {
 		Buffer var1 = new Buffer(var0);
-		var1.field5818 = var0.length - 2;
+		var1.offset = var0.length - 2;
 		SpriteBufferProperties.SpriteBuffer_spriteCount = var1.readUnsignedShort();
 		SpriteBufferProperties.SpriteBuffer_xOffsets = new int[SpriteBufferProperties.SpriteBuffer_spriteCount];
 		class440.SpriteBuffer_yOffsets = new int[SpriteBufferProperties.SpriteBuffer_spriteCount];
 		class333.SpriteBuffer_spriteWidths = new int[SpriteBufferProperties.SpriteBuffer_spriteCount];
 		Buffer.SpriteBuffer_spriteHeights = new int[SpriteBufferProperties.SpriteBuffer_spriteCount];
 		SpriteBufferProperties.SpriteBuffer_pixels = new byte[SpriteBufferProperties.SpriteBuffer_spriteCount][];
-		var1.field5818 = var0.length - 7 - SpriteBufferProperties.SpriteBuffer_spriteCount * 8;
+		var1.offset = var0.length - 7 - SpriteBufferProperties.SpriteBuffer_spriteCount * 8;
 		SpriteBufferProperties.SpriteBuffer_spriteWidth = var1.readUnsignedShort();
 		SpriteBufferProperties.SpriteBuffer_spriteHeight = var1.readUnsignedShort();
 		int var2 = (var1.readUnsignedByte() & 255) + 1;
@@ -76,7 +76,7 @@ public class class262 extends class268 {
 			Buffer.SpriteBuffer_spriteHeights[var3] = var1.readUnsignedShort();
 		}
 
-		var1.field5818 = var0.length - 7 - SpriteBufferProperties.SpriteBuffer_spriteCount * 8 - (var2 - 1) * 3;
+		var1.offset = var0.length - 7 - SpriteBufferProperties.SpriteBuffer_spriteCount * 8 - (var2 - 1) * 3;
 		class113.SpriteBuffer_spritePalette = new int[var2];
 
 		for (var3 = 1; var3 < var2; ++var3) {
@@ -86,7 +86,7 @@ public class class262 extends class268 {
 			}
 		}
 
-		var1.field5818 = 0;
+		var1.offset = 0;
 
 		for (var3 = 0; var3 < SpriteBufferProperties.SpriteBuffer_spriteCount; ++var3) {
 			int var4 = class333.SpriteBuffer_spriteWidths[var3];
@@ -111,7 +111,7 @@ public class class262 extends class268 {
 			}
 
 			if (var10) {
-				var1.field5818 += var6;
+				var1.offset += var6;
 			}
 		}
 

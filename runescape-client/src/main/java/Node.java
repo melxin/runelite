@@ -23,7 +23,8 @@ public class Node {
 	public Node next;
 
 	@ObfuscatedName("cp")
-	public void vmethod10593() {
+	@Export("remove")
+	public void remove() {
 		if (this.next != null) {
 			this.next.previous = this.previous;
 			this.previous.next = this.next;

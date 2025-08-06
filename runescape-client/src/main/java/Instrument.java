@@ -262,8 +262,8 @@ public class Instrument {
 			if (this.filter.pairs[0] > 0 || this.filter.pairs[1] > 0) {
 				this.filterEnvelope.reset();
 				var12 = this.filterEnvelope.doStep(var1 + 1);
-				var13 = this.filter.method3366(0, (float)var12 / 65536.0F, var3);
-				var14 = this.filter.method3366(1, (float)var12 / 65536.0F, var3);
+				var13 = this.filter.compute(0, (float)var12 / 65536.0F, var3);
+				var14 = this.filter.compute(1, (float)var12 / 65536.0F, var3);
 				if (var1 >= var13 + var14) {
 					var15 = 0;
 					var16 = var14;
@@ -332,8 +332,8 @@ public class Instrument {
 							break;
 						}
 
-						var13 = this.filter.method3366(0, (float)var12 / 65536.0F, var3);
-						var14 = this.filter.method3366(1, (float)var12 / 65536.0F, var3);
+						var13 = this.filter.compute(0, (float)var12 / 65536.0F, var3);
+						var14 = this.filter.compute(1, (float)var12 / 65536.0F, var3);
 						var16 += 128;
 					}
 				}
@@ -379,7 +379,7 @@ public class Instrument {
 		this.volume.decode(var1);
 		int var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			--var1.field5818;
+			--var1.offset;
 			this.pitchModifier = new SoundEnvelope();
 			this.pitchModifier.decode(var1);
 			this.pitchModifierAmplitude = new SoundEnvelope();
@@ -388,7 +388,7 @@ public class Instrument {
 
 		var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			--var1.field5818;
+			--var1.offset;
 			this.volumeMultiplier = new SoundEnvelope();
 			this.volumeMultiplier.decode(var1);
 			this.volumeMultiplierAmplitude = new SoundEnvelope();
@@ -397,7 +397,7 @@ public class Instrument {
 
 		var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			--var1.field5818;
+			--var1.offset;
 			this.release = new SoundEnvelope();
 			this.release.decode(var1);
 			this.attack = new SoundEnvelope();

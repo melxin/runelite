@@ -282,7 +282,7 @@ public enum WorldMapSectionType implements Enum {
 					return 1;
 				} else if (var0 == 1125) {
 					var4 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-					class599 var19 = (class599)HealthBarConfig.findEnumerated(WorldMapIcon_1.FillMode_values(), var4);
+					FillMode var19 = (FillMode)HealthBarConfig.findEnumerated(WorldMapIcon_1.FillMode_values(), var4);
 					if (var19 != null) {
 						var3.fillMode = var19;
 						ApproximateRouteStrategy.invalidateWidget(var3);

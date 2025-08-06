@@ -212,7 +212,7 @@ public class BufferedSink implements Runnable {
 		descriptor = "(Ltn;B)V",
 		garbageValue = "114"
 	)
-	public static void method10274(class515 var0) {
+	public static void method10274(DynamicArray var0) {
 		class150.method3792(var0, (class570)null, true);
 		int var1 = var0.method10351();
 		if (var1 > 1) {

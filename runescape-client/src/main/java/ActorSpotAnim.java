@@ -1,20 +1,25 @@
 import java.io.File;
+import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ty")
-public class class506 extends Node {
+@Implements("ActorSpotAnim")
+public class ActorSpotAnim extends Node {
 	@ObfuscatedName("al")
 	@ObfuscatedGetter(
 		intValue = 1871773193
 	)
-	public int field5342;
+	@Export("id")
+	public int id;
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "Lrk;"
 	)
-	public final class465 field5340;
+	@Export("animationSequence")
+	public final AnimationSequence animationSequence;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = -767202117
@@ -24,18 +29,19 @@ public class class506 extends Node {
 	@ObfuscatedGetter(
 		intValue = 363369293
 	)
-	public int field5341;
+	@Export("height")
+	public int height;
 
-	public class506(int var1, int var2, int var3) {
-		this.field5342 = -1;
-		this.field5340 = new class465();
+	public ActorSpotAnim(int var1, int var2, int var3) {
+		this.id = -1;
+		this.animationSequence = new AnimationSequence();
 		this.field5339 = 0;
-		this.field5341 = 0;
-		this.field5342 = var1;
-		this.field5341 = var2;
+		this.height = 0;
+		this.id = var1;
+		this.height = var2;
 		this.field5339 = var3;
-		if (this.field5342 >= 0) {
-			this.field5340.method9569(Skeleton.method5071(this.field5342).sequence);
+		if (this.id >= 0) {
+			this.animationSequence.setSequence(Skeleton.SpotAnimationDefinition_get(this.id).sequence);
 		}
 
 	}

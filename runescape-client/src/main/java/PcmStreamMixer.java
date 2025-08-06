@@ -44,7 +44,7 @@ public class PcmStreamMixer extends PcmStream {
 	)
 	@Export("removeSubStream")
 	public final synchronized void removeSubStream(PcmStream var1) {
-		var1.vmethod10593();
+		var1.remove();
 	}
 
 	@ObfuscatedName("ac")
@@ -78,7 +78,7 @@ public class PcmStreamMixer extends PcmStream {
 		descriptor = "(Lev;)V"
 	)
 	void method2936(PcmStreamMixerListener var1) {
-		var1.vmethod10593();
+		var1.remove();
 		var1.remove2();
 		Node var2 = this.field1284.sentinel.previous;
 		if (var2 == this.field1284.sentinel) {

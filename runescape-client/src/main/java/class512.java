@@ -182,10 +182,10 @@ public class class512 implements Enum {
 		descriptor = "([JI)Ltn;",
 		garbageValue = "-411270971"
 	)
-	public static class515 method10338(long[] var0) {
-		class515 var1 = new class515(class570.field5724, false);
+	public static DynamicArray method10338(long[] var0) {
+		DynamicArray var1 = new DynamicArray(class570.field5724, false);
 		var1.field5405 = var0;
-		var1.field5401 = var0.length * 1527641021;
+		var1.size = var0.length * 1527641021;
 		var1.field5402 = var0.length;
 		return var1;
 	}

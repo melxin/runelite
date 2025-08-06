@@ -266,9 +266,9 @@ public class ArchiveLoader {
 
 		WorldView var24 = class7.topLevelWorldView;
 		if (Client.hintArrowType == 2) {
-			int var21 = (Client.hintArrowX - var24.baseX << 7) + Client.field440 * 4096;
-			int var22 = (Client.hintArrowY - var24.baseY << 7) + Client.field441 * 4096;
-			RestClientThreadFactory.method211(var24, var21, var22, var21, var22, Client.field439 * 4, 0);
+			int var21 = (Client.hintArrowX - var24.baseX << 7) + Client.hintArrowSubX * 4096;
+			int var22 = (Client.hintArrowY - var24.baseY << 7) + Client.hintArrowSubY * 4096;
+			RestClientThreadFactory.worldToScreen(var24, var21, var22, var21, var22, Client.hintArrowHeight * 4, 0);
 			if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
 				class389.headIconHintSprites[0].drawTransBgAt(var0 + Client.viewportTempX - 12, Client.viewportTempY + var1 - 28);
 			}

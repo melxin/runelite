@@ -17,7 +17,7 @@ public class class244 extends AbstractRasterizer {
 	}
 
 	@ObfuscatedName("aj")
-	void vmethod5723(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12) {
+	void drawAlphaBlendedGraphics(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12) {
 		int var13 = (int)var4;
 		int var14 = (int)var5;
 		int var15 = (int)var6;
@@ -995,12 +995,12 @@ public class class244 extends AbstractRasterizer {
 	}
 
 	@ObfuscatedName("ay")
-	void vmethod5727(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
+	void drawGradientTriangle(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
 		int[] var23 = super.field2619.Rasterizer3D_textureLoader.getTexturePixels(var22);
 		int var24;
 		if (var23 == null) {
 			var24 = super.field2619.Rasterizer3D_textureLoader.getAverageTextureRGB(var22);
-			this.vmethod5723(var1, var2, var3, var4, var5, var6, var7, var8, var9, AbstractRasterizer.method5025(var24, var10), AbstractRasterizer.method5025(var24, var11), AbstractRasterizer.method5025(var24, var12));
+			this.drawAlphaBlendedGraphics(var1, var2, var3, var4, var5, var6, var7, var8, var9, AbstractRasterizer.method5025(var24, var10), AbstractRasterizer.method5025(var24, var11), AbstractRasterizer.method5025(var24, var12));
 		} else {
 			super.field2617 = super.field2619.Rasterizer3D_textureLoader.isLowDetail(var22);
 			var24 = (int)var4;
@@ -1624,12 +1624,12 @@ public class class244 extends AbstractRasterizer {
 	}
 
 	@ObfuscatedName("aa")
-	void vmethod5729(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
+	void textureMapPolygons(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
 		int[] var23 = super.field2619.Rasterizer3D_textureLoader.getTexturePixels(var22);
 		int var24;
 		if (var23 == null) {
 			var24 = super.field2619.Rasterizer3D_textureLoader.getAverageTextureRGB(var22);
-			this.vmethod5723(var1, var2, var3, var4, var5, var6, var7, var8, var9, AbstractRasterizer.method5025(var24, var10), AbstractRasterizer.method5025(var24, var11), AbstractRasterizer.method5025(var24, var12));
+			this.drawAlphaBlendedGraphics(var1, var2, var3, var4, var5, var6, var7, var8, var9, AbstractRasterizer.method5025(var24, var10), AbstractRasterizer.method5025(var24, var11), AbstractRasterizer.method5025(var24, var12));
 		} else {
 			super.field2617 = super.field2619.Rasterizer3D_textureLoader.isLowDetail(var22);
 			var24 = (int)var4;

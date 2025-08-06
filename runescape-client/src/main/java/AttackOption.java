@@ -65,13 +65,13 @@ public enum AttackOption implements Enum {
 		descriptor = "(Lrk;ILra;I)I",
 		garbageValue = "-1467006737"
 	)
-	public static int method2764(class465 var0, int var1, class464 var2) {
+	public static int method2764(AnimationSequence var0, int var1, class464 var2) {
 		int var3 = 0;
-		if (!var0.method9570()) {
+		if (!var0.isActive()) {
 			var0.method9579(0);
 			return var3;
 		} else {
-			SequenceDefinition var4 = var0.method9571();
+			SequenceDefinition var4 = var0.getSequenceDefinition();
 			if (var4.frameCount == -1) {
 				var3 |= 8;
 			}
@@ -88,12 +88,12 @@ public enum AttackOption implements Enum {
 			} else {
 				int var7 = var1;
 				int var8 = 0;
-				SequenceDefinition var9 = var0.method9571();
+				SequenceDefinition var9 = var0.getSequenceDefinition();
 				if (var9.frameCount > 0) {
 					var7 = var1 - (var1 - 1) / var9.frameCount * var9.frameCount;
 				}
 
-				int var10 = var0.method9573();
+				int var10 = var0.getFrame();
 				int var11 = var0.method9578();
 
 				while (true) {

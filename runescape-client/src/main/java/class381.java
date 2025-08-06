@@ -77,18 +77,18 @@ public enum class381 implements Enum {
 		garbageValue = "-2141405868"
 	)
 	static int method8168(int var0, Script var1, boolean var2) {
-		class515 var8;
-		class515 var9;
+		DynamicArray var8;
+		DynamicArray var9;
 		if (var0 == 8000) {
 			SecureRandomFuture.Interpreter_objectStackSize -= 2;
 			var9 = class533.method10575(Interpreter.Interpreter_objectStack[SecureRandomFuture.Interpreter_objectStackSize], (String)null);
-			var8 = (class515)Interpreter.Interpreter_objectStack[SecureRandomFuture.Interpreter_objectStackSize + 1];
+			var8 = (DynamicArray)Interpreter.Interpreter_objectStack[SecureRandomFuture.Interpreter_objectStackSize + 1];
 			class101.method3100(var9, var8);
 			return 1;
 		} else {
 			int var3;
 			int var4;
-			class515 var5;
+			DynamicArray var5;
 			if (var0 == 8001) {
 				AbstractWorldMapIcon.Interpreter_intStackSize -= 2;
 				var3 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize];
@@ -97,21 +97,21 @@ public enum class381 implements Enum {
 				class448.method9073(var5, var3, var4);
 				return 1;
 			} else if (var0 == 8002) {
-				var9 = (class515)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
+				var9 = (DynamicArray)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
 				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var9 == null ? 1 : 0;
 				return 1;
 			} else if (var0 == 8003) {
-				var9 = (class515)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
+				var9 = (DynamicArray)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
 				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var9 != null ? var9.method10351() : 0;
 				return 1;
 			} else if (var0 == 8004) {
 				SecureRandomFuture.Interpreter_objectStackSize -= 2;
-				var9 = (class515)Interpreter.Interpreter_objectStack[SecureRandomFuture.Interpreter_objectStackSize];
-				var8 = (class515)Interpreter.Interpreter_objectStack[SecureRandomFuture.Interpreter_objectStackSize + 1];
+				var9 = (DynamicArray)Interpreter.Interpreter_objectStack[SecureRandomFuture.Interpreter_objectStackSize];
+				var8 = (DynamicArray)Interpreter.Interpreter_objectStack[SecureRandomFuture.Interpreter_objectStackSize + 1];
 				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = class165.method4008(var9, var8);
 				return 1;
 			} else {
-				class515 var7;
+				DynamicArray var7;
 				int var10;
 				Object var13;
 				if (var0 == 8005) {
@@ -120,7 +120,7 @@ public enum class381 implements Enum {
 					var4 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 1];
 					var10 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 2];
 					var13 = class28.method462(var10);
-					var7 = (class515)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
+					var7 = (DynamicArray)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
 					Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var7 != null ? class375.method8135(var7, var13, var3, var4) : -1;
 					return 1;
 				} else if (var0 == 8006) {
@@ -129,7 +129,7 @@ public enum class381 implements Enum {
 					var4 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 1];
 					var10 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 2];
 					var13 = class28.method462(var10);
-					var7 = (class515)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
+					var7 = (DynamicArray)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
 					Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var7 != null ? class292.method6704(var7, var13, var3, var4) : -1;
 					return 1;
 				} else if (var0 == 8007) {
@@ -138,7 +138,7 @@ public enum class381 implements Enum {
 					var4 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 1];
 					var10 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 2];
 					var13 = class28.method462(var10);
-					var7 = (class515)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
+					var7 = (DynamicArray)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
 					Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var7 != null ? WorldMapSection0.method6725(var7, var13, var3, var4) : 0;
 					return 1;
 				} else {
@@ -183,7 +183,7 @@ public enum class381 implements Enum {
 						class389.method8205(var7, var13, var3, var4);
 						return 1;
 					} else {
-						class515 var6;
+						DynamicArray var6;
 						if (var0 == 8011) {
 							AbstractWorldMapIcon.Interpreter_intStackSize -= 3;
 							var3 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize];
@@ -276,11 +276,11 @@ public enum class381 implements Enum {
 
 									if (var4 >= 0 && var4 <= 5000 && var10 >= 0 && var10 <= 5000) {
 										if (var3 == 115) {
-											Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = new class515(class570.field5718, "", var4, var10);
+											Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = new DynamicArray(class570.field5718, "", var4, var10);
 										} else if (var3 != 105 && var3 != 49) {
-											Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = new class515(class570.field5721, -1, var4, var10);
+											Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = new DynamicArray(class570.field5721, -1, var4, var10);
 										} else {
-											Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = new class515(class570.field5721, 0, var4, var10);
+											Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = new DynamicArray(class570.field5721, 0, var4, var10);
 										}
 
 										return 1;
@@ -427,14 +427,14 @@ public enum class381 implements Enum {
 			if (class326.field3550 == var0) {
 				var2 = var1.readUnsignedShort();
 				var3 = var1.readUnsignedShort();
-				short var27 = (short)var1.readSignedShort();
-				var5 = var1.method11273();
-				short var30 = (short)var1.readSignedShort();
+				short var27 = (short)var1.method9343();
+				var5 = var1.readShortLE();
+				short var30 = (short)var1.method9343();
 				var7 = var1.readUnsignedIntIME();
 				var21 = var1.readUnsignedByteSub();
 				var35 = (var21 >> 4 & 7) + class67.field906;
 				var31 = (var21 & 7) + WorldMapArea.field3255;
-				var32 = var1.readShortLE();
+				var32 = var1.readSignedShort();
 				if (var35 >= 0 && var31 >= 0 && var35 < 104 && var31 < 104) {
 					var33 = Client.overheadTextLimit == -1 ? class81.worldView.plane : Client.overheadTextLimit;
 					class30.method482(var33, var35, var31, var2, var7, var30, var5, var27, var32, var3);
@@ -550,7 +550,7 @@ public enum class381 implements Enum {
 						var6 = Coord.method7396(var6);
 						var7 = Coord.method7396(var7);
 						var21 = Client.overheadTextLimit == -1 ? class81.worldView.plane : Client.overheadTextLimit;
-						GraphicsObject var9 = new GraphicsObject(class81.worldView, var3, var21, var6, var7, class477.method9725(class81.worldView, var6, var7, var21) - var2, var4, Client.cycle);
+						GraphicsObject var9 = new GraphicsObject(class81.worldView, var3, var21, var6, var7, class477.getTileHeight(class81.worldView, var6, var7, var21) - var2, var4, Client.cycle);
 						class81.worldView.graphicsObjects.addFirst(var9);
 					}
 

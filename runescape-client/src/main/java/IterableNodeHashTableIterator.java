@@ -98,7 +98,7 @@ public class IterableNodeHashTableIterator implements Iterator {
 		if (this.last == null) {
 			throw new IllegalStateException();
 		} else {
-			this.last.vmethod10593();
+			this.last.remove();
 			this.last = null;
 		}
 	}

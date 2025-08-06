@@ -70,15 +70,15 @@ public abstract class RouteStrategy {
 			Buffer var4 = new Buffer(new byte[1000]);
 
 			do {
-				int var5 = var3.read(var4.offset, var4.field5818, 1000 - var4.field5818);
+				int var5 = var3.read(var4.array, var4.offset, 1000 - var4.offset);
 				if (var5 == -1) {
-					var4.field5818 = 0;
+					var4.offset = 0;
 					long var7 = var4.readLong();
 					return var7;
 				}
 
-				var4.field5818 += var5;
-			} while(var4.field5818 < 1000);
+				var4.offset += var5;
+			} while(var4.offset < 1000);
 
 			return 0L;
 		} catch (Exception var9) {

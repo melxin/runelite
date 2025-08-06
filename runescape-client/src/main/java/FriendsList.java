@@ -78,7 +78,7 @@ public class FriendsList extends UserList {
 	@Export("read")
 	public void read(Buffer var1, int var2) {
 		while (true) {
-			if (var1.field5818 < var2) {
+			if (var1.offset < var2) {
 				boolean var3 = var1.readUnsignedByte() == 1;
 				Username var4 = new Username(var1.readStringCp1252NullTerminated(), this.loginType);
 				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.loginType);

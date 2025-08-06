@@ -215,7 +215,7 @@ public class class419 {
 			}
 		}
 
-		var7 = var12.field5818 < var12.offset.length ? var12.readUnsignedByte() : 0;
+		var7 = var12.offset < var12.array.length ? var12.readUnsignedByte() : 0;
 		boolean var14 = (var7 & 1) != 0;
 		if (var14) {
 			for (var9 = 0; var9 < 64; ++var9) {

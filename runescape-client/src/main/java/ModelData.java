@@ -448,7 +448,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var2.field5818 = var1.length - 26;
+		var2.offset = var1.length - 26;
 		int var9 = var2.readUnsignedShort();
 		int var10 = var2.readUnsignedShort();
 		int var11 = var2.readUnsignedByte();
@@ -471,7 +471,7 @@ public class ModelData extends Renderable {
 		int var28;
 		if (var11 > 0) {
 			this.textureRenderTypes = new byte[var11];
-			var2.field5818 = 0;
+			var2.offset = 0;
 
 			for (var28 = 0; var28 < var11; ++var28) {
 				byte var29 = this.textureRenderTypes[var28] = var2.readByte();
@@ -594,11 +594,11 @@ public class ModelData extends Renderable {
 			this.texTriangleZ = new short[var11];
 		}
 
-		var2.field5818 = var11;
-		var3.field5818 = var40;
-		var4.field5818 = var41;
-		var5.field5818 = var42;
-		var6.field5818 = var34;
+		var2.offset = var11;
+		var3.offset = var40;
+		var4.offset = var41;
+		var5.offset = var42;
+		var6.offset = var34;
 		int var50 = 0;
 		int var51 = 0;
 		int var52 = 0;
@@ -649,13 +649,13 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.field5818 = var39;
-		var3.field5818 = var30;
-		var4.field5818 = var32;
-		var5.field5818 = var35;
-		var6.field5818 = var33;
-		var7.field5818 = var37;
-		var8.field5818 = var38;
+		var2.offset = var39;
+		var3.offset = var30;
+		var4.offset = var32;
+		var5.offset = var35;
+		var6.offset = var33;
+		var7.offset = var37;
+		var8.offset = var38;
 
 		for (var53 = 0; var53 < var10; ++var53) {
 			this.faceColors[var53] = (short)var2.readUnsignedShort();
@@ -684,8 +684,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.field5818 = var36;
-		var3.field5818 = var31;
+		var2.offset = var36;
+		var3.offset = var31;
 		var53 = 0;
 		var54 = 0;
 		var55 = 0;
@@ -735,12 +735,12 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.field5818 = var43;
-		var3.field5818 = var44;
-		var4.field5818 = var45;
-		var5.field5818 = var46;
-		var6.field5818 = var47;
-		var7.field5818 = var48;
+		var2.offset = var43;
+		var3.offset = var44;
+		var4.offset = var45;
+		var5.offset = var46;
+		var6.offset = var47;
+		var7.offset = var48;
 
 		for (var57 = 0; var57 < var11; ++var57) {
 			var58 = this.textureRenderTypes[var57] & 255;
@@ -751,7 +751,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.field5818 = var28;
+		var2.offset = var28;
 		var57 = var2.readUnsignedByte();
 		if (var57 != 0) {
 			new ModelData0();
@@ -781,7 +781,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var4.field5818 = var1.length - 23;
+		var4.offset = var1.length - 23;
 		int var9 = var4.readUnsignedShort();
 		int var10 = var4.readUnsignedShort();
 		int var11 = var4.readUnsignedByte();
@@ -880,11 +880,11 @@ public class ModelData extends Renderable {
 		}
 
 		this.faceColors = new short[var10];
-		var4.field5818 = var23;
-		var5.field5818 = var34;
-		var6.field5818 = var35;
-		var7.field5818 = var36;
-		var8.field5818 = var29;
+		var4.offset = var23;
+		var5.offset = var34;
+		var6.offset = var35;
+		var7.offset = var36;
+		var8.offset = var29;
 		int var38 = 0;
 		int var39 = 0;
 		int var40 = 0;
@@ -935,11 +935,11 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.field5818 = var32;
-		var5.field5818 = var28;
-		var6.field5818 = var26;
-		var7.field5818 = var30;
-		var8.field5818 = var27;
+		var4.offset = var32;
+		var5.offset = var28;
+		var6.offset = var26;
+		var7.offset = var30;
+		var8.offset = var27;
 
 		for (var41 = 0; var41 < var10; ++var41) {
 			this.faceColors[var41] = (short)var4.readUnsignedShort();
@@ -978,8 +978,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.field5818 = var31;
-		var5.field5818 = var25;
+		var4.offset = var31;
+		var5.offset = var25;
 		var41 = 0;
 		var42 = 0;
 		var43 = 0;
@@ -1029,7 +1029,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.field5818 = var33;
+		var4.offset = var33;
 
 		for (var45 = 0; var45 < var11; ++var45) {
 			this.textureRenderTypes[var45] = 0;
@@ -1038,7 +1038,7 @@ public class ModelData extends Renderable {
 			this.texTriangleZ[var45] = (short)var4.readUnsignedShort();
 		}
 
-		var4.field5818 = var49;
+		var4.offset = var49;
 		boolean var51 = var4.readUnsignedByte() == 1;
 		if (var51) {
 			this.field2499 = new byte[var10];
@@ -1086,7 +1086,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var2.field5818 = var1.length - 23;
+		var2.offset = var1.length - 23;
 		int var9 = var2.readUnsignedShort();
 		int var10 = var2.readUnsignedShort();
 		int var11 = var2.readUnsignedByte();
@@ -1107,7 +1107,7 @@ public class ModelData extends Renderable {
 		int var26;
 		if (var11 > 0) {
 			this.textureRenderTypes = new byte[var11];
-			var2.field5818 = 0;
+			var2.offset = 0;
 
 			for (var26 = 0; var26 < var11; ++var26) {
 				byte var27 = this.textureRenderTypes[var26] = var2.readByte();
@@ -1228,11 +1228,11 @@ public class ModelData extends Renderable {
 			this.texTriangleZ = new short[var11];
 		}
 
-		var2.field5818 = var11;
-		var3.field5818 = var38;
-		var4.field5818 = var39;
-		var5.field5818 = var40;
-		var6.field5818 = var32;
+		var2.offset = var11;
+		var3.offset = var38;
+		var4.offset = var39;
+		var5.offset = var40;
+		var6.offset = var32;
 		int var48 = 0;
 		int var49 = 0;
 		int var50 = 0;
@@ -1270,13 +1270,13 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.field5818 = var37;
-		var3.field5818 = var28;
-		var4.field5818 = var30;
-		var5.field5818 = var33;
-		var6.field5818 = var31;
-		var7.field5818 = var35;
-		var8.field5818 = var36;
+		var2.offset = var37;
+		var3.offset = var28;
+		var4.offset = var30;
+		var5.offset = var33;
+		var6.offset = var31;
+		var7.offset = var35;
+		var8.offset = var36;
 
 		for (var51 = 0; var51 < var10; ++var51) {
 			this.faceColors[var51] = (short)var2.readUnsignedShort();
@@ -1305,8 +1305,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.field5818 = var34;
-		var3.field5818 = var29;
+		var2.offset = var34;
+		var3.offset = var29;
 		var51 = 0;
 		var52 = 0;
 		var53 = 0;
@@ -1355,12 +1355,12 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.field5818 = var41;
-		var3.field5818 = var42;
-		var4.field5818 = var43;
-		var5.field5818 = var44;
-		var6.field5818 = var45;
-		var7.field5818 = var46;
+		var2.offset = var41;
+		var3.offset = var42;
+		var4.offset = var43;
+		var5.offset = var44;
+		var6.offset = var45;
+		var7.offset = var46;
 
 		for (var55 = 0; var55 < var11; ++var55) {
 			var56 = this.textureRenderTypes[var55] & 255;
@@ -1371,7 +1371,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.field5818 = var26;
+		var2.offset = var26;
 		var55 = var2.readUnsignedByte();
 		if (var55 != 0) {
 			new ModelData0();
@@ -1392,7 +1392,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var4.field5818 = var1.length - 18;
+		var4.offset = var1.length - 18;
 		int var9 = var4.readUnsignedShort();
 		int var10 = var4.readUnsignedShort();
 		int var11 = var4.readUnsignedByte();
@@ -1486,11 +1486,11 @@ public class ModelData extends Renderable {
 		}
 
 		this.faceColors = new short[var10];
-		var4.field5818 = var21;
-		var5.field5818 = var32;
-		var6.field5818 = var33;
-		var7.field5818 = var45;
-		var8.field5818 = var27;
+		var4.offset = var21;
+		var5.offset = var32;
+		var6.offset = var33;
+		var7.offset = var45;
+		var8.offset = var27;
 		int var35 = 0;
 		int var36 = 0;
 		int var37 = 0;
@@ -1528,11 +1528,11 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.field5818 = var30;
-		var5.field5818 = var26;
-		var6.field5818 = var24;
-		var7.field5818 = var28;
-		var8.field5818 = var25;
+		var4.offset = var30;
+		var5.offset = var26;
+		var6.offset = var24;
+		var7.offset = var28;
+		var8.offset = var25;
 
 		for (var38 = 0; var38 < var10; ++var38) {
 			this.faceColors[var38] = (short)var4.readUnsignedShort();
@@ -1571,8 +1571,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.field5818 = var29;
-		var5.field5818 = var23;
+		var4.offset = var29;
+		var5.offset = var23;
 		var38 = 0;
 		var39 = 0;
 		var40 = 0;
@@ -1622,7 +1622,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.field5818 = var31;
+		var4.offset = var31;
 
 		for (var42 = 0; var42 < var11; ++var42) {
 			this.textureRenderTypes[var42] = 0;
@@ -2328,7 +2328,7 @@ public class ModelData extends Renderable {
 		var8.faceTextures = this.faceTextures;
 		var8.field2883 = this.field2504;
 		var8.field2894 = this.field2505;
-		var8.field2893 = this.field2499;
+		var8.faceBias = this.field2499;
 		return var8;
 	}
 

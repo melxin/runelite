@@ -71,7 +71,7 @@ public class Varps {
 		int var3 = -1;
 
 		for (int var4 = 0; var4 < var1; ++var4) {
-			var3 = var3 >>> 8 ^ Buffer.array[(var3 ^ var0[var4]) & 255];
+			var3 = var3 >>> 8 ^ Buffer.field9343[(var3 ^ var0[var4]) & 255];
 		}
 
 		var3 = ~var3;

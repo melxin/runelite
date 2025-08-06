@@ -233,7 +233,7 @@ public enum ModeWhere implements Enum {
 		}
 
 		if (var0.buttonType == 2 && !Client.isSpellSelected) {
-			String var1 = class203.method4465(var0);
+			String var1 = class203.Widget_getSpellActionName(var0);
 			if (var1 != null) {
 				GrandExchangeOfferNameComparator.method8512(var1, ObjectSound.colorStartTag(65280) + var0.field4200, 25, 0, -1, var0.id, var0.itemId);
 			}
@@ -264,7 +264,7 @@ public enum ModeWhere implements Enum {
 				for (int var8 = 31; var8 >= 0; --var8) {
 					String var9;
 					if (var8 == var0.targetPriority * 773766429) {
-						var9 = class203.method4465(var0);
+						var9 = class203.Widget_getSpellActionName(var0);
 						if (var9 != null) {
 							GrandExchangeOfferNameComparator.method8512(var9, var0.dataText, 25, 0, var0.childIndex * -64977777, var0.id, var0.itemId);
 						}

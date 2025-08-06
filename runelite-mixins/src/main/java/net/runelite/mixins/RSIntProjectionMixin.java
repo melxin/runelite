@@ -1,18 +1,9 @@
 package net.runelite.mixins;
 
-import net.runelite.api.SceneTileModel;
-import net.runelite.api.SceneTilePaint;
-import net.runelite.api.Tile;
-import net.runelite.api.hooks.DrawCallbacks;
-import net.runelite.api.mixins.Copy;
-import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.Mixin;
-import net.runelite.api.mixins.Replace;
 import net.runelite.api.mixins.Shadow;
 import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSIntProjection;
-import net.runelite.rs.api.RSScene;
-import net.runelite.rs.api.RSSceneTileModel;
 
 @Mixin(RSIntProjection.class)
 public abstract class RSIntProjectionMixin implements RSIntProjection
@@ -20,7 +11,7 @@ public abstract class RSIntProjectionMixin implements RSIntProjection
 	@Shadow("client")
 	private static RSClient client;
 
-	@Copy("drawTileUnderlay")
+	/*@Copy("drawTileUnderlay")
 	@Replace("drawTileUnderlay")
 	public void copy$drawTileUnderlay(RSScene scene, SceneTilePaint sceneTilePaint, int z, int x, int y)
 	{
@@ -291,5 +282,5 @@ public abstract class RSIntProjectionMixin implements RSIntProjection
 		{
 			client.getLogger().warn("error during overlay rendering", ex);
 		}
-	}
+	}*/
 }

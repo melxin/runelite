@@ -17,12 +17,13 @@ public class GraphicsObject extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "Ldj;"
 	)
-	final WorldView field674;
+	WorldView field674;
 	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
 		intValue = -358370001
 	)
-	int field673;
+	@Export("cycleStart")
+	int cycleStart;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
 		intValue = -339062497
@@ -33,42 +34,46 @@ public class GraphicsObject extends Renderable {
 	@ObfuscatedGetter(
 		intValue = 1770756941
 	)
-	@Export("cycleStart")
-	int cycleStart;
+	@Export("x")
+	int x;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = 1057464841
 	)
-	int field669;
+	@Export("y")
+	int y;
 	@ObfuscatedName("as")
 	@ObfuscatedGetter(
 		intValue = 141424343
 	)
-	int field668;
+	@Export("z")
+	int z;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		intValue = 1269406777
 	)
-	int field675;
+	@Export("id")
+	int id;
 	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "Lrk;"
 	)
-	final class465 field670;
+	@Export("animationSequence")
+	AnimationSequence animationSequence;
 
 	@ObfuscatedSignature(
 		descriptor = "(Ldj;IIIIIII)V"
 	)
 	GraphicsObject(WorldView var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-		this.field670 = new class465();
+		this.animationSequence = new AnimationSequence();
 		this.field674 = var1;
-		this.field675 = var2;
+		this.id = var2;
 		this.plane = var3;
-		this.cycleStart = var4;
-		this.field669 = var5;
-		this.field668 = var6;
-		this.field673 = var8 + var7;
-		this.field670.method9569(Skeleton.method5071(this.field675).sequence);
+		this.x = var4;
+		this.y = var5;
+		this.z = var6;
+		this.cycleStart = var8 + var7;
+		this.animationSequence.setSequence(Skeleton.SpotAnimationDefinition_get(this.id).sequence);
 	}
 
 	@ObfuscatedName("al")
@@ -77,7 +82,7 @@ public class GraphicsObject extends Renderable {
 		garbageValue = "-1211852050"
 	)
 	boolean method1853() {
-		return !this.field670.method9570();
+		return !this.animationSequence.isActive();
 	}
 
 	@ObfuscatedName("ab")
@@ -88,11 +93,11 @@ public class GraphicsObject extends Renderable {
 	@Export("advance")
 	final void advance(int var1) {
 		if (!this.method1853()) {
-			Client.field426.method10913(this.field674, this.cycleStart, this.field669, false);
-			int var2 = AttackOption.method2764(this.field670, var1, Client.field426);
+			Client.field426.method10913(this.field674, this.x, this.y, false);
+			int var2 = AttackOption.method2764(this.animationSequence, var1, Client.field426);
 			Client.field426.method10914();
 			if ((var2 & 1) != 0) {
-				this.field670.method9604();
+				this.animationSequence.reset();
 			}
 
 		}
@@ -105,11 +110,11 @@ public class GraphicsObject extends Renderable {
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		if (this.field670.method9601(30)) {
+		if (this.animationSequence.method9601(30)) {
 			return null;
 		} else {
-			SpotAnimationDefinition var1 = Skeleton.method5071(this.field675);
-			Model var2 = var1.getModel(this.field670.method9573());
+			SpotAnimationDefinition var1 = Skeleton.SpotAnimationDefinition_get(this.id);
+			Model var2 = var1.getModel(this.animationSequence.getFrame());
 			return var2 == null ? null : var2;
 		}
 	}

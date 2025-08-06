@@ -216,7 +216,7 @@ public class WorldMapSection0 implements WorldMapSection {
 		descriptor = "(Ltn;Ljava/lang/Object;IIB)I",
 		garbageValue = "8"
 	)
-	public static int method6725(class515 var0, Object var1, int var2, int var3) {
+	public static int method6725(DynamicArray var0, Object var1, int var2, int var3) {
 		if (var2 < 0) {
 			var2 = 0;
 		}

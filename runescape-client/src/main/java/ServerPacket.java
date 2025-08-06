@@ -231,7 +231,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmt;"
 	)
-	public static final ServerPacket field3618;
+	public static final ServerPacket IF_SETHIDE;
 	@ObfuscatedName("bs")
 	@ObfuscatedSignature(
 		descriptor = "Lmt;"
@@ -351,7 +351,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmt;"
 	)
-	public static final ServerPacket SET_NPC_UPDATE_ORIGIN;
+	public static final ServerPacket CHAT_FILTER_SETTINGS;
 	@ObfuscatedName("cb")
 	@ObfuscatedSignature(
 		descriptor = "Lmt;"
@@ -760,7 +760,7 @@ public class ServerPacket {
 		IF_SETNPCHEAD = new ServerPacket(41, 6);
 		MINIMAP_FLAG_SET = new ServerPacket(42, 2);
 		field3635 = new ServerPacket(43, 17);
-		field3618 = new ServerPacket(44, 5);
+		IF_SETHIDE = new ServerPacket(44, 5);
 		IF_SETOBJECT = new ServerPacket(45, 10);
 		LOGOUT = new ServerPacket(46, 1);
 		REFLECTION_CHECKER = new ServerPacket(47, -2);
@@ -784,7 +784,7 @@ public class ServerPacket {
 		HINT_ARROW = new ServerPacket(65, 6);
 		OCULUS_SYNC = new ServerPacket(66, 4);
 		CAM_SETANGLE = new ServerPacket(67, 6);
-		SET_NPC_UPDATE_ORIGIN = new ServerPacket(68, 2);
+		CHAT_FILTER_SETTINGS = new ServerPacket(68, 2);
 		MINIMAP_TOGGLE = new ServerPacket(69, 1);
 		UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1 = new ServerPacket(70, -2);
 		CAM_MOVE_TO = new ServerPacket(71, 6);

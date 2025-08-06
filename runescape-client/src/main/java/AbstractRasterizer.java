@@ -1,3 +1,4 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -50,7 +51,7 @@ public abstract class AbstractRasterizer extends Rasterizer2D {
 			var12 = method5024(var12, var14, var15, var16, var13);
 		}
 
-		this.vmethod5723(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12);
+		this.drawAlphaBlendedGraphics(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12);
 	}
 
 	@ObfuscatedName("am")
@@ -65,16 +66,19 @@ public abstract class AbstractRasterizer extends Rasterizer2D {
 	}
 
 	@ObfuscatedName("aj")
-	abstract void vmethod5723(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12);
+	@Export("drawAlphaBlendedGraphics")
+	abstract void drawAlphaBlendedGraphics(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12);
 
 	@ObfuscatedName("ag")
 	abstract void vmethod5725(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10);
 
 	@ObfuscatedName("ay")
-	abstract void vmethod5727(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22);
+	@Export("drawGradientTriangle")
+	abstract void drawGradientTriangle(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22);
 
 	@ObfuscatedName("aa")
-	abstract void vmethod5729(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22);
+	@Export("textureMapPolygons")
+	abstract void textureMapPolygons(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22);
 
 	@ObfuscatedName("al")
 	static int method5024(int var0, byte var1, byte var2, byte var3, byte var4) {

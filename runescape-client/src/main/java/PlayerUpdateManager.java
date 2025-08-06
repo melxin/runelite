@@ -128,15 +128,15 @@ public class PlayerUpdateManager {
 		garbageValue = "-74800516"
 	)
 	final void method2796(PacketBuffer var1, int var2) {
-		int var3 = var1.field5818;
+		int var3 = var1.offset;
 		this.Players_pendingUpdateCount = 0;
 		this.method2828(var1);
 		this.method2801();
 		this.method2802();
 		this.updatePlayers(var1);
 		this.method2805();
-		if (var2 != var1.field5818 - var3) {
-			throw new RuntimeException(var1.field5818 - var3 + " " + var2);
+		if (var2 != var1.offset - var3) {
+			throw new RuntimeException(var1.offset - var3 + " " + var2);
 		}
 	}
 
@@ -686,9 +686,9 @@ public class PlayerUpdateManager {
 			PlayerType var9 = (PlayerType)HealthBarConfig.findEnumerated(WorldMapAreaData.PlayerType_values(), var1.readUnsignedByteAdd());
 			boolean var10 = var1.readUnsignedByteSub() == 1;
 			var11 = var1.readUnsignedByteSub();
-			this.field1225.field5818 = 0;
-			var1.method11286(this.field1225.offset, 0, var11);
-			this.field1225.field5818 = 0;
+			this.field1225.offset = 0;
+			var1.method11286(this.field1225.array, 0, var11);
+			this.field1225.offset = 0;
 			String var12 = AbstractFont.escapeBrackets(class379.method8155(WorldMapIcon_0.method6722(this.field1225)));
 			byte[] var13 = null;
 			if (var8 > 0 && var8 <= 8) {
@@ -835,9 +835,9 @@ public class PlayerUpdateManager {
 			var1.readUnsignedByteNeg();
 			var1.readUnsignedByteSub();
 			var15 = var1.readUnsignedByteSub();
-			this.field1225.field5818 = 0;
-			var1.method11286(this.field1225.offset, 0, var15);
-			this.field1225.field5818 = 0;
+			this.field1225.offset = 0;
+			var1.method11286(this.field1225.array, 0, var15);
+			this.field1225.offset = 0;
 		}
 
 		if ((var3 & 512) != 0) {

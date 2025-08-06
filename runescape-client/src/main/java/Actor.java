@@ -223,17 +223,19 @@ public abstract class Actor extends Renderable implements Entity {
 	@ObfuscatedSignature(
 		descriptor = "Lrk;"
 	)
-	class465 field1064;
+	@Export("poseAnimationSequence")
+	AnimationSequence poseAnimationSequence;
 	@ObfuscatedName("ca")
 	@ObfuscatedSignature(
 		descriptor = "Lrk;"
 	)
-	class465 field1065;
+	@Export("animationSequence")
+	AnimationSequence animationSequence;
 	@ObfuscatedName("cz")
 	@ObfuscatedSignature(
 		descriptor = "Lrk;"
 	)
-	class465 field1081;
+	AnimationSequence field1081;
 	@ObfuscatedName("cd")
 	@ObfuscatedGetter(
 		intValue = 1923299729
@@ -381,9 +383,9 @@ public abstract class Actor extends Renderable implements Entity {
 		this.field1078 = 0;
 		this.field1030 = null;
 		this.targetIndex = -1;
-		this.field1064 = new class465();
-		this.field1065 = new class465();
-		this.field1081 = new class465();
+		this.poseAnimationSequence = new AnimationSequence();
+		this.animationSequence = new AnimationSequence();
+		this.field1081 = new AnimationSequence();
 		this.field1059 = 0;
 		this.spotAnimations = new IterableNodeHashTable(4);
 		this.graphicsCount = 0;
@@ -442,7 +444,7 @@ public abstract class Actor extends Renderable implements Entity {
 		garbageValue = "1047267276"
 	)
 	int method2382() {
-		return this.field1064.method9595();
+		return this.poseAnimationSequence.getId();
 	}
 
 	@ObfuscatedName("cb")
@@ -451,7 +453,7 @@ public abstract class Actor extends Renderable implements Entity {
 		garbageValue = "-108"
 	)
 	void method2383(int var1) {
-		this.field1064.method9569(var1);
+		this.poseAnimationSequence.setSequence(var1);
 	}
 
 	@ObfuscatedName("cy")
@@ -460,7 +462,7 @@ public abstract class Actor extends Renderable implements Entity {
 		garbageValue = "-116"
 	)
 	int method2442() {
-		return !this.field1064.method9570() ? 0 : this.field1064.method9571().field2432;
+		return !this.poseAnimationSequence.isActive() ? 0 : this.poseAnimationSequence.getSequenceDefinition().animationHeightOffset;
 	}
 
 	@ObfuscatedName("ct")
@@ -469,7 +471,7 @@ public abstract class Actor extends Renderable implements Entity {
 		garbageValue = "-1311739468"
 	)
 	int method2384() {
-		return this.field1065.method9595();
+		return this.animationSequence.getId();
 	}
 
 	@ObfuscatedName("cw")
@@ -478,7 +480,7 @@ public abstract class Actor extends Renderable implements Entity {
 		garbageValue = "1400803774"
 	)
 	void method2385() {
-		this.field1065.method9604();
+		this.animationSequence.reset();
 	}
 
 	@ObfuscatedName("co")
@@ -487,7 +489,7 @@ public abstract class Actor extends Renderable implements Entity {
 		garbageValue = "24172801"
 	)
 	boolean method2386() {
-		return this.field1065.method9570() && this.field1059 == 0;
+		return this.animationSequence.isActive() && this.field1059 == 0;
 	}
 
 	@ObfuscatedName("ca")
@@ -658,7 +660,7 @@ public abstract class Actor extends Renderable implements Entity {
 
 			var12.put(var2 + var4, var5, var6, var3);
 			if (var11 >= 4) {
-				var9.vmethod10593();
+				var9.remove();
 			}
 
 		}
@@ -675,7 +677,7 @@ public abstract class Actor extends Renderable implements Entity {
 
 		for (HealthBarConfig var3 = (HealthBarConfig)this.healthBars.last(); var3 != null; var3 = (HealthBarConfig)this.healthBars.previous()) {
 			if (var2 == var3.definition) {
-				var3.vmethod10593();
+				var3.remove();
 				return;
 			}
 		}
@@ -690,14 +692,14 @@ public abstract class Actor extends Renderable implements Entity {
 	@Export("updateSpotAnimation")
 	void updateSpotAnimation(int var1, int var2, int var3, int var4) {
 		int var5 = var4 + Client.cycle;
-		class506 var6 = (class506)this.spotAnimations.get((long)var1);
+		ActorSpotAnim var6 = (ActorSpotAnim)this.spotAnimations.get((long)var1);
 		if (var6 != null) {
-			var6.vmethod10593();
+			var6.remove();
 			--this.graphicsCount;
 		}
 
 		if (var2 != 65535 && var2 != -1) {
-			this.spotAnimations.put(new class506(var2, var3, var5), (long)var1);
+			this.spotAnimations.put(new ActorSpotAnim(var2, var3, var5), (long)var1);
 			++this.graphicsCount;
 		}
 	}
@@ -720,8 +722,8 @@ public abstract class Actor extends Renderable implements Entity {
 	void clearSpotAnimations() {
 		IterableNodeHashTableIterator var1 = new IterableNodeHashTableIterator(this.spotAnimations);
 
-		for (class506 var2 = (class506)var1.method8621(); var2 != null; var2 = (class506)var1.next()) {
-			var2.vmethod10593();
+		for (ActorSpotAnim var2 = (ActorSpotAnim)var1.method8621(); var2 != null; var2 = (ActorSpotAnim)var1.next()) {
+			var2.remove();
 		}
 
 		this.graphicsCount = 0;
@@ -742,9 +744,9 @@ public abstract class Actor extends Renderable implements Entity {
 			int var5 = var1.texIndicesCount;
 			byte var6 = var1.field2878;
 
-			for (class506 var7 = (class506)var2.method8621(); var7 != null; var7 = (class506)var2.next()) {
-				if (Client.cycle >= var7.field5339 && !var7.field5340.method9601(30)) {
-					Model var8 = Skeleton.method5071(var7.field5342).method4394();
+			for (ActorSpotAnim var7 = (ActorSpotAnim)var2.method8621(); var7 != null; var7 = (ActorSpotAnim)var2.next()) {
+				if (Client.cycle >= var7.field5339 && !var7.animationSequence.method9601(30)) {
+					Model var8 = Skeleton.SpotAnimationDefinition_get(var7.id).method4394();
 					if (var8 != null) {
 						var3 += var8.verticesCount;
 						var4 += var8.indicesCount;
@@ -756,11 +758,11 @@ public abstract class Actor extends Renderable implements Entity {
 			Model var10 = new Model(var3, var4, var5, var6);
 			var10.method5508(var1);
 
-			for (class506 var11 = (class506)var2.method8621(); var11 != null; var11 = (class506)var2.next()) {
-				if (Client.cycle >= var11.field5339 && !var11.field5340.method9601(30)) {
-					Model var9 = Skeleton.method5071(var11.field5342).getModel(var11.field5340.method9573());
+			for (ActorSpotAnim var11 = (ActorSpotAnim)var2.method8621(); var11 != null; var11 = (ActorSpotAnim)var2.next()) {
+				if (Client.cycle >= var11.field5339 && !var11.animationSequence.method9601(30)) {
+					Model var9 = Skeleton.SpotAnimationDefinition_get(var11.id).getModel(var11.animationSequence.getFrame());
 					if (var9 != null) {
-						var9.offsetBy(0, -var11.field5341, 0);
+						var9.offsetBy(0, -var11.height, 0);
 						var10.method5508(var9);
 					}
 				}
@@ -861,8 +863,8 @@ public abstract class Actor extends Renderable implements Entity {
 		descriptor = "(I)Lrk;",
 		garbageValue = "688990277"
 	)
-	class465 method2427() {
-		return this.field1059 == 0 && this.field1065.method9570() && this.field1065.method9571().method4719() ? this.field1065 : null;
+	AnimationSequence method2427() {
+		return this.field1059 == 0 && this.animationSequence.isActive() && this.animationSequence.getSequenceDefinition().method4719() ? this.animationSequence : null;
 	}
 
 	@ObfuscatedName("dn")
@@ -870,8 +872,8 @@ public abstract class Actor extends Renderable implements Entity {
 		descriptor = "(Lrk;I)Lrk;",
 		garbageValue = "-2145855541"
 	)
-	class465 method2407(class465 var1) {
-		return !this.field1064.method9570() || !this.field1064.method9571().method4719() || this.method2382() == this.idleSequence && var1 != null ? null : this.field1064;
+	AnimationSequence method2407(AnimationSequence var1) {
+		return !this.poseAnimationSequence.isActive() || !this.poseAnimationSequence.getSequenceDefinition().method4719() || this.method2382() == this.idleSequence && var1 != null ? null : this.poseAnimationSequence;
 	}
 
 	@ObfuscatedName("al")

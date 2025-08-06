@@ -79,7 +79,8 @@ public class SequenceDefinition extends DualNode {
 	@ObfuscatedGetter(
 		intValue = -1419577817
 	)
-	public int field2432;
+	@Export("animationHeightOffset")
+	public int animationHeightOffset;
 	@ObfuscatedName("ba")
 	public boolean field2409;
 	@ObfuscatedName("bh")
@@ -135,7 +136,7 @@ public class SequenceDefinition extends DualNode {
 		this.field2412 = 0;
 		this.field2424 = 0;
 		this.frameCount = -1;
-		this.field2432 = 0;
+		this.animationHeightOffset = 0;
 		this.field2409 = false;
 		this.field2410 = 5;
 		this.shield = -1;
@@ -251,7 +252,7 @@ public class SequenceDefinition extends DualNode {
 			this.field2412 = var1.readUnsignedShort();
 			this.field2424 = var1.readUnsignedShort();
 		} else if (var2 == 16) {
-			this.field2432 = var1.readByte();
+			this.animationHeightOffset = var1.readByte();
 		} else if (var2 == 17) {
 			this.field2422 = new boolean[256];
 
@@ -722,9 +723,10 @@ public class SequenceDefinition extends DualNode {
 		descriptor = "(Lox;B)I",
 		garbageValue = "73"
 	)
-	static int method4771(Widget var0) {
-		class357 var1 = (class357)Client.field417.get((long)var0.id);
-		class357 var2 = Login.method1930(var1, var0.childIndex * -64977777);
+	@Export("getWidgetFlags2")
+	static int getWidgetFlags2(Widget var0) {
+		WidgetConfigNode var1 = (WidgetConfigNode)Client.widgetFlags.get((long)var0.id);
+		WidgetConfigNode var2 = Login.method1930(var1, var0.childIndex * -64977777);
 		if (var2 != null) {
 			return var2.method7474();
 		} else {

@@ -36,13 +36,13 @@ public class GZipDecompressor {
 	)
 	@Export("decompress")
 	public void decompress(Buffer var1, byte[] var2) {
-		if (var1.offset[var1.field5818] == 31 && var1.offset[var1.field5818 + 1] == -117) {
+		if (var1.array[var1.offset] == 31 && var1.array[var1.offset + 1] == -117) {
 			if (this.inflater == null) {
 				this.inflater = new Inflater(true);
 			}
 
 			try {
-				this.inflater.setInput(var1.offset, var1.field5818 + 10, var1.offset.length - (var1.field5818 + 8 + 10));
+				this.inflater.setInput(var1.array, var1.offset + 10, var1.array.length - (var1.offset + 8 + 10));
 				this.inflater.inflate(var2);
 			} catch (Exception var4) {
 				this.inflater.reset();

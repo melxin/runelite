@@ -86,7 +86,7 @@ public final class NodeHashTable {
 	@Export("put")
 	public void put(Node var1, long var2) {
 		if (var1.next != null) {
-			var1.vmethod10593();
+			var1.remove();
 		}
 
 		Node var4 = this.buckets[(int)(var2 & (long)(this.size - 1))];

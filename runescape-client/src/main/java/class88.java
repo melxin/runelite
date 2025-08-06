@@ -132,10 +132,10 @@ public class class88 {
 		garbageValue = "-1367961424"
 	)
 	static int method2838(WorldView var0, int var1, int var2, int var3) {
-		int var4 = class477.method9725(var0, var1, var2, var3);
+		int var4 = class477.getTileHeight(var0, var1, var2, var3);
 		WorldEntity var5 = (WorldEntity)class7.topLevelWorldView.worldEntities.get((long)var0.id);
 		if (var5 != null) {
-			var4 += class477.method9725(class7.topLevelWorldView, var5.getY(), var5.getPlane(), var5.getX());
+			var4 += class477.getTileHeight(class7.topLevelWorldView, var5.getY(), var5.getPlane(), var5.getX());
 		}
 
 		return var4;

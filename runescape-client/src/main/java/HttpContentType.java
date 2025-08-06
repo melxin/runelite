@@ -30,7 +30,8 @@ public class HttpContentType {
 	)
 	static int field5455;
 	@ObfuscatedName("lf")
-	static String field5451;
+	@Export("gameSessionServiceBaseUrl")
+	static String gameSessionServiceBaseUrl;
 	@ObfuscatedName("av")
 	@Export("contentType")
 	String contentType;

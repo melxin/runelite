@@ -92,7 +92,7 @@ public class ClientPacket implements class324 {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ClientPacket field3470;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -102,7 +102,7 @@ public class ClientPacket implements class324 {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ClientPacket field3511;
+	public static final ClientPacket MAP_BUILD_COMPLETE;
 	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -503,9 +503,9 @@ public class ClientPacket implements class324 {
 		OPPLAYER6 = new ClientPacket(13, 3);
 		field3468 = new ClientPacket(14, -1);
 		OPNPC4 = new ClientPacket(15, 3);
-		field3470 = new ClientPacket(16, 0);
+		FREECAM_EXIT = new ClientPacket(16, 0);
 		CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL = new ClientPacket(17, -1);
-		field3511 = new ClientPacket(18, 0);
+		MAP_BUILD_COMPLETE = new ClientPacket(18, 0);
 		OPOBJ4 = new ClientPacket(19, 7);
 		MINIMAP_CLICK = new ClientPacket(20, -1);
 		CLAN_CHANNEL_FULL_REQUEST = new ClientPacket(21, 1);

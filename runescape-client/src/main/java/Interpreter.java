@@ -23,8 +23,8 @@ public class Interpreter {
 	@Export("Interpreter_intLocals")
 	static int[] Interpreter_intLocals;
 	@ObfuscatedName("ag")
-	@Export("Interpreter_stringLocals")
-	static Object[] Interpreter_stringLocals;
+	@Export("Interpreter_objectLocals")
+	static Object[] Interpreter_objectLocals;
 	@ObfuscatedName("ay")
 	@Export("Interpreter_intStack")
 	static int[] Interpreter_intStack;

@@ -114,7 +114,7 @@ public class ClientPreferences {
 		this.windowMode = 1;
 		this.drawDistance = 25;
 		this.field1133 = true;
-		if (var1 != null && var1.offset != null) {
+		if (var1 != null && var1.array != null) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 >= 0 && var2 <= 12) {
 				if (var1.readUnsignedByte() == 1) {

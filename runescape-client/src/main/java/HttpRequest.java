@@ -197,7 +197,7 @@ public class HttpRequest {
 	static void method101(int var0) {
 		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
 		if (var1 != null) {
-			var1.vmethod10593();
+			var1.remove();
 		}
 	}
 

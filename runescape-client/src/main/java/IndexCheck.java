@@ -306,7 +306,7 @@ public class IndexCheck implements class29 {
 				}
 			}
 
-			var13 = Client.field497[var2.readBits(3)];
+			var13 = Client.defaultRotations[var2.readBits(3)];
 			if (var6) {
 				var7.orientation = var7.rotation = var13;
 			}
@@ -447,20 +447,20 @@ public class IndexCheck implements class29 {
 				}
 
 				var8 = var2.readUnsignedByte();
-				SequenceDefinition var29 = var15.field1065.method9571();
+				SequenceDefinition var29 = var15.animationSequence.getSequenceDefinition();
 				if (var16 == var15.method2384() && var16 != -1) {
 					var10 = var29.restartMode;
 					if (var10 == 1) {
-						var15.field1065.method9576();
+						var15.animationSequence.method9576();
 						var15.field1059 = var8;
 					}
 
 					if (var10 == 2) {
-						var15.field1065.method9577();
+						var15.animationSequence.method9577();
 					}
-				} else if (var16 == -1 || !var15.field1065.method9570() || AsyncHttpResponse.SequenceDefinition_get(var16).field2410 >= var29.field2410) {
-					var15.field1065.method9569(var16);
-					var15.field1065.method9576();
+				} else if (var16 == -1 || !var15.animationSequence.isActive() || AsyncHttpResponse.SequenceDefinition_get(var16).field2410 >= var29.field2410) {
+					var15.animationSequence.setSequence(var16);
+					var15.animationSequence.method9576();
 					var15.field1059 = var8;
 					var15.field1086 = var15.pathLength;
 				}
@@ -657,8 +657,8 @@ public class IndexCheck implements class29 {
 			}
 		}
 
-		if (var2.field5818 != Client.packetWriter.serverPacketLength) {
-			throw new RuntimeException(var2.field5818 + "," + Client.packetWriter.serverPacketLength);
+		if (var2.offset != Client.packetWriter.serverPacketLength) {
+			throw new RuntimeException(var2.offset + "," + Client.packetWriter.serverPacketLength);
 		}
 	}
 }

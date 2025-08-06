@@ -83,13 +83,14 @@ public final class Projectile extends Renderable {
 	@ObfuscatedGetter(
 		intValue = -808003329
 	)
-	int field756;
+	@Export("slope")
+	int slope;
 	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
 		intValue = -1116324847
 	)
-	@Export("slope")
-	int slope;
+	@Export("startPos")
+	int startPos;
 	@ObfuscatedName("ak")
 	@Export("x")
 	double x;
@@ -97,7 +98,8 @@ public final class Projectile extends Renderable {
 	@Export("y")
 	double y;
 	@ObfuscatedName("at")
-	double field760;
+	@Export("z")
+	double z;
 	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
 		intValue = -749596241
@@ -118,16 +120,18 @@ public final class Projectile extends Renderable {
 	@ObfuscatedGetter(
 		intValue = 467802363
 	)
-	int field753;
+	@Export("id")
+	int id;
 	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "Lrk;"
 	)
-	final class465 field766;
+	@Export("animationSequence")
+	final AnimationSequence animationSequence;
 
 	Projectile(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15) {
 		this.isMoving = false;
-		this.field766 = new class465();
+		this.animationSequence = new AnimationSequence();
 		this.sourceLevel = var1;
 		this.sourceX = var2;
 		this.sourceY = var3;
@@ -138,12 +142,12 @@ public final class Projectile extends Renderable {
 		this.targetY = var8;
 		this.endHeight = var9;
 		this.targetIndex = var10;
-		this.field753 = var11;
+		this.id = var11;
 		this.cycleStart = var12;
 		this.cycleEnd = var13;
-		this.field756 = var14;
-		this.slope = var15;
-		this.field766.method9569(Skeleton.method5071(this.field753).sequence);
+		this.slope = var14;
+		this.startPos = var15;
+		this.animationSequence.setSequence(Skeleton.SpotAnimationDefinition_get(this.id).sequence);
 	}
 
 	@ObfuscatedName("ac")
@@ -153,11 +157,11 @@ public final class Projectile extends Renderable {
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		if (this.field766.method9601(30)) {
+		if (this.animationSequence.method9601(30)) {
 			return null;
 		} else {
-			SpotAnimationDefinition var1 = Skeleton.method5071(this.field753);
-			Model var2 = var1.getModel(this.field766.method9573());
+			SpotAnimationDefinition var1 = Skeleton.SpotAnimationDefinition_get(this.id);
+			Model var2 = var1.getModel(this.animationSequence.getFrame());
 			if (var2 == null) {
 				return null;
 			} else {
@@ -206,9 +210,9 @@ public final class Projectile extends Renderable {
 				var12 = (double)(var5 - var9);
 				var14 = (double)(var6 - var10);
 				var16 = Math.sqrt(var14 * var14 + var12 * var12);
-				this.x = Math.abs(var16) < 0.009999999776482582D ? (double)var9 : (double)this.slope * var12 / var16 + (double)var9;
-				this.y = Math.abs(var16) < 0.009999999776482582D ? (double)var10 : var14 * (double)this.slope / var16 + (double)var10;
-				this.field760 = (double)var11;
+				this.x = Math.abs(var16) < 0.009999999776482582D ? (double)var9 : (double)this.startPos * var12 / var16 + (double)var9;
+				this.y = Math.abs(var16) < 0.009999999776482582D ? (double)var10 : var14 * (double)this.startPos / var16 + (double)var10;
+				this.z = (double)var11;
 			}
 
 			double var18 = (double)(this.cycleEnd + 1 - var2);
@@ -216,19 +220,19 @@ public final class Projectile extends Renderable {
 			var12 = ((double)var6 - this.y) / var18;
 			var14 = Math.sqrt(var12 * var12 + var20 * var20);
 			if (!this.isMoving) {
-				this.field764 = -var14 * Math.tan((double)this.field756 * 0.02454369D);
+				this.field764 = -var14 * Math.tan((double)this.slope * 0.02454369D);
 			}
 
-			var16 = 2.0D * ((double)var7 - this.field760 - var18 * this.field764) / (var18 * var18);
+			var16 = 2.0D * ((double)var7 - this.z - var18 * this.field764) / (var18 * var18);
 			this.isMoving = true;
 			this.x += var20 * (double)var3;
 			this.y += (double)var3 * var12;
-			this.field760 += (double)var3 * this.field764 + (double)var3 * (double)var3 * var16 * 0.5D;
+			this.z += (double)var3 * this.field764 + (double)var3 * (double)var3 * var16 * 0.5D;
 			this.field764 += (double)var3 * var16;
 			this.orientation = (int)(Math.atan2(var20, var12) * 325.949D) + 1024 & 2047;
 			this.field765 = (int)(Math.atan2(this.field764, var14) * 325.949D) & 2047;
 			Client.field426.method10913(class7.topLevelWorldView, (int)this.x, (int)this.y, false);
-			AttackOption.method2764(this.field766, var3, Client.field426);
+			AttackOption.method2764(this.animationSequence, var3, Client.field426);
 			Client.field426.method10914();
 		}
 	}

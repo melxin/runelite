@@ -294,7 +294,7 @@ public class FriendsChat extends UserList {
 		descriptor = "(Ltn;III)V",
 		garbageValue = "-1778693379"
 	)
-	public static void method9903(class515 var0, int var1, int var2) {
+	public static void method9903(DynamicArray var0, int var1, int var2) {
 		class150.method3792(var0, (class570)null, true);
 		if (var1 >= 0 && var2 >= 0 && var1 < var0.method10351() && var2 < var0.method10351()) {
 			if (var2 != var1) {

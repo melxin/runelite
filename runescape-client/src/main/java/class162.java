@@ -165,7 +165,7 @@ public class class162 extends class165 {
 						var19 = (int)class108.method3326(15);
 						var20 = AABB.Tiles_underlays[var7][var18][var17] & var19;
 						if (var20 > 0) {
-							FloorUnderlayDefinition var49 = class427.SpotAnimationDefinition_get(var20 - 1);
+							FloorUnderlayDefinition var49 = class427.FloorUnderlayDefinition_get(var20 - 1);
 							var10000 = SecureRandomFuture.Tiles_hue;
 							var10000[var17] += var49.hue;
 							var10000 = WorldMapSection0.Tiles_saturation;
@@ -183,7 +183,7 @@ public class class162 extends class165 {
 						var20 = (int)class108.method3326(15);
 						var21 = AABB.Tiles_underlays[var7][var19][var17] & var20;
 						if (var21 > 0) {
-							FloorUnderlayDefinition var50 = class427.SpotAnimationDefinition_get(var21 - 1);
+							FloorUnderlayDefinition var50 = class427.FloorUnderlayDefinition_get(var21 - 1);
 							var10000 = SecureRandomFuture.Tiles_hue;
 							var10000[var17] -= var50.hue;
 							var10000 = WorldMapSection0.Tiles_saturation;

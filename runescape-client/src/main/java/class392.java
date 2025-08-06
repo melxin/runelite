@@ -57,7 +57,7 @@ public enum class392 implements Enum {
 		descriptor = "(Ltn;I)I",
 		garbageValue = "874353513"
 	)
-	public static int method8222(class515 var0) {
+	public static int method8222(DynamicArray var0) {
 		class281.method6335(var0);
 		byte var1 = 0;
 		int var2 = var0.method10351();

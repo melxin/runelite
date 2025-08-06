@@ -10,7 +10,8 @@ public class class470 extends SongTask {
 	@ObfuscatedGetter(
 		intValue = -1120464947
 	)
-	static int field5181;
+	@Export("Players_count")
+	static int Players_count;
 
 	@ObfuscatedSignature(
 		descriptor = "(Lsj;)V"

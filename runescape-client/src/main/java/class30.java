@@ -83,7 +83,7 @@ public class class30 {
 				class154.method3822(var4);
 				WorldEntity var14 = (WorldEntity)var0.worldEntities.get((long)var4);
 				if (var14 != null) {
-					var14.vmethod10593();
+					var14.remove();
 				}
 			}
 		}
@@ -103,7 +103,7 @@ public class class30 {
 				if (var7 == 0) {
 					class154.method3822(var5);
 					if (var13 != null) {
-						var13.vmethod10593();
+						var13.remove();
 					}
 				} else {
 					var0.field1143.method9808(var5);

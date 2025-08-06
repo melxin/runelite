@@ -50,13 +50,17 @@ public class IntProjection extends Projection {
 	@Export("cameraYaw2")
 	int cameraYaw2;
 	@ObfuscatedName("as")
-	float field2592;
+	@Export("pitchSin")
+	float pitchSin;
 	@ObfuscatedName("ah")
-	float field2598;
+	@Export("pitchCos")
+	float pitchCos;
 	@ObfuscatedName("ap")
-	float field2599;
+	@Export("yawSin")
+	float yawSin;
 	@ObfuscatedName("am")
-	float field2600;
+	@Export("yawCos")
+	float yawCos;
 	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
 		intValue = 285263451
@@ -74,10 +78,10 @@ public class IntProjection extends Projection {
 		this.cameraZ = var3;
 		this.cameraPitch = var4;
 		this.cameraYaw2 = var5;
-		this.field2592 = Rasterizer3D.field2590[var4];
-		this.field2598 = Rasterizer3D.field2588[var4];
-		this.field2599 = Rasterizer3D.field2590[var5];
-		this.field2600 = Rasterizer3D.field2588[var5];
+		this.pitchSin = Rasterizer3D.field2590[var4];
+		this.pitchCos = Rasterizer3D.field2588[var4];
+		this.yawSin = Rasterizer3D.field2590[var5];
+		this.yawCos = Rasterizer3D.field2588[var5];
 		this.field2601 = var6;
 		this.field2596 = var7;
 	}
@@ -110,34 +114,34 @@ public class IntProjection extends Projection {
 		float var15 = (float)(var1.tileHeights[var3][var4 + 1][var5] - this.cameraY);
 		float var16 = (float)(var1.tileHeights[var3][var4 + 1][var5 + 1] - this.cameraY);
 		float var17 = (float)(var1.tileHeights[var3][var4][var5 + 1] - this.cameraY);
-		float var18 = this.field2600 * var7 + var9 * this.field2599;
-		var9 = var9 * this.field2600 - var7 * this.field2599;
+		float var18 = this.yawCos * var7 + var9 * this.yawSin;
+		var9 = var9 * this.yawCos - var7 * this.yawSin;
 		var7 = var18;
-		var18 = var14 * this.field2598 - this.field2592 * var9;
-		var9 = var9 * this.field2598 + var14 * this.field2592;
+		var18 = var14 * this.pitchCos - this.pitchSin * var9;
+		var9 = var9 * this.pitchCos + var14 * this.pitchSin;
 		var14 = var18;
 		if (var9 >= 50.0F) {
-			var18 = var11 * this.field2600 + var8 * this.field2599;
-			var8 = this.field2600 * var8 - this.field2599 * var11;
+			var18 = var11 * this.yawCos + var8 * this.yawSin;
+			var8 = this.yawCos * var8 - this.yawSin * var11;
 			var11 = var18;
-			var18 = var15 * this.field2598 - this.field2592 * var8;
-			var8 = var8 * this.field2598 + var15 * this.field2592;
+			var18 = var15 * this.pitchCos - this.pitchSin * var8;
+			var8 = var8 * this.pitchCos + var15 * this.pitchSin;
 			var15 = var18;
 			if (var8 >= 50.0F) {
-				var18 = var13 * this.field2599 + this.field2600 * var10;
-				var13 = var13 * this.field2600 - var10 * this.field2599;
+				var18 = var13 * this.yawSin + this.yawCos * var10;
+				var13 = var13 * this.yawCos - var10 * this.yawSin;
 				var10 = var18;
-				var18 = var16 * this.field2598 - var13 * this.field2592;
-				var13 = this.field2598 * var13 + var16 * this.field2592;
+				var18 = var16 * this.pitchCos - var13 * this.pitchSin;
+				var13 = this.pitchCos * var13 + var16 * this.pitchSin;
 				var16 = var18;
 				if (var13 >= 50.0F) {
-					var18 = var12 * this.field2599 + var6 * this.field2600;
-					var12 = var12 * this.field2600 - this.field2599 * var6;
+					var18 = var12 * this.yawSin + var6 * this.yawCos;
+					var12 = var12 * this.yawCos - this.yawSin * var6;
 					var6 = var18;
-					var18 = this.field2598 * var17 - this.field2592 * var12;
-					var12 = var12 * this.field2598 + this.field2592 * var17;
+					var18 = this.pitchCos * var17 - this.pitchSin * var12;
+					var12 = var12 * this.pitchCos + this.pitchSin * var17;
 					if (var12 >= 50.0F) {
-						this.method5401(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var18, var9, var8, var13, var12);
+						this.drawSceneTilePaint(var1, var2, var4, var5, var7, var11, var10, var6, var14, var15, var16, var18, var9, var8, var13, var12);
 					}
 				}
 			}
@@ -157,24 +161,24 @@ public class IntProjection extends Projection {
 			float var7 = (float)(var2.vertexX[var6] - this.cameraX);
 			float var8 = (float)(var2.vertexY[var6] - this.cameraY);
 			float var9 = (float)(var2.vertexZ[var6] - this.cameraZ);
-			float var10 = this.field2600 * var7 + this.field2599 * var9;
-			var9 = this.field2600 * var9 - var7 * this.field2599;
+			float var10 = this.yawCos * var7 + this.yawSin * var9;
+			var9 = this.yawCos * var9 - var7 * this.yawSin;
 			var7 = var10;
-			var10 = this.field2598 * var8 - this.field2592 * var9;
-			var9 = var9 * this.field2598 + var8 * this.field2592;
+			var10 = this.pitchCos * var8 - this.pitchSin * var9;
+			var9 = var9 * this.pitchCos + var8 * this.pitchSin;
 			if (var9 < 50.0F) {
 				return;
 			}
 
 			if (var2.triangleTextureId != null) {
 				SceneTileModel.triangleTexturesX[var6] = (int)var7;
-				SceneTileModel.field2799[var6] = (int)var10;
-				SceneTileModel.verticesX[var6] = (int)var9;
+				SceneTileModel.triangleTexturesY[var6] = (int)var10;
+				SceneTileModel.triangleTexturesZ[var6] = (int)var9;
 			}
 
-			SceneTileModel.field2808[var6] = (float)Rasterizer3D.getClipMidX() + var7 * (float)Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.field2795[var6] = (float)Rasterizer3D.getClipMidY() + var10 * (float)Rasterizer3D.get3dZoom() / var9;
-			SceneTileModel.field2806[var6] = ClanSettings.method3890(var9);
+			SceneTileModel.verticesX[var6] = (float)Rasterizer3D.getClipMidX() + var7 * (float)Rasterizer3D.get3dZoom() / var9;
+			SceneTileModel.verticesY[var6] = (float)Rasterizer3D.getClipMidY() + var10 * (float)Rasterizer3D.get3dZoom() / var9;
+			SceneTileModel.verticesZ[var6] = ClanSettings.method3890(var9);
 		}
 
 		this.drawSceneTileModel(var1, var2, var3, var4);

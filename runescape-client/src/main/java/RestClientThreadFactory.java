@@ -47,7 +47,8 @@ public class RestClientThreadFactory implements ThreadFactory {
 		descriptor = "(Ldj;IIIIIIB)V",
 		garbageValue = "42"
 	)
-	static void method211(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+	@Export("worldToScreen")
+	static void worldToScreen(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6) {
 		if (var1 >= 128 && 13056 >= var1 && var2 >= 128 && 13056 >= var2) {
 			int var7 = WorldMapRegion.method6545(var0, var3, var4, var0.plane, var6);
 			int var8 = var7 - var5;

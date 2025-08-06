@@ -8,7 +8,7 @@ public class class442 {
 		descriptor = "(Ltn;Ltn;IIII)V",
 		garbageValue = "1955821217"
 	)
-	public static void method8957(class515 var0, class515 var1, int var2, int var3, int var4) {
+	public static void method8957(DynamicArray var0, DynamicArray var1, int var2, int var3, int var4) {
 		class281.method6335(var0);
 		WorldMapData_1.method6678(var1, var0.field5399);
 		int var5 = var0.method10351();

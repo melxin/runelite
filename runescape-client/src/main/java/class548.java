@@ -61,8 +61,8 @@ public abstract class class548 {
 		descriptor = "(ILjava/lang/Object;I)Ltn;",
 		garbageValue = "1117916046"
 	)
-	static class515 method10667(int var0, Object var1) {
-		class515 var2 = (class515)var1;
+	static DynamicArray method10667(int var0, Object var1) {
+		DynamicArray var2 = (DynamicArray)var1;
 		if (var2 == null) {
 			throw new RuntimeException();
 		} else {

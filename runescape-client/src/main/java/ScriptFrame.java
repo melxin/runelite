@@ -58,15 +58,15 @@ public class ScriptFrame {
 		descriptor = "(Ltn;III)V",
 		garbageValue = "1194103324"
 	)
-	public static void method764(class515 var0, int var1, int var2) {
+	public static void method764(DynamicArray var0, int var1, int var2) {
 		class150.method3792(var0, (class570)null, true);
 		if (var1 != 0) {
-			if (var2 >= 0 && var2 < var0.field5401 * -519676011 && var1 >= 0 && var2 + var1 <= var0.field5401 * -519676011) {
-				if (var2 < var0.field5401 * -519676011 - var1) {
-					class401.method8272(var0, var2 + var1, var0, var2, var0.field5401 * -519676011 - (var2 + var1));
+			if (var2 >= 0 && var2 < var0.size * -519676011 && var1 >= 0 && var2 + var1 <= var0.size * -519676011) {
+				if (var2 < var0.size * -519676011 - var1) {
+					class401.method8272(var0, var2 + var1, var0, var2, var0.size * -519676011 - (var2 + var1));
 				}
 
-				var0.method10358(var0.field5401 * -519676011 - var1);
+				var0.method10358(var0.size * -519676011 - var1);
 			} else {
 				throw new RuntimeException();
 			}
@@ -86,7 +86,7 @@ public class ScriptFrame {
 			return 1;
 		} else if (var0 == ScriptOpcodes.ANIM) {
 			AbstractWorldMapIcon.Interpreter_intStackSize -= 2;
-			class399.method8268(class27.localPlayer, Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize], Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 1]);
+			class399.performPlayerAnimation(class27.localPlayer, Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize], Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 1]);
 			return 1;
 		} else if (var0 == ScriptOpcodes.IF_CLOSE) {
 			if (!Interpreter.field645) {

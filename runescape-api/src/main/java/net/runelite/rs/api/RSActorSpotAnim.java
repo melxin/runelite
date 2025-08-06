@@ -5,35 +5,38 @@ import net.runelite.mapping.Import;
 
 public interface RSActorSpotAnim extends ActorSpotAnim
 {
-	@Import("spotAnimation")
+	@Import("id")
 	@Override
 	int getId();
 
-	@Import("spotAnimation")
+	@Import("id")
 	@Override
 	void setId(int id);
 
-	@Import("spotAnimationHeight")
+	@Import("height")
 	@Override
 	int getHeight();
 
-	@Import("spotAnimationHeight")
+	@Import("height")
 	@Override
 	void setHeight(int id);
 
-	@Import("spotAnimationFrame")
-	@Override
-	int getFrame();
+	@Import("animationSequence")
+	RSAnimationSequence getAnimationSequence();
 
-	@Import("spotAnimationFrame")
-	@Override
-	void setFrame(int id);
+	//@Import("spotAnimationFrame")
+	//@Override
+	//int getFrame();
 
-	@Import("spotAnimationFrameCycle")
-	@Override
-	int getCycle();
+	//@Import("spotAnimationFrame")
+	//@Override
+	//void setFrame(int id);
 
-	@Import("spotAnimationFrameCycle")
-	@Override
-	void setCycle(int cycle);
+	//@Import("spotAnimationFrameCycle")
+	//@Override
+	//int getCycle();
+
+	//@Import("spotAnimationFrameCycle")
+	//@Override
+	//void setCycle(int cycle);
 }

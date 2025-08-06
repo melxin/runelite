@@ -54,7 +54,7 @@ public class Skeleton extends Node {
 			}
 		}
 
-		if (var3.field5818 < var3.offset.length) {
+		if (var3.offset < var3.array.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
 				this.field2626 = new class225(var3, var4);
@@ -86,7 +86,8 @@ public class Skeleton extends Node {
 		descriptor = "(IS)Lhz;",
 		garbageValue = "512"
 	)
-	public static SpotAnimationDefinition method5071(int var0) {
+	@Export("SpotAnimationDefinition_get")
+	public static SpotAnimationDefinition SpotAnimationDefinition_get(int var0) {
 		SpotAnimationDefinition var1 = (SpotAnimationDefinition)SpotAnimationDefinition.SpotAnimationDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;
@@ -124,14 +125,14 @@ public class Skeleton extends Node {
 				var7 = new AccessFile(class27.field121, "rw", 10000L);
 
 				int var9;
-				for (var8 = new Buffer((int)var7.length()); var8.field5818 < var8.offset.length; var8.field5818 += var9) {
-					var9 = var7.read(var8.offset, var8.field5818, var8.offset.length - var8.field5818);
+				for (var8 = new Buffer((int)var7.length()); var8.offset < var8.array.length; var8.offset += var9) {
+					var9 = var7.read(var8.array, var8.offset, var8.array.length - var8.offset);
 					if (var9 == -1) {
 						throw new IOException();
 					}
 				}
 
-				var8.field5818 = 0;
+				var8.offset = 0;
 				var9 = var8.readUnsignedByte();
 				if (var9 < 1 || var9 > 3) {
 					throw new IOException("" + var9);
@@ -270,7 +271,7 @@ public class Skeleton extends Node {
 					var43.writeCESU8("");
 				}
 
-				var45.write(var43.offset, 0, var43.field5818);
+				var45.write(var43.array, 0, var43.offset);
 				var45.close();
 			} catch (IOException var31) {
 				var31.printStackTrace();

@@ -123,7 +123,7 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 		garbageValue = "339110765"
 	)
 	@Export("FillMode_values")
-	public static class599[] FillMode_values() {
-		return new class599[]{class599.field5899, class599.field5897, class599.SOLID};
+	public static FillMode[] FillMode_values() {
+		return new FillMode[]{FillMode.field5899, FillMode.field5897, FillMode.SOLID};
 	}
 }

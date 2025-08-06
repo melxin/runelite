@@ -70,7 +70,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 		if (!Client.field380) {
 			var0 = Coord.method7396(WorldViewManager.field1000);
 			var1 = Coord.method7396(WorldMapSectionType.field3343);
-			var2 = class477.method9725(class7.topLevelWorldView, var0, var1, class7.topLevelWorldView.plane) - class329.field3728;
+			var2 = class477.getTileHeight(class7.topLevelWorldView, var0, var1, class7.topLevelWorldView.plane) - class329.field3728;
 			FileSystem.method5914(var0, var2, var1);
 		} else if (Client.field568 != null) {
 			Language.cameraX = Client.field568.vmethod10662();
@@ -78,7 +78,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 			if (Client.field567) {
 				WorldMapCacheName.cameraY = Client.field568.vmethod10654();
 			} else {
-				WorldMapCacheName.cameraY = class477.method9725(class7.topLevelWorldView, Language.cameraX, class66.cameraZ, class7.topLevelWorldView.plane) - Client.field568.vmethod10654();
+				WorldMapCacheName.cameraY = class477.getTileHeight(class7.topLevelWorldView, Language.cameraX, class66.cameraZ, class7.topLevelWorldView.plane) - Client.field568.vmethod10654();
 			}
 
 			Client.field568.method10669();
@@ -87,7 +87,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 		if (!Client.field347) {
 			var0 = Coord.method7396(Sound.field1791);
 			var1 = Coord.method7396(ClanChannel.field1892);
-			var2 = class477.method9725(class7.topLevelWorldView, var0, var1, class7.topLevelWorldView.plane) - WorldMapElement.field1981;
+			var2 = class477.getTileHeight(class7.topLevelWorldView, var0, var1, class7.topLevelWorldView.plane) - WorldMapElement.field1981;
 			int var3 = var0 - Language.cameraX;
 			int var4 = var2 - WorldMapCacheName.cameraY;
 			int var5 = var1 - class66.cameraZ;
@@ -149,9 +149,9 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 			int var23 = var7 + var1 - var16;
 			int var24 = var15 + var7 + var1;
 			Rasterizer3D.setClipping(var17, var18, var19);
-			Rasterizer3D.method4977((float)var21, (float)var22, (float)var23, (float)var17, (float)var18, (float)var19, 0.0F, 0.0F, 0.0F, var4);
+			Rasterizer3D.rasterFlat((float)var21, (float)var22, (float)var23, (float)var17, (float)var18, (float)var19, 0.0F, 0.0F, 0.0F, var4);
 			Rasterizer3D.setClipping(var17, var19, var20);
-			Rasterizer3D.method4977((float)var21, (float)var23, (float)var24, (float)var17, (float)var19, (float)var20, 0.0F, 0.0F, 0.0F, var4);
+			Rasterizer3D.rasterFlat((float)var21, (float)var23, (float)var24, (float)var17, (float)var19, (float)var20, 0.0F, 0.0F, 0.0F, var4);
 		}
 	}
 

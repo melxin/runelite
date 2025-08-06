@@ -70,7 +70,7 @@ public class IterableNodeDequeDescendingIterator implements Iterator {
 		if (this.field5011 == null) {
 			throw new IllegalStateException();
 		} else {
-			this.field5011.vmethod10593();
+			this.field5011.remove();
 			this.field5011 = null;
 		}
 	}

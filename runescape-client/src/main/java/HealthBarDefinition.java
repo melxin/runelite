@@ -222,7 +222,7 @@ public class HealthBarDefinition extends DualNode {
 		descriptor = "(Ltn;II)I",
 		garbageValue = "-65346655"
 	)
-	public static int method4258(class515 var0, int var1) {
+	public static int method4258(DynamicArray var0, int var1) {
 		class267.method6013(var0, class570.field5721);
 		if (var1 >= 0) {
 			int[] var2 = var0.method10348();

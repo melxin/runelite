@@ -42,7 +42,8 @@ public final class NPC extends Actor {
 	@ObfuscatedSignature(
 		descriptor = "Lhu;"
 	)
-	NpcOverrides field1169;
+	@Export("modelOverrides")
+	NpcOverrides modelOverrides;
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "Lhu;"
@@ -81,8 +82,8 @@ public final class NPC extends Actor {
 		if (this.definition == null) {
 			return null;
 		} else {
-			class465 var1 = this.method2427();
-			class465 var2 = this.method2407(var1);
+			AnimationSequence var1 = this.method2427();
+			AnimationSequence var2 = this.method2407(var1);
 			if (var1 == null && var2 == null) {
 				var2 = super.field1081;
 				if (super.field1081.method9601(30)) {
@@ -90,15 +91,15 @@ public final class NPC extends Actor {
 				}
 			}
 
-			SequenceDefinition var3 = var1 == null ? null : var1.method9571();
-			SequenceDefinition var4 = var2 == null ? null : var2.method9571();
-			int var5 = var1 == null ? -1 : var1.method9573();
-			int var6 = var2 == null ? -1 : var2.method9573();
+			SequenceDefinition var3 = var1 == null ? null : var1.getSequenceDefinition();
+			SequenceDefinition var4 = var2 == null ? null : var2.getSequenceDefinition();
+			int var5 = var1 == null ? -1 : var1.getFrame();
+			int var6 = var2 == null ? -1 : var2.getFrame();
 			Model var7 = null;
-			if (this.field1169 != null && this.field1169.useLocalPlayer) {
+			if (this.modelOverrides != null && this.modelOverrides.useLocalPlayer) {
 				var7 = class27.localPlayer.appearance.getModel(var3, var5, var4, var6);
 			} else {
-				var7 = this.definition.getModel(var3, var5, var4, var6, this.field1169);
+				var7 = this.definition.getModel(var3, var5, var4, var6, this.modelOverrides);
 			}
 
 			if (var7 == null) {
@@ -210,7 +211,7 @@ public final class NPC extends Actor {
 			--var4;
 		}
 
-		if (super.field1065.method9570() && super.field1065.method9571().field2439 == 1) {
+		if (super.animationSequence.isActive() && super.animationSequence.getSequenceDefinition().field2439 == 1) {
 			this.method2385();
 		}
 
@@ -223,7 +224,7 @@ public final class NPC extends Actor {
 		garbageValue = "804056854"
 	)
 	final void method2668(int var1, int var2, boolean var3) {
-		if (super.field1065.method9570() && super.field1065.method9571().field2439 == 1) {
+		if (super.animationSequence.isActive() && super.animationSequence.getSequenceDefinition().field2439 == 1) {
 			this.method2385();
 		}
 
@@ -326,7 +327,7 @@ public final class NPC extends Actor {
 		garbageValue = "25"
 	)
 	void method2705(NpcOverrides var1) {
-		this.field1169 = var1;
+		this.modelOverrides = var1;
 	}
 
 	@ObfuscatedName("az")
@@ -353,7 +354,7 @@ public final class NPC extends Actor {
 		garbageValue = "264443014"
 	)
 	void method2680() {
-		this.field1169 = null;
+		this.modelOverrides = null;
 	}
 
 	@ObfuscatedName("dx")

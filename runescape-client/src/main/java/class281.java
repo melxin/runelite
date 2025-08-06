@@ -30,7 +30,7 @@ public class class281 implements Comparator {
 		descriptor = "(Ltn;I)V",
 		garbageValue = "-1945266304"
 	)
-	static void method6335(class515 var0) {
+	static void method6335(DynamicArray var0) {
 		class150.method3792(var0, (class570)null, false);
 	}
 
@@ -84,7 +84,7 @@ public class class281 implements Comparator {
 					HealthBarUpdate var12 = var11.get(Client.cycle);
 					if (var12 == null) {
 						if (var11.isEmpty()) {
-							var11.vmethod10593();
+							var11.remove();
 						}
 					} else {
 						HealthBarDefinition var13 = var11.definition;

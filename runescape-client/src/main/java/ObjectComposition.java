@@ -420,7 +420,7 @@ public class ObjectComposition extends DualNode {
 			var3 = var1.readUnsignedByte();
 			if (var3 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.field5818 += var3 * 3;
+					var1.offset += var3 * 3;
 				} else {
 					this.models = new int[var3];
 					this.modelIds = new int[var3];
@@ -437,7 +437,7 @@ public class ObjectComposition extends DualNode {
 			var3 = var1.readUnsignedByte();
 			if (var3 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.field5818 += 2 * var3;
+					var1.offset += 2 * var3;
 				} else {
 					this.models = null;
 					this.modelIds = new int[var3];
@@ -1037,7 +1037,7 @@ public class ObjectComposition extends DualNode {
 					for (Node var4 = var1.params.first(); var4 != null; var4 = var1.params.next()) {
 						ParamComposition var5 = Messages.getParamDefinition((int)var4.key);
 						if (var5.autoDisable) {
-							var4.vmethod10593();
+							var4.remove();
 						} else {
 							var6 = true;
 						}

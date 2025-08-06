@@ -35,7 +35,7 @@ public abstract class class165 extends Node {
 		descriptor = "(Ltn;Ltn;B)I",
 		garbageValue = "42"
 	)
-	public static int method4008(class515 var0, class515 var1) {
+	public static int method4008(DynamicArray var0, DynamicArray var1) {
 		if (var1 == var0) {
 			return 0;
 		} else if (var0 == null) {

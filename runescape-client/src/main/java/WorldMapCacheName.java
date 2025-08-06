@@ -59,17 +59,18 @@ public class WorldMapCacheName {
 		descriptor = "(Lch;ZB)V",
 		garbageValue = "-1"
 	)
-	static final void method6881(InterfaceParent var0, boolean var1) {
+	@Export("closeInterface")
+	static final void closeInterface(InterfaceParent var0, boolean var1) {
 		int var2 = var0.group;
 		int var3 = (int)var0.key;
-		var0.vmethod10593();
+		var0.remove();
 		if (var1) {
 			class167.widgetDefinition.method7460(var2);
 		}
 
-		for (class357 var4 = (class357)Client.field417.first(); var4 != null; var4 = (class357)Client.field417.next()) {
+		for (WidgetConfigNode var4 = (WidgetConfigNode)Client.widgetFlags.first(); var4 != null; var4 = (WidgetConfigNode)Client.widgetFlags.next()) {
 			if ((long)var2 == (var4.key >> 16 & 65535L)) {
-				var4.vmethod10593();
+				var4.remove();
 			}
 		}
 

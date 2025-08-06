@@ -38,6 +38,7 @@ import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSDynamicObject;
 import net.runelite.rs.api.RSModel;
 import net.runelite.rs.api.RSRenderable;
+import net.runelite.rs.api.RSSequenceDefinition;
 import net.runelite.rs.api.RSWorldView;
 
 @Mixin(RSDynamicObject.class)
@@ -128,5 +129,33 @@ public abstract class RSDynamicObjectMixin implements RSDynamicObject
 	public RSModel getModelZbuf()
 	{
 		return this.getModel();
+	}
+
+	@Inject
+	@Override
+	public int getAnimFrame()
+	{
+		return this.getAnimationSequence().getFrame();
+	}
+
+	@Inject
+	@Override
+	public void setAnimFrame(int frame)
+	{
+		this.getAnimationSequence().setFrame(frame);
+	}
+
+	@Inject
+	@Override
+	public int getAnimCycle()
+	{
+		return -1;
+	}
+
+	@Inject
+	@Override
+	public RSSequenceDefinition getAnimation()
+	{
+		return this.getAnimationSequence().getSequenceDefinition();
 	}
 }

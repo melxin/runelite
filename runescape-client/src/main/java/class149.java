@@ -31,15 +31,15 @@ public abstract class class149 extends Node {
 		descriptor = "(Lrk;ILra;B)I",
 		garbageValue = "-57"
 	)
-	static int method3780(class465 var0, int var1, class464 var2) {
+	static int method3780(AnimationSequence var0, int var1, class464 var2) {
 		int var3 = 0;
-		SequenceDefinition var4 = var0.method9571();
+		SequenceDefinition var4 = var0.getSequenceDefinition();
 		if (var4.frameCount > 0 && var4.field2428 > 0) {
 			var1 %= var4.field2428;
 		}
 
-		int var5 = var0.method9573();
-		int var6 = var0.method9574();
+		int var5 = var0.getFrame();
+		int var6 = var0.getFrameCycle();
 		int var7 = var0.method9578();
 		if (var5 >= var4.frameIds.length) {
 			var5 = 0;

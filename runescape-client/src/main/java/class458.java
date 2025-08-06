@@ -816,10 +816,10 @@ public class class458 {
 		descriptor = "([Ljava/lang/String;I)Ltn;",
 		garbageValue = "961872180"
 	)
-	public static class515 method9410(String[] var0) {
-		class515 var1 = new class515(class570.field5718, false);
+	public static DynamicArray method9410(String[] var0) {
+		DynamicArray var1 = new DynamicArray(class570.field5718, false);
 		var1.field5406 = var0;
-		var1.field5401 = var0.length * 1527641021;
+		var1.size = var0.length * 1527641021;
 		var1.field5402 = var0.length;
 		return var1;
 	}

@@ -176,7 +176,7 @@ class class141 implements Callable {
 				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 				var15.packetBuffer.writeShortAdd(var0 + var11);
 				var15.packetBuffer.writeShort(var3);
-				var15.packetBuffer.writeInt(class470.field5181);
+				var15.packetBuffer.writeInt(class470.Players_count);
 				var15.packetBuffer.writeShortAdd(HttpMethod.field32);
 				var15.packetBuffer.writeShortLE(HttpRequestTask.field80);
 				var15.packetBuffer.writeShort(var12 + var1);
@@ -263,7 +263,7 @@ class class141 implements Callable {
 						Client.destinationY = var1;
 						var16 = class291.getPacketBufferNode(ClientPacket.OPNPCU, Client.packetWriter.isaacCipher);
 						var16.packetBuffer.writeShortLE(var3);
-						var16.packetBuffer.writeIntLE(class470.field5181);
+						var16.packetBuffer.writeIntLE(class470.Players_count);
 						var16.packetBuffer.writeShortAdd(HttpRequestTask.field80);
 						var16.packetBuffer.writeShort(HttpMethod.field32);
 						var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
@@ -370,7 +370,7 @@ class class141 implements Callable {
 							var16 = class291.getPacketBufferNode(ClientPacket.OPPLAYERU, Client.packetWriter.isaacCipher);
 							var16.packetBuffer.writeShort(HttpRequestTask.field80);
 							var16.packetBuffer.writeShortAddLE(var3);
-							var16.packetBuffer.writeInt(class470.field5181);
+							var16.packetBuffer.writeInt(class470.Players_count);
 							var16.packetBuffer.writeShortAddLE(HttpMethod.field32);
 							var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 							Client.packetWriter.addNode(var16);
@@ -405,7 +405,7 @@ class class141 implements Callable {
 						var15.packetBuffer.writeShort(HttpRequestTask.field80);
 						var15.packetBuffer.writeShortAdd(var0 + var11);
 						var15.packetBuffer.writeShortLE(var3);
-						var15.packetBuffer.writeIntIME(class470.field5181);
+						var15.packetBuffer.writeIntIME(class470.Players_count);
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 17) {
@@ -519,7 +519,7 @@ class class141 implements Callable {
 									class136.method3644();
 									class385.method8192(var1, var0, class255.Widget_unpackTargetMask(class516.getWidgetFlags(var23)), var4);
 									Client.isItemSelected = 0;
-									Client.selectedSpellActionName = class203.method4465(var23);
+									Client.selectedSpellActionName = class203.Widget_getSpellActionName(var23);
 									if (Client.selectedSpellActionName == null) {
 										Client.selectedSpellActionName = "null";
 									}
@@ -802,7 +802,7 @@ class class141 implements Callable {
 
 			if (Client.isItemSelected != 0) {
 				Client.isItemSelected = 0;
-				ApproximateRouteStrategy.invalidateWidget(class167.widgetDefinition.method7456(class470.field5181));
+				ApproximateRouteStrategy.invalidateWidget(class167.widgetDefinition.method7456(class470.Players_count));
 			}
 
 			if (Client.isSpellSelected) {

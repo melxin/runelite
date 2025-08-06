@@ -218,7 +218,7 @@ public class class448 {
 		descriptor = "(Ltn;III)V",
 		garbageValue = "2137305218"
 	)
-	public static void method9073(class515 var0, int var1, int var2) {
+	public static void method9073(DynamicArray var0, int var1, int var2) {
 		if (var0 != null && var0.method10351() > 1) {
 			class150.method3792(var0, (class570)null, true);
 			if (var0.field5399 == class570.field5721) {

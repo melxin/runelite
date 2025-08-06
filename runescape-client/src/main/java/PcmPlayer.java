@@ -482,7 +482,7 @@ public class PcmPlayer {
 		garbageValue = "-1742411845"
 	)
 	public static int method3049(Buffer var0, String var1) {
-		int var2 = var0.field5818;
+		int var2 = var0.offset;
 		int var4 = var1.length();
 		byte[] var5 = new byte[var4];
 
@@ -552,8 +552,8 @@ public class PcmPlayer {
 		}
 
 		var0.writeSmartByteShort(var5.length);
-		var0.field5818 += class374.huffman.compress(var5, 0, var5.length, var0.offset, var0.field5818);
-		return var0.field5818 - var2;
+		var0.offset += class374.huffman.compress(var5, 0, var5.length, var0.array, var0.offset);
+		return var0.offset - var2;
 	}
 
 	@ObfuscatedName("aj")

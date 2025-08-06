@@ -42,6 +42,7 @@ import static net.runelite.cache.script.Opcodes.INVOKE;
 import static net.runelite.cache.script.Opcodes.RETURN;
 import static net.runelite.cache.script.RuneLiteOpcodes.RUNELITE_EXECUTE;
 import net.runelite.rs.api.RSClient;
+import net.runelite.rs.api.RSDynamicArray;
 import net.runelite.rs.api.RSScript;
 import net.runelite.rs.api.RSScriptEvent;
 
@@ -256,13 +257,15 @@ public abstract class ScriptVMMixin implements RSClient
 	@Override
 	public int getArraySizes(int arrayId)
 	{
-		return client.getArraySizes()[arrayId];
+		final RSDynamicArray array = (RSDynamicArray) client.getObjectLocals()[arrayId];
+		return array.getSize();
 	}
 
 	@Inject
 	@Override
 	public int[] getArray(int arrayId)
 	{
-		return client.getArrays()[arrayId];
+		final RSDynamicArray array = (RSDynamicArray) client.getObjectLocals()[arrayId];
+		return array.getArray();
 	}
 }

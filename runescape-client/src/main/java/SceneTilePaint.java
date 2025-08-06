@@ -76,7 +76,7 @@ public final class SceneTilePaint {
 		try {
 			var0 = HttpResponse.getPreferencesFile("", class36.field227.name, true);
 			Buffer var1 = FriendSystem.clientPreferences.toBuffer();
-			var0.write(var1.offset, 0, var1.field5818);
+			var0.write(var1.array, 0, var1.offset);
 		} catch (Exception var3) {
 		}
 

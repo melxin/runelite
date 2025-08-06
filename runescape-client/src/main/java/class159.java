@@ -92,7 +92,7 @@ public class class159 extends class149 {
 		Coord var3 = var1.method2400(var0);
 		int var4 = Coord.method7395(var1.x, var1.size * -549711872 - 1);
 		int var5 = Coord.method7395(var1.y, var1.size * -549711872 - 1);
-		RestClientThreadFactory.method211(var0, var3.x, var3.y, var4, var5, var2, var1.vmethod2682());
+		RestClientThreadFactory.worldToScreen(var0, var3.x, var3.y, var4, var5, var2, var1.vmethod2682());
 	}
 
 	@ObfuscatedName("lw")

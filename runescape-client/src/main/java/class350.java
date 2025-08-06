@@ -37,7 +37,7 @@ public class class350 extends Node {
 		descriptor = "(Ltn;II)V",
 		garbageValue = "2086876142"
 	)
-	static void method7369(class515 var0, int var1) {
+	static void method7369(DynamicArray var0, int var1) {
 		if (var1 < 0 || var1 >= var0.method10351()) {
 			throw new RuntimeException();
 		}

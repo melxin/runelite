@@ -1,10 +1,13 @@
 import java.util.Arrays;
+import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("tn")
-public class class515 {
+@Implements("DynamicArray")
+public class DynamicArray {
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "Lvf;"
@@ -13,7 +16,11 @@ public class class515 {
 	@ObfuscatedName("ac")
 	public final boolean field5400;
 	@ObfuscatedName("av")
-	int field5401;
+	@ObfuscatedGetter(
+		intValue = -519676011
+	)
+	@Export("size")
+	int size;
 	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = -1063659871
@@ -22,7 +29,8 @@ public class class515 {
 	@ObfuscatedName("as")
 	Object field5403;
 	@ObfuscatedName("ah")
-	int[] field5404;
+	@Export("array")
+	int[] array;
 	@ObfuscatedName("ap")
 	long[] field5405;
 	@ObfuscatedName("am")
@@ -31,7 +39,7 @@ public class class515 {
 	@ObfuscatedSignature(
 		descriptor = "(Lvf;Z)V"
 	)
-	class515(class570 var1, boolean var2) {
+	DynamicArray(class570 var1, boolean var2) {
 		this.field5399 = var1;
 		this.field5400 = var2;
 	}
@@ -39,13 +47,13 @@ public class class515 {
 	@ObfuscatedSignature(
 		descriptor = "(Lvf;Ljava/lang/Object;II)V"
 	)
-	public class515(class570 var1, Object var2, int var3, int var4) {
+	public DynamicArray(class570 var1, Object var2, int var3, int var4) {
 		this.field5400 = true;
 		this.field5399 = var1;
 		this.field5402 = var4;
 		this.field5403 = var2;
 		if (var1 == class570.field5721) {
-			this.field5404 = new int[var4];
+			this.array = new int[var4];
 		} else if (var1 == class570.field5724) {
 			this.field5405 = new long[var4];
 		} else if (var1 == class570.field5718) {
@@ -61,7 +69,7 @@ public class class515 {
 		garbageValue = "2034257173"
 	)
 	public final int[] method10348() {
-		return this.field5404;
+		return this.array;
 	}
 
 	@ObfuscatedName("ab")
@@ -88,7 +96,7 @@ public class class515 {
 		garbageValue = "1747068260"
 	)
 	public final int method10351() {
-		return this.field5401 * -519676011;
+		return this.size * -519676011;
 	}
 
 	@ObfuscatedName("au")
@@ -98,7 +106,7 @@ public class class515 {
 	)
 	final Object method10352(int var1) {
 		if (this.field5399 == class570.field5721) {
-			return this.field5404[var1];
+			return this.array[var1];
 		} else {
 			return this.field5399 == class570.field5724 ? this.field5405[var1] : this.field5406[var1];
 		}
@@ -111,7 +119,7 @@ public class class515 {
 	)
 	final void method10361(int var1, Object var2) {
 		if (this.field5399 == class570.field5721) {
-			this.field5404[var1] = (Integer)var2;
+			this.array[var1] = (Integer)var2;
 		} else if (this.field5399 == class570.field5724) {
 			this.field5405[var1] = (Long)var2;
 		} else {
@@ -167,7 +175,7 @@ public class class515 {
 		if (this.field5402 != var1) {
 			this.field5402 = var1;
 			if (this.field5399 == class570.field5721) {
-				this.field5404 = Arrays.copyOf(this.field5404, var1);
+				this.array = Arrays.copyOf(this.array, var1);
 			} else if (this.field5399 == class570.field5724) {
 				this.field5405 = Arrays.copyOf(this.field5405, var1);
 			} else if (this.field5399 == class570.field5718) {
@@ -183,11 +191,11 @@ public class class515 {
 		garbageValue = "19"
 	)
 	final void method10358(int var1) {
-		int var2 = this.field5401 * -519676011;
-		this.field5401 = var1 * 1527641021;
+		int var2 = this.size * -519676011;
+		this.size = var1 * 1527641021;
 		if (var1 < var2) {
 			if (this.field5399 == class570.field5721) {
-				Arrays.fill(this.field5404, var1, var2, 0);
+				Arrays.fill(this.array, var1, var2, 0);
 			} else if (this.field5399 == class570.field5724) {
 				Arrays.fill(this.field5405, var1, var2, 0L);
 			} else {
@@ -197,7 +205,7 @@ public class class515 {
 			if (this.field5399 == class570.field5721) {
 				int var5 = (Integer)this.field5403;
 				if (var5 != 0) {
-					Arrays.fill(this.field5404, var2, var1, var5);
+					Arrays.fill(this.array, var2, var1, var5);
 				}
 			} else if (this.field5399 == class570.field5724) {
 				long var3 = (Long)this.field5403;
@@ -217,24 +225,24 @@ public class class515 {
 		garbageValue = "-1378372413"
 	)
 	public void method10359(Buffer var1) {
-		var1.writeShort(this.field5401 * -519676011);
+		var1.writeShort(this.size * -519676011);
 		int var2;
 		if (this.field5399 == class570.field5721) {
 			var1.writeByte(0);
 
-			for (var2 = 0; var2 < this.field5401 * -519676011; ++var2) {
-				var1.writeInt(this.field5404[var2]);
+			for (var2 = 0; var2 < this.size * -519676011; ++var2) {
+				var1.writeInt(this.array[var2]);
 			}
 		} else if (this.field5399 == class570.field5724) {
 			var1.writeByte(1);
 
-			for (var2 = 0; var2 < this.field5401 * -519676011; ++var2) {
+			for (var2 = 0; var2 < this.size * -519676011; ++var2) {
 				var1.writeLong(this.field5405[var2]);
 			}
 		} else if (this.field5399 == class570.field5718) {
 			var1.writeByte(2);
 
-			for (var2 = 0; var2 < this.field5401 * -519676011; ++var2) {
+			for (var2 = 0; var2 < this.size * -519676011; ++var2) {
 				var1.writeStringCp1252NullTerminated((String)this.field5406[var2]);
 			}
 		}

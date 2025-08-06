@@ -125,7 +125,7 @@ public enum StudioGame implements Enum {
 		descriptor = "(Ltn;II)V",
 		garbageValue = "-1013268529"
 	)
-	public static void method8179(class515 var0, int var1) {
+	public static void method8179(DynamicArray var0, int var1) {
 		class150.method3792(var0, (class570)null, true);
 		int var2 = var0.method10351();
 		if (var2 > 1) {

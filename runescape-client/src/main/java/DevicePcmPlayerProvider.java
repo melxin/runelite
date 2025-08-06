@@ -278,7 +278,7 @@ public class DevicePcmPlayerProvider implements class105 {
 
 				MouseHandler.method722();
 				Script.method1980();
-				var19 = class291.getPacketBufferNode(ClientPacket.field3511, Client.packetWriter.isaacCipher);
+				var19 = class291.getPacketBufferNode(ClientPacket.MAP_BUILD_COMPLETE, Client.packetWriter.isaacCipher);
 				Client.packetWriter.addNode(var19);
 				class62.method2111();
 				Client.field431 = false;

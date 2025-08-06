@@ -161,7 +161,7 @@ public class class82 {
 		if (var6 != null) {
 			for (TileItem var7 = (TileItem)var6.last(); var7 != null; var7 = (TileItem)var6.previous()) {
 				if ((var4 & 32767) == var7.id && var5 == var7.quantity) {
-					var7.vmethod10593();
+					var7.remove();
 					break;
 				}
 			}

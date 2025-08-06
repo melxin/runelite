@@ -954,7 +954,7 @@ public class WorldMapRegion {
 	)
 	static int method6545(WorldView var0, int var1, int var2, int var3, int var4) {
 		if (var4 == 0) {
-			return class477.method9725(var0, var1, var2, var3);
+			return class477.getTileHeight(var0, var1, var2, var3);
 		} else {
 			int var5 = var4 / 2;
 			int var6 = var1 - var5;
@@ -969,15 +969,15 @@ public class WorldMapRegion {
 
 			for (int var15 = var10; var15 <= var12; ++var15) {
 				for (int var16 = var11; var16 <= var13; ++var16) {
-					var14 = Math.min(var14, class477.method9725(var0, Coord.method7393(var15), Coord.method7393(var16), var3));
+					var14 = Math.min(var14, class477.getTileHeight(var0, Coord.method7393(var15), Coord.method7393(var16), var3));
 				}
 			}
 
-			var14 = Math.min(var14, class477.method9725(var0, var1, var2, var3));
-			var14 = Math.min(var14, class477.method9725(var0, var1 - var5, var2 - var5, var3));
-			var14 = Math.min(var14, class477.method9725(var0, var1 - var5, var5 + var2, var3));
-			var14 = Math.min(var14, class477.method9725(var0, var5 + var1, var2 - var5, var3));
-			var14 = Math.min(var14, class477.method9725(var0, var5 + var1, var5 + var2, var3));
+			var14 = Math.min(var14, class477.getTileHeight(var0, var1, var2, var3));
+			var14 = Math.min(var14, class477.getTileHeight(var0, var1 - var5, var2 - var5, var3));
+			var14 = Math.min(var14, class477.getTileHeight(var0, var1 - var5, var5 + var2, var3));
+			var14 = Math.min(var14, class477.getTileHeight(var0, var5 + var1, var2 - var5, var3));
+			var14 = Math.min(var14, class477.getTileHeight(var0, var5 + var1, var5 + var2, var3));
 			return var14;
 		}
 	}

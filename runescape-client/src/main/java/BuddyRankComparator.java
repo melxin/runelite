@@ -82,8 +82,8 @@ public class BuddyRankComparator extends AbstractUserComparator {
 		garbageValue = "12"
 	)
 	static final void method3548() {
-		if (Client.field555 != class7.topLevelWorldView.plane) {
-			Client.field555 = class7.topLevelWorldView.plane;
+		if (Client.field1340 != class7.topLevelWorldView.plane) {
+			Client.field1340 = class7.topLevelWorldView.plane;
 			int var0 = class7.topLevelWorldView.plane;
 			int[] var1 = Script.sceneMinimapSprite.pixels;
 			int var2 = var1.length;
@@ -138,8 +138,8 @@ public class BuddyRankComparator extends AbstractUserComparator {
 						int var10 = SpriteMask.getObjectDefinition(var9).mapIconId;
 						if (var10 >= 0 && GrandExchangeOfferAgeComparator.WorldMapElement_get(var10).field1967) {
 							Client.mapIcons[Client.mapIconCount] = GrandExchangeOfferAgeComparator.WorldMapElement_get(var10).getSpriteBool(false);
-							Client.changedSkills[Client.mapIconCount] = var5;
-							Client.field558[Client.mapIconCount] = var6;
+							Client.mapIconXs[Client.mapIconCount] = var5;
+							Client.mapIconYs[Client.mapIconCount] = var6;
 							++Client.mapIconCount;
 						}
 					}
