@@ -1,68 +1,120 @@
+import java.util.Collections;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qy")
-public final class class440 {
-	@ObfuscatedName("ap")
-	@Export("base37Table")
-	static final char[] base37Table;
-	@ObfuscatedName("aj")
-	static long[] field4943;
+@ObfuscatedName("qu")
+public class class440 {
+	@ObfuscatedName("al")
+	static char[] field5024;
+	@ObfuscatedName("ab")
+	static char[] field5025;
+	@ObfuscatedName("ac")
+	static char[] field5026;
+	@ObfuscatedName("av")
+	static int[] field5027;
+	@ObfuscatedName("au")
+	@Export("SpriteBuffer_yOffsets")
+	public static int[] SpriteBuffer_yOffsets;
 
 	static {
-		base37Table = new char[]{'_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-		field4943 = new long[12];
+		field5024 = new char[64];
 
-		for (int var0 = 0; var0 < field4943.length; ++var0) {
-			field4943[var0] = (long)Math.pow(37.0D, (double)var0);
+		int var0;
+		for (var0 = 0; var0 < 26; ++var0) {
+			field5024[var0] = (char)(var0 + 65);
 		}
 
+		for (var0 = 26; var0 < 52; ++var0) {
+			field5024[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field5024[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field5024[62] = '+';
+		field5024[63] = '/';
+		field5025 = new char[64];
+
+		for (var0 = 0; var0 < 26; ++var0) {
+			field5025[var0] = (char)(var0 + 65);
+		}
+
+		for (var0 = 26; var0 < 52; ++var0) {
+			field5025[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field5025[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field5025[62] = '*';
+		field5025[63] = '-';
+		field5026 = new char[64];
+
+		for (var0 = 0; var0 < 26; ++var0) {
+			field5026[var0] = (char)(var0 + 65);
+		}
+
+		for (var0 = 26; var0 < 52; ++var0) {
+			field5026[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field5026[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field5026[62] = '-';
+		field5026[63] = '_';
+		field5027 = new int[128];
+
+		for (var0 = 0; var0 < field5027.length; ++var0) {
+			field5027[var0] = -1;
+		}
+
+		for (var0 = 65; var0 <= 90; ++var0) {
+			field5027[var0] = var0 - 65;
+		}
+
+		for (var0 = 97; var0 <= 122; ++var0) {
+			field5027[var0] = var0 - 97 + 26;
+		}
+
+		for (var0 = 48; var0 <= 57; ++var0) {
+			field5027[var0] = var0 - 48 + 52;
+		}
+
+		int[] var2 = field5027;
+		field5027[43] = 62;
+		var2[42] = 62;
+		int[] var1 = field5027;
+		field5027[47] = 63;
+		var1[45] = 63;
 	}
 
-	@ObfuscatedName("oa")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZI)V",
-		garbageValue = "1464100876"
+		descriptor = "([I[II)V",
+		garbageValue = "-651586173"
 	)
-	@Export("findItemDefinitions")
-	static void findItemDefinitions(String var0, boolean var1) {
-		var0 = var0.toLowerCase();
-		short[] var2 = new short[16];
-		int var3 = 0;
+	public static void method8908(int[] var0, int[] var1) {
+		if (var0 != null && var1 != null) {
+			class566.ByteArrayPool_alternativeSizes = var0;
+			FriendSystem.ByteArrayPool_altSizeArrayCounts = new int[var0.length];
+			WorldMapData_1.ByteArrayPool_arrays = new byte[var0.length][][];
 
-		for (int var4 = 0; var4 < class550.ItemDefinition_fileCount; ++var4) {
-			ItemComposition var9 = SceneTilePaint.ItemDefinition_get(var4);
-			if ((!var1 || var9.isTradable) && var9.noteTemplate == -1 && var9.name.toLowerCase().indexOf(var0) != -1) {
-				if (var3 >= 250) {
-					class518.foundItemIdCount = -1;
-					class226.foundItemIds = null;
-					return;
-				}
-
-				if (var3 >= var2.length) {
-					short[] var6 = new short[var2.length * 2];
-
-					for (int var7 = 0; var7 < var3; ++var7) {
-						var6[var7] = var2[var7];
-					}
-
-					var2 = var6;
-				}
-
-				var2[var3++] = (short)var4;
+			for (int var2 = 0; var2 < class566.ByteArrayPool_alternativeSizes.length; ++var2) {
+				WorldMapData_1.ByteArrayPool_arrays[var2] = new byte[var1[var2]][];
+				ByteArrayPool.field5220.add(var0[var2]);
 			}
+
+			Collections.sort(ByteArrayPool.field5220);
+		} else {
+			class566.ByteArrayPool_alternativeSizes = null;
+			FriendSystem.ByteArrayPool_altSizeArrayCounts = null;
+			WorldMapData_1.ByteArrayPool_arrays = null;
+			MouseRecorder.method2130();
 		}
-
-		class226.foundItemIds = var2;
-		GameObject.foundItemIndex = 0;
-		class518.foundItemIdCount = var3;
-		String[] var8 = new String[class518.foundItemIdCount];
-
-		for (int var5 = 0; var5 < class518.foundItemIdCount; ++var5) {
-			var8[var5] = SceneTilePaint.ItemDefinition_get(var2[var5]).name;
-		}
-
-		GraphicsObject.method1854(var8, class226.foundItemIds);
 	}
 }

@@ -6,40 +6,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dp")
+@ObfuscatedName("df")
 @Implements("Messages")
 public class Messages {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@Export("Messages_channels")
 	static final Map Messages_channels;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lqp;"
+		descriptor = "Lqr;"
 	)
 	@Export("Messages_hashTable")
 	static final IterableNodeHashTable Messages_hashTable;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lqa;"
+		descriptor = "Lqg;"
 	)
 	@Export("Messages_queue")
 	static final IterableDualNodeQueue Messages_queue;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1396666983
+		intValue = -248689755
 	)
 	@Export("Messages_count")
 	static int Messages_count;
-	@ObfuscatedName("qp")
-	@ObfuscatedSignature(
-		descriptor = "[Lwd;"
-	)
-	static SpritePixels[] field1257;
-	@ObfuscatedName("vh")
-	@ObfuscatedGetter(
-		intValue = -1994986839
-	)
-	static int field1260;
 
 	static {
 		Messages_channels = new HashMap();
@@ -48,68 +38,45 @@ public class Messages {
 		Messages_count = 0;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1202934909"
+		descriptor = "(II)Lhi;",
+		garbageValue = "1687446474"
 	)
-	@Export("savePreferences")
-	static void savePreferences() {
-		AccessFile var0 = null;
-
-		try {
-			var0 = HealthBarConfig.getPreferencesFile("", FontName.field5530.name, true);
-			Buffer var1 = ClientPacket.clientPreferences.toBuffer();
-			var0.write(var1.array, 0, var1.offset);
-		} catch (Exception var3) {
-		}
-
-		try {
-			if (var0 != null) {
-				var0.closeSync(true);
-			}
-		} catch (Exception var2) {
-		}
-
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(Lps;I)V",
-		garbageValue = "-1010700983"
-	)
-	public static void method2787(AbstractArchive var0) {
-		FloorOverlayDefinition.FloorOverlayDefinition_archive = var0;
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Ljm;IIIII)Z",
-		garbageValue = "-916934984"
-	)
-	static boolean method2806(Model var0, int var1, int var2, int var3, int var4) {
-		AABB var5 = var0.getAABB(var1);
-		int var6 = var2 + var5.xMid;
-		int var7 = var3 + var5.yMid;
-		int var8 = var4 + var5.zMid;
-		int var9 = var5.xMidOffset;
-		int var10 = var5.yMidOffset;
-		int var11 = var5.zMidOffset;
-		int var12 = class150.field1719 - var6;
-		int var13 = IntHashTable.field5140 - var7;
-		int var14 = class168.field1846 - var8;
-		if (Math.abs(var12) > var9 + class159.field1777) {
-			return false;
-		} else if (Math.abs(var13) > var10 + class218.field2407) {
-			return false;
-		} else if (Math.abs(var14) > var11 + Interpreter.field680) {
-			return false;
-		} else if (Math.abs(var14 * Message.field257 - var13 * EnumComposition.field1991) > var10 * Interpreter.field680 + var11 * class218.field2407) {
-			return false;
-		} else if (Math.abs(var12 * EnumComposition.field1991 - var14 * JagexCache.field2431) > var9 * Interpreter.field680 + var11 * class159.field1777) {
-			return false;
+	@Export("getParamDefinition")
+	public static ParamComposition getParamDefinition(int var0) {
+		ParamComposition var1 = (ParamComposition)ParamComposition.ParamDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
 		} else {
-			return Math.abs(var13 * JagexCache.field2431 - var12 * Message.field257) <= var10 * class159.field1777 + var9 * class218.field2407;
+			byte[] var2 = ParamComposition.ParamDefinition_archive.takeFile(11, var0);
+			var1 = new ParamComposition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
+
+			var1.postDecode();
+			ParamComposition.ParamDefinition_cached.put(var1, (long)var0);
+			return var1;
 		}
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "-1"
+	)
+	public static int method2906(int var0) {
+		return var0 + -512;
+	}
+
+	@ObfuscatedName("oq")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "62"
+	)
+	static final void method2904() {
+		Client.field536 = Client.cycleCntr;
+		class360.field3971 = true;
 	}
 }

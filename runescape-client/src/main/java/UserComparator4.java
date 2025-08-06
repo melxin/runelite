@@ -1,22 +1,13 @@
 import java.util.Comparator;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ez")
+@ObfuscatedName("et")
 @Implements("UserComparator4")
 public class UserComparator4 implements Comparator {
-	@ObfuscatedName("cw")
-	@ObfuscatedSignature(
-		descriptor = "Lwd;"
-	)
-	@Export("rightTitleSprite")
-	static SpritePixels rightTitleSprite;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -24,10 +15,10 @@ public class UserComparator4 implements Comparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lsl;Lsl;I)I",
-		garbageValue = "-461915513"
+		descriptor = "(Lto;Lto;I)I",
+		garbageValue = "-491930169"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(Buddy var1, Buddy var2) {
@@ -42,68 +33,28 @@ public class UserComparator4 implements Comparator {
 		return super.equals(var1);
 	}
 
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lfo;",
-		garbageValue = "1819732120"
-	)
-	static class134 method3382(int var0) {
-		class134 var1 = (class134)class175.findEnumerated(class70.method2209(), var0);
-		if (var1 == null) {
-			var1 = class134.field1581;
-		}
-
-		return var1;
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/Object;I)Ltp;",
-		garbageValue = "-1412760912"
-	)
-	static class509 method3385(int var0, Object var1) {
-		class509 var2 = (class509)var1;
-		if (var2 == null) {
-			throw new RuntimeException();
-		} else {
-			return var2;
-		}
-	}
-
 	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lfj;",
-		garbageValue = "1"
-	)
-	static class143 method3387(int var0) {
-		class143 var1 = (class143)SequenceDefinition.SequenceDefinition_cachedModel.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			AbstractArchive var3 = class230.SequenceDefinition_skeletonsArchive;
-			AbstractArchive var4 = WorldMapSection1.SpotAnimationDefinition_archive;
-			boolean var5 = EnumComposition.method4121(var3, var4, var0);
-			class143 var2;
-			if (!var5) {
-				var2 = null;
+	public static final void method3477(long var0) {
+		if (var0 > 0L) {
+			if (var0 % 10L == 0L) {
+				class386.method8193(var0 - 1L);
+				class386.method8193(1L);
 			} else {
-				if (class143.field1670 == null) {
-					class143.field1665 = Runtime.getRuntime().availableProcessors();
-					class143.field1670 = new ThreadPoolExecutor(0, class143.field1665, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(class143.field1665 * 100 + 100), new class175());
-				}
-
-				try {
-					var2 = new class143(var3, var4, var0);
-				} catch (Exception var7) {
-					var2 = null;
-				}
+				class386.method8193(var0);
 			}
 
-			if (var2 != null) {
-				SequenceDefinition.SequenceDefinition_cachedModel.put(var2, (long)var0);
-			}
-
-			return var2;
 		}
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(IIII)I",
+		garbageValue = "-2120641999"
+	)
+	public static int method3481(int var0, int var1, int var2) {
+		int var3 = PacketWriter.method2930(var2 - var1 + 1);
+		var3 <<= var1;
+		var0 |= var3;
+		return var0;
 	}
 }

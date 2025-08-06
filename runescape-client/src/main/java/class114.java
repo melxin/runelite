@@ -1,187 +1,147 @@
+import java.awt.FontMetrics;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ef")
+@ObfuscatedName("eh")
 public class class114 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ad")
+	@Export("loginScreenFontMetrics")
+	static FontMetrics loginScreenFontMetrics;
+	@ObfuscatedName("ou")
+	@Export("characterId")
+	static String characterId;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1294101531
+		intValue = -725260395
 	)
-	int field1453;
-	@ObfuscatedName("aj")
+	int field1492;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1856328269
+		intValue = 580461485
 	)
-	int field1454;
-	@ObfuscatedName("an")
-	byte[] field1452;
+	int field1490;
+	@ObfuscatedName("ac")
+	byte[] field1491;
 
 	class114() {
-		this.field1453 = 0;
-		this.field1454 = 0;
-		this.field1452 = null;
+		this.field1492 = 0;
+		this.field1490 = 0;
+		this.field1491 = null;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "-1003007762"
+		garbageValue = "-1008479519"
 	)
-	int method3296(int var1) {
+	int method3409(int var1) {
 		int var2 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = 0; var1 >= 8 - this.field1454; var1 -= var4) {
-			var4 = 8 - this.field1454;
+		for (var3 = 0; var1 >= 8 - this.field1490; var1 -= var4) {
+			var4 = 8 - this.field1490;
 			int var5 = (1 << var4) - 1;
-			var2 += (this.field1452[this.field1453] >> this.field1454 & var5) << var3;
-			this.field1454 = 0;
-			++this.field1453;
+			var2 += (this.field1491[this.field1492] >> this.field1490 & var5) << var3;
+			this.field1490 = 0;
+			++this.field1492;
 			var3 += var4;
 		}
 
 		if (var1 > 0) {
 			var4 = (1 << var1) - 1;
-			var2 += (this.field1452[this.field1453] >> this.field1454 & var4) << var3;
-			this.field1454 += var1;
+			var2 += (this.field1491[this.field1492] >> this.field1490 & var4) << var3;
+			this.field1490 += var1;
 		}
 
 		return var2;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1614195635"
+		descriptor = "(B)I",
+		garbageValue = "118"
 	)
-	int method3295() {
-		int var1 = this.field1452[this.field1453] >> this.field1454 & 1;
-		++this.field1454;
-		this.field1453 += this.field1454 >> 3;
-		this.field1454 &= 7;
+	int method3408() {
+		int var1 = this.field1491[this.field1492] >> this.field1490 & 1;
+		++this.field1490;
+		this.field1492 += this.field1490 >> 3;
+		this.field1490 &= 7;
 		return var1;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "([BII)V",
-		garbageValue = "2056454847"
+		descriptor = "([BIS)V",
+		garbageValue = "-13006"
 	)
-	void method3307(byte[] var1, int var2) {
-		this.field1452 = var1;
-		this.field1453 = var2;
-		this.field1454 = 0;
+	void method3400(byte[] var1, int var2) {
+		this.field1491 = var1;
+		this.field1492 = var2;
+		this.field1490 = 0;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "0"
+		descriptor = "(CB)Z",
+		garbageValue = "40"
 	)
-	public static void method3306() {
-		StructComposition.StructDefinition_cached.clear();
-	}
-
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "(Lov;I)I",
-		garbageValue = "277847933"
-	)
-	static int method3308(Widget var0) {
-		if (var0.type != 11) {
-			Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize - 1] = "";
-			return 1;
+	static final boolean method3402(char var0) {
+		if (Character.isISOControl(var0)) {
+			return false;
+		} else if (class359.isAlphaNumeric(var0)) {
+			return true;
 		} else {
-			String var1 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-			Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var0.method7778(var1);
-			return 1;
-		}
-	}
+			char[] var1 = class559.field5678;
 
-	@ObfuscatedName("ne")
-	@ObfuscatedSignature(
-		descriptor = "([Lov;IIIII)V",
-		garbageValue = "1452768291"
-	)
-	@Export("drawModelComponents")
-	static final void drawModelComponents(Widget[] var0, int var1, int var2, int var3, int var4) {
-		for (int var5 = var1; var5 <= var2; ++var5) {
-			Widget var6 = var0[var5];
-			if (var6 != null && var3 == var6.parentId && var4 == var6.field4127 && (!var6.isIf3 || !class171.isComponentHidden(var6))) {
-				int var8;
-				if (var6.type == 0) {
-					if (!var6.isIf3 && class171.isComponentHidden(var6) && var6 != FloorUnderlayDefinition.mousedOverWidgetIf1) {
-						continue;
-					}
-
-					drawModelComponents(var0, var6.field4002, var6.field4003, var6.id, var6.childIndex * -744024149);
-					if (var6.children != null) {
-						drawModelComponents(var6.children, 0, var6.children.length - 1, var6.id, -1);
-					}
-
-					if (var6.childIndex * -744024149 == -1) {
-						InterfaceParent var7 = (InterfaceParent)Client.interfaceParents.get((long)var6.id);
-						if (var7 != null) {
-							var8 = var7.group;
-							if (ClientPreferences.widgetDefinition.loadInterface(var8)) {
-								drawModelComponents(ClientPreferences.widgetDefinition.Widget_interfaceComponents[var8], 0, ClientPreferences.widgetDefinition.Widget_interfaceComponents[var8].length - 1, -1, -1);
-							}
-						}
-					}
-				}
-
-				if (var6.type == 6) {
-					if (var6.sequenceId != -1 || var6.sequenceId2 != -1) {
-						boolean var11 = SoundSystem.runCs1(var6);
-						if (var11) {
-							var8 = var6.sequenceId2;
-						} else {
-							var8 = var6.sequenceId;
-						}
-
-						if (var8 != -1) {
-							SequenceDefinition var9 = VarpDefinition.SequenceDefinition_get(var8);
-							if (!var9.isCachedModelIdSet()) {
-								for (var6.modelFrameCycle += Client.graphicsCycle; var6.modelFrameCycle > var9.frameLengths[var6.modelFrame]; ScriptFrame.invalidateWidget(var6)) {
-									var6.modelFrameCycle -= var9.frameLengths[var6.modelFrame];
-									++var6.modelFrame;
-									if (var6.modelFrame >= var9.frameIds.length) {
-										var6.modelFrame -= var9.frameCount;
-										if (var6.modelFrame < 0 || var6.modelFrame >= var9.frameIds.length) {
-											var6.modelFrame = 0;
-										}
-									}
-								}
-							} else {
-								var6.modelFrame += Client.graphicsCycle;
-								int var10 = var9.getMayaAnimFrame();
-								if (var6.modelFrame >= var10) {
-									var6.modelFrame -= var9.frameCount;
-									if (var6.modelFrame < 0 || var6.modelFrame >= var10) {
-										var6.modelFrame = 0;
-									}
-								}
-
-								ScriptFrame.invalidateWidget(var6);
-							}
-						}
-					}
-
-					if (var6.field4101 != 0 && !var6.isIf3) {
-						int var12 = var6.field4101 >> 16;
-						var8 = var6.field4101 << 16 >> 16;
-						var12 *= Client.graphicsCycle;
-						var8 *= Client.graphicsCycle;
-						var6.modelAngleX = var12 + var6.modelAngleX & 2047;
-						var6.modelAngleY = var8 + var6.modelAngleY & 2047;
-						ScriptFrame.invalidateWidget(var6);
-					}
+			int var2;
+			char var3;
+			for (var2 = 0; var2 < var1.length; ++var2) {
+				var3 = var1[var2];
+				if (var0 == var3) {
+					return true;
 				}
 			}
-		}
 
+			var1 = class559.field5680;
+
+			for (var2 = 0; var2 < var1.length; ++var2) {
+				var3 = var1[var2];
+				if (var0 == var3) {
+					return true;
+				}
+			}
+
+			return false;
+		}
+	}
+
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "(FFFFIIIB)V",
+		garbageValue = "-28"
+	)
+	public static final void method3411(float var0, float var1, float var2, float var3, int var4, int var5, int var6) {
+		if (!ViewportMouse.ViewportMouse_false0) {
+			float var11 = 50.0F;
+			float var12 = (float)AbstractRasterizer.method5026();
+			float var13 = (float)(ViewportMouse.ViewportMouse_x - var4) * var11 / (float)var6;
+			float var14 = (float)(ViewportMouse.ViewportMouse_y - var5) * var11 / (float)var6;
+			float var15 = var12 * (float)(ViewportMouse.ViewportMouse_x - var4) / (float)var6;
+			float var16 = var12 * (float)(ViewportMouse.ViewportMouse_y - var5) / (float)var6;
+			float var18 = var0 * var11 + var1 * var14;
+			float var19 = var1 * var11 - var14 * var0;
+			float var17 = class155.method3844(var16, var12, var1, var0);
+			float var20 = var12 * var1 - var16 * var0;
+			var16 = var17;
+			var17 = SpotAnimationDefinition.method4410(var13, var19, var3, var2);
+			float var21 = var19 * var3 + var2 * var13;
+			var13 = var17;
+			var17 = SpotAnimationDefinition.method4410(var15, var20, var3, var2);
+			float var22 = var3 * var20 + var15 * var2;
+			FriendSystem.method1578((int)var13, (int)var18, (int)var21, (int)var17, (int)var16, (int)var22);
+		}
 	}
 }

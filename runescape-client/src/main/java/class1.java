@@ -1,79 +1,66 @@
 import java.util.concurrent.Callable;
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("aj")
+@ObfuscatedName("ab")
 public class class1 implements Callable {
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ih")
 	@ObfuscatedSignature(
-		descriptor = "Lps;"
+		descriptor = "Lqe;"
 	)
-	@Export("VarpDefinition_archive")
-	static AbstractArchive VarpDefinition_archive;
-	@ObfuscatedName("gz")
-	@ObfuscatedGetter(
-		intValue = -145746093
-	)
-	static int field4;
-	@ObfuscatedName("ap")
+	public static class419 field2;
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lwt;"
+		descriptor = "Lwj;"
 	)
-	final Buffer field3;
-	@ObfuscatedName("aj")
+	final Buffer field1;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lai;"
+		descriptor = "Lav;"
 	)
-	final class3 field5;
+	final class3 field0;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lam;"
+		descriptor = "Lap;"
 	)
 	final class7 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lam;Lwt;Lai;)V"
+		descriptor = "(Lap;Lwj;Lav;)V"
 	)
 	class1(class7 var1, Buffer var2, class3 var3) {
 		this.this$0 = var1;
-		this.field3 = var2;
-		this.field5 = var3;
+		this.field1 = var2;
+		this.field0 = var3;
 	}
 
 	public Object call() {
-		return this.field5.vmethod9(this.field3);
+		return this.field0.vmethod11(this.field1);
 	}
 
-	@ObfuscatedName("lx")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1771689453"
+		descriptor = "(II)F",
+		garbageValue = "-1318464309"
 	)
-	static final boolean method8(int var0) {
-		if (var0 >= 2000) {
-			var0 -= 2000;
+	public static float method9(int var0) {
+		var0 &= 16383;
+		return (float)(3.834951969714103E-4D * (double)((float)var0));
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Lwj;BIB)I",
+		garbageValue = "4"
+	)
+	static int method8(Buffer var0, byte var1, int var2) {
+		int var3 = var1 >> var2 & 3;
+		if (var3 == 3) {
+			return var0.readInt();
+		} else if (var3 == 2) {
+			return var0.readShort();
+		} else {
+			return var3 == 1 ? var0.readByte() : 0;
 		}
-
-		return var0 == 1007;
-	}
-
-	@ObfuscatedName("ow")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1256300723"
-	)
-	static void method7(int var0) {
-		Client.oculusOrbState = var0;
-	}
-
-	@ObfuscatedName("oh")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "103"
-	)
-	static boolean method6() {
-		return ClientPacket.clientPreferences.getEULA() >= Client.field379;
 	}
 }

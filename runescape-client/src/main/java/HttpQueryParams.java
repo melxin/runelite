@@ -8,45 +8,45 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uh")
+@ObfuscatedName("un")
 @Implements("HttpQueryParams")
 public class HttpQueryParams implements HttpPayload {
-	@ObfuscatedName("ap")
-	final Map field5352;
+	@ObfuscatedName("al")
+	final Map field5460;
 
 	public HttpQueryParams(Map var1) {
-		this.field5352 = var1;
+		this.field5460 = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lup;",
-		garbageValue = "329585455"
+		descriptor = "(I)Lum;",
+		garbageValue = "2011415999"
 	)
 	@Export("getContentType")
 	public HttpContentType getContentType() {
 		return null;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)[B",
-		garbageValue = "2037324047"
+		garbageValue = "-225917004"
 	)
 	@Export("toBytes")
 	public byte[] toBytes() throws UnsupportedEncodingException {
 		return this.encode().getBytes("UTF-8");
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "421839214"
+		descriptor = "(B)Ljava/lang/String;",
+		garbageValue = "-34"
 	)
 	@Export("encode")
 	public String encode() throws UnsupportedEncodingException {
 		StringBuilder var1 = new StringBuilder();
-		Iterator var2 = this.field5352.entrySet().iterator();
+		Iterator var2 = this.field5460.entrySet().iterator();
 
 		while (var2.hasNext()) {
 			Entry var3 = (Entry)var2.next();

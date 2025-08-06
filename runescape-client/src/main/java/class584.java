@@ -1,87 +1,43 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("wc")
-public class class584 implements Enum {
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lwc;"
-	)
-	public static final class584 field5746;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lwc;"
-	)
-	public static final class584 field5748;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lwc;"
-	)
-	static final class584 field5745;
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lwc;"
-	)
-	static final class584 field5752;
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lwc;"
-	)
-	static final class584 field5749;
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lwc;"
-	)
-	static final class584 field5750;
-	@ObfuscatedName("bn")
-	@ObfuscatedSignature(
-		descriptor = "Lcb;"
-	)
-	@Export("loginScreenRunesAnimation")
-	static LoginScreenAnimation loginScreenRunesAnimation;
-	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = 568496815
-	)
-	final int field5751;
+@ObfuscatedName("ww")
+public class class584 {
 	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = -1701016191
-	)
-	final int field5747;
+	static final int[] field5804;
 
 	static {
-		field5746 = new class584(2, 0);
-		field5748 = new class584(1, 2);
-		field5745 = new class584(4, 5);
-		field5752 = new class584(5, 6);
-		field5749 = new class584(3, 7);
-		field5750 = new class584(0, 8);
-	}
+		field5804 = new int[17];
+		field5804[0] = 0;
 
-	class584(int var1, int var2) {
-		this.field5751 = var1;
-		this.field5747 = var2;
-	}
+		for (int var0 = 0; var0 < 2048; var0 += 128) {
+			int var1 = (var0 >> 7) + 1;
+			int var3 = 0;
+			if (var0 > 0 && var0 < 1024) {
+				var3 |= 272;
+			}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-103"
-	)
-	public boolean method11148() {
-		return this == field5748;
-	}
+			if (var0 > 512 && var0 < 1536) {
+				var3 |= 1088;
+			}
 
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "26"
-	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field5747;
+			if (var0 > 1024) {
+				var3 |= 544;
+			}
+
+			if (var0 > 1536 || var0 < 512) {
+				var3 |= 2176;
+			}
+
+			if (var0 == 0 || var0 == 1024) {
+				var3 |= 48;
+			}
+
+			if (var0 == 512 || var0 == 1536) {
+				var3 |= 1152;
+			}
+
+			field5804[var1] = var3;
+		}
+
 	}
 }

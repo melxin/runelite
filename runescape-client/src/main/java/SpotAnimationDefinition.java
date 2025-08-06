@@ -4,89 +4,83 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hp")
+@ObfuscatedName("hz")
 @Implements("SpotAnimationDefinition")
 public class SpotAnimationDefinition extends DualNode {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lps;"
+		descriptor = "Lpx;"
 	)
-	public static AbstractArchive field2117;
-	@ObfuscatedName("aj")
+	static AbstractArchive field2160;
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lps;"
-	)
-	@Export("SpotAnimationDefinition_modelArchive")
-	public static AbstractArchive SpotAnimationDefinition_modelArchive;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lmr;"
+		descriptor = "Lmd;"
 	)
 	@Export("SpotAnimationDefinition_cached")
-	public static EvictingDualNodeHashTable SpotAnimationDefinition_cached;
-	@ObfuscatedName("ai")
+	static EvictingDualNodeHashTable SpotAnimationDefinition_cached;
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lmr;"
+		descriptor = "Lmd;"
 	)
 	@Export("SpotAnimationDefinition_cachedModels")
-	public static EvictingDualNodeHashTable SpotAnimationDefinition_cachedModels;
-	@ObfuscatedName("al")
+	static EvictingDualNodeHashTable SpotAnimationDefinition_cachedModels;
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1701957071
+		intValue = -1317510085
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 995465221
+		intValue = 1415075465
 	)
 	@Export("archive")
 	int archive;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1901225809
+		intValue = 902931601
 	)
 	@Export("sequence")
 	public int sequence;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@Export("recolorFrom")
 	short[] recolorFrom;
-	@ObfuscatedName("ah")
-	@Export("retextureTo")
-	short[] retextureTo;
-	@ObfuscatedName("ag")
-	@Export("retextureFrom")
-	short[] retextureFrom;
-	@ObfuscatedName("au")
+	@ObfuscatedName("am")
 	@Export("recolorTo")
 	short[] recolorTo;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("aj")
+	@Export("retextureFrom")
+	short[] retextureFrom;
+	@ObfuscatedName("ag")
+	@Export("retextureTo")
+	short[] retextureTo;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 304266475
+		intValue = 1404875169
 	)
 	@Export("widthScale")
 	int widthScale;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 583921253
+		intValue = 645173911
 	)
 	@Export("heightScale")
 	int heightScale;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 2066928075
+		intValue = 267545141
 	)
 	@Export("orientation")
 	int orientation;
 	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 1994917653
+		intValue = -1600288297
 	)
 	@Export("ambient")
 	int ambient;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 1904574911
+		intValue = -7749081
 	)
 	@Export("contrast")
 	int contrast;
@@ -105,10 +99,10 @@ public class SpotAnimationDefinition extends DualNode {
 		this.contrast = 0;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;I)V",
-		garbageValue = "124018297"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1101355229"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -122,10 +116,10 @@ public class SpotAnimationDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;IB)V",
-		garbageValue = "-1"
+		descriptor = "(Lwj;II)V",
+		garbageValue = "1882088755"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -143,48 +137,46 @@ public class SpotAnimationDefinition extends DualNode {
 			this.ambient = var1.readUnsignedByte();
 		} else if (var2 == 8) {
 			this.contrast = var1.readUnsignedByte();
-		} else if (var2 == 9) {
-			var1.readStringCp1252NullTerminated();
 		} else {
 			int var3;
 			int var4;
 			if (var2 == 40) {
 				var3 = var1.readUnsignedByte();
 				this.recolorFrom = new short[var3];
-				this.retextureTo = new short[var3];
+				this.recolorTo = new short[var3];
 
 				for (var4 = 0; var4 < var3; ++var4) {
 					this.recolorFrom[var4] = (short)var1.readUnsignedShort();
-					this.retextureTo[var4] = (short)var1.readUnsignedShort();
+					this.recolorTo[var4] = (short)var1.readUnsignedShort();
 				}
 			} else if (var2 == 41) {
 				var3 = var1.readUnsignedByte();
 				this.retextureFrom = new short[var3];
-				this.recolorTo = new short[var3];
+				this.retextureTo = new short[var3];
 
 				for (var4 = 0; var4 < var3; ++var4) {
 					this.retextureFrom[var4] = (short)var1.readUnsignedShort();
-					this.recolorTo[var4] = (short)var1.readUnsignedShort();
+					this.retextureTo[var4] = (short)var1.readUnsignedShort();
 				}
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Ljm;",
-		garbageValue = "-1"
+		descriptor = "(II)Ljx;",
+		garbageValue = "612682082"
 	)
 	@Export("getModel")
 	public final Model getModel(int var1) {
-		Model var2 = this.method4238();
+		Model var2 = this.method4394();
 		if (var2 == null) {
 			return null;
 		} else {
 			Model var3;
 			if (this.sequence != -1 && var1 != -1) {
-				var3 = VarpDefinition.SequenceDefinition_get(this.sequence).transformSpotAnimationModel(var2, var1);
+				var3 = AsyncHttpResponse.SequenceDefinition_get(this.sequence).transformSpotAnimationModel(var2, var1);
 			} else {
 				var3 = var2.toSharedSpotAnimationModel(true);
 			}
@@ -214,15 +206,15 @@ public class SpotAnimationDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljm;",
-		garbageValue = "-625895714"
+		descriptor = "(I)Ljx;",
+		garbageValue = "772099472"
 	)
-	public final Model method4238() {
+	public final Model method4394() {
 		Model var1 = (Model)SpotAnimationDefinition_cachedModels.get((long)this.id);
 		if (var1 == null) {
-			ModelData var2 = ModelData.ModelData_get(SpotAnimationDefinition_modelArchive, this.archive, 0);
+			ModelData var2 = ModelData.ModelData_get(class143.SpotAnimationDefinition_modelArchive, this.archive, 0);
 			if (var2 == null) {
 				return null;
 			}
@@ -230,13 +222,13 @@ public class SpotAnimationDefinition extends DualNode {
 			int var3;
 			if (this.recolorFrom != null) {
 				for (var3 = 0; var3 < this.recolorFrom.length; ++var3) {
-					var2.recolor(this.recolorFrom[var3], this.retextureTo[var3]);
+					var2.recolor(this.recolorFrom[var3], this.recolorTo[var3]);
 				}
 			}
 
 			if (this.retextureFrom != null) {
 				for (var3 = 0; var3 < this.retextureFrom.length; ++var3) {
-					var2.retexture(this.retextureFrom[var3], this.recolorTo[var3]);
+					var2.retexture(this.retextureFrom[var3], this.retextureTo[var3]);
 				}
 			}
 
@@ -247,21 +239,178 @@ public class SpotAnimationDefinition extends DualNode {
 		return var1;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "7076"
+		descriptor = "(FFFFI)F",
+		garbageValue = "263840986"
 	)
-	public static void method4239() {
-		DbTableType.DBTableType_cache.clear();
+	static final float method4410(float var0, float var1, float var2, float var3) {
+		return var0 * var2 - var1 * var3;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-825662963"
+	)
+	public static void method4411() {
+		FileSystem.FileSystem_cacheFiles.clear();
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(CB)Z",
+		garbageValue = "66"
+	)
+	@Export("isCharAlphabetic")
+	public static boolean isCharAlphabetic(char var0) {
+		return var0 >= 'A' && var0 <= 'Z' || var0 >= 'a' && var0 <= 'z';
+	}
+
+	@ObfuscatedName("ht")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "14"
+		garbageValue = "69"
 	)
-	public static void method4249() {
-		class202.field2136.clear();
+	static final void method4414() {
+		KitDefinition.KitDefinition_archive = null;
+		KitDefinition.KitDefinition_modelsArchive = null;
+		GZipDecompressor.KitDefinition_fileCount = 0;
+	}
+
+	@ObfuscatedName("na")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "790516498"
+	)
+	@Export("changeGameOptions")
+	static final void changeGameOptions(int var0) {
+		class274.method6203();
+		class486.method9834();
+		int var1 = Projection.VarpDefinition_get(var0).type;
+		if (var1 != 0) {
+			int var2 = Varps.Varps_main[var0];
+			if (var1 == 1) {
+				if (var2 == 1) {
+					TaskHandler.method5886(0.9D);
+				}
+
+				if (var2 == 2) {
+					TaskHandler.method5886(0.8D);
+				}
+
+				if (var2 == 3) {
+					TaskHandler.method5886(0.7D);
+				}
+
+				if (var2 == 4) {
+					TaskHandler.method5886(0.6D);
+				}
+			}
+
+			if (var1 == 3) {
+				if (var2 == 0) {
+					WorldMapSectionType.setMusicVolume(255);
+				}
+
+				if (var2 == 1) {
+					WorldMapSectionType.setMusicVolume(192);
+				}
+
+				if (var2 == 2) {
+					WorldMapSectionType.setMusicVolume(128);
+				}
+
+				if (var2 == 3) {
+					WorldMapSectionType.setMusicVolume(64);
+				}
+
+				if (var2 == 4) {
+					WorldMapSectionType.setMusicVolume(0);
+				}
+			}
+
+			if (var1 == 4) {
+				if (var2 == 0) {
+					PcmPlayer.method3045(127);
+				}
+
+				if (var2 == 1) {
+					PcmPlayer.method3045(96);
+				}
+
+				if (var2 == 2) {
+					PcmPlayer.method3045(64);
+				}
+
+				if (var2 == 3) {
+					PcmPlayer.method3045(32);
+				}
+
+				if (var2 == 4) {
+					PcmPlayer.method3045(0);
+				}
+			}
+
+			if (var1 == 5) {
+				Client.leftClickOpensMenu = var2 == 1;
+			}
+
+			if (var1 == 6) {
+				Client.chatEffects = var2;
+			}
+
+			if (var1 == 9) {
+			}
+
+			if (var1 == 10) {
+				if (var2 == 0) {
+					class334.method7074(127);
+				}
+
+				if (var2 == 1) {
+					class334.method7074(96);
+				}
+
+				if (var2 == 2) {
+					class334.method7074(64);
+				}
+
+				if (var2 == 3) {
+					class334.method7074(32);
+				}
+
+				if (var2 == 4) {
+					class334.method7074(0);
+				}
+			}
+
+			if (var1 == 17) {
+				Client.followerIndex = var2 & 65535;
+			}
+
+			if (var1 == 18) {
+				Client.playerAttackOption = (AttackOption)HealthBarConfig.findEnumerated(class134.method3632(), var2);
+				if (Client.playerAttackOption == null) {
+					Client.playerAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
+				}
+			}
+
+			if (var1 == 19) {
+				if (var2 == -1) {
+					Client.combatTargetPlayerIndex = -1;
+				} else {
+					Client.combatTargetPlayerIndex = var2 & 2047;
+				}
+			}
+
+			if (var1 == 22) {
+				Client.npcAttackOption = (AttackOption)HealthBarConfig.findEnumerated(class134.method3632(), var2);
+				if (Client.npcAttackOption == null) {
+					Client.npcAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
+				}
+			}
+
+		}
 	}
 }

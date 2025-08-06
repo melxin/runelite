@@ -4,24 +4,24 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("js")
+@ObfuscatedName("it")
 @Implements("FaceNormal")
 public class FaceNormal {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 976959185
+		intValue = 26729961
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 711583669
+		intValue = -507317839
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1011973457
+		intValue = -394486121
 	)
 	@Export("z")
 	int z;
@@ -29,16 +29,25 @@ public class FaceNormal {
 	FaceNormal() {
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(I)Liv;",
-		garbageValue = "2008380976"
+		descriptor = "(ILox;IIIII[FB)Lox;",
+		garbageValue = "-58"
 	)
-	public static Clock method5455() {
-		try {
-			return new NanoClock();
-		} catch (Throwable var1) {
-			return new MilliClock();
-		}
+	static Widget method5365(int var0, Widget var1, int var2, int var3, int var4, int var5, int var6, float[] var7) {
+		Widget var8 = new Widget();
+		var8.type = var0;
+		var8.parentId = var1.id;
+		var8.childIndex = var2 * 814750319;
+		var8.isIf3 = true;
+		var8.xAlignment = var3;
+		var8.yAlignment = var4;
+		var8.widthAlignment = var5;
+		var8.heightAlignment = var6;
+		var8.rawX = (int)((float)var1.width * var7[0]);
+		var8.rawY = (int)(var7[1] * (float)(var1.height * -1326764757));
+		var8.rawWidth = (int)((float)var1.width * var7[2]);
+		var8.rawHeight = (int)(var7[3] * (float)(var1.height * -1326764757));
+		return var8;
 	}
 }

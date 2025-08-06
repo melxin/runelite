@@ -1,24 +1,30 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("na")
+@ObfuscatedName("oq")
 @Implements("Huffman")
 public class Huffman {
-	@ObfuscatedName("av")
+	@ObfuscatedName("cv")
 	@ObfuscatedSignature(
-		descriptor = "Lov;"
+		descriptor = "[Lxa;"
 	)
-	@Export("scriptActiveWidget")
-	static Widget scriptActiveWidget;
-	@ObfuscatedName("ap")
+	@Export("title_muteSprite")
+	static IndexedSprite[] title_muteSprite;
+	@ObfuscatedName("lw")
+	@ObfuscatedGetter(
+		intValue = 1691174977
+	)
+	static int field4249;
+	@ObfuscatedName("al")
 	@Export("masks")
 	int[] masks;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@Export("bits")
 	byte[] bits;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("keys")
 	int[] keys;
 
@@ -105,10 +111,10 @@ public class Huffman {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "([BII[BII)I",
-		garbageValue = "1794692037"
+		garbageValue = "1779652405"
 	)
 	@Export("compress")
 	int compress(byte[] var1, int var2, int var3, byte[] var4, int var5) {
@@ -156,10 +162,10 @@ public class Huffman {
 		return (var7 + 7 >> 3) - var5;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "([BI[BIII)I",
-		garbageValue = "1731859669"
+		descriptor = "([BI[BIIB)I",
+		garbageValue = "-40"
 	)
 	@Export("decompress")
 	int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {
@@ -300,51 +306,34 @@ public class Huffman {
 		}
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(S)Z",
-		garbageValue = "-28018"
+		descriptor = "(IIIS)I",
+		garbageValue = "13447"
 	)
-	public static boolean method7174() {
-		boolean var0 = false;
-		boolean var1 = false;
-		if (!class335.field3699.isEmpty()) {
-			SongTask var2 = (SongTask)class335.field3699.get(0);
-			if (var2 == null) {
-				class335.field3699.remove(0);
-			} else if (var2.vmethod9290()) {
-				if (var2.method9265()) {
-					System.out.println("Error in midimanager.service: " + var2.method9266());
-					var0 = true;
-				} else {
-					if (var2.method9267() != null) {
-						class335.field3699.add(1, var2.method9267());
-					}
-
-					var1 = var2.method9283();
-				}
-
-				class335.field3699.remove(0);
-			} else {
-				var1 = var2.method9283();
-			}
+	public static int method8115(int var0, int var1, int var2) {
+		var2 &= 3;
+		if (var2 == 0) {
+			return var0;
+		} else if (var2 == 1) {
+			return var1;
+		} else {
+			return var2 == 2 ? 7 - var0 : 7 - var1;
 		}
-
-		if (var0) {
-			class335.field3699.clear();
-			WorldMapIcon_1.method6192();
-		}
-
-		return var1;
 	}
 
-	@ObfuscatedName("gb")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)Luy;",
-		garbageValue = "4194304"
+		descriptor = "(IB)I",
+		garbageValue = "-22"
 	)
-	@Export("getWorldMap")
-	static WorldMap getWorldMap() {
-		return class338.worldMap;
+	public static int method8114(int var0) {
+		--var0;
+		var0 |= var0 >>> 1;
+		var0 |= var0 >>> 2;
+		var0 |= var0 >>> 4;
+		var0 |= var0 >>> 8;
+		var0 |= var0 >>> 16;
+		return var0 + 1;
 	}
 }

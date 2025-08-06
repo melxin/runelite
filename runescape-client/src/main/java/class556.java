@@ -1,39 +1,72 @@
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vw")
-class class556 implements Iterator {
-	@ObfuscatedName("ap")
+@ObfuscatedName("vj")
+public class class556 implements class555 {
+	@ObfuscatedName("sp")
 	@ObfuscatedGetter(
-		intValue = 261099391
+		intValue = -284803483
 	)
-	int field5581;
-	// $FF: synthetic field
+	@Export("selectedSpellWidget")
+	static int selectedSpellWidget;
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lvh;"
+		descriptor = "Lwg;"
 	)
-	final class557 this$0;
+	final class595 field5663;
+	@ObfuscatedName("ab")
+	Map field5660;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvh;)V"
+		descriptor = "(Lwg;)V"
 	)
-	class556(class557 var1) {
-		this.this$0 = var1;
+	public class556(class595 var1) {
+		this.field5663 = var1;
 	}
 
-	public Object next() {
-		int var1 = ++this.field5581 - 1;
-		class517 var2 = (class517)this.this$0.field5584.get((long)var1);
-		return var2 != null ? var2 : this.this$0.method10585(var1);
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "1618017719"
+	)
+	public int vmethod10928(int var1) {
+		if (this.field5660 != null) {
+			class596 var2 = (class596)this.field5660.get(var1);
+			if (var2 != null) {
+				return (Integer)var2.field5881;
+			}
+		}
+
+		return (Integer)this.field5663.vmethod11555(var1);
 	}
 
-	public boolean hasNext() {
-		return this.field5581 < this.this$0.method10064();
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(ILjava/lang/Object;I)V",
+		garbageValue = "853421187"
+	)
+	public void vmethod10930(int var1, Object var2) {
+		if (this.field5660 == null) {
+			this.field5660 = new HashMap();
+			this.field5660.put(var1, new class596(var1, var2));
+		} else {
+			class596 var3 = (class596)this.field5660.get(var1);
+			if (var3 == null) {
+				this.field5660.put(var1, new class596(var1, var2));
+			} else {
+				var3.field5881 = var2;
+			}
+		}
+
 	}
 
-	public void remove() {
-		throw new UnsupportedOperationException();
+	public Iterator iterator() {
+		return this.field5660 == null ? Collections.emptyList().iterator() : this.field5660.values().iterator();
 	}
 }

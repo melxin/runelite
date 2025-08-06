@@ -1,205 +1,90 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vl")
-public enum class571 implements Enum {
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5642(1),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5648(2),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5629(4),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5630(8),
+@ObfuscatedName("vu")
+final class class571 implements class565 {
 	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lvl;"
+		descriptor = "(Ljava/lang/Object;Lwj;I)V",
+		garbageValue = "-567180997"
 	)
-	field5628(16),
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5632(32),
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5631(64, true),
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5634(128),
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5635(256, true),
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5636(512),
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5650(1024),
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5638(2048),
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5654(4096),
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5640(8192),
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5641(16384),
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5639(32768),
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5627(65536),
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5644(131072),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5637(262144),
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5649(524288),
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5646(1048576),
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5643(2097152),
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5647(4194304),
+	public void vmethod11079(Object var1, Buffer var2) {
+		this.method11077((String)var1, var2);
+	}
+
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lvl;"
+		descriptor = "(Lwj;S)Ljava/lang/Object;",
+		garbageValue = "-30185"
 	)
-	field5645(8388608),
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5651(16777216),
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5652(33554432),
-	@ObfuscatedName("ba")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5653(67108864, true),
-	@ObfuscatedName("bx")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5633(134217728),
-	@ObfuscatedName("bl")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5655(268435456),
-	@ObfuscatedName("bi")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5656(536870912, true),
-	@ObfuscatedName("bv")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5657(1073741824, true),
-	@ObfuscatedName("bq")
-	@ObfuscatedSignature(
-		descriptor = "Lvl;"
-	)
-	field5658(Integer.MIN_VALUE);
-
-	@ObfuscatedName("bm")
-	@ObfuscatedGetter(
-		intValue = -1077790717
-	)
-	final int field5659;
-
-	class571(int var3) {
-		this(var3, false);
+	public Object vmethod11078(Buffer var1) {
+		return var1.readStringCp1252NullTerminated();
 	}
 
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IZ)V",
-		garbageValue = "1"
+		descriptor = "(Ljava/lang/String;Lwj;I)V",
+		garbageValue = "31023504"
 	)
-	class571(int var3, boolean var4) {
-		this.field5659 = var3;
+	void method11077(String var1, Buffer var2) {
+		var2.writeStringCp1252NullTerminated(var1);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "26"
+		descriptor = "(I)V",
+		garbageValue = "232291519"
 	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field5659;
+	static void method11084() {
+		Tiles.Tiles_minPlane = 99;
+		AABB.Tiles_underlays = new short[4][104][104];
+		Tiles.Tiles_overlays = new short[4][104][104];
+		class28.Tiles_shapes = new byte[4][104][104];
+		ChatChannel.field806 = new byte[4][104][104];
+		class81.field1179 = new int[4][105][105];
+		Script.Tiles_underlays2 = new byte[4][105][105];
+		Timer.field4752 = new int[105][105];
+		SecureRandomFuture.Tiles_hue = new int[104];
+		WorldMapSection0.Tiles_saturation = new int[104];
+		WorldMapArea.Tiles_lightness = new int[104];
+		DbTable.Tiles_hueMultiplier = new int[104];
+		DelayFadeTask.field5175 = new int[104];
 	}
 
-	@ObfuscatedName("lt")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1773096605"
+		descriptor = "([Ljava/lang/String;[Ljava/lang/Object;IIB)V",
+		garbageValue = "97"
 	)
-	static final int method10767() {
-		return Client.menu.menuOptionsCount - 1;
+	public static void method11083(String[] var0, Object[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var4 = (var3 + var2) / 2;
+			int var5 = var2;
+			String var6 = var0[var4];
+			var0[var4] = var0[var3];
+			var0[var3] = var6;
+			Object var7 = var1[var4];
+			var1[var4] = var1[var3];
+			var1[var3] = var7;
+
+			for (int var8 = var2; var8 < var3; ++var8) {
+				if (var6 == null || var0[var8] != null && var0[var8].compareTo(var6) < (var8 & 1)) {
+					String var9 = var0[var8];
+					var0[var8] = var0[var5];
+					var0[var5] = var9;
+					Object var10 = var1[var8];
+					var1[var8] = var1[var5];
+					var1[var5++] = var10;
+				}
+			}
+
+			var0[var3] = var0[var5];
+			var0[var5] = var6;
+			var1[var3] = var1[var5];
+			var1[var5] = var7;
+			method11083(var0, var1, var2, var5 - 1);
+			method11083(var0, var1, var5 + 1, var3);
+		}
+
 	}
 }

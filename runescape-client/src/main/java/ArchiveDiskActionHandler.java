@@ -4,40 +4,40 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("px")
+@ObfuscatedName("pw")
 @Implements("ArchiveDiskActionHandler")
 public class ArchiveDiskActionHandler implements Runnable {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lqk;"
+		descriptor = "Lqp;"
 	)
 	@Export("ArchiveDiskActionHandler_requestQueue")
 	public static final NodeDeque ArchiveDiskActionHandler_requestQueue;
-	@ObfuscatedName("aj")
-	static final Object field4691;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ab")
+	static final Object field4796;
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lqk;"
+		descriptor = "Lqp;"
 	)
 	@Export("ArchiveDiskActionHandler_responseQueue")
 	public static NodeDeque ArchiveDiskActionHandler_responseQueue;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1733720249
+		intValue = 399792067
 	)
-	static int field4695;
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "Lwz;"
+	static int field4795;
+	@ObfuscatedName("ig")
+	@ObfuscatedGetter(
+		intValue = -607855809
 	)
-	@Export("rasterProvider")
-	public static AbstractRasterProvider rasterProvider;
+	@Export("foundItemIdCount")
+	static int foundItemIdCount;
 
 	static {
 		ArchiveDiskActionHandler_requestQueue = new NodeDeque();
-		field4691 = new Object();
+		field4796 = new Object();
 		ArchiveDiskActionHandler_responseQueue = new NodeDeque();
-		field4695 = 0;
+		field4795 = 0;
 	}
 
 	ArchiveDiskActionHandler() {
@@ -55,7 +55,7 @@ public class ArchiveDiskActionHandler implements Runnable {
 					if (var1.type == 0) {
 						var1.archiveDisk.write((int)var1.key, var1.data, var1.data.length);
 						synchronized(ArchiveDiskActionHandler_requestQueue) {
-							var1.remove();
+							var1.vmethod10593();
 						}
 					} else if (var1.type == 1) {
 						var1.data = var1.archiveDisk.read((int)var1.key);
@@ -64,30 +64,30 @@ public class ArchiveDiskActionHandler implements Runnable {
 						}
 					}
 
-					synchronized(field4691) {
-						if (field4695 <= 1) {
-							field4695 = 0;
-							field4691.notifyAll();
+					synchronized(field4796) {
+						if (field4795 <= 1) {
+							field4795 = 0;
+							field4796.notifyAll();
 							return;
 						}
 
-						field4695 = 600;
+						field4795 = 600;
 					}
 				} else {
-					UserComparator8.method3393(100L);
-					synchronized(field4691) {
-						if (field4695 <= 1) {
-							field4695 = 0;
-							field4691.notifyAll();
+					UserComparator4.method3477(100L);
+					synchronized(field4796) {
+						if (field4795 <= 1) {
+							field4795 = 0;
+							field4796.notifyAll();
 							return;
 						}
 
-						--field4695;
+						--field4795;
 					}
 				}
 			}
 		} catch (Exception var13) {
-			class569.RunException_sendStackTrace((String)null, var13);
+			class559.RunException_sendStackTrace((String)null, var13);
 		}
 	}
 }

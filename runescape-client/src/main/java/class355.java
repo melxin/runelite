@@ -1,13 +1,12 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ng")
-public class class355 {
-	@ObfuscatedName("kd")
+@ObfuscatedName("nf")
+public interface class355 {
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "(I)V",
+		garbageValue = "-1845830227"
 	)
-	@Export("soundEffectsArchive")
-	static Archive soundEffectsArchive;
+	void vmethod7454();
 }

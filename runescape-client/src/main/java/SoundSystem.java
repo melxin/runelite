@@ -3,12 +3,17 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("da")
+@ObfuscatedName("dv")
 @Implements("SoundSystem")
 public class SoundSystem implements Runnable {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ci")
+	@Export("otp")
+	static String otp;
+	@ObfuscatedName("pi")
+	static int[] field1344;
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "[Ldc;"
+		descriptor = "[Ldh;"
 	)
 	@Export("players")
 	volatile PcmPlayer[] players;
@@ -26,60 +31,21 @@ public class SoundSystem implements Runnable {
 				}
 			}
 		} catch (Exception var4) {
-			class569.RunException_sendStackTrace((String)null, var4);
+			class559.RunException_sendStackTrace((String)null, var4);
 		}
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "807833514"
+		descriptor = "(FFFI)F",
+		garbageValue = "734747258"
 	)
-	static int method2980() {
-		return ++Messages.Messages_count - 1;
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(I)[Loh;",
-		garbageValue = "-2065050190"
-	)
-	public static class389[] method2977() {
-		return new class389[]{class389.field4605, class389.field4601, class389.TOKEN};
-	}
-
-	@ObfuscatedName("mj")
-	@ObfuscatedSignature(
-		descriptor = "(Lov;I)Z",
-		garbageValue = "-336178722"
-	)
-	@Export("runCs1")
-	static final boolean runCs1(Widget var0) {
-		if (var0.cs1Comparisons == null) {
-			return false;
+	public static float method3067(float var0, float var1, float var2) {
+		if (var1 < var0) {
+			throw new IllegalArgumentException("max: " + var1 + " can not be lower than min: " + var0);
 		} else {
-			for (int var1 = 0; var1 < var0.cs1Comparisons.length; ++var1) {
-				int var2 = class71.method2212(var0, var1);
-				int var3 = var0.cs1ComparisonValues[var1];
-				if (var0.cs1Comparisons[var1] == 2) {
-					if (var2 >= var3) {
-						return false;
-					}
-				} else if (var0.cs1Comparisons[var1] == 3) {
-					if (var2 <= var3) {
-						return false;
-					}
-				} else if (var0.cs1Comparisons[var1] == 4) {
-					if (var2 == var3) {
-						return false;
-					}
-				} else if (var2 != var3) {
-					return false;
-				}
-			}
-
-			return true;
+			return Math.max(var0, Math.min(var2, var1));
 		}
 	}
 }

@@ -7,13 +7,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ec")
+@ObfuscatedName("ez")
 @Implements("SecureUrlRequester")
 public class SecureUrlRequester extends UrlRequester {
-	@ObfuscatedName("or")
-	@Export("sessionId")
-	static String sessionId;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@Export("secureHttps")
 	final boolean secureHttps;
 
@@ -22,10 +19,10 @@ public class SecureUrlRequester extends UrlRequester {
 		this.secureHttps = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Leo;B)V",
-		garbageValue = "0"
+		descriptor = "(Leu;I)V",
+		garbageValue = "2043617507"
 	)
 	@Export("openConnection")
 	void openConnection(UrlRequest var1) throws IOException {
@@ -33,32 +30,32 @@ public class SecureUrlRequester extends UrlRequester {
 		boolean var9 = false;
 
 		HttpURLConnection var12;
-		label136: {
-			label128: {
+		label139: {
+			label131: {
 				try {
-					label131: {
+					label134: {
 						var9 = true;
-						String var3 = var1.field1493.getProtocol();
+						String var3 = var1.field1538.getProtocol();
 						if (var3.equals("http")) {
 							var2 = this.openHttpConnection(var1);
 						} else {
 							if (!var3.equals("https")) {
-								var1.field1491 = UrlRequest.field1497;
+								var1.field1536 = UrlRequest.field1535;
 								var9 = false;
-								break label131;
+								break label134;
 							}
 
 							var2 = this.openHttpsConnection(var1);
 						}
 
-						this.method3323(var2, var1);
+						this.method3429(var2, var1);
 						var9 = false;
-						break label136;
+						break label139;
 					}
 				} catch (IOException var10) {
-					var1.field1491 = UrlRequest.field1497;
+					var1.field1536 = UrlRequest.field1535;
 					var9 = false;
-					break label128;
+					break label131;
 				} finally {
 					if (var9) {
 						if (var2 != null && var2 instanceof HttpURLConnection) {
@@ -92,60 +89,79 @@ public class SecureUrlRequester extends UrlRequester {
 
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Leo;B)Ljava/net/URLConnection;",
-		garbageValue = "0"
+		descriptor = "(Leu;I)Ljava/net/URLConnection;",
+		garbageValue = "3929216"
 	)
 	@Export("openHttpConnection")
 	URLConnection openHttpConnection(UrlRequest var1) throws IOException {
-		URLConnection var2 = var1.field1493.openConnection();
+		URLConnection var2 = var1.field1538.openConnection();
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Leo;I)Ljava/net/URLConnection;",
-		garbageValue = "1753419906"
+		descriptor = "(Leu;I)Ljava/net/URLConnection;",
+		garbageValue = "1605374179"
 	)
 	@Export("openHttpsConnection")
 	URLConnection openHttpsConnection(UrlRequest var1) throws IOException {
-		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1493.openConnection();
+		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1538.openConnection();
 		if (!this.secureHttps) {
-			var2.setSSLSocketFactory(SecureRandomSSLSocketFactory.method185());
+			var2.setSSLSocketFactory(SecureRandomSSLSocketFactory.method177());
 		}
 
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lfi;",
-		garbageValue = "1131056131"
+		descriptor = "(Lbg;Lbg;IZI)I",
+		garbageValue = "119864443"
 	)
-	static class137[] method3358() {
-		return new class137[]{class137.field1620, class137.field1621, class137.field1618, class137.field1619, class137.field1616, class137.field1627};
-	}
+	@Export("compareWorlds")
+	static int compareWorlds(World var0, World var1, int var2, boolean var3) {
+		if (var2 == 1) {
+			int var4 = var0.population;
+			int var5 = var1.population;
+			if (!var3) {
+				if (var4 == -1) {
+					var4 = 2001;
+				}
 
-	@ObfuscatedName("kc")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIII)V",
-		garbageValue = "313395296"
-	)
-	static void method3363(int var0, int var1, int var2, int var3, int var4, int var5) {
-		NodeDeque var6 = class330.worldView.groundItems[var0][var1][var2];
-		if (var6 != null) {
-			for (TileItem var7 = (TileItem)var6.last(); var7 != null; var7 = (TileItem)var6.previous()) {
-				if ((var3 & 32767) == var7.id && var4 == var7.quantity) {
-					var7.quantity = var5;
-					break;
+				if (var5 == -1) {
+					var5 = 2001;
 				}
 			}
 
-			WorldMapRectangle.updateItemPile(var0, var1, var2);
+			return var4 - var5;
+		} else if (var2 == 2) {
+			return var0.location - var1.location;
+		} else if (var2 == 3) {
+			if (var0.activity.equals("-")) {
+				if (var1.activity.equals("-")) {
+					return 0;
+				} else {
+					return var3 ? -1 : 1;
+				}
+			} else if (var1.activity.equals("-")) {
+				return var3 ? 1 : -1;
+			} else {
+				return var0.activity.compareTo(var1.activity);
+			}
+		} else if (var2 == 4) {
+			return var0.method1490() ? (var1.method1490() ? 0 : 1) : (var1.method1490() ? -1 : 0);
+		} else if (var2 == 5) {
+			return var0.method1517() ? (var1.method1517() ? 0 : 1) : (var1.method1517() ? -1 : 0);
+		} else if (var2 == 6) {
+			return var0.isPvp() ? (var1.isPvp() ? 0 : 1) : (var1.isPvp() ? -1 : 0);
+		} else if (var2 == 7) {
+			return var0.isMembersOnly() ? (var1.isMembersOnly() ? 0 : 1) : (var1.isMembersOnly() ? -1 : 0);
+		} else {
+			return var0.id - var1.id;
 		}
-
 	}
 }

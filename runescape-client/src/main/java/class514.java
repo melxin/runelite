@@ -3,52 +3,47 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tk")
+@ObfuscatedName("tx")
 public enum class514 implements Enum {
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Ltk;"
-	)
-	field5330(2, 1),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Ltk;"
-	)
-	field5329(3, 2),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Ltk;"
-	)
-	field5331(1, 3),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Ltk;"
-	)
-	field5332(0, 10);
-
 	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = -1492923891
+	@ObfuscatedSignature(
+		descriptor = "Ltx;"
 	)
-	final int field5333;
+	field5396(0, 0),
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Ltx;"
+	)
+	field5394(1, 1),
 	@ObfuscatedName("ac")
-	@ObfuscatedGetter(
-		intValue = -776657553
+	@ObfuscatedSignature(
+		descriptor = "Ltx;"
 	)
-	final int field5334;
+	field5397(2, 2);
+
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = 1884540943
+	)
+	final int field5395;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = 829133917
+	)
+	final int field5393;
 
 	class514(int var3, int var4) {
-		this.field5333 = var3;
-		this.field5334 = var4;
+		this.field5395 = var3;
+		this.field5393 = var4;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "26"
+		descriptor = "(I)I",
+		garbageValue = "-164877066"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field5334;
+		return this.field5393;
 	}
 }

@@ -4,59 +4,57 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jz")
+@ObfuscatedName("ix")
 @Implements("AABB")
 public class AABB {
-	@ObfuscatedName("vr")
+	@ObfuscatedName("ag")
+	@Export("Tiles_underlays")
+	static short[][][] Tiles_underlays;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -2056924463
-	)
-	static int field2811;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = -1994869327
+		intValue = 1125797647
 	)
 	@Export("orientation")
 	final int orientation;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 513748147
+		intValue = -392229937
 	)
 	@Export("xMid")
 	int xMid;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 934249539
+		intValue = -1559004315
 	)
 	@Export("yMid")
 	int yMid;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -391804225
+		intValue = -877901307
 	)
 	@Export("zMid")
 	int zMid;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 834848893
+		intValue = -246552103
 	)
 	@Export("xMidOffset")
 	int xMidOffset;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1653333789
+		intValue = -959237305
 	)
 	@Export("yMidOffset")
 	int yMidOffset;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1902189619
+		intValue = -1345952159
 	)
 	@Export("zMidOffset")
 	int zMidOffset;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Ljz;"
+		descriptor = "Lix;"
 	)
 	@Export("aabb")
 	AABB aabb;
@@ -71,60 +69,31 @@ public class AABB {
 		this.zMidOffset = var7;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(ILtb;Lpu;I)V",
-		garbageValue = "-1368267450"
+		descriptor = "(III)I",
+		garbageValue = "2067864621"
 	)
-	static void method5442(int var0, ArchiveDisk var1, Archive var2) {
-		byte[] var3 = null;
-		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-			for (ArchiveDiskAction var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.last(); var5 != null; var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.previous()) {
-				if (var5.key == (long)var0 && var1 == var5.archiveDisk && var5.type == 0) {
-					var3 = var5.data;
-					break;
-				}
+	static final int method5347(int var0, int var1) {
+		if (var0 == -2) {
+			return 12345678;
+		} else if (var0 == -1) {
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
 			}
-		}
 
-		if (var3 != null) {
-			var2.load(var1, var0, var3, true);
+			return var1;
 		} else {
-			byte[] var4 = var1.read(var0);
-			var2.load(var1, var0, var4, true);
-		}
-	}
-
-	@ObfuscatedName("jf")
-	@ObfuscatedSignature(
-		descriptor = "(Ldl;ZB)V",
-		garbageValue = "5"
-	)
-	@Export("addNpcsToScene")
-	static final void addNpcsToScene(WorldView var0, boolean var1) {
-		for (int var2 = 0; var2 < var0.field1147.method9429(); ++var2) {
-			NPC var3 = (NPC)var0.npcs.get((long)var0.field1147.method9430(var2));
-			if (var3 != null && var3.isVisible() && var3.definition.isVisible == var1 && var3.definition.transformIsVisible()) {
-				int var4 = var0.plane;
-				int var5 = var3.x >> 7;
-				int var6 = var3.y >> 7;
-				if (var5 >= 0 && var5 < var0.sizeX && var6 >= 0 && var6 < var0.sizeY) {
-					if (var3.size * -5369856 == 1 && (var3.x & 127) == 64 && (var3.y & 127) == 64) {
-						if (var0.tileLastDrawnActor[var5][var6] == Client.viewportDrawCount) {
-							continue;
-						}
-
-						var0.tileLastDrawnActor[var5][var6] = Client.viewportDrawCount;
-					}
-
-					long var7 = class275.calculateTag(0, 0, 0, 1, !var3.definition.isInteractable, var3.index, var0.id);
-					var3.playerCycle = Client.cycle;
-					int var9 = GrandExchangeOfferTotalQuantityComparator.method8203(var0, var3.x, var3.y, var4, var3.definition.method4165());
-					int var10 = var3.size * -343670784 - 64 + 60;
-					var0.scene.drawEntity(var4, var3.x, var3.y, var9, var10, var3, var3.rotation, var7, var3.isWalking);
-				}
+			var1 = (var0 & 127) * var1 / 128;
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
 			}
-		}
 
+			return (var0 & 65408) + var1;
+		}
 	}
 }

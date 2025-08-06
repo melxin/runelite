@@ -1,89 +1,82 @@
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.util.Date;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ku")
+@ObfuscatedName("jj")
 @Implements("ModelData0")
 public class ModelData0 {
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = 165529761
+	)
+	public static int field2962;
+
 	ModelData0() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Laa;",
-		garbageValue = "1323089697"
+		descriptor = "(I)Ljava/util/Date;",
+		garbageValue = "-896863894"
 	)
-	public static class6[] method5837() {
-		return new class6[]{class6.field16};
+	static Date method5773() {
+		java.util.Calendar var0 = java.util.Calendar.getInstance();
+		var0.set(2, 0);
+		var0.set(5, 1);
+		var0.set(1, 1900);
+		return var0.getTime();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("me")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Z",
-		garbageValue = "1256893014"
+		descriptor = "(Lox;IIZI)V",
+		garbageValue = "-1056768743"
 	)
-	static boolean method5838(String var0) {
-		if (var0 == null) {
-			return false;
-		} else {
-			try {
-				new URL(var0);
-				return true;
-			} catch (MalformedURLException var2) {
-				return false;
-			}
+	@Export("alignWidgetSize")
+	static void alignWidgetSize(Widget var0, int var1, int var2, boolean var3) {
+		int var4 = var0.width;
+		int var5 = var0.height * -1326764757;
+		if (var0.widthAlignment == 0) {
+			var0.width = var0.rawWidth;
+		} else if (var0.widthAlignment == 1) {
+			var0.width = var1 - var0.rawWidth;
+		} else if (var0.widthAlignment == 2) {
+			var0.width = var0.rawWidth * var1 >> 14;
 		}
-	}
 
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "2"
-	)
-	public static void method5836() {
-		HealthBarDefinition.HealthBarDefinition_cached.clear();
-		HealthBarDefinition.HealthBarDefinition_cachedSprites.clear();
-	}
-
-	@ObfuscatedName("bb")
-	@ObfuscatedSignature(
-		descriptor = "(ILcr;ZI)I",
-		garbageValue = "-915945820"
-	)
-	static int method5839(int var0, Script var1, boolean var2) {
-		int var3;
-		if (var0 == ScriptOpcodes.CAM_FORCEANGLE) {
-			Interpreter.Interpreter_intStackSize -= 2;
-			var3 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
-			int var4 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
-			if (!Client.isCameraLocked) {
-				Client.camAngleX = var3;
-				Client.camAngleY = var4;
-			}
-
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_XA) {
-			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.camAngleX;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_YA) {
-			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.camAngleY;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_SETFOLLOWHEIGHT) {
-			var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-			if (var3 < 0) {
-				var3 = 0;
-			}
-
-			Client.camFollowHeight = var3;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CAM_GETFOLLOWHEIGHT) {
-			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.camFollowHeight;
-			return 1;
-		} else {
-			return 2;
+		if (var0.heightAlignment == 0) {
+			var0.height = var0.rawHeight * 1782851971;
+		} else if (var0.heightAlignment == 1) {
+			var0.height = (var2 - var0.rawHeight) * 1782851971;
+		} else if (var0.heightAlignment == 2) {
+			var0.height = (var2 * var0.rawHeight >> 14) * 1782851971;
 		}
+
+		if (var0.widthAlignment == 4) {
+			var0.width = var0.field4084 * var0.height * -1326764757 / var0.field4085;
+		}
+
+		if (var0.heightAlignment == 4) {
+			var0.height = var0.field4085 * var0.width / var0.field4084 * 1782851971;
+		}
+
+		if (var0.contentType == 1337) {
+			Client.viewportWidget = var0;
+		}
+
+		if (var0.type == 12) {
+			var0.method7935().method7585(var0.width, var0.height * -1326764757);
+		}
+
+		if (var3 && var0.onResize != null && (var4 != var0.width || var5 != var0.height * -1326764757)) {
+			ScriptEvent var6 = new ScriptEvent();
+			var6.widget = var0;
+			var6.args = var0.onResize;
+			Client.scriptEvents.addFirst(var6);
+		}
+
 	}
 }

@@ -12,24 +12,24 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ay")
+@ObfuscatedName("ae")
 @Implements("KeyHandler")
 public class KeyHandler implements KeyListener, FocusListener {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@Export("KeyHandler_pressedKeys")
 	boolean[] KeyHandler_pressedKeys;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "[Lbi;"
+		descriptor = "[Lbw;"
 	)
 	class29[] field110;
-	@ObfuscatedName("ai")
-	Collection field113;
-	@ObfuscatedName("al")
-	Collection field114;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("av")
+	Collection field112;
+	@ObfuscatedName("au")
+	Collection field111;
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1378413789
+		intValue = 1380019785
 	)
 	@Export("KeyHandler_idleCycles")
 	volatile int KeyHandler_idleCycles;
@@ -38,105 +38,152 @@ public class KeyHandler implements KeyListener, FocusListener {
 		this.KeyHandler_pressedKeys = new boolean[112];
 		this.field110 = new class29[3];
 		this.KeyHandler_idleCycles = 0;
-		this.field113 = new ArrayList(100);
-		this.field114 = new ArrayList(100);
+		this.field112 = new ArrayList(100);
+		this.field111 = new ArrayList(100);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lbi;II)V",
-		garbageValue = "1433776513"
+		descriptor = "(Lbw;IB)V",
+		garbageValue = "-39"
 	)
-	void method358(class29 var1, int var2) {
+	void method367(class29 var1, int var2) {
 		this.field110[var2] = var1;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "2005320087"
+		garbageValue = "-1278379411"
 	)
-	int method378() {
+	public int method368() {
 		return this.KeyHandler_idleCycles;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-18004391"
+		garbageValue = "1430864709"
 	)
-	public boolean method360() {
+	boolean method369() {
 		return this.KeyHandler_idleCycles <= 1;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/awt/Component;I)V",
-		garbageValue = "-2128998259"
+		descriptor = "(Ljava/awt/Component;B)V",
+		garbageValue = "5"
 	)
-	void method361(Component var1) {
+	void method370(Component var1) {
 		var1.setFocusTraversalKeysEnabled(false);
 		var1.addKeyListener(this);
 		var1.addFocusListener(this);
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/awt/Component;I)V",
-		garbageValue = "-1187619590"
+		garbageValue = "-1882347298"
 	)
-	synchronized void method362(Component var1) {
+	synchronized void method371(Component var1) {
 		var1.removeKeyListener(this);
 		var1.removeFocusListener(this);
 		synchronized(this) {
-			this.field113.add(new class33(4, 0));
+			this.field112.add(new class33(4, 0));
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1819519107"
+		descriptor = "(B)V",
+		garbageValue = "-40"
 	)
-	void method363() {
+	void method372() {
 		++this.KeyHandler_idleCycles;
-		this.method365();
-		Iterator var1 = this.field114.iterator();
+		this.method374();
+		Iterator var1 = this.field111.iterator();
 
 		while (var1.hasNext()) {
 			class33 var2 = (class33)var1.next();
 
-			for (int var3 = 0; var3 < this.field110.length && !var2.method480(this.field110[var3]); ++var3) {
+			for (int var3 = 0; var3 < this.field110.length && !var2.method520(this.field110[var3]); ++var3) {
 			}
 		}
 
-		this.field114.clear();
+		this.field111.clear();
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1789012292"
+		garbageValue = "-1385864560"
 	)
-	synchronized void method365() {
-		Collection var1 = this.field114;
-		this.field114 = this.field113;
-		this.field113 = var1;
+	synchronized void method374() {
+		Collection var1 = this.field111;
+		this.field111 = this.field112;
+		this.field112 = var1;
+	}
+
+	public final synchronized void keyReleased(KeyEvent var1) {
+		int var2;
+		label17: {
+			var2 = var1.getKeyCode();
+			if (var2 >= 0) {
+				int var4 = class27.KeyHandler_keyCodes.length;
+				if (var2 < var4) {
+					var2 = UserComparator5.method3507(var2) & -129;
+					break label17;
+				}
+			}
+
+			var2 = -1;
+		}
+
+		if (var2 >= 0) {
+			this.KeyHandler_pressedKeys[var2] = false;
+			this.field112.add(new class33(2, var2));
+		}
+
+		var1.consume();
+	}
+
+	public final synchronized void keyTyped(KeyEvent var1) {
+		char var2 = var1.getKeyChar();
+		if (var2 != 0 && var2 != '\uffff' && StudioGame.method8176(var2)) {
+			this.field112.add(new class33(3, var2));
+		}
+
+		var1.consume();
+	}
+
+	public final synchronized void focusGained(FocusEvent var1) {
+		this.field112.add(new class33(4, 1));
+	}
+
+	public final synchronized void focusLost(FocusEvent var1) {
+		for (int var2 = 0; var2 < 112; ++var2) {
+			if (this.KeyHandler_pressedKeys[var2]) {
+				this.KeyHandler_pressedKeys[var2] = false;
+				this.field112.add(new class33(2, var2));
+			}
+		}
+
+		this.field112.add(new class33(4, 0));
 	}
 
 	public final synchronized void keyPressed(KeyEvent var1) {
 		int var2;
-		label23: {
+		label28: {
 			var2 = var1.getKeyCode();
 			if (var2 >= 0) {
-				int var4 = class28.KeyHandler_keyCodes.length;
+				int var4 = class27.KeyHandler_keyCodes.length;
 				if (var2 < var4) {
-					int var5 = class28.KeyHandler_keyCodes[var2];
-					var2 = var5;
-					if (HttpResponse.method308(var5)) {
+					var2 = UserComparator5.method3507(var2);
+					boolean var5 = (var2 & 128) != 0;
+					if (var5) {
 						var2 = -1;
 					}
-					break label23;
+					break label28;
 				}
 			}
 
@@ -149,129 +196,143 @@ public class KeyHandler implements KeyListener, FocusListener {
 			}
 
 			this.KeyHandler_pressedKeys[var2] = true;
-			this.field113.add(new class33(1, var2));
+			this.field112.add(new class33(1, var2));
 		}
 
 		var1.consume();
 	}
 
-	public final synchronized void keyReleased(KeyEvent var1) {
-		int var2;
-		label17: {
-			var2 = var1.getKeyCode();
-			if (var2 >= 0) {
-				int var4 = class28.KeyHandler_keyCodes.length;
-				if (var2 < var4) {
-					int var5 = class28.KeyHandler_keyCodes[var2];
-					var2 = var5 & -129;
-					break label17;
-				}
-			}
-
-			var2 = -1;
-		}
-
-		if (var2 >= 0) {
-			this.KeyHandler_pressedKeys[var2] = false;
-			this.field113.add(new class33(2, var2));
-		}
-
-		var1.consume();
-	}
-
-	public final synchronized void focusGained(FocusEvent var1) {
-		this.field113.add(new class33(4, 1));
-	}
-
-	public final synchronized void focusLost(FocusEvent var1) {
-		for (int var2 = 0; var2 < 112; ++var2) {
-			if (this.KeyHandler_pressedKeys[var2]) {
-				this.KeyHandler_pressedKeys[var2] = false;
-				this.field113.add(new class33(2, var2));
-			}
-		}
-
-		this.field113.add(new class33(4, 0));
-	}
-
-	public final synchronized void keyTyped(KeyEvent var1) {
-		char var2 = var1.getKeyChar();
-		if (var2 != 0 && var2 != '\uffff') {
-			boolean var3;
-			if (var2 > 0 && var2 < 128 || var2 >= 160 && var2 <= 255) {
-				var3 = true;
-			} else {
-				label53: {
-					if (var2 != 0) {
-						char[] var4 = class436.cp1252AsciiExtension;
-
-						for (int var5 = 0; var5 < var4.length; ++var5) {
-							char var6 = var4[var5];
-							if (var6 == var2) {
-								var3 = true;
-								break label53;
-							}
-						}
-					}
-
-					var3 = false;
-				}
-			}
-
-			if (var3) {
-				this.field113.add(new class33(3, var2));
-			}
-		}
-
-		var1.consume();
-	}
-
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)Ljava/lang/String;",
-		garbageValue = "-1449692965"
+		descriptor = "(Lqr;ILjava/lang/String;I)Ljava/lang/String;",
+		garbageValue = "-2095221453"
 	)
-	@Export("decodeStringCp1252")
-	public static String decodeStringCp1252(byte[] var0, int var1, int var2) {
-		char[] var3 = new char[var2];
-		int var4 = 0;
-
-		for (int var5 = 0; var5 < var2; ++var5) {
-			int var6 = var0[var5 + var1] & 255;
-			if (var6 != 0) {
-				if (var6 >= 128 && var6 < 160) {
-					char var7 = class436.cp1252AsciiExtension[var6 - 128];
-					if (var7 == 0) {
-						var7 = '?';
-					}
-
-					var6 = var7;
-				}
-
-				var3[var4++] = (char)var6;
-			}
+	static String method391(IterableNodeHashTable var0, int var1, String var2) {
+		if (var0 == null) {
+			return var2;
+		} else {
+			ObjectNode var3 = (ObjectNode)var0.get((long)var1);
+			return var3 == null ? var2 : (String)var3.obj;
 		}
-
-		return new String(var3, 0, var4);
 	}
 
-	@ObfuscatedName("nh")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1861496833"
+		descriptor = "(ILce;ZI)I",
+		garbageValue = "-2080734905"
 	)
-	static final void method373(int var0) {
-		if (ClientPreferences.widgetDefinition.loadInterface(var0)) {
-			Widget[] var1 = ClientPreferences.widgetDefinition.Widget_interfaceComponents[var0];
-
-			for (int var2 = 0; var2 < var1.length; ++var2) {
-				Widget var3 = var1[var2];
-				if (var3 != null) {
-					var3.modelFrame = 0;
-					var3.modelFrameCycle = 0;
-				}
-			}
-
+	static int method375(int var0, Script var1, boolean var2) {
+		if (var0 < 1000) {
+			return class198.method4385(var0, var1, var2);
+		} else if (var0 < 1100) {
+			return NpcOverrides.method4305(var0, var1, var2);
+		} else if (var0 < 1200) {
+			return WorldMapSectionType.method6756(var0, var1, var2);
+		} else if (var0 < 1300) {
+			return WorldMapData_0.method6351(var0, var1, var2);
+		} else if (var0 < 1400) {
+			return UserComparator9.method3528(var0, var1, var2);
+		} else if (var0 < 1500) {
+			return class134.method3631(var0, var1, var2);
+		} else if (var0 < 1600) {
+			return PlayerComposition.method7524(var0, var1, var2);
+		} else if (var0 < 1700) {
+			return class400.method8269(var0, var1, var2);
+		} else if (var0 < 1800) {
+			return class481.method9804(var0, var1, var2);
+		} else if (var0 < 1900) {
+			return class28.method432(var0, var1, var2);
+		} else if (var0 < 2000) {
+			return ModeWhere.method8719(var0, var1, var2);
+		} else if (var0 < 2100) {
+			return NpcOverrides.method4305(var0, var1, var2);
+		} else if (var0 < 2200) {
+			return WorldMapSectionType.method6756(var0, var1, var2);
+		} else if (var0 < 2300) {
+			return WorldMapData_0.method6351(var0, var1, var2);
+		} else if (var0 < 2400) {
+			return UserComparator9.method3528(var0, var1, var2);
+		} else if (var0 < 2500) {
+			return class134.method3631(var0, var1, var2);
+		} else if (var0 < 2600) {
+			return FileSystem.method5915(var0, var1, var2);
+		} else if (var0 < 2700) {
+			return HealthBarConfig.method2651(var0, var1, var2);
+		} else if (var0 < 2800) {
+			return class487.method9868(var0, var1, var2);
+		} else if (var0 < 2900) {
+			return ClientPacket.method7013(var0, var1, var2);
+		} else if (var0 < 3000) {
+			return ModeWhere.method8719(var0, var1, var2);
+		} else if (var0 < 3200) {
+			return ScriptFrame.method763(var0, var1, var2);
+		} else if (var0 < 3300) {
+			return class66.method2137(var0, var1, var2);
+		} else if (var0 < 3400) {
+			return WorldMapAreaData.method6908(var0, var1, var2);
+		} else if (var0 < 3500) {
+			return class152.method3810(var0, var1, var2);
+		} else if (var0 < 3600) {
+			return class31.method498(var0, var1, var2);
+		} else if (var0 < 3700) {
+			return class439.method8907(var0, var1, var2);
+		} else if (var0 < 3800) {
+			return WorldMapIcon_0.method6721(var0, var1, var2);
+		} else if (var0 < 3900) {
+			return IntProjection.method4997(var0, var1, var2);
+		} else if (var0 < 4000) {
+			return ByteArrayPool.method9730(var0, var1, var2);
+		} else if (var0 < 4100) {
+			return class344.method7318(var0, var1, var2);
+		} else if (var0 < 4200) {
+			return class135.method3640(var0, var1, var2);
+		} else if (var0 < 4300) {
+			return HealthBarUpdate.method2477(var0, var1, var2);
+		} else if (var0 < 5100) {
+			return ConcurrentMidiTask.method9671(var0, var1, var2);
+		} else if (var0 < 5400) {
+			return class7.method53(var0, var1, var2);
+		} else if (var0 < 5600) {
+			return class57.method2019(var0, var1, var2);
+		} else if (var0 < 5700) {
+			return class198.method4389(var0, var1, var2);
+		} else if (var0 < 6300) {
+			return ObjectComposition.method4612(var0, var1, var2);
+		} else if (var0 < 6600) {
+			return MouseRecorder.method2129(var0, var1, var2);
+		} else if (var0 < 6700) {
+			return Tiles.method2073(var0, var1, var2);
+		} else if (var0 < 6800) {
+			return WorldMapIcon_0.method6723(var0, var1, var2);
+		} else if (var0 < 6900) {
+			return TileItem.method2782(var0, var1, var2);
+		} else if (var0 < 7000) {
+			return ApproximateRouteStrategy.method792(var0, var1, var2);
+		} else if (var0 < 7100) {
+			return WorldMapLabelSize.method6369(var0, var1, var2);
+		} else if (var0 < 7200) {
+			return HttpRequestTask.method298(var0, var1, var2);
+		} else if (var0 < 7500) {
+			return class254.method5842(var0, var1, var2);
+		} else if (var0 < 7600) {
+			return class4.method12(var0, var1, var2);
+		} else if (var0 < 7700) {
+			return class170.method4064(var0, var1, var2);
+		} else if (var0 < 8000) {
+			return class28.method453(var0, var1, var2);
+		} else {
+			return var0 < 8100 ? class381.method8168(var0, var1, var2) : 2;
 		}
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "-2093420375"
+	)
+	@Export("Messages_getHistorySize")
+	static int Messages_getHistorySize(int var0) {
+		ChatChannel var1 = (ChatChannel)Messages.Messages_channels.get(var0);
+		return var1 == null ? 0 : var1.size();
 	}
 }

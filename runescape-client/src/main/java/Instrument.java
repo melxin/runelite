@@ -4,111 +4,111 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ey")
+@ObfuscatedName("eq")
 @Implements("Instrument")
 public class Instrument {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@Export("Instrument_samples")
 	static int[] Instrument_samples;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("Instrument_noise")
 	static int[] Instrument_noise;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@Export("Instrument_sine")
 	static int[] Instrument_sine;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@Export("Instrument_phases")
 	static int[] Instrument_phases;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@Export("Instrument_delays")
 	static int[] Instrument_delays;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@Export("Instrument_volumeSteps")
 	static int[] Instrument_volumeSteps;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@Export("Instrument_pitchSteps")
 	static int[] Instrument_pitchSteps;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@Export("Instrument_pitchBaseSteps")
 	static int[] Instrument_pitchBaseSteps;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aj")
 	@Export("duration")
 	int duration;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ag")
 	@Export("offset")
 	int offset;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("pitch")
 	SoundEnvelope pitch;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("volume")
 	SoundEnvelope volume;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("pitchModifier")
 	SoundEnvelope pitchModifier;
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("pitchModifierAmplitude")
 	SoundEnvelope pitchModifierAmplitude;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("volumeMultiplier")
 	SoundEnvelope volumeMultiplier;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("volumeMultiplierAmplitude")
 	SoundEnvelope volumeMultiplierAmplitude;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("release")
 	SoundEnvelope release;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("attack")
 	SoundEnvelope attack;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ao")
 	@Export("oscillatorVolume")
 	int[] oscillatorVolume;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("az")
 	@Export("oscillatorPitch")
 	int[] oscillatorPitch;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ad")
 	@Export("oscillatorDelays")
 	int[] oscillatorDelays;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aw")
 	@Export("delayTime")
 	int delayTime;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
 	@Export("delayDecay")
 	int delayDecay;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lea;"
+		descriptor = "Leb;"
 	)
 	@Export("filter")
 	AudioFilter filter;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldc;"
 	)
 	@Export("filterEnvelope")
 	SoundEnvelope filterEnvelope;
@@ -146,207 +146,206 @@ public class Instrument {
 		this.delayDecay = 100;
 	}
 
-	@ObfuscatedName("ap")
-	@Export("synthesize")
-	final int[] synthesize(int var1, int var2) {
-		class470.clearIntArray(Instrument_samples, 0, var1);
+	@ObfuscatedName("al")
+	final int[] method3414(int var1, int var2, int var3) {
+		class476.clearIntArray(Instrument_samples, 0, var1);
 		if (var2 < 10) {
 			return Instrument_samples;
 		} else {
-			double var3 = (double)var1 / ((double)var2 + 0.0D);
+			double var4 = (double)var1 / ((double)var2 + 0.0D);
 			this.pitch.reset();
 			this.volume.reset();
-			int var5 = 0;
 			int var6 = 0;
 			int var7 = 0;
+			int var8 = 0;
 			if (this.pitchModifier != null) {
 				this.pitchModifier.reset();
 				this.pitchModifierAmplitude.reset();
-				var5 = (int)((double)(this.pitchModifier.end - this.pitchModifier.start) * 32.768D / var3);
-				var6 = (int)((double)this.pitchModifier.start * 32.768D / var3);
+				var6 = (int)((double)(this.pitchModifier.end - this.pitchModifier.start) * 32.768D / var4);
+				var7 = (int)((double)this.pitchModifier.start * 32.768D / var4);
 			}
 
-			int var8 = 0;
 			int var9 = 0;
 			int var10 = 0;
+			int var11 = 0;
 			if (this.volumeMultiplier != null) {
 				this.volumeMultiplier.reset();
 				this.volumeMultiplierAmplitude.reset();
-				var8 = (int)((double)(this.volumeMultiplier.end - this.volumeMultiplier.start) * 32.768D / var3);
-				var9 = (int)((double)this.volumeMultiplier.start * 32.768D / var3);
-			}
-
-			int var11;
-			for (var11 = 0; var11 < 5; ++var11) {
-				if (this.oscillatorVolume[var11] != 0) {
-					Instrument_phases[var11] = 0;
-					Instrument_delays[var11] = (int)((double)this.oscillatorDelays[var11] * var3);
-					Instrument_volumeSteps[var11] = (this.oscillatorVolume[var11] << 14) / 100;
-					Instrument_pitchSteps[var11] = (int)((double)(this.pitch.end - this.pitch.start) * 32.768D * Math.pow(1.0057929410678534D, (double)this.oscillatorPitch[var11]) / var3);
-					Instrument_pitchBaseSteps[var11] = (int)((double)this.pitch.start * 32.768D / var3);
-				}
+				var9 = (int)((double)(this.volumeMultiplier.end - this.volumeMultiplier.start) * 32.768D / var4);
+				var10 = (int)((double)this.volumeMultiplier.start * 32.768D / var4);
 			}
 
 			int var12;
+			for (var12 = 0; var12 < 5; ++var12) {
+				if (this.oscillatorVolume[var12] != 0) {
+					Instrument_phases[var12] = 0;
+					Instrument_delays[var12] = (int)((double)this.oscillatorDelays[var12] * var4);
+					Instrument_volumeSteps[var12] = (this.oscillatorVolume[var12] << 14) / 100;
+					Instrument_pitchSteps[var12] = (int)((double)(this.pitch.end - this.pitch.start) * 32.768D * Math.pow(1.0057929410678534D, (double)this.oscillatorPitch[var12]) / var4);
+					Instrument_pitchBaseSteps[var12] = (int)((double)this.pitch.start * 32.768D / var4);
+				}
+			}
+
 			int var13;
 			int var14;
 			int var15;
+			int var16;
 			int[] var10000;
-			for (var11 = 0; var11 < var1; ++var11) {
-				var12 = this.pitch.doStep(var1);
-				var13 = this.volume.doStep(var1);
+			for (var12 = 0; var12 < var1; ++var12) {
+				var13 = this.pitch.doStep(var1);
+				var14 = this.volume.doStep(var1);
 				if (this.pitchModifier != null) {
-					var14 = this.pitchModifier.doStep(var1);
-					var15 = this.pitchModifierAmplitude.doStep(var1);
-					var12 += this.evaluateWave(var7, var15, this.pitchModifier.form) >> 1;
-					var7 = var7 + var6 + (var14 * var5 >> 16);
+					var15 = this.pitchModifier.doStep(var1);
+					var16 = this.pitchModifierAmplitude.doStep(var1);
+					var13 += this.evaluateWave(var8, var16, this.pitchModifier.form) >> 1;
+					var8 = var8 + var7 + (var15 * var6 >> 16);
 				}
 
 				if (this.volumeMultiplier != null) {
-					var14 = this.volumeMultiplier.doStep(var1);
-					var15 = this.volumeMultiplierAmplitude.doStep(var1);
-					var13 = var13 * ((this.evaluateWave(var10, var15, this.volumeMultiplier.form) >> 1) + 32768) >> 15;
-					var10 = var10 + var9 + (var14 * var8 >> 16);
+					var15 = this.volumeMultiplier.doStep(var1);
+					var16 = this.volumeMultiplierAmplitude.doStep(var1);
+					var14 = var14 * ((this.evaluateWave(var11, var16, this.volumeMultiplier.form) >> 1) + 32768) >> 15;
+					var11 = var11 + var10 + (var15 * var9 >> 16);
 				}
 
-				for (var14 = 0; var14 < 5; ++var14) {
-					if (this.oscillatorVolume[var14] != 0) {
-						var15 = Instrument_delays[var14] + var11;
-						if (var15 < var1) {
+				for (var15 = 0; var15 < 5; ++var15) {
+					if (this.oscillatorVolume[var15] != 0) {
+						var16 = Instrument_delays[var15] + var12;
+						if (var16 < var1) {
 							var10000 = Instrument_samples;
-							var10000[var15] += this.evaluateWave(Instrument_phases[var14], var13 * Instrument_volumeSteps[var14] >> 15, this.pitch.form);
+							var10000[var16] += this.evaluateWave(Instrument_phases[var15], var14 * Instrument_volumeSteps[var15] >> 15, this.pitch.form);
 							var10000 = Instrument_phases;
-							var10000[var14] += (var12 * Instrument_pitchSteps[var14] >> 16) + Instrument_pitchBaseSteps[var14];
+							var10000[var15] += (var13 * Instrument_pitchSteps[var15] >> 16) + Instrument_pitchBaseSteps[var15];
 						}
 					}
 				}
 			}
 
-			int var16;
+			int var17;
 			if (this.release != null) {
 				this.release.reset();
 				this.attack.reset();
-				var11 = 0;
-				boolean var19 = false;
-				boolean var20 = true;
+				var12 = 0;
+				boolean var20 = false;
+				boolean var21 = true;
 
-				for (var14 = 0; var14 < var1; ++var14) {
-					var15 = this.release.doStep(var1);
-					var16 = this.attack.doStep(var1);
-					if (var20) {
-						var12 = (var15 * (this.release.end - this.release.start) >> 8) + this.release.start;
+				for (var15 = 0; var15 < var1; ++var15) {
+					var16 = this.release.doStep(var1);
+					var17 = this.attack.doStep(var1);
+					if (var21) {
+						var13 = (var16 * (this.release.end - this.release.start) >> 8) + this.release.start;
 					} else {
-						var12 = (var16 * (this.release.end - this.release.start) >> 8) + this.release.start;
+						var13 = (var17 * (this.release.end - this.release.start) >> 8) + this.release.start;
 					}
 
-					var11 += 256;
-					if (var11 >= var12) {
-						var11 = 0;
-						var20 = !var20;
+					var12 += 256;
+					if (var12 >= var13) {
+						var12 = 0;
+						var21 = !var21;
 					}
 
-					if (var20) {
-						Instrument_samples[var14] = 0;
+					if (var21) {
+						Instrument_samples[var15] = 0;
 					}
 				}
 			}
 
 			if (this.delayTime > 0 && this.delayDecay > 0) {
-				var11 = (int)((double)this.delayTime * var3);
+				var12 = (int)((double)this.delayTime * var4);
 
-				for (var12 = var11; var12 < var1; ++var12) {
+				for (var13 = var12; var13 < var1; ++var13) {
 					var10000 = Instrument_samples;
-					var10000[var12] += Instrument_samples[var12 - var11] * this.delayDecay / 100;
+					var10000[var13] += Instrument_samples[var13 - var12] * this.delayDecay / 100;
 				}
 			}
 
 			if (this.filter.pairs[0] > 0 || this.filter.pairs[1] > 0) {
 				this.filterEnvelope.reset();
-				var11 = this.filterEnvelope.doStep(var1 + 1);
-				var12 = this.filter.compute(0, (float)var11 / 65536.0F);
-				var13 = this.filter.compute(1, (float)var11 / 65536.0F);
-				if (var1 >= var12 + var13) {
-					var14 = 0;
-					var15 = var13;
-					if (var13 > var1 - var12) {
-						var15 = var1 - var12;
+				var12 = this.filterEnvelope.doStep(var1 + 1);
+				var13 = this.filter.method3366(0, (float)var12 / 65536.0F, var3);
+				var14 = this.filter.method3366(1, (float)var12 / 65536.0F, var3);
+				if (var1 >= var13 + var14) {
+					var15 = 0;
+					var16 = var14;
+					if (var14 > var1 - var13) {
+						var16 = var1 - var13;
 					}
 
-					int var17;
-					while (var14 < var15) {
-						var16 = (int)((long)Instrument_samples[var14 + var12] * (long)AudioFilter.forwardMultiplier >> 16);
+					int var18;
+					while (var15 < var16) {
+						var17 = (int)((long)Instrument_samples[var15 + var13] * (long)AudioFilter.forwardMultiplier >> 16);
 
-						for (var17 = 0; var17 < var12; ++var17) {
-							var16 += (int)((long)Instrument_samples[var14 + var12 - 1 - var17] * (long)AudioFilter.coefficients[0][var17] >> 16);
+						for (var18 = 0; var18 < var13; ++var18) {
+							var17 += (int)((long)Instrument_samples[var15 + var13 - 1 - var18] * (long)AudioFilter.coefficients[0][var18] >> 16);
 						}
 
-						for (var17 = 0; var17 < var14; ++var17) {
-							var16 -= (int)((long)Instrument_samples[var14 - 1 - var17] * (long)AudioFilter.coefficients[1][var17] >> 16);
+						for (var18 = 0; var18 < var15; ++var18) {
+							var17 -= (int)((long)Instrument_samples[var15 - 1 - var18] * (long)AudioFilter.coefficients[1][var18] >> 16);
 						}
 
-						Instrument_samples[var14] = var16;
-						var11 = this.filterEnvelope.doStep(var1 + 1);
-						++var14;
+						Instrument_samples[var15] = var17;
+						var12 = this.filterEnvelope.doStep(var1 + 1);
+						++var15;
 					}
 
-					boolean var21 = true;
-					var15 = 128;
+					boolean var22 = true;
+					var16 = 128;
 
 					while (true) {
-						if (var15 > var1 - var12) {
-							var15 = var1 - var12;
+						if (var16 > var1 - var13) {
+							var16 = var1 - var13;
 						}
 
-						int var18;
-						while (var14 < var15) {
-							var17 = (int)((long)Instrument_samples[var14 + var12] * (long)AudioFilter.forwardMultiplier >> 16);
+						int var19;
+						while (var15 < var16) {
+							var18 = (int)((long)Instrument_samples[var15 + var13] * (long)AudioFilter.forwardMultiplier >> 16);
 
-							for (var18 = 0; var18 < var12; ++var18) {
-								var17 += (int)((long)Instrument_samples[var14 + var12 - 1 - var18] * (long)AudioFilter.coefficients[0][var18] >> 16);
+							for (var19 = 0; var19 < var13; ++var19) {
+								var18 += (int)((long)Instrument_samples[var15 + var13 - 1 - var19] * (long)AudioFilter.coefficients[0][var19] >> 16);
 							}
 
-							for (var18 = 0; var18 < var13; ++var18) {
-								var17 -= (int)((long)Instrument_samples[var14 - 1 - var18] * (long)AudioFilter.coefficients[1][var18] >> 16);
+							for (var19 = 0; var19 < var14; ++var19) {
+								var18 -= (int)((long)Instrument_samples[var15 - 1 - var19] * (long)AudioFilter.coefficients[1][var19] >> 16);
 							}
 
-							Instrument_samples[var14] = var17;
-							var11 = this.filterEnvelope.doStep(var1 + 1);
-							++var14;
+							Instrument_samples[var15] = var18;
+							var12 = this.filterEnvelope.doStep(var1 + 1);
+							++var15;
 						}
 
-						if (var14 >= var1 - var12) {
-							while (var14 < var1) {
-								var17 = 0;
+						if (var15 >= var1 - var13) {
+							while (var15 < var1) {
+								var18 = 0;
 
-								for (var18 = var14 + var12 - var1; var18 < var12; ++var18) {
-									var17 += (int)((long)Instrument_samples[var14 + var12 - 1 - var18] * (long)AudioFilter.coefficients[0][var18] >> 16);
+								for (var19 = var15 + var13 - var1; var19 < var13; ++var19) {
+									var18 += (int)((long)Instrument_samples[var15 + var13 - 1 - var19] * (long)AudioFilter.coefficients[0][var19] >> 16);
 								}
 
-								for (var18 = 0; var18 < var13; ++var18) {
-									var17 -= (int)((long)Instrument_samples[var14 - 1 - var18] * (long)AudioFilter.coefficients[1][var18] >> 16);
+								for (var19 = 0; var19 < var14; ++var19) {
+									var18 -= (int)((long)Instrument_samples[var15 - 1 - var19] * (long)AudioFilter.coefficients[1][var19] >> 16);
 								}
 
-								Instrument_samples[var14] = var17;
+								Instrument_samples[var15] = var18;
 								this.filterEnvelope.doStep(var1 + 1);
-								++var14;
+								++var15;
 							}
 							break;
 						}
 
-						var12 = this.filter.compute(0, (float)var11 / 65536.0F);
-						var13 = this.filter.compute(1, (float)var11 / 65536.0F);
-						var15 += 128;
+						var13 = this.filter.method3366(0, (float)var12 / 65536.0F, var3);
+						var14 = this.filter.method3366(1, (float)var12 / 65536.0F, var3);
+						var16 += 128;
 					}
 				}
 			}
 
-			for (var11 = 0; var11 < var1; ++var11) {
-				if (Instrument_samples[var11] < -32768) {
-					Instrument_samples[var11] = -32768;
+			for (var12 = 0; var12 < var1; ++var12) {
+				if (Instrument_samples[var12] < -32768) {
+					Instrument_samples[var12] = -32768;
 				}
 
-				if (Instrument_samples[var11] > 32767) {
-					Instrument_samples[var11] = 32767;
+				if (Instrument_samples[var12] > 32767) {
+					Instrument_samples[var12] = 32767;
 				}
 			}
 
@@ -354,7 +353,7 @@ public class Instrument {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@Export("evaluateWave")
 	final int evaluateWave(int var1, int var2, int var3) {
 		if (var3 == 1) {
@@ -368,9 +367,9 @@ public class Instrument {
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;)V"
+		descriptor = "(Lwj;)V"
 	)
 	@Export("decode")
 	final void decode(Buffer var1) {
@@ -380,7 +379,7 @@ public class Instrument {
 		this.volume.decode(var1);
 		int var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			--var1.offset;
+			--var1.field5818;
 			this.pitchModifier = new SoundEnvelope();
 			this.pitchModifier.decode(var1);
 			this.pitchModifierAmplitude = new SoundEnvelope();
@@ -389,7 +388,7 @@ public class Instrument {
 
 		var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			--var1.offset;
+			--var1.field5818;
 			this.volumeMultiplier = new SoundEnvelope();
 			this.volumeMultiplier.decode(var1);
 			this.volumeMultiplierAmplitude = new SoundEnvelope();
@@ -398,7 +397,7 @@ public class Instrument {
 
 		var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			--var1.offset;
+			--var1.field5818;
 			this.release = new SoundEnvelope();
 			this.release.decode(var1);
 			this.attack = new SoundEnvelope();
@@ -422,6 +421,6 @@ public class Instrument {
 		this.offset = var1.readUnsignedShort();
 		this.filter = new AudioFilter();
 		this.filterEnvelope = new SoundEnvelope();
-		this.filter.method3273(var1, this.filterEnvelope);
+		this.filter.method3365(var1, this.filterEnvelope);
 	}
 }

@@ -1,95 +1,84 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ia")
+@ObfuscatedName("iv")
 public class class209 {
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lda;"
-	)
-	@Export("soundSystem")
-	static SoundSystem soundSystem;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = 389269371
-	)
-	public int field2206;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = 415853017
-	)
-	public int field2205;
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = -1933155739
-	)
-	public int field2207;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = 1411426351
-	)
-	public int field2211;
 	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1449960993
+		intValue = 684312437
 	)
-	public int field2209;
+	public int field2257;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = -1067312029
+	)
+	public int field2253;
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = -1541962633
+	)
+	public int field2254;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -516765019
+	)
+	public int field2252;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = 605627007
+	)
+	public int field2255;
 
 	class209(int var1, int var2, int var3, int var4, int var5) {
-		this.field2206 = 0;
-		this.field2205 = 1;
-		this.field2207 = 0;
-		this.field2211 = 0;
-		this.field2209 = 0;
-		this.field2206 = var1;
-		this.field2205 = var2;
-		this.field2207 = var3;
-		this.field2211 = var4;
-		this.field2209 = var5;
+		this.field2257 = 0;
+		this.field2253 = 1;
+		this.field2254 = 0;
+		this.field2252 = 0;
+		this.field2255 = 0;
+		this.field2257 = var1;
+		this.field2253 = var2;
+		this.field2254 = var3;
+		this.field2252 = var4;
+		this.field2255 = var5;
 	}
 
-	@ObfuscatedName("hs")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "103"
+		descriptor = "(Lpx;III)[Lxv;",
+		garbageValue = "-816130148"
 	)
-	static boolean method4400() {
-		if (Client.archiveLoaders != null && Client.archiveLoadersDone < Client.archiveLoaders.size()) {
-			while (Client.archiveLoadersDone < Client.archiveLoaders.size()) {
-				ArchiveLoader var0 = (ArchiveLoader)Client.archiveLoaders.get(Client.archiveLoadersDone);
-				if (!var0.isLoaded()) {
-					return false;
-				}
-
-				++Client.archiveLoadersDone;
-			}
-
-			return true;
+	public static SpritePixels[] method4562(AbstractArchive var0, int var1, int var2) {
+		if (!class522.method10495(var0, var1, var2)) {
+			return null;
 		} else {
-			return true;
-		}
-	}
+			SpritePixels[] var4 = new SpritePixels[SpriteBufferProperties.SpriteBuffer_spriteCount];
 
-	@ObfuscatedName("ov")
-	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-357909587"
-	)
-	static final void method4399(int var0, int var1) {
-		ClanChannel var2 = var0 >= 0 ? Client.currentClanChannels[var0] : PendingSpawn.guestClanChannel;
-		if (var2 != null && var1 >= 0 && var1 < var2.method3878()) {
-			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1);
-			if (var3.rank == -1) {
-				String var4 = var3.username.getName();
-				PacketBufferNode var5 = class139.getPacketBufferNode(ClientPacket.CLAN_CHANNEL_KICK_USER, Client.packetWriter.isaacCipher);
-				var5.packetBuffer.writeByte(3 + FriendsChat.stringCp1252NullTerminatedByteSize(var4));
-				var5.packetBuffer.writeByte(var0);
-				var5.packetBuffer.writeShort(var1);
-				var5.packetBuffer.writeStringCp1252NullTerminated(var4);
-				Client.packetWriter.addNode(var5);
+			for (int var5 = 0; var5 < SpriteBufferProperties.SpriteBuffer_spriteCount; ++var5) {
+				SpritePixels var6 = var4[var5] = new SpritePixels();
+				var6.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
+				var6.height = SpriteBufferProperties.SpriteBuffer_spriteHeight;
+				var6.xOffset = SpriteBufferProperties.SpriteBuffer_xOffsets[var5];
+				var6.yOffset = class440.SpriteBuffer_yOffsets[var5];
+				var6.subWidth = class333.SpriteBuffer_spriteWidths[var5];
+				var6.subHeight = Buffer.SpriteBuffer_spriteHeights[var5];
+				int var7 = var6.subWidth * var6.subHeight;
+				byte[] var8 = SpriteBufferProperties.SpriteBuffer_pixels[var5];
+				var6.pixels = new int[var7];
+
+				for (int var9 = 0; var9 < var7; ++var9) {
+					int var10 = var8[var9] & 255;
+					var6.pixels[var9] = class113.SpriteBuffer_spritePalette[var10];
+				}
 			}
+
+			SpriteBufferProperties.SpriteBuffer_xOffsets = null;
+			class440.SpriteBuffer_yOffsets = null;
+			class333.SpriteBuffer_spriteWidths = null;
+			Buffer.SpriteBuffer_spriteHeights = null;
+			class113.SpriteBuffer_spritePalette = null;
+			SpriteBufferProperties.SpriteBuffer_pixels = null;
+			return var4;
 		}
 	}
 }

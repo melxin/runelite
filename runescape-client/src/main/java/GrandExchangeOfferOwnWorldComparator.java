@@ -4,20 +4,20 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bn")
+@ObfuscatedName("ba")
 @Implements("GrandExchangeOfferOwnWorldComparator")
 public class GrandExchangeOfferOwnWorldComparator implements Comparator {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@Export("filterWorlds")
 	boolean filterWorlds;
 
 	GrandExchangeOfferOwnWorldComparator() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lpf;Lpf;I)I",
-		garbageValue = "819275693"
+		descriptor = "(Lqn;Lqn;I)I",
+		garbageValue = "1784313440"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
@@ -46,57 +46,51 @@ public class GrandExchangeOfferOwnWorldComparator implements Comparator {
 		return super.equals(var1);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("kf")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "182018814"
+		descriptor = "(Ldj;IIIIIIB)V",
+		garbageValue = "115"
 	)
-	static final void method760(String var0) {
-		GrandExchangeOfferWorldComparator.addGameMessage(30, "", var0);
-	}
+	static void method804(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+		NodeDeque var7 = var0.groundItems[var1][var2][var3];
+		if (var7 != null) {
+			for (TileItem var8 = (TileItem)var7.last(); var8 != null; var8 = (TileItem)var7.previous()) {
+				if ((var4 & 32767) == var8.id && var5 == var8.quantity) {
+					var8.quantity = var6;
+					break;
+				}
+			}
 
-	@ObfuscatedName("aj")
-	public static int method759(long var0) {
-		return (int)(var0 >>> 0 & 127L);
-	}
-
-	@ObfuscatedName("lf")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIIIZII)I",
-		garbageValue = "1607631668"
-	)
-	@Export("insertMenuItem")
-	static final int insertMenuItem(String var0, String var1, int var2, int var3, int var4, int var5, int var6, boolean var7, int var8) {
-		if (Client.isMenuOpen) {
-			return -1;
-		} else {
-			return !UserList.method9679(var8, var2) ? -1 : Client.menu.insertMenuItem(var0, var1, var2, var3, var4, var5, var6, var7, var8);
+			class167.updateItemPile(var1, var2, var3);
 		}
+
 	}
 
-	@ObfuscatedName("oi")
+	@ObfuscatedName("nh")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "78"
+		descriptor = "(IIII)Lch;",
+		garbageValue = "556826293"
 	)
-	@Export("Clan_joinChat")
-	static final void Clan_joinChat(String var0) {
-		if (!var0.equals("")) {
-			PacketBufferNode var1 = class139.getPacketBufferNode(ClientPacket.FRIEND_CHAT_JOIN_LEAVE, Client.packetWriter.isaacCipher);
-			var1.packetBuffer.writeByte(FriendsChat.stringCp1252NullTerminatedByteSize(var0));
-			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
-			Client.packetWriter.addNode(var1);
+	@Export("openInterface")
+	static final InterfaceParent openInterface(int var0, int var1, int var2) {
+		InterfaceParent var3 = new InterfaceParent();
+		var3.group = var1;
+		var3.type = var2;
+		Client.interfaceParents.put(var3, (long)var0);
+		Tiles.method2077(var1);
+		Widget var4 = class167.widgetDefinition.method7456(var0);
+		ApproximateRouteStrategy.invalidateWidget(var4);
+		if (Client.meslayerContinueWidget != null) {
+			ApproximateRouteStrategy.invalidateWidget(Client.meslayerContinueWidget);
+			Client.meslayerContinueWidget = null;
 		}
-	}
 
-	@ObfuscatedName("oy")
-	@ObfuscatedSignature(
-		descriptor = "(Lov;I)I",
-		garbageValue = "1390735869"
-	)
-	@Export("getWidgetFlags2")
-	static int getWidgetFlags2(Widget var0) {
-		WidgetConfigNode var1 = (WidgetConfigNode)Client.widgetFlags.get(((long)var0.id << 32) + (long)(var0.childIndex * -744024149));
-		return var1 != null ? var1.method7726() : class31.method456(var0.flags);
+		Tiles.revalidateWidgetScroll(class167.widgetDefinition.Widget_interfaceComponents[var0 >> 16], var4, false);
+		WorldMapRegion.runWidgetOnLoadListener(var1);
+		if (Client.rootInterface != -1) {
+			HttpResponse.runIntfCloseListeners(Client.rootInterface, 1);
+		}
+
+		return var3;
 	}
 }

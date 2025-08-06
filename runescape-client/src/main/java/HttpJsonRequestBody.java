@@ -7,10 +7,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@ObfuscatedName("uq")
+@ObfuscatedName("uy")
 @Implements("HttpJsonRequestBody")
 public class HttpJsonRequestBody implements HttpPayload {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("fg")
+	@ObfuscatedSignature(
+		descriptor = "Lru;"
+	)
+	@Export("fontBold12")
+	public static Font fontBold12;
+	@ObfuscatedName("ab")
 	@Export("body")
 	@ObfuscatedSignature(
 		descriptor = "Lorg/json/JSONObject;"
@@ -32,30 +38,30 @@ public class HttpJsonRequestBody implements HttpPayload {
 		this.setBodyFromString(var1);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lup;",
-		garbageValue = "329585455"
+		descriptor = "(I)Lum;",
+		garbageValue = "2011415999"
 	)
 	@Export("getContentType")
 	public HttpContentType getContentType() {
 		return HttpContentType.APPLICATION_JSON;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)[B",
-		garbageValue = "2037324047"
+		garbageValue = "-225917004"
 	)
 	@Export("toBytes")
 	public byte[] toBytes() throws UnsupportedEncodingException {
 		return this.body == null ? new byte[0] : this.body.toString().getBytes("UTF-8");
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "([BI)V",
-		garbageValue = "1684624962"
+		descriptor = "([BB)V",
+		garbageValue = "0"
 	)
 	@Export("bodyFromBytes")
 	void bodyFromBytes(byte[] var1) throws UnsupportedEncodingException {
@@ -63,10 +69,10 @@ public class HttpJsonRequestBody implements HttpPayload {
 		this.setBodyFromString(var2);
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "1130554091"
+		descriptor = "(Ljava/lang/String;B)V",
+		garbageValue = "113"
 	)
 	@Export("setBodyFromString")
 	void setBodyFromString(String var1) throws UnsupportedEncodingException {
@@ -88,13 +94,22 @@ public class HttpJsonRequestBody implements HttpPayload {
 		}
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(B)Lorg/json/JSONObject;",
-		garbageValue = "-114"
+		garbageValue = "22"
 	)
 	@Export("getBody")
 	public JSONObject getBody() {
 		return this.body;
+	}
+
+	@ObfuscatedName("jw")
+	@ObfuscatedSignature(
+		descriptor = "(B)Lqp;",
+		garbageValue = "4"
+	)
+	public static NodeDeque method10535() {
+		return Client.scriptEvents;
 	}
 }

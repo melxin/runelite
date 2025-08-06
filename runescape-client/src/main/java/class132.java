@@ -1,64 +1,62 @@
-import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fw")
+@ObfuscatedName("fr")
 public class class132 {
-	@ObfuscatedName("ai")
-	public static final float field1558;
+	@ObfuscatedName("ck")
+	@ObfuscatedSignature(
+		descriptor = "Lxa;"
+	)
+	static IndexedSprite field1588;
 	@ObfuscatedName("al")
-	public static final float field1559;
+	@ObfuscatedGetter(
+		intValue = -1696998483
+	)
+	int field1597;
+	@ObfuscatedName("ab")
+	float field1589;
+	@ObfuscatedName("ac")
+	float field1590;
+	@ObfuscatedName("av")
+	float field1591;
+	@ObfuscatedName("au")
+	float field1592;
+	@ObfuscatedName("as")
+	float field1593;
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lfr;"
+	)
+	class132 field1595;
 
-	static {
-		field1558 = Math.ulp(1.0F);
-		field1559 = 2.0F * field1558;
+	class132() {
+		this.field1590 = Float.MAX_VALUE;
+		this.field1591 = Float.MAX_VALUE;
+		this.field1592 = Float.MAX_VALUE;
+		this.field1593 = Float.MAX_VALUE;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lov;I[B[BI)V",
-		garbageValue = "1777161449"
+		descriptor = "(Lwj;II)V",
+		garbageValue = "441301286"
 	)
-	@Export("Widget_setKey")
-	static final void Widget_setKey(Widget var0, int var1, byte[] var2, byte[] var3) {
-		if (var0.field4058 == null) {
-			if (var2 == null) {
-				return;
-			}
-
-			var0.field4058 = new byte[11][];
-			var0.field4059 = new byte[11][];
-			var0.field4060 = new int[11];
-			var0.field4031 = new int[11];
-		}
-
-		var0.field4058[var1] = var2;
-		if (var2 != null) {
-			var0.field4057 = true;
-		} else {
-			var0.field4057 = false;
-
-			for (int var4 = 0; var4 < var0.field4058.length; ++var4) {
-				if (var0.field4058[var4] != null) {
-					var0.field4057 = true;
-					break;
-				}
-			}
-		}
-
-		var0.field4059[var1] = var3;
+	void method3571(Buffer var1, int var2) {
+		this.field1597 = var1.readShort();
+		this.field1589 = var1.method11235();
+		this.field1590 = var1.method11235();
+		this.field1591 = var1.method11235();
+		this.field1592 = var1.method11235();
+		this.field1593 = var1.method11235();
 	}
 
-	@ObfuscatedName("lv")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-2047482711"
+		descriptor = "(I)[Lpr;",
+		garbageValue = "-1456099192"
 	)
-	@Export("resumePauseWidget")
-	static void resumePauseWidget(int var0, int var1) {
-		PacketBufferNode var2 = class139.getPacketBufferNode(ClientPacket.RESUME_PAUSEBUTTON, Client.packetWriter.isaacCipher);
-		var2.packetBuffer.writeShort(var1);
-		var2.packetBuffer.writeIntIME(var0);
-		Client.packetWriter.addNode(var2);
+	public static class392[] method3574() {
+		return new class392[]{class392.field4705, class392.field4703, class392.field4701, class392.field4702};
 	}
 }

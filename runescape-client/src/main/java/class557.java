@@ -1,80 +1,94 @@
-import java.util.Iterator;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vh")
-public class class557 extends class516 implements class313 {
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lmd;"
-	)
-	final DemotingHashTable field5584;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lps;"
-	)
-	final AbstractArchive field5583;
-	@ObfuscatedName("ai")
+@ObfuscatedName("vw")
+public class class557 {
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -64969533
+		intValue = 954857425
 	)
-	final int field5582;
+	public static int field5665;
 
+	@ObfuscatedName("nc")
 	@ObfuscatedSignature(
-		descriptor = "(Lon;ILqt;Lps;)V"
+		descriptor = "([Lox;IIIIB)V",
+		garbageValue = "-71"
 	)
-	public class557(StudioGame var1, int var2, Language var3, AbstractArchive var4) {
-		super(var1, var3, var4 != null ? var4.getGroupFileCount(var2) : 0);
-		this.field5584 = new DemotingHashTable(64);
-		this.field5583 = var4;
-		this.field5582 = var2;
-	}
+	@Export("drawModelComponents")
+	static final void drawModelComponents(Widget[] var0, int var1, int var2, int var3, int var4) {
+		for (int var5 = var1; var5 <= var2; ++var5) {
+			Widget var6 = var0[var5];
+			if (var6 != null && var3 == var6.parentId && var4 == var6.field4117 && (!var6.isIf3 || !class187.isComponentHidden(var6))) {
+				if (var6.type == 0) {
+					if (!var6.isIf3 && class187.isComponentHidden(var6) && var6 != JagexCache.mousedOverWidgetIf1) {
+						continue;
+					}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lth;",
-		garbageValue = "1059633187"
-	)
-	protected class518 vmethod10584(int var1) {
-		synchronized(this.field5584) {
-			class517 var2 = (class517)this.field5584.get((long)var1);
-			if (var2 == null) {
-				var2 = this.method10585(var1);
-				this.field5584.method6771(var2, (long)var1);
+					drawModelComponents(var0, var6.field4148, var6.field4090, var6.id, var6.childIndex * -64977777);
+					if (var6.children != null) {
+						drawModelComponents(var6.children, 0, var6.children.length - 1, var6.id, -1);
+					}
+
+					if (var6.childIndex * -64977777 == -1) {
+						InterfaceParent var7 = (InterfaceParent)Client.interfaceParents.get((long)var6.id);
+						if (var7 != null) {
+							class107.method3306(var7.group);
+						}
+					}
+				}
+
+				if (var6.type == 6) {
+					int var8;
+					if (var6.sequenceId != -1 || var6.sequenceId2 != -1) {
+						boolean var11 = class375.runCs1(var6);
+						if (var11) {
+							var8 = var6.sequenceId2;
+						} else {
+							var8 = var6.sequenceId;
+						}
+
+						if (var8 != -1) {
+							SequenceDefinition var9 = AsyncHttpResponse.SequenceDefinition_get(var8);
+							if (!var9.isCachedModelIdSet()) {
+								for (var6.modelFrameCycle += Client.graphicsCycle; var6.modelFrameCycle > var9.frameLengths[var6.modelFrame]; ApproximateRouteStrategy.invalidateWidget(var6)) {
+									var6.modelFrameCycle -= var9.frameLengths[var6.modelFrame];
+									++var6.modelFrame;
+									if (var6.modelFrame >= var9.frameIds.length) {
+										var6.modelFrame -= var9.frameCount;
+										if (var6.modelFrame < 0 || var6.modelFrame >= var9.frameIds.length) {
+											var6.modelFrame = 0;
+										}
+									}
+								}
+							} else {
+								var6.modelFrame += Client.graphicsCycle;
+								int var10 = var9.getMayaAnimFrame();
+								if (var6.modelFrame >= var10) {
+									var6.modelFrame -= var9.frameCount;
+									if (var6.modelFrame < 0 || var6.modelFrame >= var10) {
+										var6.modelFrame = 0;
+									}
+								}
+
+								ApproximateRouteStrategy.invalidateWidget(var6);
+							}
+						}
+					}
+
+					if (var6.field4127 != 0 && !var6.isIf3) {
+						int var12 = var6.field4127 >> 16;
+						var8 = var6.field4127 << 16 >> 16;
+						var12 *= Client.graphicsCycle;
+						var8 *= Client.graphicsCycle;
+						var6.modelAngleX = var12 + var6.modelAngleX & 2047;
+						var6.modelAngleY = var8 + var6.modelAngleY & 2047;
+						ApproximateRouteStrategy.invalidateWidget(var6);
+					}
+				}
 			}
-
-			return var2;
-		}
-	}
-
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(II)Ltm;",
-		garbageValue = "-1143491372"
-	)
-	class517 method10585(int var1) {
-		byte[] var2 = this.field5583.takeFile(this.field5582, var1);
-		class517 var3 = new class517(var1);
-		if (var2 != null) {
-			var3.method10096(new Buffer(var2));
 		}
 
-		return var3;
-	}
-
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "35"
-	)
-	public void method10596() {
-		synchronized(this.field5584) {
-			this.field5584.clear();
-		}
-	}
-
-	public Iterator iterator() {
-		return new class556(this);
 	}
 }

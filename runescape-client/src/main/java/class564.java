@@ -1,58 +1,119 @@
 import java.util.Iterator;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vb")
-final class class564 implements class558 {
-	@ObfuscatedName("iu")
-	static Iterator field5606;
-
-	@ObfuscatedName("ap")
+@ObfuscatedName("vg")
+public class class564 extends class522 implements class314 {
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Object;Lwt;I)V",
-		garbageValue = "872276318"
+		descriptor = "Lmr;"
 	)
-	public void vmethod10652(Object var1, Buffer var2) {
-		this.method10654((String)var1, var2);
-	}
-
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(Lwt;B)Ljava/lang/Object;",
-		garbageValue = "-108"
-	)
-	public Object vmethod10657(Buffer var1) {
-		return var1.readStringCp1252NullTerminated();
-	}
-
+	final DemotingHashTable field5704;
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lwt;I)V",
-		garbageValue = "-991662182"
+		descriptor = "Lpx;"
 	)
-	void method10654(String var1, Buffer var2) {
-		var2.writeStringCp1252NullTerminated(var1);
+	final AbstractArchive field5702;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = 322588711
+	)
+	final int field5701;
+
+	@ObfuscatedSignature(
+		descriptor = "(Loy;ILqq;Lpx;)V"
+	)
+	public class564(StudioGame var1, int var2, Language var3, AbstractArchive var4) {
+		super(var1, var3, var4 != null ? var4.getGroupFileCount(var2) : 0);
+		this.field5704 = new DemotingHashTable(64);
+		this.field5702 = var4;
+		this.field5701 = var2;
 	}
 
-	@ObfuscatedName("ly")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "-1878851311"
+		descriptor = "(II)Luv;",
+		garbageValue = "1217291460"
 	)
-	static void method10658(int var0, int var1, int var2, int var3) {
-		Widget var4 = ClientPreferences.widgetDefinition.getWidgetChild(var0, var1);
-		if (var4 != null && var4.onTargetEnter != null) {
-			ScriptEvent var5 = new ScriptEvent();
-			var5.widget = var4;
-			var5.args = var4.onTargetEnter;
-			ModeWhere.runScriptEvent(var5);
+	protected class524 vmethod11009(int var1) {
+		synchronized(this.field5704) {
+			class523 var2 = (class523)this.field5704.get((long)var1);
+			if (var2 == null) {
+				var2 = this.method11019(var1);
+				this.field5704.method6953(var2, (long)var1);
+			}
+
+			return var2;
+		}
+	}
+
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "(II)Luz;",
+		garbageValue = "1850917223"
+	)
+	class523 method11019(int var1) {
+		byte[] var2 = this.field5702.takeFile(this.field5701, var1);
+		class523 var3 = new class523(var1);
+		if (var2 != null) {
+			var3.method10507(new Buffer(var2));
 		}
 
-		Client.selectedSpellItemId = var3;
-		Client.isSpellSelected = true;
-		class394.selectedSpellWidget = var0;
-		Client.selectedSpellChildIndex = var1;
-		class448.selectedSpellFlags = var2;
-		ScriptFrame.invalidateWidget(var4);
+		return var3;
+	}
+
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-110"
+	)
+	public void method11011() {
+		synchronized(this.field5704) {
+			this.field5704.clear();
+		}
+	}
+
+	public Iterator iterator() {
+		return new class563(this);
+	}
+
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(Lkm;Lwe;B)Lri;",
+		garbageValue = "0"
+	)
+	public static Bounds method11020(WorldEntityCoord var0, class582 var1) {
+		int var2 = var1.field5800;
+		int var3 = var1.field5803;
+		int var4 = var1.field5798;
+		int var5 = var1.field5802;
+		int var6 = var0.getCurrentRotationAngle();
+		int var7 = var0.getX();
+		int var8 = var0.getY();
+		double var9 = (double)WorldMapLabel.method6812(var6) / 65536.0D;
+		int var15 = class532.field5477[var6 & 2047];
+		double var13 = (double)var15 / 65536.0D;
+		int var17 = (int)((double)var2 * var9 - (double)var3 * var13);
+		int var18 = (int)((double)var3 * var9 + var13 * (double)var2);
+		var7 += var17;
+		var8 += var18;
+		int var19 = (int)((double)var4 * var9 - var13 * (double)var5);
+		int var20 = (int)((double)var5 * var9 + var13 * (double)var4);
+		int var21 = (int)((double)var4 * var9 + (double)var5 * var13);
+		int var22 = (int)(var9 * (double)var5 - var13 * (double)var4);
+		int var23 = var7 - var19;
+		int var24 = var8 + var20;
+		int var25 = var7 + var21;
+		int var26 = var8 + var22;
+		int var27 = var7 + var19;
+		int var28 = var8 - var20;
+		int var29 = var7 - var21;
+		int var30 = var8 - var22;
+		int var31 = Math.min(var23, Math.min(var25, Math.min(var27, var29)));
+		int var32 = Math.max(var23, Math.max(var25, Math.max(var27, var29)));
+		int var33 = Math.min(var24, Math.min(var26, Math.min(var28, var30)));
+		int var34 = Math.max(var24, Math.max(var26, Math.max(var28, var30)));
+		return class279.method6309(var31, var33, var32 - var31 + 1, var34 - var33 + 1);
 	}
 }

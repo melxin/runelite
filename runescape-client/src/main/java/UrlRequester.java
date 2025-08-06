@@ -10,25 +10,22 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
 @ObfuscatedName("es")
 @Implements("UrlRequester")
 public abstract class UrlRequester implements Runnable {
-	@ObfuscatedName("nf")
-	static boolean field1487;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@Export("requestThread")
 	final Thread requestThread;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@Export("isClosed")
 	volatile boolean isClosed;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("requests")
 	Queue requests;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1823159129
+		intValue = 656273093
 	)
 	@Export("clientRevision")
 	int clientRevision;
@@ -41,21 +38,21 @@ public abstract class UrlRequester implements Runnable {
 		this.clientRevision = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Leo;B)V",
-		garbageValue = "0"
+		descriptor = "(Leu;I)V",
+		garbageValue = "2043617507"
 	)
 	@Export("openConnection")
 	abstract void openConnection(UrlRequest var1) throws IOException;
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/net/URLConnection;I)I",
-		garbageValue = "-614165280"
+		garbageValue = "272061531"
 	)
-	int method3345(URLConnection var1) {
-		int var2 = UrlRequest.field1497;
+	int method3425(URLConnection var1) {
+		int var2 = UrlRequest.field1535;
 		if (var1 != null) {
 			try {
 				if (var1 instanceof HttpURLConnection) {
@@ -68,10 +65,10 @@ public abstract class UrlRequester implements Runnable {
 		return var2;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/net/URLConnection;I)V",
-		garbageValue = "-990619832"
+		garbageValue = "-2120062495"
 	)
 	@Export("setDefaultRequestProperties")
 	void setDefaultRequestProperties(URLConnection var1) {
@@ -82,12 +79,12 @@ public abstract class UrlRequester implements Runnable {
 		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.clientRevision);
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;Leo;B)V",
-		garbageValue = "64"
+		descriptor = "(Ljava/net/URLConnection;Leu;B)V",
+		garbageValue = "-122"
 	)
-	void method3323(URLConnection var1, UrlRequest var2) {
+	void method3429(URLConnection var1, UrlRequest var2) {
 		DataInputStream var3 = null;
 
 		try {
@@ -99,7 +96,7 @@ public abstract class UrlRequester implements Runnable {
 				var3.readFully(var4);
 			} else {
 				var4 = new byte[0];
-				byte[] var6 = GameEngine.method666(5000);
+				byte[] var6 = SceneTilePaint.method5667(5000);
 
 				for (int var7 = var3.read(var6); var7 > -1; var7 = var3.read(var6)) {
 					byte[] var8 = new byte[var4.length + var7];
@@ -108,14 +105,14 @@ public abstract class UrlRequester implements Runnable {
 					var4 = var8;
 				}
 
-				ArchiveLoader.ByteArrayPool_release(var6);
+				class470.ByteArrayPool_release(var6);
 			}
 
 			var2.response0 = var4;
 		} catch (IOException var14) {
 			var2.response0 = null;
 		} finally {
-			var2.field1491 = this.method3345(var1);
+			var2.field1536 = this.method3425(var1);
 		}
 
 		if (var3 != null) {
@@ -127,10 +124,10 @@ public abstract class UrlRequester implements Runnable {
 
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;I)Leo;",
-		garbageValue = "2089531643"
+		descriptor = "(Ljava/net/URL;I)Leu;",
+		garbageValue = "301697495"
 	)
 	@Export("request")
 	public UrlRequest request(URL var1) {
@@ -142,10 +139,10 @@ public abstract class UrlRequester implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "27"
+		descriptor = "(I)V",
+		garbageValue = "-2009968182"
 	)
 	@Export("close")
 	public void close() {
@@ -179,309 +176,208 @@ public abstract class UrlRequester implements Runnable {
 
 				this.openConnection(var1);
 			} catch (Exception var7) {
-				class569.RunException_sendStackTrace((String)null, var7);
+				class559.RunException_sendStackTrace((String)null, var7);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;Lqp;I)Lqp;",
-		garbageValue = "993162578"
+		descriptor = "(I)[Lfa;",
+		garbageValue = "-1028985220"
 	)
-	@Export("readStringIntParameters")
-	static final IterableNodeHashTable readStringIntParameters(Buffer var0, IterableNodeHashTable var1) {
-		int var2 = var0.readUnsignedByte();
-		int var3;
-		if (var1 == null) {
-			var3 = HealthBarUpdate.method2362(var2);
-			var1 = new IterableNodeHashTable(var3);
-		}
-
-		for (var3 = 0; var3 < var2; ++var3) {
-			boolean var4 = var0.readUnsignedByte() == 1;
-			int var5 = var0.readMedium();
-			Object var6;
-			if (var4) {
-				var6 = new ObjectNode(var0.readStringCp1252NullTerminated());
-			} else {
-				var6 = new IntegerNode(var0.readInt());
-			}
-
-			var1.put((Node)var6, (long)var5);
-		}
-
-		return var1;
+	static class138[] method3446() {
+		return new class138[]{class138.field1664, class138.field1663, class138.field1666, class138.field1662, class138.field1659, class138.field1661};
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1589928308"
+		descriptor = "([Ljava/lang/String;[IIII)V",
+		garbageValue = "-972178847"
 	)
-	public static int method3339(int var0) {
-		return class525.field5355[var0 & 16383];
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "([J[IIII)V",
-		garbageValue = "1549978929"
-	)
-	public static void method3350(long[] var0, int[] var1, int var2, int var3) {
+	@Export("quicksortStringsWithCorrespondingIntegers")
+	public static void quicksortStringsWithCorrespondingIntegers(String[] var0, int[] var1, int var2, int var3) {
 		if (var2 < var3) {
 			int var4 = (var3 + var2) / 2;
 			int var5 = var2;
-			long var6 = var0[var4];
+			String var6 = var0[var4];
 			var0[var4] = var0[var3];
 			var0[var3] = var6;
-			int var8 = var1[var4];
+			int var7 = var1[var4];
 			var1[var4] = var1[var3];
-			var1[var3] = var8;
-			int var9 = var6 == Long.MAX_VALUE ? 0 : 1;
+			var1[var3] = var7;
 
-			for (int var10 = var2; var10 < var3; ++var10) {
-				if (var0[var10] < var6 + (long)(var10 & var9)) {
-					long var11 = var0[var10];
-					var0[var10] = var0[var5];
-					var0[var5] = var11;
-					int var13 = var1[var10];
-					var1[var10] = var1[var5];
-					var1[var5++] = var13;
+			for (int var8 = var2; var8 < var3; ++var8) {
+				if (var6 == null || var0[var8] != null && var0[var8].compareTo(var6) < (var8 & 1)) {
+					String var9 = var0[var8];
+					var0[var8] = var0[var5];
+					var0[var5] = var9;
+					int var10 = var1[var8];
+					var1[var8] = var1[var5];
+					var1[var5++] = var10;
 				}
 			}
 
 			var0[var3] = var0[var5];
 			var0[var5] = var6;
 			var1[var3] = var1[var5];
-			var1[var5] = var8;
-			method3350(var0, var1, var2, var5 - 1);
-			method3350(var0, var1, var5 + 1, var3);
+			var1[var5] = var7;
+			quicksortStringsWithCorrespondingIntegers(var0, var1, var2, var5 - 1);
+			quicksortStringsWithCorrespondingIntegers(var0, var1, var5 + 1, var3);
 		}
 
 	}
 
-	@ObfuscatedName("bc")
+	@ObfuscatedName("ku")
 	@ObfuscatedSignature(
-		descriptor = "(ILcr;ZB)I",
-		garbageValue = "21"
+		descriptor = "(IIIIII)V",
+		garbageValue = "-372118387"
 	)
-	static int method3349(int var0, Script var1, boolean var2) {
-		if (var0 == ScriptOpcodes.CHAT_GETFILTER_PUBLIC) {
-			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.publicChatMode;
-			return 1;
-		} else if (var0 == ScriptOpcodes.CHAT_SETFILTER) {
-			Interpreter.Interpreter_intStackSize -= 3;
-			Client.publicChatMode = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
-			class397.privateChatMode = class146.method3642(Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1]);
-			if (class397.privateChatMode == null) {
-				class397.privateChatMode = PrivateChatMode.field5857;
+	@Export("drawObject")
+	static final void drawObject(int var0, int var1, int var2, int var3, int var4) {
+		Scene var5 = class7.topLevelWorldView.scene;
+		long var6 = var5.getBoundaryObjectTag(var0, var1, var2);
+		int var8;
+		int var9;
+		int var10;
+		int var11;
+		int var14;
+		int var15;
+		if (var6 != 0L) {
+			var8 = var5.getObjectFlags(var0, var1, var2, var6);
+			var9 = var8 >> 6 & 3;
+			var10 = var8 & 31;
+			var11 = var3;
+			boolean var12 = 0L != var6 && !Varcs.method2848(var6);
+			if (var12) {
+				var11 = var4;
 			}
 
-			Client.tradeChatMode = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 2];
-			PacketBufferNode var13 = class139.getPacketBufferNode(ClientPacket.CHAT_SETFILTER, Client.packetWriter.isaacCipher);
-			var13.packetBuffer.writeByte(Client.publicChatMode);
-			var13.packetBuffer.writeByte(class397.privateChatMode.field5858);
-			var13.packetBuffer.writeByte(Client.tradeChatMode);
-			Client.packetWriter.addNode(var13);
-			return 1;
-		} else {
-			PacketBufferNode var6;
-			int var7;
-			String var8;
-			int var9;
-			if (var0 == ScriptOpcodes.CHAT_SENDABUSEREPORT) {
-				var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-				Interpreter.Interpreter_intStackSize -= 2;
-				var7 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
-				var9 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
-				var6 = class139.getPacketBufferNode(ClientPacket.CHAT_SENDABUSEREPORT, Client.packetWriter.isaacCipher);
-				var6.packetBuffer.writeByte(FriendsChat.stringCp1252NullTerminatedByteSize(var8) + 2);
-				var6.packetBuffer.writeStringCp1252NullTerminated(var8);
-				var6.packetBuffer.writeByte(var7 - 1);
-				var6.packetBuffer.writeByte(var9);
-				Client.packetWriter.addNode(var6);
-				return 1;
+			int[] var13 = Script.sceneMinimapSprite.pixels;
+			var14 = var1 * 4 + (103 - var2) * 2048 + 24624;
+			var15 = class70.Entity_unpackID(var6);
+			ObjectComposition var16 = SpriteMask.getObjectDefinition(var15);
+			if (var16.mapSceneId != -1) {
+				IndexedSprite var17 = Bounds.mapSceneSprites[var16.mapSceneId];
+				if (var17 != null) {
+					int var18 = (var16.sizeX * 4 - var17.subWidth) / 2;
+					int var19 = (var16.sizeY * 4 - var17.subHeight) / 2;
+					var17.drawAt(var1 * 4 + var18 + 48, (104 - var2 - var16.sizeY) * 4 + var19 + 48);
+				}
 			} else {
-				int var3;
-				Message var5;
-				if (var0 == ScriptOpcodes.CHAT_GETHISTORY_BYTYPEANDLINE) {
-					Interpreter.Interpreter_intStackSize -= 2;
-					var3 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
-					var7 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
-					var5 = class7.Messages_getByChannelAndID(var3, var7);
-					if (var5 != null) {
-						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.count;
-						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.cycle;
-						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.sender != null ? var5.sender : "";
-						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.prefix != null ? var5.prefix : "";
-						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.text != null ? var5.text : "";
-						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.isFromFriend() ? 1 : (var5.isFromIgnored() ? 2 : 0);
-					} else {
-						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
-						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-						Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-						Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
+				if (var10 == 0 || var10 == 2) {
+					if (var9 == 0) {
+						var13[var14] = var11;
+						var13[var14 + 512] = var11;
+						var13[var14 + 1024] = var11;
+						var13[var14 + 1536] = var11;
+					} else if (var9 == 1) {
+						var13[var14] = var11;
+						var13[var14 + 1] = var11;
+						var13[var14 + 2] = var11;
+						var13[var14 + 3] = var11;
+					} else if (var9 == 2) {
+						var13[var14 + 3] = var11;
+						var13[var14 + 512 + 3] = var11;
+						var13[var14 + 1024 + 3] = var11;
+						var13[var14 + 1536 + 3] = var11;
+					} else if (var9 == 3) {
+						var13[var14 + 1536] = var11;
+						var13[var14 + 1536 + 1] = var11;
+						var13[var14 + 1536 + 2] = var11;
+						var13[var14 + 1536 + 3] = var11;
 					}
+				}
 
-					return 1;
-				} else {
-					Message var4;
-					if (var0 == ScriptOpcodes.CHAT_GETHISTORY_BYUID) {
-						var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-						var4 = WorldMapRegion.Messages_getMessage(var3);
-						if (var4 != null) {
-							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.type;
-							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.cycle;
-							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.sender != null ? var4.sender : "";
-							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.prefix != null ? var4.prefix : "";
-							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.text != null ? var4.text : "";
-							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.isFromFriend() ? 1 : (var4.isFromIgnored() ? 2 : 0);
-						} else {
-							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
-							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-						}
+				if (var10 == 3) {
+					if (var9 == 0) {
+						var13[var14] = var11;
+					} else if (var9 == 1) {
+						var13[var14 + 3] = var11;
+					} else if (var9 == 2) {
+						var13[var14 + 1536 + 3] = var11;
+					} else if (var9 == 3) {
+						var13[var14 + 1536] = var11;
+					}
+				}
 
-						return 1;
-					} else if (var0 == ScriptOpcodes.CHAT_GETFILTER_PRIVATE) {
-						if (class397.privateChatMode == null) {
-							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
-						} else {
-							Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class397.privateChatMode.field5858;
-						}
-
-						return 1;
-					} else {
-						PacketBufferNode var12;
-						if (var0 == ScriptOpcodes.CHAT_SENDPUBLIC) {
-							var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-							var7 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-							var12 = class538.method10225(var7, var8, class28.clientLanguage, -1);
-							Client.packetWriter.addNode(var12);
-							return 1;
-						} else if (var0 == ScriptOpcodes.CHAT_SENDPRIVATE) {
-							class175.Interpreter_objectStackSize -= 2;
-							var8 = (String)Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize];
-							String var11 = (String)Interpreter.Interpreter_objectStack[class175.Interpreter_objectStackSize + 1];
-							var12 = class139.getPacketBufferNode(ClientPacket.CHAT_SENDPRIVATE, Client.packetWriter.isaacCipher);
-							var12.packetBuffer.writeShort(0);
-							int var10 = var12.packetBuffer.offset;
-							var12.packetBuffer.writeStringCp1252NullTerminated(var8);
-							UserComparator8.method3396(var12.packetBuffer, var11);
-							var12.packetBuffer.writeLengthShort(var12.packetBuffer.offset - var10);
-							Client.packetWriter.addNode(var12);
-							return 1;
-						} else if (var0 == ScriptOpcodes.CHAT_SENDCLAN) {
-							var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-							Interpreter.Interpreter_intStackSize -= 2;
-							var7 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
-							var9 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
-							var6 = class538.method10225(var7, var8, class28.clientLanguage, var9);
-							Client.packetWriter.addNode(var6);
-							return 1;
-						} else if (var0 != ScriptOpcodes.CHAT_PLAYERNAME) {
-							if (var0 == ScriptOpcodes.CHAT_GETFILTER_TRADE) {
-								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.tradeChatMode;
-								return 1;
-							} else if (var0 == ScriptOpcodes.CHAT_GETHISTORYLENGTH) {
-								var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = WorldMapData_1.Messages_getHistorySize(var3);
-								return 1;
-							} else if (var0 == ScriptOpcodes.CHAT_GETNEXTUID) {
-								var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class231.Messages_getLastChatID(var3);
-								return 1;
-							} else if (var0 == ScriptOpcodes.CHAT_GETPREVUID) {
-								var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-								Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = class150.method3676(var3);
-								return 1;
-							} else if (var0 == ScriptOpcodes.DOCHEAT) {
-								var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-								HttpResponse.doCheat(var8);
-								return 1;
-							} else if (var0 == ScriptOpcodes.CHAT_SETMESSAGEFILTER) {
-								Client.field431 = ((String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize]).toLowerCase().trim();
-								return 1;
-							} else if (var0 == ScriptOpcodes.CHAT_GETMESSAGEFILTER) {
-								Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = Client.field431;
-								return 1;
-							} else if (var0 == ScriptOpcodes.WRITECONSOLE) {
-								var8 = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-								System.out.println(var8);
-								return 1;
-							} else if (var0 == ScriptOpcodes.CHAT_GETHISTORYEX_BYTYPEANDLINE) {
-								Interpreter.Interpreter_intStackSize -= 2;
-								var3 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
-								var7 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
-								var5 = class7.Messages_getByChannelAndID(var3, var7);
-								if (var5 != null) {
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.count;
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.cycle;
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.sender != null ? var5.sender : "";
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.prefix != null ? var5.prefix : "";
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var5.text != null ? var5.text : "";
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var5.isFromFriend() ? 1 : (var5.isFromIgnored() ? 2 : 0);
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-								} else {
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-								}
-
-								return 1;
-							} else if (var0 == ScriptOpcodes.CHAT_GETHISTORYEX_BYUID) {
-								var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-								var4 = WorldMapRegion.Messages_getMessage(var3);
-								if (var4 != null) {
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.type;
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.cycle;
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.sender != null ? var4.sender : "";
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.prefix != null ? var4.prefix : "";
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var4.text != null ? var4.text : "";
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = var4.isFromFriend() ? 1 : (var4.isFromIgnored() ? 2 : 0);
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-								} else {
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = -1;
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-									Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = "";
-									Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = 0;
-								}
-
-								return 1;
-							} else {
-								return 2;
-							}
-						} else {
-							if (class152.localPlayer != null && class152.localPlayer.username != null) {
-								var8 = class152.localPlayer.username.getName();
-							} else {
-								var8 = "";
-							}
-
-							Interpreter.Interpreter_objectStack[++class175.Interpreter_objectStackSize - 1] = var8;
-							return 1;
-						}
+				if (var10 == 2) {
+					if (var9 == 3) {
+						var13[var14] = var11;
+						var13[var14 + 512] = var11;
+						var13[var14 + 1024] = var11;
+						var13[var14 + 1536] = var11;
+					} else if (var9 == 0) {
+						var13[var14] = var11;
+						var13[var14 + 1] = var11;
+						var13[var14 + 2] = var11;
+						var13[var14 + 3] = var11;
+					} else if (var9 == 1) {
+						var13[var14 + 3] = var11;
+						var13[var14 + 512 + 3] = var11;
+						var13[var14 + 1024 + 3] = var11;
+						var13[var14 + 1536 + 3] = var11;
+					} else if (var9 == 2) {
+						var13[var14 + 1536] = var11;
+						var13[var14 + 1536 + 1] = var11;
+						var13[var14 + 1536 + 2] = var11;
+						var13[var14 + 1536 + 3] = var11;
 					}
 				}
 			}
 		}
+
+		var6 = var5.getGameObjectTag(var0, var1, var2);
+		if (0L != var6) {
+			var8 = var5.getObjectFlags(var0, var1, var2, var6);
+			var9 = var8 >> 6 & 3;
+			var10 = var8 & 31;
+			var11 = class70.Entity_unpackID(var6);
+			ObjectComposition var20 = SpriteMask.getObjectDefinition(var11);
+			if (var20.mapSceneId != -1) {
+				IndexedSprite var27 = Bounds.mapSceneSprites[var20.mapSceneId];
+				if (var27 != null) {
+					var14 = (var20.sizeX * 4 - var27.subWidth) / 2;
+					var15 = (var20.sizeY * 4 - var27.subHeight) / 2;
+					var27.drawAt(var1 * 4 + var14 + 48, var15 + (104 - var2 - var20.sizeY) * 4 + 48);
+				}
+			} else if (var10 == 9) {
+				int var21 = 15658734;
+				boolean var28 = 0L != var6 && !Varcs.method2848(var6);
+				if (var28) {
+					var21 = 15597568;
+				}
+
+				int[] var22 = Script.sceneMinimapSprite.pixels;
+				int var23 = var1 * 4 + (103 - var2) * 2048 + 24624;
+				if (var9 != 0 && var9 != 2) {
+					var22[var23] = var21;
+					var22[var23 + 1 + 512] = var21;
+					var22[var23 + 1024 + 2] = var21;
+					var22[var23 + 1536 + 3] = var21;
+				} else {
+					var22[var23 + 1536] = var21;
+					var22[var23 + 1 + 1024] = var21;
+					var22[var23 + 512 + 2] = var21;
+					var22[var23 + 3] = var21;
+				}
+			}
+		}
+
+		var6 = var5.getFloorDecorationTag(var0, var1, var2);
+		if (var6 != 0L) {
+			var8 = class70.Entity_unpackID(var6);
+			ObjectComposition var24 = SpriteMask.getObjectDefinition(var8);
+			if (var24.mapSceneId != -1) {
+				IndexedSprite var25 = Bounds.mapSceneSprites[var24.mapSceneId];
+				if (var25 != null) {
+					var11 = (var24.sizeX * 4 - var25.subWidth) / 2;
+					int var26 = (var24.sizeY * 4 - var25.subHeight) / 2;
+					var25.drawAt(var1 * 4 + var11 + 48, var26 + (104 - var2 - var24.sizeY) * 4 + 48);
+				}
+			}
+		}
+
 	}
 }

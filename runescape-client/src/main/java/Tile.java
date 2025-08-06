@@ -1,143 +1,138 @@
-import java.awt.image.BufferedImage;
-import java.awt.image.PixelGrabber;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jy")
+@ObfuscatedName("ip")
 @Implements("Tile")
 public final class Tile extends Node {
-	@ObfuscatedName("fm")
+	@ObfuscatedName("cu")
 	@ObfuscatedSignature(
-		descriptor = "Lrf;"
+		descriptor = "Lxa;"
 	)
-	@Export("fontPlain12")
-	static Font fontPlain12;
-	@ObfuscatedName("aj")
+	@Export("titlebuttonSprite")
+	static IndexedSprite titlebuttonSprite;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lkb;"
+		descriptor = "Ljt;"
 	)
 	@Export("paint")
 	SceneTilePaint paint;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Ljn;"
+		descriptor = "Ljy;"
 	)
 	@Export("model")
 	SceneTileModel model;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Ljc;"
+		descriptor = "Lib;"
 	)
 	@Export("itemLayer")
 	ItemLayer itemLayer;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -231278501
+		intValue = -649575905
 	)
 	@Export("gameObjectsCount")
 	int gameObjectsCount;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "[Lkg;"
+		descriptor = "[Ljk;"
 	)
 	@Export("gameObjects")
 	GameObject[] gameObjects;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 372589283
+		intValue = -875667687
 	)
 	@Export("plane")
 	int plane;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1588890761
+		intValue = 685137059
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -599910757
+		intValue = -1690732139
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1633009545
+		intValue = 965952075
 	)
 	@Export("originalPlane")
 	int originalPlane;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lko;"
+		descriptor = "Ljp;"
 	)
 	@Export("boundaryObject")
 	BoundaryObject boundaryObject;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lka;"
+		descriptor = "Ljc;"
 	)
 	@Export("wallDecoration")
 	WallDecoration wallDecoration;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Ljd;"
+		descriptor = "Lis;"
 	)
 	@Export("floorDecoration")
 	FloorDecoration floorDecoration;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@Export("gameObjectEdgeMasks")
 	int[] gameObjectEdgeMasks;
 	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 1715171287
+		intValue = -2024953185
 	)
 	@Export("gameObjectsEdgeMask")
 	int gameObjectsEdgeMask;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -1810563325
+		intValue = 593882325
 	)
 	@Export("minPlane")
 	int minPlane;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@Export("drawPrimary")
 	boolean drawPrimary;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ax")
 	@Export("drawSecondary")
 	boolean drawSecondary;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aq")
 	@Export("drawGameObjects")
 	boolean drawGameObjects;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -834620607
+		intValue = 122784195
 	)
 	@Export("drawGameObjectEdges")
 	int drawGameObjectEdges;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = 1552241969
+		intValue = 797084287
 	)
-	int field2626;
-	@ObfuscatedName("as")
+	int field2570;
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -1532223479
+		intValue = -494726895
 	)
-	int field2614;
-	@ObfuscatedName("ax")
+	int field2571;
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -865130949
+		intValue = -325278227
 	)
-	int field2634;
-	@ObfuscatedName("ab")
+	int field2572;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Ljy;"
+		descriptor = "Lip;"
 	)
 	@Export("linkedBelowTile")
 	Tile linkedBelowTile;
@@ -151,113 +146,30 @@ public final class Tile extends Node {
 		this.y = var3;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "([BI)Lwd;",
-		garbageValue = "191509391"
+		descriptor = "(I)[Lfo;",
+		garbageValue = "-1030976259"
 	)
-	@Export("readSpritePixelsFromBytes")
-	public static final SpritePixels readSpritePixelsFromBytes(byte[] var0) {
-		BufferedImage var1 = null;
-
-		try {
-			Class var2 = ImageIO.class;
-			synchronized(ImageIO.class) {
-				var1 = ImageIO.read(new ByteArrayInputStream(var0));
-			}
-
-			if (var1 != null) {
-				int var6 = var1.getWidth();
-				int var7 = var1.getHeight();
-				int[] var4 = new int[var7 * var6];
-				PixelGrabber var5 = new PixelGrabber(var1, 0, 0, var6, var7, var4, 0, var6);
-				var5.grabPixels();
-				return new SpritePixels(var4, var6, var7);
-			}
-		} catch (IOException var9) {
-		} catch (InterruptedException var10) {
-		}
-
-		return new SpritePixels(0, 0);
+	static class135[] method4885() {
+		return new class135[]{class135.field1619, class135.field1620, class135.field1622, class135.field1621, class135.field1623};
 	}
 
-	@ObfuscatedName("ju")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ldl;Loh;B)V",
-		garbageValue = "-52"
+		descriptor = "(B)V",
+		garbageValue = "-4"
 	)
-	static void method4989(WorldView var0, class389 var1) {
-		int var2 = 0;
+	public static void method4884() {
+		VarpDefinition.VarpDefinition_cached.clear();
+	}
 
-		for (int var3 = 0; var3 < var0.field1159.method9429(); ++var3) {
-			WorldEntity var4 = (WorldEntity)var0.worldEntities.get((long)var0.field1159.method9430(var3));
-			if (var4 != null && var4.worldView.id != Client.field337 && var4.method9709() == var1) {
-				boolean var5 = var2 < Client.field375;
-				if (var5) {
-					++var2;
-					boolean var6 = false;
-					if (var1 == class389.field4601) {
-						Bounds var8 = FloorUnderlayDefinition.method4268(var4.worldEntityCoord, var4.field5213.method4273());
-
-						boolean var7;
-						label118: {
-							int var9;
-							for (var9 = 0; var9 < Client.playerUpdateManager.playerCount; ++var9) {
-								Player var10 = (Player)var0.players.get((long)Client.playerUpdateManager.playerIndices[var9]);
-								if (var10 != null && var8.method8644(var10.x, var10.y)) {
-									var8.method8642();
-									var7 = true;
-									break label118;
-								}
-							}
-
-							var9 = 0;
-
-							label101:
-							while (true) {
-								if (var9 >= var0.field1147.method9429()) {
-									for (var9 = 0; var9 < var0.field1159.method9429(); ++var9) {
-										WorldEntity var14 = (WorldEntity)var0.worldEntities.get((long)var0.field1159.method9430(var9));
-										if (var14 != null && var14 != var4 && var14.worldView.scene.cycle == Client.cycle) {
-											Bounds var11 = FloorUnderlayDefinition.method4268(var14.worldEntityCoord, var14.field5213.method4273());
-											if (var8.method8645(var11)) {
-												var8.method8642();
-												var11.method8642();
-												var7 = true;
-												break label101;
-											}
-
-											var11.method8642();
-										}
-									}
-
-									var8.method8642();
-									var7 = false;
-									break;
-								}
-
-								NPC var13 = (NPC)var0.npcs.get((long)var0.field1147.method9430(var9));
-								if (var13 != null && var8.method8644(var13.x, var13.y)) {
-									for (int var12 = 0; var12 < var13.definition.actions.length; ++var12) {
-										if (var13.definition.actions[var12] != null) {
-											var8.method8642();
-											var7 = true;
-											break label101;
-										}
-									}
-								}
-
-								++var9;
-							}
-						}
-
-						var6 = var7;
-					}
-
-					class202.method4298(var0, var4, var6);
-				}
-			}
-		}
-
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Lmx;",
+		garbageValue = "1"
+	)
+	public static class335 method4883(int var0) {
+		return class335.field3775[var0];
 	}
 }

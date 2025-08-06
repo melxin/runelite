@@ -11,16 +11,16 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sx")
+@ObfuscatedName("st")
 @Implements("HttpHeaders")
 public class HttpHeaders {
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@Export("headers")
 	final Map headers;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@Export("acceptHeaderValues")
 	final Map acceptHeaderValues;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@Export("decimalFormat")
 	final DecimalFormat decimalFormat;
 
@@ -31,10 +31,10 @@ public class HttpHeaders {
 		this.decimalFormat.setMaximumFractionDigits(2);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(Ljavax/net/ssl/HttpsURLConnection;I)V",
-		garbageValue = "1913214346"
+		garbageValue = "-1337746036"
 	)
 	@Export("setRequestProperties")
 	public void setRequestProperties(HttpsURLConnection var1) {
@@ -47,20 +47,20 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(B)Ljava/util/Map;",
-		garbageValue = "-40"
+		garbageValue = "25"
 	)
 	@Export("getHeaders")
 	public Map getHeaders() {
 		return this.headers;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;Ljava/lang/String;I)V",
-		garbageValue = "1881492234"
+		garbageValue = "-2123114261"
 	)
 	@Export("header")
 	public void header(String var1, String var2) {
@@ -70,10 +70,10 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-176325771"
+		garbageValue = "243154931"
 	)
 	@Export("removeHeader")
 	public void removeHeader(String var1) {
@@ -83,10 +83,10 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lsn;Ljava/lang/String;B)V",
-		garbageValue = "31"
+		descriptor = "(Lsi;Ljava/lang/String;I)V",
+		garbageValue = "1403791264"
 	)
 	@Export("authenticationHeader")
 	void authenticationHeader(HttpAuthenticationHeader var1, String var2) {
@@ -94,60 +94,60 @@ public class HttpHeaders {
 		this.header("Authorization", var3);
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;S)V",
-		garbageValue = "-7020"
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "-740346597"
 	)
 	@Export("basicAuthentication")
 	public void basicAuthentication(String var1) {
 		this.authenticationHeader(HttpAuthenticationHeader.BASIC, var1);
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "142155465"
+		garbageValue = "-1384263832"
 	)
 	@Export("bearerToken")
 	public void bearerToken(String var1) {
 		this.authenticationHeader(HttpAuthenticationHeader.BEARER, var1);
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(Lup;I)V",
-		garbageValue = "-1311761417"
+		descriptor = "(Lum;I)V",
+		garbageValue = "-1985241676"
 	)
 	@Export("contentType")
 	public void contentType(HttpContentType var1) {
 		this.headers.put("Content-Type", var1.getValue());
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1932829702"
+		garbageValue = "-1962742440"
 	)
 	@Export("removeContentType")
 	public void removeContentType() {
 		this.headers.remove("Content-Type");
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lup;S)V",
-		garbageValue = "-6038"
+		descriptor = "(Lum;I)V",
+		garbageValue = "1220318113"
 	)
 	@Export("accept")
 	public void accept(HttpContentType var1) {
 		this.acceptWithFactor(var1, 1.0F);
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lup;FS)V",
-		garbageValue = "32086"
+		descriptor = "(Lum;FI)V",
+		garbageValue = "-1820344986"
 	)
 	@Export("acceptWithFactor")
 	void acceptWithFactor(HttpContentType var1, float var2) {
@@ -155,10 +155,10 @@ public class HttpHeaders {
 		this.updateAcceptHeader();
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-121"
+		descriptor = "(S)V",
+		garbageValue = "-10439"
 	)
 	@Export("updateAcceptHeader")
 	void updateAcceptHeader() {
@@ -169,15 +169,15 @@ public class HttpHeaders {
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1099128642"
+		garbageValue = "-784719034"
 	)
 	@Export("getAcceptHeaderValue")
 	String getAcceptHeaderValue() {
 		ArrayList var1 = new ArrayList(this.acceptHeaderValues.entrySet());
-		Collections.sort(var1, new class475(this));
+		Collections.sort(var1, new class481(this));
 		StringBuilder var2 = new StringBuilder();
 		Iterator var3 = var1.iterator();
 
@@ -198,29 +198,23 @@ public class HttpHeaders {
 		return var2.toString();
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-2141398380"
+		descriptor = "(Ltn;II)Ljava/lang/Object;",
+		garbageValue = "-970472589"
 	)
-	@Export("changeWorldSelectSorting")
-	static void changeWorldSelectSorting(int var0, int var1) {
-		int[] var2 = new int[4];
-		int[] var3 = new int[4];
-		var2[0] = var0;
-		var3[0] = var1;
-		int var4 = 1;
-
-		for (int var5 = 0; var5 < 4; ++var5) {
-			if (World.World_sortOption1[var5] != var0) {
-				var2[var4] = World.World_sortOption1[var5];
-				var3[var4] = World.World_sortOption2[var5];
-				++var4;
+	public static Object method9794(class515 var0, int var1) {
+		class150.method3792(var0, (class570)null, true);
+		if (var1 >= 0 && var1 < var0.field5401 * -519676011) {
+			Object var2 = var0.method10352(var1);
+			if (var1 < var0.field5401 * -519676011 - 1) {
+				class401.method8272(var0, var1 + 1, var0, var1, var0.field5401 * -519676011 - (var1 + 1));
 			}
-		}
 
-		World.World_sortOption1 = var2;
-		World.World_sortOption2 = var3;
-		class86.sortWorlds(class547.World_worlds, 0, class547.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
+			var0.method10358(var0.field5401 * -519676011 - 1);
+			return var2;
+		} else {
+			throw new RuntimeException();
+		}
 	}
 }

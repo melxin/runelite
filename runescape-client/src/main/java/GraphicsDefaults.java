@@ -4,114 +4,114 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tx")
+@ObfuscatedName("th")
 @Implements("GraphicsDefaults")
 public class GraphicsDefaults {
-	@ObfuscatedName("ap")
-	final int field5318;
-	@ObfuscatedName("aj")
-	final int field5313;
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = -1431655765
-	)
-	final int field5314;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = -1431655765
-	)
-	final int field5315;
 	@ObfuscatedName("al")
+	final int field5432;
+	@ObfuscatedName("ab")
+	final int field5422;
+	@ObfuscatedName("ac")
+	@ObfuscatedGetter(
+		intValue = -1431655765
+	)
+	final int field5434;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -1431655765
+	)
+	final int field5433;
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
 		intValue = -858993459
 	)
-	final int field5316;
-	@ObfuscatedName("ac")
-	public final int[][] field5317;
-	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = 454829303
-	)
-	public int field5325;
-	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = 1494529275
-	)
-	public int field5319;
+	final int field5431;
+	@ObfuscatedName("as")
+	public final int[][] field5426;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1445050151
+		intValue = -1966681971
 	)
-	public int field5322;
+	public int field5427;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = -1460023799
+	)
+	public int field5421;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = -988951467
+	)
+	public int field5429;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = 2106077787
+	)
+	public int field5430;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1693420037
+		intValue = 563273011
 	)
-	public int field5320;
-	@ObfuscatedName("au")
+	public int field5425;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1547157943
+		intValue = -383243991
 	)
-	public int field5312;
-	@ObfuscatedName("ar")
+	public int field5424;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -686775403
+		intValue = -1729741393
 	)
-	public int field5323;
-	@ObfuscatedName("ad")
+	public int field5423;
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -1399935551
+		intValue = 96968723
 	)
-	public int field5324;
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = -98215633
-	)
-	public int field5328;
+	public int field5428;
 	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = -93119203
+		intValue = 1660236571
 	)
-	public int field5326;
-	@ObfuscatedName("az")
+	public int field5435;
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 1503883711
+		intValue = 1937987387
 	)
-	public int field5327;
-	@ObfuscatedName("aw")
+	public int field5436;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -42548993
+		intValue = -1049098717
 	)
-	public int field5321;
+	public int field5437;
 
 	public GraphicsDefaults() {
-		this.field5318 = 1;
-		this.field5313 = 2;
-		this.field5314 = 1;
-		this.field5315 = 1;
-		this.field5316 = 1;
-		this.field5317 = new int[3][5];
-		this.field5325 = -1;
-		this.field5319 = -1;
-		this.field5322 = -1;
-		this.field5320 = -1;
-		this.field5312 = -1;
-		this.field5323 = -1;
-		this.field5324 = -1;
-		this.field5328 = -1;
-		this.field5326 = -1;
-		this.field5327 = -1;
-		this.field5321 = -1;
+		this.field5432 = 1;
+		this.field5422 = 2;
+		this.field5434 = 1;
+		this.field5433 = 1;
+		this.field5431 = 1;
+		this.field5426 = new int[3][5];
+		this.field5427 = -1;
+		this.field5421 = -1;
+		this.field5429 = -1;
+		this.field5430 = -1;
+		this.field5425 = -1;
+		this.field5424 = -1;
+		this.field5423 = -1;
+		this.field5428 = -1;
+		this.field5435 = -1;
+		this.field5436 = -1;
+		this.field5437 = -1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lps;I)V",
-		garbageValue = "784420122"
+		descriptor = "(Lpx;B)V",
+		garbageValue = "3"
 	)
 	@Export("decode")
 	public void decode(AbstractArchive var1) {
-		byte[] var2 = var1.takeFileFlat(DefaultsGroup.field5309.group);
+		byte[] var2 = var1.takeFileFlat(DefaultsGroup.field5419.group);
 		Buffer var3 = new Buffer(var2);
 
 		while (true) {
@@ -126,26 +126,87 @@ public class GraphicsDefaults {
 					var3.readMedium();
 					break;
 				case 2:
-					this.field5325 = var3.readNullableLargeSmart();
-					this.field5319 = var3.readNullableLargeSmart();
-					this.field5322 = var3.readNullableLargeSmart();
-					this.field5320 = var3.readNullableLargeSmart();
-					this.field5312 = var3.readNullableLargeSmart();
-					this.field5323 = var3.readNullableLargeSmart();
-					this.field5324 = var3.readNullableLargeSmart();
-					this.field5328 = var3.readNullableLargeSmart();
-					this.field5326 = var3.readNullableLargeSmart();
-					this.field5327 = var3.readNullableLargeSmart();
-					this.field5321 = var3.readNullableLargeSmart();
+					this.field5427 = var3.readNullableLargeSmart();
+					this.field5421 = var3.readNullableLargeSmart();
+					this.field5429 = var3.readNullableLargeSmart();
+					this.field5430 = var3.readNullableLargeSmart();
+					this.field5425 = var3.readNullableLargeSmart();
+					this.field5424 = var3.readNullableLargeSmart();
+					this.field5423 = var3.readNullableLargeSmart();
+					this.field5428 = var3.readNullableLargeSmart();
+					this.field5435 = var3.readNullableLargeSmart();
+					this.field5436 = var3.readNullableLargeSmart();
+					this.field5437 = var3.readNullableLargeSmart();
 					break;
 				case 3:
-					for (int var5 = 0; var5 < this.field5317.length; ++var5) {
-						for (int var6 = 0; var6 < this.field5317[var5].length; ++var6) {
-							this.field5317[var5][var6] = var3.readMedium();
+					for (int var5 = 0; var5 < this.field5426.length; ++var5) {
+						for (int var6 = 0; var6 < this.field5426[var5].length; ++var6) {
+							this.field5426[var5][var6] = var3.readMedium();
 						}
 					}
 				}
 			}
 		}
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lxe;",
+		garbageValue = "1704556844"
+	)
+	public static PrivateChatMode method10477(int var0) {
+		PrivateChatMode[] var1 = BufferedSink.method10278();
+
+		for (int var2 = 0; var2 < var1.length; ++var2) {
+			PrivateChatMode var3 = var1[var2];
+			if (var0 == var3.field5973) {
+				return var3;
+			}
+		}
+
+		return null;
+	}
+
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/CharSequence;B)I",
+		garbageValue = "-111"
+	)
+	@Export("hashString")
+	public static int hashString(CharSequence var0) {
+		int var1 = var0.length();
+		int var2 = 0;
+
+		for (int var3 = 0; var3 < var1; ++var3) {
+			var2 = (var2 << 5) - var2 + Player.charToByteCp1252(var0.charAt(var3));
+		}
+
+		return var2;
+	}
+
+	@ObfuscatedName("ij")
+	@ObfuscatedSignature(
+		descriptor = "(IIIII)V",
+		garbageValue = "1564995620"
+	)
+	static void method10476(int var0, int var1, int var2, int var3) {
+		PacketBufferNode var4 = class291.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
+		var4.packetBuffer.writeByte(18);
+		var4.packetBuffer.writeShortLE(var0 + class7.topLevelWorldView.baseX);
+		var4.packetBuffer.writeShortLE(var1 + class7.topLevelWorldView.baseY);
+		var4.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
+		var4.packetBuffer.writeByte(var2);
+		var4.packetBuffer.writeByte(var3);
+		var4.packetBuffer.writeShort(Client.camAngleY);
+		var4.packetBuffer.writeByte(57);
+		var4.packetBuffer.writeByte(0);
+		var4.packetBuffer.writeByte(0);
+		var4.packetBuffer.writeByte(89);
+		var4.packetBuffer.writeShort(class27.localPlayer.x);
+		var4.packetBuffer.writeShort(class27.localPlayer.y);
+		var4.packetBuffer.writeByte(63);
+		Client.packetWriter.addNode(var4);
+		Client.destinationX = var0;
+		Client.destinationY = var1;
 	}
 }

@@ -1,78 +1,128 @@
-import net.runelite.mapping.ObfuscatedGetter;
+import java.util.Random;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sw")
+@ObfuscatedName("sm")
 public class class476 {
-	@ObfuscatedName("ap")
-	final int[] field5137;
+	@ObfuscatedName("al")
+	@Export("writeRandomDat")
+	public static void writeRandomDat(byte[] var0, int var1, byte[] var2, int var3, int var4) {
+		if (var2 == var0) {
+			if (var3 == var1) {
+				return;
+			}
+
+			if (var3 > var1 && var3 < var4 + var1) {
+				--var4;
+				var1 += var4;
+				var3 += var4;
+				var4 = var1 - var4;
+
+				for (var4 += 7; var1 >= var4; var2[var3--] = var0[var1--]) {
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+					var2[var3--] = var0[var1--];
+				}
+
+				for (var4 -= 7; var1 >= var4; var2[var3--] = var0[var1--]) {
+				}
+
+				return;
+			}
+		}
+
+		var4 += var1;
+
+		for (var4 -= 7; var1 < var4; var2[var3++] = var0[var1++]) {
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+			var2[var3++] = var0[var1++];
+		}
+
+		for (var4 += 7; var1 < var4; var2[var3++] = var0[var1++]) {
+		}
+
+	}
+
 	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = 586960285
-	)
-	int field5138;
+	@Export("clearIntArray")
+	public static void clearIntArray(int[] var0, int var1, int var2) {
+		for (var2 = var2 + var1 - 7; var1 < var2; var0[var1++] = 0) {
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+			var0[var1++] = 0;
+		}
 
-	public class476(int var1) {
-		this.field5137 = new int[var1];
+		for (var2 += 7; var1 < var2; var0[var1++] = 0) {
+		}
+
 	}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1579062174"
-	)
-	public void method9428(int var1) {
-		this.field5137[++this.field5138 - 1] = var1;
+	@ObfuscatedName("ag")
+	static Random method9685(int var0, int var1) {
+		if (var0 == 0 && var1 == 0) {
+			var0 = (int)(Math.random() * 2.147483647E9D);
+			var1 = (int)(Math.random() * 2.147483647E9D);
+		}
+
+		long var2 = (long)var0 << 32 | (long)var1;
+		return new Random(var2);
 	}
 
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "-121"
-	)
-	public int method9430(int var1) {
-		return this.field5137[var1];
+	@ObfuscatedName("ay")
+	public static void method9686(int[] var0, int var1, int var2, int var3) {
+		Random var4 = method9685(var2, var3);
+
+		for (int var5 = var1 - 1; var5 > 0; --var5) {
+			int var6 = var4.nextInt(var5 + 1);
+			if (var5 != var6) {
+				int var7 = var0[var5];
+				var0[var5] = var0[var6];
+				var0[var6] = var7;
+			}
+		}
+
 	}
 
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(S)I",
-		garbageValue = "14485"
-	)
-	public int method9429() {
-		return this.field5138;
+	@ObfuscatedName("aa")
+	public static void method9687(long[] var0, int var1, int var2, int var3) {
+		Random var4 = method9685(var2, var3);
+
+		for (int var5 = var1 - 1; var5 > 0; --var5) {
+			int var6 = var4.nextInt(var5 + 1);
+			if (var5 != var6) {
+				long var7 = var0[var5];
+				var0[var5] = var0[var6];
+				var0[var6] = var7;
+			}
+		}
+
 	}
 
 	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "388884917"
-	)
-	public void method9432() {
-		this.field5138 = 0;
-	}
+	public static void method9688(Object[] var0, int var1, int var2, int var3) {
+		Random var4 = method9685(var2, var3);
 
-	@ObfuscatedName("bo")
-	@ObfuscatedSignature(
-		descriptor = "(ILcr;ZI)I",
-		garbageValue = "1121677806"
-	)
-	static int method9446(int var0, Script var1, boolean var2) {
-		int var3;
-		if (var0 == 3500) {
-			var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.indexCheck.isValidIndexInRange(var3) ? 1 : 0;
-			return 1;
-		} else if (var0 == 3501) {
-			var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.indexCheck.method5891(var3) ? 1 : 0;
-			return 1;
-		} else if (var0 == 3502) {
-			var3 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-			Interpreter.Interpreter_intStack[++Interpreter.Interpreter_intStackSize - 1] = Client.indexCheck.method5893(var3) ? 1 : 0;
-			return 1;
-		} else {
-			return 2;
+		for (int var5 = var1 - 1; var5 > 0; --var5) {
+			int var6 = var4.nextInt(var5 + 1);
+			if (var5 != var6) {
+				Object var7 = var0[var5];
+				var0[var5] = var0[var6];
+				var0[var6] = var7;
+			}
 		}
+
 	}
 }

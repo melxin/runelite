@@ -1,23 +1,12 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sz")
+@ObfuscatedName("ss")
 @Implements("IntHashTable")
 public class IntHashTable {
-	@ObfuscatedName("be")
-	@ObfuscatedGetter(
-		intValue = 1605146791
-	)
-	static int field5140;
-	@ObfuscatedName("vg")
-	@ObfuscatedGetter(
-		intValue = 182673155
-	)
-	static int field5141;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@Export("array")
 	int[] array;
 
@@ -43,10 +32,10 @@ public class IntHashTable {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "-2005026269"
+		garbageValue = "-488772130"
 	)
 	@Export("get")
 	public int get(int var1) {
@@ -65,24 +54,5 @@ public class IntHashTable {
 
 			var3 = var3 + 1 & var2;
 		}
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "97"
-	)
-	static int method9453(int var0) {
-		return (var0 >> 7) + 1;
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(Lps;IIB)Lwd;",
-		garbageValue = "99"
-	)
-	@Export("SpriteBuffer_getSprite")
-	public static SpritePixels SpriteBuffer_getSprite(AbstractArchive var0, int var1, int var2) {
-		return !class167.method3865(var0, var1, var2) ? null : MilliClock.method4750();
 	}
 }

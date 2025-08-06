@@ -3,57 +3,81 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cf")
+@ObfuscatedName("cp")
 public enum class67 implements Enum {
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lcf;"
-	)
-	field913(0, -1),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lcf;"
-	)
-	field919(1, 1),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lcf;"
-	)
-	field914(2, 7),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lcf;"
-	)
-	field915(3, 8),
 	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lcf;"
+		descriptor = "Lcp;"
 	)
-	field916(4, 9);
-
+	field908(0, -1),
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lcp;"
+	)
+	field905(1, 2),
 	@ObfuscatedName("ac")
-	@ObfuscatedGetter(
-		intValue = 2016519583
+	@ObfuscatedSignature(
+		descriptor = "Lcp;"
 	)
-	final int field920;
-	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = 656946615
+	field904(2, 3),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lcp;"
 	)
-	final int field918;
+	field907(3, 4),
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Lcp;"
+	)
+	field910(4, 5),
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "Lcp;"
+	)
+	field909(5, 6),
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lcp;"
+	)
+	field913(6, 21);
+
+	@ObfuscatedName("pk")
+	@ObfuscatedGetter(
+		intValue = -688904891
+	)
+	static int field906;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = -2059355833
+	)
+	final int field911;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = -1871080511
+	)
+	final int field912;
 
 	class67(int var3, int var4) {
-		this.field920 = var3;
-		this.field918 = var4;
+		this.field911 = var3;
+		this.field912 = var4;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "26"
+		descriptor = "(I)I",
+		garbageValue = "-164877066"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field918;
+		return this.field912;
+	}
+
+	@ObfuscatedName("le")
+	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "69"
+	)
+	static final boolean method2139() {
+		return Client.isMenuOpen;
 	}
 }

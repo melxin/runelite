@@ -1,97 +1,61 @@
+import java.util.Arrays;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oh")
-public enum class389 implements Enum {
-	@ObfuscatedName("ap")
+@ObfuscatedName("od")
+public class class389 {
+	@ObfuscatedName("oj")
+	@Export("refreshToken")
+	static String refreshToken;
+	@ObfuscatedName("pu")
 	@ObfuscatedSignature(
-		descriptor = "Loh;"
+		descriptor = "[Lxv;"
 	)
-	field4605(0, 0),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Loh;"
-	)
-	field4601(1, 1),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Loh;"
-	)
-	@Export("TOKEN")
-	TOKEN(2, 2);
+	@Export("headIconHintSprites")
+	static SpritePixels[] headIconHintSprites;
 
-	@ObfuscatedName("hx")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lts;"
+		descriptor = "(DDIB)[D",
+		garbageValue = "-71"
 	)
-	static class515 field4604;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = 1330904487
-	)
-	final int field4603;
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = 1995982963
-	)
-	final int field4600;
+	public static double[] method8204(double var0, double var2, int var4) {
+		int var5 = var4 * 2 + 1;
+		double[] var6 = new double[var5];
+		int var7 = -var4;
 
-	class389(int var3, int var4) {
-		this.field4603 = var3;
-		this.field4600 = var4;
+		for (int var8 = 0; var7 <= var4; ++var8) {
+			var6[var8] = ReflectionCheck.method756((double)var7, var0, var2);
+			++var7;
+		}
+
+		return var6;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "26"
+		descriptor = "(Ltn;Ljava/lang/Object;IIS)V",
+		garbageValue = "4124"
 	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field4600;
-	}
+	public static void method8205(class515 var0, Object var1, int var2, int var3) {
+		class150.method3792(var0, (class570)null, true);
+		if (var2 < 0) {
+			var2 = 0;
+		}
 
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lif;",
-		garbageValue = "143150502"
-	)
-	public static FloorOverlayDefinition method7962(int var0) {
-		FloorOverlayDefinition var1 = (FloorOverlayDefinition)FloorOverlayDefinition.FloorOverlayDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+		int var4 = var3 + var2;
+		if (var3 < 0 || var4 < 0 || var4 > var0.method10351()) {
+			var4 = var0.method10351();
+		}
+
+		if (var0.field5399 == class570.field5721) {
+			Arrays.fill(var0.method10348(), var2, var4, (Integer)var1);
+		} else if (var0.field5399 == class570.field5724) {
+			Arrays.fill(var0.method10377(), var2, var4, (Long)var1);
 		} else {
-			byte[] var2 = FloorOverlayDefinition.FloorOverlayDefinition_archive.takeFile(4, var0);
-			var1 = new FloorOverlayDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2), var0);
-			}
-
-			var1.postDecode();
-			FloorOverlayDefinition.FloorOverlayDefinition_cached.put(var1, (long)var0);
-			return var1;
+			Arrays.fill(var0.method10393(), var2, var4, var1);
 		}
-	}
 
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(Ltp;III)V",
-		garbageValue = "-1023999147"
-	)
-	public static void method7955(class509 var0, int var1, int var2) {
-		class573.method10775(var0);
-		if (var1 != 0) {
-			if (var2 >= 0 && var2 < var0.field5287 * 935110769 && var1 >= 0 && var2 + var1 <= var0.field5287 * 935110769) {
-				if (var2 < var0.field5287 * 935110769 - var1) {
-					ClanChannel.method3879(var0, var2 + var1, var0, var2, var0.field5287 * 935110769 - (var2 + var1));
-				}
-
-				var0.method9944(var0.field5287 * 935110769 - var1);
-			} else {
-				throw new RuntimeException();
-			}
-		}
 	}
 }

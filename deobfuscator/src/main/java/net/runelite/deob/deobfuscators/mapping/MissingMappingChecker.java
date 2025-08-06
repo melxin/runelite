@@ -83,7 +83,7 @@ public class MissingMappingChecker implements Runnable
 				continue;
 			}
 
-			if (!mapping.getMap().containsKey(namedCF))
+			if (!mapping.getMap().containsKey(namedCF) /*&& !mapping.getMap().containsValue(targetCF)*/)
 			{
 				if (namedCF.getName().equals("FillMode"))
 				{

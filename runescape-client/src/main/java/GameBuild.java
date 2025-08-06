@@ -4,39 +4,39 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oa")
+@ObfuscatedName("ot")
 @Implements("GameBuild")
 public class GameBuild {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Loa;"
+		descriptor = "Lot;"
 	)
 	@Export("LIVE")
-	static final GameBuild LIVE;
-	@ObfuscatedName("aj")
+	public static final GameBuild LIVE;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Loa;"
+		descriptor = "Lot;"
 	)
 	@Export("BUILDLIVE")
-	static final GameBuild BUILDLIVE;
-	@ObfuscatedName("an")
+	public static final GameBuild BUILDLIVE;
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Loa;"
+		descriptor = "Lot;"
 	)
 	@Export("RC")
-	static final GameBuild RC;
-	@ObfuscatedName("ai")
+	public static final GameBuild RC;
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Loa;"
+		descriptor = "Lot;"
 	)
 	@Export("WIP")
-	static final GameBuild WIP;
-	@ObfuscatedName("al")
+	public static final GameBuild WIP;
+	@ObfuscatedName("au")
 	@Export("name")
 	public final String name;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1227870063
+		intValue = 67425121
 	)
 	@Export("buildId")
 	public final int buildId;
@@ -53,21 +53,16 @@ public class GameBuild {
 		this.buildId = var2;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)Lrv;",
-		garbageValue = "-1376096067"
+		descriptor = "(IIIIIIIIFFFI)F",
+		garbageValue = "-1981323685"
 	)
-	public static Bounds method7927(int var0, int var1, int var2, int var3) {
-		synchronized(Bounds.field4953) {
-			if (Bounds.field4954 == 0) {
-				return new Bounds(var0, var1, var2, var3);
-			} else {
-				--Bounds.field4954;
-				Bounds.field4953[Bounds.field4954].setLow(var0, var1);
-				Bounds.field4953[Bounds.field4954].setHigh(var2, var3);
-				return Bounds.field4953[Bounds.field4954];
-			}
-		}
+	public static float method8169(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10) {
+		float var11 = (float)((var6 - var7) * (var2 - var4) + (var5 - var7) * (var4 - var3));
+		float var12 = (float)((var6 - var7) * (var0 - var4) + (var1 - var7) * (var4 - var3)) / var11;
+		float var13 = (float)((var7 - var5) * (var0 - var4) + (var1 - var7) * (var2 - var4)) / var11;
+		float var14 = 1.0F - var12 - var13;
+		return var14 * var10 + var12 * var8 + var9 * var13;
 	}
 }

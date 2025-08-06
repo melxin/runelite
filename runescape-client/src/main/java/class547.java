@@ -1,86 +1,44 @@
-import java.awt.FontMetrics;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vk")
-public class class547 {
+@ObfuscatedName("ve")
+public abstract class class547 extends class548 {
+	class547(int var1, int var2) {
+		super(var1, var2);
+	}
+
 	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "[Lbg;"
+		descriptor = "(B)I",
+		garbageValue = "0"
 	)
-	@Export("World_worlds")
-	static World[] World_worlds;
-	@ObfuscatedName("as")
-	@Export("loginScreenFontMetrics")
-	static FontMetrics loginScreenFontMetrics;
-	@ObfuscatedName("ap")
-	public final Object field5539;
-	@ObfuscatedName("aj")
-	public final Object field5538;
+	public abstract int vmethod10662();
 
-	public class547(Object var1, Object var2) {
-		this.field5539 = var1;
-		this.field5538 = var2;
-	}
-
-	public String toString() {
-		return this.field5539 + ", " + this.field5538;
-	}
-
-	public boolean equals(Object var1) {
-		if (var1 != null && var1 instanceof class547) {
-			class547 var2 = (class547)var1;
-			if (this.field5539 == null) {
-				if (var2.field5539 != null) {
-					return false;
-				}
-			} else if (!this.field5539.equals(var2.field5539)) {
-				return false;
-			}
-
-			if (this.field5538 == null) {
-				if (var2.field5538 != null) {
-					return false;
-				}
-			} else if (!this.field5538.equals(var2.field5538)) {
-				return false;
-			}
-
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public int hashCode() {
-		int var1 = 0;
-		if (this.field5539 != null) {
-			var1 += this.field5539.hashCode();
-		}
-
-		if (this.field5538 != null) {
-			var1 += 31 * this.field5538.hashCode();
-		}
-
-		return var1;
-	}
-
-	@ObfuscatedName("li")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "1"
+		descriptor = "(B)I",
+		garbageValue = "31"
 	)
-	@Export("addCancelMenuEntry")
-	static void addCancelMenuEntry() {
-		Client.menu.menuOptionsCount = 0;
-		Client.isMenuOpen = false;
-		Client.menu.menuWorldViewIds[0] = -1;
-		Client.menu.menuActions[0] = "Cancel";
-		Client.menu.menuTargets[0] = "";
-		Client.menu.menuOpcodes[0] = 1006;
-		Client.menu.menuShiftClick[0] = false;
-		Client.menu.subMenus[0] = null;
-		Client.menu.menuOptionsCount = 1;
+	public abstract int vmethod10660();
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-170491900"
+	)
+	public abstract int vmethod10654();
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(IZIZI)V",
+		garbageValue = "-575010336"
+	)
+	@Export("sortWorldList")
+	static void sortWorldList(int var0, boolean var1, int var2, boolean var3) {
+		if (World.World_worlds != null) {
+			class567.doWorldSorting(0, World.World_worlds.length - 1, var0, var1, var2, var3);
+		}
+
 	}
 }

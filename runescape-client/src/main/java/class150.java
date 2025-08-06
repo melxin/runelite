@@ -1,99 +1,70 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fy")
+@ObfuscatedName("fq")
 public class class150 extends class149 {
-	@ObfuscatedName("bm")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -1768702051
+		intValue = -1004476319
 	)
-	static int field1719;
-	@ObfuscatedName("kv")
-	@ObfuscatedSignature(
-		descriptor = "Lpu;"
-	)
-	static Archive field1717;
-	@ObfuscatedName("oz")
-	@Export("refreshToken")
-	static String refreshToken;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = -1359579163
-	)
-	int field1722;
-	@ObfuscatedName("aj")
-	boolean field1718;
+	int field1756;
+	@ObfuscatedName("ab")
+	boolean field1751;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfp;"
+		descriptor = "Lfg;"
 	)
 	final class152 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfp;)V"
+		descriptor = "(Lfg;)V"
 	)
 	class150(class152 var1) {
 		this.this$0 = var1;
-		this.field1722 = -1;
+		this.field1756 = -1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;I)V",
-		garbageValue = "-1635342078"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1324754926"
 	)
-	void vmethod3913(Buffer var1) {
-		this.field1722 = var1.readUnsignedShort();
-		this.field1718 = var1.readUnsignedByte() == 1;
+	void vmethod4086(Buffer var1) {
+		this.field1756 = var1.readUnsignedShort();
+		this.field1751 = var1.readUnsignedByte() == 1;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lgu;I)V",
-		garbageValue = "-1572789515"
+		descriptor = "(Lgk;I)V",
+		garbageValue = "1924878263"
 	)
-	void vmethod3914(ClanSettings var1) {
-		var1.method3754(this.field1722, this.field1718);
+	void vmethod4088(ClanSettings var1) {
+		var1.method3904(this.field1756, this.field1751);
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;I)Lia;",
-		garbageValue = "260421896"
+		descriptor = "(I)V",
+		garbageValue = "-264401289"
 	)
-	static class209 method3671(Buffer var0) {
-		if (var0 != null) {
-			boolean var1 = false;
-			boolean var2 = true;
-			boolean var3 = false;
-			boolean var4 = false;
-			boolean var5 = false;
-			int var6 = var0.readUnsignedShort();
-			int var7 = var0.readUnsignedByte();
-			int var8 = var0.readUnsignedByte();
-			int var9 = var0.readUnsignedByte();
-			int var10 = var0.readUnsignedByte();
-			if (var6 >= 1 && var8 >= 1 && var9 >= 0 && var10 >= 0) {
-				return new class209(var6, var7, var8, var9, var10);
-			}
-		}
-
-		return null;
+	public static void method3801() {
+		class179.field1915.clear();
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "958330632"
+		descriptor = "(Ltn;Lvf;ZS)V",
+		garbageValue = "19307"
 	)
-	static int method3676(int var0) {
-		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
-		if (var1 == null) {
-			return -1;
-		} else {
-			return var1.nextDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.nextDual).count;
+	static void method3792(class515 var0, class570 var1, boolean var2) {
+		if (var0 == null) {
+			throw new RuntimeException();
+		} else if (var1 != null && var0.field5399 != var1) {
+			throw new RuntimeException();
+		} else if (var2 && !var0.field5400) {
+			throw new RuntimeException();
 		}
 	}
 }

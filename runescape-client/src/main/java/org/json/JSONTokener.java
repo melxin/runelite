@@ -209,16 +209,6 @@ public class JSONTokener {
 		}
 	}
 
-	public boolean more() throws JSONException {
-		char var1 = this.next();
-		if (var1 == 0) {
-			return false;
-		} else {
-			this.back();
-			return true;
-		}
-	}
-
 	public String nextTo(char var1) throws JSONException {
 		StringBuffer var2 = new StringBuffer();
 
@@ -250,6 +240,16 @@ public class JSONTokener {
 			}
 
 			var3.append(var2);
+		}
+	}
+
+	public boolean more() throws JSONException {
+		char var1 = this.next();
+		if (var1 == 0) {
+			return false;
+		} else {
+			this.back();
+			return true;
 		}
 	}
 

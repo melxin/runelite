@@ -4,61 +4,61 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sb")
+@ObfuscatedName("sg")
 @Implements("FriendsList")
 public class FriendsList extends UserList {
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lvf;"
+		descriptor = "Lvy;"
 	)
 	@Export("loginType")
 	final LoginType loginType;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lqc;"
+		descriptor = "Lqa;"
 	)
 	@Export("friendLoginUpdates")
 	public LinkDeque friendLoginUpdates;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -730326121
+		intValue = -512349401
 	)
-	int field5164;
+	int field5269;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvf;)V"
+		descriptor = "(Lvy;)V"
 	)
 	public FriendsList(LoginType var1) {
 		super(400);
 		this.friendLoginUpdates = new LinkDeque();
-		this.field5164 = 1;
+		this.field5269 = 1;
 		this.loginType = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lsi;",
-		garbageValue = "1"
+		descriptor = "(B)Ltb;",
+		garbageValue = "0"
 	)
 	@Export("newInstance")
 	User newInstance() {
 		return new Friend();
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lsi;",
-		garbageValue = "-308089342"
+		descriptor = "(IB)[Ltb;",
+		garbageValue = "-4"
 	)
 	@Export("newTypedArray")
 	User[] newTypedArray(int var1) {
 		return new Friend[var1];
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lxm;ZI)Z",
-		garbageValue = "-1856088668"
+		descriptor = "(Lxf;ZB)Z",
+		garbageValue = "63"
 	)
 	@Export("isFriended")
 	public boolean isFriended(Username var1, boolean var2) {
@@ -70,15 +70,15 @@ public class FriendsList extends UserList {
 		}
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;II)V",
-		garbageValue = "-1327791768"
+		descriptor = "(Lwj;IB)V",
+		garbageValue = "5"
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
 		while (true) {
-			if (var1.offset < var2) {
+			if (var1.field5818 < var2) {
 				boolean var3 = var1.readUnsignedByte() == 1;
 				Username var4 = new Username(var1.readStringCp1252NullTerminated(), this.loginType);
 				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.loginType);
@@ -98,7 +98,7 @@ public class FriendsList extends UserList {
 					Friend var11 = (Friend)this.getByCurrentUsername(var4);
 					if (var3) {
 						Friend var12 = (Friend)this.getByCurrentUsername(var5);
-						if (var12 != null && var11 != var12) {
+						if (var12 != null && var12 != var11) {
 							if (var11 != null) {
 								this.remove(var12);
 							} else {
@@ -137,17 +137,17 @@ public class FriendsList extends UserList {
 					}
 
 					if (var6 != var11.world) {
-						var11.int2 = ++this.field5164 - 1;
+						var11.int2 = ++this.field5269 - 1;
 						if (var11.world == -1 && var6 == 0) {
-							var11.int2 = -(var11.int2 * -1995466197) * -1974840189;
+							var11.int2 = -(var11.int2 * -642570687) * -1604326975;
 						}
 
 						var11.world = var6;
 					}
 
 					var11.rank = var7;
-					var11.field5179 = var9;
-					var11.field5176 = var10;
+					var11.field5280 = var9;
+					var11.field5281 = var10;
 					continue;
 				}
 
@@ -159,21 +159,12 @@ public class FriendsList extends UserList {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("kp")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)I",
-		garbageValue = "110"
+		descriptor = "(IIIIII)V",
+		garbageValue = "1643892205"
 	)
-	static int method9520(int var0, int var1, int var2) {
-		int var3 = var0 >> 16 & 255;
-		int var4 = var0 >> 8 & 255;
-		int var5 = var0 & 255;
-		int var6 = var1 >> 16 & 255;
-		int var7 = var1 >> 8 & 255;
-		int var8 = var1 & 255;
-		int var9 = var3 + (var6 - var3 + 1) * var2 / 64 & 255;
-		int var10 = var4 + (var7 - var4 + 1) * var2 / 64 & 255;
-		int var11 = var5 + (var8 - var5 + 1) * var2 / 64 & 255;
-		return var9 << 16 | var10 << 8 | var11;
+	static void method9884(int var0, int var1, int var2, int var3, int var4) {
+		class366.method7885(class81.worldView, var0, var1, var2, var3, var4);
 	}
 }

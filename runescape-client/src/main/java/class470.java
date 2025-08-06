@@ -1,128 +1,86 @@
-import java.util.Random;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("su")
-public class class470 {
-	@ObfuscatedName("ap")
-	@Export("writeRandomDat")
-	public static void writeRandomDat(byte[] var0, int var1, byte[] var2, int var3, int var4) {
-		if (var2 == var0) {
-			if (var3 == var1) {
-				return;
-			}
+@ObfuscatedName("sb")
+public class class470 extends SongTask {
+	@ObfuscatedName("ix")
+	@ObfuscatedGetter(
+		intValue = -1120464947
+	)
+	static int field5181;
 
-			if (var3 > var1 && var3 < var4 + var1) {
-				--var4;
-				var1 += var4;
-				var3 += var4;
-				var4 = var1 - var4;
-
-				for (var4 += 7; var1 >= var4; var2[var3--] = var0[var1--]) {
-					var2[var3--] = var0[var1--];
-					var2[var3--] = var0[var1--];
-					var2[var3--] = var0[var1--];
-					var2[var3--] = var0[var1--];
-					var2[var3--] = var0[var1--];
-					var2[var3--] = var0[var1--];
-					var2[var3--] = var0[var1--];
-				}
-
-				for (var4 -= 7; var1 >= var4; var2[var3--] = var0[var1--]) {
-				}
-
-				return;
-			}
-		}
-
-		var4 += var1;
-
-		for (var4 -= 7; var1 < var4; var2[var3++] = var0[var1++]) {
-			var2[var3++] = var0[var1++];
-			var2[var3++] = var0[var1++];
-			var2[var3++] = var0[var1++];
-			var2[var3++] = var0[var1++];
-			var2[var3++] = var0[var1++];
-			var2[var3++] = var0[var1++];
-			var2[var3++] = var0[var1++];
-		}
-
-		for (var4 += 7; var1 < var4; var2[var3++] = var0[var1++]) {
-		}
-
+	@ObfuscatedSignature(
+		descriptor = "(Lsj;)V"
+	)
+	public class470(SongTask var1) {
+		super(var1);
+		super.field5191 = "StartSongTask";
 	}
 
-	@ObfuscatedName("ag")
-	@Export("clearIntArray")
-	public static void clearIntArray(int[] var0, int var1, int var2) {
-		for (var2 = var2 + var1 - 7; var1 < var2; var0[var1++] = 0) {
-			var0[var1++] = 0;
-			var0[var1++] = 0;
-			var0[var1++] = 0;
-			var0[var1++] = 0;
-			var0[var1++] = 0;
-			var0[var1++] = 0;
-			var0[var1++] = 0;
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(I)Z",
+		garbageValue = "1329200530"
+	)
+	public boolean vmethod9672() {
+		Iterator var1 = class337.midiRequests.iterator();
+
+		while (var1.hasNext()) {
+			MidiRequest var2 = (MidiRequest)var1.next();
+			if (var2 != null && !var2.field3908 && var2.midiPcmStream != null) {
+				try {
+					var2.midiPcmStream.method7134();
+					var2.midiPcmStream.setPcmStreamVolume(0);
+					if (var2.field3920 != null) {
+						var2.midiPcmStream.setMusicTrack(var2.field3920, var2.musicTrackBoolean);
+					}
+
+					var2.field3920 = null;
+					var2.field3919 = null;
+					var2.musicTrackArchive = null;
+					var2.field3908 = true;
+				} catch (Exception var4) {
+					class559.RunException_sendStackTrace((String)null, var4);
+					this.method9654(var4.getMessage());
+					return true;
+				}
+			}
 		}
 
-		for (var2 += 7; var1 < var2; var0[var1++] = 0) {
-		}
-
+		super.field5188 = true;
+		return true;
 	}
 
 	@ObfuscatedName("au")
-	static Random method9306(int var0, int var1) {
-		if (var0 == 0 && var1 == 0) {
-			var0 = (int)(Math.random() * 2.147483647E9D);
-			var1 = (int)(Math.random() * 2.147483647E9D);
-		}
+	@ObfuscatedSignature(
+		descriptor = "([BB)V",
+		garbageValue = "14"
+	)
+	@Export("ByteArrayPool_release")
+	public static void ByteArrayPool_release(byte[] var0) {
+		synchronized(ByteArrayPool.field5210) {
+			if (var0.length == 100 && ByteArrayPool.ByteArrayPool_smallCount < ByteArrayPool.field5212) {
+				ByteArrayPool.ByteArrayPool_small[++ByteArrayPool.ByteArrayPool_smallCount - 1] = var0;
+			} else if (var0.length == 5000 && ByteArrayPool.ByteArrayPool_mediumCount < ByteArrayPool.field5213) {
+				ByteArrayPool.ByteArrayPool_medium[++ByteArrayPool.ByteArrayPool_mediumCount - 1] = var0;
+			} else if (var0.length == 10000 && ByteArrayPool.ByteArrayPool_largeCount < ByteArrayPool.field5214) {
+				ByteArrayPool.ByteArrayPool_large[++ByteArrayPool.ByteArrayPool_largeCount - 1] = var0;
+			} else if (var0.length == 30000 && ByteArrayPool.field5206 < ByteArrayPool.field5215) {
+				ByteArrayPool.field5219[++ByteArrayPool.field5206 - 1] = var0;
+			} else {
+				if (WorldMapData_1.ByteArrayPool_arrays != null) {
+					for (int var2 = 0; var2 < class566.ByteArrayPool_alternativeSizes.length; ++var2) {
+						if (var0.length == class566.ByteArrayPool_alternativeSizes[var2] && FriendSystem.ByteArrayPool_altSizeArrayCounts[var2] < WorldMapData_1.ByteArrayPool_arrays[var2].length) {
+							WorldMapData_1.ByteArrayPool_arrays[var2][FriendSystem.ByteArrayPool_altSizeArrayCounts[var2]++] = var0;
+							return;
+						}
+					}
+				}
 
-		long var2 = (long)var0 << 32 | (long)var1;
-		return new Random(var2);
-	}
-
-	@ObfuscatedName("ar")
-	public static void method9327(int[] var0, int var1, int var2, int var3) {
-		Random var4 = method9306(var2, var3);
-
-		for (int var5 = var1 - 1; var5 > 0; --var5) {
-			int var6 = var4.nextInt(var5 + 1);
-			if (var5 != var6) {
-				int var7 = var0[var5];
-				var0[var5] = var0[var6];
-				var0[var6] = var7;
 			}
 		}
-
-	}
-
-	@ObfuscatedName("ad")
-	public static void method9336(long[] var0, int var1, int var2, int var3) {
-		Random var4 = method9306(var2, var3);
-
-		for (int var5 = var1 - 1; var5 > 0; --var5) {
-			int var6 = var4.nextInt(var5 + 1);
-			if (var5 != var6) {
-				long var7 = var0[var5];
-				var0[var5] = var0[var6];
-				var0[var6] = var7;
-			}
-		}
-
-	}
-
-	@ObfuscatedName("af")
-	public static void method9309(Object[] var0, int var1, int var2, int var3) {
-		Random var4 = method9306(var2, var3);
-
-		for (int var5 = var1 - 1; var5 > 0; --var5) {
-			int var6 = var4.nextInt(var5 + 1);
-			if (var5 != var6) {
-				Object var7 = var0[var5];
-				var0[var5] = var0[var6];
-				var0[var6] = var7;
-			}
-		}
-
 	}
 }

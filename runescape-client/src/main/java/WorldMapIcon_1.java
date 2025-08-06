@@ -1,56 +1,53 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.Locale;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kx")
+@ObfuscatedName("kr")
 @Implements("WorldMapIcon_1")
 public class WorldMapIcon_1 extends AbstractWorldMapIcon {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("nv")
+	static boolean field3231;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 864766503
+		intValue = 1808346777
 	)
 	@Export("objectDefId")
 	final int objectDefId;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lle;"
+		descriptor = "Llc;"
 	)
 	@Export("region")
 	final WorldMapRegion region;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1509856945
+		intValue = 1729067567
 	)
 	@Export("element")
 	int element;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Llp;"
+		descriptor = "Lla;"
 	)
 	@Export("label")
 	WorldMapLabel label;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -2105074555
+		intValue = 217010977
 	)
 	@Export("subWidth")
 	int subWidth;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -198317875
+		intValue = 2014443095
 	)
 	@Export("subHeight")
 	int subHeight;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lnp;Lnp;ILle;)V"
+		descriptor = "(Lng;Lng;ILlc;)V"
 	)
 	WorldMapIcon_1(Coord var1, Coord var2, int var3, WorldMapRegion var4) {
 		super(var1, var2);
@@ -59,16 +56,16 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 		this.init();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "1"
+		descriptor = "(I)V",
+		garbageValue = "-1970229818"
 	)
 	@Export("init")
 	void init() {
-		this.element = HealthBarConfig.getObjectDefinition(this.objectDefId).transform().mapIconId;
-		this.label = this.region.createMapLabel(InvDefinition.WorldMapElement_get(this.element));
-		WorldMapElement var1 = InvDefinition.WorldMapElement_get(this.getElement());
+		this.element = SpriteMask.getObjectDefinition(this.objectDefId).transform().mapIconId;
+		this.label = this.region.createMapLabel(GrandExchangeOfferAgeComparator.WorldMapElement_get(this.element));
+		WorldMapElement var1 = GrandExchangeOfferAgeComparator.WorldMapElement_get(this.getElement());
 		SpritePixels var2 = var1.getSpriteBool(false);
 		if (var2 != null) {
 			this.subWidth = var2.subWidth;
@@ -80,159 +77,53 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2005636344"
+		garbageValue = "43009635"
 	)
 	@Export("getElement")
 	public int getElement() {
 		return this.element;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)Llp;",
-		garbageValue = "111016802"
+		descriptor = "(B)Lla;",
+		garbageValue = "9"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
 		return this.label;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-963913416"
+		descriptor = "(B)I",
+		garbageValue = "-28"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
 		return this.subWidth;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-341446402"
+		garbageValue = "-1977770397"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
 		return this.subHeight;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/util/Date;",
-		garbageValue = "-76"
+		descriptor = "(I)[Lxh;",
+		garbageValue = "339110765"
 	)
-	static Date method6196() throws ParseException {
-		SimpleDateFormat var0 = new SimpleDateFormat("ddMMyyyyHH", Locale.ENGLISH);
-		var0.setLenient(false);
-		StringBuilder var1 = new StringBuilder();
-		String[] var2 = Login.field757;
-
-		for (int var3 = 0; var3 < var2.length; ++var3) {
-			String var4 = var2[var3];
-			if (var4 == null) {
-				class113.method3292("Date not valid.", "Please ensure all characters are populated.", "");
-				return null;
-			}
-
-			var1.append(var4);
-		}
-
-		var1.append("12");
-		return var0.parse(var1.toString());
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "([J[Ljava/lang/Object;III)V",
-		garbageValue = "-301953778"
-	)
-	public static void method6195(long[] var0, Object[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			long var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			Object var8 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var8;
-			int var9 = var6 == Long.MAX_VALUE ? 0 : 1;
-
-			for (int var10 = var2; var10 < var3; ++var10) {
-				if (var0[var10] < var6 + (long)(var10 & var9)) {
-					long var11 = var0[var10];
-					var0[var10] = var0[var5];
-					var0[var5] = var11;
-					Object var13 = var1[var10];
-					var1[var10] = var1[var5];
-					var1[var5++] = var13;
-				}
-			}
-
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var8;
-			method6195(var0, var1, var2, var5 - 1);
-			method6195(var0, var1, var5 + 1, var3);
-		}
-
-	}
-
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-39130042"
-	)
-	static void method6192() {
-		Iterator var0 = class335.midiRequests.iterator();
-
-		while (var0.hasNext()) {
-			MidiRequest var1 = (MidiRequest)var0.next();
-			if (var1 != null) {
-				var1.midiPcmStream.clear();
-				var1.midiPcmStream.method6981();
-				var1.midiPcmStream.setPcmStreamVolume(0);
-				var1.midiPcmStream.field3739 = 0;
-				GameEngine.method578(var1.musicTrackGroupId, var1.musicTrackFileId);
-			}
-		}
-
-		class335.midiRequests.clear();
-	}
-
-	@ObfuscatedName("hc")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1785959251"
-	)
-	static int method6194() {
-		if (Client.archiveLoaders != null && Client.archiveLoadersDone < Client.archiveLoaders.size()) {
-			int var0 = 0;
-
-			for (int var1 = 0; var1 <= Client.archiveLoadersDone; ++var1) {
-				var0 += ((ArchiveLoader)Client.archiveLoaders.get(var1)).loadedCount;
-			}
-
-			return var0 * 10000 / Client.field309;
-		} else {
-			return 10000;
-		}
-	}
-
-	@ObfuscatedName("pb")
-	@ObfuscatedSignature(
-		descriptor = "(Lbc;I)V",
-		garbageValue = "-447441409"
-	)
-	@Export("updateLoginState")
-	static void updateLoginState(LoginState var0) {
-		if (class172.loginState != var0) {
-			class172.loginState = var0;
-		}
+	@Export("FillMode_values")
+	public static class599[] FillMode_values() {
+		return new class599[]{class599.field5899, class599.field5897, class599.SOLID};
 	}
 }

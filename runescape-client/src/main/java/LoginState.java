@@ -1,172 +1,161 @@
-import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bc")
+@ObfuscatedName("bh")
 @Implements("LoginState")
 public class LoginState {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("SHUTDOWN_PREVIOUS_CONNECTION")
 	static final LoginState SHUTDOWN_PREVIOUS_CONNECTION;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("INIT_MOUSEHANDLER_SOCKET")
 	static final LoginState INIT_MOUSEHANDLER_SOCKET;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("UNMAPPED_20")
 	static final LoginState UNMAPPED_20;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("READ_LOGIN_STATUS")
 	static final LoginState READ_LOGIN_STATUS;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("READ_RANDOM_VERIFICATION_NUMBER")
 	static final LoginState READ_RANDOM_VERIFICATION_NUMBER;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("WRITE_INITIAL_LOGIN_PACKET")
 	static final LoginState WRITE_INITIAL_LOGIN_PACKET;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("READ_CLIENT_INFO_STATUS")
 	static final LoginState READ_CLIENT_INFO_STATUS;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("READ_DIGEST_PARSER_PACKET_SIZE")
 	static final LoginState READ_DIGEST_PARSER_PACKET_SIZE;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("SUBMIT_DIGEST_PARSER_TASK")
 	static final LoginState SUBMIT_DIGEST_PARSER_TASK;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("WRITE_DIGEST_PARSER_RESULT")
 	static final LoginState WRITE_DIGEST_PARSER_RESULT;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("READ_STATE_11_PACKET_SIZE")
 	static final LoginState READ_STATE_11_PACKET_SIZE;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("UNMAPPED_11")
 	static final LoginState UNMAPPED_11;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("READ_PROFILE_TRANSFER_TIME")
 	static final LoginState READ_PROFILE_TRANSFER_TIME;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("PROFILE_TRANSFER")
 	static final LoginState PROFILE_TRANSFER;
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("UNMAPPED")
 	static final LoginState UNMAPPED;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("READ_ACCOUNT_INFO")
 	static final LoginState READ_ACCOUNT_INFO;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("SET_SERVER_PROTOCOL")
 	static final LoginState SET_SERVER_PROTOCOL;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("UPDATE_PLAYER_AND_LOAD_REGIONS")
 	static final LoginState UPDATE_PLAYER_AND_LOAD_REGIONS;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("UNMAPPED_17")
 	static final LoginState UNMAPPED_17;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("UNMAPPED_18")
 	static final LoginState UNMAPPED_18;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("UNMAPPED_19")
 	static final LoginState UNMAPPED_19;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("REFRESHING_TOKEN")
 	static final LoginState REFRESHING_TOKEN;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("TOKEN_RESPONSE")
 	static final LoginState TOKEN_RESPONSE;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("UNMAPPED_21")
 	static final LoginState UNMAPPED_21;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lbc;"
+		descriptor = "Lbh;"
 	)
 	@Export("READ_ACCOUNT_INFO_PACKET_SIZE")
 	static final LoginState READ_ACCOUNT_INFO_PACKET_SIZE;
-	@ObfuscatedName("br")
-	@ObfuscatedSignature(
-		descriptor = "Lrv;"
-	)
-	static Bounds field304;
-	@ObfuscatedName("kl")
-	@ObfuscatedSignature(
-		descriptor = "Lpu;"
-	)
-	static Archive field283;
 
 	static {
 		SHUTDOWN_PREVIOUS_CONNECTION = new LoginState();
@@ -199,19 +188,14 @@ public class LoginState {
 	LoginState() {
 	}
 
-	@ObfuscatedName("bl")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-101"
+		descriptor = "(II)V",
+		garbageValue = "-1877533195"
 	)
-	static void method761() {
-		if (ClientPacket.clientPreferences.isTitleMusicDisabled()) {
-			HttpResponse.method306(0, 0);
-		} else {
-			HttpResponse.method306(0, 0);
-			ArrayList var0 = new ArrayList();
-			var0.add(new MidiRequest(ModeWhere.field4905, "scape main", "", 255, false));
-			class30.method451(var0, 0, 0, 0, 100, false);
-		}
+	static void method816(int var0) {
+		TransformationMatrix.field5071 = var0;
+		TransformationMatrix.field5073 = new TransformationMatrix[var0];
+		class359.field3967 = 0;
 	}
 }

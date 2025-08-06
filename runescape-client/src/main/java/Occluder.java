@@ -1,197 +1,232 @@
+import java.io.File;
+import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jt")
+@ObfuscatedName("jq")
 @Implements("Occluder")
 public final class Occluder {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 816384273
+		intValue = 1747143425
 	)
 	@Export("minTileX")
 	int minTileX;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -2091436435
+		intValue = 1922297601
 	)
 	@Export("maxTileX")
 	int maxTileX;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1852592145
+		intValue = 1728899777
 	)
 	@Export("minTileY")
 	int minTileY;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 1820169973
+		intValue = 1837221829
 	)
 	@Export("maxTileY")
 	int maxTileY;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1331328991
+		intValue = 253851301
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1374143025
+		intValue = -1572372041
 	)
 	@Export("minX")
 	int minX;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1972784621
+		intValue = 118736907
 	)
 	@Export("maxX")
 	int maxX;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 452147745
+		intValue = 1901785051
 	)
 	@Export("minZ")
 	int minZ;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -1059324173
+		intValue = -631571575
 	)
 	@Export("maxZ")
 	int maxZ;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1551491285
+		intValue = -1075972829
 	)
 	@Export("minY")
 	int minY;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1000244801
+		intValue = -361424135
 	)
 	@Export("maxY")
 	int maxY;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -872690365
+		intValue = -518371837
 	)
-	int field2834;
-	@ObfuscatedName("ad")
+	int field2774;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 147162171
+		intValue = -2095835569
 	)
-	int field2840;
-	@ObfuscatedName("af")
+	int field2773;
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -336856085
+		intValue = -1094593375
 	)
-	int field2836;
+	int field2778;
 	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 1275756799
+		intValue = 2088531503
 	)
-	int field2832;
-	@ObfuscatedName("az")
+	int field2775;
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 736361721
+		intValue = -1710977545
 	)
-	int field2838;
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = 963175755
-	)
-	int field2839;
+	int field2776;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -413749797
+		intValue = 2013500371
 	)
-	int field2830;
+	int field2777;
+	@ObfuscatedName("ax")
+	@ObfuscatedGetter(
+		intValue = 1022023155
+	)
+	int field2772;
 
 	Occluder() {
 	}
 
-	@ObfuscatedName("br")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "([BI)[B",
-		garbageValue = "163644096"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIB)V",
+		garbageValue = "45"
 	)
-	@Export("decompressBytes")
-	static final byte[] decompressBytes(byte[] var0) {
-		Buffer var1 = new Buffer(var0);
-		int var2 = var1.readUnsignedByte();
-		int var3 = var1.readInt();
-		if (var3 < 0 || AbstractArchive.field4752 != 0 && var3 > AbstractArchive.field4752) {
-			throw new RuntimeException();
-		} else if (var2 == 0) {
-			byte[] var6 = new byte[var3];
-			var1.readBytes(var6, 0, var3);
-			return var6;
-		} else {
-			int var4 = var1.readInt();
-			if (var4 >= 0 && (AbstractArchive.field4752 == 0 || var4 <= AbstractArchive.field4752)) {
-				byte[] var5 = new byte[var4];
-				if (var2 == 1) {
-					BZip2Decompressor.BZip2Decompressor_decompress(var5, var4, var0, var3, 9);
-				} else {
-					AbstractArchive.gzipDecompressor.decompress(var1, var5);
-				}
+	public static void method5373(String var0, String var1, String var2, int var3, int var4) throws IOException {
+		if (var1 != null && !var1.isEmpty()) {
+			var0 = var0 + "-" + var1;
+		}
 
-				return var5;
-			} else {
-				throw new RuntimeException();
+		class533.field5487 = var4;
+		ClientPreferences.cacheGamebuild = var3;
+
+		try {
+			ApproximateRouteStrategy.osName = System.getProperty("os.name");
+		} catch (Exception var14) {
+			ApproximateRouteStrategy.osName = "Unknown";
+		}
+
+		HorizontalAlignment.osNameLowercase = ApproximateRouteStrategy.osName.toLowerCase();
+		class502.userHomeDirectory = null;
+
+		try {
+			class502.userHomeDirectory = System.getProperty("jagex.userhome");
+		} catch (Exception var13) {
+		}
+
+		if (class502.userHomeDirectory == null) {
+			try {
+				class502.userHomeDirectory = System.getProperty("user.home");
+			} catch (Exception var12) {
 			}
 		}
+
+		if (class502.userHomeDirectory != null) {
+			class502.userHomeDirectory = class502.userHomeDirectory + "/";
+		}
+
+		try {
+			if (HorizontalAlignment.osNameLowercase.startsWith("win")) {
+				if (class502.userHomeDirectory == null) {
+					class502.userHomeDirectory = System.getenv("USERPROFILE");
+				}
+			} else if (class502.userHomeDirectory == null) {
+				class502.userHomeDirectory = System.getenv("HOME");
+			}
+
+			if (class502.userHomeDirectory != null) {
+				class502.userHomeDirectory = class502.userHomeDirectory + "/";
+			}
+		} catch (Exception var11) {
+		}
+
+		if (class502.userHomeDirectory == null) {
+			class502.userHomeDirectory = "~/";
+		}
+
+		HttpMethod.field41 = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", class502.userHomeDirectory, "/tmp/", ""};
+		class427.field4969 = new String[]{".jagex_cache_" + ClientPreferences.cacheGamebuild, ".file_store_" + ClientPreferences.cacheGamebuild};
+		int var10 = 0;
+
+		label107:
+		while (var10 < 4) {
+			UserComparator9.cacheDir = Skeleton.method5073(var0, var2, var10);
+			if (!UserComparator9.cacheDir.exists()) {
+				UserComparator9.cacheDir.mkdirs();
+			}
+
+			File[] var6 = UserComparator9.cacheDir.listFiles();
+			if (var6 == null) {
+				break;
+			}
+
+			File[] var7 = var6;
+			int var8 = 0;
+
+			while (true) {
+				if (var8 >= var7.length) {
+					break label107;
+				}
+
+				File var9 = var7[var8];
+				if (!MenuAction.method1865(var9, false)) {
+					++var10;
+					break;
+				}
+
+				++var8;
+			}
+		}
+
+		class506.method10193(UserComparator9.cacheDir);
+		UserComparator5.method3504();
+		JagexCache.JagexCache_dat2File = new AccessFile(Tiles.getFile("main_file_cache.dat2"), "rw", 1048576000L);
+		JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(Tiles.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+		class159.JagexCache_idxFiles = new BufferedFile[class533.field5487];
+
+		for (var10 = 0; var10 < class533.field5487; ++var10) {
+			class159.JagexCache_idxFiles[var10] = new BufferedFile(new AccessFile(Tiles.getFile("main_file_cache.idx" + var10), "rw", 1048576L), 6000, 0);
+		}
+
 	}
 
-	@ObfuscatedName("mg")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(Lov;IIZI)V",
-		garbageValue = "-431005857"
+		descriptor = "([II)Ltn;",
+		garbageValue = "782923509"
 	)
-	@Export("alignWidgetSize")
-	static void alignWidgetSize(Widget var0, int var1, int var2, boolean var3) {
-		int var4 = var0.width * -1805166981;
-		int var5 = var0.height * -2133353239;
-		if (var0.widthAlignment == 0) {
-			var0.width = var0.rawWidth * -352773965;
-		} else if (var0.widthAlignment == 1) {
-			var0.width = (var1 - var0.rawWidth) * -352773965;
-		} else if (var0.widthAlignment == 2) {
-			var0.width = (var0.rawWidth * var1 >> 14) * -352773965;
-		}
-
-		if (var0.heightAlignment == 0) {
-			var0.height = var0.rawHeight * -1251804327;
-		} else if (var0.heightAlignment == 1) {
-			var0.height = (var2 - var0.rawHeight) * -1251804327;
-		} else if (var0.heightAlignment == 2) {
-			var0.height = (var2 * var0.rawHeight >> 14) * -1251804327;
-		}
-
-		if (var0.widthAlignment == 4) {
-			var0.width = var0.field3997 * var0.height * -2133353239 / var0.field3998 * -352773965;
-		}
-
-		if (var0.heightAlignment == 4) {
-			var0.height = var0.field3998 * var0.width * -1805166981 / var0.field3997 * -1251804327;
-		}
-
-		if (var0.contentType == 1337) {
-			Client.viewportWidget = var0;
-		}
-
-		if (var0.type == 12) {
-			var0.method7755().method7406(var0.width * -1805166981, var0.height * -2133353239);
-		}
-
-		if (var3 && var0.onResize != null && (var4 != var0.width * -1805166981 || var5 != var0.height * -2133353239)) {
-			ScriptEvent var6 = new ScriptEvent();
-			var6.widget = var0;
-			var6.args = var0.onResize;
-			Client.scriptEvents.addFirst(var6);
-		}
-
+	public static class515 method5374(int[] var0) {
+		class515 var1 = new class515(class570.field5721, false);
+		var1.field5404 = var0;
+		var1.field5401 = var0.length * 1527641021;
+		var1.field5402 = var0.length;
+		return var1;
 	}
 }

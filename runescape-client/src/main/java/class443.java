@@ -1,25 +1,21 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rn")
-public class class443 {
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "122"
-	)
-	@Export("isWorldMapEvent")
-	public static boolean isWorldMapEvent(int var0) {
-		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
-	}
+@ObfuscatedName("re")
+public final class class443 {
+	@ObfuscatedName("al")
+	@Export("base37Table")
+	public static final char[] base37Table;
+	@ObfuscatedName("ab")
+	static long[] field5035;
 
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "4"
-	)
-	protected static final int method8682() {
-		return GameEngine.keyHandler.method378();
+	static {
+		base37Table = new char[]{'_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+		field5035 = new long[12];
+
+		for (int var0 = 0; var0 < field5035.length; ++var0) {
+			field5035[var0] = (long)Math.pow(37.0D, (double)var0);
+		}
+
 	}
 }

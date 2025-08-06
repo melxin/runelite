@@ -1,29 +1,35 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("wj")
+@ObfuscatedName("wb")
 @Implements("NPCOverheadIcons")
 public class NPCOverheadIcons {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("br")
+	@ObfuscatedGetter(
+		intValue = 1762798777
+	)
+	static int field5822;
+	@ObfuscatedName("al")
 	@Export("overheadArchiveIds")
 	int[] overheadArchiveIds;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@Export("overheadSpriteIds")
 	short[] overheadSpriteIds;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lhd;)V"
+		descriptor = "(Lhg;)V"
 	)
 	public NPCOverheadIcons(NPCComposition var1) {
 		this.overheadArchiveIds = new int[8];
 		this.overheadSpriteIds = new short[8];
 		int var2 = 0;
-		if (var1.method4190()) {
-			var2 = var1.method4161().length;
-			System.arraycopy(var1.method4161(), 0, this.overheadArchiveIds, 0, var2);
-			System.arraycopy(var1.method4204(), 0, this.overheadSpriteIds, 0, var2);
+		if (var1.method4342()) {
+			var2 = var1.method4320().length;
+			System.arraycopy(var1.method4320(), 0, this.overheadArchiveIds, 0, var2);
+			System.arraycopy(var1.method4310(), 0, this.overheadSpriteIds, 0, var2);
 		}
 
 		for (int var3 = var2; var3 < 8; ++var3) {
@@ -33,40 +39,40 @@ public class NPCOverheadIcons {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(B)[I",
-		garbageValue = "47"
+		garbageValue = "3"
 	)
-	public int[] method11114() {
+	public int[] method11477() {
 		return this.overheadArchiveIds;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)[S",
-		garbageValue = "-107"
+		descriptor = "(I)[S",
+		garbageValue = "-150456953"
 	)
-	public short[] method11107() {
+	public short[] method11476() {
 		return this.overheadSpriteIds;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(IISI)V",
-		garbageValue = "818588856"
+		garbageValue = "-1577920146"
 	)
-	public void method11108(int var1, int var2, short var3) {
+	public void method11479(int var1, int var2, short var3) {
 		this.overheadArchiveIds[var1] = var2;
 		this.overheadSpriteIds[var1] = var3;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "([I[SI)V",
-		garbageValue = "1315554978"
+		garbageValue = "-1809560258"
 	)
-	public void method11109(int[] var1, short[] var2) {
+	public void method11485(int[] var1, short[] var2) {
 		this.overheadArchiveIds = var1;
 		this.overheadSpriteIds = var2;
 	}

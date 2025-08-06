@@ -1,32 +1,36 @@
 import java.util.HashMap;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uo")
+@ObfuscatedName("vc")
 @Implements("Fonts")
 public class Fonts {
-	@ObfuscatedName("pu")
-	static byte[][] field5525;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("lm")
+	@ObfuscatedGetter(
+		intValue = 779598911
+	)
+	static int field5635;
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lps;"
+		descriptor = "Lpx;"
 	)
 	@Export("spritesArchive")
 	AbstractArchive spritesArchive;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lps;"
+		descriptor = "Lpx;"
 	)
 	@Export("fontsArchive")
 	AbstractArchive fontsArchive;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("map")
 	HashMap map;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lps;Lps;)V"
+		descriptor = "(Lpx;Lpx;)V"
 	)
 	public Fonts(AbstractArchive var1, AbstractArchive var2) {
 		this.spritesArchive = var1;
@@ -34,10 +38,10 @@ public class Fonts {
 		this.map = new HashMap();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "([Lvz;I)Ljava/util/HashMap;",
-		garbageValue = "1975308889"
+		descriptor = "([Lvp;B)Ljava/util/HashMap;",
+		garbageValue = "-53"
 	)
 	@Export("createMap")
 	public HashMap createMap(FontName[] var1) {
@@ -58,7 +62,7 @@ public class Fonts {
 				} else {
 					int var10 = var7.getGroupId(var9);
 					int var11 = var7.getFileId(var10, "");
-					var6 = class384.method7944(var7, var8, var10, var11);
+					var6 = WorldMapScaleHandler.method6924(var7, var8, var10, var11);
 				}
 
 				if (var6 != null) {
@@ -69,5 +73,14 @@ public class Fonts {
 		}
 
 		return var2;
+	}
+
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(IS)Z",
+		garbageValue = "31763"
+	)
+	public static boolean method10900(int var0) {
+		return var0 >= WorldMapDecorationType.field4263.id && var0 <= WorldMapDecorationType.field4280.id || var0 == WorldMapDecorationType.field4272.id;
 	}
 }

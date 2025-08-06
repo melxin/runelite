@@ -4,152 +4,183 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cc")
+@ObfuscatedName("co")
 @Implements("PendingSpawn")
 public final class PendingSpawn extends Node {
-	@ObfuscatedName("hw")
+	@ObfuscatedName("de")
 	@ObfuscatedSignature(
-		descriptor = "Lgd;"
+		descriptor = "Lxa;"
 	)
-	@Export("guestClanChannel")
-	static ClanChannel guestClanChannel;
-	@ObfuscatedName("lx")
+	@Export("worldSelectRightSprite")
+	static IndexedSprite worldSelectRightSprite;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -896334133
-	)
-	static int field992;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = -1209225183
+		intValue = -1456395569
 	)
 	@Export("plane")
 	int plane;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 2100731413
+		intValue = 1766296153
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 55581095
+		intValue = 972494363
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1626548053
+		intValue = 869135519
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1164039879
+		intValue = 1476764137
 	)
 	@Export("objectId")
 	int objectId;
-	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = -166971769
-	)
-	int field1000;
-	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = -968275809
-	)
-	int field999;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 895143665
+		intValue = -921770871
 	)
-	int field1008;
+	int field1009;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = 1732958357
+	)
+	int field1017;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = -54864075
+	)
+	int field1011;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = -386578737
+	)
+	int field1012;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1823725945
+		intValue = 443754663
 	)
-	int field1001;
-	@ObfuscatedName("au")
+	int field1013;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 762403611
-	)
-	int field1002;
-	@ObfuscatedName("ar")
-	@ObfuscatedGetter(
-		intValue = -99312829
+		intValue = 718836877
 	)
 	int field1003;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -1217862617
+		intValue = 987434791
 	)
 	@Export("delay")
 	int delay;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 1567800059
+		intValue = 610803761
 	)
 	@Export("hitpoints")
 	int hitpoints;
 	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = -1501047539
+		intValue = -1165205569
 	)
-	int field1006;
-	@ObfuscatedName("az")
-	String[] field1007;
+	int field1005;
+	@ObfuscatedName("ar")
+	String[] field1018;
 
 	PendingSpawn() {
 		this.delay = 0;
 		this.hitpoints = -1;
-		this.field1006 = 31;
+		this.field1005 = 31;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "4"
+		descriptor = "(II)V",
+		garbageValue = "-825324649"
 	)
-	void method2278(int var1) {
-		this.field1006 = var1;
+	void method2366(int var1) {
+		this.field1005 = var1;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;I)V",
-		garbageValue = "-1655417762"
+		descriptor = "([Ljava/lang/String;B)V",
+		garbageValue = "99"
 	)
-	void method2292(String[] var1) {
-		this.field1007 = var1;
+	void method2370(String[] var1) {
+		this.field1018 = var1;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "-833030301"
+		garbageValue = "1442066377"
 	)
-	boolean method2282(int var1) {
+	boolean method2372(int var1) {
 		if (var1 >= 0 && var1 <= 4) {
-			return (this.field1006 & 1 << var1) != 0;
+			return (this.field1005 & 1 << var1) != 0;
 		} else {
 			return true;
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "269484304"
+		descriptor = "(IB)Z",
+		garbageValue = "9"
 	)
-	boolean method2281(int var1) {
-		return this.field1007 != null && var1 >= 0 && var1 < this.field1007.length && this.field1007[var1] != null;
+	boolean method2365(int var1) {
+		return this.field1018 != null && var1 >= 0 && var1 < this.field1018.length && this.field1018[var1] != null;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ljava/lang/String;",
-		garbageValue = "-1924785581"
+		descriptor = "(IS)Ljava/lang/String;",
+		garbageValue = "20960"
 	)
-	String method2277(int var1) {
-		return this.field1007 != null && var1 >= 0 && var1 < this.field1007.length ? this.field1007[var1] : null;
+	String method2369(int var1) {
+		return this.field1018 != null && var1 >= 0 && var1 < this.field1018.length ? this.field1018[var1] : null;
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIB)V",
+		garbageValue = "44"
+	)
+	@Export("itemContainerSetItem")
+	static void itemContainerSetItem(int var0, int var1, int var2, int var3) {
+		ItemContainer var4 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+		if (var4 == null) {
+			var4 = new ItemContainer();
+			ItemContainer.itemContainers.put(var4, (long)var0);
+		}
+
+		if (var4.ids.length <= var1) {
+			int[] var5 = new int[var1 + 1];
+			int[] var6 = new int[var1 + 1];
+
+			int var7;
+			for (var7 = 0; var7 < var4.ids.length; ++var7) {
+				var5[var7] = var4.ids[var7];
+				var6[var7] = var4.quantities[var7];
+			}
+
+			for (var7 = var4.ids.length; var7 < var1; ++var7) {
+				var5[var7] = -1;
+				var6[var7] = 0;
+			}
+
+			var4.ids = var5;
+			var4.quantities = var6;
+		}
+
+		var4.ids[var1] = var2;
+		var4.quantities[var1] = var3;
 	}
 }

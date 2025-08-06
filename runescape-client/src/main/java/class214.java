@@ -2,102 +2,107 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("im")
+@ObfuscatedName("iu")
 public class class214 {
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lim;"
-	)
-	static final class214 field2387;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lim;"
-	)
-	static final class214 field2374;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lim;"
-	)
-	static final class214 field2380;
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lim;"
-	)
-	public static final class214 field2375;
 	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Liu;"
 	)
-	public static final class214 field2376;
+	static final class214 field2449;
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Liu;"
+	)
+	static final class214 field2445;
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Liu;"
 	)
-	public static final class214 field2377;
-	@ObfuscatedName("aa")
+	static final class214 field2446;
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Liu;"
 	)
-	public static final class214 field2378;
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "Lim;"
-	)
-	public static final class214 field2379;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lim;"
-	)
-	public static final class214 field2373;
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Lim;"
-	)
-	public static final class214 field2381;
+	public static final class214 field2458;
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Liu;"
 	)
-	public static final class214 field2382;
-	@ObfuscatedName("ar")
+	public static final class214 field2450;
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Liu;"
 	)
-	public static final class214 field2383;
-	@ObfuscatedName("ad")
+	public static final class214 field2452;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Liu;"
 	)
-	static final class214 field2384;
-	@ObfuscatedName("af")
+	public static final class214 field2455;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lim;"
+		descriptor = "Liu;"
 	)
-	static final class214 field2385;
-	@ObfuscatedName("az")
+	public static final class214 field2451;
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Liu;"
+	)
+	public static final class214 field2447;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Liu;"
+	)
+	public static final class214 field2453;
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Liu;"
+	)
+	public static final class214 field2454;
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "Liu;"
+	)
+	public static final class214 field2444;
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "Liu;"
+	)
+	static final class214 field2456;
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Liu;"
+	)
+	static final class214 field2457;
+	@ObfuscatedName("bf")
 	@ObfuscatedGetter(
-		intValue = 1587448925
+		intValue = -366080509
 	)
-	public final int field2372;
+	static int field2459;
+	@ObfuscatedName("ar")
+	@ObfuscatedGetter(
+		intValue = -740346597
+	)
+	public final int field2448;
 
 	static {
-		field2387 = new class214(0);
-		field2374 = new class214(1);
-		field2380 = new class214(2);
-		field2375 = new class214(3);
-		field2376 = new class214(4);
-		field2377 = new class214(5);
-		field2378 = new class214(6);
-		field2379 = new class214(7);
-		field2373 = new class214(8);
-		field2381 = new class214(9);
-		field2382 = new class214(10);
-		field2383 = new class214(11);
-		field2384 = new class214(12);
-		field2385 = new class214(13);
+		field2449 = new class214(0);
+		field2445 = new class214(1);
+		field2446 = new class214(2);
+		field2458 = new class214(3);
+		field2450 = new class214(4);
+		field2452 = new class214(5);
+		field2455 = new class214(6);
+		field2451 = new class214(7);
+		field2447 = new class214(8);
+		field2453 = new class214(9);
+		field2454 = new class214(10);
+		field2444 = new class214(11);
+		field2456 = new class214(12);
+		field2457 = new class214(13);
 	}
 
 	class214(int var1) {
-		this.field2372 = var1;
+		this.field2448 = var1;
 	}
 }

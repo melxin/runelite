@@ -1,34 +1,52 @@
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("kt")
+@ObfuscatedName("ke")
 @Implements("MoveSpeed")
 public enum MoveSpeed implements Enum {
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lkt;"
-	)
-	field3121((byte)-1),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lkt;"
-	)
-	field3117((byte)0),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lkt;"
-	)
-	field3118((byte)1),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lkt;"
-	)
-	field3119((byte)2);
-
 	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "Lke;"
+	)
+	field3195((byte)-1),
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lke;"
+	)
+	field3192((byte)0),
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lke;"
+	)
+	field3194((byte)1),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lke;"
+	)
+	field3197((byte)2);
+
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "Lei;"
+	)
+	@Export("pcmPlayerProvider")
+	public static class105 pcmPlayerProvider;
+	@ObfuscatedName("kf")
+	@ObfuscatedSignature(
+		descriptor = "Lpo;"
+	)
+	static Archive field3199;
+	@ObfuscatedName("kq")
+	@ObfuscatedSignature(
+		descriptor = "Lpo;"
+	)
+	@Export("archive6")
+	static Archive archive6;
+	@ObfuscatedName("au")
 	@Export("id")
 	final byte id;
 
@@ -36,89 +54,79 @@ public enum MoveSpeed implements Enum {
 		this.id = var3;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "26"
+		descriptor = "(I)I",
+		garbageValue = "-164877066"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)Lcr;",
-		garbageValue = "-1036430378"
+		descriptor = "(I)Lmb;",
+		garbageValue = "-1466806946"
 	)
-	@Export("getWorldMapScript")
-	static Script getWorldMapScript(int var0, int var1, int var2) {
-		int var3 = LoginPacket.method3651(var1, var0);
-		Script var4 = UserComparator10.getScript(var3, var0);
-		if (var4 != null) {
-			return var4;
+	public static PacketBufferNode method6300() {
+		PacketBufferNode var0;
+		if (PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0) {
+			var0 = new PacketBufferNode();
 		} else {
-			var3 = WorldMapIcon_0.method6537(var2, var0);
-			var4 = UserComparator10.getScript(var3, var0);
-			if (var4 != null) {
-				return var4;
-			} else {
-				int var5 = var0 + -512;
-				var4 = UserComparator10.getScript(var5, var0);
-				return var4 != null ? var4 : null;
-			}
+			var0 = PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
 		}
+
+		var0.clientPacket = null;
+		var0.clientPacketLength = 0;
+		var0.packetBuffer = new PacketBuffer(5000);
+		return var0;
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)Ljava/lang/String;",
-		garbageValue = "1"
+		descriptor = "(Ljm;IIB)Ldh;",
+		garbageValue = "60"
 	)
-	public static String method6102(String var0) {
-		int var1 = var0.length();
-		char[] var2 = new char[var1];
-		byte var3 = 2;
-
-		for (int var4 = 0; var4 < var1; ++var4) {
-			char var5 = var0.charAt(var4);
-			if (var3 == 0) {
-				var5 = Character.toLowerCase(var5);
-			} else if (var3 == 2 || Character.isUpperCase(var5)) {
-				var5 = TaskHandler.method4700(var5);
+	public static final PcmPlayer method6297(TaskHandler var0, int var1, int var2) {
+		if (PcmPlayer.field1313 == 0) {
+			throw new IllegalStateException();
+		} else if (var1 >= 0 && var1 < 2) {
+			if (var2 < 512) {
+				var2 = 512;
 			}
 
-			if (Character.isLetter(var5)) {
-				var3 = 0;
-			} else if (var5 != '.' && var5 != '?' && var5 != '!') {
-				if (Character.isSpaceChar(var5)) {
-					if (var3 != 2) {
-						var3 = 1;
-					}
-				} else {
-					var3 = 1;
+			try {
+				PcmPlayer var3 = pcmPlayerProvider.player();
+				var3.samples = new int[512 * (class475.PcmPlayer_stereo ? 2 : 1)];
+				var3.field1319 = var2;
+				var3.init();
+				var3.capacity = (var2 & -2048) + 2048;
+				if (var3.capacity > 32768) {
+					var3.capacity = 32768;
 				}
-			} else {
-				var3 = 2;
+
+				var3.open(var3.capacity);
+				if (AuthenticationScheme.field1584 > 0 && MusicPatchPcmStream.soundSystem == null) {
+					MusicPatchPcmStream.soundSystem = new SoundSystem();
+					class359.soundSystemExecutor = Executors.newScheduledThreadPool(1);
+					class359.soundSystemExecutor.scheduleAtFixedRate(MusicPatchPcmStream.soundSystem, 0L, 10L, TimeUnit.MILLISECONDS);
+				}
+
+				if (MusicPatchPcmStream.soundSystem != null) {
+					if (MusicPatchPcmStream.soundSystem.players[var1] != null) {
+						throw new IllegalArgumentException();
+					}
+
+					MusicPatchPcmStream.soundSystem.players[var1] = var3;
+				}
+
+				return var3;
+			} catch (Throwable var4) {
+				return new PcmPlayer();
 			}
-
-			var2[var4] = var5;
-		}
-
-		return new String(var2);
-	}
-
-	@ObfuscatedName("bu")
-	@ObfuscatedSignature(
-		descriptor = "(ILcr;ZI)I",
-		garbageValue = "1771448669"
-	)
-	static int method6101(int var0, Script var1, boolean var2) {
-		if (var0 == ScriptOpcodes.LOGOUT) {
-			Client.logoutTimer = 250;
-			return 1;
 		} else {
-			return 2;
+			throw new IllegalArgumentException();
 		}
 	}
 }

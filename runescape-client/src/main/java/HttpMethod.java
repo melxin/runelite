@@ -1,64 +1,73 @@
+import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ag")
+@ObfuscatedName("aj")
 @Implements("HttpMethod")
 public class HttpMethod implements Enum {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lag;"
+		descriptor = "Laj;"
 	)
 	@Export("POST")
 	public static final HttpMethod POST;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lag;"
+		descriptor = "Laj;"
 	)
 	@Export("GET")
 	public static final HttpMethod GET;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lag;"
+		descriptor = "Laj;"
 	)
 	@Export("PUT")
 	static final HttpMethod PUT;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lag;"
+		descriptor = "Laj;"
 	)
 	@Export("PATCH")
 	static final HttpMethod PATCH;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lag;"
+		descriptor = "Laj;"
 	)
 	@Export("DELETE")
 	static final HttpMethod DELETE;
-	@ObfuscatedName("dp")
+	@ObfuscatedName("ad")
+	static String[] field41;
+	@ObfuscatedName("ko")
+	@ObfuscatedGetter(
+		longValue = 2527990320718600839L
+	)
+	static long field38;
+	@ObfuscatedName("py")
 	@ObfuscatedSignature(
-		descriptor = "Lwy;"
+		descriptor = "[Lxv;"
 	)
-	static IndexedSprite field43;
-	@ObfuscatedName("iz")
+	@Export("headIconPrayerSprites")
+	static SpritePixels[] headIconPrayerSprites;
+	@ObfuscatedName("st")
 	@ObfuscatedGetter(
-		intValue = 1559372579
+		intValue = -608853119
 	)
-	static int field42;
-	@ObfuscatedName("ac")
+	static int field32;
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 968537279
+		intValue = -123983669
 	)
-	int field32;
-	@ObfuscatedName("aa")
+	int field42;
+	@ObfuscatedName("ah")
 	@Export("name")
 	String name;
+	@ObfuscatedName("ap")
+	boolean field37;
 	@ObfuscatedName("am")
-	boolean field39;
-	@ObfuscatedName("ah")
-	boolean field40;
+	boolean field34;
 
 	static {
 		POST = new HttpMethod(0, "POST", true, true);
@@ -69,126 +78,173 @@ public class HttpMethod implements Enum {
 	}
 
 	HttpMethod(int var1, String var2, boolean var3, boolean var4) {
-		this.field32 = var1;
+		this.field42 = var1;
 		this.name = var2;
-		this.field39 = var3;
-		this.field40 = var4;
+		this.field37 = var3;
+		this.field34 = var4;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "77197743"
+		garbageValue = "1171989961"
 	)
-	boolean method81() {
-		return this.field39;
+	boolean method72() {
+		return this.field37;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "26"
+		descriptor = "(I)I",
+		garbageValue = "-164877066"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field32;
+		return this.field42;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "1238252449"
+		garbageValue = "-1873291526"
 	)
 	@Export("getName")
 	public String getName() {
 		return this.name;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "1334592352"
+		garbageValue = "1905712289"
 	)
-	boolean method69() {
-		return this.field40;
+	boolean method75() {
+		return this.field34;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("hf")
 	@ObfuscatedSignature(
-		descriptor = "(Ldl;[BIIIII)V",
-		garbageValue = "-1862927163"
+		descriptor = "(I)I",
+		garbageValue = "707763979"
 	)
-	static final void method80(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5) {
-		int var8;
-		int var9;
-		if (var0.collisionMaps != null) {
-			for (int var6 = 0; var6 < 4; ++var6) {
-				CollisionMap var13 = var0.collisionMaps[var6];
+	static int method67() {
+		if (Client.archiveLoaders != null && Client.archiveLoadersDone < Client.archiveLoaders.size()) {
+			int var0 = 0;
 
-				for (var8 = var2; var8 < var2 + 64; ++var8) {
-					for (var9 = var3; var9 < var3 + 64; ++var9) {
-						if (var13.method5960(var8, var9)) {
-							var13.method5933(var8, var9, 1073741824);
+			for (int var1 = 0; var1 <= Client.archiveLoadersDone; ++var1) {
+				var0 += ((ArchiveLoader)Client.archiveLoaders.get(var1)).loadedCount;
+			}
+
+			return var0 * 10000 / Client.field480;
+		} else {
+			return 10000;
+		}
+	}
+
+	@ObfuscatedName("iv")
+	@ObfuscatedSignature(
+		descriptor = "(III)V",
+		garbageValue = "2134089127"
+	)
+	static void method80(int var0, int var1) {
+		if (FriendSystem.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
+			ArrayList var2 = new ArrayList();
+			var2.add(new MidiRequest(MoveSpeed.archive6, var0, 0, FriendSystem.clientPreferences.getMusicVolume(), false));
+			class30.method486(var2, 0, 0, 0, 0, true);
+			Client.playingJingle = true;
+		}
+
+	}
+
+	@ObfuscatedName("ma")
+	@ObfuscatedSignature(
+		descriptor = "(Lcr;IIIII)V",
+		garbageValue = "-1135954424"
+	)
+	@Export("addPlayerToMenu")
+	static final void addPlayerToMenu(Player var0, int var1, int var2, int var3, int var4) {
+		if (var0.index != Client.localPlayerIndex) {
+			if (Client.menu.menuOptionsCount < 400) {
+				String var5;
+				int var8;
+				if (var0.skillLevel == 0) {
+					String var6 = var0.actions[0] + var0.username + var0.actions[1];
+					var8 = var0.combatLevel;
+					int var9 = class27.localPlayer.combatLevel;
+					int var10 = var9 - var8;
+					String var7;
+					if (var10 < -9) {
+						var7 = ObjectSound.colorStartTag(16711680);
+					} else if (var10 < -6) {
+						var7 = ObjectSound.colorStartTag(16723968);
+					} else if (var10 < -3) {
+						var7 = ObjectSound.colorStartTag(16740352);
+					} else if (var10 < 0) {
+						var7 = ObjectSound.colorStartTag(16756736);
+					} else if (var10 > 9) {
+						var7 = ObjectSound.colorStartTag(65280);
+					} else if (var10 > 6) {
+						var7 = ObjectSound.colorStartTag(4259584);
+					} else if (var10 > 3) {
+						var7 = ObjectSound.colorStartTag(8453888);
+					} else if (var10 > 0) {
+						var7 = ObjectSound.colorStartTag(12648192);
+					} else {
+						var7 = ObjectSound.colorStartTag(16776960);
+					}
+
+					var5 = var6 + var7 + " " + " (" + "level-" + var0.combatLevel + ")" + var0.actions[2];
+				} else {
+					var5 = var0.actions[0] + var0.username + var0.actions[1] + " " + " (" + "skill-" + var0.skillLevel + ")" + var0.actions[2];
+				}
+
+				int var11;
+				if (Client.isItemSelected == 1) {
+					ClanSettings.insertMenuItem("Use", Client.field501 + " " + "->" + " " + ObjectSound.colorStartTag(16777215) + var5, 14, var1, var2, var3, -1, false, var4);
+				} else if (Client.isSpellSelected) {
+					if ((class533.selectedSpellFlags & 8) == 8) {
+						ClanSettings.insertMenuItem(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + ObjectSound.colorStartTag(16777215) + var5, 15, var1, var2, var3, -1, false, var4);
+					}
+				} else {
+					for (var11 = 7; var11 >= 0; --var11) {
+						if (Client.playerMenuActions[var11] != null) {
+							short var12 = 0;
+							if (Client.playerMenuActions[var11].equalsIgnoreCase("Attack")) {
+								if (AttackOption.AttackOption_hidden == Client.playerAttackOption) {
+									continue;
+								}
+
+								if (Client.playerAttackOption == AttackOption.AttackOption_alwaysRightClick || AttackOption.AttackOption_dependsOnCombatLevels == Client.playerAttackOption && var0.combatLevel > class27.localPlayer.combatLevel) {
+									var12 = 2000;
+								}
+
+								if (class27.localPlayer.team != 0 && var0.team != 0) {
+									if (var0.team == class27.localPlayer.team) {
+										var12 = 2000;
+									} else {
+										var12 = 0;
+									}
+								} else if (Client.playerAttackOption == AttackOption.field1197 && var0.isClanMember()) {
+									var12 = 2000;
+								}
+							} else if (Client.playerOptionsPriorities[var11]) {
+								var12 = 2000;
+							}
+
+							boolean var13 = false;
+							var8 = Client.playerMenuOpcodes[var11] + var12;
+							ClanSettings.insertMenuItem(Client.playerMenuActions[var11], ObjectSound.colorStartTag(16777215) + var5, var8, var1, var2, var3, -1, false, var4);
 						}
 					}
 				}
-			}
-		}
 
-		Buffer var12 = new Buffer(var1);
-
-		for (int var7 = 0; var7 < 4; ++var7) {
-			for (var8 = 0; var8 < 64; ++var8) {
-				for (var9 = 0; var9 < 64; ++var9) {
-					int var10 = var8 + var2;
-					int var11 = var3 + var9;
-					FriendSystem.loadTerrain(var0, var12, var7, var10, var11, var10 + var4, var5 + var11, 0);
+				for (var11 = 0; var11 < Client.menu.menuOptionsCount; ++var11) {
+					if (Client.menu.menuOpcodes[var11] == 23) {
+						Client.menu.menuTargets[var11] = ObjectSound.colorStartTag(16777215) + var5;
+						break;
+					}
 				}
-			}
-		}
 
-	}
-
-	@ObfuscatedName("nd")
-	@ObfuscatedSignature(
-		descriptor = "(Lov;I)Z",
-		garbageValue = "-2019078946"
-	)
-	static final boolean method75(Widget var0) {
-		int var1 = var0.contentType;
-		if (var1 == 205) {
-			Client.logoutTimer = 250;
-			return true;
-		} else {
-			int var2;
-			int var3;
-			if (var1 >= 300 && var1 <= 313) {
-				var2 = (var1 - 300) / 2;
-				var3 = var1 & 1;
-				Client.playerAppearance.changeAppearance(var2, var3 == 1);
-			}
-
-			if (var1 >= 314 && var1 <= 323) {
-				var2 = (var1 - 314) / 2;
-				var3 = var1 & 1;
-				Client.playerAppearance.method7321(var2, var3 == 1);
-			}
-
-			if (var1 == 324) {
-				Client.playerAppearance.method7322(0);
-			}
-
-			if (var1 == 325) {
-				Client.playerAppearance.method7322(1);
-			}
-
-			if (var1 == 326) {
-				PacketBufferNode var4 = class139.getPacketBufferNode(ClientPacket.UPDATE_PLAYER_MODEL, Client.packetWriter.isaacCipher);
-				Client.playerAppearance.write(var4.packetBuffer);
-				Client.packetWriter.addNode(var4);
-				return true;
-			} else {
-				return false;
 			}
 		}
 	}

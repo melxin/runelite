@@ -10,23 +10,19 @@ import org.bouncycastle.crypto.tls.CertificateRequest;
 import org.bouncycastle.crypto.tls.TlsAuthentication;
 import org.bouncycastle.crypto.tls.TlsCredentials;
 
-@ObfuscatedName("ar")
+@ObfuscatedName("ay")
 class class11 implements TlsAuthentication {
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Laf;"
+		descriptor = "Lai;"
 	)
 	final class13 this$2;
 
 	@ObfuscatedSignature(
-		descriptor = "(Laf;)V"
+		descriptor = "(Lai;)V"
 	)
 	class11(class13 var1) {
 		this.this$2 = var1;
-	}
-
-	public TlsCredentials getClientCredentials(CertificateRequest var1) throws IOException {
-		return null;
 	}
 
 	public void notifyServerCertificate(Certificate var1) throws IOException {
@@ -44,5 +40,9 @@ class class11 implements TlsAuthentication {
 		} catch (CertificateException var7) {
 			throw new IOException(var7);
 		}
+	}
+
+	public TlsCredentials getClientCredentials(CertificateRequest var1) throws IOException {
+		return null;
 	}
 }

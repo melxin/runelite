@@ -4,45 +4,51 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kb")
+@ObfuscatedName("jt")
 @Implements("SceneTilePaint")
 public final class SceneTilePaint {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("is")
+	@ObfuscatedSignature(
+		descriptor = "Lpc;"
+	)
+	@Export("grandExchangeEvents")
+	static GrandExchangeEvents grandExchangeEvents;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 263466359
+		intValue = 838003661
 	)
 	@Export("swColor")
 	int swColor;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -530915411
+		intValue = 1394344111
 	)
 	@Export("seColor")
 	int seColor;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1088016391
+		intValue = 1086879889
 	)
 	@Export("neColor")
 	int neColor;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1295061777
+		intValue = -242187243
 	)
 	@Export("nwColor")
 	int nwColor;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -862806703
+		intValue = 503396139
 	)
 	@Export("texture")
 	int texture;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@Export("isFlat")
 	boolean isFlat;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 319464929
+		intValue = 1600769329
 	)
 	@Export("rgb")
 	int rgb;
@@ -58,92 +64,136 @@ public final class SceneTilePaint {
 		this.isFlat = var7;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lid;",
-		garbageValue = "-2081068068"
+		descriptor = "(I)V",
+		garbageValue = "1464421927"
 	)
-	@Export("ItemDefinition_get")
-	public static ItemComposition ItemDefinition_get(int var0) {
-		ItemComposition var1 = (ItemComposition)ItemComposition.ItemDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	@Export("savePreferences")
+	static void savePreferences() {
+		AccessFile var0 = null;
+
+		try {
+			var0 = HttpResponse.getPreferencesFile("", class36.field227.name, true);
+			Buffer var1 = FriendSystem.clientPreferences.toBuffer();
+			var0.write(var1.offset, 0, var1.field5818);
+		} catch (Exception var3) {
+		}
+
+		try {
+			if (var0 != null) {
+				var0.closeSync(true);
+			}
+		} catch (Exception var2) {
+		}
+
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/CharSequence;Lvy;I)Ljava/lang/String;",
+		garbageValue = "-1495901682"
+	)
+	public static String method5664(CharSequence var0, LoginType var1) {
+		if (var0 == null) {
+			return null;
 		} else {
-			byte[] var2 = Decimator.ItemDefinition_archive.takeFile(10, var0);
-			var1 = new ItemComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+			int var2 = 0;
+
+			int var3;
+			boolean var4;
+			char var5;
+			for (var3 = var0.length(); var2 < var3; ++var2) {
+				var5 = var0.charAt(var2);
+				var4 = var5 == 160 || var5 == ' ' || var5 == '_' || var5 == '-';
+				if (!var4) {
+					break;
+				}
 			}
 
-			var1.post();
-			if (var1.noteTemplate != -1) {
-				var1.genCert(ItemDefinition_get(var1.noteTemplate), ItemDefinition_get(var1.note));
-			}
-
-			if (var1.notedId != -1) {
-				var1.genBought(ItemDefinition_get(var1.notedId), ItemDefinition_get(var1.unnotedId));
-			}
-
-			if (var1.placeholderTemplate != -1) {
-				var1.genPlaceholder(ItemDefinition_get(var1.placeholderTemplate), ItemDefinition_get(var1.placeholder));
-			}
-
-			if (!Script.ItemDefinition_inMembersWorld && var1.isMembersOnly) {
-				if (var1.noteTemplate == -1 && var1.notedId == -1 && var1.placeholderTemplate == -1) {
-					var1.name = var1.name + " (Members)";
+			while (var3 > var2) {
+				var5 = var0.charAt(var3 - 1);
+				var4 = var5 == 160 || var5 == ' ' || var5 == '_' || var5 == '-';
+				if (!var4) {
+					break;
 				}
 
-				var1.examine = "Login to a members' server to use this object.";
-				var1.isTradable = false;
+				--var3;
+			}
 
-				int var3;
-				for (var3 = 0; var3 < var1.groundActions.length; ++var3) {
-					var1.groundActions[var3] = null;
-				}
-
-				for (var3 = 0; var3 < var1.inventoryActions.length; ++var3) {
-					if (var3 != 4) {
-						if (var1.subOps != null) {
-							var1.subOps[var3] = null;
-						}
-
-						var1.inventoryActions[var3] = null;
+			int var10 = var3 - var2;
+			if (var10 >= 1) {
+				byte var6;
+				if (var1 == null) {
+					var6 = 12;
+				} else {
+					switch(var1.field5673) {
+					case 1:
+						var6 = 20;
+						break;
+					default:
+						var6 = 12;
 					}
 				}
 
-				var1.shiftClickIndex = -2;
-				var1.team = 0;
-				if (var1.params != null) {
-					boolean var6 = false;
+				if (var10 <= var6) {
+					StringBuilder var9 = new StringBuilder(var10);
 
-					for (Node var4 = var1.params.first(); var4 != null; var4 = var1.params.next()) {
-						ParamComposition var5 = TaskHandler.getParamDefinition((int)var4.key);
-						if (var5.autoDisable) {
-							var4.remove();
-						} else {
-							var6 = true;
+					for (int var11 = var2; var11 < var3; ++var11) {
+						char var7 = var0.charAt(var11);
+						if (class114.method3402(var7)) {
+							char var8 = class155.method3843(var7);
+							if (var8 != 0) {
+								var9.append(var8);
+							}
 						}
 					}
 
-					if (!var6) {
-						var1.params = null;
+					if (var9.length() == 0) {
+						return null;
 					}
+
+					return var9.toString();
 				}
 			}
 
-			ItemComposition.ItemDefinition_cached.put(var1, (long)var0);
-			return var1;
+			return null;
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)I",
-		garbageValue = "-59"
+		descriptor = "(IS)[B",
+		garbageValue = "22509"
 	)
-	static final int method5725(int var0, int var1, int var2, int var3) {
-		int var4 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var2 * 1024 / var3] >> 1;
-		return ((65536 - var4) * var0 >> 16) + (var4 * var1 >> 16);
+	public static byte[] method5667(int var0) {
+		return class386.ByteArrayPool_getArrayBool(var0, false);
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1798669190"
+	)
+	static void method5663() {
+		Messages.Messages_channels.clear();
+		Messages.Messages_hashTable.clear();
+		Messages.Messages_queue.clear();
+		Messages.Messages_count = 0;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "-67"
+	)
+	@Export("Messages_getLastChatID")
+	static int Messages_getLastChatID(int var0) {
+		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
+		if (var1 == null) {
+			return -1;
+		} else {
+			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count;
+		}
 	}
 }

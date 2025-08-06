@@ -4,66 +4,60 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hy")
+@ObfuscatedName("hp")
 @Implements("EnumComposition")
 public class EnumComposition extends DualNode {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lps;"
-	)
-	@Export("EnumDefinition_archive")
-	public static AbstractArchive EnumDefinition_archive;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lmr;"
+		descriptor = "Lmd;"
 	)
 	@Export("EnumDefinition_cached")
-	static EvictingDualNodeHashTable EnumDefinition_cached;
-	@ObfuscatedName("bj")
+	public static EvictingDualNodeHashTable EnumDefinition_cached;
+	@ObfuscatedName("vl")
 	@ObfuscatedGetter(
-		intValue = -1618932575
+		intValue = 1532580053
 	)
-	static int field1991;
-	@ObfuscatedName("an")
+	static int field2034;
+	@ObfuscatedName("ac")
 	@Export("inputType")
 	public char inputType;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@Export("outputType")
 	public char outputType;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@Export("defaultStr")
 	public String defaultStr;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -311000709
+		intValue = -1245976595
 	)
 	@Export("defaultInt")
 	public int defaultInt;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1232725907
+		intValue = -1195541527
 	)
 	@Export("outputCount")
 	public int outputCount;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@Export("keys")
 	public int[] keys;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@Export("intVals")
 	public int[] intVals;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aj")
 	@Export("strVals")
 	public String[] strVals;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Ltp;"
+		descriptor = "Ltn;"
 	)
-	class509 field1998;
-	@ObfuscatedName("ar")
+	class515 field2048;
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Ltp;"
+		descriptor = "Ltn;"
 	)
-	class509 field1988;
+	class515 field2040;
 
 	static {
 		EnumDefinition_cached = new EvictingDualNodeHashTable(64);
@@ -74,10 +68,10 @@ public class EnumComposition extends DualNode {
 		this.outputCount = 0;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;I)V",
-		garbageValue = "-1088034478"
+		descriptor = "(Lwj;B)V",
+		garbageValue = "0"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -91,10 +85,10 @@ public class EnumComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;II)V",
-		garbageValue = "436526466"
+		descriptor = "(Lwj;II)V",
+		garbageValue = "-433756535"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -131,69 +125,43 @@ public class EnumComposition extends DualNode {
 
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "599549872"
+		garbageValue = "-11975984"
 	)
 	@Export("size")
 	public int size() {
 		return this.outputCount;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltp;",
-		garbageValue = "-1741019282"
+		descriptor = "(I)Ltn;",
+		garbageValue = "854540047"
 	)
-	public class509 method4107() {
-		if (this.field1998 == null) {
-			int[] var2 = this.keys;
-			class509 var3 = new class509(class563.field5600, false);
-			var3.field5294 = var2;
-			var3.field5287 = var2.length * 1090132113;
-			var3.field5291 = var2.length;
-			this.field1998 = var3;
+	public class515 method4288() {
+		if (this.field2048 == null) {
+			this.field2048 = Occluder.method5374(this.keys);
 		}
 
-		return this.field1998;
+		return this.field2048;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltp;",
-		garbageValue = "-957403934"
+		descriptor = "(I)Ltn;",
+		garbageValue = "1460195907"
 	)
-	public class509 method4112() {
-		if (this.field1988 == null) {
+	public class515 method4272() {
+		if (this.field2040 == null) {
 			if (this.outputType == 's') {
-				this.field1988 = ChatChannel.method2005(this.strVals);
+				this.field2040 = class458.method9410(this.strVals);
 			} else {
-				int[] var2 = this.intVals;
-				class509 var3 = new class509(class563.field5600, false);
-				var3.field5294 = var2;
-				var3.field5287 = var2.length * 1090132113;
-				var3.field5291 = var2.length;
-				this.field1988 = var3;
+				this.field2040 = Occluder.method5374(this.intVals);
 			}
 		}
 
-		return this.field1988;
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(Lps;Lps;II)Z",
-		garbageValue = "-714407408"
-	)
-	public static boolean method4121(AbstractArchive var0, AbstractArchive var1, int var2) {
-		byte[] var3 = var0.getFile(var2 >> 16 & 65535, var2 & 65535);
-		if (var3 == null) {
-			return false;
-		} else {
-			int var4 = (var3[1] & 255) << 8 | var3[2] & 255;
-			byte[] var5 = var1.getFile(var4, 0);
-			return var5 != null;
-		}
+		return this.field2040;
 	}
 }

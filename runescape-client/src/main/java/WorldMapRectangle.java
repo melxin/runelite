@@ -7,114 +7,78 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("lx")
 @Implements("WorldMapRectangle")
 public final class WorldMapRectangle {
-	@ObfuscatedName("kg")
-	@ObfuscatedSignature(
-		descriptor = "Lpu;"
-	)
-	static Archive field3283;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -2126470515
+		intValue = -816015567
 	)
 	@Export("width")
 	int width;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1866073183
+		intValue = -82625235
 	)
 	@Export("height")
 	int height;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -461915513
+		intValue = 498571187
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1761956193
+		intValue = 782021347
 	)
 	@Export("y")
 	int y;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Llk;"
+		descriptor = "Llj;"
 	)
 	final WorldMapRenderer this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Llk;)V"
+		descriptor = "(Llj;)V"
 	)
 	WorldMapRectangle(WorldMapRenderer var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "-119"
+		descriptor = "(I)Z",
+		garbageValue = "1109454388"
 	)
-	static final boolean method6612(int var0) {
-		return var0 == 14 || var0 == 15 || var0 >= 44 && var0 <= 51;
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(Ltp;Ltp;II)V",
-		garbageValue = "1694522883"
-	)
-	public static void method6613(class509 var0, class509 var1, int var2) {
-		class573.method10775(var0);
-		class563 var3 = var0.field5288;
-		DelayFadeTask.method9245(var1, var3, false);
-		if (var2 >= 0 && var2 <= var0.field5287 * 935110769) {
-			if (var1.field5287 * 935110769 != 0) {
-				var0.method9941(var1.field5287 * 935110769 + var0.field5287 * 935110769);
-				if (var2 < var0.field5287 * 935110769) {
-					ClanChannel.method3879(var0, var2, var0, var2 + var1.field5287 * 935110769, var0.field5287 * 935110769 - var2);
-				}
-
-				ClanChannel.method3879(var1, 0, var0, var2, var1.field5287 * 935110769);
-				var0.field5287 += var1.field5287;
-			}
-		} else {
-			throw new RuntimeException();
-		}
-	}
-
-	@ObfuscatedName("kz")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)V",
-		garbageValue = "1589849533"
-	)
-	@Export("updateItemPile")
-	static final void updateItemPile(int var0, int var1, int var2) {
-		NpcOverrides.updateItemPile2(class330.worldView, var0, var1, var2);
-	}
-
-	@ObfuscatedName("mx")
-	@ObfuscatedSignature(
-		descriptor = "(ILtr;Ldl;I)I",
-		garbageValue = "-243816846"
-	)
-	static int method6614(int var0, WorldEntity var1, WorldView var2) {
-		int var3 = -1;
-		if (var0 == Client.field337) {
-			var3 = var2.plane;
-		} else if (Client.field337 == -1) {
-			var3 = var1.field5213.method4291();
-		} else {
-			WorldEntity var4 = Client.worldViewManager.method2217();
-			WorldView var5 = var4.worldView;
-			if (var5.plane == var4.field5213.method4291()) {
-				if (var0 == -1) {
-					var3 = var4.getX();
+	public static boolean method6799() {
+		boolean var0 = false;
+		boolean var1 = false;
+		if (!class337.field3795.isEmpty()) {
+			SongTask var2 = (SongTask)class337.field3795.get(0);
+			if (var2 == null) {
+				class337.field3795.remove(0);
+			} else if (var2.vmethod9672()) {
+				if (var2.method9650()) {
+					System.out.println("Error in midimanager.service: " + var2.method9667());
+					var0 = true;
 				} else {
-					var3 = var1.field5213.method4291();
+					if (var2.method9653() != null) {
+						class337.field3795.add(1, var2.method9653());
+					}
+
+					var1 = var2.method9655();
 				}
+
+				class337.field3795.remove(0);
+			} else {
+				var1 = var2.method9655();
 			}
 		}
 
-		return var3;
+		if (var0) {
+			class337.field3795.clear();
+			class82.method2752();
+		}
+
+		return var1;
 	}
 }

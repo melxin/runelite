@@ -4,374 +4,390 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tr")
+@ObfuscatedName("tz")
 @Implements("WorldEntity")
 public class WorldEntity extends Node implements Entity {
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lks;"
+		descriptor = "Lkm;"
 	)
 	@Export("worldEntityCoord")
 	public final WorldEntityCoord worldEntityCoord;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -638841979
+		intValue = 96143285
 	)
 	@Export("plane")
 	public int plane;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Ldl;"
+		descriptor = "Ldj;"
 	)
 	@Export("worldView")
 	public WorldView worldView;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lhb;"
+	)
+	public class201 field5320;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lhf;"
+		descriptor = "[Ltj;"
 	)
-	public class201 field5213;
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "[Lta;"
-	)
-	class496[] field5216;
-	@ObfuscatedName("ar")
+	class502[] field5321;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 89997183
+		intValue = -1270356363
 	)
-	int field5214;
-	@ObfuscatedName("ad")
+	int field5322;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 119478677
+		intValue = -1162347163
 	)
-	public int field5206;
-	@ObfuscatedName("af")
+	public int field5324;
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Loh;"
+		descriptor = "Lpq;"
 	)
-	class389 field5217;
+	class391 field5312;
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Ltu;"
+		descriptor = "Ltm;"
 	)
-	class497 field5218;
-	@ObfuscatedName("az")
-	boolean field5219;
+	class503 field5325;
+	@ObfuscatedName("ar")
+	boolean field5326;
 
 	@ObfuscatedSignature(
-		descriptor = "(ILdl;)V"
+		descriptor = "(ILdj;)V"
 	)
 	public WorldEntity(int var1, WorldView var2) {
 		this.worldEntityCoord = new WorldEntityCoord();
 		this.plane = 0;
-		this.field5216 = new class496[10];
-		this.field5214 = 0;
-		this.field5206 = -1;
-		this.field5217 = class389.field4605;
-		this.field5218 = new class498();
-		this.field5219 = false;
+		this.field5321 = new class502[10];
+		this.field5322 = 0;
+		this.field5324 = -1;
+		this.field5312 = class391.field4700;
+		this.field5325 = new class504();
+		this.field5326 = false;
 		this.plane = var1;
 		this.worldView = var2;
-		this.field5214 = 0;
+		this.field5322 = 0;
 
 		for (int var3 = 0; var3 < 10; ++var3) {
-			this.field5216[var3] = new class496();
+			this.field5321[var3] = new class502();
 		}
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1537061280"
+		garbageValue = "-1261334993"
 	)
 	@Export("getX")
 	public int getX() {
-		if (this.field5206 != -1) {
-			WorldView var1 = Client.worldViewManager.getWorldView(this.field5206);
+		if (this.field5324 != -1) {
+			WorldView var1 = Client.worldViewManager.getWorldView(this.field5324);
 			if (var1 != null) {
 				return var1.plane;
 			}
 		}
 
-		return Sound.topLevelWorldView.plane;
+		return class7.topLevelWorldView.plane;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(ZB)V",
-		garbageValue = "29"
+		descriptor = "(ZI)V",
+		garbageValue = "-1871513373"
 	)
 	@Export("initScenePlane")
 	public void initScenePlane(boolean var1) {
 		this.worldView.scene.Scene_plane = this.worldView.plane;
 		if (var1) {
-			this.worldView.scene.field2728 = false;
-			this.worldView.scene.field2774 = -1200;
-			this.worldView.scene.field2727 = 0.01F;
-			this.worldView.scene.modelColorOverride.method5715((byte)38, (byte)2, (byte)20, (byte)127);
+			this.worldView.scene.field2666 = false;
+			this.worldView.scene.field2663 = -1200;
+			this.worldView.scene.field2665 = 0.01F;
+			this.worldView.scene.modelColorOverride.method5658((byte)38, (byte)2, (byte)20, (byte)127);
 		} else {
-			this.worldView.scene.field2728 = true;
-			this.worldView.scene.field2774 = 0;
-			this.worldView.scene.field2727 = 1.0F;
-			this.worldView.scene.modelColorOverride.method5713();
+			this.worldView.scene.field2666 = true;
+			this.worldView.scene.field2663 = 0;
+			this.worldView.scene.field2665 = 1.0F;
+			this.worldView.scene.modelColorOverride.method5652();
 		}
 
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1337003944"
+		garbageValue = "629319418"
 	)
-	public boolean method9727() {
-		return this.worldView.scene.field2727 == 0.01F;
+	public boolean method10138() {
+		return 0.01F == this.worldView.scene.field2665;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-2129373747"
+		descriptor = "(B)I",
+		garbageValue = "9"
 	)
 	@Export("getZ")
 	public int getZ() {
 		return this.worldEntityCoord.getZ();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(S)I",
-		garbageValue = "29186"
+		descriptor = "(I)I",
+		garbageValue = "584871381"
 	)
-	public int method9706() {
+	public int method10098() {
 		return this.worldEntityCoord.getCurrentRotationAngle();
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lks;",
-		garbageValue = "-2135313486"
+		descriptor = "(I)Lkm;",
+		garbageValue = "1904559776"
 	)
-	public WorldEntityCoord method9746() {
-		return this.field5214 == 0 ? this.worldEntityCoord : this.field5216[0].field5222;
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(Lhf;I)V",
-		garbageValue = "-1542390317"
-	)
-	public void method9708(class201 var1) {
-		this.field5213 = var1;
-		this.worldView.scene.field2777 = var1.method4285();
-		this.worldView.scene.field2720 = var1.method4280();
-	}
-
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "(S)Loh;",
-		garbageValue = "-32377"
-	)
-	public class389 method9709() {
-		return this.field5217;
+	public WorldEntityCoord method10099() {
+		return this.field5322 == 0 ? this.worldEntityCoord : this.field5321[0].field5331;
 	}
 
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Loh;I)V",
-		garbageValue = "-569684891"
+		descriptor = "(Lhb;I)V",
+		garbageValue = "1409299948"
 	)
-	public void method9761(class389 var1) {
-		this.field5217 = var1;
+	public void method10100(class201 var1) {
+		this.field5320 = var1;
+		this.worldView.scene.field2703 = var1.method4439();
+		this.worldView.scene.field2664 = var1.method4441();
+	}
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lpq;",
+		garbageValue = "1618682339"
+	)
+	public class391 method10101() {
+		return this.field5312;
+	}
+
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(Lpq;I)V",
+		garbageValue = "-1738804664"
+	)
+	public void method10102(class391 var1) {
+		this.field5312 = var1;
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "498667193"
+	)
+	public int method10091() {
+		return this.worldView.sizeX * 64 + this.field5320.method4439();
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1023739192"
+		garbageValue = "-1172488082"
 	)
-	public int method9711() {
-		return this.worldView.sizeX * 64 + this.field5213.method4285();
+	public int method10154() {
+		return this.worldView.sizeY * 64 + this.field5320.method4441();
 	}
 
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-679812455"
-	)
-	public int method9712() {
-		return this.worldView.sizeY * 64 + this.field5213.method4280();
-	}
-
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "-107951070"
+		garbageValue = "2133095573"
 	)
 	@Export("setPosition")
 	public void setPosition(int var1, int var2) {
-		for (int var3 = 0; var3 < this.field5216.length; ++var3) {
-			this.field5216[var3].field5222.setDirection(var1, var2);
+		for (int var3 = 0; var3 < this.field5321.length; ++var3) {
+			this.field5321[var3].field5331.setDirection(var1, var2);
 		}
 
 		this.worldEntityCoord.setDirection(var1, var2);
-		this.field5218.vmethod9787(var1, var2);
+		this.field5325.vmethod10175(var1, var2);
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(Lks;I)V",
-		garbageValue = "754562595"
+		descriptor = "(Lkm;B)V",
+		garbageValue = "58"
 	)
-	public final void method9717(WorldEntityCoord var1) {
+	public final void method10137(WorldEntityCoord var1) {
 		int var2 = var1.getTileX();
 		int var3 = var1.getTileY();
 		if (var2 >= 0 && var2 < 104 && var3 >= 0 && var3 < 104) {
-			int var4 = var1.getX() - this.field5216[0].field5222.getX();
-			int var5 = var1.getY() - this.field5216[0].field5222.getY();
-			this.method9719(var1, Math.abs(var4), Math.abs(var5));
+			int var4 = var1.getX() - this.field5321[0].field5331.getX();
+			int var5 = var1.getY() - this.field5321[0].field5331.getY();
+			this.method10108(var1, Math.abs(var4), Math.abs(var5));
 		} else {
-			this.method9715(var1);
+			this.method10107(var1);
 		}
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Lks;I)V",
-		garbageValue = "-1309737626"
+		descriptor = "(Lkm;S)V",
+		garbageValue = "-256"
 	)
-	public void method9715(WorldEntityCoord var1) {
-		this.worldEntityCoord.method6070(var1);
-		this.field5216[0].field5222.method6070(var1);
-		this.field5214 = 0;
-		this.field5219 = false;
+	public void method10107(WorldEntityCoord var1) {
+		this.worldEntityCoord.method6255(var1);
+		this.field5321[0].field5331.method6255(var1);
+		this.field5322 = 0;
+		this.field5326 = false;
 	}
 
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(Lks;III)V",
-		garbageValue = "139898017"
+		descriptor = "(Lkm;IIB)V",
+		garbageValue = "63"
 	)
-	void method9719(WorldEntityCoord var1, int var2, int var3) {
-		if (this.field5214 < 9) {
-			++this.field5214;
+	void method10108(WorldEntityCoord var1, int var2, int var3) {
+		if (this.field5322 < 9) {
+			++this.field5322;
 		}
 
-		for (int var4 = this.field5214; var4 > 0; --var4) {
-			class496 var5 = this.field5216[var4];
-			this.field5216[var4] = this.field5216[var4 - 1];
-			this.field5216[var4 - 1] = var5;
+		for (int var4 = this.field5322; var4 > 0; --var4) {
+			class502 var5 = this.field5321[var4];
+			this.field5321[var4] = this.field5321[var4 - 1];
+			this.field5321[var4 - 1] = var5;
 		}
 
-		this.field5216[0].field5222.method6070(var1);
-		this.field5216[0].field5220 = Client.cycle;
+		this.field5321[0].field5331.method6255(var1);
+		this.field5321[0].field5328 = Client.cycle;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "1421943498"
+		garbageValue = "2100920520"
 	)
-	public final void method9701(int var1) {
-		if (this.field5214 == 0) {
-			this.method9715(this.field5216[0].field5222);
+	public final void method10148(int var1) {
+		if (this.field5322 == 0) {
+			this.method10107(this.field5321[0].field5331);
 		} else {
-			if (!this.field5219) {
-				this.field5218.vmethod9786(this.worldEntityCoord, this.field5216[0], var1);
-				this.field5219 = true;
+			if (!this.field5326) {
+				this.field5325.vmethod10176(this.worldEntityCoord, this.field5321[0], var1);
+				this.field5326 = true;
 			}
 
-			if (this.field5218.vmethod9791(this.worldEntityCoord, var1, this.field5214)) {
-				--this.field5214;
-				this.field5219 = false;
+			if (this.field5325.vmethod10174(this.worldEntityCoord, var1, this.field5322)) {
+				--this.field5322;
+				this.field5326 = false;
 			}
 
 		}
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)Lre;",
-		garbageValue = "106"
-	)
-	public class445 method9718(int var1, int var2) {
-		class441 var3 = new class441();
-		TransformationMatrix var4 = class231.method4854();
-		class446 var5 = var3.field4951;
-		int var7 = this.worldEntityCoord.getCurrentRotationAngle();
-		var7 &= 2047;
-		float var6 = (float)((double)((float)var7 / 2048.0F) * 6.283185307179586D);
-		var5.method8740(var6, 0.0F, 0.0F);
-		var3.field4946.method8688((float)this.worldEntityCoord.getX(), 0.0F, (float)this.worldEntityCoord.getY());
-		var1 -= this.method9711();
-		var2 -= this.method9712();
-		var4.method8791(var3);
-		var3.method8634();
-		class445 var8 = var4.method8790((float)var1, 0.0F, (float)var2);
-		var4.method8772();
-		return var8;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lre;",
-		garbageValue = "-1496178706"
+		descriptor = "(III)Lrm;",
+		garbageValue = "2136749503"
 	)
-	public class445 method9757(int var1, int var2) {
-		class441 var3 = new class441();
-		TransformationMatrix var4 = class231.method4854();
-		class446 var5 = var3.field4951;
-		int var7 = this.worldEntityCoord.getCurrentRotationAngle();
-		var7 &= 2047;
-		float var6 = (float)(6.283185307179586D * (double)((float)var7 / 2048.0F));
-		var5.method8740(var6, 0.0F, 0.0F);
-		var3.field4946.method8688((float)this.worldEntityCoord.getX(), 0.0F, (float)this.worldEntityCoord.getY());
-		var4.method8791(var3);
-		var4.method8787();
-		var3.method8634();
-		class445 var8 = var4.method8790((float)var1, 0.0F, (float)var2);
-		var8.method8694((float)this.method9711(), 0.0F, (float)this.method9712());
-		var4.method8772();
-		return var8;
+	public class448 method10109(int var1, int var2) {
+		class444 var3 = new class444();
+		TransformationMatrix var4 = class166.method4019();
+		var3.field5037.method9078(class31.method501(this.worldEntityCoord.getCurrentRotationAngle()), 0.0F, 0.0F);
+		var3.field5038.method9022((float)this.worldEntityCoord.getX(), 0.0F, (float)this.worldEntityCoord.getY());
+		var1 -= this.method10091();
+		var2 -= this.method10154();
+		var4.method9115(var3);
+		var3.method8965();
+		class448 var5 = var4.method9122((float)var1, 0.0F, (float)var2);
+		var4.method9104();
+		return var5;
 	}
 
-	@ObfuscatedName("cv")
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "(III)Lrm;",
+		garbageValue = "2120498940"
+	)
+	public class448 method10110(int var1, int var2) {
+		class444 var3 = new class444();
+		TransformationMatrix var4 = class166.method4019();
+		var3.field5037.method9078(class31.method501(this.worldEntityCoord.getCurrentRotationAngle()), 0.0F, 0.0F);
+		var3.field5038.method9022((float)this.worldEntityCoord.getX(), 0.0F, (float)this.worldEntityCoord.getY());
+		var4.method9115(var3);
+		var4.method9119();
+		var3.method8965();
+		class448 var5 = var4.method9122((float)var1, 0.0F, (float)var2);
+		var5.method9044((float)this.method10091(), 0.0F, (float)this.method10154());
+		var4.method9104();
+		return var5;
+	}
+
+	@ObfuscatedName("dt")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-2121730630"
+		garbageValue = "1626965421"
 	)
 	@Export("getY")
 	public int getY() {
 		return this.worldEntityCoord.getX();
 	}
 
-	@ObfuscatedName("cb")
+	@ObfuscatedName("du")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "-71"
+		garbageValue = "33"
 	)
 	@Export("getPlane")
 	public int getPlane() {
 		return this.worldEntityCoord.getY();
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ltp;I)J",
-		garbageValue = "-1378414686"
+		descriptor = "(Lpx;Ljava/lang/String;Ljava/lang/String;I)[Lxa;",
+		garbageValue = "1175007091"
 	)
-	public static long method9740(class509 var0) {
-		class563 var1 = class563.field5600;
-		DelayFadeTask.method9245(var0, var1, false);
-		int[] var2 = var0.method9965();
-		int var3 = var0.method9937();
-		long var4 = 0L;
+	@Export("getFont")
+	public static IndexedSprite[] getFont(AbstractArchive var0, String var1, String var2) {
+		if (!var0.isValidFileName(var1, var2)) {
+			return null;
+		} else {
+			int var3 = var0.getGroupId(var1);
+			int var4 = var0.getFileId(var3, var2);
+			IndexedSprite[] var5;
+			if (!class522.method10495(var0, var3, var4)) {
+				var5 = null;
+			} else {
+				IndexedSprite[] var7 = new IndexedSprite[SpriteBufferProperties.SpriteBuffer_spriteCount];
 
-		for (int var6 = 0; var6 < var3; ++var6) {
-			var4 += (long)var2[var6];
+				for (int var8 = 0; var8 < SpriteBufferProperties.SpriteBuffer_spriteCount; ++var8) {
+					IndexedSprite var9 = var7[var8] = new IndexedSprite();
+					var9.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
+					var9.height = SpriteBufferProperties.SpriteBuffer_spriteHeight;
+					var9.xOffset = SpriteBufferProperties.SpriteBuffer_xOffsets[var8];
+					var9.yOffset = class440.SpriteBuffer_yOffsets[var8];
+					var9.subWidth = class333.SpriteBuffer_spriteWidths[var8];
+					var9.subHeight = Buffer.SpriteBuffer_spriteHeights[var8];
+					var9.palette = class113.SpriteBuffer_spritePalette;
+					var9.pixels = SpriteBufferProperties.SpriteBuffer_pixels[var8];
+				}
+
+				SpriteBufferProperties.SpriteBuffer_xOffsets = null;
+				class440.SpriteBuffer_yOffsets = null;
+				class333.SpriteBuffer_spriteWidths = null;
+				Buffer.SpriteBuffer_spriteHeights = null;
+				class113.SpriteBuffer_spritePalette = null;
+				SpriteBufferProperties.SpriteBuffer_pixels = null;
+				var5 = var7;
+			}
+
+			return var5;
 		}
-
-		return var4;
 	}
 }

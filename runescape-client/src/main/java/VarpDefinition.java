@@ -4,28 +4,23 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gf")
+@ObfuscatedName("gc")
 @Implements("VarpDefinition")
 public class VarpDefinition extends DualNode {
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = 1189518373
-	)
-	public static int field1910;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = -483192749
-	)
-	public static int field1914;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lmr;"
+		descriptor = "Lmd;"
 	)
 	@Export("VarpDefinition_cached")
-	public static EvictingDualNodeHashTable VarpDefinition_cached;
-	@ObfuscatedName("ac")
+	static EvictingDualNodeHashTable VarpDefinition_cached;
+	@ObfuscatedName("do")
 	@ObfuscatedGetter(
-		intValue = 533587421
+		intValue = -1474596625
+	)
+	static int field1950;
+	@ObfuscatedName("as")
+	@ObfuscatedGetter(
+		intValue = 1109031997
 	)
 	@Export("type")
 	public int type;
@@ -38,17 +33,17 @@ public class VarpDefinition extends DualNode {
 		this.type = 0;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;B)V",
-		garbageValue = "-5"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "870629607"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
-				this.method3978();
+				this.method4153();
 				return;
 			}
 
@@ -56,10 +51,10 @@ public class VarpDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;II)V",
-		garbageValue = "1129575553"
+		descriptor = "(Lwj;IB)V",
+		garbageValue = "51"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -69,79 +64,38 @@ public class VarpDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1160722520"
+		garbageValue = "-1892552450"
 	)
-	void method3978() {
+	void method4153() {
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lip;",
-		garbageValue = "-1728911948"
+		descriptor = "(IB)Lbd;",
+		garbageValue = "116"
 	)
-	@Export("SequenceDefinition_get")
-	public static SequenceDefinition SequenceDefinition_get(int var0) {
-		SequenceDefinition var1 = (SequenceDefinition)SequenceDefinition.SequenceDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = SequenceDefinition.SequenceDefinition_archive.takeFile(12, var0);
-			var1 = new SequenceDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
+	@Export("Messages_getMessage")
+	static Message Messages_getMessage(int var0) {
+		return (Message)Messages.Messages_hashTable.get((long)var0);
+	}
 
-			var1.postDecode();
-			SequenceDefinition.SequenceDefinition_cached.put(var1, (long)var0);
-			return var1;
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "(III)I",
+		garbageValue = "-2010350520"
+	)
+	static final int method4155(int var0, int var1) {
+		int var2 = Language.method8707(45365 + var0, 91923 + var1, 4) - 128 + (Language.method8707(var0 + 10294, 37821 + var1, 2) - 128 >> 1) + (Language.method8707(var0, var1, 1) - 128 >> 2);
+		var2 = (int)(0.3D * (double)var2) + 35;
+		if (var2 < 10) {
+			var2 = 10;
+		} else if (var2 > 60) {
+			var2 = 60;
 		}
-	}
 
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "477485197"
-	)
-	public static void method3989() {
-		KitDefinition.KitDefinition_cached.clear();
-	}
-
-	@ObfuscatedName("ha")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "0"
-	)
-	static final void method3991() {
-		if (Client.logoutTimer > 0) {
-			class378.logOut();
-		} else {
-			Client.timer.method7986();
-			HealthBarConfig.updateGameState(40);
-			ObjectSound.field653 = Client.packetWriter.getSocket();
-			Client.packetWriter.removeSocket();
-		}
-	}
-
-	@ObfuscatedName("os")
-	@ObfuscatedSignature(
-		descriptor = "(IIZI)V",
-		garbageValue = "-1686072307"
-	)
-	static final void method3992(int var0, int var1, boolean var2) {
-		if (Client.currentClanChannels[var0] != null) {
-			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3878()) {
-				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
-				PacketBufferNode var4 = class139.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
-				var4.packetBuffer.writeByte(4 + FriendsChat.stringCp1252NullTerminatedByteSize(var3.username.getName()));
-				var4.packetBuffer.writeByte(var0);
-				var4.packetBuffer.writeShort(var1);
-				var4.packetBuffer.writeBoolean(var2);
-				var4.packetBuffer.writeStringCp1252NullTerminated(var3.username.getName());
-				Client.packetWriter.addNode(var4);
-			}
-		}
+		return var2;
 	}
 }

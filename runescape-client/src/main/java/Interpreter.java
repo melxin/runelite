@@ -5,121 +5,140 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bz")
+@ObfuscatedName("bs")
 @Implements("Interpreter")
 public class Interpreter {
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@Export("Interpreter_MONTHS")
 	static final String[] Interpreter_MONTHS;
-	@ObfuscatedName("ah")
-	static final double field663;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lxt;"
+	)
+	@Export("rasterProvider")
+	public static AbstractRasterProvider rasterProvider;
+	@ObfuscatedName("am")
+	static final double field634;
+	@ObfuscatedName("aj")
+	@Export("Interpreter_intLocals")
+	static int[] Interpreter_intLocals;
+	@ObfuscatedName("ag")
 	@Export("Interpreter_stringLocals")
 	static Object[] Interpreter_stringLocals;
-	@ObfuscatedName("ar")
-	@Export("Interpreter_arrayLengths")
-	static int[] Interpreter_arrayLengths;
-	@ObfuscatedName("ad")
-	@Export("Interpreter_arrays")
-	static int[][] Interpreter_arrays;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ay")
 	@Export("Interpreter_intStack")
 	static int[] Interpreter_intStack;
-	@ObfuscatedName("ak")
-	@ObfuscatedGetter(
-		intValue = -1023999147
-	)
-	@Export("Interpreter_intStackSize")
-	static int Interpreter_intStackSize;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ai")
 	@Export("Interpreter_objectStack")
 	static Object[] Interpreter_objectStack;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -492415237
+		intValue = -1482797897
 	)
 	@Export("Interpreter_frameDepth")
 	static int Interpreter_frameDepth;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "[Lbt;"
+		descriptor = "[Lbc;"
 	)
 	@Export("Interpreter_frames")
 	static ScriptFrame[] Interpreter_frames;
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Loi;"
-	)
-	static class369 field672;
 	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "Lox;"
+	)
+	@Export("scriptActiveWidget")
+	static Widget scriptActiveWidget;
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lor;"
+	)
+	static class366 field642;
+	@ObfuscatedName("az")
 	@Export("Interpreter_calendar")
 	static java.util.Calendar Interpreter_calendar;
-	@ObfuscatedName("aq")
-	static boolean field664;
-	@ObfuscatedName("ay")
-	static boolean field665;
-	@ObfuscatedName("ba")
-	static ArrayList field670;
-	@ObfuscatedName("bx")
+	@ObfuscatedName("aw")
+	static boolean field629;
+	@ObfuscatedName("af")
+	static boolean field645;
+	@ObfuscatedName("an")
+	static ArrayList field646;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 260629727
+		intValue = -2010101367
 	)
-	static int field677;
-	@ObfuscatedName("bs")
-	@ObfuscatedGetter(
-		intValue = 1600536679
+	static int field644;
+	@ObfuscatedName("cc")
+	@ObfuscatedSignature(
+		descriptor = "Lxa;"
 	)
-	static int field680;
-	@ObfuscatedName("vi")
-	@ObfuscatedGetter(
-		intValue = 1781614849
+	@Export("options_buttons_0Sprite")
+	static IndexedSprite options_buttons_0Sprite;
+	@ObfuscatedName("fq")
+	@ObfuscatedSignature(
+		descriptor = "Lru;"
 	)
-	static int field676;
+	@Export("fontPlain11")
+	static Font fontPlain11;
+	@ObfuscatedName("lb")
+	@Export("worldHost")
+	static String worldHost;
 
 	static {
 		Interpreter_MONTHS = new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-		field663 = Math.log(2.0D);
-		Interpreter_arrayLengths = new int[5];
-		Interpreter_arrays = new int[5][5000];
+		field634 = Math.log(2.0D);
 		Interpreter_intStack = new int[1000];
 		Interpreter_objectStack = new Object[1000];
 		Interpreter_frameDepth = 0;
 		Interpreter_frames = new ScriptFrame[50];
-		field672 = new class369();
+		field642 = new class366();
 		Interpreter_calendar = java.util.Calendar.getInstance();
-		field664 = false;
-		field665 = false;
-		field670 = new ArrayList();
-		field677 = 0;
+		field629 = false;
+		field645 = false;
+		field646 = new ArrayList();
+		field644 = 0;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhn;",
-		garbageValue = "-724431597"
+		descriptor = "([BB)Llf;",
+		garbageValue = "0"
 	)
-	public static VarbitComposition method1757(int var0) {
-		VarbitComposition var1 = (VarbitComposition)VarbitComposition.VarbitDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	static WorldMapSprite method1733(byte[] var0) {
+		return var0 == null ? new WorldMapSprite() : new WorldMapSprite(class177.readSpritePixelsFromBytes(var0).pixels);
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)Lce;",
+		garbageValue = "41"
+	)
+	@Export("getScript")
+	static Script getScript(int var0, int var1) {
+		Script var2 = (Script)Script.Script_cached.get((long)(var0 << 16));
+		if (var2 != null) {
+			return var2;
 		} else {
-			byte[] var2 = VarbitComposition.VarbitDefinition_archive.takeFile(14, var0);
-			var1 = new VarbitComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+			String var3 = String.valueOf(var0);
+			int var4 = Canvas.archive12.getGroupId(var3);
+			if (var4 == -1) {
+				return null;
+			} else {
+				byte[] var5 = Canvas.archive12.takeFileFlat(var4);
+				if (var5 != null) {
+					if (var5.length <= 1) {
+						return null;
+					}
+
+					var2 = class70.newScript(var5);
+					if (var2 != null) {
+						Script.Script_cached.put(var2, (long)(var0 << 16));
+						return var2;
+					}
+				}
+
+				return null;
 			}
-
-			VarbitComposition.VarbitDefinition_cached.put(var1, (long)var0);
-			return var1;
 		}
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(S)Z",
-		garbageValue = "10834"
-	)
-	public static boolean method1758() {
-		return !class335.field3698.isEmpty();
 	}
 }

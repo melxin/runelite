@@ -5,138 +5,131 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rz")
+@ObfuscatedName("rr")
 @Implements("TransformationMatrix")
 public final class TransformationMatrix {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lrz;"
+		descriptor = "Lrr;"
 	)
-	public static final TransformationMatrix field4986;
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "[Lrz;"
-	)
-	static TransformationMatrix[] field4981;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = 807658107
-	)
-	static int field4982;
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = -1584756353
-	)
-	static int field4980;
+	public static final TransformationMatrix field5075;
 	@ObfuscatedName("ac")
-	public float[] field4984;
+	@ObfuscatedSignature(
+		descriptor = "[Lrr;"
+	)
+	public static TransformationMatrix[] field5073;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -259849103
+	)
+	static int field5071;
+	@ObfuscatedName("as")
+	public float[] field5074;
 
 	static {
-		field4986 = new TransformationMatrix();
-		field4981 = new TransformationMatrix[0];
-		field4982 = 16;
-		field4981 = new TransformationMatrix[16];
-		field4980 = 0;
+		field5075 = new TransformationMatrix();
+		field5073 = new TransformationMatrix[0];
+		LoginState.method816(16);
 	}
 
 	public TransformationMatrix() {
-		this.field4984 = new float[16];
-		this.method8776();
+		this.field5074 = new float[16];
+		this.method9108();
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lrz;)V"
+		descriptor = "(Lrr;)V"
 	)
 	public TransformationMatrix(TransformationMatrix var1) {
-		this.field4984 = new float[16];
-		this.method8778(var1);
+		this.field5074 = new float[16];
+		this.method9110(var1);
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;Z)V"
+		descriptor = "(Lwj;Z)V"
 	)
 	public TransformationMatrix(Buffer var1, boolean var2) {
-		this.field4984 = new float[16];
-		this.method8773(var1, var2);
+		this.field5074 = new float[16];
+		this.method9105(var1, var2);
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "776678911"
+		descriptor = "(B)V",
+		garbageValue = "54"
 	)
-	public void method8772() {
-		synchronized(field4981) {
-			if (field4980 < field4982) {
-				field4981[++field4980 - 1] = this;
+	public void method9104() {
+		synchronized(field5073) {
+			if (class359.field3967 < field5071) {
+				field5073[++class359.field3967 - 1] = this;
 			}
 
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;ZI)V",
-		garbageValue = "-231750250"
+		descriptor = "(Lwj;ZI)V",
+		garbageValue = "-1748215575"
 	)
-	void method8773(Buffer var1, boolean var2) {
+	void method9105(Buffer var1, boolean var2) {
 		if (var2) {
-			class448 var4 = new class448();
-			var4.method8875(WorldMapDecoration.method6615(var1.readShort()));
-			var4.method8876(WorldMapDecoration.method6615(var1.readShort()));
-			var4.method8877(WorldMapDecoration.method6615(var1.readShort()));
-			var4.method8878((float)var1.readShort(), (float)var1.readShort(), (float)var1.readShort());
-			this.method8796(var4);
+			class451 var4 = new class451();
+			var4.method9195(class1.method9(var1.readShort()));
+			var4.method9205(class1.method9(var1.readShort()));
+			var4.method9194(class1.method9(var1.readShort()));
+			var4.method9191((float)var1.readShort(), (float)var1.readShort(), (float)var1.readShort());
+			this.method9117(var4);
 		} else {
 			for (int var3 = 0; var3 < 16; ++var3) {
-				this.field4984[var3] = var1.method10861();
+				this.field5074[var3] = var1.method11235();
 			}
 		}
 
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)[F",
-		garbageValue = "-436569271"
+		descriptor = "(B)[F",
+		garbageValue = "-106"
 	)
-	float[] method8774() {
+	float[] method9162() {
 		float[] var1 = new float[3];
-		if ((double)this.field4984[2] < 0.999D && (double)this.field4984[2] > -0.999D) {
-			var1[1] = (float)(-Math.asin((double)this.field4984[2]));
+		if ((double)this.field5074[2] < 0.999D && (double)this.field5074[2] > -0.999D) {
+			var1[1] = (float)(-Math.asin((double)this.field5074[2]));
 			double var2 = Math.cos((double)var1[1]);
-			var1[0] = (float)Math.atan2((double)this.field4984[6] / var2, (double)this.field4984[10] / var2);
-			var1[2] = (float)Math.atan2((double)this.field4984[1] / var2, (double)this.field4984[0] / var2);
+			var1[0] = (float)Math.atan2((double)this.field5074[6] / var2, (double)this.field5074[10] / var2);
+			var1[2] = (float)Math.atan2((double)this.field5074[1] / var2, (double)this.field5074[0] / var2);
 		} else {
 			var1[0] = 0.0F;
-			var1[1] = (float)Math.atan2((double)this.field4984[2], 0.0D);
-			var1[2] = (float)Math.atan2((double)(-this.field4984[9]), (double)this.field4984[5]);
+			var1[1] = (float)Math.atan2((double)this.field5074[2], 0.0D);
+			var1[2] = (float)Math.atan2((double)(-this.field5074[9]), (double)this.field5074[5]);
 		}
 
 		return var1;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "(I)[F",
-		garbageValue = "1732667320"
+		garbageValue = "1132553953"
 	)
-	public float[] method8775() {
-		float[] var1 = new float[]{(float)(-Math.asin((double)this.field4984[6])), 0.0F, 0.0F};
+	public float[] method9114() {
+		float[] var1 = new float[]{(float)(-Math.asin((double)this.field5074[6])), 0.0F, 0.0F};
 		double var2 = Math.cos((double)var1[0]);
 		double var4;
 		double var6;
 		if (Math.abs(var2) > 0.005D) {
-			var4 = (double)this.field4984[2];
-			var6 = (double)this.field4984[10];
-			double var8 = (double)this.field4984[4];
-			double var10 = (double)this.field4984[5];
+			var4 = (double)this.field5074[2];
+			var6 = (double)this.field5074[10];
+			double var8 = (double)this.field5074[4];
+			double var10 = (double)this.field5074[5];
 			var1[1] = (float)Math.atan2(var4, var6);
 			var1[2] = (float)Math.atan2(var8, var10);
 		} else {
-			var4 = (double)this.field4984[1];
-			var6 = (double)this.field4984[0];
-			if (this.field4984[6] < 0.0F) {
+			var4 = (double)this.field5074[1];
+			var6 = (double)this.field5074[0];
+			if (this.field5074[6] < 0.0F) {
 				var1[1] = (float)Math.atan2(var4, var6);
 			} else {
 				var1[1] = (float)(-Math.atan2(var4, var6));
@@ -148,371 +141,371 @@ public final class TransformationMatrix {
 		return var1;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-101"
+	)
+	void method9108() {
+		this.field5074[0] = 1.0F;
+		this.field5074[1] = 0.0F;
+		this.field5074[2] = 0.0F;
+		this.field5074[3] = 0.0F;
+		this.field5074[4] = 0.0F;
+		this.field5074[5] = 1.0F;
+		this.field5074[6] = 0.0F;
+		this.field5074[7] = 0.0F;
+		this.field5074[8] = 0.0F;
+		this.field5074[9] = 0.0F;
+		this.field5074[10] = 1.0F;
+		this.field5074[11] = 0.0F;
+		this.field5074[12] = 0.0F;
+		this.field5074[13] = 0.0F;
+		this.field5074[14] = 0.0F;
+		this.field5074[15] = 1.0F;
+	}
+
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-653648542"
+		garbageValue = "307471634"
 	)
-	void method8776() {
-		this.field4984[0] = 1.0F;
-		this.field4984[1] = 0.0F;
-		this.field4984[2] = 0.0F;
-		this.field4984[3] = 0.0F;
-		this.field4984[4] = 0.0F;
-		this.field4984[5] = 1.0F;
-		this.field4984[6] = 0.0F;
-		this.field4984[7] = 0.0F;
-		this.field4984[8] = 0.0F;
-		this.field4984[9] = 0.0F;
-		this.field4984[10] = 1.0F;
-		this.field4984[11] = 0.0F;
-		this.field4984[12] = 0.0F;
-		this.field4984[13] = 0.0F;
-		this.field4984[14] = 0.0F;
-		this.field4984[15] = 1.0F;
+	public void method9109() {
+		this.field5074[0] = 0.0F;
+		this.field5074[1] = 0.0F;
+		this.field5074[2] = 0.0F;
+		this.field5074[3] = 0.0F;
+		this.field5074[4] = 0.0F;
+		this.field5074[5] = 0.0F;
+		this.field5074[6] = 0.0F;
+		this.field5074[7] = 0.0F;
+		this.field5074[8] = 0.0F;
+		this.field5074[9] = 0.0F;
+		this.field5074[10] = 0.0F;
+		this.field5074[11] = 0.0F;
+		this.field5074[12] = 0.0F;
+		this.field5074[13] = 0.0F;
+		this.field5074[14] = 0.0F;
+		this.field5074[15] = 0.0F;
 	}
 
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "20"
+		descriptor = "(Lrr;I)V",
+		garbageValue = "1170587637"
 	)
-	public void method8777() {
-		this.field4984[0] = 0.0F;
-		this.field4984[1] = 0.0F;
-		this.field4984[2] = 0.0F;
-		this.field4984[3] = 0.0F;
-		this.field4984[4] = 0.0F;
-		this.field4984[5] = 0.0F;
-		this.field4984[6] = 0.0F;
-		this.field4984[7] = 0.0F;
-		this.field4984[8] = 0.0F;
-		this.field4984[9] = 0.0F;
-		this.field4984[10] = 0.0F;
-		this.field4984[11] = 0.0F;
-		this.field4984[12] = 0.0F;
-		this.field4984[13] = 0.0F;
-		this.field4984[14] = 0.0F;
-		this.field4984[15] = 0.0F;
+	public void method9110(TransformationMatrix var1) {
+		System.arraycopy(var1.field5074, 0, this.field5074, 0, 16);
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lrz;I)V",
-		garbageValue = "-1662681798"
+		descriptor = "(FI)V",
+		garbageValue = "2005701485"
 	)
-	public void method8778(TransformationMatrix var1) {
-		System.arraycopy(var1.field4984, 0, this.field4984, 0, 16);
+	public void method9111(float var1) {
+		this.method9139(var1, var1, var1);
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(FI)V",
-		garbageValue = "1733045735"
+		descriptor = "(FFFI)V",
+		garbageValue = "-1871585402"
 	)
-	public void method8779(float var1) {
-		this.method8780(var1, var1, var1);
+	public void method9139(float var1, float var2, float var3) {
+		this.method9108();
+		this.field5074[0] = var1;
+		this.field5074[5] = var2;
+		this.field5074[10] = var3;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(FFFB)V",
-		garbageValue = "113"
+		descriptor = "(Lrr;B)V",
+		garbageValue = "-108"
 	)
-	public void method8780(float var1, float var2, float var3) {
-		this.method8776();
-		this.field4984[0] = var1;
-		this.field4984[5] = var2;
-		this.field4984[10] = var3;
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(Lrz;B)V",
-		garbageValue = "92"
-	)
-	public void method8781(TransformationMatrix var1) {
-		for (int var2 = 0; var2 < this.field4984.length; ++var2) {
-			float[] var10000 = this.field4984;
-			var10000[var2] += var1.field4984[var2];
+	public void method9112(TransformationMatrix var1) {
+		for (int var2 = 0; var2 < this.field5074.length; ++var2) {
+			float[] var10000 = this.field5074;
+			var10000[var2] += var1.field5074[var2];
 		}
 
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(Lrz;I)V",
-		garbageValue = "-303329759"
+		descriptor = "(Lrr;I)V",
+		garbageValue = "1631095545"
 	)
-	public void method8782(TransformationMatrix var1) {
-		float var2 = var1.field4984[12] * this.field4984[3] + this.field4984[2] * var1.field4984[8] + var1.field4984[0] * this.field4984[0] + this.field4984[1] * var1.field4984[4];
-		float var3 = this.field4984[0] * var1.field4984[1] + this.field4984[1] * var1.field4984[5] + var1.field4984[9] * this.field4984[2] + var1.field4984[13] * this.field4984[3];
-		float var4 = var1.field4984[14] * this.field4984[3] + var1.field4984[6] * this.field4984[1] + var1.field4984[2] * this.field4984[0] + this.field4984[2] * var1.field4984[10];
-		float var5 = this.field4984[0] * var1.field4984[3] + var1.field4984[7] * this.field4984[1] + this.field4984[2] * var1.field4984[11] + this.field4984[3] * var1.field4984[15];
-		float var6 = var1.field4984[4] * this.field4984[5] + this.field4984[4] * var1.field4984[0] + this.field4984[6] * var1.field4984[8] + this.field4984[7] * var1.field4984[12];
-		float var7 = this.field4984[6] * var1.field4984[9] + var1.field4984[1] * this.field4984[4] + this.field4984[5] * var1.field4984[5] + var1.field4984[13] * this.field4984[7];
-		float var8 = var1.field4984[14] * this.field4984[7] + var1.field4984[10] * this.field4984[6] + var1.field4984[6] * this.field4984[5] + var1.field4984[2] * this.field4984[4];
-		float var9 = this.field4984[7] * var1.field4984[15] + this.field4984[6] * var1.field4984[11] + var1.field4984[3] * this.field4984[4] + this.field4984[5] * var1.field4984[7];
-		float var10 = this.field4984[8] * var1.field4984[0] + this.field4984[9] * var1.field4984[4] + var1.field4984[8] * this.field4984[10] + this.field4984[11] * var1.field4984[12];
-		float var11 = var1.field4984[5] * this.field4984[9] + this.field4984[8] * var1.field4984[1] + var1.field4984[9] * this.field4984[10] + this.field4984[11] * var1.field4984[13];
-		float var12 = var1.field4984[2] * this.field4984[8] + var1.field4984[6] * this.field4984[9] + this.field4984[10] * var1.field4984[10] + this.field4984[11] * var1.field4984[14];
-		float var13 = this.field4984[10] * var1.field4984[11] + var1.field4984[3] * this.field4984[8] + this.field4984[9] * var1.field4984[7] + this.field4984[11] * var1.field4984[15];
-		float var14 = this.field4984[14] * var1.field4984[8] + var1.field4984[0] * this.field4984[12] + var1.field4984[4] * this.field4984[13] + this.field4984[15] * var1.field4984[12];
-		float var15 = this.field4984[15] * var1.field4984[13] + var1.field4984[9] * this.field4984[14] + this.field4984[13] * var1.field4984[5] + this.field4984[12] * var1.field4984[1];
-		float var16 = var1.field4984[10] * this.field4984[14] + var1.field4984[6] * this.field4984[13] + var1.field4984[2] * this.field4984[12] + var1.field4984[14] * this.field4984[15];
-		float var17 = this.field4984[13] * var1.field4984[7] + this.field4984[12] * var1.field4984[3] + this.field4984[14] * var1.field4984[11] + var1.field4984[15] * this.field4984[15];
-		this.field4984[0] = var2;
-		this.field4984[1] = var3;
-		this.field4984[2] = var4;
-		this.field4984[3] = var5;
-		this.field4984[4] = var6;
-		this.field4984[5] = var7;
-		this.field4984[6] = var8;
-		this.field4984[7] = var9;
-		this.field4984[8] = var10;
-		this.field4984[9] = var11;
-		this.field4984[10] = var12;
-		this.field4984[11] = var13;
-		this.field4984[12] = var14;
-		this.field4984[13] = var15;
-		this.field4984[14] = var16;
-		this.field4984[15] = var17;
+	public void method9172(TransformationMatrix var1) {
+		float var2 = var1.field5074[8] * this.field5074[2] + this.field5074[1] * var1.field5074[4] + this.field5074[0] * var1.field5074[0] + var1.field5074[12] * this.field5074[3];
+		float var3 = this.field5074[3] * var1.field5074[13] + var1.field5074[1] * this.field5074[0] + this.field5074[1] * var1.field5074[5] + this.field5074[2] * var1.field5074[9];
+		float var4 = var1.field5074[2] * this.field5074[0] + var1.field5074[6] * this.field5074[1] + var1.field5074[10] * this.field5074[2] + this.field5074[3] * var1.field5074[14];
+		float var5 = this.field5074[0] * var1.field5074[3] + var1.field5074[7] * this.field5074[1] + var1.field5074[11] * this.field5074[2] + this.field5074[3] * var1.field5074[15];
+		float var6 = var1.field5074[4] * this.field5074[5] + this.field5074[4] * var1.field5074[0] + this.field5074[6] * var1.field5074[8] + var1.field5074[12] * this.field5074[7];
+		float var7 = var1.field5074[13] * this.field5074[7] + var1.field5074[9] * this.field5074[6] + this.field5074[4] * var1.field5074[1] + var1.field5074[5] * this.field5074[5];
+		float var8 = var1.field5074[14] * this.field5074[7] + var1.field5074[10] * this.field5074[6] + var1.field5074[2] * this.field5074[4] + this.field5074[5] * var1.field5074[6];
+		float var9 = this.field5074[6] * var1.field5074[11] + var1.field5074[7] * this.field5074[5] + var1.field5074[3] * this.field5074[4] + var1.field5074[15] * this.field5074[7];
+		float var10 = var1.field5074[0] * this.field5074[8] + this.field5074[9] * var1.field5074[4] + this.field5074[10] * var1.field5074[8] + var1.field5074[12] * this.field5074[11];
+		float var11 = this.field5074[9] * var1.field5074[5] + this.field5074[8] * var1.field5074[1] + var1.field5074[9] * this.field5074[10] + this.field5074[11] * var1.field5074[13];
+		float var12 = var1.field5074[14] * this.field5074[11] + this.field5074[9] * var1.field5074[6] + var1.field5074[2] * this.field5074[8] + var1.field5074[10] * this.field5074[10];
+		float var13 = this.field5074[11] * var1.field5074[15] + this.field5074[10] * var1.field5074[11] + var1.field5074[3] * this.field5074[8] + this.field5074[9] * var1.field5074[7];
+		float var14 = var1.field5074[0] * this.field5074[12] + var1.field5074[4] * this.field5074[13] + var1.field5074[8] * this.field5074[14] + this.field5074[15] * var1.field5074[12];
+		float var15 = var1.field5074[13] * this.field5074[15] + var1.field5074[5] * this.field5074[13] + var1.field5074[1] * this.field5074[12] + this.field5074[14] * var1.field5074[9];
+		float var16 = var1.field5074[14] * this.field5074[15] + var1.field5074[10] * this.field5074[14] + this.field5074[12] * var1.field5074[2] + this.field5074[13] * var1.field5074[6];
+		float var17 = var1.field5074[11] * this.field5074[14] + this.field5074[12] * var1.field5074[3] + var1.field5074[7] * this.field5074[13] + var1.field5074[15] * this.field5074[15];
+		this.field5074[0] = var2;
+		this.field5074[1] = var3;
+		this.field5074[2] = var4;
+		this.field5074[3] = var5;
+		this.field5074[4] = var6;
+		this.field5074[5] = var7;
+		this.field5074[6] = var8;
+		this.field5074[7] = var9;
+		this.field5074[8] = var10;
+		this.field5074[9] = var11;
+		this.field5074[10] = var12;
+		this.field5074[11] = var13;
+		this.field5074[12] = var14;
+		this.field5074[13] = var15;
+		this.field5074[14] = var16;
+		this.field5074[15] = var17;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Lqi;I)V",
-		garbageValue = "1453735347"
+		descriptor = "(Lrp;I)V",
+		garbageValue = "418911304"
 	)
-	public void method8791(class441 var1) {
-		float var2 = var1.field4951.field4972 * var1.field4951.field4972;
-		float var3 = var1.field4951.field4975 * var1.field4951.field4972;
-		float var4 = var1.field4951.field4972 * var1.field4951.field4976;
-		float var5 = var1.field4951.field4972 * var1.field4951.field4977;
-		float var6 = var1.field4951.field4975 * var1.field4951.field4975;
-		float var7 = var1.field4951.field4976 * var1.field4951.field4975;
-		float var8 = var1.field4951.field4977 * var1.field4951.field4975;
-		float var9 = var1.field4951.field4976 * var1.field4951.field4976;
-		float var10 = var1.field4951.field4976 * var1.field4951.field4977;
-		float var11 = var1.field4951.field4977 * var1.field4951.field4977;
-		this.field4984[0] = var6 + var2 - var11 - var9;
-		this.field4984[1] = var5 + var5 + var7 + var7;
-		this.field4984[2] = var8 - var4 - var4 + var8;
-		this.field4984[4] = var7 - var5 - var5 + var7;
-		this.field4984[5] = var2 + var9 - var6 - var11;
-		this.field4984[6] = var3 + var10 + var3 + var10;
-		this.field4984[8] = var4 + var8 + var8 + var4;
-		this.field4984[9] = var10 - var3 - var3 + var10;
-		this.field4984[10] = var11 + var2 - var9 - var6;
-		float[] var12 = this.field4984;
-		float[] var13 = this.field4984;
-		this.field4984[11] = 0.0F;
+	public void method9115(class444 var1) {
+		float var2 = var1.field5037.field5069 * var1.field5037.field5069;
+		float var3 = var1.field5037.field5063 * var1.field5037.field5069;
+		float var4 = var1.field5037.field5067 * var1.field5037.field5069;
+		float var5 = var1.field5037.field5069 * var1.field5037.field5066;
+		float var6 = var1.field5037.field5063 * var1.field5037.field5063;
+		float var7 = var1.field5037.field5063 * var1.field5037.field5067;
+		float var8 = var1.field5037.field5066 * var1.field5037.field5063;
+		float var9 = var1.field5037.field5067 * var1.field5037.field5067;
+		float var10 = var1.field5037.field5066 * var1.field5037.field5067;
+		float var11 = var1.field5037.field5066 * var1.field5037.field5066;
+		this.field5074[0] = var6 + var2 - var11 - var9;
+		this.field5074[1] = var7 + var7 + var5 + var5;
+		this.field5074[2] = var8 + (var8 - var4 - var4);
+		this.field5074[4] = var7 + (var7 - var5 - var5);
+		this.field5074[5] = var2 + var9 - var6 - var11;
+		this.field5074[6] = var10 + var3 + var10 + var3;
+		this.field5074[8] = var8 + var4 + var8 + var4;
+		this.field5074[9] = var10 + (var10 - var3 - var3);
+		this.field5074[10] = var2 + var11 - var9 - var6;
+		float[] var12 = this.field5074;
+		float[] var13 = this.field5074;
+		this.field5074[11] = 0.0F;
 		var13[7] = 0.0F;
 		var12[3] = 0.0F;
-		this.field4984[12] = var1.field4946.field4967;
-		this.field4984[13] = var1.field4946.field4971;
-		this.field4984[14] = var1.field4946.field4969;
-		this.field4984[15] = 1.0F;
+		this.field5074[12] = var1.field5038.field5059;
+		this.field5074[13] = var1.field5038.field5060;
+		this.field5074[14] = var1.field5038.field5054;
+		this.field5074[15] = 1.0F;
 	}
 
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(Lrw;I)V",
-		garbageValue = "2097195830"
+		descriptor = "(Lrc;B)V",
+		garbageValue = "80"
 	)
-	public void method8784(class446 var1) {
-		float var2 = var1.field4972 * var1.field4972;
-		float var3 = var1.field4975 * var1.field4972;
-		float var4 = var1.field4972 * var1.field4976;
-		float var5 = var1.field4977 * var1.field4972;
-		float var6 = var1.field4975 * var1.field4975;
-		float var7 = var1.field4975 * var1.field4976;
-		float var8 = var1.field4977 * var1.field4975;
-		float var9 = var1.field4976 * var1.field4976;
-		float var10 = var1.field4976 * var1.field4977;
-		float var11 = var1.field4977 * var1.field4977;
-		this.field4984[0] = var6 + var2 - var11 - var9;
-		this.field4984[1] = var5 + var5 + var7 + var7;
-		this.field4984[2] = var8 + (var8 - var4 - var4);
-		this.field4984[4] = var7 - var5 - var5 + var7;
-		this.field4984[5] = var9 + var2 - var6 - var11;
-		this.field4984[6] = var10 + var3 + var10 + var3;
-		this.field4984[8] = var8 + var4 + var8 + var4;
-		this.field4984[9] = var10 - var3 - var3 + var10;
-		this.field4984[10] = var11 + var2 - var9 - var6;
+	public void method9116(class449 var1) {
+		float var2 = var1.field5069 * var1.field5069;
+		float var3 = var1.field5063 * var1.field5069;
+		float var4 = var1.field5067 * var1.field5069;
+		float var5 = var1.field5069 * var1.field5066;
+		float var6 = var1.field5063 * var1.field5063;
+		float var7 = var1.field5063 * var1.field5067;
+		float var8 = var1.field5066 * var1.field5063;
+		float var9 = var1.field5067 * var1.field5067;
+		float var10 = var1.field5066 * var1.field5067;
+		float var11 = var1.field5066 * var1.field5066;
+		this.field5074[0] = var2 + var6 - var11 - var9;
+		this.field5074[1] = var5 + var5 + var7 + var7;
+		this.field5074[2] = var8 + (var8 - var4 - var4);
+		this.field5074[4] = var7 + (var7 - var5 - var5);
+		this.field5074[5] = var2 + var9 - var6 - var11;
+		this.field5074[6] = var3 + var10 + var3 + var10;
+		this.field5074[8] = var4 + var8 + var8 + var4;
+		this.field5074[9] = var10 + (var10 - var3 - var3);
+		this.field5074[10] = var2 + var11 - var9 - var6;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(Lrg;I)V",
-		garbageValue = "-479359896"
+		descriptor = "(Lrq;I)V",
+		garbageValue = "-1441719913"
 	)
-	public void method8796(class448 var1) {
-		this.field4984[0] = var1.field4996;
-		this.field4984[1] = var1.field4989;
-		this.field4984[2] = var1.field4990;
-		this.field4984[3] = 0.0F;
-		this.field4984[4] = var1.field4991;
-		this.field4984[5] = var1.field4992;
-		this.field4984[6] = var1.field4997;
-		this.field4984[7] = 0.0F;
-		this.field4984[8] = var1.field4994;
-		this.field4984[9] = var1.field5000;
-		this.field4984[10] = var1.field4993;
-		this.field4984[11] = 0.0F;
-		this.field4984[12] = var1.field4995;
-		this.field4984[13] = var1.field4998;
-		this.field4984[14] = var1.field4999;
-		this.field4984[15] = 1.0F;
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(I)F",
-		garbageValue = "1418601169"
-	)
-	float method8786() {
-		return this.field4984[8] * this.field4984[2] * this.field4984[7] * this.field4984[13] + this.field4984[2] * this.field4984[4] * this.field4984[9] * this.field4984[15] + this.field4984[12] * this.field4984[1] * this.field4984[7] * this.field4984[10] + (this.field4984[11] * this.field4984[4] * this.field4984[1] * this.field4984[14] + (this.field4984[9] * this.field4984[7] * this.field4984[0] * this.field4984[14] + this.field4984[13] * this.field4984[0] * this.field4984[6] * this.field4984[11] + (this.field4984[15] * this.field4984[0] * this.field4984[5] * this.field4984[10] - this.field4984[14] * this.field4984[11] * this.field4984[0] * this.field4984[5] - this.field4984[15] * this.field4984[0] * this.field4984[6] * this.field4984[9]) - this.field4984[13] * this.field4984[10] * this.field4984[0] * this.field4984[7] - this.field4984[15] * this.field4984[10] * this.field4984[4] * this.field4984[1]) + this.field4984[15] * this.field4984[6] * this.field4984[1] * this.field4984[8] - this.field4984[1] * this.field4984[6] * this.field4984[11] * this.field4984[12] - this.field4984[7] * this.field4984[1] * this.field4984[8] * this.field4984[14]) - this.field4984[13] * this.field4984[11] * this.field4984[2] * this.field4984[4] - this.field4984[5] * this.field4984[2] * this.field4984[8] * this.field4984[15] + this.field4984[11] * this.field4984[2] * this.field4984[5] * this.field4984[12] - this.field4984[2] * this.field4984[7] * this.field4984[9] * this.field4984[12] - this.field4984[9] * this.field4984[3] * this.field4984[4] * this.field4984[14] + this.field4984[13] * this.field4984[4] * this.field4984[3] * this.field4984[10] + this.field4984[14] * this.field4984[8] * this.field4984[5] * this.field4984[3] - this.field4984[10] * this.field4984[5] * this.field4984[3] * this.field4984[12] - this.field4984[13] * this.field4984[8] * this.field4984[6] * this.field4984[3] + this.field4984[12] * this.field4984[3] * this.field4984[6] * this.field4984[9];
+	public void method9117(class451 var1) {
+		this.field5074[0] = var1.field5077;
+		this.field5074[1] = var1.field5081;
+		this.field5074[2] = var1.field5078;
+		this.field5074[3] = 0.0F;
+		this.field5074[4] = var1.field5079;
+		this.field5074[5] = var1.field5080;
+		this.field5074[6] = var1.field5076;
+		this.field5074[7] = 0.0F;
+		this.field5074[8] = var1.field5082;
+		this.field5074[9] = var1.field5086;
+		this.field5074[10] = var1.field5083;
+		this.field5074[11] = 0.0F;
+		this.field5074[12] = var1.field5085;
+		this.field5074[13] = var1.field5084;
+		this.field5074[14] = var1.field5087;
+		this.field5074[15] = 1.0F;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1505125459"
+		descriptor = "(B)F",
+		garbageValue = "-1"
 	)
-	public void method8787() {
-		float var1 = 1.0F / this.method8786();
-		float var2 = (this.field4984[13] * this.field4984[6] * this.field4984[11] + (this.field4984[10] * this.field4984[5] * this.field4984[15] - this.field4984[14] * this.field4984[11] * this.field4984[5] - this.field4984[9] * this.field4984[6] * this.field4984[15]) + this.field4984[9] * this.field4984[7] * this.field4984[14] - this.field4984[13] * this.field4984[7] * this.field4984[10]) * var1;
-		float var3 = (-this.field4984[1] * this.field4984[10] * this.field4984[15] + this.field4984[14] * this.field4984[11] * this.field4984[1] + this.field4984[9] * this.field4984[2] * this.field4984[15] - this.field4984[2] * this.field4984[11] * this.field4984[13] - this.field4984[3] * this.field4984[9] * this.field4984[14] + this.field4984[3] * this.field4984[10] * this.field4984[13]) * var1;
-		float var4 = (this.field4984[5] * this.field4984[3] * this.field4984[14] + this.field4984[13] * this.field4984[7] * this.field4984[2] + (this.field4984[15] * this.field4984[6] * this.field4984[1] - this.field4984[14] * this.field4984[7] * this.field4984[1] - this.field4984[15] * this.field4984[2] * this.field4984[5]) - this.field4984[13] * this.field4984[3] * this.field4984[6]) * var1;
-		float var5 = (-this.field4984[1] * this.field4984[6] * this.field4984[11] + this.field4984[10] * this.field4984[1] * this.field4984[7] + this.field4984[11] * this.field4984[5] * this.field4984[2] - this.field4984[7] * this.field4984[2] * this.field4984[9] - this.field4984[5] * this.field4984[3] * this.field4984[10] + this.field4984[9] * this.field4984[6] * this.field4984[3]) * var1;
-		float var6 = var1 * (this.field4984[12] * this.field4984[10] * this.field4984[7] + (this.field4984[15] * this.field4984[8] * this.field4984[6] + this.field4984[11] * this.field4984[4] * this.field4984[14] + this.field4984[10] * -this.field4984[4] * this.field4984[15] - this.field4984[12] * this.field4984[6] * this.field4984[11] - this.field4984[7] * this.field4984[8] * this.field4984[14]));
-		float var7 = (this.field4984[12] * this.field4984[2] * this.field4984[11] + (this.field4984[15] * this.field4984[0] * this.field4984[10] - this.field4984[14] * this.field4984[11] * this.field4984[0] - this.field4984[2] * this.field4984[8] * this.field4984[15]) + this.field4984[14] * this.field4984[8] * this.field4984[3] - this.field4984[12] * this.field4984[10] * this.field4984[3]) * var1;
-		float var8 = var1 * (this.field4984[12] * this.field4984[6] * this.field4984[3] + (this.field4984[4] * this.field4984[2] * this.field4984[15] + this.field4984[14] * this.field4984[7] * this.field4984[0] + this.field4984[15] * -this.field4984[0] * this.field4984[6] - this.field4984[12] * this.field4984[7] * this.field4984[2] - this.field4984[3] * this.field4984[4] * this.field4984[14]));
-		float var9 = (this.field4984[10] * this.field4984[3] * this.field4984[4] + this.field4984[6] * this.field4984[0] * this.field4984[11] - this.field4984[0] * this.field4984[7] * this.field4984[10] - this.field4984[11] * this.field4984[4] * this.field4984[2] + this.field4984[8] * this.field4984[7] * this.field4984[2] - this.field4984[8] * this.field4984[6] * this.field4984[3]) * var1;
-		float var10 = (this.field4984[13] * this.field4984[8] * this.field4984[7] + this.field4984[9] * this.field4984[4] * this.field4984[15] - this.field4984[13] * this.field4984[4] * this.field4984[11] - this.field4984[15] * this.field4984[5] * this.field4984[8] + this.field4984[5] * this.field4984[11] * this.field4984[12] - this.field4984[7] * this.field4984[9] * this.field4984[12]) * var1;
-		float var11 = var1 * (this.field4984[9] * this.field4984[3] * this.field4984[12] + (this.field4984[15] * this.field4984[9] * -this.field4984[0] + this.field4984[13] * this.field4984[11] * this.field4984[0] + this.field4984[1] * this.field4984[8] * this.field4984[15] - this.field4984[12] * this.field4984[11] * this.field4984[1] - this.field4984[8] * this.field4984[3] * this.field4984[13]));
-		float var12 = (this.field4984[12] * this.field4984[7] * this.field4984[1] + (this.field4984[15] * this.field4984[5] * this.field4984[0] - this.field4984[13] * this.field4984[7] * this.field4984[0] - this.field4984[1] * this.field4984[4] * this.field4984[15]) + this.field4984[4] * this.field4984[3] * this.field4984[13] - this.field4984[3] * this.field4984[5] * this.field4984[12]) * var1;
-		float var13 = (this.field4984[8] * this.field4984[5] * this.field4984[3] + (this.field4984[0] * this.field4984[7] * this.field4984[9] + this.field4984[11] * -this.field4984[0] * this.field4984[5] + this.field4984[11] * this.field4984[1] * this.field4984[4] - this.field4984[1] * this.field4984[7] * this.field4984[8] - this.field4984[9] * this.field4984[4] * this.field4984[3])) * var1;
-		float var14 = (this.field4984[14] * this.field4984[5] * this.field4984[8] + this.field4984[13] * this.field4984[4] * this.field4984[10] + -this.field4984[4] * this.field4984[9] * this.field4984[14] - this.field4984[5] * this.field4984[10] * this.field4984[12] - this.field4984[13] * this.field4984[8] * this.field4984[6] + this.field4984[12] * this.field4984[6] * this.field4984[9]) * var1;
-		float var15 = (this.field4984[2] * this.field4984[8] * this.field4984[13] + this.field4984[12] * this.field4984[10] * this.field4984[1] + (this.field4984[9] * this.field4984[0] * this.field4984[14] - this.field4984[13] * this.field4984[10] * this.field4984[0] - this.field4984[14] * this.field4984[1] * this.field4984[8]) - this.field4984[12] * this.field4984[9] * this.field4984[2]) * var1;
-		float var16 = var1 * (this.field4984[2] * this.field4984[5] * this.field4984[12] + (this.field4984[14] * -this.field4984[0] * this.field4984[5] + this.field4984[13] * this.field4984[6] * this.field4984[0] + this.field4984[14] * this.field4984[4] * this.field4984[1] - this.field4984[1] * this.field4984[6] * this.field4984[12] - this.field4984[2] * this.field4984[4] * this.field4984[13]));
-		float var17 = var1 * (this.field4984[8] * this.field4984[6] * this.field4984[1] + (this.field4984[10] * this.field4984[0] * this.field4984[5] - this.field4984[0] * this.field4984[6] * this.field4984[9] - this.field4984[4] * this.field4984[1] * this.field4984[10]) + this.field4984[9] * this.field4984[4] * this.field4984[2] - this.field4984[8] * this.field4984[2] * this.field4984[5]);
-		this.field4984[0] = var2;
-		this.field4984[1] = var3;
-		this.field4984[2] = var4;
-		this.field4984[3] = var5;
-		this.field4984[4] = var6;
-		this.field4984[5] = var7;
-		this.field4984[6] = var8;
-		this.field4984[7] = var9;
-		this.field4984[8] = var10;
-		this.field4984[9] = var11;
-		this.field4984[10] = var12;
-		this.field4984[11] = var13;
-		this.field4984[12] = var14;
-		this.field4984[13] = var15;
-		this.field4984[14] = var16;
-		this.field4984[15] = var17;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(FFFFI)V",
-		garbageValue = "-1378246891"
-	)
-	public void method8813(float var1, float var2, float var3, float var4) {
-		this.field4984[0] = var1;
-		this.field4984[1] = 0.0F;
-		this.field4984[2] = 0.0F;
-		this.field4984[3] = 0.0F;
-		this.field4984[4] = 0.0F;
-		this.field4984[5] = var2;
-		this.field4984[6] = 0.0F;
-		this.field4984[7] = 0.0F;
-		this.field4984[8] = 0.0F;
-		this.field4984[9] = 0.0F;
-		this.field4984[10] = var3;
-		this.field4984[11] = 0.0F;
-		this.field4984[12] = 0.0F;
-		this.field4984[13] = 0.0F;
-		this.field4984[14] = 0.0F;
-		this.field4984[15] = var4;
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(FFF[FB)V",
-		garbageValue = "0"
-	)
-	@Export("transformPoint")
-	public void transformPoint(float var1, float var2, float var3, float[] var4) {
-		var4[0] = this.field4984[12] + var3 * this.field4984[8] + var1 * this.field4984[0] + var2 * this.field4984[4];
-		var4[1] = this.field4984[13] + this.field4984[1] * var1 + var2 * this.field4984[5] + var3 * this.field4984[9];
-		var4[2] = this.field4984[10] * var3 + var2 * this.field4984[6] + this.field4984[2] * var1 + this.field4984[14];
-		if (var4.length > 3) {
-			var4[3] = var3 * this.field4984[11] + var2 * this.field4984[7] + var1 * this.field4984[3] + this.field4984[15];
-		}
-
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(FFFI)Lre;",
-		garbageValue = "292154950"
-	)
-	public class445 method8790(float var1, float var2, float var3) {
-		float var4 = 1.0F / (this.field4984[15] + this.field4984[3] * var1 + this.field4984[7] * var2 + var3 * this.field4984[11]);
-		return class47.method1781((var1 * this.field4984[0] + var2 * this.field4984[4] + this.field4984[8] * var3 + this.field4984[12]) * var4, var4 * (var1 * this.field4984[1] + this.field4984[5] * var2 + this.field4984[9] * var3 + this.field4984[13]), var4 * (var3 * this.field4984[10] + var1 * this.field4984[2] + this.field4984[6] * var2 + this.field4984[14]));
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(FFFB)F",
-		garbageValue = "-76"
-	)
-	public float method8835(float var1, float var2, float var3) {
-		return var1 * this.field4984[0] + this.field4984[4] * var2 + this.field4984[8] * var3 + this.field4984[12];
+	float method9118() {
+		return this.field5074[3] * this.field5074[6] * this.field5074[9] * this.field5074[12] + (this.field5074[5] * this.field5074[3] * this.field5074[8] * this.field5074[14] + this.field5074[10] * this.field5074[4] * this.field5074[3] * this.field5074[13] + (this.field5074[2] * this.field5074[7] * this.field5074[8] * this.field5074[13] + this.field5074[9] * this.field5074[2] * this.field5074[4] * this.field5074[15] + this.field5074[12] * this.field5074[7] * this.field5074[1] * this.field5074[10] + (this.field5074[15] * this.field5074[8] * this.field5074[1] * this.field5074[6] + this.field5074[10] * this.field5074[0] * this.field5074[5] * this.field5074[15] - this.field5074[14] * this.field5074[0] * this.field5074[5] * this.field5074[11] - this.field5074[0] * this.field5074[6] * this.field5074[9] * this.field5074[15] + this.field5074[0] * this.field5074[6] * this.field5074[11] * this.field5074[13] + this.field5074[7] * this.field5074[0] * this.field5074[9] * this.field5074[14] - this.field5074[7] * this.field5074[0] * this.field5074[10] * this.field5074[13] - this.field5074[15] * this.field5074[1] * this.field5074[4] * this.field5074[10] + this.field5074[1] * this.field5074[4] * this.field5074[11] * this.field5074[14] - this.field5074[12] * this.field5074[1] * this.field5074[6] * this.field5074[11] - this.field5074[8] * this.field5074[7] * this.field5074[1] * this.field5074[14]) - this.field5074[2] * this.field5074[4] * this.field5074[11] * this.field5074[13] - this.field5074[8] * this.field5074[5] * this.field5074[2] * this.field5074[15] + this.field5074[12] * this.field5074[11] * this.field5074[2] * this.field5074[5] - this.field5074[12] * this.field5074[9] * this.field5074[7] * this.field5074[2] - this.field5074[3] * this.field5074[4] * this.field5074[9] * this.field5074[14]) - this.field5074[12] * this.field5074[10] * this.field5074[5] * this.field5074[3] - this.field5074[3] * this.field5074[6] * this.field5074[8] * this.field5074[13]);
 	}
 
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(FFFI)F",
-		garbageValue = "1037831591"
+		descriptor = "(B)V",
+		garbageValue = "3"
 	)
-	public float method8792(float var1, float var2, float var3) {
-		return var3 * this.field4984[9] + var2 * this.field4984[5] + var1 * this.field4984[1] + this.field4984[13];
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(FFFB)F",
-		garbageValue = "108"
-	)
-	public float method8793(float var1, float var2, float var3) {
-		return this.field4984[10] * var3 + this.field4984[2] * var1 + this.field4984[6] * var2 + this.field4984[14];
+	public void method9119() {
+		float var1 = 1.0F / this.method9118();
+		float var2 = var1 * (this.field5074[13] * this.field5074[6] * this.field5074[11] + (this.field5074[10] * this.field5074[5] * this.field5074[15] - this.field5074[11] * this.field5074[5] * this.field5074[14] - this.field5074[6] * this.field5074[9] * this.field5074[15]) + this.field5074[14] * this.field5074[7] * this.field5074[9] - this.field5074[13] * this.field5074[10] * this.field5074[7]);
+		float var3 = (this.field5074[15] * this.field5074[10] * -this.field5074[1] + this.field5074[14] * this.field5074[1] * this.field5074[11] + this.field5074[9] * this.field5074[2] * this.field5074[15] - this.field5074[2] * this.field5074[11] * this.field5074[13] - this.field5074[9] * this.field5074[3] * this.field5074[14] + this.field5074[3] * this.field5074[10] * this.field5074[13]) * var1;
+		float var4 = var1 * (this.field5074[15] * this.field5074[6] * this.field5074[1] - this.field5074[14] * this.field5074[7] * this.field5074[1] - this.field5074[5] * this.field5074[2] * this.field5074[15] + this.field5074[13] * this.field5074[7] * this.field5074[2] + this.field5074[3] * this.field5074[5] * this.field5074[14] - this.field5074[13] * this.field5074[6] * this.field5074[3]);
+		float var5 = (this.field5074[11] * this.field5074[5] * this.field5074[2] + this.field5074[6] * -this.field5074[1] * this.field5074[11] + this.field5074[10] * this.field5074[7] * this.field5074[1] - this.field5074[9] * this.field5074[2] * this.field5074[7] - this.field5074[3] * this.field5074[5] * this.field5074[10] + this.field5074[3] * this.field5074[6] * this.field5074[9]) * var1;
+		float var6 = var1 * (-this.field5074[4] * this.field5074[10] * this.field5074[15] + this.field5074[14] * this.field5074[11] * this.field5074[4] + this.field5074[6] * this.field5074[8] * this.field5074[15] - this.field5074[6] * this.field5074[11] * this.field5074[12] - this.field5074[14] * this.field5074[8] * this.field5074[7] + this.field5074[10] * this.field5074[7] * this.field5074[12]);
+		float var7 = (this.field5074[12] * this.field5074[11] * this.field5074[2] + (this.field5074[10] * this.field5074[0] * this.field5074[15] - this.field5074[14] * this.field5074[11] * this.field5074[0] - this.field5074[15] * this.field5074[2] * this.field5074[8]) + this.field5074[14] * this.field5074[8] * this.field5074[3] - this.field5074[12] * this.field5074[3] * this.field5074[10]) * var1;
+		float var8 = (this.field5074[12] * this.field5074[3] * this.field5074[6] + (this.field5074[0] * this.field5074[7] * this.field5074[14] + this.field5074[15] * this.field5074[6] * -this.field5074[0] + this.field5074[2] * this.field5074[4] * this.field5074[15] - this.field5074[12] * this.field5074[2] * this.field5074[7] - this.field5074[3] * this.field5074[4] * this.field5074[14])) * var1;
+		float var9 = var1 * (this.field5074[0] * this.field5074[6] * this.field5074[11] - this.field5074[0] * this.field5074[7] * this.field5074[10] - this.field5074[2] * this.field5074[4] * this.field5074[11] + this.field5074[2] * this.field5074[7] * this.field5074[8] + this.field5074[10] * this.field5074[4] * this.field5074[3] - this.field5074[3] * this.field5074[6] * this.field5074[8]);
+		float var10 = (this.field5074[13] * this.field5074[7] * this.field5074[8] + this.field5074[5] * this.field5074[11] * this.field5074[12] + (this.field5074[15] * this.field5074[9] * this.field5074[4] - this.field5074[11] * this.field5074[4] * this.field5074[13] - this.field5074[15] * this.field5074[8] * this.field5074[5]) - this.field5074[9] * this.field5074[7] * this.field5074[12]) * var1;
+		float var11 = (this.field5074[12] * this.field5074[3] * this.field5074[9] + (this.field5074[15] * this.field5074[8] * this.field5074[1] + this.field5074[9] * -this.field5074[0] * this.field5074[15] + this.field5074[13] * this.field5074[0] * this.field5074[11] - this.field5074[12] * this.field5074[11] * this.field5074[1] - this.field5074[13] * this.field5074[3] * this.field5074[8])) * var1;
+		float var12 = var1 * (this.field5074[13] * this.field5074[3] * this.field5074[4] + this.field5074[5] * this.field5074[0] * this.field5074[15] - this.field5074[7] * this.field5074[0] * this.field5074[13] - this.field5074[15] * this.field5074[4] * this.field5074[1] + this.field5074[7] * this.field5074[1] * this.field5074[12] - this.field5074[5] * this.field5074[3] * this.field5074[12]);
+		float var13 = (this.field5074[9] * this.field5074[0] * this.field5074[7] + this.field5074[11] * -this.field5074[0] * this.field5074[5] + this.field5074[11] * this.field5074[1] * this.field5074[4] - this.field5074[8] * this.field5074[1] * this.field5074[7] - this.field5074[9] * this.field5074[3] * this.field5074[4] + this.field5074[5] * this.field5074[3] * this.field5074[8]) * var1;
+		float var14 = var1 * (this.field5074[8] * this.field5074[5] * this.field5074[14] + this.field5074[14] * -this.field5074[4] * this.field5074[9] + this.field5074[13] * this.field5074[4] * this.field5074[10] - this.field5074[12] * this.field5074[5] * this.field5074[10] - this.field5074[6] * this.field5074[8] * this.field5074[13] + this.field5074[9] * this.field5074[6] * this.field5074[12]);
+		float var15 = var1 * (this.field5074[10] * this.field5074[1] * this.field5074[12] + (this.field5074[0] * this.field5074[9] * this.field5074[14] - this.field5074[10] * this.field5074[0] * this.field5074[13] - this.field5074[14] * this.field5074[8] * this.field5074[1]) + this.field5074[13] * this.field5074[2] * this.field5074[8] - this.field5074[2] * this.field5074[9] * this.field5074[12]);
+		float var16 = (this.field5074[12] * this.field5074[5] * this.field5074[2] + (this.field5074[1] * this.field5074[4] * this.field5074[14] + -this.field5074[0] * this.field5074[5] * this.field5074[14] + this.field5074[0] * this.field5074[6] * this.field5074[13] - this.field5074[12] * this.field5074[1] * this.field5074[6] - this.field5074[13] * this.field5074[4] * this.field5074[2])) * var1;
+		float var17 = (this.field5074[9] * this.field5074[2] * this.field5074[4] + this.field5074[10] * this.field5074[5] * this.field5074[0] - this.field5074[9] * this.field5074[0] * this.field5074[6] - this.field5074[4] * this.field5074[1] * this.field5074[10] + this.field5074[8] * this.field5074[6] * this.field5074[1] - this.field5074[5] * this.field5074[2] * this.field5074[8]) * var1;
+		this.field5074[0] = var2;
+		this.field5074[1] = var3;
+		this.field5074[2] = var4;
+		this.field5074[3] = var5;
+		this.field5074[4] = var6;
+		this.field5074[5] = var7;
+		this.field5074[6] = var8;
+		this.field5074[7] = var9;
+		this.field5074[8] = var10;
+		this.field5074[9] = var11;
+		this.field5074[10] = var12;
+		this.field5074[11] = var13;
+		this.field5074[12] = var14;
+		this.field5074[13] = var15;
+		this.field5074[14] = var16;
+		this.field5074[15] = var17;
 	}
 
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(B)[F",
-		garbageValue = "-26"
+		descriptor = "(FFFFB)V",
+		garbageValue = "114"
 	)
-	public float[] method8795() {
+	public void method9120(float var1, float var2, float var3, float var4) {
+		this.field5074[0] = var1;
+		this.field5074[1] = 0.0F;
+		this.field5074[2] = 0.0F;
+		this.field5074[3] = 0.0F;
+		this.field5074[4] = 0.0F;
+		this.field5074[5] = var2;
+		this.field5074[6] = 0.0F;
+		this.field5074[7] = 0.0F;
+		this.field5074[8] = 0.0F;
+		this.field5074[9] = 0.0F;
+		this.field5074[10] = var3;
+		this.field5074[11] = 0.0F;
+		this.field5074[12] = 0.0F;
+		this.field5074[13] = 0.0F;
+		this.field5074[14] = 0.0F;
+		this.field5074[15] = var4;
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(FFF[FI)V",
+		garbageValue = "-1677705754"
+	)
+	@Export("transformPoint")
+	public void transformPoint(float var1, float var2, float var3, float[] var4) {
+		var4[0] = this.field5074[12] + var3 * this.field5074[8] + var2 * this.field5074[4] + this.field5074[0] * var1;
+		var4[1] = this.field5074[13] + var2 * this.field5074[5] + var1 * this.field5074[1] + var3 * this.field5074[9];
+		var4[2] = this.field5074[10] * var3 + this.field5074[6] * var2 + this.field5074[2] * var1 + this.field5074[14];
+		if (var4.length > 3) {
+			var4[3] = this.field5074[7] * var2 + var1 * this.field5074[3] + var3 * this.field5074[11] + this.field5074[15];
+		}
+
+	}
+
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(FFFI)Lrm;",
+		garbageValue = "-2037833777"
+	)
+	public class448 method9122(float var1, float var2, float var3) {
+		float var4 = 1.0F / (var3 * this.field5074[11] + this.field5074[7] * var2 + var1 * this.field5074[3] + this.field5074[15]);
+		return ClientPreferences.method2599((this.field5074[12] + var1 * this.field5074[0] + var2 * this.field5074[4] + this.field5074[8] * var3) * var4, (this.field5074[13] + var2 * this.field5074[5] + var1 * this.field5074[1] + var3 * this.field5074[9]) * var4, var4 * (this.field5074[14] + var3 * this.field5074[10] + var1 * this.field5074[2] + this.field5074[6] * var2));
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(FFFB)F",
+		garbageValue = "-110"
+	)
+	public float method9123(float var1, float var2, float var3) {
+		return this.field5074[8] * var3 + this.field5074[0] * var1 + this.field5074[4] * var2 + this.field5074[12];
+	}
+
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "(FFFI)F",
+		garbageValue = "876420699"
+	)
+	public float method9103(float var1, float var2, float var3) {
+		return this.field5074[13] + var1 * this.field5074[1] + this.field5074[5] * var2 + this.field5074[9] * var3;
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(FFFB)F",
+		garbageValue = "-8"
+	)
+	public float method9127(float var1, float var2, float var3) {
+		return this.field5074[14] + var2 * this.field5074[6] + this.field5074[2] * var1 + var3 * this.field5074[10];
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(I)[F",
+		garbageValue = "184922972"
+	)
+	public float[] method9143() {
 		float[] var1 = new float[3];
-		class445 var2 = new class445(this.field4984[0], this.field4984[1], this.field4984[2]);
-		class445 var3 = new class445(this.field4984[4], this.field4984[5], this.field4984[6]);
-		class445 var4 = new class445(this.field4984[8], this.field4984[9], this.field4984[10]);
-		var1[0] = var2.method8720();
-		var1[1] = var3.method8720();
-		var1[2] = var4.method8720();
+		class448 var2 = new class448(this.field5074[0], this.field5074[1], this.field5074[2]);
+		class448 var3 = new class448(this.field5074[4], this.field5074[5], this.field5074[6]);
+		class448 var4 = new class448(this.field5074[8], this.field5074[9], this.field5074[10]);
+		var1[0] = var2.method9031();
+		var1[1] = var3.method9031();
+		var1[2] = var4.method9031();
 		return var1;
 	}
 
 	public String toString() {
 		StringBuilder var1 = new StringBuilder();
-		this.method8775();
-		this.method8774();
+		this.method9114();
+		this.method9162();
 
 		for (int var2 = 0; var2 < 4; ++var2) {
 			for (int var3 = 0; var3 < 4; ++var3) {
@@ -520,7 +513,7 @@ public final class TransformationMatrix {
 					var1.append("\t");
 				}
 
-				float var4 = this.field4984[var3 + var2 * 4];
+				float var4 = this.field5074[var3 + var2 * 4];
 				if (Math.sqrt((double)(var4 * var4)) < 9.999999747378752E-5D) {
 					var4 = 0.0F;
 				}
@@ -534,6 +527,13 @@ public final class TransformationMatrix {
 		return var1.toString();
 	}
 
+	public int hashCode() {
+		boolean var1 = true;
+		byte var2 = 1;
+		int var3 = var2 * 31 + Arrays.hashCode(this.field5074);
+		return var3;
+	}
+
 	public boolean equals(Object var1) {
 		if (!(var1 instanceof TransformationMatrix)) {
 			return false;
@@ -541,7 +541,7 @@ public final class TransformationMatrix {
 			TransformationMatrix var2 = (TransformationMatrix)var1;
 
 			for (int var3 = 0; var3 < 16; ++var3) {
-				if (this.field4984[var3] != var2.field4984[var3]) {
+				if (var2.field5074[var3] != this.field5074[var3]) {
 					return false;
 				}
 			}
@@ -550,10 +550,18 @@ public final class TransformationMatrix {
 		}
 	}
 
-	public int hashCode() {
-		boolean var1 = true;
-		byte var2 = 1;
-		int var3 = var2 * 31 + Arrays.hashCode(this.field4984);
-		return var3;
+	@ObfuscatedName("ow")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "-186824695"
+	)
+	@Export("clanKickUser")
+	static final void clanKickUser(String var0) {
+		if (MusicPatch.friendsChat != null) {
+			PacketBufferNode var1 = class291.getPacketBufferNode(ClientPacket.CLAN_KICKUSER, Client.packetWriter.isaacCipher);
+			var1.packetBuffer.writeByte(class283.stringCp1252NullTerminatedByteSize(var0));
+			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
+			Client.packetWriter.addNode(var1);
+		}
 	}
 }

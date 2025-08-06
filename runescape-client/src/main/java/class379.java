@@ -1,63 +1,50 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("oe")
-public enum class379 implements Enum {
-	@ObfuscatedName("ap")
+public final class class379 {
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Loe;"
+		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
+		garbageValue = "580684847"
 	)
-	@Export("USERNAME_PASSWORD")
-	USERNAME_PASSWORD(0, 0),
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Loe;"
-	)
-	field4201(1, 1),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Loe;"
-	)
-	field4200(2, 2);
+	public static String method8155(String var0) {
+		int var1 = var0.length();
+		char[] var2 = new char[var1];
+		byte var3 = 2;
 
-	@ObfuscatedName("ac")
-	@Export("SpriteBuffer_spriteWidths")
-	static int[] SpriteBuffer_spriteWidths;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = 293087215
-	)
-	public final int field4198;
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = 518902223
-	)
-	int field4202;
+		for (int var4 = 0; var4 < var1; ++var4) {
+			char var5 = var0.charAt(var4);
+			if (var3 == 0) {
+				var5 = Character.toLowerCase(var5);
+			} else if (var3 == 2 || Character.isUpperCase(var5)) {
+				char var6;
+				if (var5 != 181 && var5 != 402) {
+					var6 = Character.toTitleCase(var5);
+				} else {
+					var6 = var5;
+				}
 
-	class379(int var3, int var4) {
-		this.field4198 = var3;
-		this.field4202 = var4;
-	}
+				var5 = var6;
+			}
 
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "26"
-	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field4202;
-	}
+			if (Character.isLetter(var5)) {
+				var3 = 0;
+			} else if (var5 != '.' && var5 != '?' && var5 != '!') {
+				if (Character.isSpaceChar(var5)) {
+					if (var3 != 2) {
+						var3 = 1;
+					}
+				} else {
+					var3 = 1;
+				}
+			} else {
+				var3 = 2;
+			}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(Lps;I)V",
-		garbageValue = "-1116749936"
-	)
-	public static void method7926(AbstractArchive var0) {
-		class1.VarpDefinition_archive = var0;
-		VarpDefinition.field1910 = class1.VarpDefinition_archive.getGroupFileCount(16);
+			var2[var4] = var5;
+		}
+
+		return new String(var2);
 	}
 }

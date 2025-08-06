@@ -4,60 +4,60 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ko")
+@ObfuscatedName("jp")
 @Implements("BoundaryObject")
 public final class BoundaryObject {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Ljr;"
+		descriptor = "Liq;"
 	)
 	@Export("renderable1")
 	public Renderable renderable1;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Ljr;"
+		descriptor = "Liq;"
 	)
 	@Export("renderable2")
 	public Renderable renderable2;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		longValue = 2401494802445669407L
+		longValue = -9114907871266542199L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 754275415
+		intValue = 113748867
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 1152331983
+		intValue = -738263123
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1284909137
+		intValue = -255134201
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1367703823
+		intValue = 2071044347
 	)
 	@Export("orientationA")
 	int orientationA;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1490093769
+		intValue = -1173420951
 	)
 	@Export("orientationB")
 	int orientationB;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -115667083
+		intValue = 1753440193
 	)
 	@Export("flags")
 	int flags;
@@ -67,60 +67,32 @@ public final class BoundaryObject {
 		this.flags = 0;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lps;I)V",
-		garbageValue = "-610796991"
+		descriptor = "(II)I",
+		garbageValue = "-1476039788"
 	)
-	public static void method5842(AbstractArchive var0) {
-		class559.field5585 = var0;
+	public static int method5776(int var0) {
+		return class531.field5464[var0 & 16383];
 	}
 
-	@ObfuscatedName("hq")
+	@ObfuscatedName("mb")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "2104549399"
+		descriptor = "(IB)Ljava/lang/String;",
+		garbageValue = "-62"
 	)
-	static final void method5840() {
-		ConcurrentMidiTask.method9288();
-	}
+	@Export("formatItemStacks")
+	static final String formatItemStacks(int var0) {
+		String var1 = Integer.toString(var0);
 
-	@ObfuscatedName("kt")
-	@ObfuscatedSignature(
-		descriptor = "(Ldl;Lcc;S)V",
-		garbageValue = "-6519"
-	)
-	static final void method5841(WorldView var0, PendingSpawn var1) {
-		Scene var2 = var0.scene;
-		long var3 = 0L;
-		int var5 = -1;
-		int var6 = 0;
-		int var7 = 0;
-		if (var1.type == 0) {
-			var3 = var2.getBoundaryObjectTag(var1.plane, var1.x, var1.y);
+		for (int var2 = var1.length() - 3; var2 > 0; var2 -= 3) {
+			var1 = var1.substring(0, var2) + "," + var1.substring(var2);
 		}
 
-		if (var1.type == 1) {
-			var3 = var2.getWallDecorationTag(var1.plane, var1.x, var1.y);
+		if (var1.length() > 9) {
+			return " " + ObjectSound.colorStartTag(65408) + var1.substring(0, var1.length() - 8) + "M" + " " + " (" + var1 + ")" + "</col>";
+		} else {
+			return var1.length() > 6 ? " " + ObjectSound.colorStartTag(16777215) + var1.substring(0, var1.length() - 4) + "K" + " " + " (" + var1 + ")" + "</col>" : " " + ObjectSound.colorStartTag(16776960) + var1 + "</col>";
 		}
-
-		if (var1.type == 2) {
-			var3 = var2.getGameObjectTag(var1.plane, var1.x, var1.y);
-		}
-
-		if (var1.type == 3) {
-			var3 = var2.getFloorDecorationTag(var1.plane, var1.x, var1.y);
-		}
-
-		if (var3 != 0L) {
-			int var8 = var2.getObjectFlags(var1.plane, var1.x, var1.y, var3);
-			var5 = DirectByteArrayCopier.Entity_unpackID(var3);
-			var6 = var8 & 31;
-			var7 = var8 >> 6 & 3;
-		}
-
-		var1.objectId = var5;
-		var1.field999 = var6;
-		var1.field1000 = var7;
 	}
 }

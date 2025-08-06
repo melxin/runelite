@@ -3,37 +3,20 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nd")
+@ObfuscatedName("ni")
 @Implements("Varps")
 public class Varps {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("al")
 	@Export("Varps_temp")
 	public static int[] Varps_temp;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ab")
 	@Export("Varps_main")
 	public static int[] Varps_main;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ac")
 	@Export("Varps_masks")
 	static int[] Varps_masks;
-	@ObfuscatedName("al")
-	@Export("SpriteBuffer_yOffsets")
-	static int[] SpriteBuffer_yOffsets;
-	@ObfuscatedName("ql")
-	@ObfuscatedSignature(
-		descriptor = "[Lwd;"
-	)
-	@Export("headIconHintSprites")
-	static SpritePixels[] headIconHintSprites;
-	@ObfuscatedName("wt")
-	@ObfuscatedSignature(
-		descriptor = "Ltb;"
-	)
-	@Export("masterDisk")
-	static ArchiveDisk masterDisk;
 
 	static {
-		Varps_temp = new int[5000];
-		Varps_main = new int[5000];
 		Varps_masks = new int[32];
 		int var0 = 2;
 
@@ -44,22 +27,54 @@ public class Varps {
 
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "1"
+		descriptor = "(Lox;I[B[BI)V",
+		garbageValue = "-1966700037"
 	)
-	public static void method7213(int var0, int var1) {
-		VarbitComposition var2 = Interpreter.method1757(var0);
-		int var3 = var2.baseVar;
-		int var4 = var2.startBit;
-		int var5 = var2.endBit;
-		int var6 = Varps_masks[var5 - var4];
-		if (var1 < 0 || var1 > var6) {
-			var1 = 0;
+	@Export("Widget_setKey")
+	static final void Widget_setKey(Widget var0, int var1, byte[] var2, byte[] var3) {
+		if (var0.field4145 == null) {
+			if (var2 == null) {
+				return;
+			}
+
+			var0.field4145 = new byte[11][];
+			var0.field4146 = new byte[11][];
+			var0.field4147 = new int[11];
+			var0.field4055 = new int[11];
 		}
 
-		var6 <<= var4;
-		Varps_main[var3] = Varps_main[var3] & ~var6 | var1 << var4 & var6;
+		var0.field4145[var1] = var2;
+		if (var2 != null) {
+			var0.field4068 = true;
+		} else {
+			var0.field4068 = false;
+
+			for (int var4 = 0; var4 < var0.field4145.length; ++var4) {
+				if (var0.field4145[var4] != null) {
+					var0.field4068 = true;
+					break;
+				}
+			}
+		}
+
+		var0.field4146[var1] = var3;
+	}
+
+	@ObfuscatedName("ba")
+	@ObfuscatedSignature(
+		descriptor = "([BII)I",
+		garbageValue = "1577705317"
+	)
+	public static int method7383(byte[] var0, int var1) {
+		int var3 = -1;
+
+		for (int var4 = 0; var4 < var1; ++var4) {
+			var3 = var3 >>> 8 ^ Buffer.array[(var3 ^ var0[var4]) & 255];
+		}
+
+		var3 = ~var3;
+		return var3;
 	}
 }

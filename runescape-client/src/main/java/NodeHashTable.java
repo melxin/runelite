@@ -3,31 +3,31 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qq")
+@ObfuscatedName("qo")
 @Implements("NodeHashTable")
 public final class NodeHashTable {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@Export("size")
 	int size;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "[Lub;"
+		descriptor = "[Luj;"
 	)
 	@Export("buckets")
 	Node[] buckets;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Luj;"
 	)
 	@Export("currentGet")
 	Node currentGet;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Luj;"
 	)
 	@Export("current")
 	Node current;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@Export("index")
 	int index;
 
@@ -44,9 +44,9 @@ public final class NodeHashTable {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(J)Lub;"
+		descriptor = "(J)Luj;"
 	)
 	@Export("get")
 	public Node get(long var1) {
@@ -64,8 +64,8 @@ public final class NodeHashTable {
 		return null;
 	}
 
-	@ObfuscatedName("aj")
-	public int method8358() {
+	@ObfuscatedName("ab")
+	public int method8661() {
 		int var1 = 0;
 
 		for (int var2 = 0; var2 < this.size; ++var2) {
@@ -79,14 +79,14 @@ public final class NodeHashTable {
 		return var1;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lub;J)V"
+		descriptor = "(Luj;J)V"
 	)
 	@Export("put")
 	public void put(Node var1, long var2) {
 		if (var1.next != null) {
-			var1.remove();
+			var1.vmethod10593();
 		}
 
 		Node var4 = this.buckets[(int)(var2 & (long)(this.size - 1))];
@@ -97,9 +97,9 @@ public final class NodeHashTable {
 		var1.key = var2;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "()Lub;"
+		descriptor = "()Luj;"
 	)
 	@Export("first")
 	public Node first() {
@@ -107,9 +107,9 @@ public final class NodeHashTable {
 		return this.next();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "()Lub;"
+		descriptor = "()Luj;"
 	)
 	@Export("next")
 	public Node next() {

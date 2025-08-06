@@ -1,35 +1,27 @@
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gq")
+@ObfuscatedName("gs")
 @Implements("InvDefinition")
 public class InvDefinition extends DualNode {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lps;"
+		descriptor = "Lpx;"
 	)
 	@Export("InvDefinition_archive")
 	static AbstractArchive InvDefinition_archive;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lmr;"
+		descriptor = "Lmd;"
 	)
 	@Export("InvDefinition_cached")
-	public static EvictingDualNodeHashTable InvDefinition_cached;
-	@ObfuscatedName("jo")
-	@ObfuscatedSignature(
-		descriptor = "Lii;"
-	)
-	@Export("js5SocketTask")
-	static Task js5SocketTask;
-	@ObfuscatedName("an")
+	static EvictingDualNodeHashTable InvDefinition_cached;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1935930757
+		intValue = -2135600203
 	)
 	@Export("size")
 	public int size;
@@ -42,10 +34,10 @@ public class InvDefinition extends DualNode {
 		this.size = 0;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;I)V",
-		garbageValue = "-1764341119"
+		descriptor = "(Lwj;S)V",
+		garbageValue = "255"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -59,10 +51,10 @@ public class InvDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;II)V",
-		garbageValue = "1696268480"
+		descriptor = "(Lwj;IB)V",
+		garbageValue = "-64"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -72,60 +64,47 @@ public class InvDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("jf")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhm;",
-		garbageValue = "-1894269736"
+		descriptor = "(Ldj;IZI)V",
+		garbageValue = "-1306681092"
 	)
-	@Export("WorldMapElement_get")
-	public static WorldMapElement WorldMapElement_get(int var0) {
-		return var0 >= 0 && var0 < WorldMapElement.WorldMapElement_cached.length && WorldMapElement.WorldMapElement_cached[var0] != null ? WorldMapElement.WorldMapElement_cached[var0] : new WorldMapElement(var0);
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(Lin;III)Ldc;",
-		garbageValue = "-786099370"
-	)
-	public static final PcmPlayer method3961(TaskHandler var0, int var1, int var2) {
-		if (UserComparator3.field1521 == 0) {
-			throw new IllegalStateException();
-		} else if (var1 >= 0 && var1 < 2) {
-			if (var2 < 256) {
-				var2 = 256;
+	@Export("addPlayerToScene")
+	static void addPlayerToScene(WorldView var0, int var1, boolean var2) {
+		Player var3 = (Player)var0.players.get((long)var1);
+		if (var3 != null && var3.isVisible() && !var3.isHidden) {
+			int var4 = var3.plane;
+			var3.isUnanimated = false;
+			if ((Client.isLowDetail && Client.playerUpdateManager.playerCount > 50 || Client.playerUpdateManager.playerCount > 200) && var2 && var3.method2382() == var3.idleSequence) {
+				var3.isUnanimated = true;
 			}
 
-			try {
-				PcmPlayer var3 = HealthBarDefinition.pcmPlayerProvider.player();
-				var3.samples = new int[(PcmPlayer.PcmPlayer_stereo ? 2 : 1) * 256];
-				var3.field1313 = var2;
-				var3.init();
-				var3.capacity = (var2 & -1024) + 1024;
-				if (var3.capacity > 16384) {
-					var3.capacity = 16384;
-				}
+			int var5 = var3.x >> 7;
+			int var6 = var3.y >> 7;
+			if (0 <= var5 && var5 < 104 && 0 <= var6 && var6 < 104) {
+				long var7 = Skills.calculateTag(0, 0, 0, 0, false, var3.index, var0.id);
+				if (var3.model0 != null && Client.cycle >= var3.animationCycleStart && Client.cycle < var3.animationCycleEnd) {
+					var3.isUnanimated = false;
+					var3.tileHeight = WorldMapRegion.method6545(var0, var3.x, var3.y, var4, var3.vmethod2682());
+					var3.tileHeight -= var3.method2442();
+					var3.playerCycle = Client.cycle;
+					var0.scene.addNullableObject(var4, var3.x, var3.y, var3.tileHeight, 60, var3, var3.rotation, var7, var3.minX, var3.minY, var3.maxX, var3.maxY);
+				} else {
+					if ((var3.x & 127) == 64 && (var3.y & 127) == 64) {
+						if (var0.tileLastDrawnActor[var5][var6] == Client.viewportDrawCount) {
+							return;
+						}
 
-				var3.open(var3.capacity);
-				if (Language.field4892 > 0 && class209.soundSystem == null) {
-					class209.soundSystem = new SoundSystem();
-					BuddyRankComparator.soundSystemExecutor = Executors.newScheduledThreadPool(1);
-					BuddyRankComparator.soundSystemExecutor.scheduleAtFixedRate(class209.soundSystem, 0L, 10L, TimeUnit.MILLISECONDS);
-				}
-
-				if (class209.soundSystem != null) {
-					if (class209.soundSystem.players[var1] != null) {
-						throw new IllegalArgumentException();
+						var0.tileLastDrawnActor[var5][var6] = Client.viewportDrawCount;
 					}
 
-					class209.soundSystem.players[var1] = var3;
+					var3.tileHeight = WorldMapRegion.method6545(var0, var3.x, var3.y, var4, var3.vmethod2682());
+					var3.tileHeight -= var3.method2442();
+					var3.playerCycle = Client.cycle;
+					var0.scene.drawEntity(var4, var3.x, var3.y, var3.tileHeight, 60, var3, var3.rotation, var7, var3.isWalking);
 				}
-
-				return var3;
-			} catch (Throwable var4) {
-				return new PcmPlayer();
 			}
-		} else {
-			throw new IllegalArgumentException();
 		}
+
 	}
 }

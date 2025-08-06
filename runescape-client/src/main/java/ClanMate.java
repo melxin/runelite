@@ -2,19 +2,22 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-@ObfuscatedName("sh")
+@ObfuscatedName("ts")
 @Implements("ClanMate")
 public class ClanMate extends Buddy {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Ltc;"
+		descriptor = "Lta;"
 	)
 	@Export("friend")
 	TriBool friend;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Ltc;"
+		descriptor = "Lta;"
 	)
 	@Export("ignored")
 	TriBool ignored;
@@ -24,20 +27,20 @@ public class ClanMate extends Buddy {
 		this.ignored = TriBool.TriBool_unknown;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "-32"
+		garbageValue = "-37"
 	)
 	@Export("clearIsFriend")
 	void clearIsFriend() {
 		this.friend = TriBool.TriBool_unknown;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "968316764"
+		garbageValue = "1849202636"
 	)
 	@Export("isFriend")
 	public final boolean isFriend() {
@@ -48,20 +51,20 @@ public class ClanMate extends Buddy {
 		return this.friend == TriBool.TriBool_true;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1974840189"
+		garbageValue = "850863851"
 	)
 	@Export("fillIsFriend")
 	void fillIsFriend() {
-		this.friend = Actor.friendSystem.friendsList.contains(super.username) ? TriBool.TriBool_true : TriBool.TriBool_false;
+		this.friend = class137.friendSystem.friendsList.contains(super.username) ? TriBool.TriBool_true : TriBool.TriBool_false;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-26"
+		descriptor = "(I)V",
+		garbageValue = "-1848232569"
 	)
 	@Export("clearIsIgnored")
 	void clearIsIgnored() {
@@ -71,7 +74,7 @@ public class ClanMate extends Buddy {
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1547196927"
+		garbageValue = "2090397522"
 	)
 	@Export("isIgnored")
 	public final boolean isIgnored() {
@@ -82,31 +85,37 @@ public class ClanMate extends Buddy {
 		return this.ignored == TriBool.TriBool_true;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "2055919573"
+		garbageValue = "1211831968"
 	)
 	@Export("fillIsIgnored")
 	void fillIsIgnored() {
-		this.ignored = Actor.friendSystem.ignoreList.contains(super.username) ? TriBool.TriBool_true : TriBool.TriBool_false;
+		this.ignored = class137.friendSystem.ignoreList.contains(super.username) ? TriBool.TriBool_true : TriBool.TriBool_false;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lxs;",
-		garbageValue = "-1951555505"
+		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;I)[F",
+		garbageValue = "-289277501"
 	)
-	static PrivateChatMode[] method9580() {
-		return new PrivateChatMode[]{PrivateChatMode.field5855, PrivateChatMode.field5856, PrivateChatMode.field5857};
-	}
+	static float[] method9941(JSONObject var0, String var1) throws JSONException {
+		float[] var2 = new float[4];
 
-	@ObfuscatedName("by")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "135299876"
-	)
-	static int method9567(int var0) {
-		return (int)((Math.log((double)var0) / Interpreter.field663 - 7.0D) * 256.0D);
+		try {
+			JSONArray var3 = var0.getJSONArray(var1);
+			var2[0] = (float)var3.optDouble(0, 0.0D);
+			var2[1] = (float)var3.optDouble(1, 0.0D);
+			var2[2] = (float)var3.optDouble(2, 1.0D);
+			var2[3] = (float)var3.optDouble(3, 1.0D);
+		} catch (JSONException var4) {
+			var2[0] = 0.0F;
+			var2[1] = 0.0F;
+			var2[2] = 1.0F;
+			var2[3] = 1.0F;
+		}
+
+		return var2;
 	}
 }

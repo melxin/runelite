@@ -4,54 +4,54 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jc")
+@ObfuscatedName("ib")
 @Implements("ItemLayer")
 public final class ItemLayer {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1432977343
+		intValue = 1675178913
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -279066337
+		intValue = -310439053
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1950426147
+		intValue = -418956347
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Ljr;"
+		descriptor = "Liq;"
 	)
 	@Export("first")
 	Renderable first;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Ljr;"
+		descriptor = "Liq;"
 	)
 	@Export("second")
 	Renderable second;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Ljr;"
+		descriptor = "Liq;"
 	)
 	@Export("third")
 	Renderable third;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		longValue = 3036212681244980719L
+		longValue = 6168778998003613095L
 	)
 	@Export("tag")
 	long tag;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 314893951
+		intValue = 138009977
 	)
 	@Export("height")
 	int height;
@@ -59,26 +59,12 @@ public final class ItemLayer {
 	ItemLayer() {
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhe;",
-		garbageValue = "2102457966"
+		descriptor = "(I)I",
+		garbageValue = "59824424"
 	)
-	@Export("StructDefinition_getStructDefinition")
-	public static StructComposition StructDefinition_getStructDefinition(int var0) {
-		StructComposition var1 = (StructComposition)StructComposition.StructDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = StructComposition.StructDefinition_archive.takeFile(34, var0);
-			var1 = new StructComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.postDecode();
-			StructComposition.StructDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
+	static int method4778() {
+		return ++Messages.Messages_count - 1;
 	}
 }

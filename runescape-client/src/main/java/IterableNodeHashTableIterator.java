@@ -4,33 +4,33 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qr")
+@ObfuscatedName("qf")
 @Implements("IterableNodeHashTableIterator")
 public class IterableNodeHashTableIterator implements Iterator {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lqp;"
+		descriptor = "Lqr;"
 	)
 	@Export("hashTable")
 	IterableNodeHashTable hashTable;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Luj;"
 	)
 	@Export("head")
 	Node head;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@Export("index")
 	int index;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lub;"
+		descriptor = "Luj;"
 	)
 	@Export("last")
 	Node last;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lqp;)V"
+		descriptor = "(Lqr;)V"
 	)
 	public IterableNodeHashTableIterator(IterableNodeHashTable var1) {
 		this.last = null;
@@ -38,7 +38,7 @@ public class IterableNodeHashTableIterator implements Iterator {
 		this.start();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@Export("start")
 	void start() {
 		this.head = this.hashTable.buckets[0].previous;
@@ -46,11 +46,11 @@ public class IterableNodeHashTableIterator implements Iterator {
 		this.last = null;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "()Lub;"
+		descriptor = "()Luj;"
 	)
-	public Node method8308() {
+	public Node method8621() {
 		this.start();
 		return (Node)this.next();
 	}
@@ -77,15 +77,6 @@ public class IterableNodeHashTableIterator implements Iterator {
 		}
 	}
 
-	public void remove() {
-		if (this.last == null) {
-			throw new IllegalStateException();
-		} else {
-			this.last.remove();
-			this.last = null;
-		}
-	}
-
 	public boolean hasNext() {
 		if (this.hashTable.buckets[this.index - 1] != this.head) {
 			return true;
@@ -100,6 +91,15 @@ public class IterableNodeHashTableIterator implements Iterator {
 			}
 
 			return false;
+		}
+	}
+
+	public void remove() {
+		if (this.last == null) {
+			throw new IllegalStateException();
+		} else {
+			this.last.vmethod10593();
+			this.last = null;
 		}
 	}
 }

@@ -1,48 +1,76 @@
-import net.runelite.mapping.Export;
+import java.net.MalformedURLException;
+import java.net.URL;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nf")
+@ObfuscatedName("nh")
 public class class361 {
-	@ObfuscatedName("kt")
+	@ObfuscatedName("lx")
+	@ObfuscatedGetter(
+		intValue = -1045180231
+	)
+	static int field3982;
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Leu;"
 	)
-	@Export("archive13")
-	static Archive archive13;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = 168218257
-	)
-	public int field3885;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = -1420984831
-	)
-	public int field3883;
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = -2064503183
-	)
-	public int field3886;
-
-	class361() {
-	}
-
-	@ObfuscatedName("pn")
+	UrlRequest field3981;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lvu;",
-		garbageValue = "-1158963920"
+		descriptor = "Lxv;"
 	)
-	@Export("getDbTable")
-	static DbTable getDbTable(int var0) {
-		DbTable var1 = (DbTable)Client.DBTableIndex_cache.get((long)var0);
-		if (var1 == null) {
-			var1 = new DbTable(AbstractByteArrayCopier.field3837, class393.method7981(var0), Projectile.method1944(var0));
-			Client.DBTableIndex_cache.put(var1, (long)var0);
+	SpritePixels field3977;
+
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;Les;)V"
+	)
+	class361(String var1, UrlRequester var2) {
+		try {
+			this.field3981 = var2.request(new URL(var1));
+		} catch (MalformedURLException var4) {
+			this.field3981 = null;
 		}
 
-		return var1;
+	}
+
+	@ObfuscatedSignature(
+		descriptor = "(Leu;)V"
+	)
+	class361(UrlRequest var1) {
+		this.field3981 = var1;
+	}
+
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lxv;",
+		garbageValue = "-453617960"
+	)
+	SpritePixels method7504() {
+		if (this.field3977 == null && this.field3981 != null && this.field3981.isDone()) {
+			if (this.field3981.getResponse() != null) {
+				this.field3977 = class177.readSpritePixelsFromBytes(this.field3981.getResponse());
+			}
+
+			this.field3981 = null;
+		}
+
+		return this.field3977;
+	}
+
+	@ObfuscatedName("bi")
+	@ObfuscatedSignature(
+		descriptor = "([Ljava/lang/Object;III)V",
+		garbageValue = "46606302"
+	)
+	static void method7510(Object[] var0, int var1, int var2) {
+		while (var1 < var2) {
+			Object var3 = var0[var1];
+			var0[var1] = var0[var2];
+			var0[var2] = var3;
+			++var1;
+			--var2;
+		}
+
 	}
 }

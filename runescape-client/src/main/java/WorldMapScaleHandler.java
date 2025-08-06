@@ -4,16 +4,19 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lf")
+@ObfuscatedName("ll")
 @Implements("WorldMapScaleHandler")
 public class WorldMapScaleHandler {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("am")
+	@Export("hasFocus")
+	protected static boolean hasFocus;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1179002257
+		intValue = 400077141
 	)
 	@Export("pixelsPerTile")
 	int pixelsPerTile;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@Export("tileTemplates")
 	byte[][][] tileTemplates;
 
@@ -21,25 +24,25 @@ public class WorldMapScaleHandler {
 		this.pixelsPerTile = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(IIIIIIIIB)V",
-		garbageValue = "1"
+		garbageValue = "76"
 	)
-	void method6754(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+	void method6910(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		if (var7 != 0 && this.pixelsPerTile != 0 && this.tileTemplates != null) {
-			var8 = this.method6725(var8, var7);
-			var7 = this.method6726(var7);
+			var8 = this.method6920(var8, var7);
+			var7 = this.method6912(var7);
 			Rasterizer2D.Rasterizer2D_drawGradientPixels(var1, var2, var5, var6, var3, var4, this.tileTemplates[var7 - 1][var8], this.pixelsPerTile);
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "1675603699"
+		descriptor = "(IIB)I",
+		garbageValue = "-14"
 	)
-	int method6725(int var1, int var2) {
+	int method6920(int var1, int var2) {
 		if (var2 == 9) {
 			var1 = var1 + 1 & 3;
 		}
@@ -55,12 +58,12 @@ public class WorldMapScaleHandler {
 		return var1;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "1432204118"
+		garbageValue = "-521531828"
 	)
-	int method6726(int var1) {
+	int method6912(int var1) {
 		if (var1 != 9 && var1 != 10) {
 			return var1 == 11 ? 8 : var1;
 		} else {
@@ -68,10 +71,10 @@ public class WorldMapScaleHandler {
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1899428840"
+		garbageValue = "-570258103"
 	)
 	@Export("init")
 	void init() {
@@ -88,10 +91,10 @@ public class WorldMapScaleHandler {
 		}
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-749822101"
+		descriptor = "(B)V",
+		garbageValue = "26"
 	)
 	@Export("init0")
 	void init0() {
@@ -155,10 +158,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[0][3] = var1;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "697301858"
+		garbageValue = "-758987737"
 	)
 	@Export("init1")
 	void init1() {
@@ -226,10 +229,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[1][3] = var1;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "44"
+		descriptor = "(I)V",
+		garbageValue = "-1633268965"
 	)
 	@Export("init2")
 	void init2() {
@@ -293,10 +296,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[2][3] = var1;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "2"
+		garbageValue = "75"
 	)
 	@Export("init3")
 	void init3() {
@@ -360,10 +363,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[3][3] = var1;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1606733377"
+		descriptor = "(B)V",
+		garbageValue = "6"
 	)
 	@Export("init4")
 	void init4() {
@@ -427,10 +430,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[4][3] = var1;
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "854963947"
+		descriptor = "(B)V",
+		garbageValue = "101"
 	)
 	@Export("init5")
 	void init5() {
@@ -496,10 +499,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[5][3] = var1;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1972862605"
+		descriptor = "(B)V",
+		garbageValue = "-58"
 	)
 	@Export("init6")
 	void init6() {
@@ -565,10 +568,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[6][3] = var1;
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "16284"
+		descriptor = "(I)V",
+		garbageValue = "-1884048508"
 	)
 	@Export("init7")
 	void init7() {
@@ -634,25 +637,57 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[7][3] = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "4"
+		descriptor = "(III)V",
+		garbageValue = "-335426707"
 	)
-	public static int method6761(int var0, int var1) {
-		int var2;
-		if (var1 > var0) {
-			var2 = var0;
-			var0 = var1;
-			var1 = var2;
+	@Export("changeWorldSelectSorting")
+	static void changeWorldSelectSorting(int var0, int var1) {
+		int[] var2 = new int[4];
+		int[] var3 = new int[4];
+		var2[0] = var0;
+		var3[0] = var1;
+		int var4 = 1;
+
+		for (int var5 = 0; var5 < 4; ++var5) {
+			if (World.World_sortOption1[var5] != var0) {
+				var2[var4] = World.World_sortOption1[var5];
+				var3[var4] = World.World_sortOption2[var5];
+				++var4;
+			}
 		}
 
-		while (var1 != 0) {
-			var2 = var0 % var1;
-			var0 = var1;
-			var1 = var2;
-		}
+		World.World_sortOption1 = var2;
+		World.World_sortOption2 = var3;
+		class407.sortWorlds(World.World_worlds, 0, World.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
+	}
 
-		return var0;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(Lpx;Lpx;IIB)Lru;",
+		garbageValue = "34"
+	)
+	public static Font method6924(AbstractArchive var0, AbstractArchive var1, int var2, int var3) {
+		if (!class522.method10495(var0, var2, var3)) {
+			return null;
+		} else {
+			byte[] var5 = var1.takeFile(var2, var3);
+			Font var4;
+			if (var5 == null) {
+				var4 = null;
+			} else {
+				Font var6 = new Font(var5, SpriteBufferProperties.SpriteBuffer_xOffsets, class440.SpriteBuffer_yOffsets, class333.SpriteBuffer_spriteWidths, Buffer.SpriteBuffer_spriteHeights, class113.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
+				SpriteBufferProperties.SpriteBuffer_xOffsets = null;
+				class440.SpriteBuffer_yOffsets = null;
+				class333.SpriteBuffer_spriteWidths = null;
+				Buffer.SpriteBuffer_spriteHeights = null;
+				class113.SpriteBuffer_spritePalette = null;
+				SpriteBufferProperties.SpriteBuffer_pixels = null;
+				var4 = var6;
+			}
+
+			return var4;
+		}
 	}
 }

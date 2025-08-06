@@ -1,99 +1,96 @@
-import java.io.File;
-import java.io.RandomAccessFile;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gw")
+@ObfuscatedName("gg")
 public class class164 extends class149 {
-	@ObfuscatedName("ct")
-	@ObfuscatedSignature(
-		descriptor = "Lwy;"
-	)
-	@Export("options_buttons_0Sprite")
-	static IndexedSprite options_buttons_0Sprite;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		longValue = 1847766597588277827L
+		longValue = -519071735305173163L
 	)
-	long field1826;
-	@ObfuscatedName("aj")
-	String field1824;
-	@ObfuscatedName("an")
+	long field1859;
+	@ObfuscatedName("ab")
+	String field1858;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1713242295
+		intValue = -913783153
 	)
-	int field1823;
+	int field1860;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfp;"
+		descriptor = "Lfg;"
 	)
 	final class152 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfp;)V"
+		descriptor = "(Lfg;)V"
 	)
 	class164(class152 var1) {
 		this.this$0 = var1;
-		this.field1826 = -1L;
-		this.field1824 = null;
-		this.field1823 = 0;
+		this.field1859 = -1L;
+		this.field1858 = null;
+		this.field1860 = 0;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;I)V",
-		garbageValue = "-1635342078"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1324754926"
 	)
-	void vmethod3913(Buffer var1) {
+	void vmethod4086(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
-			this.field1826 = var1.readLong();
+			--var1.field5818;
+			this.field1859 = var1.readLong();
 		}
 
-		this.field1824 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1823 = var1.readUnsignedShort();
+		this.field1858 = var1.readStringCp1252NullTerminatedOrNull();
+		this.field1860 = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lgu;I)V",
-		garbageValue = "-1572789515"
+		descriptor = "(Lgk;I)V",
+		garbageValue = "1924878263"
 	)
-	void vmethod3914(ClanSettings var1) {
-		var1.method3747(this.field1826, this.field1824, this.field1823);
+	void vmethod4088(ClanSettings var1) {
+		var1.method3897(this.field1859, this.field1858, this.field1860);
 	}
 
 	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)J",
-		garbageValue = "871737452"
+		descriptor = "([J[IIII)V",
+		garbageValue = "192707233"
 	)
-	static long method3844(int var0, int var1, int var2) {
-		return (long)(var2 << 16 | var0 << 8 | var1);
-	}
+	public static void method3995(long[] var0, int[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var4 = (var3 + var2) / 2;
+			int var5 = var2;
+			long var6 = var0[var4];
+			var0[var4] = var0[var3];
+			var0[var3] = var6;
+			int var8 = var1[var4];
+			var1[var4] = var1[var3];
+			var1[var3] = var8;
+			int var9 = var6 == Long.MAX_VALUE ? 0 : 1;
 
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/io/File;ZI)Z",
-		garbageValue = "-581170605"
-	)
-	static boolean method3843(File var0, boolean var1) {
-		try {
-			RandomAccessFile var2 = new RandomAccessFile(var0, "rw");
-			int var3 = var2.read();
-			var2.seek(0L);
-			var2.write(var3);
-			var2.seek(0L);
-			var2.close();
-			if (var1) {
-				var0.delete();
+			for (int var10 = var2; var10 < var3; ++var10) {
+				if (var0[var10] < (long)(var10 & var9) + var6) {
+					long var11 = var0[var10];
+					var0[var10] = var0[var5];
+					var0[var5] = var11;
+					int var13 = var1[var10];
+					var1[var10] = var1[var5];
+					var1[var5++] = var13;
+				}
 			}
 
-			return true;
-		} catch (Exception var4) {
-			return false;
+			var0[var3] = var0[var5];
+			var0[var5] = var6;
+			var1[var3] = var1[var5];
+			var1[var5] = var8;
+			method3995(var0, var1, var2, var5 - 1);
+			method3995(var0, var1, var5 + 1, var3);
 		}
+
 	}
 }

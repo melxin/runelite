@@ -1,15 +1,32 @@
 import java.awt.Component;
 import java.awt.Graphics;
-import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ab")
+@ObfuscatedName("af")
 @Implements("Canvas")
 public final class Canvas extends java.awt.Canvas {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("kb")
+	@ObfuscatedSignature(
+		descriptor = "Lpo;"
+	)
+	@Export("archive12")
+	static Archive archive12;
+	@ObfuscatedName("pm")
+	static byte[][] field100;
+	@ObfuscatedName("sf")
+	@ObfuscatedSignature(
+		descriptor = "Lox;"
+	)
+	static Widget field102;
+	@ObfuscatedName("tj")
+	@ObfuscatedSignature(
+		descriptor = "[Lox;"
+	)
+	static Widget[] field104;
+	@ObfuscatedName("al")
 	@Export("component")
 	Component component;
 
@@ -25,247 +42,183 @@ public final class Canvas extends java.awt.Canvas {
 		this.component.paint(var1);
 	}
 
-	@ObfuscatedName("lh")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)V",
-		garbageValue = "-18"
+		descriptor = "(Ldj;I)V",
+		garbageValue = "1768047860"
 	)
-	@Export("addSceneMenuOptions")
-	static final void addSceneMenuOptions(int var0, int var1, int var2, int var3) {
-		if (Client.isItemSelected == 0 && !Client.isSpellSelected) {
-			Timer.method8005(var0 - var2, var1 - var3);
-		}
+	static void method346(WorldView var0) {
+		int var1 = var0.sizeX;
+		int var2 = var0.sizeY;
+		int[][][] var3 = var0.tileHeights;
+		Scene var4 = var0.scene;
+		int var5 = 1;
+		int var6 = 2;
+		int var7 = 4;
 
-		long var4 = -1L;
-		int var6 = 0;
-		long var7 = -1L;
-		int var9 = 0;
-
-		while (true) {
-			int var11 = ViewportMouse.ViewportMouse_entityCount;
-			if (var9 >= var11) {
-				if (-1L != var4) {
-					var9 = GrandExchangeOfferOwnWorldComparator.method759(var4);
-					int var10 = (int)(var4 >>> 7 & 127L);
-					Player var12 = (Player)Sound.topLevelWorldView.players.get((long)Client.combatTargetPlayerIndex);
-					LoginPacket.addPlayerToMenu(var12, Client.combatTargetPlayerIndex, var9, var10, var6);
-				}
-
-				return;
+		for (int var8 = 0; var8 < 4; ++var8) {
+			if (var8 > 0) {
+				var5 <<= 3;
+				var6 <<= 3;
+				var7 <<= 3;
 			}
 
-			long var32 = FadeInTask.method9262(var9);
-			if (var32 != var7) {
-				label450: {
-					var7 = var32;
-					int var14 = GrandExchangeOfferOwnWorldComparator.method759(ViewportMouse.ViewportMouse_entityTags[var9]);
-					int var15 = var14;
-					int var16 = class270.method5882(var9);
-					long var19 = ViewportMouse.ViewportMouse_entityTags[var9];
-					int var18 = (int)(var19 >>> 16 & 7L);
-					int var34 = DirectByteArrayCopier.Entity_unpackID(ViewportMouse.ViewportMouse_entityTags[var9]);
-					int var20 = var34;
-					int var21 = SequenceDefinition.method4597(ViewportMouse.ViewportMouse_entityTags[var9]);
-					int var22 = var21;
-					WorldEntity var23 = null;
-					WorldView var24 = null;
-					var23 = (WorldEntity)Sound.topLevelWorldView.worldEntities.get((long)var21);
-					if (var21 >= 0 && var23 != null) {
-						if (var23.method9727()) {
-							break label450;
+			for (int var9 = 0; var9 <= var8; ++var9) {
+				for (int var10 = 0; var10 <= var2; ++var10) {
+					for (int var11 = 0; var11 <= var1; ++var11) {
+						int var12;
+						int var13;
+						int var14;
+						int var15;
+						int var16;
+						int[] var10000;
+						short var17;
+						int var18;
+						int var19;
+						int var20;
+						int var21;
+						if ((class81.field1179[var9][var11][var10] & var5) != 0) {
+							var12 = var10;
+							var13 = var10;
+							var14 = var9;
+
+							for (var15 = var9; var12 > 0 && (class81.field1179[var9][var11][var12 - 1] & var5) != 0; --var12) {
+							}
+
+							while (var13 < var2 && (class81.field1179[var9][var11][var13 + 1] & var5) != 0) {
+								++var13;
+							}
+
+							label191:
+							while (var14 > 0) {
+								for (var16 = var12; var16 <= var13; ++var16) {
+									if ((class81.field1179[var14 - 1][var11][var16] & var5) == 0) {
+										break label191;
+									}
+								}
+
+								--var14;
+							}
+
+							label180:
+							while (var15 < var8) {
+								for (var16 = var12; var16 <= var13; ++var16) {
+									if ((class81.field1179[var15 + 1][var11][var16] & var5) == 0) {
+										break label180;
+									}
+								}
+
+								++var15;
+							}
+
+							var16 = (var13 - var12 + 1) * (var15 + 1 - var14);
+							if (var16 >= 8) {
+								var17 = 240;
+								var18 = var3[var15][var11][var12] - var17;
+								var19 = var3[var14][var11][var12];
+								var4.Scene_addOccluder(var8, 1, var11 * 128, var11 * 128, var12 * 128, var13 * 128 + 128, var18, var19);
+
+								for (var20 = var14; var20 <= var15; ++var20) {
+									for (var21 = var12; var21 <= var13; ++var21) {
+										var10000 = class81.field1179[var20][var11];
+										var10000[var21] &= ~var5;
+									}
+								}
+							}
 						}
 
-						var24 = var23.worldView;
-					} else if (var21 == -1) {
-						var23 = null;
-						var24 = Sound.topLevelWorldView;
-					}
+						if ((class81.field1179[var9][var11][var10] & var6) != 0) {
+							var12 = var11;
+							var13 = var11;
+							var14 = var9;
 
-					if (var24 != null) {
-						int var25 = WorldMapRectangle.method6614(var21, var23, var24);
-						if (var25 != -1) {
-							label431: {
-								int var29;
-								if (var18 == 2 && var24.scene.getObjectFlags(var25, var14, var16, var32) >= 0) {
-									ObjectComposition var26 = HealthBarConfig.getObjectDefinition(var34);
-									if (var26.transforms != null) {
-										var26 = var26.transform();
-									}
+							for (var15 = var9; var12 > 0 && (class81.field1179[var9][var12 - 1][var10] & var6) != 0; --var12) {
+							}
 
-									if (var26 == null) {
-										break label431;
-									}
+							while (var13 < var1 && (class81.field1179[var9][var13 + 1][var10] & var6) != 0) {
+								++var13;
+							}
 
-									PendingSpawn var27 = null;
-
-									for (PendingSpawn var28 = (PendingSpawn)var24.pendingSpawns.last(); var28 != null; var28 = (PendingSpawn)var24.pendingSpawns.previous()) {
-										if (var25 == var28.plane && var15 == var28.x && var16 == var28.y && var20 == var28.field1008) {
-											var27 = var28;
-											break;
-										}
-									}
-
-									if (!WorldMapAreaData.field3334 && Client.isItemSelected == 1) {
-										GrandExchangeOfferOwnWorldComparator.insertMenuItem("Use", Client.field520 + " " + "->" + " " + AbstractWorldMapIcon.colorStartTag(65535) + var26.name, 1, var20, var15, var16, -1, false, var21);
-									} else if (Client.isSpellSelected) {
-										if (!WorldMapAreaData.field3334 && (class448.selectedSpellFlags & 4) == 4) {
-											GrandExchangeOfferOwnWorldComparator.insertMenuItem(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + AbstractWorldMapIcon.colorStartTag(65535) + var26.name, 2, var20, var15, var16, -1, false, var21);
-										}
-									} else {
-										String[] var42 = var26.actions;
-										if (var42 != null) {
-											for (var29 = 4; var29 >= 0; --var29) {
-												if (!WorldMapAreaData.field3334 && (var27 == null || var27.method2282(var29))) {
-													String var30 = var42[var29];
-													if (var27 != null && var27.method2281(var29)) {
-														var30 = var27.method2277(var29);
-													}
-
-													if (var30 != null) {
-														short var31 = 0;
-														if (var29 == 0) {
-															var31 = 3;
-														}
-
-														if (var29 == 1) {
-															var31 = 4;
-														}
-
-														if (var29 == 2) {
-															var31 = 5;
-														}
-
-														if (var29 == 3) {
-															var31 = 6;
-														}
-
-														if (var29 == 4) {
-															var31 = 1001;
-														}
-
-														GrandExchangeOfferOwnWorldComparator.insertMenuItem(var30, AbstractWorldMapIcon.colorStartTag(65535) + var26.name, var31, var20, var15, var16, -1, false, var22);
-													}
-												}
-											}
-										}
-
-										GrandExchangeOfferOwnWorldComparator.insertMenuItem("Examine", AbstractWorldMapIcon.colorStartTag(65535) + var26.name, 1002, var26.id, var15, var16, -1, false, var22);
+							label244:
+							while (var14 > 0) {
+								for (var16 = var12; var16 <= var13; ++var16) {
+									if ((class81.field1179[var14 - 1][var16][var10] & var6) == 0) {
+										break label244;
 									}
 								}
 
-								int var35;
-								NPC var43;
-								int[] var44;
-								Player var46;
-								if (var18 == 1) {
-									NPC var38 = (NPC)var24.npcs.get((long)var20);
-									if (var38 == null) {
-										break label431;
-									}
+								--var14;
+							}
 
-									if (var38.definition.size == 1 && (var38.x & 127) == 64 && (var38.y & 127) == 64) {
-										for (var35 = 0; var35 < var24.field1147.method9429(); ++var35) {
-											var43 = (NPC)var24.npcs.get((long)var24.field1147.method9430(var35));
-											if (var43 != null && var43 != var38 && var43.definition.size == 1 && var38.x == var43.x && var38.y == var43.y) {
-												ItemComposition.addNpcToMenu(var43, var43.index, var15, var16, var22);
-											}
-										}
-
-										var35 = Client.playerUpdateManager.playerCount;
-										var44 = Client.playerUpdateManager.playerIndices;
-
-										for (var29 = 0; var29 < var35; ++var29) {
-											var46 = (Player)var24.players.get((long)var44[var29]);
-											if (var46 != null && var46.x == var38.x && var38.y == var46.y) {
-												LoginPacket.addPlayerToMenu(var46, var44[var29], var15, var16, var22);
-											}
-										}
-									}
-
-									ItemComposition.addNpcToMenu(var38, var20, var15, var16, var22);
-								}
-
-								if (var18 == 0) {
-									Player var39 = (Player)var24.players.get((long)var20);
-									if (var39 == null) {
-										break label431;
-									}
-
-									if ((var39.x & 127) == 64 && (var39.y & 127) == 64) {
-										for (var35 = 0; var35 < var24.field1147.method9429(); ++var35) {
-											var43 = (NPC)var24.npcs.get((long)var24.field1147.method9430(var35));
-											if (var43 != null && var43.definition.size == 1 && var43.x == var39.x && var43.y == var39.y) {
-												ItemComposition.addNpcToMenu(var43, var24.field1147.method9430(var35), var15, var16, var22);
-											}
-										}
-
-										var35 = Client.playerUpdateManager.playerCount;
-										var44 = Client.playerUpdateManager.playerIndices;
-
-										for (var29 = 0; var29 < var35; ++var29) {
-											var46 = (Player)var24.players.get((long)var44[var29]);
-											if (var46 != null && var39 != var46 && var46.x == var39.x && var46.y == var39.y) {
-												LoginPacket.addPlayerToMenu(var46, var44[var29], var15, var16, var22);
-											}
-										}
-									}
-
-									if (var20 != Client.combatTargetPlayerIndex) {
-										LoginPacket.addPlayerToMenu(var39, var20, var15, var16, var22);
-									} else {
-										var4 = var32;
-										var6 = var22;
+							label233:
+							while (var15 < var8) {
+								for (var16 = var12; var16 <= var13; ++var16) {
+									if ((class81.field1179[var15 + 1][var16][var10] & var6) == 0) {
+										break label233;
 									}
 								}
 
-								if (var18 == 3) {
-									NodeDeque var40 = var24.groundItems[var25][var15][var16];
-									if (var40 != null) {
-										for (TileItem var41 = (TileItem)var40.first(); var41 != null; var41 = (TileItem)var40.next()) {
-											ItemComposition var45 = SceneTilePaint.ItemDefinition_get(var41.id);
-											if (!class166.field1835 && Client.isItemSelected == 1) {
-												GrandExchangeOfferOwnWorldComparator.insertMenuItem("Use", Client.field520 + " " + "->" + " " + AbstractWorldMapIcon.colorStartTag(16748608) + var45.name, 16, var41.id, var15, var16, -1, false, var22);
-											} else if (Client.isSpellSelected) {
-												if (!class166.field1835 && (class448.selectedSpellFlags & 1) == 1) {
-													GrandExchangeOfferOwnWorldComparator.insertMenuItem(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + AbstractWorldMapIcon.colorStartTag(16748608) + var45.name, 17, var41.id, var15, var16, -1, false, var22);
-												}
-											} else {
-												String[] var36 = var45.groundActions;
+								++var15;
+							}
 
-												for (int var37 = 4; var37 >= 0; --var37) {
-													if (!class166.field1835 && var41.method2666(var37)) {
-														if (var36 != null && var36[var37] != null) {
-															byte var47 = 0;
-															if (var37 == 0) {
-																var47 = 18;
-															}
+							var16 = (var13 - var12 + 1) * (var15 + 1 - var14);
+							if (var16 >= 8) {
+								var17 = 240;
+								var18 = var3[var15][var12][var10] - var17;
+								var19 = var3[var14][var12][var10];
+								var4.Scene_addOccluder(var8, 2, var12 * 128, var13 * 128 + 128, var10 * 128, var10 * 128, var18, var19);
 
-															if (var37 == 1) {
-																var47 = 19;
-															}
+								for (var20 = var14; var20 <= var15; ++var20) {
+									for (var21 = var12; var21 <= var13; ++var21) {
+										var10000 = class81.field1179[var20][var21];
+										var10000[var10] &= ~var6;
+									}
+								}
+							}
+						}
 
-															if (var37 == 2) {
-																var47 = 20;
-															}
+						if ((class81.field1179[var9][var11][var10] & var7) != 0) {
+							var12 = var11;
+							var13 = var11;
+							var14 = var10;
 
-															if (var37 == 3) {
-																var47 = 21;
-															}
+							for (var15 = var10; var14 > 0 && (class81.field1179[var9][var11][var14 - 1] & var7) != 0; --var14) {
+							}
 
-															if (var37 == 4) {
-																var47 = 22;
-															}
+							while (var15 < var2 && (class81.field1179[var9][var11][var15 + 1] & var7) != 0) {
+								++var15;
+							}
 
-															GrandExchangeOfferOwnWorldComparator.insertMenuItem(var36[var37], AbstractWorldMapIcon.colorStartTag(16748608) + var45.name, var47, var41.id, var15, var16, -1, false, var22);
-														} else if (var37 == 2) {
-															GrandExchangeOfferOwnWorldComparator.insertMenuItem("Take", AbstractWorldMapIcon.colorStartTag(16748608) + var45.name, 20, var41.id, var15, var16, -1, false, var22);
-														}
-													}
-												}
+							label297:
+							while (var12 > 0) {
+								for (var16 = var14; var16 <= var15; ++var16) {
+									if ((class81.field1179[var9][var12 - 1][var16] & var7) == 0) {
+										break label297;
+									}
+								}
 
-												GrandExchangeOfferOwnWorldComparator.insertMenuItem("Examine", AbstractWorldMapIcon.colorStartTag(16748608) + var45.name, 1004, var41.id, var15, var16, -1, false, var22);
-											}
-										}
+								--var12;
+							}
+
+							label286:
+							while (var13 < var1) {
+								for (var16 = var14; var16 <= var15; ++var16) {
+									if ((class81.field1179[var9][var13 + 1][var16] & var7) == 0) {
+										break label286;
+									}
+								}
+
+								++var13;
+							}
+
+							if ((var15 - var14 + 1) * (var13 - var12 + 1) >= 4) {
+								var16 = var3[var9][var12][var14];
+								var4.Scene_addOccluder(var8, 4, var12 * 128, var13 * 128 + 128, var14 * 128, var15 * 128 + 128, var16, var16);
+
+								for (int var22 = var12; var22 <= var13; ++var22) {
+									for (var18 = var14; var18 <= var15; ++var18) {
+										var10000 = class81.field1179[var9][var22];
+										var10000[var18] &= ~var7;
 									}
 								}
 							}
@@ -273,63 +226,24 @@ public final class Canvas extends java.awt.Canvas {
 					}
 				}
 			}
-
-			++var9;
 		}
+
 	}
 
-	@ObfuscatedName("ok")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-613046261"
+		descriptor = "(Ldy;I)V",
+		garbageValue = "-1334175492"
 	)
-	static final void method334(int var0, int var1) {
-		if (Client.currentClanChannels[var0] != null) {
-			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3878()) {
-				ClanChannelMember var2 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
-				if (var2.rank == -1) {
-					PacketBufferNode var3 = class139.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_ADD_BANNED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
-					var3.packetBuffer.writeByte(3 + FriendsChat.stringCp1252NullTerminatedByteSize(var2.username.getName()));
-					var3.packetBuffer.writeByte(var0);
-					var3.packetBuffer.writeShort(var1);
-					var3.packetBuffer.writeStringCp1252NullTerminated(var2.username.getName());
-					Client.packetWriter.addNode(var3);
-				}
-			}
+	@Export("PcmStream_disable")
+	static final void PcmStream_disable(PcmStream var0) {
+		var0.active = false;
+		if (var0.sound != null) {
+			var0.sound.position = 0;
 		}
-	}
 
-	@ObfuscatedName("oe")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "1195462019"
-	)
-	static void method336(String var0) {
-		ApproximateRouteStrategy.field267 = var0;
-
-		try {
-			String var1 = class36.client.getParameter(Integer.toString(18));
-			String var2 = class36.client.getParameter(Integer.toString(13));
-			String var3 = var1 + "settings=" + var0 + "; version=1; path=/; domain=" + var2;
-			if (var0.isEmpty()) {
-				var3 = var3 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
-			} else {
-				String var4 = var3 + "; Expires=";
-				long var6 = class180.method3973() + 94608000000L;
-				Calendar.Calendar_calendar.setTime(new Date(var6));
-				int var8 = Calendar.Calendar_calendar.get(7);
-				int var9 = Calendar.Calendar_calendar.get(5);
-				int var10 = Calendar.Calendar_calendar.get(2);
-				int var11 = Calendar.Calendar_calendar.get(1);
-				int var12 = Calendar.Calendar_calendar.get(11);
-				int var13 = Calendar.Calendar_calendar.get(12);
-				int var14 = Calendar.Calendar_calendar.get(13);
-				String var5 = Calendar.DAYS_OF_THE_WEEK[var8 - 1] + ", " + var9 / 10 + var9 % 10 + "-" + Calendar.MONTH_NAMES_ENGLISH_GERMAN[0][var10] + "-" + var11 + " " + var12 / 10 + var12 % 10 + ":" + var13 / 10 + var13 % 10 + ":" + var14 / 10 + var14 % 10 + " GMT";
-				var3 = var4 + var5 + "; Max-Age=" + 94608000L;
-			}
-
-			class26.method389(class36.client, "document.cookie=\"" + var3 + "\"");
-		} catch (Throwable var15) {
+		for (PcmStream var1 = var0.firstSubStream(); var1 != null; var1 = var0.nextSubStream()) {
+			PcmStream_disable(var1);
 		}
 
 	}

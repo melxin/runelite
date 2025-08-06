@@ -1,78 +1,73 @@
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("cu")
+@ObfuscatedName("ci")
 @Implements("DynamicObject")
 public class DynamicObject extends Renderable {
-	@ObfuscatedName("as")
-	static String[] field825;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Ldl;"
+		descriptor = "Ldj;"
 	)
 	@Export("worldView")
 	final WorldView worldView;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1171399541
+		intValue = 117616549
 	)
 	@Export("id")
 	final int id;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1330516337
+		intValue = 1370420631
 	)
 	@Export("type")
 	final int type;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1850328327
+		intValue = 533161513
 	)
 	@Export("orientation")
 	final int orientation;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1610359691
+		intValue = -1169014325
 	)
 	@Export("plane")
 	final int plane;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 632029471
+		intValue = -723908345
 	)
 	@Export("x")
 	final int x;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1367261069
+		intValue = -202053319
 	)
 	@Export("y")
 	final int y;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lrk;"
+	)
+	final class465 field797;
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lip;"
+		descriptor = "Lrk;"
 	)
-	@Export("sequenceDefinition")
-	SequenceDefinition sequenceDefinition;
-	@ObfuscatedName("ah")
+	final class465 field794;
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1477283285
+		intValue = -1451529473
 	)
-	@Export("frame")
-	int frame;
-	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = -1584539933
-	)
-	@Export("cycleStart")
-	int cycleStart;
+	int field798;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ldl;IIIIIIIZLjr;)V"
+		descriptor = "(Ldj;IIIIIIIZLiq;)V"
 	)
 	DynamicObject(WorldView var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, Renderable var10) {
 		this.worldView = var1;
@@ -82,39 +77,44 @@ public class DynamicObject extends Renderable {
 		this.plane = var5;
 		this.x = var6;
 		this.y = var7;
+		this.field797 = new class465();
+		this.field794 = new class465();
 		if (var8 != -1) {
-			this.sequenceDefinition = VarpDefinition.SequenceDefinition_get(var8);
-			this.frame = 0;
-			this.cycleStart = Client.cycle - 1;
-			if (this.sequenceDefinition.restartMode == 0 && var10 instanceof DynamicObject) {
-				DynamicObject var11 = (DynamicObject)var10;
-				if (var11.sequenceDefinition == this.sequenceDefinition) {
-					this.frame = var11.frame;
-					this.cycleStart = var11.cycleStart;
-					return;
-				}
+			this.field797.method9569(var8);
+			this.field794.method9569(var8);
+			SequenceDefinition var11 = this.field797.method9571();
+			this.field798 = Client.cycle - 1;
+			if (var9 && var11.frameCount != -1) {
+				this.field797.method9613();
 			}
 
-			if (var9 && this.sequenceDefinition.frameCount != -1) {
-				if (!this.sequenceDefinition.isCachedModelIdSet()) {
-					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.frameIds.length);
-					this.cycleStart -= (int)(Math.random() * (double)this.sequenceDefinition.frameLengths[this.frame]);
+			if (var10 instanceof DynamicObject) {
+				DynamicObject var12 = (DynamicObject)var10;
+				if (var12.field797.method9595() == var8) {
+					if (var11.restartMode == 0) {
+						this.field797.method9591(var12.field797);
+						this.field798 = var12.field798;
+					}
+
+					this.field794.method9591(var12.field794);
+				} else if (!var12.field797.method9581()) {
+					this.field794.method9591(var12.field794);
 				} else {
-					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.getMayaAnimFrame());
+					this.field794.method9591(var12.field797);
 				}
 			}
 		}
 
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljm;",
-		garbageValue = "27"
+		descriptor = "(B)Ljx;",
+		garbageValue = "15"
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		ObjectComposition var1 = HealthBarConfig.getObjectDefinition(this.id);
+		ObjectComposition var1 = SpriteMask.getObjectDefinition(this.id);
 		if (var1.transforms != null) {
 			var1 = var1.transform();
 		}
@@ -137,212 +137,128 @@ public class DynamicObject extends Renderable {
 			int var6 = (var3 >> 1) + this.y;
 			int var7 = (var3 + 1 >> 1) + this.y;
 			int[][] var8 = this.worldView.tileHeights[this.plane];
-			int var9 = var8[var4][var7] + var8[var4][var6] + var8[var5][var6] + var8[var5][var7] >> 2;
+			int var9 = var8[var5][var7] + var8[var4][var6] + var8[var5][var6] + var8[var4][var7] >> 2;
 			int var10 = (this.x << 7) + (var2 << 6);
 			int var11 = (this.y << 7) + (var3 << 6);
-			if (this.sequenceDefinition != null) {
-				int var12 = Client.cycle - this.cycleStart;
-				if (this.sequenceDefinition.frameCount > 0 && this.sequenceDefinition.field2368 > 0) {
-					var12 %= this.sequenceDefinition.field2368;
-				}
-
-				if (!this.sequenceDefinition.isCachedModelIdSet()) {
-					for (; var12 > this.sequenceDefinition.frameLengths[this.frame]; class203.method4299(this.worldView, this.sequenceDefinition, this.frame, var10, var11, false)) {
-						var12 -= this.sequenceDefinition.frameLengths[this.frame];
-						++this.frame;
-						if (this.frame >= this.sequenceDefinition.frameIds.length) {
-							this.frame -= this.sequenceDefinition.frameCount;
-							if (this.frame < 0 || this.frame >= this.sequenceDefinition.frameIds.length) {
-								this.sequenceDefinition = null;
-								break;
-							}
-						}
-					}
-				} else {
-					int var13 = this.sequenceDefinition.getMayaAnimFrame();
-					this.frame += var12;
-					var12 = 0;
-					if (this.frame >= var13) {
-						this.frame = var13 - this.sequenceDefinition.frameCount;
-						if (this.frame < 0 || this.frame > var13) {
-							this.sequenceDefinition = null;
-						}
-					}
-
-					if (this.sequenceDefinition != null) {
-						class203.method4299(this.worldView, this.sequenceDefinition, this.frame, var10, var11, false);
-					}
-				}
-
-				this.cycleStart = Client.cycle - var12;
+			int var12 = Client.cycle - this.field798;
+			this.field798 = Client.cycle;
+			Client.field426.method10913(this.worldView, var10, var11, false);
+			int var13 = AttackOption.method2764(this.field797, var12, Client.field426);
+			Client.field426.method10914();
+			if ((var13 & 1) != 0 && (var13 & 8) != 0) {
+				this.field797.method9604();
 			}
 
-			return var1.getModelDynamic(this.type, this.orientation, var8, var10, var9, var11, this.sequenceDefinition, this.frame);
+			if (this.field797.method9601(30)) {
+				if (this.field794.method9570()) {
+					int var14 = AttackOption.method2764(this.field794, var12, (class464)null);
+					if ((var14 & 1) != 0 && (var14 & 8) != 0) {
+						this.field794.method9604();
+					}
+
+					if (!this.field794.method9601(30)) {
+						return var1.getModelDynamic(this.type, this.orientation, var8, var10, var9, var11, this.field794.method9571(), this.field794.method9573());
+					}
+				}
+
+				return null;
+			} else {
+				return var1.getModelDynamic(this.type, this.orientation, var8, var10, var9, var11, this.field797.method9571(), this.field797.method9573());
+			}
 		}
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(ILcr;ZI)I",
-		garbageValue = "1296407636"
+		descriptor = "(B)V",
+		garbageValue = "-86"
 	)
-	static int method1993(int var0, Script var1, boolean var2) {
-		boolean var3 = true;
-		Widget var4;
-		if (var0 >= 2000) {
-			var0 -= 1000;
-			var4 = ClientPreferences.widgetDefinition.method7286(Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize]);
-			var3 = false;
-		} else {
-			var4 = var2 ? class539.scriptDotWidget : Huffman.scriptActiveWidget;
+	static void method1988() {
+		Iterator var0 = Messages.Messages_hashTable.iterator();
+
+		while (var0.hasNext()) {
+			Message var1 = (Message)var0.next();
+			var1.clearIsFromIgnored();
 		}
 
-		int var11;
-		if (var0 == ScriptOpcodes.CC_SETOP) {
-			var11 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] - 1;
-			if (var11 >= 0 && var11 < 32) {
-				var4.setAction(var11, (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize]);
-				return 1;
-			} else {
-				--class175.Interpreter_objectStackSize;
-				return 1;
-			}
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "2092670116"
+	)
+	static void method1987(int var0) {
+		if (var0 != Login.loginIndex) {
+			Login.loginIndex = var0;
+		}
+	}
+
+	@ObfuscatedName("jj")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "2135382816"
+	)
+	static void method1984() {
+		for (class271 var0 = (class271)Client.field416.last(); var0 != null; var0 = (class271)Client.field416.previous()) {
+			var0.vmethod10593();
+		}
+
+	}
+
+	@ObfuscatedName("ld")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)Lkq;",
+		garbageValue = "-24"
+	)
+	static RouteStrategy method1990(int var0, int var1) {
+		Client.field590.approxDestinationX = var0;
+		Client.field590.approxDestinationY = var1;
+		Client.field590.approxDestinationSizeX = 1;
+		Client.field590.approxDestinationSizeY = 1;
+		return Client.field590;
+	}
+
+	@ObfuscatedName("nn")
+	@ObfuscatedSignature(
+		descriptor = "(Lox;I)Z",
+		garbageValue = "-1061158720"
+	)
+	static final boolean method1989(Widget var0) {
+		int var1 = var0.contentType;
+		if (var1 == 205) {
+			Client.logoutTimer = 250;
+			return true;
 		} else {
-			int var6;
-			if (var0 == ScriptOpcodes.CC_SETDRAGGABLE) {
-				Interpreter.Interpreter_intStackSize -= 2;
-				var11 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize];
-				var6 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
-				var4.parent = ClientPreferences.widgetDefinition.getWidgetChild(var11, var6);
-				return 1;
-			} else if (var0 == ScriptOpcodes.CC_SETDRAGGABLEBEHAVIOR) {
-				var4.isScrollBar = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] == 1;
-				return 1;
-			} else if (var0 == ScriptOpcodes.CC_SETDRAGDEADZONE) {
-				var4.dragZoneSize = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-				return 1;
-			} else if (var0 == ScriptOpcodes.CC_SETDRAGDEADTIME) {
-				var4.dragThreshold = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-				return 1;
-			} else if (var0 == ScriptOpcodes.CC_SETOPBASE) {
-				var4.dataText = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-				return 1;
-			} else if (var0 == ScriptOpcodes.CC_SETTARGETVERB) {
-				var4.spellActionName = (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-				return 1;
-			} else if (var0 == ScriptOpcodes.CC_CLEAROPS) {
-				var4.actions = null;
-				var4.field4064 = null;
-				return 1;
-			} else if (var0 == 1308) {
-				var4.prioritizeMenuEntry = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] == 1;
-				return 1;
-			} else if (var0 == 1309) {
-				--Interpreter.Interpreter_intStackSize;
-				return 1;
-			} else if (var0 == 1310) {
-				var11 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] - 1;
-				if (var11 >= 0 && var11 <= 9 && var4.field4064 != null) {
-					var4.field4064[var11] = null;
-					return 1;
-				} else {
-					return 1;
-				}
-			} else if (var0 == 1311) {
-				var11 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] - 1;
-				var6 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] - 1;
-				if (var6 >= 0 && var6 <= 9 && var11 >= 0) {
-					var4.method7794(var6, var11, (String)Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize]);
-					return 1;
-				} else {
-					throw new RuntimeException();
-				}
-			} else if (var0 == 1312) {
-				var11 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-				if (var11 == -1) {
-					var4.targetPriority = -209307052;
-				} else if (var11 >= 1 && var11 <= 10) {
-					var4.targetPriority = (var11 - 1) * -52326763;
-				}
+			int var2;
+			int var3;
+			if (var1 >= 300 && var1 <= 313) {
+				var2 = (var1 - 300) / 2;
+				var3 = var1 & 1;
+				Client.playerAppearance.changeAppearance(var2, var3 == 1);
+			}
 
-				return 1;
+			if (var1 >= 314 && var1 <= 323) {
+				var2 = (var1 - 314) / 2;
+				var3 = var1 & 1;
+				Client.playerAppearance.method7516(var2, var3 == 1);
+			}
+
+			if (var1 == 324) {
+				Client.playerAppearance.method7517(0);
+			}
+
+			if (var1 == 325) {
+				Client.playerAppearance.method7517(1);
+			}
+
+			if (var1 == 326) {
+				PacketBufferNode var4 = class291.getPacketBufferNode(ClientPacket.UPDATE_PLAYER_MODEL, Client.packetWriter.isaacCipher);
+				Client.playerAppearance.write(var4.packetBuffer);
+				Client.packetWriter.addNode(var4);
+				return true;
 			} else {
-				int var7;
-				byte[] var8;
-				if (var0 != ScriptOpcodes.CC_SETOPKEY) {
-					byte var5;
-					if (var0 == ScriptOpcodes.CC_SETOPTKEY) {
-						Interpreter.Interpreter_intStackSize -= 2;
-						var5 = 10;
-						var8 = new byte[]{(byte)Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize]};
-						byte[] var9 = new byte[]{(byte)Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1]};
-						class132.Widget_setKey(var4, var5, var8, var9);
-						return 1;
-					} else if (var0 == ScriptOpcodes.CC_SETOPKEYRATE) {
-						Interpreter.Interpreter_intStackSize -= 3;
-						var11 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize] - 1;
-						var6 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1];
-						var7 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 2];
-						if (var11 >= 0 && var11 <= 9) {
-							HttpRequest.Widget_setKeyRate(var4, var11, var6, var7);
-							return 1;
-						} else {
-							throw new RuntimeException();
-						}
-					} else if (var0 == ScriptOpcodes.CC_SETOPTKEYRATE) {
-						var5 = 10;
-						var6 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-						var7 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-						HttpRequest.Widget_setKeyRate(var4, var5, var6, var7);
-						return 1;
-					} else if (var0 == ScriptOpcodes.CC_SETOPKEYIGNOREHELD) {
-						--Interpreter.Interpreter_intStackSize;
-						var11 = Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize] - 1;
-						if (var11 >= 0 && var11 <= 9) {
-							ClanChannel.Widget_setKeyIgnoreHeld(var4, var11);
-							return 1;
-						} else {
-							throw new RuntimeException();
-						}
-					} else if (var0 == ScriptOpcodes.CC_SETOPTKEYIGNOREHELD) {
-						var5 = 10;
-						ClanChannel.Widget_setKeyIgnoreHeld(var4, var5);
-						return 1;
-					} else {
-						return 2;
-					}
-				} else {
-					byte[] var10 = null;
-					var8 = null;
-					if (var3) {
-						Interpreter.Interpreter_intStackSize -= 10;
-
-						for (var7 = 0; var7 < 10 && Interpreter.Interpreter_intStack[var7 + Interpreter.Interpreter_intStackSize] >= 0; var7 += 2) {
-						}
-
-						if (var7 > 0) {
-							var10 = new byte[var7 / 2];
-							var8 = new byte[var7 / 2];
-
-							for (var7 -= 2; var7 >= 0; var7 -= 2) {
-								var10[var7 / 2] = (byte)Interpreter.Interpreter_intStack[var7 + Interpreter.Interpreter_intStackSize];
-								var8[var7 / 2] = (byte)Interpreter.Interpreter_intStack[var7 + Interpreter.Interpreter_intStackSize + 1];
-							}
-						}
-					} else {
-						Interpreter.Interpreter_intStackSize -= 2;
-						var10 = new byte[]{(byte)Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize]};
-						var8 = new byte[]{(byte)Interpreter.Interpreter_intStack[Interpreter.Interpreter_intStackSize + 1]};
-					}
-
-					var7 = Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize] - 1;
-					if (var7 >= 0 && var7 <= 9) {
-						class132.Widget_setKey(var4, var7, var10, var8);
-						return 1;
-					} else {
-						throw new RuntimeException();
-					}
-				}
+				return false;
 			}
 		}
 	}

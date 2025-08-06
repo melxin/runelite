@@ -4,85 +4,74 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dr")
+@ObfuscatedName("dd")
 @Implements("TileItem")
 public final class TileItem extends Renderable {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 2128121917
+		intValue = -672817003
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -783328143
+		intValue = -5181231
 	)
 	@Export("quantity")
 	int quantity;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -766714879
+		intValue = 596598111
 	)
 	@Export("visibleTime")
 	int visibleTime;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 2130412817
+		intValue = 1673794713
 	)
 	@Export("despawnTime")
 	int despawnTime;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 644585335
+		intValue = -426251315
 	)
 	@Export("ownership")
 	int ownership;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@Export("isPrivate")
 	boolean isPrivate;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -2055362143
+		intValue = 1631400373
 	)
 	@Export("flag")
 	int flag;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "Lgi;"
 	)
-	PlayerCompositionColorTextureOverride field1206;
+	PlayerCompositionColorTextureOverride field1207;
 
 	TileItem() {
 		this.flag = 31;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "-729609244"
+		garbageValue = "-1989335864"
 	)
 	@Export("setFlag")
 	void setFlag(int var1) {
 		this.flag = var1;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljm;",
-		garbageValue = "27"
+		descriptor = "(IB)Z",
+		garbageValue = "-59"
 	)
-	@Export("getModel")
-	protected final Model getModel() {
-		ItemComposition var1 = SceneTilePaint.ItemDefinition_get(this.id);
-		return this.field1206 == null ? var1.getModel(this.quantity) : var1.method4455(this.field1206);
-	}
-
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1508702421"
-	)
-	boolean method2666(int var1) {
+	boolean method2771(int var1) {
 		if (var1 >= 0 && var1 <= 4) {
 			return (this.flag & 1 << var1) != 0;
 		} else {
@@ -90,76 +79,72 @@ public final class TileItem extends Renderable {
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lgi;",
-		garbageValue = "26"
+		descriptor = "(B)Ljx;",
+		garbageValue = "15"
 	)
-	PlayerCompositionColorTextureOverride method2668() {
-		return this.field1206;
+	@Export("getModel")
+	protected final Model getModel() {
+		ItemComposition var1 = ObjectComposition.ItemDefinition_get(this.id);
+		return this.field1207 == null ? var1.getModel(this.quantity) : var1.method4623(this.field1207);
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lgi;",
+		garbageValue = "1736826557"
+	)
+	PlayerCompositionColorTextureOverride method2769() {
+		return this.field1207;
+	}
+
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(Lgi;I)V",
-		garbageValue = "-1190605996"
+		garbageValue = "2010721181"
 	)
-	void method2669(PlayerCompositionColorTextureOverride var1) {
-		this.field1206 = var1;
+	void method2770(PlayerCompositionColorTextureOverride var1) {
+		this.field1207 = var1;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-828541258"
+		garbageValue = "1247452480"
 	)
-	void method2670() {
-		this.field1206 = null;
+	void method2780() {
+		this.field1207 = null;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lho;",
-		garbageValue = "-2145441165"
+		descriptor = "(IZII)V",
+		garbageValue = "69797891"
 	)
-	public static KitDefinition method2686(int var0) {
-		KitDefinition var1 = (KitDefinition)KitDefinition.KitDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else if (ClanSettings.KitDefinition_archive == null) {
-			return null;
+	public static final void method2783(int var0, boolean var1, int var2) {
+		if (var0 >= 8000 && var0 <= 48000) {
+			PcmPlayer.field1313 = var0;
+			class475.PcmPlayer_stereo = var1;
+			AuthenticationScheme.field1584 = var2;
 		} else {
-			byte[] var2 = ClanSettings.KitDefinition_archive.takeFile(3, var0);
-			var1 = new KitDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			KitDefinition.KitDefinition_cached.put(var1, (long)var0);
-			return var1;
+			throw new IllegalArgumentException();
 		}
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("cg")
 	@ObfuscatedSignature(
-		descriptor = "([BI)[I",
-		garbageValue = "-96111231"
+		descriptor = "(ILce;ZI)I",
+		garbageValue = "-214622737"
 	)
-	public static int[] method2683(byte[] var0) {
-		if (var0 != null && var0.length != 0 && var0.length <= 8) {
-			int[] var1 = new int[var0.length];
-
-			for (int var2 = 0; var2 < var0.length; ++var2) {
-				if (var0[var2] < 0 || var0[var2] >= class603.field5864.length) {
-					return null;
-				}
-
-				var1[var2] = class603.field5864[var0[var2]];
-			}
-
-			return var1;
+	static int method2782(int var0, Script var1, boolean var2) {
+		if (var0 == 6809) {
+			int var3 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
+			ObjectComposition var4 = SpriteMask.getObjectDefinition(var3);
+			Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = var4 != null ? var4.name : "";
+			return 1;
 		} else {
-			return null;
+			return 2;
 		}
 	}
 }

@@ -4,56 +4,33 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pe")
+@ObfuscatedName("pp")
 @Implements("ArchiveDiskAction")
 public class ArchiveDiskAction extends Node {
-	@ObfuscatedName("ky")
-	@ObfuscatedSignature(
-		descriptor = "Lpu;"
-	)
-	static Archive field4689;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("jl")
+	static String field4784;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 960110547
+		intValue = 1915325405
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@Export("data")
 	public byte[] data;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Ltb;"
+		descriptor = "Ltp;"
 	)
 	@Export("archiveDisk")
 	public ArchiveDisk archiveDisk;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lpu;"
+		descriptor = "Lpo;"
 	)
 	@Export("archive")
 	public Archive archive;
 
 	ArchiveDiskAction() {
-	}
-
-	@ObfuscatedName("cw")
-	@ObfuscatedSignature(
-		descriptor = "(Lve;B)Ljava/lang/Object;",
-		garbageValue = "-110"
-	)
-	static Object method8009(class563 var0) {
-		if (var0 == null) {
-			throw new IllegalStateException("popValueOfType() failure - null baseVarType");
-		} else {
-			switch(var0.field5596) {
-			case 0:
-				return Interpreter.Interpreter_objectStack[--class175.Interpreter_objectStackSize];
-			case 3:
-				return Interpreter.Interpreter_intStack[--Interpreter.Interpreter_intStackSize];
-			default:
-				throw new IllegalStateException("popValueOfType() failure - unsupported type");
-			}
-		}
 	}
 }

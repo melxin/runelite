@@ -1,18 +1,22 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ev")
+@ObfuscatedName("em")
 @Implements("UserComparator6")
 public class UserComparator6 extends AbstractUserComparator {
-	@ObfuscatedName("na")
-	@ObfuscatedSignature(
-		descriptor = "Ldg;"
+	@ObfuscatedName("lh")
+	@ObfuscatedGetter(
+		intValue = 332407637
 	)
-	@Export("pcmStreamMixer")
-	static PcmStreamMixer pcmStreamMixer;
-	@ObfuscatedName("ap")
+	@Export("worldPort")
+	static int worldPort;
+	@ObfuscatedName("pf")
+	@Export("regionMapArchives")
+	static byte[][] regionMapArchives;
+	@ObfuscatedName("al")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -20,10 +24,10 @@ public class UserComparator6 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lsl;Lsl;B)I",
-		garbageValue = "8"
+		descriptor = "(Lto;Lto;I)I",
+		garbageValue = "1616549487"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -38,13 +42,17 @@ public class UserComparator6 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("me")
-	@ObfuscatedSignature(
-		descriptor = "(ZB)V",
-		garbageValue = "-65"
-	)
-	@Export("setTapToDrop")
-	static void setTapToDrop(boolean var0) {
-		Client.tapToDrop = var0;
+	@ObfuscatedName("al")
+	public static int method3559(int var0, double var1) {
+		double var3 = (double)(var0 >> 16 & 255) / 256.0D;
+		double var5 = (double)(var0 >> 8 & 255) / 256.0D;
+		double var7 = (double)(var0 & 255) / 256.0D;
+		var3 = Math.pow(var3, var1);
+		var5 = Math.pow(var5, var1);
+		var7 = Math.pow(var7, var1);
+		int var9 = (int)(256.0D * var3);
+		int var10 = (int)(var5 * 256.0D);
+		int var11 = (int)(256.0D * var7);
+		return var11 + (var10 << 8) + (var9 << 16) + -16777216;
 	}
 }

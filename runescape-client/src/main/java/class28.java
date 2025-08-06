@@ -1,44 +1,289 @@
+import java.util.Arrays;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("bl")
+@ObfuscatedName("bi")
 public class class28 {
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aa")
+	@Export("Tiles_shapes")
+	static byte[][][] Tiles_shapes;
+	@ObfuscatedName("mm")
 	@ObfuscatedGetter(
-		intValue = 2142261841
+		intValue = 388119823
 	)
-	@Export("cacheGamebuild")
-	static int cacheGamebuild;
-	@ObfuscatedName("dy")
-	@Export("KeyHandler_keyCodes")
-	static int[] KeyHandler_keyCodes;
-	@ObfuscatedName("jf")
-	@ObfuscatedSignature(
-		descriptor = "Lqt;"
+	@Export("cameraYaw")
+	static int cameraYaw;
+	@ObfuscatedName("qk")
+	@ObfuscatedGetter(
+		intValue = -707976655
 	)
-	@Export("clientLanguage")
-	static Language clientLanguage;
+	@Export("oculusOrbFocalPointX")
+	static int oculusOrbFocalPointX;
+	@ObfuscatedName("ah")
+	int[] field130;
+	@ObfuscatedName("ap")
+	int[] field131;
 
-	static {
-		KeyHandler_keyCodes = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, 85, 80, 84, -1, 91, -1, -1, -1, 81, 82, 86, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1, -1, 83, 104, 105, 103, 102, 96, 98, 97, 99, -1, -1, -1, -1, -1, -1, -1, 25, 16, 17, 18, 19, 20, 21, 22, 23, 24, -1, -1, -1, -1, -1, -1, -1, 48, 68, 66, 50, 34, 51, 52, 53, 39, 54, 55, 56, 70, 69, 40, 41, 32, 35, 49, 36, 38, 67, 33, 65, 37, 64, -1, -1, -1, -1, -1, 228, 231, 227, 233, 224, 219, 225, 230, 226, 232, 89, 87, -1, 88, 229, 90, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, -1, -1, -1, 101, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 100, -1, 87, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+	public class28() {
+		this.field130 = new int[112];
+		this.field131 = new int[192];
+		Arrays.fill(this.field130, 3);
+		Arrays.fill(this.field131, 3);
 	}
 
-	@ObfuscatedName("jp")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Ldl;IIB)V",
-		garbageValue = "-11"
+		descriptor = "(III)V",
+		garbageValue = "-469114926"
 	)
-	static final void method437(WorldView var0, int var1, int var2) {
-		if (Client.hintArrowType == 2) {
-			int var3 = Client.hintArrowSubX * 4096 + (Client.hintArrowX - var0.baseX << 7);
-			int var4 = Client.hintArrowSubY * 64 + (Client.hintArrowY - var0.baseY << 7);
-			GraphicsObject.worldToScreen(var0, var3, var4, var3, var4, Client.hintArrowHeight * 4);
-			if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
-				Varps.headIconHintSprites[0].drawTransBgAt(Client.viewportTempX + var1 - 12, var2 + Client.viewportTempY - 28);
+	public void method420(int var1, int var2) {
+		if (this.method428(var1) && this.method430(var2)) {
+			this.field130[var1] = var2;
+		}
+
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(CIB)V",
+		garbageValue = "99"
+	)
+	public void method442(char var1, int var2) {
+		if (this.method429(var1) && this.method430(var2)) {
+			this.field131[var1] = var2;
+		}
+
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "1228605709"
+	)
+	public int method422(int var1) {
+		return this.method428(var1) ? this.field130[var1] : 0;
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(CB)I",
+		garbageValue = "-58"
+	)
+	public int method423(char var1) {
+		return this.method429(var1) ? this.field131[var1] : 0;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Z",
+		garbageValue = "-95"
+	)
+	public boolean method424(int var1) {
+		return this.method428(var1) && (this.field130[var1] == 1 || this.field130[var1] == 3);
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(CI)Z",
+		garbageValue = "-803839082"
+	)
+	public boolean method425(char var1) {
+		return this.method429(var1) && (this.field131[var1] == 1 || this.field131[var1] == 3);
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "-334351263"
+	)
+	public boolean method441(int var1) {
+		return this.method428(var1) && (this.field130[var1] == 2 || this.field130[var1] == 3);
+	}
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(CB)Z",
+		garbageValue = "88"
+	)
+	public boolean method427(char var1) {
+		return this.method429(var1) && (this.field131[var1] == 2 || this.field131[var1] == 3);
+	}
+
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Z",
+		garbageValue = "105"
+	)
+	boolean method428(int var1) {
+		if (var1 >= 0 && var1 < 112) {
+			return true;
+		} else {
+			System.out.println("Invalid keycode: " + var1);
+			return false;
+		}
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(CI)Z",
+		garbageValue = "-1389239308"
+	)
+	boolean method429(char var1) {
+		if (var1 >= 0 && var1 < 192) {
+			return true;
+		} else {
+			System.out.println("Invalid keychar: " + var1);
+			return false;
+		}
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "-1188604496"
+	)
+	boolean method430(int var1) {
+		if (var1 >= 0 && var1 < 4) {
+			return true;
+		} else {
+			System.out.println("Invalid mode: " + var1);
+			return false;
+		}
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lfe;",
+		garbageValue = "676319445"
+	)
+	static class145 method461(int var0) {
+		class145 var1 = (class145)HealthBarConfig.findEnumerated(UserComparator7.method3500(), var0);
+		if (var1 == null) {
+			var1 = class145.field1722;
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "1513405883"
+	)
+	static final void method460(String var0) {
+		PacketBufferNode var1 = class291.getPacketBufferNode(ClientPacket.FRIEND_ADDUSER, Client.packetWriter.isaacCipher);
+		var1.packetBuffer.writeByte(class283.stringCp1252NullTerminatedByteSize(var0));
+		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
+		Client.packetWriter.addNode(var1);
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(Lox;II)V",
+		garbageValue = "1497245549"
+	)
+	@Export("Widget_setKeyIgnoreHeld")
+	static final void Widget_setKeyIgnoreHeld(Widget var0, int var1) {
+		if (var0.field4145 == null) {
+			throw new RuntimeException();
+		} else {
+			if (var0.field4181 == null) {
+				var0.field4181 = new int[var0.field4145.length];
 			}
 
+			var0.field4181[var1] = Integer.MAX_VALUE;
 		}
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(ILce;ZI)I",
+		garbageValue = "-981772689"
+	)
+	static int method432(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? class392.scriptDotWidget : Interpreter.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
+			Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = class255.Widget_unpackTargetMask(class516.getWidgetFlags(var3));
+			return 1;
+		} else if (var0 != ScriptOpcodes.CC_GETOP) {
+			if (var0 == ScriptOpcodes.CC_GETOPBASE) {
+				if (var3.dataText == null) {
+					Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = "";
+				} else {
+					Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = var3.dataText;
+				}
+
+				return 1;
+			} else {
+				return 2;
+			}
+		} else {
+			int var4 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
+			--var4;
+			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
+				Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = var3.actions[var4];
+			} else {
+				Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = "";
+			}
+
+			return 1;
+		}
+	}
+
+	@ObfuscatedName("cu")
+	@ObfuscatedSignature(
+		descriptor = "(ILce;ZB)I",
+		garbageValue = "-22"
+	)
+	static int method453(int var0, Script var1, boolean var2) {
+		if (var0 == 7900) {
+			int var3 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
+			Client.field535 = Math.max(var3, 0);
+			return 1;
+		} else if (var0 == 7901) {
+			Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = Client.field535;
+			return 1;
+		} else {
+			return 2;
+		}
+	}
+
+	@ObfuscatedName("cx")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Ljava/lang/Object;",
+		garbageValue = "99"
+	)
+	static Object method462(int var0) {
+		return var0 == -1 ? null : class546.method10651((class570)HealthBarConfig.findEnumerated(class570.method11060(), var0));
+	}
+
+	@ObfuscatedName("my")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIII)V",
+		garbageValue = "-1834103823"
+	)
+	@Export("drawScrollBar")
+	static final void drawScrollBar(int var0, int var1, int var2, int var3, int var4) {
+		class393.scrollBarSprites[0].drawAt(var0, var1);
+		class393.scrollBarSprites[1].drawAt(var0, var3 + var1 - 16);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1 + 16, 16, var3 - 32, Client.field456);
+		int var5 = var3 * (var3 - 32) / var4;
+		if (var5 < 8) {
+			var5 = 8;
+		}
+
+		int var6 = (var3 - 32 - var5) * var2 / (var4 - var3);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var6 + var1 + 16, 16, var5, Client.field411);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0, var6 + var1 + 16, var5, Client.field354);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 1, var6 + var1 + 16, var5, Client.field354);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 16, 16, Client.field354);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 17, 16, Client.field354);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 15, var6 + var1 + 16, var5, Client.field290);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 14, var6 + var1 + 17, var5 - 1, Client.field290);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var5 + var6 + var1 + 15, 16, Client.field290);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0 + 1, var6 + var5 + var1 + 14, 15, Client.field290);
 	}
 }

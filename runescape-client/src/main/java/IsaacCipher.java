@@ -1,40 +1,39 @@
-import java.awt.Component;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("wo")
+@ObfuscatedName("xs")
 @Implements("IsaacCipher")
 public final class IsaacCipher {
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -103606211
+		intValue = 553372047
 	)
 	@Export("valuesRemaining")
 	int valuesRemaining;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@Export("results")
 	int[] results;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@Export("mm")
 	int[] mm;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -2129081933
+		intValue = -694352919
 	)
 	@Export("aa")
 	int aa;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -587095419
+		intValue = -396141067
 	)
 	@Export("bb")
 	int bb;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -1171896669
+		intValue = -583012815
 	)
 	@Export("cc")
 	int cc;
@@ -47,13 +46,13 @@ public final class IsaacCipher {
 			this.results[var2] = var1[var2];
 		}
 
-		this.method11470();
+		this.method11839();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "2110640169"
+		garbageValue = "-1228669602"
 	)
 	@Export("nextInt")
 	public final int nextInt() {
@@ -65,12 +64,12 @@ public final class IsaacCipher {
 		return this.results[--this.valuesRemaining];
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "774582226"
+		garbageValue = "-2089410012"
 	)
-	public final int method11468() {
+	public final int method11837() {
 		if (this.valuesRemaining == 0) {
 			this.generateMoreResults();
 			this.valuesRemaining = 256;
@@ -79,10 +78,10 @@ public final class IsaacCipher {
 		return this.results[this.valuesRemaining - 1];
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-44"
+		descriptor = "(I)V",
+		garbageValue = "-942236415"
 	)
 	@Export("generateMoreResults")
 	final void generateMoreResults() {
@@ -102,20 +101,20 @@ public final class IsaacCipher {
 				this.aa ^= this.aa >>> 16;
 			}
 
-			this.aa += this.mm[128 + var1 & 255];
+			this.aa += this.mm[var1 + 128 & 255];
 			int var3;
-			this.mm[var1] = var3 = this.mm[(var2 & 1020) >> 2] + this.bb + this.aa;
+			this.mm[var1] = var3 = this.mm[(var2 & 1020) >> 2] + this.aa + this.bb;
 			this.results[var1] = this.bb = this.mm[(var3 >> 8 & 1020) >> 2] + var2;
 		}
 
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1100004164"
+		garbageValue = "-2082292876"
 	)
-	final void method11470() {
+	final void method11839() {
 		int var9 = -1640531527;
 		int var8 = -1640531527;
 		int var7 = -1640531527;
@@ -241,17 +240,5 @@ public final class IsaacCipher {
 
 		this.generateMoreResults();
 		this.valuesRemaining = 256;
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/awt/Component;B)V",
-		garbageValue = "26"
-	)
-	static void method11481(Component var0) {
-		var0.removeMouseListener(MouseHandler.MouseHandler_instance);
-		var0.removeMouseMotionListener(MouseHandler.MouseHandler_instance);
-		var0.removeFocusListener(MouseHandler.MouseHandler_instance);
-		MouseHandler.MouseHandler_currentButtonVolatile = 0;
 	}
 }

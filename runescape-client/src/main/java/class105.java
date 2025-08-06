@@ -4,10 +4,10 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ei")
 public interface class105 {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldc;",
-		garbageValue = "91183909"
+		descriptor = "(I)Ldh;",
+		garbageValue = "-1008109510"
 	)
 	@Export("player")
 	PcmPlayer player();

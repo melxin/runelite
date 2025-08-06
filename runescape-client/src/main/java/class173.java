@@ -1,81 +1,53 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gp")
+@ObfuscatedName("ga")
 public class class173 extends class149 {
-	@ObfuscatedName("cl")
+	@ObfuscatedName("ke")
 	@ObfuscatedSignature(
-		descriptor = "Lwy;"
+		descriptor = "Lpo;"
 	)
-	@Export("titleboxSprite")
-	static IndexedSprite titleboxSprite;
-	@ObfuscatedName("ap")
+	static Archive field1915;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 409837471
+		intValue = 58547053
 	)
-	int field1872;
-	@ObfuscatedName("aj")
+	int field1913;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		longValue = -3973325281832991069L
+		longValue = -49561878339763589L
 	)
-	long field1869;
+	long field1912;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfp;"
+		descriptor = "Lfg;"
 	)
 	final class152 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfp;)V"
+		descriptor = "(Lfg;)V"
 	)
 	class173(class152 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;I)V",
-		garbageValue = "-1635342078"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1324754926"
 	)
-	void vmethod3913(Buffer var1) {
-		this.field1872 = var1.readInt();
-		this.field1869 = var1.readLong();
+	void vmethod4086(Buffer var1) {
+		this.field1913 = var1.readInt();
+		this.field1912 = var1.readLong();
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lgu;I)V",
-		garbageValue = "-1572789515"
+		descriptor = "(Lgk;I)V",
+		garbageValue = "1924878263"
 	)
-	void vmethod3914(ClanSettings var1) {
-		var1.method3758(this.field1872, this.field1869);
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(Lks;Lks;FLks;I)V",
-		garbageValue = "-1666698759"
-	)
-	static void method3918(WorldEntityCoord var0, WorldEntityCoord var1, float var2, WorldEntityCoord var3) {
-		float var4 = Math.max(0.0F, Math.min(var2, 1.0F));
-		int var5 = var1.getX() - var0.getX();
-		int var6 = var1.getY() - var0.getY();
-		var5 = (int)(var4 * (float)var5);
-		var6 = (int)(var4 * (float)var6);
-		var3.method6057(var0.getX() + var5, var0.getY() + var6);
-		int var8 = var0.getCurrentRotationAngle();
-		int var9 = var1.getCurrentRotationAngle();
-		int var10 = var9 - var8 & 2047;
-		int var7;
-		if (var10 > 1024) {
-			var7 = -(2048 - var10);
-		} else {
-			var7 = var10;
-		}
-
-		var10 = (int)((float)var7 * var4);
-		var3.setCurrentRotationAngle(var0.getCurrentRotationAngle() + var10);
+	void vmethod4088(ClanSettings var1) {
+		var1.method3941(this.field1913, this.field1912);
 	}
 }

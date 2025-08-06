@@ -2,77 +2,53 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gc")
+@ObfuscatedName("gb")
 public class class168 extends class149 {
-	@ObfuscatedName("bo")
+	@ObfuscatedName("au")
+	public static short[] field1878;
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1911563409
+		intValue = 1513463383
 	)
-	static int field1846;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = 997150031
-	)
-	int field1847;
+	int field1876;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfp;"
+		descriptor = "Lfg;"
 	)
 	final class152 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfp;)V"
+		descriptor = "(Lfg;)V"
 	)
 	class168(class152 var1) {
 		this.this$0 = var1;
-		this.field1847 = -1;
+		this.field1876 = -1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lwt;I)V",
-		garbageValue = "-1635342078"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1324754926"
 	)
-	void vmethod3913(Buffer var1) {
-		this.field1847 = var1.readUnsignedShort();
+	void vmethod4086(Buffer var1) {
+		this.field1876 = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lgu;I)V",
-		garbageValue = "-1572789515"
+		descriptor = "(Lgk;I)V",
+		garbageValue = "1924878263"
 	)
-	void vmethod3914(ClanSettings var1) {
-		var1.method3753(this.field1847);
+	void vmethod4088(ClanSettings var1) {
+		var1.method3908(this.field1876);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Ltv;",
-		garbageValue = "-744024149"
+		descriptor = "(I)V",
+		garbageValue = "534739515"
 	)
-	public static class506[] method3866() {
-		return new class506[]{class506.field5272, class506.field5264, class506.field5265, class506.field5263};
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(Lwt;II)Ljava/lang/String;",
-		garbageValue = "250730910"
-	)
-	static String method3872(Buffer var0, int var1) {
-		try {
-			int var2 = var0.readUShortSmart();
-			if (var2 > var1) {
-				var2 = var1;
-			}
-
-			byte[] var3 = new byte[var2];
-			var0.offset += class351.huffman.decompress(var0.array, var0.offset, var3, 0, var2);
-			String var4 = KeyHandler.decodeStringCp1252(var3, 0, var2);
-			return var4;
-		} catch (Exception var6) {
-			return "Cabbage";
-		}
+	public static void method4033() {
+		class197.field2022.clear();
 	}
 }

@@ -4,104 +4,99 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tg")
+@ObfuscatedName("tl")
 @Implements("AbstractSocket")
 public abstract class AbstractSocket {
 	AbstractSocket() {
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "-118"
+		descriptor = "(II)Z",
+		garbageValue = "2130905796"
 	)
 	@Export("isAvailable")
 	public abstract boolean isAvailable(int var1) throws IOException;
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-837832776"
+		garbageValue = "-1013495030"
 	)
 	@Export("available")
 	public abstract int available() throws IOException;
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-122"
+		descriptor = "(I)I",
+		garbageValue = "-760552642"
 	)
 	@Export("readUnsignedByte")
 	public abstract int readUnsignedByte() throws IOException;
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)I",
-		garbageValue = "-2009179957"
+		descriptor = "([BIIB)I",
+		garbageValue = "-37"
 	)
 	@Export("read")
 	public abstract int read(byte[] var1, int var2, int var3) throws IOException;
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "([BIIB)V",
-		garbageValue = "50"
+		descriptor = "([BIIS)V",
+		garbageValue = "-11244"
 	)
 	@Export("write")
 	public abstract void write(byte[] var1, int var2, int var3) throws IOException;
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "797434832"
+		garbageValue = "115773402"
 	)
 	@Export("close")
 	public abstract void close();
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "([I[Ljava/lang/Object;IIB)V",
-		garbageValue = "60"
+		descriptor = "(I)V",
+		garbageValue = "-2048096921"
 	)
-	public static void method9821(int[] var0, Object[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			int var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			Object var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
-			int var8 = var6 == Integer.MAX_VALUE ? 0 : 1;
-
-			for (int var9 = var2; var9 < var3; ++var9) {
-				if (var0[var9] < (var9 & var8) + var6) {
-					int var10 = var0[var9];
-					var0[var9] = var0[var5];
-					var0[var5] = var10;
-					Object var11 = var1[var9];
-					var1[var9] = var1[var5];
-					var1[var5++] = var11;
-				}
+	static void method10221() {
+		Login.Login_username = Login.Login_username.trim();
+		if (Login.Login_username.isEmpty()) {
+			class460.setLoginResponseString("Please enter your username.", "If you created your account after November", "2010, this will be the creation email address.");
+		} else {
+			long var1 = RouteStrategy.method6210();
+			int var0;
+			if (0L == var1) {
+				var0 = 5;
+			} else {
+				var0 = class31.method496(var1, Login.Login_username);
 			}
 
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			method9821(var0, var1, var2, var5 - 1);
-			method9821(var0, var1, var5 + 1, var3);
+			switch(var0) {
+			case 2:
+				class460.setLoginResponseString(Strings.field4648, Strings.field4649, Strings.field4518);
+				DynamicObject.method1987(6);
+				break;
+			case 3:
+				class460.setLoginResponseString("", "Error connecting to server.", "");
+				break;
+			case 4:
+				class460.setLoginResponseString("The part of the website you are trying", "to connect to is offline at the moment.", "Please try again later.");
+				break;
+			case 5:
+				class460.setLoginResponseString("Sorry, there was an error trying to", "log you in to this part of the website.", "Please try again later.");
+				break;
+			case 6:
+				class460.setLoginResponseString("", "Error connecting to server.", "");
+				break;
+			case 7:
+				class460.setLoginResponseString("You must enter a valid login to proceed. For accounts", "created after 24th November 2010, please use your", "email address. Otherwise please use your username.");
+			}
+
 		}
-
-	}
-
-	@ObfuscatedName("bx")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-2121912683"
-	)
-	static void method9822(String var0) {
-		Login.displayName = class507.method9926(var0);
 	}
 }

@@ -1,46 +1,51 @@
-import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jd")
+@ObfuscatedName("is")
 @Implements("FloorDecoration")
 public final class FloorDecoration {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("hv")
 	@ObfuscatedSignature(
-		descriptor = "Ljr;"
+		descriptor = "Ldx;"
+	)
+	@Export("varcs")
+	static Varcs varcs;
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "Liq;"
 	)
 	@Export("renderable")
 	public Renderable renderable;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		longValue = 4010746377285225209L
+		longValue = 5282745047579754191L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("an")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1210278711
+		intValue = 535412003
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 2127434873
+		intValue = -2142622221
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("al")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 108491785
+		intValue = -373793125
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1480057111
+		intValue = 1355434533
 	)
 	@Export("flags")
 	int flags;
@@ -50,23 +55,27 @@ public final class FloorDecoration {
 
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)V",
-		garbageValue = "103"
+		descriptor = "(IIII)I",
+		garbageValue = "-2140439516"
 	)
-	public static void method4979(int var0, int var1, int var2, int var3) {
-		if (class335.midiRequests.size() > 1 && class335.midiRequests.get(0) != null && ((MidiRequest)class335.midiRequests.get(0)).midiPcmStream.isReady() && class335.midiRequests.get(1) != null && ((MidiRequest)class335.midiRequests.get(1)).midiPcmStream.isReady()) {
-			class175.method3946(var0, var1, var2, var3);
-			class335.field3699.add(new SwapSongTask((SongTask)null));
-			ArrayList var4 = new ArrayList();
-			var4.add(new DelayFadeTask(new FadeInTask((SongTask)null, 1, false, class335.field3703), class335.field3702));
-			var4.add(new DelayFadeTask(new FadeOutTask((SongTask)null, 0, false, class335.field3697), class335.musicPlayerStatus));
-			class335.field3699.add(new ConcurrentMidiTask((SongTask)null, var4));
-			if (class335.field3698.get(0) != null && class335.field3698.get(1) != null) {
-				MidiRequest var5 = (MidiRequest)class335.field3698.get(0);
-				class335.field3698.set(0, class335.midiRequests.get(1));
-				class335.field3698.set(1, var5);
+	public static int method4871(int var0, int var1, int var2) {
+		int var3 = PacketWriter.method2930(var2 - var1 + 1);
+		var3 <<= var1;
+		return var0 & ~var3;
+	}
+
+	@ObfuscatedName("nq")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Z",
+		garbageValue = "-85"
+	)
+	static boolean method4872(int var0) {
+		for (int var1 = 0; var1 < Client.field421; ++var1) {
+			if (Client.field423[var1] == var0) {
+				return true;
 			}
 		}
 
+		return false;
 	}
 }
