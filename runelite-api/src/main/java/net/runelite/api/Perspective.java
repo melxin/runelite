@@ -52,7 +52,8 @@ import org.jetbrains.annotations.ApiStatus;
  */
 public class Perspective
 {
-	public static final double UNIT = Math.PI / 1024d; // How much of the circle each unit of SINE/COSINE is
+	// How much of the unit circle each unit of SINE/COSINE is
+	public static final double UNIT = 0.0030679615d; // ~pi/1024
 
 	public static final int LOCAL_COORD_BITS = 7;
 	public static final int LOCAL_TILE_SIZE = 1 << LOCAL_COORD_BITS; // 128 - size of a tile in local coordinates

@@ -518,5 +518,11 @@ public interface Actor extends Renderable, Locatable
 	 */
 	void setDead(boolean dead);
 
+	/**
+	 * Get the height offset of the actor from their current animation
+	 * @return
+	 */
+	int getAnimationHeightOffset();
+
 	boolean isMoving();
 }

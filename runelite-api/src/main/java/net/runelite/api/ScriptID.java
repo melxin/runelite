@@ -345,7 +345,7 @@ public final class ScriptID
 	/**
 	 * Called to build the combat interface
 	 */
-	@ScriptArguments()
+	@ScriptArguments(integer = 1)
 	public static final int COMBAT_INTERFACE_SETUP = 7593;
 
 	/**
@@ -532,4 +532,7 @@ public final class ScriptID
 
 	@ScriptArguments(integer = 4)
 	public static final int LOOTTRACKER_ADD_LOOT = 7192;
+
+	@ScriptArguments(integer = 1)
+	public static final int DOM_LOOT_CLAIM = 7928;
 }
