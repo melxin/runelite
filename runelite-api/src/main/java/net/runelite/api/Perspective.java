@@ -64,12 +64,19 @@ public class Perspective
 	public static final int[] SINE = new int[2048]; // sine angles for each of the 2048 units, * 65536 and stored as an int
 	public static final int[] COSINE = new int[2048]; // cosine
 
+	private static final float[] SINF = new float[2048];
+	private static final float[] COSF = new float[2048];
+
 	static
 	{
 		for (int i = 0; i < 2048; ++i)
 		{
-			SINE[i] = (int) (65536.0D * Math.sin((double) i * UNIT));
-			COSINE[i] = (int) (65536.0D * Math.cos((double) i * UNIT));
+			double s = Math.sin((double) i * UNIT);
+			double c = Math.cos((double) i * UNIT);
+			SINF[i] = (float) s;
+			COSF[i] = (float) c;
+			SINE[i] = (int) (65536.0 * s);
+			COSINE[i] = (int) (65536.0 * c);
 		}
 	}
 
