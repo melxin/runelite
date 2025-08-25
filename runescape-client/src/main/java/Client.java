@@ -3677,7 +3677,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 			int var5 = (int)var1;
 			PacketBufferNode var6;
 			if (class581.field5790 >= 232) {
-				var6 = class291.getPacketBufferNode(ClientPacket.field3517, packetWriter.isaacCipher);
+				var6 = class291.getPacketBufferNode(ClientPacket.EVENT_MOUSE_CLICK_V2, packetWriter.isaacCipher);
 				var6.packetBuffer.writeShortLE(var4);
 				var6.packetBuffer.writeShortAdd((MouseHandler.MouseHandler_lastButton == 2 ? 1 : 0) + (var5 << 1));
 				var6.packetBuffer.writeByte(0);

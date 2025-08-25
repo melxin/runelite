@@ -327,7 +327,7 @@ public class ClientPacket implements class324 {
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
 	)
-	public static final ClientPacket field3517;
+	public static final ClientPacket EVENT_MOUSE_CLICK_V2;
 	@ObfuscatedName("cx")
 	@ObfuscatedSignature(
 		descriptor = "Lmi;"
@@ -550,7 +550,7 @@ public class ClientPacket implements class324 {
 		OPLOC5 = new ClientPacket(60, 7);
 		IGNORE_DELUSER = new ClientPacket(61, -1);
 		IF_BUTTONT = new ClientPacket(62, 16);
-		field3517 = new ClientPacket(63, 7);
+		EVENT_MOUSE_CLICK_V2 = new ClientPacket(63, 7);
 		OPNPCU = new ClientPacket(64, 11);
 		EVENT_MOUSE_CLICK = new ClientPacket(65, 6);
 		OPPLAYER3 = new ClientPacket(66, 3);
