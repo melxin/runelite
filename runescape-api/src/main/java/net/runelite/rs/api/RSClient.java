@@ -1460,6 +1460,9 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("getDbTable")
 	RSDbTable getDbTable(int var0);
 
+	@Import("getDbTable2")
+	RSDbTable getDbTable2(int var0);
+
 	@Import("getDbTableType")
 	RSDbTableType getDbTableType(int var0);
 

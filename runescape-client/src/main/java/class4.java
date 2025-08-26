@@ -142,7 +142,7 @@ public final class class4 {
 			} else if (var0 == ScriptOpcodes.DB_FINDALL_WITH_COUNT) {
 				--AbstractWorldMapIcon.Interpreter_intStackSize;
 				var3 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize];
-				DbTable var24 = class348.method7361(var3);
+				DbTable var24 = class348.getDbTable2(var3);
 				if (var24 == null) {
 					throw new RuntimeException();
 				} else {

@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -225,7 +226,8 @@ public class class348 implements Comparator {
 		descriptor = "(IB)Lwr;",
 		garbageValue = "-51"
 	)
-	static DbTable method7361(int var0) {
+	@Export("getDbTable2")
+	static DbTable getDbTable2(int var0) {
 		DbTable var1 = (DbTable)Client.archive11.get((long)var0);
 		if (var1 == null) {
 			var1 = new DbTable(ScriptEvent.field871, var0);

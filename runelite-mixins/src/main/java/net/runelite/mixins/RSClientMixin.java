@@ -3326,6 +3326,16 @@ public abstract class RSClientMixin implements RSClient
 	}
 
 	@Inject
+	@Override
+	public List getDBTableRows(int table)
+	{
+		assert this.isClientThread() : "getDBTableRows must be called on client thread";
+
+		final RSDbTable dbTable = client.getDbTable2(table);
+		return (List) ((Map) dbTable.getColumns().get(0)).get(0);
+	}
+
+	@Inject
 	private static int idleTimeout = 15000;
 
 	@Inject
