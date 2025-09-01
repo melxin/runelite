@@ -1338,6 +1338,7 @@ public interface RSClient extends RSGameEngine, Client
 	RSBuffer createBuffer(byte[] bytes);
 
 	@Construct
+	@Override
 	RSSceneTilePaint createSceneTilePaint(int swColor, int seColor, int neColor, int nwColor, int texture, int rgb, boolean isFlat);
 
 	@Import("crossWorldMessageIds")
