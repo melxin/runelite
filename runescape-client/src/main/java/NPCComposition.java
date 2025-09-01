@@ -55,7 +55,8 @@ public class NPCComposition extends DualNode {
 	@Export("models")
 	int[] models;
 	@ObfuscatedName("ag")
-	int[] field2078;
+	@Export("chatHeadModels")
+	int[] chatHeadModels;
 	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
 		intValue = -492206343
@@ -384,10 +385,10 @@ public class NPCComposition extends DualNode {
 			}
 		} else if (var2 == 60) {
 			var3 = var1.readUnsignedByte();
-			this.field2078 = new int[var3];
+			this.chatHeadModels = new int[var3];
 
 			for (var4 = 0; var4 < var3; ++var4) {
-				this.field2078[var4] = var1.readUnsignedShort();
+				this.chatHeadModels[var4] = var1.readUnsignedShort();
 			}
 		} else if (var2 == 74) {
 			this.stats[0] = var1.readUnsignedShort();
@@ -560,7 +561,7 @@ public class NPCComposition extends DualNode {
 			NPCComposition var2 = this.transform();
 			return var2 == null ? null : var2.method4309(var1);
 		} else {
-			return this.getModelData(this.field2078, var1);
+			return this.getModelData(this.chatHeadModels, var1);
 		}
 	}
 
