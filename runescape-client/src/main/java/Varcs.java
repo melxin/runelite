@@ -179,7 +179,7 @@ public class Varcs {
 				}
 			}
 
-			var1.write(var23.field5916, 0, var23.array * 1216585693);
+			var1.write(var23.array, 0, var23.offset * 1216585693);
 		} catch (Exception var21) {
 		} finally {
 			try {
@@ -214,7 +214,7 @@ public class Varcs {
 			}
 
 			Buffer var14 = new Buffer(var2);
-			if (var14.field5916.length - var14.array * 1216585693 < 1) {
+			if (var14.array.length - var14.offset * 1216585693 < 1) {
 				return;
 			}
 
@@ -244,7 +244,7 @@ public class Varcs {
 
 				for (var7 = 0; var7 < var16; ++var7) {
 					var8 = var14.readUnsignedShort();
-					var9 = var14.readShortSmart();
+					var9 = var14.method1958();
 					if (var8 >= 0 && var8 < this.intsPersistence.length && this.intsPersistence[var8]) {
 						this.map.put(var8, var9);
 					}

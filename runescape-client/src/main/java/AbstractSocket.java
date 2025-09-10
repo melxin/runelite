@@ -115,7 +115,7 @@ public abstract class AbstractSocket {
 			var2.xOffset = LoginPacket.SpriteBuffer_xOffsets[var1];
 			var2.yOffset = class191.SpriteBuffer_yOffsets[var1];
 			var2.subWidth = class255.SpriteBuffer_spriteWidths[var1];
-			var2.subHeight = FriendLoginUpdate.field5390[var1];
+			var2.subHeight = FriendLoginUpdate.SpriteBuffer_spriteHeights[var1];
 			int var3 = var2.subWidth * var2.subHeight;
 			byte[] var4 = SpriteBufferProperties.SpriteBuffer_pixels[var1];
 			var2.pixels = new int[var3];

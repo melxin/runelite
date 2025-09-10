@@ -24,7 +24,7 @@ public enum class380 implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Loh;"
 	)
-	field4371 = field4373;
+	field4371(-1, -1, false, false);
 
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(

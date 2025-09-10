@@ -114,16 +114,16 @@ public class class109 {
 		garbageValue = "1070872547"
 	)
 	void method3395(Buffer var1) {
-		this.field1446 = var1.readShortSmart();
-		this.field1447 = var1.readShortSmart();
-		this.field1448 = var1.readShortSmart();
-		this.field1454 = var1.readShortSmart();
+		this.field1446 = var1.method1958();
+		this.field1447 = var1.method1958();
+		this.field1448 = var1.method1958();
+		this.field1454 = var1.method1958();
 		if (this.field1454 < 0) {
 			this.field1454 = ~this.field1454;
 			this.field1450 = true;
 		}
 
-		int var2 = var1.readShortSmart();
+		int var2 = var1.method1958();
 		this.field1445 = new byte[var2][];
 
 		for (int var3 = 0; var3 < var2; ++var3) {

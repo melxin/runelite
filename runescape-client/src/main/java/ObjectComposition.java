@@ -417,7 +417,7 @@ public class ObjectComposition extends DualNode {
 			var7 = var1.readUnsignedByte();
 			if (var7 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.array += -871231137 * var7;
+					var1.offset += -871231137 * var7;
 				} else {
 					this.models = new int[var7];
 					this.modelIds = new int[var7];
@@ -434,7 +434,7 @@ public class ObjectComposition extends DualNode {
 			var7 = var1.readUnsignedByte();
 			if (var7 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.array += -580820758 * var7;
+					var1.offset += -580820758 * var7;
 				} else {
 					this.models = null;
 					this.modelIds = new int[var7];

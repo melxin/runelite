@@ -44,7 +44,7 @@ public abstract class class551 extends class552 {
 	static final byte[] decompressBytes(byte[] var0) {
 		Buffer var1 = new Buffer(var0);
 		int var2 = var1.readUnsignedByte();
-		int var3 = var1.readShortSmart();
+		int var3 = var1.method1958();
 		if (var3 < 0 || AbstractArchive.field4961 != 0 && var3 > AbstractArchive.field4961) {
 			throw new RuntimeException();
 		} else if (var2 == 0) {
@@ -52,7 +52,7 @@ public abstract class class551 extends class552 {
 			var1.readBytes(var6, 0, var3);
 			return var6;
 		} else {
-			int var4 = var1.readShortSmart();
+			int var4 = var1.method1958();
 			if (var4 >= 0 && (AbstractArchive.field4961 == 0 || var4 <= AbstractArchive.field4961)) {
 				byte[] var5 = new byte[var4];
 				if (var2 == 1) {

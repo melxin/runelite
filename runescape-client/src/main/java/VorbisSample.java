@@ -104,16 +104,16 @@ public class VorbisSample extends Node {
 	@Export("read")
 	void read(byte[] var1) {
 		Buffer var2 = new Buffer(var1);
-		this.sampleRate = var2.readShortSmart();
-		this.sampleCount = var2.readShortSmart();
-		this.start = var2.readShortSmart();
-		this.end = var2.readShortSmart();
+		this.sampleRate = var2.method1958();
+		this.sampleCount = var2.method1958();
+		this.start = var2.method1958();
+		this.end = var2.method1958();
 		if (this.end < 0) {
 			this.end = ~this.end;
 			this.field1464 = true;
 		}
 
-		int var3 = var2.readShortSmart();
+		int var3 = var2.method1958();
 		this.field1474 = new byte[var3][];
 
 		for (int var4 = 0; var4 < var3; ++var4) {

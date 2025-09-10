@@ -155,7 +155,7 @@ public class FriendsChat extends UserList {
 
 		this.method9892(var4);
 		this.minKick = var1.readByte();
-		var7 = var1.readLargeSmart();
+		var7 = var1.readShortSmartSub();
 		if (var7 != -1) {
 			this.clear();
 

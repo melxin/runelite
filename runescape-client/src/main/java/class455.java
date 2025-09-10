@@ -146,8 +146,8 @@ public class class455 {
 		PacketBufferNode var4 = UserComparator6.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(18);
 		var4.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
-		var4.packetBuffer.writeIntLE(var0 + class333.topLevelWorldView.baseX);
-		var4.packetBuffer.writeIntLE(var1 + class333.topLevelWorldView.baseY);
+		var4.packetBuffer.writeShortAdd(var0 + class333.topLevelWorldView.baseX);
+		var4.packetBuffer.writeShortAdd(var1 + class333.topLevelWorldView.baseY);
 		var4.packetBuffer.writeByte(var2);
 		var4.packetBuffer.writeByte(var3);
 		var4.packetBuffer.writeShort(Client.camAngleY);

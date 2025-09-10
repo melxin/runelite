@@ -138,13 +138,14 @@ public class NPCComposition extends DualNode {
 	@Export("recolorFrom")
 	short[] recolorFrom;
 	@ObfuscatedName("co")
-	public short[] field2130;
+	@Export("recolorTo")
+	public short[] recolorTo;
 	@ObfuscatedName("ck")
 	@Export("retextureFrom")
 	short[] retextureFrom;
 	@ObfuscatedName("ct")
-	@Export("recolorTo")
-	public short[] recolorTo;
+	@Export("retextureTo")
+	public short[] retextureTo;
 	@ObfuscatedName("ch")
 	@Export("actions")
 	public String[] actions;
@@ -173,12 +174,14 @@ public class NPCComposition extends DualNode {
 	@ObfuscatedGetter(
 		intValue = -1296222233
 	)
-	int field2138;
+	@Export("ambient")
+	int ambient;
 	@ObfuscatedName("da")
 	@ObfuscatedGetter(
 		intValue = 1103450485
 	)
-	int field2139;
+	@Export("contrast")
+	int contrast;
 	@ObfuscatedName("dc")
 	@ObfuscatedGetter(
 		intValue = -103900231
@@ -272,8 +275,8 @@ public class NPCComposition extends DualNode {
 		this.combatLevel = -1;
 		this.widthScale = 128;
 		this.heightScale = 128;
-		this.field2138 = 0;
-		this.field2139 = 0;
+		this.ambient = 0;
+		this.contrast = 0;
 		this.rotation = 32;
 		this.transformVarbit = -1;
 		this.transformVarp = -1;
@@ -379,22 +382,22 @@ public class NPCComposition extends DualNode {
 		case 40:
 			var3 = var1.readUnsignedByte();
 			this.recolorFrom = new short[var3];
-			this.field2130 = new short[var3];
+			this.recolorTo = new short[var3];
 
 			for (var4 = 0; var4 < var3; ++var4) {
 				this.recolorFrom[var4] = (short)var1.readUnsignedShort();
-				this.field2130[var4] = (short)var1.readUnsignedShort();
+				this.recolorTo[var4] = (short)var1.readUnsignedShort();
 			}
 
 			return;
 		case 41:
 			var3 = var1.readUnsignedByte();
 			this.retextureFrom = new short[var3];
-			this.recolorTo = new short[var3];
+			this.retextureTo = new short[var3];
 
 			for (var4 = 0; var4 < var3; ++var4) {
 				this.retextureFrom[var4] = (short)var1.readUnsignedShort();
-				this.recolorTo[var4] = (short)var1.readUnsignedShort();
+				this.retextureTo[var4] = (short)var1.readUnsignedShort();
 			}
 
 			return;
@@ -441,10 +444,10 @@ public class NPCComposition extends DualNode {
 			this.field2154 = class197.field2163;
 			break;
 		case 100:
-			this.field2138 = var1.readByte();
+			this.ambient = var1.readByte();
 			break;
 		case 101:
-			this.field2139 = var1.readByte() * 5;
+			this.contrast = var1.readByte() * 5;
 			break;
 		case 102:
 			var3 = var1.readUnsignedByte();
@@ -462,8 +465,8 @@ public class NPCComposition extends DualNode {
 					this.headIconArchiveIds[var6] = -1;
 					this.headIconSpriteIndex[var6] = -1;
 				} else {
-					this.headIconArchiveIds[var6] = var1.readVarInt();
-					this.headIconSpriteIndex[var6] = (short)var1.readLargeSmart();
+					this.headIconArchiveIds[var6] = var1.readNullableLargeSmart();
+					this.headIconSpriteIndex[var6] = (short)var1.readShortSmartSub();
 				}
 			}
 
@@ -574,7 +577,7 @@ public class NPCComposition extends DualNode {
 					return null;
 				}
 
-				var8 = var9.toModel(this.field2138 + 64, this.field2139 + 850, -30, -50, -30);
+				var8 = var9.toModel(this.ambient + 64, this.contrast + 850, -30, -50, -30);
 				NpcDefinition_cachedModels.put(var8, var6);
 			}
 
@@ -656,7 +659,7 @@ public class NPCComposition extends DualNode {
 				short[] var7;
 				int var8;
 				if (this.recolorFrom != null) {
-					var7 = this.field2130;
+					var7 = this.recolorTo;
 					if (var2 != null && var2.recolorTo != null) {
 						var7 = var2.recolorTo;
 					}
@@ -667,7 +670,7 @@ public class NPCComposition extends DualNode {
 				}
 
 				if (this.retextureFrom != null) {
-					var7 = this.recolorTo;
+					var7 = this.retextureTo;
 					if (var2 != null && var2.retextureTo != null) {
 						var7 = var2.retextureTo;
 					}

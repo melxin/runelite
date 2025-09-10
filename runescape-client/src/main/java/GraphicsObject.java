@@ -17,7 +17,7 @@ public class GraphicsObject extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "Ldr;"
 	)
-	final WorldView field693;
+	WorldView field693;
 	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
 		intValue = 402610731
@@ -59,7 +59,7 @@ public class GraphicsObject extends Renderable {
 		descriptor = "Lsp;"
 	)
 	@Export("animationSequence")
-	final AnimationSequence animationSequence;
+	AnimationSequence animationSequence;
 
 	@ObfuscatedSignature(
 		descriptor = "(Ldr;IIIIIII)V"

@@ -56,11 +56,11 @@ public class Animation {
 		this.skeleton = var2;
 		Buffer var3 = new Buffer(var1);
 		Buffer var4 = new Buffer(var1);
-		var3.array = -580820758;
+		var3.offset = -580820758;
 		int var5 = var3.readUnsignedByte();
 		int var6 = -1;
 		int var7 = 0;
-		var4.array = (var5 + var3.array * 1216585693) * -290410379;
+		var4.offset = (var5 + var3.offset * 1216585693) * -290410379;
 
 		int var8;
 		for (var8 = 0; var8 < var5; ++var8) {
@@ -86,19 +86,19 @@ public class Animation {
 				}
 
 				if ((var9 & 1) != 0) {
-					field2589[var7] = var4.readUShortSmart();
+					field2589[var7] = var4.readShortSmart();
 				} else {
 					field2589[var7] = var11;
 				}
 
 				if ((var9 & 2) != 0) {
-					field2593[var7] = var4.readUShortSmart();
+					field2593[var7] = var4.readShortSmart();
 				} else {
 					field2593[var7] = var11;
 				}
 
 				if ((var9 & 4) != 0) {
-					field2591[var7] = var4.readUShortSmart();
+					field2591[var7] = var4.readShortSmart();
 				} else {
 					field2591[var7] = var11;
 				}
@@ -111,7 +111,7 @@ public class Animation {
 			}
 		}
 
-		if (var1.length != var4.array * 1216585693) {
+		if (var1.length != var4.offset * 1216585693) {
 			throw new RuntimeException();
 		} else {
 			this.transformCount = var7;
@@ -127,7 +127,7 @@ public class Animation {
 				this.transformZs[var8] = field2591[var8];
 			}
 
-			var3.array = var4.array;
+			var3.offset = var4.offset;
 		}
 	}
 }

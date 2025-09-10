@@ -126,7 +126,7 @@ public class ScriptEvent extends Node {
 			} else if (World.World_request.isDone()) {
 				byte[] var0 = World.World_request.getResponse();
 				Buffer var1 = new Buffer(var0);
-				var1.readShortSmart();
+				var1.method1958();
 				World.World_count = var1.readUnsignedShort();
 				World.World_worlds = new World[World.World_count];
 
@@ -134,7 +134,7 @@ public class ScriptEvent extends Node {
 				for (int var2 = 0; var2 < World.World_count; var3.index = var2++) {
 					var3 = World.World_worlds[var2] = new World();
 					var3.id = var1.readUnsignedShort();
-					var3.properties = var1.readShortSmart();
+					var3.properties = var1.method1958();
 					var3.host = var1.readStringCp1252NullTerminated();
 					var3.activity = var1.readStringCp1252NullTerminated();
 					var3.location = var1.readUnsignedByte();
@@ -161,13 +161,13 @@ public class ScriptEvent extends Node {
 	public static String method2145(Buffer var0) {
 		String var1;
 		try {
-			int var2 = var0.readShortSmartSub();
+			int var2 = var0.readUShortSmart();
 			if (var2 > 32767) {
 				var2 = 32767;
 			}
 
 			byte[] var3 = new byte[var2];
-			var0.array += class376.huffman.decompress(var0.field5916, var0.array * 1216585693, var3, 0, var2) * -290410379;
+			var0.offset += class376.huffman.decompress(var0.array, var0.offset * 1216585693, var3, 0, var2) * -290410379;
 			String var4 = FloorOverlayDefinition.decodeStringCp1252(var3, 0, var2);
 			var1 = var4;
 		} catch (Exception var6) {

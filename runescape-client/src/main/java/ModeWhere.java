@@ -190,7 +190,8 @@ public enum ModeWhere implements Enum {
 		descriptor = "(Ldr;Lhw;I)V",
 		garbageValue = "-860845225"
 	)
-	static final void method8666(WorldView var0, class197 var1) {
+	@Export("addNpcsToScene")
+	static final void addNpcsToScene(WorldView var0, class197 var1) {
 		for (int var2 = 0; var2 < var0.field1161.method9790(); ++var2) {
 			NPC var3 = (NPC)var0.npcs.get((long)var0.field1161.method9787(var2));
 			if (var3 != null && var3.isVisible() && var3.definition.field2154 == var1 && var3.definition.transformIsVisible()) {

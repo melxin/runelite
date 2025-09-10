@@ -97,7 +97,7 @@ public class UserComparator7 extends AbstractUserComparator {
 			}
 		}
 
-		var13 = var25.array * 1216585693 < var25.field5916.length ? var25.readUnsignedByte() : 0;
+		var13 = var25.offset * 1216585693 < var25.array.length ? var25.readUnsignedByte() : 0;
 		boolean var26 = (var13 & 1) != 0;
 		if (var26) {
 			for (var15 = 0; var15 < 64; ++var15) {
@@ -124,14 +124,14 @@ public class UserComparator7 extends AbstractUserComparator {
 		int var7;
 		if (!Client.isInInstance) {
 			var1.readShort();
-			var2 = var1.readShortLE();
+			var2 = var1.readUnsignedShortAdd();
 			var3 = var1.readUnsignedShort();
 			int var4 = var1.readUnsignedShort();
 			class267.xteaKeys = new int[var4][4];
 
 			for (var5 = 0; var5 < var4; ++var5) {
 				for (var6 = 0; var6 < 4; ++var6) {
-					class267.xteaKeys[var5][var6] = var1.readShortSmart();
+					class267.xteaKeys[var5][var6] = var1.method1958();
 				}
 			}
 
@@ -154,9 +154,9 @@ public class UserComparator7 extends AbstractUserComparator {
 
 			class364.method7522(var2, var3, true);
 		} else {
-			var2 = var1.readUnsignedShortAddLE();
-			var3 = var1.readShortLE();
-			boolean var15 = var1.readUnsignedShortAdd() == 1;
+			var2 = var1.readUnsignedShortLE();
+			var3 = var1.readUnsignedShortAdd();
+			boolean var15 = var1.readUnsignedByteSub() == 1;
 			var5 = var1.readUnsignedShort();
 			var1.importIndex();
 
@@ -180,7 +180,7 @@ public class UserComparator7 extends AbstractUserComparator {
 
 			for (var6 = 0; var6 < var5; ++var6) {
 				for (var7 = 0; var7 < 4; ++var7) {
-					class267.xteaKeys[var6][var7] = var1.readShortSmart();
+					class267.xteaKeys[var6][var7] = var1.method1958();
 				}
 			}
 

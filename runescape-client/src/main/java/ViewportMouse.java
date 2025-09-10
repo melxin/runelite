@@ -75,7 +75,7 @@ public class ViewportMouse {
 	public static void performReflectionCheck(PacketBuffer var0) {
 		ReflectionCheck var1 = (ReflectionCheck)class36.reflectionChecks.last();
 		if (var1 != null) {
-			int var2 = var0.array * 1216585693;
+			int var2 = var0.offset * 1216585693;
 			var0.writeInt(var1.id);
 
 			for (int var3 = 0; var3 < var1.size; ++var3) {

@@ -159,17 +159,17 @@ public class HitSplatDefinition extends DualNode {
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 1) {
-			this.fontId = var1.readVarInt();
+			this.fontId = var1.readNullableLargeSmart();
 		} else if (var2 == 2) {
 			this.textColor = var1.readMedium();
 		} else if (var2 == 3) {
-			this.field2283 = var1.readVarInt();
+			this.field2283 = var1.readNullableLargeSmart();
 		} else if (var2 == 4) {
-			this.field2299 = var1.readVarInt();
+			this.field2299 = var1.readNullableLargeSmart();
 		} else if (var2 == 5) {
-			this.field2291 = var1.readVarInt();
+			this.field2291 = var1.readNullableLargeSmart();
 		} else if (var2 == 6) {
-			this.field2293 = var1.readVarInt();
+			this.field2293 = var1.readNullableLargeSmart();
 		} else if (var2 == 7) {
 			this.field2294 = var1.readShort();
 		} else if (var2 == 8) {
@@ -381,7 +381,7 @@ public class HitSplatDefinition extends DualNode {
 					if (var7 == null) {
 						var6 = null;
 					} else {
-						Font var8 = new Font(var7, LoginPacket.SpriteBuffer_xOffsets, class191.SpriteBuffer_yOffsets, class255.SpriteBuffer_spriteWidths, FriendLoginUpdate.field5390, TriBool.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
+						Font var8 = new Font(var7, LoginPacket.SpriteBuffer_xOffsets, class191.SpriteBuffer_yOffsets, class255.SpriteBuffer_spriteWidths, FriendLoginUpdate.SpriteBuffer_spriteHeights, TriBool.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
 						class388.method8205();
 						var6 = var8;
 					}

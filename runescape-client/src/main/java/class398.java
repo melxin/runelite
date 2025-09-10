@@ -29,7 +29,7 @@ public enum class398 implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Lpj;"
 	)
-	field4838 = field4844;
+	field4838(-1, -1);
 
 	@ObfuscatedName("jq")
 	@ObfuscatedSignature(

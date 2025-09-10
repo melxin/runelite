@@ -70,8 +70,8 @@ public final class WorldMapSprite {
 			}
 		}
 
-		if (var2.array * 1216585693 != Client.packetWriter.serverPacketLength) {
-			throw new RuntimeException(var2.array * 1216585693 + "," + Client.packetWriter.serverPacketLength);
+		if (var2.offset * 1216585693 != Client.packetWriter.serverPacketLength) {
+			throw new RuntimeException(var2.offset * 1216585693 + "," + Client.packetWriter.serverPacketLength);
 		}
 	}
 }

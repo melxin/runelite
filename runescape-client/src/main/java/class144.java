@@ -26,7 +26,7 @@ public class class144 {
 			if (var4) {
 				var6 = new ObjectNode(var0.readStringCp1252NullTerminated());
 			} else {
-				var6 = new IntegerNode(var0.readShortSmart());
+				var6 = new IntegerNode(var0.method1958());
 			}
 
 			var1.put((Node)var6, (long)var5);

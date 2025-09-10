@@ -120,13 +120,13 @@ public class ByteArrayPool {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPLOCU, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-				var15.packetBuffer.writeShortAdd(var0 + var11);
-				var15.packetBuffer.method11234(class325.Players_count);
-				var15.packetBuffer.writeShortAddLE(class36.field240);
+				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeShortAddLE(var0 + var11);
+				var15.packetBuffer.writeIntIME(class325.Players_count);
+				var15.packetBuffer.writeShortLE(class36.field240);
 				var15.packetBuffer.writeShort(var3);
-				var15.packetBuffer.writeIntLE(AABB.field2800);
-				var15.packetBuffer.writeIntLE(var12 + var1);
+				var15.packetBuffer.writeShortAdd(AABB.field2800);
+				var15.packetBuffer.writeShortAdd(var12 + var1);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 2) {
 				Client.mouseCrossX = var8;
@@ -140,8 +140,8 @@ public class ByteArrayPool {
 				var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 				var15.packetBuffer.writeShort(Client.selectedSpellItemId);
 				var15.packetBuffer.writeInt(ModeWhere.selectedSpellWidget);
-				var15.packetBuffer.writeShortAdd(var0 + var11);
-				var15.packetBuffer.writeShortAdd(var12 + var1);
+				var15.packetBuffer.writeShortAddLE(var0 + var11);
+				var15.packetBuffer.writeShortAddLE(var12 + var1);
 				var15.packetBuffer.writeShort(var3);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 3) {
@@ -152,10 +152,10 @@ public class ByteArrayPool {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPLOC1, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeShortAdd(var12 + var1);
+				var15.packetBuffer.writeShortAddLE(var12 + var1);
 				var15.packetBuffer.writeShort(var0 + var11);
-				var15.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-				var15.packetBuffer.writeShortAddLE(var3);
+				var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeShortLE(var3);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 4) {
 				Client.mouseCrossX = var8;
@@ -165,9 +165,9 @@ public class ByteArrayPool {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPLOC2, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 				var15.packetBuffer.writeShort(var0 + var11);
-				var15.packetBuffer.writeShortAdd(var3);
+				var15.packetBuffer.writeShortAddLE(var3);
 				var15.packetBuffer.writeShort(var12 + var1);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 5) {
@@ -179,9 +179,9 @@ public class ByteArrayPool {
 				Client.destinationY = var1;
 				var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPLOC3, Client.packetWriter.isaacCipher);
 				var15.packetBuffer.writeShort(var12 + var1);
-				var15.packetBuffer.writeShortAddLE(var3);
+				var15.packetBuffer.writeShortLE(var3);
 				var15.packetBuffer.writeShort(var0 + var11);
-				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 6) {
 				Client.mouseCrossX = var8;
@@ -194,7 +194,7 @@ public class ByteArrayPool {
 				var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 				var15.packetBuffer.writeShort(var0 + var11);
 				var15.packetBuffer.writeShort(var12 + var1);
-				var15.packetBuffer.writeShortAdd(var3);
+				var15.packetBuffer.writeShortAddLE(var3);
 				Client.packetWriter.addNode(var15);
 			} else {
 				PacketBufferNode var16;
@@ -211,9 +211,9 @@ public class ByteArrayPool {
 						var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPNPCU, Client.packetWriter.isaacCipher);
 						var16.packetBuffer.writeInt(class325.Players_count);
 						var16.packetBuffer.writeShort(AABB.field2800);
-						var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var16.packetBuffer.writeShortAdd(class36.field240);
-						var16.packetBuffer.writeShortAddLE(var3);
+						var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortAddLE(class36.field240);
+						var16.packetBuffer.writeShortLE(var3);
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 8) {
@@ -226,9 +226,9 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPNPCT, Client.packetWriter.isaacCipher);
-						var16.packetBuffer.writeIntLE(Client.selectedSpellItemId);
-						var16.packetBuffer.writeIntLE(Client.selectedSpellChildIndex);
-						var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortAdd(Client.selectedSpellItemId);
+						var16.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
+						var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var16.packetBuffer.writeShort(var3);
 						var16.packetBuffer.writeInt(ModeWhere.selectedSpellWidget);
 						Client.packetWriter.addNode(var16);
@@ -243,8 +243,8 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPNPC1, Client.packetWriter.isaacCipher);
-						var16.packetBuffer.writeShortAdd(var3);
-						var16.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortAddLE(var3);
+						var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 10) {
@@ -257,8 +257,8 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPNPC2, Client.packetWriter.isaacCipher);
-						var16.packetBuffer.writeShortAdd(var3);
-						var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortAddLE(var3);
+						var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 11) {
@@ -271,8 +271,8 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPNPC3, Client.packetWriter.isaacCipher);
-						var16.packetBuffer.writeShortAddLE(var3);
-						var16.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortLE(var3);
+						var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 12) {
@@ -285,8 +285,8 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPNPC4, Client.packetWriter.isaacCipher);
-						var16.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var16.packetBuffer.writeShortAdd(var3);
+						var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeShortAddLE(var3);
 						Client.packetWriter.addNode(var16);
 					}
 				} else if (var2 == 13) {
@@ -300,7 +300,7 @@ public class ByteArrayPool {
 						Client.destinationY = var1;
 						var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPNPC5, Client.packetWriter.isaacCipher);
 						var16.packetBuffer.writeShort(var3);
-						var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						Client.packetWriter.addNode(var16);
 					}
 				} else {
@@ -315,11 +315,11 @@ public class ByteArrayPool {
 							Client.destinationX = var0;
 							Client.destinationY = var1;
 							var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYERU, Client.packetWriter.isaacCipher);
-							var16.packetBuffer.writeIntLE(AABB.field2800);
-							var16.packetBuffer.method11234(class325.Players_count);
-							var16.packetBuffer.writeIntLE(var3);
-							var16.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-							var16.packetBuffer.writeShortAdd(class36.field240);
+							var16.packetBuffer.writeShortAdd(AABB.field2800);
+							var16.packetBuffer.writeIntIME(class325.Players_count);
+							var16.packetBuffer.writeShortAdd(var3);
+							var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+							var16.packetBuffer.writeShortAddLE(class36.field240);
 							Client.packetWriter.addNode(var16);
 						}
 					} else if (var2 == 15) {
@@ -332,11 +332,11 @@ public class ByteArrayPool {
 							Client.destinationX = var0;
 							Client.destinationY = var1;
 							var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYERT, Client.packetWriter.isaacCipher);
-							var16.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-							var16.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
-							var16.packetBuffer.writeIntLE(Client.selectedSpellItemId);
-							var16.packetBuffer.writeIntLE(var3);
-							var16.packetBuffer.writeIntIME(ModeWhere.selectedSpellWidget);
+							var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+							var16.packetBuffer.writeShortAddLE(Client.selectedSpellChildIndex);
+							var16.packetBuffer.writeShortAdd(Client.selectedSpellItemId);
+							var16.packetBuffer.writeShortAdd(var3);
+							var16.packetBuffer.writeIntLE(ModeWhere.selectedSpellWidget);
 							Client.packetWriter.addNode(var16);
 						}
 					} else if (var2 == 16) {
@@ -347,12 +347,12 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPOBJU, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeIntLE(var3);
-						var15.packetBuffer.writeIntIME(class325.Players_count);
-						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeShortAddLE(class36.field240);
+						var15.packetBuffer.writeShortAdd(var3);
+						var15.packetBuffer.writeIntLE(class325.Players_count);
+						var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortLE(class36.field240);
 						var15.packetBuffer.writeShort(AABB.field2800);
-						var15.packetBuffer.writeShortAddLE(var12 + var1);
+						var15.packetBuffer.writeShortLE(var12 + var1);
 						var15.packetBuffer.writeShort(var0 + var11);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 17) {
@@ -363,13 +363,13 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPOBJT, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeIntLE(Client.selectedSpellChildIndex);
+						var15.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
 						var15.packetBuffer.writeInt(ModeWhere.selectedSpellWidget);
-						var15.packetBuffer.writeIntLE(var3);
-						var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeIntLE(Client.selectedSpellItemId);
+						var15.packetBuffer.writeShortAdd(var3);
+						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortAdd(Client.selectedSpellItemId);
 						var15.packetBuffer.writeShort(var12 + var1);
-						var15.packetBuffer.writeShortAddLE(var0 + var11);
+						var15.packetBuffer.writeShortLE(var0 + var11);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 18) {
 						Client.mouseCrossX = var8;
@@ -380,7 +380,7 @@ public class ByteArrayPool {
 						Client.destinationY = var1;
 						var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPOBJ1, Client.packetWriter.isaacCipher);
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeIntLE(var3);
+						var15.packetBuffer.writeShortAdd(var3);
 						var15.packetBuffer.writeShort(var0 + var11);
 						var15.packetBuffer.writeShort(var12 + var1);
 						Client.packetWriter.addNode(var15);
@@ -392,10 +392,10 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPOBJ2, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var15.packetBuffer.writeShort(var0 + var11);
 						var15.packetBuffer.writeShort(var12 + var1);
-						var15.packetBuffer.writeShortAdd(var3);
+						var15.packetBuffer.writeShortAddLE(var3);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 20) {
 						Client.mouseCrossX = var8;
@@ -405,10 +405,10 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPOBJ3, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeShortAddLE(var0 + var11);
-						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeIntLE(var3);
-						var15.packetBuffer.writeShortAdd(var12 + var1);
+						var15.packetBuffer.writeShortLE(var0 + var11);
+						var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortAdd(var3);
+						var15.packetBuffer.writeShortAddLE(var12 + var1);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 21) {
 						Client.mouseCrossX = var8;
@@ -418,7 +418,7 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPOBJ4, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeIntLE(var3);
+						var15.packetBuffer.writeShortAdd(var3);
 						var15.packetBuffer.writeShort(var0 + var11);
 						var15.packetBuffer.writeShort(var12 + var1);
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
@@ -431,10 +431,10 @@ public class ByteArrayPool {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPOBJ5, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeIntLE(var12 + var1);
-						var15.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortAdd(var12 + var1);
+						var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var15.packetBuffer.writeShort(var3);
-						var15.packetBuffer.writeShortAdd(var0 + var11);
+						var15.packetBuffer.writeShortAddLE(var0 + var11);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 23) {
 						if (Client.isMenuOpen) {
@@ -524,8 +524,8 @@ public class ByteArrayPool {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
-										var16.packetBuffer.writeShortAddLE(var3);
-										var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShortLE(var3);
+										var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 45) {
@@ -539,7 +539,7 @@ public class ByteArrayPool {
 										Client.destinationY = var1;
 										var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER2, Client.packetWriter.isaacCipher);
 										var16.packetBuffer.writeShort(var3);
-										var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 46) {
@@ -552,8 +552,8 @@ public class ByteArrayPool {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER3, Client.packetWriter.isaacCipher);
-										var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-										var16.packetBuffer.writeIntLE(var3);
+										var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShortAdd(var3);
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 47) {
@@ -580,8 +580,8 @@ public class ByteArrayPool {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER5, Client.packetWriter.isaacCipher);
-										var16.packetBuffer.writeIntLE(var3);
-										var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShortAdd(var3);
+										var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 49) {
@@ -594,7 +594,7 @@ public class ByteArrayPool {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
-										var16.packetBuffer.writeShortAdd(var3);
+										var16.packetBuffer.writeShortAddLE(var3);
 										var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var16);
 									}
@@ -609,7 +609,7 @@ public class ByteArrayPool {
 										Client.destinationY = var1;
 										var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
 										var16.packetBuffer.writeShort(var3);
-										var16.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var16);
 									}
 								} else if (var2 == 51) {
@@ -622,8 +622,8 @@ public class ByteArrayPool {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER8, Client.packetWriter.isaacCipher);
-										var16.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-										var16.packetBuffer.writeIntLE(var3);
+										var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var16.packetBuffer.writeShortAdd(var3);
 										Client.packetWriter.addNode(var16);
 									}
 								} else {
@@ -642,10 +642,10 @@ public class ByteArrayPool {
 													}
 
 													var16 = UserComparator6.getPacketBufferNode(ClientPacket.IF_BUTTONT, Client.packetWriter.isaacCipher);
-													var16.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
-													var16.packetBuffer.writeIntIME(var1);
-													var16.packetBuffer.writeIntLE(var4);
-													var16.packetBuffer.writeIntLE(var0);
+													var16.packetBuffer.writeShortAddLE(Client.selectedSpellChildIndex);
+													var16.packetBuffer.writeIntLE(var1);
+													var16.packetBuffer.writeShortAdd(var4);
+													var16.packetBuffer.writeShortAdd(var0);
 													var16.packetBuffer.writeInt(ModeWhere.selectedSpellWidget);
 													var16.packetBuffer.writeShort(Client.selectedSpellItemId);
 													Client.packetWriter.addNode(var16);
@@ -661,7 +661,7 @@ public class ByteArrayPool {
 												Client.field583 = var3;
 												Client.field584 = 30;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.SET_HEADING, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeByteNeg(var3);
+												var15.packetBuffer.writeByteAdd(var3);
 												Client.packetWriter.addNode(var15);
 												break label663;
 											}
@@ -677,11 +677,11 @@ public class ByteArrayPool {
 													Client.destinationX = var0;
 													Client.destinationY = var1;
 													var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPWORLDENTITYU, Client.packetWriter.isaacCipher);
-													var16.packetBuffer.writeIntLE(var3);
-													var16.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-													var16.packetBuffer.method11250(class325.Players_count);
-													var16.packetBuffer.writeIntLE(AABB.field2800);
-													var16.packetBuffer.writeIntLE(class36.field240);
+													var16.packetBuffer.writeShortAdd(var3);
+													var16.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+													var16.packetBuffer.writeIntME(class325.Players_count);
+													var16.packetBuffer.writeShortAdd(AABB.field2800);
+													var16.packetBuffer.writeShortAdd(class36.field240);
 													Client.packetWriter.addNode(var16);
 												}
 												break label663;
@@ -697,11 +697,11 @@ public class ByteArrayPool {
 													Client.destinationX = var0;
 													Client.destinationY = var1;
 													var16 = UserComparator6.getPacketBufferNode(ClientPacket.OPWORLDENTITYT, Client.packetWriter.isaacCipher);
-													var16.packetBuffer.writeShortAddLE(Client.selectedSpellChildIndex);
-													var16.packetBuffer.method11234(ModeWhere.selectedSpellWidget);
-													var16.packetBuffer.writeIntLE(var3);
+													var16.packetBuffer.writeShortLE(Client.selectedSpellChildIndex);
+													var16.packetBuffer.writeIntIME(ModeWhere.selectedSpellWidget);
+													var16.packetBuffer.writeShortAdd(var3);
 													var16.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-													var16.packetBuffer.writeIntLE(Client.selectedSpellItemId);
+													var16.packetBuffer.writeShortAdd(Client.selectedSpellItemId);
 													Client.packetWriter.addNode(var16);
 												}
 												break label663;
@@ -715,7 +715,7 @@ public class ByteArrayPool {
 												Client.destinationX = var0;
 												Client.destinationY = var1;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPWORLDENTITY1, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												var15.packetBuffer.writeShort(var3);
 												Client.packetWriter.addNode(var15);
 												break label663;
@@ -729,8 +729,8 @@ public class ByteArrayPool {
 												Client.destinationX = var0;
 												Client.destinationY = var1;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPWORLDENTITY2, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-												var15.packetBuffer.writeIntLE(var3);
+												var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeShortAdd(var3);
 												Client.packetWriter.addNode(var15);
 												break label663;
 											}
@@ -743,7 +743,7 @@ public class ByteArrayPool {
 												Client.destinationX = var0;
 												Client.destinationY = var1;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPWORLDENTITY3, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeIntLE(var3);
+												var15.packetBuffer.writeShortAdd(var3);
 												var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label663;
@@ -757,7 +757,7 @@ public class ByteArrayPool {
 												Client.destinationX = var0;
 												Client.destinationY = var1;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPWORLDENTITY4, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeShortAdd(var3);
+												var15.packetBuffer.writeShortAddLE(var3);
 												var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label663;
@@ -771,8 +771,8 @@ public class ByteArrayPool {
 												Client.destinationX = var0;
 												Client.destinationY = var1;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPWORLDENTITY5, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeIntLE(var3);
-												var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeShortAdd(var3);
+												var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label663;
 											}
@@ -786,9 +786,9 @@ public class ByteArrayPool {
 												Client.destinationY = var1;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPLOC5, Client.packetWriter.isaacCipher);
 												var15.packetBuffer.writeShort(var0 + var11);
-												var15.packetBuffer.writeShortAdd(var12 + var1);
+												var15.packetBuffer.writeShortAddLE(var12 + var1);
 												var15.packetBuffer.writeShort(var3);
-												var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label663;
 											}
@@ -799,7 +799,7 @@ public class ByteArrayPool {
 												Client.mouseCrossColor = 2;
 												Client.mouseCrossState = 0;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPLOCE, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeShortAddLE(var3);
+												var15.packetBuffer.writeShortLE(var3);
 												Client.packetWriter.addNode(var15);
 												break label663;
 											}
@@ -832,8 +832,8 @@ public class ByteArrayPool {
 												Client.mouseCrossState = 0;
 												var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPOBJE, Client.packetWriter.isaacCipher);
 												var15.packetBuffer.writeShort(var12 + var1);
-												var15.packetBuffer.writeShortAddLE(var0 + var11);
-												var15.packetBuffer.writeIntLE(var3);
+												var15.packetBuffer.writeShortLE(var0 + var11);
+												var15.packetBuffer.writeShortAdd(var3);
 												Client.packetWriter.addNode(var15);
 												break label663;
 											}
@@ -846,7 +846,7 @@ public class ByteArrayPool {
 														Client.mouseCrossColor = 2;
 														Client.mouseCrossState = 0;
 														var15 = UserComparator6.getPacketBufferNode(ClientPacket.OPWORLDENTITYE, Client.packetWriter.isaacCipher);
-														var15.packetBuffer.writeShortAddLE(var3);
+														var15.packetBuffer.writeShortLE(var3);
 														Client.packetWriter.addNode(var15);
 													}
 												} else {

@@ -121,11 +121,11 @@ public class class137 implements Callable {
 	static Script newScript(byte[] var0) {
 		Script var1 = new Script();
 		Buffer var2 = new Buffer(var0);
-		var2.array = (var2.field5916.length - 2) * -290410379;
+		var2.offset = (var2.array.length - 2) * -290410379;
 		int var3 = var2.readUnsignedShort();
-		int var4 = var2.field5916.length - 2 - var3 - 12;
-		var2.array = var4 * -290410379;
-		int var5 = var2.readShortSmart();
+		int var4 = var2.array.length - 2 - var3 - 12;
+		var2.offset = var4 * -290410379;
+		int var5 = var2.method1958();
 		var1.localIntCount = var2.readUnsignedShort();
 		var1.localStringCount = var2.readUnsignedShort();
 		var1.intArgumentCount = var2.readUnsignedShort();
@@ -142,20 +142,20 @@ public class class137 implements Callable {
 				var1.switches[var7] = var9;
 
 				while (var8-- > 0) {
-					int var10 = var2.readShortSmart();
-					int var11 = var2.readShortSmart();
+					int var10 = var2.method1958();
+					int var11 = var2.method1958();
 					var9.put(new IntegerNode(var11), (long)var10);
 				}
 			}
 		}
 
-		var2.array = 0;
+		var2.offset = 0;
 		var1.field795 = var2.readStringCp1252NullTerminatedOrNull();
 		var1.opcodes = new int[var5];
 		var1.intOperands = new int[var5];
 		var1.stringOperands = new String[var5];
 
-		for (var7 = 0; var2.array * 1216585693 < var4; var1.opcodes[var7++] = var8) {
+		for (var7 = 0; var2.offset * 1216585693 < var4; var1.opcodes[var7++] = var8) {
 			var8 = var2.readUnsignedShort();
 			switch(var8) {
 			case 3:
@@ -169,7 +169,7 @@ public class class137 implements Callable {
 				break;
 			default:
 				if (var8 <= 99) {
-					var1.intOperands[var7] = var2.readShortSmart();
+					var1.intOperands[var7] = var2.method1958();
 				} else {
 					var1.intOperands[var7] = var2.readUnsignedByte();
 				}

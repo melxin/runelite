@@ -25,7 +25,7 @@ public class class160 extends class151 {
 	)
 	void vmethod4111(Buffer var1) {
 		this.field1833 = var1.readStringCp1252NullTerminated();
-		var1.readShortSmart();
+		var1.method1958();
 	}
 
 	@ObfuscatedName("aw")

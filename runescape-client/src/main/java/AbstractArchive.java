@@ -141,7 +141,7 @@ public abstract class AbstractArchive {
 		int var3 = var2.readUnsignedByte();
 		if (var3 >= 5 && var3 <= 7) {
 			if (var3 >= 6) {
-				var2.readShortSmart();
+				var2.method1958();
 			}
 
 			int var4 = var2.readUnsignedByte();
@@ -155,7 +155,7 @@ public abstract class AbstractArchive {
 				throw new UnsupportedOperationException("");
 			} else {
 				if (var3 >= 7) {
-					this.groupCount = var2.readNullableLargeSmart();
+					this.groupCount = var2.readLargeSmart();
 				} else {
 					this.groupCount = var2.readUnsignedShort();
 				}
@@ -166,7 +166,7 @@ public abstract class AbstractArchive {
 				int var11;
 				if (var3 >= 7) {
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.groupIds[var11] = var9 += var2.readNullableLargeSmart();
+						this.groupIds[var11] = var9 += var2.readLargeSmart();
 						if (this.groupIds[var11] > var10) {
 							var10 = this.groupIds[var11];
 						}
@@ -192,14 +192,14 @@ public abstract class AbstractArchive {
 					Arrays.fill(this.groupNameHashes, -1);
 
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.groupNameHashes[this.groupIds[var11]] = var2.readShortSmart();
+						this.groupNameHashes[this.groupIds[var11]] = var2.method1958();
 					}
 
 					this.groupNameHashTable = new IntHashTable(this.groupNameHashes);
 				}
 
 				for (var11 = 0; var11 < this.groupCount; ++var11) {
-					this.groupCrcs[this.groupIds[var11]] = var2.readShortSmart();
+					this.groupCrcs[this.groupIds[var11]] = var2.method1958();
 				}
 
 				if (var7) {
@@ -207,13 +207,13 @@ public abstract class AbstractArchive {
 					this.field4971 = new int[this.field4972];
 
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.field4970[this.groupIds[var11]] = var2.readShortSmart();
-						this.field4971[this.groupIds[var11]] = var2.readShortSmart();
+						this.field4970[this.groupIds[var11]] = var2.method1958();
+						this.field4971[this.groupIds[var11]] = var2.method1958();
 					}
 				}
 
 				for (var11 = 0; var11 < this.groupCount; ++var11) {
-					this.groupVersions[this.groupIds[var11]] = var2.readShortSmart();
+					this.groupVersions[this.groupIds[var11]] = var2.method1958();
 				}
 
 				int var12;
@@ -223,7 +223,7 @@ public abstract class AbstractArchive {
 				int var16;
 				if (var3 >= 7) {
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
-						this.fileCounts[this.groupIds[var11]] = var2.readNullableLargeSmart();
+						this.fileCounts[this.groupIds[var11]] = var2.readLargeSmart();
 					}
 
 					for (var11 = 0; var11 < this.groupCount; ++var11) {
@@ -234,7 +234,7 @@ public abstract class AbstractArchive {
 						this.fileIds[var12] = new int[var13];
 
 						for (var15 = 0; var15 < var13; ++var15) {
-							var16 = this.fileIds[var12][var15] = var9 += var2.readNullableLargeSmart();
+							var16 = this.fileIds[var12][var15] = var9 += var2.readLargeSmart();
 							if (var16 > var14) {
 								var14 = var16;
 							}
@@ -277,7 +277,7 @@ public abstract class AbstractArchive {
 
 						for (var14 = 0; var14 < var13; ++var14) {
 							var15 = this.fileIds[var12] != null ? this.fileIds[var12][var14] : var14;
-							this.fileNameHashes[var12][var15] = var2.readShortSmart();
+							this.fileNameHashes[var12][var15] = var2.method1958();
 						}
 
 						this.fileNameHashTables[var12] = new IntHashTable(this.fileNameHashes[var12]);
@@ -563,7 +563,7 @@ public abstract class AbstractArchive {
 				if (var2 != null && (var2[0] != 0 || var2[1] != 0 || var2[2] != 0 || var2[3] != 0)) {
 					var18 = class200.method4403(this.groups[var1], true);
 					Buffer var8 = new Buffer(var18);
-					var8.xteaDecrypt(var2, 5, var8.field5916.length);
+					var8.xteaDecrypt(var2, 5, var8.array.length);
 				} else {
 					var18 = class200.method4403(this.groups[var1], false);
 				}
@@ -580,7 +580,7 @@ public abstract class AbstractArchive {
 					var9 -= var10 * var3 * 4;
 					Buffer var11 = new Buffer(var20);
 					int[] var12 = new int[var3];
-					var11.array = var9 * -290410379;
+					var11.offset = var9 * -290410379;
 
 					int var14;
 					int var15;
@@ -588,7 +588,7 @@ public abstract class AbstractArchive {
 						var14 = 0;
 
 						for (var15 = 0; var15 < var3; ++var15) {
-							var14 += var11.readShortSmart();
+							var14 += var11.method1958();
 							var12[var15] += var14;
 						}
 					}
@@ -600,14 +600,14 @@ public abstract class AbstractArchive {
 						var12[var14] = 0;
 					}
 
-					var11.array = var9 * -290410379;
+					var11.offset = var9 * -290410379;
 					var14 = 0;
 
 					for (var15 = 0; var15 < var10; ++var15) {
 						int var16 = 0;
 
 						for (int var17 = 0; var17 < var3; ++var17) {
-							var16 += var11.readShortSmart();
+							var16 += var11.method1958();
 							System.arraycopy(var20, var14, var19[var17], var12[var17], var16);
 							var12[var17] += var16;
 							var14 += var16;

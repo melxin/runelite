@@ -28,9 +28,9 @@ public class class325 {
 	)
 	static final void method7035(boolean var0) {
 		if (var0) {
-			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.field1597;
+			Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
 		} else {
-			Client.authenticationScheme = class36.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.field1602 : AuthenticationScheme.USERNAME_PASSWORD;
+			Client.authenticationScheme = class36.clientPreferences.containsKey(Login.Login_username) ? AuthenticationScheme.TOKEN_REMEMBER : AuthenticationScheme.TOKEN;
 		}
 
 	}

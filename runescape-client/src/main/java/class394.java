@@ -84,7 +84,7 @@ public enum class394 implements Enum {
 				int[] var8 = new int[var1];
 
 				for (var4 = 0; var4 < var1; ++var4) {
-					var8[var4] = var0.readShortSmart();
+					var8[var4] = var0.method1958();
 				}
 
 				DynamicArray var5 = new DynamicArray(class574.field5820, false);

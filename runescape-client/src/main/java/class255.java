@@ -86,7 +86,7 @@ public class class255 extends class270 {
 	)
 	static int method5812(WorldView var0, int var1, int var2, int var3, int var4) {
 		if (var4 == 0) {
-			return JagNetThread.method8434(var0, var1, var2, var3);
+			return JagNetThread.getTileHeight(var0, var1, var2, var3);
 		} else {
 			int var5 = var4 / 2;
 			int var6 = var1 - var5;
@@ -105,15 +105,15 @@ public class class255 extends class270 {
 
 			for (int var19 = var11; var19 <= var15; ++var19) {
 				for (int var20 = var13; var20 <= var17; ++var20) {
-					var18 = Math.min(var18, JagNetThread.method8434(var0, Coord.method7417(var19), Coord.method7417(var20), var3));
+					var18 = Math.min(var18, JagNetThread.getTileHeight(var0, Coord.method7417(var19), Coord.method7417(var20), var3));
 				}
 			}
 
-			var18 = Math.min(var18, JagNetThread.method8434(var0, var1, var2, var3));
-			var18 = Math.min(var18, JagNetThread.method8434(var0, var1 - var5, var2 - var5, var3));
-			var18 = Math.min(var18, JagNetThread.method8434(var0, var1 - var5, var5 + var2, var3));
-			var18 = Math.min(var18, JagNetThread.method8434(var0, var5 + var1, var2 - var5, var3));
-			var18 = Math.min(var18, JagNetThread.method8434(var0, var5 + var1, var5 + var2, var3));
+			var18 = Math.min(var18, JagNetThread.getTileHeight(var0, var1, var2, var3));
+			var18 = Math.min(var18, JagNetThread.getTileHeight(var0, var1 - var5, var2 - var5, var3));
+			var18 = Math.min(var18, JagNetThread.getTileHeight(var0, var1 - var5, var5 + var2, var3));
+			var18 = Math.min(var18, JagNetThread.getTileHeight(var0, var5 + var1, var2 - var5, var3));
+			var18 = Math.min(var18, JagNetThread.getTileHeight(var0, var5 + var1, var5 + var2, var3));
 			return var18;
 		}
 	}

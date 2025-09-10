@@ -69,7 +69,7 @@ public abstract class class270 {
 		garbageValue = "35"
 	)
 	static void method6064(Buffer var0, int var1) {
-		PlayerCompositionColorTextureOverride.method4126(var0.field5916, var1);
+		PlayerCompositionColorTextureOverride.method4126(var0.array, var1);
 		FontName.method10841(var0, var1);
 	}
 }

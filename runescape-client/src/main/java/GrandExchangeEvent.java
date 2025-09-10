@@ -40,8 +40,8 @@ public class GrandExchangeEvent {
 		this.previousOfferName = var1.readStringCp1252NullTerminated();
 		this.world = var1.readUnsignedShort();
 		this.age = var1.readLong();
-		int var4 = var1.readShortSmart();
-		int var5 = var1.readShortSmart();
+		int var4 = var1.method1958();
+		int var5 = var1.method1958();
 		this.grandExchangeOffer = new GrandExchangeOffer();
 		this.grandExchangeOffer.method8513(2);
 		this.grandExchangeOffer.method8525(var2);

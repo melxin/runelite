@@ -60,7 +60,7 @@ public class DbTableType extends DualNode {
 				int[] var7 = new int[var1.readUnsignedByte()];
 
 				for (int var8 = 0; var8 < var7.length; ++var8) {
-					var7[var8] = var1.readShortSmartSub();
+					var7[var8] = var1.readUShortSmart();
 				}
 
 				this.types[var5] = var7;
@@ -70,7 +70,7 @@ public class DbTableType extends DualNode {
 					}
 
 					Object[][] var17 = this.defaultValues;
-					int var11 = var1.readShortSmartSub();
+					int var11 = var1.readUShortSmart();
 					Object[] var12 = new Object[var7.length * var11];
 
 					for (int var13 = 0; var13 < var11; ++var13) {
@@ -104,7 +104,7 @@ public class DbTableType extends DualNode {
 	public static PacketBufferNode method11058(int var0, String var1, Language var2, int var3) {
 		PacketBufferNode var4 = UserComparator6.getPacketBufferNode(ClientPacket.MESSAGE_PUBLIC, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(0);
-		int var5 = var4.packetBuffer.array * 1216585693;
+		int var5 = var4.packetBuffer.offset * 1216585693;
 		var4.packetBuffer.writeByte(var0);
 		String var6 = var1.toLowerCase();
 		int var7 = 0;
@@ -188,7 +188,7 @@ public class DbTableType extends DualNode {
 			var4.packetBuffer.writeByte(var3);
 		}
 
-		var4.packetBuffer.writeLengthByte(var4.packetBuffer.array * 1216585693 - var5);
+		var4.packetBuffer.writeLengthByte(var4.packetBuffer.offset * 1216585693 - var5);
 		return var4;
 	}
 }

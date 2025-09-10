@@ -10,18 +10,20 @@ public class Texture extends Node {
 	@Export("Texture_animatedPixels")
 	static int[] Texture_animatedPixels;
 	@ObfuscatedName("aq")
-	@Export("animationSpeed")
-	int animationSpeed;
+	@Export("fileId")
+	int fileId;
 	@ObfuscatedName("ao")
 	@Export("averageRGB")
 	int averageRGB;
 	@ObfuscatedName("as")
-	boolean field2583;
+	@Export("isLowDetail")
+	boolean isLowDetail;
 	@ObfuscatedName("al")
 	@Export("animationDirection")
 	int animationDirection;
 	@ObfuscatedName("au")
-	int field2585;
+	@Export("animationSpeed")
+	int animationSpeed;
 	@ObfuscatedName("ai")
 	@Export("pixels")
 	int[] pixels;
@@ -36,18 +38,18 @@ public class Texture extends Node {
 		this.isLoaded = false;
 		if (class585.field5890 <= 232) {
 			this.averageRGB = var1.readUnsignedShort();
-			this.field2583 = var1.readUnsignedByte() == 1;
+			this.isLowDetail = var1.readUnsignedByte() == 1;
 			var1.readUnsignedByte();
-			this.animationSpeed = var1.readUnsignedShort();
-			var1.readShortSmart();
+			this.fileId = var1.readUnsignedShort();
+			var1.method1958();
 			this.animationDirection = var1.readUnsignedByte();
-			this.field2585 = var1.readUnsignedByte();
+			this.animationSpeed = var1.readUnsignedByte();
 		} else {
-			this.animationSpeed = var1.readUnsignedShort();
+			this.fileId = var1.readUnsignedShort();
 			this.averageRGB = var1.readUnsignedShort();
-			this.field2583 = var1.readUnsignedByte() == 1;
+			this.isLowDetail = var1.readUnsignedByte() == 1;
 			this.animationDirection = var1.readUnsignedByte();
-			this.field2585 = var1.readUnsignedByte();
+			this.animationSpeed = var1.readUnsignedByte();
 		}
 
 		this.pixels = null;
@@ -59,12 +61,12 @@ public class Texture extends Node {
 	)
 	@Export("load")
 	boolean load(double var1, int var3, AbstractArchive var4) {
-		if (var4.getFileFlat(this.animationSpeed) == null) {
+		if (var4.getFileFlat(this.fileId) == null) {
 			return false;
 		} else {
 			int var5 = var3 * var3;
 			this.pixels = new int[var5];
-			int var7 = this.animationSpeed;
+			int var7 = this.fileId;
 			IndexedSprite var6;
 			if (!class489.method9813(var4, var7)) {
 				var6 = null;
@@ -142,7 +144,7 @@ public class Texture extends Node {
 			int var6;
 			int var7;
 			if (this.animationDirection == 1 || this.animationDirection == 2) {
-				var4 = var2 * this.field2585 * var1;
+				var4 = var2 * this.animationSpeed * var1;
 				var5 = var3 - 1;
 				if (this.animationDirection == 1) {
 					var4 = -var4;
@@ -155,7 +157,7 @@ public class Texture extends Node {
 			}
 
 			if (this.animationDirection == 3 || this.animationDirection == 4) {
-				var4 = this.field2585 * var1;
+				var4 = this.animationSpeed * var1;
 				var5 = var2 - 1;
 				if (this.animationDirection == 3) {
 					var4 = -var4;

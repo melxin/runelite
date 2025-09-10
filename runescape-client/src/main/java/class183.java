@@ -105,7 +105,7 @@ public class class183 extends DualNode {
 					var10 = Interpreter.Interpreter_intStack[UserComparator7.Interpreter_intStackSize + 2];
 					var13 = SecureRandomCallable.method2082(var10);
 					var7 = (DynamicArray)Interpreter.Interpreter_objectStack[--Interpreter.Interpreter_objectStackSize];
-					Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = var7 != null ? class38.method741(var7, var13, var3, var4) : -1;
+					Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = var7 != null ? ScriptFrame.method741(var7, var13, var3, var4) : -1;
 					return 1;
 				} else if (var0 == 8007) {
 					UserComparator7.Interpreter_intStackSize -= 3;

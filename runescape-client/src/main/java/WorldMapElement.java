@@ -160,9 +160,9 @@ public class WorldMapElement extends DualNode {
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 1) {
-			this.sprite1 = var1.readVarInt();
+			this.sprite1 = var1.readNullableLargeSmart();
 		} else if (var2 == 2) {
-			this.sprite2 = var1.readVarInt();
+			this.sprite2 = var1.readNullableLargeSmart();
 		} else if (var2 == 3) {
 			this.name = var1.readStringCp1252NullTerminated();
 		} else if (var2 == 4) {
@@ -195,13 +195,13 @@ public class WorldMapElement extends DualNode {
 					this.field2002[var4] = var1.readShort();
 				}
 
-				var1.readShortSmart();
+				var1.method1958();
 				var4 = var1.readUnsignedByte();
 				this.field2009 = new int[var4];
 
 				int var5;
 				for (var5 = 0; var5 < this.field2009.length; ++var5) {
-					this.field2009[var5] = var1.readShortSmart();
+					this.field2009[var5] = var1.method1958();
 				}
 
 				this.field2010 = new byte[var6];
@@ -213,13 +213,13 @@ public class WorldMapElement extends DualNode {
 				if (var2 == 17) {
 					this.menuTargetName = var1.readStringCp1252NullTerminated();
 				} else if (var2 == 18) {
-					var1.readVarInt();
+					var1.readNullableLargeSmart();
 				} else if (var2 == 19) {
 					this.category = var1.readUnsignedShort();
 				} else if (var2 == 21) {
-					var1.readShortSmart();
+					var1.method1958();
 				} else if (var2 == 22) {
-					var1.readShortSmart();
+					var1.method1958();
 				} else if (var2 == 23) {
 					var1.readUnsignedByte();
 					var1.readUnsignedByte();
@@ -228,7 +228,7 @@ public class WorldMapElement extends DualNode {
 					var1.readShort();
 					var1.readShort();
 				} else if (var2 == 25) {
-					var1.readVarInt();
+					var1.readNullableLargeSmart();
 				} else if (var2 == 28) {
 					var1.readUnsignedByte();
 				} else if (var2 == 29) {

@@ -38,7 +38,7 @@ public final class class447 {
 		var0.xOffset = LoginPacket.SpriteBuffer_xOffsets[0];
 		var0.yOffset = class191.SpriteBuffer_yOffsets[0];
 		var0.subWidth = class255.SpriteBuffer_spriteWidths[0];
-		var0.subHeight = FriendLoginUpdate.field5390[0];
+		var0.subHeight = FriendLoginUpdate.SpriteBuffer_spriteHeights[0];
 		var0.palette = TriBool.SpriteBuffer_spritePalette;
 		var0.pixels = SpriteBufferProperties.SpriteBuffer_pixels[0];
 		class388.method8205();

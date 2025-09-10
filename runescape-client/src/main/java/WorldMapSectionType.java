@@ -217,10 +217,10 @@ public enum WorldMapSectionType implements Enum {
 	)
 	public static void method6782(int var0, int var1, int var2, boolean var3) {
 		PacketBufferNode var4 = UserComparator6.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
-		var4.packetBuffer.writeIntLE(var0);
-		var4.packetBuffer.writeByteSub(var2);
+		var4.packetBuffer.writeShortAdd(var0);
+		var4.packetBuffer.writeByteNeg(var2);
 		var4.packetBuffer.writeInt(var3 ? Client.field486 : 0);
-		var4.packetBuffer.writeShortAdd(var1);
+		var4.packetBuffer.writeShortAddLE(var1);
 		Client.packetWriter.addNode(var4);
 	}
 }

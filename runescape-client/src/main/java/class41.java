@@ -32,7 +32,7 @@ public class class41 {
 		if (class464.otp.length() != 6) {
 			MouseRecorder.setLoginResponseString("", "Please enter a 6-digit PIN.", "");
 		} else {
-			class38.otpMedium = Integer.parseInt(class464.otp);
+			ScriptFrame.otpMedium = Integer.parseInt(class464.otp);
 			class464.otp = "";
 			class325.method7035(true);
 			MouseRecorder.setLoginResponseString("", "Connecting to server...", "");

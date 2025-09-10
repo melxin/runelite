@@ -752,12 +752,12 @@ public class WorldEntity extends Node implements Entity {
 					var31 += 15;
 					var30 = 277;
 					var8 = class294.loginBoxCenter + -117;
-					IndexedSprite var9 = ScriptFrame.method4283(Client.Login_isUsernameRemembered, Login.field727);
+					IndexedSprite var9 = class188.method4283(Client.Login_isUsernameRemembered, Login.field727);
 					var9.drawAt(var8, var30);
 					var8 = var8 + var9.subWidth + 5;
 					var1.draw("Remember username", var8, var30 + 13, 16776960, 0);
 					var8 = class294.loginBoxCenter + 24;
-					var9 = ScriptFrame.method4283(class36.clientPreferences.isUsernameHidden(), Login.field749);
+					var9 = class188.method4283(class36.clientPreferences.isUsernameHidden(), Login.field749);
 					var9.drawAt(var8, var30);
 					var8 = var8 + var9.subWidth + 5;
 					var1.draw("Hide username", var8, var30 + 13, 16776960, 0);

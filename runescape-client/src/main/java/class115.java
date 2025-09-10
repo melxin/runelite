@@ -140,8 +140,8 @@ public class class115 {
 	@Export("resumePauseWidget")
 	static void resumePauseWidget(int var0, int var1) {
 		PacketBufferNode var2 = UserComparator6.getPacketBufferNode(ClientPacket.RESUME_PAUSEBUTTON, Client.packetWriter.isaacCipher);
-		var2.packetBuffer.writeIntLE(var1);
-		var2.packetBuffer.writeIntIME(var0);
+		var2.packetBuffer.writeShortAdd(var1);
+		var2.packetBuffer.writeIntLE(var0);
 		Client.packetWriter.addNode(var2);
 	}
 }

@@ -236,10 +236,10 @@ public class Bounds {
 
 		StructComposition.method4564(class333.topLevelWorldView, class394.TOKEN);
 		StructComposition.method4564(class333.topLevelWorldView, class394.field4796);
-		ModeWhere.method8666(class333.topLevelWorldView, class197.field2163);
+		ModeWhere.addNpcsToScene(class333.topLevelWorldView, class197.field2163);
 		NPC.method2772(class333.topLevelWorldView);
-		ModeWhere.method8666(class333.topLevelWorldView, class197.field2162);
-		ModeWhere.method8666(class333.topLevelWorldView, class197.field2164);
+		ModeWhere.addNpcsToScene(class333.topLevelWorldView, class197.field2162);
+		ModeWhere.addNpcsToScene(class333.topLevelWorldView, class197.field2164);
 		ItemContainer.method2120();
 		WorldView var38 = class333.topLevelWorldView;
 
@@ -296,7 +296,7 @@ public class Bounds {
 				var18 = HealthBarDefinition.cameraX >> 7;
 				var19 = HttpRequest.cameraZ >> 7;
 				if (var18 >= 0 && 104 > var18 && var19 >= 0 && 104 > var19) {
-					var20 = JagNetThread.method8434(class333.topLevelWorldView, HealthBarDefinition.cameraX, HttpRequest.cameraZ, class333.topLevelWorldView.plane);
+					var20 = JagNetThread.getTileHeight(class333.topLevelWorldView, HealthBarDefinition.cameraX, HttpRequest.cameraZ, class333.topLevelWorldView.plane);
 					if (var20 - class174.cameraY < 800 && (class333.topLevelWorldView.tileSettings[class333.topLevelWorldView.plane][var18][var19] & 4) != 0) {
 						var17 = class333.topLevelWorldView.plane;
 					} else {

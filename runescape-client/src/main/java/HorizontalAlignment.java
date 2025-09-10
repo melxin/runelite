@@ -90,7 +90,7 @@ public enum HorizontalAlignment implements Enum {
 			while (true) {
 				int var9;
 				while (!var8) {
-					var9 = var4.readShortSmartSub();
+					var9 = var4.readUShortSmart();
 					if (var9 == 0) {
 						continue label72;
 					}
@@ -114,7 +114,7 @@ public enum HorizontalAlignment implements Enum {
 					}
 				}
 
-				var9 = var4.readShortSmartSub();
+				var9 = var4.readUShortSmart();
 				if (var9 == 0) {
 					break;
 				}

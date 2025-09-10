@@ -89,7 +89,7 @@ public class class146 extends DualNode {
 				var16 = class139.field1685;
 			}
 
-			var9 = var1.readUShortSmart();
+			var9 = var1.readShortSmart();
 			int var11 = var1.readUnsignedByte();
 			class140 var12 = (class140)class173.findEnumerated(WorldMapSectionType.method6781(), var11);
 			if (var12 == null) {
@@ -436,10 +436,10 @@ public class class146 extends DualNode {
 							String var11 = (String)Interpreter.Interpreter_objectStack[Interpreter.Interpreter_objectStackSize + 1];
 							var12 = UserComparator6.getPacketBufferNode(ClientPacket.CHAT_SENDPRIVATE, Client.packetWriter.isaacCipher);
 							var12.packetBuffer.writeShort(0);
-							int var10 = var12.packetBuffer.array * 1216585693;
+							int var10 = var12.packetBuffer.offset * 1216585693;
 							var12.packetBuffer.writeStringCp1252NullTerminated(var8);
 							WidgetConfigNode.method7497(var12.packetBuffer, var11);
-							var12.packetBuffer.writeLengthShort(var12.packetBuffer.array * 1216585693 - var10);
+							var12.packetBuffer.writeLengthShort(var12.packetBuffer.offset * 1216585693 - var10);
 							Client.packetWriter.addNode(var12);
 							return 1;
 						} else if (var0 == ScriptOpcodes.CHAT_SENDCLAN) {
@@ -586,12 +586,12 @@ public class class146 extends DualNode {
 							int[] var4 = var0.field3196.method7966();
 							if (var4 != null) {
 								PacketBufferNode var2 = UserComparator6.getPacketBufferNode(ClientPacket.IF_CRMVIEW, Client.packetWriter.isaacCipher);
-								var2.packetBuffer.method11234(var4[0]);
-								var2.packetBuffer.writeIntIME(var4[2]);
-								var2.packetBuffer.method11250(var4[1]);
-								var2.packetBuffer.writeIntLE(var0.field3196.childIndex * -217986249);
+								var2.packetBuffer.writeIntIME(var4[0]);
+								var2.packetBuffer.writeIntLE(var4[2]);
+								var2.packetBuffer.writeIntME(var4[1]);
+								var2.packetBuffer.writeShortAdd(var0.field3196.childIndex * -217986249);
 								var2.packetBuffer.writeInt(var0.field3196.id);
-								var2.packetBuffer.writeIntIME(var0.field3196.method7964());
+								var2.packetBuffer.writeIntLE(var0.field3196.method7964());
 								Client.packetWriter.addNode(var2);
 							}
 						}

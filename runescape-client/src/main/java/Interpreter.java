@@ -14,7 +14,8 @@ public class Interpreter {
 	@ObfuscatedName("al")
 	static final double field657;
 	@ObfuscatedName("ai")
-	static Object[] field671;
+	@Export("Interpreter_objectLocals")
+	static Object[] Interpreter_objectLocals;
 	@ObfuscatedName("aa")
 	@Export("Interpreter_intStack")
 	static int[] Interpreter_intStack;
@@ -38,7 +39,7 @@ public class Interpreter {
 		descriptor = "[Lbq;"
 	)
 	@Export("Interpreter_frames")
-	static class38[] Interpreter_frames;
+	static ScriptFrame[] Interpreter_frames;
 	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
 		intValue = 222371735
@@ -70,7 +71,7 @@ public class Interpreter {
 		Interpreter_intStack = new int[1000];
 		Interpreter_objectStack = new Object[1000];
 		Interpreter_frameDepth = 0;
-		Interpreter_frames = new class38[50];
+		Interpreter_frames = new ScriptFrame[50];
 		field653 = 0;
 		field665 = new class368();
 		Interpreter_calendar = java.util.Calendar.getInstance();

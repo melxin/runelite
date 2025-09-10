@@ -331,7 +331,7 @@ public class FadeOutTask extends SongTask {
 				ObjectComposition.ObjectDefinition_cachedModelData.clear();
 				PacketBufferNode var19;
 				if (class521.client.hasFrame()) {
-					var19 = UserComparator6.getPacketBufferNode(ClientPacket.field3606, Client.packetWriter.isaacCipher);
+					var19 = UserComparator6.getPacketBufferNode(ClientPacket.DETECT_MODIFIED_CLIENT, Client.packetWriter.isaacCipher);
 					var19.packetBuffer.writeInt(1057001181);
 					Client.packetWriter.addNode(var19);
 				}

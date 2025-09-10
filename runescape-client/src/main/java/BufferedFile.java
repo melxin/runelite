@@ -132,7 +132,7 @@ public class BufferedFile {
 	)
 	@Export("readFully")
 	public void readFully(byte[] var1) throws IOException {
-		this.method10920(var1, 0, var1.length);
+		this.read(var1, 0, var1.length);
 	}
 
 	@ObfuscatedName("aq")
@@ -140,7 +140,8 @@ public class BufferedFile {
 		descriptor = "([BIII)V",
 		garbageValue = "-69763938"
 	)
-	public void method10920(byte[] var1, int var2, int var3) throws IOException {
+	@Export("read")
+	public void read(byte[] var1, int var2, int var3) throws IOException {
 		try {
 			if (var3 + var2 > var1.length) {
 				throw new ArrayIndexOutOfBoundsException(var3 + var2 - var1.length);

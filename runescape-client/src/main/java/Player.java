@@ -193,7 +193,7 @@ public final class Player extends Actor {
 	)
 	@Export("read")
 	final void read(Buffer var1) {
-		var1.array = 0;
+		var1.offset = 0;
 		byte var2 = var1.readByte();
 		boolean var3 = true;
 		this.headIconPk = var1.readByte();

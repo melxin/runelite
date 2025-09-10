@@ -126,17 +126,17 @@ public class GraphicsDefaults {
 					var3.readMedium();
 					break;
 				case 2:
-					this.field5529 = var3.readVarInt();
-					this.field5539 = var3.readVarInt();
-					this.field5524 = var3.readVarInt();
-					this.field5532 = var3.readVarInt();
-					this.field5528 = var3.readVarInt();
-					this.field5534 = var3.readVarInt();
-					this.field5533 = var3.readVarInt();
-					this.field5536 = var3.readVarInt();
-					this.field5537 = var3.readVarInt();
-					this.field5538 = var3.readVarInt();
-					this.field5530 = var3.readVarInt();
+					this.field5529 = var3.readNullableLargeSmart();
+					this.field5539 = var3.readNullableLargeSmart();
+					this.field5524 = var3.readNullableLargeSmart();
+					this.field5532 = var3.readNullableLargeSmart();
+					this.field5528 = var3.readNullableLargeSmart();
+					this.field5534 = var3.readNullableLargeSmart();
+					this.field5533 = var3.readNullableLargeSmart();
+					this.field5536 = var3.readNullableLargeSmart();
+					this.field5537 = var3.readNullableLargeSmart();
+					this.field5538 = var3.readNullableLargeSmart();
+					this.field5530 = var3.readNullableLargeSmart();
 					break;
 				case 3:
 					for (int var5 = 0; var5 < this.field5535.length; ++var5) {

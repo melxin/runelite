@@ -38,7 +38,7 @@ public class class154 {
 	)
 	void method3837(Buffer var1) {
 		this.field1793 = var1.readLong();
-		this.field1787 = var1.readShortSmart();
+		this.field1787 = var1.method1958();
 
 		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
 			Object var3;

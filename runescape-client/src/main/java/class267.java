@@ -493,7 +493,7 @@ public class class267 {
 
 						var39 = class294.loginBoxCenter + 80;
 						if (var5 == 1 && var33 >= var39 - 75 && var33 <= var39 + 75 && var34 >= var38 - 20 && var34 <= var38 + 20 || var43) {
-							class38.method742();
+							ScriptFrame.focusPasswordWhenUsernameFilled();
 						}
 					} else if (Login.loginIndex == 1) {
 						var43 = class521.client.containsAccessAndRefreshToken() || class521.client.otlTokenRequesterInitialized() || class521.client.containsSessionAndCharacterId();
@@ -581,7 +581,7 @@ public class class267 {
 								ClientPreferences.method2677(0);
 								Login.Login_username = "";
 								Login.Login_password = "";
-								class38.otpMedium = 0;
+								ScriptFrame.otpMedium = 0;
 								class464.otp = "";
 								Login.rememberUsername = true;
 							}
@@ -646,7 +646,7 @@ public class class267 {
 														ClientPreferences.method2677(0);
 														Login.Login_username = "";
 														Login.Login_password = "";
-														class38.otpMedium = 0;
+														ScriptFrame.otpMedium = 0;
 														class464.otp = "";
 														Login.rememberUsername = true;
 													}
@@ -759,7 +759,7 @@ public class class267 {
 										ClientPreferences.method2677(0);
 										Login.Login_username = "";
 										Login.Login_password = "";
-										class38.otpMedium = 0;
+										ScriptFrame.otpMedium = 0;
 										class464.otp = "";
 									}
 
@@ -777,7 +777,7 @@ public class class267 {
 											ClientPreferences.method2677(0);
 											Login.Login_username = "";
 											Login.Login_password = "";
-											class38.otpMedium = 0;
+											ScriptFrame.otpMedium = 0;
 											class464.otp = "";
 										} else {
 											if (var9.field3212 == 85 && !class464.otp.isEmpty()) {

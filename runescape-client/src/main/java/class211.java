@@ -219,20 +219,20 @@ public class class211 {
 		int var30;
 		int var31;
 		if (class328.field3651 == var0) {
-			var27 = var1.readSignedShort();
-			var3 = var1.readShortLE();
+			var27 = var1.readUnsignedShortAddLE();
+			var3 = var1.readUnsignedShortAdd();
 			var4 = var1.readInt();
-			var5 = var1.readShortLE();
+			var5 = var1.readUnsignedShortAdd();
 			var6 = var1.method11247();
-			var30 = var1.method11254();
+			var30 = var1.readUnsignedIntME();
 			var31 = Coord.method7413(var30);
 			var9 = Coord.method7424(var30);
 			var10 = Coord.method7415(var30);
-			var11 = var1.readShortLE();
-			var12 = var1.readUnsignedShortAddLE();
-			var13 = var1.readSignedShort();
-			int var34 = var1.readUnsignedShortLE();
-			var15 = var1.readUnsignedShortLE();
+			var11 = var1.readUnsignedShortAdd();
+			var12 = var1.readUnsignedShortLE();
+			var13 = var1.readUnsignedShortAddLE();
+			int var34 = var1.readUnsignedByteNeg();
+			var15 = var1.readUnsignedByteNeg();
 			var16 = HttpHeaders.worldView.plane;
 			int var26 = (var15 >> 4 & 7) + class148.field1756 + HttpHeaders.worldView.baseX;
 			var18 = (var15 & 7) + class163.field1873 + HttpHeaders.worldView.baseY;
@@ -242,10 +242,10 @@ public class class211 {
 			}
 
 		} else if (class328.field3648 == var0) {
-			var27 = var1.readUnsignedShortAdd();
+			var27 = var1.readUnsignedByteSub();
 			var3 = (var27 >> 4 & 7) + class148.field1756;
 			var4 = (var27 & 7) + class163.field1873;
-			var5 = var1.readUnsignedShortLE();
+			var5 = var1.readUnsignedByteNeg();
 			var6 = var5 >> 2;
 			var30 = var5 & 3;
 			var31 = Client.field320[var6];
@@ -256,15 +256,15 @@ public class class211 {
 
 		} else if (class328.field3645 == var0) {
 			boolean var28 = var1.readUnsignedByte() == 1;
-			var3 = var1.readUnsignedShortLE();
-			var4 = var1.readUnsignedByteSub();
+			var3 = var1.readUnsignedByteNeg();
+			var4 = var1.readUnsignedByteAdd();
 			var5 = (var4 >> 4 & 7) + class148.field1756;
 			var6 = (var4 & 7) + class163.field1873;
-			var30 = var1.readUnsignedShortAddLE();
-			var31 = var1.readUnsignedShortLE();
-			var9 = var1.readShortLE();
-			var10 = var1.readUnsignedShortAddLE();
-			var11 = var1.method11252();
+			var30 = var1.readUnsignedShortLE();
+			var31 = var1.readUnsignedByteNeg();
+			var9 = var1.readUnsignedShortAdd();
+			var10 = var1.readUnsignedShortLE();
+			var11 = var1.readUnsignedIntLE();
 			if (var5 >= 0 && var6 >= 0 && var5 < HttpHeaders.worldView.sizeX && var6 < HttpHeaders.worldView.sizeY) {
 				var12 = Client.overheadTextLimit == -1 ? HttpHeaders.worldView.plane : Client.overheadTextLimit;
 				class71.addTileItemToGroundItems(var12, var5, var6, var9, var11, var31, var10, var30, var3, var28);
@@ -272,10 +272,10 @@ public class class211 {
 
 		} else if (class328.field3653 == var0) {
 			var27 = var1.readUnsignedShort();
-			var3 = var1.readUnsignedShortLE();
+			var3 = var1.readUnsignedByteNeg();
 			var4 = (var3 >> 4 & 7) + class148.field1756;
 			var5 = (var3 & 7) + class163.field1873;
-			var6 = var1.readUnsignedShortLE();
+			var6 = var1.readUnsignedByteNeg();
 			var30 = var6 >> 2;
 			var31 = var6 & 3;
 			var9 = Client.field320[var30];
@@ -305,21 +305,21 @@ public class class211 {
 			var27 = var1.readUnsignedByte();
 			var3 = (var27 >> 4 & 7) + class148.field1756;
 			var4 = (var27 & 7) + class163.field1873;
-			var5 = var1.readShortLE();
-			var6 = var1.readUnsignedShortAddLE();
-			var30 = var1.readUnsignedShortAdd();
+			var5 = var1.readUnsignedShortAdd();
+			var6 = var1.readUnsignedShortLE();
+			var30 = var1.readUnsignedByteSub();
 			if (var3 >= 0 && var4 >= 0 && var3 < HttpHeaders.worldView.sizeX && var4 < HttpHeaders.worldView.sizeY) {
 				var3 = Coord.method7416(var3);
 				var4 = Coord.method7416(var4);
 				var31 = Client.overheadTextLimit == -1 ? HttpHeaders.worldView.plane : Client.overheadTextLimit;
-				GraphicsObject var35 = new GraphicsObject(HttpHeaders.worldView, var6, var31, var3, var4, JagNetThread.method8434(HttpHeaders.worldView, var3, var4, var31) - var30, var5, Client.cycle);
+				GraphicsObject var35 = new GraphicsObject(HttpHeaders.worldView, var6, var31, var3, var4, JagNetThread.getTileHeight(HttpHeaders.worldView, var3, var4, var31) - var30, var5, Client.cycle);
 				HttpHeaders.worldView.graphicsObjects.addFirst(var35);
 			}
 
 		} else if (class328.field3646 == var0) {
-			var27 = var1.readUnsignedShortAddLE();
-			var3 = var1.method11254();
-			var4 = var1.readUnsignedShortAdd();
+			var27 = var1.readUnsignedShortLE();
+			var3 = var1.readUnsignedIntME();
+			var4 = var1.readUnsignedByteSub();
 			var5 = (var4 >> 4 & 7) + class148.field1756;
 			var6 = (var4 & 7) + class163.field1873;
 			var30 = HttpHeaders.worldView.plane;
@@ -329,38 +329,38 @@ public class class211 {
 			}
 
 		} else if (class328.field3644 == var0) {
-			var27 = var1.readUnsignedShortAdd();
+			var27 = var1.readUnsignedByteSub();
 			var3 = (var27 >> 4 & 7) + class148.field1756;
 			var4 = (var27 & 7) + class163.field1873;
-			var5 = var1.readShortLE();
-			var6 = var1.method11254();
+			var5 = var1.readUnsignedShortAdd();
+			var6 = var1.readUnsignedIntME();
 			if (var3 >= 0 && var4 >= 0 && var3 < 104 && var4 < 104) {
 				var30 = Client.overheadTextLimit == -1 ? HttpHeaders.worldView.plane : Client.overheadTextLimit;
 				class114.method3454(var30, var3, var4, var5, var6);
 			}
 
 		} else if (class328.field3643 == var0) {
-			var27 = var1.method11295();
-			var3 = var1.readUnsignedShortAdd();
+			var27 = var1.readUnsignedIntIME();
+			var3 = var1.readUnsignedByteSub();
 			var4 = (var3 >> 4 & 7) + class148.field1756;
 			var5 = (var3 & 7) + class163.field1873;
-			var6 = var1.readUnsignedShortAddLE();
-			var30 = var1.method11254();
+			var6 = var1.readUnsignedShortLE();
+			var30 = var1.readUnsignedIntME();
 			if (var4 >= 0 && var5 >= 0 && var4 < HttpHeaders.worldView.sizeX && var5 < HttpHeaders.worldView.sizeY) {
 				var31 = Client.overheadTextLimit == -1 ? HttpHeaders.worldView.plane : Client.overheadTextLimit;
 				class51.method1895(var31, var4, var5, var6, var30, var27);
 			}
 
 		} else if (class328.field3650 == var0) {
-			var27 = var1.readUnsignedIntLE();
-			var3 = var1.readUnsignedShortAdd();
+			var27 = var1.readShortLE();
+			var3 = var1.readUnsignedByteSub();
 			var4 = (var3 >> 4 & 7) + class148.field1756;
 			var5 = (var3 & 7) + class163.field1873;
 			short var29 = (short)var1.readShort();
-			var30 = var1.method11295();
-			var31 = var1.readUnsignedShortAddLE();
-			var9 = var1.readUnsignedShortAddLE();
-			var10 = var1.readUnsignedIntME();
+			var30 = var1.readUnsignedIntIME();
+			var31 = var1.readUnsignedShortLE();
+			var9 = var1.readUnsignedShortLE();
+			var10 = var1.method9343();
 			short var32 = (short)var1.readShort();
 			if (var4 >= 0 && var5 >= 0 && var4 < 104 && var5 < 104) {
 				var12 = Client.overheadTextLimit == -1 ? HttpHeaders.worldView.plane : Client.overheadTextLimit;
@@ -368,13 +368,13 @@ public class class211 {
 			}
 
 		} else if (class328.field3654 == var0) {
-			var27 = var1.readUnsignedShortLE();
+			var27 = var1.readUnsignedByteNeg();
 			String[] var22 = null;
 			if (var27 > 0) {
 				var22 = new String[5];
 
 				for (var4 = 0; var4 < var27; ++var4) {
-					var5 = var1.readUnsignedShortAdd();
+					var5 = var1.readUnsignedByteSub();
 					String var23 = var1.readStringCp1252NullTerminated();
 					if (var5 >= 0 && var5 < 5) {
 						var22[var5] = var23;
@@ -382,14 +382,14 @@ public class class211 {
 				}
 			}
 
-			var4 = var1.readUnsignedShortLE();
+			var4 = var1.readUnsignedByteNeg();
 			var5 = (var4 >> 4 & 7) + class148.field1756;
 			var6 = (var4 & 7) + class163.field1873;
-			var30 = var1.readUnsignedShortLE();
+			var30 = var1.readUnsignedByteNeg();
 			var31 = var30 >> 2;
 			var9 = var30 & 3;
 			var10 = Client.field320[var31];
-			var11 = var1.readUnsignedShortAddLE();
+			var11 = var1.readUnsignedShortLE();
 			var12 = var1.readUnsignedByte();
 			if (var5 >= 0 && var6 >= 0 && var5 < HttpHeaders.worldView.sizeX && var6 < HttpHeaders.worldView.sizeY) {
 				var13 = Client.overheadTextLimit == -1 ? HttpHeaders.worldView.plane : Client.overheadTextLimit;
@@ -397,12 +397,12 @@ public class class211 {
 			}
 
 		} else if (class328.field3652 == var0) {
-			var27 = var1.readUnsignedShortAdd();
-			var3 = var1.readSignedShort();
-			var4 = var1.readUnsignedByteSub();
-			var5 = var1.readUnsignedByteSub() & 31;
+			var27 = var1.readUnsignedByteSub();
+			var3 = var1.readUnsignedShortAddLE();
+			var4 = var1.readUnsignedByteAdd();
+			var5 = var1.readUnsignedByteAdd() & 31;
 			var6 = var1.readUnsignedByte();
-			var30 = var1.readUnsignedShortAdd();
+			var30 = var1.readUnsignedByteSub();
 			var31 = (var30 >> 4 & 7) + class148.field1756;
 			var9 = (var30 & 7) + class163.field1873;
 			if (var31 >= 0 && var9 >= 0 && var31 < HttpHeaders.worldView.sizeX && var9 < HttpHeaders.worldView.sizeY) {
@@ -416,19 +416,19 @@ public class class211 {
 			if (class328.field3647 == var0) {
 				byte var2 = var1.readByteNeg();
 				var3 = var1.readUnsignedShort();
-				var4 = var1.readUnsignedShortAdd();
+				var4 = var1.readUnsignedByteSub();
 				var5 = (var4 >> 4 & 7) + class148.field1756;
 				var6 = (var4 & 7) + class163.field1873;
 				byte var7 = var1.readByteSub();
 				byte var8 = var1.readByteNeg();
 				var9 = var1.readUnsignedShort();
-				var10 = var1.readUnsignedByteSub();
+				var10 = var1.readUnsignedByteAdd();
 				var11 = var10 >> 2;
 				var12 = var10 & 3;
 				var13 = Client.field320[var11];
 				byte var14 = var1.readByteSub();
-				var15 = var1.readUnsignedShortAddLE();
-				var16 = var1.readSignedShort();
+				var15 = var1.readUnsignedShortLE();
+				var16 = var1.readUnsignedShortAddLE();
 				Player var17;
 				if (var3 == Client.localPlayerIndex) {
 					var17 = HealthBarUpdate.localPlayer;
@@ -444,10 +444,10 @@ public class class211 {
 
 			if (class328.field3649 == var0) {
 				var27 = var1.readUnsignedShort();
-				var3 = var1.readUnsignedByteSub();
+				var3 = var1.readUnsignedByteAdd();
 				var4 = (var3 >> 4 & 7) + class148.field1756;
 				var5 = (var3 & 7) + class163.field1873;
-				var6 = var1.readUnsignedShortLE();
+				var6 = var1.readUnsignedByteNeg();
 				var30 = HttpHeaders.worldView.plane;
 				if (var4 >= 0 && var5 >= 0 && var4 < HttpHeaders.worldView.sizeX && var5 < HttpHeaders.worldView.sizeY) {
 					NodeDeque var20 = HttpHeaders.worldView.groundItems[var30][var4][var5];

@@ -65,7 +65,7 @@ public class Fonts {
 						if (var14 == null) {
 							var13 = null;
 						} else {
-							Font var15 = new Font(var14, LoginPacket.SpriteBuffer_xOffsets, class191.SpriteBuffer_yOffsets, class255.SpriteBuffer_spriteWidths, FriendLoginUpdate.field5390, TriBool.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
+							Font var15 = new Font(var14, LoginPacket.SpriteBuffer_xOffsets, class191.SpriteBuffer_yOffsets, class255.SpriteBuffer_spriteWidths, FriendLoginUpdate.SpriteBuffer_spriteHeights, TriBool.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
 							class388.method8205();
 							var13 = var15;
 						}

@@ -145,12 +145,12 @@ final class class145 implements ThreadFactory {
 	)
 	static void method3748(PacketBufferNode var0) {
 		var0.packetBuffer.writeInt(HorizontalAlignment.field2091.hash);
-		var0.packetBuffer.method11250(Friend.archive8.hash);
-		var0.packetBuffer.writeIntIME(archive13.hash);
-		var0.packetBuffer.writeIntIME(WidgetDefinition.field4042.hash);
-		var0.packetBuffer.writeIntIME(class159.field1830.hash);
-		var0.packetBuffer.method11250(class115.field1514.hash);
-		var0.packetBuffer.method11234(class27.archive10.hash);
+		var0.packetBuffer.writeIntME(Friend.archive8.hash);
+		var0.packetBuffer.writeIntLE(archive13.hash);
+		var0.packetBuffer.writeIntLE(WidgetDefinition.field4042.hash);
+		var0.packetBuffer.writeIntLE(class159.field1830.hash);
+		var0.packetBuffer.writeIntME(class115.field1514.hash);
+		var0.packetBuffer.writeIntIME(class27.archive10.hash);
 	}
 
 	@ObfuscatedName("md")

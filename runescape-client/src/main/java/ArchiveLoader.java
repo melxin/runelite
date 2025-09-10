@@ -67,7 +67,7 @@ public class ArchiveLoader {
 		try {
 			var0 = class33.getPreferencesFile("", class429.field5084.name, true);
 			Buffer var1 = class36.clientPreferences.toBuffer();
-			var0.write(var1.field5916, 0, var1.array * 1216585693);
+			var0.write(var1.array, 0, var1.offset * 1216585693);
 		} catch (Exception var3) {
 		}
 

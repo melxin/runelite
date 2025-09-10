@@ -38,7 +38,8 @@ public class DefaultsGroup {
 		descriptor = "(Lbk;B)V",
 		garbageValue = "28"
 	)
-	static void method10432(LoginState var0) {
+	@Export("updateLoginState")
+	static void updateLoginState(LoginState var0) {
 		if (class333.loginState != var0) {
 			class333.loginState = var0;
 		}

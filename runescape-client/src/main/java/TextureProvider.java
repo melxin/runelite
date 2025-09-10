@@ -96,9 +96,9 @@ public class TextureProvider implements TextureLoader {
 
 			for (int var4 = 0; var4 < var3.length; ++var4) {
 				Texture var5 = var3[var4];
-				if (var5 != null && var5.animationSpeed != -1) {
+				if (var5 != null && var5.fileId != -1) {
 					++var1;
-					if (this.archive.method8381(var5.animationSpeed)) {
+					if (this.archive.method8381(var5.fileId)) {
 						++var2;
 					}
 				}
@@ -169,7 +169,7 @@ public class TextureProvider implements TextureLoader {
 	)
 	@Export("isLowDetail")
 	public boolean isLowDetail(int var1) {
-		return this.textures[var1].field2583;
+		return this.textures[var1].isLowDetail;
 	}
 
 	@ObfuscatedName("aq")

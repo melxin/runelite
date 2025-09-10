@@ -379,7 +379,7 @@ public class Instrument {
 		this.volume.decode(var1);
 		int var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			var1.array -= -290410379;
+			var1.offset -= -290410379;
 			this.pitchModifier = new SoundEnvelope();
 			this.pitchModifier.decode(var1);
 			this.pitchModifierAmplitude = new SoundEnvelope();
@@ -388,7 +388,7 @@ public class Instrument {
 
 		var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			var1.array -= -290410379;
+			var1.offset -= -290410379;
 			this.volumeMultiplier = new SoundEnvelope();
 			this.volumeMultiplier.decode(var1);
 			this.volumeMultiplierAmplitude = new SoundEnvelope();
@@ -397,7 +397,7 @@ public class Instrument {
 
 		var2 = var1.readUnsignedByte();
 		if (var2 != 0) {
-			var1.array -= -290410379;
+			var1.offset -= -290410379;
 			this.release = new SoundEnvelope();
 			this.release.decode(var1);
 			this.attack = new SoundEnvelope();
@@ -405,18 +405,18 @@ public class Instrument {
 		}
 
 		for (int var3 = 0; var3 < 10; ++var3) {
-			int var4 = var1.readShortSmartSub();
+			int var4 = var1.readUShortSmart();
 			if (var4 == 0) {
 				break;
 			}
 
 			this.oscillatorVolume[var3] = var4;
-			this.oscillatorPitch[var3] = var1.readUShortSmart();
-			this.oscillatorDelays[var3] = var1.readShortSmartSub();
+			this.oscillatorPitch[var3] = var1.readShortSmart();
+			this.oscillatorDelays[var3] = var1.readUShortSmart();
 		}
 
-		this.delayTime = var1.readShortSmartSub();
-		this.delayDecay = var1.readShortSmartSub();
+		this.delayTime = var1.readUShortSmart();
+		this.delayDecay = var1.readUShortSmart();
 		this.duration = var1.readUnsignedShort();
 		this.offset = var1.readUnsignedShort();
 		this.filter = new AudioFilter();

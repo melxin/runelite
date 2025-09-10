@@ -57,16 +57,16 @@ public class InterfaceParent extends Node {
 				Buffer var7 = new Buffer(new byte[1000]);
 
 				while (true) {
-					int var8 = var6.read(var7.field5916, var7.array * 1216585693, 1000 - var7.array * 1216585693);
+					int var8 = var6.read(var7.array, var7.offset * 1216585693, 1000 - var7.offset * 1216585693);
 					if (var8 == -1) {
-						var7.array = 0;
+						var7.offset = 0;
 						long var10 = var7.readLong();
 						var1 = var10;
 						break;
 					}
 
-					var7.array += -290410379 * var8;
-					if (var7.array * 1216585693 >= 1000) {
+					var7.offset += -290410379 * var8;
+					if (var7.offset * 1216585693 >= 1000) {
 						var1 = 0L;
 						break;
 					}

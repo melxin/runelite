@@ -46,7 +46,7 @@ public class Skeleton extends Node {
 			}
 		}
 
-		if (var3.array * 1216585693 < var3.field5916.length) {
+		if (var3.offset * 1216585693 < var3.array.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
 				this.field2674 = new class227(var3, var4);

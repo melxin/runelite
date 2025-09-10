@@ -98,14 +98,14 @@ public class class27 {
 
 					Buffer var12;
 					int var13;
-					for (var12 = new Buffer((int)var11.length()); var12.array * 1216585693 < var12.field5916.length; var12.array += -290410379 * var13) {
-						var13 = var11.read(var12.field5916, var12.array * 1216585693, var12.field5916.length - var12.array * 1216585693);
+					for (var12 = new Buffer((int)var11.length()); var12.offset * 1216585693 < var12.array.length; var12.offset += -290410379 * var13) {
+						var13 = var11.read(var12.array, var12.offset * 1216585693, var12.array.length - var12.offset * 1216585693);
 						if (var13 == -1) {
 							throw new IOException();
 						}
 					}
 
-					var12.array = 0;
+					var12.offset = 0;
 					var13 = var12.readUnsignedByte();
 					if (var13 < 1 || var13 > 3) {
 						throw new IOException("" + var13);
@@ -413,7 +413,7 @@ public class class27 {
 		if (!Client.field553) {
 			var0 = Coord.method7416(KeyHandler.field114);
 			var1 = Coord.method7416(SequenceDefinition.field2487);
-			var2 = JagNetThread.method8434(class333.topLevelWorldView, var0, var1, class333.topLevelWorldView.plane) - GrandExchangeOffer.field5046;
+			var2 = JagNetThread.getTileHeight(class333.topLevelWorldView, var0, var1, class333.topLevelWorldView.plane) - GrandExchangeOffer.field5046;
 			WorldMapLabel.method6829(var0, var2, var1);
 		} else if (Client.field589 != null) {
 			HealthBarDefinition.cameraX = Client.field589.vmethod10615();
@@ -421,7 +421,7 @@ public class class27 {
 			if (Client.field588) {
 				class174.cameraY = Client.field589.vmethod10614();
 			} else {
-				class174.cameraY = JagNetThread.method8434(class333.topLevelWorldView, HealthBarDefinition.cameraX, HttpRequest.cameraZ, class333.topLevelWorldView.plane) - Client.field589.vmethod10614();
+				class174.cameraY = JagNetThread.getTileHeight(class333.topLevelWorldView, HealthBarDefinition.cameraX, HttpRequest.cameraZ, class333.topLevelWorldView.plane) - Client.field589.vmethod10614();
 			}
 
 			Client.field589.method10620();
@@ -430,7 +430,7 @@ public class class27 {
 		if (!Client.field587) {
 			var0 = Coord.method7416(class169.field1909);
 			var1 = Coord.method7416(class227.field2654);
-			var2 = JagNetThread.method8434(class333.topLevelWorldView, var0, var1, class333.topLevelWorldView.plane) - Buddy.field5413;
+			var2 = JagNetThread.getTileHeight(class333.topLevelWorldView, var0, var1, class333.topLevelWorldView.plane) - Buddy.field5413;
 			int var3 = var0 - HealthBarDefinition.cameraX;
 			int var4 = var2 - class174.cameraY;
 			int var5 = var1 - HttpRequest.cameraZ;

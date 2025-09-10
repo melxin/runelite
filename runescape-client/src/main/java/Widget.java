@@ -1226,18 +1226,18 @@ public class Widget extends Node {
 		}
 
 		if (this.type == 1 || this.type == 3 || this.type == 4) {
-			this.color = var1.readShortSmart();
+			this.color = var1.method1958();
 		}
 
 		if (this.type == 3 || this.type == 4) {
-			this.color2 = var1.readShortSmart();
-			this.mouseOverColor = var1.readShortSmart();
-			this.mouseOverColor2 = var1.readShortSmart();
+			this.color2 = var1.method1958();
+			this.mouseOverColor = var1.method1958();
+			this.mouseOverColor2 = var1.method1958();
 		}
 
 		if (this.type == 5) {
-			this.spriteId2 = var1.readShortSmart();
-			this.spriteId = var1.readShortSmart();
+			this.spriteId2 = var1.method1958();
+			this.spriteId = var1.method1958();
 		}
 
 		if (this.type == 6) {
@@ -1349,12 +1349,12 @@ public class Widget extends Node {
 		}
 
 		if (this.type == 5) {
-			this.spriteId2 = var1.readShortSmart();
+			this.spriteId2 = var1.method1958();
 			this.spriteAngle = var1.readUnsignedShort();
 			this.spriteTiling = var1.readUnsignedByte() == 1;
 			this.transparencyTop = var1.readUnsignedByte();
 			this.outline = var1.readUnsignedByte();
-			this.spriteShadow = var1.readShortSmart();
+			this.spriteShadow = var1.method1958();
 			this.spriteFlipV = var1.readUnsignedByte() == 1;
 			this.spriteFlipH = var1.readUnsignedByte() == 1;
 		}
@@ -1399,18 +1399,18 @@ public class Widget extends Node {
 			this.textXAlignment = var1.readUnsignedByte();
 			this.textYAlignment = var1.readUnsignedByte();
 			this.textShadowed = var1.readUnsignedByte() == 1;
-			this.color = var1.readShortSmart();
+			this.color = var1.method1958();
 		}
 
 		if (this.type == 3) {
-			this.color = var1.readShortSmart();
+			this.color = var1.method1958();
 			this.fill = var1.readUnsignedByte() == 1;
 			this.transparencyTop = var1.readUnsignedByte();
 		}
 
 		if (this.type == 9) {
 			this.lineWid = var1.readUnsignedByte();
-			this.color = var1.readShortSmart();
+			this.color = var1.method1958();
 			this.field4182 = var1.readUnsignedByte() == 1;
 		}
 
@@ -1477,7 +1477,7 @@ public class Widget extends Node {
 			for (int var4 = 0; var4 < var2; ++var4) {
 				int var5 = var1.readUnsignedByte();
 				if (var5 == 0) {
-					var3[var4] = new Integer(var1.readShortSmart());
+					var3[var4] = new Integer(var1.method1958());
 				} else if (var5 == 1) {
 					var3[var4] = var1.readStringCp1252NullTerminated();
 				}
@@ -1502,7 +1502,7 @@ public class Widget extends Node {
 			int[] var3 = new int[var2];
 
 			for (int var4 = 0; var4 < var2; ++var4) {
-				var3[var4] = var1.readShortSmart();
+				var3[var4] = var1.method1958();
 			}
 
 			return var3;
@@ -1663,7 +1663,7 @@ public class Widget extends Node {
 					if (var8 == null) {
 						var7 = null;
 					} else {
-						Font var9 = new Font(var8, LoginPacket.SpriteBuffer_xOffsets, class191.SpriteBuffer_yOffsets, class255.SpriteBuffer_spriteWidths, FriendLoginUpdate.field5390, TriBool.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
+						Font var9 = new Font(var8, LoginPacket.SpriteBuffer_xOffsets, class191.SpriteBuffer_yOffsets, class255.SpriteBuffer_spriteWidths, FriendLoginUpdate.SpriteBuffer_spriteHeights, TriBool.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
 						class388.method8205();
 						var7 = var9;
 					}

@@ -117,7 +117,7 @@ public class AABB {
 
 		for (var6 = 0; var6 < var5; ++var6) {
 			for (var7 = 0; var7 < 4; ++var7) {
-				class87.field1235[var6][var7] = var1.readShortSmart();
+				class87.field1235[var6][var7] = var1.method1958();
 			}
 		}
 

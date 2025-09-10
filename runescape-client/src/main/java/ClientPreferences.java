@@ -108,7 +108,7 @@ public class ClientPreferences {
 		this.windowMode = 1;
 		this.drawDistance = 25;
 		this.field1156 = true;
-		if (var1 != null && var1.field5916 != null) {
+		if (var1 != null && var1.array != null) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 >= 0 && var2 <= 12) {
 				if (var1.readUnsignedByte() == 1) {
@@ -127,8 +127,8 @@ public class ClientPreferences {
 					int var3 = var1.readUnsignedByte();
 
 					for (int var4 = 0; var4 < var3; ++var4) {
-						int var5 = var1.readShortSmart();
-						int var6 = var1.readShortSmart();
+						int var5 = var1.method1958();
+						int var6 = var1.method1958();
 						this.parameters.put(var5, var6);
 					}
 				}
@@ -157,7 +157,7 @@ public class ClientPreferences {
 				}
 
 				if (var2 > 9) {
-					this.field1146 = var1.readShortSmart();
+					this.field1146 = var1.method1958();
 				}
 
 				if (var2 > 10) {
@@ -578,7 +578,7 @@ public class ClientPreferences {
 		PacketBufferNode var2 = UserComparator6.getPacketBufferNode(ClientPacket.FRIEND_CHAT_SETRANK, Client.packetWriter.isaacCipher);
 		var2.packetBuffer.writeByte(WorldMapSection2.stringCp1252NullTerminatedByteSize(var0) + 1);
 		var2.packetBuffer.writeStringCp1252NullTerminated(var0);
-		var2.packetBuffer.writeByteNeg(var1);
+		var2.packetBuffer.writeByteAdd(var1);
 		Client.packetWriter.addNode(var2);
 	}
 

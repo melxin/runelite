@@ -275,17 +275,17 @@ public class WorldMapSection0 implements WorldMapSection {
 
 		Buffer var8 = new Buffer(var7);
 		var8.writeStringCp1252NullTerminated(var2);
-		var8.array = var7 * -290410379;
+		var8.offset = var7 * -290410379;
 		var8.xteaEncryptAll(var6);
-		Buffer var9 = new Buffer(var4.array * 1216585693 + var8.array * 1216585693 + var5.array * 1216585693 + 5);
+		Buffer var9 = new Buffer(var4.offset * 1216585693 + var8.offset * 1216585693 + var5.offset * 1216585693 + 5);
 		var9.writeByte(2);
-		var9.writeByte(var4.array * 1216585693);
-		var9.writeBytes(var4.field5916, 0, var4.array * 1216585693);
-		var9.writeByte(var5.array * 1216585693);
-		var9.writeBytes(var5.field5916, 0, var5.array * 1216585693);
-		var9.writeShort(var8.array * 1216585693);
-		var9.writeBytes(var8.field5916, 0, var8.array * 1216585693);
-		String var10 = ClanSettings.method3992(var9.field5916);
+		var9.writeByte(var4.offset * 1216585693);
+		var9.writeBytes(var4.array, 0, var4.offset * 1216585693);
+		var9.writeByte(var5.offset * 1216585693);
+		var9.writeBytes(var5.array, 0, var5.offset * 1216585693);
+		var9.writeShort(var8.offset * 1216585693);
+		var9.writeBytes(var8.array, 0, var8.offset * 1216585693);
+		String var10 = ClanSettings.method3992(var9.array);
 
 		try {
 			URL var11 = new URL(FloorOverlayDefinition.method4756("services", false) + "m=accountappeal/login.ws");
@@ -300,11 +300,11 @@ public class WorldMapSection0 implements WorldMapSection {
 			var9 = new Buffer(new byte[1000]);
 
 			do {
-				int var15 = var14.read(var9.field5916, var9.array * 1216585693, 1000 - var9.array * 1216585693);
+				int var15 = var14.read(var9.array, var9.offset * 1216585693, 1000 - var9.offset * 1216585693);
 				if (var15 == -1) {
 					var13.close();
 					var14.close();
-					String var16 = new String(var9.field5916);
+					String var16 = new String(var9.array);
 					if (var16.startsWith("OFFLINE")) {
 						return 4;
 					} else if (var16.startsWith("WRONG")) {
@@ -316,11 +316,11 @@ public class WorldMapSection0 implements WorldMapSection {
 					} else {
 						var9.xteaDecryptAll(var6);
 
-						while (var9.array * 1216585693 > 0 && var9.field5916[var9.array * 1216585693 - 1] == 0) {
-							var9.array -= -290410379;
+						while (var9.offset * 1216585693 > 0 && var9.array[var9.offset * 1216585693 - 1] == 0) {
+							var9.offset -= -290410379;
 						}
 
-						var16 = new String(var9.field5916, 0, var9.array * 1216585693);
+						var16 = new String(var9.array, 0, var9.offset * 1216585693);
 						if (BuddyRankComparator.method3588(var16)) {
 							DevicePcmPlayerProvider.openURL(var16, true, false);
 							return 2;
@@ -330,8 +330,8 @@ public class WorldMapSection0 implements WorldMapSection {
 					}
 				}
 
-				var9.array += -290410379 * var15;
-			} while(var9.array * 1216585693 < 1000);
+				var9.offset += -290410379 * var15;
+			} while(var9.offset * 1216585693 < 1000);
 
 			return 5;
 		} catch (Throwable var17) {

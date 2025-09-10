@@ -448,7 +448,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var2.array = (var1.length - 26) * -290410379;
+		var2.offset = (var1.length - 26) * -290410379;
 		int var9 = var2.readUnsignedShort();
 		int var10 = var2.readUnsignedShort();
 		int var11 = var2.readUnsignedByte();
@@ -471,7 +471,7 @@ public class ModelData extends Renderable {
 		int var28;
 		if (var11 > 0) {
 			this.textureRenderTypes = new byte[var11];
-			var2.array = 0;
+			var2.offset = 0;
 
 			for (var28 = 0; var28 < var11; ++var28) {
 				byte var29 = this.textureRenderTypes[var28] = var2.readByte();
@@ -594,11 +594,11 @@ public class ModelData extends Renderable {
 			this.texTriangleZ = new short[var11];
 		}
 
-		var2.array = var11 * -290410379;
-		var3.array = var40 * -290410379;
-		var4.array = var41 * -290410379;
-		var5.array = var42 * -290410379;
-		var6.array = var34 * -290410379;
+		var2.offset = var11 * -290410379;
+		var3.offset = var40 * -290410379;
+		var4.offset = var41 * -290410379;
+		var5.offset = var42 * -290410379;
+		var6.offset = var34 * -290410379;
 		int var50 = 0;
 		int var51 = 0;
 		int var52 = 0;
@@ -612,17 +612,17 @@ public class ModelData extends Renderable {
 			var54 = var2.readUnsignedByte();
 			var55 = 0;
 			if ((var54 & 1) != 0) {
-				var55 = var3.readUShortSmart();
+				var55 = var3.readShortSmart();
 			}
 
 			var56 = 0;
 			if ((var54 & 2) != 0) {
-				var56 = var4.readUShortSmart();
+				var56 = var4.readShortSmart();
 			}
 
 			var57 = 0;
 			if ((var54 & 4) != 0) {
-				var57 = var5.readUShortSmart();
+				var57 = var5.readShortSmart();
 			}
 
 			this.verticesX[var53] = var50 + var55;
@@ -649,13 +649,13 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.array = var39 * -290410379;
-		var3.array = var30 * -290410379;
-		var4.array = var32 * -290410379;
-		var5.array = var35 * -290410379;
-		var6.array = var33 * -290410379;
-		var7.array = var37 * -290410379;
-		var8.array = var38 * -290410379;
+		var2.offset = var39 * -290410379;
+		var3.offset = var30 * -290410379;
+		var4.offset = var32 * -290410379;
+		var5.offset = var35 * -290410379;
+		var6.offset = var33 * -290410379;
+		var7.offset = var37 * -290410379;
+		var8.offset = var38 * -290410379;
 
 		for (var53 = 0; var53 < var10; ++var53) {
 			this.faceColors[var53] = (short)var2.readUnsignedShort();
@@ -684,8 +684,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.array = var36 * -290410379;
-		var3.array = var31 * -290410379;
+		var2.offset = var36 * -290410379;
+		var3.offset = var31 * -290410379;
 		var53 = 0;
 		var54 = 0;
 		var55 = 0;
@@ -696,9 +696,9 @@ public class ModelData extends Renderable {
 		for (var57 = 0; var57 < var10; ++var57) {
 			var58 = var3.readUnsignedByte();
 			if (var58 == 1) {
-				var53 = var2.readUShortSmart() + var56;
-				var54 = var2.readUShortSmart() + var53;
-				var55 = var2.readUShortSmart() + var54;
+				var53 = var2.readShortSmart() + var56;
+				var54 = var2.readShortSmart() + var53;
+				var55 = var2.readShortSmart() + var54;
 				var56 = var55;
 				this.indices1[var57] = var53;
 				this.indices2[var57] = var54;
@@ -707,7 +707,7 @@ public class ModelData extends Renderable {
 
 			if (var58 == 2) {
 				var54 = var55;
-				var55 = var2.readUShortSmart() + var56;
+				var55 = var2.readShortSmart() + var56;
 				var56 = var55;
 				this.indices1[var57] = var53;
 				this.indices2[var57] = var54;
@@ -716,7 +716,7 @@ public class ModelData extends Renderable {
 
 			if (var58 == 3) {
 				var53 = var55;
-				var55 = var2.readUShortSmart() + var56;
+				var55 = var2.readShortSmart() + var56;
 				var56 = var55;
 				this.indices1[var57] = var53;
 				this.indices2[var57] = var54;
@@ -727,7 +727,7 @@ public class ModelData extends Renderable {
 				var59 = var53;
 				var53 = var54;
 				var54 = var59;
-				var55 = var2.readUShortSmart() + var56;
+				var55 = var2.readShortSmart() + var56;
 				var56 = var55;
 				this.indices1[var57] = var53;
 				this.indices2[var57] = var59;
@@ -735,12 +735,12 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.array = var43 * -290410379;
-		var3.array = var44 * -290410379;
-		var4.array = var45 * -290410379;
-		var5.array = var46 * -290410379;
-		var6.array = var47 * -290410379;
-		var7.array = var48 * -290410379;
+		var2.offset = var43 * -290410379;
+		var3.offset = var44 * -290410379;
+		var4.offset = var45 * -290410379;
+		var5.offset = var46 * -290410379;
+		var6.offset = var47 * -290410379;
+		var7.offset = var48 * -290410379;
 
 		for (var57 = 0; var57 < var11; ++var57) {
 			var58 = this.textureRenderTypes[var57] & 255;
@@ -751,14 +751,14 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.array = var28 * -290410379;
+		var2.offset = var28 * -290410379;
 		var57 = var2.readUnsignedByte();
 		if (var57 != 0) {
 			new ModelData0();
 			var2.readUnsignedShort();
 			var2.readUnsignedShort();
 			var2.readUnsignedShort();
-			var2.readShortSmart();
+			var2.method1958();
 		}
 
 		boolean var60 = var2.readUnsignedByte() == 1;
@@ -781,7 +781,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var4.array = (var1.length - 23) * -290410379;
+		var4.offset = (var1.length - 23) * -290410379;
 		int var9 = var4.readUnsignedShort();
 		int var10 = var4.readUnsignedShort();
 		int var11 = var4.readUnsignedByte();
@@ -880,11 +880,11 @@ public class ModelData extends Renderable {
 		}
 
 		this.faceColors = new short[var10];
-		var4.array = var23 * -290410379;
-		var5.array = var34 * -290410379;
-		var6.array = var35 * -290410379;
-		var7.array = var36 * -290410379;
-		var8.array = var29 * -290410379;
+		var4.offset = var23 * -290410379;
+		var5.offset = var34 * -290410379;
+		var6.offset = var35 * -290410379;
+		var7.offset = var36 * -290410379;
+		var8.offset = var29 * -290410379;
 		int var38 = 0;
 		int var39 = 0;
 		int var40 = 0;
@@ -898,17 +898,17 @@ public class ModelData extends Renderable {
 			var42 = var4.readUnsignedByte();
 			var43 = 0;
 			if ((var42 & 1) != 0) {
-				var43 = var5.readUShortSmart();
+				var43 = var5.readShortSmart();
 			}
 
 			var44 = 0;
 			if ((var42 & 2) != 0) {
-				var44 = var6.readUShortSmart();
+				var44 = var6.readShortSmart();
 			}
 
 			var45 = 0;
 			if ((var42 & 4) != 0) {
-				var45 = var7.readUShortSmart();
+				var45 = var7.readShortSmart();
 			}
 
 			this.verticesX[var41] = var38 + var43;
@@ -935,11 +935,11 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.array = var32 * -290410379;
-		var5.array = var28 * -290410379;
-		var6.array = var26 * -290410379;
-		var7.array = var30 * -290410379;
-		var8.array = var27 * -290410379;
+		var4.offset = var32 * -290410379;
+		var5.offset = var28 * -290410379;
+		var6.offset = var26 * -290410379;
+		var7.offset = var30 * -290410379;
+		var8.offset = var27 * -290410379;
 
 		for (var41 = 0; var41 < var10; ++var41) {
 			this.faceColors[var41] = (short)var4.readUnsignedShort();
@@ -978,8 +978,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.array = var31 * -290410379;
-		var5.array = var25 * -290410379;
+		var4.offset = var31 * -290410379;
+		var5.offset = var25 * -290410379;
 		var41 = 0;
 		var42 = 0;
 		var43 = 0;
@@ -990,9 +990,9 @@ public class ModelData extends Renderable {
 		for (var45 = 0; var45 < var10; ++var45) {
 			var46 = var5.readUnsignedByte();
 			if (var46 == 1) {
-				var41 = var4.readUShortSmart() + var44;
-				var42 = var4.readUShortSmart() + var41;
-				var43 = var4.readUShortSmart() + var42;
+				var41 = var4.readShortSmart() + var44;
+				var42 = var4.readShortSmart() + var41;
+				var43 = var4.readShortSmart() + var42;
 				var44 = var43;
 				this.indices1[var45] = var41;
 				this.indices2[var45] = var42;
@@ -1001,7 +1001,7 @@ public class ModelData extends Renderable {
 
 			if (var46 == 2) {
 				var42 = var43;
-				var43 = var4.readUShortSmart() + var44;
+				var43 = var4.readShortSmart() + var44;
 				var44 = var43;
 				this.indices1[var45] = var41;
 				this.indices2[var45] = var42;
@@ -1010,7 +1010,7 @@ public class ModelData extends Renderable {
 
 			if (var46 == 3) {
 				var41 = var43;
-				var43 = var4.readUShortSmart() + var44;
+				var43 = var4.readShortSmart() + var44;
 				var44 = var43;
 				this.indices1[var45] = var41;
 				this.indices2[var45] = var42;
@@ -1021,7 +1021,7 @@ public class ModelData extends Renderable {
 				var47 = var41;
 				var41 = var42;
 				var42 = var47;
-				var43 = var4.readUShortSmart() + var44;
+				var43 = var4.readShortSmart() + var44;
 				var44 = var43;
 				this.indices1[var45] = var41;
 				this.indices2[var45] = var47;
@@ -1029,7 +1029,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.array = var33 * -290410379;
+		var4.offset = var33 * -290410379;
 
 		for (var45 = 0; var45 < var11; ++var45) {
 			this.textureRenderTypes[var45] = 0;
@@ -1038,7 +1038,7 @@ public class ModelData extends Renderable {
 			this.texTriangleZ[var45] = (short)var4.readUnsignedShort();
 		}
 
-		var4.array = var49 * -290410379;
+		var4.offset = var49 * -290410379;
 		boolean var51 = var4.readUnsignedByte() == 1;
 		if (var51) {
 			this.field2545 = new byte[var10];
@@ -1086,7 +1086,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var2.array = (var1.length - 23) * -290410379;
+		var2.offset = (var1.length - 23) * -290410379;
 		int var9 = var2.readUnsignedShort();
 		int var10 = var2.readUnsignedShort();
 		int var11 = var2.readUnsignedByte();
@@ -1107,7 +1107,7 @@ public class ModelData extends Renderable {
 		int var26;
 		if (var11 > 0) {
 			this.textureRenderTypes = new byte[var11];
-			var2.array = 0;
+			var2.offset = 0;
 
 			for (var26 = 0; var26 < var11; ++var26) {
 				byte var27 = this.textureRenderTypes[var26] = var2.readByte();
@@ -1228,11 +1228,11 @@ public class ModelData extends Renderable {
 			this.texTriangleZ = new short[var11];
 		}
 
-		var2.array = var11 * -290410379;
-		var3.array = var38 * -290410379;
-		var4.array = var39 * -290410379;
-		var5.array = var40 * -290410379;
-		var6.array = var32 * -290410379;
+		var2.offset = var11 * -290410379;
+		var3.offset = var38 * -290410379;
+		var4.offset = var39 * -290410379;
+		var5.offset = var40 * -290410379;
+		var6.offset = var32 * -290410379;
 		int var48 = 0;
 		int var49 = 0;
 		int var50 = 0;
@@ -1246,17 +1246,17 @@ public class ModelData extends Renderable {
 			var52 = var2.readUnsignedByte();
 			var53 = 0;
 			if ((var52 & 1) != 0) {
-				var53 = var3.readUShortSmart();
+				var53 = var3.readShortSmart();
 			}
 
 			var54 = 0;
 			if ((var52 & 2) != 0) {
-				var54 = var4.readUShortSmart();
+				var54 = var4.readShortSmart();
 			}
 
 			var55 = 0;
 			if ((var52 & 4) != 0) {
-				var55 = var5.readUShortSmart();
+				var55 = var5.readShortSmart();
 			}
 
 			this.verticesX[var51] = var48 + var53;
@@ -1270,13 +1270,13 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.array = var37 * -290410379;
-		var3.array = var28 * -290410379;
-		var4.array = var30 * -290410379;
-		var5.array = var33 * -290410379;
-		var6.array = var31 * -290410379;
-		var7.array = var35 * -290410379;
-		var8.array = var36 * -290410379;
+		var2.offset = var37 * -290410379;
+		var3.offset = var28 * -290410379;
+		var4.offset = var30 * -290410379;
+		var5.offset = var33 * -290410379;
+		var6.offset = var31 * -290410379;
+		var7.offset = var35 * -290410379;
+		var8.offset = var36 * -290410379;
 
 		for (var51 = 0; var51 < var10; ++var51) {
 			this.faceColors[var51] = (short)var2.readUnsignedShort();
@@ -1305,8 +1305,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.array = var34 * -290410379;
-		var3.array = var29 * -290410379;
+		var2.offset = var34 * -290410379;
+		var3.offset = var29 * -290410379;
 		var51 = 0;
 		var52 = 0;
 		var53 = 0;
@@ -1316,9 +1316,9 @@ public class ModelData extends Renderable {
 		for (var55 = 0; var55 < var10; ++var55) {
 			var56 = var3.readUnsignedByte();
 			if (var56 == 1) {
-				var51 = var2.readUShortSmart() + var54;
-				var52 = var2.readUShortSmart() + var51;
-				var53 = var2.readUShortSmart() + var52;
+				var51 = var2.readShortSmart() + var54;
+				var52 = var2.readShortSmart() + var51;
+				var53 = var2.readShortSmart() + var52;
 				var54 = var53;
 				this.indices1[var55] = var51;
 				this.indices2[var55] = var52;
@@ -1327,7 +1327,7 @@ public class ModelData extends Renderable {
 
 			if (var56 == 2) {
 				var52 = var53;
-				var53 = var2.readUShortSmart() + var54;
+				var53 = var2.readShortSmart() + var54;
 				var54 = var53;
 				this.indices1[var55] = var51;
 				this.indices2[var55] = var52;
@@ -1336,7 +1336,7 @@ public class ModelData extends Renderable {
 
 			if (var56 == 3) {
 				var51 = var53;
-				var53 = var2.readUShortSmart() + var54;
+				var53 = var2.readShortSmart() + var54;
 				var54 = var53;
 				this.indices1[var55] = var51;
 				this.indices2[var55] = var52;
@@ -1347,7 +1347,7 @@ public class ModelData extends Renderable {
 				int var57 = var51;
 				var51 = var52;
 				var52 = var57;
-				var53 = var2.readUShortSmart() + var54;
+				var53 = var2.readShortSmart() + var54;
 				var54 = var53;
 				this.indices1[var55] = var51;
 				this.indices2[var55] = var57;
@@ -1355,12 +1355,12 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.array = var41 * -290410379;
-		var3.array = var42 * -290410379;
-		var4.array = var43 * -290410379;
-		var5.array = var44 * -290410379;
-		var6.array = var45 * -290410379;
-		var7.array = var46 * -290410379;
+		var2.offset = var41 * -290410379;
+		var3.offset = var42 * -290410379;
+		var4.offset = var43 * -290410379;
+		var5.offset = var44 * -290410379;
+		var6.offset = var45 * -290410379;
+		var7.offset = var46 * -290410379;
 
 		for (var55 = 0; var55 < var11; ++var55) {
 			var56 = this.textureRenderTypes[var55] & 255;
@@ -1371,14 +1371,14 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.array = var26 * -290410379;
+		var2.offset = var26 * -290410379;
 		var55 = var2.readUnsignedByte();
 		if (var55 != 0) {
 			new ModelData0();
 			var2.readUnsignedShort();
 			var2.readUnsignedShort();
 			var2.readUnsignedShort();
-			var2.readShortSmart();
+			var2.method1958();
 		}
 
 	}
@@ -1392,7 +1392,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var4.array = (var1.length - 18) * -290410379;
+		var4.offset = (var1.length - 18) * -290410379;
 		int var9 = var4.readUnsignedShort();
 		int var10 = var4.readUnsignedShort();
 		int var11 = var4.readUnsignedByte();
@@ -1486,11 +1486,11 @@ public class ModelData extends Renderable {
 		}
 
 		this.faceColors = new short[var10];
-		var4.array = var21 * -290410379;
-		var5.array = var32 * -290410379;
-		var6.array = var33 * -290410379;
-		var7.array = var45 * -290410379;
-		var8.array = var27 * -290410379;
+		var4.offset = var21 * -290410379;
+		var5.offset = var32 * -290410379;
+		var6.offset = var33 * -290410379;
+		var7.offset = var45 * -290410379;
+		var8.offset = var27 * -290410379;
 		int var35 = 0;
 		int var36 = 0;
 		int var37 = 0;
@@ -1504,17 +1504,17 @@ public class ModelData extends Renderable {
 			var39 = var4.readUnsignedByte();
 			var40 = 0;
 			if ((var39 & 1) != 0) {
-				var40 = var5.readUShortSmart();
+				var40 = var5.readShortSmart();
 			}
 
 			var41 = 0;
 			if ((var39 & 2) != 0) {
-				var41 = var6.readUShortSmart();
+				var41 = var6.readShortSmart();
 			}
 
 			var42 = 0;
 			if ((var39 & 4) != 0) {
-				var42 = var7.readUShortSmart();
+				var42 = var7.readShortSmart();
 			}
 
 			this.verticesX[var38] = var35 + var40;
@@ -1528,11 +1528,11 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.array = var30 * -290410379;
-		var5.array = var26 * -290410379;
-		var6.array = var24 * -290410379;
-		var7.array = var28 * -290410379;
-		var8.array = var25 * -290410379;
+		var4.offset = var30 * -290410379;
+		var5.offset = var26 * -290410379;
+		var6.offset = var24 * -290410379;
+		var7.offset = var28 * -290410379;
+		var8.offset = var25 * -290410379;
 
 		for (var38 = 0; var38 < var10; ++var38) {
 			this.faceColors[var38] = (short)var4.readUnsignedShort();
@@ -1571,8 +1571,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.array = var29 * -290410379;
-		var5.array = var23 * -290410379;
+		var4.offset = var29 * -290410379;
+		var5.offset = var23 * -290410379;
 		var38 = 0;
 		var39 = 0;
 		var40 = 0;
@@ -1583,9 +1583,9 @@ public class ModelData extends Renderable {
 		for (var42 = 0; var42 < var10; ++var42) {
 			var43 = var5.readUnsignedByte();
 			if (var43 == 1) {
-				var38 = var4.readUShortSmart() + var41;
-				var39 = var4.readUShortSmart() + var38;
-				var40 = var4.readUShortSmart() + var39;
+				var38 = var4.readShortSmart() + var41;
+				var39 = var4.readShortSmart() + var38;
+				var40 = var4.readShortSmart() + var39;
 				var41 = var40;
 				this.indices1[var42] = var38;
 				this.indices2[var42] = var39;
@@ -1594,7 +1594,7 @@ public class ModelData extends Renderable {
 
 			if (var43 == 2) {
 				var39 = var40;
-				var40 = var4.readUShortSmart() + var41;
+				var40 = var4.readShortSmart() + var41;
 				var41 = var40;
 				this.indices1[var42] = var38;
 				this.indices2[var42] = var39;
@@ -1603,7 +1603,7 @@ public class ModelData extends Renderable {
 
 			if (var43 == 3) {
 				var38 = var40;
-				var40 = var4.readUShortSmart() + var41;
+				var40 = var4.readShortSmart() + var41;
 				var41 = var40;
 				this.indices1[var42] = var38;
 				this.indices2[var42] = var39;
@@ -1614,7 +1614,7 @@ public class ModelData extends Renderable {
 				var44 = var38;
 				var38 = var39;
 				var39 = var44;
-				var40 = var4.readUShortSmart() + var41;
+				var40 = var4.readShortSmart() + var41;
 				var41 = var40;
 				this.indices1[var42] = var38;
 				this.indices2[var42] = var44;
@@ -1622,7 +1622,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.array = var31 * -290410379;
+		var4.offset = var31 * -290410379;
 
 		for (var42 = 0; var42 < var11; ++var42) {
 			this.textureRenderTypes[var42] = 0;

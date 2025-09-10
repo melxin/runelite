@@ -60,7 +60,7 @@ public class class192 extends DualNode {
 				Login.field738 = 0;
 			}
 
-			class38.otpMedium = 0;
+			ScriptFrame.otpMedium = 0;
 			class464.otp = "";
 			Login.rememberUsername = true;
 			Login.worldSelectOpen = false;
@@ -144,7 +144,7 @@ public class class192 extends DualNode {
 			var4 = UserComparator8.calculateTag(var9, var10, var13, 4, !var8, var1.plane, var0.id);
 		}
 
-		var1.worldEntityCoord.setZ(JagNetThread.method8434(var0, var1.getY(), var1.getPlane(), var0.plane));
+		var1.worldEntityCoord.setZ(JagNetThread.getTileHeight(var0, var1.getY(), var1.getPlane(), var0.plane));
 		var1.worldView.scene.cycle = Client.cycle;
 		var1.initScenePlane(var2);
 		var8 = var0.scene.drawEntity(var0.plane, var1.getY(), var1.getPlane(), var1.getZ(), 60, var1.worldView.scene, var1.method10110(), var4, false);
@@ -159,10 +159,10 @@ public class class192 extends DualNode {
 				class390.addPlayerToScene(var16, Client.combatTargetPlayerIndex, false);
 			}
 
-			ModeWhere.method8666(var1.worldView, class197.field2163);
+			ModeWhere.addNpcsToScene(var1.worldView, class197.field2163);
 			NPC.method2772(var1.worldView);
-			ModeWhere.method8666(var1.worldView, class197.field2162);
-			ModeWhere.method8666(var1.worldView, class197.field2164);
+			ModeWhere.addNpcsToScene(var1.worldView, class197.field2162);
+			ModeWhere.addNpcsToScene(var1.worldView, class197.field2164);
 			WorldView var17 = var1.worldView;
 
 			for (GraphicsObject var18 = (GraphicsObject)var17.graphicsObjects.last(); var18 != null; var18 = (GraphicsObject)var17.graphicsObjects.previous()) {

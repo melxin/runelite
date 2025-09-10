@@ -129,15 +129,15 @@ public class PlayerUpdateManager {
 		garbageValue = "-576307041"
 	)
 	final void method2854(PacketBuffer var1, int var2) {
-		int var3 = var1.array * 1216585693;
+		int var3 = var1.offset * 1216585693;
 		this.Players_pendingUpdateCount = 0;
 		this.method2837(var1);
 		this.method2841();
 		this.method2842();
 		this.updatePlayers(var1);
 		this.method2844();
-		if (var2 != var1.array * 1216585693 - var3) {
-			throw new RuntimeException(var1.array * 1216585693 - var3 + " " + var2);
+		if (var2 != var1.offset * 1216585693 - var3) {
+			throw new RuntimeException(var1.offset * 1216585693 - var3 + " " + var2);
 		}
 	}
 
@@ -674,27 +674,27 @@ public class PlayerUpdateManager {
 		int var6;
 		int var7;
 		if ((var3 & 1) != 0) {
-			var6 = var1.readShortLE();
+			var6 = var1.readUnsignedShortAdd();
 			if (var6 == 65535) {
 				var6 = -1;
 			}
 
-			var7 = var1.readUnsignedShortAdd();
+			var7 = var1.readUnsignedByteSub();
 			var4.method1829(var6, var7);
 		}
 
 		int var8;
 		int var11;
 		if ((var3 & 2048) != 0) {
-			var6 = var1.readSignedShort();
+			var6 = var1.readUnsignedShortAddLE();
 			var7 = var6 >> 8;
 			var8 = var7 >= 13 && var7 <= 20 ? var7 - 12 : 0;
 			PlayerType var9 = (PlayerType)class173.findEnumerated(class446.PlayerType_values(), var1.readUnsignedByte());
-			boolean var10 = var1.readUnsignedShortLE() == 1;
-			var11 = var1.readUnsignedShortAdd();
-			this.field1244.array = 0;
-			var1.method11255(this.field1244.field5916, 0, var11);
-			this.field1244.array = 0;
+			boolean var10 = var1.readUnsignedByteNeg() == 1;
+			var11 = var1.readUnsignedByteSub();
+			this.field1244.offset = 0;
+			var1.method11255(this.field1244.array, 0, var11);
+			this.field1244.offset = 0;
 			String var12 = AbstractFont.escapeBrackets(Calendar.method8130(ScriptEvent.method2145(this.field1244)));
 			byte[] var13 = null;
 			if (var8 > 0 && var8 <= 8) {
@@ -709,8 +709,8 @@ public class PlayerUpdateManager {
 		}
 
 		if ((var3 & 32) != 0) {
-			var7 = var1.readSignedShort();
-			var7 += var1.readUnsignedShortLE() << 16;
+			var7 = var1.readUnsignedShortAddLE();
+			var7 += var1.readUnsignedByteNeg() << 16;
 			var6 = 16777215;
 			if (var7 == var6) {
 				var7 = -1;
@@ -722,7 +722,7 @@ public class PlayerUpdateManager {
 		byte var15;
 		byte var22;
 		if ((var3 & 256) != 0) {
-			var6 = Client.cycle + var1.readSignedShort();
+			var6 = Client.cycle + var1.readUnsignedShortAddLE();
 			var7 = Client.cycle + var1.readUnsignedShort();
 			var22 = var1.readByteAdd();
 			var15 = var1.readByteSub();
@@ -745,9 +745,9 @@ public class PlayerUpdateManager {
 			var6 = var1.readUnsignedByte();
 
 			for (var7 = 0; var7 < var6; ++var7) {
-				var8 = var1.readUnsignedByteSub();
-				var28 = var1.readShortLE();
-				var25 = var1.method11254();
+				var8 = var1.readUnsignedByteAdd();
+				var28 = var1.readUnsignedShortAdd();
+				var25 = var1.readUnsignedIntME();
 				var4.method1777(var8, var28, var25 >> 16, var25 & 65535);
 			}
 		}
@@ -762,38 +762,38 @@ public class PlayerUpdateManager {
 
 		int var19;
 		if ((var3 & 4) != 0) {
-			var6 = var1.readUnsignedShortLE();
+			var6 = var1.readUnsignedByteNeg();
 			if (var6 > 0) {
 				for (var7 = 0; var7 < var6; ++var7) {
 					var28 = -1;
 					var25 = -1;
 					var11 = -1;
-					var8 = var1.readShortSmartSub();
+					var8 = var1.readUShortSmart();
 					if (var8 == 32767) {
-						var8 = var1.readShortSmartSub();
-						var25 = var1.readShortSmartSub();
-						var28 = var1.readShortSmartSub();
-						var11 = var1.readShortSmartSub();
+						var8 = var1.readUShortSmart();
+						var25 = var1.readUShortSmart();
+						var28 = var1.readUShortSmart();
+						var11 = var1.readUShortSmart();
 					} else if (var8 != 32766) {
-						var25 = var1.readShortSmartSub();
+						var25 = var1.readUShortSmart();
 					} else {
 						var8 = -1;
 					}
 
-					var19 = var1.readShortSmartSub();
+					var19 = var1.readUShortSmart();
 					var4.method1846(var8, var25, var28, var11, var19);
 				}
 			}
 
-			var7 = var1.readUnsignedShortAdd();
+			var7 = var1.readUnsignedByteSub();
 			if (var7 > 0) {
 				for (var8 = 0; var8 < var7; ++var8) {
-					var28 = var1.readShortSmartSub();
-					var25 = var1.readShortSmartSub();
+					var28 = var1.readUShortSmart();
+					var25 = var1.readUShortSmart();
 					if (var25 != 32767) {
-						var11 = var1.readShortSmartSub();
-						var19 = var1.readUnsignedShortLE();
-						int var20 = var25 > 0 ? var1.readUnsignedShortLE() : var19;
+						var11 = var1.readUShortSmart();
+						var19 = var1.readUnsignedByteNeg();
+						int var20 = var25 > 0 ? var1.readUnsignedByteNeg() : var19;
 						var4.method1789(var28, var25, var11, var19, var20);
 					} else {
 						var4.method1794(var28);
@@ -803,13 +803,13 @@ public class PlayerUpdateManager {
 		}
 
 		if ((var3 & 128) != 0) {
-			var1.readSignedShort();
-			var1.readUnsignedShortAdd();
-			var1.readUnsignedShortLE();
+			var1.readUnsignedShortAddLE();
+			var1.readUnsignedByteSub();
+			var1.readUnsignedByteNeg();
 			var6 = var1.readUnsignedByte();
-			this.field1244.array = 0;
-			var1.method11255(this.field1244.field5916, 0, var6);
-			this.field1244.array = 0;
+			this.field1244.offset = 0;
+			var1.method11255(this.field1244.array, 0, var6);
+			this.field1244.offset = 0;
 		}
 
 		if ((var3 & 1024) != 0) {
@@ -834,7 +834,7 @@ public class PlayerUpdateManager {
 		}
 
 		if ((var3 & 16) != 0) {
-			var6 = var1.readShortLE();
+			var6 = var1.readUnsignedShortAdd();
 			var4.method1795(var6);
 		}
 
@@ -843,9 +843,9 @@ public class PlayerUpdateManager {
 			byte var26 = var1.readByteSub();
 			var22 = var1.readByteSub();
 			var15 = var1.readByteAdd();
-			var25 = var1.readShortLE() + Client.cycle;
+			var25 = var1.readUnsignedShortAdd() + Client.cycle;
 			var11 = var1.readUnsignedShort() + Client.cycle;
-			var19 = var1.readUnsignedShortAddLE();
+			var19 = var1.readUnsignedShortLE();
 			var4.method1797(var24, var26, var22, var15, var25, var11, var19);
 			this.field1245[var2] = false;
 		}

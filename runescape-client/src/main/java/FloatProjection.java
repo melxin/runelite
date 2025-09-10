@@ -229,17 +229,17 @@ public class FloatProjection extends Projection {
 
 			PacketBufferNode var16 = UserComparator6.getPacketBufferNode(ClientPacket.IF_RUNSCRIPT, Client.packetWriter.isaacCipher);
 			var16.packetBuffer.writeShort(0);
-			var8 = var16.packetBuffer.array * 1216585693;
-			var16.packetBuffer.writeIntIME(var3);
+			var8 = var16.packetBuffer.offset * 1216585693;
+			var16.packetBuffer.writeIntLE(var3);
 			var16.packetBuffer.writeInt(var0);
-			var16.packetBuffer.writeShortAddLE(var2);
-			var16.packetBuffer.writeShortAdd(var1);
+			var16.packetBuffer.writeShortLE(var2);
+			var16.packetBuffer.writeShortAddLE(var1);
 			Object[] var9 = var4;
 
 			for (int var10 = 0; var10 < var9.length; ++var10) {
 				Object var11 = var9[var10];
 				if (var11 instanceof Integer) {
-					var16.packetBuffer.writeByteAdd((Integer)var11);
+					var16.packetBuffer.method11195((Integer)var11);
 				} else if (var11 instanceof String) {
 					var16.packetBuffer.writeStringCp1252NullTerminated((String)var11);
 				} else if (var11 instanceof DynamicArray) {
@@ -251,7 +251,7 @@ public class FloatProjection extends Projection {
 						int[] var17 = var12.method10318();
 
 						for (var15 = 0; var15 < var13; ++var15) {
-							var16.packetBuffer.writeByteAdd(var17[var15]);
+							var16.packetBuffer.method11195(var17[var15]);
 						}
 					} else {
 						Object[] var14 = var12.method10321();
@@ -265,7 +265,7 @@ public class FloatProjection extends Projection {
 				}
 			}
 
-			var16.packetBuffer.writeLengthShort(var16.packetBuffer.array * 1216585693 - var8);
+			var16.packetBuffer.writeLengthShort(var16.packetBuffer.offset * 1216585693 - var8);
 			Client.packetWriter.addNode(var16);
 		}
 	}

@@ -8,7 +8,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldEntityCoord")
 public class WorldEntityCoord {
 	@ObfuscatedName("au")
-	static int[] field3277;
+	@Export("Interpreter_intLocals")
+	static int[] Interpreter_intLocals;
 	@ObfuscatedName("ii")
 	@Export("foundItemIds")
 	static short[] foundItemIds;

@@ -647,8 +647,8 @@ public class ClanSettings {
 				this.bannedMemberNames = null;
 			}
 
-			this.field1870 = var1.readShortSmart();
-			this.field1848 = var1.readShortSmart();
+			this.field1870 = var1.method1958();
+			this.field1848 = var1.method1958();
 			if (var2 <= 3 && this.field1848 != 0) {
 				this.field1848 += 16912800;
 			}
@@ -657,7 +657,7 @@ public class ClanSettings {
 			this.bannedMemberCount = var1.readUnsignedByte();
 			this.name = var1.readStringCp1252NullTerminated();
 			if (var2 >= 4) {
-				var1.readShortSmart();
+				var1.method1958();
 			}
 
 			this.allowGuests = var1.readUnsignedByte() == 1;
@@ -702,7 +702,7 @@ public class ClanSettings {
 
 					this.memberRanks[var4] = var1.readByte();
 					if (var2 >= 2) {
-						this.field1857[var4] = var1.readShortSmart();
+						this.field1857[var4] = var1.method1958();
 					}
 
 					if (var2 >= 5) {
@@ -747,11 +747,11 @@ public class ClanSettings {
 					this.parameters = new IterableNodeHashTable(var4 < 16 ? class165.method4019(var4) : 16);
 
 					while (var4-- > 0) {
-						int var5 = var1.readShortSmart();
+						int var5 = var1.method1958();
 						int var6 = var5 & 1073741823;
 						int var7 = var5 >>> 30;
 						if (var7 == 0) {
-							int var12 = var1.readShortSmart();
+							int var12 = var1.method1958();
 							this.parameters.put(new IntegerNode(var12), (long)var6);
 						} else if (var7 == 1) {
 							long var10 = var1.readLong();

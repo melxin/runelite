@@ -57,7 +57,7 @@ public class class204 extends DualNode {
 	)
 	static void method4499(int var0) {
 		PacketBufferNode var1 = UserComparator6.getPacketBufferNode(ClientPacket.SET_HEADING, Client.packetWriter.isaacCipher);
-		var1.packetBuffer.writeByteNeg(var0);
+		var1.packetBuffer.writeByteAdd(var0);
 		Client.packetWriter.addNode(var1);
 	}
 }

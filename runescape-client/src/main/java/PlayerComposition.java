@@ -296,7 +296,7 @@ public class PlayerComposition {
 	@Export("setHash")
 	void setHash() {
 		long var1 = this.hash;
-		long[] var3 = Buffer.SpriteBuffer_spriteHeights;
+		long[] var3 = Buffer.field5917;
 		this.hash = -1L;
 
 		int var4;
@@ -795,10 +795,10 @@ public class PlayerComposition {
 
 		var9 = (int)var5.field5175;
 		int var14 = (int)var5.field5169;
-		int var17 = JagNetThread.method8434(var6, var9, var14, var3);
+		int var17 = JagNetThread.getTileHeight(var6, var9, var14, var3);
 		WorldEntity var21 = (WorldEntity)class333.topLevelWorldView.worldEntities.get((long)var6.id);
 		if (var21 != null) {
-			var17 += JagNetThread.method8434(class333.topLevelWorldView, var21.getY(), var21.getPlane(), var21.getX());
+			var17 += JagNetThread.getTileHeight(class333.topLevelWorldView, var21.getY(), var21.getPlane(), var21.getX());
 		}
 
 		var5.field5176 = (float)var17;
@@ -822,7 +822,7 @@ public class PlayerComposition {
 		class36.reflectionChecks = new IterableNodeDeque();
 		Client.packetWriter.clearBuffer();
 		Client.packetWriter.field1289 = 0;
-		Client.packetWriter.packetBuffer.array = 0;
+		Client.packetWriter.packetBuffer.offset = 0;
 		Client.packetWriter.serverPacket = null;
 		Client.packetWriter.field1295 = null;
 		Client.packetWriter.field1302 = null;

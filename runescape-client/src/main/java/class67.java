@@ -381,7 +381,7 @@ public enum class67 implements Enum {
 			}
 
 			class172.oculusOrbFocalPointX = HealthBarUpdate.localPlayer.x;
-			int var2 = JagNetThread.method8434(class333.topLevelWorldView, HealthBarUpdate.localPlayer.x, HealthBarUpdate.localPlayer.y, class333.topLevelWorldView.plane) - Client.camFollowHeight;
+			int var2 = JagNetThread.getTileHeight(class333.topLevelWorldView, HealthBarUpdate.localPlayer.x, HealthBarUpdate.localPlayer.y, class333.topLevelWorldView.plane) - Client.camFollowHeight;
 			if (var2 < class191.oculusOrbFocalPointZ) {
 				class191.oculusOrbFocalPointZ = var2;
 			}

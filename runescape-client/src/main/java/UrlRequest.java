@@ -170,7 +170,7 @@ public class UrlRequest {
 			}
 
 			if (var0 == 20 || var0 == 40 || var0 == 45 || var0 == 50) {
-				DefaultsGroup.method10432(LoginState.SHUTDOWN_PREVIOUS_CONNECTION);
+				DefaultsGroup.updateLoginState(LoginState.SHUTDOWN_PREVIOUS_CONNECTION);
 				Client.field351 = 0;
 				Client.field448 = 0;
 				Client.timer.method8249(var0);

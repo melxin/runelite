@@ -112,7 +112,7 @@ public final class Tiles {
 			int var12 = 0;
 
 			while (true) {
-				int var13 = var9.readShortSmartSub();
+				int var13 = var9.readUShortSmart();
 				if (var13 == 0) {
 					break;
 				}

@@ -667,7 +667,7 @@ public class FriendSystem {
 									var21.xOffset = LoginPacket.SpriteBuffer_xOffsets[var20];
 									var21.yOffset = class191.SpriteBuffer_yOffsets[var20];
 									var21.subWidth = class255.SpriteBuffer_spriteWidths[var20];
-									var21.subHeight = FriendLoginUpdate.field5390[var20];
+									var21.subHeight = FriendLoginUpdate.SpriteBuffer_spriteHeights[var20];
 									var21.palette = TriBool.SpriteBuffer_spritePalette;
 									var21.pixels = SpriteBufferProperties.SpriteBuffer_pixels[var20];
 								}
@@ -732,7 +732,7 @@ public class FriendSystem {
 									var21.xOffset = LoginPacket.SpriteBuffer_xOffsets[var20];
 									var21.yOffset = class191.SpriteBuffer_yOffsets[var20];
 									var21.subWidth = class255.SpriteBuffer_spriteWidths[var20];
-									var21.subHeight = FriendLoginUpdate.field5390[var20];
+									var21.subHeight = FriendLoginUpdate.SpriteBuffer_spriteHeights[var20];
 									var21.palette = TriBool.SpriteBuffer_spritePalette;
 									var21.pixels = SpriteBufferProperties.SpriteBuffer_pixels[var20];
 								}
@@ -761,7 +761,7 @@ public class FriendSystem {
 									var21.xOffset = LoginPacket.SpriteBuffer_xOffsets[var20];
 									var21.yOffset = class191.SpriteBuffer_yOffsets[var20];
 									var21.subWidth = class255.SpriteBuffer_spriteWidths[var20];
-									var21.subHeight = FriendLoginUpdate.field5390[var20];
+									var21.subHeight = FriendLoginUpdate.SpriteBuffer_spriteHeights[var20];
 									var21.palette = TriBool.SpriteBuffer_spritePalette;
 									var21.pixels = SpriteBufferProperties.SpriteBuffer_pixels[var20];
 								}
@@ -858,7 +858,7 @@ public class FriendSystem {
 						if (Client.field401 == class70.field977) {
 							Script.field793 = false;
 							UrlRequest.updateGameState(20);
-							DefaultsGroup.method10432(LoginState.READ_ACCOUNT_INFO_PACKET_SIZE);
+							DefaultsGroup.updateLoginState(LoginState.READ_ACCOUNT_INFO_PACKET_SIZE);
 						}
 
 					}

@@ -61,7 +61,7 @@ public class class363 {
 	public static int method7521(Buffer var0, byte var1, int var2) {
 		int var3 = var1 >> var2 & 3;
 		if (var3 == 3) {
-			return var0.readShortSmart();
+			return var0.method1958();
 		} else if (var3 == 2) {
 			return var0.readShort();
 		} else {

@@ -178,7 +178,7 @@ public class Varps {
 		if (var0) {
 			Login.Login_username = "";
 			Login.Login_password = "";
-			class38.otpMedium = 0;
+			ScriptFrame.otpMedium = 0;
 			class464.otp = "";
 		}
 

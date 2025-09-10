@@ -20,21 +20,22 @@ public class HttpContentType {
 	@ObfuscatedSignature(
 		descriptor = "Luj;"
 	)
-	static final HttpContentType field5554;
+	@Export("TEXT_PLAIN")
+	static final HttpContentType TEXT_PLAIN;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "Luj;"
 	)
-	@Export("TEXT_PLAIN")
-	static final HttpContentType TEXT_PLAIN;
+	@Export("APPLICATION_X_WWW_FORM_URLENCODED")
+	static final HttpContentType APPLICATION_X_WWW_FORM_URLENCODED;
 	@ObfuscatedName("ac")
 	@Export("contentType")
 	String contentType;
 
 	static {
 		APPLICATION_JSON = new HttpContentType("application/json");
-		field5554 = new HttpContentType("text/plain");
-		TEXT_PLAIN = new HttpContentType("application/x-www-form-urlencoded");
+		TEXT_PLAIN = new HttpContentType("text/plain");
+		APPLICATION_X_WWW_FORM_URLENCODED = new HttpContentType("application/x-www-form-urlencoded");
 	}
 
 	HttpContentType(String var1) {

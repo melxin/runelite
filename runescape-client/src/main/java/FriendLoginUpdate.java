@@ -8,7 +8,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("FriendLoginUpdate")
 public class FriendLoginUpdate extends Link {
 	@ObfuscatedName("ao")
-	public static int[] field5390;
+	@Export("SpriteBuffer_spriteHeights")
+	public static int[] SpriteBuffer_spriteHeights;
 	@ObfuscatedName("af")
 	@ObfuscatedGetter(
 		intValue = -1759439157

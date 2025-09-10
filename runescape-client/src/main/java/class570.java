@@ -20,7 +20,7 @@ final class class570 implements class569 {
 		garbageValue = "-944661961"
 	)
 	public Object vmethod11037(Buffer var1) {
-		return var1.readShortSmart();
+		return var1.method1958();
 	}
 
 	@ObfuscatedName("ao")
@@ -48,7 +48,7 @@ final class class570 implements class569 {
 				var3.writeCESU8("");
 			}
 
-			var2.write(var3.field5916, 0, var3.array * 1216585693);
+			var2.write(var3.array, 0, var3.offset * 1216585693);
 			var2.close();
 		} catch (IOException var4) {
 			var4.printStackTrace();

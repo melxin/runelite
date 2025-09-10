@@ -284,14 +284,14 @@ public class class265 {
 	@Export("SpriteBuffer_decode")
 	static void SpriteBuffer_decode(byte[] var0) {
 		Buffer var1 = new Buffer(var0);
-		var1.array = (var0.length - 2) * -290410379;
+		var1.offset = (var0.length - 2) * -290410379;
 		class606.SpriteBuffer_spriteCount = var1.readUnsignedShort();
 		LoginPacket.SpriteBuffer_xOffsets = new int[class606.SpriteBuffer_spriteCount];
 		class191.SpriteBuffer_yOffsets = new int[class606.SpriteBuffer_spriteCount];
 		class255.SpriteBuffer_spriteWidths = new int[class606.SpriteBuffer_spriteCount];
-		FriendLoginUpdate.field5390 = new int[class606.SpriteBuffer_spriteCount];
+		FriendLoginUpdate.SpriteBuffer_spriteHeights = new int[class606.SpriteBuffer_spriteCount];
 		SpriteBufferProperties.SpriteBuffer_pixels = new byte[class606.SpriteBuffer_spriteCount][];
-		var1.array = (var0.length - 7 - class606.SpriteBuffer_spriteCount * 8) * -290410379;
+		var1.offset = (var0.length - 7 - class606.SpriteBuffer_spriteCount * 8) * -290410379;
 		class606.SpriteBuffer_spriteWidth = var1.readUnsignedShort();
 		class581.SpriteBuffer_spriteHeight = var1.readUnsignedShort();
 		int var2 = (var1.readUnsignedByte() & 255) + 1;
@@ -310,10 +310,10 @@ public class class265 {
 		}
 
 		for (var3 = 0; var3 < class606.SpriteBuffer_spriteCount; ++var3) {
-			FriendLoginUpdate.field5390[var3] = var1.readUnsignedShort();
+			FriendLoginUpdate.SpriteBuffer_spriteHeights[var3] = var1.readUnsignedShort();
 		}
 
-		var1.array = (var0.length - 7 - class606.SpriteBuffer_spriteCount * 8 - (var2 - 1) * 3) * -290410379;
+		var1.offset = (var0.length - 7 - class606.SpriteBuffer_spriteCount * 8 - (var2 - 1) * 3) * -290410379;
 		TriBool.SpriteBuffer_spritePalette = new int[var2];
 
 		for (var3 = 1; var3 < var2; ++var3) {
@@ -323,11 +323,11 @@ public class class265 {
 			}
 		}
 
-		var1.array = 0;
+		var1.offset = 0;
 
 		for (var3 = 0; var3 < class606.SpriteBuffer_spriteCount; ++var3) {
 			int var4 = class255.SpriteBuffer_spriteWidths[var3];
-			int var5 = FriendLoginUpdate.field5390[var3];
+			int var5 = FriendLoginUpdate.SpriteBuffer_spriteHeights[var3];
 			int var6 = var5 * var4;
 			byte[] var7 = new byte[var6];
 			SpriteBufferProperties.SpriteBuffer_pixels[var3] = var7;
@@ -348,7 +348,7 @@ public class class265 {
 			}
 
 			if (var10) {
-				var1.array += var6 * -290410379;
+				var1.offset += var6 * -290410379;
 			}
 		}
 

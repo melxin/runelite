@@ -1,3 +1,4 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -43,8 +44,8 @@ public class class156 extends class151 {
 		garbageValue = "-2943315"
 	)
 	void vmethod4111(Buffer var1) {
-		this.field1809 = var1.readShortSmart();
-		this.field1810 = var1.readShortSmart();
+		this.field1809 = var1.method1958();
+		this.field1810 = var1.method1958();
 		this.field1808 = var1.readUnsignedByte();
 		this.field1807 = var1.readUnsignedByte();
 	}
@@ -63,7 +64,8 @@ public class class156 extends class151 {
 		descriptor = "(Ldr;Lwf;II)V",
 		garbageValue = "624706055"
 	)
-	static void method3864(WorldView var0, PacketBuffer var1, int var2) {
+	@Export("updateWorldEntitiesFromPacketBuffer")
+	static void updateWorldEntitiesFromPacketBuffer(WorldView var0, PacketBuffer var1, int var2) {
 		int var3 = var1.readUnsignedByte();
 		int var5;
 		int var7;

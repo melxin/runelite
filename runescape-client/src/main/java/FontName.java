@@ -138,7 +138,7 @@ public class FontName {
 		if (JagexCache.JagexCache_randomDat != null) {
 			try {
 				JagexCache.JagexCache_randomDat.seek(0L);
-				JagexCache.JagexCache_randomDat.write(var0.field5916, var1, 24);
+				JagexCache.JagexCache_randomDat.write(var0.array, var1, 24);
 			} catch (Exception var3) {
 			}
 		}
@@ -251,7 +251,7 @@ public class FontName {
 							PacketBufferNode var6 = UserComparator6.getPacketBufferNode(ClientPacket.BUG_REPORT, Client.packetWriter.isaacCipher);
 							var6.packetBuffer.writeShort(1 + WorldMapSection2.stringCp1252NullTerminatedByteSize(var4) + WorldMapSection2.stringCp1252NullTerminatedByteSize(var5));
 							var6.packetBuffer.writeStringCp1252NullTerminated(var5);
-							var6.packetBuffer.writeShortLE(var3);
+							var6.packetBuffer.writeByteSub(var3);
 							var6.packetBuffer.writeStringCp1252NullTerminated(var4);
 							Client.packetWriter.addNode(var6);
 							return 1;

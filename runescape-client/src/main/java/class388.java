@@ -13,7 +13,7 @@ public class class388 {
 		LoginPacket.SpriteBuffer_xOffsets = null;
 		class191.SpriteBuffer_yOffsets = null;
 		class255.SpriteBuffer_spriteWidths = null;
-		FriendLoginUpdate.field5390 = null;
+		FriendLoginUpdate.SpriteBuffer_spriteHeights = null;
 		TriBool.SpriteBuffer_spritePalette = null;
 		SpriteBufferProperties.SpriteBuffer_pixels = null;
 	}

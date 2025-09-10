@@ -43,7 +43,7 @@ public class class166 extends class151 {
 	)
 	void vmethod4111(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			var1.array -= -290410379;
+			var1.offset -= -290410379;
 			this.field1889 = var1.readLong();
 		}
 

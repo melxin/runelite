@@ -111,7 +111,7 @@ public class class168 {
 					var9.xOffset = LoginPacket.SpriteBuffer_xOffsets[var8];
 					var9.yOffset = class191.SpriteBuffer_yOffsets[var8];
 					var9.subWidth = class255.SpriteBuffer_spriteWidths[var8];
-					var9.subHeight = FriendLoginUpdate.field5390[var8];
+					var9.subHeight = FriendLoginUpdate.SpriteBuffer_spriteHeights[var8];
 					var9.palette = TriBool.SpriteBuffer_spritePalette;
 					var9.pixels = SpriteBufferProperties.SpriteBuffer_pixels[var8];
 				}

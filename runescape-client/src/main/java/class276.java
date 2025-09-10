@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -46,7 +47,8 @@ public class class276 {
 	)
 	static final class276[] field3244;
 	@ObfuscatedName("ln")
-	static String field3255;
+	@Export("gameSessionServiceBaseUrl")
+	static String gameSessionServiceBaseUrl;
 	@ObfuscatedName("as")
 	@ObfuscatedGetter(
 		intValue = -2022478941

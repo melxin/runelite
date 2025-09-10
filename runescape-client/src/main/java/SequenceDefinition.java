@@ -243,7 +243,7 @@ public class SequenceDefinition extends DualNode {
 				this.chatFrameIds[var4] += var1.readUnsignedShort() << 16;
 			}
 		} else if (var2 == 13) {
-			this.SequenceDefinition_cachedModelId = var1.readShortSmart();
+			this.SequenceDefinition_cachedModelId = var1.method1958();
 		} else if (var2 == 14) {
 			var3 = var1.readUnsignedShort();
 			if (this.field2471 == null) {

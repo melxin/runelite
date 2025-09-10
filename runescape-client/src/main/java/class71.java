@@ -16,7 +16,7 @@ public class class71 {
 	public static void readReflectionCheck(Buffer var0, int var1) {
 		ReflectionCheck var2 = new ReflectionCheck();
 		var2.size = var0.readUnsignedByte();
-		var2.id = var0.readShortSmart();
+		var2.id = var0.method1958();
 		var2.operations = new int[var2.size];
 		var2.creationErrors = new int[var2.size];
 		var2.fields = new Field[var2.size];
@@ -46,7 +46,7 @@ public class class71 {
 						int var12;
 						if (var4 == 3) {
 							for (int var11 = 0; var11 < var7; ++var11) {
-								var12 = var0.readShortSmart();
+								var12 = var0.method1958();
 								var10[var11] = new byte[var12];
 								var0.readBytes(var10[var11], 0, var12);
 							}
@@ -95,7 +95,7 @@ public class class71 {
 					var6 = var0.readStringCp1252NullTerminated();
 					var7 = 0;
 					if (var4 == 1) {
-						var7 = var0.readShortSmart();
+						var7 = var0.method1958();
 					}
 
 					var2.operations[var3] = var4;

@@ -107,9 +107,9 @@ public class WorldMapArea {
 		this.id = var2;
 		this.internalName = var1.readStringCp1252NullTerminated();
 		this.externalName = var1.readStringCp1252NullTerminated();
-		this.origin = new Coord(var1.readShortSmart());
-		this.field3329 = var1.readShortSmart();
-		this.field3330 = var1.readShortSmart();
+		this.origin = new Coord(var1.method1958());
+		this.field3329 = var1.method1958();
+		this.field3330 = var1.method1958();
 		var1.readUnsignedByte();
 		this.isMain = var1.readUnsignedByte() == 1;
 		this.zoom = var1.readUnsignedByte();

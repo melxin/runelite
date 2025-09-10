@@ -45,7 +45,7 @@ public class class161 extends class151 {
 		garbageValue = "-2943315"
 	)
 	void vmethod4111(Buffer var1) {
-		this.field1839 = var1.readShortSmart();
+		this.field1839 = var1.method1958();
 		this.field1838 = var1.readStringCp1252NullTerminated();
 	}
 

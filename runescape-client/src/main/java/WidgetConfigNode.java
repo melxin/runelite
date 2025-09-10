@@ -69,7 +69,7 @@ public class WidgetConfigNode extends Node {
 		garbageValue = "66073683"
 	)
 	public static int method7497(Buffer var0, String var1) {
-		int var2 = var0.array * 1216585693;
+		int var2 = var0.offset * 1216585693;
 		int var4 = var1.length();
 		byte[] var5 = new byte[var4];
 
@@ -139,7 +139,7 @@ public class WidgetConfigNode extends Node {
 		}
 
 		var0.writeSmartByteShort(var5.length);
-		var0.array += class376.huffman.compress(var5, 0, var5.length, var0.field5916, 1216585693 * var0.array) * -290410379;
-		return var0.array * 1216585693 - var2;
+		var0.offset += class376.huffman.compress(var5, 0, var5.length, var0.array, 1216585693 * var0.offset) * -290410379;
+		return var0.offset * 1216585693 - var2;
 	}
 }

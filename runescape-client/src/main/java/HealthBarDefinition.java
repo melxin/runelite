@@ -149,9 +149,9 @@ public class HealthBarDefinition extends DualNode {
 		} else if (var2 == 6) {
 			var1.readUnsignedByte();
 		} else if (var2 == 7) {
-			this.frontSpriteID = var1.readVarInt();
+			this.frontSpriteID = var1.readNullableLargeSmart();
 		} else if (var2 == 8) {
-			this.backSpriteID = var1.readVarInt();
+			this.backSpriteID = var1.readNullableLargeSmart();
 		} else if (var2 == 11) {
 			this.int3 = var1.readUnsignedShort();
 		} else if (var2 == 14) {

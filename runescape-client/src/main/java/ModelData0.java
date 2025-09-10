@@ -43,9 +43,9 @@ public class ModelData0 {
 					int var12;
 					try {
 						var26 = true;
-						WorldEntityCoord.field3277 = new int[var1.localIntCount];
+						WorldEntityCoord.Interpreter_intLocals = new int[var1.localIntCount];
 						int var10 = 0;
-						Interpreter.field671 = new Object[var1.localStringCount];
+						Interpreter.Interpreter_objectLocals = new Object[var1.localStringCount];
 						int var11 = 0;
 
 						int var13;
@@ -93,16 +93,16 @@ public class ModelData0 {
 									var13 = var0.field897;
 								}
 
-								WorldEntityCoord.field3277[var10++] = var13;
+								WorldEntityCoord.Interpreter_intLocals[var10++] = var13;
 							} else if (var4[var12] instanceof String) {
 								var19 = (String)var4[var12];
 								if (var19.equals("event_opbase")) {
 									var19 = var0.targetName;
 								}
 
-								Interpreter.field671[var11++] = var19;
+								Interpreter.Interpreter_objectLocals[var11++] = var19;
 							} else if (var4[var12] instanceof DynamicArray) {
-								Interpreter.field671[var11++] = var4[var12];
+								Interpreter.Interpreter_objectLocals[var11++] = var4[var12];
 							}
 						}
 
@@ -156,13 +156,13 @@ public class ModelData0 {
 										break label907;
 									}
 
-									class38 var37 = Interpreter.Interpreter_frames[--Interpreter.Interpreter_frameDepth];
-									var1 = var37.field259;
+									ScriptFrame var37 = Interpreter.Interpreter_frames[--Interpreter.Interpreter_frameDepth];
+									var1 = var37.script;
 									var6 = var1.opcodes;
 									var7 = var1.intOperands;
-									var5 = var37.field255;
-									WorldEntityCoord.field3277 = var37.field258;
-									Interpreter.field671 = var37.field254;
+									var5 = var37.pc;
+									WorldEntityCoord.Interpreter_intLocals = var37.intLocals;
+									Interpreter.Interpreter_objectLocals = var37.stringLocals;
 								} else if (var29 == 25) {
 									var12 = var7[var5];
 									Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = class281.getVarbit(var12);
@@ -180,13 +180,13 @@ public class ModelData0 {
 										var5 += var7[var5];
 									}
 								} else if (var29 == 33) {
-									Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = WorldEntityCoord.field3277[var7[var5]];
+									Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = WorldEntityCoord.Interpreter_intLocals[var7[var5]];
 								} else if (var29 == 34) {
-									WorldEntityCoord.field3277[var7[var5]] = Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize];
+									WorldEntityCoord.Interpreter_intLocals[var7[var5]] = Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize];
 								} else if (var29 == 35) {
-									Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = Interpreter.field671[var7[var5]];
+									Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = Interpreter.Interpreter_objectLocals[var7[var5]];
 								} else if (var29 == 36) {
-									Interpreter.field671[var7[var5]] = Interpreter.Interpreter_objectStack[--Interpreter.Interpreter_objectStackSize];
+									Interpreter.Interpreter_objectLocals[var7[var5]] = Interpreter.Interpreter_objectStack[--Interpreter.Interpreter_objectStackSize];
 								} else if (var29 == 37) {
 									var12 = var7[var5];
 									Interpreter.Interpreter_objectStackSize -= var12;
@@ -215,18 +215,18 @@ public class ModelData0 {
 
 									UserComparator7.Interpreter_intStackSize -= var33.intArgumentCount;
 									Interpreter.Interpreter_objectStackSize -= var33.stringArgumentCount;
-									class38 var16 = new class38();
-									var16.field259 = var1;
-									var16.field255 = var5;
-									var16.field258 = WorldEntityCoord.field3277;
-									var16.field254 = Interpreter.field671;
+									ScriptFrame var16 = new ScriptFrame();
+									var16.script = var1;
+									var16.pc = var5;
+									var16.intLocals = WorldEntityCoord.Interpreter_intLocals;
+									var16.stringLocals = Interpreter.Interpreter_objectLocals;
 									Interpreter.Interpreter_frames[++Interpreter.Interpreter_frameDepth - 1] = var16;
 									var1 = var33;
 									var6 = var33.opcodes;
 									var7 = var33.intOperands;
 									var5 = -1;
-									WorldEntityCoord.field3277 = var14;
-									Interpreter.field671 = var15;
+									WorldEntityCoord.Interpreter_intLocals = var14;
+									Interpreter.Interpreter_objectLocals = var15;
 								} else if (var29 == 42) {
 									Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = class516.varcs.getInt(var7[var5]);
 								} else if (var29 == 43) {
@@ -240,16 +240,16 @@ public class ModelData0 {
 									}
 
 									if (var13 == 115) {
-										Interpreter.field671[var12] = new DynamicArray(class574.field5824, "", var21, var21);
+										Interpreter.Interpreter_objectLocals[var12] = new DynamicArray(class574.field5824, "", var21, var21);
 									} else if (var13 != 105 && var13 != 49) {
-										Interpreter.field671[var12] = new DynamicArray(class574.field5820, -1, var21, var21);
+										Interpreter.Interpreter_objectLocals[var12] = new DynamicArray(class574.field5820, -1, var21, var21);
 									} else {
-										Interpreter.field671[var12] = new DynamicArray(class574.field5820, 0, var21, var21);
+										Interpreter.Interpreter_objectLocals[var12] = new DynamicArray(class574.field5820, 0, var21, var21);
 									}
 								} else {
 									DynamicArray var20;
 									if (var29 == 45) {
-										var20 = class382.method8181(var7[var5], Interpreter.field671[var7[var5]]);
+										var20 = class382.method8181(var7[var5], Interpreter.Interpreter_objectLocals[var7[var5]]);
 										var13 = Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize];
 										class517.method10309(var20, var13);
 										if (var20.field5504 == class574.field5820) {
@@ -258,7 +258,7 @@ public class ModelData0 {
 											Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = var20.method10321()[var13];
 										}
 									} else if (var29 == 46) {
-										var20 = class382.method8181(var7[var5], Interpreter.field671[var7[var5]]);
+										var20 = class382.method8181(var7[var5], Interpreter.Interpreter_objectLocals[var7[var5]]);
 										if (!var20.field5501) {
 											throw new RuntimeException();
 										}
@@ -338,7 +338,7 @@ public class ModelData0 {
 								break;
 							}
 
-							var23.append("").append(Interpreter.Interpreter_frames[var12].field259.key).append(" ");
+							var23.append("").append(Interpreter.Interpreter_frames[var12].script.key).append(" ");
 							--var12;
 						}
 					}

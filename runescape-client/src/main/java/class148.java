@@ -52,7 +52,7 @@ public class class148 extends class151 {
 	)
 	void vmethod4111(Buffer var1) {
 		this.field1753 = var1.readUnsignedShort();
-		this.field1752 = var1.readShortSmart();
+		this.field1752 = var1.method1958();
 		this.field1757 = var1.readUnsignedByte();
 		this.field1754 = var1.readUnsignedByte();
 	}

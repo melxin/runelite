@@ -67,7 +67,7 @@ public class ClientPacket implements class326 {
 	@ObfuscatedSignature(
 		descriptor = "Lmn;"
 	)
-	public static final ClientPacket field3551;
+	public static final ClientPacket EVENT_MOUSE_CLICK_V2;
 	@ObfuscatedName("am")
 	@ObfuscatedSignature(
 		descriptor = "Lmn;"
@@ -342,7 +342,7 @@ public class ClientPacket implements class326 {
 	@ObfuscatedSignature(
 		descriptor = "Lmn;"
 	)
-	public static final ClientPacket field3606;
+	public static final ClientPacket DETECT_MODIFIED_CLIENT;
 	@ObfuscatedName("cl")
 	@ObfuscatedSignature(
 		descriptor = "Lmn;"
@@ -367,7 +367,7 @@ public class ClientPacket implements class326 {
 	@ObfuscatedSignature(
 		descriptor = "Lmn;"
 	)
-	public static final ClientPacket field3611;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("cd")
 	@ObfuscatedSignature(
 		descriptor = "Lmn;"
@@ -538,7 +538,7 @@ public class ClientPacket implements class326 {
 		CLICK_WORLD_MAP = new ClientPacket(8, 4);
 		IF_BUTTONX = new ClientPacket(9, 9);
 		MINIMAP_CLICK = new ClientPacket(10, -1);
-		field3551 = new ClientPacket(11, 6);
+		EVENT_MOUSE_CLICK_V2 = new ClientPacket(11, 6);
 		CLOSE_MODAL = new ClientPacket(12, 0);
 		LOGIN_TIMINGS = new ClientPacket(13, -1);
 		CLAN_SETTINGS_FULL_REQUEST = new ClientPacket(14, 1);
@@ -593,12 +593,12 @@ public class ClientPacket implements class326 {
 		UPDATE_PLAYER_MODEL = new ClientPacket(63, 26);
 		CLAN_CHANNEL_KICK_USER = new ClientPacket(64, -1);
 		CHAT_SENDPRIVATE = new ClientPacket(65, -2);
-		field3606 = new ClientPacket(66, 4);
+		DETECT_MODIFIED_CLIENT = new ClientPacket(66, 4);
 		IGNORE_DELUSER = new ClientPacket(67, -1);
 		CLAN_KICKUSER = new ClientPacket(68, -1);
 		SET_HEADING = new ClientPacket(69, 1);
 		field3610 = new ClientPacket(70, -1);
-		field3611 = new ClientPacket(71, 0);
+		FREECAM_EXIT = new ClientPacket(71, 0);
 		field3540 = new ClientPacket(72, 2);
 		OPLOCU = new ClientPacket(73, 15);
 		OPPLAYER4 = new ClientPacket(74, 3);

@@ -155,7 +155,7 @@ public class SoundCache {
 			var4.xOffset = LoginPacket.SpriteBuffer_xOffsets[0];
 			var4.yOffset = class191.SpriteBuffer_yOffsets[0];
 			var4.subWidth = class255.SpriteBuffer_spriteWidths[0];
-			var4.subHeight = FriendLoginUpdate.field5390[0];
+			var4.subHeight = FriendLoginUpdate.SpriteBuffer_spriteHeights[0];
 			int var5 = var4.subHeight * var4.subWidth;
 			byte[] var6 = SpriteBufferProperties.SpriteBuffer_pixels[0];
 			var4.pixels = new int[var5];

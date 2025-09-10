@@ -66,7 +66,7 @@ public class SoundEffect {
 		for (int var2 = 0; var2 < 10; ++var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 != 0) {
-				var1.array -= -290410379;
+				var1.offset -= -290410379;
 				this.instruments[var2] = new Instrument();
 				this.instruments[var2].decode(var1);
 			}
@@ -200,9 +200,9 @@ public class SoundEffect {
 					return null;
 				}
 
-				int var6 = var5.readShortSmart();
+				int var6 = var5.method1958();
 				var3.method3397(var4, 4);
-				var5.array = (var6 + 4) * -290410379;
+				var5.offset = (var6 + 4) * -290410379;
 			} else {
 				if (var2 != 0) {
 					return null;

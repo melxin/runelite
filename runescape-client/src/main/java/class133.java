@@ -12,7 +12,8 @@ public class class133 {
 	@Export("SequenceDefinition_archive")
 	public static AbstractArchive SequenceDefinition_archive;
 	@ObfuscatedName("lv")
-	static String field1615;
+	@Export("authServiceBaseUrl")
+	static String authServiceBaseUrl;
 	@ObfuscatedName("uw")
 	static boolean field1614;
 	@ObfuscatedName("af")
