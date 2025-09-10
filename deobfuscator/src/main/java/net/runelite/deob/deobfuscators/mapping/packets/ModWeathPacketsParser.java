@@ -27,6 +27,7 @@ package net.runelite.deob.deobfuscators.mapping.packets;
 import com.google.common.base.Stopwatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -34,7 +35,11 @@ import net.runelite.asm.Annotation;
 import net.runelite.asm.ClassFile;
 import net.runelite.asm.ClassGroup;
 import net.runelite.asm.Field;
+import net.runelite.asm.Method;
 import net.runelite.asm.Type;
+import net.runelite.asm.attributes.code.Instruction;
+import net.runelite.asm.attributes.code.instruction.types.PushConstantInstruction;
+import net.runelite.asm.attributes.code.instructions.PutStatic;
 import net.runelite.deob.DeobAnnotations;
 import net.runelite.deob.DeobProperties;
 import net.runelite.deob.deobfuscators.Renamer;
@@ -49,216 +54,231 @@ import net.runelite.deob.util.NameMappings;
 public class ModWeathPacketsParser implements Runnable
 {
 	// Update COMPATIBLE_REVISION, SERVER_PACKETS and CLIENT_PACKETS each revision
-	private static final String COMPATIBLE_REVISION = "232";
+	private static final String COMPATIBLE_REVISION = "233";
 
 	private static final Map<String, String> SERVER_PACKETS = List.of(
-		"CAM_MODE,field3684,0",
-		"MIDI_SONG,field3575,1",
-		"VARP_SMALL,field3576,2",
-		"MIDI_SONG_WITH_SECONDARY,field3577,3",
-		"NPC_INFO_SMALL_VIEWPORT,field3578,4",
-		"UPDATE_INV_STOP_TRANSIT,field3579,5",
-		"UPDATE_INV_PARTIAL,field3581,7",
-		"NPC_INFO_LARGE_VIEWPORT,field3582,8",
-		"MIDI_JINGLE,field3583,9",
-		"PLAYER_SPOTANIM,field3671,11",
-		"CAM_SMOOTH_RESET,field3586,12",
-		"EVENT_WORLDHOP,field3587,13",
-		"IF_SETNPCHEAD_ACTIVE,field3588,14",
-		"IF_SET_PLAYERMODEL_BASECOLOUR,field3714,15",
-		"CAM_LOOKAT_EASED_COORD,field3622,17",
-		"CAM_LOOKAT,field3592,18",
-		"CLAN_SETTINGS_FULL,field3593,19",
-		"RESET_ANIMS,field3594,20",
-		"HEAT_MAP,field3595,21",
-		"VAR_CLAN_ENABLE,field3633,22",
-		"VARP_LARGE,field3597,23",
-		"LOGOUT_FULL,field3598,24",
-		"UPDATE_INV_FULL,field3666,25",
-		"PLAYER_ANIM_SPECIFIC,field3590,26",
-		"UPDATE_STOCKMARKET_SLOT,field3602,28",
-		"UPDATE_STAT,field3603,29",
-		"OBJ_COUNT,field3605,30",
-		"IF_SET_ROTATE_SPEED,field3672,31",
-		"CAM_MOVETO_EASED_CIRCULAR,field3693,32",
-		"CAM_RESET,field3607,33",
-		"PING_STATISTICS_REQUEST,field3609,35",
-		"VAR_CLAN,field3611,37",
-		"LOC_ANIM,field3612,38",
-		"IF_SETNPCHEAD,field3615,41",
-		"MINIMAP_FLAG_SET,field3670,42",
-		"IF_SETOBJECT,field3621,45",
-		"LOGOUT,field3620,46",
-		"REFLECTION_CHECKER,field3645,47",
-		"UPDATE_FRIENDLIST,field3591,48",
-		"MIDI_SONG_STOP,field3623,49",
-		"IF_SETANGLE,field3624,50",
-		"IF_SETSCROLLPOS,field3625,51",
-		"IF_SETPOSITION,field3626,52",
-		"MESSAGE_CLAN_CHANNEL_SYSTEM,field3627,53",
-		"IF_MOVESUB,field3661,54",
-		"SYNC_CLIENT_VARCACHE,field3629,55",
-		"REBUILD_WORLDENTITY,field3630,56",
-		"UPDATE_INV_CLEAR,field3632,58",
-		"UPDATE_ZONE_FULL_FOLLOWS,field3643,59",
-		"SET_PRIVCHATMODE,field3694,60",
-		"UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER,field3644,61",
-		"IF_SETPLAYERHEAD,field3636,62",
-		"CAM_LOOKAT_EASED_ANGLE_RELATIVE,field3637,63",
-		"MIDI_SWAP,field3638,64",
-		"HINT_ARROW,field3639,65",
-		"OCULUS_SYNC,field3640,66",
-		"CAM_SETANGLE,field3655,67",
-		"SET_NPC_UPDATE_ORIGIN,field3642,68",
-		"MINIMAP_TOGGLE,field3585,69",
-		"UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1,field3700,70",
-		"CAM_MOVE_TO,field3678,71",
-		"IF_SET_PLAYERMODEL_OBJ,field3646,72",
-		"IF_OPENTOP,field3647,73",
-		"IF_CLOSESUB,field3574,74",
-		"FRIENDS_LIST_LOADED,field3649,75",
-		"NPC_SET_SEQUENCE,field3650,76",
-		"UPDATE_IGNORELIST,field3651,77",
-		"NPC_HEADICON_SPECIFIC,field3634,78",
-		"CAM_MOVETO,field3619,79",
-		"RESET_INTERACTION_MODE,field3654,80",
-		"URL_OPEN,field3599,81",
-		"UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL,field3656,82",
-		"UPDATE_REBOOT_TIMER,field3657,83",
-		"RESET_CLIENT_VARCACHE,field3641,84",
-		"IF_SET_PLAYERMODEL_SELF,field3660,86",
-		"VAR_CLAN_DISABLE,field3606,87",
-		"MAP_ANIM,field3662,88",
-		"MESSAGE_PRIVATE,field3663,89",
-		"CAM_TARGET,field3617,90",
-		"CLAN_CHANNEL_DELTA,field3665,91",
-		"SERVER_TICK_END,field3652,92",
-		"UPDATE_TRADING_POST,field3667,93",
-		"DYNAMICOBJECT_SPAWN,field3685,94",
-		"UPDATE_ZONE_PARTIAL_ENCLOSED,field3613,96",
-		"CAM_SHAKE,field3713,97",
-		"IF_SETMODEL,field3600,98",
-		"IF_SETANIM,field3673,99",
-		"REBUILD_REGION,field3687,100",
-		"MESSAGE_PRIVATE_ECHO,field3676,102",
-		"GRAPHICSOBJECT_SPAWN,field3679,105",
-		"LOC_DEL,field3709,106",
-		"OBJ_DEL,field3681,107",
-		"MESSAGE_FRIEND_PRIVATE,field3682,108",
-		"MESSAGE_GAME,field3683,109",
-		"IF_SETCOLOUR,field3707,110",
-		"SET_PLAYER_OP,field3601,111",
-		"REBUILD_NORMAL,field3648,112",
-		"IF_OPENSUB,field3699,113",
-		"MESSAGE_FRIENDS_CHAT,field3688,114",
-		"IF_SET_TEXT,field3689,115",
-		"IF_SET_PLAYERMODEL_BODYTYPE,field3690,116",
-		"UPDATE_UID192,field3691,117",
-		"RUNCLIENTSCRIPT,field3596,119",
-		"NPC_SPOTANIM,field3616,120",
-		"OBJ_ADD,field3695,121",
-		"CLAN_CHANNEL_FULL,field3697,123",
-		"TRIGGER_ONDIALOG_ABORT,field3698,124",
-		"UPDATE_SITE_SETTINGS,field3628,125",
-		"PLAYER_INFO,field3653,126",
-		"CLAN_SETTINGS_DELTA,field3701,127",
-		"IF_SET_EVENTS,field3705,131",
-		"SET_ACTIVE_WORLD,field3589,133",
-		"OBJ_RESET_CUSTOMIZATION,field3708,134",
-		"IF_RESYNC,field3604,135",
-		"OBJ_SET_CUSTOMIZATION,field3710,136",
-		"PROJECTILE_SPAWN,field3712,138"
+		"VARP_SMALL,0",
+		"MIDI_SONG,1",
+		"IF_SET_PLAYERMODEL_OBJ,3",
+		"IF_SET_PLAYERMODEL_BODYTYPE,4",
+		"IF_SETSCROLLPOS,5",
+		"OBJ_ADD,6",
+		"CAM_SETANGLE,7",
+		"UPDATE_REBOOT_TIMER,8",
+		"UPDATE_STOCKMARKET_SLOT,9",
+		"CAM_MOVE_TO,10",
+		"IF_SETOBJECT,11",
+		"IF_SETPOSITION,12",
+		"IF_SET_ROTATE_SPEED,13",
+		"UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER,14",
+		"IF_SETHIDE,15",
+		"UPDATE_INV_PARTIAL,16",
+		"MESSAGE_GAME,17",
+		"MIDI_SWAP,18",
+		"UPDATE_ZONE_FULL_FOLLOWS,19",
+		"RESET_ANIMS,20",
+		"UPDATE_IGNORELIST,21",
+		"IF_SETNPCHEAD,22",
+		"VARP_LARGE,23",
+		"UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL,24",
+		"RUNCLIENTSCRIPT,25",
+		"UPDATE_FRIENDLIST,27",
+		"IF_SETNPCHEAD_ACTIVE,28",
+		"CLAN_SETTINGS_DELTA,29",
+		"NPC_SET_SEQUENCE,30",
+		"CLAN_SETTINGS_FULL,31",
+		"OBJ_OPFILTER,32",
+		"NPC_HEADICON_SPECIFIC,33",
+		"MINIMAP_TOGGLE,34",
+		"RESET_INTERACTION_MODE,36",
+		"REBUILD_NORMAL,37",
+		"REBUILD_REGION,38",
+		"HINT_ARROW,39",
+		"CAM_LOOKAT,40",
+		"LOC_DEL,41",
+		"MAP_ANIM,43",
+		"URL_OPEN,44",
+		"IF_CLOSESUB,46",
+		"LOC_ANIM,47",
+		"CAM_RESET,48",
+		"MESSAGE_PRIVATE,50",
+		"MINIMAP_FLAG_SET,51",
+		"CAM_MODE,52",
+		"PLAYER_SPOTANIM,53",
+		"CLAN_CHANNEL_DELTA,54",
+		"IF_SET_PLAYERMODEL_BASECOLOUR,56",
+		"IF_OPENSUB,57",
+		"MIDI_SONG_WITH_SECONDARY,58",
+		"CAM_SMOOTH_RESET,59",
+		"MESSAGE_FRIEND_PRIVATE,61",
+		"HEAT_MAP,62",
+		"PING_STATISTICS_REQUEST,63",
+		"UPDATE_UID192,64",
+		"OBJ_COUNT,65",
+		"CAM_SHAKE,66",
+		"UPDATE_RUN_WEIGHT,67",
+		"UPDATE_INV_CLEAR,68",
+		"IF_OPENTOP,69",
+		"OCULUS_SYNC,70",
+		"CAM_MOVETO_EASED_CIRCULAR,71",
+		"VAR_CLAN_DISABLE,72",
+		"LOC_ADD_CHANGE,73",
+		"SET_PRIVCHATMODE,74",
+		"LOGOUT_FULL,75",
+		"VAR_CLAN_ENABLE,76",
+		"SET_PLAYER_OP,77",
+		"SYNC_CLIENT_VARCACHE,78",
+		"CHAT_FILTER_SETTINGS,80",
+		"IF_SET_TEXT,82",
+		"CLAN_CHANNEL_FULL,83",
+		"CAM_MOVETO,84",
+		"VAR_CLAN,85",
+		"IF_MOVESUB,86",
+		"IF_SETANGLE,87",
+		"UPDATE_RUN_ENERGY,88",
+		"UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1,89",
+		"PLAYER_ANIM_SPECIFIC,90",
+		"CAM_LOOKAT_EASED_ANGLE_RELATIVE,91",
+		"GRAPHICSOBJECT_SPAWN,92",
+		"REBUILD_WORLDENTITY,93",
+		"NPC_INFO_SMALL_VIEWPORT,94",
+		"UPDATE_ZONE_PARTIAL_ENCLOSED,95",
+		"REFLECTION_CHECKER ,96",
+		"UPDATE_TRADING_POST,97",
+		"UPDATE_STAT,98",
+		"MESSAGE_FRIENDS_CHAT,99",
+		"IF_SETPLAYERHEAD,100",
+		"CAM_LOOKAT_EASED_COORD,101",
+		"LOGOUT,102",
+		"CAM_TARGET,103",
+		"EVENT_WORLDHOP,104",
+		"TRIGGER_ONDIALOG_ABORT,105",
+		"IF_SET_PLAYERMODEL_SELF,106",
+		"SET_NPC_UPDATE_ORIGIN,107",
+		"NPC_SPOTANIM,108",
+		"MESSAGE_PRIVATE_ECHO,109",
+		"FRIENDS_LIST_LOADED,110",
+		"IF_SETANIM,111",
+		"IF_SETMODEL,112",
+		"MESSAGE_CLAN_CHANNEL_SYSTEM,113",
+		"MIDI_SONG_STOP,114",
+		"NPC_INFO_LARGE_VIEWPORT,115",
+		"SERVER_TICK_END,116",
+		"IF_SETCOLOUR,118",
+		"UPDATE_INV_FULL,119",
+		"LOC_MERGEPLAYER,120",
+		"PLAYER_INFO,121",
+		"OBJ_DEL,122",
+		"DYNAMICOBJECT_SPAWN,123",
+		"UPDATE_SITE_SETTINGS,124",
+		"MIDI_JINGLE,125",
+		"RESET_CLIENT_VARCACHE,126",
+		"UPDATE_INV_STOP_TRANSIT,127",
+		"OBJ_RESET_CUSTOMIZATION,130",
+		"IF_SET_EVENTS,131",
+		"IF_RESYNC,134",
+		"PROJECTILE_SPAWN,135",
+		"OBJ_SET_CUSTOMIZATION,138",
+		"SET_ACTIVE_WORLD,140"
 	).stream()
 		.map(s -> s.split(","))
 		.filter(s -> s.length >= 2)
 		.collect(Collectors.toMap(s -> s[1].trim(), s -> s[0].trim()));
 
 	private static final Map<String, String> CLIENT_PACKETS = List.of(
-		"IF_BUTTONX,field3504,0",
-		"OPNPC5,field3455,1",
-		"OPNPC1,field3456,2",
-		"OPNPCE,field3457,3",
-		"RESUME_COUNTDIALOG,field3491,4",
-		"CHAT_SENDPRIVATE,field3459,5",
-		"OPLOCT,field3516,6",
-		"MUSIC_PLAYING,field3474,7",
-		"OPPLAYER1,field3462,8",
-		"RESUME_STRINGDIALOG,field3463,9",
-		"EVENT_CAMERA_POSITION,field3464,10",
-		"LOGIN_TIMINGS,field3519,11",
-		"WIDGET_TYPE,field3466,12",
-		"OPPLAYER6,field3467,13",
-		"OPNPC4,field3494,15",
-		"CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL,field3471,17",
-		"OPOBJ4,field3473,19",
-		"MINIMAP_CLICK,field3545,20",
-		"CLAN_CHANNEL_FULL_REQUEST,field3475,21",
-		"DETECT_MODIFIED_CLIENT,field3458,22",
-		"OPOBJE,field3477,23",
-		"BUG_REPORT,field3478,24",
-		"OPPLAYERU,field3505,25",
-		"RESUME_PAUSEBUTTON,field3480,26",
-		"OPLOC1,field3482,28",
-		"OPLOC2,field3534,29",
-		"CLAN_CHANNEL_KICK_USER,field3484,30",
-		"OPOBJ2,field3454,31",
-		"OPLOCE,field3486,32",
-		"OPPLAYER4,field3483,34",
-		"OPPLAYER2,field3489,35",
-		"FRIEND_DELUSER,field3465,36",
-		"CLICK_WORLD_MAP,field3469,37",
-		"OPPLAYER5,field3492,38",
-		"MOVE_GAMECLICK,field3479,39",
-		"MESSAGE_PUBLIC,field3488,40",
-		"OPOBJU,field3543,41",
-		"DOCHEAT,field3497,43",
-		"CLAN_SETTINGS_FULL_REQUEST,field3498,44",
-		"MOUSE_MOVE,field3499,45",
-		"EVENT_KEYBOARD,field3500,46",
-		"OPPLAYER8,field3501,47",
-		"EVENT_WINDOW_SETTING,field3502,48",
-		"MOUSE_WHEEL,field3503,49",
-		"OPLOCU,field3461,50",
-		"OPLOC3,field3476,51",
-		"FRIEND_CHAT_JOIN_LEAVE,field3506,52",
-		"CLAN_KICKUSER,field3507,53",
-		"OPPLAYER7,field3508,54",
-		"RESUME_NAMEDIALOG,field3493,55",
-		"FRIEND_CHAT_SETRANK,field3510,56",
-		"RESUME_OBJDIALOG,field3523,57",
-		"CLAN_SETTINGS_ADD_BANNED_FROM_CHANNEL,field3533,58",
-		"OPOBJ3,field3512,59",
-		"OPLOC5,field3514,60",
-		"IGNORE_DELUSER,field3515,61",
-		"IF_BUTTONT,field3513,62",
-		"OPNPCU,field3518,64",
-		"EVENT_MOUSE_CLICK,field3460,65",
-		"OPPLAYER3,field3544,66",
-		"TELEPORT,field3521,67",
-		"OPNPC2,field3522,68",
-		"SET_HEADING,field3535,69",
-		"OPOBJ5,field3509,70",
-		"OPOBJ1,field3525,71",
-		"CHAT_SENDABUSEREPORT,field3526,72",
-		"FRIEND_ADDUSER,field3527,73",
-		"IF_RUNSCRIPT,field3528,74",
-		"CLOSE_MODAL,field3529,75",
-		"OPOBJT,field3530,76",
-		"OPNPCT,field3531,77",
-		"IF_SUBOP,field3532,78",
-		"REFLECTION_CHECK_REPLY,field3481,79",
-		"IF_CRMVIEW,field3524,80",
-		"OPHELDD,field3495,81",
-		"OPPLAYERT,field3536,82",
-		"OPLOC4,field3537,83",
-		"PING_STATISTICS,field3538,84",
-		"EVENT_APPLET_FOCUS,field3539,85",
-		"UPDATE_PLAYER_MODEL,field3540,86",
-		"EVENT_MOUSE_IDLE,field3541,87",
-		"CHAT_SETFILTER,field3485,89",
-		"NO_TIMEOUT,field3490,90",
-		"OPNPC3,field3472,91",
-		"IGNORE_LIST_ADD,field3546,92"
+		"OPLOC3,0",
+		"OPLOCT,1",
+		"OPWORLDENTITY3,2",
+		"OPOBJ4,3",
+		"MOUSE_MOVE,4",
+		"RESUME_PAUSEBUTTON,5",
+		"OPOBJ5,6",
+		"MUSIC_PLAYING,7",
+		"CLICK_WORLD_MAP,8",
+		"IF_BUTTONX,9",
+		"MINIMAP_CLICK,10",
+		"CLOSE_MODAL,12",
+		"LOGIN_TIMINGS,13",
+		"CLAN_SETTINGS_FULL_REQUEST,14",
+		"OPPLAYER2,15",
+		"OPOBJ1,16",
+		"BUG_REPORT,17",
+		"OPOBJ3,18",
+		"CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL,19",
+		"FRIEND_CHAT_SETRANK,20",
+		"OPOBJE,21",
+		"OPOBJT,22",
+		"OPPLAYERU,23",
+		"IF_BUTTONT,24",
+		"OPNPC4,25",
+		"MESSAGE_PUBLIC,26",
+		"OPWORLDENTITY1,27",
+		"EVENT_WINDOW_SETTING,28",
+		"OPNPC5,29",
+		"OPPLAYERT,30",
+		"OPWORLDENTITYT,31",
+		"OPOBJ2,32",
+		"OPWORLDENTITY5,33",
+		"MOUSE_WHEEL,34",
+		"EVENT_KEYBOARD,36",
+		"EVENT_APPLET_FOCUS,37",
+		"OPOBJU,39",
+		"DOCHEAT,40",
+		"OPNPC2,41",
+		"OPPLAYER8,42",
+		"OPPLAYER5,43",
+		"CHAT_SETFILTER,44",
+		"RESUME_STRINGDIALOG,46",
+		"MAP_BUILD_COMPLETE,47",
+		"EVENT_CAMERA_POSITION,48",
+		"OPPLAYER7,49",
+		"OPPLAYER1,50",
+		"RESUME_OBJDIALOG,51",
+		"FRIEND_CHAT_JOIN_LEAVE,52",
+		"OPNPC1,53",
+		"CHAT_SENDABUSEREPORT,54",
+		"OPWORLDENTITY2,55",
+		"OPLOC5,56",
+		"OPNPCT,57",
+		"OPLOC4,58",
+		"FRIEND_ADDUSER,59",
+		"OPWORLDENTITYU,60",
+		"OPPLAYER3,61",
+		"CLAN_SETTINGS_ADD_BANNED_FROM_CHANNEL,62",
+		"UPDATE_PLAYER_MODEL,63",
+		"CLAN_CHANNEL_KICK_USER,64",
+		"CHAT_SENDPRIVATE,65",
+		"IGNORE_DELUSER,67",
+		"CLAN_KICKUSER,68",
+		"SET_HEADING,69",
+		"OPLOCU,73",
+		"OPPLAYER4,74",
+		"WIDGET_TYPE,75",
+		"PING_STATISTICS,76",
+		"IGNORE_LIST_ADD,77",
+		"OPNPCE,78",
+		"REFLECTION_CHECK_REPLY,79",
+		"IF_CRMVIEW,80",
+		"TELEPORT,81",
+		"OPNPCU,82",
+		"FRIEND_DELUSER,83",
+		"CLAN_CHANNEL_FULL_REQUEST,84",
+		"RESUME_NAMEDIALOG,85",
+		"OPWORLDENTITY4,86",
+		"RESUME_COUNTDIALOG,87",
+		"OPWORLDENTITYE,88",
+		"OPLOCE,89",
+		"MOVE_GAMECLICK,90",
+		"OPPLAYER6,91",
+		"EVENT_MOUSE_CLICK,92",
+		"OPNPC3,93",
+		"OPHELDD,94",
+		"IF_RUNSCRIPT,95",
+		"EVENT_MOUSE_IDLE,96",
+		"OPLOC1,97",
+		"OPLOC2,98",
+		"NO_TIMEOUT,99",
+		"IF_SUBOP,100"
 	).stream()
 		.map(s -> s.split(","))
 		.filter(s -> s.length >= 2)
@@ -313,31 +333,107 @@ public class ModWeathPacketsParser implements Runnable
 		// Server packets
 		if (!SERVER_PACKETS.isEmpty())
 		{
-			targetServerPacketCF.getFields().stream()
-				.filter(f -> f.getType().equals(SERVER_PACKET_TYPE))
-				.forEach(targetServerPacketField ->
+			final Method clinit = targetServerPacketCF.findStaticMethod("<clinit>");
+			final List<Instruction> ins = clinit.getCode().getInstructions().getInstructions();
+			final Map<String, Field> idToPacketMap = new HashMap<>();
+			String id = null;
+			Field packet = null;
+			for (Instruction in : ins)
+			{
+				if (id == null)
 				{
-					if (SERVER_PACKETS.containsKey(targetServerPacketField.getName()))
+					if (in instanceof PushConstantInstruction)
 					{
-						logger.info("Mapping server packet: {} -> {}", targetServerPacketField.getName(), SERVER_PACKETS.get(targetServerPacketField.getName()));
-						newNameMappings.map(targetServerPacketField.getPoolField(), SERVER_PACKETS.get(targetServerPacketField.getName()));
+						final PushConstantInstruction pci = (PushConstantInstruction) in;
+						id = String.valueOf(pci.getConstant());
+						continue;
 					}
-				});
+				}
+
+				if (id != null && packet == null)
+				{
+					if (in instanceof PutStatic)
+					{
+						final Field targetServerPacketField = ((PutStatic) in).getMyField();
+						if (targetServerPacketField.getType().equals(SERVER_PACKET_TYPE))
+						{
+							packet = targetServerPacketField;
+						}
+					}
+				}
+
+				if (id != null && packet != null)
+				{
+					idToPacketMap.put(id, packet);
+					id = null;
+					packet = null;
+				}
+			}
+
+			SERVER_PACKETS.entrySet().forEach(entry ->
+			{
+				final String packetId = entry.getKey();
+				final String named = entry.getValue();
+				final Field targetServerPacketField = idToPacketMap.get(packetId);
+				if (targetServerPacketField != null)
+				{
+					logger.info("Mapping server packet: {} -> {}", targetServerPacketField.getName(), named);
+					newNameMappings.map(targetServerPacketField.getPoolField(), named);
+				}
+			});
 		}
 
 		// Client packets
 		if (!CLIENT_PACKETS.isEmpty())
 		{
-			targetClientPacketCF.getFields().stream()
-				.filter(f -> f.getType().equals(CLIENT_PACKET_TYPE))
-				.forEach(targetClientPacketField ->
+			final Method clinit = targetClientPacketCF.findStaticMethod("<clinit>");
+			final List<Instruction> ins = clinit.getCode().getInstructions().getInstructions();
+			final Map<String, Field> idToPacketMap = new HashMap<>();
+			String id = null;
+			Field packet = null;
+			for (Instruction in : ins)
+			{
+				if (id == null)
 				{
-					if (CLIENT_PACKETS.containsKey(targetClientPacketField.getName()))
+					if (in instanceof PushConstantInstruction)
 					{
-						logger.info("Mapping client packet: {} -> {}", targetClientPacketField.getName(), CLIENT_PACKETS.get(targetClientPacketField.getName()));
-						newNameMappings.map(targetClientPacketField.getPoolField(), CLIENT_PACKETS.get(targetClientPacketField.getName()));
+						final PushConstantInstruction pci = (PushConstantInstruction) in;
+						id = String.valueOf(pci.getConstant());
+						continue;
 					}
-				});
+				}
+
+				if (id != null && packet == null)
+				{
+					if (in instanceof PutStatic)
+					{
+						final Field targetClientPacketField = ((PutStatic) in).getMyField();
+						if (targetClientPacketField.getType().equals(CLIENT_PACKET_TYPE))
+						{
+							packet = targetClientPacketField;
+						}
+					}
+				}
+
+				if (id != null && packet != null)
+				{
+					idToPacketMap.put(id, packet);
+					id = null;
+					packet = null;
+				}
+			}
+
+			CLIENT_PACKETS.entrySet().forEach(entry ->
+			{
+				final String packetId = entry.getKey();
+				final String named = entry.getValue();
+				final Field targetClientPacketField = idToPacketMap.get(packetId);
+				if (targetClientPacketField != null)
+				{
+					logger.info("Mapping client packet: {} -> {}", targetClientPacketField.getName(), named);
+					newNameMappings.map(targetClientPacketField.getPoolField(), named);
+				}
+			});
 		}
 
 		/**
