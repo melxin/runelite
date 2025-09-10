@@ -1,97 +1,68 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sd")
+@ObfuscatedName("ss")
 @Implements("DelayFadeTask")
 public class DelayFadeTask extends SongTask {
-	@ObfuscatedName("az")
-	static int[] field5175;
-	@ObfuscatedName("ld")
-	@Export("authServiceBaseUrl")
-	static String authServiceBaseUrl;
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		longValue = 287224077443550231L
+		longValue = -3477653084176250655L
 	)
-	long field5177;
-	@ObfuscatedName("ab")
+	long field5289;
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 748008633
+		intValue = -2137312327
 	)
-	int field5176;
+	int field5288;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lsj;I)V"
+		descriptor = "(Lsi;I)V"
 	)
 	public DelayFadeTask(SongTask var1, int var2) {
 		super(var1);
-		this.field5176 = var2;
-		super.field5191 = "DelayFadeTask";
+		this.field5288 = var2;
+		super.field5303 = "DelayFadeTask";
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1329200530"
+		descriptor = "(B)Z",
+		garbageValue = "40"
 	)
-	public boolean vmethod9672() {
-		if (this.field5177 < (long)this.field5176) {
-			++this.field5177;
+	public boolean vmethod9673() {
+		if (this.field5289 < (long)this.field5288) {
+			++this.field5289;
 			return false;
 		} else {
 			return true;
 		}
 	}
 
-	@ObfuscatedName("nl")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "([Lox;II)V",
-		garbageValue = "547382223"
+		descriptor = "(IB)J",
+		garbageValue = "26"
 	)
-	@Export("runComponentCloseListeners")
-	static final void runComponentCloseListeners(Widget[] var0, int var1) {
-		for (int var2 = 0; var2 < var0.length; ++var2) {
-			Widget var3 = var0[var2];
-			if (var3 != null) {
-				if (var3.type == 0) {
-					if (var3.children != null) {
-						runComponentCloseListeners(var3.children, var1);
-					}
-
-					if (var3.childIndex * -64977777 == -1) {
-						InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
-						if (var4 != null) {
-							HttpResponse.runIntfCloseListeners(var4.group, var1);
-						}
-					}
-				}
-
-				ScriptEvent var5;
-				if (var1 == 0 && var3.onDialogAbort != null) {
-					var5 = new ScriptEvent();
-					var5.widget = var3;
-					var5.args = var3.onDialogAbort;
-					SequenceDefinition.runScriptEvent(var5);
-				}
-
-				if (var1 == 1 && var3.onSubChange != null) {
-					if (var3.childIndex * -64977777 >= 0) {
-						Widget var6 = class167.widgetDefinition.method7456(var3.id);
-						if (var6 == null || var6.children == null || var3.childIndex * -64977777 >= var6.children.length || var3 != var6.children[var3.childIndex * -64977777]) {
-							continue;
-						}
-					}
-
-					var5 = new ScriptEvent();
-					var5.widget = var3;
-					var5.args = var3.onSubChange;
-					SequenceDefinition.runScriptEvent(var5);
-				}
-			}
+	public static long method9649(int var0) {
+		if (var0 > 63) {
+			throw new class457("Cannot generate max unsigned value for more than 63 bits as this is greater than the boundaries of a java long. Value provided: %d", new Object[]{var0});
+		} else {
+			return (long)Math.pow(2.0D, (double)var0) - 1L;
 		}
+	}
 
+	@ObfuscatedName("ca")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/Object;Ljava/lang/String;I)Lti;",
+		garbageValue = "650035798"
+	)
+	static DynamicArray method9647(Object var0, String var1) {
+		if (var0 == null) {
+			throw new RuntimeException();
+		} else {
+			return (DynamicArray)var0;
+		}
 	}
 }

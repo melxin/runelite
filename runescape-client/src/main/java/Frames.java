@@ -1,14 +1,30 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("in")
+@ObfuscatedName("jj")
 @Implements("Frames")
 public class Frames extends DualNode {
-	@ObfuscatedName("al")
+	@ObfuscatedName("ah")
+	static int[] field2814;
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "[Liw;"
+		descriptor = "Lmv;"
+	)
+	@Export("worldMapEvent")
+	static WorldMapEvent worldMapEvent;
+	@ObfuscatedName("lh")
+	@ObfuscatedGetter(
+		intValue = -878993875
+	)
+	static int field2812;
+	@ObfuscatedName("pg")
+	static int[] field2811;
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "[Lip;"
 	)
 	@Export("frames")
 	Animation[] frames;
@@ -35,10 +51,10 @@ public class Frames extends DualNode {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1462448483"
+		descriptor = "(IB)Z",
+		garbageValue = "65"
 	)
 	@Export("hasAlphaTransform")
 	public boolean hasAlphaTransform(int var1) {

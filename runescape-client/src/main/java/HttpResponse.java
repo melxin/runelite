@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -11,46 +10,35 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("az")
+@ObfuscatedName("ah")
 @Implements("HttpResponse")
 public class HttpResponse {
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	public static AbstractArchive field93;
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	@Export("HitSplatDefinition_fontsArchive")
-	public static AbstractArchive HitSplatDefinition_fontsArchive;
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1841759859
+		intValue = 2064132583
 	)
 	@Export("responseCode")
 	final int responseCode;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("headerFields")
 	final String headerFields;
+	@ObfuscatedName("at")
+	final Map field84;
 	@ObfuscatedName("ac")
-	final Map field89;
-	@ObfuscatedName("av")
 	@Export("responseBody")
 	final String responseBody;
 
 	HttpResponse(String var1) {
 		this.responseCode = 400;
 		this.headerFields = var1;
-		this.field89 = null;
+		this.field84 = null;
 		this.responseBody = "";
 	}
 
 	HttpResponse(HttpURLConnection var1) throws IOException {
 		this.responseCode = var1.getResponseCode();
 		this.headerFields = var1.getResponseMessage();
-		this.field89 = var1.getHeaderFields();
+		this.field84 = var1.getHeaderFields();
 		StringBuilder var2 = new StringBuilder();
 		InputStream var3 = this.responseCode >= 300 ? var1.getErrorStream() : var1.getInputStream();
 		if (var3 != null) {
@@ -68,131 +56,168 @@ public class HttpResponse {
 		this.responseBody = var2.toString();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1427452611"
+		garbageValue = "51700832"
 	)
 	@Export("getResponseCode")
 	public int getResponseCode() {
 		return this.responseCode;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1160114100"
+		descriptor = "(B)Ljava/lang/String;",
+		garbageValue = "79"
 	)
-	public String method323() {
+	public String method302() {
 		return this.headerFields;
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(I)Ljava/util/Map;",
+		garbageValue = "-2022393815"
+	)
+	@Export("getHeaderFields")
+	public Map getHeaderFields() {
+		return this.field84;
 	}
 
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/util/Map;",
-		garbageValue = "1527336672"
-	)
-	@Export("getHeaderFields")
-	public Map getHeaderFields() {
-		return this.field89;
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "1272817627"
+		garbageValue = "-88997212"
 	)
 	@Export("getResponseBody")
 	public String getResponseBody() {
 		return this.responseBody;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("jl")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;ZB)Lvv;",
-		garbageValue = "-28"
+		descriptor = "(I)I",
+		garbageValue = "353989651"
 	)
-	@Export("getPreferencesFile")
-	public static AccessFile getPreferencesFile(String var0, String var1, boolean var2) {
-		File var3 = new File(UserComparator9.cacheDir, "preferences" + var0 + ".dat");
-		if (var3.exists()) {
-			try {
-				AccessFile var10 = new AccessFile(var3, "rw", 10000L);
-				return var10;
-			} catch (IOException var9) {
+	static final int method306() {
+		if (class36.clientPreferences.isRoofsHidden()) {
+			return class333.topLevelWorldView.plane;
+		} else {
+			int var0 = 3;
+			int var1 = Client.field552 >> 7;
+			int var2 = Client.field337 >> 7;
+			if (class401.cameraPitch < 310) {
+				int var3;
+				int var4;
+				if (Client.oculusOrbState == 1) {
+					var3 = class172.oculusOrbFocalPointX >> 7;
+					var4 = BuddyRankComparator.oculusOrbFocalPointY >> 7;
+				} else {
+					var3 = var1;
+					var4 = var2;
+				}
+
+				int var5 = HealthBarDefinition.cameraX >> 7;
+				int var6 = HttpRequest.cameraZ >> 7;
+				if (var5 < 0 || 104 <= var5 || var6 < 0 || 104 <= var6) {
+					return class333.topLevelWorldView.plane;
+				}
+
+				if (var3 < 0 || 104 <= var3 || var4 < 0 || 104 <= var4) {
+					return class333.topLevelWorldView.plane;
+				}
+
+				if ((class333.topLevelWorldView.tileSettings[class333.topLevelWorldView.plane][var5][var6] & 4) != 0) {
+					var0 = class333.topLevelWorldView.plane;
+				}
+
+				int var7;
+				if (var3 > var5) {
+					var7 = var3 - var5;
+				} else {
+					var7 = var5 - var3;
+				}
+
+				int var8;
+				if (var4 > var6) {
+					var8 = var4 - var6;
+				} else {
+					var8 = var6 - var4;
+				}
+
+				int var9;
+				int var10;
+				if (var7 > var8) {
+					var9 = var8 * 65536 / var7;
+					var10 = 32768;
+
+					while (var5 != var3) {
+						if (var5 < var3) {
+							++var5;
+						} else if (var5 > var3) {
+							--var5;
+						}
+
+						if ((class333.topLevelWorldView.tileSettings[class333.topLevelWorldView.plane][var5][var6] & 4) != 0) {
+							var0 = class333.topLevelWorldView.plane;
+						}
+
+						var10 += var9;
+						if (var10 >= 65536) {
+							var10 -= 65536;
+							if (var6 < var4) {
+								++var6;
+							} else if (var6 > var4) {
+								--var6;
+							}
+
+							if ((class333.topLevelWorldView.tileSettings[class333.topLevelWorldView.plane][var5][var6] & 4) != 0) {
+								var0 = class333.topLevelWorldView.plane;
+							}
+						}
+					}
+				} else if (var8 > 0) {
+					var9 = var7 * 65536 / var8;
+					var10 = 32768;
+
+					while (var4 != var6) {
+						if (var6 < var4) {
+							++var6;
+						} else if (var6 > var4) {
+							--var6;
+						}
+
+						if ((class333.topLevelWorldView.tileSettings[class333.topLevelWorldView.plane][var5][var6] & 4) != 0) {
+							var0 = class333.topLevelWorldView.plane;
+						}
+
+						var10 += var9;
+						if (var10 >= 65536) {
+							var10 -= 65536;
+							if (var5 < var3) {
+								++var5;
+							} else if (var5 > var3) {
+								--var5;
+							}
+
+							if ((class333.topLevelWorldView.tileSettings[class333.topLevelWorldView.plane][var5][var6] & 4) != 0) {
+								var0 = class333.topLevelWorldView.plane;
+							}
+						}
+					}
+				}
 			}
-		}
 
-		String var4 = "";
-		if (ClientPreferences.cacheGamebuild == 33) {
-			var4 = "_rc";
-		} else if (ClientPreferences.cacheGamebuild == 34) {
-			var4 = "_wip";
-		}
+			if (var1 >= 0 && 104 > var1 && var2 >= 0 && 104 > var2) {
+				if ((class333.topLevelWorldView.tileSettings[class333.topLevelWorldView.plane][var1][var2] & 4) != 0) {
+					var0 = class333.topLevelWorldView.plane;
+				}
 
-		File var5 = new File(class502.userHomeDirectory, "jagex_" + var1 + "_preferences" + var0 + var4 + ".dat");
-		AccessFile var6;
-		if (!var2 && var5.exists()) {
-			try {
-				var6 = new AccessFile(var5, "rw", 10000L);
-				return var6;
-			} catch (IOException var8) {
+				return var0;
+			} else {
+				return class333.topLevelWorldView.plane;
 			}
-		}
-
-		try {
-			var6 = new AccessFile(var3, "rw", 10000L);
-			return var6;
-		} catch (IOException var7) {
-			throw new RuntimeException();
-		}
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)I",
-		garbageValue = "73633127"
-	)
-	public static int method313(CharSequence var0) {
-		return MusicPatchPcmStream.method7324(var0, 10, true);
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "68"
-	)
-	@Export("clearItemContainer")
-	static void clearItemContainer(int var0) {
-		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var1 != null) {
-			for (int var2 = 0; var2 < var1.ids.length; ++var2) {
-				var1.ids[var2] = -1;
-				var1.quantities[var2] = 0;
-			}
-
-		}
-	}
-
-	@ObfuscatedName("am")
-	static int method322(long var0) {
-		int var2 = (int)(var0 >>> 52 & 4095L);
-		if (4095L == (long)var2) {
-			var2 = -1;
-		}
-
-		return var2;
-	}
-
-	@ObfuscatedName("nd")
-	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-1710351656"
-	)
-	@Export("runIntfCloseListeners")
-	static final void runIntfCloseListeners(int var0, int var1) {
-		if (class167.widgetDefinition.loadInterface(var0)) {
-			DelayFadeTask.runComponentCloseListeners(class167.widgetDefinition.Widget_interfaceComponents[var0], var1);
 		}
 	}
 }

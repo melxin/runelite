@@ -4,52 +4,52 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oy")
+@ObfuscatedName("op")
 @Implements("StudioGame")
 public enum StudioGame implements Enum {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Lop;"
 	)
 	@Export("runescape")
 	runescape("runescape", "RuneScape", 0),
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Lop;"
 	)
 	@Export("stellardawn")
 	stellardawn("stellardawn", "Stellar Dawn", 1),
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Lop;"
 	)
 	@Export("game3")
 	game3("game3", "Game 3", 2),
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Lop;"
 	)
 	@Export("game4")
 	game4("game4", "Game 4", 3),
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Lop;"
 	)
 	@Export("game5")
 	game5("game5", "Game 5", 4),
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Loy;"
+		descriptor = "Lop;"
 	)
 	@Export("oldscape")
 	oldscape("oldscape", "RuneScape 2007", 5);
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@Export("name")
 	public final String name;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1968675415
+		intValue = -782428977
 	)
 	@Export("id")
 	final int id;
@@ -59,100 +59,159 @@ public enum StudioGame implements Enum {
 		this.id = var5;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-164877066"
+		garbageValue = "-1935172756"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lrc;",
-		garbageValue = "834407628"
+		descriptor = "(Ljava/lang/CharSequence;IZI)I",
+		garbageValue = "1767996623"
 	)
-	public static class449 method8178() {
-		synchronized(class449.field5068) {
-			if (class449.field5065 == 0) {
-				return new class449();
-			} else {
-				class449.field5068[--class449.field5065].method9079();
-				return class449.field5068[class449.field5065];
-			}
-		}
-	}
+	static int method8195(CharSequence var0, int var1, boolean var2) {
+		if (var1 >= 2 && var1 <= 36) {
+			boolean var3 = false;
+			boolean var4 = false;
+			int var5 = 0;
+			int var6 = var0.length();
 
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(CB)Z",
-		garbageValue = "98"
-	)
-	public static boolean method8176(char var0) {
-		if ((var0 <= 0 || var0 >= 128) && (var0 < 160 || var0 > 255)) {
-			if (var0 != 0) {
-				char[] var1 = class439.cp1252AsciiExtension;
+			for (int var7 = 0; var7 < var6; ++var7) {
+				char var8 = var0.charAt(var7);
+				if (var7 == 0) {
+					if (var8 == '-') {
+						var3 = true;
+						continue;
+					}
 
-				for (int var2 = 0; var2 < var1.length; ++var2) {
-					char var3 = var1[var2];
-					if (var0 == var3) {
-						return true;
+					if (var8 == '+') {
+						continue;
 					}
 				}
+
+				int var10;
+				if (var8 >= '0' && var8 <= '9') {
+					var10 = var8 - '0';
+				} else if (var8 >= 'A' && var8 <= 'Z') {
+					var10 = var8 - '7';
+				} else {
+					if (var8 < 'a' || var8 > 'z') {
+						throw new NumberFormatException();
+					}
+
+					var10 = var8 - 'W';
+				}
+
+				if (var10 >= var1) {
+					throw new NumberFormatException();
+				}
+
+				if (var3) {
+					var10 = -var10;
+				}
+
+				int var9 = var5 * var1 + var10;
+				if (var9 / var1 != var5) {
+					throw new NumberFormatException();
+				}
+
+				var5 = var9;
+				var4 = true;
 			}
 
-			return false;
+			if (!var4) {
+				throw new NumberFormatException();
+			} else {
+				return var5;
+			}
 		} else {
-			return true;
+			throw new IllegalArgumentException("" + var1);
 		}
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("lc")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "27020042"
+		descriptor = "(Ldr;ZLwf;B)V",
+		garbageValue = "5"
 	)
-	public static void method8181() {
-		SequenceDefinition.SequenceDefinition_cached.clear();
-		SequenceDefinition.SequenceDefinition_cachedFrames.clear();
-		SequenceDefinition.SequenceDefinition_cachedModel.clear();
-	}
+	static final void method8199(WorldView var0, boolean var1, PacketBuffer var2) {
+		while (true) {
+			byte var3 = 16;
+			int var4 = 1 << var3;
+			if (var2.bitsRemaining(Client.packetWriter.serverPacketLength) >= var3 + 12) {
+				int var5 = var2.readBits(var3);
+				if (var5 != var4 - 1) {
+					boolean var6 = false;
+					NPC var7 = (NPC)var0.npcs.get((long)var5);
+					if (var7 == null) {
+						var7 = new NPC(var5);
+						var0.npcs.add(var7, (long)var5);
+						var6 = true;
+					}
 
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(Ltn;II)V",
-		garbageValue = "-1013268529"
-	)
-	public static void method8179(DynamicArray var0, int var1) {
-		class150.method3792(var0, (class570)null, true);
-		int var2 = var0.method10351();
-		if (var2 > 1) {
-			var1 %= var2;
-			if (var1 != 0) {
-				if (var1 < 0) {
-					var1 += var2;
+					var0.field1161.method9798(var5);
+					var7.field1188 = false;
+					var7.worldViewId = var0.id;
+					int var8 = var2.readBits(1);
+					int var11 = var2.readBits(1);
+					if (var11 == 1) {
+						Client.npcIndices[++Client.npcCount - 1] = var5;
+					}
+
+					boolean var12 = var2.readBits(1) == 1;
+					if (var12) {
+						var2.readBits(32);
+					}
+
+					var7.definition = class63.getNpcDefinition(var2.readBits(14));
+					int var9;
+					if (var1) {
+						var9 = var2.readBits(8);
+						if (var9 > 127) {
+							var9 -= 256;
+						}
+					} else {
+						var9 = var2.readBits(6);
+						if (var9 > 31) {
+							var9 -= 64;
+						}
+					}
+
+					int var13 = Client.defaultRotations[var2.readBits(3)];
+					if (var6) {
+						var7.orientation = var7.rotation = var13;
+					}
+
+					int var10;
+					if (var1) {
+						var10 = var2.readBits(8);
+						if (var10 > 127) {
+							var10 -= 256;
+						}
+					} else {
+						var10 = var2.readBits(6);
+						if (var10 > 31) {
+							var10 -= 64;
+						}
+					}
+
+					HorizontalAlignment.method4319(var7);
+					if (var7.field1099 == 0) {
+						var7.rotation = 0;
+					}
+
+					var7.method2721(var9 + Canvas.field94, var10 + IndexCheck.field3224, var8 == 1);
+					continue;
 				}
-
-				if (var0.field5399 == class570.field5721) {
-					int[] var3 = var0.method10348();
-					class50.method1869(var3, 0, var2 - 1);
-					class50.method1869(var3, 0, var1 - 1);
-					class50.method1869(var3, var1, var2 - 1);
-				} else if (var0.field5399 == class570.field5724) {
-					long[] var4 = var0.method10377();
-					class505.method10192(var4, 0, var2 - 1);
-					class505.method10192(var4, 0, var1 - 1);
-					class505.method10192(var4, var1, var2 - 1);
-				} else {
-					Object[] var5 = var0.method10393();
-					class361.method7510(var5, 0, var2 - 1);
-					class361.method7510(var5, 0, var1 - 1);
-					class361.method7510(var5, var1, var2 - 1);
-				}
-
 			}
+
+			var2.exportIndex();
+			return;
 		}
 	}
 }

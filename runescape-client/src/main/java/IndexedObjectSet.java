@@ -4,27 +4,27 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qw")
+@ObfuscatedName("qf")
 @Implements("IndexedObjectSet")
 public final class IndexedObjectSet implements Iterable {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lqh;"
+		descriptor = "Lqa;"
 	)
 	@Export("iterator")
 	final IndexedObjectSetIterator iterator;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("size")
 	int size;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "[Lui;"
+		descriptor = "[Lus;"
 	)
 	@Export("nodes")
 	IndexedObjectNode[] nodes;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lui;"
+		descriptor = "Lus;"
 	)
 	@Export("currentNode")
 	IndexedObjectNode currentNode;
@@ -42,9 +42,9 @@ public final class IndexedObjectSet implements Iterable {
 		this.iterator = new IndexedObjectSetIterator(this);
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(J)Lui;"
+		descriptor = "(J)Lus;"
 	)
 	@Export("get")
 	public IndexedObjectNode get(long var1) {
@@ -62,9 +62,9 @@ public final class IndexedObjectSet implements Iterable {
 		return null;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lui;J)V"
+		descriptor = "(Lus;J)V"
 	)
 	@Export("add")
 	public void add(IndexedObjectNode var1, long var2) {
@@ -80,7 +80,7 @@ public final class IndexedObjectSet implements Iterable {
 		var1.idx = var2;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@Export("clear")
 	public void clear() {
 		for (int var1 = 0; var1 < this.size; ++var1) {
@@ -100,7 +100,7 @@ public final class IndexedObjectSet implements Iterable {
 	}
 
 	public Iterator iterator() {
-		this.iterator.method8648();
+		this.iterator.method8618();
 		return this.iterator;
 	}
 }

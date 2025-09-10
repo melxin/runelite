@@ -1,66 +1,59 @@
-import java.util.Iterator;
+import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ce")
+@ObfuscatedName("cg")
 @Implements("Script")
 public class Script extends DualNode {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lmd;"
+		descriptor = "Lmu;"
 	)
 	@Export("Script_cached")
 	static EvictingDualNodeHashTable Script_cached;
-	@ObfuscatedName("ak")
-	@Export("Tiles_underlays2")
-	static byte[][][] Tiles_underlays2;
-	@ObfuscatedName("uo")
+	@ObfuscatedName("fh")
+	static boolean field793;
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lxv;"
-	)
-	@Export("sceneMinimapSprite")
-	static SpritePixels sceneMinimapSprite;
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "[Lqr;"
+		descriptor = "[Lqm;"
 	)
 	@Export("switches")
 	IterableNodeHashTable[] switches;
+	@ObfuscatedName("at")
+	String field795;
 	@ObfuscatedName("ac")
-	String field777;
-	@ObfuscatedName("av")
 	@Export("opcodes")
 	int[] opcodes;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@Export("intOperands")
 	int[] intOperands;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@Export("stringOperands")
 	String[] stringOperands;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 696982785
+		intValue = 1797357531
 	)
 	@Export("localIntCount")
 	int localIntCount;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1844842555
+		intValue = 814391737
 	)
 	@Export("localStringCount")
 	int localStringCount;
-	@ObfuscatedName("am")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1320278685
+		intValue = -1207287197
 	)
 	@Export("intArgumentCount")
 	int intArgumentCount;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 1417864765
+		intValue = 562338133
 	)
 	@Export("stringArgumentCount")
 	int stringArgumentCount;
@@ -72,51 +65,50 @@ public class Script extends DualNode {
 	Script() {
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lqr;",
-		garbageValue = "208959378"
+		descriptor = "(IB)[Lqm;",
+		garbageValue = "32"
 	)
 	@Export("newIterableNodeHashTable")
 	IterableNodeHashTable[] newIterableNodeHashTable(int var1) {
 		return new IterableNodeHashTable[var1];
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "164348684"
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "-1984251400"
 	)
-	static void method1980() {
-		AABB.Tiles_underlays = null;
-		Tiles.Tiles_overlays = null;
-		class28.Tiles_shapes = null;
-		ChatChannel.field806 = null;
-		class81.field1179 = null;
-		Tiles_underlays2 = null;
-		Timer.field4752 = null;
-		SecureRandomFuture.Tiles_hue = null;
-		WorldMapSection0.Tiles_saturation = null;
-		WorldMapArea.Tiles_lightness = null;
-		DbTable.Tiles_hueMultiplier = null;
-		DelayFadeTask.field5175 = null;
+	static final void method2006(String var0) {
+		VarbitComposition.method4512(var0 + " is already on your ignore list");
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "40"
+		descriptor = "(S)[B",
+		garbageValue = "-9152"
 	)
-	static void method1978() {
-		Iterator var0 = Client.worldViewManager.iterator();
+	public static byte[] method2005() {
+		byte[] var0 = new byte[24];
 
-		while (var0.hasNext()) {
-			WorldView var1 = (WorldView)var0.next();
+		try {
+			JagexCache.JagexCache_randomDat.seek(0L);
+			JagexCache.JagexCache_randomDat.readFully(var0);
 
-			for (ObjectSound var2 = (ObjectSound)var1.method2638().last(); var2 != null; var2 = (ObjectSound)var1.method2638().previous()) {
-				var2.method2242();
+			int var1;
+			for (var1 = 0; var1 < 24 && var0[var1] == 0; ++var1) {
+			}
+
+			if (var1 >= 24) {
+				throw new IOException();
+			}
+		} catch (Exception var4) {
+			for (int var2 = 0; var2 < 24; ++var2) {
+				var0[var2] = -1;
 			}
 		}
 
+		return var0;
 	}
 }

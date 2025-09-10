@@ -2,1459 +2,993 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jw")
+@ObfuscatedName("ja")
 public class class246 extends AbstractRasterizer {
 	@ObfuscatedSignature(
-		descriptor = "(Ljz;)V"
+		descriptor = "(Ljd;)V"
 	)
 	class246(Clips var1) {
 		super(var1);
 	}
 
-	@ObfuscatedName("as")
-	boolean vmethod5761() {
-		return true;
+	@ObfuscatedName("aq")
+	boolean vmethod5713() {
+		return false;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("au")
+	@Export("drawAlphaBlendedGraphics")
 	void drawAlphaBlendedGraphics(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12) {
-		float var13 = (float)((int)(var4 + 0.5F));
-		float var14 = (float)((int)(var5 + 0.5F));
-		float var15 = (float)((int)(var6 + 0.5F));
-		float var16 = (float)((int)(var1 + 0.5F));
-		float var17 = (float)((int)(var2 + 0.5F));
-		float var18 = (float)((int)(var3 + 0.5F));
-		float var19 = var14 - var13;
-		float var20 = var17 - var16;
-		float var21 = var15 - var13;
-		float var22 = var18 - var16;
-		float var23 = var19 * var22 - var21 * var20;
-		if (var23 != 0.0F) {
-			float var24 = (float)var10;
-			float var25 = (float)var11;
-			float var26 = (float)var12;
-			float var27 = var25 - var24;
-			float var28 = var26 - var24;
-			float var29 = (var27 * var22 - var28 * var20) / var23;
-			float var30 = (var28 * var19 - var27 * var21) / var23;
-			float var31 = var5 - var4;
-			float var32 = var2 - var1;
-			float var33 = var6 - var4;
-			float var34 = var3 - var1;
-			float var35 = var31 * var34 - var33 * var32;
-			if (var35 != 0.0F) {
-				float var36 = var8 - var7;
-				float var37 = var9 - var7;
-				float var38 = (var36 * var34 - var37 * var32) / var35;
-				float var39 = (var37 * var31 - var36 * var33) / var35;
-				float var40;
-				if (var18 != var17) {
-					var40 = (var15 - var14) / (var18 - var17);
-				} else {
-					var40 = 0.0F;
-				}
-
-				float var41;
-				if (var17 != var16) {
-					var41 = var19 / var20;
-				} else {
-					var41 = 0.0F;
-				}
-
-				float var42;
-				if (var18 != var16) {
-					var42 = var21 / var22;
-				} else {
-					var42 = 0.0F;
-				}
-
-				int[] var43 = super.field2619.Rasterizer3D_rowOffsets;
-				int var44 = super.field2619.clipY;
-				int var45;
-				if (var16 <= var17 && var16 <= var18) {
-					if (var16 < (float)var44) {
-						if (var17 > (float)var44) {
-							var17 = (float)var44;
-						}
-
-						if (var18 > (float)var44) {
-							var18 = (float)var44;
-						}
-
-						var24 = var24 - var29 * var13 + var29;
-						var7 = this.method5721(var4, var1, var7, var38, var39);
-						if (var17 < var18) {
-							var15 = var13;
-							if (var16 < 0.0F) {
-								var15 = var13 - var42 * var16;
-								var13 -= var41 * var16;
-								var24 -= var30 * var16;
-								var16 = 0.0F;
-							}
-
-							if (var17 < 0.0F) {
-								var14 -= var40 * var17;
-								var17 = 0.0F;
-							}
-
-							if (var16 != var17 && var42 < var41 || var16 == var17 && var42 > var40) {
-								var16 = (float)((int)(var16 + 0.5F));
-								var17 = (float)((int)(var17 + 0.5F));
-								var18 = (float)((int)(var18 + 0.5F)) - var17;
-								var17 -= var16;
-
-								for (var45 = var43[(int)var16]; --var17 >= 0.0F; var7 += var39) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var15, (int)var13, var24, var29, var7, var38);
-									var15 += var42;
-									var13 += var41;
-									var24 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-								}
-
-								while (--var18 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var15, (int)var14, var24, var29, var7, var38);
-									var15 += var42;
-									var14 += var40;
-									var24 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var7 += var39;
-								}
-
-							} else {
-								var16 = (float)((int)(var16 + 0.5F));
-								var17 = (float)((int)(var17 + 0.5F));
-								var18 = (float)((int)(var18 + 0.5F)) - var17;
-								var17 -= var16;
-
-								for (var45 = var43[(int)var16]; --var17 >= 0.0F; var7 += var39) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var13, (int)var15, var24, var29, var7, var38);
-									var15 += var42;
-									var13 += var41;
-									var24 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-								}
-
-								while (--var18 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var14, (int)var15, var24, var29, var7, var38);
-									var15 += var42;
-									var14 += var40;
-									var24 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var7 += var39;
-								}
-
-							}
-						} else {
-							var14 = var13;
-							if (var16 < 0.0F) {
-								var14 = var13 - var42 * var16;
-								var13 -= var41 * var16;
-								var24 -= var30 * var16;
-								var16 = 0.0F;
-							}
-
-							if (var18 < 0.0F) {
-								var15 -= var40 * var18;
-								var18 = 0.0F;
-							}
-
-							if (var16 != var18 && var42 < var41 || var16 == var18 && var40 > var41) {
-								var16 = (float)((int)(var16 + 0.5F));
-								var18 = (float)((int)(var18 + 0.5F));
-								var17 = (float)((int)(var17 + 0.5F)) - var18;
-								var18 -= var16;
-
-								for (var45 = var43[(int)var16]; --var18 >= 0.0F; var7 += var39) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var14, (int)var13, var24, var29, var7, var38);
-									var14 += var42;
-									var13 += var41;
-									var24 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-								}
-
-								while (--var17 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var15, (int)var13, var24, var29, var7, var38);
-									var15 += var40;
-									var13 += var41;
-									var24 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var7 += var39;
-								}
-
-							} else {
-								var16 = (float)((int)(var16 + 0.5F));
-								var18 = (float)((int)(var18 + 0.5F));
-								var17 = (float)((int)(var17 + 0.5F)) - var18;
-								var18 -= var16;
-
-								for (var45 = var43[(int)var16]; --var18 >= 0.0F; var7 += var39) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var13, (int)var14, var24, var29, var7, var38);
-									var14 += var42;
-									var13 += var41;
-									var24 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-								}
-
-								while (--var17 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var13, (int)var15, var24, var29, var7, var38);
-									var15 += var40;
-									var13 += var41;
-									var24 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var7 += var39;
-								}
-
-							}
-						}
-					}
-				} else if (var17 <= var18) {
-					if (var17 < (float)var44) {
-						if (var18 > (float)var44) {
-							var18 = (float)var44;
-						}
-
-						if (var16 > (float)var44) {
-							var16 = (float)var44;
-						}
-
-						var25 = var25 - var29 * var14 + var29;
-						var8 = this.method5721(var5, var2, var8, var38, var39);
-						if (var18 < var16) {
-							var13 = var14;
-							if (var17 < 0.0F) {
-								var13 = var14 - var41 * var17;
-								var14 -= var40 * var17;
-								var25 -= var30 * var17;
-								var17 = 0.0F;
-							}
-
-							if (var18 < 0.0F) {
-								var15 -= var42 * var18;
-								var18 = 0.0F;
-							}
-
-							if (var17 != var18 && var41 < var40 || var17 == var18 && var41 > var42) {
-								var17 = (float)((int)(var17 + 0.5F));
-								var18 = (float)((int)(var18 + 0.5F));
-								var16 = (float)((int)(var16 + 0.5F)) - var18;
-								var18 -= var17;
-
-								for (var45 = var43[(int)var17]; --var18 >= 0.0F; var8 += var39) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var13, (int)var14, var25, var29, var8, var38);
-									var13 += var41;
-									var14 += var40;
-									var25 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-								}
-
-								while (--var16 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var13, (int)var15, var25, var29, var8, var38);
-									var13 += var41;
-									var15 += var42;
-									var25 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var8 += var39;
-								}
-
-							} else {
-								var17 = (float)((int)(var17 + 0.5F));
-								var18 = (float)((int)(var18 + 0.5F));
-								var16 = (float)((int)(var16 + 0.5F)) - var18;
-								var18 -= var17;
-
-								for (var45 = var43[(int)var17]; --var18 >= 0.0F; var8 += var39) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var14, (int)var13, var25, var29, var8, var38);
-									var13 += var41;
-									var14 += var40;
-									var25 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-								}
-
-								while (--var16 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var15, (int)var13, var25, var29, var8, var38);
-									var13 += var41;
-									var15 += var42;
-									var25 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var8 += var39;
-								}
-
-							}
-						} else {
-							var15 = var14;
-							if (var17 < 0.0F) {
-								var15 = var14 - var41 * var17;
-								var14 -= var40 * var17;
-								var25 -= var30 * var17;
-								var17 = 0.0F;
-							}
-
-							if (var16 < 0.0F) {
-								var13 -= var42 * var16;
-								var16 = 0.0F;
-							}
-
-							var17 = (float)((int)(var17 + 0.5F));
-							var16 = (float)((int)(var16 + 0.5F));
-							var18 = (float)((int)(var18 + 0.5F)) - var16;
-							var16 -= var17;
-							var45 = var43[(int)var17];
-							if (var41 < var40) {
-								while (--var16 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var15, (int)var14, var25, var29, var8, var38);
-									var15 += var41;
-									var14 += var40;
-									var25 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var8 += var39;
-								}
-
-								while (--var18 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var13, (int)var14, var25, var29, var8, var38);
-									var13 += var42;
-									var14 += var40;
-									var25 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var8 += var39;
-								}
-
-							} else {
-								while (--var16 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var14, (int)var15, var25, var29, var8, var38);
-									var15 += var41;
-									var14 += var40;
-									var25 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var8 += var39;
-								}
-
-								while (--var18 >= 0.0F) {
-									this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var14, (int)var13, var25, var29, var8, var38);
-									var13 += var42;
-									var14 += var40;
-									var25 += var30;
-									var45 += Rasterizer2D.Rasterizer2D_width;
-									var8 += var39;
-								}
-
-							}
-						}
-					}
-				} else if (var18 < (float)var44) {
-					if (var16 > (float)var44) {
-						var16 = (float)var44;
-					}
-
-					if (var17 > (float)var44) {
-						var17 = (float)var44;
-					}
-
-					var26 = var26 - var29 * var15 + var29;
-					var9 = this.method5721(var6, var3, var9, var38, var39);
-					if (var16 < var17) {
-						var14 = var15;
-						if (var18 < 0.0F) {
-							var14 = var15 - var40 * var18;
-							var15 -= var42 * var18;
-							var26 -= var30 * var18;
-							var18 = 0.0F;
-						}
-
-						if (var16 < 0.0F) {
-							var13 -= var41 * var16;
-							var16 = 0.0F;
-						}
-
-						var18 = (float)((int)(var18 + 0.5F));
-						var16 = (float)((int)(var16 + 0.5F));
-						var17 = (float)((int)(var17 + 0.5F)) - var16;
-						var16 -= var18;
-						var45 = var43[(int)var18];
-						if (var40 < var42) {
-							while (--var16 >= 0.0F) {
-								this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var14, (int)var15, var26, var29, var9, var38);
-								var14 += var40;
-								var15 += var42;
-								var26 += var30;
-								var45 += Rasterizer2D.Rasterizer2D_width;
-								var9 += var39;
-							}
-
-							while (--var17 >= 0.0F) {
-								this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var14, (int)var13, var26, var29, var9, var38);
-								var14 += var40;
-								var13 += var41;
-								var26 += var30;
-								var45 += Rasterizer2D.Rasterizer2D_width;
-								var9 += var39;
-							}
-
-						} else {
-							while (--var16 >= 0.0F) {
-								this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var15, (int)var14, var26, var29, var9, var38);
-								var14 += var40;
-								var15 += var42;
-								var26 += var30;
-								var45 += Rasterizer2D.Rasterizer2D_width;
-								var9 += var39;
-							}
-
-							while (--var17 >= 0.0F) {
-								this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var13, (int)var14, var26, var29, var9, var38);
-								var14 += var40;
-								var13 += var41;
-								var26 += var30;
-								var45 += Rasterizer2D.Rasterizer2D_width;
-								var9 += var39;
-							}
-
-						}
-					} else {
-						var13 = var15;
-						if (var18 < 0.0F) {
-							var13 = var15 - var40 * var18;
-							var15 -= var42 * var18;
-							var26 -= var30 * var18;
-							var18 = 0.0F;
-						}
-
-						if (var17 < 0.0F) {
-							var14 -= var41 * var17;
-							var17 = 0.0F;
-						}
-
-						var18 = (float)((int)(var18 + 0.5F));
-						var17 = (float)((int)(var17 + 0.5F));
-						var16 = (float)((int)(var16 + 0.5F)) - var17;
-						var17 -= var18;
-						var45 = var43[(int)var18];
-						if (var40 < var42) {
-							while (--var17 >= 0.0F) {
-								this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var13, (int)var15, var26, var29, var9, var38);
-								var13 += var40;
-								var15 += var42;
-								var26 += var30;
-								var45 += Rasterizer2D.Rasterizer2D_width;
-								var9 += var39;
-							}
-
-							while (--var16 >= 0.0F) {
-								this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var14, (int)var15, var26, var29, var9, var38);
-								var14 += var41;
-								var15 += var42;
-								var26 += var30;
-								var45 += Rasterizer2D.Rasterizer2D_width;
-								var9 += var39;
-							}
-
-						} else {
-							while (--var17 >= 0.0F) {
-								this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var15, (int)var13, var26, var29, var9, var38);
-								var13 += var40;
-								var15 += var42;
-								var26 += var30;
-								var45 += Rasterizer2D.Rasterizer2D_width;
-								var9 += var39;
-							}
-
-							while (--var16 >= 0.0F) {
-								this.method5724(Rasterizer2D.Rasterizer2D_pixels, var45, 0, 0, (int)var15, (int)var14, var26, var29, var9, var38);
-								var14 += var41;
-								var15 += var42;
-								var26 += var30;
-								var45 += Rasterizer2D.Rasterizer2D_width;
-								var9 += var39;
-							}
-
-						}
-					}
-				}
-			}
-		}
-	}
-
-	@ObfuscatedName("ag")
-	void vmethod5725(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10) {
-		float var11 = (float)((int)(var4 + 0.5F));
-		float var12 = (float)((int)(var5 + 0.5F));
-		float var13 = (float)((int)(var6 + 0.5F));
-		float var14 = (float)((int)(var1 + 0.5F));
-		float var15 = (float)((int)(var2 + 0.5F));
-		float var16 = (float)((int)(var3 + 0.5F));
-		float var17 = var12 - var11;
-		float var18 = var15 - var14;
-		float var19 = var13 - var11;
-		float var20 = var16 - var14;
-		float var21 = var5 - var4;
-		float var22 = var2 - var1;
-		float var23 = var6 - var4;
-		float var24 = var3 - var1;
-		float var25 = var21 * var24 - var23 * var22;
-		if (var25 != 0.0F) {
-			float var26 = var8 - var7;
-			float var27 = var9 - var7;
-			float var28 = (var26 * var24 - var27 * var22) / var25;
-			float var29 = (var27 * var21 - var26 * var23) / var25;
-			float var30;
-			if (var16 != var15) {
-				var30 = (var13 - var12) / (var16 - var15);
-			} else {
-				var30 = 0.0F;
-			}
-
-			float var31;
-			if (var15 != var14) {
-				var31 = var17 / var18;
-			} else {
-				var31 = 0.0F;
-			}
-
-			float var32;
-			if (var16 != var14) {
-				var32 = var19 / var20;
-			} else {
-				var32 = 0.0F;
-			}
-
-			int[] var33 = super.field2619.Rasterizer3D_rowOffsets;
-			int var34 = super.field2619.clipY;
-			int var35;
-			if (var14 <= var15 && var14 <= var16) {
-				if (var14 < (float)var34) {
-					if (var15 > (float)var34) {
-						var15 = (float)var34;
-					}
-
-					if (var16 > (float)var34) {
-						var16 = (float)var34;
-					}
-
-					var7 = this.method5721(var4, var1, var7, var28, var29);
-					if (var15 < var16) {
-						var13 = var11;
-						if (var14 < 0.0F) {
-							var13 = var11 - var32 * var14;
-							var11 -= var31 * var14;
-							var14 = 0.0F;
-						}
-
-						if (var15 < 0.0F) {
-							var12 -= var30 * var15;
-							var15 = 0.0F;
-						}
-
-						if ((var14 == var15 || var32 >= var31) && (var14 != var15 || var32 <= var30)) {
-							var14 = (float)((int)(var14 + 0.5F));
-							var15 = (float)((int)(var15 + 0.5F));
-							var16 = (float)((int)(var16 + 0.5F)) - var15;
-							var15 -= var14;
-
-							for (var35 = var33[(int)var14]; --var15 >= 0.0F; var7 += var29) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var11, (int)var13, var7, var28);
-								var13 += var32;
-								var11 += var31;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-							}
-
-							while (--var16 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var12, (int)var13, var7, var28);
-								var13 += var32;
-								var12 += var30;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var7 += var29;
-							}
-
-						} else {
-							var14 = (float)((int)(var14 + 0.5F));
-							var15 = (float)((int)(var15 + 0.5F));
-							var16 = (float)((int)(var16 + 0.5F)) - var15;
-							var15 -= var14;
-
-							for (var35 = var33[(int)var14]; --var15 >= 0.0F; var7 += var29) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var13, (int)var11, var7, var28);
-								var13 += var32;
-								var11 += var31;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-							}
-
-							while (--var16 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var13, (int)var12, var7, var28);
-								var13 += var32;
-								var12 += var30;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var7 += var29;
-							}
-
-						}
-					} else {
-						var12 = var11;
-						if (var14 < 0.0F) {
-							var12 = var11 - var32 * var14;
-							var11 -= var31 * var14;
-							var14 = 0.0F;
-						}
-
-						if (var16 < 0.0F) {
-							var13 -= var30 * var16;
-							var16 = 0.0F;
-						}
-
-						if (var14 != var16 && var32 < var31 || var14 == var16 && var30 > var31) {
-							var14 = (float)((int)(var14 + 0.5F));
-							var16 = (float)((int)(var16 + 0.5F));
-							var15 = (float)((int)(var15 + 0.5F)) - var16;
-							var16 -= var14;
-
-							for (var35 = var33[(int)var14]; --var16 >= 0.0F; var7 += var29) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var12, (int)var11, var7, var28);
-								var12 += var32;
-								var11 += var31;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-							}
-
-							while (--var15 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var13, (int)var11, var7, var28);
-								var13 += var30;
-								var11 += var31;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var7 += var29;
-							}
-
-						} else {
-							var14 = (float)((int)(var14 + 0.5F));
-							var16 = (float)((int)(var16 + 0.5F));
-							var15 = (float)((int)(var15 + 0.5F)) - var16;
-							var16 -= var14;
-
-							for (var35 = var33[(int)var14]; --var16 >= 0.0F; var7 += var29) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var11, (int)var12, var7, var28);
-								var12 += var32;
-								var11 += var31;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-							}
-
-							while (--var15 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var11, (int)var13, var7, var28);
-								var13 += var30;
-								var11 += var31;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var7 += var29;
-							}
-
-						}
-					}
-				}
-			} else if (var15 <= var16) {
-				if (var15 < (float)var34) {
-					if (var16 > (float)var34) {
-						var16 = (float)var34;
-					}
-
-					if (var14 > (float)var34) {
-						var14 = (float)var34;
-					}
-
-					var8 = this.method5721(var5, var2, var8, var28, var29);
-					if (var16 < var14) {
-						var11 = var12;
-						if (var15 < 0.0F) {
-							var11 = var12 - var31 * var15;
-							var12 -= var30 * var15;
-							var15 = 0.0F;
-						}
-
-						if (var16 < 0.0F) {
-							var13 -= var32 * var16;
-							var16 = 0.0F;
-						}
-
-						if ((var15 == var16 || var31 >= var30) && (var15 != var16 || var31 <= var32)) {
-							var15 = (float)((int)(var15 + 0.5F));
-							var16 = (float)((int)(var16 + 0.5F));
-							var14 = (float)((int)(var14 + 0.5F)) - var16;
-							var16 -= var15;
-
-							for (var35 = var33[(int)var15]; --var16 >= 0.0F; var8 += var29) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var12, (int)var11, var8, var28);
-								var11 += var31;
-								var12 += var30;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-							}
-
-							while (--var14 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var13, (int)var11, var8, var28);
-								var11 += var31;
-								var13 += var32;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var8 += var29;
-							}
-
-						} else {
-							var15 = (float)((int)(var15 + 0.5F));
-							var16 = (float)((int)(var16 + 0.5F));
-							var14 = (float)((int)(var14 + 0.5F)) - var16;
-							var16 -= var15;
-
-							for (var35 = var33[(int)var15]; --var16 >= 0.0F; var8 += var29) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var11, (int)var12, var8, var28);
-								var11 += var31;
-								var12 += var30;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-							}
-
-							while (--var14 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var11, (int)var13, var8, var28);
-								var11 += var31;
-								var13 += var32;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var8 += var29;
-							}
-
-						}
-					} else {
-						var13 = var12;
-						if (var15 < 0.0F) {
-							var13 = var12 - var31 * var15;
-							var12 -= var30 * var15;
-							var15 = 0.0F;
-						}
-
-						if (var14 < 0.0F) {
-							var11 -= var32 * var14;
-							var14 = 0.0F;
-						}
-
-						var15 = (float)((int)(var15 + 0.5F));
-						var14 = (float)((int)(var14 + 0.5F));
-						var16 = (float)((int)(var16 + 0.5F)) - var14;
-						var14 -= var15;
-						var35 = var33[(int)var15];
-						if (var31 < var30) {
-							while (--var14 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var13, (int)var12, var8, var28);
-								var13 += var31;
-								var12 += var30;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var8 += var29;
-							}
-
-							while (--var16 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var11, (int)var12, var8, var28);
-								var11 += var32;
-								var12 += var30;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var8 += var29;
-							}
-
-						} else {
-							while (--var14 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var12, (int)var13, var8, var28);
-								var13 += var31;
-								var12 += var30;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var8 += var29;
-							}
-
-							while (--var16 >= 0.0F) {
-								this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var12, (int)var11, var8, var28);
-								var11 += var32;
-								var12 += var30;
-								var35 += Rasterizer2D.Rasterizer2D_width;
-								var8 += var29;
-							}
-
-						}
-					}
-				}
-			} else if (var16 < (float)var34) {
-				if (var14 > (float)var34) {
-					var14 = (float)var34;
-				}
-
-				if (var15 > (float)var34) {
-					var15 = (float)var34;
-				}
-
-				var9 = this.method5721(var6, var3, var9, var28, var29);
-				if (var14 < var15) {
-					var12 = var13;
-					if (var16 < 0.0F) {
-						var12 = var13 - var30 * var16;
-						var13 -= var32 * var16;
-						var16 = 0.0F;
-					}
-
-					if (var14 < 0.0F) {
-						var11 -= var31 * var14;
-						var14 = 0.0F;
-					}
-
-					var16 = (float)((int)(var16 + 0.5F));
-					var14 = (float)((int)(var14 + 0.5F));
-					var15 = (float)((int)(var15 + 0.5F)) - var14;
-					var14 -= var16;
-					var35 = var33[(int)var16];
-					if (var30 < var32) {
-						while (--var14 >= 0.0F) {
-							this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var12, (int)var13, var9, var28);
-							var12 += var30;
-							var13 += var32;
-							var35 += Rasterizer2D.Rasterizer2D_width;
-							var9 += var29;
-						}
-
-						while (--var15 >= 0.0F) {
-							this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var12, (int)var11, var9, var28);
-							var12 += var30;
-							var11 += var31;
-							var35 += Rasterizer2D.Rasterizer2D_width;
-							var9 += var29;
-						}
-
-					} else {
-						while (--var14 >= 0.0F) {
-							this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var13, (int)var12, var9, var28);
-							var12 += var30;
-							var13 += var32;
-							var35 += Rasterizer2D.Rasterizer2D_width;
-							var9 += var29;
-						}
-
-						while (--var15 >= 0.0F) {
-							this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var11, (int)var12, var9, var28);
-							var12 += var30;
-							var11 += var31;
-							var35 += Rasterizer2D.Rasterizer2D_width;
-							var9 += var29;
-						}
-
-					}
-				} else {
-					var11 = var13;
-					if (var16 < 0.0F) {
-						var11 = var13 - var30 * var16;
-						var13 -= var32 * var16;
-						var16 = 0.0F;
-					}
-
-					if (var15 < 0.0F) {
-						var12 -= var31 * var15;
-						var15 = 0.0F;
-					}
-
-					var16 = (float)((int)(var16 + 0.5F));
-					var15 = (float)((int)(var15 + 0.5F));
-					var14 = (float)((int)(var14 + 0.5F)) - var15;
-					var15 -= var16;
-					var35 = var33[(int)var16];
-					if (var30 < var32) {
-						while (--var15 >= 0.0F) {
-							this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var11, (int)var13, var9, var28);
-							var11 += var30;
-							var13 += var32;
-							var35 += Rasterizer2D.Rasterizer2D_width;
-							var9 += var29;
-						}
-
-						while (--var14 >= 0.0F) {
-							this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var12, (int)var13, var9, var28);
-							var12 += var31;
-							var13 += var32;
-							var35 += Rasterizer2D.Rasterizer2D_width;
-							var9 += var29;
-						}
-
-					} else {
-						while (--var15 >= 0.0F) {
-							this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var13, (int)var11, var9, var28);
-							var11 += var30;
-							var13 += var32;
-							var35 += Rasterizer2D.Rasterizer2D_width;
-							var9 += var29;
-						}
-
-						while (--var14 >= 0.0F) {
-							this.copyPixelsWithAlphaBlending(Rasterizer2D.Rasterizer2D_pixels, var35, var10, 0, (int)var13, (int)var12, var9, var28);
-							var12 += var31;
-							var13 += var32;
-							var35 += Rasterizer2D.Rasterizer2D_width;
-							var9 += var29;
-						}
-
-					}
-				}
-			}
-		}
-	}
-
-	@ObfuscatedName("ay")
-	void drawGradientTriangle(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
-		int[] var23 = super.field2619.Rasterizer3D_textureLoader.getTexturePixels(var22);
-		if (var23 == null) {
-			int var65 = super.field2619.Rasterizer3D_textureLoader.getAverageTextureRGB(var22);
-			this.drawAlphaBlendedGraphics(var1, var2, var3, var4, var5, var6, var7, var8, var9, AbstractRasterizer.method5025(var65, var10), AbstractRasterizer.method5025(var65, var11), AbstractRasterizer.method5025(var65, var12));
+		int var13 = (int)var4;
+		int var14 = (int)var5;
+		int var15 = (int)var6;
+		int var16 = (int)var1;
+		int var17 = (int)var2;
+		int var18 = (int)var3;
+		int var19 = var14 - var13;
+		int var20 = var17 - var16;
+		int var21 = var15 - var13;
+		int var22 = var18 - var16;
+		int var23 = var11 - var10;
+		int var24 = var12 - var10;
+		int var25;
+		if (var18 != var17) {
+			var25 = (var15 - var14 << 14) / (var18 - var17);
 		} else {
-			super.field2617 = super.field2619.Rasterizer3D_textureLoader.isLowDetail(var22);
-			float var24 = (float)((int)(var4 + 0.5F));
-			float var25 = (float)((int)(var5 + 0.5F));
-			float var26 = (float)((int)(var6 + 0.5F));
-			float var27 = (float)((int)(var1 + 0.5F));
-			float var28 = (float)((int)(var2 + 0.5F));
-			float var29 = (float)((int)(var3 + 0.5F));
-			float var30 = var25 - var24;
-			float var31 = var28 - var27;
-			float var32 = var26 - var24;
-			float var33 = var29 - var27;
-			float var34 = var30 * var33 - var32 * var31;
-			if (var34 != 0.0F) {
-				float var35 = (float)(var11 - var10);
-				float var36 = (float)(var12 - var10);
-				int var37 = (int)((var35 * var33 - var36 * var31) * 512.0F / var34);
-				int var38 = (int)((var36 * var30 - var35 * var32) * 512.0F / var34);
-				float var39 = var5 - var4;
-				float var40 = var2 - var1;
-				float var41 = var6 - var4;
-				float var42 = var3 - var1;
-				float var43 = var39 * var42 - var41 * var40;
-				if (var43 != 0.0F) {
-					float var44 = var8 - var7;
-					float var45 = var9 - var7;
-					float var46 = (var44 * var42 - var45 * var40) / var43;
-					float var47 = (var45 * var39 - var44 * var41) / var43;
-					float var48;
-					if (var29 != var28) {
-						var48 = (var26 - var25) / (var29 - var28);
-					} else {
-						var48 = 0.0F;
+			var25 = 0;
+		}
+
+		int var26;
+		if (var17 != var16) {
+			var26 = (var19 << 14) / var20;
+		} else {
+			var26 = 0;
+		}
+
+		int var27;
+		if (var18 != var16) {
+			var27 = (var21 << 14) / var22;
+		} else {
+			var27 = 0;
+		}
+
+		int var28 = var19 * var22 - var21 * var20;
+		if (var28 != 0) {
+			int var29 = (var23 * var22 - var24 * var20 << 8) / var28;
+			int var30 = (var24 * var19 - var23 * var21 << 8) / var28;
+			int[] var31 = super.field2668.Rasterizer3D_rowOffsets;
+			int var32 = super.field2668.clipY;
+			if (var16 <= var17 && var16 <= var18) {
+				if (var16 < var32) {
+					if (var17 > var32) {
+						var17 = var32;
 					}
 
-					float var49;
-					if (var28 != var27) {
-						var49 = var30 / var31;
-					} else {
-						var49 = 0.0F;
+					if (var18 > var32) {
+						var18 = var32;
 					}
 
-					float var50;
-					if (var29 != var27) {
-						var50 = var32 / var33;
-					} else {
-						var50 = 0.0F;
-					}
-
-					int var51 = super.field2619.zoom;
-					var14 = var13 - var14;
-					var17 = var16 - var17;
-					var20 = var19 - var20;
-					var15 -= var13;
-					var18 -= var16;
-					var21 -= var19;
-					int var52 = var15 * var16 - var18 * var13 << 14;
-					int var53 = (int)(((long)(var18 * var19 - var16 * var21) << 3 << 14) / (long)var51);
-					int var54 = (int)(((long)(var13 * var21 - var19 * var15) << 14) / (long)var51);
-					int var55 = var16 * var14 - var13 * var17 << 14;
-					int var56 = (int)(((long)(var19 * var17 - var16 * var20) << 3 << 14) / (long)var51);
-					int var57 = (int)(((long)(var13 * var20 - var19 * var14) << 14) / (long)var51);
-					int var58 = var17 * var15 - var18 * var14 << 14;
-					int var59 = (int)(((long)(var18 * var20 - var17 * var21) << 3 << 14) / (long)var51);
-					int var60 = (int)(((long)(var21 * var14 - var15 * var20) << 14) / (long)var51);
-					int[] var61 = super.field2619.Rasterizer3D_rowOffsets;
-					int var62 = super.field2619.clipY;
-					int var63;
-					int var64;
-					if (var27 <= var28 && var27 <= var29) {
-						if (var27 < (float)var62) {
-							if (var28 > (float)var62) {
-								var28 = (float)var62;
-							}
-
-							if (var29 > (float)var62) {
-								var29 = (float)var62;
-							}
-
-							var10 = var37 + ((var10 << 9) - var37 * (int)var24);
-							var7 = this.method5721(var4, var1, var7, var46, var47);
-							if (var28 < var29) {
-								var26 = var24;
-								if (var27 < 0.0F) {
-									var26 = var24 - var50 * var27;
-									var24 -= var49 * var27;
-									var10 -= var38 * (int)var27;
-									var27 = 0.0F;
-								}
-
-								if (var28 < 0.0F) {
-									var25 -= var48 * var28;
-									var28 = 0.0F;
-								}
-
-								var63 = (int)var27 - super.field2619.clipMidY;
-								var52 += var54 * var63;
-								var55 += var57 * var63;
-								var58 += var60 * var63;
-								if (var27 != var28 && var50 < var49 || var27 == var28 && var50 > var48) {
-									var27 = (float)((int)(var27 + 0.5F));
-									var28 = (float)((int)(var28 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F)) - var28;
-									var28 -= var27;
-
-									for (var64 = var61[(int)var27]; --var28 >= 0.0F; var7 += var47) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var24, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var50;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var29 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var25, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var50;
-										var25 += var48;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var7 += var47;
-									}
-
-								} else {
-									var27 = (float)((int)(var27 + 0.5F));
-									var28 = (float)((int)(var28 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F)) - var28;
-									var28 -= var27;
-
-									for (var64 = var61[(int)var27]; --var28 >= 0.0F; var7 += var47) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var26, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var50;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var29 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var26, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var50;
-										var25 += var48;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var7 += var47;
-									}
-
-								}
-							} else {
-								var25 = var24;
-								if (var27 < 0.0F) {
-									var25 = var24 - var50 * var27;
-									var24 -= var49 * var27;
-									var10 = (int)((float)var10 - (float)var38 * var27);
-									var27 = 0.0F;
-								}
-
-								if (var29 < 0.0F) {
-									var26 -= var48 * var29;
-									var29 = 0.0F;
-								}
-
-								var63 = (int)var27 - super.field2619.clipMidY;
-								var52 += var54 * var63;
-								var55 += var57 * var63;
-								var58 += var60 * var63;
-								if (var27 != var29 && var50 < var49 || var27 == var29 && var48 > var49) {
-									var27 = (float)((int)(var27 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F));
-									var28 = (float)((int)(var28 + 0.5F)) - var29;
-									var29 -= var27;
-
-									for (var64 = var61[(int)var27]; --var29 >= 0.0F; var7 += var47) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var24, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var25 += var50;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var28 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var24, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var48;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var7 += var47;
-									}
-
-								} else {
-									var27 = (float)((int)(var27 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F));
-									var28 = (float)((int)(var28 + 0.5F)) - var29;
-									var29 -= var27;
-
-									for (var64 = var61[(int)var27]; --var29 >= 0.0F; var7 += var47) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var25, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var25 += var50;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var28 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var26, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var48;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var7 += var47;
-									}
-
-								}
-							}
-						}
-					} else if (var28 <= var29) {
-						if (var28 < (float)var62) {
-							if (var29 > (float)var62) {
-								var29 = (float)var62;
-							}
-
-							if (var27 > (float)var62) {
-								var27 = (float)var62;
-							}
-
-							var11 = var37 + ((var11 << 9) - var37 * (int)var25);
-							var8 = this.method5721(var5, var2, var8, var46, var47);
-							if (var29 < var27) {
-								var24 = var25;
-								if (var28 < 0.0F) {
-									var24 = var25 - var49 * var28;
-									var25 -= var48 * var28;
-									var11 -= var38 * (int)var28;
-									var28 = 0.0F;
-								}
-
-								if (var29 < 0.0F) {
-									var26 -= var50 * var29;
-									var29 = 0.0F;
-								}
-
-								var63 = (int)var28 - super.field2619.clipMidY;
-								var52 += var54 * var63;
-								var55 += var57 * var63;
-								var58 += var60 * var63;
-								if (var28 != var29 && var49 < var48 || var28 == var29 && var49 > var50) {
-									var28 = (float)((int)(var28 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F));
-									var27 = (float)((int)(var27 + 0.5F)) - var29;
-									var29 -= var28;
-
-									for (var64 = var61[(int)var28]; --var29 >= 0.0F; var8 += var47) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var25, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var49;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var27 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var26, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var49;
-										var26 += var50;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-								} else {
-									var28 = (float)((int)(var28 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F));
-									var27 = (float)((int)(var27 + 0.5F)) - var29;
-									var29 -= var28;
-
-									for (var64 = var61[(int)var28]; --var29 >= 0.0F; var8 += var47) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var24, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var49;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var27 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var24, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var49;
-										var26 += var50;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-								}
-							} else {
-								var26 = var25;
-								if (var28 < 0.0F) {
-									var26 = var25 - var49 * var28;
-									var25 -= var48 * var28;
-									var11 -= var38 * (int)var28;
-									var28 = 0.0F;
-								}
-
-								if (var27 < 0.0F) {
-									var24 -= var50 * var27;
-									var27 = 0.0F;
-								}
-
-								var63 = (int)var28 - super.field2619.clipMidY;
-								var52 += var54 * var63;
-								var55 += var57 * var63;
-								var58 += var60 * var63;
-								var28 = (float)((int)(var28 + 0.5F));
-								var27 = (float)((int)(var27 + 0.5F));
-								var29 = (float)((int)(var29 + 0.5F)) - var27;
-								var27 -= var28;
-								var64 = var61[(int)var28];
-								if (var49 < var48) {
-									while (--var27 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var25, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var49;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-									while (--var29 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var25, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var50;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-								} else {
-									while (--var27 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var26, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var49;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-									while (--var29 >= 0.0F) {
-										this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var24, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var50;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-								}
-							}
-						}
-					} else if (var29 < (float)var62) {
-						if (var27 > (float)var62) {
-							var27 = (float)var62;
+					var10 = var29 + ((var10 << 8) - var29 * var13);
+					if (var17 < var18) {
+						var15 = var13 <<= 14;
+						if (var16 < 0) {
+							var15 -= var27 * var16;
+							var13 -= var26 * var16;
+							var10 -= var30 * var16;
+							var16 = 0;
 						}
 
-						if (var28 > (float)var62) {
-							var28 = (float)var62;
+						var14 <<= 14;
+						if (var17 < 0) {
+							var14 -= var25 * var17;
+							var17 = 0;
 						}
 
-						var12 = var37 + ((var12 << 9) - var37 * (int)var26);
-						var9 = this.method5721(var6, var3, var9, var46, var47);
-						if (var27 < var28) {
-							var25 = var26;
-							if (var29 < 0.0F) {
-								var25 = var26 - var48 * var29;
-								var26 -= var50 * var29;
-								var12 -= var38 * (int)var29;
-								var29 = 0.0F;
-							}
+						if (var16 != var17 && var27 < var26 || var16 == var17 && var27 > var25) {
+							var18 -= var17;
+							var17 -= var16;
+							var16 = var31[var16];
 
-							if (var27 < 0.0F) {
-								var24 -= var49 * var27;
-								var27 = 0.0F;
-							}
+							while (true) {
+								--var17;
+								if (var17 < 0) {
+									while (true) {
+										--var18;
+										if (var18 < 0) {
+											return;
+										}
 
-							var63 = (int)var29 - super.field2619.clipMidY;
-							var52 += var54 * var63;
-							var55 += var57 * var63;
-							var58 += var60 * var63;
-							var29 = (float)((int)(var29 + 0.5F));
-							var27 = (float)((int)(var27 + 0.5F));
-							var28 = (float)((int)(var28 + 0.5F)) - var27;
-							var27 -= var29;
-							var64 = var61[(int)var29];
-							if (var48 < var50) {
-								while (--var27 >= 0.0F) {
-									this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var26, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var48;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
+										this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var16, 0, 0, var15 >> 14, var14 >> 14, var10, var29);
+										var15 += var27;
+										var14 += var25;
+										var10 += var30;
+										var16 += Rasterizer2D.Rasterizer2D_width;
+									}
 								}
 
-								while (--var28 >= 0.0F) {
-									this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var24, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var48;
-									var24 += var49;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
-							} else {
-								while (--var27 >= 0.0F) {
-									this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var25, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var48;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
-								while (--var28 >= 0.0F) {
-									this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var25, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var48;
-									var24 += var49;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
+								this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var16, 0, 0, var15 >> 14, var13 >> 14, var10, var29);
+								var15 += var27;
+								var13 += var26;
+								var10 += var30;
+								var16 += Rasterizer2D.Rasterizer2D_width;
 							}
 						} else {
-							var24 = var26;
-							if (var29 < 0.0F) {
-								var24 = var26 - var48 * var29;
-								var26 -= var50 * var29;
-								var12 -= var38 * (int)var29;
-								var29 = 0.0F;
-							}
+							var18 -= var17;
+							var17 -= var16;
+							var16 = var31[var16];
 
-							if (var28 < 0.0F) {
-								var25 -= var49 * var28;
-								var28 = 0.0F;
-							}
+							while (true) {
+								--var17;
+								if (var17 < 0) {
+									while (true) {
+										--var18;
+										if (var18 < 0) {
+											return;
+										}
 
-							var63 = (int)var29 - super.field2619.clipMidY;
-							var52 += var54 * var63;
-							var55 += var57 * var63;
-							var58 += var60 * var63;
-							var29 = (float)((int)(var29 + 0.5F));
-							var28 = (float)((int)(var28 + 0.5F));
-							var27 = (float)((int)(var27 + 0.5F)) - var28;
-							var28 -= var29;
-							var64 = var61[(int)var29];
-							if (var48 < var50) {
-								while (--var28 >= 0.0F) {
-									this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var26, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var24 += var48;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
+										this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var16, 0, 0, var14 >> 14, var15 >> 14, var10, var29);
+										var15 += var27;
+										var14 += var25;
+										var10 += var30;
+										var16 += Rasterizer2D.Rasterizer2D_width;
+									}
 								}
 
-								while (--var27 >= 0.0F) {
-									this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var26, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var49;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
-							} else {
-								while (--var28 >= 0.0F) {
-									this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var24, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var24 += var48;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
-								while (--var27 >= 0.0F) {
-									this.method5728(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var25, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var49;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
+								this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var16, 0, 0, var13 >> 14, var15 >> 14, var10, var29);
+								var15 += var27;
+								var13 += var26;
+								var10 += var30;
+								var16 += Rasterizer2D.Rasterizer2D_width;
 							}
 						}
+					} else {
+						var14 = var13 <<= 14;
+						if (var16 < 0) {
+							var14 -= var27 * var16;
+							var13 -= var26 * var16;
+							var10 -= var30 * var16;
+							var16 = 0;
+						}
+
+						var15 <<= 14;
+						if (var18 < 0) {
+							var15 -= var25 * var18;
+							var18 = 0;
+						}
+
+						if ((var16 == var18 || var27 >= var26) && (var16 != var18 || var25 <= var26)) {
+							var17 -= var18;
+							var18 -= var16;
+							var16 = var31[var16];
+
+							while (true) {
+								--var18;
+								if (var18 < 0) {
+									while (true) {
+										--var17;
+										if (var17 < 0) {
+											return;
+										}
+
+										this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var16, 0, 0, var13 >> 14, var15 >> 14, var10, var29);
+										var15 += var25;
+										var13 += var26;
+										var10 += var30;
+										var16 += Rasterizer2D.Rasterizer2D_width;
+									}
+								}
+
+								this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var16, 0, 0, var13 >> 14, var14 >> 14, var10, var29);
+								var14 += var27;
+								var13 += var26;
+								var10 += var30;
+								var16 += Rasterizer2D.Rasterizer2D_width;
+							}
+						} else {
+							var17 -= var18;
+							var18 -= var16;
+							var16 = var31[var16];
+
+							while (true) {
+								--var18;
+								if (var18 < 0) {
+									while (true) {
+										--var17;
+										if (var17 < 0) {
+											return;
+										}
+
+										this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var16, 0, 0, var15 >> 14, var13 >> 14, var10, var29);
+										var15 += var25;
+										var13 += var26;
+										var10 += var30;
+										var16 += Rasterizer2D.Rasterizer2D_width;
+									}
+								}
+
+								this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var16, 0, 0, var14 >> 14, var13 >> 14, var10, var29);
+								var14 += var27;
+								var13 += var26;
+								var10 += var30;
+								var16 += Rasterizer2D.Rasterizer2D_width;
+							}
+						}
+					}
+				}
+			} else if (var17 <= var18) {
+				if (var17 < var32) {
+					if (var18 > var32) {
+						var18 = var32;
+					}
+
+					if (var16 > var32) {
+						var16 = var32;
+					}
+
+					var11 = (var11 << 8) - var29 * var14 + var29;
+					if (var18 < var16) {
+						var13 = var14 <<= 14;
+						if (var17 < 0) {
+							var13 -= var26 * var17;
+							var14 -= var25 * var17;
+							var11 -= var30 * var17;
+							var17 = 0;
+						}
+
+						var15 <<= 14;
+						if (var18 < 0) {
+							var15 -= var27 * var18;
+							var18 = 0;
+						}
+
+						if (var17 != var18 && var26 < var25 || var17 == var18 && var26 > var27) {
+							var16 -= var18;
+							var18 -= var17;
+							var17 = var31[var17];
+
+							while (true) {
+								--var18;
+								if (var18 < 0) {
+									while (true) {
+										--var16;
+										if (var16 < 0) {
+											return;
+										}
+
+										this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var17, 0, 0, var13 >> 14, var15 >> 14, var11, var29);
+										var13 += var26;
+										var15 += var27;
+										var11 += var30;
+										var17 += Rasterizer2D.Rasterizer2D_width;
+									}
+								}
+
+								this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var17, 0, 0, var13 >> 14, var14 >> 14, var11, var29);
+								var13 += var26;
+								var14 += var25;
+								var11 += var30;
+								var17 += Rasterizer2D.Rasterizer2D_width;
+							}
+						} else {
+							var16 -= var18;
+							var18 -= var17;
+							var17 = var31[var17];
+
+							while (true) {
+								--var18;
+								if (var18 < 0) {
+									while (true) {
+										--var16;
+										if (var16 < 0) {
+											return;
+										}
+
+										this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var17, 0, 0, var15 >> 14, var13 >> 14, var11, var29);
+										var13 += var26;
+										var15 += var27;
+										var11 += var30;
+										var17 += Rasterizer2D.Rasterizer2D_width;
+									}
+								}
+
+								this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var17, 0, 0, var14 >> 14, var13 >> 14, var11, var29);
+								var13 += var26;
+								var14 += var25;
+								var11 += var30;
+								var17 += Rasterizer2D.Rasterizer2D_width;
+							}
+						}
+					} else {
+						var15 = var14 <<= 14;
+						if (var17 < 0) {
+							var15 -= var26 * var17;
+							var14 -= var25 * var17;
+							var11 -= var30 * var17;
+							var17 = 0;
+						}
+
+						var13 <<= 14;
+						if (var16 < 0) {
+							var13 -= var27 * var16;
+							var16 = 0;
+						}
+
+						if (var26 < var25) {
+							var18 -= var16;
+							var16 -= var17;
+							var17 = var31[var17];
+
+							while (true) {
+								--var16;
+								if (var16 < 0) {
+									while (true) {
+										--var18;
+										if (var18 < 0) {
+											return;
+										}
+
+										this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var17, 0, 0, var13 >> 14, var14 >> 14, var11, var29);
+										var13 += var27;
+										var14 += var25;
+										var11 += var30;
+										var17 += Rasterizer2D.Rasterizer2D_width;
+									}
+								}
+
+								this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var17, 0, 0, var15 >> 14, var14 >> 14, var11, var29);
+								var15 += var26;
+								var14 += var25;
+								var11 += var30;
+								var17 += Rasterizer2D.Rasterizer2D_width;
+							}
+						} else {
+							var18 -= var16;
+							var16 -= var17;
+							var17 = var31[var17];
+
+							while (true) {
+								--var16;
+								if (var16 < 0) {
+									while (true) {
+										--var18;
+										if (var18 < 0) {
+											return;
+										}
+
+										this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var17, 0, 0, var14 >> 14, var13 >> 14, var11, var29);
+										var13 += var27;
+										var14 += var25;
+										var11 += var30;
+										var17 += Rasterizer2D.Rasterizer2D_width;
+									}
+								}
+
+								this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var17, 0, 0, var14 >> 14, var15 >> 14, var11, var29);
+								var15 += var26;
+								var14 += var25;
+								var11 += var30;
+								var17 += Rasterizer2D.Rasterizer2D_width;
+							}
+						}
+					}
+				}
+			} else if (var18 < var32) {
+				if (var16 > var32) {
+					var16 = var32;
+				}
+
+				if (var17 > var32) {
+					var17 = var32;
+				}
+
+				var12 = var29 + ((var12 << 8) - var29 * var15);
+				if (var16 < var17) {
+					var14 = var15 <<= 14;
+					if (var18 < 0) {
+						var14 -= var25 * var18;
+						var15 -= var27 * var18;
+						var12 -= var30 * var18;
+						var18 = 0;
+					}
+
+					var13 <<= 14;
+					if (var16 < 0) {
+						var13 -= var26 * var16;
+						var16 = 0;
+					}
+
+					if (var25 < var27) {
+						var17 -= var16;
+						var16 -= var18;
+						var18 = var31[var18];
+
+						while (true) {
+							--var16;
+							if (var16 < 0) {
+								while (true) {
+									--var17;
+									if (var17 < 0) {
+										return;
+									}
+
+									this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var18, 0, 0, var14 >> 14, var13 >> 14, var12, var29);
+									var14 += var25;
+									var13 += var26;
+									var12 += var30;
+									var18 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var18, 0, 0, var14 >> 14, var15 >> 14, var12, var29);
+							var14 += var25;
+							var15 += var27;
+							var12 += var30;
+							var18 += Rasterizer2D.Rasterizer2D_width;
+						}
+					} else {
+						var17 -= var16;
+						var16 -= var18;
+						var18 = var31[var18];
+
+						while (true) {
+							--var16;
+							if (var16 < 0) {
+								while (true) {
+									--var17;
+									if (var17 < 0) {
+										return;
+									}
+
+									this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var18, 0, 0, var13 >> 14, var14 >> 14, var12, var29);
+									var14 += var25;
+									var13 += var26;
+									var12 += var30;
+									var18 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var18, 0, 0, var15 >> 14, var14 >> 14, var12, var29);
+							var14 += var25;
+							var15 += var27;
+							var12 += var30;
+							var18 += Rasterizer2D.Rasterizer2D_width;
+						}
+					}
+				} else {
+					var13 = var15 <<= 14;
+					if (var18 < 0) {
+						var13 -= var25 * var18;
+						var15 -= var27 * var18;
+						var12 -= var30 * var18;
+						var18 = 0;
+					}
+
+					var14 <<= 14;
+					if (var17 < 0) {
+						var14 -= var26 * var17;
+						var17 = 0;
+					}
+
+					if (var25 < var27) {
+						var16 -= var17;
+						var17 -= var18;
+						var18 = var31[var18];
+
+						while (true) {
+							--var17;
+							if (var17 < 0) {
+								while (true) {
+									--var16;
+									if (var16 < 0) {
+										return;
+									}
+
+									this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var18, 0, 0, var14 >> 14, var15 >> 14, var12, var29);
+									var14 += var26;
+									var15 += var27;
+									var12 += var30;
+									var18 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var18, 0, 0, var13 >> 14, var15 >> 14, var12, var29);
+							var13 += var25;
+							var15 += var27;
+							var12 += var30;
+							var18 += Rasterizer2D.Rasterizer2D_width;
+						}
+					} else {
+						var16 -= var17;
+						var17 -= var18;
+						var18 = var31[var18];
+
+						while (true) {
+							--var17;
+							if (var17 < 0) {
+								while (true) {
+									--var16;
+									if (var16 < 0) {
+										return;
+									}
+
+									this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var18, 0, 0, var15 >> 14, var14 >> 14, var12, var29);
+									var14 += var26;
+									var15 += var27;
+									var12 += var30;
+									var18 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.Rasterizer3D_vertAlpha(Rasterizer2D.Rasterizer2D_pixels, var18, 0, 0, var15 >> 14, var13 >> 14, var12, var29);
+							var13 += var25;
+							var15 += var27;
+							var12 += var30;
+							var18 += Rasterizer2D.Rasterizer2D_width;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@ObfuscatedName("ai")
+	void vmethod5717(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10) {
+		int var11 = (int)var4;
+		int var12 = (int)var5;
+		int var13 = (int)var6;
+		int var14 = (int)var1;
+		int var15 = (int)var2;
+		int var16 = (int)var3;
+		int var17 = 0;
+		if (var15 != var14) {
+			var17 = (var12 - var11 << 14) / (var15 - var14);
+		}
+
+		int var18 = 0;
+		if (var16 != var15) {
+			var18 = (var13 - var12 << 14) / (var16 - var15);
+		}
+
+		int var19 = 0;
+		if (var16 != var14) {
+			var19 = (var11 - var13 << 14) / (var14 - var16);
+		}
+
+		int[] var20 = super.field2668.Rasterizer3D_rowOffsets;
+		int var21 = super.field2668.clipY;
+		if (var14 <= var15 && var14 <= var16) {
+			if (var14 < var21) {
+				if (var15 > var21) {
+					var15 = var21;
+				}
+
+				if (var16 > var21) {
+					var16 = var21;
+				}
+
+				if (var15 < var16) {
+					var13 = var11 <<= 14;
+					if (var14 < 0) {
+						var13 -= var19 * var14;
+						var11 -= var17 * var14;
+						var14 = 0;
+					}
+
+					var12 <<= 14;
+					if (var15 < 0) {
+						var12 -= var18 * var15;
+						var15 = 0;
+					}
+
+					if (var14 != var15 && var19 < var17 || var14 == var15 && var19 > var18) {
+						var16 -= var15;
+						var15 -= var14;
+						var14 = var20[var14];
+
+						while (true) {
+							--var15;
+							if (var15 < 0) {
+								while (true) {
+									--var16;
+									if (var16 < 0) {
+										return;
+									}
+
+									this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var14, var10, 0, var13 >> 14, var12 >> 14);
+									var13 += var19;
+									var12 += var18;
+									var14 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var14, var10, 0, var13 >> 14, var11 >> 14);
+							var13 += var19;
+							var11 += var17;
+							var14 += Rasterizer2D.Rasterizer2D_width;
+						}
+					} else {
+						var16 -= var15;
+						var15 -= var14;
+						var14 = var20[var14];
+
+						while (true) {
+							--var15;
+							if (var15 < 0) {
+								while (true) {
+									--var16;
+									if (var16 < 0) {
+										return;
+									}
+
+									this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var14, var10, 0, var12 >> 14, var13 >> 14);
+									var13 += var19;
+									var12 += var18;
+									var14 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var14, var10, 0, var11 >> 14, var13 >> 14);
+							var13 += var19;
+							var11 += var17;
+							var14 += Rasterizer2D.Rasterizer2D_width;
+						}
+					}
+				} else {
+					var12 = var11 <<= 14;
+					if (var14 < 0) {
+						var12 -= var19 * var14;
+						var11 -= var17 * var14;
+						var14 = 0;
+					}
+
+					var13 <<= 14;
+					if (var16 < 0) {
+						var13 -= var18 * var16;
+						var16 = 0;
+					}
+
+					if ((var14 == var16 || var19 >= var17) && (var14 != var16 || var18 <= var17)) {
+						var15 -= var16;
+						var16 -= var14;
+						var14 = var20[var14];
+
+						while (true) {
+							--var16;
+							if (var16 < 0) {
+								while (true) {
+									--var15;
+									if (var15 < 0) {
+										return;
+									}
+
+									this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var14, var10, 0, var11 >> 14, var13 >> 14);
+									var13 += var18;
+									var11 += var17;
+									var14 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var14, var10, 0, var11 >> 14, var12 >> 14);
+							var12 += var19;
+							var11 += var17;
+							var14 += Rasterizer2D.Rasterizer2D_width;
+						}
+					} else {
+						var15 -= var16;
+						var16 -= var14;
+						var14 = var20[var14];
+
+						while (true) {
+							--var16;
+							if (var16 < 0) {
+								while (true) {
+									--var15;
+									if (var15 < 0) {
+										return;
+									}
+
+									this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var14, var10, 0, var13 >> 14, var11 >> 14);
+									var13 += var18;
+									var11 += var17;
+									var14 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var14, var10, 0, var12 >> 14, var11 >> 14);
+							var12 += var19;
+							var11 += var17;
+							var14 += Rasterizer2D.Rasterizer2D_width;
+						}
+					}
+				}
+			}
+		} else if (var15 <= var16) {
+			if (var15 < var21) {
+				if (var16 > var21) {
+					var16 = var21;
+				}
+
+				if (var14 > var21) {
+					var14 = var21;
+				}
+
+				if (var16 < var14) {
+					var11 = var12 <<= 14;
+					if (var15 < 0) {
+						var11 -= var17 * var15;
+						var12 -= var18 * var15;
+						var15 = 0;
+					}
+
+					var13 <<= 14;
+					if (var16 < 0) {
+						var13 -= var19 * var16;
+						var16 = 0;
+					}
+
+					if (var15 != var16 && var17 < var18 || var15 == var16 && var17 > var19) {
+						var14 -= var16;
+						var16 -= var15;
+						var15 = var20[var15];
+
+						while (true) {
+							--var16;
+							if (var16 < 0) {
+								while (true) {
+									--var14;
+									if (var14 < 0) {
+										return;
+									}
+
+									this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var15, var10, 0, var11 >> 14, var13 >> 14);
+									var11 += var17;
+									var13 += var19;
+									var15 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var15, var10, 0, var11 >> 14, var12 >> 14);
+							var11 += var17;
+							var12 += var18;
+							var15 += Rasterizer2D.Rasterizer2D_width;
+						}
+					} else {
+						var14 -= var16;
+						var16 -= var15;
+						var15 = var20[var15];
+
+						while (true) {
+							--var16;
+							if (var16 < 0) {
+								while (true) {
+									--var14;
+									if (var14 < 0) {
+										return;
+									}
+
+									this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var15, var10, 0, var13 >> 14, var11 >> 14);
+									var11 += var17;
+									var13 += var19;
+									var15 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var15, var10, 0, var12 >> 14, var11 >> 14);
+							var11 += var17;
+							var12 += var18;
+							var15 += Rasterizer2D.Rasterizer2D_width;
+						}
+					}
+				} else {
+					var13 = var12 <<= 14;
+					if (var15 < 0) {
+						var13 -= var17 * var15;
+						var12 -= var18 * var15;
+						var15 = 0;
+					}
+
+					var11 <<= 14;
+					if (var14 < 0) {
+						var11 -= var19 * var14;
+						var14 = 0;
+					}
+
+					if (var17 < var18) {
+						var16 -= var14;
+						var14 -= var15;
+						var15 = var20[var15];
+
+						while (true) {
+							--var14;
+							if (var14 < 0) {
+								while (true) {
+									--var16;
+									if (var16 < 0) {
+										return;
+									}
+
+									this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var15, var10, 0, var11 >> 14, var12 >> 14);
+									var11 += var19;
+									var12 += var18;
+									var15 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var15, var10, 0, var13 >> 14, var12 >> 14);
+							var13 += var17;
+							var12 += var18;
+							var15 += Rasterizer2D.Rasterizer2D_width;
+						}
+					} else {
+						var16 -= var14;
+						var14 -= var15;
+						var15 = var20[var15];
+
+						while (true) {
+							--var14;
+							if (var14 < 0) {
+								while (true) {
+									--var16;
+									if (var16 < 0) {
+										return;
+									}
+
+									this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var15, var10, 0, var12 >> 14, var11 >> 14);
+									var11 += var19;
+									var12 += var18;
+									var15 += Rasterizer2D.Rasterizer2D_width;
+								}
+							}
+
+							this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var15, var10, 0, var12 >> 14, var13 >> 14);
+							var13 += var17;
+							var12 += var18;
+							var15 += Rasterizer2D.Rasterizer2D_width;
+						}
+					}
+				}
+			}
+		} else if (var16 < var21) {
+			if (var14 > var21) {
+				var14 = var21;
+			}
+
+			if (var15 > var21) {
+				var15 = var21;
+			}
+
+			if (var14 < var15) {
+				var12 = var13 <<= 14;
+				if (var16 < 0) {
+					var12 -= var18 * var16;
+					var13 -= var19 * var16;
+					var16 = 0;
+				}
+
+				var11 <<= 14;
+				if (var14 < 0) {
+					var11 -= var17 * var14;
+					var14 = 0;
+				}
+
+				if (var18 < var19) {
+					var15 -= var14;
+					var14 -= var16;
+					var16 = var20[var16];
+
+					while (true) {
+						--var14;
+						if (var14 < 0) {
+							while (true) {
+								--var15;
+								if (var15 < 0) {
+									return;
+								}
+
+								this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var16, var10, 0, var12 >> 14, var11 >> 14);
+								var12 += var18;
+								var11 += var17;
+								var16 += Rasterizer2D.Rasterizer2D_width;
+							}
+						}
+
+						this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var16, var10, 0, var12 >> 14, var13 >> 14);
+						var12 += var18;
+						var13 += var19;
+						var16 += Rasterizer2D.Rasterizer2D_width;
+					}
+				} else {
+					var15 -= var14;
+					var14 -= var16;
+					var16 = var20[var16];
+
+					while (true) {
+						--var14;
+						if (var14 < 0) {
+							while (true) {
+								--var15;
+								if (var15 < 0) {
+									return;
+								}
+
+								this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var16, var10, 0, var11 >> 14, var12 >> 14);
+								var12 += var18;
+								var11 += var17;
+								var16 += Rasterizer2D.Rasterizer2D_width;
+							}
+						}
+
+						this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var16, var10, 0, var13 >> 14, var12 >> 14);
+						var12 += var18;
+						var13 += var19;
+						var16 += Rasterizer2D.Rasterizer2D_width;
+					}
+				}
+			} else {
+				var11 = var13 <<= 14;
+				if (var16 < 0) {
+					var11 -= var18 * var16;
+					var13 -= var19 * var16;
+					var16 = 0;
+				}
+
+				var12 <<= 14;
+				if (var15 < 0) {
+					var12 -= var17 * var15;
+					var15 = 0;
+				}
+
+				if (var18 < var19) {
+					var14 -= var15;
+					var15 -= var16;
+					var16 = var20[var16];
+
+					while (true) {
+						--var15;
+						if (var15 < 0) {
+							while (true) {
+								--var14;
+								if (var14 < 0) {
+									return;
+								}
+
+								this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var16, var10, 0, var12 >> 14, var13 >> 14);
+								var12 += var17;
+								var13 += var19;
+								var16 += Rasterizer2D.Rasterizer2D_width;
+							}
+						}
+
+						this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var16, var10, 0, var11 >> 14, var13 >> 14);
+						var11 += var18;
+						var13 += var19;
+						var16 += Rasterizer2D.Rasterizer2D_width;
+					}
+				} else {
+					var14 -= var15;
+					var15 -= var16;
+					var16 = var20[var16];
+
+					while (true) {
+						--var15;
+						if (var15 < 0) {
+							while (true) {
+								--var14;
+								if (var14 < 0) {
+									return;
+								}
+
+								this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var16, var10, 0, var13 >> 14, var12 >> 14);
+								var12 += var17;
+								var13 += var19;
+								var16 += Rasterizer2D.Rasterizer2D_width;
+							}
+						}
+
+						this.applyColorFilterToPixelsInRange(Rasterizer2D.Rasterizer2D_pixels, var16, var10, 0, var13 >> 14, var11 >> 14);
+						var11 += var18;
+						var13 += var19;
+						var16 += Rasterizer2D.Rasterizer2D_width;
 					}
 				}
 			}
@@ -1462,571 +996,627 @@ public class class246 extends AbstractRasterizer {
 	}
 
 	@ObfuscatedName("aa")
-	void textureMapPolygons(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
-		int[] var23 = super.field2619.Rasterizer3D_textureLoader.getTexturePixels(var22);
+	@Export("drawGradientTriangle")
+	void drawGradientTriangle(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
+		int[] var23 = super.field2668.Rasterizer3D_textureLoader.getTexturePixels(var22);
+		int var24;
 		if (var23 == null) {
-			int var65 = super.field2619.Rasterizer3D_textureLoader.getAverageTextureRGB(var22);
-			this.drawAlphaBlendedGraphics(var1, var2, var3, var4, var5, var6, var7, var8, var9, AbstractRasterizer.method5025(var65, var10), AbstractRasterizer.method5025(var65, var11), AbstractRasterizer.method5025(var65, var12));
+			var24 = super.field2668.Rasterizer3D_textureLoader.getAverageTextureRGB(var22);
+			this.drawAlphaBlendedGraphics(var1, var2, var3, var4, var5, var6, var7, var8, var9, AbstractRasterizer.method5087(var24, var10), AbstractRasterizer.method5087(var24, var11), AbstractRasterizer.method5087(var24, var12));
 		} else {
-			super.field2617 = super.field2619.Rasterizer3D_textureLoader.isLowDetail(var22);
-			float var24 = (float)((int)(var4 + 0.5F));
-			float var25 = (float)((int)(var5 + 0.5F));
-			float var26 = (float)((int)(var6 + 0.5F));
-			float var27 = (float)((int)(var1 + 0.5F));
-			float var28 = (float)((int)(var2 + 0.5F));
-			float var29 = (float)((int)(var3 + 0.5F));
-			float var30 = var25 - var24;
-			float var31 = var28 - var27;
-			float var32 = var26 - var24;
-			float var33 = var29 - var27;
-			float var34 = var30 * var33 - var32 * var31;
-			if (var34 != 0.0F) {
-				float var35 = (float)(var11 - var10);
-				float var36 = (float)(var12 - var10);
-				int var37 = (int)((var35 * var33 - var36 * var31) * 512.0F / var34);
-				int var38 = (int)((var36 * var30 - var35 * var32) * 512.0F / var34);
-				float var39 = var5 - var4;
-				float var40 = var2 - var1;
-				float var41 = var6 - var4;
-				float var42 = var3 - var1;
-				float var43 = var39 * var42 - var41 * var40;
-				if (var43 != 0.0F) {
-					float var44 = var8 - var7;
-					float var45 = var9 - var7;
-					float var46 = (var44 * var42 - var45 * var40) / var43;
-					float var47 = (var45 * var39 - var44 * var41) / var43;
-					float var48;
-					if (var29 != var28) {
-						var48 = (var26 - var25) / (var29 - var28);
-					} else {
-						var48 = 0.0F;
-					}
+			super.field2659 = super.field2668.Rasterizer3D_textureLoader.isLowDetail(var22);
+			var24 = (int)var4;
+			int var25 = (int)var5;
+			int var26 = (int)var6;
+			int var27 = (int)var1;
+			int var28 = (int)var2;
+			int var29 = (int)var3;
+			int var30 = var25 - var24;
+			int var31 = var28 - var27;
+			int var32 = var26 - var24;
+			int var33 = var29 - var27;
+			int var34 = var11 - var10;
+			int var35 = var12 - var10;
+			int var36 = 0;
+			if (var28 != var27) {
+				var36 = (var25 - var24 << 14) / (var28 - var27);
+			}
 
-					float var49;
-					if (var28 != var27) {
-						var49 = var30 / var31;
-					} else {
-						var49 = 0.0F;
-					}
+			int var37 = 0;
+			if (var29 != var28) {
+				var37 = (var26 - var25 << 14) / (var29 - var28);
+			}
 
-					float var50;
-					if (var29 != var27) {
-						var50 = var32 / var33;
-					} else {
-						var50 = 0.0F;
-					}
+			int var38 = 0;
+			if (var29 != var27) {
+				var38 = (var24 - var26 << 14) / (var27 - var29);
+			}
 
-					int var51 = super.field2619.zoom;
-					var14 = var13 - var14;
-					var17 = var16 - var17;
-					var20 = var19 - var20;
-					var15 -= var13;
-					var18 -= var16;
-					var21 -= var19;
-					int var52 = var15 * var16 - var18 * var13 << 14;
-					int var53 = (int)(((long)(var18 * var19 - var16 * var21) << 14) / (long)var51);
-					int var54 = (int)(((long)(var13 * var21 - var19 * var15) << 14) / (long)var51);
-					int var55 = var16 * var14 - var13 * var17 << 14;
-					int var56 = (int)(((long)(var19 * var17 - var16 * var20) << 14) / (long)var51);
-					int var57 = (int)(((long)(var13 * var20 - var19 * var14) << 14) / (long)var51);
-					int var58 = var17 * var15 - var18 * var14 << 14;
-					int var59 = (int)(((long)(var18 * var20 - var17 * var21) << 14) / (long)var51);
-					int var60 = (int)(((long)(var21 * var14 - var15 * var20) << 14) / (long)var51);
-					int[] var61 = super.field2619.Rasterizer3D_rowOffsets;
-					int var62 = super.field2619.clipY;
-					int var63;
-					int var64;
-					if (var27 <= var28 && var27 <= var29) {
-						if (var27 < (float)var62) {
-							if (var28 > (float)var62) {
-								var28 = (float)var62;
+			int var39 = var30 * var33 - var32 * var31;
+			if (var39 != 0) {
+				int var40 = (var34 * var33 - var35 * var31 << 9) / var39;
+				int var41 = (var35 * var30 - var34 * var32 << 9) / var39;
+				int var42 = super.field2668.zoom;
+				var14 = var13 - var14;
+				var17 = var16 - var17;
+				var20 = var19 - var20;
+				var15 -= var13;
+				var18 -= var16;
+				var21 -= var19;
+				int var43 = var15 * var16 - var18 * var13 << 14;
+				int var44 = (int)(((long)(var18 * var19 - var16 * var21) << 3 << 14) / (long)var42);
+				int var45 = (int)(((long)(var13 * var21 - var19 * var15) << 14) / (long)var42);
+				int var46 = var16 * var14 - var13 * var17 << 14;
+				int var47 = (int)(((long)(var19 * var17 - var16 * var20) << 3 << 14) / (long)var42);
+				int var48 = (int)(((long)(var13 * var20 - var19 * var14) << 14) / (long)var42);
+				int var49 = var17 * var15 - var18 * var14 << 14;
+				int var50 = (int)(((long)(var18 * var20 - var17 * var21) << 3 << 14) / (long)var42);
+				int var51 = (int)(((long)(var21 * var14 - var15 * var20) << 14) / (long)var42);
+				int[] var52 = super.field2668.Rasterizer3D_rowOffsets;
+				int var53 = super.field2668.clipY;
+				int var54;
+				if (var27 <= var28 && var27 <= var29) {
+					if (var27 < var53) {
+						if (var28 > var53) {
+							var28 = var53;
+						}
+
+						if (var29 > var53) {
+							var29 = var53;
+						}
+
+						var10 = var40 + ((var10 << 9) - var40 * var24);
+						if (var28 < var29) {
+							var26 = var24 <<= 14;
+							if (var27 < 0) {
+								var26 -= var38 * var27;
+								var24 -= var36 * var27;
+								var10 -= var41 * var27;
+								var27 = 0;
 							}
 
-							if (var29 > (float)var62) {
-								var29 = (float)var62;
+							var25 <<= 14;
+							if (var28 < 0) {
+								var25 -= var37 * var28;
+								var28 = 0;
 							}
 
-							var10 = var37 + ((var10 << 9) - var37 * (int)var24);
-							var7 = this.method5721(var4, var1, var7, var46, var47);
-							if (var28 < var29) {
-								var26 = var24;
-								if (var27 < 0.0F) {
-									var26 = var24 - var50 * var27;
-									var24 -= var49 * var27;
-									var10 -= var38 * (int)var27;
-									var27 = 0.0F;
-								}
+							var54 = var27 - super.field2668.clipMidY;
+							var43 += var45 * var54;
+							var46 += var48 * var54;
+							var49 += var51 * var54;
+							if ((var27 == var28 || var38 >= var36) && (var27 != var28 || var38 <= var37)) {
+								var29 -= var28;
+								var28 -= var27;
+								var27 = var52[var27];
 
-								if (var28 < 0.0F) {
-									var25 -= var48 * var28;
-									var28 = 0.0F;
-								}
+								while (true) {
+									--var28;
+									if (var28 < 0) {
+										while (true) {
+											--var29;
+											if (var29 < 0) {
+												return;
+											}
 
-								var63 = (int)var27 - super.field2619.clipMidY;
-								var52 += var54 * var63;
-								var55 += var57 * var63;
-								var58 += var60 * var63;
-								if (var27 != var28 && var50 < var49 || var27 == var28 && var50 > var48) {
-									var27 = (float)((int)(var27 + 0.5F));
-									var28 = (float)((int)(var28 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F)) - var28;
-									var28 -= var27;
-
-									for (var64 = var61[(int)var27]; --var28 >= 0.0F; var7 += var47) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var24, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var50;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
+											this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var25 >> 14, var26 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+											var26 += var38;
+											var25 += var37;
+											var10 += var41;
+											var27 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
 									}
 
-									while (--var29 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var25, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var50;
-										var25 += var48;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var7 += var47;
-									}
-
-								} else {
-									var27 = (float)((int)(var27 + 0.5F));
-									var28 = (float)((int)(var28 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F)) - var28;
-									var28 -= var27;
-
-									for (var64 = var61[(int)var27]; --var28 >= 0.0F; var7 += var47) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var26, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var50;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var29 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var26, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var50;
-										var25 += var48;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var7 += var47;
-									}
-
+									this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var24 >> 14, var26 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+									var26 += var38;
+									var24 += var36;
+									var10 += var41;
+									var27 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
 								}
 							} else {
-								var25 = var24;
-								if (var27 < 0.0F) {
-									var25 = var24 - var50 * var27;
-									var24 -= var49 * var27;
-									var10 -= var38 * (int)var27;
-									var27 = 0.0F;
-								}
+								var29 -= var28;
+								var28 -= var27;
+								var27 = var52[var27];
 
-								if (var29 < 0.0F) {
-									var26 -= var48 * var29;
-									var29 = 0.0F;
-								}
+								while (true) {
+									--var28;
+									if (var28 < 0) {
+										while (true) {
+											--var29;
+											if (var29 < 0) {
+												return;
+											}
 
-								var63 = (int)var27 - super.field2619.clipMidY;
-								var52 += var54 * var63;
-								var55 += var57 * var63;
-								var58 += var60 * var63;
-								if (var27 != var29 && var50 < var49 || var27 == var29 && var48 > var49) {
-									var27 = (float)((int)(var27 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F));
-									var28 = (float)((int)(var28 + 0.5F)) - var29;
-									var29 -= var27;
-
-									for (var64 = var61[(int)var27]; --var29 >= 0.0F; var7 += var47) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var24, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var25 += var50;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
+											this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var26 >> 14, var25 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+											var26 += var38;
+											var25 += var37;
+											var10 += var41;
+											var27 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
 									}
 
-									while (--var28 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var24, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var48;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var7 += var47;
-									}
-
-								} else {
-									var27 = (float)((int)(var27 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F));
-									var28 = (float)((int)(var28 + 0.5F)) - var29;
-									var29 -= var27;
-
-									for (var64 = var61[(int)var27]; --var29 >= 0.0F; var7 += var47) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var25, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var25 += var50;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var28 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var26, var10, var37, var7, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var48;
-										var24 += var49;
-										var10 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var7 += var47;
-									}
-
+									this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var26 >> 14, var24 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+									var26 += var38;
+									var24 += var36;
+									var10 += var41;
+									var27 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
 								}
-							}
-						}
-					} else if (var28 <= var29) {
-						if (var28 < (float)var62) {
-							if (var29 > (float)var62) {
-								var29 = (float)var62;
-							}
-
-							if (var27 > (float)var62) {
-								var27 = (float)var62;
-							}
-
-							var11 = var37 + ((var11 << 9) - var37 * (int)var25);
-							var8 = this.method5721(var5, var2, var8, var46, var47);
-							if (var29 < var27) {
-								var24 = var25;
-								if (var28 < 0.0F) {
-									var24 = var25 - var49 * var28;
-									var25 -= var48 * var28;
-									var11 -= var38 * (int)var28;
-									var28 = 0.0F;
-								}
-
-								if (var29 < 0.0F) {
-									var26 -= var50 * var29;
-									var29 = 0.0F;
-								}
-
-								var63 = (int)var28 - super.field2619.clipMidY;
-								var52 += var54 * var63;
-								var55 += var57 * var63;
-								var58 += var60 * var63;
-								if (var28 != var29 && var49 < var48 || var28 == var29 && var49 > var50) {
-									var28 = (float)((int)(var28 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F));
-									var27 = (float)((int)(var27 + 0.5F)) - var29;
-									var29 -= var28;
-
-									for (var64 = var61[(int)var28]; --var29 >= 0.0F; var8 += var47) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var25, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var49;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var27 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var26, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var49;
-										var26 += var50;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-								} else {
-									var28 = (float)((int)(var28 + 0.5F));
-									var29 = (float)((int)(var29 + 0.5F));
-									var27 = (float)((int)(var27 + 0.5F)) - var29;
-									var29 -= var28;
-
-									for (var64 = var61[(int)var28]; --var29 >= 0.0F; var8 += var47) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var24, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var49;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-									}
-
-									while (--var27 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var24, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var49;
-										var26 += var50;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-								}
-							} else {
-								var26 = var25 = var25;
-								if (var28 < 0.0F) {
-									var26 -= var49 * var28;
-									var25 -= var48 * var28;
-									var11 -= var38 * (int)var28;
-									var28 = 0.0F;
-								}
-
-								if (var27 < 0.0F) {
-									var24 -= var50 * var27;
-									var27 = 0.0F;
-								}
-
-								var63 = (int)var28 - super.field2619.clipMidY;
-								var52 += var54 * var63;
-								var55 += var57 * var63;
-								var58 += var60 * var63;
-								var28 = (float)((int)(var28 + 0.5F));
-								var27 = (float)((int)(var27 + 0.5F));
-								var29 = (float)((int)(var29 + 0.5F)) - var27;
-								var27 -= var28;
-								var64 = var61[(int)var28];
-								if (var49 < var48) {
-									while (--var27 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var25, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var49;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-									while (--var29 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var25, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var50;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-								} else {
-									while (--var27 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var26, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var26 += var49;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-									while (--var29 >= 0.0F) {
-										this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var24, var11, var37, var8, var46, var52, var55, var58, var53, var56, var59);
-										var24 += var50;
-										var25 += var48;
-										var11 += var38;
-										var64 += Rasterizer2D.Rasterizer2D_width;
-										var52 += var54;
-										var55 += var57;
-										var58 += var60;
-										var8 += var47;
-									}
-
-								}
-							}
-						}
-					} else if (var29 < (float)var62) {
-						if (var27 > (float)var62) {
-							var27 = (float)var62;
-						}
-
-						if (var28 > (float)var62) {
-							var28 = (float)var62;
-						}
-
-						var12 = var37 + ((var12 << 9) - var37 * (int)var26);
-						var9 = this.method5721(var6, var3, var9, var46, var47);
-						if (var27 < var28) {
-							var25 = var26;
-							if (var29 < 0.0F) {
-								var25 = var26 - var48 * var29;
-								var26 -= var50 * var29;
-								var12 -= var38 * (int)var29;
-								var29 = 0.0F;
-							}
-
-							if (var27 < 0.0F) {
-								var24 -= var49 * var27;
-								var27 = 0.0F;
-							}
-
-							var63 = (int)var29 - super.field2619.clipMidY;
-							var52 += var54 * var63;
-							var55 += var57 * var63;
-							var58 += var60 * var63;
-							var29 = (float)((int)(var29 + 0.5F));
-							var27 = (float)((int)(var27 + 0.5F));
-							var28 = (float)((int)(var28 + 0.5F)) - var27;
-							var27 -= var29;
-							var64 = var61[(int)var29];
-							if (var48 < var50) {
-								while (--var27 >= 0.0F) {
-									this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var26, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var48;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
-								while (--var28 >= 0.0F) {
-									this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var24, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var48;
-									var24 += var49;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
-							} else {
-								while (--var27 >= 0.0F) {
-									this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var25, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var48;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
-								while (--var28 >= 0.0F) {
-									this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var25, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var48;
-									var24 += var49;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
-
 							}
 						} else {
-							var24 = var26 = var26;
-							if (var29 < 0.0F) {
-								var24 -= var48 * var29;
-								var26 -= var50 * var29;
-								var12 -= var38 * (int)var29;
-								var29 = 0.0F;
+							var25 = var24 <<= 14;
+							if (var27 < 0) {
+								var25 -= var38 * var27;
+								var24 -= var36 * var27;
+								var10 -= var41 * var27;
+								var27 = 0;
 							}
 
-							if (var28 < 0.0F) {
-								var25 -= var49 * var28;
-								var28 = 0.0F;
+							var26 <<= 14;
+							if (var29 < 0) {
+								var26 -= var37 * var29;
+								var29 = 0;
 							}
 
-							var63 = (int)var29 - super.field2619.clipMidY;
-							var52 += var54 * var63;
-							var55 += var57 * var63;
-							var58 += var60 * var63;
-							var29 = (float)((int)(var29 + 0.5F));
-							var28 = (float)((int)(var28 + 0.5F));
-							var27 = (float)((int)(var27 + 0.5F)) - var28;
-							var28 -= var29;
-							var64 = var61[(int)var29];
-							if (var48 < var50) {
-								while (--var28 >= 0.0F) {
-									this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var24, (int)var26, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var24 += var48;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
+							var54 = var27 - super.field2668.clipMidY;
+							var43 += var45 * var54;
+							var46 += var48 * var54;
+							var49 += var51 * var54;
+							if (var27 != var29 && var38 < var36 || var27 == var29 && var37 > var36) {
+								var28 -= var29;
+								var29 -= var27;
+								var27 = var52[var27];
 
-								while (--var27 >= 0.0F) {
-									this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var25, (int)var26, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var49;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
-								}
+								while (true) {
+									--var29;
+									if (var29 < 0) {
+										while (true) {
+											--var28;
+											if (var28 < 0) {
+												return;
+											}
 
+											this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var26 >> 14, var24 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+											var26 += var37;
+											var24 += var36;
+											var10 += var41;
+											var27 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var25 >> 14, var24 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+									var25 += var38;
+									var24 += var36;
+									var10 += var41;
+									var27 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
 							} else {
-								while (--var28 >= 0.0F) {
-									this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var24, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var24 += var48;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
+								var28 -= var29;
+								var29 -= var27;
+								var27 = var52[var27];
+
+								while (true) {
+									--var29;
+									if (var29 < 0) {
+										while (true) {
+											--var28;
+											if (var28 < 0) {
+												return;
+											}
+
+											this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var24 >> 14, var26 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+											var26 += var37;
+											var24 += var36;
+											var10 += var41;
+											var27 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var24 >> 14, var25 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+									var25 += var38;
+									var24 += var36;
+									var10 += var41;
+									var27 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							}
+						}
+					}
+				} else if (var28 <= var29) {
+					if (var28 < var53) {
+						if (var29 > var53) {
+							var29 = var53;
+						}
+
+						if (var27 > var53) {
+							var27 = var53;
+						}
+
+						var11 = (var11 << 9) - var40 * var25 + var40;
+						if (var29 < var27) {
+							var24 = var25 <<= 14;
+							if (var28 < 0) {
+								var24 -= var36 * var28;
+								var25 -= var37 * var28;
+								var11 -= var41 * var28;
+								var28 = 0;
+							}
+
+							var26 <<= 14;
+							if (var29 < 0) {
+								var26 -= var38 * var29;
+								var29 = 0;
+							}
+
+							var54 = var28 - super.field2668.clipMidY;
+							var43 += var45 * var54;
+							var46 += var48 * var54;
+							var49 += var51 * var54;
+							if ((var28 == var29 || var36 >= var37) && (var28 != var29 || var36 <= var38)) {
+								var27 -= var29;
+								var29 -= var28;
+								var28 = var52[var28];
+
+								while (true) {
+									--var29;
+									if (var29 < 0) {
+										while (true) {
+											--var27;
+											if (var27 < 0) {
+												return;
+											}
+
+											this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var26 >> 14, var24 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+											var24 += var36;
+											var26 += var38;
+											var11 += var41;
+											var28 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var25 >> 14, var24 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+									var24 += var36;
+									var25 += var37;
+									var11 += var41;
+									var28 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							} else {
+								var27 -= var29;
+								var29 -= var28;
+								var28 = var52[var28];
+
+								while (true) {
+									--var29;
+									if (var29 < 0) {
+										while (true) {
+											--var27;
+											if (var27 < 0) {
+												return;
+											}
+
+											this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var24 >> 14, var26 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+											var24 += var36;
+											var26 += var38;
+											var11 += var41;
+											var28 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var24 >> 14, var25 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+									var24 += var36;
+									var25 += var37;
+									var11 += var41;
+									var28 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							}
+						} else {
+							var26 = var25 <<= 14;
+							if (var28 < 0) {
+								var26 -= var36 * var28;
+								var25 -= var37 * var28;
+								var11 -= var41 * var28;
+								var28 = 0;
+							}
+
+							var24 <<= 14;
+							if (var27 < 0) {
+								var24 -= var38 * var27;
+								var27 = 0;
+							}
+
+							var54 = var28 - super.field2668.clipMidY;
+							var43 += var45 * var54;
+							var46 += var48 * var54;
+							var49 += var51 * var54;
+							if (var36 < var37) {
+								var29 -= var27;
+								var27 -= var28;
+								var28 = var52[var28];
+
+								while (true) {
+									--var27;
+									if (var27 < 0) {
+										while (true) {
+											--var29;
+											if (var29 < 0) {
+												return;
+											}
+
+											this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var24 >> 14, var25 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+											var24 += var38;
+											var25 += var37;
+											var11 += var41;
+											var28 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var26 >> 14, var25 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+									var26 += var36;
+									var25 += var37;
+									var11 += var41;
+									var28 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							} else {
+								var29 -= var27;
+								var27 -= var28;
+								var28 = var52[var28];
+
+								while (true) {
+									--var27;
+									if (var27 < 0) {
+										while (true) {
+											--var29;
+											if (var29 < 0) {
+												return;
+											}
+
+											this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var25 >> 14, var24 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+											var24 += var38;
+											var25 += var37;
+											var11 += var41;
+											var28 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var25 >> 14, var26 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+									var26 += var36;
+									var25 += var37;
+									var11 += var41;
+									var28 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							}
+						}
+					}
+				} else if (var29 < var53) {
+					if (var27 > var53) {
+						var27 = var53;
+					}
+
+					if (var28 > var53) {
+						var28 = var53;
+					}
+
+					var12 = var40 + ((var12 << 9) - var40 * var26);
+					if (var27 < var28) {
+						var25 = var26 <<= 14;
+						if (var29 < 0) {
+							var25 -= var37 * var29;
+							var26 -= var38 * var29;
+							var12 -= var41 * var29;
+							var29 = 0;
+						}
+
+						var24 <<= 14;
+						if (var27 < 0) {
+							var24 -= var36 * var27;
+							var27 = 0;
+						}
+
+						var54 = var29 - super.field2668.clipMidY;
+						var43 += var45 * var54;
+						var46 += var48 * var54;
+						var49 += var51 * var54;
+						if (var37 < var38) {
+							var28 -= var27;
+							var27 -= var29;
+							var29 = var52[var29];
+
+							while (true) {
+								--var27;
+								if (var27 < 0) {
+									while (true) {
+										--var28;
+										if (var28 < 0) {
+											return;
+										}
+
+										this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var25 >> 14, var24 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+										var25 += var37;
+										var24 += var36;
+										var12 += var41;
+										var29 += Rasterizer2D.Rasterizer2D_width;
+										var43 += var45;
+										var46 += var48;
+										var49 += var51;
+									}
 								}
 
-								while (--var27 >= 0.0F) {
-									this.method5730(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var64, (int)var26, (int)var25, var12, var37, var9, var46, var52, var55, var58, var53, var56, var59);
-									var25 += var49;
-									var26 += var50;
-									var12 += var38;
-									var64 += Rasterizer2D.Rasterizer2D_width;
-									var52 += var54;
-									var55 += var57;
-									var58 += var60;
-									var9 += var47;
+								this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var25 >> 14, var26 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+								var25 += var37;
+								var26 += var38;
+								var12 += var41;
+								var29 += Rasterizer2D.Rasterizer2D_width;
+								var43 += var45;
+								var46 += var48;
+								var49 += var51;
+							}
+						} else {
+							var28 -= var27;
+							var27 -= var29;
+							var29 = var52[var29];
+
+							while (true) {
+								--var27;
+								if (var27 < 0) {
+									while (true) {
+										--var28;
+										if (var28 < 0) {
+											return;
+										}
+
+										this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var24 >> 14, var25 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+										var25 += var37;
+										var24 += var36;
+										var12 += var41;
+										var29 += Rasterizer2D.Rasterizer2D_width;
+										var43 += var45;
+										var46 += var48;
+										var49 += var51;
+									}
 								}
 
+								this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var26 >> 14, var25 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+								var25 += var37;
+								var26 += var38;
+								var12 += var41;
+								var29 += Rasterizer2D.Rasterizer2D_width;
+								var43 += var45;
+								var46 += var48;
+								var49 += var51;
+							}
+						}
+					} else {
+						var24 = var26 <<= 14;
+						if (var29 < 0) {
+							var24 -= var37 * var29;
+							var26 -= var38 * var29;
+							var12 -= var41 * var29;
+							var29 = 0;
+						}
+
+						var25 <<= 14;
+						if (var28 < 0) {
+							var25 -= var36 * var28;
+							var28 = 0;
+						}
+
+						var54 = var29 - super.field2668.clipMidY;
+						var43 += var45 * var54;
+						var46 += var48 * var54;
+						var49 += var51 * var54;
+						if (var37 < var38) {
+							var27 -= var28;
+							var28 -= var29;
+							var29 = var52[var29];
+
+							while (true) {
+								--var28;
+								if (var28 < 0) {
+									while (true) {
+										--var27;
+										if (var27 < 0) {
+											return;
+										}
+
+										this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var25 >> 14, var26 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+										var25 += var36;
+										var26 += var38;
+										var12 += var41;
+										var29 += Rasterizer2D.Rasterizer2D_width;
+										var43 += var45;
+										var46 += var48;
+										var49 += var51;
+									}
+								}
+
+								this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var24 >> 14, var26 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+								var24 += var37;
+								var26 += var38;
+								var12 += var41;
+								var29 += Rasterizer2D.Rasterizer2D_width;
+								var43 += var45;
+								var46 += var48;
+								var49 += var51;
+							}
+						} else {
+							var27 -= var28;
+							var28 -= var29;
+							var29 = var52[var29];
+
+							while (true) {
+								--var28;
+								if (var28 < 0) {
+									while (true) {
+										--var27;
+										if (var27 < 0) {
+											return;
+										}
+
+										this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var26 >> 14, var25 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+										var25 += var36;
+										var26 += var38;
+										var12 += var41;
+										var29 += Rasterizer2D.Rasterizer2D_width;
+										var43 += var45;
+										var46 += var48;
+										var49 += var51;
+									}
+								}
+
+								this.processPixelsToArray(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var26 >> 14, var24 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+								var24 += var37;
+								var26 += var38;
+								var12 += var41;
+								var29 += Rasterizer2D.Rasterizer2D_width;
+								var43 += var45;
+								var46 += var48;
+								var49 += var51;
 							}
 						}
 					}
@@ -2035,98 +1625,643 @@ public class class246 extends AbstractRasterizer {
 		}
 	}
 
-	@ObfuscatedName("bg")
-	final void method5712(int[] var1, float[] var2, int var3, int var4, float var5, int var6) {
-		int var7 = super.field2619.field2956 & var6;
-		int var8 = super.field2619.field2957 & var6;
-		var1[var3] = var7 & var4 | ~var7 & var1[var3];
-		int var9 = var8 & Float.floatToRawIntBits(var5);
-		int var10 = ~var8 & Float.floatToRawIntBits(var2[var3]);
-		var2[var3] = Float.intBitsToFloat(var9 | var10);
-	}
+	@ObfuscatedName("am")
+	@Export("textureMapPolygons")
+	void textureMapPolygons(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9, int var10, int var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18, int var19, int var20, int var21, int var22) {
+		int[] var23 = super.field2668.Rasterizer3D_textureLoader.getTexturePixels(var22);
+		int var24;
+		if (var23 == null) {
+			var24 = super.field2668.Rasterizer3D_textureLoader.getAverageTextureRGB(var22);
+			this.drawAlphaBlendedGraphics(var1, var2, var3, var4, var5, var6, var7, var8, var9, AbstractRasterizer.method5087(var24, var10), AbstractRasterizer.method5087(var24, var11), AbstractRasterizer.method5087(var24, var12));
+		} else {
+			super.field2659 = super.field2668.Rasterizer3D_textureLoader.isLowDetail(var22);
+			var24 = (int)var4;
+			int var25 = (int)var5;
+			int var26 = (int)var6;
+			int var27 = (int)var1;
+			int var28 = (int)var2;
+			int var29 = (int)var3;
+			int var30 = var25 - var24;
+			int var31 = var28 - var27;
+			int var32 = var26 - var24;
+			int var33 = var29 - var27;
+			int var34 = var11 - var10;
+			int var35 = var12 - var10;
+			int var36 = 0;
+			if (var28 != var27) {
+				var36 = (var25 - var24 << 14) / (var28 - var27);
+			}
 
-	@ObfuscatedName("bt")
-	final void method5713(int[] var1, float[] var2, int[] var3, int var4, int var5, int var6, float var7) {
-		int var8 = var3[(var6 & 16256) + (var6 >>> 25)];
-		var8 = ((var8 & 16711935) * var5 & -16711936) + (var5 * (var8 & 65280) & 16711680) >> 8;
-		this.method5712(var1, var2, var4, var8, var7, method5711(var2[var4], var7));
-	}
+			int var37 = 0;
+			if (var29 != var28) {
+				var37 = (var26 - var25 << 14) / (var29 - var28);
+			}
 
-	@ObfuscatedName("bs")
-	final void method5714(int[] var1, float[] var2, int[] var3, int var4, int var5, int var6, int var7, float var8) {
-		int var9 = var3[(var7 & 16256) + (var7 >>> 25)];
-		var9 = ((var9 & 16711935) * var6 & -16711936 | (var9 & 65280) * var6 & 16711680) >> 8;
-		int var10 = var1[var4];
-		var9 += ((var10 & 16711935) * var5 & -16711936 | var5 * (var10 & 65280) & 16711680) >> 8;
-		int var11 = super.field2619.field2956 & method5711(var2[var4], var8);
-		var1[var4] = (var11 & var9) + (~var11 & var10);
-	}
+			int var38 = 0;
+			if (var29 != var27) {
+				var38 = (var24 - var26 << 14) / (var27 - var29);
+			}
 
-	@ObfuscatedName("bu")
-	final void method5746(int[] var1, float[] var2, int[] var3, int var4, int var5, int var6, float var7) {
-		int var8 = var3[(var6 & 16256) + (var6 >>> 25)];
-		if (var8 != 0) {
-			var8 = ((var8 & 16711935) * var5 & -16711936) + (var5 * (var8 & 65280) & 16711680) >> 8;
-			this.method5712(var1, var2, var4, var8, var7, method5711(var2[var4], var7));
+			int var39 = var30 * var33 - var32 * var31;
+			if (var39 != 0) {
+				int var40 = (var34 * var33 - var35 * var31 << 9) / var39;
+				int var41 = (var35 * var30 - var34 * var32 << 9) / var39;
+				int var42 = super.field2668.zoom;
+				var14 = var13 - var14;
+				var17 = var16 - var17;
+				var20 = var19 - var20;
+				var15 -= var13;
+				var18 -= var16;
+				var21 -= var19;
+				int var43 = var15 * var16 - var18 * var13 << 14;
+				int var44 = (int)(((long)(var18 * var19 - var16 * var21) << 14) / (long)var42);
+				int var45 = (int)(((long)(var13 * var21 - var19 * var15) << 14) / (long)var42);
+				int var46 = var16 * var14 - var13 * var17 << 14;
+				int var47 = (int)(((long)(var19 * var17 - var16 * var20) << 14) / (long)var42);
+				int var48 = (int)(((long)(var13 * var20 - var19 * var14) << 14) / (long)var42);
+				int var49 = var17 * var15 - var18 * var14 << 14;
+				int var50 = (int)(((long)(var18 * var20 - var17 * var21) << 14) / (long)var42);
+				int var51 = (int)(((long)(var21 * var14 - var15 * var20) << 14) / (long)var42);
+				int[] var52 = super.field2668.Rasterizer3D_rowOffsets;
+				int var53 = super.field2668.clipY;
+				int var54 = super.field2668.clipMidY;
+				int var55;
+				if (var27 <= var28 && var27 <= var29) {
+					if (var27 < var53) {
+						if (var28 > var53) {
+							var28 = var53;
+						}
+
+						if (var29 > var53) {
+							var29 = var53;
+						}
+
+						var10 = var40 + ((var10 << 9) - var40 * var24);
+						if (var28 < var29) {
+							var26 = var24 <<= 14;
+							if (var27 < 0) {
+								var26 -= var38 * var27;
+								var24 -= var36 * var27;
+								var10 -= var41 * var27;
+								var27 = 0;
+							}
+
+							var25 <<= 14;
+							if (var28 < 0) {
+								var25 -= var37 * var28;
+								var28 = 0;
+							}
+
+							var55 = var27 - var54;
+							var43 += var45 * var55;
+							var46 += var48 * var55;
+							var49 += var51 * var55;
+							if ((var27 == var28 || var38 >= var36) && (var27 != var28 || var38 <= var37)) {
+								var29 -= var28;
+								var28 -= var27;
+								var27 = var52[var27];
+
+								while (true) {
+									--var28;
+									if (var28 < 0) {
+										while (true) {
+											--var29;
+											if (var29 < 0) {
+												return;
+											}
+
+											this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var25 >> 14, var26 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+											var26 += var38;
+											var25 += var37;
+											var10 += var41;
+											var27 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var24 >> 14, var26 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+									var26 += var38;
+									var24 += var36;
+									var10 += var41;
+									var27 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							} else {
+								var29 -= var28;
+								var28 -= var27;
+								var27 = var52[var27];
+
+								while (true) {
+									--var28;
+									if (var28 < 0) {
+										while (true) {
+											--var29;
+											if (var29 < 0) {
+												return;
+											}
+
+											this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var26 >> 14, var25 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+											var26 += var38;
+											var25 += var37;
+											var10 += var41;
+											var27 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var26 >> 14, var24 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+									var26 += var38;
+									var24 += var36;
+									var10 += var41;
+									var27 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							}
+						} else {
+							var25 = var24 <<= 14;
+							if (var27 < 0) {
+								var25 -= var38 * var27;
+								var24 -= var36 * var27;
+								var10 -= var41 * var27;
+								var27 = 0;
+							}
+
+							var26 <<= 14;
+							if (var29 < 0) {
+								var26 -= var37 * var29;
+								var29 = 0;
+							}
+
+							var55 = var27 - var54;
+							var43 += var45 * var55;
+							var46 += var48 * var55;
+							var49 += var51 * var55;
+							if (var27 != var29 && var38 < var36 || var27 == var29 && var37 > var36) {
+								var28 -= var29;
+								var29 -= var27;
+								var27 = var52[var27];
+
+								while (true) {
+									--var29;
+									if (var29 < 0) {
+										while (true) {
+											--var28;
+											if (var28 < 0) {
+												return;
+											}
+
+											this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var26 >> 14, var24 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+											var26 += var37;
+											var24 += var36;
+											var10 += var41;
+											var27 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var25 >> 14, var24 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+									var25 += var38;
+									var24 += var36;
+									var10 += var41;
+									var27 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							} else {
+								var28 -= var29;
+								var29 -= var27;
+								var27 = var52[var27];
+
+								while (true) {
+									--var29;
+									if (var29 < 0) {
+										while (true) {
+											--var28;
+											if (var28 < 0) {
+												return;
+											}
+
+											this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var24 >> 14, var26 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+											var26 += var37;
+											var24 += var36;
+											var10 += var41;
+											var27 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var27, var24 >> 14, var25 >> 14, var10, var40, var43, var46, var49, var44, var47, var50);
+									var25 += var38;
+									var24 += var36;
+									var10 += var41;
+									var27 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							}
+						}
+					}
+				} else if (var28 <= var29) {
+					if (var28 < var53) {
+						if (var29 > var53) {
+							var29 = var53;
+						}
+
+						if (var27 > var53) {
+							var27 = var53;
+						}
+
+						var11 = (var11 << 9) - var40 * var25 + var40;
+						if (var29 < var27) {
+							var24 = var25 <<= 14;
+							if (var28 < 0) {
+								var24 -= var36 * var28;
+								var25 -= var37 * var28;
+								var11 -= var41 * var28;
+								var28 = 0;
+							}
+
+							var26 <<= 14;
+							if (var29 < 0) {
+								var26 -= var38 * var29;
+								var29 = 0;
+							}
+
+							var55 = var28 - var54;
+							var43 += var45 * var55;
+							var46 += var48 * var55;
+							var49 += var51 * var55;
+							if ((var28 == var29 || var36 >= var37) && (var28 != var29 || var36 <= var38)) {
+								var27 -= var29;
+								var29 -= var28;
+								var28 = var52[var28];
+
+								while (true) {
+									--var29;
+									if (var29 < 0) {
+										while (true) {
+											--var27;
+											if (var27 < 0) {
+												return;
+											}
+
+											this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var26 >> 14, var24 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+											var24 += var36;
+											var26 += var38;
+											var11 += var41;
+											var28 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var25 >> 14, var24 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+									var24 += var36;
+									var25 += var37;
+									var11 += var41;
+									var28 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							} else {
+								var27 -= var29;
+								var29 -= var28;
+								var28 = var52[var28];
+
+								while (true) {
+									--var29;
+									if (var29 < 0) {
+										while (true) {
+											--var27;
+											if (var27 < 0) {
+												return;
+											}
+
+											this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var24 >> 14, var26 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+											var24 += var36;
+											var26 += var38;
+											var11 += var41;
+											var28 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var24 >> 14, var25 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+									var24 += var36;
+									var25 += var37;
+									var11 += var41;
+									var28 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							}
+						} else {
+							var26 = var25 <<= 14;
+							if (var28 < 0) {
+								var26 -= var36 * var28;
+								var25 -= var37 * var28;
+								var11 -= var41 * var28;
+								var28 = 0;
+							}
+
+							var24 <<= 14;
+							if (var27 < 0) {
+								var24 -= var38 * var27;
+								var27 = 0;
+							}
+
+							var55 = var28 - var54;
+							var43 += var45 * var55;
+							var46 += var48 * var55;
+							var49 += var51 * var55;
+							if (var36 < var37) {
+								var29 -= var27;
+								var27 -= var28;
+								var28 = var52[var28];
+
+								while (true) {
+									--var27;
+									if (var27 < 0) {
+										while (true) {
+											--var29;
+											if (var29 < 0) {
+												return;
+											}
+
+											this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var24 >> 14, var25 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+											var24 += var38;
+											var25 += var37;
+											var11 += var41;
+											var28 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var26 >> 14, var25 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+									var26 += var36;
+									var25 += var37;
+									var11 += var41;
+									var28 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							} else {
+								var29 -= var27;
+								var27 -= var28;
+								var28 = var52[var28];
+
+								while (true) {
+									--var27;
+									if (var27 < 0) {
+										while (true) {
+											--var29;
+											if (var29 < 0) {
+												return;
+											}
+
+											this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var25 >> 14, var24 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+											var24 += var38;
+											var25 += var37;
+											var11 += var41;
+											var28 += Rasterizer2D.Rasterizer2D_width;
+											var43 += var45;
+											var46 += var48;
+											var49 += var51;
+										}
+									}
+
+									this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var28, var25 >> 14, var26 >> 14, var11, var40, var43, var46, var49, var44, var47, var50);
+									var26 += var36;
+									var25 += var37;
+									var11 += var41;
+									var28 += Rasterizer2D.Rasterizer2D_width;
+									var43 += var45;
+									var46 += var48;
+									var49 += var51;
+								}
+							}
+						}
+					}
+				} else if (var29 < var53) {
+					if (var27 > var53) {
+						var27 = var53;
+					}
+
+					if (var28 > var53) {
+						var28 = var53;
+					}
+
+					var12 = var40 + ((var12 << 9) - var40 * var26);
+					if (var27 < var28) {
+						var25 = var26 <<= 14;
+						if (var29 < 0) {
+							var25 -= var37 * var29;
+							var26 -= var38 * var29;
+							var12 -= var41 * var29;
+							var29 = 0;
+						}
+
+						var24 <<= 14;
+						if (var27 < 0) {
+							var24 -= var36 * var27;
+							var27 = 0;
+						}
+
+						var55 = var29 - var54;
+						var43 += var45 * var55;
+						var46 += var48 * var55;
+						var49 += var51 * var55;
+						if (var37 < var38) {
+							var28 -= var27;
+							var27 -= var29;
+							var29 = var52[var29];
+
+							while (true) {
+								--var27;
+								if (var27 < 0) {
+									while (true) {
+										--var28;
+										if (var28 < 0) {
+											return;
+										}
+
+										this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var25 >> 14, var24 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+										var25 += var37;
+										var24 += var36;
+										var12 += var41;
+										var29 += Rasterizer2D.Rasterizer2D_width;
+										var43 += var45;
+										var46 += var48;
+										var49 += var51;
+									}
+								}
+
+								this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var25 >> 14, var26 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+								var25 += var37;
+								var26 += var38;
+								var12 += var41;
+								var29 += Rasterizer2D.Rasterizer2D_width;
+								var43 += var45;
+								var46 += var48;
+								var49 += var51;
+							}
+						} else {
+							var28 -= var27;
+							var27 -= var29;
+							var29 = var52[var29];
+
+							while (true) {
+								--var27;
+								if (var27 < 0) {
+									while (true) {
+										--var28;
+										if (var28 < 0) {
+											return;
+										}
+
+										this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var24 >> 14, var25 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+										var25 += var37;
+										var24 += var36;
+										var12 += var41;
+										var29 += Rasterizer2D.Rasterizer2D_width;
+										var43 += var45;
+										var46 += var48;
+										var49 += var51;
+									}
+								}
+
+								this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var26 >> 14, var25 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+								var25 += var37;
+								var26 += var38;
+								var12 += var41;
+								var29 += Rasterizer2D.Rasterizer2D_width;
+								var43 += var45;
+								var46 += var48;
+								var49 += var51;
+							}
+						}
+					} else {
+						var24 = var26 <<= 14;
+						if (var29 < 0) {
+							var24 -= var37 * var29;
+							var26 -= var38 * var29;
+							var12 -= var41 * var29;
+							var29 = 0;
+						}
+
+						var25 <<= 14;
+						if (var28 < 0) {
+							var25 -= var36 * var28;
+							var28 = 0;
+						}
+
+						var55 = var29 - var54;
+						var43 += var45 * var55;
+						var46 += var48 * var55;
+						var49 += var51 * var55;
+						if (var37 < var38) {
+							var27 -= var28;
+							var28 -= var29;
+							var29 = var52[var29];
+
+							while (true) {
+								--var28;
+								if (var28 < 0) {
+									while (true) {
+										--var27;
+										if (var27 < 0) {
+											return;
+										}
+
+										this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var25 >> 14, var26 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+										var25 += var36;
+										var26 += var38;
+										var12 += var41;
+										var29 += Rasterizer2D.Rasterizer2D_width;
+										var43 += var45;
+										var46 += var48;
+										var49 += var51;
+									}
+								}
+
+								this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var24 >> 14, var26 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+								var24 += var37;
+								var26 += var38;
+								var12 += var41;
+								var29 += Rasterizer2D.Rasterizer2D_width;
+								var43 += var45;
+								var46 += var48;
+								var49 += var51;
+							}
+						} else {
+							var27 -= var28;
+							var28 -= var29;
+							var29 = var52[var29];
+
+							while (true) {
+								--var28;
+								if (var28 < 0) {
+									while (true) {
+										--var27;
+										if (var27 < 0) {
+											return;
+										}
+
+										this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var26 >> 14, var25 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+										var25 += var36;
+										var26 += var38;
+										var12 += var41;
+										var29 += Rasterizer2D.Rasterizer2D_width;
+										var43 += var45;
+										var46 += var48;
+										var49 += var51;
+									}
+								}
+
+								this.drawPixels(Rasterizer2D.Rasterizer2D_pixels, var23, 0, 0, var29, var26 >> 14, var24 >> 14, var12, var40, var43, var46, var49, var44, var47, var50);
+								var24 += var37;
+								var26 += var38;
+								var12 += var41;
+								var29 += Rasterizer2D.Rasterizer2D_width;
+								var43 += var45;
+								var46 += var48;
+								var49 += var51;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
-	@ObfuscatedName("bp")
-	final void method5716(int[] var1, float[] var2, int[] var3, int var4, int var5, int var6, int var7, float var8) {
-		int var9 = var3[(var7 & 16256) + (var7 >>> 25)];
-		if (var9 != 0) {
-			var9 = ((var9 & 16711935) * var6 & -16711936 | (var9 & 65280) * var6 & 16711680) >> 8;
-			int var10 = var1[var4];
-			var9 += ((var10 & 16711935) * var5 & -16711936 | var5 * (var10 & 65280) & 16711680) >> 8;
-			int var11 = super.field2619.field2956 & method5711(var2[var4], var8);
-			var1[var4] = (var11 & var9) + (~var11 & var10);
-		}
-	}
-
-	@ObfuscatedName("bz")
-	final void method5717(int[] var1, float[] var2, int var3, int var4, float var5) {
-		this.method5712(var1, var2, var3, var4, var5, method5711(var2[var3], var5));
-	}
-
-	@ObfuscatedName("bk")
-	final void method5734(int[] var1, float[] var2, int var3, int var4, float var5) {
-		this.method5712(var1, var2, var3, super.field2611[var4], var5, method5711(var2[var3], var5));
-	}
-
-	@ObfuscatedName("bb")
-	final void method5751(int[] var1, float[] var2, int var3, int var4, int var5, float var6) {
-		int var7 = var1[var3];
-		var4 = ((var7 & 16711935) * var5 >> 8 & 16711935) + var4 + (var5 * (var7 & 65280) >> 8 & 65280);
-		int var8 = super.field2619.field2956 & method5711(var2[var3], var6);
-		var1[var3] = (~var8 & var7) + (var8 & var4);
-	}
-
-	@ObfuscatedName("by")
-	final void method5720(int[] var1, float[] var2, int var3, int var4, int var5, int var6, float var7) {
-		int var8 = super.field2611[var4];
-		var8 = ((var8 & 65280) * var6 >> 8 & 65280) + ((var8 & 16711935) * var6 >> 8 & 16711935);
-		int var9 = var1[var3];
-		var8 = var8 + ((var9 & 16711935) * var5 >> 8 & 16711935) + (var5 * (var9 & 65280) >> 8 & 65280);
-		int var10 = super.field2619.field2956 & method5711(var2[var3], var7);
-		var1[var3] = (var10 & var8) + (~var10 & var9);
-	}
-
-	@ObfuscatedName("cg")
-	float method5721(float var1, float var2, float var3, float var4, float var5) {
-		var3 = var3 - var4 * var1 + var4;
-		if (var2 < 0.0F) {
-			var3 -= var5 * (float)((int)var2);
-		}
-
-		var3 -= var5 * (var2 - (float)((int)(var2 + 0.5F)));
-		return var3;
-	}
-
-	@ObfuscatedName("cs")
-	final void method5724(int[] var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8, float var9, float var10) {
-		if (super.field2619.clipping) {
-			if (var6 > super.field2619.clipX) {
-				var6 = super.field2619.clipX;
+	@ObfuscatedName("bv")
+	@Export("Rasterizer3D_vertAlpha")
+	final void Rasterizer3D_vertAlpha(int[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		if (super.field2668.clipping) {
+			if (var6 > super.field2668.clipX) {
+				var6 = super.field2668.clipX;
 			}
 
 			if (var5 < 0) {
@@ -2135,84 +2270,69 @@ public class class246 extends AbstractRasterizer {
 		}
 
 		if (var5 < var6) {
-			var2 += var5 - 1;
-			var7 += var8 * (float)var5;
-			var9 += var10 * (float)var5;
+			var2 += var5;
+			var7 += var5 * var8;
+			int var9;
+			int var10;
 			int var11;
 			int var12;
-			if (super.field2619.rasterGouraudLowRes) {
+			if (super.field2668.rasterGouraudLowRes) {
 				var4 = var6 - var5 >> 2;
-				var8 *= 4.0F;
-				if (super.field2619.currentFaceAlpha == 0) {
+				var8 <<= 2;
+				if (super.field2668.currentFaceAlpha == 0) {
 					if (var4 > 0) {
 						do {
-							var11 = (int)var7 & 65535;
-							var3 = super.field2611[var11];
+							var9 = (var7 & ~(var7 >> 31)) >> 8;
+							var3 = super.field2667[var9];
 							var7 += var8;
-							++var2;
-							this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9);
-							var9 += var10;
-							++var2;
-							this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9);
-							var9 += var10;
-							++var2;
-							this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9);
-							var9 += var10;
-							++var2;
-							this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9);
-							var9 += var10;
+							var1[var2++] = var3;
+							var1[var2++] = var3;
+							var1[var2++] = var3;
+							var1[var2++] = var3;
 							--var4;
 						} while(var4 > 0);
 					}
 
 					var4 = var6 - var5 & 3;
 					if (var4 > 0) {
-						var11 = (int)var7 & 65535;
-						var3 = super.field2611[var11];
+						var9 = (var7 & ~(var7 >> 31)) >> 8;
+						var3 = super.field2667[var9];
 
 						do {
-							++var2;
-							this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9);
-							var9 += var10;
+							var1[var2++] = var3;
 							--var4;
 						} while(var4 > 0);
 					}
 				} else {
-					var11 = super.field2619.currentFaceAlpha;
-					var12 = 256 - super.field2619.currentFaceAlpha;
-					int var13;
+					var9 = super.field2668.currentFaceAlpha;
+					var10 = 256 - super.field2668.currentFaceAlpha;
 					if (var4 > 0) {
 						do {
-							var13 = (int)var7 & 65535;
-							var3 = super.field2611[var13];
+							var11 = (var7 & ~(var7 >> 31)) >> 8;
+							var3 = super.field2667[var11];
 							var7 += var8;
-							var3 = ((var3 & 16711935) * var12 >> 8 & 16711935) + (var12 * (var3 & 65280) >> 8 & 65280);
-							++var2;
-							this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var11, var9);
-							var9 += var10;
-							++var2;
-							this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var11, var9);
-							var9 += var10;
-							++var2;
-							this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var11, var9);
-							var9 += var10;
-							++var2;
-							this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var11, var9);
-							var9 += var10;
+							var3 = ((var3 & 16711935) * var10 >> 8 & 16711935) + (var10 * (var3 & 65280) >> 8 & 65280);
+							var12 = var1[var2];
+							var1[var2++] = var3 + ((var12 & 16711935) * var9 >> 8 & 16711935) + (var9 * (var12 & 65280) >> 8 & 65280);
+							var12 = var1[var2];
+							var1[var2++] = var3 + ((var12 & 16711935) * var9 >> 8 & 16711935) + (var9 * (var12 & 65280) >> 8 & 65280);
+							var12 = var1[var2];
+							var1[var2++] = var3 + ((var12 & 16711935) * var9 >> 8 & 16711935) + (var9 * (var12 & 65280) >> 8 & 65280);
+							var12 = var1[var2];
+							var1[var2++] = var3 + ((var12 & 16711935) * var9 >> 8 & 16711935) + (var9 * (var12 & 65280) >> 8 & 65280);
 							--var4;
 						} while(var4 > 0);
 					}
 
 					var4 = var6 - var5 & 3;
 					if (var4 > 0) {
-						var13 = (int)var7 & 65535;
-						var3 = super.field2611[var13];
-						var3 = ((var3 & 16711935) * var12 >> 8 & 16711935) + (var12 * (var3 & 65280) >> 8 & 65280);
+						var11 = (var7 & ~(var7 >> 31)) >> 8;
+						var3 = super.field2667[var11];
+						var3 = ((var3 & 16711935) * var10 >> 8 & 16711935) + (var10 * (var3 & 65280) >> 8 & 65280);
 
 						do {
-							++var2;
-							this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var11, var9);
-							var9 += var10;
+							var12 = var1[var2];
+							var1[var2++] = var3 + ((var12 & 16711935) * var9 >> 8 & 16711935) + (var9 * (var12 & 65280) >> 8 & 65280);
 							--var4;
 						} while(var4 > 0);
 					}
@@ -2220,23 +2340,24 @@ public class class246 extends AbstractRasterizer {
 
 			} else {
 				var4 = var6 - var5;
-				if (super.field2619.currentFaceAlpha == 0) {
+				if (super.field2668.currentFaceAlpha == 0) {
 					do {
-						++var2;
-						this.method5734(var1, Rasterizer2D.Rasterizer2D_brightness, var2, (int)var7 & 65535, var9);
-						var9 += var10;
+						var9 = (var7 & ~(var7 >> 31)) >> 8;
+						var1[var2++] = super.field2667[var9];
 						var7 += var8;
 						--var4;
 					} while(var4 > 0);
 				} else {
-					var11 = super.field2619.currentFaceAlpha;
-					var12 = 256 - super.field2619.currentFaceAlpha;
+					var9 = super.field2668.currentFaceAlpha;
+					var10 = 256 - super.field2668.currentFaceAlpha;
 
 					do {
-						++var2;
-						this.method5720(var1, Rasterizer2D.Rasterizer2D_brightness, var2, (int)var7 & 65535, var11, var12, var9);
-						var9 += var10;
+						var11 = (var7 & ~(var7 >> 31)) >> 8;
+						var3 = super.field2667[var11];
 						var7 += var8;
+						var3 = ((var3 & 16711935) * var10 >> 8 & 16711935) + (var10 * (var3 & 65280) >> 8 & 65280);
+						var12 = var1[var2];
+						var1[var2++] = var3 + ((var12 & 16711935) * var9 >> 8 & 16711935) + (var9 * (var12 & 65280) >> 8 & 65280);
 						--var4;
 					} while(var4 > 0);
 				}
@@ -2245,12 +2366,12 @@ public class class246 extends AbstractRasterizer {
 		}
 	}
 
-	@ObfuscatedName("ce")
-	@Export("copyPixelsWithAlphaBlending")
-	final void copyPixelsWithAlphaBlending(int[] var1, int var2, int var3, int var4, int var5, int var6, float var7, float var8) {
-		if (super.field2619.clipping) {
-			if (var6 > super.field2619.clipX) {
-				var6 = super.field2619.clipX;
+	@ObfuscatedName("bj")
+	@Export("applyColorFilterToPixelsInRange")
+	void applyColorFilterToPixelsInRange(int[] var1, int var2, int var3, int var4, int var5, int var6) {
+		if (super.field2668.clipping) {
+			if (var6 > super.field2668.clipX) {
+				var6 = super.field2668.clipX;
 			}
 
 			if (var5 < 0) {
@@ -2259,45 +2380,63 @@ public class class246 extends AbstractRasterizer {
 		}
 
 		if (var5 < var6) {
-			var2 += var5 - 1;
+			var2 += var5;
 			var4 = var6 - var5 >> 2;
-			var7 += var8 * (float)var5;
-			if (super.field2619.currentFaceAlpha == 0) {
-				while (true) {
-					--var4;
-					if (var4 < 0) {
-						var4 = var6 - var5 & 3;
+			if (super.field2668.currentFaceAlpha != 0) {
+				if (super.field2668.currentFaceAlpha == 254) {
+					while (true) {
+						--var4;
+						if (var4 < 0) {
+							var4 = var6 - var5 & 3;
 
-						while (true) {
-							--var4;
-							if (var4 < 0) {
-								return;
+							while (true) {
+								--var4;
+								if (var4 < 0) {
+									return;
+								}
+
+								var1[var2++] = var1[var2];
 							}
-
-							++var2;
-							this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var7);
-							var7 += var8;
 						}
-					}
 
-					++var2;
-					this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var7);
-					var7 += var8;
-					++var2;
-					this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var7);
-					var7 += var8;
-					++var2;
-					this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var7);
-					var7 += var8;
-					++var2;
-					this.method5717(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var7);
-					var7 += var8;
+						var1[var2++] = var1[var2];
+						var1[var2++] = var1[var2];
+						var1[var2++] = var1[var2];
+						var1[var2++] = var1[var2];
+					}
+				} else {
+					int var7 = super.field2668.currentFaceAlpha;
+					int var8 = 256 - super.field2668.currentFaceAlpha;
+					var3 = ((var3 & 16711935) * var8 >> 8 & 16711935) + (var8 * (var3 & 65280) >> 8 & 65280);
+
+					while (true) {
+						--var4;
+						int var9;
+						if (var4 < 0) {
+							var4 = var6 - var5 & 3;
+
+							while (true) {
+								--var4;
+								if (var4 < 0) {
+									return;
+								}
+
+								var9 = var1[var2];
+								var1[var2++] = var3 + ((var9 & 16711935) * var7 >> 8 & 16711935) + (var7 * (var9 & 65280) >> 8 & 65280);
+							}
+						}
+
+						var9 = var1[var2];
+						var1[var2++] = var3 + ((var9 & 16711935) * var7 >> 8 & 16711935) + (var7 * (var9 & 65280) >> 8 & 65280);
+						var9 = var1[var2];
+						var1[var2++] = var3 + ((var9 & 16711935) * var7 >> 8 & 16711935) + (var7 * (var9 & 65280) >> 8 & 65280);
+						var9 = var1[var2];
+						var1[var2++] = var3 + ((var9 & 16711935) * var7 >> 8 & 16711935) + (var7 * (var9 & 65280) >> 8 & 65280);
+						var9 = var1[var2];
+						var1[var2++] = var3 + ((var9 & 16711935) * var7 >> 8 & 16711935) + (var7 * (var9 & 65280) >> 8 & 65280);
+					}
 				}
-			} else if (super.field2619.currentFaceAlpha != 254) {
-				int var9 = super.field2619.currentFaceAlpha;
-				int var10 = 256 - super.field2619.currentFaceAlpha;
-				var3 = ((var3 & 16711935) * var10 >> 8 & 16711935) + (var10 * (var3 & 65280) >> 8 & 65280);
-
+			} else {
 				while (true) {
 					--var4;
 					if (var4 < 0) {
@@ -2309,65 +2448,25 @@ public class class246 extends AbstractRasterizer {
 								return;
 							}
 
-							++var2;
-							this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9, var7);
-							var7 += var8;
+							var1[var2++] = var3;
 						}
 					}
 
-					++var2;
-					this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9, var7);
-					var7 += var8;
-					++var2;
-					this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9, var7);
-					var7 += var8;
-					++var2;
-					this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9, var7);
-					var7 += var8;
-					++var2;
-					this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var3, var9, var7);
-					var7 += var8;
-				}
-			} else if (var5 != 0 && var6 <= super.field2619.clipX - 1) {
-				while (true) {
-					--var4;
-					if (var4 < 0) {
-						var4 = var6 - var5 & 3;
-
-						while (true) {
-							--var4;
-							if (var4 < 0) {
-								return;
-							}
-
-							++var2;
-							this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2 - 1, var1[var2], 0, var7);
-							var7 += var8;
-						}
-					}
-
-					++var2;
-					this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2 - 1, var1[var2], 0, var7);
-					var7 += var8;
-					++var2;
-					this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2 - 1, var1[var2], 0, var7);
-					var7 += var8;
-					++var2;
-					this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2 - 1, var1[var2], 0, var7);
-					var7 += var8;
-					++var2;
-					this.method5751(var1, Rasterizer2D.Rasterizer2D_brightness, var2 - 1, var1[var2], 0, var7);
-					var7 += var8;
+					var1[var2++] = var3;
+					var1[var2++] = var3;
+					var1[var2++] = var3;
+					var1[var2++] = var3;
 				}
 			}
 		}
 	}
 
-	@ObfuscatedName("ci")
-	final void method5728(int[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, float var10, float var11, int var12, int var13, int var14, int var15, int var16, int var17) {
-		if (super.field2619.clipping) {
-			if (var7 > super.field2619.clipX) {
-				var7 = super.field2619.clipX;
+	@ObfuscatedName("bm")
+	@Export("processPixelsToArray")
+	void processPixelsToArray(int[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15) {
+		if (super.field2668.clipping) {
+			if (var7 > super.field2668.clipX) {
+				var7 = super.field2668.clipX;
 			}
 
 			if (var6 < 0) {
@@ -2378,18 +2477,36 @@ public class class246 extends AbstractRasterizer {
 		if (var6 < var7) {
 			var5 += var6;
 			var8 += var9 * var6;
-			var10 += var11 * (float)var6;
-			int var20 = var7 - var6;
-			int var26 = var6 - super.field2619.clipMidX;
-			var12 += (var15 >> 3) * var26;
-			var13 += var26 * (var16 >> 3);
-			var14 += var26 * (var17 >> 3);
-			int var25 = var14 >> 14;
+			int var18 = var7 - var6;
+			int var24 = var6 - super.field2668.clipMidX;
+			var10 += (var13 >> 3) * var24;
+			var11 += var24 * (var14 >> 3);
+			var12 += (var15 >> 3) * var24;
+			int var23 = var12 >> 14;
+			int var19;
+			int var20;
+			if (var23 != 0) {
+				var19 = var10 / var23;
+				var20 = var11 / var23;
+				if (var19 < 0) {
+					var19 = 0;
+				} else if (var19 > 16256) {
+					var19 = 16256;
+				}
+			} else {
+				var19 = 0;
+				var20 = 0;
+			}
+
+			var10 += var13;
+			var11 += var14;
+			var12 += var15;
+			var23 = var12 >> 14;
 			int var21;
 			int var22;
-			if (var25 != 0) {
-				var21 = var12 / var25;
-				var22 = var13 / var25;
+			if (var23 != 0) {
+				var21 = var10 / var23;
+				var22 = var11 / var23;
 				if (var21 < 0) {
 					var21 = 0;
 				} else if (var21 > 16256) {
@@ -2400,306 +2517,377 @@ public class class246 extends AbstractRasterizer {
 				var22 = 0;
 			}
 
-			var12 += var15;
-			var13 += var16;
-			var14 += var17;
-			var25 = var14 >> 14;
-			int var23;
-			int var24;
-			if (var25 != 0) {
-				var23 = var12 / var25;
-				var24 = var13 / var25;
-				if (var23 < 0) {
-					var23 = 0;
-				} else if (var23 > 16256) {
-					var23 = 16256;
-				}
-			} else {
-				var23 = 0;
-				var24 = 0;
-			}
-
-			var3 = (var21 << 18) + var22;
-			int var19 = (var24 - var22 >> 3) + (var23 - var21 >> 3 << 18);
-			var20 >>= 3;
+			var3 = (var19 << 18) + var20;
+			int var17 = (var22 - var20 >> 3) + (var21 - var19 >> 3 << 18);
+			var18 >>= 3;
 			var9 <<= 3;
-			int var18 = var8 >> 8;
+			int var16 = var8 >> 8;
 			int var10000;
+			int var25;
+			int var26;
 			int var27;
 			int var28;
-			int var29;
-			if (super.field2617) {
-				if (super.field2619.currentFaceAlpha != 0) {
-					var27 = super.field2619.currentFaceAlpha;
-					var28 = 256 - super.field2619.currentFaceAlpha;
-
-					for (var29 = var18 * var28 >> 8; var20-- > 0; var18 = var8 >> 8) {
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var10000 = var3 + var19;
-						var10 += var11;
-						var21 = var23;
-						var22 = var24;
-						var12 += var15;
-						var13 += var16;
-						var14 += var17;
-						var25 = var14 >> 14;
-						if (var25 != 0) {
-							var23 = var12 / var25;
-							var24 = var13 / var25;
-							if (var23 < 0) {
-								var23 = 0;
-							} else if (var23 > 16256) {
-								var23 = 16256;
+			if (super.field2659) {
+				if (super.field2668.currentFaceAlpha == 0) {
+					if (var18 > 0) {
+						do {
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var10000 = var3 + var17;
+							var19 = var21;
+							var20 = var22;
+							var10 += var13;
+							var11 += var14;
+							var12 += var15;
+							var23 = var12 >> 14;
+							if (var23 != 0) {
+								var21 = var10 / var23;
+								var22 = var11 / var23;
+								if (var21 < 0) {
+									var21 = 0;
+								} else if (var21 > 16256) {
+									var21 = 16256;
+								}
+							} else {
+								var21 = 0;
+								var22 = 0;
 							}
-						} else {
-							var23 = 0;
-							var24 = 0;
-						}
 
-						var3 = (var21 << 18) + var22;
-						var19 = (var24 - var22 >> 3) + (var23 - var21 >> 3 << 18);
-						var8 += var9;
+							var3 = (var19 << 18) + var20;
+							var17 = (var22 - var20 >> 3) + (var21 - var19 >> 3 << 18);
+							var8 += var9;
+							var16 = var8 >> 8;
+							--var18;
+						} while(var18 > 0);
 					}
 
-					for (var20 = var7 - var6 & 7; var20-- > 0; var10 += var11) {
-						this.method5714(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-						++var5;
-						var3 += var19;
+					var18 = var7 - var6 & 7;
+					if (var18 > 0) {
+						do {
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+							var3 += var17;
+							--var18;
+						} while(var18 > 0);
 					}
 				} else {
-					while (var20-- > 0) {
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
+					var25 = super.field2668.currentFaceAlpha;
+					var26 = 256 - super.field2668.currentFaceAlpha;
+					var27 = var16 * var26 >> 8;
+					if (var18 > 0) {
+						do {
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var3 += var17;
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var10000 = var3 + var17;
+							var19 = var21;
+							var20 = var22;
+							var10 += var13;
+							var11 += var14;
+							var12 += var15;
+							var23 = var12 >> 14;
+							if (var23 != 0) {
+								var21 = var10 / var23;
+								var22 = var11 / var23;
+								if (var21 < 0) {
+									var21 = 0;
+								} else if (var21 > 16256) {
+									var21 = 16256;
+								}
+							} else {
+								var21 = 0;
+								var22 = 0;
+							}
+
+							var3 = (var19 << 18) + var20;
+							var17 = (var22 - var20 >> 3) + (var21 - var19 >> 3 << 18);
+							var8 += var9;
+							var16 = var8 >> 8;
+							--var18;
+						} while(var18 > 0);
+					}
+
+					var18 = var7 - var6 & 7;
+					if (var18 > 0) {
+						do {
+							var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5++] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+							var3 += var17;
+							--var18;
+						} while(var18 > 0);
+					}
+				}
+			} else if (super.field2668.currentFaceAlpha == 0) {
+				if (var18 > 0) {
+					do {
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
 						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
 						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
 						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
 						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
 						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
 						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
 						++var5;
-						var3 += var19;
-						var10 += var11;
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
 						++var5;
-						var10000 = var3 + var19;
-						var10 += var11;
-						var21 = var23;
-						var22 = var24;
+						var10000 = var3 + var17;
+						var19 = var21;
+						var20 = var22;
+						var10 += var13;
+						var11 += var14;
 						var12 += var15;
-						var13 += var16;
-						var14 += var17;
-						var25 = var14 >> 14;
-						if (var25 != 0) {
-							var23 = var12 / var25;
-							var24 = var13 / var25;
-							if (var23 < 0) {
-								var23 = 0;
-							} else if (var23 > 16256) {
-								var23 = 16256;
+						var23 = var12 >> 14;
+						if (var23 != 0) {
+							var21 = var10 / var23;
+							var22 = var11 / var23;
+							if (var21 < 0) {
+								var21 = 0;
+							} else if (var21 > 16256) {
+								var21 = 16256;
 							}
 						} else {
-							var23 = 0;
-							var24 = 0;
+							var21 = 0;
+							var22 = 0;
 						}
 
-						var3 = (var21 << 18) + var22;
-						var19 = (var24 - var22 >> 3) + (var23 - var21 >> 3 << 18);
+						var3 = (var19 << 18) + var20;
+						var17 = (var22 - var20 >> 3) + (var21 - var19 >> 3 << 18);
 						var8 += var9;
-						var18 = var8 >> 8;
-					}
-
-					for (var20 = var7 - var6 & 7; var20-- > 0; var10 += var11) {
-						this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-						++var5;
-						var3 += var19;
-					}
+						var16 = var8 >> 8;
+						--var18;
+					} while(var18 > 0);
 				}
-			} else if (super.field2619.currentFaceAlpha != 0) {
-				var27 = super.field2619.currentFaceAlpha;
-				var28 = 256 - super.field2619.currentFaceAlpha;
 
-				for (var29 = var18 * var28 >> 8; var20-- > 0; var18 = var8 >> 8) {
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var10000 = var3 + var19;
-					var10 += var11;
-					var21 = var23;
-					var22 = var24;
-					var12 += var15;
-					var13 += var16;
-					var14 += var17;
-					var25 = var14 >> 14;
-					if (var25 != 0) {
-						var23 = var12 / var25;
-						var24 = var13 / var25;
-						if (var23 < 0) {
-							var23 = 0;
-						} else if (var23 > 16256) {
-							var23 = 16256;
+				var18 = var7 - var6 & 7;
+				if (var18 > 0) {
+					do {
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
 						}
-					} else {
-						var23 = 0;
-						var24 = 0;
-					}
 
-					var3 = (var21 << 18) + var22;
-					var19 = (var24 - var22 >> 3) + (var23 - var21 >> 3 << 18);
-					var8 += var9;
-				}
-
-				for (var20 = var7 - var6 & 7; var20-- > 0; var10 += var11) {
-					this.method5716(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var27, var29, var3, var10);
-					++var5;
-					var3 += var19;
+						++var5;
+						var3 += var17;
+						--var18;
+					} while(var18 > 0);
 				}
 			} else {
-				while (var20-- > 0) {
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var10000 = var3 + var19;
-					var10 += var11;
-					var21 = var23;
-					var22 = var24;
-					var12 += var15;
-					var13 += var16;
-					var14 += var17;
-					var25 = var14 >> 14;
-					if (var25 != 0) {
-						var23 = var12 / var25;
-						var24 = var13 / var25;
-						if (var23 < 0) {
-							var23 = 0;
-						} else if (var23 > 16256) {
-							var23 = 16256;
+				var25 = super.field2668.currentFaceAlpha;
+				var26 = 256 - super.field2668.currentFaceAlpha;
+				var27 = var16 * var26 >> 8;
+				if (var18 > 0) {
+					do {
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
 						}
-					} else {
-						var23 = 0;
-						var24 = 0;
-					}
 
-					var3 = (var21 << 18) + var22;
-					var19 = (var24 - var22 >> 3) + (var23 - var21 >> 3 << 18);
-					var8 += var9;
-					var18 = var8 >> 8;
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+						}
+
+						++var5;
+						var10000 = var3 + var17;
+						var19 = var21;
+						var20 = var22;
+						var10 += var13;
+						var11 += var14;
+						var12 += var15;
+						var23 = var12 >> 14;
+						if (var23 != 0) {
+							var21 = var10 / var23;
+							var22 = var11 / var23;
+							if (var21 < 0) {
+								var21 = 0;
+							} else if (var21 > 16256) {
+								var21 = 16256;
+							}
+						} else {
+							var21 = 0;
+							var22 = 0;
+						}
+
+						var3 = (var19 << 18) + var20;
+						var17 = (var22 - var20 >> 3) + (var21 - var19 >> 3 << 18);
+						var8 += var9;
+						var16 = var8 >> 8;
+						--var18;
+					} while(var18 > 0);
 				}
 
-				for (var20 = var7 - var6 & 7; var20-- > 0; var10 += var11) {
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
+				var18 = var7 - var6 & 7;
+				if (var18 > 0) {
+					do {
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var4 = (var27 * (var4 & 16711935) & -16711936 | var27 * (var4 & 65280) & 16711680) >> 8;
+							var28 = var1[var5];
+							var1[var5] = var4 + (((var28 & 16711935) * var25 & -16711936 | var25 * (var28 & 65280) & 16711680) >> 8);
+						}
+
+						++var5;
+						var3 += var17;
+						--var18;
+					} while(var18 > 0);
 				}
 			}
 
 		}
 	}
 
-	@ObfuscatedName("cq")
-	final void method5730(int[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, float var10, float var11, int var12, int var13, int var14, int var15, int var16, int var17) {
-		if (super.field2619.clipping) {
-			if (var7 > super.field2619.clipX) {
-				var7 = super.field2619.clipX;
+	@ObfuscatedName("bf")
+	@Export("drawPixels")
+	void drawPixels(int[] var1, int[] var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, int var13, int var14, int var15) {
+		if (super.field2668.clipping) {
+			if (var7 > super.field2668.clipX) {
+				var7 = super.field2668.clipX;
 			}
 
 			if (var6 < 0) {
@@ -2710,135 +2898,154 @@ public class class246 extends AbstractRasterizer {
 		if (var6 < var7) {
 			var5 += var6;
 			var8 += var9 * var6;
-			var10 += var11 * (float)var6;
-			int var20 = var7 - var6;
-			int var26 = var6 - super.field2619.clipMidX;
-			var12 += var26 * var15;
-			var13 += var26 * var16;
-			var14 += var17 * var26;
-			int var25 = var14 >> 14;
+			int var18 = var7 - var6;
+			int var24 = var6 - super.field2668.clipMidX;
+			var10 += var13 * var24;
+			var11 += var24 * var14;
+			var12 += var24 * var15;
+			int var23 = var12 >> 14;
+			int var19;
+			int var20;
+			if (var23 != 0) {
+				var19 = var10 / var23;
+				var20 = var11 / var23;
+			} else {
+				var19 = 0;
+				var20 = 0;
+			}
+
+			var10 += var13 * var18;
+			var11 += var18 * var14;
+			var12 += var18 * var15;
+			var23 = var12 >> 14;
 			int var21;
 			int var22;
-			if (var25 != 0) {
-				var21 = var12 / var25;
-				var22 = var13 / var25;
+			if (var23 != 0) {
+				var21 = var10 / var23;
+				var22 = var11 / var23;
 			} else {
 				var21 = 0;
 				var22 = 0;
 			}
 
-			var12 += var20 * var15;
-			var13 += var20 * var16;
-			var14 += var17 * var20;
-			var25 = var14 >> 14;
-			int var23;
-			int var24;
-			if (var25 != 0) {
-				var23 = var12 / var25;
-				var24 = var13 / var25;
-			} else {
-				var23 = 0;
-				var24 = 0;
-			}
-
-			var3 = (var21 << 18) + var22;
-			int var19 = (var24 - var22) / var20 + ((var23 - var21) / var20 << 18);
-			var20 >>= 3;
+			var3 = (var19 << 18) + var20;
+			int var17 = (var22 - var20) / var18 + ((var21 - var19) / var18 << 18);
+			var18 >>= 3;
 			var9 <<= 3;
-			int var18 = var8 >> 8;
-			if (super.field2617) {
-				while (var20-- > 0) {
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					var8 += var9;
-					var18 = var8 >> 8;
+			int var16 = var8 >> 8;
+			if (super.field2659) {
+				if (var18 > 0) {
+					do {
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						var8 += var9;
+						var16 = var8 >> 8;
+						--var18;
+					} while(var18 > 0);
 				}
 
-				for (var20 = var7 - var6 & 7; var20-- > 0; var10 += var11) {
-					this.method5713(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
+				var18 = var7 - var6 & 7;
+				if (var18 > 0) {
+					do {
+						var4 = var2[(var3 & 16256) + (var3 >>> 25)];
+						var1[var5++] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						var3 += var17;
+						--var18;
+					} while(var18 > 0);
 				}
 			} else {
-				while (var20-- > 0) {
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
-					var10 += var11;
-					var8 += var9;
-					var18 = var8 >> 8;
+				if (var18 > 0) {
+					do {
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						var8 += var9;
+						var16 = var8 >> 8;
+						--var18;
+					} while(var18 > 0);
 				}
 
-				for (var20 = var7 - var6 & 7; var20-- > 0; var10 += var11) {
-					this.method5746(var1, Rasterizer2D.Rasterizer2D_brightness, var2, var5, var18, var3, var10);
-					++var5;
-					var3 += var19;
+				var18 = var7 - var6 & 7;
+				if (var18 > 0) {
+					do {
+						if ((var4 = var2[(var3 & 16256) + (var3 >>> 25)]) != 0) {
+							var1[var5] = (var16 * (var4 & 16711935) & -16711936) + (var16 * (var4 & 65280) & 16711680) >> 8;
+						}
+
+						++var5;
+						var3 += var17;
+						--var18;
+					} while(var18 > 0);
 				}
 			}
 
 		}
-	}
-
-	@ObfuscatedName("bh")
-	static final int method5711(float var0, float var1) {
-		return Float.floatToRawIntBits(var0 - var1) >> 31;
 	}
 }

@@ -1,32 +1,68 @@
+import java.awt.image.BufferedImage;
+import java.awt.image.PixelGrabber;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gv")
+@ObfuscatedName("gl")
 public class class179 extends DualNode {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lmd;"
+		descriptor = "Lmu;"
 	)
-	@Export("field1915")
-	static EvictingDualNodeHashTable field1915;
+	@Export("field1913")
+	static EvictingDualNodeHashTable field1913;
+	@ObfuscatedName("bl")
+	@ObfuscatedGetter(
+		intValue = -1238400531
+	)
+	static int field1967;
+	@ObfuscatedName("bg")
+	@ObfuscatedGetter(
+		intValue = 1896617167
+	)
+	static int field1965;
+	@ObfuscatedName("kn")
+	@ObfuscatedGetter(
+		longValue = 8155561508855884499L
+	)
+	static long field1970;
 
 	static {
-		field1915 = new EvictingDualNodeHashTable(64);
+		field1913 = new EvictingDualNodeHashTable(64);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Ljx;IIIILrr;IIII)Z",
-		garbageValue = "2119831854"
+		descriptor = "([BI)Lxt;",
+		garbageValue = "1671643171"
 	)
-	static final boolean method4147(Model var0, int var1, int var2, int var3, int var4, TransformationMatrix var5, int var6, int var7, int var8) {
-		boolean var9 = ViewportMouse.ViewportMouse_isInViewport;
-		if (!var9) {
-			return false;
-		} else {
-			Projectile.method1950(var5, var6, var7, var8);
-			return MenuAction.method1866(var0, var1, var2, var3, var4);
+	@Export("readSpritePixelsFromBytes")
+	public static final SpritePixels readSpritePixelsFromBytes(byte[] var0) {
+		BufferedImage var1 = null;
+
+		try {
+			Class var2 = ImageIO.class;
+			synchronized(ImageIO.class) {
+				var1 = ImageIO.read(new ByteArrayInputStream(var0));
+			}
+
+			if (var1 != null) {
+				int var6 = var1.getWidth();
+				int var7 = var1.getHeight();
+				int[] var4 = new int[var7 * var6];
+				PixelGrabber var5 = new PixelGrabber(var1, 0, 0, var6, var7, var4, 0, var6);
+				var5.grabPixels();
+				return new SpritePixels(var4, var6, var7);
+			}
+		} catch (IOException var9) {
+		} catch (InterruptedException var10) {
 		}
+
+		return new SpritePixels(0, 0);
 	}
 }

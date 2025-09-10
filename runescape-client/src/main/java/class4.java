@@ -1,218 +1,90 @@
-import java.util.LinkedList;
-import java.util.List;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("au")
+@ObfuscatedName("ap")
 public final class class4 {
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+	@ObfuscatedName("at")
+	@ObfuscatedGetter(
+		intValue = 47249087
 	)
-	@Export("EnumDefinition_archive")
-	public static AbstractArchive EnumDefinition_archive;
-	@ObfuscatedName("ka")
+	public static int field8;
+	@ObfuscatedName("bz")
+	@Export("clearLoginScreen")
+	static boolean clearLoginScreen;
+	@ObfuscatedName("go")
 	@ObfuscatedSignature(
-		descriptor = "Lpo;"
+		descriptor = "Loc;"
 	)
-	static Archive field6;
+	static class384 field7;
 
-	@ObfuscatedName("cj")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(ILce;ZI)I",
-		garbageValue = "-1396170113"
+		descriptor = "(Lre;Lre;I)Lre;",
+		garbageValue = "1274021437"
 	)
-	static int method12(int var0, Script var1, boolean var2) {
-		int var3;
-		Object var4;
-		int var5;
-		DbTable var6;
-		int var7;
-		if (var0 == ScriptOpcodes.DB_FIND_WITH_COUNT) {
-			var3 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-			var4 = class28.method462(var3);
-			var5 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-			var6 = AsyncHttpResponse.getDbTable(var5);
-			if (var6 == null) {
-				throw new RuntimeException();
-			} else {
-				var7 = class486.method9855(var5);
-				class322.field3448 = var6.method11101(var4, var7);
-				if (class322.field3448 != null) {
-					Client.field530 = class101.method3102(var5);
-					class139.field1674 = class322.field3448.iterator();
-					if (var0 == ScriptOpcodes.DB_FIND_WITH_COUNT) {
-						Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = class322.field3448.size();
-					}
-				} else {
-					Client.field530 = -1;
-					class139.field1674 = null;
-					if (var0 == ScriptOpcodes.DB_FIND_WITH_COUNT) {
-						Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = 0;
-					}
+	public static final class452 method18(class452 var0, class452 var1) {
+		class452 var2 = class334.method7060(var0);
+		var2.method8997(var1);
+		return var2;
+	}
+
+	@ObfuscatedName("bj")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "-239212976"
+	)
+	static int method16(int var0) {
+		return (int)Math.pow(2.0D, (double)((float)var0 / 256.0F + 7.0F));
+	}
+
+	@ObfuscatedName("if")
+	@ObfuscatedSignature(
+		descriptor = "(Loi;III)V",
+		garbageValue = "1388841937"
+	)
+	@Export("checkIfMinimapClicked")
+	static final void checkIfMinimapClicked(Widget var0, int var1, int var2) {
+		if (Client.minimapState == 0 || Client.minimapState == 3) {
+			if (!Client.isMenuOpen && (MouseHandler.MouseHandler_lastButton == 1 || !class423.mouseCam && MouseHandler.MouseHandler_lastButton == 4)) {
+				SpriteMask var3 = var0.method8005(UrlRequester.widgetDefinition, true);
+				if (var3 == null) {
+					return;
 				}
 
-				return 1;
-			}
-		} else if (var0 != ScriptOpcodes.DB_FINDNEXT) {
-			int var19;
-			int var20;
-			if (var0 == ScriptOpcodes.DB_GETFIELD) {
-				AbstractWorldMapIcon.Interpreter_intStackSize -= 3;
-				var3 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize];
-				var19 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 1];
-				var5 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 2];
-				var20 = class101.method3102(var19);
-				var7 = ApproximateRouteStrategy.method801(var19);
-				int var21 = class486.method9855(var19);
-				DbRowType var26 = class86.getDbRowType(var3);
-				DbTableType var27 = class570.getDbTableType(var20);
-				int[] var28 = var27.types[var7];
-				int var12 = 0;
-				int var13 = var28.length;
-				if (var21 >= 0) {
-					if (var21 >= var13) {
-						throw new RuntimeException("Tuple index out-of-bounds. Requested: " + var21 + ", Max: " + var13);
-					}
-
-					var12 = var21;
-					var13 = var21 + 1;
-				}
-
-				Object[] var14 = var26.getColumnType(var7);
-				if (var14 == null && var27.defaultValues != null) {
-					var14 = var27.defaultValues[var7];
-				}
-
-				int var15;
-				int var16;
-				if (var14 == null) {
-					for (var15 = var12; var15 < var13; ++var15) {
-						var16 = var28[var15];
-						class570 var22 = WorldMapDecoration.method6802(var16);
-						if (var22 == class570.field5718) {
-							Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = "";
-						} else {
-							Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = class70.method2216(var16);
-						}
-					}
-
-					return 1;
-				} else {
-					var15 = var14.length / var28.length;
-					if (var5 >= 0 && var5 < var15) {
-						for (var16 = var12; var16 < var13; ++var16) {
-							int var17 = var16 + var28.length * var5;
-							class570 var18 = WorldMapDecoration.method6802(var28[var16]);
-							if (var18 == class570.field5718) {
-								Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = var14[var17];
-							} else {
-								Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = (Integer)var14[var17];
-							}
-						}
-
-						return 1;
-					} else {
-						throw new RuntimeException();
+				int var4 = MouseHandler.MouseHandler_lastPressedX - var1;
+				int var5 = MouseHandler.MouseHandler_lastPressedY - var2;
+				if (var3.contains(var4, var5)) {
+					var4 -= var3.width / 2;
+					var5 -= var3.height / 2;
+					int var6 = Client.camAngleY & 2047;
+					int var7 = Rasterizer3D.Rasterizer3D_sine[var6];
+					int var8 = Rasterizer3D.Rasterizer3D_cosine[var6];
+					int var9 = var7 * var5 + var4 * var8 >> 11;
+					int var10 = var8 * var5 - var4 * var7 >> 11;
+					int var11 = var9 + Client.field552 >> 7;
+					int var12 = Client.field337 - var10 >> 7;
+					class518 var13 = Client.worldViewManager.method2352(-1);
+					if (var13 == class518.field5493) {
+						class455.method9187(var11, var12, var4, var5);
+					} else if (var13 == class518.field5494) {
+						int var15 = var3.width / 2 + var1;
+						int var16 = var3.height / 2 + var2;
+						int var17 = MouseHandler.MouseHandler_x - var15;
+						int var18 = MouseHandler.MouseHandler_y - var16;
+						int var19 = UserComparator9.method3568(var18, var17);
+						var19 -= Client.camAngleY;
+						var19 &= 2047;
+						int var21 = var19 + 64;
+						int var20 = (var21 & 2047) / 128;
+						Client.field583 = var20;
+						Client.field584 = 30;
+						class204.method4499(Client.field583);
 					}
 				}
-			} else if (var0 == ScriptOpcodes.DB_GETFIELDCOUNT) {
-				AbstractWorldMapIcon.Interpreter_intStackSize -= 2;
-				var3 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize];
-				var19 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 1];
-				var5 = 0;
-				var20 = class101.method3102(var19);
-				var7 = ApproximateRouteStrategy.method801(var19);
-				DbRowType var25 = class86.getDbRowType(var3);
-				DbTableType var9 = class570.getDbTableType(var20);
-				int[] var10 = var9.types[var7];
-				Object[] var11 = var25.getColumnType(var7);
-				if (var11 == null && var9.defaultValues != null) {
-					var11 = var9.defaultValues[var7];
-				}
-
-				if (var11 != null) {
-					var5 = var11.length / var10.length;
-				}
-
-				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var5;
-				return 1;
-			} else if (var0 == ScriptOpcodes.DB_FINDALL_WITH_COUNT) {
-				--AbstractWorldMapIcon.Interpreter_intStackSize;
-				var3 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize];
-				DbTable var24 = class348.getDbTable2(var3);
-				if (var24 == null) {
-					throw new RuntimeException();
-				} else {
-					class322.field3448 = var24.method11101(0, 0);
-					var5 = 0;
-					if (class322.field3448 != null) {
-						Client.field530 = var3;
-						class139.field1674 = class322.field3448.iterator();
-						var5 = class322.field3448.size();
-					}
-
-					if (var0 == ScriptOpcodes.DB_FINDALL_WITH_COUNT) {
-						Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var5;
-					}
-
-					return 1;
-				}
-			} else if (var0 == ScriptOpcodes.DB_GETROWTABLE) {
-				var3 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-				DbRowType var23 = class86.getDbRowType(var3);
-				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var23.tableId;
-				return 1;
-			} else if (var0 == ScriptOpcodes.DB_GETROW) {
-				var3 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-				var19 = -1;
-				if (class322.field3448 != null && var3 >= 0 && var3 < class322.field3448.size()) {
-					var19 = (Integer)class322.field3448.get(var3);
-				}
-
-				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var19;
-				return 1;
-			} else if (var0 == ScriptOpcodes.DB_FIND_FILTER_WITH_COUNT) {
-				var3 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-				var4 = class28.method462(var3);
-				var5 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-				var6 = AsyncHttpResponse.getDbTable(var5);
-				if (var6 == null) {
-					throw new RuntimeException();
-				} else if (class101.method3102(var5) != Client.field530) {
-					throw new RuntimeException();
-				} else if (class322.field3448 == null && class322.field3448.isEmpty()) {
-					throw new RuntimeException();
-				} else {
-					var7 = class486.method9855(var5);
-					List var8 = var6.method11101(var4, var7);
-					class322.field3448 = new LinkedList(class322.field3448);
-					if (var8 != null) {
-						class322.field3448.retainAll(var8);
-					} else {
-						class322.field3448.clear();
-					}
-
-					class139.field1674 = class322.field3448.iterator();
-					if (var0 == ScriptOpcodes.DB_FIND_FILTER_WITH_COUNT) {
-						Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = class322.field3448.size();
-					}
-
-					return 1;
-				}
-			} else {
-				return 2;
-			}
-		} else {
-			if (class139.field1674 != null && class139.field1674.hasNext()) {
-				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = (Integer)class139.field1674.next();
-			} else {
-				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = -1;
 			}
 
-			return 1;
 		}
 	}
 }

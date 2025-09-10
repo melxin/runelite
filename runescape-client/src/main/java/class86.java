@@ -1,70 +1,49 @@
+import java.util.concurrent.ThreadPoolExecutor;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("du")
-final class class86 implements class355 {
-	@ObfuscatedName("pj")
-	@Export("xteaKeys")
-	static int[][] xteaKeys;
+@ObfuscatedName("db")
+final class class86 implements class357 {
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		intValue = 436040985
+	)
+	static int field1230;
+	@ObfuscatedName("aw")
+	static ThreadPoolExecutor field1231;
+	@ObfuscatedName("hl")
+	@ObfuscatedSignature(
+		descriptor = "Lgm;"
+	)
+	@Export("guestClanChannel")
+	static ClanChannel guestClanChannel;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lox;"
+		descriptor = "Loi;"
 	)
 	final Widget val$item;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lox;)V"
+		descriptor = "(Loi;)V"
 	)
 	class86(Widget var1) {
 		this.val$item = var1;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1845830227"
+		descriptor = "(S)V",
+		garbageValue = "-8197"
 	)
-	public void vmethod7454() {
-		if (this.val$item.method7931().field3987 != null) {
+	public void vmethod7474() {
+		if (this.val$item.method7974().field4069 != null) {
 			ScriptEvent var1 = new ScriptEvent();
-			var1.method2124(this.val$item);
-			var1.setArgs(this.val$item.method7931().field3987);
-			HttpJsonRequestBody.method10535().addFirst(var1);
+			var1.method2136(this.val$item);
+			var1.setArgs(this.val$item.method7974().field4069);
+			class161.method3912().addFirst(var1);
 		}
 
-	}
-
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lwf;",
-		garbageValue = "41"
-	)
-	@Export("getDbRowType")
-	public static DbRowType getDbRowType(int var0) {
-		DbRowType var1 = (DbRowType)DbRowType.DBRowType_cache.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = DbRowType.field5741.takeFile(38, var0);
-			var1 = new DbRowType();
-			if (var2 != null) {
-				var1.method11105(new Buffer(var2));
-			}
-
-			var1.method11108();
-			DbRowType.DBRowType_cache.put(var1, (long)var0);
-			return var1;
-		}
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(B)Lbg;",
-		garbageValue = "126"
-	)
-	@Export("getNextWorldListWorld")
-	static World getNextWorldListWorld() {
-		return World.World_listCount < World.World_count ? World.World_worlds[++World.World_listCount - 1] : null;
 	}
 }

@@ -1,137 +1,107 @@
-import net.runelite.mapping.Export;
+import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gp")
-public class class166 {
-	@ObfuscatedName("as")
+@ObfuscatedName("gy")
+public class class166 extends class151 {
+	@ObfuscatedName("pc")
+	static byte[][] field1890;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		longValue = -3846091845792541665L
+		longValue = 8061763569836155007L
 	)
-	long field1868;
-	@ObfuscatedName("ah")
+	long field1889;
+	@ObfuscatedName("aw")
+	String field1887;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		longValue = 872392788691478369L
+		intValue = 571895803
 	)
-	public long field1867;
-	@ObfuscatedName("ap")
+	int field1888;
+	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lqm;"
+		descriptor = "Lfz;"
 	)
-	IterableNodeDeque field1863;
+	final class154 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;)V"
+		descriptor = "(Lfz;)V"
 	)
-	public class166(Buffer var1) {
-		this.field1867 = -1L;
-		this.field1863 = new IterableNodeDeque();
-		this.method4010(var1);
+	class166(class154 var1) {
+		this.this$0 = var1;
+		this.field1889 = -1L;
+		this.field1887 = null;
+		this.field1888 = 0;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;B)V",
-		garbageValue = "7"
+		descriptor = "(Lwb;I)V",
+		garbageValue = "-2943315"
 	)
-	void method4010(Buffer var1) {
-		this.field1868 = var1.readLong();
-		this.field1867 = var1.readLong();
-
-		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
-			Object var3;
-			if (var2 == 1) {
-				var3 = new class161(this);
-			} else if (var2 == 4) {
-				var3 = new class172(this);
-			} else if (var2 == 3) {
-				var3 = new class157(this);
-			} else if (var2 == 2) {
-				var3 = new class155(this);
-			} else {
-				if (var2 != 5) {
-					throw new RuntimeException("");
-				}
-
-				var3 = new class162(this);
-			}
-
-			((class165)var3).vmethod4076(var1);
-			this.field1863.addFirst((Node)var3);
+	void vmethod4111(Buffer var1) {
+		if (var1.readUnsignedByte() != 255) {
+			var1.array -= -290410379;
+			this.field1889 = var1.readLong();
 		}
 
+		this.field1887 = var1.readStringCp1252NullTerminatedOrNull();
+		this.field1888 = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lgw;I)V",
-		garbageValue = "595352516"
+		descriptor = "(Lgs;I)V",
+		garbageValue = "2108880901"
 	)
-	public void method4011(ClanChannel var1) {
-		if (var1.key == this.field1868 && var1.field1885 == this.field1867) {
-			for (class165 var2 = (class165)this.field1863.last(); var2 != null; var2 = (class165)this.field1863.previous()) {
-				var2.vmethod4077(var1);
-			}
-
-			++var1.field1885;
-		} else {
-			throw new RuntimeException("");
-		}
+	void vmethod4112(ClanSettings var1) {
+		var1.method3962(this.field1889, this.field1887, this.field1888);
 	}
 
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(Lpx;I)V",
-		garbageValue = "-1792281244"
-	)
-	public static void method4016(AbstractArchive var0) {
-		class554.field5659 = var0;
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lrr;",
-		garbageValue = "-1699754054"
-	)
-	public static TransformationMatrix method4019() {
-		synchronized(TransformationMatrix.field5073) {
-			if (class359.field3967 == 0) {
-				return new TransformationMatrix();
-			} else {
-				TransformationMatrix.field5073[--class359.field3967].method9108();
-				return TransformationMatrix.field5073[class359.field3967];
-			}
-		}
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "1754283513"
-	)
-	static void method4014(int var0, int var1, int var2, int var3) {
-		class337.musicPlayerStatus = var0;
-		class337.field3797 = var1;
-		class337.field3798 = var2;
-		class337.field3789 = var3;
-	}
-
-	@ObfuscatedName("la")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1680957230"
+		garbageValue = "142805065"
 	)
-	@Export("addCancelMenuEntry")
-	static void addCancelMenuEntry() {
-		Client.menu.menuOptionsCount = 0;
-		Client.isMenuOpen = false;
-		Client.menu.menuWorldViewIds[0] = -1;
-		Client.menu.menuActions[0] = "Cancel";
-		Client.menu.menuTargets[0] = "";
-		Client.menu.menuOpcodes[0] = 1006;
-		Client.menu.menuShiftClick[0] = false;
-		Client.menu.subMenus[0] = null;
-		Client.menu.menuOptionsCount = 1;
+	public static void method4023() {
+		class196.field2100.clear();
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)I",
+		garbageValue = "21"
+	)
+	public static int method4030(int var0, int var1) {
+		int var2 = var1 - var0 & 2047;
+		return var2 > 1024 ? -(2048 - var2) : var2;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(Lpx;II)V",
+		garbageValue = "1288803374"
+	)
+	public static void method4028(AbstractArchive var0, int var1) {
+		if (!class339.field3889.isEmpty()) {
+			ArrayList var2 = new ArrayList();
+			Iterator var3 = class339.field3889.iterator();
+
+			while (var3.hasNext()) {
+				MidiRequest var4 = (MidiRequest)var3.next();
+				var4.field4009 = false;
+				var4.field4008 = false;
+				var4.field4010 = false;
+				var4.field4011 = false;
+				var4.musicTrackArchive = var0;
+				var4.musicTrackVolume = var1;
+				var4.field4002 = 0.0F;
+				var2.add(var4);
+			}
+
+			Clock.method6081(var2, class339.musicPlayerStatus, class339.field3896, class339.field3898, class339.field3897, false);
+		}
 	}
 }

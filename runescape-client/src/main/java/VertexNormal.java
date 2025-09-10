@@ -4,30 +4,35 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jh")
+@ObfuscatedName("je")
 @Implements("VertexNormal")
 public class VertexNormal {
-	@ObfuscatedName("al")
+	@ObfuscatedName("gk")
+	@ObfuscatedSignature(
+		descriptor = "Ldr;"
+	)
+	static WorldView field2978;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 2021150823
+		intValue = 1325188909
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -1101315455
+		intValue = -1711867357
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 2035190653
+		intValue = 1576361895
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 757047759
+		intValue = 2029642655
 	)
 	@Export("magnitude")
 	int magnitude;
@@ -36,21 +41,12 @@ public class VertexNormal {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljh;)V"
+		descriptor = "(Lje;)V"
 	)
 	VertexNormal(VertexNormal var1) {
 		this.x = var1.x;
 		this.y = var1.y;
 		this.z = var1.z;
 		this.magnitude = var1.magnitude;
-	}
-
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(Lpx;B)V",
-		garbageValue = "17"
-	)
-	public static void method5648(AbstractArchive var0) {
-		VarbitComposition.VarbitDefinition_archive = var0;
 	}
 }

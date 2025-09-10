@@ -1,26 +1,26 @@
-import java.security.SecureRandom;
+import java.applet.Applet;
+import java.net.MalformedURLException;
+import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import netscape.javascript.JSObject;
 
-@ObfuscatedName("ey")
+@ObfuscatedName("ev")
 @Implements("BuddyRankComparator")
 public class BuddyRankComparator extends AbstractUserComparator {
-	@ObfuscatedName("gf")
-	@ObfuscatedSignature(
-		descriptor = "Los;"
-	)
-	static class381 field1571;
-	@ObfuscatedName("lq")
+	@ObfuscatedName("ap")
+	@Export("javaVersion")
+	public static String javaVersion;
+	@ObfuscatedName("qw")
 	@ObfuscatedGetter(
-		intValue = 1818481597
+		intValue = -192942121
 	)
-	static int field1574;
-	@ObfuscatedName("ov")
-	static SecureRandom field1570;
-	@ObfuscatedName("al")
+	@Export("oculusOrbFocalPointY")
+	static int oculusOrbFocalPointY;
+	@ObfuscatedName("af")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -28,10 +28,10 @@ public class BuddyRankComparator extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lto;Lto;I)I",
-		garbageValue = "1261538368"
+		descriptor = "(Lty;Lty;I)I",
+		garbageValue = "1669907296"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -46,152 +46,80 @@ public class BuddyRankComparator extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lir;",
-		garbageValue = "-1507471743"
+		descriptor = "(Ljava/lang/String;B)Z",
+		garbageValue = "-46"
 	)
-	public static HitSplatDefinition method3550(int var0) {
-		HitSplatDefinition var1 = (HitSplatDefinition)HitSplatDefinition.HitSplatDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	static boolean method3588(String var0) {
+		if (var0 == null) {
+			return false;
 		} else {
-			byte[] var2 = HitSplatDefinition.HitSplatDefinition_archive.takeFile(32, var0);
-			var1 = new HitSplatDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+			try {
+				new URL(var0);
+				return true;
+			} catch (MalformedURLException var2) {
+				return false;
 			}
-
-			HitSplatDefinition.HitSplatDefinition_cached.put(var1, (long)var0);
-			return var1;
 		}
 	}
 
-	@ObfuscatedName("hn")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-2087899454"
+		descriptor = "(Ljava/lang/String;ILjava/lang/String;I)Z",
+		garbageValue = "-1068232297"
 	)
-	static int method3551(int var0) {
-		return var0 * 3 + 600;
-	}
+	static boolean method3589(String var0, int var1, String var2) {
+		if (var1 == 0) {
+			try {
+				if (!class31.field159.startsWith("win")) {
+					throw new Exception();
+				} else if (!var0.startsWith("http://") && !var0.startsWith("https://")) {
+					throw new Exception();
+				} else {
+					String var11 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
 
-	@ObfuscatedName("ia")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "12"
-	)
-	static final void method3548() {
-		if (Client.field1340 != class7.topLevelWorldView.plane) {
-			Client.field1340 = class7.topLevelWorldView.plane;
-			int var0 = class7.topLevelWorldView.plane;
-			int[] var1 = Script.sceneMinimapSprite.pixels;
-			int var2 = var1.length;
-
-			int var3;
-			for (var3 = 0; var3 < var2; ++var3) {
-				var1[var3] = 0;
-			}
-
-			int var4;
-			int var5;
-			for (var3 = 1; var3 < 103; ++var3) {
-				var4 = (103 - var3) * 2048 + 24628;
-
-				for (var5 = 1; var5 < 103; ++var5) {
-					if ((class7.topLevelWorldView.tileSettings[var0][var5][var3] & 24) == 0) {
-						class7.topLevelWorldView.scene.drawTileMinimap(var1, var4, 512, var0, var5, var3);
-					}
-
-					if (var0 < 3 && (class7.topLevelWorldView.tileSettings[var0 + 1][var5][var3] & 8) != 0) {
-						class7.topLevelWorldView.scene.drawTileMinimap(var1, var4, 512, var0 + 1, var5, var3);
-					}
-
-					var4 += 4;
-				}
-			}
-
-			var3 = (238 + (int)(Math.random() * 20.0D) - 10 << 16) + (238 + (int)(Math.random() * 20.0D) - 10 << 8) + (238 + (int)(Math.random() * 20.0D) - 10);
-			var4 = 238 + (int)(Math.random() * 20.0D) - 10 << 16;
-			Script.sceneMinimapSprite.setRaster();
-
-			int var6;
-			for (var5 = 1; var5 < 103; ++var5) {
-				for (var6 = 1; var6 < 103; ++var6) {
-					if ((class7.topLevelWorldView.tileSettings[var0][var6][var5] & 24) == 0) {
-						UrlRequester.drawObject(var0, var6, var5, var3, var4);
-					}
-
-					if (var0 < 3 && (class7.topLevelWorldView.tileSettings[var0 + 1][var6][var5] & 8) != 0) {
-						UrlRequester.drawObject(var0 + 1, var6, var5, var3, var4);
-					}
-				}
-			}
-
-			Client.mapIconCount = 0;
-
-			for (var5 = 0; var5 < 104; ++var5) {
-				for (var6 = 0; var6 < 104; ++var6) {
-					long var7 = class7.topLevelWorldView.scene.getFloorDecorationTag(class7.topLevelWorldView.plane, var5, var6);
-					if (0L != var7) {
-						int var9 = class70.Entity_unpackID(var7);
-						int var10 = SpriteMask.getObjectDefinition(var9).mapIconId;
-						if (var10 >= 0 && GrandExchangeOfferAgeComparator.WorldMapElement_get(var10).field1967) {
-							Client.mapIcons[Client.mapIconCount] = GrandExchangeOfferAgeComparator.WorldMapElement_get(var10).getSpriteBool(false);
-							Client.mapIconXs[Client.mapIconCount] = var5;
-							Client.mapIconYs[Client.mapIconCount] = var6;
-							++Client.mapIconCount;
+					for (int var4 = 0; var4 < var0.length(); ++var4) {
+						if (var11.indexOf(var0.charAt(var4)) == -1) {
+							throw new Exception();
 						}
 					}
+
+					Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var0 + "\"");
+					return true;
 				}
+			} catch (Throwable var5) {
+				return false;
+			}
+		} else if (var1 == 1) {
+			try {
+				Object var10 = class26.method406(class31.field158, var2, new Object[]{(new URL(class31.field158.getCodeBase(), var0)).toString()});
+				return var10 != null;
+			} catch (Throwable var6) {
+				return false;
+			}
+		} else if (var1 == 2) {
+			try {
+				class31.field158.getAppletContext().showDocument(new URL(class31.field158.getCodeBase(), var0), "_blank");
+				return true;
+			} catch (Exception var7) {
+				return false;
+			}
+		} else if (var1 == 3) {
+			try {
+				Applet var3 = class31.field158;
+				JSObject.getWindow(var3).call("loggedout", (Object[])null);
+			} catch (Throwable var9) {
 			}
 
-			Interpreter.rasterProvider.apply();
-		}
-
-	}
-
-	@ObfuscatedName("nj")
-	@ObfuscatedSignature(
-		descriptor = "(Lox;I)V",
-		garbageValue = "-1957028796"
-	)
-	static final void method3549(Widget var0) {
-		int var1 = var0.contentType;
-		if (var1 == 324) {
-			if (Client.field468 == -1) {
-				Client.field468 = var0.spriteId2;
-				Client.field577 = var0.spriteId;
+			try {
+				class31.field158.getAppletContext().showDocument(new URL(class31.field158.getCodeBase(), var0), "_top");
+				return true;
+			} catch (Exception var8) {
+				return false;
 			}
-
-			if (Client.playerAppearance.gender == 1) {
-				var0.spriteId2 = Client.field468;
-			} else {
-				var0.spriteId2 = Client.field577;
-			}
-
-		} else if (var1 == 325) {
-			if (Client.field468 == -1) {
-				Client.field468 = var0.spriteId2;
-				Client.field577 = var0.spriteId;
-			}
-
-			if (Client.playerAppearance.gender == 1) {
-				var0.spriteId2 = Client.field577;
-			} else {
-				var0.spriteId2 = Client.field468;
-			}
-
-		} else if (var1 == 327) {
-			var0.modelAngleX = 150;
-			var0.modelAngleY = (int)(Math.sin((double)Client.cycle / 40.0D) * 256.0D) & 2047;
-			var0.modelType = 5;
-			var0.modelId = 0;
-		} else if (var1 == 328) {
-			var0.modelAngleX = 150;
-			var0.modelAngleY = (int)(Math.sin((double)Client.cycle / 40.0D) * 256.0D) & 2047;
-			var0.modelType = 5;
-			var0.modelId = 1;
+		} else {
+			throw new IllegalArgumentException();
 		}
 	}
 }

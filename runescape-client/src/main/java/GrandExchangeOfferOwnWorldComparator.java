@@ -4,20 +4,26 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ba")
+@ObfuscatedName("bh")
 @Implements("GrandExchangeOfferOwnWorldComparator")
 public class GrandExchangeOfferOwnWorldComparator implements Comparator {
-	@ObfuscatedName("al")
+	@ObfuscatedName("dq")
+	@ObfuscatedSignature(
+		descriptor = "[Lxc;"
+	)
+	@Export("worldSelectFlagSprites")
+	static IndexedSprite[] worldSelectFlagSprites;
+	@ObfuscatedName("af")
 	@Export("filterWorlds")
 	boolean filterWorlds;
 
 	GrandExchangeOfferOwnWorldComparator() {
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lqn;Lqn;I)I",
-		garbageValue = "1784313440"
+		descriptor = "(Lqi;Lqi;I)I",
+		garbageValue = "-852390989"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
@@ -46,51 +52,27 @@ public class GrandExchangeOfferOwnWorldComparator implements Comparator {
 		return super.equals(var1);
 	}
 
-	@ObfuscatedName("kf")
+	@ObfuscatedName("by")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;IIIIIIB)V",
-		garbageValue = "115"
+		descriptor = "(ILcg;ZB)I",
+		garbageValue = "-5"
 	)
-	static void method804(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6) {
-		NodeDeque var7 = var0.groundItems[var1][var2][var3];
-		if (var7 != null) {
-			for (TileItem var8 = (TileItem)var7.last(); var8 != null; var8 = (TileItem)var7.previous()) {
-				if ((var4 & 32767) == var8.id && var5 == var8.quantity) {
-					var8.quantity = var6;
-					break;
-				}
-			}
-
-			class167.updateItemPile(var1, var2, var3);
+	static int method789(int var0, Script var1, boolean var2) {
+		int var3;
+		if (var0 == 3500) {
+			var3 = Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = Client.indexCheck.isValidIndexInRange(var3) ? 1 : 0;
+			return 1;
+		} else if (var0 == 3501) {
+			var3 = Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = Client.indexCheck.method6122(var3) ? 1 : 0;
+			return 1;
+		} else if (var0 == 3502) {
+			var3 = Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize];
+			Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = Client.indexCheck.method6124(var3) ? 1 : 0;
+			return 1;
+		} else {
+			return 2;
 		}
-
-	}
-
-	@ObfuscatedName("nh")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)Lch;",
-		garbageValue = "556826293"
-	)
-	@Export("openInterface")
-	static final InterfaceParent openInterface(int var0, int var1, int var2) {
-		InterfaceParent var3 = new InterfaceParent();
-		var3.group = var1;
-		var3.type = var2;
-		Client.interfaceParents.put(var3, (long)var0);
-		Tiles.method2077(var1);
-		Widget var4 = class167.widgetDefinition.method7456(var0);
-		ApproximateRouteStrategy.invalidateWidget(var4);
-		if (Client.meslayerContinueWidget != null) {
-			ApproximateRouteStrategy.invalidateWidget(Client.meslayerContinueWidget);
-			Client.meslayerContinueWidget = null;
-		}
-
-		Tiles.revalidateWidgetScroll(class167.widgetDefinition.Widget_interfaceComponents[var0 >> 16], var4, false);
-		WorldMapRegion.runWidgetOnLoadListener(var1);
-		if (Client.rootInterface != -1) {
-			HttpResponse.runIntfCloseListeners(Client.rootInterface, 1);
-		}
-
-		return var3;
 	}
 }

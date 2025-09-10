@@ -4,82 +4,82 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jc")
+@ObfuscatedName("jr")
 @Implements("WallDecoration")
 public final class WallDecoration {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Liq;"
+		descriptor = "Liz;"
 	)
 	@Export("renderable1")
 	public Renderable renderable1;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Liq;"
+		descriptor = "Liz;"
 	)
 	@Export("renderable2")
 	public Renderable renderable2;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		longValue = -1360717247176388875L
+		longValue = 1018809780381384529L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 355786887
+		intValue = -1386950097
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1661396665
+		intValue = -1302913785
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -68301323
+		intValue = 1143420041
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -499550773
+		intValue = -310888395
 	)
 	@Export("orientation")
 	int orientation;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 738440143
+		intValue = -264803905
 	)
 	@Export("orientation2")
 	int orientation2;
-	@ObfuscatedName("am")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = 1001841007
+		intValue = -1356146427
 	)
 	@Export("yOffset")
 	int yOffset;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = 103501313
+		intValue = 15695633
 	)
-	int field2974;
-	@ObfuscatedName("ag")
+	int field3044;
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 588140379
+		intValue = 512076447
 	)
 	@Export("xOffset")
 	int xOffset;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = 2061198463
-	)
-	int field2985;
 	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 1931344609
+		intValue = -1572389463
+	)
+	int field3035;
+	@ObfuscatedName("am")
+	@ObfuscatedGetter(
+		intValue = -1154018501
 	)
 	@Export("flags")
 	int flags;
@@ -89,14 +89,14 @@ public final class WallDecoration {
 		this.flags = 0;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "22"
+		descriptor = "(III)V",
+		garbageValue = "1304137704"
 	)
-	void method5785(int var1, int var2) {
+	void method5789(int var1, int var2) {
 		this.yOffset = var1;
-		this.field2974 = var2;
+		this.field3044 = var2;
 		switch(this.orientation) {
 		case 1:
 			++var1;
@@ -117,64 +117,85 @@ public final class WallDecoration {
 		}
 
 		this.xOffset = var1;
-		this.field2985 = var2;
+		this.field3035 = var2;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)Z",
-		garbageValue = "-2130616148"
+		descriptor = "(IZI)Ljava/lang/String;",
+		garbageValue = "1586972230"
 	)
-	static final boolean method5786(byte[] var0, int var1, int var2) {
-		boolean var3 = true;
-		Buffer var4 = new Buffer(var0);
-		int var5 = -1;
+	@Export("intToString")
+	public static String intToString(int var0, boolean var1) {
+		if (var1 && var0 >= 0) {
+			int var3 = var0;
+			String var2;
+			if (var1 && var0 >= 0) {
+				int var4 = 2;
 
-		label68:
-		while (true) {
-			int var6 = var4.readIncrSmallSmart();
-			if (var6 == 0) {
-				return var3;
-			}
+				for (int var5 = var0 / 10; var5 != 0; ++var4) {
+					var5 /= 10;
+				}
 
-			var5 += var6;
-			int var7 = 0;
-			boolean var8 = false;
+				char[] var6 = new char[var4];
+				var6[0] = '+';
 
-			while (true) {
-				int var9;
-				while (!var8) {
-					var9 = var4.readUShortSmart();
-					if (var9 == 0) {
-						continue label68;
-					}
-
-					var7 += var9 - 1;
-					int var10 = var7 & 63;
-					int var11 = var7 >> 6 & 63;
-					int var12 = var4.readUnsignedByte() >> 2;
-					int var13 = var11 + var1;
-					int var14 = var10 + var2;
-					if (var13 > 0 && var14 > 0 && var13 < 103 && var14 < 103) {
-						ObjectComposition var15 = SpriteMask.getObjectDefinition(var5);
-						if (var12 != 22 || !Client.isLowDetail || var15.int1 != 0 || var15.interactType == 1 || var15.boolean2) {
-							if (!var15.needsModelFiles()) {
-								++Client.field391;
-								var3 = false;
-							}
-
-							var8 = true;
-						}
+				for (int var7 = var4 - 1; var7 > 0; --var7) {
+					int var8 = var3;
+					var3 /= 10;
+					int var9 = var8 - var3 * 10;
+					if (var9 >= 10) {
+						var6[var7] = (char)(var9 + 87);
+					} else {
+						var6[var7] = (char)(var9 + 48);
 					}
 				}
 
-				var9 = var4.readUShortSmart();
-				if (var9 == 0) {
-					break;
-				}
-
-				var4.readUnsignedByte();
+				var2 = new String(var6);
+			} else {
+				var2 = Integer.toString(var0, 10);
 			}
+
+			return var2;
+		} else {
+			return Integer.toString(var0);
 		}
+	}
+
+	@ObfuscatedName("mh")
+	@ObfuscatedSignature(
+		descriptor = "(Loi;III)V",
+		garbageValue = "-1761196560"
+	)
+	@Export("alignWidgetPosition")
+	static void alignWidgetPosition(Widget var0, int var1, int var2) {
+		if (var0.xAlignment == 0) {
+			var0.x = var0.rawX;
+		} else if (var0.xAlignment == 1) {
+			var0.x = (var1 - var0.width * 469894397) / 2 + var0.rawX;
+		} else if (var0.xAlignment == 2) {
+			var0.x = var1 - var0.width * 469894397 - var0.rawX;
+		} else if (var0.xAlignment == 3) {
+			var0.x = var0.rawX * var1 >> 14;
+		} else if (var0.xAlignment == 4) {
+			var0.x = (var0.rawX * var1 >> 14) + (var1 - var0.width * 469894397) / 2;
+		} else {
+			var0.x = var1 - var0.width * 469894397 - (var0.rawX * var1 >> 14);
+		}
+
+		if (var0.yAlignment == 0) {
+			var0.y = var0.rawY;
+		} else if (var0.yAlignment == 1) {
+			var0.y = (var2 - var0.height * 1156037777) / 2 + var0.rawY;
+		} else if (var0.yAlignment == 2) {
+			var0.y = var2 - var0.height * 1156037777 - var0.rawY;
+		} else if (var0.yAlignment == 3) {
+			var0.y = var2 * var0.rawY >> 14;
+		} else if (var0.yAlignment == 4) {
+			var0.y = (var2 - var0.height * 1156037777) / 2 + (var2 * var0.rawY >> 14);
+		} else {
+			var0.y = var2 - var0.height * 1156037777 - (var2 * var0.rawY >> 14);
+		}
+
 	}
 }

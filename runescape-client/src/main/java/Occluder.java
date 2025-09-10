@@ -1,232 +1,138 @@
-import java.io.File;
-import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jq")
+@ObfuscatedName("jk")
 @Implements("Occluder")
 public final class Occluder {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1747143425
+		intValue = 1942311071
 	)
 	@Export("minTileX")
 	int minTileX;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1922297601
+		intValue = -803319375
 	)
 	@Export("maxTileX")
 	int maxTileX;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1728899777
+		intValue = -1030563503
 	)
 	@Export("minTileY")
 	int minTileY;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1837221829
+		intValue = 2133961185
 	)
 	@Export("maxTileY")
 	int maxTileY;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 253851301
+		intValue = 753330381
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1572372041
+		intValue = -1134792567
 	)
 	@Export("minX")
 	int minX;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 118736907
+		intValue = 344670591
 	)
 	@Export("maxX")
 	int maxX;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 1901785051
+		intValue = 1813630749
 	)
 	@Export("minZ")
 	int minZ;
-	@ObfuscatedName("am")
+	@ObfuscatedName("al")
 	@ObfuscatedGetter(
-		intValue = -631571575
+		intValue = -968611377
 	)
 	@Export("maxZ")
 	int maxZ;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1075972829
+		intValue = 754158615
 	)
 	@Export("minY")
 	int minY;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = -361424135
+		intValue = -1259682761
 	)
 	@Export("maxY")
 	int maxY;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -518371837
-	)
-	int field2774;
 	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -2095835569
+		intValue = -1586443513
 	)
-	int field2773;
-	@ObfuscatedName("ai")
+	int field2826;
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -1094593375
+		intValue = 1510671523
 	)
-	int field2778;
-	@ObfuscatedName("ak")
+	int field2827;
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 2088531503
+		intValue = 487184861
 	)
-	int field2775;
+	int field2828;
 	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -1710977545
+		intValue = -2084873843
 	)
-	int field2776;
-	@ObfuscatedName("at")
+	int field2817;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 2013500371
+		intValue = 1125511533
 	)
-	int field2777;
-	@ObfuscatedName("ax")
+	int field2833;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1022023155
+		intValue = -736166349
 	)
-	int field2772;
+	int field2831;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = -1715814317
+	)
+	int field2832;
 
 	Occluder() {
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("kh")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIB)V",
-		garbageValue = "45"
+		descriptor = "(Ldr;IIIIII)V",
+		garbageValue = "752206861"
 	)
-	public static void method5373(String var0, String var1, String var2, int var3, int var4) throws IOException {
-		if (var1 != null && !var1.isEmpty()) {
-			var0 = var0 + "-" + var1;
-		}
-
-		class533.field5487 = var4;
-		ClientPreferences.cacheGamebuild = var3;
-
-		try {
-			ApproximateRouteStrategy.osName = System.getProperty("os.name");
-		} catch (Exception var14) {
-			ApproximateRouteStrategy.osName = "Unknown";
-		}
-
-		HorizontalAlignment.osNameLowercase = ApproximateRouteStrategy.osName.toLowerCase();
-		class502.userHomeDirectory = null;
-
-		try {
-			class502.userHomeDirectory = System.getProperty("jagex.userhome");
-		} catch (Exception var13) {
-		}
-
-		if (class502.userHomeDirectory == null) {
-			try {
-				class502.userHomeDirectory = System.getProperty("user.home");
-			} catch (Exception var12) {
-			}
-		}
-
-		if (class502.userHomeDirectory != null) {
-			class502.userHomeDirectory = class502.userHomeDirectory + "/";
-		}
-
-		try {
-			if (HorizontalAlignment.osNameLowercase.startsWith("win")) {
-				if (class502.userHomeDirectory == null) {
-					class502.userHomeDirectory = System.getenv("USERPROFILE");
-				}
-			} else if (class502.userHomeDirectory == null) {
-				class502.userHomeDirectory = System.getenv("HOME");
-			}
-
-			if (class502.userHomeDirectory != null) {
-				class502.userHomeDirectory = class502.userHomeDirectory + "/";
-			}
-		} catch (Exception var11) {
-		}
-
-		if (class502.userHomeDirectory == null) {
-			class502.userHomeDirectory = "~/";
-		}
-
-		HttpMethod.field41 = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", class502.userHomeDirectory, "/tmp/", ""};
-		class427.field4969 = new String[]{".jagex_cache_" + ClientPreferences.cacheGamebuild, ".file_store_" + ClientPreferences.cacheGamebuild};
-		int var10 = 0;
-
-		label107:
-		while (var10 < 4) {
-			UserComparator9.cacheDir = Skeleton.method5073(var0, var2, var10);
-			if (!UserComparator9.cacheDir.exists()) {
-				UserComparator9.cacheDir.mkdirs();
-			}
-
-			File[] var6 = UserComparator9.cacheDir.listFiles();
-			if (var6 == null) {
-				break;
-			}
-
-			File[] var7 = var6;
-			int var8 = 0;
-
-			while (true) {
-				if (var8 >= var7.length) {
-					break label107;
-				}
-
-				File var9 = var7[var8];
-				if (!MenuAction.method1865(var9, false)) {
-					++var10;
+	static void method5384(WorldView var0, int var1, int var2, int var3, int var4, int var5) {
+		NodeDeque var6 = var0.groundItems[var1][var2][var3];
+		if (var6 != null) {
+			for (TileItem var7 = (TileItem)var6.last(); var7 != null; var7 = (TileItem)var6.previous()) {
+				if ((var4 & 32767) == var7.id && var5 == var7.quantity) {
+					var7.remove();
 					break;
 				}
-
-				++var8;
 			}
+
+			if (var6.last() == null) {
+				var0.groundItems[var1][var2][var3] = null;
+			}
+
+			ObjectSound.updateItemPile2(var0, var1, var2, var3);
 		}
 
-		ActorSpotAnim.method10193(UserComparator9.cacheDir);
-		UserComparator5.method3504();
-		JagexCache.JagexCache_dat2File = new AccessFile(Tiles.getFile("main_file_cache.dat2"), "rw", 1048576000L);
-		JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(Tiles.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
-		class159.JagexCache_idxFiles = new BufferedFile[class533.field5487];
-
-		for (var10 = 0; var10 < class533.field5487; ++var10) {
-			class159.JagexCache_idxFiles[var10] = new BufferedFile(new AccessFile(Tiles.getFile("main_file_cache.idx" + var10), "rw", 1048576L), 6000, 0);
-		}
-
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "([II)Ltn;",
-		garbageValue = "782923509"
-	)
-	public static DynamicArray method5374(int[] var0) {
-		DynamicArray var1 = new DynamicArray(class570.field5721, false);
-		var1.array = var0;
-		var1.size = var0.length * 1527641021;
-		var1.field5402 = var0.length;
-		return var1;
 	}
 }

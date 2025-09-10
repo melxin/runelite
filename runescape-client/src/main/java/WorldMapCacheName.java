@@ -4,84 +4,67 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lu")
+@ObfuscatedName("lk")
 @Implements("WorldMapCacheName")
 public class WorldMapCacheName {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Llu;"
+		descriptor = "Llk;"
 	)
-	public static final WorldMapCacheName field3410;
-	@ObfuscatedName("ab")
+	public static final WorldMapCacheName field3498;
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Llu;"
+		descriptor = "Llk;"
 	)
-	public static final WorldMapCacheName field3411;
+	public static final WorldMapCacheName field3494;
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Llk;"
+	)
+	public static final WorldMapCacheName field3495;
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Llu;"
+		descriptor = "Llk;"
 	)
-	public static final WorldMapCacheName field3407;
-	@ObfuscatedName("av")
+	static final WorldMapCacheName field3501;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Llu;"
+		descriptor = "Llk;"
 	)
-	static final WorldMapCacheName field3408;
-	@ObfuscatedName("au")
+	public static final WorldMapCacheName field3497;
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Llu;"
+		descriptor = "Lpx;"
 	)
-	public static final WorldMapCacheName field3409;
-	@ObfuscatedName("mn")
+	@Export("ObjectDefinition_modelsArchive")
+	public static AbstractArchive ObjectDefinition_modelsArchive;
+	@ObfuscatedName("bn")
 	@ObfuscatedGetter(
-		intValue = -562752735
+		intValue = 753195445
 	)
-	@Export("cameraY")
-	static int cameraY;
-	@ObfuscatedName("as")
+	static int field3500;
+	@ObfuscatedName("aq")
 	@Export("name")
 	public final String name;
 
 	static {
-		field3410 = new WorldMapCacheName("details");
-		field3411 = new WorldMapCacheName("compositemap");
-		field3407 = new WorldMapCacheName("compositetexture");
-		field3408 = new WorldMapCacheName("area");
-		field3409 = new WorldMapCacheName("labels");
+		field3498 = new WorldMapCacheName("details");
+		field3494 = new WorldMapCacheName("compositemap");
+		field3495 = new WorldMapCacheName("compositetexture");
+		field3501 = new WorldMapCacheName("area");
+		field3497 = new WorldMapCacheName("labels");
 	}
 
 	WorldMapCacheName(String var1) {
 		this.name = var1;
 	}
 
-	@ObfuscatedName("nv")
+	@ObfuscatedName("kf")
 	@ObfuscatedSignature(
-		descriptor = "(Lch;ZB)V",
-		garbageValue = "-1"
+		descriptor = "(IIIIII)V",
+		garbageValue = "-273544819"
 	)
-	@Export("closeInterface")
-	static final void closeInterface(InterfaceParent var0, boolean var1) {
-		int var2 = var0.group;
-		int var3 = (int)var0.key;
-		var0.remove();
-		if (var1) {
-			class167.widgetDefinition.method7460(var2);
-		}
-
-		for (WidgetConfigNode var4 = (WidgetConfigNode)Client.widgetFlags.first(); var4 != null; var4 = (WidgetConfigNode)Client.widgetFlags.next()) {
-			if ((long)var2 == (var4.key >> 16 & 65535L)) {
-				var4.remove();
-			}
-		}
-
-		Widget var5 = class167.widgetDefinition.method7456(var3);
-		if (var5 != null) {
-			ApproximateRouteStrategy.invalidateWidget(var5);
-		}
-
-		if (Client.rootInterface != -1) {
-			HttpResponse.runIntfCloseListeners(Client.rootInterface, 1);
-		}
-
+	static void method6895(int var0, int var1, int var2, int var3, int var4) {
+		ArchiveLoader.method2091(HttpHeaders.worldView, var0, var1, var2, var3, var4);
 	}
 }

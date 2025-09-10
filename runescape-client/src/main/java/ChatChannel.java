@@ -4,25 +4,18 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cq")
+@ObfuscatedName("cp")
 @Implements("ChatChannel")
 public class ChatChannel {
-	@ObfuscatedName("ai")
-	static byte[][][] field806;
-	@ObfuscatedName("io")
-	@ObfuscatedGetter(
-		longValue = -4449852899261931453L
-	)
-	static long field804;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "[Lbd;"
+		descriptor = "[Lbz;"
 	)
 	@Export("messages")
 	Message[] messages;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 705681979
+		intValue = -1088846521
 	)
 	@Export("count")
 	int count;
@@ -31,10 +24,10 @@ public class ChatChannel {
 		this.messages = new Message[100];
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Lbd;",
-		garbageValue = "1609462101"
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Lbz;",
+		garbageValue = "1293446909"
 	)
 	@Export("addMessage")
 	Message addMessage(int var1, String var2, String var3, String var4) {
@@ -62,95 +55,32 @@ public class ChatChannel {
 		return var5;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lbd;",
-		garbageValue = "-1459480157"
+		descriptor = "(IB)Lbz;",
+		garbageValue = "-60"
 	)
 	@Export("getMessage")
 	Message getMessage(int var1) {
 		return var1 >= 0 && var1 < this.count ? this.messages[var1] : null;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1488192901"
+		descriptor = "(S)I",
+		garbageValue = "-8110"
 	)
 	@Export("size")
 	int size() {
 		return this.count;
 	}
 
-	@ObfuscatedName("al")
-	public static final int method1997(double var0, double var2, double var4) {
-		double var6 = var4;
-		double var8 = var4;
-		double var10 = var4;
-		if (0.0D != var2) {
-			double var12;
-			if (var4 < 0.5D) {
-				var12 = (1.0D + var2) * var4;
-			} else {
-				var12 = var2 + var4 - var2 * var4;
-			}
-
-			double var14 = 2.0D * var4 - var12;
-			double var16 = var0 + 0.3333333333333333D;
-			if (var16 > 1.0D) {
-				--var16;
-			}
-
-			double var20 = var0 - 0.3333333333333333D;
-			if (var20 < 0.0D) {
-				++var20;
-			}
-
-			if (var16 * 6.0D < 1.0D) {
-				var6 = var16 * 6.0D * (var12 - var14) + var14;
-			} else if (var16 * 2.0D < 1.0D) {
-				var6 = var12;
-			} else if (var16 * 3.0D < 2.0D) {
-				var6 = var14 + 6.0D * (0.6666666666666666D - var16) * (var12 - var14);
-			} else {
-				var6 = var14;
-			}
-
-			if (6.0D * var0 < 1.0D) {
-				var8 = var14 + var0 * 6.0D * (var12 - var14);
-			} else if (2.0D * var0 < 1.0D) {
-				var8 = var12;
-			} else if (var0 * 3.0D < 2.0D) {
-				var8 = var14 + (var12 - var14) * (0.6666666666666666D - var0) * 6.0D;
-			} else {
-				var8 = var14;
-			}
-
-			if (var20 * 6.0D < 1.0D) {
-				var10 = var14 + var20 * 6.0D * (var12 - var14);
-			} else if (2.0D * var20 < 1.0D) {
-				var10 = var12;
-			} else if (var20 * 3.0D < 2.0D) {
-				var10 = var14 + (0.6666666666666666D - var20) * (var12 - var14) * 6.0D;
-			} else {
-				var10 = var14;
-			}
-		}
-
-		int var22 = (int)(256.0D * var6);
-		int var13 = (int)(256.0D * var8);
-		int var23 = (int)(var10 * 256.0D);
-		int var15 = var23 + (var13 << 8) + (var22 << 16);
-		return var15;
-	}
-
-	@ObfuscatedName("nu")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1750791445"
+		descriptor = "(II)Ljava/lang/String;",
+		garbageValue = "455766931"
 	)
-	static final int method2002() {
-		float var0 = 200.0F * ((float)FriendSystem.clientPreferences.getBrightness() - 0.5F);
-		return 100 - Math.round(var0);
+	static String method2014(int var0) {
+		return "<img=" + var0 + ">";
 	}
 }

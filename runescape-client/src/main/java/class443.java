@@ -1,20 +1,48 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("re")
-public final class class443 {
-	@ObfuscatedName("al")
-	@Export("base37Table")
-	public static final char[] base37Table;
-	@ObfuscatedName("ab")
-	static long[] field5035;
+@ObfuscatedName("rz")
+public class class443 {
+	@ObfuscatedName("af")
+	@Export("cp1252AsciiExtension")
+	public static final char[] cp1252AsciiExtension;
 
 	static {
-		base37Table = new char[]{'_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-		field5035 = new long[12];
+		cp1252AsciiExtension = new char[]{'€', '\u0000', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '\u0000', 'Ž', '\u0000', '\u0000', '‘', '’', '“', '”', '•', '–', '—', '˜', '™', 'š', '›', 'œ', '\u0000', 'ž', 'Ÿ'};
+	}
 
-		for (int var0 = 0; var0 < field5035.length; ++var0) {
-			field5035[var0] = (long)Math.pow(37.0D, (double)var0);
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(Ldr;IIIII)V",
+		garbageValue = "309725002"
+	)
+	static final void method8868(WorldView var0, int var1, int var2, int var3, int var4) {
+		int[][][] var5 = var0.tileHeights;
+		int var6 = var0.sizeX - 1;
+		int var7 = var0.sizeY - 1;
+
+		for (int var8 = var2; var8 <= var2 + var4; ++var8) {
+			for (int var9 = var1; var9 <= var3 + var1; ++var9) {
+				if (var9 >= 0 && var9 < var5[0].length - 1 && var8 >= 0 && var8 < var5[0][0].length - 1) {
+					Tiles.Tiles_underlays2[0][var9][var8] = 127;
+					if (var9 == var1 && var9 > 0) {
+						var5[0][var9][var8] = var5[0][var9 - 1][var8];
+					}
+
+					if (var9 == var3 + var1 && var9 < var6) {
+						var5[0][var9][var8] = var5[0][var9 + 1][var8];
+					}
+
+					if (var8 == var2 && var8 > 0) {
+						var5[0][var9][var8] = var5[0][var9][var8 - 1];
+					}
+
+					if (var8 == var2 + var4 && var8 < var7) {
+						var5[0][var9][var8] = var5[0][var9][var8 + 1];
+					}
+				}
+			}
 		}
 
 	}

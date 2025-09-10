@@ -1,38 +1,45 @@
-import java.util.ArrayList;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lb")
+@ObfuscatedName("lc")
 @Implements("WorldMapData_1")
 public class WorldMapData_1 extends AbstractWorldMapData {
-	@ObfuscatedName("ao")
-	@Export("ByteArrayPool_arrays")
-	static byte[][][] ByteArrayPool_arrays;
-	@ObfuscatedName("al")
+	@ObfuscatedName("db")
+	@ObfuscatedSignature(
+		descriptor = "[Lxt;"
+	)
+	@Export("worldSelectBackSprites")
+	static SpritePixels[] worldSelectBackSprites;
+	@ObfuscatedName("dm")
+	@ObfuscatedSignature(
+		descriptor = "Lxc;"
+	)
+	@Export("worldSelectLeftSprite")
+	static IndexedSprite worldSelectLeftSprite;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 770929889
+		intValue = -939145015
 	)
 	@Export("chunkXLow")
 	int chunkXLow;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -2122069667
+		intValue = 381949617
 	)
 	@Export("chunkYLow")
 	int chunkYLow;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1780932119
+		intValue = 719315667
 	)
 	@Export("chunkX")
 	int chunkX;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 726618239
+		intValue = -1828466757
 	)
 	@Export("chunkY")
 	int chunkY;
@@ -40,47 +47,47 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	WorldMapData_1() {
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;B)V",
-		garbageValue = "-59"
+		descriptor = "(Lwb;I)V",
+		garbageValue = "-2015769013"
 	)
 	@Export("init")
 	void init(Buffer var1) {
 		int var2 = var1.readUnsignedByte();
-		if (var2 != WorldMapID.field3386.value) {
+		if (var2 != WorldMapID.field3466.value) {
 			throw new IllegalStateException("");
 		} else {
 			super.minPlane = var1.readUnsignedByte();
 			super.planes = var1.readUnsignedByte();
 			super.regionXLow = var1.readUnsignedShort() * 64;
-			super.regionYLow = var1.readUnsignedShort() * 64;
+			super.regionYLow = var1.readUnsignedShort() * 4096;
 			this.chunkXLow = var1.readUnsignedByte();
 			this.chunkYLow = var1.readUnsignedByte();
 			super.regionX = var1.readUnsignedShort();
 			super.regionY = var1.readUnsignedShort();
 			this.chunkX = var1.readUnsignedByte();
 			this.chunkY = var1.readUnsignedByte();
-			super.groupId = var1.readNullableLargeSmart();
-			super.fileId = var1.readNullableLargeSmart();
+			super.groupId = var1.readVarInt();
+			super.fileId = var1.readVarInt();
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "-1513260144"
+		descriptor = "(Lwb;I)V",
+		garbageValue = "1975102326"
 	)
 	@Export("readGeography")
 	void readGeography(Buffer var1) {
 		super.planes = Math.min(super.planes, 4);
 		super.floorUnderlayIds = new short[1][64][64];
 		super.floorOverlayIds = new short[super.planes][64][64];
-		super.field3356 = new byte[super.planes][64][64];
-		super.field3357 = new byte[super.planes][64][64];
+		super.field3435 = new byte[super.planes][64][64];
+		super.field3436 = new byte[super.planes][64][64];
 		super.decorations = new WorldMapDecoration[super.planes][64][64][];
 		int var2 = var1.readUnsignedByte();
-		if (var2 != class301.field3383.value) {
+		if (var2 != class303.field3462.value) {
 			throw new IllegalStateException("");
 		} else {
 			int var3 = var1.readUnsignedByte();
@@ -100,40 +107,40 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1116445556"
+		descriptor = "(B)I",
+		garbageValue = "62"
 	)
 	@Export("getChunkXLow")
 	int getChunkXLow() {
 		return this.chunkXLow;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1037282226"
+		garbageValue = "-1842342027"
 	)
 	@Export("getChunkYLow")
 	int getChunkYLow() {
 		return this.chunkYLow;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(S)I",
-		garbageValue = "1373"
+		descriptor = "(I)I",
+		garbageValue = "-97475939"
 	)
 	@Export("getChunkX")
 	int getChunkX() {
 		return this.chunkX;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1708464783"
+		garbageValue = "-667716871"
 	)
 	@Export("getChunkY")
 	int getChunkY() {
@@ -145,8 +152,8 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 			return false;
 		} else {
 			WorldMapData_1 var2 = (WorldMapData_1)var1;
-			if (super.regionX == var2.regionX && var2.regionY == super.regionY) {
-				return this.chunkX == var2.chunkX && var2.chunkY == this.chunkY;
+			if (var2.regionX == super.regionX && super.regionY == var2.regionY) {
+				return var2.chunkX == this.chunkX && this.chunkY == var2.chunkY;
 			} else {
 				return false;
 			}
@@ -157,166 +164,74 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 		return super.regionX | super.regionY << 8 | this.chunkX << 16 | this.chunkY << 24;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;Liz;IIIZI)V",
-		garbageValue = "-2072361868"
+		descriptor = "(Lpx;Lpx;II)Ljj;",
+		garbageValue = "-908959487"
 	)
-	public static void method6677(WorldView var0, SequenceDefinition var1, int var2, int var3, int var4, boolean var5) {
-		if (class57.soundEffectCount < 50) {
-			if (var1.field2406 != null && var1.field2406.containsKey(var2)) {
-				ArrayList var6 = (ArrayList)var1.field2406.get(var2);
-				if (!var6.isEmpty()) {
-					int var7 = 0;
-					int var9;
-					int var12;
-					if (var6.size() > 1) {
-						int var8 = 1 + (int)(Math.random() * 100.0D);
-						var9 = 0;
+	public static Frames method6690(AbstractArchive var0, AbstractArchive var1, int var2) {
+		boolean var3 = true;
+		int var4 = -1;
+		int[] var5 = var0.getGroupFileIds(var2);
 
-						for (Iterator var10 = var6.iterator(); var10.hasNext(); ++var7) {
-							class209 var11 = (class209)var10.next();
-							var12 = var9;
-							var9 += var11.field2253;
-							if (var12 <= var8 && var8 < var9) {
-								break;
-							}
-						}
+		for (int var6 = 0; var6 < var5.length; ++var6) {
+			byte[] var7 = var0.getFile(var2, var5[var6]);
+			if (var7 == null) {
+				var3 = false;
+			} else if (var4 == -1) {
+				var4 = (var7[0] & 255) << 8 | var7[1] & 255;
+			}
+		}
 
-						if (var7 >= var6.size()) {
-							return;
-						}
-					}
+		if (var4 != -1) {
+			byte[] var8 = var1.getFile(var4, 0);
+			if (var8 == null) {
+				var3 = false;
+			}
+		} else {
+			var3 = false;
+		}
 
-					class209 var14 = (class209)var6.get(var7);
-					var9 = var14.field2252 & 31;
-					if ((var9 <= 0 || FriendSystem.clientPreferences.getAreaSoundEffectsVolume() != 0) && (var9 != 0 || FriendSystem.clientPreferences.getSoundEffectsVolume() != 0)) {
-						if (var14 != null) {
-							if (var14.field2252 == 0) {
-								if (!var5) {
-									return;
-								}
-
-								Calendar.method8097(var0.id, var14.field2257, 0, 0, 0, var14.field2255, var14.field2254, 0, var1.field2441);
-							} else {
-								int var15 = Coord.method7394(var3 - 64);
-								var12 = var4 - 64;
-								int var16 = var12 >> 7;
-								Calendar.method8097(var0.id, var14.field2257, var15, var16, var14.field2252, var14.field2255, var14.field2254, 0, var1.field2441);
-							}
-
-						}
-					}
-				}
+		if (!var3) {
+			return null;
+		} else {
+			try {
+				return new Frames(var0, var1, var2);
+			} catch (Exception var9) {
+				return null;
 			}
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(Ltn;Lvf;I)V",
-		garbageValue = "-1477532044"
+		descriptor = "(ZB)V",
+		garbageValue = "0"
 	)
-	static void method6678(DynamicArray var0, class570 var1) {
-		class150.method3792(var0, var1, true);
-	}
+	static void method6698(boolean var0) {
+		if (var0) {
+			FloatProjection.method5344();
+		} else {
+			for (int var1 = 0; var1 < class339.midiRequests.size(); ++var1) {
+				MidiRequest var2 = (MidiRequest)class339.midiRequests.get(var1);
+				if (var2 == null) {
+					class339.midiRequests.remove(var1);
+					--var1;
+				} else if (var2.field4011) {
+					if (var2.midiPcmStream.field3904 > 0) {
+						--var2.midiPcmStream.field3904;
+					}
 
-	@ObfuscatedName("nz")
-	@ObfuscatedSignature(
-		descriptor = "(Lox;III)V",
-		garbageValue = "462586014"
-	)
-	@Export("clickWidget")
-	static final void clickWidget(Widget var0, int var1, int var2) {
-		if (Client.clickedWidget == null && !Client.isMenuOpen) {
-			if (var0 != null) {
-				Widget var5 = var0;
-				int var7 = class516.getWidgetFlags(var0);
-				int var6 = var7 >> 17 & 7;
-				int var8 = var6;
-				Widget var4;
-				int var9;
-				if (var6 == 0) {
-					var4 = null;
+					var2.midiPcmStream.clear();
+					var2.midiPcmStream.method7143();
+					var2.midiPcmStream.setPcmStreamVolume(0);
+					class339.midiRequests.remove(var1);
+					--var1;
 				} else {
-					var9 = 0;
-
-					while (true) {
-						if (var9 >= var8) {
-							var4 = var5;
-							break;
-						}
-
-						var5 = class167.widgetDefinition.method7456(var5.parentId);
-						if (var5 == null) {
-							var4 = null;
-							break;
-						}
-
-						++var9;
-					}
-				}
-
-				Widget var10 = var4;
-				if (var4 == null) {
-					var10 = var0.parent;
-				}
-
-				if (var10 != null) {
-					Client.clickedWidget = var0;
-					var5 = var0;
-					var7 = class516.getWidgetFlags(var0);
-					var6 = var7 >> 17 & 7;
-					var8 = var6;
-					if (var6 == 0) {
-						var4 = null;
-					} else {
-						var9 = 0;
-
-						while (true) {
-							if (var9 >= var8) {
-								var4 = var5;
-								break;
-							}
-
-							var5 = class167.widgetDefinition.method7456(var5.parentId);
-							if (var5 == null) {
-								var4 = null;
-								break;
-							}
-
-							++var9;
-						}
-					}
-
-					var10 = var4;
-					if (var4 == null) {
-						var10 = var0.parent;
-					}
-
-					Client.clickedWidgetParent = var10;
-					Client.widgetClickX = var1;
-					Client.widgetClickY = var2;
-					AnimationSequence.widgetDragDuration = 0;
-					Client.isDraggingWidget = false;
-					int var11 = Client.menu.menuOptionsCount - 1;
-					if (var11 != -1) {
-						NPCComposition.tempMenuAction = new MenuAction();
-						NPCComposition.tempMenuAction.param0 = Client.menu.menuArguments1[var11];
-						NPCComposition.tempMenuAction.param1 = Client.menu.menuArguments2[var11];
-						NPCComposition.tempMenuAction.opcode = Client.menu.menuOpcodes[var11];
-						NPCComposition.tempMenuAction.identifier = Client.menu.menuIdentifiers[var11];
-						NPCComposition.tempMenuAction.itemId = Client.menu.menuItemIds[var11];
-						NPCComposition.tempMenuAction.action = Client.menu.menuActions[var11];
-						NPCComposition.tempMenuAction.target = Client.menu.menuTargets[var11];
-						NPCComposition.tempMenuAction.worldViewId = Client.menu.menuWorldViewIds[var11];
-						NPCComposition.tempMenuAction.field691 = Client.menu.menuShiftClick[var11];
-					}
-
-					return;
+					var2.field4011 = true;
 				}
 			}
-
 		}
+
 	}
 }

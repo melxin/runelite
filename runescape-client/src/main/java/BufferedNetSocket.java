@@ -5,26 +5,26 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tg")
+@ObfuscatedName("ts")
 @Implements("BufferedNetSocket")
 public class BufferedNetSocket extends AbstractSocket {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@Export("socket")
 	Socket socket;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Ltc;"
+		descriptor = "Lte;"
 	)
 	@Export("source")
 	BufferedSource source;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Ltd;"
+		descriptor = "Ltx;"
 	)
 	@Export("sink")
 	BufferedSink sink;
 
-	BufferedNetSocket(Socket var1, int var2, int var3) throws IOException {
+	public BufferedNetSocket(Socket var1, int var2, int var3) throws IOException {
 		this.socket = var1;
 		this.socket.setSoTimeout(30000);
 		this.socket.setTcpNoDelay(true);
@@ -34,60 +34,60 @@ public class BufferedNetSocket extends AbstractSocket {
 		this.sink = new BufferedSink(this.socket.getOutputStream(), var3);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "2130905796"
+		garbageValue = "2030306076"
 	)
 	@Export("isAvailable")
 	public boolean isAvailable(int var1) throws IOException {
 		return this.source.isAvailable(var1);
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1013495030"
+		garbageValue = "397267938"
 	)
 	@Export("available")
 	public int available() throws IOException {
 		return this.source.available();
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-760552642"
+		descriptor = "(B)I",
+		garbageValue = "1"
 	)
 	@Export("readUnsignedByte")
 	public int readUnsignedByte() throws IOException {
 		return this.source.readUnsignedByte();
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "([BIIB)I",
-		garbageValue = "-37"
+		descriptor = "([BIII)I",
+		garbageValue = "2145484894"
 	)
 	@Export("read")
 	public int read(byte[] var1, int var2, int var3) throws IOException {
 		return this.source.read(var1, var2, var3);
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "([BIIS)V",
-		garbageValue = "-11244"
+		descriptor = "([BIII)V",
+		garbageValue = "-1472304779"
 	)
 	@Export("write")
 	public void write(byte[] var1, int var2, int var3) throws IOException {
 		this.sink.write(var1, var2, var3);
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "115773402"
+		garbageValue = "217506457"
 	)
 	@Export("close")
 	public void close() {
@@ -105,27 +105,25 @@ public class BufferedNetSocket extends AbstractSocket {
 		this.close();
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lxa;",
-		garbageValue = "145387764"
+		descriptor = "(II)I",
+		garbageValue = "-1099343377"
 	)
-	public static IndexedSprite method10250() {
-		IndexedSprite var0 = new IndexedSprite();
-		var0.width = SpriteBufferProperties.SpriteBuffer_spriteWidth;
-		var0.height = SpriteBufferProperties.SpriteBuffer_spriteHeight;
-		var0.xOffset = SpriteBufferProperties.SpriteBuffer_xOffsets[0];
-		var0.yOffset = class440.SpriteBuffer_yOffsets[0];
-		var0.subWidth = class333.SpriteBuffer_spriteWidths[0];
-		var0.subHeight = Buffer.SpriteBuffer_spriteHeights[0];
-		var0.palette = class113.SpriteBuffer_spritePalette;
-		var0.pixels = SpriteBufferProperties.SpriteBuffer_pixels[0];
-		SpriteBufferProperties.SpriteBuffer_xOffsets = null;
-		class440.SpriteBuffer_yOffsets = null;
-		class333.SpriteBuffer_spriteWidths = null;
-		Buffer.SpriteBuffer_spriteHeights = null;
-		class113.SpriteBuffer_spritePalette = null;
-		SpriteBufferProperties.SpriteBuffer_pixels = null;
-		return var0;
+	public static int method10223(int var0) {
+		return var0 >>> 4 & class580.field5844;
+	}
+
+	@ObfuscatedName("jw")
+	@ObfuscatedSignature(
+		descriptor = "(Ldr;I)V",
+		garbageValue = "-1790419855"
+	)
+	static void method10222(WorldView var0) {
+		if (Client.field584 > 0) {
+			int var1 = Client.field583 * 128;
+			class36.method731(var0, var1, FontName.field5748);
+		}
+
 	}
 }

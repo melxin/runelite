@@ -1,4 +1,3 @@
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
@@ -8,59 +7,59 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("nx")
 @Implements("MidiRequest")
 public class MidiRequest {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "Lpx;"
 	)
 	@Export("musicTrackArchive")
 	public AbstractArchive musicTrackArchive;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -1905748077
+		intValue = 1633172061
 	)
 	@Export("musicTrackGroupId")
 	public int musicTrackGroupId;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -25074317
+		intValue = 1874982089
 	)
 	@Export("musicTrackFileId")
 	public int musicTrackFileId;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1622137919
+		intValue = 300103545
 	)
 	@Export("musicTrackVolume")
 	public int musicTrackVolume;
-	@ObfuscatedName("au")
-	public float field3912;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ap")
+	public float field4002;
+	@ObfuscatedName("aq")
 	@Export("musicTrackBoolean")
 	public boolean musicTrackBoolean;
-	@ObfuscatedName("ah")
-	public boolean field3917;
-	@ObfuscatedName("ap")
-	public boolean field3908;
-	@ObfuscatedName("am")
-	public boolean field3914;
-	@ObfuscatedName("aj")
-	boolean field3918;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ao")
+	public boolean field4008;
+	@ObfuscatedName("as")
+	public boolean field4009;
+	@ObfuscatedName("al")
+	public boolean field4010;
+	@ObfuscatedName("au")
+	boolean field4011;
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lnm;"
+		descriptor = "Lnf;"
 	)
 	@Export("midiPcmStream")
 	public MidiPcmStream midiPcmStream;
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Ldm;"
-	)
-	public SoundCache field3919;
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lnp;"
+		descriptor = "Ldi;"
 	)
-	public MusicTrack field3920;
+	public SoundCache field4006;
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Lnd;"
+	)
+	public MusicTrack field4003;
 
 	@ObfuscatedSignature(
 		descriptor = "(Lpx;Ljava/lang/String;Ljava/lang/String;IZ)V"
@@ -69,10 +68,10 @@ public class MidiRequest {
 		this.musicTrackGroupId = -1;
 		this.musicTrackFileId = -1;
 		this.musicTrackVolume = 0;
-		this.field3912 = 0.0F;
+		this.field4002 = 0.0F;
 		this.musicTrackBoolean = false;
-		this.field3914 = false;
-		this.field3918 = false;
+		this.field4010 = false;
+		this.field4011 = false;
 		this.musicTrackGroupId = var1.getGroupId(var2);
 		this.musicTrackFileId = var1.getFileId(this.musicTrackGroupId, var3);
 		this.playMusicTrack(var1, this.musicTrackGroupId, this.musicTrackFileId, var4, var5);
@@ -85,17 +84,17 @@ public class MidiRequest {
 		this.musicTrackGroupId = -1;
 		this.musicTrackFileId = -1;
 		this.musicTrackVolume = 0;
-		this.field3912 = 0.0F;
+		this.field4002 = 0.0F;
 		this.musicTrackBoolean = false;
-		this.field3914 = false;
-		this.field3918 = false;
+		this.field4010 = false;
+		this.field4011 = false;
 		this.playMusicTrack(var1, var2, var3, var4, var5);
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(Lpx;IIIZI)V",
-		garbageValue = "-1031816559"
+		garbageValue = "625955701"
 	)
 	@Export("playMusicTrack")
 	void playMusicTrack(AbstractArchive var1, int var2, int var3, int var4, boolean var5) {
@@ -104,26 +103,5 @@ public class MidiRequest {
 		this.musicTrackFileId = var3;
 		this.musicTrackVolume = var4;
 		this.musicTrackBoolean = var5;
-	}
-
-	@ObfuscatedName("oc")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1224008257"
-	)
-	static final void method7367() {
-		Iterator var0 = Client.worldViewManager.iterator();
-
-		while (var0.hasNext()) {
-			WorldView var1 = (WorldView)var0.next();
-
-			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
-				Player var3 = (Player)class7.topLevelWorldView.players.get((long)Client.playerUpdateManager.playerIndices[var2]);
-				if (var3 != null) {
-					var3.clearIsInFriendsChat();
-				}
-			}
-		}
-
 	}
 }

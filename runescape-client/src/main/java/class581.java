@@ -1,15 +1,13 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("wd")
+@ObfuscatedName("wx")
 public class class581 {
-	@ObfuscatedName("al")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -483356857
+		intValue = 1177119463
 	)
-	public static int field5790;
-
-	static {
-		field5790 = Integer.MAX_VALUE;
-	}
+	@Export("SpriteBuffer_spriteHeight")
+	public static int SpriteBuffer_spriteHeight;
 }

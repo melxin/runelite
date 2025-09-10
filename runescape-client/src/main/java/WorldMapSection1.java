@@ -4,42 +4,42 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lz")
+@ObfuscatedName("ld")
 @Implements("WorldMapSection1")
 public class WorldMapSection1 implements WorldMapSection {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 225402929
+		intValue = 1952092899
 	)
 	@Export("minPlane")
 	int minPlane;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1078102335
+		intValue = -860455509
 	)
 	@Export("planes")
 	int planes;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 2041253271
+		intValue = 1365363659
 	)
 	@Export("regionStartX")
 	int regionStartX;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1647070163
+		intValue = -2112240261
 	)
 	@Export("regionStartY")
 	int regionStartY;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1876170333
+		intValue = -1502864257
 	)
 	@Export("regionEndX")
 	int regionEndX;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1458186105
+		intValue = 2036461915
 	)
 	@Export("regionEndY")
 	int regionEndY;
@@ -47,10 +47,10 @@ public class WorldMapSection1 implements WorldMapSection {
 	WorldMapSection1() {
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Llr;B)V",
-		garbageValue = "78"
+		descriptor = "(Lll;I)V",
+		garbageValue = "1896416407"
 	)
 	@Export("expandBounds")
 	public void expandBounds(WorldMapArea var1) {
@@ -72,10 +72,10 @@ public class WorldMapSection1 implements WorldMapSection {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)Z",
-		garbageValue = "828092552"
+		garbageValue = "-739948834"
 	)
 	@Export("containsCoord")
 	public boolean containsCoord(int var1, int var2, int var3) {
@@ -86,20 +86,20 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(IIB)Z",
-		garbageValue = "-29"
+		garbageValue = "-51"
 	)
 	@Export("containsPosition")
 	public boolean containsPosition(int var1, int var2) {
 		return var1 >> 6 == this.regionEndX && var2 >> 6 == this.regionEndY;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)[I",
-		garbageValue = "-826920955"
+		garbageValue = "-2061697618"
 	)
 	@Export("getBorderTileLengths")
 	public int[] getBorderTileLengths(int var1, int var2, int var3) {
@@ -111,10 +111,10 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lng;",
-		garbageValue = "-596761800"
+		descriptor = "(IIB)Lna;",
+		garbageValue = "1"
 	)
 	@Export("coord")
 	public Coord coord(int var1, int var2) {
@@ -127,10 +127,10 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "-1001820155"
+		descriptor = "(Lwb;I)V",
+		garbageValue = "-1979822224"
 	)
 	@Export("read")
 	public void read(Buffer var1) {
@@ -143,12 +143,116 @@ public class WorldMapSection1 implements WorldMapSection {
 		this.postRead();
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-330126879"
+		garbageValue = "-2085895626"
 	)
 	@Export("postRead")
 	void postRead() {
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "-1971343149"
+	)
+	static int method6859(int var0) {
+		return class27.KeyHandler_keyCodes[var0];
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "([BI)V",
+		garbageValue = "114431228"
+	)
+	@Export("ByteArrayPool_release")
+	public static void ByteArrayPool_release(byte[] var0) {
+		synchronized(ByteArrayPool.field5317) {
+			if (var0.length == 100 && ByteArrayPool.ByteArrayPool_smallCount < ByteArrayPool.field5322) {
+				ByteArrayPool.ByteArrayPool_small[++ByteArrayPool.ByteArrayPool_smallCount - 1] = var0;
+			} else if (var0.length == 5000 && ByteArrayPool.ByteArrayPool_mediumCount < ByteArrayPool.field5316) {
+				ByteArrayPool.ByteArrayPool_medium[++ByteArrayPool.ByteArrayPool_mediumCount - 1] = var0;
+			} else if (var0.length == 10000 && ByteArrayPool.ByteArrayPool_largeCount < ByteArrayPool.field5324) {
+				ByteArrayPool.ByteArrayPool_large[++ByteArrayPool.ByteArrayPool_largeCount - 1] = var0;
+			} else if (var0.length == 30000 && ByteArrayPool.field5321 < ByteArrayPool.field5325) {
+				ByteArrayPool.field5328[++ByteArrayPool.field5321 - 1] = var0;
+			} else {
+				if (class67.ByteArrayPool_arrays != null) {
+					for (int var2 = 0; var2 < ByteArrayPool.ByteArrayPool_alternativeSizes.length; ++var2) {
+						if (var0.length == ByteArrayPool.ByteArrayPool_alternativeSizes[var2] && FadeInTask.ByteArrayPool_altSizeArrayCounts[var2] < class67.ByteArrayPool_arrays[var2].length) {
+							class67.ByteArrayPool_arrays[var2][FadeInTask.ByteArrayPool_altSizeArrayCounts[var2]++] = var0;
+							return;
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "([Ljava/lang/String;I)Lti;",
+		garbageValue = "1808539492"
+	)
+	public static DynamicArray method6858(String[] var0) {
+		DynamicArray var1 = new DynamicArray(class574.field5824, false);
+		var1.field5506 = var0;
+		var1.size = var0.length * -698619497;
+		var1.field5503 = var0.length;
+		return var1;
+	}
+
+	@ObfuscatedName("lj")
+	@ObfuscatedSignature(
+		descriptor = "(ILjava/lang/String;I)V",
+		garbageValue = "-898793886"
+	)
+	static void method6862(int var0, String var1) {
+		int var2 = Client.playerUpdateManager.playerCount;
+		int[] var3 = Client.playerUpdateManager.playerIndices;
+		boolean var4 = false;
+		Username var5 = new Username(var1, PacketWriter.loginType);
+		WorldView var6 = HealthBarUpdate.localPlayer.getWorldView();
+		if (var6 == null) {
+			Varcs.addGameMessage(4, "", "Unable to find " + var1 + ", current world null.");
+		} else {
+			for (int var7 = 0; var7 < var2; ++var7) {
+				Player var8 = (Player)var6.players.get((long)var3[var7]);
+				if (var8 != null && var8 != HealthBarUpdate.localPlayer && var8.username != null && var8.username.equals(var5)) {
+					PacketBufferNode var9;
+					if (var0 == 1) {
+						var9 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeShortAddLE(var3[var7]);
+						var9.packetBuffer.writeByteSub(0);
+						Client.packetWriter.addNode(var9);
+					} else if (var0 == 4) {
+						var9 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeShort(var3[var7]);
+						var9.packetBuffer.writeByte(0);
+						Client.packetWriter.addNode(var9);
+					} else if (var0 == 6) {
+						var9 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeShortAdd(var3[var7]);
+						var9.packetBuffer.writeByte(0);
+						Client.packetWriter.addNode(var9);
+					} else if (var0 == 7) {
+						var9 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
+						var9.packetBuffer.writeShort(var3[var7]);
+						var9.packetBuffer.writeShortLE(0);
+						Client.packetWriter.addNode(var9);
+					}
+
+					var4 = true;
+					break;
+				}
+			}
+
+			if (!var4) {
+				Varcs.addGameMessage(4, "", "Unable to find " + var1);
+			}
+
+		}
 	}
 }

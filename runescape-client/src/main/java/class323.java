@@ -1,40 +1,24 @@
-import java.io.IOException;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mh")
+@ObfuscatedName("mz")
 public class class323 {
-	@ObfuscatedName("ph")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "-492694788"
+		descriptor = "(IIII)I",
+		garbageValue = "2006321818"
 	)
-	@Export("randomDatData2")
-	static void randomDatData2(Buffer var0) {
-		if (Client.randomDatData != null) {
-			var0.writeBytes(Client.randomDatData, 0, Client.randomDatData.length);
-		} else {
-			byte[] var2 = new byte[24];
-
-			try {
-				JagexCache.JagexCache_randomDat.seek(0L);
-				JagexCache.JagexCache_randomDat.readFully(var2);
-
-				int var3;
-				for (var3 = 0; var3 < 24 && var2[var3] == 0; ++var3) {
-				}
-
-				if (var3 >= 24) {
-					throw new IOException();
-				}
-			} catch (Exception var6) {
-				for (int var4 = 0; var4 < 24; ++var4) {
-					var2[var4] = -1;
-				}
-			}
-
-			var0.writeBytes(var2, 0, var2.length);
-		}
+	static final int method7031(int var0, int var1, int var2) {
+		int var3 = var0 / var2;
+		int var4 = var0 & var2 - 1;
+		int var5 = var1 / var2;
+		int var6 = var1 & var2 - 1;
+		int var7 = DevicePcmPlayerProvider.method331(var3, var5);
+		int var8 = DevicePcmPlayerProvider.method331(var3 + 1, var5);
+		int var9 = DevicePcmPlayerProvider.method331(var3, var5 + 1);
+		int var10 = DevicePcmPlayerProvider.method331(var3 + 1, var5 + 1);
+		int var11 = NpcOverrides.method4321(var7, var8, var4, var2);
+		int var12 = NpcOverrides.method4321(var9, var10, var4, var2);
+		return NpcOverrides.method4321(var11, var12, var6, var2);
 	}
 }

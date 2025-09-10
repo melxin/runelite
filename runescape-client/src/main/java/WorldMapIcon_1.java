@@ -4,50 +4,48 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kr")
+@ObfuscatedName("lo")
 @Implements("WorldMapIcon_1")
 public class WorldMapIcon_1 extends AbstractWorldMapIcon {
-	@ObfuscatedName("nv")
-	static boolean field3231;
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1808346777
+		intValue = -51663707
 	)
 	@Export("objectDefId")
 	final int objectDefId;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Llc;"
+		descriptor = "Llb;"
 	)
 	@Export("region")
 	final WorldMapRegion region;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1729067567
+		intValue = 1381594615
 	)
 	@Export("element")
 	int element;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lla;"
+		descriptor = "Lls;"
 	)
 	@Export("label")
 	WorldMapLabel label;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 217010977
+		intValue = 2074827413
 	)
 	@Export("subWidth")
 	int subWidth;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 2014443095
+		intValue = -696966113
 	)
 	@Export("subHeight")
 	int subHeight;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lng;Lng;ILlc;)V"
+		descriptor = "(Lna;Lna;ILlb;)V"
 	)
 	WorldMapIcon_1(Coord var1, Coord var2, int var3, WorldMapRegion var4) {
 		super(var1, var2);
@@ -56,16 +54,16 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 		this.init();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1970229818"
+		descriptor = "(B)V",
+		garbageValue = "2"
 	)
 	@Export("init")
 	void init() {
-		this.element = SpriteMask.getObjectDefinition(this.objectDefId).transform().mapIconId;
-		this.label = this.region.createMapLabel(GrandExchangeOfferAgeComparator.WorldMapElement_get(this.element));
-		WorldMapElement var1 = GrandExchangeOfferAgeComparator.WorldMapElement_get(this.getElement());
+		this.element = ModeWhere.getObjectDefinition(this.objectDefId).transform().mapIconId;
+		this.label = this.region.createMapLabel(VerticalAlignment.WorldMapElement_get(this.element));
+		WorldMapElement var1 = VerticalAlignment.WorldMapElement_get(this.getElement());
 		SpritePixels var2 = var1.getSpriteBool(false);
 		if (var2 != null) {
 			this.subWidth = var2.subWidth;
@@ -77,53 +75,52 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "43009635"
+		garbageValue = "-1313098329"
 	)
 	@Export("getElement")
 	public int getElement() {
 		return this.element;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lla;",
-		garbageValue = "9"
+		descriptor = "(I)Lls;",
+		garbageValue = "-1635642188"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
 		return this.label;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "-28"
+		garbageValue = "96"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
 		return this.subWidth;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1977770397"
+		garbageValue = "-1852373606"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
 		return this.subHeight;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lxh;",
-		garbageValue = "339110765"
+		descriptor = "(S)[Lme;",
+		garbageValue = "1259"
 	)
-	@Export("FillMode_values")
-	public static FillMode[] FillMode_values() {
-		return new FillMode[]{FillMode.field5899, FillMode.field5897, FillMode.SOLID};
+	public static class328[] method6393() {
+		return new class328[]{class328.field3643, class328.field3644, class328.field3645, class328.field3646, class328.field3647, class328.field3648, class328.field3655, class328.field3649, class328.field3650, class328.field3652, class328.field3653, class328.field3654, class328.field3651};
 	}
 }

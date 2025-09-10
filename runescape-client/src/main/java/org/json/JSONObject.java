@@ -28,6 +28,10 @@ public class JSONObject {
 		this.properties = new HashMap();
 	}
 
+	public JSONObject(String var1) throws JSONException {
+		this(new JSONTokener(var1));
+	}
+
 	public JSONObject(JSONTokener var1) throws JSONException {
 		this();
 		if (var1.nextClean() != '{') {
@@ -70,10 +74,6 @@ public class JSONObject {
 				}
 			}
 		}
-	}
-
-	public JSONObject(String var1) throws JSONException {
-		this(new JSONTokener(var1));
 	}
 
 	public JSONObject(Object var1, boolean var2) {
@@ -136,18 +136,18 @@ public class JSONObject {
 		}
 	}
 
-	public boolean optBoolean(String var1, boolean var2) {
-		try {
-			return this.getBoolean(var1);
-		} catch (Exception var4) {
-			return var2;
-		}
-	}
-
 	public long optLong(String var1, long var2) {
 		try {
 			return this.getLong(var1);
 		} catch (Exception var5) {
+			return var2;
+		}
+	}
+
+	public boolean optBoolean(String var1, boolean var2) {
+		try {
+			return this.getBoolean(var1);
+		} catch (Exception var4) {
 			return var2;
 		}
 	}
@@ -417,62 +417,35 @@ public class JSONObject {
 		return var1.isPrimitive() || var1.isAssignableFrom(Byte.class) || var1.isAssignableFrom(Short.class) || var1.isAssignableFrom(Integer.class) || var1.isAssignableFrom(Long.class) || var1.isAssignableFrom(Float.class) || var1.isAssignableFrom(Double.class) || var1.isAssignableFrom(Character.class) || var1.isAssignableFrom(String.class) || var1.isAssignableFrom(Boolean.class);
 	}
 
-	public double optDouble(String var1) {
-		return this.optDouble(var1, Double.NaN);
-	}
-
-	public JSONObject append(String var1, Object var2) throws JSONException {
-		testValidity(var2);
-		Object var3 = this.method11959(var1);
-		if (var3 == null) {
-			this.setProperty(var1, (new JSONArray()).method11980(var2));
-		} else {
-			if (!(var3 instanceof JSONArray)) {
-				throw new JSONException("JSONObject[" + var1 + "] is not a JSONArray.");
-			}
-
-			this.setProperty(var1, ((JSONArray)var3).method11980(var2));
-		}
-
-		return this;
-	}
-
-	public long optLong(String var1) {
-		return this.optLong(var1, 0L);
-	}
-
 	public String toString(int var1) throws JSONException {
 		return this.toString(var1, 0);
-	}
-
-	public boolean isNull(String var1) {
-		return NULL.equals(this.method11959(var1));
-	}
-
-	public JSONArray names() {
-		JSONArray var1 = new JSONArray();
-		Iterator var2 = this.keys();
-
-		while (var2.hasNext()) {
-			var1.method11980(var2.next());
-		}
-
-		return var1.length() == 0 ? null : var1;
-	}
-
-	public boolean optBoolean(String var1) {
-		return this.optBoolean(var1, false);
 	}
 
 	public JSONObject accumulate(String var1, Object var2) throws JSONException {
 		testValidity(var2);
 		Object var3 = this.method11959(var1);
 		if (var3 == null) {
-			this.setProperty(var1, var2 instanceof JSONArray ? (new JSONArray()).method11980(var2) : var2);
+			this.setProperty(var1, var2 instanceof JSONArray ? (new JSONArray()).method11978(var2) : var2);
 		} else if (var3 instanceof JSONArray) {
-			((JSONArray)var3).method11980(var2);
+			((JSONArray)var3).method11978(var2);
 		} else {
-			this.setProperty(var1, (new JSONArray()).method11980(var3).method11980(var2));
+			this.setProperty(var1, (new JSONArray()).method11978(var3).method11978(var2));
+		}
+
+		return this;
+	}
+
+	public JSONObject append(String var1, Object var2) throws JSONException {
+		testValidity(var2);
+		Object var3 = this.method11959(var1);
+		if (var3 == null) {
+			this.setProperty(var1, (new JSONArray()).method11978(var2));
+		} else {
+			if (!(var3 instanceof JSONArray)) {
+				throw new JSONException("JSONObject[" + var1 + "] is not a JSONArray.");
+			}
+
+			this.setProperty(var1, ((JSONArray)var3).method11978(var2));
 		}
 
 		return this;
@@ -488,7 +461,7 @@ public class JSONObject {
 			JSONArray var2 = new JSONArray();
 
 			for (int var3 = 0; var3 < var1.length(); ++var3) {
-				var2.method11980(this.method11959(var1.getString(var3)));
+				var2.method11978(this.method11959(var1.getString(var3)));
 			}
 
 			return var2;
@@ -497,12 +470,39 @@ public class JSONObject {
 		}
 	}
 
+	public boolean optBoolean(String var1) {
+		return this.optBoolean(var1, false);
+	}
+
+	public double optDouble(String var1) {
+		return this.optDouble(var1, Double.NaN);
+	}
+
+	public JSONArray names() {
+		JSONArray var1 = new JSONArray();
+		Iterator var2 = this.keys();
+
+		while (var2.hasNext()) {
+			var1.method11978(var2.next());
+		}
+
+		return var1.length() == 0 ? null : var1;
+	}
+
 	public JSONObject putOpt(String var1, Object var2) throws JSONException {
 		if (var1 != null && var2 != null) {
 			this.setProperty(var1, var2);
 		}
 
 		return this;
+	}
+
+	public long optLong(String var1) {
+		return this.optLong(var1, 0L);
+	}
+
+	public boolean isNull(String var1) {
+		return NULL.equals(this.method11959(var1));
 	}
 
 	public static String[] getNames(JSONObject var0) {
@@ -718,6 +718,25 @@ public class JSONObject {
 		}
 	}
 
+	public static String doubleToString(double var0) {
+		if (!Double.isInfinite(var0) && !Double.isNaN(var0)) {
+			String var2 = Double.toString(var0);
+			if (var2.indexOf(46) > 0 && var2.indexOf(101) < 0 && var2.indexOf(69) < 0) {
+				while (var2.endsWith("0")) {
+					var2 = var2.substring(0, var2.length() - 1);
+				}
+
+				if (var2.endsWith(".")) {
+					var2 = var2.substring(0, var2.length() - 1);
+				}
+			}
+
+			return var2;
+		} else {
+			return "null";
+		}
+	}
+
 	public static String[] getNames(Object var0) {
 		if (var0 == null) {
 			return null;
@@ -736,25 +755,6 @@ public class JSONObject {
 
 				return var4;
 			}
-		}
-	}
-
-	public static String doubleToString(double var0) {
-		if (!Double.isInfinite(var0) && !Double.isNaN(var0)) {
-			String var2 = Double.toString(var0);
-			if (var2.indexOf(46) > 0 && var2.indexOf(101) < 0 && var2.indexOf(69) < 0) {
-				while (var2.endsWith("0")) {
-					var2 = var2.substring(0, var2.length() - 1);
-				}
-
-				if (var2.endsWith(".")) {
-					var2 = var2.substring(0, var2.length() - 1);
-				}
-			}
-
-			return var2;
-		} else {
-			return "null";
 		}
 	}
 }

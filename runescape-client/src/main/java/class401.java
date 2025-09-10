@@ -1,27 +1,35 @@
+import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pd")
+@ObfuscatedName("pc")
 public class class401 {
-	@ObfuscatedName("df")
-	@ObfuscatedSignature(
-		descriptor = "Lxa;"
+	@ObfuscatedName("mc")
+	@ObfuscatedGetter(
+		intValue = -2105622257
 	)
-	static IndexedSprite field4773;
+	@Export("cameraPitch")
+	static int cameraPitch;
+	@ObfuscatedName("vv")
+	@ObfuscatedGetter(
+		intValue = -336208599
+	)
+	static int field4853;
 
-	@ObfuscatedName("bw")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Ltn;ILtn;III)V",
-		garbageValue = "1550891299"
+		descriptor = "(I)Lrj;",
+		garbageValue = "1771498025"
 	)
-	static void method8272(DynamicArray var0, int var1, DynamicArray var2, int var3, int var4) {
-		if (var0.field5399 == class570.field5721) {
-			System.arraycopy(var0.array, var1, var2.array, var3, var4);
-		} else if (var0.field5399 == class570.field5724) {
-			System.arraycopy(var0.field5405, var1, var2.field5405, var3, var4);
-		} else {
-			System.arraycopy(var0.field5406, var1, var2.field5406, var3, var4);
+	public static TransformationMatrix method8245() {
+		synchronized(TransformationMatrix.field5185) {
+			if (class172.field1931 == 0) {
+				return new TransformationMatrix();
+			} else {
+				TransformationMatrix.field5185[--class172.field1931].method9090();
+				return TransformationMatrix.field5185[class172.field1931];
+			}
 		}
-
 	}
 }

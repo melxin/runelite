@@ -4,40 +4,37 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pw")
+@ObfuscatedName("pl")
 @Implements("ArchiveDiskActionHandler")
 public class ArchiveDiskActionHandler implements Runnable {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lqp;"
+		descriptor = "Lqs;"
 	)
 	@Export("ArchiveDiskActionHandler_requestQueue")
 	public static final NodeDeque ArchiveDiskActionHandler_requestQueue;
-	@ObfuscatedName("ab")
-	static final Object field4796;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aw")
+	static final Object field4903;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lqp;"
+		descriptor = "Lqs;"
 	)
 	@Export("ArchiveDiskActionHandler_responseQueue")
 	public static NodeDeque ArchiveDiskActionHandler_responseQueue;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 399792067
+		intValue = -1118150385
 	)
-	static int field4795;
-	@ObfuscatedName("ig")
-	@ObfuscatedGetter(
-		intValue = -607855809
-	)
-	@Export("foundItemIdCount")
-	static int foundItemIdCount;
+	static int field4901;
+	@ObfuscatedName("ao")
+	@Export("ArchiveDiskActionHandler_thread")
+	static Thread ArchiveDiskActionHandler_thread;
 
 	static {
 		ArchiveDiskActionHandler_requestQueue = new NodeDeque();
-		field4796 = new Object();
+		field4903 = new Object();
 		ArchiveDiskActionHandler_responseQueue = new NodeDeque();
-		field4795 = 0;
+		field4901 = 0;
 	}
 
 	ArchiveDiskActionHandler() {
@@ -64,30 +61,39 @@ public class ArchiveDiskActionHandler implements Runnable {
 						}
 					}
 
-					synchronized(field4796) {
-						if (field4795 <= 1) {
-							field4795 = 0;
-							field4796.notifyAll();
+					synchronized(field4903) {
+						if (field4901 <= 1) {
+							field4901 = 0;
+							field4903.notifyAll();
 							return;
 						}
 
-						field4795 = 600;
+						field4901 = 600;
 					}
 				} else {
-					UserComparator4.method3477(100L);
-					synchronized(field4796) {
-						if (field4795 <= 1) {
-							field4795 = 0;
-							field4796.notifyAll();
+					class164.method4001(100L);
+					synchronized(field4903) {
+						if (field4901 <= 1) {
+							field4901 = 0;
+							field4903.notifyAll();
 							return;
 						}
 
-						--field4795;
+						--field4901;
 					}
 				}
 			}
 		} catch (Exception var13) {
-			class559.RunException_sendStackTrace((String)null, var13);
+			class508.RunException_sendStackTrace((String)null, var13);
 		}
+	}
+
+	@ObfuscatedName("bx")
+	@ObfuscatedSignature(
+		descriptor = "(ILcg;ZI)I",
+		garbageValue = "-777180588"
+	)
+	static int method8285(int var0, Script var1, boolean var2) {
+		return 2;
 	}
 }

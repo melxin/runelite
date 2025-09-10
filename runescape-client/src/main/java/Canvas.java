@@ -1,32 +1,24 @@
 import java.awt.Component;
 import java.awt.Graphics;
+import java.io.File;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("af")
+@ObfuscatedName("ak")
 @Implements("Canvas")
 public final class Canvas extends java.awt.Canvas {
-	@ObfuscatedName("kb")
-	@ObfuscatedSignature(
-		descriptor = "Lpo;"
+	@ObfuscatedName("ad")
+	@Export("cacheDir")
+	static File cacheDir;
+	@ObfuscatedName("gd")
+	@ObfuscatedGetter(
+		intValue = 2068617489
 	)
-	@Export("archive12")
-	static Archive archive12;
-	@ObfuscatedName("pm")
-	static byte[][] field100;
-	@ObfuscatedName("sf")
-	@ObfuscatedSignature(
-		descriptor = "Lox;"
-	)
-	static Widget field102;
-	@ObfuscatedName("tj")
-	@ObfuscatedSignature(
-		descriptor = "[Lox;"
-	)
-	static Widget[] field104;
-	@ObfuscatedName("al")
+	static int field94;
+	@ObfuscatedName("af")
 	@Export("component")
 	Component component;
 
@@ -42,209 +34,54 @@ public final class Canvas extends java.awt.Canvas {
 		this.component.paint(var1);
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;I)V",
-		garbageValue = "1768047860"
+		descriptor = "(II)Z",
+		garbageValue = "-1316501754"
 	)
-	static void method346(WorldView var0) {
-		int var1 = var0.sizeX;
-		int var2 = var0.sizeY;
-		int[][][] var3 = var0.tileHeights;
-		Scene var4 = var0.scene;
-		int var5 = 1;
-		int var6 = 2;
-		int var7 = 4;
+	public static boolean method338(int var0) {
+		return (var0 >> 21 & 1) != 0;
+	}
 
-		for (int var8 = 0; var8 < 4; ++var8) {
-			if (var8 > 0) {
-				var5 <<= 3;
-				var6 <<= 3;
-				var7 <<= 3;
+	@ObfuscatedName("ma")
+	@ObfuscatedSignature(
+		descriptor = "([Loi;Loi;ZB)V",
+		garbageValue = "29"
+	)
+	@Export("revalidateWidgetScroll")
+	static void revalidateWidgetScroll(Widget[] var0, Widget var1, boolean var2) {
+		int var3 = var1.scrollWidth != 0 ? var1.scrollWidth : var1.width * 469894397;
+		int var4 = var1.scrollHeight != 0 ? var1.scrollHeight : var1.height * 1156037777;
+		class537.resizeInterface(var0, var1.field4248, var1.field4214, var1.id, var1.childIndex * -217986249, var3, var4, var2);
+		if (var1.children != null) {
+			class537.resizeInterface(var1.children, 0, var1.children.length - 1, var1.id, -1, var3, var4, var2);
+		}
+
+		if (var1.childIndex * -217986249 == -1) {
+			InterfaceParent var5 = (InterfaceParent)Client.interfaceParents.get((long)var1.id);
+			if (var5 != null) {
+				class382.method8179(var5.group, var3, var4, var2);
 			}
+		}
 
-			for (int var9 = 0; var9 <= var8; ++var9) {
-				for (int var10 = 0; var10 <= var2; ++var10) {
-					for (int var11 = 0; var11 <= var1; ++var11) {
-						int var12;
-						int var13;
-						int var14;
-						int var15;
-						int var16;
-						int[] var10000;
-						short var17;
-						int var18;
-						int var19;
-						int var20;
-						int var21;
-						if ((class81.field1179[var9][var11][var10] & var5) != 0) {
-							var12 = var10;
-							var13 = var10;
-							var14 = var9;
-
-							for (var15 = var9; var12 > 0 && (class81.field1179[var9][var11][var12 - 1] & var5) != 0; --var12) {
-							}
-
-							while (var13 < var2 && (class81.field1179[var9][var11][var13 + 1] & var5) != 0) {
-								++var13;
-							}
-
-							label191:
-							while (var14 > 0) {
-								for (var16 = var12; var16 <= var13; ++var16) {
-									if ((class81.field1179[var14 - 1][var11][var16] & var5) == 0) {
-										break label191;
-									}
-								}
-
-								--var14;
-							}
-
-							label180:
-							while (var15 < var8) {
-								for (var16 = var12; var16 <= var13; ++var16) {
-									if ((class81.field1179[var15 + 1][var11][var16] & var5) == 0) {
-										break label180;
-									}
-								}
-
-								++var15;
-							}
-
-							var16 = (var13 - var12 + 1) * (var15 + 1 - var14);
-							if (var16 >= 8) {
-								var17 = 240;
-								var18 = var3[var15][var11][var12] - var17;
-								var19 = var3[var14][var11][var12];
-								var4.Scene_addOccluder(var8, 1, var11 * 128, var11 * 128, var12 * 128, var13 * 128 + 128, var18, var19);
-
-								for (var20 = var14; var20 <= var15; ++var20) {
-									for (var21 = var12; var21 <= var13; ++var21) {
-										var10000 = class81.field1179[var20][var11];
-										var10000[var21] &= ~var5;
-									}
-								}
-							}
-						}
-
-						if ((class81.field1179[var9][var11][var10] & var6) != 0) {
-							var12 = var11;
-							var13 = var11;
-							var14 = var9;
-
-							for (var15 = var9; var12 > 0 && (class81.field1179[var9][var12 - 1][var10] & var6) != 0; --var12) {
-							}
-
-							while (var13 < var1 && (class81.field1179[var9][var13 + 1][var10] & var6) != 0) {
-								++var13;
-							}
-
-							label244:
-							while (var14 > 0) {
-								for (var16 = var12; var16 <= var13; ++var16) {
-									if ((class81.field1179[var14 - 1][var16][var10] & var6) == 0) {
-										break label244;
-									}
-								}
-
-								--var14;
-							}
-
-							label233:
-							while (var15 < var8) {
-								for (var16 = var12; var16 <= var13; ++var16) {
-									if ((class81.field1179[var15 + 1][var16][var10] & var6) == 0) {
-										break label233;
-									}
-								}
-
-								++var15;
-							}
-
-							var16 = (var13 - var12 + 1) * (var15 + 1 - var14);
-							if (var16 >= 8) {
-								var17 = 240;
-								var18 = var3[var15][var12][var10] - var17;
-								var19 = var3[var14][var12][var10];
-								var4.Scene_addOccluder(var8, 2, var12 * 128, var13 * 128 + 128, var10 * 128, var10 * 128, var18, var19);
-
-								for (var20 = var14; var20 <= var15; ++var20) {
-									for (var21 = var12; var21 <= var13; ++var21) {
-										var10000 = class81.field1179[var20][var21];
-										var10000[var10] &= ~var6;
-									}
-								}
-							}
-						}
-
-						if ((class81.field1179[var9][var11][var10] & var7) != 0) {
-							var12 = var11;
-							var13 = var11;
-							var14 = var10;
-
-							for (var15 = var10; var14 > 0 && (class81.field1179[var9][var11][var14 - 1] & var7) != 0; --var14) {
-							}
-
-							while (var15 < var2 && (class81.field1179[var9][var11][var15 + 1] & var7) != 0) {
-								++var15;
-							}
-
-							label297:
-							while (var12 > 0) {
-								for (var16 = var14; var16 <= var15; ++var16) {
-									if ((class81.field1179[var9][var12 - 1][var16] & var7) == 0) {
-										break label297;
-									}
-								}
-
-								--var12;
-							}
-
-							label286:
-							while (var13 < var1) {
-								for (var16 = var14; var16 <= var15; ++var16) {
-									if ((class81.field1179[var9][var13 + 1][var16] & var7) == 0) {
-										break label286;
-									}
-								}
-
-								++var13;
-							}
-
-							if ((var15 - var14 + 1) * (var13 - var12 + 1) >= 4) {
-								var16 = var3[var9][var12][var14];
-								var4.Scene_addOccluder(var8, 4, var12 * 128, var13 * 128 + 128, var14 * 128, var15 * 128 + 128, var16, var16);
-
-								for (int var22 = var12; var22 <= var13; ++var22) {
-									for (var18 = var14; var18 <= var15; ++var18) {
-										var10000 = class81.field1179[var9][var22];
-										var10000[var18] &= ~var7;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+		if (var1.contentType == 1337) {
 		}
 
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("pc")
 	@ObfuscatedSignature(
-		descriptor = "(Ldy;I)V",
-		garbageValue = "-1334175492"
+		descriptor = "(II)Lwd;",
+		garbageValue = "-1437045612"
 	)
-	@Export("PcmStream_disable")
-	static final void PcmStream_disable(PcmStream var0) {
-		var0.active = false;
-		if (var0.sound != null) {
-			var0.sound.position = 0;
+	@Export("getDbTable")
+	static DbTable getDbTable(int var0) {
+		DbTable var1 = (DbTable)Client.DBTableIndex_cache.get((long)var0);
+		if (var1 == null) {
+			var1 = new DbTable(WorldMapLabelSize.field3302, class456.method9207(var0), BufferedNetSocket.method10223(var0));
+			Client.DBTableIndex_cache.put(var1, (long)var0);
 		}
 
-		for (PcmStream var1 = var0.firstSubStream(); var1 != null; var1 = var0.nextSubStream()) {
-			PcmStream_disable(var1);
-		}
-
+		return var1;
 	}
 }

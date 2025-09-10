@@ -1,98 +1,74 @@
-import java.util.concurrent.Callable;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fu")
-public class class136 implements Callable {
-	@ObfuscatedName("al")
+@ObfuscatedName("fs")
+public enum class136 implements Enum {
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lfn;"
+		descriptor = "Lfs;"
 	)
-	final class137 field1632;
-	@ObfuscatedName("ab")
+	field1647(0, 0),
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lfa;"
+		descriptor = "Lfs;"
 	)
-	final class138 field1627;
+	field1641(1, 1),
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lfs;"
+	)
+	field1642(2, 2),
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lfw;"
+		descriptor = "Lfs;"
 	)
-	final class139 field1630;
-	@ObfuscatedName("av")
+	field1643(3, 3),
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lfs;"
+	)
+	field1644(4, 4);
+
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -381907927
+		intValue = -984888973
 	)
-	final int field1628;
-	// $FF: synthetic field
-	@ObfuscatedSignature(
-		descriptor = "Lfh;"
+	final int field1645;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = -434289387
 	)
-	final class144 this$0;
+	final int field1646;
 
-	@ObfuscatedSignature(
-		descriptor = "(Lfh;Lfn;Lfa;Lfw;I)V"
-	)
-	class136(class144 var1, class137 var2, class138 var3, class139 var4, int var5) {
-		this.this$0 = var1;
-		this.field1632 = var2;
-		this.field1627 = var3;
-		this.field1630 = var4;
-		this.field1628 = var5;
+	class136(int var3, int var4) {
+		this.field1645 = var3;
+		this.field1646 = var4;
 	}
 
-	public Object call() {
-		this.field1632.method3651();
-		class137[][] var1;
-		if (this.field1627 == class138.field1663) {
-			var1 = this.this$0.field1712;
-		} else {
-			var1 = this.this$0.field1710;
-		}
-
-		var1[this.field1628][this.field1630.method3689()] = this.field1632;
-		return null;
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-1935172756"
+	)
+	@Export("rsOrdinal")
+	public int rsOrdinal() {
+		return this.field1646;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(III)I",
-		garbageValue = "1875096266"
+		garbageValue = "-1792283733"
 	)
-	static final int method3648(int var0, int var1) {
-		if (var0 == -1) {
-			return 12345678;
+	@Export("ItemContainer_getCount")
+	static int ItemContainer_getCount(int var0, int var1) {
+		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+		if (var2 == null) {
+			return 0;
 		} else {
-			var1 = (var0 & 127) * var1 / 128;
-			if (var1 < 2) {
-				var1 = 2;
-			} else if (var1 > 126) {
-				var1 = 126;
-			}
-
-			return (var0 & 65408) + var1;
-		}
-	}
-
-	@ObfuscatedName("ll")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "91"
-	)
-	static void method3644() {
-		if (Client.isSpellSelected) {
-			Widget var0 = class167.widgetDefinition.getWidgetChild(class556.selectedSpellWidget, Client.selectedSpellChildIndex);
-			if (var0 != null && var0.onTargetLeave != null) {
-				ScriptEvent var1 = new ScriptEvent();
-				var1.widget = var0;
-				var1.args = var0.onTargetLeave;
-				SequenceDefinition.runScriptEvent(var1);
-			}
-
-			Client.selectedSpellItemId = -1;
-			Client.isSpellSelected = false;
-			ApproximateRouteStrategy.invalidateWidget(var0);
+			return var1 >= 0 && var1 < var2.quantities.length ? var2.quantities[var1] : 0;
 		}
 	}
 }

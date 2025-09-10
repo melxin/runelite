@@ -4,20 +4,20 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ti")
+@ObfuscatedName("tw")
 @Implements("AbstractUserComparator")
 public abstract class AbstractUserComparator implements Comparator {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("nextComparator")
 	Comparator nextComparator;
 
 	protected AbstractUserComparator() {
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/Comparator;B)V",
-		garbageValue = "-19"
+		descriptor = "(Ljava/util/Comparator;I)V",
+		garbageValue = "2068533580"
 	)
 	@Export("addComparator")
 	final void addComparator(Comparator var1) {
@@ -29,10 +29,10 @@ public abstract class AbstractUserComparator implements Comparator {
 
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Ltb;Ltb;B)I",
-		garbageValue = "0"
+		descriptor = "(Ltl;Ltl;I)I",
+		garbageValue = "-1309674587"
 	)
 	@Export("compareUser")
 	protected final int compareUser(User var1, User var2) {
@@ -41,5 +41,14 @@ public abstract class AbstractUserComparator implements Comparator {
 
 	public boolean equals(Object var1) {
 		return super.equals(var1);
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(I)[Ltb;",
+		garbageValue = "1789155977"
+	)
+	public static class518[] method9969() {
+		return new class518[]{class518.field5492, class518.field5493, class518.field5494};
 	}
 }

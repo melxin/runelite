@@ -3,62 +3,62 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("xf")
+@ObfuscatedName("xa")
 @Implements("Username")
 public class Username implements Comparable {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@Export("name")
 	String name;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("cleanName")
 	String cleanName;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lvy;)V"
+		descriptor = "(Ljava/lang/String;Lva;)V"
 	)
 	public Username(String var1, LoginType var2) {
 		this.name = var1;
-		this.cleanName = SceneTilePaint.method5664(var1, var2);
+		this.cleanName = class196.method4386(var1, var2);
 	}
 
 	public Username(String var1) {
 		this.name = var1;
-		this.cleanName = SceneTilePaint.method5664(var1, LoginType.oldscape);
+		this.cleanName = class196.method4386(var1, LoginType.oldscape);
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1797967383"
+		descriptor = "(B)Ljava/lang/String;",
+		garbageValue = "38"
 	)
 	@Export("getName")
 	public String getName() {
 		return this.name;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1477423520"
+		descriptor = "(B)Ljava/lang/String;",
+		garbageValue = "-95"
 	)
-	public String method11913() {
+	public String method11910() {
 		return this.cleanName;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-84"
+		descriptor = "(I)Z",
+		garbageValue = "846964310"
 	)
 	@Export("hasCleanName")
 	public boolean hasCleanName() {
 		return this.cleanName != null;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lxf;S)I",
-		garbageValue = "-13054"
+		descriptor = "(Lxa;I)I",
+		garbageValue = "1591588445"
 	)
 	@Export("compareToTyped")
 	public int compareToTyped(Username var1) {

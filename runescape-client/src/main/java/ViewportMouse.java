@@ -1,48 +1,63 @@
-import java.util.ArrayList;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InvalidClassException;
+import java.io.ObjectInputStream;
+import java.io.OptionalDataException;
+import java.io.StreamCorruptedException;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.Reflection;
 
 @ObfuscatedName("jl")
 @Implements("ViewportMouse")
 public class ViewportMouse {
-	@ObfuscatedName("bn")
+	@ObfuscatedName("bs")
 	@ObfuscatedSignature(
-		descriptor = "Lrm;"
+		descriptor = "Lre;"
 	)
-	public static final class448 field2905;
-	@ObfuscatedName("bi")
+	static final class452 field2962;
+	@ObfuscatedName("bu")
 	@Export("ViewportMouse_isInViewport")
 	public static boolean ViewportMouse_isInViewport;
-	@ObfuscatedName("bw")
+	@ObfuscatedName("bi")
 	@ObfuscatedGetter(
-		intValue = -884646507
+		intValue = 1879042057
 	)
 	@Export("ViewportMouse_x")
-	static int ViewportMouse_x;
-	@ObfuscatedName("bo")
+	public static int ViewportMouse_x;
+	@ObfuscatedName("bd")
 	@ObfuscatedGetter(
-		intValue = 334517251
+		intValue = -758639641
 	)
 	@Export("ViewportMouse_y")
-	static int ViewportMouse_y;
-	@ObfuscatedName("be")
-	@Export("ViewportMouse_false0")
-	static boolean ViewportMouse_false0;
+	public static int ViewportMouse_y;
 	@ObfuscatedName("ba")
+	@Export("ViewportMouse_false0")
+	public static boolean ViewportMouse_false0;
+	@ObfuscatedName("be")
 	@ObfuscatedGetter(
-		intValue = -942059985
+		intValue = 1232264553
 	)
 	@Export("ViewportMouse_entityCount")
 	public static int ViewportMouse_entityCount;
 	@ObfuscatedName("bh")
 	@Export("ViewportMouse_entityTags")
 	public static long[] ViewportMouse_entityTags;
+	@ObfuscatedName("ji")
+	@ObfuscatedSignature(
+		descriptor = "Lqh;"
+	)
+	@Export("clientLanguage")
+	static Language clientLanguage;
 
 	static {
-		field2905 = new class448();
+		field2962 = new class452();
 		ViewportMouse_isInViewport = false;
 		ViewportMouse_x = 0;
 		ViewportMouse_y = 0;
@@ -51,112 +66,103 @@ public class ViewportMouse {
 		ViewportMouse_entityTags = new long[1000];
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lfn;FI)F",
-		garbageValue = "444610927"
+		descriptor = "(Lwf;I)V",
+		garbageValue = "-113348182"
 	)
-	static float method5621(class137 var0, float var1) {
-		if (var0 == null) {
-			return 0.0F;
-		} else {
-			float var2 = var1 - var0.field1658;
-			return var0.field1646 + ((var0.field1642 * var2 + var0.field1643) * var2 + var0.field1635) * var2;
-		}
-	}
+	@Export("performReflectionCheck")
+	public static void performReflectionCheck(PacketBuffer var0) {
+		ReflectionCheck var1 = (ReflectionCheck)class36.reflectionChecks.last();
+		if (var1 != null) {
+			int var2 = var0.array * 1216585693;
+			var0.writeInt(var1.id);
 
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "1757691329"
-	)
-	public static void method5645(int var0, int var1, int var2, int var3) {
-		if (class337.midiRequests.size() > 1 && class337.midiRequests.get(0) != null && ((MidiRequest)class337.midiRequests.get(0)).midiPcmStream.isReady() && class337.midiRequests.get(1) != null && ((MidiRequest)class337.midiRequests.get(1)).midiPcmStream.isReady()) {
-			class166.method4014(var0, var1, var2, var3);
-			class337.field3795.add(new SwapSongTask((SongTask)null));
-			ArrayList var4 = new ArrayList();
-			var4.add(new DelayFadeTask(new FadeInTask((SongTask)null, 1, false, class337.field3789), class337.field3798));
-			var4.add(new DelayFadeTask(new FadeOutTask((SongTask)null, 0, false, class337.field3797), class337.musicPlayerStatus));
-			class337.field3795.add(new ConcurrentMidiTask((SongTask)null, var4));
-			if (class337.field3790.get(0) != null && class337.field3790.get(1) != null) {
-				MidiRequest var5 = (MidiRequest)class337.field3790.get(0);
-				class337.field3790.set(0, class337.midiRequests.get(1));
-				class337.field3790.set(1, var5);
-			}
-		}
+			for (int var3 = 0; var3 < var1.size; ++var3) {
+				if (var1.creationErrors[var3] != 0) {
+					var0.writeByte(var1.creationErrors[var3]);
+				} else {
+					try {
+						int var4 = var1.operations[var3];
+						Field var5;
+						int var6;
+						if (var4 == 0) {
+							var5 = var1.fields[var3];
+							var6 = Reflection.getInt(var5, (Object)null);
+							var0.writeByte(0);
+							var0.writeInt(var6);
+						} else if (var4 == 1) {
+							var5 = var1.fields[var3];
+							Reflection.setInt(var5, (Object)null, var1.intReplaceValues[var3]);
+							var0.writeByte(0);
+						} else if (var4 == 2) {
+							var5 = var1.fields[var3];
+							var6 = var5.getModifiers();
+							var0.writeByte(0);
+							var0.writeInt(var6);
+						}
 
-	}
+						Method var25;
+						if (var4 != 3) {
+							if (var4 == 4) {
+								var25 = var1.methods[var3];
+								var6 = var25.getModifiers();
+								var0.writeByte(0);
+								var0.writeInt(var6);
+							}
+						} else {
+							var25 = var1.methods[var3];
+							byte[][] var10 = var1.arguments[var3];
+							Object[] var7 = new Object[var10.length];
 
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "1"
-	)
-	public static int method5646(int var0) {
-		if (var0 > 0) {
-			return 1;
-		} else {
-			return var0 < 0 ? -1 : 0;
-		}
-	}
+							for (int var8 = 0; var8 < var10.length; ++var8) {
+								ObjectInputStream var9 = new ObjectInputStream(new ByteArrayInputStream(var10[var8]));
+								var7[var8] = var9.readObject();
+							}
 
-	@ObfuscatedName("lg")
-	@ObfuscatedSignature(
-		descriptor = "(IIIILjava/lang/String;I)V",
-		garbageValue = "-1495202470"
-	)
-	@Export("widgetDefaultMenuAction")
-	static void widgetDefaultMenuAction(int var0, int var1, int var2, int var3, String var4) {
-		int var5 = var0 >>> 16;
-		int var6 = var0 & 65535;
-		Widget var7 = class167.widgetDefinition.getWidgetChild(var1, var2);
-		if (var7 != null) {
-			if (var7.onOp != null) {
-				ScriptEvent var8 = new ScriptEvent();
-				var8.widget = var7;
-				var8.opIndex = var6;
-				var8.field877 = var5;
-				var8.targetName = var4;
-				var8.args = var7.onOp;
-				SequenceDefinition.runScriptEvent(var8);
-			}
-
-			boolean var10 = true;
-			if (var7.contentType > 0) {
-				var10 = DynamicObject.method1989(var7);
-			}
-
-			if (var10) {
-				if (AbstractWorldMapIcon.method6880(SequenceDefinition.getWidgetFlags2(var7), var6 - 1)) {
-					PacketBufferNode var9;
-					if (var5 == 0) {
-						var9 = class291.getPacketBufferNode(ClientPacket.IF_BUTTONX, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeInt(var1);
-						var9.packetBuffer.writeShort(var2);
-						var9.packetBuffer.writeShort(var3);
-						var9.packetBuffer.writeByte(var6);
-						Client.packetWriter.addNode(var9);
-					} else {
-						var9 = class291.getPacketBufferNode(ClientPacket.IF_SUBOP, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeInt(var1);
-						var9.packetBuffer.writeShort(var2);
-						var9.packetBuffer.writeShort(var3);
-						var9.packetBuffer.writeByte(var6);
-						var9.packetBuffer.writeByte(var5 - 1);
-						Client.packetWriter.addNode(var9);
+							Object var11 = Reflection.invoke(var25, (Object)null, var7);
+							if (var11 == null) {
+								var0.writeByte(0);
+							} else if (var11 instanceof Number) {
+								var0.writeByte(1);
+								var0.writeLong(((Number)var11).longValue());
+							} else if (var11 instanceof String) {
+								var0.writeByte(2);
+								var0.writeStringCp1252NullTerminated((String)var11);
+							} else {
+								var0.writeByte(4);
+							}
+						}
+					} catch (ClassNotFoundException var13) {
+						var0.writeByte(-10);
+					} catch (InvalidClassException var14) {
+						var0.writeByte(-11);
+					} catch (StreamCorruptedException var15) {
+						var0.writeByte(-12);
+					} catch (OptionalDataException var16) {
+						var0.writeByte(-13);
+					} catch (IllegalAccessException var17) {
+						var0.writeByte(-14);
+					} catch (IllegalArgumentException var18) {
+						var0.writeByte(-15);
+					} catch (InvocationTargetException var19) {
+						var0.writeByte(-16);
+					} catch (SecurityException var20) {
+						var0.writeByte(-17);
+					} catch (IOException var21) {
+						var0.writeByte(-18);
+					} catch (NullPointerException var22) {
+						var0.writeByte(-19);
+					} catch (Exception var23) {
+						var0.writeByte(-20);
+					} catch (Throwable var24) {
+						var0.writeByte(-21);
 					}
-
 				}
 			}
-		}
-	}
 
-	@ObfuscatedName("pz")
-	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "-1236043375"
-	)
-	static void method5644(boolean var0) {
-		Client.leftClickOpensMenu = var0;
+			var0.writeCrc(var2);
+			var1.remove();
+		}
 	}
 }

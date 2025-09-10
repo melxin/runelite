@@ -1,147 +1,207 @@
-import java.awt.FontMetrics;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eh")
+@ObfuscatedName("es")
 public class class114 {
-	@ObfuscatedName("ad")
-	@Export("loginScreenFontMetrics")
-	static FontMetrics loginScreenFontMetrics;
-	@ObfuscatedName("ou")
-	@Export("characterId")
-	static String characterId;
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = -725260395
+	@ObfuscatedName("jv")
+	@ObfuscatedSignature(
+		descriptor = "Ltf;"
 	)
-	int field1492;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = 580461485
+	@Export("js5Socket")
+	static AbstractSocket js5Socket;
+	@ObfuscatedName("ls")
+	@ObfuscatedSignature(
+		descriptor = "Lel;"
 	)
-	int field1490;
+	@Export("urlRequester")
+	static UrlRequester urlRequester;
+	@ObfuscatedName("vx")
+	@ObfuscatedGetter(
+		intValue = -1961960705
+	)
+	static int field1510;
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Ldk;"
+	)
+	VorbisFloor field1505;
+	@ObfuscatedName("aw")
+	boolean field1511;
+	@ObfuscatedName("at")
+	int[] field1504;
 	@ObfuscatedName("ac")
-	byte[] field1491;
+	int[] field1502;
+	@ObfuscatedName("ap")
+	boolean[] field1506;
 
-	class114() {
-		this.field1492 = 0;
-		this.field1490 = 0;
-		this.field1491 = null;
+	@ObfuscatedSignature(
+		descriptor = "(Ldk;Z[I[I[Z)V"
+	)
+	class114(VorbisFloor var1, boolean var2, int[] var3, int[] var4, boolean[] var5) {
+		this.field1505 = var1;
+		this.field1511 = var2;
+		this.field1504 = var3;
+		this.field1502 = var4;
+		this.field1506 = var5;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-1008479519"
+		descriptor = "([FIB)V",
+		garbageValue = "74"
 	)
-	int method3409(int var1) {
-		int var2 = 0;
+	void method3451(float[] var1, int var2) {
+		int var3 = this.field1505.field1329.length;
+		VorbisFloor var10000 = this.field1505;
+		int var4 = VorbisFloor.field1330[this.field1505.multiplier - 1];
+		boolean[] var5 = this.field1506;
+		this.field1506[1] = true;
+		var5[0] = true;
 
-		int var3;
-		int var4;
-		for (var3 = 0; var1 >= 8 - this.field1490; var1 -= var4) {
-			var4 = 8 - this.field1490;
-			int var5 = (1 << var4) - 1;
-			var2 += (this.field1491[this.field1492] >> this.field1490 & var5) << var3;
-			this.field1490 = 0;
-			++this.field1492;
-			var3 += var4;
+		int var6;
+		int var7;
+		int var8;
+		int var9;
+		int var10;
+		for (var6 = 2; var6 < var3; ++var6) {
+			var7 = this.field1505.method3029(this.field1504, var6);
+			var8 = this.field1505.method3030(this.field1504, var6);
+			var9 = this.field1505.method3040(this.field1504[var7], this.field1502[var7], this.field1504[var8], this.field1502[var8], this.field1504[var6]);
+			var10 = this.field1502[var6];
+			int var11 = var4 - var9;
+			int var13 = (var11 < var9 ? var11 : var9) << 1;
+			if (var10 != 0) {
+				boolean[] var14 = this.field1506;
+				this.field1506[var8] = true;
+				var14[var7] = true;
+				this.field1506[var6] = true;
+				if (var10 >= var13) {
+					this.field1502[var6] = var11 > var9 ? var9 + (var10 - var9) : var11 + (var9 - var10) - 1;
+				} else {
+					this.field1502[var6] = (var10 & 1) != 0 ? var9 - (var10 + 1) / 2 : var10 / 2 + var9;
+				}
+			} else {
+				this.field1506[var6] = false;
+				this.field1502[var6] = var9;
+			}
 		}
 
-		if (var1 > 0) {
-			var4 = (1 << var1) - 1;
-			var2 += (this.field1491[this.field1492] >> this.field1490 & var4) << var3;
-			this.field1490 += var1;
+		this.VarbisFloor_sort(0, var3 - 1);
+		var6 = 0;
+		var7 = this.field1505.multiplier * this.field1502[0];
+
+		for (var8 = 1; var8 < var3; ++var8) {
+			if (this.field1506[var8]) {
+				var9 = this.field1504[var8];
+				var10 = this.field1505.multiplier * this.field1502[var8];
+				this.field1505.method3028(var6, var7, var9, var10, var1, var2);
+				if (var9 >= var2) {
+					return;
+				}
+
+				var6 = var9;
+				var7 = var10;
+			}
 		}
 
-		return var2;
+		var10000 = this.field1505;
+		float var16 = VorbisFloor.VorbisFloor_decibelStatics[var7];
+
+		for (var9 = var6; var9 < var2; ++var9) {
+			var1[var9] *= var16;
+		}
+
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "118"
+		descriptor = "(I)Z",
+		garbageValue = "1533498860"
 	)
-	int method3408() {
-		int var1 = this.field1491[this.field1492] >> this.field1490 & 1;
-		++this.field1490;
-		this.field1492 += this.field1490 >> 3;
-		this.field1490 &= 7;
-		return var1;
+	boolean method3453() {
+		return this.field1511;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "([BIS)V",
-		garbageValue = "-13006"
+		descriptor = "(III)V",
+		garbageValue = "-1396201942"
 	)
-	void method3400(byte[] var1, int var2) {
-		this.field1491 = var1;
-		this.field1492 = var2;
-		this.field1490 = 0;
-	}
+	@Export("VarbisFloor_sort")
+	void VarbisFloor_sort(int var1, int var2) {
+		if (var1 < var2) {
+			int var3 = var1;
+			int var4 = this.field1504[var1];
+			int var5 = this.field1502[var1];
+			boolean var6 = this.field1506[var1];
 
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(CB)Z",
-		garbageValue = "40"
-	)
-	static final boolean method3402(char var0) {
-		if (Character.isISOControl(var0)) {
-			return false;
-		} else if (class359.isAlphaNumeric(var0)) {
-			return true;
-		} else {
-			char[] var1 = class559.field5678;
-
-			int var2;
-			char var3;
-			for (var2 = 0; var2 < var1.length; ++var2) {
-				var3 = var1[var2];
-				if (var0 == var3) {
-					return true;
+			for (int var7 = var1 + 1; var7 <= var2; ++var7) {
+				int var8 = this.field1504[var7];
+				if (var8 < var4) {
+					this.field1504[var3] = var8;
+					this.field1502[var3] = this.field1502[var7];
+					this.field1506[var3] = this.field1506[var7];
+					++var3;
+					this.field1504[var7] = this.field1504[var3];
+					this.field1502[var7] = this.field1502[var3];
+					this.field1506[var7] = this.field1506[var3];
 				}
 			}
 
-			var1 = class559.field5680;
-
-			for (var2 = 0; var2 < var1.length; ++var2) {
-				var3 = var1[var2];
-				if (var0 == var3) {
-					return true;
-				}
-			}
-
-			return false;
+			this.field1504[var3] = var4;
+			this.field1502[var3] = var5;
+			this.field1506[var3] = var6;
+			this.VarbisFloor_sort(var1, var3 - 1);
+			this.VarbisFloor_sort(var3 + 1, var2);
 		}
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("kk")
 	@ObfuscatedSignature(
-		descriptor = "(FFFFIIIB)V",
-		garbageValue = "-28"
+		descriptor = "(Ldr;IIIIISISIII)V",
+		garbageValue = "-765038711"
 	)
-	public static final void method3411(float var0, float var1, float var2, float var3, int var4, int var5, int var6) {
-		if (!ViewportMouse.ViewportMouse_false0) {
-			float var11 = 50.0F;
-			float var12 = (float)AbstractRasterizer.method5026();
-			float var13 = (float)(ViewportMouse.ViewportMouse_x - var4) * var11 / (float)var6;
-			float var14 = (float)(ViewportMouse.ViewportMouse_y - var5) * var11 / (float)var6;
-			float var15 = var12 * (float)(ViewportMouse.ViewportMouse_x - var4) / (float)var6;
-			float var16 = var12 * (float)(ViewportMouse.ViewportMouse_y - var5) / (float)var6;
-			float var18 = var0 * var11 + var1 * var14;
-			float var19 = var1 * var11 - var14 * var0;
-			float var17 = class155.method3844(var16, var12, var1, var0);
-			float var20 = var12 * var1 - var16 * var0;
-			var16 = var17;
-			var17 = SpotAnimationDefinition.method4410(var13, var19, var3, var2);
-			float var21 = var19 * var3 + var2 * var13;
-			var13 = var17;
-			var17 = SpotAnimationDefinition.method4410(var15, var20, var3, var2);
-			float var22 = var3 * var20 + var15 * var2;
-			FriendSystem.method1578((int)var13, (int)var18, (int)var21, (int)var17, (int)var16, (int)var22);
+	static void method3459(WorldView var0, int var1, int var2, int var3, int var4, int var5, short var6, int var7, short var8, int var9, int var10) {
+		NodeDeque var11 = var0.groundItems[var1][var2][var3];
+		if (var11 != null) {
+			for (TileItem var12 = (TileItem)var11.last(); var12 != null; var12 = (TileItem)var11.previous()) {
+				if ((var4 & 32767) == var12.id && var5 == var12.quantity) {
+					PlayerCompositionColorTextureOverride var13 = var12.method2805();
+					if (var13 == null) {
+						var13 = new PlayerCompositionColorTextureOverride(var4);
+					}
+
+					if (var13.method4121() && var7 > -1 && var7 < var13.playerCompositionRecolorTo.length) {
+						var13.playerCompositionRecolorTo[var7] = var6;
+					}
+
+					if (var13.method4122() && var9 > -1 && var9 < var13.playerCompositionRetextureTo.length) {
+						var13.playerCompositionRetextureTo[var9] = var8;
+					}
+
+					if (var10 > -1) {
+						var13.field1953 = var10;
+						var13.field1955 = null;
+					}
+
+					var12.method2812(var13);
+					break;
+				}
+			}
+
+			EnumComposition.updateItemPile(var1, var2, var3);
 		}
+
+	}
+
+	@ObfuscatedName("kr")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIII)V",
+		garbageValue = "356777708"
+	)
+	static void method3454(int var0, int var1, int var2, int var3, int var4) {
+		ClientPacket.method7040(HttpHeaders.worldView, var0, var1, var2, var3, var4);
 	}
 }

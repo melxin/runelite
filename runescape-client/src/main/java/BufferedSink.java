@@ -1,3 +1,4 @@
+import java.awt.Image;
 import java.io.IOException;
 import java.io.OutputStream;
 import net.runelite.mapping.Export;
@@ -6,40 +7,47 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("td")
+@ObfuscatedName("tx")
 @Implements("BufferedSink")
 public class BufferedSink implements Runnable {
-	@ObfuscatedName("al")
+	@ObfuscatedName("ax")
+	static Image field5468;
+	@ObfuscatedName("pz")
+	@ObfuscatedSignature(
+		descriptor = "Lvc;"
+	)
+	static Fonts field5467;
+	@ObfuscatedName("af")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("outputStream")
 	OutputStream outputStream;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1012560119
+		intValue = -634771801
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@Export("buffer")
 	byte[] buffer;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1085238445
+		intValue = -211398701
 	)
 	@Export("position")
 	int position;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -2119777421
+		intValue = 327141635
 	)
 	@Export("limit")
 	int limit;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@Export("exception")
 	IOException exception;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@Export("closed")
 	boolean closed;
 
@@ -54,10 +62,10 @@ public class BufferedSink implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1454953580"
+		descriptor = "(B)Z",
+		garbageValue = "71"
 	)
 	@Export("isClosed")
 	boolean isClosed() {
@@ -79,10 +87,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)V",
-		garbageValue = "812774422"
+		descriptor = "([BIIB)V",
+		garbageValue = "81"
 	)
 	@Export("write")
 	void write(byte[] var1, int var2, int var3) throws IOException {
@@ -119,10 +127,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1010231708"
+		garbageValue = "179023291"
 	)
 	@Export("close")
 	void close() {
@@ -198,32 +206,32 @@ public class BufferedSink implements Runnable {
 
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("be")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lxe;",
-		garbageValue = "-2089442022"
+		descriptor = "(Ljava/lang/String;I)I",
+		garbageValue = "-170869480"
 	)
-	static PrivateChatMode[] method10278() {
-		return new PrivateChatMode[]{PrivateChatMode.field5972, PrivateChatMode.field5970, PrivateChatMode.field5971};
+	public static int method10262(String var0) {
+		return var0.length() + 2;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("of")
 	@ObfuscatedSignature(
-		descriptor = "(Ltn;B)V",
-		garbageValue = "114"
+		descriptor = "(IIZI)V",
+		garbageValue = "963621894"
 	)
-	public static void method10274(DynamicArray var0) {
-		class150.method3792(var0, (class570)null, true);
-		int var1 = var0.method10351();
-		if (var1 > 1) {
-			if (var0.field5399 == class570.field5721) {
-				class50.method1869(var0.method10348(), 0, var1 - 1);
-			} else if (var0.field5399 == class570.field5724) {
-				class505.method10192(var0.method10377(), 0, var1 - 1);
-			} else {
-				class361.method7510(var0.method10393(), 0, var1 - 1);
+	static final void method10263(int var0, int var1, boolean var2) {
+		if (Client.currentClanChannels[var0] != null) {
+			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method4076()) {
+				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
+				PacketBufferNode var4 = UserComparator6.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
+				var4.packetBuffer.writeByte(4 + WorldMapSection2.stringCp1252NullTerminatedByteSize(var3.username.getName()));
+				var4.packetBuffer.writeByte(var0);
+				var4.packetBuffer.writeShort(var1);
+				var4.packetBuffer.writeBoolean(var2);
+				var4.packetBuffer.writeStringCp1252NullTerminated(var3.username.getName());
+				Client.packetWriter.addNode(var4);
 			}
-
 		}
 	}
 }

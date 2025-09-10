@@ -7,10 +7,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ez")
+@ObfuscatedName("ey")
 @Implements("SecureUrlRequester")
 public class SecureUrlRequester extends UrlRequester {
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@Export("secureHttps")
 	final boolean secureHttps;
 
@@ -19,10 +19,10 @@ public class SecureUrlRequester extends UrlRequester {
 		this.secureHttps = var1;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Leu;I)V",
-		garbageValue = "2043617507"
+		descriptor = "(Lea;I)V",
+		garbageValue = "20500778"
 	)
 	@Export("openConnection")
 	void openConnection(UrlRequest var1) throws IOException {
@@ -30,32 +30,32 @@ public class SecureUrlRequester extends UrlRequester {
 		boolean var9 = false;
 
 		HttpURLConnection var12;
-		label139: {
-			label131: {
+		label137: {
+			label129: {
 				try {
-					label134: {
+					label132: {
 						var9 = true;
-						String var3 = var1.field1538.getProtocol();
+						String var3 = var1.field1559.getProtocol();
 						if (var3.equals("http")) {
 							var2 = this.openHttpConnection(var1);
 						} else {
 							if (!var3.equals("https")) {
-								var1.field1536 = UrlRequest.field1535;
+								var1.field1557 = UrlRequest.field1558;
 								var9 = false;
-								break label134;
+								break label132;
 							}
 
 							var2 = this.openHttpsConnection(var1);
 						}
 
-						this.method3429(var2, var1);
+						this.method3488(var2, var1);
 						var9 = false;
-						break label139;
+						break label137;
 					}
 				} catch (IOException var10) {
-					var1.field1536 = UrlRequest.field1535;
+					var1.field1557 = UrlRequest.field1558;
 					var9 = false;
-					break label131;
+					break label129;
 				} finally {
 					if (var9) {
 						if (var2 != null && var2 instanceof HttpURLConnection) {
@@ -91,77 +91,67 @@ public class SecureUrlRequester extends UrlRequester {
 
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Leu;I)Ljava/net/URLConnection;",
-		garbageValue = "3929216"
+		descriptor = "(Lea;I)Ljava/net/URLConnection;",
+		garbageValue = "716925282"
 	)
 	@Export("openHttpConnection")
 	URLConnection openHttpConnection(UrlRequest var1) throws IOException {
-		URLConnection var2 = var1.field1538.openConnection();
+		URLConnection var2 = var1.field1559.openConnection();
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Leu;I)Ljava/net/URLConnection;",
-		garbageValue = "1605374179"
+		descriptor = "(Lea;B)Ljava/net/URLConnection;",
+		garbageValue = "-102"
 	)
 	@Export("openHttpsConnection")
 	URLConnection openHttpsConnection(UrlRequest var1) throws IOException {
-		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1538.openConnection();
+		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1559.openConnection();
 		if (!this.secureHttps) {
-			var2.setSSLSocketFactory(SecureRandomSSLSocketFactory.method177());
+			var2.setSSLSocketFactory(SecureRandomSSLSocketFactory.method201());
 		}
 
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lbg;Lbg;IZI)I",
-		garbageValue = "119864443"
+		descriptor = "(CB)C",
+		garbageValue = "-64"
 	)
-	@Export("compareWorlds")
-	static int compareWorlds(World var0, World var1, int var2, boolean var3) {
-		if (var2 == 1) {
-			int var4 = var0.population;
-			int var5 = var1.population;
-			if (!var3) {
-				if (var4 == -1) {
-					var4 = 2001;
-				}
-
-				if (var5 == -1) {
-					var5 = 2001;
-				}
-			}
-
-			return var4 - var5;
-		} else if (var2 == 2) {
-			return var0.location - var1.location;
-		} else if (var2 == 3) {
-			if (var0.activity.equals("-")) {
-				if (var1.activity.equals("-")) {
-					return 0;
-				} else {
-					return var3 ? -1 : 1;
-				}
-			} else if (var1.activity.equals("-")) {
-				return var3 ? 1 : -1;
-			} else {
-				return var0.activity.compareTo(var1.activity);
-			}
-		} else if (var2 == 4) {
-			return var0.method1490() ? (var1.method1490() ? 0 : 1) : (var1.method1490() ? -1 : 0);
-		} else if (var2 == 5) {
-			return var0.method1517() ? (var1.method1517() ? 0 : 1) : (var1.method1517() ? -1 : 0);
-		} else if (var2 == 6) {
-			return var0.isPvp() ? (var1.isPvp() ? 0 : 1) : (var1.isPvp() ? -1 : 0);
-		} else if (var2 == 7) {
-			return var0.isMembersOnly() ? (var1.isMembersOnly() ? 0 : 1) : (var1.isMembersOnly() ? -1 : 0);
+	static char method3517(char var0) {
+		if (var0 == 198) {
+			return 'E';
+		} else if (var0 == 230) {
+			return 'e';
+		} else if (var0 == 223) {
+			return 's';
+		} else if (var0 == 338) {
+			return 'E';
 		} else {
-			return var0.id - var1.id;
+			return (char)(var0 == 339 ? 'e' : '\u0000');
+		}
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lfh;",
+		garbageValue = "471637573"
+	)
+	public static class146 method3516(int var0) {
+		class146 var1 = (class146)SequenceDefinition.SequenceDefinition_cachedModel.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			var1 = class294.method6731(TransformationMatrix.SequenceDefinition_skeletonsArchive, class216.SpotAnimationDefinition_archive, var0);
+			if (var1 != null) {
+				SequenceDefinition.SequenceDefinition_cachedModel.put(var1, (long)var0);
+			}
+
+			return var1;
 		}
 	}
 }

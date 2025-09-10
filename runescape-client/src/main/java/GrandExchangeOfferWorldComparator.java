@@ -4,24 +4,29 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pu")
+@ObfuscatedName("qe")
 @Implements("GrandExchangeOfferWorldComparator")
 final class GrandExchangeOfferWorldComparator implements Comparator {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lqn;Lqn;I)I",
-		garbageValue = "-1722167353"
+		descriptor = "(Lqi;Lqi;I)I",
+		garbageValue = "-172610999"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
 		return var1.world < var2.world ? -1 : (var2.world == var1.world ? 0 : 1);
 	}
 
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
+
 	public int compare(Object var1, Object var2) {
 		return this.compare_bridged((GrandExchangeEvent)var1, (GrandExchangeEvent)var2);
 	}
 
-	public boolean equals(Object var1) {
-		return super.equals(var1);
+	@ObfuscatedName("as")
+	static final void method8499(long var0) {
+		ViewportMouse.ViewportMouse_entityTags[++ViewportMouse.ViewportMouse_entityCount - 1] = var0;
 	}
 }

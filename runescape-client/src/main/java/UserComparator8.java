@@ -1,19 +1,12 @@
-import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("el")
+@ObfuscatedName("ei")
 @Implements("UserComparator8")
 public class UserComparator8 extends AbstractUserComparator {
-	@ObfuscatedName("vp")
-	@ObfuscatedGetter(
-		intValue = -2069259715
-	)
-	static int field1544;
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -21,10 +14,10 @@ public class UserComparator8 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lto;Lto;I)I",
-		garbageValue = "136115044"
+		descriptor = "(Lty;Lty;B)I",
+		garbageValue = "38"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -43,27 +36,33 @@ public class UserComparator8 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("ko")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(ZB)V",
-		garbageValue = "-125"
+		descriptor = "(II)I",
+		garbageValue = "45931988"
 	)
-	static final void method3491(boolean var0) {
-		MouseHandler.method722();
-		++Client.packetWriter.pendingWrites;
-		if (Client.packetWriter.pendingWrites >= 50 || var0) {
-			Client.packetWriter.pendingWrites = 0;
-			if (!Client.hadNetworkError && Client.packetWriter.getSocket() != null) {
-				PacketBufferNode var1 = class291.getPacketBufferNode(ClientPacket.NO_TIMEOUT, Client.packetWriter.isaacCipher);
-				Client.packetWriter.addNode(var1);
-
-				try {
-					Client.packetWriter.flush();
-				} catch (IOException var3) {
-					Client.hadNetworkError = true;
-				}
-			}
-
+	public static int method3543(int var0) {
+		long var2 = ViewportMouse.ViewportMouse_entityTags[var0];
+		int var4 = (int)(var2 >>> 52 & 4095L);
+		if ((long)var4 == 4095L) {
+			var4 = -1;
 		}
+
+		return var4;
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIZIII)J",
+		garbageValue = "369312725"
+	)
+	@Export("calculateTag")
+	public static long calculateTag(int var0, int var1, int var2, int var3, boolean var4, int var5, int var6) {
+		long var7 = (long)((var1 & 127) << 0 | (var2 & 127) << 7 | (var0 & 3) << 14 | (var3 & 7) << 16) | ((long)var5 & 4294967295L) << 20 | ((long)var6 & 4095L) << 52;
+		if (var4) {
+			var7 |= 524288L;
+		}
+
+		return var7;
 	}
 }

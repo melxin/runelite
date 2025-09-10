@@ -4,24 +4,29 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("it")
+@ObfuscatedName("jw")
 @Implements("FaceNormal")
 public class FaceNormal {
-	@ObfuscatedName("al")
+	@ObfuscatedName("bs")
+	@ObfuscatedSignature(
+		descriptor = "Lgs;"
+	)
+	static ClanSettings field2805;
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 26729961
+		intValue = 542673887
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -507317839
+		intValue = 694810815
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -394486121
+		intValue = 1991757615
 	)
 	@Export("z")
 	int z;
@@ -29,25 +34,25 @@ public class FaceNormal {
 	FaceNormal() {
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("kq")
 	@ObfuscatedSignature(
-		descriptor = "(ILox;IIIII[FB)Lox;",
-		garbageValue = "-58"
+		descriptor = "(Ldr;IIIIIIIIIZI)V",
+		garbageValue = "781510154"
 	)
-	static Widget method5365(int var0, Widget var1, int var2, int var3, int var4, int var5, int var6, float[] var7) {
-		Widget var8 = new Widget();
-		var8.type = var0;
-		var8.parentId = var1.id;
-		var8.childIndex = var2 * 814750319;
-		var8.isIf3 = true;
-		var8.xAlignment = var3;
-		var8.yAlignment = var4;
-		var8.widthAlignment = var5;
-		var8.heightAlignment = var6;
-		var8.rawX = (int)((float)var1.width * var7[0]);
-		var8.rawY = (int)(var7[1] * (float)(var1.height * -1326764757));
-		var8.rawWidth = (int)((float)var1.width * var7[2]);
-		var8.rawHeight = (int)(var7[3] * (float)(var1.height * -1326764757));
-		return var8;
+	static void method5375(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, boolean var10) {
+		TileItem var11 = new TileItem();
+		var11.id = var4;
+		var11.quantity = var5;
+		var11.setFlag(var6);
+		var11.visibleTime = var7 + Client.serverCycle;
+		var11.despawnTime = var8 + Client.serverCycle;
+		var11.ownership = var9;
+		var11.isPrivate = var10;
+		if (var0.groundItems[var1][var2][var3] == null) {
+			var0.groundItems[var1][var2][var3] = new NodeDeque();
+		}
+
+		var0.groundItems[var1][var2][var3].addFirst(var11);
+		ObjectSound.updateItemPile2(var0, var1, var2, var3);
 	}
 }

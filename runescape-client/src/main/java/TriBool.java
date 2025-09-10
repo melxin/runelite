@@ -1,29 +1,33 @@
+import java.awt.datatransfer.Clipboard;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ta")
+@ObfuscatedName("th")
 @Implements("TriBool")
 public class TriBool {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lta;"
+		descriptor = "Lth;"
 	)
 	@Export("TriBool_unknown")
 	public static final TriBool TriBool_unknown;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lta;"
+		descriptor = "Lth;"
 	)
 	@Export("TriBool_true")
 	public static final TriBool TriBool_true;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lta;"
+		descriptor = "Lth;"
 	)
 	@Export("TriBool_false")
 	public static final TriBool TriBool_false;
+	@ObfuscatedName("as")
+	@Export("SpriteBuffer_spritePalette")
+	public static int[] SpriteBuffer_spritePalette;
 
 	static {
 		TriBool_unknown = new TriBool();
@@ -34,16 +38,12 @@ public class TriBool {
 	TriBool() {
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("pp")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;IIII)I",
-		garbageValue = "37926091"
+		descriptor = "(I)Ljava/awt/datatransfer/Clipboard;",
+		garbageValue = "195320137"
 	)
-	static int method10090(WorldView var0, int var1, int var2, int var3) {
-		if ((var0.tileSettings[var1][var2][var3] & 8) != 0) {
-			return 0;
-		} else {
-			return var1 > 0 && (var0.tileSettings[1][var2][var3] & 2) != 0 ? var1 - 1 : var1;
-		}
+	public static Clipboard method10061() {
+		return class521.client.method685();
 	}
 }

@@ -4,43 +4,48 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jd")
+@ObfuscatedName("jb")
 @Implements("TextureProvider")
 public class TextureProvider implements TextureLoader {
-	@ObfuscatedName("al")
+	@ObfuscatedName("oe")
+	@ObfuscatedGetter(
+		longValue = -4736702138323274113L
+	)
+	static long field2846;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "[Lio;"
+		descriptor = "[Lik;"
 	)
 	@Export("textures")
 	Texture[] textures;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lqp;"
+		descriptor = "Lqs;"
 	)
 	@Export("deque")
 	NodeDeque deque;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 455250103
+		intValue = 1957067633
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -839530283
+		intValue = -625281243
 	)
 	@Export("remaining")
 	int remaining;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@Export("brightness")
 	double brightness;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1185184311
+		intValue = 1976758453
 	)
 	@Export("textureSize")
 	int textureSize;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
 		descriptor = "Lpx;"
 	)
@@ -75,10 +80,10 @@ public class TextureProvider implements TextureLoader {
 
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "0"
+		descriptor = "(I)I",
+		garbageValue = "1787541827"
 	)
 	@Export("getLoadedPercentage")
 	public int getLoadedPercentage() {
@@ -91,15 +96,10 @@ public class TextureProvider implements TextureLoader {
 
 			for (int var4 = 0; var4 < var3.length; ++var4) {
 				Texture var5 = var3[var4];
-				if (var5 != null && var5.fileIds != null) {
-					var1 += var5.fileIds.length;
-					int[] var6 = var5.fileIds;
-
-					for (int var7 = 0; var7 < var6.length; ++var7) {
-						int var8 = var6[var7];
-						if (this.archive.method8338(var8)) {
-							++var2;
-						}
+				if (var5 != null && var5.animationSpeed != -1) {
+					++var1;
+					if (this.archive.method8381(var5.animationSpeed)) {
+						++var2;
 					}
 				}
 			}
@@ -112,17 +112,17 @@ public class TextureProvider implements TextureLoader {
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("setBrightness")
 	public void setBrightness(double var1) {
 		this.brightness = var1;
 		this.clear();
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(II)[I",
-		garbageValue = "1719377543"
+		garbageValue = "-954219982"
 	)
 	@Export("getTexturePixels")
 	public int[] getTexturePixels(int var1) {
@@ -152,30 +152,30 @@ public class TextureProvider implements TextureLoader {
 		return null;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-1759511923"
+		descriptor = "(IB)I",
+		garbageValue = "-50"
 	)
 	@Export("getAverageTextureRGB")
 	public int getAverageTextureRGB(int var1) {
 		return this.textures[var1] != null ? this.textures[var1].averageRGB : 0;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-593453582"
+		descriptor = "(IS)Z",
+		garbageValue = "20355"
 	)
 	@Export("isLowDetail")
 	public boolean isLowDetail(int var1) {
-		return this.textures[var1].field2538;
+		return this.textures[var1].field2583;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-182945045"
+		descriptor = "(B)V",
+		garbageValue = "31"
 	)
 	@Export("clear")
 	public void clear() {
@@ -189,10 +189,10 @@ public class TextureProvider implements TextureLoader {
 		this.remaining = this.capacity;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "65"
+		descriptor = "(II)V",
+		garbageValue = "901037758"
 	)
 	@Export("animate")
 	public void animate(int var1) {

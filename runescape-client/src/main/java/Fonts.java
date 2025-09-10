@@ -1,31 +1,25 @@
 import java.util.HashMap;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("vc")
 @Implements("Fonts")
 public class Fonts {
-	@ObfuscatedName("lm")
-	@ObfuscatedGetter(
-		intValue = 779598911
-	)
-	static int field5635;
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "Lpx;"
 	)
 	@Export("spritesArchive")
 	AbstractArchive spritesArchive;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "Lpx;"
 	)
 	@Export("fontsArchive")
 	AbstractArchive fontsArchive;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@Export("map")
 	HashMap map;
 
@@ -38,10 +32,10 @@ public class Fonts {
 		this.map = new HashMap();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "([Lvp;B)Ljava/util/HashMap;",
-		garbageValue = "-53"
+		descriptor = "([Lvf;I)Ljava/util/HashMap;",
+		garbageValue = "-662771868"
 	)
 	@Export("createMap")
 	public HashMap createMap(FontName[] var1) {
@@ -62,7 +56,24 @@ public class Fonts {
 				} else {
 					int var10 = var7.getGroupId(var9);
 					int var11 = var7.getFileId(var10, "");
-					var6 = WorldMapScaleHandler.method6924(var7, var8, var10, var11);
+					Font var12;
+					if (!class587.method11132(var7, var10, var11)) {
+						var12 = null;
+					} else {
+						byte[] var14 = var8.takeFile(var10, var11);
+						Font var13;
+						if (var14 == null) {
+							var13 = null;
+						} else {
+							Font var15 = new Font(var14, LoginPacket.SpriteBuffer_xOffsets, class191.SpriteBuffer_yOffsets, class255.SpriteBuffer_spriteWidths, FriendLoginUpdate.field5390, TriBool.SpriteBuffer_spritePalette, SpriteBufferProperties.SpriteBuffer_pixels);
+							class388.method8205();
+							var13 = var15;
+						}
+
+						var12 = var13;
+					}
+
+					var6 = var12;
 				}
 
 				if (var6 != null) {
@@ -75,12 +86,12 @@ public class Fonts {
 		return var2;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(IS)Z",
-		garbageValue = "31763"
+		descriptor = "(IB)I",
+		garbageValue = "37"
 	)
-	public static boolean method10900(int var0) {
-		return var0 >= WorldMapDecorationType.field4263.id && var0 <= WorldMapDecorationType.field4280.id || var0 == WorldMapDecorationType.field4272.id;
+	public static int method10840(int var0) {
+		return var0 != 0 && var0 != 1 ? -1 : 0;
 	}
 }

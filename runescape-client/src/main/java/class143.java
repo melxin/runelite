@@ -3,87 +3,60 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fi")
+@ObfuscatedName("fg")
 class class143 implements Callable {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	@Export("SpotAnimationDefinition_modelArchive")
-	static AbstractArchive SpotAnimationDefinition_modelArchive;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
 		descriptor = "Lfh;"
 	)
-	final class144 this$0;
-	// $FF: synthetic field
-	final int val$workStart;
-	// $FF: synthetic field
-	final int val$workEnd;
+	final class146 this$0;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "[Lfu;"
+		descriptor = "Lwb;"
 	)
-	final class136[] val$curveLoadJobs;
+	final Buffer val$p;
+	// $FF: synthetic field
+	final int val$version;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfh;II[Lfu;)V"
+		descriptor = "(Lfh;Lwb;I)V"
 	)
-	class143(class144 var1, int var2, int var3, class136[] var4) {
+	class143(class146 var1, Buffer var2, int var3) {
 		this.this$0 = var1;
-		this.val$workStart = var2;
-		this.val$workEnd = var3;
-		this.val$curveLoadJobs = var4;
+		this.val$p = var2;
+		this.val$version = var3;
 	}
 
 	public Object call() {
-		for (int var1 = this.val$workStart; var1 < this.val$workEnd; ++var1) {
-			this.val$curveLoadJobs[var1].call();
-		}
-
+		this.this$0.method3783(this.val$p, this.val$version);
 		return null;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("np")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lin;",
-		garbageValue = "-1011261633"
+		descriptor = "(IIII)Lcu;",
+		garbageValue = "-1465366104"
 	)
-	@Export("getFrames")
-	static Frames getFrames(int var0) {
-		Frames var1 = (Frames)SequenceDefinition.SequenceDefinition_cachedFrames.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			var1 = class188.method4266(class407.SequenceDefinition_animationsArchive, class202.SpotAnimationDefinition_archive, var0);
-			if (var1 != null) {
-				SequenceDefinition.SequenceDefinition_cachedFrames.put(var1, (long)var0);
-			}
-
-			return var1;
+	@Export("openInterface")
+	static final InterfaceParent openInterface(int var0, int var1, int var2) {
+		InterfaceParent var3 = new InterfaceParent();
+		var3.group = var1;
+		var3.type = var2;
+		Client.interfaceParents.put(var3, (long)var0);
+		class1.method10(var1);
+		Widget var4 = UrlRequester.widgetDefinition.method7476(var0);
+		class89.invalidateWidget(var4);
+		if (Client.meslayerContinueWidget != null) {
+			class89.invalidateWidget(Client.meslayerContinueWidget);
+			Client.meslayerContinueWidget = null;
 		}
-	}
 
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lhe;",
-		garbageValue = "1731602356"
-	)
-	@Export("StructDefinition_getStructDefinition")
-	public static StructComposition StructDefinition_getStructDefinition(int var0) {
-		StructComposition var1 = (StructComposition)StructComposition.StructDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = StructComposition.StructDefinition_archive.takeFile(34, var0);
-			var1 = new StructComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.postDecode();
-			StructComposition.StructDefinition_cached.put(var1, (long)var0);
-			return var1;
+		Canvas.revalidateWidgetScroll(UrlRequester.widgetDefinition.Widget_interfaceComponents[var0 >> 16], var4, false);
+		class429.runWidgetOnLoadListener(var1);
+		if (Client.rootInterface != -1) {
+			class142.runIntfCloseListeners(Client.rootInterface, 1);
 		}
+
+		return var3;
 	}
 }

@@ -1,24 +1,11 @@
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mf")
-public final class class332 {
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		longValue = -4291259946509758447L
-	)
-	static long field3738;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		longValue = 7157878295955999821L
-	)
-	static long field3736;
-	@ObfuscatedName("aj")
+@ObfuscatedName("mg")
+public class class332 {
+	@ObfuscatedName("og")
 	@ObfuscatedSignature(
-		descriptor = "Leu;"
+		descriptor = "Lud;"
 	)
-	@Export("World_request")
-	static UrlRequest World_request;
+	static GraphicsDefaults field3827;
 }

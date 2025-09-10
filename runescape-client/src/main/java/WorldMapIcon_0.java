@@ -7,44 +7,39 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("li")
 @Implements("WorldMapIcon_0")
 public class WorldMapIcon_0 extends AbstractWorldMapIcon {
-	@ObfuscatedName("bv")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -2080262311
-	)
-	static int field3313;
-	@ObfuscatedName("al")
-	@ObfuscatedGetter(
-		intValue = 1479556057
+		intValue = -945635161
 	)
 	@Export("element")
 	final int element;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lla;"
+		descriptor = "Lls;"
 	)
 	@Export("label")
 	final WorldMapLabel label;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 484692617
+		intValue = -301118169
 	)
 	@Export("subWidth")
 	final int subWidth;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 427356961
+		intValue = -2084315803
 	)
 	@Export("subHeight")
 	final int subHeight;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lng;Lng;ILla;)V"
+		descriptor = "(Lna;Lna;ILls;)V"
 	)
 	WorldMapIcon_0(Coord var1, Coord var2, int var3, WorldMapLabel var4) {
 		super(var1, var2);
 		this.element = var3;
 		this.label = var4;
-		WorldMapElement var5 = GrandExchangeOfferAgeComparator.WorldMapElement_get(this.getElement());
+		WorldMapElement var5 = VerticalAlignment.WorldMapElement_get(this.getElement());
 		SpritePixels var6 = var5.getSpriteBool(false);
 		if (var6 != null) {
 			this.subWidth = var6.subWidth;
@@ -56,91 +51,54 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "43009635"
+		garbageValue = "-1313098329"
 	)
 	@Export("getElement")
 	public int getElement() {
 		return this.element;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lla;",
-		garbageValue = "9"
+		descriptor = "(I)Lls;",
+		garbageValue = "-1635642188"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
 		return this.label;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "-28"
+		garbageValue = "96"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
 		return this.subWidth;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1977770397"
+		garbageValue = "-1852373606"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
 		return this.subHeight;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ik")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;B)Ljava/lang/String;",
-		garbageValue = "29"
+		descriptor = "(I)V",
+		garbageValue = "916887222"
 	)
-	public static String method6722(Buffer var0) {
-		return class190.method4291(var0, 32767);
-	}
-
-	@ObfuscatedName("bl")
-	@ObfuscatedSignature(
-		descriptor = "(ILce;ZB)I",
-		garbageValue = "2"
-	)
-	static int method6721(int var0, Script var1, boolean var2) {
-		return 2;
-	}
-
-	@ObfuscatedName("by")
-	@ObfuscatedSignature(
-		descriptor = "(ILce;ZB)I",
-		garbageValue = "-20"
-	)
-	static int method6723(int var0, Script var1, boolean var2) {
-		if (var0 == 6754) {
-			int var5 = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-			NPCComposition var6 = class191.getNpcDefinition(var5);
-			Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = var6 != null ? var6.name : "";
-			return 1;
-		} else {
-			NPCComposition var3;
-			if (var0 == 6764) {
-				AbstractWorldMapIcon.Interpreter_intStackSize -= 2;
-				var3 = class191.getNpcDefinition(Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize]);
-				int var4 = Interpreter.Interpreter_intStack[AbstractWorldMapIcon.Interpreter_intStackSize + 1];
-				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var3.method4321(var4);
-				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var3.method4360(var4);
-				return 1;
-			} else if (var0 == 6765) {
-				var3 = class191.getNpcDefinition(Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize]);
-				Interpreter.Interpreter_intStack[++AbstractWorldMapIcon.Interpreter_intStackSize - 1] = var3 != null ? var3.combatLevel : 0;
-				return 1;
-			} else {
-				return 2;
-			}
-		}
+	static void method6747() {
+		Client.field348 = Client.localPlayerIndex;
+		class4.field7 = class384.USERNAME_PASSWORD;
+		Client.field347 = -1;
 	}
 }

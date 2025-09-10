@@ -3,47 +3,49 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dm")
+@ObfuscatedName("di")
 @Implements("SoundCache")
 public class SoundCache {
-	@ObfuscatedName("al")
+	@ObfuscatedName("ps")
+	static int[] field1377;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "Lpx;"
 	)
 	@Export("soundEffectIndex")
 	AbstractArchive soundEffectIndex;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "Lpx;"
 	)
-	AbstractArchive field1350;
-	@ObfuscatedName("ac")
+	AbstractArchive field1376;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lqo;"
+		descriptor = "Lqw;"
 	)
-	NodeHashTable field1352;
+	NodeHashTable field1375;
 
 	@ObfuscatedSignature(
 		descriptor = "(Lpx;Lpx;)V"
 	)
 	public SoundCache(AbstractArchive var1, AbstractArchive var2) {
 		new NodeHashTable(256);
-		this.field1352 = new NodeHashTable(256);
+		this.field1375 = new NodeHashTable(256);
 		this.soundEffectIndex = var1;
-		this.field1350 = var2;
+		this.field1376 = var2;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(II[II)Ldg;",
-		garbageValue = "-359035993"
+		descriptor = "(II[IB)Ldv;",
+		garbageValue = "-79"
 	)
 	@Export("getSoundEffect0")
 	RawSound getSoundEffect0(int var1, int var2, int[] var3) {
-		long var4 = this.method3074(var1, var2, false);
-		class107 var6 = (class107)this.field1352.get(var4);
+		long var4 = this.method3122(var1, var2, false);
+		class108 var6 = (class108)this.field1375.get(var4);
 		if (var6 != null) {
-			return var6.method3305();
+			return var6.method3372();
 		} else if (var3 != null && var3[0] <= 0) {
 			return null;
 		} else {
@@ -52,7 +54,7 @@ public class SoundCache {
 				return null;
 			} else {
 				RawSound var8 = var7.toRawSound();
-				this.field1352.put(new class107(var8), var4);
+				this.field1375.put(new class108(var8), var4);
 				if (var3 != null) {
 					var3[0] -= var8.samples.length;
 				}
@@ -62,32 +64,32 @@ public class SoundCache {
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lej;",
-		garbageValue = "-1786104228"
+		descriptor = "(III)Lec;",
+		garbageValue = "489673497"
 	)
-	class107 method3090(int var1, int var2) {
-		long var3 = this.method3074(var1, var2, true);
-		class107 var5 = (class107)this.field1352.get(var3);
+	class108 method3143(int var1, int var2) {
+		long var3 = this.method3122(var1, var2, true);
+		class108 var5 = (class108)this.field1375.get(var3);
 		if (var5 != null) {
 			return var5;
 		} else {
-			VorbisSample var6 = VorbisSample.readMusicSample(this.field1350, var1, var2);
+			VorbisSample var6 = VorbisSample.readMusicSample(this.field1376, var1, var2);
 			if (var6 == null) {
-				return new class107();
+				return new class108();
 			} else {
-				class107 var7 = new class107(var6);
-				this.field1352.put(var7, var3);
+				class108 var7 = new class108(var6);
+				this.field1375.put(var7, var3);
 				return var7;
 			}
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I[II)Ldg;",
-		garbageValue = "361382036"
+		descriptor = "(I[IB)Ldv;",
+		garbageValue = "50"
 	)
 	@Export("getSoundEffect")
 	RawSound getSoundEffect(int var1, int[] var2) {
@@ -102,134 +104,89 @@ public class SoundCache {
 		}
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lej;",
-		garbageValue = "1495631465"
+		descriptor = "(II)Lec;",
+		garbageValue = "1318867147"
 	)
-	public class107 method3072(int var1) {
-		if (this.field1350.getGroupCount() == 1) {
-			return this.method3090(0, var1);
-		} else if (this.field1350.getGroupFileCount(var1) == 1) {
-			return this.method3090(var1, 0);
+	public class108 method3120(int var1) {
+		if (this.field1376.getGroupCount() == 1) {
+			return this.method3143(0, var1);
+		} else if (this.field1376.getGroupFileCount(var1) == 1) {
+			return this.method3143(var1, 0);
 		} else {
 			throw new RuntimeException();
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ldg;",
-		garbageValue = "-2103967996"
+		descriptor = "(II)Ldv;",
+		garbageValue = "1047739201"
 	)
-	public RawSound method3073(int var1) {
+	public RawSound method3121(int var1) {
 		return this.getSoundEffect(var1, (int[])null);
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "(IIZB)J",
-		garbageValue = "-83"
+		garbageValue = "-55"
 	)
-	long method3074(int var1, int var2, boolean var3) {
+	long method3122(int var1, int var2, boolean var3) {
 		int var4 = var2 ^ (var1 << 4 & 65535 | var1 >> 12);
 		var4 |= var1 << 16;
 		return var3 ? (long)var4 ^ 4294967296L : (long)var4;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lnw;IIIIB)Lnw;",
-		garbageValue = "-121"
+		descriptor = "(Lpx;III)Lxt;",
+		garbageValue = "-1019010004"
 	)
-	public static WidgetConfigNode method3092(WidgetConfigNode var0, int var1, int var2, int var3, int var4) {
-		WidgetConfigNode var5 = var0;
+	@Export("SpriteBuffer_getSprite")
+	public static SpritePixels SpriteBuffer_getSprite(AbstractArchive var0, int var1, int var2) {
+		if (!class587.method11132(var0, var1, var2)) {
+			return null;
+		} else {
+			SpritePixels var4 = new SpritePixels();
+			var4.width = class606.SpriteBuffer_spriteWidth;
+			var4.height = class581.SpriteBuffer_spriteHeight;
+			var4.xOffset = LoginPacket.SpriteBuffer_xOffsets[0];
+			var4.yOffset = class191.SpriteBuffer_yOffsets[0];
+			var4.subWidth = class255.SpriteBuffer_spriteWidths[0];
+			var4.subHeight = FriendLoginUpdate.field5390[0];
+			int var5 = var4.subHeight * var4.subWidth;
+			byte[] var6 = SpriteBufferProperties.SpriteBuffer_pixels[0];
+			var4.pixels = new int[var5];
 
-		WidgetConfigNode var6;
-		for (var6 = null; var5 != null; var5 = var5.nextWidgetConfigNode) {
-			if (var5.end >= var1 && var5.start <= var2) {
-				if (var6 != null) {
-					var6.nextWidgetConfigNode = var5.nextWidgetConfigNode;
-				} else {
-					var0 = var5.nextWidgetConfigNode;
-				}
-
-				WidgetConfigNode var7;
-				if (var5.start < var1) {
-					var7 = new WidgetConfigNode(var5.start, var1 - 1, var5.clickMask, var5.opMask);
-					if (var6 != null) {
-						var7.nextWidgetConfigNode = var6.nextWidgetConfigNode;
-					} else {
-						var7.nextWidgetConfigNode = var0;
-					}
-
-					if (var6 != null) {
-						var6.nextWidgetConfigNode = var7;
-					} else {
-						var0 = var7;
-					}
-
-					var6 = var7;
-				}
-
-				if (var5.end > var2) {
-					var7 = new WidgetConfigNode(var2 + 1, var5.end, var5.clickMask, var5.opMask);
-					if (var6 != null) {
-						var7.nextWidgetConfigNode = var6.nextWidgetConfigNode;
-					} else {
-						var7.nextWidgetConfigNode = var0;
-					}
-
-					if (var6 != null) {
-						var6.nextWidgetConfigNode = var7;
-					} else {
-						var0 = var7;
-					}
-				}
+			for (int var7 = 0; var7 < var5; ++var7) {
+				var4.pixels[var7] = TriBool.SpriteBuffer_spritePalette[var6[var7] & 255];
 			}
 
-			var6 = var5;
+			class388.method8205();
+			return var4;
 		}
-
-		var5 = null;
-
-		for (var6 = var0; var6 != null && var6.start <= var1; var6 = var6.nextWidgetConfigNode) {
-			var5 = var6;
-		}
-
-		var6 = new WidgetConfigNode(var1, var2, var3, var4);
-		if (var5 != null) {
-			var6.nextWidgetConfigNode = var5.nextWidgetConfigNode;
-		} else {
-			var6.nextWidgetConfigNode = var0;
-		}
-
-		if (var5 != null) {
-			var5.nextWidgetConfigNode = var6;
-		} else {
-			var0 = var6;
-		}
-
-		return var0;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Ljava/lang/Object;",
-		garbageValue = "-1641555727"
+		descriptor = "(Ljava/lang/String;B)V",
+		garbageValue = "-62"
 	)
-	static Object[] method3093() {
-		String var0 = (String)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
-		Object[] var1 = new Object[var0.length()];
+	static final void method3117(String var0) {
+		PacketBufferNode var1 = UserComparator6.getPacketBufferNode(ClientPacket.FRIEND_ADDUSER, Client.packetWriter.isaacCipher);
+		var1.packetBuffer.writeByte(WorldMapSection2.stringCp1252NullTerminatedByteSize(var0));
+		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
+		Client.packetWriter.addNode(var1);
+	}
 
-		for (int var2 = var0.length() - 1; var2 >= 0; --var2) {
-			if (var0.charAt(var2) == 'i') {
-				var1[var2] = Interpreter.Interpreter_intStack[--AbstractWorldMapIcon.Interpreter_intStackSize];
-			} else {
-				var1[var2] = Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
-			}
-		}
-
-		return var1;
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(FFFFI)F",
+		garbageValue = "2011880333"
+	)
+	static final float method3130(float var0, float var1, float var2, float var3) {
+		return var0 * var2 - var3 * var1;
 	}
 }

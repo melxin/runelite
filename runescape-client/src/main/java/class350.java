@@ -1,45 +1,35 @@
-import java.util.BitSet;
-import net.runelite.mapping.ObfuscatedGetter;
+import java.util.Comparator;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nb")
-public class class350 extends Node {
-	@ObfuscatedName("ki")
-	@ObfuscatedSignature(
-		descriptor = "Lpo;"
-	)
-	static Archive field3925;
-	@ObfuscatedName("al")
-	BitSet field3924;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -481979687
-	)
-	int field3923;
-
-	class350(int var1) {
-		this.field3923 = var1;
-		this.field3924 = new BitSet(128);
+@ObfuscatedName("nm")
+public class class350 implements Comparator {
+	class350() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "0"
+		descriptor = "(Lnb;Lnb;I)I",
+		garbageValue = "-1348600189"
 	)
-	public static void method7370() {
-		FloorUnderlayDefinition.FloorUnderlayDefinition_cached.clear();
+	int method7377(class343 var1, class343 var2) {
+		return var1.field3949 - var2.field3949;
 	}
 
-	@ObfuscatedName("au")
+	public int compare(Object var1, Object var2) {
+		return this.method7377((class343)var1, (class343)var2);
+	}
+
+	public boolean equals(Object var1) {
+		return super.equals(var1);
+	}
+
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Ltn;II)V",
-		garbageValue = "2086876142"
+		descriptor = "(I)[Lcl;",
+		garbageValue = "-20243175"
 	)
-	static void method7369(DynamicArray var0, int var1) {
-		if (var1 < 0 || var1 >= var0.method10351()) {
-			throw new RuntimeException();
-		}
+	static class67[] method7378() {
+		return new class67[]{class67.field914, class67.field916, class67.field922, class67.field920, class67.field915};
 	}
 }

@@ -1,133 +1,197 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mq")
-public class class337 {
-	@ObfuscatedName("al")
-	public static final List field3799;
-	@ObfuscatedName("ab")
-	public static ArrayList field3794;
+@ObfuscatedName("mx")
+public enum class337 implements Enum {
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3853(0, 0),
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3847(1, 1),
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3848(2, 2),
 	@ObfuscatedName("ac")
-	public static LinkedList field3791;
-	@ObfuscatedName("av")
-	@Export("midiRequests")
-	public static ArrayList midiRequests;
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3849(3, 3),
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3850(4, 4),
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3851(5, 5),
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3852(6, 6),
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3870(7, 7),
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3854(8, 8),
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "Lmx;"
 	)
-	public static AbstractArchive field3793;
-	@ObfuscatedName("ap")
-	static ArrayList field3790;
-	@ObfuscatedName("am")
-	static ArrayList field3795;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = -1172703077
+	field3868(9, 9),
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
 	)
-	@Export("musicPlayerStatus")
-	static int musicPlayerStatus;
-	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = -1187913633
-	)
-	static int field3797;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -410295905
-	)
-	static int field3798;
+	field3856(10, 10),
 	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = 2009020853
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
 	)
-	static int field3789;
-
-	static {
-		field3799 = new ArrayList();
-		field3794 = null;
-		field3791 = new LinkedList();
-		midiRequests = new ArrayList(3);
-		field3790 = new ArrayList(3);
-		field3795 = new ArrayList();
-		musicPlayerStatus = 0;
-		field3797 = 0;
-		field3798 = 0;
-		field3789 = 0;
-	}
-
+	field3857(11, 11),
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3858(12, 12),
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3855(13, 13),
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3859(14, 14),
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3861(15, 15),
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3862(16, 16),
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3863(17, 17),
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3867(18, 18),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3877(19, 19),
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3864(20, 20),
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lpx;Lpx;Lth;ZIB)V",
-		garbageValue = "93"
+		descriptor = "Lmx;"
 	)
-	static void method7129(AbstractArchive var0, AbstractArchive var1, GraphicsDefaults var2, boolean var3, int var4) {
-		if (class482.clearLoginScreen) {
-			if (var4 == 4) {
-				DynamicObject.method1987(4);
-			}
+	field3873(21, 21),
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3875(22, 22),
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3869(23, 23),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3871(24, 24),
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3846(25, 25),
+	@ObfuscatedName("bt")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3872(26, 26),
+	@ObfuscatedName("bs")
+	@ObfuscatedSignature(
+		descriptor = "Lmx;"
+	)
+	field3866(27, 27);
 
-		} else {
-			if (var4 == 0) {
-				WorldMapDecoration.updateLoginStatusUsernameRemembered(var3);
-			} else {
-				DynamicObject.method1987(var4);
-			}
+	@ObfuscatedName("bi")
+	@ObfuscatedSignature(
+		descriptor = "[Lmx;"
+	)
+	public static final class337[] field3860;
+	@ObfuscatedName("sh")
+	@ObfuscatedGetter(
+		intValue = -643377373
+	)
+	@Export("selectedSpellFlags")
+	static int selectedSpellFlags;
+	@ObfuscatedName("bu")
+	@ObfuscatedGetter(
+		intValue = -77670489
+	)
+	final int field3874;
+	@ObfuscatedName("bd")
+	@ObfuscatedGetter(
+		intValue = 1472328093
+	)
+	final int field3876;
 
-			Rasterizer2D.Rasterizer2D_clear();
-			byte[] var5 = var0.takeFileByNames("title.jpg", "");
-			class372.leftTitleSprite = class177.readSpritePixelsFromBytes(var5);
-			class524.rightTitleSprite = class372.leftTitleSprite.mirrorHorizontally();
-			class449.method9087(var1, Client.worldProperties);
-			Login.titleboxSprite = class484.SpriteBuffer_getIndexedSpriteByName(var1, "titlebox", "");
-			Tile.titlebuttonSprite = class484.SpriteBuffer_getIndexedSpriteByName(var1, "titlebutton", "");
-			class163.field1854 = class484.SpriteBuffer_getIndexedSpriteByName(var1, "titlebutton_large", "");
-			class132.field1588 = class484.SpriteBuffer_getIndexedSpriteByName(var1, "play_now_text", "");
-			class484.SpriteBuffer_getIndexedSpriteByName(var1, "titlebutton_wide42,1", "");
-			class36.runesSprite = WorldEntity.getFont(var1, "runes", "");
-			Huffman.title_muteSprite = WorldEntity.getFont(var1, "title_mute", "");
-			Interpreter.options_buttons_0Sprite = class484.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,0", "");
-			FadeOutTask.field5182 = class484.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,4", "");
-			AddRequestTask.options_buttons_2Sprite = class484.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,2", "");
-			ClanChannel.field1888 = class484.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,6", "");
-			class144.field1717 = Interpreter.options_buttons_0Sprite.subWidth;
-			VarpDefinition.field1950 = Interpreter.options_buttons_0Sprite.subHeight;
-			MidiPcmStream.loginScreenRunesAnimation = new LoginScreenAnimation(class36.runesSprite, var2.field5426);
-			if (var3) {
-				Login.Login_username = "";
-				Login.Login_password = "";
-				Login.field706 = new String[8];
-				Login.field708 = 0;
-			}
+	static {
+		class337[] var0 = new class337[]{field3853, field3847, field3848, field3849, field3850, field3851, field3852, field3870, field3854, field3868, field3856, field3857, field3858, field3855, field3859, field3861, field3862, field3863, field3867, field3877, field3864, field3873, field3875, field3869, field3871, field3846, field3872, field3866};
+		field3860 = new class337[var0.length];
+		class337[] var2 = var0;
 
-			class563.otpMedium = 0;
-			SoundSystem.otp = "";
-			Login.rememberUsername = true;
-			Login.worldSelectOpen = false;
-			if (FriendSystem.clientPreferences.isTitleMusicDisabled()) {
-				class267.method6028(0, 0);
-			} else {
-				class267.method6028(0, 0);
-				ArrayList var6 = new ArrayList();
-				var6.add(new MidiRequest(MoveSpeed.field3199, "scape main", "", 255, false));
-				class30.method486(var6, 0, 0, 0, 100, false);
-			}
-
-			class330.method7035();
-			JagNetThread var7 = HorizontalAlignment.field2060;
-			var7.method8447(false);
-			class482.clearLoginScreen = true;
-			Login.xPadding = (RestClientThreadFactory.canvasWidth - 765) / 2;
-			Login.loginBoxX = Login.xPadding + 202;
-			class133.loginBoxCenter = Login.loginBoxX + 180;
-			class372.leftTitleSprite.drawAt(Login.xPadding, 0);
-			class524.rightTitleSprite.drawAt(Login.xPadding + 382, 0);
-			class205.logoSprite.drawAt(Login.xPadding + 382 - class205.logoSprite.subWidth / 2, 18);
+		for (int var3 = 0; var3 < var2.length; ++var3) {
+			class337 var4 = var2[var3];
+			field3860[var4.field3876] = var4;
 		}
+
+	}
+
+	class337(int var3, int var4) {
+		this.field3874 = var3;
+		this.field3876 = var4;
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-1935172756"
+	)
+	@Export("rsOrdinal")
+	public int rsOrdinal() {
+		return this.field3876;
 	}
 }

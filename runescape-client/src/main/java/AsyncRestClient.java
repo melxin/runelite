@@ -8,39 +8,21 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ak")
+@ObfuscatedName("ar")
 @Implements("AsyncRestClient")
 public class AsyncRestClient {
-	@ObfuscatedName("fd")
-	static boolean field57;
-	@ObfuscatedName("kl")
-	@ObfuscatedSignature(
-		descriptor = "Lpo;"
-	)
-	@Export("archive2")
-	static Archive archive2;
-	@ObfuscatedName("qs")
-	@ObfuscatedSignature(
-		descriptor = "[Lxv;"
-	)
-	static SpritePixels[] field62;
-	@ObfuscatedName("va")
-	@ObfuscatedGetter(
-		intValue = -433169259
-	)
-	static int field60;
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@Export("threadNamePrefix")
 	final String threadNamePrefix;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("threadFactory")
 	final ThreadFactory threadFactory;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@Export("threadPoolExecutor")
 	final ThreadPoolExecutor threadPoolExecutor;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -643487589
+		intValue = -391947939
 	)
 	@Export("workQueueCapacity")
 	final int workQueueCapacity;
@@ -52,20 +34,20 @@ public class AsyncRestClient {
 		this.threadPoolExecutor = this.createThreadPoolExecutor(var3);
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(IB)Ljava/util/concurrent/ThreadPoolExecutor;",
-		garbageValue = "-18"
+		garbageValue = "-125"
 	)
 	@Export("createThreadPoolExecutor")
 	final ThreadPoolExecutor createThreadPoolExecutor(int var1) {
 		return new ThreadPoolExecutor(var1, var1, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue(this.workQueueCapacity), this.threadFactory);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(Lag;I)Laq;",
-		garbageValue = "-1520158396"
+		descriptor = "(Lai;I)Lag;",
+		garbageValue = "642811050"
 	)
 	@Export("submitRequest")
 	public AsyncHttpResponse submitRequest(HttpRequest var1) {
@@ -78,10 +60,10 @@ public class AsyncRestClient {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "717566437"
+		descriptor = "(B)V",
+		garbageValue = "127"
 	)
 	@Export("shutdown")
 	public final void shutdown() {
@@ -93,38 +75,48 @@ public class AsyncRestClient {
 
 	}
 
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;[SI)V",
-		garbageValue = "1865094494"
-	)
-	public static void method174(String[] var0, short[] var1) {
-		ArchiveLoader.sortItemsByName(var0, var1, 0, var0.length - 1);
-	}
-
-	@ObfuscatedName("hi")
+	@ObfuscatedName("ha")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1314746657"
+		garbageValue = "846925215"
 	)
-	static final void method161() {
-		if (Client.logoutTimer > 0) {
-			MilliClock.logOut();
-		} else {
-			Client.timer.method8245();
-			AuthenticationScheme.updateGameState(40);
-			Tiles.field834 = Client.packetWriter.getSocket();
-			Client.packetWriter.removeSocket();
+	static void method188() {
+		IndexCheck.accessToken = System.getenv("JX_ACCESS_TOKEN");
+		MilliClock.refreshToken = System.getenv("JX_REFRESH_TOKEN");
+		WorldMapID.sessionId = System.getenv("JX_SESSION_ID");
+		KitDefinition.characterId = System.getenv("JX_CHARACTER_ID");
+		PlatformInfo.method10584(System.getenv("JX_DISPLAY_NAME"));
+	}
+
+	@ObfuscatedName("lh")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-34"
+	)
+	@Export("addCancelMenuEntry")
+	static void addCancelMenuEntry() {
+		Widget.method8102();
+		Client.menu.menuWorldViewIds[0] = -1;
+		Client.menu.menuActions[0] = "Cancel";
+		Client.menu.menuTargets[0] = "";
+		Client.menu.menuOpcodes[0] = 1006;
+		Client.menu.menuShiftClick[0] = false;
+		Client.menu.subMenus[0] = null;
+		Client.menu.menuOptionsCount = 1;
+	}
+
+	@ObfuscatedName("pa")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lwd;",
+		garbageValue = "-524460341"
+	)
+	@Export("getDbTable2")
+	static DbTable getDbTable2(int var0) {
+		DbTable var1 = (DbTable)Client.archive11.get((long)var0);
+		if (var1 == null) {
+			var1 = new DbTable(WorldMapLabelSize.field3302, var0);
 		}
-	}
 
-	@ObfuscatedName("oh")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-659308431"
-	)
-	static final void method175() {
-		Client.field514 = Client.cycleCntr;
-		MilliClock.ClanChat_inClanChat = true;
+		return var1;
 	}
 }

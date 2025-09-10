@@ -4,32 +4,17 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("cs")
+@ObfuscatedName("cf")
 @Implements("SecureRandomFuture")
 public class SecureRandomFuture {
-	@ObfuscatedName("ak")
-	@ObfuscatedGetter(
-		intValue = -1950216001
-	)
-	@Export("Interpreter_objectStackSize")
-	static int Interpreter_objectStackSize;
-	@ObfuscatedName("at")
-	@Export("Tiles_hue")
-	static int[] Tiles_hue;
-	@ObfuscatedName("kr")
-	@ObfuscatedSignature(
-		descriptor = "Lpo;"
-	)
-	@Export("soundEffectsArchive")
-	static Archive soundEffectsArchive;
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@Export("executor")
 	ExecutorService executor;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("future")
 	Future future;
 
@@ -38,10 +23,10 @@ public class SecureRandomFuture {
 		this.future = this.executor.submit(new SecureRandomCallable());
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-78"
+		descriptor = "(I)V",
+		garbageValue = "-2036108609"
 	)
 	@Export("shutdown")
 	void shutdown() {
@@ -49,47 +34,103 @@ public class SecureRandomFuture {
 		this.executor = null;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "111"
+		descriptor = "(I)Z",
+		garbageValue = "46901898"
 	)
 	@Export("isDone")
 	boolean isDone() {
 		return this.future.isDone();
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/security/SecureRandom;",
-		garbageValue = "28"
+		descriptor = "(I)Ljava/security/SecureRandom;",
+		garbageValue = "856038810"
 	)
 	@Export("get")
 	SecureRandom get() {
 		try {
 			return (SecureRandom)this.future.get();
-		} catch (Exception var2) {
-			return class386.method8197();
+		} catch (Exception var4) {
+			SecureRandom var3 = new SecureRandom();
+			var3.nextInt();
+			return var3;
 		}
 	}
 
-	@ObfuscatedName("ok")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(IIILxv;I)V",
-		garbageValue = "-582905527"
+		descriptor = "(II)Lgt;",
+		garbageValue = "2028200764"
 	)
-	static void method1967(int var0, int var1, int var2, SpritePixels var3) {
-		int var4 = var2 * 128;
-		var4 += Client.camAngleY;
-		var4 &= 2047;
-		byte var5 = 30;
-		int var9 = class532.field5477[var4 & 2047];
-		double var7 = (double)var9 / 65536.0D;
-		var9 = var0 - (int)((double)var5 * var7);
-		double var11 = (double)WorldMapLabel.method6812(var4) / 65536.0D;
-		int var13 = var1 + (int)((double)var5 * var11);
-		int var14 = Math.max(var3.subWidth, var3.subHeight);
-		int var15 = var14 / 2;
-		var3.method11801(var9 - var15, var13 - var15, var3.subWidth, var3.subHeight, var3.subWidth / 2, var3.subHeight / 2, (double)class31.method501(var4), 256);
+	@Export("getInvDefinition")
+	public static InvDefinition getInvDefinition(int var0) {
+		InvDefinition var1 = (InvDefinition)InvDefinition.InvDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = InvDefinition.InvDefinition_archive.takeFile(5, var0);
+			var1 = new InvDefinition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
+
+			InvDefinition.InvDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/CharSequence;B)Ljava/lang/String;",
+		garbageValue = "100"
+	)
+	public static String method1987(CharSequence var0) {
+		int var2 = var0.length();
+		char[] var3 = new char[var2];
+
+		for (int var4 = 0; var4 < var2; ++var4) {
+			var3[var4] = '*';
+		}
+
+		String var1 = new String(var3);
+		return var1;
+	}
+
+	@ObfuscatedName("bd")
+	@ObfuscatedSignature(
+		descriptor = "(ILcg;ZI)I",
+		garbageValue = "-1445536234"
+	)
+	static int method1982(int var0, Script var1, boolean var2) {
+		Widget var3 = UrlRequester.widgetDefinition.method7476(Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize]);
+		if (var0 == ScriptOpcodes.IF_GETTARGETMASK) {
+			Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = class537.Widget_unpackTargetMask(DirectByteArrayCopier.getWidgetFlags(var3));
+			return 1;
+		} else if (var0 != ScriptOpcodes.IF_GETOP) {
+			if (var0 == ScriptOpcodes.IF_GETOPBASE) {
+				if (var3.dataText == null) {
+					Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = "";
+				} else {
+					Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = var3.dataText;
+				}
+
+				return 1;
+			} else {
+				return 2;
+			}
+		} else {
+			int var4 = Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize];
+			--var4;
+			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
+				Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = var3.actions[var4];
+			} else {
+				Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = "";
+			}
+
+			return 1;
+		}
 	}
 }

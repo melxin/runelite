@@ -4,55 +4,49 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hx")
+@ObfuscatedName("he")
 @Implements("VarbitComposition")
 public class VarbitComposition extends DualNode {
-	@ObfuscatedName("al")
-	static final int[] field2207;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
+	static final int[] field2261;
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "Lpx;"
 	)
 	@Export("VarbitDefinition_archive")
 	static AbstractArchive VarbitDefinition_archive;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lmd;"
+		descriptor = "Lmu;"
 	)
 	@Export("VarbitDefinition_cached")
-	static EvictingDualNodeHashTable VarbitDefinition_cached;
-	@ObfuscatedName("ai")
+	public static EvictingDualNodeHashTable VarbitDefinition_cached;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1255076423
-	)
-	@Export("gameCyclesToDo")
-	static int gameCyclesToDo;
-	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		intValue = 1142076203
+		intValue = 391048105
 	)
 	@Export("baseVar")
 	public int baseVar;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1838225857
+		intValue = -1000785497
 	)
 	@Export("startBit")
 	public int startBit;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1324654765
+		intValue = -850328077
 	)
 	@Export("endBit")
 	public int endBit;
 
 	static {
-		field2207 = new int[32];
+		field2261 = new int[32];
 		VarbitDefinition_cached = new EvictingDualNodeHashTable(64);
 		int var0 = 2;
 
 		for (int var1 = 0; var1 < 32; ++var1) {
-			field2207[var1] = var0 - 1;
+			field2261[var1] = var0 - 1;
 			var0 += var0;
 		}
 
@@ -61,10 +55,10 @@ public class VarbitComposition extends DualNode {
 	VarbitComposition() {
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "1791016684"
+		descriptor = "(Lwb;I)V",
+		garbageValue = "1264643719"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -78,10 +72,10 @@ public class VarbitComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;IB)V",
-		garbageValue = "-102"
+		descriptor = "(Lwb;IB)V",
+		garbageValue = "18"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -93,55 +87,23 @@ public class VarbitComposition extends DualNode {
 
 	}
 
-	@ObfuscatedName("kr")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;Lco;I)V",
-		garbageValue = "-1060337149"
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "856085244"
 	)
-	static final void method4480(WorldView var0, PendingSpawn var1) {
-		Scene var2 = var0.scene;
-		long var3 = 0L;
-		int var5 = -1;
-		int var6 = 0;
-		int var7 = 0;
-		if (var1.type == 0) {
-			var3 = var2.getBoundaryObjectTag(var1.plane, var1.x, var1.y);
-		}
-
-		if (var1.type == 1) {
-			var3 = var2.getWallDecorationTag(var1.plane, var1.x, var1.y);
-		}
-
-		if (var1.type == 2) {
-			var3 = var2.getGameObjectTag(var1.plane, var1.x, var1.y);
-		}
-
-		if (var1.type == 3) {
-			var3 = var2.getFloorDecorationTag(var1.plane, var1.x, var1.y);
-		}
-
-		if (var3 != 0L) {
-			int var8 = var2.getObjectFlags(var1.plane, var1.x, var1.y, var3);
-			var5 = class70.Entity_unpackID(var3);
-			var6 = var8 & 31;
-			var7 = var8 >> 6 & 3;
-		}
-
-		var1.objectId = var5;
-		var1.field1017 = var6;
-		var1.field1009 = var7;
+	static final void method4512(String var0) {
+		Varcs.addGameMessage(30, "", var0);
 	}
 
-	@ObfuscatedName("oo")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "([BII)V",
-		garbageValue = "-855989691"
+		descriptor = "(II)I",
+		garbageValue = "2112596582"
 	)
-	static void method4479(byte[] var0, int var1) {
-		if (Client.randomDatData == null) {
-			Client.randomDatData = new byte[24];
-		}
-
-		class476.writeRandomDat(var0, var1, Client.randomDatData, 0, 24);
+	public static int method4513(int var0) {
+		long var2 = ViewportMouse.ViewportMouse_entityTags[var0];
+		int var1 = (int)(var2 >>> 0 & 127L);
+		return var1;
 	}
 }

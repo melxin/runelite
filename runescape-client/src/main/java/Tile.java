@@ -1,138 +1,133 @@
+import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ip")
+@ObfuscatedName("ii")
 @Implements("Tile")
 public final class Tile extends Node {
-	@ObfuscatedName("cu")
-	@ObfuscatedSignature(
-		descriptor = "Lxa;"
-	)
-	@Export("titlebuttonSprite")
-	static IndexedSprite titlebuttonSprite;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "Ljt;"
 	)
 	@Export("paint")
 	SceneTilePaint paint;
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Ljy;"
-	)
-	@Export("model")
-	SceneTileModel model;
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lib;"
-	)
-	@Export("itemLayer")
-	ItemLayer itemLayer;
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = -649575905
-	)
-	@Export("gameObjectsCount")
-	int gameObjectsCount;
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "[Ljk;"
-	)
-	@Export("gameObjects")
-	GameObject[] gameObjects;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = -875667687
-	)
-	@Export("plane")
-	int plane;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = 685137059
-	)
-	@Export("x")
-	int x;
-	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = -1690732139
-	)
-	@Export("y")
-	int y;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = 965952075
-	)
-	@Export("originalPlane")
-	int originalPlane;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "Ljp;"
 	)
+	@Export("model")
+	SceneTileModel model;
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Liw;"
+	)
+	@Export("itemLayer")
+	ItemLayer itemLayer;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = 422153801
+	)
+	@Export("gameObjectsCount")
+	int gameObjectsCount;
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "[Ljm;"
+	)
+	@Export("gameObjects")
+	GameObject[] gameObjects;
+	@ObfuscatedName("ao")
+	@ObfuscatedGetter(
+		intValue = 671492593
+	)
+	@Export("plane")
+	int plane;
+	@ObfuscatedName("as")
+	@ObfuscatedGetter(
+		intValue = -2022624537
+	)
+	@Export("x")
+	int x;
+	@ObfuscatedName("al")
+	@ObfuscatedGetter(
+		intValue = -1465657841
+	)
+	@Export("y")
+	int y;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -1474143877
+	)
+	@Export("originalPlane")
+	int originalPlane;
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Ljf;"
+	)
 	@Export("boundaryObject")
 	BoundaryObject boundaryObject;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Ljc;"
+		descriptor = "Ljr;"
 	)
 	@Export("wallDecoration")
 	WallDecoration wallDecoration;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lis;"
+		descriptor = "Lir;"
 	)
 	@Export("floorDecoration")
 	FloorDecoration floorDecoration;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("an")
 	@Export("gameObjectEdgeMasks")
 	int[] gameObjectEdgeMasks;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -2024953185
+		intValue = -1325311709
 	)
 	@Export("gameObjectsEdgeMask")
 	int gameObjectsEdgeMask;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 593882325
+		intValue = 1043101699
 	)
 	@Export("minPlane")
 	int minPlane;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ay")
 	@Export("drawPrimary")
 	boolean drawPrimary;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ad")
 	@Export("drawSecondary")
 	boolean drawSecondary;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ag")
 	@Export("drawGameObjects")
 	boolean drawGameObjects;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 122784195
+		intValue = 196909571
 	)
 	@Export("drawGameObjectEdges")
 	int drawGameObjectEdges;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 797084287
+		intValue = -666850291
 	)
-	int field2570;
-	@ObfuscatedName("ad")
+	int field2619;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -494726895
+		intValue = 1202243977
 	)
-	int field2571;
-	@ObfuscatedName("aw")
+	int field2606;
+	@ObfuscatedName("ax")
 	@ObfuscatedGetter(
-		intValue = -325278227
+		intValue = -518683825
 	)
-	int field2572;
-	@ObfuscatedName("af")
+	int field2616;
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Lip;"
+		descriptor = "Lii;"
 	)
 	@Export("linkedBelowTile")
 	Tile linkedBelowTile;
@@ -146,30 +141,33 @@ public final class Tile extends Node {
 		this.y = var3;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lfo;",
-		garbageValue = "-1030976259"
+		descriptor = "(I)Z",
+		garbageValue = "-1952775347"
 	)
-	static class135[] method4885() {
-		return new class135[]{class135.field1619, class135.field1620, class135.field1622, class135.field1621, class135.field1623};
+	public static boolean method4924() {
+		if (!class339.field3892.isEmpty()) {
+			return true;
+		} else {
+			return !class339.midiRequests.isEmpty() && class339.midiRequests.get(0) != null && ((MidiRequest)class339.midiRequests.get(0)).midiPcmStream != null ? ((MidiRequest)class339.midiRequests.get(0)).midiPcmStream.isReady() : false;
+		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-4"
+		descriptor = "(Ljava/util/Date;B)Z",
+		garbageValue = "4"
 	)
-	public static void method4884() {
-		VarpDefinition.VarpDefinition_cached.clear();
-	}
-
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lmx;",
-		garbageValue = "1"
-	)
-	public static class335 method4883(int var0) {
-		return class335.field3775[var0];
+	static boolean method4925(Date var0) {
+		java.util.Calendar var1 = java.util.Calendar.getInstance();
+		var1.set(1, var1.get(1) - 13);
+		var1.set(5, var1.get(5) + 1);
+		var1.set(11, 0);
+		var1.set(12, 0);
+		var1.set(13, 0);
+		var1.set(14, 0);
+		Date var2 = var1.getTime();
+		return var0.before(var2);
 	}
 }

@@ -1,80 +1,196 @@
+import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("we")
-public class class582 extends class583 {
-	@ObfuscatedName("al")
-	final int[][] field5796;
-	@ObfuscatedName("ab")
-	final int[][] field5792;
-	@ObfuscatedName("ac")
-	final int[] field5797;
-	@ObfuscatedName("av")
-	final int[] field5794;
-	@ObfuscatedName("au")
+@ObfuscatedName("wu")
+public enum class582 implements Enum {
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "[Lri;"
+		descriptor = "Lwu;"
 	)
-	final Bounds[] field5795;
+	field5862(1),
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5879(2),
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5851(4),
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5866(8),
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5853(16),
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5850(32),
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5855(64, true),
 	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "[Lri;"
+		descriptor = "Lwu;"
 	)
-	final Bounds[] field5793;
+	field5854(128),
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5856(256, true),
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5858(512),
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5859(1024),
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5852(2048),
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5861(4096),
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5857(8192),
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5871(16384),
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5864(32768),
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5865(65536),
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5874(131072),
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5867(262144),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5868(524288),
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "[Lri;"
+		descriptor = "Lwu;"
 	)
-	final Bounds[] field5791;
+	field5869(1048576),
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5870(2097152),
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5849(4194304),
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5872(8388608),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5873(16777216),
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5863(33554432),
+	@ObfuscatedName("bt")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5875(67108864, true),
+	@ObfuscatedName("bs")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5876(134217728),
+	@ObfuscatedName("bu")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5877(268435456),
+	@ObfuscatedName("bi")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5881(536870912, true),
+	@ObfuscatedName("bd")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5878(1073741824, true),
+	@ObfuscatedName("ba")
+	@ObfuscatedSignature(
+		descriptor = "Lwu;"
+	)
+	field5880(Integer.MIN_VALUE);
 
-	public class582(int var1, int var2, int var3, int var4) {
-		super(var1, var2, var3, var4);
-		this.field5796 = new int[16][4];
-		this.field5792 = new int[16][4];
-		this.field5797 = new int[16];
-		this.field5794 = new int[16];
-		this.field5795 = new Bounds[16];
-		this.field5793 = new Bounds[16];
-		this.field5791 = new Bounds[16];
+	@ObfuscatedName("bb")
+	@ObfuscatedGetter(
+		intValue = -1462956207
+	)
+	final int field5860;
 
-		for (int var5 = 0; var5 < 16; ++var5) {
-			int var6 = var5 * 128;
-			int var7 = WorldMapLabel.method6812(var6);
-			int var8 = class532.field5477[var6 & 2047];
-			int var10 = -(var3 * var7 - var8 * var4 >> 16);
-			int var11 = var3 * var8 + var7 * var4 >> 16;
-			int var12 = var7 * super.field5798 - var8 * super.field5802 >> 16;
-			int var13 = var7 * super.field5802 + var8 * super.field5798 >> 16;
-			int var14 = var8 * super.field5802 + var7 * super.field5798 >> 16;
-			int var15 = var7 * super.field5802 - var8 * super.field5798 >> 16;
-			this.field5796[var5] = new int[4];
-			this.field5792[var5] = new int[4];
-			this.field5796[var5][0] = var10 - var12;
-			this.field5792[var5][0] = var13 + var11;
-			this.field5796[var5][1] = var10 + var14;
-			this.field5792[var5][1] = var15 + var11;
-			this.field5796[var5][2] = var10 + var12;
-			this.field5792[var5][2] = var11 - var13;
-			this.field5796[var5][3] = var10 - var14;
-			this.field5792[var5][3] = var11 - var15;
-			this.field5797[var5] = Math.abs(var8 * super.field5802) >> 16;
-			this.field5794[var5] = Math.abs(var7 * super.field5802) >> 16;
-			int var16 = Math.min(this.field5796[var5][0], Math.min(this.field5796[var5][1], Math.min(this.field5796[var5][2], this.field5796[var5][3])));
-			int var17 = Math.max(this.field5796[var5][0], Math.max(this.field5796[var5][1], Math.max(this.field5796[var5][2], this.field5796[var5][3])));
-			int var18 = Math.min(this.field5792[var5][0], Math.min(this.field5792[var5][1], Math.min(this.field5792[var5][2], this.field5792[var5][3])));
-			int var19 = Math.max(this.field5792[var5][0], Math.max(this.field5792[var5][1], Math.max(this.field5792[var5][2], this.field5792[var5][3])));
-			this.field5795[var5] = new Bounds(var16, var18, var17 - var16, var19 - var18);
-			var16 = Math.min(this.field5796[var5][2], Math.min(this.field5796[var5][3], var10));
-			var17 = Math.max(this.field5796[var5][2], Math.max(this.field5796[var5][3], var10));
-			var18 = Math.min(this.field5792[var5][2], Math.min(this.field5792[var5][3], var11));
-			var19 = Math.max(this.field5792[var5][2], Math.max(this.field5792[var5][3], var11));
-			this.field5793[var5] = new Bounds(var16, var18, var17 - var16, var19 - var18);
-			var16 = Math.min(this.field5796[var5][0], Math.min(this.field5796[var5][1], var10));
-			var17 = Math.max(this.field5796[var5][0], Math.max(this.field5796[var5][1], var10));
-			var18 = Math.min(this.field5792[var5][0], Math.min(this.field5792[var5][1], var11));
-			var19 = Math.max(this.field5792[var5][0], Math.max(this.field5792[var5][1], var11));
-			this.field5791[var5] = new Bounds(var16, var18, var17 - var16, var19 - var18);
-		}
+	class582(int var3) {
+		this(var3, false);
+	}
 
+	@ObfuscatedSignature(
+		descriptor = "(IZ)V",
+		garbageValue = "1"
+	)
+	class582(int var3, boolean var4) {
+		this.field5860 = var3;
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-1935172756"
+	)
+	@Export("rsOrdinal")
+	public int rsOrdinal() {
+		return this.field5860;
 	}
 }

@@ -3,28 +3,28 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("np")
+@ObfuscatedName("nd")
 @Implements("MusicTrack")
 public class MusicTrack extends Node {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lqo;"
+		descriptor = "Lqw;"
 	)
-	NodeHashTable field3880;
-	@ObfuscatedName("ab")
+	NodeHashTable field3974;
+	@ObfuscatedName("aw")
 	@Export("midi")
 	byte[] midi;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;)V"
+		descriptor = "(Lwb;)V"
 	)
 	MusicTrack(Buffer var1) {
-		this.field3880 = new NodeHashTable(16);
-		var1.offset = var1.array.length - 3;
+		this.field3974 = new NodeHashTable(16);
+		var1.array = (var1.field5916.length - 3) * -290410379;
 		int var2 = var1.readUnsignedByte();
 		int var3 = var1.readUnsignedShort();
 		int var4 = var2 * 10 + 14;
-		var1.offset = 0;
+		var1.array = 0;
 		int var5 = 0;
 		int var6 = 0;
 		int var7 = 0;
@@ -78,15 +78,15 @@ public class MusicTrack extends Node {
 		var4 += var5 * 5;
 		var4 += (var7 + var8 + var6 + var9 + var11) * 2;
 		var4 = var4 + var10 + var12;
-		var13 = var1.offset;
+		var13 = var1.array * 1216585693;
 		var14 = var2 + var5 + var6 + var7 + var8 + var9 + var10 + var11 + var12;
 
 		for (var15 = 0; var15 < var14; ++var15) {
-			var1.readVarInt();
+			var1.packBytesToInt();
 		}
 
-		var4 += var1.offset - var13;
-		var15 = var1.offset;
+		var4 += var1.array * 1216585693 - var13;
+		var15 = var1.array * 1216585693;
 		int var16 = 0;
 		int var17 = 0;
 		int var18 = 0;
@@ -136,48 +136,48 @@ public class MusicTrack extends Node {
 		}
 
 		var29 = 0;
-		int var30 = var1.offset;
-		var1.offset += var26;
-		int var31 = var1.offset;
-		var1.offset += var11;
-		int var32 = var1.offset;
-		var1.offset += var10;
-		int var33 = var1.offset;
-		var1.offset += var9;
-		int var34 = var1.offset;
-		var1.offset += var16;
-		int var35 = var1.offset;
-		var1.offset += var18;
-		int var36 = var1.offset;
-		var1.offset += var20;
-		int var37 = var1.offset;
-		var1.offset += var7 + var8 + var11;
-		int var38 = var1.offset;
-		var1.offset += var7;
-		int var39 = var1.offset;
-		var1.offset += var27;
-		int var40 = var1.offset;
-		var1.offset += var8;
-		int var41 = var1.offset;
-		var1.offset += var17;
-		int var42 = var1.offset;
-		var1.offset += var19;
-		int var43 = var1.offset;
-		var1.offset += var21;
-		int var44 = var1.offset;
-		var1.offset += var12;
-		int var45 = var1.offset;
-		var1.offset += var9;
-		int var46 = var1.offset;
-		var1.offset += var22;
-		int var47 = var1.offset;
-		var1.offset += var23;
-		int var48 = var1.offset;
-		var1.offset += var24;
-		int var49 = var1.offset;
-		var1.offset += var25;
-		int var50 = var1.offset;
-		var1.offset += var5 * 3;
+		int var30 = var1.array * 1216585693;
+		var1.array += var26 * -290410379;
+		int var31 = var1.array * 1216585693;
+		var1.array += var11 * -290410379;
+		int var32 = var1.array * 1216585693;
+		var1.array += var10 * -290410379;
+		int var33 = var1.array * 1216585693;
+		var1.array += var9 * -290410379;
+		int var34 = var1.array * 1216585693;
+		var1.array += var16 * -290410379;
+		int var35 = var1.array * 1216585693;
+		var1.array += var18 * -290410379;
+		int var36 = var1.array * 1216585693;
+		var1.array += var20 * -290410379;
+		int var37 = var1.array * 1216585693;
+		var1.array += (var7 + var8 + var11) * -290410379;
+		int var38 = var1.array * 1216585693;
+		var1.array += var7 * -290410379;
+		int var39 = var1.array * 1216585693;
+		var1.array += var27 * -290410379;
+		int var40 = var1.array * 1216585693;
+		var1.array += var8 * -290410379;
+		int var41 = var1.array * 1216585693;
+		var1.array += var17 * -290410379;
+		int var42 = var1.array * 1216585693;
+		var1.array += var19 * -290410379;
+		int var43 = var1.array * 1216585693;
+		var1.array += var21 * -290410379;
+		int var44 = var1.array * 1216585693;
+		var1.array += var12 * -290410379;
+		int var45 = var1.array * 1216585693;
+		var1.array += var9 * -290410379;
+		int var46 = var1.array * 1216585693;
+		var1.array += var22 * -290410379;
+		int var47 = var1.array * 1216585693;
+		var1.array += var23 * -290410379;
+		int var48 = var1.array * 1216585693;
+		var1.array += var24 * -290410379;
+		int var49 = var1.array * 1216585693;
+		var1.array += var25 * -290410379;
+		int var50 = var1.array * 1216585693;
+		var1.array += var5 * -871231137;
 		this.midi = new byte[var4];
 		Buffer var51 = new Buffer(this.midi);
 		var51.writeInt(1297377380);
@@ -185,7 +185,7 @@ public class MusicTrack extends Node {
 		var51.writeShort(var2 > 1 ? 1 : 0);
 		var51.writeShort(var2);
 		var51.writeShort(var3);
-		var1.offset = var13;
+		var1.array = var13 * -290410379;
 		int var52 = 0;
 		int var53 = 0;
 		int var54 = 0;
@@ -203,17 +203,17 @@ public class MusicTrack extends Node {
 		label277:
 		for (int var63 = 0; var63 < var2; ++var63) {
 			var51.writeInt(1297379947);
-			var51.offset += 4;
-			int var64 = var51.offset;
+			var51.array += -1161641516;
+			int var64 = var51.array * 1216585693;
 			int var65 = var64;
 			int var66 = -1;
 
 			while (true) {
 				while (true) {
-					int var67 = var1.readVarInt();
+					int var67 = var1.packBytesToInt();
 					var51.writeVarInt(var67);
 					var65 += var67;
-					int var68 = var1.array[var29++] & 255;
+					int var68 = var1.field5916[var29++] & 255;
 					boolean var69 = var68 != var66;
 					var66 = var68 & 15;
 					if (var68 == 7) {
@@ -223,7 +223,7 @@ public class MusicTrack extends Node {
 
 						var51.writeByte(47);
 						var51.writeByte(0);
-						var51.writeLengthInt(var51.offset - var64);
+						var51.writeLengthInt(var51.array * 1216585693 - var64);
 						continue label277;
 					}
 
@@ -234,9 +234,9 @@ public class MusicTrack extends Node {
 
 						var51.writeByte(81);
 						var51.writeByte(3);
-						var51.writeByte(var1.array[var50++]);
-						var51.writeByte(var1.array[var50++]);
-						var51.writeByte(var1.array[var50++]);
+						var51.writeByte(var1.field5916[var50++]);
+						var51.writeByte(var1.field5916[var50++]);
+						var51.writeByte(var1.field5916[var50++]);
 					} else {
 						var52 ^= var68 >> 4;
 						int var71;
@@ -246,29 +246,29 @@ public class MusicTrack extends Node {
 								var51.writeByte(var52 + 144);
 							}
 
-							var53 += var1.array[var37++];
-							var54 += var1.array[var38++];
+							var53 += var1.field5916[var37++];
+							var54 += var1.field5916[var38++];
 							var74 = var53 & 127;
 							var71 = var54 & 127;
 							var51.writeByte(var74);
 							var51.writeByte(var71);
 							if (var71 > 0) {
 								int var72 = var61[var52];
-								class350 var73 = (class350)this.field3880.get((long)var72);
+								class352 var73 = (class352)this.field3974.get((long)var72);
 								if (var73 == null) {
-									var73 = new class350(var65);
-									this.field3880.put(var73, (long)var72);
+									var73 = new class352(var65);
+									this.field3974.put(var73, (long)var72);
 								}
 
-								var73.field3924.set(var74);
+								var73.field4015.set(var74);
 							}
 						} else if (var66 == 1) {
 							if (var69) {
 								var51.writeByte(var52 + 128);
 							}
 
-							var53 += var1.array[var37++];
-							var55 += var1.array[var40++];
+							var53 += var1.field5916[var37++];
+							var55 += var1.field5916[var40++];
 							var51.writeByte(var53 & 127);
 							var51.writeByte(var55 & 127);
 						} else {
@@ -278,36 +278,36 @@ public class MusicTrack extends Node {
 									var51.writeByte(var52 + 176);
 								}
 
-								var28 = var28 + var1.array[var15++] & 127;
+								var28 = var28 + var1.field5916[var15++] & 127;
 								var51.writeByte(var28);
 								if (var28 != 0 && var28 != 32) {
 									if (var28 == 1) {
-										var70 = var1.array[var34++];
+										var70 = var1.field5916[var34++];
 									} else if (var28 == 33) {
-										var70 = var1.array[var41++];
+										var70 = var1.field5916[var41++];
 									} else if (var28 == 7) {
-										var70 = var1.array[var35++];
+										var70 = var1.field5916[var35++];
 									} else if (var28 == 39) {
-										var70 = var1.array[var42++];
+										var70 = var1.field5916[var42++];
 									} else if (var28 == 10) {
-										var70 = var1.array[var36++];
+										var70 = var1.field5916[var36++];
 									} else if (var28 == 42) {
-										var70 = var1.array[var43++];
+										var70 = var1.field5916[var43++];
 									} else if (var28 == 99) {
-										var70 = var1.array[var46++];
+										var70 = var1.field5916[var46++];
 									} else if (var28 == 98) {
-										var70 = var1.array[var47++];
+										var70 = var1.field5916[var47++];
 									} else if (var28 == 101) {
-										var70 = var1.array[var48++];
+										var70 = var1.field5916[var48++];
 									} else if (var28 == 100) {
-										var70 = var1.array[var49++];
+										var70 = var1.field5916[var49++];
 									} else if (var28 != 64 && var28 != 65 && var28 != 120 && var28 != 121 && var28 != 123) {
-										var70 = var1.array[var39++];
+										var70 = var1.field5916[var39++];
 									} else {
-										var70 = var1.array[var30++];
+										var70 = var1.field5916[var30++];
 									}
 								} else {
-									var70 = var1.array[var44++];
+									var70 = var1.field5916[var44++];
 								}
 
 								var74 = var70 + var59[var28];
@@ -326,8 +326,8 @@ public class MusicTrack extends Node {
 									var51.writeByte(var52 + 224);
 								}
 
-								var56 += var1.array[var45++];
-								var56 += var1.array[var33++] << 7;
+								var56 += var1.field5916[var45++];
+								var56 += var1.field5916[var33++] << 7;
 								var51.writeByte(var56 & 127);
 								var51.writeByte(var56 >> 7 & 127);
 							} else if (var66 == 4) {
@@ -335,15 +335,15 @@ public class MusicTrack extends Node {
 									var51.writeByte(var52 + 208);
 								}
 
-								var57 += var1.array[var32++];
+								var57 += var1.field5916[var32++];
 								var51.writeByte(var57 & 127);
 							} else if (var66 == 5) {
 								if (var69) {
 									var51.writeByte(var52 + 160);
 								}
 
-								var53 += var1.array[var37++];
-								var58 += var1.array[var31++];
+								var53 += var1.field5916[var37++];
+								var58 += var1.field5916[var31++];
 								var51.writeByte(var53 & 127);
 								var51.writeByte(var58 & 127);
 							} else {
@@ -355,7 +355,7 @@ public class MusicTrack extends Node {
 									var51.writeByte(var52 + 192);
 								}
 
-								var70 = var1.array[var44++];
+								var70 = var1.field5916[var44++];
 								var61[var52] = var70 + var60[var52];
 								var51.writeByte(var70);
 							}
@@ -367,9 +367,9 @@ public class MusicTrack extends Node {
 
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lpx;II)Lnp;"
+		descriptor = "(Lpx;II)Lnd;"
 	)
 	@Export("readTrack")
 	public static MusicTrack readTrack(AbstractArchive var0, int var1, int var2) {

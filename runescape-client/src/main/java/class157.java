@@ -1,128 +1,108 @@
-import java.net.URL;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gj")
-public class class157 extends class165 {
-	@ObfuscatedName("ie")
-	@Export("foundItemIds")
-	static short[] foundItemIds;
-	@ObfuscatedName("js")
-	@ObfuscatedSignature(
-		descriptor = "Ltl;"
-	)
-	@Export("js5Socket")
-	static AbstractSocket js5Socket;
-	@ObfuscatedName("al")
+@ObfuscatedName("gk")
+public class class157 extends class167 {
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1167216397
+		intValue = -1380060981
 	)
-	int field1793;
+	int field1817;
+	@ObfuscatedName("aw")
+	byte field1813;
+	@ObfuscatedName("at")
+	@ObfuscatedGetter(
+		intValue = -1193055997
+	)
+	int field1815;
+	@ObfuscatedName("ac")
+	String field1816;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lgp;"
+		descriptor = "Lga;"
 	)
-	final class166 this$0;
+	final class168 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lgp;)V"
+		descriptor = "(Lga;)V"
 	)
-	class157(class166 var1) {
+	class157(class168 var1) {
 		this.this$0 = var1;
-		this.field1793 = -1;
+		this.field1817 = -1;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "-2035870878"
+		descriptor = "(Lwb;I)V",
+		garbageValue = "1665789280"
 	)
-	void vmethod4076(Buffer var1) {
-		this.field1793 = var1.readUnsignedShort();
-		var1.readUnsignedByte();
-		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
-			var1.readLong();
+	void vmethod4108(Buffer var1) {
+		this.field1817 = var1.readUnsignedShort();
+		this.field1813 = var1.readByte();
+		this.field1815 = var1.readUnsignedShort();
+		var1.readLong();
+		this.field1816 = var1.readStringCp1252NullTerminated();
+	}
+
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "(Lgm;I)V",
+		garbageValue = "-358275379"
+	)
+	void vmethod4104(ClanChannel var1) {
+		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1817);
+		var2.rank = this.field1813;
+		var2.world = this.field1815;
+		var2.username = new Username(this.field1816);
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lhu;",
+		garbageValue = "1635156818"
+	)
+	public static class203 method3872(int var0) {
+		class203 var1 = (class203)class203.field2237.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = RestClientThreadFactory.field65.takeFile(72, var0);
+			var1 = new class203();
+			var1.field2244 = var0;
+			if (var2 != null) {
+				var1.method4448(new Buffer(var2));
+			}
+
+			var1.method4473();
+			class203.field2237.put(var1, (long)var0);
+			return var1;
 		}
-
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lgw;B)V",
-		garbageValue = "19"
+		descriptor = "([FI)V",
+		garbageValue = "-1189994107"
 	)
-	void vmethod4077(ClanChannel var1) {
-		var1.removeMember(this.field1793);
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ILjava/lang/String;I)Z",
-		garbageValue = "834324396"
-	)
-	static boolean method3868(String var0, int var1, String var2) {
-		if (var1 == 0) {
-			try {
-				if (!class31.field146.startsWith("win")) {
-					throw new Exception();
-				} else if (!var0.startsWith("http://") && !var0.startsWith("https://")) {
-					throw new Exception();
-				} else {
-					String var10 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
-
-					for (int var4 = 0; var4 < var0.length(); ++var4) {
-						if (var10.indexOf(var0.charAt(var4)) == -1) {
-							throw new Exception();
-						}
-					}
-
-					Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var0 + "\"");
-					return true;
+	static void method3871(float[] var0) {
+		if (var0[0] + class134.field1620 < 1.3333334F) {
+			float var1 = var0[0] - 2.0F;
+			float var2 = var0[0] - 1.0F;
+			float var3 = (float)Math.sqrt((double)(var1 * var1 - var2 * 4.0F * var2));
+			float var4 = (-var1 + var3) * 0.5F;
+			if (class134.field1620 + var0[1] > var4) {
+				var0[1] = var4 - class134.field1620;
+			} else {
+				var4 = 0.5F * (-var1 - var3);
+				if (var0[1] < class134.field1620 + var4) {
+					var0[1] = class134.field1620 + var4;
 				}
-			} catch (Throwable var5) {
-				return false;
-			}
-		} else if (var1 == 1) {
-			try {
-				Object var3 = class26.method412(class31.field147, var2, new Object[]{(new URL(class31.field147.getCodeBase(), var0)).toString()});
-				return var3 != null;
-			} catch (Throwable var6) {
-				return false;
-			}
-		} else if (var1 == 2) {
-			try {
-				class31.field147.getAppletContext().showDocument(new URL(class31.field147.getCodeBase(), var0), "_blank");
-				return true;
-			} catch (Exception var7) {
-				return false;
-			}
-		} else if (var1 == 3) {
-			try {
-				class26.method405(class31.field147, "loggedout");
-			} catch (Throwable var9) {
-			}
-
-			try {
-				class31.field147.getAppletContext().showDocument(new URL(class31.field147.getCodeBase(), var0), "_top");
-				return true;
-			} catch (Exception var8) {
-				return false;
 			}
 		} else {
-			throw new IllegalArgumentException();
+			var0[0] = 1.3333334F - class134.field1620;
+			var0[1] = 0.33333334F - class134.field1620;
 		}
-	}
 
-	@ObfuscatedName("ke")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIIZB)V",
-		garbageValue = "4"
-	)
-	@Export("addTileItemToGroundItems")
-	static void addTileItemToGroundItems(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9) {
-		Client.method1485(class81.worldView, var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
 	}
 }

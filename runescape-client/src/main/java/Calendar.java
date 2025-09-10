@@ -4,16 +4,16 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("oc")
+@ObfuscatedName("ov")
 @Implements("Calendar")
 public class Calendar {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@Export("MONTH_NAMES_ENGLISH_GERMAN")
 	static final String[][] MONTH_NAMES_ENGLISH_GERMAN;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@Export("DAYS_OF_THE_WEEK")
 	static final String[] DAYS_OF_THE_WEEK;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@Export("Calendar_calendar")
 	static java.util.Calendar Calendar_calendar;
 
@@ -24,29 +24,55 @@ public class Calendar {
 		Calendar_calendar = java.util.Calendar.getInstance(TimeZone.getTimeZone("GMT"));
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIZI)V",
-		garbageValue = "273835134"
+		descriptor = "(IIB)I",
+		garbageValue = "0"
 	)
-	static void method8097(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8) {
-		class57.soundEffectIds[class57.soundEffectCount] = var0;
-		class57.soundEffects[class57.soundEffectCount] = null;
-		class57.soundLocations[class57.soundEffectCount] = var4 + (var3 << 8) + (var2 << 16);
-		class57.field815[class57.soundEffectCount] = var1;
-		class57.queuedSoundEffectLoops[class57.soundEffectCount] = var6;
-		class57.queuedSoundEffectDelays[class57.soundEffectCount] = var7;
-		class57.field808[class57.soundEffectCount] = var5;
-		class57.field812[class57.soundEffectCount] = var8;
-		++class57.soundEffectCount;
+	static int method8131(int var0, int var1) {
+		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
+		if (var2 == null) {
+			return -1;
+		} else {
+			return var1 >= 0 && var1 < var2.ids.length ? var2.ids[var1] : -1;
+		}
 	}
 
-	@ObfuscatedName("pe")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1525712423"
+		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
+		garbageValue = "-1882194296"
 	)
-	static void method8098(int var0) {
-		Client.oculusOrbState = var0;
+	public static String method8130(String var0) {
+		int var1 = var0.length();
+		char[] var2 = new char[var1];
+		byte var3 = 2;
+
+		for (int var4 = 0; var4 < var1; ++var4) {
+			char var5 = var0.charAt(var4);
+			if (var3 == 0) {
+				var5 = Character.toLowerCase(var5);
+			} else if (var3 == 2 || Character.isUpperCase(var5)) {
+				var5 = MilliClock.method5948(var5);
+			}
+
+			if (Character.isLetter(var5)) {
+				var3 = 0;
+			} else if (var5 != '.' && var5 != '?' && var5 != '!') {
+				if (Character.isSpaceChar(var5)) {
+					if (var3 != 2) {
+						var3 = 1;
+					}
+				} else {
+					var3 = 1;
+				}
+			} else {
+				var3 = 2;
+			}
+
+			var2[var4] = var5;
+		}
+
+		return new String(var2);
 	}
 }

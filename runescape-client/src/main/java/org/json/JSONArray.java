@@ -82,7 +82,7 @@ public class JSONArray {
 			int var2 = Array.getLength(var1);
 
 			for (int var3 = 0; var3 < var2; ++var3) {
-				this.method11980(Array.get(var1, var3));
+				this.method11978(Array.get(var1, var3));
 			}
 
 		}
@@ -96,7 +96,7 @@ public class JSONArray {
 			int var3 = Array.getLength(var1);
 
 			for (int var4 = 0; var4 < var3; ++var4) {
-				this.method11980(new JSONObject(Array.get(var1, var4), var2));
+				this.method11978(new JSONObject(Array.get(var1, var4), var2));
 			}
 
 		}
@@ -114,12 +114,12 @@ public class JSONArray {
 
 	}
 
-	public Object method11973(int var1) {
+	public Object method11969(int var1) {
 		return var1 >= 0 && var1 < this.length() ? this.myArrayList.get(var1) : null;
 	}
 
-	public Object method11972(int var1) throws JSONException {
-		Object var2 = this.method11973(var1);
+	public Object method11964(int var1) throws JSONException {
+		Object var2 = this.method11969(var1);
 		if (var2 == null) {
 			throw new JSONException("JSONArray[" + var1 + "] not found.");
 		} else {
@@ -127,14 +127,9 @@ public class JSONArray {
 		}
 	}
 
-	public JSONArray method11980(Object var1) {
+	public JSONArray method11978(Object var1) {
 		this.myArrayList.add(var1);
 		return this;
-	}
-
-	public String optString(int var1, String var2) {
-		Object var3 = this.method11973(var1);
-		return var3 != null ? var3.toString() : var2;
 	}
 
 	public long optLong(int var1, long var2) {
@@ -161,8 +156,13 @@ public class JSONArray {
 		}
 	}
 
+	public String optString(int var1, String var2) {
+		Object var3 = this.method11969(var1);
+		return var3 != null ? var3.toString() : var2;
+	}
+
 	public boolean getBoolean(int var1) throws JSONException {
-		Object var2 = this.method11972(var1);
+		Object var2 = this.method11964(var1);
 		if (var2.equals(Boolean.FALSE) || var2 instanceof String && ((String)var2).equalsIgnoreCase("false")) {
 			return false;
 		} else if (var2.equals(Boolean.TRUE) || var2 instanceof String && ((String)var2).equalsIgnoreCase("true")) {
@@ -172,18 +172,18 @@ public class JSONArray {
 		}
 	}
 
-	public int getInt(int var1) throws JSONException {
-		Object var2 = this.method11972(var1);
-		return var2 instanceof Number ? ((Number)var2).intValue() : (int)this.getDouble(var1);
-	}
-
 	public long getLong(int var1) throws JSONException {
-		Object var2 = this.method11972(var1);
+		Object var2 = this.method11964(var1);
 		return var2 instanceof Number ? ((Number)var2).longValue() : (long)this.getDouble(var1);
 	}
 
+	public int getInt(int var1) throws JSONException {
+		Object var2 = this.method11964(var1);
+		return var2 instanceof Number ? ((Number)var2).intValue() : (int)this.getDouble(var1);
+	}
+
 	public double getDouble(int var1) throws JSONException {
-		Object var2 = this.method11972(var1);
+		Object var2 = this.method11964(var1);
 
 		try {
 			return var2 instanceof Number ? ((Number)var2).doubleValue() : Double.valueOf((String)var2);
@@ -257,7 +257,7 @@ public class JSONArray {
 	}
 
 	public JSONObject getJSONObject(int var1) throws JSONException {
-		Object var2 = this.method11972(var1);
+		Object var2 = this.method11964(var1);
 		if (var2 instanceof JSONObject) {
 			return (JSONObject)var2;
 		} else {
@@ -266,7 +266,7 @@ public class JSONArray {
 	}
 
 	public String getString(int var1) throws JSONException {
-		return this.method11972(var1).toString();
+		return this.method11964(var1).toString();
 	}
 
 	public Writer write(Writer var1) throws JSONException {
@@ -307,20 +307,6 @@ public class JSONArray {
 		}
 	}
 
-	public JSONObject toJSONObject(JSONArray var1) throws JSONException {
-		if (var1 != null && var1.length() != 0 && this.length() != 0) {
-			JSONObject var2 = new JSONObject();
-
-			for (int var3 = 0; var3 < var1.length(); ++var3) {
-				var2.setProperty(var1.getString(var3), this.method11973(var3));
-			}
-
-			return var2;
-		} else {
-			return null;
-		}
-	}
-
 	public boolean optBoolean(int var1) {
 		return this.optBoolean(var1, false);
 	}
@@ -334,24 +320,25 @@ public class JSONArray {
 	}
 
 	public JSONArray optJSONArray(int var1) {
-		Object var2 = this.method11973(var1);
+		Object var2 = this.method11969(var1);
 		return var2 instanceof JSONArray ? (JSONArray)var2 : null;
 	}
 
-	public long optLong(int var1) {
-		return this.optLong(var1, 0L);
+	public JSONObject optJSONObject(int var1) {
+		Object var2 = this.method11969(var1);
+		return var2 instanceof JSONObject ? (JSONObject)var2 : null;
 	}
 
 	public String optString(int var1) {
 		return this.optString(var1, "");
 	}
 
-	public boolean isNull(int var1) {
-		return JSONObject.NULL.equals(this.method11973(var1));
+	public long optLong(int var1) {
+		return this.optLong(var1, 0L);
 	}
 
 	public JSONArray getJSONArray(int var1) throws JSONException {
-		Object var2 = this.method11972(var1);
+		Object var2 = this.method11964(var1);
 		if (var2 instanceof JSONArray) {
 			return (JSONArray)var2;
 		} else {
@@ -359,12 +346,25 @@ public class JSONArray {
 		}
 	}
 
+	public JSONObject toJSONObject(JSONArray var1) throws JSONException {
+		if (var1 != null && var1.length() != 0 && this.length() != 0) {
+			JSONObject var2 = new JSONObject();
+
+			for (int var3 = 0; var3 < var1.length(); ++var3) {
+				var2.setProperty(var1.getString(var3), this.method11969(var3));
+			}
+
+			return var2;
+		} else {
+			return null;
+		}
+	}
+
 	public String toString(int var1) throws JSONException {
 		return this.toString(var1, 0);
 	}
 
-	public JSONObject optJSONObject(int var1) {
-		Object var2 = this.method11973(var1);
-		return var2 instanceof JSONObject ? (JSONObject)var2 : null;
+	public boolean isNull(int var1) {
+		return JSONObject.NULL.equals(this.method11969(var1));
 	}
 }

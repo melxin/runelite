@@ -1,43 +1,44 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ww")
+@ObfuscatedName("wi")
 public class class584 {
-	@ObfuscatedName("am")
-	static final int[] field5804;
+	@ObfuscatedName("ne")
+	@ObfuscatedSignature(
+		descriptor = "(Loi;III)V",
+		garbageValue = "-2139264577"
+	)
+	@Export("clickWidget")
+	static final void clickWidget(Widget var0, int var1, int var2) {
+		if (Client.clickedWidget == null && !Client.isMenuOpen) {
+			if (var0 != null) {
+				Widget var4 = class207.method4518(var0);
+				if (var4 == null) {
+					var4 = var0.parent;
+				}
 
-	static {
-		field5804 = new int[17];
-		field5804[0] = 0;
+				if (var4 != null) {
+					Client.clickedWidget = var0;
+					var4 = class207.method4518(var0);
+					if (var4 == null) {
+						var4 = var0.parent;
+					}
 
-		for (int var0 = 0; var0 < 2048; var0 += 128) {
-			int var1 = (var0 >> 7) + 1;
-			int var3 = 0;
-			if (var0 > 0 && var0 < 1024) {
-				var3 |= 272;
+					Client.clickedWidgetParent = var4;
+					Client.widgetClickX = var1;
+					Client.widgetClickY = var2;
+					PendingSpawn.widgetDragDuration = 0;
+					Client.isDraggingWidget = false;
+					int var5 = Sound.method3883();
+					if (var5 != -1) {
+						class87.method2833(var5);
+					}
+
+					return;
+				}
 			}
 
-			if (var0 > 512 && var0 < 1536) {
-				var3 |= 1088;
-			}
-
-			if (var0 > 1024) {
-				var3 |= 544;
-			}
-
-			if (var0 > 1536 || var0 < 512) {
-				var3 |= 2176;
-			}
-
-			if (var0 == 0 || var0 == 1024) {
-				var3 |= 48;
-			}
-
-			if (var0 == 512 || var0 == 1536) {
-				var3 |= 1152;
-			}
-
-			field5804[var1] = var3;
 		}
-
 	}
 }

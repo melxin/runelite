@@ -4,98 +4,98 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bp")
+@ObfuscatedName("bm")
 @Implements("GraphicsObject")
 public class GraphicsObject extends Renderable {
-	@ObfuscatedName("dx")
+	@ObfuscatedName("km")
 	@ObfuscatedSignature(
-		descriptor = "[Lxa;"
+		descriptor = "Lpw;"
 	)
-	@Export("worldSelectStars")
-	static IndexedSprite[] worldSelectStars;
-	@ObfuscatedName("al")
+	@Export("archive4")
+	static Archive archive4;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldr;"
 	)
-	WorldView field674;
-	@ObfuscatedName("ab")
+	final WorldView field693;
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -358370001
+		intValue = 402610731
 	)
 	@Export("cycleStart")
 	int cycleStart;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -339062497
+		intValue = 293528773
 	)
 	@Export("plane")
 	int plane;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1770756941
+		intValue = -2021141769
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1057464841
+		intValue = 1096412731
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 141424343
+		intValue = 859759075
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = 1269406777
+		intValue = -703151279
 	)
 	@Export("id")
 	int id;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lrk;"
+		descriptor = "Lsp;"
 	)
 	@Export("animationSequence")
-	AnimationSequence animationSequence;
+	final AnimationSequence animationSequence;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;IIIIIII)V"
+		descriptor = "(Ldr;IIIIIII)V"
 	)
 	GraphicsObject(WorldView var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		this.animationSequence = new AnimationSequence();
-		this.field674 = var1;
+		this.field693 = var1;
 		this.id = var2;
 		this.plane = var3;
 		this.x = var4;
 		this.y = var5;
 		this.z = var6;
 		this.cycleStart = var8 + var7;
-		this.animationSequence.setSequence(Skeleton.SpotAnimationDefinition_get(this.id).sequence);
+		this.animationSequence.setSequence(ModeWhere.SpotAnimationDefinition_get(this.id).sequence);
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1211852050"
+		descriptor = "(B)Z",
+		garbageValue = "-57"
 	)
-	boolean method1853() {
+	boolean method1874() {
 		return !this.animationSequence.isActive();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "905631829"
+		descriptor = "(IB)V",
+		garbageValue = "1"
 	)
 	@Export("advance")
 	final void advance(int var1) {
-		if (!this.method1853()) {
-			Client.field426.method10913(this.field674, this.x, this.y, false);
-			int var2 = AttackOption.method2764(this.animationSequence, var1, Client.field426);
-			Client.field426.method10914();
+		if (!this.method1874()) {
+			Client.field399.method10862(this.field693, this.x, this.y, false);
+			int var2 = class145.method3747(this.animationSequence, var1, Client.field399);
+			Client.field399.method10859();
 			if ((var2 & 1) != 0) {
 				this.animationSequence.reset();
 			}
@@ -103,29 +103,20 @@ public class GraphicsObject extends Renderable {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljx;",
-		garbageValue = "15"
+		descriptor = "(I)Ljn;",
+		garbageValue = "-1879635116"
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		if (this.animationSequence.method9601(30)) {
+		if (this.animationSequence.method9567(30)) {
 			return null;
 		} else {
-			SpotAnimationDefinition var1 = Skeleton.SpotAnimationDefinition_get(this.id);
+			SpotAnimationDefinition var1 = ModeWhere.SpotAnimationDefinition_get(this.id);
 			Model var2 = var1.getModel(this.animationSequence.getFrame());
 			return var2 == null ? null : var2;
 		}
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;IB)I",
-		garbageValue = "-49"
-	)
-	public static int method1842(CharSequence var0, int var1) {
-		return MusicPatchPcmStream.method7324(var0, var1, true);
 	}
 
 	public GraphicsObject() {

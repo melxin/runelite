@@ -1,31 +1,43 @@
+import java.util.List;
+import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("my")
-public class class334 {
-	@ObfuscatedName("al")
-	static int[] field3744;
-
-	static {
-		new Object();
-		field3744 = new int[33];
-		field3744[0] = 0;
-		int var0 = 2;
-
-		for (int var1 = 1; var1 < 33; ++var1) {
-			field3744[var1] = var0 - 1;
-			var0 += var0;
-		}
-
-	}
-
-	@ObfuscatedName("nw")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1582086879"
+@ObfuscatedName("ms")
+public final class class334 {
+	@ObfuscatedName("af")
+	@ObfuscatedGetter(
+		longValue = 8593797756653973077L
 	)
-	static final void method7074(int var0) {
-		var0 = Math.min(Math.max(var0, 0), 127);
-		FriendSystem.clientPreferences.updateAreaSoundEffectsVolume(var0);
+	static long field3839;
+	@ObfuscatedName("aw")
+	@ObfuscatedGetter(
+		longValue = 1862171730385611819L
+	)
+	static long field3838;
+	@ObfuscatedName("ir")
+	static List field3837;
+	@ObfuscatedName("kq")
+	@ObfuscatedSignature(
+		descriptor = "Lpw;"
+	)
+	@Export("archive12")
+	static Archive archive12;
+
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "(Lre;I)Lre;",
+		garbageValue = "-2123776403"
+	)
+	public static class452 method7060(class452 var0) {
+		synchronized(class452.field5171) {
+			if (class452.field5173 == 0) {
+				return new class452(var0);
+			} else {
+				class452.field5171[--class452.field5173].method9018(var0);
+				return class452.field5171[class452.field5173];
+			}
+		}
 	}
 }

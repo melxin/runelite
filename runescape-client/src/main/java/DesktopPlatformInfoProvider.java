@@ -4,38 +4,44 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ug")
+@ObfuscatedName("uv")
 @Implements("DesktopPlatformInfoProvider")
-public class DesktopPlatformInfoProvider implements class543 {
-	@ObfuscatedName("av")
+public class DesktopPlatformInfoProvider implements class547 {
+	@ObfuscatedName("lc")
 	@ObfuscatedGetter(
-		intValue = -799001147
+		intValue = -1637282951
 	)
-	int field5505;
-	@ObfuscatedName("au")
+	@Export("js5Port")
+	static int js5Port;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1871714381
+		intValue = 853356597
 	)
-	int field5509;
-	@ObfuscatedName("as")
+	int field5602;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -757534981
+		intValue = -2101649203
 	)
-	int field5508;
+	int field5604;
+	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = -32459687
+	)
+	int field5605;
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lut;",
-		garbageValue = "1078448057"
+		descriptor = "(I)Lvj;",
+		garbageValue = "-1500077735"
 	)
 	@Export("get")
 	public PlatformInfo get() {
 		byte var1;
-		if (HorizontalAlignment.osNameLowercase.startsWith("win")) {
+		if (JagexCache.osNameLowercase.startsWith("win")) {
 			var1 = 1;
-		} else if (HorizontalAlignment.osNameLowercase.startsWith("mac")) {
+		} else if (JagexCache.osNameLowercase.startsWith("mac")) {
 			var1 = 2;
-		} else if (HorizontalAlignment.osNameLowercase.startsWith("linux")) {
+		} else if (JagexCache.osNameLowercase.startsWith("linux")) {
 			var1 = 3;
 		} else {
 			var1 = 4;
@@ -158,11 +164,11 @@ public class DesktopPlatformInfoProvider implements class543 {
 			var9 = 4;
 		}
 
-		this.method10606(var6);
+		this.method10563(var6);
 		boolean var10 = false;
 		int var11 = (int)(Runtime.getRuntime().maxMemory() / 1048576L) + 1;
 		int var12;
-		if (this.field5505 > 3) {
+		if (this.field5602 > 3) {
 			var12 = Runtime.getRuntime().availableProcessors();
 		} else {
 			var12 = 0;
@@ -185,19 +191,37 @@ public class DesktopPlatformInfoProvider implements class543 {
 		String var27 = "";
 		String var28 = "";
 		boolean var29 = false;
-		return new PlatformInfo(var1, var30, var8, var9, this.field5505, this.field5509, this.field5508, false, var11, var12, var13, 0, var14, var15, var16, var17, 0, 0, 0, 0, var18, var19, var24, 0, "", "", var28);
+		return new PlatformInfo(var1, var30, var8, var9, this.field5602, this.field5604, this.field5605, false, var11, var12, var13, 0, var14, var15, var16, var17, 0, 0, 0, 0, var18, var19, var24, 0, "", "", var28);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-278600206"
+		garbageValue = "-1721057195"
 	)
-	void method10606(String var1) {
+	void method10563(String var1) {
 		if (var1.startsWith("1.")) {
-			this.method10601(var1);
+			this.method10564(var1);
 		} else {
-			this.method10599(var1);
+			this.method10565(var1);
+		}
+
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;B)V",
+		garbageValue = "1"
+	)
+	void method10564(String var1) {
+		String[] var2 = var1.split("\\.");
+
+		try {
+			this.field5602 = Integer.parseInt(var2[1]);
+			var2 = var2[2].split("_");
+			this.field5604 = Integer.parseInt(var2[0]);
+			this.field5605 = Integer.parseInt(var2[1]);
+		} catch (Exception var4) {
 		}
 
 	}
@@ -205,59 +229,17 @@ public class DesktopPlatformInfoProvider implements class543 {
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "771373613"
+		garbageValue = "-119850150"
 	)
-	void method10601(String var1) {
+	void method10565(String var1) {
 		String[] var2 = var1.split("\\.");
 
 		try {
-			this.field5505 = Integer.parseInt(var2[1]);
-			var2 = var2[2].split("_");
-			this.field5509 = Integer.parseInt(var2[0]);
-			this.field5508 = Integer.parseInt(var2[1]);
+			this.field5602 = Integer.parseInt(var2[0]);
+			this.field5604 = Integer.parseInt(var2[1]);
+			this.field5605 = Integer.parseInt(var2[2]);
 		} catch (Exception var4) {
 		}
 
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-282454261"
-	)
-	void method10599(String var1) {
-		String[] var2 = var1.split("\\.");
-
-		try {
-			this.field5505 = Integer.parseInt(var2[0]);
-			this.field5509 = Integer.parseInt(var2[1]);
-			this.field5508 = Integer.parseInt(var2[2]);
-		} catch (Exception var4) {
-		}
-
-	}
-
-	@ObfuscatedName("nt")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1775443399"
-	)
-	static final void method10613() {
-		PacketBufferNode var0 = class291.getPacketBufferNode(ClientPacket.CLOSE_MODAL, Client.packetWriter.isaacCipher);
-		Client.packetWriter.addNode(var0);
-		Interpreter.field645 = true;
-
-		for (InterfaceParent var1 = (InterfaceParent)Client.interfaceParents.first(); var1 != null; var1 = (InterfaceParent)Client.interfaceParents.next()) {
-			if (var1.type == 0 || var1.type == 3) {
-				WorldMapCacheName.closeInterface(var1, true);
-			}
-		}
-
-		if (Client.meslayerContinueWidget != null) {
-			ApproximateRouteStrategy.invalidateWidget(Client.meslayerContinueWidget);
-			Client.meslayerContinueWidget = null;
-		}
-
-		Interpreter.field645 = false;
 	}
 }

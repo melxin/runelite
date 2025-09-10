@@ -6,141 +6,131 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cw")
+@ObfuscatedName("co")
 @Implements("WorldViewManager")
 public class WorldViewManager implements Iterable {
-	@ObfuscatedName("ph")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lvc;"
-	)
-	static Fonts field995;
-	@ObfuscatedName("vo")
-	@ObfuscatedGetter(
-		intValue = 1249372231
-	)
-	static int field1000;
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lqr;"
+		descriptor = "Lqm;"
 	)
 	@Export("worldViews")
 	final IterableNodeHashTable worldViews;
-	@ObfuscatedName("ab")
-	final HashMap field994;
+	@ObfuscatedName("aw")
+	final HashMap field1014;
+	@ObfuscatedName("at")
+	final HashMap field1009;
 	@ObfuscatedName("ac")
-	final HashMap field993;
-	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Ltx;"
+		descriptor = "Ltb;"
 	)
-	class514 field996;
-	@ObfuscatedName("au")
+	class518 field1017;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lte;"
+		descriptor = "Ltz;"
 	)
-	class512 field997;
-	@ObfuscatedName("as")
+	class516 field1011;
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "Ldr;"
 	)
 	@Export("worldView")
 	WorldView worldView;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -1437111785
+		intValue = -216031703
 	)
-	int field999;
+	int field1013;
 
 	WorldViewManager() {
 		this.worldViews = new IterableNodeHashTable(16);
-		this.field994 = new HashMap(16);
-		this.field993 = new HashMap(16);
-		this.field999 = 0;
+		this.field1014 = new HashMap(16);
+		this.field1009 = new HashMap(16);
+		this.field1013 = 0;
 		this.clear();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)Ldj;",
-		garbageValue = "-107"
+		descriptor = "(IIII)Ldr;",
+		garbageValue = "524163268"
 	)
-	WorldView method2309(int var1, int var2, int var3) {
-		this.worldView = this.method2310(-1, var1, var2, var3, class215.field2460);
+	WorldView method2380(int var1, int var2, int var3) {
+		this.worldView = this.method2363(-1, var1, var2, var3, class217.field2512);
 		return this.worldView;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(IIIILim;B)Ldj;",
-		garbageValue = "101"
+		descriptor = "(IIIILio;I)Ldr;",
+		garbageValue = "-1150538650"
 	)
-	WorldView method2310(int var1, int var2, int var3, int var4, class215 var5) {
+	WorldView method2363(int var1, int var2, int var3, int var4, class217 var5) {
 		WorldView var6 = new WorldView(var1, var2, var3, var4, var5);
 		this.worldViews.put(var6, (long)var1);
-		++this.field999;
+		++this.field1013;
 		return var6;
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(IB)V",
+		garbageValue = "-78"
+	)
+	void method2376(int var1) {
+		WorldView var2 = (WorldView)this.worldViews.get((long)var1);
+		this.method2341(var2);
 	}
 
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1559351787"
+		descriptor = "(Ldr;I)V",
+		garbageValue = "-1952370542"
 	)
-	void method2311(int var1) {
-		WorldView var2 = (WorldView)this.worldViews.get((long)var1);
-		this.method2312(var2);
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(Ldj;I)V",
-		garbageValue = "2058815225"
-	)
-	void method2312(WorldView var1) {
+	void method2341(WorldView var1) {
 		if (var1 != null) {
-			this.field994.remove(var1.id);
-			this.field993.remove(var1.id);
-			var1.method2641();
+			this.field1014.remove(var1.id);
+			this.field1009.remove(var1.id);
+			var1.method2686();
 			var1.remove();
-			--this.field999;
+			--this.field1013;
 		}
 
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ldj;",
-		garbageValue = "-385981111"
+		descriptor = "(II)Ldr;",
+		garbageValue = "-895060527"
 	)
 	@Export("getWorldView")
 	public WorldView getWorldView(int var1) {
 		return (WorldView)this.worldViews.get((long)var1);
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldj;",
-		garbageValue = "-656714051"
+		descriptor = "(I)Ldr;",
+		garbageValue = "1914949692"
 	)
-	WorldView method2314() {
+	public WorldView method2343() {
 		return this.worldView;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldj;",
-		garbageValue = "713153204"
+		descriptor = "(I)Ldr;",
+		garbageValue = "2029947527"
 	)
-	WorldView method2315() {
-		return this.getWorldView(Client.field326);
+	WorldView method2348() {
+		return this.getWorldView(Client.field346);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(III)Ldj;",
-		garbageValue = "1052432634"
+		descriptor = "(III)Ldr;",
+		garbageValue = "-172649369"
 	)
-	WorldView method2316(int var1, int var2) {
+	WorldView method2345(int var1, int var2) {
 		Iterator var3 = this.iterator();
 
 		while (var3.hasNext()) {
@@ -159,100 +149,100 @@ public class WorldViewManager implements Iterable {
 		return this.worldView;
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ltz;",
-		garbageValue = "1028984052"
+		descriptor = "(IB)Ltj;",
+		garbageValue = "-104"
 	)
-	WorldEntity method2317(int var1) {
-		return (WorldEntity)this.method2314().worldEntities.get((long)var1);
+	WorldEntity method2346(int var1) {
+		return (WorldEntity)this.method2343().worldEntities.get((long)var1);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ltz;",
-		garbageValue = "-23"
+		descriptor = "(I)Ltj;",
+		garbageValue = "1823470721"
 	)
-	WorldEntity method2318() {
-		return (WorldEntity)this.method2314().worldEntities.get((long)Client.field326);
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lrm;",
-		garbageValue = "2004382639"
-	)
-	class448 method2363() {
-		WorldView var1 = this.method2315();
-		Player var2 = var1.method2627(Client.localPlayerIndex);
-		class448 var3 = AttackOption.method2761(var1, var2.getY(), var2.getPlane());
-		var3.field5060 = (float)var2.getX();
-		return var3;
-	}
-
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1208930073"
-	)
-	int method2320() {
-		return this.field999;
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(Ltx;Lte;B)V",
-		garbageValue = "124"
-	)
-	void method2321(class514 var1, class512 var2) {
-		this.field996 = var1;
-		this.field997 = var2;
+	WorldEntity method2347() {
+		return (WorldEntity)this.method2343().worldEntities.get((long)Client.field346);
 	}
 
 	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(ILtx;Lte;I)V",
-		garbageValue = "-663102578"
+		descriptor = "(I)Lre;",
+		garbageValue = "798312635"
 	)
-	void method2350(int var1, class514 var2, class512 var3) {
-		this.field994.put(var1, var2);
-		this.field993.put(var1, var3);
+	class452 method2361() {
+		WorldView var1 = this.method2348();
+		Player var2 = var1.method2683(Client.localPlayerIndex);
+		class452 var3 = DynamicObject.method2010(var1, var2.getY(), var2.getPlane());
+		var3.field5176 = (float)var2.getX();
+		return var3;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1361153612"
+		descriptor = "(I)I",
+		garbageValue = "-980049304"
 	)
-	void method2344(int var1) {
-		this.field994.remove(var1);
-		this.field993.remove(var1);
+	int method2349() {
+		return this.field1013;
+	}
+
+	@ObfuscatedName("am")
+	@ObfuscatedSignature(
+		descriptor = "(Ltb;Ltz;I)V",
+		garbageValue = "1952238475"
+	)
+	void method2362(class518 var1, class516 var2) {
+		this.field1017 = var1;
+		this.field1011 = var2;
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(ILtb;Ltz;B)V",
+		garbageValue = "-10"
+	)
+	void method2351(int var1, class518 var2, class516 var3) {
+		this.field1014.put(var1, var2);
+		this.field1009.put(var1, var3);
 	}
 
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Ltx;",
-		garbageValue = "-128"
+		descriptor = "(II)V",
+		garbageValue = "67295533"
 	)
-	class514 method2355(int var1) {
-		class514 var2 = (class514)this.field994.get(var1);
-		return var2 != null ? var2 : this.field996;
+	void method2393(int var1) {
+		this.field1014.remove(var1);
+		this.field1009.remove(var1);
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lte;",
-		garbageValue = "-27"
+		descriptor = "(II)Ltb;",
+		garbageValue = "-1166056294"
 	)
-	class512 method2313(int var1) {
-		class512 var2 = (class512)this.field993.get(var1);
-		return var2 != null ? var2 : this.field997;
+	class518 method2352(int var1) {
+		class518 var2 = (class518)this.field1014.get(var1);
+		return var2 != null ? var2 : this.field1017;
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(II)Ltz;",
+		garbageValue = "-1377775468"
+	)
+	class516 method2378(int var1) {
+		class516 var2 = (class516)this.field1009.get(var1);
+		return var2 != null ? var2 : this.field1011;
+	}
+
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1897604562"
+		garbageValue = "1841855457"
 	)
 	@Export("clear")
 	void clear() {
@@ -260,19 +250,19 @@ public class WorldViewManager implements Iterable {
 
 		while (var1.hasNext()) {
 			WorldView var2 = (WorldView)var1.next();
-			this.method2312(var2);
+			this.method2341(var2);
 		}
 
 		this.worldViews.clear();
-		this.field999 = 0;
-		this.field994.clear();
-		this.field993.clear();
-		this.field996 = class514.field5394;
-		this.field997 = class512.field5377;
+		this.field1013 = 0;
+		this.field1014.clear();
+		this.field1009.clear();
+		this.field1017 = class518.field5493;
+		this.field1011 = class516.field5485;
 		if (this.worldView != null) {
-			this.worldView.method2628();
+			this.worldView.method2681();
 			this.worldViews.put(this.worldView, -1L);
-			this.field999 = 1;
+			this.field1013 = 1;
 		}
 
 	}
@@ -281,61 +271,132 @@ public class WorldViewManager implements Iterable {
 		return this.worldViews.iterator();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/Object;IIB)Ljava/lang/String;",
-		garbageValue = "61"
+		descriptor = "(Lff;FZI)F",
+		garbageValue = "191954913"
 	)
-	public static String method2348(Object[] var0, int var1, int var2) {
-		if (var2 == 0) {
-			return "";
-		} else if (var2 == 1) {
-			CharSequence var10 = (CharSequence)var0[var1];
-			return var10 == null ? "null" : var10.toString();
+	static float method2395(class138 var0, float var1, boolean var2) {
+		float var3 = 0.0F;
+		if (var0 != null && var0.method3697() != 0) {
+			float var4 = (float)var0.field1673[0].field1612;
+			float var5 = (float)var0.field1673[var0.method3697() - 1].field1612;
+			float var6 = var5 - var4;
+			if (0.0F == var6) {
+				return var0.field1673[0].field1606;
+			} else {
+				float var7 = 0.0F;
+				if (var1 > var5) {
+					var7 = (var1 - var5) / var6;
+				} else {
+					var7 = (var1 - var4) / var6;
+				}
+
+				float var8 = (float)((int)var7);
+				float var9 = Math.abs(var7 - var8);
+				float var10 = var6 * var9;
+				var8 = Math.abs(1.0F + var8);
+				float var11 = var8 / 2.0F;
+				float var12 = (float)((int)var11);
+				var9 = var11 - var12;
+				float var13;
+				float var14;
+				if (var2) {
+					if (var0.field1659 == class136.field1644) {
+						if (var9 != 0.0F) {
+							var10 += var4;
+						} else {
+							var10 = var5 - var10;
+						}
+					} else if (var0.field1659 != class136.field1642 && var0.field1659 != class136.field1643) {
+						if (var0.field1659 == class136.field1641) {
+							var10 = var4 - var1;
+							var13 = var0.field1673[0].field1605;
+							var14 = var0.field1673[0].field1603;
+							var3 = var0.field1673[0].field1606;
+							if (var13 != 0.0F) {
+								var3 -= var14 * var10 / var13;
+							}
+
+							return var3;
+						}
+					} else {
+						var10 = var5 - var10;
+					}
+				} else if (var0.field1660 == class136.field1644) {
+					if (0.0F != var9) {
+						var10 = var5 - var10;
+					} else {
+						var10 += var4;
+					}
+				} else if (var0.field1660 != class136.field1642 && var0.field1660 != class136.field1643) {
+					if (var0.field1660 == class136.field1641) {
+						var10 = var1 - var5;
+						var13 = var0.field1673[var0.method3697() - 1].field1613;
+						var14 = var0.field1673[var0.method3697() - 1].field1608;
+						var3 = var0.field1673[var0.method3697() - 1].field1606;
+						if (0.0F != var13) {
+							var3 += var14 * var10 / var13;
+						}
+
+						return var3;
+					}
+				} else {
+					var10 += var4;
+				}
+
+				var3 = UserComparator6.method3592(var0, var10);
+				float var15;
+				if (var2 && var0.field1659 == class136.field1643) {
+					var15 = var0.field1673[var0.method3697() - 1].field1606 - var0.field1673[0].field1606;
+					var3 -= var15 * var8;
+				} else if (!var2 && var0.field1660 == class136.field1643) {
+					var15 = var0.field1673[var0.method3697() - 1].field1606 - var0.field1673[0].field1606;
+					var3 += var8 * var15;
+				}
+
+				return var3;
+			}
 		} else {
-			int var3 = var2 + var1;
-			int var4 = 0;
-
-			for (int var5 = var1; var5 < var3; ++var5) {
-				CharSequence var9 = (CharSequence)var0[var5];
-				if (var9 == null) {
-					var4 += 4;
-				} else {
-					var4 += var9.length();
-				}
-			}
-
-			StringBuilder var8 = new StringBuilder(var4);
-
-			for (int var6 = var1; var6 < var3; ++var6) {
-				CharSequence var7 = (CharSequence)var0[var6];
-				if (var7 == null) {
-					var8.append("null");
-				} else {
-					var8.append(var7);
-				}
-			}
-
-			return var8.toString();
+			return var3;
 		}
 	}
 
-	@ObfuscatedName("hl")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "521539138"
+		descriptor = "(Lti;Ljava/lang/String;B)Ljava/lang/String;",
+		garbageValue = "-65"
 	)
-	static void method2364() {
-		class484.compass = null;
-		class141.redHintArrowSprite = null;
-		Bounds.mapSceneSprites = null;
-		Message.headIconPkSprites = null;
-		HttpMethod.headIconPrayerSprites = null;
-		class389.headIconHintSprites = null;
-		class48.mapDotSprites = null;
-		class360.crossSprites = null;
-		AsyncRestClient.field62 = null;
-		class393.scrollBarSprites = null;
-		Tiles.field820 = null;
+	public static String method2396(DynamicArray var0, String var1) {
+		class328.method7046(var0, class574.field5824);
+		int var2 = var0.method10322();
+		String[] var3 = (String[])((String[])var0.method10321());
+		if (var2 == 0) {
+			return "";
+		} else if (var2 == 1) {
+			return var3[0];
+		} else {
+			int var4 = var1.length();
+			int var5 = var4 * (var2 - 1);
+
+			for (int var6 = 0; var6 < var2; ++var6) {
+				var5 += var3[var6].length();
+			}
+
+			char[] var9 = new char[var5];
+			int var7 = 0;
+
+			for (int var8 = 0; var8 < var2; ++var8) {
+				if (var8 > 0) {
+					var1.getChars(0, var4, var9, var7);
+					var7 += var4;
+				}
+
+				var3[var8].getChars(0, var3[var8].length(), var9, var7);
+				var7 += var3[var8].length();
+			}
+
+			return new String(var9);
+		}
 	}
 }

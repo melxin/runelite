@@ -1,81 +1,116 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rp")
+@ObfuscatedName("rg")
 public class class444 {
-	@ObfuscatedName("ow")
-	@ObfuscatedSignature(
-		descriptor = "Lbh;"
-	)
-	@Export("loginState")
-	static LoginState loginState;
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lrc;"
-	)
-	public class449 field5037;
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lrm;"
-	)
-	public class448 field5038;
+	@ObfuscatedName("af")
+	static char[] field5143;
+	@ObfuscatedName("aw")
+	static char[] field5146;
+	@ObfuscatedName("at")
+	static char[] field5145;
 	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lrm;"
-	)
-	public class448 field5039;
+	static int[] field5144;
 
-	public class444() {
-		this.field5037 = StudioGame.method8178();
-		class448 var1;
-		synchronized(class448.field5055) {
-			if (class448.field5061 == 0) {
-				var1 = new class448();
-			} else {
-				class448.field5055[--class448.field5061].method9024();
-				var1 = class448.field5055[class448.field5061];
-			}
+	static {
+		field5143 = new char[64];
+
+		int var0;
+		for (var0 = 0; var0 < 26; ++var0) {
+			field5143[var0] = (char)(var0 + 65);
 		}
 
-		this.field5038 = var1;
-		this.field5039 = ClientPreferences.method2599(1.0F, 1.0F, 1.0F);
+		for (var0 = 26; var0 < 52; ++var0) {
+			field5143[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field5143[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field5143[62] = '+';
+		field5143[63] = '/';
+		field5146 = new char[64];
+
+		for (var0 = 0; var0 < 26; ++var0) {
+			field5146[var0] = (char)(var0 + 65);
+		}
+
+		for (var0 = 26; var0 < 52; ++var0) {
+			field5146[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field5146[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field5146[62] = '*';
+		field5146[63] = '-';
+		field5145 = new char[64];
+
+		for (var0 = 0; var0 < 26; ++var0) {
+			field5145[var0] = (char)(var0 + 65);
+		}
+
+		for (var0 = 26; var0 < 52; ++var0) {
+			field5145[var0] = (char)(var0 + 97 - 26);
+		}
+
+		for (var0 = 52; var0 < 62; ++var0) {
+			field5145[var0] = (char)(var0 + 48 - 52);
+		}
+
+		field5145[62] = '-';
+		field5145[63] = '_';
+		field5144 = new int[128];
+
+		for (var0 = 0; var0 < field5144.length; ++var0) {
+			field5144[var0] = -1;
+		}
+
+		for (var0 = 65; var0 <= 90; ++var0) {
+			field5144[var0] = var0 - 65;
+		}
+
+		for (var0 = 97; var0 <= 122; ++var0) {
+			field5144[var0] = var0 - 97 + 26;
+		}
+
+		for (var0 = 48; var0 <= 57; ++var0) {
+			field5144[var0] = var0 - 48 + 52;
+		}
+
+		int[] var2 = field5144;
+		field5144[43] = 62;
+		var2[42] = 62;
+		int[] var1 = field5144;
+		field5144[47] = 63;
+		var1[45] = 63;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("mu")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1262570789"
+		descriptor = "(IIB)Ljava/lang/String;",
+		garbageValue = "82"
 	)
-	public void method8965() {
-		this.field5037.method9075();
-		this.field5038.method9038();
-		this.field5039.method9038();
-	}
-
-	public String toString() {
-		return "[" + this.field5037.toString() + "|" + this.field5038.toString() + "|" + this.field5039.toString() + "]";
-	}
-
-	public int hashCode() {
-		boolean var1 = true;
-		byte var2 = 1;
-		int var3 = var2 * 31 + this.field5037.hashCode();
-		var3 = var3 * 31 + this.field5038.hashCode();
-		var3 = 31 * var3 + this.field5039.hashCode();
-		return var3;
-	}
-
-	public boolean equals(Object var1) {
-		if (var1 == null) {
-			return false;
-		} else if (this == var1) {
-			return true;
-		} else if (!(var1 instanceof class444)) {
-			return false;
+	static final String method8880(int var0, int var1) {
+		int var2 = var1 - var0;
+		if (var2 < -9) {
+			return class134.colorStartTag(16711680);
+		} else if (var2 < -6) {
+			return class134.colorStartTag(16723968);
+		} else if (var2 < -3) {
+			return class134.colorStartTag(16740352);
+		} else if (var2 < 0) {
+			return class134.colorStartTag(16756736);
+		} else if (var2 > 9) {
+			return class134.colorStartTag(65280);
+		} else if (var2 > 6) {
+			return class134.colorStartTag(4259584);
+		} else if (var2 > 3) {
+			return class134.colorStartTag(8453888);
 		} else {
-			class444 var2 = (class444)var1;
-			return this.field5037.equals(var2.field5037) && this.field5038.method9025(var2.field5038) && this.field5039.method9025(var2.field5039);
+			return var2 > 0 ? class134.colorStartTag(12648192) : class134.colorStartTag(16776960);
 		}
 	}
 }

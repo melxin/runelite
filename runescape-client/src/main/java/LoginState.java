@@ -3,156 +3,156 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bh")
+@ObfuscatedName("bk")
 @Implements("LoginState")
 public class LoginState {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("SHUTDOWN_PREVIOUS_CONNECTION")
 	static final LoginState SHUTDOWN_PREVIOUS_CONNECTION;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("INIT_MOUSEHANDLER_SOCKET")
 	static final LoginState INIT_MOUSEHANDLER_SOCKET;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("UNMAPPED_20")
 	static final LoginState UNMAPPED_20;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("READ_LOGIN_STATUS")
 	static final LoginState READ_LOGIN_STATUS;
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("READ_RANDOM_VERIFICATION_NUMBER")
 	static final LoginState READ_RANDOM_VERIFICATION_NUMBER;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("WRITE_INITIAL_LOGIN_PACKET")
 	static final LoginState WRITE_INITIAL_LOGIN_PACKET;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("READ_CLIENT_INFO_STATUS")
 	static final LoginState READ_CLIENT_INFO_STATUS;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("READ_DIGEST_PARSER_PACKET_SIZE")
 	static final LoginState READ_DIGEST_PARSER_PACKET_SIZE;
-	@ObfuscatedName("am")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("SUBMIT_DIGEST_PARSER_TASK")
 	static final LoginState SUBMIT_DIGEST_PARSER_TASK;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("WRITE_DIGEST_PARSER_RESULT")
 	static final LoginState WRITE_DIGEST_PARSER_RESULT;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("READ_STATE_11_PACKET_SIZE")
 	static final LoginState READ_STATE_11_PACKET_SIZE;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("UNMAPPED_11")
 	static final LoginState UNMAPPED_11;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("READ_PROFILE_TRANSFER_TIME")
 	static final LoginState READ_PROFILE_TRANSFER_TIME;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("PROFILE_TRANSFER")
 	static final LoginState PROFILE_TRANSFER;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("UNMAPPED")
 	static final LoginState UNMAPPED;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("READ_ACCOUNT_INFO")
 	static final LoginState READ_ACCOUNT_INFO;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("SET_SERVER_PROTOCOL")
 	static final LoginState SET_SERVER_PROTOCOL;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("UPDATE_PLAYER_AND_LOAD_REGIONS")
 	static final LoginState UPDATE_PLAYER_AND_LOAD_REGIONS;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("UNMAPPED_17")
 	static final LoginState UNMAPPED_17;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("UNMAPPED_18")
 	static final LoginState UNMAPPED_18;
-	@ObfuscatedName("az")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("UNMAPPED_19")
 	static final LoginState UNMAPPED_19;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("REFRESHING_TOKEN")
 	static final LoginState REFRESHING_TOKEN;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("TOKEN_RESPONSE")
 	static final LoginState TOKEN_RESPONSE;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("UNMAPPED_21")
 	static final LoginState UNMAPPED_21;
-	@ObfuscatedName("an")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lbh;"
+		descriptor = "Lbk;"
 	)
 	@Export("READ_ACCOUNT_INFO_PACKET_SIZE")
 	static final LoginState READ_ACCOUNT_INFO_PACKET_SIZE;
@@ -188,14 +188,29 @@ public class LoginState {
 	LoginState() {
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1877533195"
+		descriptor = "(II)Lfm;",
+		garbageValue = "292421332"
 	)
-	static void method816(int var0) {
-		TransformationMatrix.field5071 = var0;
-		TransformationMatrix.field5073 = new TransformationMatrix[var0];
-		class359.field3967 = 0;
+	static class147 method790(int var0) {
+		class147 var1 = (class147)class173.findEnumerated(class145.method3750(), var0);
+		if (var1 == null) {
+			var1 = class147.field1748;
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(IIIII)V",
+		garbageValue = "1813065956"
+	)
+	static void method791(int var0, int var1, int var2, int var3) {
+		class339.musicPlayerStatus = var0;
+		class339.field3896 = var1;
+		class339.field3898 = var2;
+		class339.field3897 = var3;
 	}
 }

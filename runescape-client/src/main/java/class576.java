@@ -1,21 +1,40 @@
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("wo")
-public class class576 {
-	@ObfuscatedName("ac")
-	@ObfuscatedGetter(
-		intValue = 1497414181
+@ObfuscatedName("wc")
+public final class class576 {
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(CI)Z",
+		garbageValue = "519488780"
 	)
-	static final int field5748;
-	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		intValue = -1437594587
-	)
-	static final int field5746;
+	static final boolean method11045(char var0) {
+		if (Character.isISOControl(var0)) {
+			return false;
+		} else if (ModelData0.isAlphaNumeric(var0)) {
+			return true;
+		} else {
+			char[] var1 = class563.field5780;
 
-	static {
-		field5748 = (int)(Math.pow(2.0D, 4.0D) - 1.0D);
-		field5746 = (int)(Math.pow(2.0D, 8.0D) - 1.0D);
+			int var2;
+			char var3;
+			for (var2 = 0; var2 < var1.length; ++var2) {
+				var3 = var1[var2];
+				if (var0 == var3) {
+					return true;
+				}
+			}
+
+			var1 = class563.field5782;
+
+			for (var2 = 0; var2 < var1.length; ++var2) {
+				var3 = var1[var2];
+				if (var0 == var3) {
+					return true;
+				}
+			}
+
+			return false;
+		}
 	}
 }

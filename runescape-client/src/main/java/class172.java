@@ -3,69 +3,39 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gf")
-public class class172 extends class165 {
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	public static AbstractArchive field1904;
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lpx;"
-	)
-	@Export("SequenceDefinition_archive")
-	public static AbstractArchive SequenceDefinition_archive;
-	@ObfuscatedName("bq")
+@ObfuscatedName("go")
+public class class172 {
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1653011411
+		intValue = 697366175
 	)
-	static int field1901;
-	@ObfuscatedName("al")
-	String field1907;
-	@ObfuscatedName("ab")
-	byte field1902;
+	static int field1931;
+	@ObfuscatedName("qm")
+	@ObfuscatedGetter(
+		intValue = 27881281
+	)
+	@Export("oculusOrbFocalPointX")
+	static int oculusOrbFocalPointX;
+
 	@ObfuscatedName("ac")
-	byte field1903;
-	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lgp;"
+		descriptor = "(IZIZB)V",
+		garbageValue = "-89"
 	)
-	final class166 this$0;
-
-	@ObfuscatedSignature(
-		descriptor = "(Lgp;)V"
-	)
-	class172(class166 var1) {
-		this.this$0 = var1;
-	}
-
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "-2035870878"
-	)
-	void vmethod4076(Buffer var1) {
-		this.field1907 = var1.readStringCp1252NullTerminatedOrNull();
-		if (this.field1907 != null) {
-			var1.readUnsignedByte();
-			this.field1902 = var1.readByte();
-			this.field1903 = var1.readByte();
+	@Export("sortWorldList")
+	static void sortWorldList(int var0, boolean var1, int var2, boolean var3) {
+		if (World.World_worlds != null) {
+			RestClientThreadFactory.doWorldSorting(0, World.World_worlds.length - 1, var0, var1, var2, var3);
 		}
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("kc")
 	@ObfuscatedSignature(
-		descriptor = "(Lgw;B)V",
-		garbageValue = "19"
+		descriptor = "(IIIIIIB)Z",
+		garbageValue = "1"
 	)
-	void vmethod4077(ClanChannel var1) {
-		var1.name = this.field1907;
-		if (this.field1907 != null) {
-			var1.field1880 = this.field1902;
-			var1.field1883 = this.field1903;
-		}
-
+	static boolean method4086(int var0, int var1, int var2, int var3, int var4, int var5) {
+		return ClientPacket.method7038(HttpHeaders.worldView.plane, var0, var1, var2, var3, var4, var5);
 	}
 }

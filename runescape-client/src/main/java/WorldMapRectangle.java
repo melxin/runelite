@@ -4,81 +4,43 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lx")
+@ObfuscatedName("ln")
 @Implements("WorldMapRectangle")
 public final class WorldMapRectangle {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -816015567
+		intValue = -476040071
 	)
 	@Export("width")
 	int width;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = -82625235
+		intValue = -1718449145
 	)
 	@Export("height")
 	int height;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 498571187
+		intValue = -652245765
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 782021347
+		intValue = 1057871737
 	)
 	@Export("y")
 	int y;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Llj;"
+		descriptor = "Llw;"
 	)
 	final WorldMapRenderer this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Llj;)V"
+		descriptor = "(Llw;)V"
 	)
 	WorldMapRectangle(WorldMapRenderer var1) {
 		this.this$0 = var1;
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1109454388"
-	)
-	public static boolean method6799() {
-		boolean var0 = false;
-		boolean var1 = false;
-		if (!class337.field3795.isEmpty()) {
-			SongTask var2 = (SongTask)class337.field3795.get(0);
-			if (var2 == null) {
-				class337.field3795.remove(0);
-			} else if (var2.vmethod9672()) {
-				if (var2.method9650()) {
-					System.out.println("Error in midimanager.service: " + var2.method9667());
-					var0 = true;
-				} else {
-					if (var2.method9653() != null) {
-						class337.field3795.add(1, var2.method9653());
-					}
-
-					var1 = var2.method9655();
-				}
-
-				class337.field3795.remove(0);
-			} else {
-				var1 = var2.method9655();
-			}
-		}
-
-		if (var0) {
-			class337.field3795.clear();
-			class82.method2752();
-		}
-
-		return var1;
 	}
 }

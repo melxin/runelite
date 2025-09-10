@@ -4,49 +4,49 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("xh")
+@ObfuscatedName("xk")
 @Implements("FillMode")
 public enum FillMode implements Enum {
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lxh;"
+		descriptor = "Lxk;"
 	)
 	@Export("SOLID")
 	SOLID(0, 0),
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lxh;"
+		descriptor = "Lxk;"
 	)
-	field5899(1, 1),
-	@ObfuscatedName("ac")
+	field6001(1, 1),
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lxh;"
+		descriptor = "Lxk;"
 	)
-	field5897(2, 2);
+	field6002(2, 2);
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -488888901
+		intValue = 1170963199
 	)
-	public final int field5900;
-	@ObfuscatedName("au")
+	public final int field6003;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1955429139
+		intValue = 1154368451
 	)
-	final int field5898;
+	final int field6004;
 
 	FillMode(int var3, int var4) {
-		this.field5900 = var3;
-		this.field5898 = var4;
+		this.field6003 = var3;
+		this.field6004 = var4;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-164877066"
+		garbageValue = "-1935172756"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field5898;
+		return this.field6004;
 	}
 }

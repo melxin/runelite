@@ -7,28 +7,28 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jm")
+@ObfuscatedName("jh")
 @Implements("TaskHandler")
 public class TaskHandler implements Runnable {
-	@ObfuscatedName("au")
-	@Export("javaVersion")
-	public static String javaVersion;
-	@ObfuscatedName("as")
+	@ObfuscatedName("ac")
+	@Export("javaVendor")
+	public static String javaVendor;
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lkh;"
+		descriptor = "Lku;"
 	)
 	@Export("current")
 	Task current;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lkh;"
+		descriptor = "Lku;"
 	)
 	@Export("task")
 	Task task;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("as")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("am")
+	@ObfuscatedName("al")
 	@Export("isClosed")
 	boolean isClosed;
 
@@ -36,12 +36,12 @@ public class TaskHandler implements Runnable {
 		this.current = null;
 		this.task = null;
 		this.isClosed = false;
-		class358.javaVendor = "Unknown";
-		javaVersion = "1.6";
+		javaVendor = "Unknown";
+		BuddyRankComparator.javaVersion = "1.6";
 
 		try {
-			class358.javaVendor = System.getProperty("java.vendor");
-			javaVersion = System.getProperty("java.version");
+			javaVendor = System.getProperty("java.vendor");
+			BuddyRankComparator.javaVersion = System.getProperty("java.version");
 		} catch (Exception var2) {
 		}
 
@@ -52,10 +52,10 @@ public class TaskHandler implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-29040167"
+		garbageValue = "-1140258154"
 	)
 	@Export("close")
 	public final void close() {
@@ -71,10 +71,10 @@ public class TaskHandler implements Runnable {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(IIILjava/lang/Object;B)Lkh;",
-		garbageValue = "-62"
+		descriptor = "(IIILjava/lang/Object;B)Lku;",
+		garbageValue = "6"
 	)
 	@Export("newTask")
 	final Task newTask(int var1, int var2, int var3, Object var4) {
@@ -95,20 +95,20 @@ public class TaskHandler implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;II)Lkh;",
-		garbageValue = "-858955533"
+		descriptor = "(Ljava/lang/String;II)Lku;",
+		garbageValue = "-2033686042"
 	)
 	@Export("newSocketTask")
 	public final Task newSocketTask(String var1, int var2) {
 		return this.newTask(1, var2, 0, var1);
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Runnable;II)Lkh;",
-		garbageValue = "-1919232827"
+		descriptor = "(Ljava/lang/Runnable;II)Lku;",
+		garbageValue = "989916454"
 	)
 	@Export("newThreadTask")
 	public final Task newThreadTask(Runnable var1, int var2) {
@@ -161,42 +161,5 @@ public class TaskHandler implements Runnable {
 				var1.status = 2;
 			}
 		}
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(Ltz;Ltz;ZI)Z",
-		garbageValue = "-1206219882"
-	)
-	static boolean method5885(WorldEntity var0, WorldEntity var1, boolean var2) {
-		if (var1 == var0) {
-			return true;
-		} else if (var1 == null) {
-			return true;
-		} else {
-			return var0 == null ? false : var2;
-		}
-	}
-
-	@ObfuscatedName("mv")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIII)I",
-		garbageValue = "-1866593827"
-	)
-	@Export("insertMenuItemNoShift")
-	public static final int insertMenuItemNoShift(String var0, String var1, int var2, int var3, int var4, int var5) {
-		return ClanSettings.insertMenuItem(var0, var1, var2, var3, var4, var5, -1, false, -1);
-	}
-
-	@ObfuscatedName("ng")
-	static final void method5886(double var0) {
-		Rasterizer3D.buildPalette(var0);
-		((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness(var0);
-		if (Skills.worldMap != null) {
-			Skills.worldMap.method10702();
-		}
-
-		class134.method3608();
-		FriendSystem.clientPreferences.updateBrightness(var0);
 	}
 }

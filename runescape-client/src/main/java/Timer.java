@@ -4,146 +4,144 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pi")
+@ObfuscatedName("pa")
 @Implements("Timer")
 public class Timer {
-	@ObfuscatedName("ar")
-	static int[][] field4752;
-	@ObfuscatedName("al")
-	public boolean field4748;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("af")
+	public boolean field4865;
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		longValue = -7445399682987254329L
+		longValue = -8444671973689126785L
 	)
-	long field4743;
+	long field4860;
+	@ObfuscatedName("at")
+	@ObfuscatedGetter(
+		longValue = 5152616498439631411L
+	)
+	long field4859;
 	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		longValue = -729746941421479871L
+		longValue = 6715840556874542751L
 	)
-	long field4742;
-	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		longValue = 5695096056904187087L
-	)
-	long field4745;
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		longValue = -1908743626393324691L
-	)
-	long field4746;
-	@ObfuscatedName("as")
-	@ObfuscatedGetter(
-		longValue = -4435548914025393789L
-	)
-	long field4749;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = 923897285
-	)
-	int field4747;
+	long field4857;
 	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1211476705
+		longValue = -3256971789739317415L
 	)
-	int field4744;
-	@ObfuscatedName("am")
+	long field4861;
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1499919753
+		longValue = 5837439338484093793L
 	)
-	int field4750;
-	@ObfuscatedName("aj")
+	long field4862;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -1671662321
+		intValue = -1357269797
 	)
-	int field4751;
+	int field4863;
+	@ObfuscatedName("as")
+	@ObfuscatedGetter(
+		intValue = 1988686483
+	)
+	int field4864;
+	@ObfuscatedName("al")
+	@ObfuscatedGetter(
+		intValue = 792333441
+	)
+	int field4858;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -1632527543
+	)
+	int field4866;
 
 	public Timer() {
-		this.field4748 = false;
-		this.field4743 = -1L;
-		this.field4742 = -1L;
-		this.field4745 = 0L;
-		this.field4746 = 0L;
-		this.field4749 = 0L;
-		this.field4747 = 0;
-		this.field4744 = 0;
-		this.field4750 = 0;
-		this.field4751 = 0;
+		this.field4865 = false;
+		this.field4860 = -1L;
+		this.field4859 = -1L;
+		this.field4857 = 0L;
+		this.field4861 = 0L;
+		this.field4862 = 0L;
+		this.field4863 = 0;
+		this.field4864 = 0;
+		this.field4858 = 0;
+		this.field4866 = 0;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1334641211"
+		descriptor = "(B)V",
+		garbageValue = "2"
 	)
-	public void method8243() {
-		this.field4743 = UserComparator7.method3496();
+	public void method8246() {
+		this.field4860 = class189.method4284();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1135163806"
+		descriptor = "(B)V",
+		garbageValue = "120"
 	)
-	public void method8245() {
-		if (this.field4743 != -1L) {
-			this.field4746 = UserComparator7.method3496() - this.field4743;
-			this.field4743 = -1L;
+	public void method8248() {
+		if (this.field4860 != -1L) {
+			this.field4861 = class189.method4284() - this.field4860;
+			this.field4860 = -1L;
 		}
 
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "132230892"
+	)
+	public void method8249(int var1) {
+		this.field4859 = class189.method4284();
+		this.field4863 = var1;
 	}
 
 	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1113588887"
+		descriptor = "(B)V",
+		garbageValue = "-1"
 	)
-	public void method8246(int var1) {
-		this.field4742 = UserComparator7.method3496();
-		this.field4747 = var1;
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1553349015"
-	)
-	public void method8247() {
-		if (-1L != this.field4742) {
-			this.field4745 = UserComparator7.method3496() - this.field4742;
-			this.field4742 = -1L;
+	public void method8250() {
+		if (-1L != this.field4859) {
+			this.field4857 = class189.method4284() - this.field4859;
+			this.field4859 = -1L;
 		}
 
-		++this.field4750;
-		this.field4748 = true;
+		++this.field4858;
+		this.field4865 = true;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-611970177"
+		garbageValue = "-1206226470"
 	)
-	public void method8248() {
-		this.field4748 = false;
-		this.field4744 = 0;
+	public void method8253() {
+		this.field4865 = false;
+		this.field4864 = 0;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "37"
+		descriptor = "(I)V",
+		garbageValue = "1833000534"
 	)
-	public void method8249() {
-		this.method8247();
+	public void method8252() {
+		this.method8250();
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "-109868908"
+		descriptor = "(Lwb;I)V",
+		garbageValue = "1720703541"
 	)
 	@Export("write")
 	public void write(Buffer var1) {
-		long var2 = this.field4746;
+		long var2 = this.field4861;
 		var2 /= 10L;
 		if (var2 < 0L) {
 			var2 = 0L;
@@ -152,7 +150,7 @@ public class Timer {
 		}
 
 		var1.writeShort((int)var2);
-		long var4 = this.field4745;
+		long var4 = this.field4857;
 		var4 /= 10L;
 		if (var4 < 0L) {
 			var4 = 0L;
@@ -161,7 +159,7 @@ public class Timer {
 		}
 
 		var1.writeShort((int)var4);
-		long var6 = this.field4749;
+		long var6 = this.field4862;
 		var6 /= 10L;
 		if (var6 < 0L) {
 			var6 = 0L;
@@ -170,9 +168,49 @@ public class Timer {
 		}
 
 		var1.writeShort((int)var6);
-		var1.writeShort(this.field4747);
-		var1.writeShort(this.field4744);
-		var1.writeShort(this.field4750);
-		var1.writeShort(this.field4751);
+		var1.writeShort(this.field4863);
+		var1.writeShort(this.field4864);
+		var1.writeShort(this.field4858);
+		var1.writeShort(this.field4866);
+	}
+
+	@ObfuscatedName("lu")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "905663720"
+	)
+	static void method8270() {
+		if (Client.isSpellSelected) {
+			Widget var0 = UrlRequester.widgetDefinition.getWidgetChild(ModeWhere.selectedSpellWidget, Client.selectedSpellChildIndex);
+			if (var0 != null && var0.onTargetLeave != null) {
+				ScriptEvent var1 = new ScriptEvent();
+				var1.widget = var0;
+				var1.args = var0.onTargetLeave;
+				PacketBufferNode.runScriptEvent(var1);
+			}
+
+			Client.selectedSpellItemId = -1;
+			Client.isSpellSelected = false;
+			class89.invalidateWidget(var0);
+		}
+	}
+
+	@ObfuscatedName("mp")
+	@ObfuscatedSignature(
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;IIIIIII)V",
+		garbageValue = "1451027019"
+	)
+	static final void method8247(int var0, String var1, String var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		if (!Client.isMenuOpen) {
+			if (FriendSystem.method1591(var8, var3)) {
+				if (var0 >= 0 && var0 < Client.menu.subMenus.length) {
+					if (Client.menu.subMenus[var0] == null) {
+						Client.menu.subMenus[var0] = new Menu(false);
+					}
+
+					Client.menu.subMenus[var0].insertMenuItem(var1, var2, var3, var4, var5, var6, var7, false, var8);
+				}
+			}
+		}
 	}
 }
