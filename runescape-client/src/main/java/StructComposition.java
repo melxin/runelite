@@ -137,7 +137,7 @@ public class StructComposition extends DualNode {
 
 		for (int var3 = 0; var3 < var0.field1176.method9790(); ++var3) {
 			WorldEntity var4 = (WorldEntity)var0.worldEntities.get((long)var0.field1176.method9787(var3));
-			if (var4 != null && var4.worldView.id != Client.field346 && var4.method10072() == var1) {
+			if (var4 != null && var4.worldView.id != Client.currentWorldViewId && var4.method10072() == var1) {
 				boolean var5 = var2 < Client.field384;
 				if (var5) {
 					++var2;

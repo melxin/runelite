@@ -570,7 +570,7 @@ public class FriendSystem {
 							class68.method2161(class70.field964);
 						}
 					} else if (class70.field964 == Client.field401) {
-						class333.topLevelWorldView = Client.worldViewManager.method2380(104, 104, class36.clientPreferences.getDrawDistance());
+						class333.topLevelWorldView = Client.worldViewManager.createWorldView(104, 104, class36.clientPreferences.getDrawDistance());
 						HttpHeaders.worldView = class333.topLevelWorldView;
 						SceneTilePaint.sceneMinimapSprite = new SpritePixels(512, 512);
 						class423.method8556(30, "Starting game engine...");
@@ -880,7 +880,7 @@ public class FriendSystem {
 		class516 var2 = Client.worldViewManager.method2378(var0);
 		WorldEntity var3 = (WorldEntity)Client.worldViewManager.method2343().worldEntities.get((long)var0);
 		boolean var4 = var0 == -1;
-		boolean var5 = var0 == Client.field346;
+		boolean var5 = var0 == Client.currentWorldViewId;
 		boolean var6 = false;
 		boolean var9;
 		if (var3 != null) {

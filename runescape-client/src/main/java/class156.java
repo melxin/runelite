@@ -80,7 +80,7 @@ public class class156 extends class151 {
 						Client.playerUpdateManager.method2851((Player)var26.players.get((long)var8));
 					}
 
-					Client.worldViewManager.method2376(var5);
+					Client.worldViewManager.removeWorldViewById(var5);
 				}
 
 				WorldEntity var29 = (WorldEntity)var0.worldEntities.get((long)var5);
@@ -134,7 +134,7 @@ public class class156 extends class151 {
 							Client.playerUpdateManager.method2851((Player)var25.players.get((long)var23));
 						}
 
-						Client.worldViewManager.method2376(var6);
+						Client.worldViewManager.removeWorldViewById(var6);
 					}
 
 					if (var21 != null) {

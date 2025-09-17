@@ -142,6 +142,6 @@ public class Interpreter {
 		garbageValue = "698620686"
 	)
 	static WorldView method1773(int var0, int var1, int var2) {
-		return Client.worldViewManager.method2363(var0, var1, var2, class36.clientPreferences.getDrawDistance(), class217.field2511);
+		return Client.worldViewManager.createWorldView2(var0, var1, var2, class36.clientPreferences.getDrawDistance(), class217.field2511);
 	}
 }

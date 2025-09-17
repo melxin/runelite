@@ -229,7 +229,7 @@ public class Bounds {
 		}
 
 		WorldView var31 = class333.topLevelWorldView;
-		WorldEntity var8 = (WorldEntity)var31.worldEntities.get((long)Client.field346);
+		WorldEntity var8 = (WorldEntity)var31.worldEntities.get((long)Client.currentWorldViewId);
 		if (var8 != null) {
 			class192.method4314(var31, var8, false);
 		}
@@ -378,7 +378,7 @@ public class Bounds {
 		var24 = Rasterizer3D.get3dZoom();
 		Rasterizer3D.method4927(class521.client.field206);
 		Rasterizer3D.clips.zoom = Client.viewportZoom;
-		class217 var35 = Client.field346 == -1 ? class217.field2512 : class217.field2511;
+		class217 var35 = Client.currentWorldViewId == -1 ? class217.field2512 : class217.field2511;
 		class333.topLevelWorldView.scene.method5139(var35);
 		class333.topLevelWorldView.scene.draw(HealthBarDefinition.cameraX, class174.cameraY, HttpRequest.cameraZ, class401.cameraPitch, WorldMapLabel.cameraYaw, var16, Client.field552, Client.field337, Client.isCameraLocked);
 		Rasterizer3D.method4927(false);

@@ -129,7 +129,7 @@ public class class192 extends DualNode {
 	static void method4314(WorldView var0, WorldEntity var1, boolean var2) {
 		boolean var3 = var1.field5425.field2245 && !var2;
 		long var4 = 0L;
-		boolean var6 = var1.worldView.id == Client.field346;
+		boolean var6 = var1.worldView.id == Client.currentWorldViewId;
 		class398 var7 = var1.method10073(var6);
 		boolean var8;
 		if (var7 == class398.field4841) {

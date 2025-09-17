@@ -587,7 +587,7 @@ public class PlayerUpdateManager {
 		garbageValue = "82"
 	)
 	void method2842() {
-		Client.field346 = -1;
+		Client.currentWorldViewId = -1;
 
 		label69:
 		for (int var1 = 0; var1 < this.playerCount; ++var1) {
@@ -606,7 +606,7 @@ public class PlayerUpdateManager {
 					Player var7 = (Player)var6.players.get((long)var2);
 					boolean var8 = var4.x > var6.baseX && var4.y > var6.baseY && var4.x < var6.baseX + var6.sizeX && var4.y < var6.baseY + var6.sizeY;
 					if (var2 == Client.localPlayerIndex && var8 && var6.id != -1) {
-						Client.field346 = var6.id;
+						Client.currentWorldViewId = var6.id;
 					}
 
 					if (var8 && var7 == null) {

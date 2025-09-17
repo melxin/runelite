@@ -109,9 +109,9 @@ public class UserComparator4 implements Comparator {
 	)
 	static int method3535(int var0, WorldEntity var1, WorldView var2) {
 		int var3 = -1;
-		if (var0 == Client.field346) {
+		if (var0 == Client.currentWorldViewId) {
 			var3 = var2.plane;
-		} else if (Client.field346 == -1) {
+		} else if (Client.currentWorldViewId == -1) {
 			var3 = var1.field5425.method4452();
 		} else {
 			WorldEntity var4 = Client.worldViewManager.method2347();

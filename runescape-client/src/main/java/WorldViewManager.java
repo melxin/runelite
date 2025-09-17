@@ -54,8 +54,9 @@ public class WorldViewManager implements Iterable {
 		descriptor = "(IIII)Ldr;",
 		garbageValue = "524163268"
 	)
-	WorldView method2380(int var1, int var2, int var3) {
-		this.worldView = this.method2363(-1, var1, var2, var3, class217.field2512);
+	@Export("createWorldView")
+	WorldView createWorldView(int var1, int var2, int var3) {
+		this.worldView = this.createWorldView2(-1, var1, var2, var3, class217.field2512);
 		return this.worldView;
 	}
 
@@ -64,7 +65,8 @@ public class WorldViewManager implements Iterable {
 		descriptor = "(IIIILio;I)Ldr;",
 		garbageValue = "-1150538650"
 	)
-	WorldView method2363(int var1, int var2, int var3, int var4, class217 var5) {
+	@Export("createWorldView2")
+	WorldView createWorldView2(int var1, int var2, int var3, int var4, class217 var5) {
 		WorldView var6 = new WorldView(var1, var2, var3, var4, var5);
 		this.worldViews.put(var6, (long)var1);
 		++this.field1013;
@@ -76,9 +78,10 @@ public class WorldViewManager implements Iterable {
 		descriptor = "(IB)V",
 		garbageValue = "-78"
 	)
-	void method2376(int var1) {
+	@Export("removeWorldViewById")
+	void removeWorldViewById(int var1) {
 		WorldView var2 = (WorldView)this.worldViews.get((long)var1);
-		this.method2341(var2);
+		this.removeWorldView(var2);
 	}
 
 	@ObfuscatedName("ac")
@@ -86,7 +89,8 @@ public class WorldViewManager implements Iterable {
 		descriptor = "(Ldr;I)V",
 		garbageValue = "-1952370542"
 	)
-	void method2341(WorldView var1) {
+	@Export("removeWorldView")
+	void removeWorldView(WorldView var1) {
 		if (var1 != null) {
 			this.field1014.remove(var1.id);
 			this.field1009.remove(var1.id);
@@ -122,7 +126,7 @@ public class WorldViewManager implements Iterable {
 		garbageValue = "2029947527"
 	)
 	WorldView method2348() {
-		return this.getWorldView(Client.field346);
+		return this.getWorldView(Client.currentWorldViewId);
 	}
 
 	@ObfuscatedName("as")
@@ -164,7 +168,7 @@ public class WorldViewManager implements Iterable {
 		garbageValue = "1823470721"
 	)
 	WorldEntity method2347() {
-		return (WorldEntity)this.method2343().worldEntities.get((long)Client.field346);
+		return (WorldEntity)this.method2343().worldEntities.get((long)Client.currentWorldViewId);
 	}
 
 	@ObfuscatedName("ai")
@@ -250,7 +254,7 @@ public class WorldViewManager implements Iterable {
 
 		while (var1.hasNext()) {
 			WorldView var2 = (WorldView)var1.next();
-			this.method2341(var2);
+			this.removeWorldView(var2);
 		}
 
 		this.worldViews.clear();

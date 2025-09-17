@@ -167,7 +167,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedGetter(
 		intValue = -458120041
 	)
-	static int field346;
+	@Export("currentWorldViewId")
+	static int currentWorldViewId;
 	@ObfuscatedName("gf")
 	@ObfuscatedGetter(
 		intValue = 883771343
@@ -1441,7 +1442,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		localPlayerIndex = -1;
 		field344 = 0;
 		field345 = "";
-		field346 = -1;
+		currentWorldViewId = -1;
 		field347 = -1;
 		field348 = -1;
 		renderSelf = true;

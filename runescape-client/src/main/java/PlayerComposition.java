@@ -851,7 +851,7 @@ public class PlayerComposition {
 		Client.playerAttackOption = AttackOption.AttackOption_hidden;
 		Client.npcAttackOption = AttackOption.AttackOption_hidden;
 		Client.worldViewManager.clear();
-		Client.field346 = -1;
+		Client.currentWorldViewId = -1;
 		Client.projectiles.clear();
 		Client.playerUpdateManager.clear();
 		ApproximateRouteStrategy.friendSystem.method1539();
