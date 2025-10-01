@@ -171,8 +171,7 @@ public class MenuManager
 				WidgetMenuOptionClicked widgetMenuOptionClicked = new WidgetMenuOptionClicked();
 				widgetMenuOptionClicked.setMenuOption(event.getMenuOption());
 				widgetMenuOptionClicked.setMenuTarget(event.getMenuTarget());
-				widgetMenuOptionClicked.setWidget(curMenuOption.getWidget());
-				widgetMenuOptionClicked.setWidgetId(curMenuOption.getWidgetId());
+				widgetMenuOptionClicked.setWidgetIds(curMenuOption.getWidgetIds());
 
 				eventBus.post(widgetMenuOptionClicked);
 

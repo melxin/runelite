@@ -24,9 +24,8 @@
  */
 package net.runelite.api.events;
 
-import javax.annotation.Nullable;
 import lombok.Data;
-import net.runelite.api.widgets.WidgetInfo;
+import net.runelite.api.annotations.Component;
 
 /**
  * A MenuManager widget menu was clicked. This event is fired only for MenuManager managed custom menus.
@@ -44,12 +43,8 @@ public class WidgetMenuOptionClicked
 	 */
 	private String menuTarget;
 	/**
-	 * The WidgetInfo of the widget that was clicked, if available.
+	 * The clicked widget ids.
 	 */
-	@Nullable
-	private WidgetInfo widget;
-	/**
-	 * The widget id of the widget that was clicked.
-	 */
-	private int widgetId;
+	@Component
+	private int[] widgetIds;
 }
