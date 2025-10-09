@@ -4,47 +4,47 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qi")
+@ObfuscatedName("qo")
 @Implements("GrandExchangeEvent")
 public class GrandExchangeEvent {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1355047097
+		intValue = -2100278039
 	)
 	@Export("world")
 	public final int world;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		longValue = -2009867072126087687L
+		longValue = 7632065372937797571L
 	)
 	@Export("age")
 	public final long age;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lqt;"
+		descriptor = "Lqe;"
 	)
 	@Export("grandExchangeOffer")
 	public final GrandExchangeOffer grandExchangeOffer;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@Export("offerName")
 	String offerName;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@Export("previousOfferName")
 	String previousOfferName;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;BI)V"
+		descriptor = "(Lwj;BI)V"
 	)
 	GrandExchangeEvent(Buffer var1, byte var2, int var3) {
 		this.offerName = var1.readStringCp1252NullTerminated();
 		this.previousOfferName = var1.readStringCp1252NullTerminated();
 		this.world = var1.readUnsignedShort();
 		this.age = var1.readLong();
-		int var4 = var1.method1958();
-		int var5 = var1.method1958();
+		int var4 = var1.method11575();
+		int var5 = var1.method11575();
 		this.grandExchangeOffer = new GrandExchangeOffer();
-		this.grandExchangeOffer.method8513(2);
-		this.grandExchangeOffer.method8525(var2);
+		this.grandExchangeOffer.method8584(2);
+		this.grandExchangeOffer.method8585(var2);
 		this.grandExchangeOffer.unitPrice = var4;
 		this.grandExchangeOffer.totalQuantity = var5;
 		this.grandExchangeOffer.currentQuantity = 0;
@@ -52,107 +52,43 @@ public class GrandExchangeEvent {
 		this.grandExchangeOffer.id = var3;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1237531853"
+		garbageValue = "1445448445"
 	)
 	@Export("getOfferName")
 	public String getOfferName() {
 		return this.offerName;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "542971699"
+		garbageValue = "-261236548"
 	)
 	@Export("getPreviousOfferName")
 	public String getPreviousOfferName() {
 		return this.previousOfferName;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lxk;",
-		garbageValue = "-2116850015"
+		descriptor = "(Ltl;III)V",
+		garbageValue = "-1962533056"
 	)
-	@Export("FillMode_values")
-	public static FillMode[] FillMode_values() {
-		return new FillMode[]{FillMode.SOLID, FillMode.field6002, FillMode.field6001};
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "([J[JIII)V",
-		garbageValue = "-2142951697"
-	)
-	public static void method8509(long[] var0, long[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			long var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			long var8 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var8;
-			long var10 = Long.MAX_VALUE == var6 ? 0L : 1L;
-
-			for (int var12 = var2; var12 < var3; ++var12) {
-				if (var0[var12] < ((long)var12 & var10) + var6) {
-					long var13 = var0[var12];
-					var0[var12] = var0[var5];
-					var0[var5] = var13;
-					long var15 = var1[var12];
-					var1[var12] = var1[var5];
-					var1[var5++] = var15;
-				}
-			}
-
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var8;
-			method8509(var0, var1, var2, var5 - 1);
-			method8509(var0, var1, var5 + 1, var3);
-		}
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
-		garbageValue = "1399594449"
-	)
-	public static String method8505(String var0) {
-		StringBuilder var1 = new StringBuilder(var0.length());
-		int var2 = 0;
-		int var3 = -1;
-
-		for (int var4 = 0; var4 < var0.length(); ++var4) {
-			char var5 = var0.charAt(var4);
-			if (var5 == '<') {
-				var1.append(var0.substring(var2, var4));
-				var3 = var4;
-			} else if (var5 == '>' && var3 != -1) {
-				String var6 = var0.substring(var3 + 1, var4);
-				var3 = -1;
-				if (var6.equals("lt")) {
-					var1.append("<");
-				} else if (var6.equals("gt")) {
-					var1.append(">");
-				} else if (var6.equals("br")) {
-					var1.append("\n");
+	public static void method8573(DynamicArray var0, int var1, int var2) {
+		PacketBufferNode.method7052(var0, (class572)null, true);
+		if (var1 != 0) {
+			if (var2 >= 0 && var2 < var0.size * 479682119 && var1 >= 0 && var2 + var1 <= var0.size * 479682119) {
+				if (var2 < var0.size * 479682119 - var1) {
+					class167.method4091(var0, var2 + var1, var0, var2, var0.size * 479682119 - (var2 + var1));
 				}
 
-				var2 = var4 + 1;
+				var0.method10440(var0.size * 479682119 - var1);
+			} else {
+				throw new RuntimeException();
 			}
 		}
-
-		if (var2 < var0.length()) {
-			var1.append(var0.substring(var2, var0.length()));
-		}
-
-		return var1.toString();
 	}
 }

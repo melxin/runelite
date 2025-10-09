@@ -3,70 +3,73 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dl")
+@ObfuscatedName("dz")
 @Implements("SoundEffect")
 public class SoundEffect {
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Led;"
+		descriptor = "Lef;"
 	)
-	static class115 field1316;
-	@ObfuscatedName("af")
-	int field1320;
-	@ObfuscatedName("aw")
-	int field1317;
+	static class114 field1320;
+	@ObfuscatedName("ab")
+	int field1315;
 	@ObfuscatedName("at")
+	int field1319;
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lew;"
+		descriptor = "Leg;"
 	)
-	class109 field1315;
-	@ObfuscatedName("ap")
+	class108 field1316;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "[Lep;"
+		descriptor = "[Lee;"
 	)
 	@Export("instruments")
 	final Instrument[] instruments;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@Export("start")
 	int start;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@Export("end")
 	int end;
 
 	static {
-		field1316 = new class115();
+		field1320 = new class114();
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;ILew;)V"
+		descriptor = "(Lwj;ILeg;)V"
 	)
-	SoundEffect(Buffer var1, int var2, class109 var3) {
+	SoundEffect(Buffer var1, int var2, class108 var3) {
 		this.instruments = new Instrument[10];
-		this.field1317 = var2;
-		this.field1315 = var3;
+		this.field1319 = var2;
+		this.field1316 = var3;
 		if (var2 == 0) {
-			this.method3005(var1);
+			this.method3120(var1);
 		} else {
 			if (var2 != 1) {
 				throw new RuntimeException("Invalid fileId for SFX");
 			}
 
-			var3.method3395(var1);
+			var3.method3444(var1);
+			this.field1315 = var3.method3470();
+			this.start = var3.method3446();
+			this.end = var3.method3449();
 		}
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;)V"
+		descriptor = "(Lwj;)V"
 	)
-	void method3005(Buffer var1) {
-		this.field1320 = 22050;
+	void method3120(Buffer var1) {
+		this.field1315 = 22050;
 
 		for (int var2 = 0; var2 < 10; ++var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 != 0) {
-				var1.offset -= -290410379;
+				--var1.offset;
 				this.instruments[var2] = new Instrument();
 				this.instruments[var2].decode(var1);
 			}
@@ -76,34 +79,34 @@ public class SoundEffect {
 		this.end = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Z)Ldv;"
+		descriptor = "(Z)Ldi;"
 	)
-	public RawSound method3003(boolean var1) {
+	public RawSound method3108(boolean var1) {
 		short[] var2 = this.mix(var1);
-		RawSound var3 = new RawSound(this.field1320, var2, this.field1320 * this.start / 1000, this.field1320 * this.end / 1000, false, var1);
+		RawSound var3 = new RawSound(this.field1315, var2, this.field1315 * this.start / 1000, this.field1315 * this.end / 1000, false, var1);
 		return var3;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "()Ldv;"
+		descriptor = "()Ldi;"
 	)
 	@Export("toRawSound")
-	RawSound toRawSound() {
-		return this.field1317 == 0 ? this.method3003(false) : this.field1315.method3394();
+	public RawSound toRawSound() {
+		return this.field1319 == 0 ? this.method3108(false) : this.field1316.method3448();
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Z)Ldv;"
+		descriptor = "(Z)Ldi;"
 	)
-	public RawSound method3013(boolean var1) {
-		return this.field1317 == 0 ? this.method3003(var1) : this.field1315.method3394();
+	public RawSound method3110(boolean var1) {
+		return this.field1319 == 0 ? this.method3108(var1) : this.field1316.method3448();
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@Export("calculateDelay")
 	public final int calculateDelay() {
 		int var1 = 9999999;
@@ -138,7 +141,7 @@ public class SoundEffect {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@Export("mix")
 	final short[] mix(boolean var1) {
 		int var2 = 0;
@@ -153,26 +156,26 @@ public class SoundEffect {
 		if (var2 == 0) {
 			return new short[0];
 		} else {
-			var3 = var2 * this.field1320 / 1000;
+			var3 = var2 * this.field1315 / 1000;
 			short[] var4 = new short[var3];
 
 			for (int var5 = 0; var5 < 10; ++var5) {
 				if (this.instruments[var5] != null) {
-					int var6 = this.instruments[var5].duration * this.field1320 / 1000;
-					int var7 = this.instruments[var5].offset * this.field1320 / 1000;
-					int[] var8 = this.instruments[var5].method3472(var6, this.instruments[var5].duration, this.field1320);
+					int var6 = this.instruments[var5].duration * this.field1315 / 1000;
+					int var7 = this.instruments[var5].offset * this.field1315 / 1000;
+					int[] var8 = this.instruments[var5].method3551(var6, this.instruments[var5].duration, this.field1315);
 					int var9;
 					int var10;
 					if (var1) {
 						for (var9 = 0; var9 < var6; ++var9) {
 							var10 = (var8[var9] >> 8) + var4[var9 + var7];
-							var10 = WorldEntity.method10135(-128, 127, var10);
+							var10 = KeyHandler.method396(-128, 127, var10);
 							var4[var9 + var7] = (short)((byte)var10);
 						}
 					} else {
 						for (var9 = 0; var9 < var6; ++var9) {
 							var10 = var8[var9] + var4[var9 + var7];
-							var10 = WorldEntity.method10135(-32768, 32767, var10);
+							var10 = KeyHandler.method396(-32768, 32767, var10);
 							var4[var9 + var7] = (short)var10;
 						}
 					}
@@ -183,13 +186,13 @@ public class SoundEffect {
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lpx;II)Ldl;"
+		descriptor = "(Lpe;II)Ldz;"
 	)
 	@Export("readSoundEffect")
 	public static SoundEffect readSoundEffect(AbstractArchive var0, int var1, int var2) {
-		class109 var3 = new class109(field1316);
+		class108 var3 = new class108(field1320);
 		byte[] var4 = var0.takeFile(var1, var2);
 		if (var4 == null) {
 			return null;
@@ -200,9 +203,9 @@ public class SoundEffect {
 					return null;
 				}
 
-				int var6 = var5.method1958();
-				var3.method3397(var4, 4);
-				var5.offset = (var6 + 4) * -290410379;
+				int var6 = var5.method11575();
+				var3.method3461(var4, 4);
+				var5.offset = var6 + 4;
 			} else {
 				if (var2 != 0) {
 					return null;

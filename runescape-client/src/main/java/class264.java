@@ -1,195 +1,253 @@
-import java.lang.management.GarbageCollectorMXBean;
-import java.lang.management.ManagementFactory;
-import java.util.Iterator;
-import net.runelite.mapping.Export;
+import java.io.IOException;
+import java.net.URL;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import org.json.JSONObject;
 
-@ObfuscatedName("kf")
-public class class264 extends class270 {
+@ObfuscatedName("kb")
+public class class264 {
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lkb;"
+	)
+	static final class264 field3137;
 	@ObfuscatedName("af")
-	String field3131;
-	// $FF: synthetic field
-	@ObfuscatedSignature(
-		descriptor = "Lkm;"
+	final int field3138;
+	@ObfuscatedName("ae")
+	final int field3139;
+	@ObfuscatedName("aq")
+	String field3140;
+	@ObfuscatedName("ac")
+	String field3135;
+	@ObfuscatedName("aa")
+	String field3141;
+	@ObfuscatedName("ap")
+	String field3142;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		longValue = 8133006569314021235L
 	)
-	final class267 this$0;
-
+	long field3144;
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lkm;Ljava/lang/String;Ljava/lang/String;)V"
+		descriptor = "Lar;"
 	)
-	class264(class267 var1, String var2, String var3) {
-		super(var1, var2);
-		this.this$0 = var1;
-		this.field3131 = var3;
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-11589271"
-	)
-	public int vmethod6058() {
-		return 1;
-	}
-
+	AsyncRestClient field3145;
 	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "1657302888"
+		descriptor = "Lao;"
 	)
-	public String vmethod6059() {
-		return this.field3131;
+	AsyncHttpResponse field3146;
+	@ObfuscatedName("ar")
+	@ObfuscatedGetter(
+		intValue = 559398845
+	)
+	int field3147;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = 1280363009
+	)
+	int field3148;
+	@ObfuscatedName("au")
+	String field3149;
+	@ObfuscatedName("ak")
+	boolean field3134;
+
+	static {
+		field3137 = new class264();
 	}
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "-171654730"
-	)
-	public static int method5949(int var0, int var1, int var2) {
-		var2 &= 3;
-		if (var2 == 0) {
-			return var0;
-		} else if (var2 == 1) {
-			return var1;
-		} else {
-			return var2 == 2 ? 7 - var0 : 7 - var1;
-		}
+	class264() {
+		this.field3138 = 1;
+		this.field3139 = 2;
+		this.field3140 = "";
+		this.field3135 = "";
+		this.field3141 = "";
+		this.field3142 = "";
+		this.field3144 = -1L;
+		this.field3147 = 1;
+		this.field3148 = 0;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(JJLmx;I)D",
-		garbageValue = "-1665603147"
+		descriptor = "(ILjava/lang/String;I)V",
+		garbageValue = "-891315907"
 	)
-	public static double method5958(long var0, long var2, class337 var4) {
-		float var5;
-		if (var2 > 0L) {
-			float var7 = (float)var0 / (float)var2;
-			float var6 = Math.max(0.0F, Math.min(var7, 1.0F));
-			var5 = var6;
-		} else {
-			var5 = 1.0F;
-		}
+	public void method6001(int var1, String var2) {
+		this.field3148 = var1;
+		this.field3149 = var2;
+	}
 
-		double var12 = (double)var5;
-		if (var12 > 0.0D && var12 < 1.0D) {
-			double var8;
-			double var10;
-			switch(var4.field3874) {
-			case 0:
-			default:
-				return var12;
-			case 1:
-				return 1.0D - Math.cos(3.141592653589793D * var12 / 2.0D);
-			case 2:
-				return Math.sin(3.141592653589793D * var12 / 2.0D);
-			case 3:
-				return -(Math.cos(3.141592653589793D * var12) - 1.0D) / 2.0D;
-			case 4:
-				return var12 * var12;
-			case 5:
-				return 1.0D - (1.0D - var12) * (1.0D - var12);
-			case 6:
-				return var12 < 0.5D ? var12 * 2.0D * var12 : 1.0D - Math.pow(2.0D + -2.0D * var12, 2.0D) / 2.0D;
-			case 7:
-				return var12 * var12 * var12;
-			case 8:
-				return 1.0D - Math.pow(1.0D - var12, 3.0D);
-			case 9:
-				return var12 < 0.5D ? var12 * var12 * 4.0D * var12 : 1.0D - Math.pow(2.0D + -2.0D * var12, 3.0D) / 2.0D;
-			case 10:
-				return var12 * var12 * var12 * var12;
-			case 11:
-				return 1.0D - Math.pow(1.0D - var12, 4.0D);
-			case 12:
-				return var12 < 0.5D ? var12 * var12 * 8.0D * var12 * var12 : 1.0D - Math.pow(var12 * -2.0D + 2.0D, 4.0D) / 2.0D;
-			case 13:
-				return var12 * var12 * var12 * var12 * var12;
-			case 14:
-				return 1.0D - Math.pow(1.0D - var12, 5.0D);
-			case 15:
-				return var12 < 0.5D ? var12 * var12 * var12 * 8.0D * var12 * var12 : 1.0D - Math.pow(var12 * -2.0D + 2.0D, 5.0D) / 2.0D;
-			case 16:
-				return Math.pow(2.0D, 10.0D * var12 - 10.0D);
-			case 17:
-				return 1.0D - Math.pow(2.0D, -10.0D * var12);
-			case 18:
-				return var12 < 0.5D ? Math.pow(2.0D, 10.0D + 20.0D * var12) / 2.0D : (2.0D - Math.pow(2.0D, 10.0D + var12 * -20.0D)) / 2.0D;
-			case 19:
-				return 1.0D - Math.sqrt(1.0D - Math.pow(var12, 2.0D));
-			case 20:
-				return Math.sqrt(1.0D - Math.pow(var12 - 1.0D, 2.0D));
-			case 21:
-				return var12 < 0.5D ? (1.0D - Math.sqrt(1.0D - Math.pow(var12 * 2.0D, 2.0D))) / 2.0D : (Math.sqrt(1.0D - Math.pow(2.0D + var12 * -2.0D, 2.0D)) + 1.0D) / 2.0D;
-			case 22:
-				var8 = 1.70158D;
-				var10 = 2.70158D;
-				return var12 * var12 * 2.70158D * var12 - var12 * 1.70158D * var12;
-			case 23:
-				var8 = 1.70158D;
-				var10 = 2.70158D;
-				return 1.0D + 2.70158D * Math.pow(var12 - 1.0D, 3.0D) + 1.70158D * Math.pow(var12 - 1.0D, 2.0D);
-			case 24:
-				var8 = 1.70158D;
-				var10 = 2.5949095D;
-				return var12 < 0.5D ? Math.pow(2.0D * var12, 2.0D) * (var12 * 7.189819D - 2.5949095D) / 2.0D : (Math.pow(var12 * 2.0D - 2.0D, 2.0D) * (2.5949095D + 3.5949095D * (var12 * 2.0D - 2.0D)) + 2.0D) / 2.0D;
-			case 25:
-				var8 = 2.0943951023931953D;
-				return -Math.pow(2.0D, var12 * 10.0D - 10.0D) * Math.sin((var12 * 10.0D - 10.75D) * 2.0943951023931953D);
-			case 26:
-				var8 = 2.0943951023931953D;
-				return Math.pow(2.0D, var12 * -10.0D) * Math.sin(2.0943951023931953D * (10.0D * var12 - 0.75D)) + 1.0D;
-			case 27:
-				var8 = 1.3962634015954636D;
-				var10 = Math.sin((20.0D * var12 - 11.125D) * 1.3962634015954636D);
-				return var12 < 0.5D ? -(Math.pow(2.0D, var12 * 20.0D - 10.0D) * var10) / 2.0D : Math.pow(2.0D, 10.0D + var12 * -20.0D) * var10 / 2.0D + 1.0D;
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(ZI)V",
+		garbageValue = "-2051039574"
+	)
+	public void method5986(boolean var1) {
+		this.field3134 = var1;
+		this.field3145 = new AsyncRestClient("crmsession", 1, 1);
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+		garbageValue = "-161779827"
+	)
+	void method5987(String var1, String var2, String var3) {
+		if (this.field3147 != 2) {
+			this.field3140 = var1;
+			this.field3135 = var2;
+			this.field3141 = var3;
+			if (!this.field3140.endsWith("/")) {
+				this.field3140 = this.field3140 + "/";
 			}
-		} else {
-			return var12 <= 0.0D ? 0.0D : 1.0D;
+
+			if (!this.field3135.equals("")) {
+				String var4 = this.field3140;
+				var4 = var4 + "session/open/" + this.field3135;
+				if (this.field3141.equals("")) {
+				}
+
+				var4 = var4 + "?userHash=" + this.field3141;
+
+				try {
+					this.field3146 = this.method6011(var4);
+					this.field3144 = class281.method6373();
+				} catch (IOException var6) {
+					this.field3146 = null;
+					this.field3135 = "";
+					this.field3141 = "";
+				}
+
+			}
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-271206630"
+		descriptor = "(B)V",
+		garbageValue = "-53"
 	)
-	@Export("getGcDuration")
-	protected static int getGcDuration() {
-		int var0 = 0;
-		if (FloatProjection.garbageCollector == null || !FloatProjection.garbageCollector.isValid()) {
-			try {
-				Iterator var1 = ManagementFactory.getGarbageCollectorMXBeans().iterator();
-
-				while (var1.hasNext()) {
-					GarbageCollectorMXBean var2 = (GarbageCollectorMXBean)var1.next();
-					if (var2.isValid()) {
-						FloatProjection.garbageCollector = var2;
-						GameEngine.garbageCollectorLastCheckTimeMs = -1L;
-						GameEngine.garbageCollectorLastCollectionTime = -1L;
-					}
+	public void method5988() {
+		if (this.field3146 == null) {
+			if (!this.field3142.isEmpty() && this.field3147 == 1) {
+				long var1 = class281.method6373();
+				long var3 = var1 - this.field3144;
+				String var5 = this.field3140;
+				var5 = var5 + "session/close/" + this.field3135 + "/" + this.field3142;
+				if (this.field3141.isEmpty()) {
+					var5 = var5 + "?sessionDuration=" + var3;
+				} else {
+					var5 = var5 + "?userHash=" + this.field3141 + "&sessionDuration=" + var3;
 				}
-			} catch (Throwable var11) {
-			}
-		}
 
-		if (FloatProjection.garbageCollector != null) {
-			long var9 = class189.method4284();
-			long var3 = FloatProjection.garbageCollector.getCollectionTime();
-			if (-1L != GameEngine.garbageCollectorLastCollectionTime) {
-				long var5 = var3 - GameEngine.garbageCollectorLastCollectionTime;
-				long var7 = var9 - GameEngine.garbageCollectorLastCheckTimeMs;
-				if (var7 != 0L) {
-					var0 = (int)(var5 * 100L / var7);
+				try {
+					this.field3146 = this.method6011(var5);
+				} catch (IOException var7) {
+					this.field3147 = 1;
 				}
 			}
 
-			GameEngine.garbageCollectorLastCollectionTime = var3;
-			GameEngine.garbageCollectorLastCheckTimeMs = var9;
+		}
+	}
+
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-53822348"
+	)
+	public void method5989() {
+		if (this.field3145 != null) {
+			this.field3145.shutdown();
 		}
 
-		return var0;
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-1279411597"
+	)
+	void method5990() {
+		if (!this.field3142.isEmpty()) {
+			String var1 = "";
+			switch(this.field3148) {
+			case 1:
+				var1 = "events/click";
+				break;
+			case 2:
+				var1 = "events/dismissed";
+				break;
+			case 3:
+				var1 = "events/impression";
+			}
+
+			if (!this.field3149.isEmpty()) {
+				String var2 = this.field3140;
+				var2 = var2 + var1 + "/" + this.field3135 + "/" + this.field3142 + "/" + this.field3149 + "?userHash=" + this.field3141;
+
+				try {
+					this.field3146 = this.method6011(var2);
+				} catch (IOException var4) {
+					this.field3147 = 1;
+				}
+
+				this.field3147 = 1;
+				this.field3148 = 0;
+			}
+		}
+	}
+
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-18"
+	)
+	public void method5991() {
+		if (this.field3146 != null && this.field3146.hasFinished()) {
+			if (this.field3146.hasFinished() && this.field3146.await().getResponseCode() == 200 && this.field3142.isEmpty()) {
+				String var1 = this.field3146.await().getResponseBody();
+				if (var1.isEmpty()) {
+					return;
+				}
+
+				this.field3142 = var1;
+			}
+
+			if (this.field3148 != 0) {
+				this.method5990();
+			}
+
+		}
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;I)Z",
+		garbageValue = "1245684529"
+	)
+	public boolean method5992(String var1) {
+		this.method6001(2, var1);
+		return true;
+	}
+
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;I)Lao;",
+		garbageValue = "1432930643"
+	)
+	AsyncHttpResponse method6011(String var1) throws IOException {
+		URL var2 = new URL(var1);
+		HttpRequest var3 = new HttpRequest(var2, HttpMethod.POST, this.field3134);
+
+		try {
+			JSONObject var4 = new JSONObject();
+			var3.setPayload(new HttpJsonRequestBody(var4));
+		} catch (Exception var5) {
+		}
+
+		return this.field3145.submitRequest(var3);
 	}
 }

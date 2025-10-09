@@ -5,31 +5,30 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("pr")
 @Implements("Strings")
 public class Strings {
-	@ObfuscatedName("fb")
-	public static String field4609;
-	@ObfuscatedName("kv")
-	public static String field4745;
-	@ObfuscatedName("kt")
-	public static String field4793;
-	@ObfuscatedName("lf")
-	public static String field4747;
+	@ObfuscatedName("fe")
+	public static String field4686;
+	@ObfuscatedName("kp")
+	public static String field4777;
+	@ObfuscatedName("ka")
+	public static String field4626;
+	@ObfuscatedName("lz")
+	public static String field4779;
 
 	static {
-		field4609 = "Please visit the support page for assistance.";
-		field4745 = "";
-		field4793 = "Page has opened in the browser.";
-		field4747 = "";
+		field4686 = "Please visit the support page for assistance.";
+		field4777 = "";
+		field4626 = "Page has opened in the browser.";
+		field4779 = "";
 	}
 
-	@ObfuscatedName("ig")
+	@ObfuscatedName("je")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "-98"
+		garbageValue = "-91"
 	)
-	static void method8221() {
-		if (DynamicObject.worldMap != null) {
-			DynamicObject.worldMap.method10649(class333.topLevelWorldView.plane, (Client.field552 >> 7) + class333.topLevelWorldView.baseX, (Client.field337 >> 7) + class333.topLevelWorldView.baseY, false);
-			DynamicObject.worldMap.loadCache();
+	static void method8218() {
+		if (class159.localPlayer.x >> 7 == Client.destinationX && class159.localPlayer.y >> 7 == Client.destinationY) {
+			Client.destinationX = 0;
 		}
 
 	}

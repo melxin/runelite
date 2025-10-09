@@ -4,134 +4,122 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gq")
+@ObfuscatedName("gv")
 @Implements("PlayerCompositionColorTextureOverride")
 public class PlayerCompositionColorTextureOverride {
-	@ObfuscatedName("kg")
-	@ObfuscatedSignature(
-		descriptor = "Lpw;"
+	@ObfuscatedName("ii")
+	@ObfuscatedGetter(
+		intValue = 1616809093
 	)
-	static Archive field1956;
-	@ObfuscatedName("ap")
+	@Export("foundItemIdCount")
+	static int foundItemIdCount;
+	@ObfuscatedName("ah")
 	@Export("playerCompositionRecolorTo")
 	public short[] playerCompositionRecolorTo;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@Export("playerCompositionRetextureTo")
 	public short[] playerCompositionRetextureTo;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1392712751
+		intValue = -2477213
 	)
-	int field1950;
-	@ObfuscatedName("as")
+	public int field1946;
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1518534525
+		intValue = -1719168563
 	)
-	int field1951;
-	@ObfuscatedName("al")
+	public int field1945;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -179895527
+		intValue = 1638469209
 	)
-	int field1944;
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = 1212660207
-	)
-	int field1952;
-	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = 914769109
-	)
-	public int field1953;
+	public int field1948;
 	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "Ljn;"
+	@ObfuscatedGetter(
+		intValue = -1342559047
 	)
-	public Model field1955;
+	public int field1949;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = 172449657
+	)
+	public int field1950;
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Ljd;"
+	)
+	public Model field1942;
 
 	public PlayerCompositionColorTextureOverride(int var1) {
-		this.field1950 = -1;
-		this.field1951 = -1;
-		this.field1944 = -1;
-		this.field1952 = -1;
-		ItemComposition var2 = AttackOption.ItemDefinition_get(var1);
-		if (var2.method4672()) {
+		this.field1946 = -1;
+		this.field1945 = -1;
+		this.field1948 = -1;
+		this.field1949 = -1;
+		ItemComposition var2 = WorldMapIcon_1.ItemDefinition_get(var1);
+		if (var2.method4741()) {
 			this.playerCompositionRecolorTo = new short[var2.recolorTo.length];
 			System.arraycopy(var2.recolorTo, 0, this.playerCompositionRecolorTo, 0, this.playerCompositionRecolorTo.length);
 		}
 
-		if (var2.method4673()) {
+		if (var2.method4789()) {
 			this.playerCompositionRetextureTo = new short[var2.retextureTo.length];
 			System.arraycopy(var2.retextureTo, 0, this.playerCompositionRetextureTo, 0, this.playerCompositionRetextureTo.length);
 		}
 
-		this.field1953 = var2.model;
+		this.field1950 = var2.model;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "4"
+		descriptor = "(I)Z",
+		garbageValue = "1811842349"
 	)
-	public boolean method4121() {
+	public boolean method4169() {
 		return this.playerCompositionRecolorTo != null;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-91"
+		descriptor = "(I)Z",
+		garbageValue = "-1986115917"
 	)
-	public boolean method4122() {
+	public boolean method4170() {
 		return this.playerCompositionRetextureTo != null;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1499502467"
-	)
-	boolean method4123(int var1) {
-		return var1 == 0 && this.field1950 != -1 || var1 == 1 && this.field1951 != -1;
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-1899550101"
-	)
-	boolean method4139(int var1) {
-		return var1 == 0 && this.field1944 != -1 || var1 == 1 && this.field1952 != -1;
-	}
-
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
+		descriptor = "(IB)Z",
 		garbageValue = "0"
 	)
-	int method4141(int var1) {
-		return var1 == 0 ? this.field1950 : this.field1951;
+	boolean method4176(int var1) {
+		return var1 == 0 && this.field1946 != -1 || var1 == 1 && this.field1945 != -1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Z",
+		garbageValue = "-13"
+	)
+	boolean method4168(int var1) {
+		return var1 == 0 && this.field1948 != -1 || var1 == 1 && this.field1949 != -1;
+	}
+
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(II)I",
-		garbageValue = "74780957"
+		garbageValue = "942772025"
 	)
-	int method4142(int var1) {
-		return var1 == 0 ? this.field1944 : this.field1952;
+	int method4177(int var1) {
+		return var1 == 0 ? this.field1946 : this.field1945;
 	}
 
-	@ObfuscatedName("pz")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "([BIB)V",
-		garbageValue = "-43"
+		descriptor = "(II)I",
+		garbageValue = "-1390174060"
 	)
-	static void method4126(byte[] var0, int var1) {
-		if (Client.randomDatData == null) {
-			Client.randomDatData = new byte[24];
-		}
-
-		class480.writeRandomDat(var0, var1, Client.randomDatData, 0, 24);
+	int method4173(int var1) {
+		return var1 == 0 ? this.field1948 : this.field1949;
 	}
 }

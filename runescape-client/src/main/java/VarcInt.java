@@ -3,25 +3,22 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hg")
+@ObfuscatedName("hs")
 @Implements("VarcInt")
 public class VarcInt extends DualNode {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "Lpe;"
 	)
 	@Export("VarcInt_archive")
 	public static AbstractArchive VarcInt_archive;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lmu;"
+		descriptor = "Lme;"
 	)
 	@Export("VarcInt_cached")
 	public static EvictingDualNodeHashTable VarcInt_cached;
-	@ObfuscatedName("pq")
-	@Export("regionMapArchives")
-	static byte[][] regionMapArchives;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@Export("persist")
 	public boolean persist;
 
@@ -33,103 +30,57 @@ public class VarcInt extends DualNode {
 		this.persist = false;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "1113234237"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "-1020246739"
 	)
-	public void method4207(Buffer var1) {
+	public void method4255(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
 				return;
 			}
 
-			this.method4208(var1, var2);
+			this.method4256(var1, var2);
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;IB)V",
-		garbageValue = "107"
+		descriptor = "(Lwj;IB)V",
+		garbageValue = "-4"
 	)
-	void method4208(Buffer var1, int var2) {
+	void method4256(Buffer var1, int var2) {
 		if (var2 == 2) {
 			this.persist = true;
 		}
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("mh")
 	@ObfuscatedSignature(
-		descriptor = "(III)Z",
-		garbageValue = "-945324004"
+		descriptor = "([Lok;Lok;ZI)V",
+		garbageValue = "-1264945129"
 	)
-	public static boolean method4212(int var0, int var1) {
-		return (var0 >> var1 & 1) != 0;
-	}
+	@Export("revalidateWidgetScroll")
+	static void revalidateWidgetScroll(Widget[] var0, Widget var1, boolean var2) {
+		int var3 = var1.scrollWidth != 0 ? var1.scrollWidth : var1.width;
+		int var4 = var1.scrollHeight != 0 ? var1.scrollHeight : var1.height * -171267385;
+		class391.resizeInterface(var0, var1.field4228, var1.field4195, var1.id, var1.childIndex * -2066937045, var3, var4, var2);
+		if (var1.children != null) {
+			class391.resizeInterface(var1.children, 0, var1.children.length - 1, var1.id, -1, var3, var4, var2);
+		}
 
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lhy;",
-		garbageValue = "-2105276794"
-	)
-	@Export("getEnum")
-	public static EnumComposition getEnum(int var0) {
-		EnumComposition var1 = (EnumComposition)EnumComposition.EnumDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = EnumComposition.EnumDefinition_archive.takeFile(8, var0);
-			var1 = new EnumComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+		if (var1.childIndex * -2066937045 == -1) {
+			InterfaceParent var5 = (InterfaceParent)Client.interfaceParents.get((long)var1.id);
+			if (var5 != null) {
+				AsyncRestClient.method175(var5.group, var3, var4, var2);
 			}
-
-			EnumComposition.EnumDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "895471414"
-	)
-	public static void method4206() {
-		ParamComposition.ParamDefinition_cached.clear();
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1558024971"
-	)
-	static void method4216(int var0) {
-		--class58.soundEffectCount;
-
-		for (int var1 = var0; var1 < class58.soundEffectCount; ++var1) {
-			class58.soundEffectIds[var1] = class58.soundEffectIds[var1 + 1];
-			class58.soundEffects[var1] = class58.soundEffects[var1 + 1];
-			class58.soundLocations[var1] = class58.soundLocations[var1 + 1];
-			class58.field834[var1] = class58.field834[var1 + 1];
-			class58.queuedSoundEffectLoops[var1] = class58.queuedSoundEffectLoops[var1 + 1];
-			class58.queuedSoundEffectDelays[var1] = class58.queuedSoundEffectDelays[var1 + 1];
-			class58.field829[var1] = class58.field829[var1 + 1];
-			class58.field835[var1] = class58.field835[var1 + 1];
 		}
 
-	}
-
-	@ObfuscatedName("no")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "749451288"
-	)
-	static final void method4215(int var0) {
-		if (UrlRequester.widgetDefinition.loadInterface(var0)) {
-			UserComparator4.drawModelComponents(UrlRequester.widgetDefinition.Widget_interfaceComponents[var0], 0, UrlRequester.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1);
+		if (var1.contentType == 1337) {
 		}
+
 	}
 }

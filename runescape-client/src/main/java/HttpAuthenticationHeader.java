@@ -3,28 +3,24 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("st")
+@ObfuscatedName("se")
 @Implements("HttpAuthenticationHeader")
 public class HttpAuthenticationHeader {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lst;"
+		descriptor = "Lse;"
 	)
 	@Export("BASIC")
 	static final HttpAuthenticationHeader BASIC;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lst;"
+		descriptor = "Lse;"
 	)
 	@Export("BEARER")
 	static final HttpAuthenticationHeader BEARER;
-	@ObfuscatedName("hx")
-	@ObfuscatedSignature(
-		descriptor = "Lgs;"
-	)
-	@Export("guestClanSettings")
-	static ClanSettings guestClanSettings;
-	@ObfuscatedName("at")
+	@ObfuscatedName("jr")
+	static String field5389;
+	@ObfuscatedName("ag")
 	@Export("key")
 	final String key;
 
@@ -37,13 +33,31 @@ public class HttpAuthenticationHeader {
 		this.key = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "1674575021"
+		garbageValue = "-1980511632"
 	)
 	@Export("getKey")
 	String getKey() {
 		return this.key;
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(I)[Lda;",
+		garbageValue = "-528507937"
+	)
+	static AttackOption[] method9826() {
+		return new AttackOption[]{AttackOption.field1210, AttackOption.field1211, AttackOption.AttackOption_hidden, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.AttackOption_alwaysRightClick};
+	}
+
+	@ObfuscatedName("ce")
+	@ObfuscatedSignature(
+		descriptor = "(ILcj;ZI)I",
+		garbageValue = "-859307764"
+	)
+	static int method9827(int var0, Script var1, boolean var2) {
+		return 2;
 	}
 }

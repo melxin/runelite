@@ -4,44 +4,43 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uu")
+@ObfuscatedName("uj")
 @Implements("DefaultsGroup")
 public class DefaultsGroup {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Luu;"
+		descriptor = "Luj;"
 	)
-	static final DefaultsGroup field5521;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Luu;"
-	)
-	static final DefaultsGroup field5522;
+	static final DefaultsGroup field5588;
 	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Luj;"
+	)
+	static final DefaultsGroup field5587;
+	@ObfuscatedName("aw")
+	static String[] field5589;
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1325038255
+		intValue = 366987827
 	)
 	@Export("group")
 	final int group;
 
 	static {
-		field5521 = new DefaultsGroup(1);
-		field5522 = new DefaultsGroup(3);
+		field5588 = new DefaultsGroup(1);
+		field5587 = new DefaultsGroup(3);
 	}
 
 	DefaultsGroup(int var1) {
 		this.group = var1;
 	}
 
-	@ObfuscatedName("ps")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lbk;B)V",
-		garbageValue = "28"
+		descriptor = "(Ltl;Lwe;I)V",
+		garbageValue = "-673397482"
 	)
-	@Export("updateLoginState")
-	static void updateLoginState(LoginState var0) {
-		if (class333.loginState != var0) {
-			class333.loginState = var0;
-		}
+	static void method10548(DynamicArray var0, class572 var1) {
+		PacketBufferNode.method7052(var0, var1, false);
 	}
 }

@@ -6,32 +6,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dm")
+@ObfuscatedName("dc")
 @Implements("Messages")
 public class Messages {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@Export("Messages_channels")
 	static final Map Messages_channels;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lqm;"
+		descriptor = "Lqw;"
 	)
 	@Export("Messages_hashTable")
 	static final IterableNodeHashTable Messages_hashTable;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lqg;"
+		descriptor = "Lqy;"
 	)
 	@Export("Messages_queue")
 	static final IterableDualNodeQueue Messages_queue;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1463291147
+		intValue = 1621305589
 	)
 	@Export("Messages_count")
 	static int Messages_count;
-	@ObfuscatedName("pj")
-	static int[] field1281;
 
 	static {
 		Messages_channels = new HashMap();

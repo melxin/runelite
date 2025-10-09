@@ -1,65 +1,55 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("pj")
-public enum class398 implements Enum {
-	@ObfuscatedName("af")
+public class class398 {
+	@ObfuscatedName("nk")
 	@ObfuscatedSignature(
-		descriptor = "Lpj;"
+		descriptor = "([Lok;II)V",
+		garbageValue = "-1197776074"
 	)
-	field4840(0, 0),
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lpj;"
-	)
-	field4839(1, 1),
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lpj;"
-	)
-	field4844(2, 2),
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lpj;"
-	)
-	field4841(3, 3),
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lpj;"
-	)
-	field4838(-1, -1);
+	@Export("runComponentCloseListeners")
+	static final void runComponentCloseListeners(Widget[] var0, int var1) {
+		for (int var2 = 0; var2 < var0.length; ++var2) {
+			Widget var3 = var0[var2];
+			if (var3 != null) {
+				if (var3.type == 0) {
+					if (var3.children != null) {
+						runComponentCloseListeners(var3.children, var1);
+					}
 
-	@ObfuscatedName("jq")
-	@ObfuscatedSignature(
-		descriptor = "Lcn;"
-	)
-	@Export("mouseRecorder")
-	static MouseRecorder mouseRecorder;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = -2010354431
-	)
-	final int field4842;
-	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		intValue = 1714261557
-	)
-	final int field4843;
+					if (var3.childIndex * -2066937045 == -1) {
+						InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
+						if (var4 != null) {
+							HttpResponse.runIntfCloseListeners(var4.group, var1);
+						}
+					}
+				}
 
-	class398(int var3, int var4) {
-		this.field4842 = var3;
-		this.field4843 = var4;
-	}
+				ScriptEvent var5;
+				if (var1 == 0 && var3.onDialogAbort != null) {
+					var5 = new ScriptEvent();
+					var5.widget = var3;
+					var5.args = var3.onDialogAbort;
+					class332.runScriptEvent(var5);
+				}
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1935172756"
-	)
-	@Export("rsOrdinal")
-	public int rsOrdinal() {
-		return this.field4843;
+				if (var1 == 1 && var3.onSubChange != null) {
+					if (var3.childIndex * -2066937045 >= 0) {
+						Widget var6 = class35.widgetDefinition.method7496(var3.id);
+						if (var6 == null || var6.children == null || var3.childIndex * -2066937045 >= var6.children.length || var3 != var6.children[var3.childIndex * -2066937045]) {
+							continue;
+						}
+					}
+
+					var5 = new ScriptEvent();
+					var5.widget = var3;
+					var5.args = var3.onSubChange;
+					class332.runScriptEvent(var5);
+				}
+			}
+		}
+
 	}
 }

@@ -3,83 +3,84 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("jr")
+@ObfuscatedName("jk")
 @Implements("WallDecoration")
 public final class WallDecoration {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Liz;"
+		descriptor = "Liy;"
 	)
 	@Export("renderable1")
 	public Renderable renderable1;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Liz;"
+		descriptor = "Liy;"
 	)
 	@Export("renderable2")
 	public Renderable renderable2;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		longValue = 1018809780381384529L
+		longValue = 5377812239843171079L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1386950097
+		intValue = 290260849
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1302913785
+		intValue = 296287657
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1143420041
+		intValue = -429627473
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -310888395
+		intValue = 272329847
 	)
 	@Export("orientation")
 	int orientation;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -264803905
+		intValue = 466978823
 	)
 	@Export("orientation2")
 	int orientation2;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1356146427
+		intValue = -490026635
 	)
 	@Export("yOffset")
 	int yOffset;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 15695633
+		intValue = -309778379
 	)
-	int field3044;
-	@ObfuscatedName("ai")
+	int field3046;
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 512076447
+		intValue = -1427268267
 	)
 	@Export("xOffset")
 	int xOffset;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -1572389463
+		intValue = -1074292649
 	)
-	int field3035;
-	@ObfuscatedName("am")
+	int field3044;
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1154018501
+		intValue = 1633565455
 	)
 	@Export("flags")
 	int flags;
@@ -89,14 +90,14 @@ public final class WallDecoration {
 		this.flags = 0;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "1304137704"
+		descriptor = "(IIB)V",
+		garbageValue = "73"
 	)
-	void method5789(int var1, int var2) {
+	void method5847(int var1, int var2) {
 		this.yOffset = var1;
-		this.field3044 = var2;
+		this.field3046 = var2;
 		switch(this.orientation) {
 		case 1:
 			++var1;
@@ -117,85 +118,20 @@ public final class WallDecoration {
 		}
 
 		this.xOffset = var1;
-		this.field3035 = var2;
+		this.field3044 = var2;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("br")
 	@ObfuscatedSignature(
-		descriptor = "(IZI)Ljava/lang/String;",
-		garbageValue = "1586972230"
+		descriptor = "(ILcj;ZB)I",
+		garbageValue = "12"
 	)
-	@Export("intToString")
-	public static String intToString(int var0, boolean var1) {
-		if (var1 && var0 >= 0) {
-			int var3 = var0;
-			String var2;
-			if (var1 && var0 >= 0) {
-				int var4 = 2;
-
-				for (int var5 = var0 / 10; var5 != 0; ++var4) {
-					var5 /= 10;
-				}
-
-				char[] var6 = new char[var4];
-				var6[0] = '+';
-
-				for (int var7 = var4 - 1; var7 > 0; --var7) {
-					int var8 = var3;
-					var3 /= 10;
-					int var9 = var8 - var3 * 10;
-					if (var9 >= 10) {
-						var6[var7] = (char)(var9 + 87);
-					} else {
-						var6[var7] = (char)(var9 + 48);
-					}
-				}
-
-				var2 = new String(var6);
-			} else {
-				var2 = Integer.toString(var0, 10);
-			}
-
-			return var2;
+	static int method5849(int var0, Script var1, boolean var2) {
+		if (var0 == ScriptOpcodes.LOGOUT) {
+			Client.logoutTimer = 250;
+			return 1;
 		} else {
-			return Integer.toString(var0);
+			return 2;
 		}
-	}
-
-	@ObfuscatedName("mh")
-	@ObfuscatedSignature(
-		descriptor = "(Loi;III)V",
-		garbageValue = "-1761196560"
-	)
-	@Export("alignWidgetPosition")
-	static void alignWidgetPosition(Widget var0, int var1, int var2) {
-		if (var0.xAlignment == 0) {
-			var0.x = var0.rawX;
-		} else if (var0.xAlignment == 1) {
-			var0.x = (var1 - var0.width * 469894397) / 2 + var0.rawX;
-		} else if (var0.xAlignment == 2) {
-			var0.x = var1 - var0.width * 469894397 - var0.rawX;
-		} else if (var0.xAlignment == 3) {
-			var0.x = var0.rawX * var1 >> 14;
-		} else if (var0.xAlignment == 4) {
-			var0.x = (var0.rawX * var1 >> 14) + (var1 - var0.width * 469894397) / 2;
-		} else {
-			var0.x = var1 - var0.width * 469894397 - (var0.rawX * var1 >> 14);
-		}
-
-		if (var0.yAlignment == 0) {
-			var0.y = var0.rawY;
-		} else if (var0.yAlignment == 1) {
-			var0.y = (var2 - var0.height * 1156037777) / 2 + var0.rawY;
-		} else if (var0.yAlignment == 2) {
-			var0.y = var2 - var0.height * 1156037777 - var0.rawY;
-		} else if (var0.yAlignment == 3) {
-			var0.y = var2 * var0.rawY >> 14;
-		} else if (var0.yAlignment == 4) {
-			var0.y = (var2 - var0.height * 1156037777) / 2 + (var2 * var0.rawY >> 14);
-		} else {
-			var0.y = var2 - var0.height * 1156037777 - (var2 * var0.rawY >> 14);
-		}
-
 	}
 }

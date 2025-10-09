@@ -1,138 +1,207 @@
+import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jk")
+@ObfuscatedName("jp")
 @Implements("Occluder")
 public final class Occluder {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ip")
+	@ObfuscatedSignature(
+		descriptor = "Lqu;"
+	)
+	public static class421 field2830;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1942311071
+		intValue = -15866743
 	)
 	@Export("minTileX")
 	int minTileX;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -803319375
+		intValue = 1232613773
 	)
 	@Export("maxTileX")
 	int maxTileX;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1030563503
+		intValue = -466413845
 	)
 	@Export("minTileY")
 	int minTileY;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 2133961185
+		intValue = 808093151
 	)
 	@Export("maxTileY")
 	int maxTileY;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 753330381
+		intValue = 1413146603
 	)
 	@Export("type")
 	int type;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1134792567
+		intValue = 1995887661
 	)
 	@Export("minX")
 	int minX;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 344670591
+		intValue = -1153400869
 	)
 	@Export("maxX")
 	int maxX;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = 1813630749
+		intValue = 1947947995
 	)
 	@Export("minZ")
 	int minZ;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -968611377
+		intValue = 71627173
 	)
 	@Export("maxZ")
 	int maxZ;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 754158615
+		intValue = 1260573221
 	)
 	@Export("minY")
 	int minY;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1259682761
+		intValue = 974877055
 	)
 	@Export("maxY")
 	int maxY;
-	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = -1586443513
-	)
-	int field2826;
-	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = 1510671523
-	)
-	int field2827;
-	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = 487184861
-	)
-	int field2828;
-	@ObfuscatedName("ar")
-	@ObfuscatedGetter(
-		intValue = -2084873843
-	)
-	int field2817;
-	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = 1125511533
-	)
-	int field2833;
-	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -736166349
-	)
-	int field2831;
 	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -1715814317
+		intValue = -1770007129
 	)
-	int field2832;
+	int field2823;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -430076585
+	)
+	int field2812;
+	@ObfuscatedName("as")
+	@ObfuscatedGetter(
+		intValue = -344663637
+	)
+	int field2825;
+	@ObfuscatedName("ar")
+	@ObfuscatedGetter(
+		intValue = -824580017
+	)
+	int field2820;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = -313526351
+	)
+	int field2827;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -1138219283
+	)
+	int field2828;
+	@ObfuscatedName("ak")
+	@ObfuscatedGetter(
+		intValue = 769687355
+	)
+	int field2829;
 
 	Occluder() {
 	}
 
-	@ObfuscatedName("kh")
-	@ObfuscatedSignature(
-		descriptor = "(Ldr;IIIIII)V",
-		garbageValue = "752206861"
-	)
-	static void method5384(WorldView var0, int var1, int var2, int var3, int var4, int var5) {
-		NodeDeque var6 = var0.groundItems[var1][var2][var3];
-		if (var6 != null) {
-			for (TileItem var7 = (TileItem)var6.last(); var7 != null; var7 = (TileItem)var6.previous()) {
-				if ((var4 & 32767) == var7.id && var5 == var7.quantity) {
-					var7.remove();
-					break;
-				}
-			}
-
-			if (var6.last() == null) {
-				var0.groundItems[var1][var2][var3] = null;
-			}
-
-			ObjectSound.updateItemPile2(var0, var1, var2, var3);
+	@ObfuscatedName("at")
+	static final void method5461(long var0) {
+		try {
+			Thread.sleep(var0);
+		} catch (InterruptedException var3) {
 		}
 
+	}
+
+	@ObfuscatedName("hh")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "-73"
+	)
+	static void method5462() {
+		if (ModeWhere.varcs != null && ModeWhere.varcs.hasUnwrittenChanges()) {
+			ModeWhere.varcs.write();
+		}
+
+		ServerPacket.method7053();
+		AsyncRestClient.method174();
+		if (MidiRequest.mouseRecorder != null) {
+			MidiRequest.mouseRecorder.isRunning = false;
+		}
+
+		MidiRequest.mouseRecorder = null;
+		Client.packetWriter.close();
+		if (GameEngine.taskHandler != null) {
+			try {
+				GameEngine.taskHandler.close();
+			} catch (Exception var2) {
+			}
+		}
+
+		GameEngine.taskHandler = null;
+		class562.logOut();
+		NPCComposition.method4448();
+		Client.worldViewManager.clear();
+		Client.projectiles.clear();
+		class50.worldMap = null;
+		Clock.method6092(0, 0);
+		WorldMapSectionType.method6800();
+		Client.playingJingle = false;
+		NpcOverrides.method4379();
+		if (class135.pcmPlayer1 != null) {
+			class135.pcmPlayer1.shutdown();
+		}
+
+		BufferedNetSocket.field5515.method8497();
+		class62.method2163();
+		if (PcmPlayer.urlRequester != null) {
+			PcmPlayer.urlRequester.close();
+		}
+
+		Projection.method5508();
+		JagexCache.JagexCache_dat2File = null;
+		JagexCache.JagexCache_idx255File = null;
+		JagexCache.JagexCache_idxFiles = null;
+		Calendar.method8180();
+		class479.masterDisk = null;
+		Client.archiveLoaders.clear();
+		Client.field520 = 0;
+		BufferedNetSocket.field5515 = new JagNetThread();
+		PcmPlayer.urlRequester = new SecureUrlRequester(class32.client.https, 234);
+
+		try {
+			ItemLayer.method4893("oldschool", IntProjection.field2650, class69.field958.name, 0, 25);
+		} catch (IOException var1) {
+			throw new RuntimeException(var1);
+		}
+
+		class479.masterDisk = new ArchiveDisk(255, JagexCache.JagexCache_dat2File, JagexCache.JagexCache_idx255File, 750000);
+		GameEngine.taskHandler = new TaskHandler();
+		class32.client.method519();
+		RestClientThreadFactory.method205(class69.field953);
+		class135.updateGameState(0);
+	}
+
+	@ObfuscatedName("hq")
+	@ObfuscatedSignature(
+		descriptor = "(II)I",
+		garbageValue = "1751268999"
+	)
+	static int method5463(int var0) {
+		return var0 * 3 + 600;
 	}
 }

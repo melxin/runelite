@@ -4,41 +4,35 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ch")
+@ObfuscatedName("cm")
 @Implements("HealthBarUpdate")
 public class HealthBarUpdate extends Node {
-	@ObfuscatedName("bq")
+	@ObfuscatedName("ix")
 	@ObfuscatedGetter(
-		intValue = 389094465
+		intValue = -1977504741
 	)
-	static int field1113;
-	@ObfuscatedName("gw")
-	@ObfuscatedSignature(
-		descriptor = "Lcv;"
-	)
-	@Export("localPlayer")
-	static Player localPlayer;
-	@ObfuscatedName("af")
+	static int field1098;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 876498697
+		intValue = -1925944051
 	)
 	@Export("cycle")
 	int cycle;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1520805869
+		intValue = 1984338053
 	)
 	@Export("health")
 	int health;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1702229519
+		intValue = 1764641457
 	)
 	@Export("health2")
 	int health2;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1463772141
+		intValue = 1245082597
 	)
 	@Export("cycleOffset")
 	int cycleOffset;
@@ -50,10 +44,10 @@ public class HealthBarUpdate extends Node {
 		this.cycleOffset = var4;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)V",
-		garbageValue = "2"
+		descriptor = "(IIIII)V",
+		garbageValue = "-618496349"
 	)
 	@Export("set")
 	void set(int var1, int var2, int var3, int var4) {

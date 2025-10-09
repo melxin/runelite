@@ -5,96 +5,95 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dz")
+@ObfuscatedName("ds")
 @Implements("PacketWriter")
 public class PacketWriter {
-	@ObfuscatedName("jk")
+	@ObfuscatedName("km")
 	@ObfuscatedSignature(
-		descriptor = "Lva;"
+		descriptor = "Lpg;"
 	)
-	@Export("loginType")
-	static LoginType loginType;
-	@ObfuscatedName("af")
+	static Archive field1291;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lqn;"
+		descriptor = "Lqh;"
 	)
 	@Export("packetBufferNodes")
 	IterableNodeDeque packetBufferNodes;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -239473435
+		intValue = -2098708527
 	)
 	@Export("bufferSize")
 	int bufferSize;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lwb;"
+		descriptor = "Lwj;"
 	)
 	@Export("buffer")
 	Buffer buffer;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lxj;"
+		descriptor = "Lxo;"
 	)
 	@Export("isaacCipher")
 	public IsaacCipher isaacCipher;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lwf;"
+		descriptor = "Lwn;"
 	)
 	@Export("packetBuffer")
 	PacketBuffer packetBuffer;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lmh;"
+		descriptor = "Lmw;"
 	)
 	@Export("serverPacket")
 	ServerPacket serverPacket;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 745654293
+		intValue = 1910035737
 	)
 	@Export("serverPacketLength")
 	int serverPacketLength;
-	@ObfuscatedName("as")
-	boolean field1296;
-	@ObfuscatedName("al")
+	@ObfuscatedName("aq")
+	boolean field1298;
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 2129789557
+		intValue = 1299076225
 	)
-	int field1297;
-	@ObfuscatedName("au")
+	int field1294;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -841317061
+		intValue = -1310031987
 	)
 	@Export("pendingWrites")
 	int pendingWrites;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1330573823
+		intValue = -70182873
 	)
-	int field1289;
-	@ObfuscatedName("aa")
+	int field1301;
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = 1710742239
+		intValue = -1559810541
 	)
-	int field1300;
-	@ObfuscatedName("am")
+	int field1302;
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lmh;"
+		descriptor = "Lmw;"
 	)
-	ServerPacket field1295;
-	@ObfuscatedName("an")
+	ServerPacket field1303;
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lmh;"
+		descriptor = "Lmw;"
 	)
-	ServerPacket field1302;
+	ServerPacket field1304;
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lmh;"
+		descriptor = "Lmw;"
 	)
-	ServerPacket field1306;
-	@ObfuscatedName("ae")
+	ServerPacket field1305;
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "Ltf;"
 	)
@@ -108,16 +107,16 @@ public class PacketWriter {
 		this.packetBuffer = new PacketBuffer(40000);
 		this.serverPacket = null;
 		this.serverPacketLength = 0;
-		this.field1296 = true;
-		this.field1297 = 0;
+		this.field1298 = true;
+		this.field1294 = 0;
 		this.pendingWrites = 0;
-		this.field1289 = 0;
+		this.field1301 = 0;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1156810850"
+		descriptor = "(B)V",
+		garbageValue = "-41"
 	)
 	@Export("clearBuffer")
 	final void clearBuffer() {
@@ -125,10 +124,10 @@ public class PacketWriter {
 		this.bufferSize = 0;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "16"
+		garbageValue = "-59"
 	)
 	@Export("flush")
 	final void flush() throws IOException {
@@ -137,8 +136,8 @@ public class PacketWriter {
 
 			while (true) {
 				PacketBufferNode var1 = (PacketBufferNode)this.packetBufferNodes.last();
-				if (var1 == null || var1.index > this.buffer.array.length - this.buffer.offset * 1216585693) {
-					this.socket.write(this.buffer.array, 0, this.buffer.offset * 1216585693);
+				if (var1 == null || var1.index > this.buffer.array.length - this.buffer.offset) {
+					this.socket.write(this.buffer.array, 0, this.buffer.offset);
 					this.pendingWrites = 0;
 					break;
 				}
@@ -153,23 +152,23 @@ public class PacketWriter {
 
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lmy;S)V",
-		garbageValue = "15888"
+		descriptor = "(Lmr;I)V",
+		garbageValue = "-1261823635"
 	)
 	@Export("addNode")
 	public final void addNode(PacketBufferNode var1) {
 		this.packetBufferNodes.addFirst(var1);
-		var1.index = var1.packetBuffer.offset * 1216585693;
+		var1.index = var1.packetBuffer.offset;
 		var1.packetBuffer.offset = 0;
 		this.bufferSize += var1.index;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(B)V",
-		garbageValue = "-1"
+		garbageValue = "-55"
 	)
 	@Export("close")
 	void close() {
@@ -180,55 +179,56 @@ public class PacketWriter {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "933471756"
+		garbageValue = "977136793"
 	)
 	@Export("removeSocket")
 	void removeSocket() {
 		this.socket = null;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltf;",
-		garbageValue = "-482460285"
+		descriptor = "(B)Ltf;",
+		garbageValue = "-99"
 	)
 	@Export("getSocket")
 	AbstractSocket getSocket() {
 		return this.socket;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ltf;B)V",
-		garbageValue = "36"
+		descriptor = "(Ltf;I)V",
+		garbageValue = "-646554309"
 	)
 	@Export("setSocket")
 	void setSocket(AbstractSocket var1) {
 		this.socket = var1;
 	}
 
-	@ObfuscatedName("hf")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1875660210"
+		descriptor = "(II)Liq;",
+		garbageValue = "1412262900"
 	)
-	static boolean method2956() {
-		if (Client.archiveLoaders != null && Client.archiveLoadersDone < Client.archiveLoaders.size()) {
-			while (Client.archiveLoadersDone < Client.archiveLoaders.size()) {
-				ArchiveLoader var0 = (ArchiveLoader)Client.archiveLoaders.get(Client.archiveLoadersDone);
-				if (!var0.isLoaded()) {
-					return false;
-				}
-
-				++Client.archiveLoadersDone;
+	@Export("StructDefinition_getStructDefinition")
+	public static StructComposition StructDefinition_getStructDefinition(int var0) {
+		StructComposition var1 = (StructComposition)StructComposition.StructDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = StructComposition.StructDefinition_archive.takeFile(34, var0);
+			var1 = new StructComposition();
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
 			}
 
-			return true;
-		} else {
-			return true;
+			var1.postDecode();
+			StructComposition.StructDefinition_cached.put(var1, (long)var0);
+			return var1;
 		}
 	}
 }

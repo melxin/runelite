@@ -3,41 +3,39 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-@ObfuscatedName("hp")
+@ObfuscatedName("hv")
 @Implements("HorizontalAlignment")
 public enum HorizontalAlignment implements Enum {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lhp;"
+		descriptor = "Lhv;"
 	)
-	field2089(2, 0),
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lhp;"
-	)
-	@Export("HorizontalAlignment_centered")
-	HorizontalAlignment_centered(0, 1),
+	field2076(1, 0),
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lhp;"
+		descriptor = "Lhv;"
 	)
-	field2088(1, 2);
-
-	@ObfuscatedName("ky")
+	@Export("HorizontalAlignment_centered")
+	HorizontalAlignment_centered(2, 1),
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lpw;"
+		descriptor = "Lhv;"
 	)
-	static Archive field2091;
-	@ObfuscatedName("ac")
+	field2072(0, 2);
+
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1646399517
+		intValue = 346876309
 	)
 	@Export("value")
 	public final int value;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 173630741
+		intValue = 432202813
 	)
 	@Export("id")
 	final int id;
@@ -47,105 +45,110 @@ public enum HorizontalAlignment implements Enum {
 		this.id = var4;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1935172756"
+		garbageValue = "-1012656358"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1168196192"
+		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;I)[F",
+		garbageValue = "83049674"
 	)
-	public static void method4316() {
-		FileSystem.FileSystem_cacheFiles.clear();
-	}
+	static float[] method4374(JSONObject var0, String var1) throws JSONException {
+		float[] var2 = new float[4];
 
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "([BIIB)Z",
-		garbageValue = "34"
-	)
-	static final boolean method4320(byte[] var0, int var1, int var2) {
-		boolean var3 = true;
-		Buffer var4 = new Buffer(var0);
-		int var5 = -1;
-
-		label72:
-		while (true) {
-			int var6 = var4.readIncrSmallSmart();
-			if (var6 == 0) {
-				return var3;
-			}
-
-			var5 += var6;
-			int var7 = 0;
-			boolean var8 = false;
-
-			while (true) {
-				int var9;
-				while (!var8) {
-					var9 = var4.readUShortSmart();
-					if (var9 == 0) {
-						continue label72;
-					}
-
-					var7 += var9 - 1;
-					int var10 = var7 & 63;
-					int var11 = var7 >> 6 & 63;
-					int var12 = var4.readUnsignedByte() >> 2;
-					int var13 = var11 + var1;
-					int var14 = var10 + var2;
-					if (var13 > 0 && var14 > 0 && var13 < 103 && var14 < 103) {
-						ObjectComposition var15 = ModeWhere.getObjectDefinition(var5);
-						if (var12 != 22 || !Client.isLowDetail || var15.int1 != 0 || var15.interactType == 1 || var15.boolean2) {
-							if (!var15.needsModelFiles()) {
-								++Client.field329;
-								var3 = false;
-							}
-
-							var8 = true;
-						}
-					}
-				}
-
-				var9 = var4.readUShortSmart();
-				if (var9 == 0) {
-					break;
-				}
-
-				var4.readUnsignedByte();
-			}
+		try {
+			JSONArray var3 = var0.getJSONArray(var1);
+			var2[0] = (float)var3.optDouble(0, 0.0D);
+			var2[1] = (float)var3.optDouble(1, 0.0D);
+			var2[2] = (float)var3.optDouble(2, 1.0D);
+			var2[3] = (float)var3.optDouble(3, 1.0D);
+		} catch (JSONException var4) {
+			var2[0] = 0.0F;
+			var2[1] = 0.0F;
+			var2[2] = 1.0F;
+			var2[3] = 1.0F;
 		}
+
+		return var2;
 	}
 
-	@ObfuscatedName("lg")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ldt;B)V",
-		garbageValue = "52"
+		descriptor = "(Lmk;Lxo;I)Lmr;",
+		garbageValue = "1607863478"
 	)
-	static void method4319(NPC var0) {
-		var0.size = var0.definition.size * 64;
-		var0.field1099 = var0.definition.rotation;
-		var0.walkSequence = var0.definition.walkSequence;
-		var0.walkBackSequence = var0.definition.walkBackSequence;
-		var0.walkLeftSequence = var0.definition.walkLeftSequence;
-		var0.walkRightSequence = var0.definition.walkRightSequence;
-		var0.idleSequence = var0.definition.idleSequence;
-		var0.turnLeftSequence = var0.definition.turnLeftSequence;
-		var0.turnRightSequence = var0.definition.turnRightSequence;
-		var0.runSequence = var0.definition.field2121;
-		var0.field1068 = var0.definition.field2133;
-		var0.field1065 = var0.definition.field2155;
-		var0.field1090 = var0.definition.field2124;
-		var0.field1071 = var0.definition.field2125;
-		var0.field1069 = var0.definition.field2126;
-		var0.field1061 = var0.definition.field2115;
-		var0.field1105 = var0.definition.field2122;
+	@Export("getPacketBufferNode")
+	public static PacketBufferNode getPacketBufferNode(ClientPacket var0, IsaacCipher var1) {
+		PacketBufferNode var2;
+		if (PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0) {
+			var2 = new PacketBufferNode();
+		} else {
+			var2 = PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
+		}
+
+		var2.clientPacket = var0;
+		var2.clientPacketLength = var0.length;
+		if (var2.clientPacketLength == -1) {
+			var2.packetBuffer = new PacketBuffer(260);
+		} else if (var2.clientPacketLength == -2) {
+			var2.packetBuffer = new PacketBuffer(10000);
+		} else if (var2.clientPacketLength <= 18) {
+			var2.packetBuffer = new PacketBuffer(20);
+		} else if (var2.clientPacketLength <= 98) {
+			var2.packetBuffer = new PacketBuffer(100);
+		} else {
+			var2.packetBuffer = new PacketBuffer(260);
+		}
+
+		var2.packetBuffer.setIsaacCipher(var1);
+		var2.packetBuffer.writeByteIsaac(var2.clientPacket.id);
+		var2.index = 0;
+		return var2;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(CI)Z",
+		garbageValue = "-623118110"
+	)
+	static final boolean method4376(char var0) {
+		return var0 == 160 || var0 == ' ' || var0 == '_' || var0 == '-';
+	}
+
+	@ObfuscatedName("on")
+	@ObfuscatedSignature(
+		descriptor = "(Ldm;IIIIILxl;Lnt;I)V",
+		garbageValue = "2000304466"
+	)
+	static final void method4377(WorldView var0, int var1, int var2, int var3, int var4, int var5, SpritePixels var6, SpriteMask var7) {
+		class450 var8 = Varcs.method3022(var0, var1, var2);
+		var1 = (int)var8.field5216;
+		var2 = (int)var8.field5219;
+		var8.method9065();
+		int var9 = var1 / 32 - Client.field484 / 32;
+		int var10 = var2 / 32 - Client.field377 / 32;
+		int var11 = var9 * var9 + var10 * var10;
+		if (var11 > 4225 && var11 < 90000) {
+			int var12 = Rasterizer3D.Rasterizer3D_sine[var5];
+			int var13 = Rasterizer3D.Rasterizer3D_cosine[var5];
+			int var14 = var13 * var9 + var12 * var10 >> 16;
+			int var15 = var13 * var10 - var12 * var9 >> 16;
+			double var16 = Math.atan2((double)var14, (double)var15);
+			int var18 = var7.width / 2 - 25;
+			int var19 = (int)(Math.sin(var16) * (double)var18);
+			int var20 = (int)(Math.cos(var16) * (double)var18);
+			byte var21 = 20;
+			class445.redHintArrowSprite.method11965(var19 + (var3 + var7.width / 2 - var21 / 2), var7.height / 2 + var4 - var21 / 2 - var20 - 10, var21, var21, 15, 15, var16, 256);
+		} else {
+			class445.method8994(var3, var4, var9, var10, var5, var6, var7);
+		}
+
 	}
 }

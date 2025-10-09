@@ -4,128 +4,128 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ou")
+@ObfuscatedName("ov")
 @Implements("WorldMapDecorationType")
 public enum WorldMapDecorationType implements Enum {
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4365(0, 0),
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4342(1, 0),
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4345(2, 0),
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4355(3, 0),
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4360(9, 2),
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4348(4, 1),
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4363(5, 1),
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4347(6, 1),
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4349(7, 1),
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4350(8, 1),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4351(12, 2),
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4352(13, 2),
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4341(14, 2),
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4354(15, 2),
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4343(16, 2),
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4356(17, 2),
-	@ObfuscatedName("ay")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4357(18, 2),
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4358(19, 2),
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4359(20, 2),
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4346(21, 2),
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lou;"
-	)
-	field4361(10, 2),
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lou;"
+		descriptor = "Lov;"
 	)
-	field4362(11, 2),
+	field4366(0, 0),
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4354(1, 0),
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4355(2, 0),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4368(3, 0),
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4357(9, 2),
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4358(4, 1),
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4359(5, 1),
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4353(6, 1),
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4361(7, 1),
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4356(8, 1),
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4363(12, 2),
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4362(13, 2),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4365(14, 2),
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4370(15, 2),
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4367(16, 2),
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4373(17, 2),
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4364(18, 2),
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4360(19, 2),
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4371(20, 2),
 	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lou;"
+		descriptor = "Lov;"
 	)
-	field4344(22, 3);
+	field4372(21, 2),
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4369(10, 2),
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4374(11, 2),
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Lov;"
+	)
+	field4375(22, 3);
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = -93451035
+		intValue = 398754503
 	)
 	@Export("id")
 	public final int id;
@@ -138,22 +138,13 @@ public enum WorldMapDecorationType implements Enum {
 		this.id = var3;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1935172756"
+		garbageValue = "-1012656358"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
-	}
-
-	@ObfuscatedName("pd")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "66"
-	)
-	static void method8170(int var0) {
-		Client.oculusOrbState = var0;
 	}
 }

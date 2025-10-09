@@ -1,49 +1,42 @@
-import java.util.concurrent.ThreadPoolExecutor;
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("db")
-final class class86 implements class357 {
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = 436040985
-	)
-	static int field1230;
-	@ObfuscatedName("aw")
-	static ThreadPoolExecutor field1231;
-	@ObfuscatedName("hl")
-	@ObfuscatedSignature(
-		descriptor = "Lgm;"
-	)
-	@Export("guestClanChannel")
-	static ClanChannel guestClanChannel;
+@ObfuscatedName("df")
+final class class86 implements class356 {
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Loi;"
+		descriptor = "Lok;"
 	)
 	final Widget val$item;
 
 	@ObfuscatedSignature(
-		descriptor = "(Loi;)V"
+		descriptor = "(Lok;)V"
 	)
 	class86(Widget var1) {
 		this.val$item = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-8197"
+		descriptor = "(I)V",
+		garbageValue = "603869602"
 	)
-	public void vmethod7474() {
-		if (this.val$item.method7974().field4069 != null) {
+	public void vmethod7479() {
+		if (this.val$item.method7964().field4091 != null) {
 			ScriptEvent var1 = new ScriptEvent();
-			var1.method2136(this.val$item);
-			var1.setArgs(this.val$item.method7974().field4069);
-			class161.method3912().addFirst(var1);
+			var1.method2172(this.val$item);
+			var1.setArgs(this.val$item.method7964().field4091);
+			class215.method4888().addFirst(var1);
 		}
 
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(I)[Ltj;",
+		garbageValue = "1387764070"
+	)
+	public static class514[] method2928() {
+		return new class514[]{class514.field5546, class514.field5547, class514.field5544, class514.field5545};
 	}
 }

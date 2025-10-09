@@ -1,63 +1,67 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gx")
-public class class165 extends class151 {
-	@ObfuscatedName("vb")
+@ObfuscatedName("gz")
+public class class165 extends class150 {
+	@ObfuscatedName("ao")
+	@Export("Tiles_lightness")
+	static int[] Tiles_lightness;
+	@ObfuscatedName("bk")
 	@ObfuscatedGetter(
-		intValue = 29702835
+		intValue = -1084155925
 	)
 	static int field1886;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1299114377
+		longValue = 9951221469293291L
 	)
-	int field1885;
+	long field1889;
+	@ObfuscatedName("at")
+	String field1885;
+	@ObfuscatedName("ag")
+	@ObfuscatedGetter(
+		intValue = 392074717
+	)
+	int field1887;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lfh;"
 	)
-	final class154 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lfh;)V"
 	)
-	class165(class154 var1) {
+	class165(class153 var1) {
 		this.this$0 = var1;
-		this.field1885 = -1;
+		this.field1889 = -1L;
+		this.field1885 = null;
+		this.field1887 = 0;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-2943315"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1804820754"
 	)
-	void vmethod4111(Buffer var1) {
-		this.field1885 = var1.readUnsignedShort();
+	void vmethod4162(Buffer var1) {
+		if (var1.readUnsignedByte() != 255) {
+			--var1.offset;
+			this.field1889 = var1.readLong();
+		}
+
+		this.field1885 = var1.readStringCp1252NullTerminatedOrNull();
+		this.field1887 = var1.readUnsignedShort();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lgs;I)V",
-		garbageValue = "2108880901"
+		descriptor = "(Lgh;I)V",
+		garbageValue = "1850606911"
 	)
-	void vmethod4112(ClanSettings var1) {
-		var1.method3925(this.field1885);
-	}
-
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "40"
-	)
-	public static int method4019(int var0) {
-		--var0;
-		var0 |= var0 >>> 1;
-		var0 |= var0 >>> 2;
-		var0 |= var0 >>> 4;
-		var0 |= var0 >>> 8;
-		var0 |= var0 >>> 16;
-		return var0 + 1;
+	void vmethod4163(ClanSettings var1) {
+		var1.method3987(this.field1889, this.field1885, this.field1887);
 	}
 }

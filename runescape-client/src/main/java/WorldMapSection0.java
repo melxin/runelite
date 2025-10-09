@@ -1,99 +1,98 @@
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Iterator;
-import java.util.Random;
+import java.text.ParseException;
+import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lx")
+@ObfuscatedName("lk")
 @Implements("WorldMapSection0")
 public class WorldMapSection0 implements WorldMapSection {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ax")
+	@Export("fontHelvetica13")
+	static java.awt.Font fontHelvetica13;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1120940959
+		intValue = 835026009
 	)
 	@Export("oldZ")
 	int oldZ;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1967860837
+		intValue = 8205355
 	)
 	@Export("newZ")
 	int newZ;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1973728303
+		intValue = 70054765
 	)
 	@Export("oldX")
 	int oldX;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1261586451
+		intValue = 150218947
 	)
 	@Export("oldY")
 	int oldY;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 462359135
+		intValue = 545353129
 	)
 	@Export("newX")
 	int newX;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 1027011727
+		intValue = 1219878721
 	)
 	@Export("newY")
 	int newY;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1727492911
+		intValue = -707073553
 	)
 	@Export("oldChunkXLow")
 	int oldChunkXLow;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1902155725
+		intValue = 1022973279
 	)
 	@Export("oldChunkYLow")
 	int oldChunkYLow;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -361083091
+		intValue = 181015963
 	)
 	@Export("oldChunkXHigh")
 	int oldChunkXHigh;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -352972105
+		intValue = -1354720123
 	)
 	@Export("oldChunkYHigh")
 	int oldChunkYHigh;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -1033187523
+		intValue = 2056337049
 	)
 	@Export("newChunkXLow")
 	int newChunkXLow;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -1707349133
+		intValue = 1748002321
 	)
 	@Export("newChunkYLow")
 	int newChunkYLow;
-	@ObfuscatedName("am")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 97520505
+		intValue = 914272673
 	)
 	@Export("newChunkXHigh")
 	int newChunkXHigh;
-	@ObfuscatedName("an")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -195734985
+		intValue = -373254213
 	)
 	@Export("newChunkYHigh")
 	int newChunkYHigh;
@@ -101,10 +100,10 @@ public class WorldMapSection0 implements WorldMapSection {
 	WorldMapSection0() {
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lll;I)V",
-		garbageValue = "1896416407"
+		descriptor = "(Llh;I)V",
+		garbageValue = "-321528483"
 	)
 	@Export("expandBounds")
 	public void expandBounds(WorldMapArea var1) {
@@ -126,34 +125,34 @@ public class WorldMapSection0 implements WorldMapSection {
 
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)Z",
-		garbageValue = "-739948834"
+		garbageValue = "-1647486588"
 	)
 	@Export("containsCoord")
 	public boolean containsCoord(int var1, int var2, int var3) {
-		if (var1 >= this.oldZ && var1 < this.newZ + this.oldZ) {
+		if (var1 >= this.oldZ && var1 < this.oldZ + this.newZ) {
 			return var2 >= (this.oldX << 6) + (this.oldChunkXLow << 3) && var2 <= (this.oldX << 6) + (this.oldChunkXHigh << 3) + 7 && var3 >= (this.oldY << 6) + (this.oldChunkYLow << 3) && var3 <= (this.oldY << 6) + (this.oldChunkYHigh << 3) + 7;
 		} else {
 			return false;
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "-51"
+		descriptor = "(III)Z",
+		garbageValue = "16374902"
 	)
 	@Export("containsPosition")
 	public boolean containsPosition(int var1, int var2) {
 		return var1 >= (this.newX << 6) + (this.newChunkXLow << 3) && var1 <= (this.newX << 6) + (this.newChunkXHigh << 3) + 7 && var2 >= (this.newY << 6) + (this.newChunkYLow << 3) && var2 <= (this.newY << 6) + (this.newChunkYHigh << 3) + 7;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)[I",
-		garbageValue = "-2061697618"
+		descriptor = "(IIIB)[I",
+		garbageValue = "-10"
 	)
 	@Export("getBorderTileLengths")
 	public int[] getBorderTileLengths(int var1, int var2, int var3) {
@@ -165,10 +164,10 @@ public class WorldMapSection0 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Lna;",
-		garbageValue = "1"
+		descriptor = "(III)Lny;",
+		garbageValue = "126893021"
 	)
 	@Export("coord")
 	public Coord coord(int var1, int var2) {
@@ -181,10 +180,10 @@ public class WorldMapSection0 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-1979822224"
+		descriptor = "(Lwj;B)V",
+		garbageValue = "-7"
 	)
 	@Export("read")
 	public void read(Buffer var1) {
@@ -205,174 +204,57 @@ public class WorldMapSection0 implements WorldMapSection {
 		this.postRead();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "2053097418"
+		garbageValue = "-841452392"
 	)
 	@Export("postRead")
 	void postRead() {
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(FFFI)Lre;",
-		garbageValue = "712802527"
+		descriptor = "(I)Z",
+		garbageValue = "1502628452"
 	)
-	public static class452 method6761(float var0, float var1, float var2) {
-		synchronized(class452.field5171) {
-			if (class452.field5173 == 0) {
-				return new class452(var0, var1, var2);
-			} else {
-				class452.field5171[--class452.field5173].method8993(var0, var1, var2);
-				return class452.field5171[class452.field5173];
-			}
-		}
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(JLjava/lang/String;I)I",
-		garbageValue = "1478591872"
-	)
-	static final int method6767(long var0, String var2) {
-		Random var3 = new Random();
-		Buffer var4 = new Buffer(128);
-		Buffer var5 = new Buffer(128);
-		int[] var6 = new int[]{var3.nextInt(), var3.nextInt(), (int)(var0 >> 32), (int)var0};
-		var4.writeByte(10);
-
-		int var7;
-		for (var7 = 0; var7 < 4; ++var7) {
-			var4.writeInt(var3.nextInt());
-		}
-
-		var4.writeInt(var6[0]);
-		var4.writeInt(var6[1]);
-		var4.writeLong(var0);
-		var4.writeLong(0L);
-
-		for (var7 = 0; var7 < 4; ++var7) {
-			var4.writeInt(var3.nextInt());
-		}
-
-		var4.encryptRsa(class49.field705, class49.field706);
-		var5.writeByte(10);
-
-		for (var7 = 0; var7 < 3; ++var7) {
-			var5.writeInt(var3.nextInt());
-		}
-
-		var5.writeLong(var3.nextLong());
-		var5.writeLongMedium(var3.nextLong());
-		HttpRequestTask.randomDatData2(var5);
-		var5.writeLong(var3.nextLong());
-		var5.encryptRsa(class49.field705, class49.field706);
-		var7 = WorldMapSection2.stringCp1252NullTerminatedByteSize(var2);
-		if (var7 % 8 != 0) {
-			var7 += 8 - var7 % 8;
-		}
-
-		Buffer var8 = new Buffer(var7);
-		var8.writeStringCp1252NullTerminated(var2);
-		var8.offset = var7 * -290410379;
-		var8.xteaEncryptAll(var6);
-		Buffer var9 = new Buffer(var4.offset * 1216585693 + var8.offset * 1216585693 + var5.offset * 1216585693 + 5);
-		var9.writeByte(2);
-		var9.writeByte(var4.offset * 1216585693);
-		var9.writeBytes(var4.array, 0, var4.offset * 1216585693);
-		var9.writeByte(var5.offset * 1216585693);
-		var9.writeBytes(var5.array, 0, var5.offset * 1216585693);
-		var9.writeShort(var8.offset * 1216585693);
-		var9.writeBytes(var8.array, 0, var8.offset * 1216585693);
-		String var10 = ClanSettings.method3992(var9.array);
-
+	static boolean method6793() {
+		Date var0;
 		try {
-			URL var11 = new URL(FloorOverlayDefinition.method4756("services", false) + "m=accountappeal/login.ws");
-			URLConnection var12 = var11.openConnection();
-			var12.setDoInput(true);
-			var12.setDoOutput(true);
-			var12.setConnectTimeout(5000);
-			OutputStreamWriter var13 = new OutputStreamWriter(var12.getOutputStream());
-			var13.write("data2=" + class240.method5442(var10) + "&dest=" + class240.method5442("passwordchoice.ws"));
-			var13.flush();
-			InputStream var14 = var12.getInputStream();
-			var9 = new Buffer(new byte[1000]);
+			var0 = class67.method2190();
+		} catch (ParseException var6) {
+			GrandExchangeOfferWorldComparator.method8565("Date not valid.", "Please ensure date follows the format", "DD/MM/YYYY and is after 01/01/1900");
+			return false;
+		}
 
-			do {
-				int var15 = var14.read(var9.array, var9.offset * 1216585693, 1000 - var9.offset * 1216585693);
-				if (var15 == -1) {
-					var13.close();
-					var14.close();
-					String var16 = new String(var9.array);
-					if (var16.startsWith("OFFLINE")) {
-						return 4;
-					} else if (var16.startsWith("WRONG")) {
-						return 7;
-					} else if (var16.startsWith("RELOAD")) {
-						return 3;
-					} else if (var16.startsWith("Not permitted for social network accounts.")) {
-						return 6;
-					} else {
-						var9.xteaDecryptAll(var6);
-
-						while (var9.offset * 1216585693 > 0 && var9.array[var9.offset * 1216585693 - 1] == 0) {
-							var9.offset -= -290410379;
-						}
-
-						var16 = new String(var9.array, 0, var9.offset * 1216585693);
-						if (BuddyRankComparator.method3588(var16)) {
-							DevicePcmPlayerProvider.openURL(var16, true, false);
-							return 2;
-						} else {
-							return 5;
-						}
-					}
+		if (var0 == null) {
+			return false;
+		} else {
+			boolean var4 = class139.method3814(var0);
+			Date var3 = class203.method4567();
+			boolean var2 = var0.after(var3);
+			if (!var2) {
+				GrandExchangeOfferWorldComparator.method8565("Date not valid.", "Please ensure date follows the format", "DD/MM/YYYY and is after 01/01/1900");
+				return false;
+			} else {
+				if (!var4) {
+					class165.field1886 = 8388607;
+				} else {
+					class165.field1886 = (int)(var0.getTime() / 86400000L - 11745L);
 				}
 
-				var9.offset += -290410379 * var15;
-			} while(var9.offset * 1216585693 < 1000);
-
-			return 5;
-		} catch (Throwable var17) {
-			var17.printStackTrace();
-			return 5;
+				return true;
+			}
 		}
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("hz")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1342679654"
+		descriptor = "(B)J",
+		garbageValue = "17"
 	)
-	static void method6773() {
-		Iterator var0 = Client.worldViewManager.iterator();
-
-		while (var0.hasNext()) {
-			WorldView var1 = (WorldView)var0.next();
-
-			for (ObjectSound var2 = (ObjectSound)var1.method2684().last(); var2 != null; var2 = (ObjectSound)var1.method2684().previous()) {
-				var2.method2252();
-			}
-		}
-
-	}
-
-	@ObfuscatedName("cv")
-	@ObfuscatedSignature(
-		descriptor = "(Loi;Loi;I)V",
-		garbageValue = "1753580939"
-	)
-	static void method6771(Widget var0, Widget var1) {
-		if (var0.type == 0) {
-			for (int var2 = var0.field4248; var2 <= var0.field4214; ++var2) {
-				Widget var3 = var1.children[var2];
-				if (var3 != null && var0.childIndex * -217986249 == var3.field4165) {
-					method6771(var3, var1);
-				}
-			}
-		}
-
-		var1.children[var0.childIndex * -217986249] = null;
+	@Export("getUserHash")
+	static long getUserHash() {
+		return Client.userHash;
 	}
 }

@@ -3,10 +3,15 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("em")
+@ObfuscatedName("ed")
 @Implements("UserComparator3")
 public class UserComparator3 extends AbstractUserComparator {
-	@ObfuscatedName("af")
+	@ObfuscatedName("rw")
+	@ObfuscatedSignature(
+		descriptor = "Ljd;"
+	)
+	static Model field1576;
+	@ObfuscatedName("ab")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -14,10 +19,10 @@ public class UserComparator3 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lty;Lty;I)I",
-		garbageValue = "2115721439"
+		descriptor = "(Ltu;Ltu;B)I",
+		garbageValue = "114"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -30,5 +35,14 @@ public class UserComparator3 extends AbstractUserComparator {
 
 	public int compare(Object var1, Object var2) {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(I)[Lfw;",
+		garbageValue = "-196532283"
+	)
+	static class135[] method3626() {
+		return new class135[]{class135.field1636, class135.field1635, class135.field1634, class135.field1641, class135.field1637};
 	}
 }

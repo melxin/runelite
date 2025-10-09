@@ -4,89 +4,89 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jm")
+@ObfuscatedName("ju")
 @Implements("GameObject")
 public final class GameObject {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Liz;"
+		descriptor = "Liy;"
 	)
 	@Export("renderable")
 	public Renderable renderable;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 70477995
+		intValue = 1008918747
 	)
 	@Export("orientation")
 	int orientation;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		longValue = -3451756420657839043L
+		longValue = -2827712403474703L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 985204991
+		intValue = 1432405507
 	)
 	@Export("plane")
 	int plane;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -496937227
+		intValue = -1145605769
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 504071911
+		intValue = 1824669671
 	)
 	@Export("centerX")
 	int centerX;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1044397321
+		intValue = -2064427561
 	)
 	@Export("centerY")
 	int centerY;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1193957357
+		intValue = -1050130219
 	)
 	@Export("startX")
 	int startX;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -158811479
+		intValue = 2125484985
 	)
 	@Export("endX")
 	int endX;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 1581408207
+		intValue = -561334741
 	)
 	@Export("startY")
 	int startY;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -499861321
+		intValue = 1381641623
 	)
 	@Export("endY")
 	int endY;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -149041761
+		intValue = 1978577731
 	)
-	int field3059;
-	@ObfuscatedName("am")
+	int field3060;
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -251231821
+		intValue = -1926664053
 	)
 	@Export("lastDrawn")
 	int lastDrawn;
-	@ObfuscatedName("an")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -773460857
+		intValue = -37538361
 	)
 	@Export("flags")
 	int flags;
@@ -96,35 +96,19 @@ public final class GameObject {
 		this.flags = 0;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "272039198"
+		descriptor = "(Ljava/lang/CharSequence;I)I",
+		garbageValue = "1760046722"
 	)
-	public static int method5796(int var0) {
-		return var0 >> 14 & 1023;
-	}
+	public static int method5850(CharSequence var0) {
+		int var1 = var0.length();
+		int var2 = 0;
 
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;[IB)V",
-		garbageValue = "-74"
-	)
-	public static void method5795(String[] var0, int[] var1) {
-		class567.quicksortStringsWithCorrespondingIntegers(var0, var1, 0, var0.length - 1);
-	}
-
-	@ObfuscatedName("oh")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-691908688"
-	)
-	static void method5797(int var0) {
-		for (WidgetConfigNode var1 = (WidgetConfigNode)Client.widgetFlags.first(); var1 != null; var1 = (WidgetConfigNode)Client.widgetFlags.next()) {
-			if ((var1.key >> 16 & 65535L) == (long)var0) {
-				var1.remove();
-			}
+		for (int var3 = 0; var3 < var1; ++var3) {
+			var2 = (var2 << 5) - var2 + var0.charAt(var3);
 		}
 
+		return var2;
 	}
 }

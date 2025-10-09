@@ -4,25 +4,25 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nq")
+@ObfuscatedName("nt")
 @Implements("SpriteMask")
 public class SpriteMask extends DualNode {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 143943703
+		intValue = 1385837663
 	)
 	@Export("width")
 	public final int width;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 298036503
+		intValue = 1078307221
 	)
 	@Export("height")
 	public final int height;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@Export("xWidths")
 	public final int[] xWidths;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@Export("xStarts")
 	public final int[] xStarts;
 
@@ -33,10 +33,10 @@ public class SpriteMask extends DualNode {
 		this.xStarts = var4;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(IIB)Z",
-		garbageValue = "-124"
+		garbageValue = "34"
 	)
 	@Export("contains")
 	public boolean contains(int var1, int var2) {
@@ -50,110 +50,35 @@ public class SpriteMask extends DualNode {
 		return false;
 	}
 
-	@ObfuscatedName("af")
-	static double method7393(double var0) {
-		return Math.exp(var0 * -var0 / 2.0D) / Math.sqrt(6.283185307179586D);
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Lpe;I)V",
+		garbageValue = "1840789530"
+	)
+	public static void method7407(AbstractArchive var0) {
+		ParamComposition.ParamDefinition_archive = var0;
 	}
 
-	@ObfuscatedName("cg")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(ILcg;ZI)I",
-		garbageValue = "-1000290571"
+		descriptor = "(IIIB)Lcj;",
+		garbageValue = "30"
 	)
-	static int method7397(int var0, Script var1, boolean var2) {
-		return 2;
-	}
-
-	@ObfuscatedName("my")
-	@ObfuscatedSignature(
-		descriptor = "(Loi;IIZI)V",
-		garbageValue = "2049495357"
-	)
-	@Export("alignWidgetSize")
-	static void alignWidgetSize(Widget var0, int var1, int var2, boolean var3) {
-		int var4 = var0.width * 469894397;
-		int var5 = var0.height * 1156037777;
-		if (var0.widthAlignment == 0) {
-			var0.width = var0.rawWidth * 1447114837;
-		} else if (var0.widthAlignment == 1) {
-			var0.width = (var1 - var0.rawWidth) * 1447114837;
-		} else if (var0.widthAlignment == 2) {
-			var0.width = (var0.rawWidth * var1 >> 14) * 1447114837;
-		}
-
-		if (var0.heightAlignment == 0) {
-			var0.height = var0.rawHeight * 978027633;
-		} else if (var0.heightAlignment == 1) {
-			var0.height = (var2 - var0.rawHeight) * 978027633;
-		} else if (var0.heightAlignment == 2) {
-			var0.height = (var2 * var0.rawHeight >> 14) * 978027633;
-		}
-
-		if (var0.widthAlignment == 4) {
-			var0.width = var0.height * var0.field4162 * 1156037777 / var0.field4163 * 1447114837;
-		}
-
-		if (var0.heightAlignment == 4) {
-			var0.height = var0.width * var0.field4163 * 469894397 / var0.field4162 * 978027633;
-		}
-
-		if (var0.contentType == 1337) {
-			Client.viewportWidget = var0;
-		}
-
-		if (var0.type == 12) {
-			var0.method7971().method7880(var0.width * 469894397, var0.height * 1156037777);
-		}
-
-		if (var3 && var0.onResize != null && (var4 != var0.width * 469894397 || var5 != var0.height * 1156037777)) {
-			ScriptEvent var6 = new ScriptEvent();
-			var6.widget = var0;
-			var6.args = var0.onResize;
-			Client.scriptEvents.addFirst(var6);
-		}
-
-	}
-
-	@ObfuscatedName("nt")
-	@ObfuscatedSignature(
-		descriptor = "(Loi;I)Z",
-		garbageValue = "2095244080"
-	)
-	static final boolean method7398(Widget var0) {
-		int var1 = var0.contentType;
-		if (var1 == 205) {
-			Client.logoutTimer = 250;
-			return true;
+	@Export("getWorldMapScript")
+	static Script getWorldMapScript(int var0, int var1, int var2) {
+		int var3 = ArchiveLoader.method2140(var1, var0);
+		Script var4 = SecureUrlRequester.getScript(var3, var0);
+		if (var4 != null) {
+			return var4;
 		} else {
-			int var2;
-			int var3;
-			if (var1 >= 300 && var1 <= 313) {
-				var2 = (var1 - 300) / 2;
-				var3 = var1 & 1;
-				Client.playerAppearance.changeAppearance(var2, var3 == 1);
-			}
-
-			if (var1 >= 314 && var1 <= 323) {
-				var2 = (var1 - 314) / 2;
-				var3 = var1 & 1;
-				Client.playerAppearance.method7543(var2, var3 == 1);
-			}
-
-			if (var1 == 324) {
-				Client.playerAppearance.method7531(0);
-			}
-
-			if (var1 == 325) {
-				Client.playerAppearance.method7531(1);
-			}
-
-			if (var1 == 326) {
-				PacketBufferNode var4 = UserComparator6.getPacketBufferNode(ClientPacket.UPDATE_PLAYER_MODEL, Client.packetWriter.isaacCipher);
-				Client.playerAppearance.write(var4.packetBuffer);
-				Client.packetWriter.addNode(var4);
-				return true;
+			int var5 = (-3 - var2 << 8) + var0;
+			var4 = SecureUrlRequester.getScript(var5, var0);
+			if (var4 != null) {
+				return var4;
 			} else {
-				return false;
+				var3 = AbstractWorldMapData.method6829(var0);
+				var4 = SecureUrlRequester.getScript(var3, var0);
+				return var4 != null ? var4 : null;
 			}
 		}
 	}

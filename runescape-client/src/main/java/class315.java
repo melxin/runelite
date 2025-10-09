@@ -1,5 +1,5 @@
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("mk")
-public interface class315 {
+@ObfuscatedName("mu")
+public interface class315 extends Iterable {
 }

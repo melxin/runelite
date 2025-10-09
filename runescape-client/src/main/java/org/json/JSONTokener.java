@@ -200,23 +200,6 @@ public class JSONTokener {
 		}
 	}
 
-	public String nextTo(String var1) throws JSONException {
-		StringBuffer var3 = new StringBuffer();
-
-		while (true) {
-			char var2 = this.next();
-			if (var1.indexOf(var2) >= 0 || var2 == 0 || var2 == '\n' || var2 == '\r') {
-				if (var2 != 0) {
-					this.back();
-				}
-
-				return var3.toString().trim();
-			}
-
-			var3.append(var2);
-		}
-	}
-
 	public char next(char var1) throws JSONException {
 		char var2 = this.next();
 		if (var2 != var1) {
@@ -250,6 +233,23 @@ public class JSONTokener {
 			}
 
 			var2.append(var3);
+		}
+	}
+
+	public String nextTo(String var1) throws JSONException {
+		StringBuffer var3 = new StringBuffer();
+
+		while (true) {
+			char var2 = this.next();
+			if (var1.indexOf(var2) >= 0 || var2 == 0 || var2 == '\n' || var2 == '\r') {
+				if (var2 != 0) {
+					this.back();
+				}
+
+				return var3.toString().trim();
+			}
+
+			var3.append(var2);
 		}
 	}
 

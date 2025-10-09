@@ -4,42 +4,47 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ld")
+@ObfuscatedName("lf")
 @Implements("WorldMapSection1")
 public class WorldMapSection1 implements WorldMapSection {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ra")
+	@ObfuscatedSignature(
+		descriptor = "Ljd;"
+	)
+	static Model field3493;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1952092899
+		intValue = 1371836951
 	)
 	@Export("minPlane")
 	int minPlane;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -860455509
+		intValue = 1133633067
 	)
 	@Export("planes")
 	int planes;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1365363659
+		intValue = 1321601809
 	)
 	@Export("regionStartX")
 	int regionStartX;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -2112240261
+		intValue = 1764650555
 	)
 	@Export("regionStartY")
 	int regionStartY;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1502864257
+		intValue = 1644312621
 	)
 	@Export("regionEndX")
 	int regionEndX;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 2036461915
+		intValue = -1683947721
 	)
 	@Export("regionEndY")
 	int regionEndY;
@@ -47,10 +52,10 @@ public class WorldMapSection1 implements WorldMapSection {
 	WorldMapSection1() {
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lll;I)V",
-		garbageValue = "1896416407"
+		descriptor = "(Llh;I)V",
+		garbageValue = "-321528483"
 	)
 	@Export("expandBounds")
 	public void expandBounds(WorldMapArea var1) {
@@ -72,10 +77,10 @@ public class WorldMapSection1 implements WorldMapSection {
 
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)Z",
-		garbageValue = "-739948834"
+		garbageValue = "-1647486588"
 	)
 	@Export("containsCoord")
 	public boolean containsCoord(int var1, int var2, int var3) {
@@ -86,20 +91,20 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "-51"
+		descriptor = "(III)Z",
+		garbageValue = "16374902"
 	)
 	@Export("containsPosition")
 	public boolean containsPosition(int var1, int var2) {
 		return var1 >> 6 == this.regionEndX && var2 >> 6 == this.regionEndY;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)[I",
-		garbageValue = "-2061697618"
+		descriptor = "(IIIB)[I",
+		garbageValue = "-10"
 	)
 	@Export("getBorderTileLengths")
 	public int[] getBorderTileLengths(int var1, int var2, int var3) {
@@ -111,10 +116,10 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Lna;",
-		garbageValue = "1"
+		descriptor = "(III)Lny;",
+		garbageValue = "126893021"
 	)
 	@Export("coord")
 	public Coord coord(int var1, int var2) {
@@ -127,10 +132,10 @@ public class WorldMapSection1 implements WorldMapSection {
 		}
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-1979822224"
+		descriptor = "(Lwj;B)V",
+		garbageValue = "-7"
 	)
 	@Export("read")
 	public void read(Buffer var1) {
@@ -143,116 +148,291 @@ public class WorldMapSection1 implements WorldMapSection {
 		this.postRead();
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-2085895626"
+		garbageValue = "603758088"
 	)
 	@Export("postRead")
 	void postRead() {
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("cn")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-1971343149"
+		descriptor = "(ILcj;ZB)I",
+		garbageValue = "51"
 	)
-	static int method6859(int var0) {
-		return class27.KeyHandler_keyCodes[var0];
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "([BI)V",
-		garbageValue = "114431228"
-	)
-	@Export("ByteArrayPool_release")
-	public static void ByteArrayPool_release(byte[] var0) {
-		synchronized(ByteArrayPool.field5317) {
-			if (var0.length == 100 && ByteArrayPool.ByteArrayPool_smallCount < ByteArrayPool.field5322) {
-				ByteArrayPool.ByteArrayPool_small[++ByteArrayPool.ByteArrayPool_smallCount - 1] = var0;
-			} else if (var0.length == 5000 && ByteArrayPool.ByteArrayPool_mediumCount < ByteArrayPool.field5316) {
-				ByteArrayPool.ByteArrayPool_medium[++ByteArrayPool.ByteArrayPool_mediumCount - 1] = var0;
-			} else if (var0.length == 10000 && ByteArrayPool.ByteArrayPool_largeCount < ByteArrayPool.field5324) {
-				ByteArrayPool.ByteArrayPool_large[++ByteArrayPool.ByteArrayPool_largeCount - 1] = var0;
-			} else if (var0.length == 30000 && ByteArrayPool.field5321 < ByteArrayPool.field5325) {
-				ByteArrayPool.field5328[++ByteArrayPool.field5321 - 1] = var0;
+	static int method6874(int var0, Script var1, boolean var2) {
+		DynamicArray var8;
+		DynamicArray var9;
+		if (var0 == 8000) {
+			Message.Interpreter_objectStackSize -= 2;
+			var9 = class196.method4453(Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize], (String)null);
+			var8 = (DynamicArray)Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize + 1];
+			ArchiveDiskAction.method8324(var9, var8);
+			return 1;
+		} else {
+			int var3;
+			int var4;
+			DynamicArray var5;
+			if (var0 == 8001) {
+				UrlRequest.Interpreter_intStackSize -= 2;
+				var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+				var5 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+				class167.method4102(var5, var3, var4);
+				return 1;
+			} else if (var0 == 8002) {
+				var9 = (DynamicArray)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+				Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = var9 == null ? 1 : 0;
+				return 1;
+			} else if (var0 == 8003) {
+				var9 = (DynamicArray)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+				Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = var9 != null ? var9.method10433() : 0;
+				return 1;
+			} else if (var0 == 8004) {
+				Message.Interpreter_objectStackSize -= 2;
+				var9 = (DynamicArray)Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize];
+				var8 = (DynamicArray)Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize + 1];
+				Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = ChatChannel.method2054(var9, var8);
+				return 1;
 			} else {
-				if (class67.ByteArrayPool_arrays != null) {
-					for (int var2 = 0; var2 < ByteArrayPool.ByteArrayPool_alternativeSizes.length; ++var2) {
-						if (var0.length == ByteArrayPool.ByteArrayPool_alternativeSizes[var2] && FadeInTask.ByteArrayPool_altSizeArrayCounts[var2] < class67.ByteArrayPool_arrays[var2].length) {
-							class67.ByteArrayPool_arrays[var2][FadeInTask.ByteArrayPool_altSizeArrayCounts[var2]++] = var0;
-							return;
+				DynamicArray var7;
+				int var10;
+				Object var13;
+				if (var0 == 8005) {
+					UrlRequest.Interpreter_intStackSize -= 3;
+					var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+					var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+					var10 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 2];
+					var13 = WorldMap.method10995(var10);
+					var7 = (DynamicArray)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+					Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = var7 != null ? class526.method10592(var7, var13, var3, var4) : -1;
+					return 1;
+				} else if (var0 == 8006) {
+					UrlRequest.Interpreter_intStackSize -= 3;
+					var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+					var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+					var10 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 2];
+					var13 = WorldMap.method10995(var10);
+					var7 = (DynamicArray)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+					Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = var7 != null ? WorldMapLabelSize.method6408(var7, var13, var3, var4) : -1;
+					return 1;
+				} else if (var0 == 8007) {
+					UrlRequest.Interpreter_intStackSize -= 3;
+					var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+					var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+					var10 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 2];
+					var13 = WorldMap.method10995(var10);
+					var7 = (DynamicArray)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+					Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = var7 != null ? class327.method7042(var7, var13, var3, var4) : 0;
+					return 1;
+				} else {
+					String var14;
+					if (var0 == 8008) {
+						var9 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+						var4 = class470.method9706(var9);
+						if (var9.field5571 == class572.field5879) {
+							Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = var4 >= 0 ? var9.method10430()[var4] : -1;
+						} else {
+							if (var9.field5571 != class572.field5877) {
+								throw new IllegalStateException();
+							}
+
+							var14 = (String)((String)(var4 >= 0 ? var9.method10428()[var4] : null));
+							Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var14 != null ? var14 : "";
+						}
+
+						return 1;
+					} else if (var0 == 8009) {
+						var9 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+						var4 = class304.method6849(var9);
+						if (var9.field5571 == class572.field5879) {
+							Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = var4 >= 0 ? var9.method10430()[var4] : -1;
+						} else {
+							if (var9.field5571 != class572.field5877) {
+								throw new IllegalStateException();
+							}
+
+							var14 = (String)((String)(var4 >= 0 ? var9.method10428()[var4] : null));
+							Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var14 != null ? var14 : "";
+						}
+
+						return 1;
+					} else if (var0 == 8010) {
+						UrlRequest.Interpreter_intStackSize -= 3;
+						var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+						var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+						var10 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 2];
+						var13 = WorldMap.method10995(var10);
+						var7 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+						class331.method7061(var7, var13, var3, var4);
+						return 1;
+					} else {
+						DynamicArray var6;
+						if (var0 == 8011) {
+							UrlRequest.Interpreter_intStackSize -= 3;
+							var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+							var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+							var10 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 2];
+							var6 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+							class402.method8317(var6, var3, 1, var4, var10);
+							return 1;
+						} else if (var0 == 8012) {
+							var9 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+							class391.method8225(var9);
+							return 1;
+						} else if (var0 == 8013) {
+							var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+							var8 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+							class263.method5975(var8, var3);
+							return 1;
+						} else if (var0 == 8014) {
+							UrlRequest.Interpreter_intStackSize -= 2;
+							var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+							var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+							var5 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+							GrandExchangeOfferOwnWorldComparator.method792(var5, var3, var4);
+							return 1;
+						} else if (var0 == 8015) {
+							UrlRequest.Interpreter_intStackSize -= 3;
+							var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+							var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+							var10 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 2];
+							Message.Interpreter_objectStackSize -= 2;
+							var6 = class196.method4453(Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize], (String)null);
+							var7 = class196.method4453(Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize + 1], (String)null);
+							class385.method8204(var6, var7, var3, var4, var10);
+							return 1;
+						} else if (var0 == 8016) {
+							var9 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+							Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = (int)ParamComposition.method4595(var9);
+							return 1;
+						} else if (var0 == 8017) {
+							var9 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+							var4 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+							Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = class389.method8214(var9, var4);
+							return 1;
+						} else {
+							String var17;
+							if (var0 == 8018) {
+								Message.Interpreter_objectStackSize -= 2;
+								String var16 = (String)Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize];
+								var17 = (String)Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize + 1];
+								Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = class486.method9898(var16, var17);
+								return 1;
+							} else if (var0 == 8019) {
+								Message.Interpreter_objectStackSize -= 2;
+								var9 = class196.method4453(Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize], (String)null);
+								var17 = (String)Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize + 1];
+								Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = FloatProjection.method5429(var9, var17);
+								return 1;
+							} else {
+								EnumComposition var12;
+								if (var0 == 8020) {
+									UrlRequest.Interpreter_intStackSize -= 2;
+									var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+									var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+									var12 = class195.getEnum(var4);
+									if (var3 != var12.inputType) {
+										throw new RuntimeException();
+									} else {
+										Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var12.method4339();
+										return 1;
+									}
+								} else if (var0 == 8021) {
+									UrlRequest.Interpreter_intStackSize -= 2;
+									var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+									var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+									var12 = class195.getEnum(var4);
+									if (var3 != var12.outputType) {
+										throw new RuntimeException();
+									} else {
+										Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var12.method4351();
+										return 1;
+									}
+								} else if (var0 == 8022) {
+									UrlRequest.Interpreter_intStackSize -= 3;
+									var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+									var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+									var10 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 2];
+									if (var10 < var4) {
+										var10 = var4;
+									}
+
+									if (var4 >= 0 && var4 <= 5000 && var10 >= 0 && var10 <= 5000) {
+										if (var3 == 115) {
+											Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = new DynamicArray(class572.field5877, "", var4, var10);
+										} else if (var3 != 105 && var3 != 49) {
+											Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = new DynamicArray(class572.field5879, -1, var4, var10);
+										} else {
+											Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = new DynamicArray(class572.field5879, 0, var4, var10);
+										}
+
+										return 1;
+									} else {
+										throw new RuntimeException();
+									}
+								} else if (var0 == 8023) {
+									var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+									var8 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+									if (var3 >= 0 && var3 <= 5000) {
+										var8.method10456(var3);
+										return 1;
+									} else {
+										throw new RuntimeException();
+									}
+								} else if (var0 == 8024) {
+									var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+									Object var15 = WorldMap.method10995(var3);
+									var5 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+									class377.method8176(var5, var5.method10433(), var15);
+									return 1;
+								} else {
+									Object var11;
+									if (var0 == 8025) {
+										UrlRequest.Interpreter_intStackSize -= 2;
+										var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+										var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+										var11 = WorldMap.method10995(var4);
+										var6 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+										class377.method8176(var6, var3, var11);
+										return 1;
+									} else if (var0 == 8026) {
+										var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+										var8 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+										var11 = class132.method3673(var8, var3);
+										MoveSpeed.method6336(var8.field5571, var11);
+										return 1;
+									} else if (var0 == 8027) {
+										Message.Interpreter_objectStackSize -= 2;
+										var9 = class196.method4453(Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize], (String)null);
+										var8 = class196.method4453(Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize + 1], (String)null);
+										WorldMapCacheName.method6907(var9, var8, var9.method10433());
+										return 1;
+									} else if (var0 == 8028) {
+										var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+										Message.Interpreter_objectStackSize -= 2;
+										var8 = class196.method4453(Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize], (String)null);
+										var5 = class196.method4453(Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize + 1], (String)null);
+										WorldMapCacheName.method6907(var8, var5, var3);
+										return 1;
+									} else if (var0 == 8029) {
+										UrlRequest.Interpreter_intStackSize -= 2;
+										var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+										var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+										var5 = class196.method4453(Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize], (String)null);
+										GrandExchangeEvent.method8573(var5, var3, var4);
+										return 1;
+									} else {
+										return 2;
+									}
+								}
+							}
 						}
 					}
 				}
-
 			}
-		}
-	}
-
-	@ObfuscatedName("an")
-	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;I)Lti;",
-		garbageValue = "1808539492"
-	)
-	public static DynamicArray method6858(String[] var0) {
-		DynamicArray var1 = new DynamicArray(class574.field5824, false);
-		var1.field5506 = var0;
-		var1.size = var0.length * -698619497;
-		var1.field5503 = var0.length;
-		return var1;
-	}
-
-	@ObfuscatedName("lj")
-	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;I)V",
-		garbageValue = "-898793886"
-	)
-	static void method6862(int var0, String var1) {
-		int var2 = Client.playerUpdateManager.playerCount;
-		int[] var3 = Client.playerUpdateManager.playerIndices;
-		boolean var4 = false;
-		Username var5 = new Username(var1, PacketWriter.loginType);
-		WorldView var6 = HealthBarUpdate.localPlayer.getWorldView();
-		if (var6 == null) {
-			Varcs.addGameMessage(4, "", "Unable to find " + var1 + ", current world null.");
-		} else {
-			for (int var7 = 0; var7 < var2; ++var7) {
-				Player var8 = (Player)var6.players.get((long)var3[var7]);
-				if (var8 != null && var8 != HealthBarUpdate.localPlayer && var8.username != null && var8.username.equals(var5)) {
-					PacketBufferNode var9;
-					if (var0 == 1) {
-						var9 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeShortLE(var3[var7]);
-						var9.packetBuffer.writeByteNeg(0);
-						Client.packetWriter.addNode(var9);
-					} else if (var0 == 4) {
-						var9 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeShort(var3[var7]);
-						var9.packetBuffer.writeByte(0);
-						Client.packetWriter.addNode(var9);
-					} else if (var0 == 6) {
-						var9 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeShortAddLE(var3[var7]);
-						var9.packetBuffer.writeByte(0);
-						Client.packetWriter.addNode(var9);
-					} else if (var0 == 7) {
-						var9 = UserComparator6.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeShort(var3[var7]);
-						var9.packetBuffer.writeByteSub(0);
-						Client.packetWriter.addNode(var9);
-					}
-
-					var4 = true;
-					break;
-				}
-			}
-
-			if (!var4) {
-				Varcs.addGameMessage(4, "", "Unable to find " + var1);
-			}
-
 		}
 	}
 }

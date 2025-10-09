@@ -1,78 +1,75 @@
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gj")
-public class class160 extends class151 {
-	@ObfuscatedName("af")
-	String field1833;
+@ObfuscatedName("ge")
+public class class160 extends class150 {
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = -2086058735
+	)
+	int field1836;
+	@ObfuscatedName("at")
+	String field1837;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lfh;"
 	)
-	final class154 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lfh;)V"
 	)
-	class160(class154 var1) {
+	class160(class153 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-2943315"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1804820754"
 	)
-	void vmethod4111(Buffer var1) {
-		this.field1833 = var1.readStringCp1252NullTerminated();
-		var1.method1958();
+	void vmethod4162(Buffer var1) {
+		this.field1836 = var1.method11575();
+		this.field1837 = var1.readStringCp1252NullTerminated();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lgs;I)V",
-		garbageValue = "2108880901"
+		descriptor = "(Lgh;I)V",
+		garbageValue = "1850606911"
 	)
-	void vmethod4112(ClanSettings var1) {
-		var1.name = this.field1833;
+	void vmethod4163(ClanSettings var1) {
+		var1.method4022(this.field1836, this.field1837);
 	}
 
-	@ObfuscatedName("cw")
+	@ObfuscatedName("na")
 	@ObfuscatedSignature(
-		descriptor = "(ILcg;ZI)I",
-		garbageValue = "903454439"
+		descriptor = "(Ldm;IIILnt;B)V",
+		garbageValue = "0"
 	)
-	static int method3896(int var0, Script var1, boolean var2) {
-		if (var0 == 6754) {
-			int var5 = Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize];
-			NPCComposition var6 = class63.getNpcDefinition(var5);
-			Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = var6 != null ? var6.name : "";
-			return 1;
-		} else {
-			NPCComposition var3;
-			if (var0 == 6764) {
-				UserComparator7.Interpreter_intStackSize -= 2;
-				var3 = class63.getNpcDefinition(Interpreter.Interpreter_intStack[UserComparator7.Interpreter_intStackSize]);
-				int var4 = Interpreter.Interpreter_intStack[UserComparator7.Interpreter_intStackSize + 1];
-				Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = var3.method4336(var4);
-				Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = var3.method4338(var4);
-				return 1;
-			} else if (var0 == 6765) {
-				var3 = class63.getNpcDefinition(Interpreter.Interpreter_intStack[--UserComparator7.Interpreter_intStackSize]);
-				Interpreter.Interpreter_intStack[++UserComparator7.Interpreter_intStackSize - 1] = var3 != null ? var3.combatLevel : 0;
-				return 1;
-			} else {
-				return 2;
+	static void method3974(WorldView var0, int var1, int var2, int var3, SpriteMask var4) {
+		for (int var5 = 0; var5 < var0.sizeX; ++var5) {
+			for (int var6 = 0; var6 < var0.sizeY; ++var6) {
+				NodeDeque var7 = var0.groundItems[var0.plane][var5][var6];
+				if (var7 != null) {
+					int var9;
+					if (var0.method2736()) {
+						int var13 = var5 * 4 + 2 - Client.field484 / 32;
+						var9 = var6 * 4 + 2 - Client.field377 / 32;
+						class445.method8994(var1, var2, var13, var9, var3, class199.field2176[0], var4);
+					} else {
+						class450 var8 = Varcs.method3022(var0, Coord.method7440(var5), Coord.method7440(var6));
+						var9 = (int)var8.field5216;
+						int var10 = (int)var8.field5219;
+						var8.method9065();
+						int var11 = var9 / 32 - Client.field484 / 32;
+						int var12 = var10 / 32 - Client.field377 / 32;
+						class445.method8994(var1, var2, var11, var12, var3, class199.field2176[0], var4);
+					}
+				}
 			}
 		}
-	}
 
-	@ObfuscatedName("lv")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "742442526"
-	)
-	static final boolean method3903() {
-		return Client.isMenuOpen;
 	}
 }

@@ -1,240 +1,320 @@
+import java.io.File;
+import java.io.IOException;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fa")
-public class class135 {
+@ObfuscatedName("fw")
+public enum class135 implements Enum {
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lfw;"
+	)
+	field1636(0, 0),
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lfw;"
+	)
+	field1635(1, 1),
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lfw;"
+	)
+	field1634(2, 2),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lfw;"
+	)
+	field1641(3, 3),
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lfw;"
+	)
+	field1637(4, 4);
+
+	@ObfuscatedName("au")
+	static File field1640;
+	@ObfuscatedName("pb")
+	static int[][] field1642;
+	@ObfuscatedName("ug")
+	@ObfuscatedSignature(
+		descriptor = "Lxl;"
+	)
+	@Export("sceneMinimapSprite")
+	static SpritePixels sceneMinimapSprite;
+	@ObfuscatedName("uu")
+	@ObfuscatedSignature(
+		descriptor = "Ldx;"
+	)
+	@Export("pcmPlayer1")
+	static PcmPlayer pcmPlayer1;
 	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 2098147621
+		intValue = 1347895857
 	)
-	public final int field1633;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "[Lrj;"
+	final int field1639;
+	@ObfuscatedName("ae")
+	@ObfuscatedGetter(
+		intValue = -823044467
 	)
-	final TransformationMatrix[] field1626;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lfa;"
-	)
-	public class135 field1636;
-	@ObfuscatedName("ac")
-	float[][] field1628;
-	@ObfuscatedName("ap")
-	boolean field1629;
-	@ObfuscatedName("aq")
-	boolean field1630;
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "[Lrj;"
-	)
-	TransformationMatrix[] field1627;
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "[Lrj;"
-	)
-	TransformationMatrix[] field1632;
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lrj;"
-	)
-	TransformationMatrix field1631;
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lrj;"
-	)
-	TransformationMatrix field1634;
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lrj;"
-	)
-	TransformationMatrix field1635;
-	@ObfuscatedName("aa")
-	float[][] field1638;
-	@ObfuscatedName("am")
-	float[][] field1637;
-	@ObfuscatedName("an")
-	float[][] field1625;
+	final int field1638;
 
-	@ObfuscatedSignature(
-		descriptor = "(ILwb;Z)V"
-	)
-	public class135(int var1, Buffer var2, boolean var3) {
-		this.field1629 = true;
-		this.field1630 = true;
-		this.field1631 = new TransformationMatrix();
-		this.field1634 = new TransformationMatrix();
-		this.field1635 = new TransformationMatrix();
-		this.field1633 = var2.readShort();
-		this.field1626 = new TransformationMatrix[var1];
-		this.field1627 = new TransformationMatrix[this.field1626.length];
-		this.field1632 = new TransformationMatrix[this.field1626.length];
-		this.field1628 = new float[this.field1626.length][3];
-
-		for (int var4 = 0; var4 < this.field1626.length; ++var4) {
-			this.field1626[var4] = new TransformationMatrix(var2, var3);
-			this.field1628[var4][0] = var2.method11362();
-			this.field1628[var4][1] = var2.method11362();
-			this.field1628[var4][2] = var2.method11362();
-		}
-
-		this.method3621();
+	class135(int var3, int var4) {
+		this.field1639 = var3;
+		this.field1638 = var4;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "171330457"
+		descriptor = "(I)I",
+		garbageValue = "-1012656358"
 	)
-	void method3621() {
-		this.field1638 = new float[this.field1626.length][3];
-		this.field1637 = new float[this.field1626.length][3];
-		this.field1625 = new float[this.field1626.length][3];
-		TransformationMatrix var1 = class401.method8245();
-
-		for (int var2 = 0; var2 < this.field1626.length; ++var2) {
-			TransformationMatrix var3 = this.method3623(var2);
-			var1.method9092(var3);
-			var1.method9101();
-			this.field1638[var2] = var1.method9089();
-			this.field1637[var2][0] = var3.field5186[12];
-			this.field1637[var2][1] = var3.field5186[13];
-			this.field1637[var2][2] = var3.field5186[14];
-			this.field1625[var2] = var3.method9096();
-		}
-
-		var1.method9140();
+	@Export("rsOrdinal")
+	public int rsOrdinal() {
+		return this.field1638;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lrj;",
-		garbageValue = "1"
+		descriptor = "(I)Lrt;",
+		garbageValue = "-27794798"
 	)
-	TransformationMatrix method3623(int var1) {
-		return this.field1626[var1];
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lrj;",
-		garbageValue = "-1257552713"
-	)
-	TransformationMatrix method3626(int var1) {
-		if (this.field1627[var1] == null) {
-			this.field1627[var1] = new TransformationMatrix(this.method3623(var1));
-			if (this.field1636 != null) {
-				this.field1627[var1].method9173(this.field1636.method3626(var1));
+	public static class451 method3746() {
+		synchronized(class451.field5228) {
+			if (class451.field5224 == 0) {
+				return new class451();
 			} else {
-				this.field1627[var1].method9173(TransformationMatrix.field5184);
+				class451.field5228[--class451.field5224].method9144();
+				return class451.field5228[class451.field5224];
 			}
 		}
-
-		return this.field1627[var1];
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lrj;",
-		garbageValue = "51"
+		descriptor = "(B)Lcg;",
+		garbageValue = "-4"
 	)
-	TransformationMatrix method3625(int var1) {
-		if (this.field1632[var1] == null) {
-			this.field1632[var1] = new TransformationMatrix(this.method3626(var1));
-			this.field1632[var1].method9101();
+	static ClientPreferences method3745() {
+		AccessFile var0 = null;
+		ClientPreferences var1 = new ClientPreferences();
+
+		try {
+			var0 = LoginState.getPreferencesFile("", NpcOverrides.field2082.name, false);
+			byte[] var2 = new byte[(int)var0.length()];
+
+			int var4;
+			for (int var3 = 0; var3 < var2.length; var3 += var4) {
+				var4 = var0.read(var2, var3, var2.length - var3);
+				if (var4 == -1) {
+					throw new IOException();
+				}
+			}
+
+			var1 = new ClientPreferences(new Buffer(var2));
+		} catch (Exception var6) {
 		}
 
-		return this.field1632[var1];
-	}
+		try {
+			if (var0 != null) {
+				var0.close();
+			}
+		} catch (Exception var5) {
+		}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(B)Lrj;",
-		garbageValue = "-44"
-	)
-	TransformationMatrix method3639() {
-		return this.field1631;
+		return var1;
 	}
 
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Lrj;I)V",
-		garbageValue = "1440205823"
+		descriptor = "(III)V",
+		garbageValue = "-1016199801"
 	)
-	void method3636(TransformationMatrix var1) {
-		this.field1631.method9092(var1);
-		this.field1629 = true;
-		this.field1630 = true;
+	public static final void method3744(int var0, int var1) {
+		ViewportMouse.ViewportMouse_x = var0;
+		ViewportMouse.ViewportMouse_y = var1;
+		ViewportMouse.ViewportMouse_isInViewport = true;
+		ViewportMouse.ViewportMouse_entityCount = 0;
+		ViewportMouse.ViewportMouse_entityTags[0] = -1L;
+		ViewportMouse.field2958[0] = Integer.MAX_VALUE;
+		ViewportMouse.ViewportMouse_false0 = false;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lrj;",
-		garbageValue = "1906881453"
+		descriptor = "(Lkg;Lkg;FLkg;I)V",
+		garbageValue = "-1416604479"
 	)
-	TransformationMatrix method3628() {
-		if (this.field1629) {
-			this.field1634.method9092(this.method3639());
-			if (this.field1636 != null) {
-				this.field1634.method9173(this.field1636.method3628());
+	static void method3748(WorldEntityCoord var0, WorldEntityCoord var1, float var2, WorldEntityCoord var3) {
+		var2 = FontName.method11000(0.0F, 1.0F, var2);
+		int var4 = var1.getX() - var0.getX();
+		int var5 = var1.getY() - var0.getY();
+		var4 = (int)((float)var4 * var2);
+		var5 = (int)(var2 * (float)var5);
+		var3.method6292(var0.getX() + var4, var0.getY() + var5);
+		int var6 = HealthBarDefinition.method4318(var0.getCurrentRotationAngle(), var1.getCurrentRotationAngle());
+		var6 = (int)(var2 * (float)var6);
+		var3.setCurrentRotationAngle(var0.getCurrentRotationAngle() + var6);
+	}
+
+	@ObfuscatedName("hg")
+	@ObfuscatedSignature(
+		descriptor = "(IB)V",
+		garbageValue = "-59"
+	)
+	@Export("updateGameState")
+	static void updateGameState(int var0) {
+		if (var0 != Client.gameState) {
+			if (Client.gameState == 30) {
+				Client.field491.method6096();
 			}
 
-			this.field1629 = false;
+			if (Client.gameState == 0) {
+				class32.client.method536();
+			}
+
+			if (var0 == 20 || var0 == 40 || var0 == 45 || var0 == 50) {
+				class254.updateLoginState(LoginState.SHUTDOWN_PREVIOUS_CONNECTION);
+				Client.field386 = 0;
+				Client.field387 = 0;
+				Client.timer.method8295(var0);
+				if (var0 != 20) {
+					class379.method8181(false);
+				}
+			}
+
+			if (var0 != 20 && var0 != 40 && class386.field4470 != null) {
+				class386.field4470.close();
+				class386.field4470 = null;
+			}
+
+			if (Client.gameState == 25) {
+				Client.field394 = 0;
+				Client.field390 = 0;
+				Client.field391 = 1;
+				Client.field392 = 0;
+				Client.field393 = 1;
+			}
+
+			int var1;
+			if (var0 != 5 && var0 != 10) {
+				if (var0 == 20) {
+					var1 = Client.gameState == 11 ? 4 : 0;
+					class572.method11199(Projection.archive10, BoundaryObject.archive8, class155.field1804, false, var1);
+				} else if (var0 == 11) {
+					class572.method11199(Projection.archive10, BoundaryObject.archive8, class155.field1804, false, 4);
+				} else if (var0 == 50) {
+					class203.setLoginResponseString("", "Updating date of birth...", "");
+					class572.method11199(Projection.archive10, BoundaryObject.archive8, class155.field1804, false, 7);
+				} else if (var0 != 0) {
+					class387.method8213();
+				}
+			} else {
+				var1 = RouteStrategy.method6247() ? 0 : 12;
+				class572.method11199(Projection.archive10, BoundaryObject.archive8, class155.field1804, true, var1);
+			}
+
+			Client.gameState = var0;
+		}
+	}
+
+	@ObfuscatedName("lu")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "-995474663"
+	)
+	static void method3743(int var0) {
+		WorldView var1 = Client.worldViewManager.getWorldView(var0);
+		if (var1 != null) {
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				int var3 = Client.playerUpdateManager.playerIndices[var2];
+				Client.playerUpdateManager.method2944((Player)var1.players.get((long)var3));
+			}
+
+			Client.worldViewManager.removeWorldViewById(var0);
+		}
+	}
+
+	@ObfuscatedName("md")
+	@ObfuscatedSignature(
+		descriptor = "(Lok;I)V",
+		garbageValue = "74868060"
+	)
+	@Export("Widget_addToMenu")
+	static final void Widget_addToMenu(Widget var0) {
+		if (var0.buttonType == 1) {
+			LoginScreenAnimation.method2587(var0.buttonText, "", 24, 0, 0, var0.id, var0.itemId);
 		}
 
-		return this.field1634;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lrj;",
-		garbageValue = "-87572797"
-	)
-	public TransformationMatrix method3624(int var1) {
-		if (this.field1630) {
-			this.field1635.method9092(this.method3625(var1));
-			this.field1635.method9173(this.method3628());
-			this.field1630 = false;
+		if (var0.buttonType == 2 && !Client.isSpellSelected) {
+			String var1 = ClientPreferences.Widget_getSpellActionName(var0);
+			if (var1 != null) {
+				LoginScreenAnimation.method2587(var1, class171.colorStartTag(65280) + var0.field4305, 25, 0, -1, var0.id, var0.itemId);
+			}
 		}
 
-		return this.field1635;
-	}
+		if (var0.buttonType == 3) {
+			FileSystem.insertMenuItemNoShift("Close", "", 26, 0, 0, var0.id);
+		}
 
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(II)[F",
-		garbageValue = "-868868024"
-	)
-	float[] method3630(int var1) {
-		return this.field1638[var1];
-	}
+		if (var0.buttonType == 4) {
+			FileSystem.insertMenuItemNoShift(var0.buttonText, "", 28, 0, 0, var0.id);
+		}
 
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(II)[F",
-		garbageValue = "-1160761169"
-	)
-	float[] method3631(int var1) {
-		return this.field1637[var1];
-	}
+		if (var0.buttonType == 5) {
+			FileSystem.insertMenuItemNoShift(var0.buttonText, "", 29, 0, 0, var0.id);
+		}
 
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(II)[F",
-		garbageValue = "-344577838"
-	)
-	float[] method3632(int var1) {
-		return this.field1625[var1];
-	}
+		if (var0.buttonType == 6 && Client.meslayerContinueWidget == null) {
+			FileSystem.insertMenuItemNoShift(var0.buttonText, "", 30, 0, -1, var0.id);
+		}
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Lpx;Lpx;B)V",
-		garbageValue = "-63"
-	)
-	public static void method3657(AbstractArchive var0, AbstractArchive var1) {
-		SpotAnimationDefinition.field2203 = var0;
-		SpotAnimationDefinition.SpotAnimationDefinition_modelArchive = var1;
+		if (var0.isIf3) {
+			if (Client.isSpellSelected) {
+				if (class367.method7918(MouseRecorder.method2181(var0)) && (class266.selectedSpellFlags & 32) == 32) {
+					LoginScreenAnimation.method2587(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + var0.dataText, 58, 0, var0.childIndex * -2066937045, var0.id, var0.itemId);
+				}
+			} else {
+				for (int var8 = 31; var8 >= 0; --var8) {
+					String var2;
+					if (var8 == var0.targetPriority * 1010706597) {
+						var2 = ClientPreferences.Widget_getSpellActionName(var0);
+						if (var2 != null) {
+							LoginScreenAnimation.method2587(var2, var0.dataText, 25, 0, var0.childIndex * -2066937045, var0.id, var0.itemId);
+						}
+					}
+
+					var2 = class440.method8918(var0, var8);
+					if (var2 != null) {
+						int var3;
+						short var4;
+						if (var8 > var0.targetPriority * 1010706597) {
+							var4 = 1007;
+							var3 = LoginScreenAnimation.method2587(var2, var0.dataText, var4, var8 + 1, var0.childIndex * -2066937045, var0.id, var0.itemId);
+						} else {
+							var4 = 57;
+							var3 = class162.insertMenuItem(var2, var0.dataText, var4, var8 + 1, var0.childIndex * -2066937045, var0.id, var0.itemId, var0.prioritizeMenuEntry, -1);
+						}
+
+						if (var0.field4256 != null && var8 < var0.field4256.length && var0.field4256[var8] != null) {
+							String[] var5 = var0.field4256[var8];
+
+							for (int var6 = var5.length - 1; var6 >= 0; --var6) {
+								int var7 = var6 + 1 << 16 | var8 + 1;
+								if (var5[var6] != null && !var5[var6].isEmpty()) {
+									Message.method765(var3, var5[var6], "", var4, var7, var0.childIndex * -2066937045, var0.id, var0.itemId, -1);
+								}
+							}
+						}
+					}
+				}
+
+				if (ItemContainer.method2154(MouseRecorder.method2181(var0))) {
+					FileSystem.insertMenuItemNoShift("Continue", "", 30, 0, var0.childIndex * -2066937045, var0.id);
+				}
+			}
+		}
+
 	}
 }

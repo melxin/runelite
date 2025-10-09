@@ -1,52 +1,48 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ro")
-public class class456 {
-	@ObfuscatedName("af")
-	float[] field5202;
-	@ObfuscatedName("aw")
+@ObfuscatedName("rc")
+public final class class456 {
+	@ObfuscatedName("dy")
+	@ObfuscatedSignature(
+		descriptor = "[Lxc;"
+	)
+	@Export("worldSelectFlagSprites")
+	static IndexedSprite[] worldSelectFlagSprites;
+	@ObfuscatedName("ab")
+	final Object field5256;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 110203385
+		intValue = 52939655
 	)
-	int field5203;
+	int field5258;
 
-	class456(float[] var1, int var2) {
-		this.field5202 = var1;
-		this.field5203 = var2;
+	class456(Object var1, int var2) {
+		this.field5256 = var1;
+		this.field5258 = var2;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "4"
+		descriptor = "(IB)Lcj;",
+		garbageValue = "-88"
 	)
-	public static int method9207(int var0) {
-		return var0 >>> 12;
-	}
-
-	@ObfuscatedName("bm")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1312130987"
-	)
-	static int method9206(int var0) {
-		return (int)((Math.log((double)var0) / Interpreter.field657 - 7.0D) * 256.0D);
-	}
-
-	@ObfuscatedName("ko")
-	@ObfuscatedSignature(
-		descriptor = "(Ldr;IIIII)Lck;",
-		garbageValue = "857025246"
-	)
-	static final PendingSpawn method9208(WorldView var0, int var1, int var2, int var3, int var4) {
-		for (PendingSpawn var5 = (PendingSpawn)var0.pendingSpawns.last(); var5 != null; var5 = (PendingSpawn)var0.pendingSpawns.previous()) {
-			if (var5.plane == var1 && var2 == var5.x && var3 == var5.y && var4 == var5.type) {
-				return var5;
+	@Export("getScript")
+	static Script getScript(int var0) {
+		Script var1 = (Script)Script.Script_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = class142.archive12.takeFile(var0, 0);
+			if (var2 == null) {
+				return null;
+			} else {
+				var1 = class203.newScript(var2);
+				Script.Script_cached.put(var1, (long)var0);
+				return var1;
 			}
 		}
-
-		return null;
 	}
 }

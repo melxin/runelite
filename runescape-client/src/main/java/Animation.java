@@ -3,51 +3,51 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ip")
+@ObfuscatedName("io")
 @Implements("Animation")
 public class Animation {
-	@ObfuscatedName("af")
-	static int[] field2598;
-	@ObfuscatedName("aw")
-	static int[] field2589;
+	@ObfuscatedName("ab")
+	static int[] field2590;
 	@ObfuscatedName("at")
-	static int[] field2593;
-	@ObfuscatedName("ac")
+	static int[] field2592;
+	@ObfuscatedName("ag")
 	static int[] field2591;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aj")
+	static int[] field2594;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lin;"
+		descriptor = "Lip;"
 	)
 	@Export("skeleton")
 	Skeleton skeleton;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@Export("transformCount")
 	int transformCount;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@Export("transformSkeletonLabels")
 	int[] transformSkeletonLabels;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@Export("transformXs")
 	int[] transformXs;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@Export("transformYs")
 	int[] transformYs;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@Export("transformZs")
 	int[] transformZs;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@Export("hasAlphaTransform")
 	boolean hasAlphaTransform;
 
 	static {
-		field2598 = new int[500];
-		field2589 = new int[500];
-		field2593 = new int[500];
+		field2590 = new int[500];
+		field2592 = new int[500];
 		field2591 = new int[500];
+		field2594 = new int[500];
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "([BLin;)V"
+		descriptor = "([BLip;)V"
 	)
 	Animation(byte[] var1, Skeleton var2) {
 		this.skeleton = null;
@@ -56,11 +56,11 @@ public class Animation {
 		this.skeleton = var2;
 		Buffer var3 = new Buffer(var1);
 		Buffer var4 = new Buffer(var1);
-		var3.offset = -580820758;
+		var3.offset = 2;
 		int var5 = var3.readUnsignedByte();
 		int var6 = -1;
 		int var7 = 0;
-		var4.offset = (var5 + var3.offset * 1216585693) * -290410379;
+		var4.offset = var5 + var3.offset;
 
 		int var8;
 		for (var8 = 0; var8 < var5; ++var8) {
@@ -69,38 +69,38 @@ public class Animation {
 				if (this.skeleton.transformTypes[var8] != 0) {
 					for (int var10 = var8 - 1; var10 > var6; --var10) {
 						if (this.skeleton.transformTypes[var10] == 0) {
-							field2598[var7] = var10;
-							field2589[var7] = 0;
-							field2593[var7] = 0;
+							field2590[var7] = var10;
+							field2592[var7] = 0;
 							field2591[var7] = 0;
+							field2594[var7] = 0;
 							++var7;
 							break;
 						}
 					}
 				}
 
-				field2598[var7] = var8;
+				field2590[var7] = var8;
 				short var11 = 0;
 				if (this.skeleton.transformTypes[var8] == 3) {
 					var11 = 128;
 				}
 
 				if ((var9 & 1) != 0) {
-					field2589[var7] = var4.readShortSmart();
+					field2592[var7] = var4.readShortSmart();
 				} else {
-					field2589[var7] = var11;
+					field2592[var7] = var11;
 				}
 
 				if ((var9 & 2) != 0) {
-					field2593[var7] = var4.readShortSmart();
-				} else {
-					field2593[var7] = var11;
-				}
-
-				if ((var9 & 4) != 0) {
 					field2591[var7] = var4.readShortSmart();
 				} else {
 					field2591[var7] = var11;
+				}
+
+				if ((var9 & 4) != 0) {
+					field2594[var7] = var4.readShortSmart();
+				} else {
+					field2594[var7] = var11;
 				}
 
 				var6 = var8;
@@ -111,7 +111,7 @@ public class Animation {
 			}
 		}
 
-		if (var1.length != var4.offset * 1216585693) {
+		if (var1.length != var4.offset) {
 			throw new RuntimeException();
 		} else {
 			this.transformCount = var7;
@@ -121,10 +121,10 @@ public class Animation {
 			this.transformZs = new int[var7];
 
 			for (var8 = 0; var8 < var7; ++var8) {
-				this.transformSkeletonLabels[var8] = field2598[var8];
-				this.transformXs[var8] = field2589[var8];
-				this.transformYs[var8] = field2593[var8];
-				this.transformZs[var8] = field2591[var8];
+				this.transformSkeletonLabels[var8] = field2590[var8];
+				this.transformXs[var8] = field2592[var8];
+				this.transformYs[var8] = field2591[var8];
+				this.transformZs[var8] = field2594[var8];
 			}
 
 			var3.offset = var4.offset;

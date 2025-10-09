@@ -3,95 +3,125 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("as")
+@ObfuscatedName("aq")
 @Implements("SpriteBufferProperties")
 public class SpriteBufferProperties {
-	@ObfuscatedName("al")
-	@Export("SpriteBuffer_pixels")
-	public static byte[][] SpriteBuffer_pixels;
-	@ObfuscatedName("af")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lwb;"
+		descriptor = "Lpe;"
 	)
-	final Buffer field21;
-	@ObfuscatedName("aw")
+	@Export("ItemDefinition_modelArchive")
+	public static AbstractArchive ItemDefinition_modelArchive;
+	@ObfuscatedName("az")
+	static int[][] field24;
+	@ObfuscatedName("mb")
+	@ObfuscatedGetter(
+		intValue = -948425081
+	)
+	@Export("cameraYaw")
+	static int cameraYaw;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Lwj;"
 	)
-	final class3 field19;
+	final Buffer field28;
 	@ObfuscatedName("at")
-	ExecutorService field24;
-	@ObfuscatedName("ac")
-	Future field22;
+	@ObfuscatedSignature(
+		descriptor = "Laj;"
+	)
+	final class3 field26;
+	@ObfuscatedName("ag")
+	ExecutorService field19;
+	@ObfuscatedName("aj")
+	Future field20;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;Lac;)V"
+		descriptor = "(Lwj;Laj;)V"
 	)
 	public SpriteBufferProperties(Buffer var1, class3 var2) {
-		this.field24 = Executors.newSingleThreadExecutor();
-		this.field21 = var1;
-		this.field19 = var2;
-		this.method44();
+		this.field19 = Executors.newSingleThreadExecutor();
+		this.field28 = var1;
+		this.field26 = var2;
+		this.method41();
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(B)Z",
-		garbageValue = "-1"
+		garbageValue = "88"
 	)
-	public boolean method43() {
-		return this.field22.isDone();
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "381"
-	)
-	public void method52() {
-		this.field24.shutdown();
-		this.field24 = null;
+	public boolean method42() {
+		return this.field20.isDone();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lwb;",
-		garbageValue = "-1239446823"
+		descriptor = "(I)V",
+		garbageValue = "1687695813"
 	)
-	public Buffer method54() {
+	public void method40() {
+		this.field19.shutdown();
+		this.field19 = null;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lwj;",
+		garbageValue = "1251241349"
+	)
+	public Buffer method43() {
 		try {
-			return (Buffer)this.field22.get();
+			return (Buffer)this.field20.get();
 		} catch (Exception var2) {
 			return null;
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "14689"
+		descriptor = "(B)V",
+		garbageValue = "0"
 	)
-	void method44() {
-		this.field22 = this.field24.submit(new class1(this, this.field21, this.field19));
+	void method41() {
+		this.field20 = this.field19.submit(new class1(this, this.field28, this.field26));
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-249506631"
+		descriptor = "(Lwj;J)V"
 	)
-	@Export("clearItemContainer")
-	static void clearItemContainer(int var0) {
-		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var1 != null) {
-			for (int var2 = 0; var2 < var1.ids.length; ++var2) {
-				var1.ids[var2] = -1;
-				var1.quantities[var2] = 0;
-			}
-
+	static void method51(Buffer var0, long var1) {
+		var1 /= 10L;
+		if (var1 < 0L) {
+			var1 = 0L;
+		} else if (var1 > 65535L) {
+			var1 = 65535L;
 		}
+
+		var0.writeShort((int)var1);
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(Lrt;I)Lrt;",
+		garbageValue = "-600444548"
+	)
+	static final class451 method54(class451 var0) {
+		class451 var1 = class226.method5106(var0);
+		var1.method9127();
+		return var1;
+	}
+
+	@ObfuscatedName("hl")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lky;",
+		garbageValue = "-1479716944"
+	)
+	public static IndexCheck method52() {
+		return Client.indexCheck;
 	}
 }

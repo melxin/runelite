@@ -4,60 +4,66 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jf")
+@ObfuscatedName("ji")
 @Implements("BoundaryObject")
 public final class BoundaryObject {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ko")
 	@ObfuscatedSignature(
-		descriptor = "Liz;"
+		descriptor = "Lpg;"
+	)
+	@Export("archive8")
+	static Archive archive8;
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Liy;"
 	)
 	@Export("renderable1")
 	public Renderable renderable1;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Liz;"
+		descriptor = "Liy;"
 	)
 	@Export("renderable2")
 	public Renderable renderable2;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		longValue = 9027675054958033925L
+		longValue = 3402815881984803951L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1390673375
+		intValue = -1650497165
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1222861919
+		intValue = 495595975
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -658078459
+		intValue = -1023439509
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 900647447
+		intValue = 1746131451
 	)
 	@Export("orientationA")
 	int orientationA;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1447138463
+		intValue = 1953156409
 	)
 	@Export("orientationB")
 	int orientationB;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1282124153
+		intValue = -432336851
 	)
 	@Export("flags")
 	int flags;
@@ -65,5 +71,16 @@ public final class BoundaryObject {
 	BoundaryObject() {
 		this.tag = 0L;
 		this.flags = 0;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(IIII)I",
+		garbageValue = "-2084962977"
+	)
+	public static int method5835(int var0, int var1, int var2) {
+		int var3 = class172.method4149(var2 - var1 + 1);
+		var3 <<= var1;
+		return var0 & ~var3;
 	}
 }

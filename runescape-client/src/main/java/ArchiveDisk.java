@@ -5,33 +5,39 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("to")
+@ObfuscatedName("td")
 @Implements("ArchiveDisk")
 public final class ArchiveDisk {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@Export("ArchiveDisk_buffer")
 	static byte[] ArchiveDisk_buffer;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("pg")
 	@ObfuscatedSignature(
-		descriptor = "Lvv;"
+		descriptor = "[Lxl;"
+	)
+	@Export("headIconHintSprites")
+	static SpritePixels[] headIconHintSprites;
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lvy;"
 	)
 	@Export("datFile")
 	BufferedFile datFile;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lvv;"
+		descriptor = "Lvy;"
 	)
 	@Export("idxFile")
 	BufferedFile idxFile;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1079099507
+		intValue = 1596930259
 	)
 	@Export("archive")
 	int archive;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 857823363
+		intValue = 1617309495
 	)
 	@Export("maxEntrySize")
 	int maxEntrySize;
@@ -41,7 +47,7 @@ public final class ArchiveDisk {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(ILvv;Lvv;I)V"
+		descriptor = "(ILvy;Lvy;I)V"
 	)
 	public ArchiveDisk(int var1, BufferedFile var2, BufferedFile var3, int var4) {
 		this.datFile = null;
@@ -53,10 +59,10 @@ public final class ArchiveDisk {
 		this.maxEntrySize = var4;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)[B",
-		garbageValue = "-1347382812"
+		descriptor = "(IB)[B",
+		garbageValue = "78"
 	)
 	@Export("read")
 	public byte[] read(int var1) {
@@ -80,15 +86,14 @@ public final class ArchiveDisk {
 					} else {
 						byte[] var5 = new byte[var3];
 						int var6 = 0;
-						int var7 = 0;
 
-						while (var6 < var3) {
+						for (int var7 = 0; var6 < var3; ++var7) {
 							if (var4 == 0) {
 								var10000 = null;
 								return (byte[])var10000;
 							}
 
-							this.datFile.seek((long)var4 * 520L);
+							this.datFile.seek(520L * (long)var4);
 							int var8 = var3 - var6;
 							int var9;
 							int var10;
@@ -112,32 +117,30 @@ public final class ArchiveDisk {
 								}
 
 								var13 = 8;
-								this.datFile.read(ArchiveDisk_buffer, 0, var13 + var8);
+								this.datFile.read(ArchiveDisk_buffer, 0, var8 + var13);
 								var9 = (ArchiveDisk_buffer[1] & 255) + ((ArchiveDisk_buffer[0] & 255) << 8);
 								var10 = (ArchiveDisk_buffer[3] & 255) + ((ArchiveDisk_buffer[2] & 255) << 8);
 								var11 = ((ArchiveDisk_buffer[5] & 255) << 8) + ((ArchiveDisk_buffer[4] & 255) << 16) + (ArchiveDisk_buffer[6] & 255);
 								var12 = ArchiveDisk_buffer[7] & 255;
 							}
 
-							if (var9 == var1 && var10 == var7 && var12 == this.archive) {
-								if (var11 >= 0 && (long)var11 <= this.datFile.length() / 520L) {
-									int var14 = var13 + var8;
-
-									for (int var15 = var13; var15 < var14; ++var15) {
-										var5[var6++] = ArchiveDisk_buffer[var15];
-									}
-
-									var4 = var11;
-									++var7;
-									continue;
-								}
-
+							if (var9 != var1 || var10 != var7 || var12 != this.archive) {
 								var10000 = null;
 								return (byte[])var10000;
 							}
 
-							var10000 = null;
-							return (byte[])var10000;
+							if (var11 < 0 || (long)var11 > this.datFile.length() / 520L) {
+								var10000 = null;
+								return (byte[])var10000;
+							}
+
+							int var14 = var13 + var8;
+
+							for (int var15 = var13; var15 < var14; ++var15) {
+								var5[var6++] = ArchiveDisk_buffer[var15];
+							}
+
+							var4 = var11;
 						}
 
 						byte[] var20 = var5;
@@ -150,10 +153,10 @@ public final class ArchiveDisk {
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I[BIB)Z",
-		garbageValue = "116"
+		descriptor = "(I[BII)Z",
+		garbageValue = "229118123"
 	)
 	@Export("write")
 	public boolean write(int var1, byte[] var2, int var3) {
@@ -171,10 +174,10 @@ public final class ArchiveDisk {
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I[BIZB)Z",
-		garbageValue = "-23"
+		descriptor = "(I[BIZI)Z",
+		garbageValue = "2032478115"
 	)
 	@Export("write0")
 	boolean write0(int var1, byte[] var2, int var3, boolean var4) {
@@ -196,7 +199,7 @@ public final class ArchiveDisk {
 						return var10000;
 					}
 				} else {
-					var6 = (int)((this.datFile.method10918().length() + 519L) / 520L);
+					var6 = (int)((this.datFile.method11088().length() + 519L) / 520L);
 					if (var6 == 0) {
 						var6 = 1;
 					}
@@ -209,7 +212,7 @@ public final class ArchiveDisk {
 					int var10 = 0;
 					int var11;
 					if (var4) {
-						this.datFile.seek((long)var9 * 520L);
+						this.datFile.seek(520L * (long)var9);
 						int var12;
 						int var13;
 						if (var1 > 65535) {
@@ -226,7 +229,7 @@ public final class ArchiveDisk {
 							var13 = ArchiveDisk_buffer[7] & 255;
 						}
 
-						if (var11 != var1 || var8 != var12 || var13 != this.archive) {
+						if (var11 != var1 || var12 != var8 || var13 != this.archive) {
 							var10000 = false;
 							return var10000;
 						}
@@ -239,7 +242,7 @@ public final class ArchiveDisk {
 
 					if (var10 == 0) {
 						var4 = false;
-						var10 = (int)((this.datFile.method10918().length() + 519L) / 520L);
+						var10 = (int)((this.datFile.method11088().length() + 519L) / 520L);
 						if (var10 == 0) {
 							++var10;
 						}
@@ -318,5 +321,25 @@ public final class ArchiveDisk {
 
 	public String toString() {
 		return "" + this.archive;
+	}
+
+	@ObfuscatedName("mz")
+	@ObfuscatedSignature(
+		descriptor = "(II)Ljava/lang/String;",
+		garbageValue = "-1666111145"
+	)
+	@Export("formatItemStacks")
+	static final String formatItemStacks(int var0) {
+		String var1 = Integer.toString(var0);
+
+		for (int var2 = var1.length() - 3; var2 > 0; var2 -= 3) {
+			var1 = var1.substring(0, var2) + "," + var1.substring(var2);
+		}
+
+		if (var1.length() > 9) {
+			return " " + class171.colorStartTag(65408) + var1.substring(0, var1.length() - 8) + "M" + " " + " (" + var1 + ")" + "</col>";
+		} else {
+			return var1.length() > 6 ? " " + class171.colorStartTag(16777215) + var1.substring(0, var1.length() - 4) + "K" + " " + " (" + var1 + ")" + "</col>" : " " + class171.colorStartTag(16776960) + var1 + "</col>";
+		}
 	}
 }

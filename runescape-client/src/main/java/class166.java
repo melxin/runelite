@@ -1,107 +1,59 @@
-import java.util.ArrayList;
-import java.util.Iterator;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("gy")
-public class class166 extends class151 {
-	@ObfuscatedName("pc")
-	static byte[][] field1890;
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		longValue = 8061763569836155007L
+public abstract class class166 extends Node {
+	class166() {
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(Lwj;I)V",
+		garbageValue = "2073998337"
 	)
-	long field1889;
-	@ObfuscatedName("aw")
-	String field1887;
+	abstract void vmethod4154(Buffer var1);
+
 	@ObfuscatedName("at")
-	@ObfuscatedGetter(
-		intValue = 571895803
-	)
-	int field1888;
-	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "(Lgr;I)V",
+		garbageValue = "2002767604"
 	)
-	final class154 this$0;
+	abstract void vmethod4151(ClanChannel var1);
 
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "([Ljava/lang/String;[JIII)V",
+		garbageValue = "71512821"
 	)
-	class166(class154 var1) {
-		this.this$0 = var1;
-		this.field1889 = -1L;
-		this.field1887 = null;
-		this.field1888 = 0;
-	}
+	public static void method4090(String[] var0, long[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var4 = (var3 + var2) / 2;
+			int var5 = var2;
+			String var6 = var0[var4];
+			var0[var4] = var0[var3];
+			var0[var3] = var6;
+			long var7 = var1[var4];
+			var1[var4] = var1[var3];
+			var1[var3] = var7;
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-2943315"
-	)
-	void vmethod4111(Buffer var1) {
-		if (var1.readUnsignedByte() != 255) {
-			var1.offset -= -290410379;
-			this.field1889 = var1.readLong();
-		}
-
-		this.field1887 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1888 = var1.readUnsignedShort();
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(Lgs;I)V",
-		garbageValue = "2108880901"
-	)
-	void vmethod4112(ClanSettings var1) {
-		var1.method3962(this.field1889, this.field1887, this.field1888);
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "142805065"
-	)
-	public static void method4023() {
-		class196.field2100.clear();
-	}
-
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "21"
-	)
-	public static int method4030(int var0, int var1) {
-		int var2 = var1 - var0 & 2047;
-		return var2 > 1024 ? -(2048 - var2) : var2;
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(Lpx;II)V",
-		garbageValue = "1288803374"
-	)
-	public static void method4028(AbstractArchive var0, int var1) {
-		if (!class339.field3889.isEmpty()) {
-			ArrayList var2 = new ArrayList();
-			Iterator var3 = class339.field3889.iterator();
-
-			while (var3.hasNext()) {
-				MidiRequest var4 = (MidiRequest)var3.next();
-				var4.field4009 = false;
-				var4.field4008 = false;
-				var4.field4010 = false;
-				var4.field4011 = false;
-				var4.musicTrackArchive = var0;
-				var4.musicTrackVolume = var1;
-				var4.field4002 = 0.0F;
-				var2.add(var4);
+			for (int var9 = var2; var9 < var3; ++var9) {
+				if (var6 == null || var0[var9] != null && var0[var9].compareTo(var6) < (var9 & 1)) {
+					String var10 = var0[var9];
+					var0[var9] = var0[var5];
+					var0[var5] = var10;
+					long var11 = var1[var9];
+					var1[var9] = var1[var5];
+					var1[var5++] = var11;
+				}
 			}
 
-			Clock.method6081(var2, class339.musicPlayerStatus, class339.field3896, class339.field3898, class339.field3897, false);
+			var0[var3] = var0[var5];
+			var0[var5] = var6;
+			var1[var3] = var1[var5];
+			var1[var5] = var7;
+			method4090(var0, var1, var2, var5 - 1);
+			method4090(var0, var1, var5 + 1, var3);
 		}
+
 	}
 }

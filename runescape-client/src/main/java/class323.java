@@ -1,24 +1,38 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("mz")
+@ObfuscatedName("ml")
 public class class323 {
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aj")
+	public static short[][] field3544;
+
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "2006321818"
+		descriptor = "(II)Z",
+		garbageValue = "-1077652640"
 	)
-	static final int method7031(int var0, int var1, int var2) {
-		int var3 = var0 / var2;
-		int var4 = var0 & var2 - 1;
-		int var5 = var1 / var2;
-		int var6 = var1 & var2 - 1;
-		int var7 = DevicePcmPlayerProvider.method331(var3, var5);
-		int var8 = DevicePcmPlayerProvider.method331(var3 + 1, var5);
-		int var9 = DevicePcmPlayerProvider.method331(var3, var5 + 1);
-		int var10 = DevicePcmPlayerProvider.method331(var3 + 1, var5 + 1);
-		int var11 = NpcOverrides.method4321(var7, var8, var4, var2);
-		int var12 = NpcOverrides.method4321(var9, var10, var4, var2);
-		return NpcOverrides.method4321(var11, var12, var6, var2);
+	static final boolean method7033(int var0) {
+		return var0 == 1 || var0 == 2 || var0 >= 3 && var0 <= 6 || var0 == 1001;
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-1157829090"
+	)
+	static int method7031() {
+		return class26.KeyHandler_keyCodes.length;
+	}
+
+	@ObfuscatedName("nf")
+	static final void method7032(double var0) {
+		Rasterizer3D.buildPalette(var0);
+		((TextureProvider)Rasterizer3D.clips.Rasterizer3D_textureLoader).setBrightness(var0);
+		if (class50.worldMap != null) {
+			class50.worldMap.method10803();
+		}
+
+		WidgetDefinition.method7504();
+		class154.clientPreferences.updateBrightness(var0);
 	}
 }

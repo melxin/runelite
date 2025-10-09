@@ -3,31 +3,31 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ko")
+@ObfuscatedName("kj")
 @Implements("MoveSpeed")
 public enum MoveSpeed implements Enum {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lko;"
+		descriptor = "Lkj;"
 	)
-	field3279((byte)-1),
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lko;"
-	)
-	field3280((byte)0),
+	field3278((byte)-1),
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lko;"
+		descriptor = "Lkj;"
 	)
-	field3281((byte)1),
-	@ObfuscatedName("ac")
+	field3280((byte)0),
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lko;"
+		descriptor = "Lkj;"
 	)
-	field3282((byte)2);
+	field3276((byte)1),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lkj;"
+	)
+	field3274((byte)2);
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@Export("id")
 	final byte id;
 
@@ -35,40 +35,62 @@ public enum MoveSpeed implements Enum {
 		this.id = var3;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1935172756"
+		garbageValue = "-1012656358"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ch")
 	@ObfuscatedSignature(
-		descriptor = "(Lti;IIIIB)V",
-		garbageValue = "3"
+		descriptor = "(Lwe;Ljava/lang/Object;B)V",
+		garbageValue = "0"
 	)
-	public static void method6323(DynamicArray var0, int var1, int var2, int var3, int var4) {
-		class574 var5 = class574.field5820;
-		ItemLayer.method4826(var0, var5, true);
-		if (var3 < 0) {
-			var3 = 0;
+	static void method6336(class572 var0, Object var1) {
+		if (var0 == null) {
+			throw new IllegalStateException("pushValueOfType() failure - null baseVarType");
+		} else {
+			switch(var0.field5881) {
+			case 1:
+				Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var1;
+				break;
+			case 2:
+				Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = (Integer)var1;
+				break;
+			default:
+				throw new IllegalStateException("pushValueOfType() failure - unsupported type");
+			}
+
 		}
+	}
 
-		int var6 = var3 + var4;
-		if (var4 < 0 || var6 < 0 || var6 > var0.method10322()) {
-			var6 = var0.method10322();
+	@ObfuscatedName("jv")
+	@ObfuscatedSignature(
+		descriptor = "(Lcs;B)Z",
+		garbageValue = "55"
+	)
+	static boolean method6337(Player var0) {
+		if (Client.drawPlayerNames == 0) {
+			return false;
+		} else {
+			boolean var1;
+			if (class159.localPlayer != var0) {
+				var1 = (Client.drawPlayerNames & 4) != 0;
+				boolean var2 = var1;
+				if (!var1) {
+					boolean var3 = (Client.drawPlayerNames & 1) != 0;
+					var2 = var3 && var0.isFriend();
+				}
+
+				return var2 || ModeWhere.method8721() && var0.isFriendsChatMember();
+			} else {
+				var1 = (Client.drawPlayerNames & 8) != 0;
+				return var1;
+			}
 		}
-
-		int[] var7 = var0.method10318();
-		int var8 = var1;
-
-		for (int var9 = var3; var9 < var6; ++var9) {
-			var7[var9] = var8;
-			var8 += var2;
-		}
-
 	}
 }

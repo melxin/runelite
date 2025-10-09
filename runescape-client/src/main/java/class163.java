@@ -1,105 +1,101 @@
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gv")
-public class class163 extends class167 {
-	@ObfuscatedName("pe")
+@ObfuscatedName("gl")
+public class class163 extends class166 {
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1743196271
-	)
-	static int field1873;
-	@ObfuscatedName("ty")
-	@ObfuscatedGetter(
-		intValue = -103445513
-	)
-	static int field1872;
-	@ObfuscatedName("af")
-	String field1878;
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = 1285409083
+		intValue = 95984119
 	)
 	int field1877;
 	@ObfuscatedName("at")
-	byte field1874;
+	byte field1878;
+	@ObfuscatedName("ag")
+	@ObfuscatedGetter(
+		intValue = -197328297
+	)
+	int field1879;
+	@ObfuscatedName("aj")
+	String field1880;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lga;"
+		descriptor = "Lgc;"
 	)
-	final class168 this$0;
+	final class167 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lga;)V"
+		descriptor = "(Lgc;)V"
 	)
-	class163(class168 var1) {
+	class163(class167 var1) {
 		this.this$0 = var1;
-		this.field1878 = null;
+		this.field1877 = -1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "1665789280"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "2073998337"
 	)
-	void vmethod4108(Buffer var1) {
-		if (var1.readUnsignedByte() != 255) {
-			var1.offset -= -290410379;
-			var1.readLong();
-		}
-
-		this.field1878 = var1.readStringCp1252NullTerminatedOrNull();
+	void vmethod4154(Buffer var1) {
+		var1.readUnsignedByte();
 		this.field1877 = var1.readUnsignedShort();
-		this.field1874 = var1.readByte();
+		this.field1878 = var1.readByte();
+		this.field1879 = var1.readUnsignedShort();
 		var1.readLong();
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(Lgm;I)V",
-		garbageValue = "-358275379"
-	)
-	void vmethod4104(ClanChannel var1) {
-		ClanChannelMember var2 = new ClanChannelMember();
-		var2.username = new Username(this.field1878);
-		var2.world = this.field1877;
-		var2.rank = this.field1874;
-		var1.addMember(var2);
+		this.field1880 = var1.readStringCp1252NullTerminated();
+		var1.readUnsignedByte();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)[Lko;",
-		garbageValue = "46"
+		descriptor = "(Lgr;I)V",
+		garbageValue = "2002767604"
 	)
-	public static MoveSpeed[] method3999() {
-		return new MoveSpeed[]{MoveSpeed.field3280, MoveSpeed.field3279, MoveSpeed.field3281, MoveSpeed.field3282};
+	void vmethod4151(ClanChannel var1) {
+		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1877);
+		var2.rank = this.field1878;
+		var2.world = this.field1879;
+		var2.username = new Username(this.field1880);
 	}
 
-	@ObfuscatedName("ih")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lcv;III)V",
-		garbageValue = "-1492584916"
+		descriptor = "(Lcb;III)V",
+		garbageValue = "-1977714884"
 	)
-	@Export("performPlayerAnimation")
-	static void performPlayerAnimation(Player var0, int var1, int var2) {
-		SequenceDefinition var3 = var0.animationSequence.getSequenceDefinition();
-		if (var1 == var0.animationSequence.getId() && var1 != -1) {
-			int var4 = var3.restartMode;
-			if (var4 == 1) {
-				var0.animationSequence.method9572();
-				var0.field1102 = var2;
-			}
+	@Export("runScript")
+	static void runScript(ScriptEvent var0, int var1, int var2) {
+		Object[] var3 = var0.args;
+		Script var4;
+		if (DirectByteArrayCopier.isWorldMapEvent(var0.type)) {
+			class199.worldMapEvent = (WorldMapEvent)var3[0];
+			WorldMapElement var6 = LoginState.WorldMapElement_get(class199.worldMapEvent.mapElement);
+			var4 = SpriteMask.getWorldMapScript(var0.type, var6.objectId, var6.category);
+		} else {
+			int var5 = (Integer)var3[0];
+			var4 = class456.getScript(var5);
+		}
 
-			if (var4 == 2) {
-				var0.animationSequence.method9589();
-			}
-		} else if (var1 == -1 || !var0.animationSequence.isActive() || InvDefinition.SequenceDefinition_get(var1).field2480 >= var3.field2480) {
-			var0.animationSequence.setSequence(var1);
-			var0.animationSequence.method9572();
-			var0.field1102 = var2;
-			var0.field1040 = var0.pathLength;
+		if (var4 != null) {
+			ModelData0.runScriptLogic(var0, var4, var1, var2);
+		}
+
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(III)V",
+		garbageValue = "-689943485"
+	)
+	public static void method4069(int var0, int var1) {
+		Iterator var2 = class338.field3892.iterator();
+
+		while (var2.hasNext()) {
+			class344 var3 = (class344)var2.next();
+			var3.vmethod7348(var0, var1);
 		}
 
 	}

@@ -1,72 +1,48 @@
-import java.util.ArrayList;
 import java.util.Iterator;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sy")
+@ObfuscatedName("sh")
 public class class472 extends SongTask {
-	@ObfuscatedName("af")
-	ArrayList field5287;
-
 	@ObfuscatedSignature(
-		descriptor = "(Lsi;Ljava/util/ArrayList;)V"
+		descriptor = "(Lsw;)V"
 	)
-	public class472(SongTask var1, ArrayList var2) {
+	public class472(SongTask var1) {
 		super(var1);
-		super.field5303 = "ClearRequestTask";
-		this.field5287 = var2;
+		super.field5350 = "StartSongTask";
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "40"
+		descriptor = "(I)Z",
+		garbageValue = "-1369867803"
 	)
-	public boolean vmethod9673() {
-		if (this.field5287.isEmpty()) {
-			return true;
-		} else {
-			Iterator var1 = this.field5287.iterator();
+	public boolean vmethod9763() {
+		Iterator var1 = class338.midiRequests.iterator();
 
-			while (var1.hasNext()) {
-				MidiRequest var2 = (MidiRequest)var1.next();
-
+		while (var1.hasNext()) {
+			MidiRequest var2 = (MidiRequest)var1.next();
+			if (var2 != null && !var2.field4021 && var2.midiPcmStream != null) {
 				try {
-					if (class339.midiRequests.contains(var2)) {
-						if (var2 == null) {
-							class339.midiRequests.remove(var2);
-						} else {
-							if (var2.midiPcmStream.field3904 > 0) {
-								--var2.midiPcmStream.field3904;
-							}
-
-							if (var2.midiPcmStream.field3904 == 0) {
-								var2.midiPcmStream.clear();
-								var2.midiPcmStream.method7143();
-								var2.midiPcmStream.setPcmStreamVolume(0);
-							}
-
-							int var3 = var2.musicTrackGroupId;
-							int var4 = var2.musicTrackFileId;
-							Iterator var5 = class339.field3893.iterator();
-
-							while (var5.hasNext()) {
-								class345 var6 = (class345)var5.next();
-								var6.vmethod7338(var3, var4);
-							}
-
-							class339.midiRequests.remove(var2);
-						}
+					var2.midiPcmStream.method7153();
+					var2.midiPcmStream.setPcmStreamVolume(0);
+					if (var2.field4027 != null) {
+						var2.midiPcmStream.setMusicTrack(var2.field4027, var2.musicTrackBoolean);
 					}
-				} catch (Exception var8) {
-					class508.RunException_sendStackTrace((String)null, var8);
-					this.method9659(var8.getMessage());
-					class339.midiRequests.clear();
+
+					var2.field4027 = null;
+					var2.field4022 = null;
+					var2.musicTrackArchive = null;
+					var2.field4021 = true;
+				} catch (Exception var4) {
+					ArchiveDiskActionHandler.RunException_sendStackTrace((String)null, var4);
+					this.method9741(var4.getMessage());
 					return true;
 				}
 			}
-
-			return true;
 		}
+
+		super.field5351 = true;
+		return true;
 	}
 }

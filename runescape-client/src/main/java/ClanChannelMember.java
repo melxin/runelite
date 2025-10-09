@@ -4,26 +4,21 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fx")
+@ObfuscatedName("fs")
 @Implements("ClanChannelMember")
 public class ClanChannelMember {
-	@ObfuscatedName("iv")
-	@ObfuscatedSignature(
-		descriptor = "Lqv;"
-	)
-	public static class423 field1780;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@Export("rank")
 	public byte rank;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1362145957
+		intValue = -316237065
 	)
 	@Export("world")
 	public int world;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lxa;"
+		descriptor = "Lxp;"
 	)
 	@Export("username")
 	public Username username;
@@ -31,28 +26,18 @@ public class ClanChannelMember {
 	ClanChannelMember() {
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1782630395"
+		descriptor = "(IIIIZIIB)J",
+		garbageValue = "117"
 	)
-	public static int method3835(int var0) {
-		return var0 >> 24 & 3;
-	}
-
-	@ObfuscatedName("bs")
-	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/Object;III)V",
-		garbageValue = "-1711867357"
-	)
-	static void method3834(Object[] var0, int var1, int var2) {
-		while (var1 < var2) {
-			Object var3 = var0[var1];
-			var0[var1] = var0[var2];
-			var0[var2] = var3;
-			++var1;
-			--var2;
+	@Export("calculateTag")
+	public static long calculateTag(int var0, int var1, int var2, int var3, boolean var4, int var5, int var6) {
+		long var7 = (long)((var1 & 127) << 0 | (var2 & 127) << 7 | (var0 & 3) << 14 | (var3 & 7) << 16) | ((long)var5 & 4294967295L) << 20 | ((long)var6 & 4095L) << 52;
+		if (var4) {
+			var7 |= 524288L;
 		}
 
+		return var7;
 	}
 }

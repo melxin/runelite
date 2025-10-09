@@ -4,98 +4,94 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("va")
+@ObfuscatedName("vt")
 @Implements("LoginType")
 public class LoginType {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lva;"
+		descriptor = "Lvt;"
 	)
 	@Export("oldscape")
 	public static final LoginType oldscape;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lva;"
-	)
-	static final LoginType field5774;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lva;"
+		descriptor = "Lvt;"
 	)
-	static final LoginType field5768;
-	@ObfuscatedName("ac")
+	static final LoginType field5832;
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lva;"
+		descriptor = "Lvt;"
 	)
-	static final LoginType field5777;
-	@ObfuscatedName("ap")
+	static final LoginType field5833;
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lva;"
+		descriptor = "Lvt;"
 	)
-	static final LoginType field5770;
+	static final LoginType field5834;
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lvt;"
+	)
+	static final LoginType field5831;
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lvt;"
+	)
+	static final LoginType field5836;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lvt;"
+	)
+	static final LoginType field5835;
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lva;"
+		descriptor = "Lvt;"
 	)
-	static final LoginType field5771;
-	@ObfuscatedName("ao")
+	static final LoginType field5838;
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lva;"
+		descriptor = "Lvt;"
 	)
-	static final LoginType field5772;
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lva;"
-	)
-	static final LoginType field5766;
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lva;"
-	)
-	public static final LoginType field5769;
-	@ObfuscatedName("au")
+	public static final LoginType field5837;
+	@ObfuscatedName("bq")
 	@ObfuscatedGetter(
-		intValue = -640433825
+		intValue = -76890969
 	)
-	final int field5775;
-	@ObfuscatedName("ai")
-	final String field5776;
+	static int field5842;
+	@ObfuscatedName("aa")
+	@ObfuscatedGetter(
+		intValue = -951199051
+	)
+	final int field5840;
+	@ObfuscatedName("ap")
+	final String field5841;
 
 	static {
-		oldscape = new LoginType(7, 0, "", "");
-		field5774 = new LoginType(0, 1, "", "");
-		field5768 = new LoginType(6, 2, "", "");
-		field5777 = new LoginType(4, 3, "", "");
-		field5770 = new LoginType(8, 4, "", "");
-		field5771 = new LoginType(1, 5, "", "");
-		field5772 = new LoginType(3, 6, "", "");
-		field5766 = new LoginType(5, 7, "", "");
-		field5769 = new LoginType(2, -1, "", "", true, new LoginType[]{oldscape, field5774, field5768, field5770, field5777});
+		oldscape = new LoginType(6, 0, "", "");
+		field5832 = new LoginType(3, 1, "", "");
+		field5833 = new LoginType(5, 2, "", "");
+		field5834 = new LoginType(0, 3, "", "");
+		field5831 = new LoginType(7, 4, "", "");
+		field5836 = new LoginType(4, 5, "", "");
+		field5835 = new LoginType(8, 6, "", "");
+		field5838 = new LoginType(1, 7, "", "");
+		field5837 = new LoginType(2, -1, "", "", true, new LoginType[]{oldscape, field5832, field5833, field5831, field5834});
 	}
 
 	LoginType(int var1, int var2, String var3, String var4) {
-		this.field5775 = var1;
-		this.field5776 = var4;
+		this.field5840 = var1;
+		this.field5841 = var4;
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(IILjava/lang/String;Ljava/lang/String;Z[Lva;)V"
+		descriptor = "(IILjava/lang/String;Ljava/lang/String;Z[Lvt;)V"
 	)
 	LoginType(int var1, int var2, String var3, String var4, boolean var5, LoginType[] var6) {
-		this.field5775 = var1;
-		this.field5776 = var4;
+		this.field5840 = var1;
+		this.field5841 = var4;
 	}
 
 	public String toString() {
-		return this.field5776;
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "100"
-	)
-	public static int method10882(int var0) {
-		return (var0 & class580.field5846) - 1;
+		return this.field5841;
 	}
 }

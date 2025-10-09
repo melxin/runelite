@@ -5,129 +5,129 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dr")
+@ObfuscatedName("dm")
 @Implements("WorldView")
 public class WorldView extends Node {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lqs;"
+		descriptor = "Lqf;"
 	)
 	@Export("objectSounds")
 	final NodeDeque objectSounds;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 542989475
+		intValue = 342219453
 	)
 	@Export("id")
 	public int id;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lit;"
+		descriptor = "Lih;"
 	)
 	@Export("scene")
 	public Scene scene;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "[Lkb;"
+		descriptor = "[Lke;"
 	)
 	@Export("collisionMaps")
 	CollisionMap[] collisionMaps;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -71765503
+		intValue = 1633830575
 	)
 	@Export("plane")
 	public int plane;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 688942373
+		intValue = 1095188513
 	)
 	@Export("sizeX")
 	public int sizeX;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1737912357
+		intValue = -1077011335
 	)
 	@Export("sizeY")
 	public int sizeY;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedGetter(
-		intValue = -1803587969
+		intValue = 1409092661
 	)
 	@Export("baseX")
 	int baseX;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 1957453421
+		intValue = 267347979
 	)
 	@Export("baseY")
 	int baseY;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@Export("tileLastDrawnActor")
 	int[][] tileLastDrawnActor;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@Export("tileHeights")
 	int[][][] tileHeights;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ad")
 	@Export("tileSettings")
 	byte[][][] tileSettings;
-	@ObfuscatedName("am")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lqf;"
+		descriptor = "Lqi;"
 	)
 	@Export("players")
 	public IndexedObjectSet players;
-	@ObfuscatedName("an")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Lqf;"
+		descriptor = "Lqi;"
 	)
 	@Export("npcs")
 	IndexedObjectSet npcs;
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "Lqm;"
+		descriptor = "Lqw;"
 	)
 	@Export("worldEntities")
 	IterableNodeHashTable worldEntities;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "[[[Lqs;"
+		descriptor = "[[[Lqf;"
 	)
 	@Export("groundItems")
 	NodeDeque[][][] groundItems;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lqs;"
+		descriptor = "Lqf;"
 	)
 	@Export("pendingSpawns")
 	NodeDeque pendingSpawns;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Lqs;"
+		descriptor = "Lqf;"
 	)
 	@Export("graphicsObjects")
 	NodeDeque graphicsObjects;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ao")
 	@ObfuscatedSignature(
-		descriptor = "Lsn;"
+		descriptor = "Lsr;"
 	)
-	class486 field1161;
-	@ObfuscatedName("av")
+	class484 field1169;
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "Lsn;"
+		descriptor = "Lsr;"
 	)
-	class486 field1176;
+	class484 field1170;
 
 	@ObfuscatedSignature(
-		descriptor = "(IIIILio;)V"
+		descriptor = "(IIIILir;)V"
 	)
-	WorldView(int var1, int var2, int var3, int var4, class217 var5) {
+	WorldView(int var1, int var2, int var3, int var4, class216 var5) {
 		this.objectSounds = new NodeDeque();
 		this.collisionMaps = new CollisionMap[4];
 		this.pendingSpawns = new NodeDeque();
 		this.graphicsObjects = new NodeDeque();
-		this.field1161 = new class486(149);
-		this.field1176 = new class486(25);
+		this.field1169 = new class484(149);
+		this.field1170 = new class484(25);
 		this.id = var1;
 		this.sizeX = var2;
 		this.sizeY = var3;
@@ -147,23 +147,23 @@ public class WorldView extends Node {
 		this.scene = new Scene(var1, 4, var2, var3, var4, var5, this.tileHeights);
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1129049926"
+		descriptor = "(B)Z",
+		garbageValue = "7"
 	)
-	boolean method2691() {
+	boolean method2736() {
 		return this.id == -1;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1923596588"
+		garbageValue = "-2068872742"
 	)
-	void method2681() {
-		this.field1161.method9793();
-		this.field1176.method9793();
+	void method2743() {
+		this.field1169.method9888();
+		this.field1170.method9888();
 		this.players.clear();
 		this.npcs.clear();
 		this.worldEntities.clear();
@@ -187,12 +187,12 @@ public class WorldView extends Node {
 
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1814219322"
+		garbageValue = "-1570495960"
 	)
-	void method2680() {
+	void method2739() {
 		this.players.clear();
 
 		Actor var2;
@@ -203,28 +203,28 @@ public class WorldView extends Node {
 
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lcv;",
-		garbageValue = "-51"
+		descriptor = "(II)Lcs;",
+		garbageValue = "1190592204"
 	)
-	Player method2683(int var1) {
+	Player method2745(int var1) {
 		return (Player)this.players.get((long)var1);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lqs;",
-		garbageValue = "90"
+		descriptor = "(I)Lqf;",
+		garbageValue = "-390705206"
 	)
-	NodeDeque method2684() {
+	NodeDeque method2741() {
 		return this.objectSounds;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(IIILib;II)V",
-		garbageValue = "2089182867"
+		descriptor = "(IIILia;II)V",
+		garbageValue = "-758336980"
 	)
 	@Export("createObjectSound")
 	void createObjectSound(int var1, int var2, int var3, ObjectComposition var4, int var5) {
@@ -232,24 +232,24 @@ public class WorldView extends Node {
 		this.objectSounds.addFirst(var6);
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1463268347"
+		descriptor = "(B)V",
+		garbageValue = "-115"
 	)
-	void method2686() {
+	void method2747() {
 		for (ObjectSound var1 = (ObjectSound)this.objectSounds.last(); var1 != null; var1 = (ObjectSound)this.objectSounds.previous()) {
-			var1.method2252();
+			var1.method2286();
 		}
 
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(IIILib;IB)V",
-		garbageValue = "2"
+		descriptor = "(IIILia;II)V",
+		garbageValue = "685871960"
 	)
-	void method2687(int var1, int var2, int var3, ObjectComposition var4, int var5) {
+	void method2744(int var1, int var2, int var3, ObjectComposition var4, int var5) {
 		if (var4 != null && var4.hasSound()) {
 			int var6 = var4.sizeX;
 			int var7 = var4.sizeY;
@@ -258,25 +258,25 @@ public class WorldView extends Node {
 				var7 = var4.sizeX;
 			}
 
-			int var8 = Coord.method7417(var6 + var2);
-			int var9 = Coord.method7417(var3 + var7);
-			var2 = Coord.method7417(var2);
-			var3 = Coord.method7417(var3);
+			int var8 = Coord.method7440(var6 + var2);
+			int var9 = Coord.method7440(var3 + var7);
+			var2 = Coord.method7440(var2);
+			var3 = Coord.method7440(var3);
 			int var10 = var4.ambientSoundId;
-			int var11 = Coord.method7417(var4.int7);
-			int var12 = Coord.method7417(var4.int8);
+			int var11 = Coord.method7440(var4.int7);
+			int var12 = Coord.method7440(var4.int8);
 			if (var4.transforms != null) {
 				ObjectComposition var13 = var4.transform();
 				if (var13 != null) {
 					var10 = var13.ambientSoundId;
-					var11 = Coord.method7417(var13.int7);
-					var12 = Coord.method7417(var13.int8);
+					var11 = Coord.method7440(var13.int7);
+					var12 = Coord.method7440(var13.int8);
 				}
 			}
 
 			for (ObjectSound var14 = (ObjectSound)this.objectSounds.last(); var14 != null; var14 = (ObjectSound)this.objectSounds.previous()) {
-				if (var14.method2260() == var1 && var14.method2254() == var2 && var14.method2317() == var3 && var14.method2255() == var8 && var14.method2257() == var9 && var14.method2290() == var10 && var14.method2259() == var11 && var14.method2300() == var12) {
-					var14.method2252();
+				if (var14.method2292() == var1 && var14.method2288() == var2 && var14.method2290() == var3 && var14.method2289() == var8 && var14.method2302() == var9 && var14.method2321() == var10 && var14.method2293() == var11 && var14.method2294() == var12) {
+					var14.method2286();
 					break;
 				}
 			}
@@ -284,48 +284,23 @@ public class WorldView extends Node {
 
 	}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "951678344"
-	)
-	protected static final int method2701() {
-		return GameEngine.keyHandler.method381();
+	@ObfuscatedName("ab")
+	public static double method2763(double var0, double var2, double var4) {
+		double var8 = (var0 - var2) / var4;
+		double var6 = Math.exp(-var8 * var8 / 2.0D) / Math.sqrt(6.283185307179586D);
+		return var6 / var4;
 	}
 
-	@ObfuscatedName("ky")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Ldr;IIIIIIII[Ljava/lang/String;IIB)V",
-		garbageValue = "-67"
+		descriptor = "(IZIZI)V",
+		garbageValue = "-1317271040"
 	)
-	static void method2702(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, String[] var9, int var10, int var11) {
-		NodeDeque var12 = var0.pendingSpawns;
-		PendingSpawn var13 = null;
-
-		for (PendingSpawn var14 = (PendingSpawn)var12.last(); var14 != null; var14 = (PendingSpawn)var12.previous()) {
-			if (var14.plane == var1 && var2 == var14.x && var3 == var14.y && var4 == var14.type) {
-				var13 = var14;
-				break;
-			}
+	@Export("sortWorldList")
+	static void sortWorldList(int var0, boolean var1, int var2, boolean var3) {
+		if (World.World_worlds != null) {
+			ServerPacket.doWorldSorting(0, World.World_worlds.length - 1, var0, var1, var2, var3);
 		}
 
-		if (var13 == null) {
-			var13 = new PendingSpawn();
-			var13.plane = var1;
-			var13.type = var4;
-			var13.x = var2;
-			var13.y = var3;
-			var13.field1023 = -1;
-			class108.method3388(var0, var13);
-			var12.addFirst(var13);
-		}
-
-		var13.field1027 = var5;
-		var13.field1029 = var6;
-		var13.field1028 = var7;
-		var13.delay = var10;
-		var13.hitpoints = var11;
-		var13.method2398(var8);
-		var13.method2399(var9);
 	}
 }

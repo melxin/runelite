@@ -2,37 +2,39 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gi")
+@ObfuscatedName("gf")
 public class class178 extends DualNode {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lmu;"
+		descriptor = "Lme;"
 	)
-	@Export("field1842")
-	public static EvictingDualNodeHashTable field1842;
-	@ObfuscatedName("cv")
-	@ObfuscatedSignature(
-		descriptor = "Lxc;"
-	)
-	static IndexedSprite field1964;
+	@Export("field1913")
+	public static EvictingDualNodeHashTable field1913;
 
 	static {
-		field1842 = new EvictingDualNodeHashTable(64);
+		field1913 = new EvictingDualNodeHashTable(64);
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Loi;I)I",
-		garbageValue = "1943525583"
+		descriptor = "(IB)Lhz;",
+		garbageValue = "9"
 	)
-	static int method4156(Widget var0) {
-		if (var0.type != 11) {
-			Interpreter.Interpreter_objectStack[Interpreter.Interpreter_objectStackSize - 1] = "";
-			return 1;
+	public static class202 method4207(int var0) {
+		class202 var1 = (class202)class202.field2228.get((long)var0);
+		if (var1 != null) {
+			return var1;
 		} else {
-			String var1 = (String)Interpreter.Interpreter_objectStack[--Interpreter.Interpreter_objectStackSize];
-			Interpreter.Interpreter_objectStack[++Interpreter.Interpreter_objectStackSize - 1] = var0.method7962(var1);
-			return 1;
+			byte[] var2 = ScriptFrame.field240.takeFile(72, var0);
+			var1 = new class202();
+			var1.field2222 = var0;
+			if (var2 != null) {
+				var1.method4515(new Buffer(var2));
+			}
+
+			var1.method4517();
+			class202.field2228.put(var1, (long)var0);
+			return var1;
 		}
 	}
 }

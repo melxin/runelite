@@ -3,10 +3,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ei")
+@ObfuscatedName("ew")
 @Implements("UserComparator8")
 public class UserComparator8 extends AbstractUserComparator {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -14,10 +14,10 @@ public class UserComparator8 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lty;Lty;B)I",
-		garbageValue = "38"
+		descriptor = "(Ltu;Ltu;I)I",
+		garbageValue = "1677368969"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -36,33 +36,12 @@ public class UserComparator8 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "45931988"
+		descriptor = "(I)[Lcf;",
+		garbageValue = "1949325251"
 	)
-	public static int method3543(int var0) {
-		long var2 = ViewportMouse.ViewportMouse_entityTags[var0];
-		int var4 = (int)(var2 >>> 52 & 4095L);
-		if ((long)var4 == 4095L) {
-			var4 = -1;
-		}
-
-		return var4;
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIZIII)J",
-		garbageValue = "369312725"
-	)
-	@Export("calculateTag")
-	public static long calculateTag(int var0, int var1, int var2, int var3, boolean var4, int var5, int var6) {
-		long var7 = (long)((var1 & 127) << 0 | (var2 & 127) << 7 | (var0 & 3) << 14 | (var3 & 7) << 16) | ((long)var5 & 4294967295L) << 20 | ((long)var6 & 4095L) << 52;
-		if (var4) {
-			var7 |= 524288L;
-		}
-
-		return var7;
+	static class66[] method3610() {
+		return new class66[]{class66.field893, class66.field896, class66.field900, class66.field899, class66.field895};
 	}
 }

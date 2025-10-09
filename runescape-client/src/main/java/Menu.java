@@ -7,91 +7,91 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("xx")
 @Implements("Menu")
 public class Menu {
-	@ObfuscatedName("af")
-	boolean field6053;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ab")
+	boolean field6121;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 437518483
+		intValue = -1139806751
 	)
 	@Export("menuOptionsCount")
 	public int menuOptionsCount;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@Export("menuArguments1")
 	public int[] menuArguments1;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@Export("menuArguments2")
 	public int[] menuArguments2;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@Export("menuOpcodes")
 	public int[] menuOpcodes;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@Export("menuIdentifiers")
 	public int[] menuIdentifiers;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@Export("menuItemIds")
 	public int[] menuItemIds;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@Export("menuWorldViewIds")
 	public int[] menuWorldViewIds;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@Export("menuActions")
 	public String[] menuActions;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@Export("menuTargets")
 	public String[] menuTargets;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "[Lxx;"
 	)
 	@Export("subMenus")
 	public Menu[] subMenus;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ad")
 	@Export("menuShiftClick")
 	public boolean[] menuShiftClick;
-	@ObfuscatedName("am")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 1699925617
+		intValue = 2014104731
 	)
 	@Export("menuX")
 	int menuX;
-	@ObfuscatedName("an")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1983324149
+		intValue = 196608353
 	)
 	@Export("menuY")
 	int menuY;
 	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = -46345949
+		intValue = -1330943111
 	)
 	@Export("menuWidth")
 	int menuWidth;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("az")
 	@Export("menuHeight")
 	@ObfuscatedGetter(
-		intValue = 758988865
+		intValue = -1310202087
 	)
 	int menuHeight;
-	@ObfuscatedName("ay")
+	@ObfuscatedName("au")
 	@ObfuscatedGetter(
-		intValue = -1240416743
+		intValue = 1934732173
 	)
-	int field6059;
-	@ObfuscatedName("ad")
+	int field6133;
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 440763903
+		intValue = -4151853
 	)
-	int field6068;
-	@ObfuscatedName("ag")
+	int field6134;
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		longValue = -1340367106229341551L
+		longValue = 7109446646821642471L
 	)
-	long field6069;
+	long field6128;
 
 	public Menu(boolean var1) {
 		this.menuOptionsCount = 0;
 		int var2 = var1 ? 500 : 20;
-		this.field6053 = var1;
+		this.field6121 = var1;
 		this.menuArguments1 = new int[var2];
 		this.menuArguments2 = new int[var2];
 		this.menuOpcodes = new int[var2];
@@ -104,12 +104,12 @@ public class Menu {
 		this.menuShiftClick = new boolean[var2];
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ljava/lang/String;",
-		garbageValue = "-69720355"
+		descriptor = "(IB)Ljava/lang/String;",
+		garbageValue = "14"
 	)
-	public final String method11859(int var1) {
+	public final String method12043(int var1) {
 		if (var1 < 0) {
 			return "";
 		} else {
@@ -117,16 +117,16 @@ public class Menu {
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-131495321"
+		garbageValue = "-585279455"
 	)
-	void method11861() {
-		this.menuWidth = class333.fontBold12.stringWidth("Choose Option");
+	void method12026() {
+		this.menuWidth = class70.fontBold12.stringWidth("Choose Option");
 
 		for (int var1 = 0; var1 < this.menuOptionsCount; ++var1) {
-			int var2 = class333.fontBold12.stringWidth(this.method11859(var1));
+			int var2 = class70.fontBold12.stringWidth(this.method12043(var1));
 			if (this.subMenus[var1] != null) {
 				var2 += 15;
 			}
@@ -137,23 +137,23 @@ public class Menu {
 		}
 
 		this.menuWidth += 8;
-		this.menuHeight = this.menuOptionsCount * 529411151 + 427507460;
-		if (this.field6053) {
-			this.menuHeight += -223700078;
+		this.menuHeight = this.menuOptionsCount * 404475239 + 1253184676;
+		if (this.field6121) {
+			this.menuHeight += 1344363746;
 		}
 
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(III)V",
-		garbageValue = "934996814"
+		garbageValue = "-1063414417"
 	)
-	public final void method11868(int var1, int var2) {
-		this.method11861();
+	public final void method12027(int var1, int var2) {
+		this.method12026();
 		this.menuX = var1 - this.menuWidth / 2;
-		if (this.menuX + this.menuWidth > GameEngine.canvasWidth) {
-			this.menuX = GameEngine.canvasWidth - this.menuWidth;
+		if (this.menuX + this.menuWidth > class4.canvasWidth) {
+			this.menuX = class4.canvasWidth - this.menuWidth;
 		}
 
 		if (this.menuX < 0) {
@@ -161,29 +161,29 @@ public class Menu {
 		}
 
 		this.menuY = var2;
-		if (this.menuHeight * 758988865 + this.menuY > class396.canvasHeight) {
-			this.menuY = class396.canvasHeight - this.menuHeight * 758988865;
+		if (this.menuHeight * -1310202087 + this.menuY > class558.canvasHeight) {
+			this.menuY = class558.canvasHeight - this.menuHeight * -1310202087;
 		}
 
 		if (this.menuY < 0) {
 			this.menuY = 0;
 		}
 
-		if (this.field6059 != -1 && this.subMenus[this.field6059] != null) {
-			this.subMenus[this.field6059].method11869(this);
+		if (this.field6133 != -1 && this.subMenus[this.field6133] != null) {
+			this.subMenus[this.field6133].method12028(this);
 		}
 
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lxx;B)V",
-		garbageValue = "-4"
+		descriptor = "(Lxx;I)V",
+		garbageValue = "-131564483"
 	)
-	final void method11869(Menu var1) {
-		this.method11861();
-		this.menuX = var1.menuWidth + var1.menuX;
-		if (this.menuWidth + this.menuX > GameEngine.canvasWidth) {
+	final void method12028(Menu var1) {
+		this.method12026();
+		this.menuX = var1.menuX + var1.menuWidth;
+		if (this.menuWidth + this.menuX > class4.canvasWidth) {
 			this.menuX = var1.menuX - this.menuWidth;
 		}
 
@@ -191,15 +191,15 @@ public class Menu {
 			this.menuX = 0;
 		}
 
-		int var2 = var1.menuOptionsCount * 15 - 15 - var1.field6059 * 15 + var1.menuY;
-		if (var1.field6053) {
+		int var2 = var1.menuOptionsCount * 15 - 15 - var1.field6133 * 15 + var1.menuY;
+		if (var1.field6121) {
 			var2 += 17;
 		}
 
 		int var3 = var2 + 19;
 		this.menuY = var2;
-		if (this.menuHeight * 758988865 + this.menuY > class396.canvasHeight) {
-			this.menuY = var3 - this.menuHeight * 758988865;
+		if (this.menuHeight * -1310202087 + this.menuY > class558.canvasHeight) {
+			this.menuY = var3 - this.menuHeight * -1310202087;
 		}
 
 		if (this.menuY < 0) {
@@ -208,15 +208,15 @@ public class Menu {
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(III)I",
-		garbageValue = "34334073"
+		garbageValue = "-1383786381"
 	)
-	final int method11885(int var1, int var2) {
+	final int method12029(int var1, int var2) {
 		for (int var3 = 0; var3 < this.menuOptionsCount; ++var3) {
 			int var4 = this.menuY + (this.menuOptionsCount - 1 - var3) * 15 + 14;
-			if (this.field6053) {
+			if (this.field6121) {
 				var4 += 17;
 			}
 
@@ -228,42 +228,42 @@ public class Menu {
 		return -1;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "-89740103"
+		garbageValue = "286990163"
 	)
-	public final void method11863(int var1) {
+	public final void method12030(int var1) {
 		if (var1 >= 0) {
-			ByteArrayPool.menuAction(this.menuArguments1[var1], this.menuArguments2[var1], this.menuOpcodes[var1], this.menuIdentifiers[var1], this.menuItemIds[var1], this.menuWorldViewIds[var1], this.menuActions[var1], this.menuTargets[var1], MouseHandler.MouseHandler_lastPressedX, MouseHandler.MouseHandler_lastPressedY);
+			HttpRequestTask.menuAction(this.menuArguments1[var1], this.menuArguments2[var1], this.menuOpcodes[var1], this.menuIdentifiers[var1], this.menuItemIds[var1], this.menuWorldViewIds[var1], this.menuActions[var1], this.menuTargets[var1], MouseHandler.MouseHandler_lastPressedX, MouseHandler.MouseHandler_lastPressedY);
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(III)Z",
-		garbageValue = "901420117"
+		descriptor = "(IIB)Z",
+		garbageValue = "1"
 	)
-	public final boolean method11900(int var1, int var2) {
-		if (this.field6059 != -1 && this.subMenus[this.field6059] != null && this.subMenus[this.field6059].method11900(var1, var2)) {
+	public final boolean method12031(int var1, int var2) {
+		if (this.field6133 != -1 && this.subMenus[this.field6133] != null && this.subMenus[this.field6133].method12031(var1, var2)) {
 			return true;
-		} else if (var1 >= this.menuX - 10 && var1 <= this.menuWidth + this.menuX + 10 && var2 >= this.menuY - 10 && var2 <= this.menuY + this.menuHeight * 758988865 + 10) {
-			int var3 = this.method11885(var1, var2);
-			if (var3 != -1 && var3 != this.field6059) {
-				if (var3 != this.field6068) {
-					this.field6068 = var3;
-					this.field6069 = class189.method4284();
-					if (this.field6059 != -1) {
-						this.field6069 += 300L;
+		} else if (var1 >= this.menuX - 10 && var1 <= this.menuX + this.menuWidth + 10 && var2 >= this.menuY - 10 && var2 <= this.menuHeight * -1310202087 + this.menuY + 10) {
+			int var3 = this.method12029(var1, var2);
+			if (var3 != -1 && var3 != this.field6133) {
+				if (var3 != this.field6134) {
+					this.field6134 = var3;
+					this.field6128 = class281.method6373();
+					if (this.field6133 != -1) {
+						this.field6128 += 300L;
 					}
 				}
 
-				if (this.field6069 <= class189.method4284()) {
-					this.field6068 = -1;
-					this.method11866();
+				if (this.field6128 <= class281.method6373()) {
+					this.field6134 = -1;
+					this.method12057();
 					if (this.subMenus[var3] != null) {
-						this.field6059 = var3;
-						this.subMenus[var3].method11869(this);
+						this.field6133 = var3;
+						this.subMenus[var3].method12028(this);
 					}
 				}
 			}
@@ -274,18 +274,18 @@ public class Menu {
 		}
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(III)Z",
-		garbageValue = "683822367"
+		descriptor = "(IIB)Z",
+		garbageValue = "73"
 	)
-	public final boolean method11865(int var1, int var2) {
-		if (this.field6059 != -1 && this.subMenus[this.field6059] != null && this.subMenus[this.field6059].method11865(var1, var2)) {
+	public final boolean method12050(int var1, int var2) {
+		if (this.field6133 != -1 && this.subMenus[this.field6133] != null && this.subMenus[this.field6133].method12050(var1, var2)) {
 			return true;
 		} else {
-			int var3 = this.method11885(var1, var2);
+			int var3 = this.method12029(var1, var2);
 			if (var3 != -1) {
-				this.method11863(var3);
+				this.method12030(var3);
 				return true;
 			} else {
 				return false;
@@ -293,53 +293,63 @@ public class Menu {
 		}
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1474329272"
+		garbageValue = "-113253885"
 	)
-	public final void method11888() {
-		this.field6059 = -1;
+	public final void method12033() {
+		this.field6133 = -1;
 
 		for (int var1 = 0; var1 < this.menuOptionsCount; ++var1) {
 			if (this.subMenus[var1] != null) {
-				this.subMenus[var1].method11888();
+				this.subMenus[var1].method12033();
 			}
-		}
-
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1273790628"
-	)
-	@Export("invalidateWidgetsUnder")
-	public final void invalidateWidgetsUnder() {
-		RouteStrategy.method6236(this.menuX, this.menuY, this.menuWidth, this.menuHeight * 758988865);
-		this.method11866();
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "82"
-	)
-	final void method11866() {
-		if (this.field6059 != -1) {
-			if (this.subMenus[this.field6059] != null) {
-				this.subMenus[this.field6059].invalidateWidgetsUnder();
-			}
-
-			this.field6059 = -1;
 		}
 
 	}
 
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIIIZIB)I",
-		garbageValue = "0"
+		descriptor = "(I)V",
+		garbageValue = "1665633423"
+	)
+	@Export("invalidateWidgetsUnder")
+	public final void invalidateWidgetsUnder() {
+		int var1 = this.menuX;
+		int var2 = this.menuY;
+		int var3 = this.menuWidth;
+		int var4 = this.menuHeight * -1310202087;
+
+		for (int var5 = 0; var5 < Client.rootWidgetCount; ++var5) {
+			if (Client.rootWidgetXs[var5] + Client.rootWidgetWidths[var5] > var1 && Client.rootWidgetXs[var5] < var1 + var3 && Client.rootWidgetHeights[var5] + Client.rootWidgetYs[var5] > var2 && Client.rootWidgetYs[var5] < var2 + var4) {
+				Client.validRootWidgets[var5] = true;
+			}
+		}
+
+		this.method12057();
+	}
+
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "362779892"
+	)
+	final void method12057() {
+		if (this.field6133 != -1) {
+			if (this.subMenus[this.field6133] != null) {
+				this.subMenus[this.field6133].invalidateWidgetsUnder();
+			}
+
+			this.field6133 = -1;
+		}
+
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIIIZII)I",
+		garbageValue = "-1754840576"
 	)
 	@Export("insertMenuItem")
 	public final int insertMenuItem(String var1, String var2, int var3, int var4, int var5, int var6, int var7, boolean var8, int var9) {
@@ -360,22 +370,22 @@ public class Menu {
 		}
 	}
 
-	@ObfuscatedName("am")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1841306569"
+		garbageValue = "-1921993194"
 	)
-	public final void method11877() {
+	public final void method12037() {
 		int var1 = this.menuX;
 		int var2 = this.menuY;
 		int var3 = 6116423;
-		Rasterizer2D.Rasterizer2D_fillRectangle(var1, var2, this.menuWidth, this.menuHeight * 758988865, var3);
-		if (this.field6053) {
+		Rasterizer2D.Rasterizer2D_fillRectangle(var1, var2, this.menuWidth, this.menuHeight * -1310202087, var3);
+		if (this.field6121) {
 			Rasterizer2D.Rasterizer2D_fillRectangle(var1 + 1, var2 + 1, this.menuWidth - 2, 16, 0);
-			Rasterizer2D.Rasterizer2D_drawRectangle(var1 + 1, var2 + 18, this.menuWidth - 2, this.menuHeight * 758988865 - 19, 0);
-			class333.fontBold12.draw("Choose Option", var1 + 3, var2 + 14, var3, -1);
+			Rasterizer2D.Rasterizer2D_drawRectangle(var1 + 1, var2 + 18, this.menuWidth - 2, this.menuHeight * -1310202087 - 19, 0);
+			class70.fontBold12.draw("Choose Option", var1 + 3, var2 + 14, var3, -1);
 		} else {
-			Rasterizer2D.Rasterizer2D_drawRectangle(var1 + 1, var2 + 1, this.menuWidth - 2, this.menuHeight * 758988865 - 2, 0);
+			Rasterizer2D.Rasterizer2D_drawRectangle(var1 + 1, var2 + 1, this.menuWidth - 2, this.menuHeight * -1310202087 - 2, 0);
 		}
 
 		int var4 = MouseHandler.MouseHandler_x;
@@ -383,7 +393,7 @@ public class Menu {
 
 		for (int var6 = 0; var6 < this.menuOptionsCount; ++var6) {
 			int var7 = var2 + (this.menuOptionsCount - 1 - var6) * 15 + 14;
-			if (this.field6053) {
+			if (this.field6121) {
 				var7 += 17;
 			}
 
@@ -392,20 +402,38 @@ public class Menu {
 				var8 = 16776960;
 			}
 
-			if (var6 == this.field6059 || var6 == this.field6068 && this.subMenus[var6] != null) {
+			if (var6 == this.field6133 || var6 == this.field6134 && this.subMenus[var6] != null) {
 				Rasterizer2D.Rasterizer2D_fillRectangle(var1 + 2, var7 - 12, this.menuWidth - 4, 15, 7496785);
 			}
 
-			class333.fontBold12.draw(this.method11859(var6), var1 + 3, var7, var8, 0);
+			class70.fontBold12.draw(this.method12043(var6), var1 + 3, var7, var8, 0);
 			if (this.subMenus[var6] != null) {
-				class333.fontBold12.method9434(62, var1 + this.menuWidth - 10, var7, 16777215);
+				class70.fontBold12.method9495(62, var1 + this.menuWidth - 10, var7, 16777215);
 			}
 		}
 
-		HttpRequest.method103(this.menuX, this.menuY, this.menuWidth, this.menuHeight * 758988865);
-		if (this.field6059 != -1 && this.subMenus[this.field6059] != null) {
-			this.subMenus[this.field6059].method11877();
+		ScriptFrame.method738(this.menuX, this.menuY, this.menuWidth, this.menuHeight * -1310202087);
+		if (this.field6133 != -1 && this.subMenus[this.field6133] != null) {
+			this.subMenus[this.field6133].method12037();
 		}
 
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lxz;",
+		garbageValue = "-1576055122"
+	)
+	public static PrivateChatMode method12069(int var0) {
+		PrivateChatMode[] var1 = class342.method7334();
+
+		for (int var2 = 0; var2 < var1.length; ++var2) {
+			PrivateChatMode var3 = var1[var2];
+			if (var0 == var3.field6139) {
+				return var3;
+			}
+		}
+
+		return null;
 	}
 }

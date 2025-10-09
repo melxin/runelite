@@ -4,29 +4,24 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jw")
+@ObfuscatedName("il")
 @Implements("FaceNormal")
 public class FaceNormal {
-	@ObfuscatedName("bs")
-	@ObfuscatedSignature(
-		descriptor = "Lgs;"
-	)
-	static ClanSettings field2805;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 542673887
+		intValue = 1418999345
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 694810815
+		intValue = 460667375
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1991757615
+		intValue = -459371687
 	)
 	@Export("z")
 	int z;
@@ -34,25 +29,34 @@ public class FaceNormal {
 	FaceNormal() {
 	}
 
-	@ObfuscatedName("kq")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Ldr;IIIIIIIIIZI)V",
-		garbageValue = "781510154"
+		descriptor = "(II)Lhh;",
+		garbageValue = "1902005361"
 	)
-	static void method5375(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, boolean var10) {
-		TileItem var11 = new TileItem();
-		var11.id = var4;
-		var11.quantity = var5;
-		var11.setFlag(var6);
-		var11.visibleTime = var7 + Client.serverCycle;
-		var11.despawnTime = var8 + Client.serverCycle;
-		var11.ownership = var9;
-		var11.isPrivate = var10;
-		if (var0.groundItems[var1][var2][var3] == null) {
-			var0.groundItems[var1][var2][var3] = new NodeDeque();
-		}
+	public static HealthBarDefinition method5454(int var0) {
+		HealthBarDefinition var1 = (HealthBarDefinition)HealthBarDefinition.HealthBarDefinition_cached.get((long)var0);
+		if (var1 != null) {
+			return var1;
+		} else {
+			byte[] var2 = HealthBarDefinition.HealthBarDefinition_archive.takeFile(33, var0);
+			var1 = new HealthBarDefinition();
+			var1.field2034 = var0;
+			if (var2 != null) {
+				var1.decode(new Buffer(var2));
+			}
 
-		var0.groundItems[var1][var2][var3].addFirst(var11);
-		ObjectSound.updateItemPile2(var0, var1, var2, var3);
+			HealthBarDefinition.HealthBarDefinition_cached.put(var1, (long)var0);
+			return var1;
+		}
+	}
+
+	@ObfuscatedName("py")
+	@ObfuscatedSignature(
+		descriptor = "(IB)V",
+		garbageValue = "65"
+	)
+	static void method5453(int var0) {
+		Client.oculusOrbState = var0;
 	}
 }

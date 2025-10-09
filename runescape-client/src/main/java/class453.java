@@ -1,152 +1,139 @@
-import java.util.Iterator;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rl")
-public final class class453 {
+@ObfuscatedName("rr")
+public class class453 {
+	@ObfuscatedName("ab")
+	float field5248;
+	@ObfuscatedName("at")
+	float field5237;
+	@ObfuscatedName("ag")
+	float field5238;
+	@ObfuscatedName("aj")
+	float field5239;
+	@ObfuscatedName("ah")
+	float field5240;
 	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "[Lrl;"
-	)
-	static class453[] field5178;
-	@ObfuscatedName("ac")
-	float field5182;
-	@ObfuscatedName("ap")
-	float field5179;
+	float field5241;
+	@ObfuscatedName("ae")
+	float field5244;
 	@ObfuscatedName("aq")
-	float field5180;
-	@ObfuscatedName("ao")
-	float field5181;
+	float field5243;
+	@ObfuscatedName("ac")
+	float field5246;
+	@ObfuscatedName("aa")
+	float field5245;
+	@ObfuscatedName("ap")
+	float field5247;
+	@ObfuscatedName("ad")
+	float field5236;
 
 	static {
 		new class453();
-		field5178 = new class453[0];
-		class33.method502(16);
 	}
 
-	class453() {
-		this.method9058();
+	public class453() {
+		this.method9259();
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "996867666"
+	)
+	void method9259() {
+		this.field5236 = 0.0F;
+		this.field5247 = 0.0F;
+		this.field5245 = 0.0F;
+		this.field5243 = 0.0F;
+		this.field5244 = 0.0F;
+		this.field5241 = 0.0F;
+		this.field5239 = 0.0F;
+		this.field5238 = 0.0F;
+		this.field5237 = 0.0F;
+		this.field5246 = 1.0F;
+		this.field5240 = 1.0F;
+		this.field5248 = 1.0F;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-778990682"
+		descriptor = "(FS)V",
+		garbageValue = "-32198"
 	)
-	public void method9054() {
-		synchronized(field5178) {
-			if (DevicePcmPlayerProvider.field91 < class442.field5140) {
-				field5178[++DevicePcmPlayerProvider.field91 - 1] = this;
-			}
-
-		}
+	public void method9260(float var1) {
+		float var2 = (float)Math.cos((double)var1);
+		float var3 = (float)Math.sin((double)var1);
+		float var4 = this.field5237;
+		float var5 = this.field5240;
+		float var6 = this.field5243;
+		float var7 = this.field5247;
+		this.field5237 = var2 * var4 - var3 * this.field5238;
+		this.field5238 = var4 * var3 + var2 * this.field5238;
+		this.field5240 = var5 * var2 - this.field5241 * var3;
+		this.field5241 = this.field5241 * var2 + var5 * var3;
+		this.field5243 = var2 * var6 - this.field5246 * var3;
+		this.field5246 = this.field5246 * var2 + var6 * var3;
+		this.field5247 = var2 * var7 - this.field5236 * var3;
+		this.field5236 = var3 * var7 + var2 * this.field5236;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(FFFFI)V",
-		garbageValue = "-1613436739"
+		descriptor = "(FI)V",
+		garbageValue = "-824192707"
 	)
-	void method9077(float var1, float var2, float var3, float var4) {
-		this.field5182 = var1;
-		this.field5179 = var2;
-		this.field5180 = var3;
-		this.field5181 = var4;
+	public void method9261(float var1) {
+		float var2 = (float)Math.cos((double)var1);
+		float var3 = (float)Math.sin((double)var1);
+		float var4 = this.field5248;
+		float var5 = this.field5239;
+		float var6 = this.field5244;
+		float var7 = this.field5245;
+		this.field5248 = this.field5238 * var3 + var4 * var2;
+		this.field5238 = var2 * this.field5238 - var3 * var4;
+		this.field5239 = var5 * var2 + var3 * this.field5241;
+		this.field5241 = var2 * this.field5241 - var3 * var5;
+		this.field5244 = var6 * var2 + var3 * this.field5246;
+		this.field5246 = var2 * this.field5246 - var6 * var3;
+		this.field5245 = this.field5236 * var3 + var2 * var7;
+		this.field5236 = this.field5236 * var2 - var3 * var7;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(FFFFI)V",
-		garbageValue = "-1523016913"
+		descriptor = "(FB)V",
+		garbageValue = "34"
 	)
-	public void method9056(float var1, float var2, float var3, float var4) {
-		float var5 = (float)Math.sin((double)(0.5F * var4));
-		float var6 = (float)Math.cos((double)(0.5F * var4));
-		this.field5182 = var5 * var1;
-		this.field5179 = var5 * var2;
-		this.field5180 = var3 * var5;
-		this.field5181 = var6;
+	void method9262(float var1) {
+		float var2 = (float)Math.cos((double)var1);
+		float var3 = (float)Math.sin((double)var1);
+		float var4 = this.field5248;
+		float var5 = this.field5239;
+		float var6 = this.field5244;
+		float var7 = this.field5245;
+		this.field5248 = var4 * var2 - this.field5237 * var3;
+		this.field5237 = var3 * var4 + this.field5237 * var2;
+		this.field5239 = var5 * var2 - this.field5240 * var3;
+		this.field5240 = var5 * var3 + var2 * this.field5240;
+		this.field5244 = var2 * var6 - this.field5243 * var3;
+		this.field5243 = this.field5243 * var2 + var6 * var3;
+		this.field5245 = var2 * var7 - this.field5247 * var3;
+		this.field5247 = this.field5247 * var2 + var3 * var7;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(FFFI)V",
-		garbageValue = "1445629254"
+		garbageValue = "-745100649"
 	)
-	public void method9072(float var1, float var2, float var3) {
-		this.method9056(0.0F, 1.0F, 0.0F, var1);
-		class453 var4 = PendingSpawn.method2414();
-		var4.method9056(1.0F, 0.0F, 0.0F, var2);
-		this.method9059(var4);
-		var4.method9056(0.0F, 0.0F, 1.0F, var3);
-		this.method9059(var4);
-		var4.method9054();
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "487169977"
-	)
-	final void method9058() {
-		this.field5180 = 0.0F;
-		this.field5179 = 0.0F;
-		this.field5182 = 0.0F;
-		this.field5181 = 1.0F;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(Lrl;I)V",
-		garbageValue = "65536"
-	)
-	public final void method9059(class453 var1) {
-		this.method9077(var1.field5182 * this.field5181 + var1.field5181 * this.field5182 + this.field5180 * var1.field5179 - var1.field5180 * this.field5179, var1.field5180 * this.field5182 + var1.field5181 * this.field5179 - this.field5180 * var1.field5182 + this.field5181 * var1.field5179, this.field5180 * var1.field5181 + var1.field5182 * this.field5179 - var1.field5179 * this.field5182 + var1.field5180 * this.field5181, var1.field5181 * this.field5181 - var1.field5182 * this.field5182 - var1.field5179 * this.field5179 - this.field5180 * var1.field5180);
-	}
-
-	public int hashCode() {
-		boolean var1 = true;
-		float var2 = 1.0F;
-		var2 = var2 * 31.0F + this.field5182;
-		var2 = 31.0F * var2 + this.field5179;
-		var2 = 31.0F * var2 + this.field5180;
-		var2 = var2 * 31.0F + this.field5181;
-		return (int)var2;
+	public void method9263(float var1, float var2, float var3) {
+		this.field5245 += var1;
+		this.field5247 += var2;
+		this.field5236 += var3;
 	}
 
 	public String toString() {
-		return this.field5182 + "," + this.field5179 + "," + this.field5180 + "," + this.field5181;
-	}
-
-	public boolean equals(Object var1) {
-		if (!(var1 instanceof class453)) {
-			return false;
-		} else {
-			class453 var2 = (class453)var1;
-			return var2.field5182 == this.field5182 && this.field5179 == var2.field5179 && var2.field5180 == this.field5180 && this.field5181 == var2.field5181;
-		}
-	}
-
-	@ObfuscatedName("ii")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1702186973"
-	)
-	static final void method9084() {
-		int var0 = Client.playerUpdateManager.playerCount;
-		int[] var1 = Client.playerUpdateManager.playerIndices;
-		Iterator var2 = Client.worldViewManager.iterator();
-
-		while (var2.hasNext()) {
-			WorldView var3 = (WorldView)var2.next();
-
-			for (int var4 = 0; var4 < var0; ++var4) {
-				Player var5 = (Player)var3.players.get((long)var1[var4]);
-				if (var5 != null) {
-					WorldMapID.updateActorSequence(var3, var5, 1);
-				}
-			}
-		}
-
+		return this.field5248 + "," + this.field5239 + "," + this.field5244 + "," + this.field5245 + "\n" + this.field5237 + "," + this.field5240 + "," + this.field5243 + "," + this.field5247 + "\n" + this.field5238 + "," + this.field5241 + "," + this.field5246 + "," + this.field5236;
 	}
 }

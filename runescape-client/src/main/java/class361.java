@@ -2,41 +2,42 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ng")
+@ObfuscatedName("nn")
 public class class361 {
-	@ObfuscatedName("hl")
+	@ObfuscatedName("mw")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "0"
+		descriptor = "(Lok;III)V",
+		garbageValue = "-707802990"
 	)
-	@Export("forceDisconnect")
-	static final void forceDisconnect(int var0) {
-		class386.logOut();
-		switch(var0) {
-		case 1:
-			ClientPreferences.method2677(24);
-			MouseRecorder.setLoginResponseString("", "You were disconnected from the server.", "");
-			break;
-		case 2:
-			ClientPreferences.method2677(24);
-			MouseRecorder.setLoginResponseString("The game servers are currently being updated.", "Please wait a few minutes and try again.", "");
-		}
-
-	}
-
-	@ObfuscatedName("hr")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1153709617"
-	)
-	static final void method7512() {
-		if (Client.logoutTimer > 0) {
-			class386.logOut();
+	@Export("alignWidgetPosition")
+	static void alignWidgetPosition(Widget var0, int var1, int var2) {
+		if (var0.xAlignment == 0) {
+			var0.x = var0.rawX;
+		} else if (var0.xAlignment == 1) {
+			var0.x = var0.rawX + (var1 - var0.width) / 2;
+		} else if (var0.xAlignment == 2) {
+			var0.x = var1 - var0.width - var0.rawX;
+		} else if (var0.xAlignment == 3) {
+			var0.x = var0.rawX * var1 >> 14;
+		} else if (var0.xAlignment == 4) {
+			var0.x = (var1 - var0.width) / 2 + (var0.rawX * var1 >> 14);
 		} else {
-			Client.timer.method8248();
-			UrlRequest.updateGameState(40);
-			HttpRequest.field50 = Client.packetWriter.getSocket();
-			Client.packetWriter.removeSocket();
+			var0.x = var1 - var0.width - (var0.rawX * var1 >> 14);
 		}
+
+		if (var0.yAlignment == 0) {
+			var0.y = var0.rawY;
+		} else if (var0.yAlignment == 1) {
+			var0.y = var0.rawY + (var2 - var0.height * -171267385) / 2;
+		} else if (var0.yAlignment == 2) {
+			var0.y = var2 - var0.height * -171267385 - var0.rawY;
+		} else if (var0.yAlignment == 3) {
+			var0.y = var2 * var0.rawY >> 14;
+		} else if (var0.yAlignment == 4) {
+			var0.y = (var2 * var0.rawY >> 14) + (var2 - var0.height * -171267385) / 2;
+		} else {
+			var0.y = var2 - var0.height * -171267385 - (var2 * var0.rawY >> 14);
+		}
+
 	}
 }

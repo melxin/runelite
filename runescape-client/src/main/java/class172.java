@@ -3,39 +3,69 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("go")
-public class class172 {
-	@ObfuscatedName("ap")
+@ObfuscatedName("gg")
+public class class172 extends class150 {
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 697366175
+		longValue = 5754332401193467857L
 	)
-	static int field1931;
-	@ObfuscatedName("qm")
-	@ObfuscatedGetter(
-		intValue = 27881281
-	)
-	@Export("oculusOrbFocalPointX")
-	static int oculusOrbFocalPointX;
-
-	@ObfuscatedName("ac")
+	long field1924;
+	@ObfuscatedName("at")
+	String field1925;
+	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "(IZIZB)V",
-		garbageValue = "-89"
+		descriptor = "Lfh;"
 	)
-	@Export("sortWorldList")
-	static void sortWorldList(int var0, boolean var1, int var2, boolean var3) {
-		if (World.World_worlds != null) {
-			RestClientThreadFactory.doWorldSorting(0, World.World_worlds.length - 1, var0, var1, var2, var3);
-		}
+	final class153 this$0;
 
+	@ObfuscatedSignature(
+		descriptor = "(Lfh;)V"
+	)
+	class172(class153 var1) {
+		this.this$0 = var1;
+		this.field1924 = -1L;
+		this.field1925 = null;
 	}
 
-	@ObfuscatedName("kc")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIB)Z",
-		garbageValue = "1"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1804820754"
 	)
-	static boolean method4086(int var0, int var1, int var2, int var3, int var4, int var5) {
-		return ClientPacket.method7038(HttpHeaders.worldView.plane, var0, var1, var2, var3, var4, var5);
+	void vmethod4162(Buffer var1) {
+		if (var1.readUnsignedByte() != 255) {
+			--var1.offset;
+			this.field1924 = var1.readLong();
+		}
+
+		this.field1925 = var1.readStringCp1252NullTerminatedOrNull();
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(Lgh;I)V",
+		garbageValue = "1850606911"
+	)
+	void vmethod4163(ClanSettings var1) {
+		var1.method3990(this.field1924, this.field1925);
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "8"
+	)
+	public static int method4149(int var0) {
+		return class335.field3845[var0];
+	}
+
+	@ObfuscatedName("la")
+	@ObfuscatedSignature(
+		descriptor = "(IIII)V",
+		garbageValue = "711956568"
+	)
+	@Export("updateItemPile")
+	static final void updateItemPile(int var0, int var1, int var2) {
+		class263.updateItemPile2(class32.worldView, var0, var1, var2);
 	}
 }

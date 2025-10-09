@@ -7,16 +7,16 @@ import net.runelite.mapping.ObfuscatedSignature;
 import org.bouncycastle.crypto.tls.DefaultTlsClient;
 import org.bouncycastle.crypto.tls.TlsAuthentication;
 
-@ObfuscatedName("an")
+@ObfuscatedName("as")
 class class13 extends DefaultTlsClient {
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lam;"
+		descriptor = "Lav;"
 	)
 	final SecureRandomSSLSocket this$1;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lam;)V"
+		descriptor = "(Lav;)V"
 	)
 	class13(SecureRandomSSLSocket var1) {
 		this.this$1 = var1;

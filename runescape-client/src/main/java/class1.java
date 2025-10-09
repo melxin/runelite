@@ -3,26 +3,35 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("aw")
+@ObfuscatedName("at")
 public class class1 implements Callable {
-	@ObfuscatedName("af")
+	@ObfuscatedName("au")
+	@Export("Tiles_hue")
+	static int[] Tiles_hue;
+	@ObfuscatedName("cb")
 	@ObfuscatedSignature(
-		descriptor = "Lwb;"
+		descriptor = "Lxc;"
+	)
+	@Export("logoSprite")
+	static IndexedSprite logoSprite;
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lwj;"
 	)
 	final Buffer field1;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lac;"
+		descriptor = "Laj;"
 	)
 	final class3 field4;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Las;"
+		descriptor = "Laq;"
 	)
 	final SpriteBufferProperties this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Las;Lwb;Lac;)V"
+		descriptor = "(Laq;Lwj;Laj;)V"
 	)
 	class1(SpriteBufferProperties var1, Buffer var2, class3 var3) {
 		this.this$0 = var1;
@@ -31,62 +40,52 @@ public class class1 implements Callable {
 	}
 
 	public Object call() {
-		return this.field4.vmethod12(this.field1);
+		return this.field4.vmethod18(this.field1);
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Loi;IB)V",
-		garbageValue = "-15"
+		descriptor = "(I)V",
+		garbageValue = "-358192125"
 	)
-	static void method11(Widget var0, int var1) {
-		if (var0.type == 0 && var0.childIndex * -217986249 > -1) {
-			if (var1 > var0.field4214) {
-				var0.field4214 = var1;
-			}
-
-			if (var1 < var0.field4248) {
-				var0.field4248 = var1;
-			}
-		}
-
+	public static void method8() {
+		class188.field2007.clear();
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lef;I)V",
-		garbageValue = "-28007039"
+		descriptor = "(FI)F",
+		garbageValue = "1148555530"
 	)
-	@Export("PcmStream_disable")
-	static final void PcmStream_disable(PcmStream var0) {
-		var0.active = false;
-		if (var0.sound != null) {
-			var0.sound.position = 0;
-		}
-
-		for (PcmStream var1 = var0.firstSubStream(); var1 != null; var1 = var0.nextSubStream()) {
-			PcmStream_disable(var1);
-		}
-
+	public static final float method13(float var0) {
+		float var1 = 150.75377F / (var0 - 1.0100503F);
+		return var1 / 14925.0F / 1.0100503F;
 	}
 
-	@ObfuscatedName("nd")
+	@ObfuscatedName("mj")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-690163849"
+		descriptor = "(IIIIII)V",
+		garbageValue = "918197734"
 	)
-	static final void method10(int var0) {
-		if (UrlRequester.widgetDefinition.loadInterface(var0)) {
-			Widget[] var1 = UrlRequester.widgetDefinition.Widget_interfaceComponents[var0];
-
-			for (int var2 = 0; var2 < var1.length; ++var2) {
-				Widget var3 = var1[var2];
-				if (var3 != null) {
-					var3.modelFrame = 0;
-					var3.modelFrameCycle = 0;
-				}
-			}
-
+	@Export("drawScrollBar")
+	static final void drawScrollBar(int var0, int var1, int var2, int var3, int var4) {
+		class450.scrollBarSprites[0].drawAt(var0, var1);
+		class450.scrollBarSprites[1].drawAt(var0, var3 + var1 - 16);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1 + 16, 16, var3 - 32, Client.field450);
+		int var5 = var3 * (var3 - 32) / var4;
+		if (var5 < 8) {
+			var5 = 8;
 		}
+
+		int var6 = (var3 - 32 - var5) * var2 / (var4 - var3);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var6 + var1 + 16, 16, var5, Client.field451);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0, var6 + var1 + 16, var5, Client.field366);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 1, var6 + var1 + 16, var5, Client.field366);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 16, 16, Client.field366);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 17, 16, Client.field366);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 15, var6 + var1 + 16, var5, Client.field452);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 14, var6 + var1 + 17, var5 - 1, Client.field452);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var5 + var1 + 15, 16, Client.field452);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0 + 1, var6 + var5 + var1 + 14, 15, Client.field452);
 	}
 }

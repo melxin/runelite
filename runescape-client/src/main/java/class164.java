@@ -1,165 +1,204 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("ge")
-public class class164 extends class167 {
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = -1561273863
+@ObfuscatedName("gs")
+public class class164 extends class150 {
+	@ObfuscatedName("bf")
+	@ObfuscatedSignature(
+		descriptor = "Lra;"
 	)
-	int field1880;
-	@ObfuscatedName("aw")
-	byte field1879;
-	@ObfuscatedName("at")
+	static Bounds field1882;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 282965887
+		intValue = -442303163
 	)
-	int field1881;
-	@ObfuscatedName("ac")
-	String field1882;
+	int field1884;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lga;"
+		descriptor = "Lfh;"
 	)
-	final class168 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lga;)V"
+		descriptor = "(Lfh;)V"
 	)
-	class164(class168 var1) {
+	class164(class153 var1) {
 		this.this$0 = var1;
-		this.field1880 = -1;
+		this.field1884 = -1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "1665789280"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1804820754"
 	)
-	void vmethod4108(Buffer var1) {
-		var1.readUnsignedByte();
-		this.field1880 = var1.readUnsignedShort();
-		this.field1879 = var1.readByte();
-		this.field1881 = var1.readUnsignedShort();
-		var1.readLong();
-		this.field1882 = var1.readStringCp1252NullTerminated();
-		var1.readUnsignedByte();
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(Lgm;I)V",
-		garbageValue = "-358275379"
-	)
-	void vmethod4104(ClanChannel var1) {
-		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1880);
-		var2.rank = this.field1879;
-		var2.world = this.field1881;
-		var2.username = new Username(this.field1882);
-	}
-
-	@ObfuscatedName("af")
-	public static final void method4001(long var0) {
-		if (var0 > 0L) {
-			if (0L == var0 % 10L) {
-				long var2 = var0 - 1L;
-
-				try {
-					Thread.sleep(var2);
-				} catch (InterruptedException var8) {
-				}
-
-				try {
-					Thread.sleep(1L);
-				} catch (InterruptedException var7) {
-				}
-			} else {
-				try {
-					Thread.sleep(var0);
-				} catch (InterruptedException var6) {
-				}
-			}
-
-		}
+	void vmethod4162(Buffer var1) {
+		this.field1884 = var1.readUnsignedShort();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IS)I",
-		garbageValue = "710"
+		descriptor = "(Lgh;I)V",
+		garbageValue = "1850606911"
 	)
-	public static int method4009(int var0) {
-		var0 = (var0 & 1431655765) + (var0 >>> 1 & 1431655765);
-		var0 = (var0 >>> 2 & 858993459) + (var0 & 858993459);
-		var0 = var0 + (var0 >>> 4) & 252645135;
-		var0 += var0 >>> 8;
-		var0 += var0 >>> 16;
-		return var0 & 255;
+	void vmethod4163(ClanSettings var1) {
+		var1.method3991(this.field1884);
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;[Ljava/lang/Object;III)V",
-		garbageValue = "-2128978745"
+		descriptor = "(Ltg;Ltg;ZI)Z",
+		garbageValue = "264053196"
 	)
-	public static void method4008(String[] var0, Object[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			String var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			Object var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
-
-			for (int var8 = var2; var8 < var3; ++var8) {
-				if (var6 == null || var0[var8] != null && var0[var8].compareTo(var6) < (var8 & 1)) {
-					String var9 = var0[var8];
-					var0[var8] = var0[var5];
-					var0[var5] = var9;
-					Object var10 = var1[var8];
-					var1[var8] = var1[var5];
-					var1[var5++] = var10;
-				}
-			}
-
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			method4008(var0, var1, var2, var5 - 1);
-			method4008(var0, var1, var5 + 1, var3);
-		}
-
-	}
-
-	@ObfuscatedName("mq")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIB)V",
-		garbageValue = "-49"
-	)
-	@Export("drawWidgets")
-	static final void drawWidgets(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-		if (UrlRequester.widgetDefinition.loadInterface(var0)) {
-			class152.field1777 = null;
-			PendingSpawn.drawInterface(UrlRequester.widgetDefinition.Widget_interfaceComponents[var0], 0, UrlRequester.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1, var1, var2, var3, var4, var5, var6, var7);
-			if (class152.field1777 != null) {
-				PendingSpawn.drawInterface(class152.field1777, 0, class152.field1777.length - 1, -1412584499, -1412584499, var1, var2, var3, var4, class163.field1872, WorldMapRenderer.field3375, var7);
-				class152.field1777 = null;
-			}
-
+	static boolean method4070(WorldEntity var0, WorldEntity var1, boolean var2) {
+		if (var1 == var0) {
+			return true;
+		} else if (var1 == null) {
+			return true;
 		} else {
-			if (var7 != -1) {
-				Client.validRootWidgets[var7] = true;
-			} else {
-				for (int var8 = 0; var8 < 100; ++var8) {
-					Client.validRootWidgets[var8] = true;
+			return var0 == null ? false : var2;
+		}
+	}
+
+	@ObfuscatedName("ao")
+	@ObfuscatedSignature(
+		descriptor = "(ILcj;ZB)I",
+		garbageValue = "10"
+	)
+	static int method4076(int var0, Script var1, boolean var2) {
+		Widget var3;
+		if (var0 >= 2000) {
+			var0 -= 1000;
+			var3 = class35.widgetDefinition.method7496(Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize]);
+		} else {
+			var3 = var2 ? class359.scriptDotWidget : GameEngine.scriptActiveWidget;
+		}
+
+		String var4 = (String)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+		int[] var5 = null;
+		if (!var4.isEmpty() && var4.charAt(var4.length() - 1) == 'Y') {
+			int var6 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+			if (var6 > 0) {
+				for (var5 = new int[var6]; var6-- > 0; var5[var6] = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize]) {
 				}
 			}
 
+			var4 = var4.substring(0, var4.length() - 1);
 		}
+
+		Object[] var9 = new Object[var4.length() + 1];
+
+		int var7;
+		for (var7 = var9.length - 1; var7 >= 1; --var7) {
+			switch(var4.charAt(var7 - 1)) {
+			case 'W':
+			case 'X':
+			case 's':
+				var9[var7] = Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+				break;
+			default:
+				var9[var7] = new Integer(Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize]);
+			}
+		}
+
+		var7 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+		if (var7 != -1) {
+			var9[0] = new Integer(var7);
+		} else {
+			var9 = null;
+		}
+
+		if (var0 == ScriptOpcodes.CC_SETONCLICK) {
+			var3.onClick = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONHOLD) {
+			var3.onHold = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONRELEASE) {
+			var3.onRelease = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONMOUSEOVER) {
+			var3.onMouseOver = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONMOUSELEAVE) {
+			var3.onMouseLeave = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONDRAG) {
+			var3.onDrag = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONTARGETLEAVE) {
+			var3.onTargetLeave = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONVARTRANSMIT) {
+			var3.onVarTransmit = var9;
+			var3.varTransmitTriggers = var5;
+		} else if (var0 == ScriptOpcodes.CC_SETONTIMER) {
+			var3.onTimer = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONOP) {
+			var3.onOp = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONDRAGCOMPLETE) {
+			var3.onDragComplete = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONCLICKREPEAT) {
+			var3.onClickRepeat = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONMOUSEREPEAT) {
+			var3.onMouseRepeat = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONINVTRANSMIT) {
+			var3.onInvTransmit = var9;
+			var3.invTransmitTriggers = var5;
+		} else if (var0 == ScriptOpcodes.CC_SETONSTATTRANSMIT) {
+			var3.onStatTransmit = var9;
+			var3.statTransmitTriggers = var5;
+		} else if (var0 == ScriptOpcodes.CC_SETONTARGETENTER) {
+			var3.onTargetEnter = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONSCROLLWHEEL) {
+			var3.onScroll = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONCHATTRANSMIT) {
+			var3.onChatTransmit = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONKEY) {
+			var3.onKey = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONFRIENDTRANSMIT) {
+			var3.onFriendTransmit = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONCLANTRANSMIT) {
+			var3.onClanTransmit = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONMISCTRANSMIT) {
+			var3.onMiscTransmit = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONDIALOGABORT) {
+			var3.onDialogAbort = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONSUBCHANGE) {
+			var3.onSubChange = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONSTOCKTRANSMIT) {
+			var3.onStockTransmit = var9;
+		} else if (var0 == 1426) {
+			var3.field4299 = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONRESIZE) {
+			var3.onResize = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONCLANSETTINGSTRANSMIT) {
+			var3.field4292 = var9;
+		} else if (var0 == ScriptOpcodes.CC_SETONCLANCHANNELTRANSMIT) {
+			var3.field4243 = var9;
+		} else if (var0 == 1430) {
+			var3.field4288 = var9;
+		} else if (var0 == 1431) {
+			var3.field4289 = var9;
+		} else if (var0 == 1434) {
+			var3.field4300 = var9;
+		} else if (var0 == 1435) {
+			var3.field4319 = var9;
+		} else {
+			if (var0 < 1436 || var0 > 1439) {
+				return 2;
+			}
+
+			class363 var8 = var3.method7964();
+			if (var8 != null) {
+				if (var0 == 1436) {
+					var8.field4092 = var9;
+				} else if (var0 == 1437) {
+					var8.field4088 = var9;
+				} else if (var0 == 1438) {
+					var8.field4094 = var9;
+				} else if (var0 == 1439) {
+					var8.field4091 = var9;
+				}
+			}
+		}
+
+		var3.hasListener = true;
+		return 1;
 	}
 }

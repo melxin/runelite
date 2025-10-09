@@ -4,97 +4,76 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ax")
+@ObfuscatedName("ai")
 @Implements("DevicePcmPlayerProvider")
-public class DevicePcmPlayerProvider implements class106 {
-	@ObfuscatedName("at")
+public class DevicePcmPlayerProvider implements class105 {
+	@ObfuscatedName("ok")
+	@Export("refreshToken")
+	static String refreshToken;
+	@ObfuscatedName("ot")
 	@ObfuscatedGetter(
-		intValue = 60482423
+		longValue = -6615141330785227133L
 	)
-	static int field91;
-	@ObfuscatedName("hw")
-	@ObfuscatedSignature(
-		descriptor = "Ltg;"
-	)
-	@Export("friendsChat")
-	static FriendsChat friendsChat;
+	static long field92;
 
 	DevicePcmPlayerProvider() {
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldn;",
-		garbageValue = "-183806159"
+		descriptor = "(I)Ldx;",
+		garbageValue = "1873731449"
 	)
 	@Export("player")
 	public PcmPlayer player() {
 		return new DevicePcmPlayer();
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZZI)V",
-		garbageValue = "-2028322013"
+		descriptor = "(II)Z",
+		garbageValue = "1402642411"
 	)
-	@Export("openURL")
-	public static void openURL(String var0, boolean var1, boolean var2) {
-		class6.method39(var0, var1, "openjs", var2);
+	static final boolean method319(int var0) {
+		return var0 == 14 || var0 == 15 || var0 >= 44 && var0 <= 51;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1302330911"
+		descriptor = "(ZI)V",
+		garbageValue = "1642587538"
 	)
-	public static int method332(int var0) {
-		return class535.field5563[var0 & 16383];
-	}
+	@Export("updateLoginStatusUsernameRemembered")
+	static void updateLoginStatusUsernameRemembered(boolean var0) {
+		byte var1 = 0;
+		if (!RouteStrategy.method6247()) {
+			var1 = 12;
+		} else if (class32.client.containsAccessAndRefreshToken() || class32.client.otlTokenRequesterInitialized() || class32.client.containsSessionAndCharacterId()) {
+			var1 = 10;
+		}
 
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-290410379"
-	)
-	public static void method326() {
-		try {
-			JagexCache.JagexCache_dat2File.close();
+		class146.method3876(var1);
+		if (var0) {
+			Login.Login_username = "";
+			Login.Login_password = "";
+			AABB.otpMedium = 0;
+			class572.otp = "";
+		}
 
-			for (int var0 = 0; var0 < JagexCache.field3110; ++var0) {
-				JagexCache.JagexCache_idxFiles[var0].close();
+		if (Login.Login_username == null || Login.Login_username.isEmpty()) {
+			if (class154.clientPreferences.getRememberedUsername() != null) {
+				Login.Login_username = class154.clientPreferences.getRememberedUsername();
+				Client.Login_isUsernameRemembered = true;
+			} else {
+				Client.Login_isUsernameRemembered = false;
 			}
-
-			JagexCache.JagexCache_idx255File.close();
-			JagexCache.JagexCache_randomDat.close();
-		} catch (Exception var2) {
 		}
 
-	}
-
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "1201012857"
-	)
-	static final int method331(int var0, int var1) {
-		int var2 = class204.method4496(var0 - 1, var1 - 1) + class204.method4496(var0 + 1, var1 - 1) + class204.method4496(var0 - 1, var1 + 1) + class204.method4496(1 + var0, var1 + 1);
-		int var3 = class204.method4496(var0 - 1, var1) + class204.method4496(1 + var0, var1) + class204.method4496(var0, var1 - 1) + class204.method4496(var0, 1 + var1);
-		int var4 = class204.method4496(var0, var1);
-		return var2 / 16 + var3 / 8 + var4 / 4;
-	}
-
-	@ObfuscatedName("oo")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "1658772962"
-	)
-	@Export("Clan_joinChat")
-	static final void Clan_joinChat(String var0) {
-		if (!var0.equals("")) {
-			PacketBufferNode var1 = UserComparator6.getPacketBufferNode(ClientPacket.FRIEND_CHAT_JOIN_LEAVE, Client.packetWriter.isaacCipher);
-			var1.packetBuffer.writeByte(WorldMapSection2.stringCp1252NullTerminatedByteSize(var0));
-			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
-			Client.packetWriter.addNode(var1);
+		if (Client.Login_isUsernameRemembered && Login.Login_username != null && !Login.Login_username.isEmpty()) {
+			Login.currentLoginField = 1;
+		} else {
+			Login.currentLoginField = 0;
 		}
+
 	}
 }

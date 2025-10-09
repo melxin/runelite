@@ -1,120 +1,126 @@
-import java.util.ArrayList;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vo")
-public class class568 extends class526 implements class316 {
-	@ObfuscatedName("aw")
+@ObfuscatedName("vc")
+final class class568 implements class567 {
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lmi;"
+		descriptor = "(Ljava/lang/Object;Lwj;I)V",
+		garbageValue = "-1304869252"
 	)
-	final DemotingHashTable field5809;
+	public void vmethod11207(Object var1, Buffer var2) {
+		this.method11151((Integer)var1, var2);
+	}
+
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "(Lwj;S)Ljava/lang/Object;",
+		garbageValue = "2047"
 	)
-	final AbstractArchive field5808;
-	@ObfuscatedName("ac")
-	@ObfuscatedGetter(
-		intValue = 773267705
-	)
-	final int field5807;
-
-	@ObfuscatedSignature(
-		descriptor = "(Lop;ILqh;Lpx;)V"
-	)
-	public class568(StudioGame var1, int var2, Language var3, AbstractArchive var4) {
-		super(var1, var3, var4 != null ? var4.getGroupFileCount(var2) : 0);
-		this.field5809 = new DemotingHashTable(64);
-		this.field5808 = var4;
-		this.field5807 = var2;
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(II)Luo;",
-		garbageValue = "1856887071"
-	)
-	protected class528 vmethod10961(int var1) {
-		synchronized(this.field5809) {
-			class527 var2 = (class527)this.field5809.get((long)var1);
-			if (var2 == null) {
-				var2 = this.method10962(var1);
-				this.field5809.method6980(var2, (long)var1);
-			}
-
-			return var2;
-		}
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lux;",
-		garbageValue = "-2000988974"
-	)
-	class527 method10962(int var1) {
-		byte[] var2 = this.field5808.takeFile(this.field5807, var1);
-		class527 var3 = new class527(var1);
-		if (var2 != null) {
-			var3.method10462(new Buffer(var2));
-		}
-
-		return var3;
+	public Object vmethod11209(Buffer var1) {
+		return var1.method11575();
 	}
 
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1812988703"
+		descriptor = "(Ljava/lang/Integer;Lwj;I)V",
+		garbageValue = "625680422"
 	)
-	public void method10966() {
-		synchronized(this.field5809) {
-			this.field5809.clear();
-		}
+	void method11151(Integer var1, Buffer var2) {
+		var2.writeInt(var1);
 	}
 
-	public Iterator iterator() {
-		return new class567(this);
-	}
-
-	@ObfuscatedName("im")
+	@ObfuscatedName("me")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/ArrayList;IIIII)V",
-		garbageValue = "-1960750308"
+		descriptor = "(Lcs;IIIII)V",
+		garbageValue = "-1306234141"
 	)
-	@Export("playSong")
-	static void playSong(ArrayList var0, int var1, int var2, int var3, int var4) {
-		if (!var0.isEmpty()) {
-			int var5 = (Integer)var0.get(0);
-			if (var5 == -1 && !Client.playingJingle) {
-				class257.method5884(0, 0);
-			} else if (var5 != -1) {
-				boolean var6;
-				if (class339.field3889.isEmpty()) {
-					var6 = false;
-				} else {
-					MidiRequest var7 = (MidiRequest)class339.field3889.get(0);
-					var6 = var7 != null && var5 == var7.musicTrackGroupId;
-				}
-
-				if (!var6 && class36.clientPreferences.getMusicVolume() != 0) {
-					ArrayList var9 = new ArrayList();
-
-					for (int var8 = 0; var8 < var0.size(); ++var8) {
-						var9.add(new MidiRequest(WidgetDefinition.field4042, (Integer)var0.get(var8), 0, class36.clientPreferences.getMusicVolume(), false));
-					}
-
-					if (Client.playingJingle) {
-						class204.method4497(var9, var1, var2, var3, var4);
+	@Export("addPlayerToMenu")
+	static final void addPlayerToMenu(Player var0, int var1, int var2, int var3, int var4) {
+		if (var0.index != Client.localPlayerIndex) {
+			if (Client.menu.menuOptionsCount < 400) {
+				String var5;
+				int var8;
+				if (var0.skillLevel == 0) {
+					String var6 = var0.actions[0] + var0.username + var0.actions[1];
+					var8 = var0.combatLevel;
+					int var9 = class159.localPlayer.combatLevel;
+					int var10 = var9 - var8;
+					String var7;
+					if (var10 < -9) {
+						var7 = class171.colorStartTag(16711680);
+					} else if (var10 < -6) {
+						var7 = class171.colorStartTag(16723968);
+					} else if (var10 < -3) {
+						var7 = class171.colorStartTag(16740352);
+					} else if (var10 < 0) {
+						var7 = class171.colorStartTag(16756736);
+					} else if (var10 > 9) {
+						var7 = class171.colorStartTag(65280);
+					} else if (var10 > 6) {
+						var7 = class171.colorStartTag(4259584);
+					} else if (var10 > 3) {
+						var7 = class171.colorStartTag(8453888);
+					} else if (var10 > 0) {
+						var7 = class171.colorStartTag(12648192);
 					} else {
-						Clock.method6081(var9, var1, var2, var3, var4, false);
+						var7 = class171.colorStartTag(16776960);
+					}
+
+					var5 = var6 + var7 + " " + " (" + "level-" + var0.combatLevel + ")" + var0.actions[2];
+				} else {
+					var5 = var0.actions[0] + var0.username + var0.actions[1] + " " + " (" + "skill-" + var0.skillLevel + ")" + var0.actions[2];
+				}
+
+				int var11;
+				if (Client.isItemSelected == 1) {
+					class162.insertMenuItem("Use", Client.field485 + " " + "->" + " " + class171.colorStartTag(16777215) + var5, 14, var1, var2, var3, -1, false, var4);
+				} else if (Client.isSpellSelected) {
+					if ((class266.selectedSpellFlags & 8) == 8) {
+						class162.insertMenuItem(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + class171.colorStartTag(16777215) + var5, 15, var1, var2, var3, -1, false, var4);
+					}
+				} else {
+					for (var11 = 7; var11 >= 0; --var11) {
+						if (Client.playerMenuActions[var11] != null) {
+							short var12 = 0;
+							if (Client.playerMenuActions[var11].equalsIgnoreCase("Attack")) {
+								if (Client.playerAttackOption == AttackOption.AttackOption_hidden) {
+									continue;
+								}
+
+								if (AttackOption.AttackOption_alwaysRightClick == Client.playerAttackOption || Client.playerAttackOption == AttackOption.AttackOption_dependsOnCombatLevels && var0.combatLevel > class159.localPlayer.combatLevel) {
+									var12 = 2000;
+								}
+
+								if (class159.localPlayer.team != 0 && var0.team != 0) {
+									if (var0.team == class159.localPlayer.team) {
+										var12 = 2000;
+									} else {
+										var12 = 0;
+									}
+								} else if (AttackOption.field1211 == Client.playerAttackOption && var0.isClanMember()) {
+									var12 = 2000;
+								}
+							} else if (Client.playerOptionsPriorities[var11]) {
+								var12 = 2000;
+							}
+
+							boolean var13 = false;
+							var8 = Client.playerMenuOpcodes[var11] + var12;
+							class162.insertMenuItem(Client.playerMenuActions[var11], class171.colorStartTag(16777215) + var5, var8, var1, var2, var3, -1, false, var4);
+						}
 					}
 				}
-			}
 
+				for (var11 = 0; var11 < Client.menu.menuOptionsCount; ++var11) {
+					if (Client.menu.menuOpcodes[var11] == 23) {
+						Client.menu.menuTargets[var11] = class171.colorStartTag(16777215) + var5;
+						break;
+					}
+				}
+
+			}
 		}
 	}
 }

@@ -1,53 +1,87 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fr")
-public class class155 extends class151 {
-	@ObfuscatedName("be")
+@ObfuscatedName("fl")
+public class class155 extends class150 {
+	@ObfuscatedName("om")
 	@ObfuscatedSignature(
-		descriptor = "Lcs;"
+		descriptor = "Lun;"
 	)
-	@Export("loginScreenRunesAnimation")
-	static LoginScreenAnimation loginScreenRunesAnimation;
-	@ObfuscatedName("af")
+	static GraphicsDefaults field1804;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = 1029458903
+		intValue = -1305937963
 	)
-	int field1799;
-	@ObfuscatedName("aw")
-	byte field1800;
+	int field1807;
+	@ObfuscatedName("at")
+	@ObfuscatedGetter(
+		intValue = 878503313
+	)
+	int field1808;
+	@ObfuscatedName("ag")
+	@ObfuscatedGetter(
+		intValue = -1058963461
+	)
+	int field1805;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = -1655427877
+	)
+	int field1806;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lfh;"
 	)
-	final class154 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lfh;)V"
 	)
-	class155(class154 var1) {
+	class155(class153 var1) {
 		this.this$0 = var1;
-		this.field1799 = -1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-2943315"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1804820754"
 	)
-	void vmethod4111(Buffer var1) {
-		this.field1799 = var1.readUnsignedShort();
-		this.field1800 = var1.readByte();
+	void vmethod4162(Buffer var1) {
+		this.field1807 = var1.method11575();
+		this.field1806 = var1.method11575();
+		this.field1808 = var1.readUnsignedByte();
+		this.field1805 = var1.readUnsignedByte();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lgs;I)V",
-		garbageValue = "2108880901"
+		descriptor = "(Lgh;I)V",
+		garbageValue = "1850606911"
 	)
-	void vmethod4112(ClanSettings var1) {
-		var1.method3926(this.field1799, this.field1800);
+	void vmethod4163(ClanSettings var1) {
+		var1.method3997(this.field1807, this.field1806, this.field1808, this.field1805);
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(I)Z",
+		garbageValue = "2020020691"
+	)
+	public static boolean method3939() {
+		if (!class338.field3897.isEmpty()) {
+			return true;
+		} else {
+			return !class338.midiRequests.isEmpty() && class338.midiRequests.get(0) != null && ((MidiRequest)class338.midiRequests.get(0)).midiPcmStream != null ? ((MidiRequest)class338.midiRequests.get(0)).midiPcmStream.isReady() : false;
+		}
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(I)[Ltn;",
+		garbageValue = "1727841736"
+	)
+	public static class516[] method3940() {
+		return new class516[]{class516.field5567, class516.field5563, class516.field5564};
 	}
 }

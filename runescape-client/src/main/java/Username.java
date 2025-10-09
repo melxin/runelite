@@ -3,62 +3,62 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("xa")
+@ObfuscatedName("xp")
 @Implements("Username")
 public class Username implements Comparable {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@Export("name")
 	String name;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@Export("cleanName")
 	String cleanName;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lva;)V"
+		descriptor = "(Ljava/lang/String;Lvt;)V"
 	)
 	public Username(String var1, LoginType var2) {
 		this.name = var1;
-		this.cleanName = class196.method4386(var1, var2);
+		this.cleanName = class81.method2855(var1, var2);
 	}
 
 	public Username(String var1) {
 		this.name = var1;
-		this.cleanName = class196.method4386(var1, LoginType.oldscape);
+		this.cleanName = class81.method2855(var1, LoginType.oldscape);
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "38"
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "1291704747"
 	)
 	@Export("getName")
 	public String getName() {
 		return this.name;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-95"
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "317451761"
 	)
-	public String method11910() {
+	public String method12080() {
 		return this.cleanName;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "846964310"
+		garbageValue = "893269947"
 	)
 	@Export("hasCleanName")
 	public boolean hasCleanName() {
 		return this.cleanName != null;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lxa;I)I",
-		garbageValue = "1591588445"
+		descriptor = "(Lxp;I)I",
+		garbageValue = "-1151037655"
 	)
 	@Export("compareToTyped")
 	public int compareToTyped(Username var1) {

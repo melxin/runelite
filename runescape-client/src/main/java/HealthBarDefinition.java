@@ -4,93 +4,98 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hi")
+@ObfuscatedName("hh")
 @Implements("HealthBarDefinition")
 public class HealthBarDefinition extends DualNode {
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "Lpe;"
 	)
 	@Export("HealthBarDefinition_archive")
 	static AbstractArchive HealthBarDefinition_archive;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "Lpe;"
 	)
-	static AbstractArchive field2039;
-	@ObfuscatedName("ap")
+	static AbstractArchive field2031;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lmu;"
+		descriptor = "Lme;"
 	)
 	@Export("HealthBarDefinition_cached")
-	static EvictingDualNodeHashTable HealthBarDefinition_cached;
-	@ObfuscatedName("aq")
+	public static EvictingDualNodeHashTable HealthBarDefinition_cached;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lmu;"
+		descriptor = "Lme;"
 	)
 	@Export("HealthBarDefinition_cachedSprites")
-	static EvictingDualNodeHashTable HealthBarDefinition_cachedSprites;
-	@ObfuscatedName("lt")
+	public static EvictingDualNodeHashTable HealthBarDefinition_cachedSprites;
+	@ObfuscatedName("bg")
 	@ObfuscatedGetter(
-		intValue = -915910047
+		intValue = -769175921
 	)
-	@Export("cameraX")
-	static int cameraX;
-	@ObfuscatedName("ao")
+	static int field2044;
+	@ObfuscatedName("lm")
 	@ObfuscatedGetter(
-		intValue = 1314996873
+		intValue = 701780559
 	)
-	public int field2042;
-	@ObfuscatedName("as")
+	@Export("worldPort")
+	static int worldPort;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 2090325649
+		intValue = 645274507
+	)
+	public int field2034;
+	@ObfuscatedName("aq")
+	@ObfuscatedGetter(
+		intValue = 414350947
 	)
 	@Export("int1")
 	public int int1;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = -1125424573
+		intValue = -2081477753
 	)
 	@Export("int2")
 	public int int2;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = 1796499015
+		intValue = 445246779
 	)
 	@Export("int3")
 	public int int3;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -865076841
+		intValue = -1828387355
 	)
-	public int field2046;
-	@ObfuscatedName("aa")
+	public int field2040;
+	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -1968747049
+		intValue = 1480998725
 	)
 	@Export("int5")
 	public int int5;
-	@ObfuscatedName("am")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1248285335
+		intValue = -1878057051
 	)
 	@Export("frontSpriteID")
 	int frontSpriteID;
-	@ObfuscatedName("an")
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = 59520525
+		intValue = -1974982281
 	)
 	@Export("backSpriteID")
 	int backSpriteID;
 	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 682173989
+		intValue = 1578119937
 	)
 	@Export("width")
 	public int width;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("az")
 	@ObfuscatedGetter(
-		intValue = -548856825
+		intValue = -1388582271
 	)
 	@Export("widthPadding")
 	public int widthPadding;
@@ -104,7 +109,7 @@ public class HealthBarDefinition extends DualNode {
 		this.int1 = 255;
 		this.int2 = 255;
 		this.int3 = -1;
-		this.field2046 = 1;
+		this.field2040 = 1;
 		this.int5 = 70;
 		this.frontSpriteID = -1;
 		this.backSpriteID = -1;
@@ -112,10 +117,10 @@ public class HealthBarDefinition extends DualNode {
 		this.widthPadding = 0;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-2088254435"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "33491820"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -129,10 +134,10 @@ public class HealthBarDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;II)V",
-		garbageValue = "-236442452"
+		descriptor = "(Lwj;II)V",
+		garbageValue = "1454741063"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -162,10 +167,10 @@ public class HealthBarDefinition extends DualNode {
 
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lxt;",
-		garbageValue = "548633291"
+		descriptor = "(I)Lxl;",
+		garbageValue = "-1171719193"
 	)
 	@Export("getFrontSprite")
 	public SpritePixels getFrontSprite() {
@@ -176,7 +181,7 @@ public class HealthBarDefinition extends DualNode {
 			if (var1 != null) {
 				return var1;
 			} else {
-				var1 = SoundCache.SpriteBuffer_getSprite(field2039, this.frontSpriteID, 0);
+				var1 = class455.SpriteBuffer_getSprite(field2031, this.frontSpriteID, 0);
 				if (var1 != null) {
 					HealthBarDefinition_cachedSprites.put(var1, (long)this.frontSpriteID);
 				}
@@ -186,10 +191,10 @@ public class HealthBarDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lxt;",
-		garbageValue = "-1730060620"
+		descriptor = "(B)Lxl;",
+		garbageValue = "27"
 	)
 	@Export("getBackSprite")
 	public SpritePixels getBackSprite() {
@@ -200,7 +205,7 @@ public class HealthBarDefinition extends DualNode {
 			if (var1 != null) {
 				return var1;
 			} else {
-				var1 = SoundCache.SpriteBuffer_getSprite(field2039, this.backSpriteID, 0);
+				var1 = class455.SpriteBuffer_getSprite(field2031, this.backSpriteID, 0);
 				if (var1 != null) {
 					HealthBarDefinition_cachedSprites.put(var1, (long)this.backSpriteID);
 				}
@@ -212,152 +217,99 @@ public class HealthBarDefinition extends DualNode {
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIZIII)Lxt;",
-		garbageValue = "-1997595539"
+		descriptor = "(I)V",
+		garbageValue = "-186124279"
 	)
-	@Export("getItemSprite")
-	public static final SpritePixels getItemSprite(int var0, int var1, int var2, int var3, int var4, boolean var5, int var6, int var7) {
-		if (var6 == 36 && var7 == 32) {
-			if (var1 == -1) {
-				var4 = 0;
-			} else if (var4 == 2 && var1 != 1) {
-				var4 = 1;
-			}
-		} else {
-			var4 = 0;
-		}
-
-		long var8 = ((long)var3 << 42) + ((long)var2 << 38) + ((long)var1 << 16) + (long)var0 + ((long)var4 << 40);
-		SpritePixels var10;
-		if (!var5 && var6 == 36 && var7 == 32) {
-			var10 = (SpritePixels)ItemComposition.ItemDefinition_cachedSprites.get(var8);
-			if (var10 != null) {
-				return var10;
-			}
-		}
-
-		ItemComposition var11 = AttackOption.ItemDefinition_get(var0);
-		if (var1 > 1 && var11.countobj != null) {
-			int var12 = -1;
-
-			for (int var13 = 0; var13 < 10; ++var13) {
-				if (var1 >= var11.countco[var13] && var11.countco[var13] != 0) {
-					var12 = var11.countobj[var13];
-				}
-			}
-
-			if (var12 != -1) {
-				var11 = AttackOption.ItemDefinition_get(var12);
-			}
-		}
-
-		Model var25 = var11.getModel(1);
-		if (var25 == null) {
-			return null;
-		} else {
-			SpritePixels var26 = null;
-			if (var11.noteTemplate != -1) {
-				var26 = getItemSprite(var11.note, 10, 1, 0, 0, true, var6, var7);
-				if (var26 == null) {
-					return null;
-				}
-			} else if (var11.notedId != -1) {
-				var26 = getItemSprite(var11.unnotedId, var1, var2, var3, 0, false, var6, var7);
-				if (var26 == null) {
-					return null;
-				}
-			} else if (var11.placeholderTemplate != -1) {
-				var26 = getItemSprite(var11.placeholder, var1, 0, 0, 0, false, var6, var7);
-				if (var26 == null) {
-					return null;
-				}
-			}
-
-			int[] var14 = Rasterizer2D.Rasterizer2D_pixels;
-			int var15 = Rasterizer2D.Rasterizer2D_width;
-			int var16 = Rasterizer2D.Rasterizer2D_height;
-			float[] var17 = Rasterizer2D.Rasterizer2D_brightness;
-			int[] var18 = new int[4];
-			Rasterizer2D.Rasterizer2D_getClipArray(var18);
-			var10 = new SpritePixels(var6, var7);
-			Rasterizer3D.method4941(var10.pixels, var6, var7, (float[])null);
-			Rasterizer2D.Rasterizer2D_clear();
-			Rasterizer3D.resetRasterClipping();
-			int var19 = var7 >> 1;
-			Rasterizer3D.setCustomClipBounds(var19, var19);
-			Rasterizer3D.clips.rasterGouraudLowRes = false;
-			if (var11.placeholderTemplate != -1) {
-				var26.drawTransBgAt(0, 0);
-			}
-
-			int var20 = var11.zoom2d;
-			if (var6 != 36) {
-				var20 = var20 * 32 / var6;
-			}
-
-			if (var5) {
-				var20 = (int)((double)var20 * 1.5D);
-			} else if (var2 == 2) {
-				var20 = (int)((double)var20 * 1.04D);
-			}
-
-			int var21 = var20 * Rasterizer3D.Rasterizer3D_sine[var11.xan2d] >> 16;
-			int var22 = var20 * Rasterizer3D.Rasterizer3D_cosine[var11.xan2d] >> 16;
-			var25.calculateBoundsCylinder();
-			var25.drawFrustum(0, var11.yan2d, var11.zan2d, var11.xan2d, var11.offsetX2d, var25.height / 2 + var21 + var11.offsetY2d, var22 + var11.offsetY2d);
-			if (var11.notedId != -1) {
-				var26.drawTransBgAt(0, 0);
-			}
-
-			if (var2 >= 1) {
-				var10.outline(1);
-			}
-
-			if (var2 >= 2) {
-				var10.outline(16777215);
-			}
-
-			if (var3 != 0) {
-				var10.shadow(var3);
-			}
-
-			Rasterizer3D.method4941(var10.pixels, var6, var7, (float[])null);
-			if (var11.noteTemplate != -1) {
-				var26.drawTransBgAt(0, 0);
-			}
-
-			if (var4 == 1 || var4 == 2 && var11.isStackable == 1) {
-				Font var23 = ItemComposition.ItemDefinition_fontPlain11;
-				String var24;
-				if (var1 < 100000) {
-					var24 = "<col=ffff00>" + var1 + "</col>";
-				} else if (var1 < 10000000) {
-					var24 = "<col=ffffff>" + var1 / 1000 + "K" + "</col>";
-				} else {
-					var24 = "<col=00ff80>" + var1 / 1000000 + "M" + "</col>";
-				}
-
-				var23.draw(var24, 0, 9, 16776960, 1);
-			}
-
-			if (!var5 && var6 == 36 && var7 == 32) {
-				ItemComposition.ItemDefinition_cachedSprites.put(var10, var8);
-			}
-
-			Rasterizer3D.method4941(var14, var15, var16, var17);
-			Rasterizer2D.Rasterizer2D_setClipArray(var18);
-			Rasterizer3D.resetRasterClipping();
-			Rasterizer3D.clips.rasterGouraudLowRes = true;
-			return var10;
-		}
+	static void method4316() {
+		Tiles.Tiles_underlays = null;
+		Tiles.Tiles_overlays = null;
+		Frames.Tiles_shapes = null;
+		GrandExchangeEvents.field5045 = null;
+		MusicPatch.field3967 = null;
+		Tiles.Tiles_underlays2 = null;
+		SpriteBufferProperties.field24 = null;
+		class1.Tiles_hue = null;
+		ClanChannel.Tiles_saturation = null;
+		class165.Tiles_lightness = null;
+		class450.Tiles_hueMultiplier = null;
+		Language.field5129 = null;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "360543412"
+		descriptor = "(III)I",
+		garbageValue = "-2045596187"
 	)
-	static final int method4259() {
-		return ViewportMouse.ViewportMouse_x;
+	public static int method4318(int var0, int var1) {
+		int var2 = var1 - var0 & 2047;
+		return var2 > 1024 ? -(2048 - var2) : var2;
+	}
+
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(Ldm;Lwj;IIIIIIB)V",
+		garbageValue = "8"
+	)
+	@Export("loadTerrain")
+	static final void loadTerrain(WorldView var0, Buffer var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+		int[][][] var8 = var0.tileHeights;
+		byte[][][] var9 = var0.tileSettings;
+		int var10;
+		if (var2 >= 0 && var2 < 4 && var3 >= 0 && var3 < var8[0].length - 1 && var4 >= 0 && var4 < var8[0][0].length - 1) {
+			var9[var2][var3][var4] = 0;
+
+			while (true) {
+				var10 = var1.readUnsignedShort();
+				if (var10 == 0) {
+					if (var2 == 0) {
+						var8[0][var3][var4] = -WorldMapID.method6843(var5 + 932731, 556238 + var6) * 8;
+					} else {
+						var8[var2][var3][var4] = var8[var2 - 1][var3][var4] - 240;
+					}
+					break;
+				}
+
+				if (var10 == 1) {
+					int var11 = var1.readUnsignedByte();
+					if (var11 == 1) {
+						var11 = 0;
+					}
+
+					if (var2 == 0) {
+						var8[0][var3][var4] = -var11 * 8;
+					} else {
+						var8[var2][var3][var4] = var8[var2 - 1][var3][var4] - var11 * 8;
+					}
+					break;
+				}
+
+				if (var10 <= 49) {
+					Tiles.Tiles_overlays[var2][var3][var4] = (short)var1.readShort();
+					Frames.Tiles_shapes[var2][var3][var4] = (byte)((var10 - 2) / 4);
+					GrandExchangeEvents.field5045[var2][var3][var4] = (byte)(var10 - 2 + var7 & 3);
+				} else if (var10 <= 81) {
+					var9[var2][var3][var4] = (byte)(var10 - 49);
+				} else {
+					Tiles.Tiles_underlays[var2][var3][var4] = (short)(var10 - 81);
+				}
+			}
+		} else {
+			while (true) {
+				var10 = var1.readUnsignedShort();
+				if (var10 == 0) {
+					break;
+				}
+
+				if (var10 == 1) {
+					var1.readUnsignedByte();
+					break;
+				}
+
+				if (var10 <= 49) {
+					var1.readShort();
+				}
+			}
+		}
+
 	}
 }

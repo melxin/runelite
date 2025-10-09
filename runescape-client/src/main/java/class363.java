@@ -1,87 +1,88 @@
-import java.net.MalformedURLException;
-import java.net.URL;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("nh")
+@ObfuscatedName("na")
 public class class363 {
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "Lom;"
+	)
+	public class365 field4093;
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lnd;"
+	)
+	class359 field4089;
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lba;"
+	)
+	class27 field4090;
+	@ObfuscatedName("aj")
+	public Object[] field4091;
+	@ObfuscatedName("ah")
+	public Object[] field4092;
 	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lea;"
-	)
-	UrlRequest field4061;
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lxt;"
-	)
-	SpritePixels field4063;
+	public Object[] field4088;
+	@ObfuscatedName("ae")
+	public Object[] field4094;
 
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lel;)V"
-	)
-	class363(String var1, UrlRequester var2) {
-		try {
-			this.field4061 = var2.request(new URL(var1));
-		} catch (MalformedURLException var4) {
-			this.field4061 = null;
-		}
-
+	class363() {
+		this.field4093 = new class365();
+		this.field4089 = new class359();
+		this.field4090 = new class27();
 	}
 
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lea;)V"
+		descriptor = "(ILcj;ZB)I",
+		garbageValue = "126"
 	)
-	class363(UrlRequest var1) {
-		this.field4061 = var1;
-	}
+	static int method7534(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? class359.scriptDotWidget : GameEngine.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
+			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.method2181(var3));
+			return 1;
+		} else if (var0 != ScriptOpcodes.CC_GETOP) {
+			if (var0 == ScriptOpcodes.CC_GETOPBASE) {
+				if (var3.dataText == null) {
+					Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = "";
+				} else {
+					Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var3.dataText;
+				}
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lxt;",
-		garbageValue = "-999062412"
-	)
-	SpritePixels method7519() {
-		if (this.field4063 == null && this.field4061 != null && this.field4061.isDone()) {
-			if (this.field4061.getResponse() != null) {
-				this.field4063 = class179.readSpritePixelsFromBytes(this.field4061.getResponse());
+				return 1;
+			} else {
+				return 2;
+			}
+		} else {
+			int var4 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+			--var4;
+			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
+				Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var3.actions[var4];
+			} else {
+				Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = "";
 			}
 
-			this.field4061 = null;
-		}
-
-		return this.field4063;
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Lwb;BIB)I",
-		garbageValue = "114"
-	)
-	public static int method7521(Buffer var0, byte var1, int var2) {
-		int var3 = var1 >> var2 & 3;
-		if (var3 == 3) {
-			return var0.method1958();
-		} else if (var3 == 2) {
-			return var0.readShort();
-		} else {
-			return var3 == 1 ? var0.readByte() : 0;
+			return 1;
 		}
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ia")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-1572048165"
+		descriptor = "(I)V",
+		garbageValue = "636250229"
 	)
-	@Export("isCharPrintable")
-	public static boolean isCharPrintable(char var0) {
-		if (var0 >= ' ' && var0 <= '~') {
-			return true;
-		} else if (var0 >= 160 && var0 <= 255) {
-			return true;
-		} else {
-			return var0 == 8364 || var0 == 338 || var0 == 8212 || var0 == 339 || var0 == 376;
+	static final void method7535() {
+		if (ClientPreferences.ClanChat_inClanChat) {
+			if (class445.friendsChat != null) {
+				class445.friendsChat.sort();
+			}
+
+			LoginState.method794();
+			ClientPreferences.ClanChat_inClanChat = false;
 		}
+
 	}
 }

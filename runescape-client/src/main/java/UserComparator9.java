@@ -1,19 +1,12 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("et")
+@ObfuscatedName("eq")
 @Implements("UserComparator9")
 public class UserComparator9 extends AbstractUserComparator {
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = -452342813
-	)
-	@Export("cacheGamebuild")
-	static int cacheGamebuild;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -21,10 +14,10 @@ public class UserComparator9 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lty;Lty;I)I",
-		garbageValue = "771071997"
+		descriptor = "(Ltu;Ltu;B)I",
+		garbageValue = "-45"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -39,37 +32,93 @@ public class UserComparator9 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lpx;Lpx;I)V",
-		garbageValue = "-160103304"
+		descriptor = "(B)V",
+		garbageValue = "-7"
 	)
-	public static void method3573(AbstractArchive var0, AbstractArchive var1) {
-		HealthBarDefinition.HealthBarDefinition_archive = var0;
-		HealthBarDefinition.field2039 = var1;
+	static final void method3637() {
+		Frames.method5459("You can't add yourself to your own friend list");
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ng")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-1709069497"
+		descriptor = "([Lok;IIIII)V",
+		garbageValue = "716059432"
 	)
-	public static int method3568(int var0, int var1) {
-		return (int)Math.round(Math.atan2((double)var0, (double)var1) * 325.94932345220167D) - 512 & 2047;
-	}
+	@Export("drawModelComponents")
+	static final void drawModelComponents(Widget[] var0, int var1, int var2, int var3, int var4) {
+		for (int var5 = var1; var5 <= var2; ++var5) {
+			Widget var6 = var0[var5];
+			if (var6 != null && var3 == var6.parentId && var4 == var6.field4173 && (!var6.isIf3 || !class30.isComponentHidden(var6))) {
+				if (var6.type == 0) {
+					if (!var6.isIf3 && class30.isComponentHidden(var6) && var6 != class280.mousedOverWidgetIf1) {
+						continue;
+					}
 
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(IZIB)V",
-		garbageValue = "114"
-	)
-	public static final void method3575(int var0, boolean var1, int var2) {
-		if (var0 >= 8000 && var0 <= 48000) {
-			PcmPlayer.field1356 = var0;
-			PcmPlayer.PcmPlayer_stereo = var1;
-			ScriptEvent.field904 = var2;
-		} else {
-			throw new IllegalArgumentException();
+					drawModelComponents(var0, var6.field4228, var6.field4195, var6.id, var6.childIndex * -2066937045);
+					if (var6.children != null) {
+						drawModelComponents(var6.children, 0, var6.children.length - 1, var6.id, -1);
+					}
+
+					if (var6.childIndex * -2066937045 == -1) {
+						InterfaceParent var7 = (InterfaceParent)Client.interfaceParents.get((long)var6.id);
+						if (var7 != null) {
+							class394.method8274(var7.group);
+						}
+					}
+				}
+
+				if (var6.type == 6) {
+					int var8;
+					if (var6.sequenceId != -1 || var6.sequenceId2 != -1) {
+						boolean var11 = WorldMapIcon_1.runCs1(var6);
+						if (var11) {
+							var8 = var6.sequenceId2;
+						} else {
+							var8 = var6.sequenceId;
+						}
+
+						if (var8 != -1) {
+							SequenceDefinition var9 = class171.SequenceDefinition_get(var8);
+							if (!var9.isCachedModelIdSet()) {
+								for (var6.modelFrameCycle += Client.graphicsCycle; var6.modelFrameCycle > var9.frameLengths[var6.modelFrame]; class154.invalidateWidget(var6)) {
+									var6.modelFrameCycle -= var9.frameLengths[var6.modelFrame];
+									++var6.modelFrame;
+									if (var6.modelFrame >= var9.frameIds.length) {
+										var6.modelFrame -= var9.frameCount;
+										if (var6.modelFrame < 0 || var6.modelFrame >= var9.frameIds.length) {
+											var6.modelFrame = 0;
+										}
+									}
+								}
+							} else {
+								var6.modelFrame += Client.graphicsCycle;
+								int var10 = var9.getMayaAnimFrame();
+								if (var6.modelFrame >= var10) {
+									var6.modelFrame -= var9.frameCount;
+									if (var6.modelFrame < 0 || var6.modelFrame >= var10) {
+										var6.modelFrame = 0;
+									}
+								}
+
+								class154.invalidateWidget(var6);
+							}
+						}
+					}
+
+					if (var6.field4241 != 0 && !var6.isIf3) {
+						int var12 = var6.field4241 >> 16;
+						var8 = var6.field4241 << 16 >> 16;
+						var12 *= Client.graphicsCycle;
+						var8 *= Client.graphicsCycle;
+						var6.modelAngleX = var12 + var6.modelAngleX & 2047;
+						var6.modelAngleY = var8 + var6.modelAngleY & 2047;
+						class154.invalidateWidget(var6);
+					}
+				}
+			}
 		}
+
 	}
 }

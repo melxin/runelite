@@ -4,41 +4,41 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dp")
+@ObfuscatedName("da")
 @Implements("AttackOption")
 public enum AttackOption implements Enum {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Ldp;"
+		descriptor = "Lda;"
 	)
 	@Export("AttackOption_dependsOnCombatLevels")
 	AttackOption_dependsOnCombatLevels(0),
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Ldp;"
+		descriptor = "Lda;"
 	)
 	@Export("AttackOption_alwaysRightClick")
 	AttackOption_alwaysRightClick(1),
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Ldp;"
+		descriptor = "Lda;"
 	)
-	field1212(2),
-	@ObfuscatedName("ac")
+	field1210(2),
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Ldp;"
+		descriptor = "Lda;"
 	)
 	@Export("AttackOption_hidden")
 	AttackOption_hidden(3),
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Ldp;"
+		descriptor = "Lda;"
 	)
-	field1216(4);
+	field1211(4);
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1418971993
+		intValue = 1991112439
 	)
 	@Export("id")
 	final int id;
@@ -47,126 +47,154 @@ public enum AttackOption implements Enum {
 		this.id = var3;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1935172756"
+		garbageValue = "-1012656358"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-91"
+		descriptor = "(Ldm;[BIIIIIIIIII)V",
+		garbageValue = "1637829027"
 	)
-	public static void method2799() {
-		class199.field2022.clear();
+	static final void method2881(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
+		CollisionMap[] var11 = var0.collisionMaps;
+		int var13;
+		int var14;
+		if (var11 != null && var2 >= 0 && var2 < var11.length) {
+			CollisionMap var12 = var11[var2];
+
+			for (var13 = var3; var13 < var3 + 8; ++var13) {
+				for (var14 = var4; var14 < var4 + 8; ++var14) {
+					if (var12.method6182(var13, var14)) {
+						var12.method6216(var13, var14, 1073741824);
+					}
+				}
+			}
+		}
+
+		Buffer var20 = new Buffer(var1);
+
+		int var15;
+		int var16;
+		int var17;
+		for (var13 = 0; var13 < 4; ++var13) {
+			for (var14 = 0; var14 < 64; ++var14) {
+				for (var15 = 0; var15 < 64; ++var15) {
+					if (var5 == var13 && var14 >= var6 && var14 < var6 + 8 && var15 >= var7 && var15 < var7 + 8) {
+						var16 = var3 + AsyncHttpResponse.method278(var14 & 7, var15 & 7, var8);
+						var17 = var4 + BufferedSink.method10371(var14 & 7, var15 & 7, var8);
+						int var18 = var3 + (var14 & 7) + var9;
+						int var19 = var10 + (var15 & 7) + var4;
+						HealthBarDefinition.loadTerrain(var0, var20, var2, var16, var17, var18, var19, var8);
+					} else {
+						HealthBarDefinition.loadTerrain(var0, var20, 0, -1, -1, 0, 0, 0);
+					}
+				}
+			}
+		}
+
+		var13 = var20.offset < var20.array.length ? var20.readUnsignedByte() : 0;
+		boolean var21 = (var13 & 1) != 0;
+		if (var21) {
+			for (var15 = 0; var15 < 64; ++var15) {
+				for (var16 = 0; var16 < 64; ++var16) {
+					while (true) {
+						var17 = var20.readUnsignedShort();
+						if (var17 == 0) {
+							break;
+						}
+
+						if (var17 == 1) {
+							var20.readUnsignedByte();
+							break;
+						}
+
+						if (var17 <= 49) {
+							var20.readShort();
+						}
+					}
+				}
+			}
+		}
+
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lis;",
-		garbageValue = "652149108"
+		descriptor = "(IIIIIIB)V",
+		garbageValue = "58"
 	)
-	@Export("ItemDefinition_get")
-	public static ItemComposition ItemDefinition_get(int var0) {
-		ItemComposition var1 = (ItemComposition)ItemComposition.ItemDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	static void method2876(int var0, int var1, int var2, int var3, int var4, int var5) {
+		HealthBarDefinition.field2044 = (var3 + var0) / 2;
+		StructComposition.field2267 = (var4 + var1) / 2;
+		class114.field1517 = (var5 + var2) / 2;
+		LoginType.field5842 = (var3 - var0) / 2;
+		class82.field1206 = (var4 - var1) / 2;
+		class182.field1981 = (var5 - var2) / 2;
+		class139.field1691 = Math.abs(LoginType.field5842);
+		LoginState.field291 = Math.abs(class82.field1206);
+		class107.field1425 = Math.abs(class182.field1981);
+		ViewportMouse.field2955.method9066((float)(var3 - var0), (float)(var4 - var1), (float)(var5 - var2));
+		ViewportMouse.field2955.method9070();
+		ViewportMouse.ViewportMouse_false0 = true;
+	}
+
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIII)Z",
+		garbageValue = "746978829"
+	)
+	static final boolean method2883(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+		int var7 = ViewportMouse.ViewportMouse_y + var6;
+		if (var7 < var0 && var7 < var1 && var7 < var2) {
+			return false;
 		} else {
-			byte[] var2 = class142.ItemDefinition_archive.takeFile(10, var0);
-			var1 = new ItemComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			var1.post();
-			if (var1.noteTemplate != -1) {
-				var1.genCert(ItemDefinition_get(var1.noteTemplate), ItemDefinition_get(var1.note));
-			}
-
-			if (var1.notedId != -1) {
-				var1.genBought(ItemDefinition_get(var1.notedId), ItemDefinition_get(var1.unnotedId));
-			}
-
-			if (var1.placeholderTemplate != -1) {
-				var1.genPlaceholder(ItemDefinition_get(var1.placeholderTemplate), ItemDefinition_get(var1.placeholder));
-			}
-
-			if (!class303.ItemDefinition_inMembersWorld && var1.isMembersOnly) {
-				if (var1.noteTemplate == -1 && var1.notedId == -1 && var1.placeholderTemplate == -1) {
-					var1.name = var1.name + " (Members)";
-				}
-
-				var1.examine = "Login to a members' server to use this object.";
-				var1.isTradable = false;
-
-				int var3;
-				for (var3 = 0; var3 < var1.groundActions.length; ++var3) {
-					var1.groundActions[var3] = null;
-				}
-
-				for (var3 = 0; var3 < var1.inventoryActions.length; ++var3) {
-					if (var3 != 4) {
-						if (var1.subOps != null) {
-							var1.subOps[var3] = null;
-						}
-
-						var1.inventoryActions[var3] = null;
-					}
-				}
-
-				var1.shiftClickIndex = -2;
-				var1.team = 0;
-				if (var1.params != null) {
-					boolean var6 = false;
-
-					for (Node var4 = var1.params.first(); var4 != null; var4 = var1.params.next()) {
-						ParamComposition var5 = PcmPlayer.getParamDefinition((int)var4.key);
-						if (var5.autoDisable) {
-							var4.remove();
-						} else {
-							var6 = true;
-						}
-					}
-
-					if (!var6) {
-						var1.params = null;
-					}
+			var7 = ViewportMouse.ViewportMouse_y - var6;
+			if (var7 > var0 && var7 > var1 && var7 > var2) {
+				return false;
+			} else {
+				var7 = ViewportMouse.ViewportMouse_x + var6;
+				if (var7 < var3 && var7 < var4 && var7 < var5) {
+					return false;
+				} else {
+					var7 = ViewportMouse.ViewportMouse_x - var6;
+					return var7 <= var3 || var7 <= var4 || var7 <= var5;
 				}
 			}
-
-			ItemComposition.ItemDefinition_cached.put(var1, (long)var0);
-			return var1;
 		}
 	}
 
 	@ObfuscatedName("od")
 	@ObfuscatedSignature(
-		descriptor = "(IIIILxt;Lnq;I)V",
-		garbageValue = "565339939"
+		descriptor = "(Ldm;IIILnt;B)V",
+		garbageValue = "33"
 	)
-	@Export("drawSpriteOnMinimap")
-	static final void drawSpriteOnMinimap(int var0, int var1, int var2, int var3, SpritePixels var4, SpriteMask var5) {
-		if (var4 != null) {
-			int var6 = Client.camAngleY & 2047;
-			int var7 = var3 * var3 + var2 * var2;
-			if (var7 <= 6400) {
-				int var8 = Rasterizer3D.Rasterizer3D_sine[var6];
-				int var9 = Rasterizer3D.Rasterizer3D_cosine[var6];
-				int var10 = var9 * var2 + var3 * var8 >> 16;
-				int var11 = var3 * var9 - var8 * var2 >> 16;
-				if (var7 > 2500) {
-					var4.method11742(var10 + var5.width / 2 - var4.width / 2, var5.height / 2 - var11 - var4.height / 2, var0, var1, var5.width, var5.height, var5.xStarts, var5.xWidths);
-				} else {
-					var4.drawTransBgAt(var0 + var10 + var5.width / 2 - var4.width / 2, var5.height / 2 + var1 - var11 - var4.height / 2);
+	static void method2882(WorldView var0, int var1, int var2, int var3, SpriteMask var4) {
+		for (int var5 = 0; var5 < var0.field1169.method9887(); ++var5) {
+			NPC var6 = (NPC)var0.npcs.get((long)var0.field1169.method9886(var5));
+			if (var6 != null && var6.isVisible()) {
+				NPCComposition var7 = var6.definition;
+				if (var7 != null && var7.transforms != null) {
+					var7 = var7.transform();
 				}
 
+				if (var7 != null && var7.drawMapDot && var7.isInteractable) {
+					class450 var8 = Varcs.method3022(var0, var6.x, var6.y);
+					int var9 = (int)var8.field5216;
+					int var10 = (int)var8.field5219;
+					var8.method9065();
+					int var11 = var9 / 32 - Client.field484 / 32;
+					int var12 = var10 / 32 - Client.field377 / 32;
+					class445.method8994(var1, var2, var11, var12, var3, class199.field2176[1], var4);
+				}
 			}
 		}
+
 	}
 }

@@ -1,16 +1,17 @@
+import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dx")
+@ObfuscatedName("dk")
 @Implements("SoundSystem")
 public class SoundSystem implements Runnable {
-	@ObfuscatedName("jc")
-	static String field1372;
-	@ObfuscatedName("af")
+	@ObfuscatedName("lc")
+	static String field1371;
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "[Ldn;"
+		descriptor = "[Ldx;"
 	)
 	@Export("players")
 	public volatile PcmPlayer[] players;
@@ -28,31 +29,41 @@ public class SoundSystem implements Runnable {
 				}
 			}
 		} catch (Exception var4) {
-			class508.RunException_sendStackTrace((String)null, var4);
+			ArchiveDiskActionHandler.RunException_sendStackTrace((String)null, var4);
 		}
 
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("cw")
 	@ObfuscatedSignature(
-		descriptor = "(Lti;IB)I",
-		garbageValue = "64"
+		descriptor = "(ILcj;ZB)I",
+		garbageValue = "35"
 	)
-	public static int method3116(DynamicArray var0, int var1) {
-		class328.method7046(var0, class574.field5820);
-		if (var1 >= 0) {
-			int[] var2 = var0.method10318();
-			int var3 = var0.method10322();
+	static int method3200(int var0, Script var1, boolean var2) {
+		if (var0 == 7900) {
+			int var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+			Client.field364 = Math.max(var3, 0);
+			return 1;
+		} else if (var0 == 7901) {
+			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = Client.field364;
+			return 1;
+		} else {
+			return 2;
+		}
+	}
 
-			for (int var4 = 0; var4 < var3; ++var4) {
-				if (var1 < var2[var4]) {
-					return var4;
-				}
-
-				var1 -= var2[var4];
-			}
+	@ObfuscatedName("iv")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)V",
+		garbageValue = "-71"
+	)
+	static void method3199(int var0, int var1) {
+		if (class154.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
+			ArrayList var2 = new ArrayList();
+			var2.add(new MidiRequest(GrandExchangeOffer.archive6, var0, 0, class154.clientPreferences.getMusicVolume(), false));
+			TextureProvider.method5489(var2, 0, 0, 0, 0, true);
+			Client.playingJingle = true;
 		}
 
-		return -1;
 	}
 }

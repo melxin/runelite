@@ -1,53 +1,49 @@
-import java.awt.Image;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.management.GarbageCollectorMXBean;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tx")
+@ObfuscatedName("tv")
 @Implements("BufferedSink")
 public class BufferedSink implements Runnable {
-	@ObfuscatedName("ax")
-	static Image field5468;
-	@ObfuscatedName("pz")
-	@ObfuscatedSignature(
-		descriptor = "Lvc;"
-	)
-	static Fonts field5467;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ay")
+	@Export("garbageCollector")
+	static GarbageCollectorMXBean garbageCollector;
+	@ObfuscatedName("ab")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@Export("outputStream")
 	OutputStream outputStream;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -634771801
+		intValue = 1368632429
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@Export("buffer")
 	byte[] buffer;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -211398701
+		intValue = 1405650747
 	)
 	@Export("position")
 	int position;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 327141635
+		intValue = 2073959049
 	)
 	@Export("limit")
 	int limit;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@Export("exception")
 	IOException exception;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@Export("closed")
 	boolean closed;
 
@@ -62,10 +58,10 @@ public class BufferedSink implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "71"
+		descriptor = "(I)Z",
+		garbageValue = "-201806137"
 	)
 	@Export("isClosed")
 	boolean isClosed() {
@@ -87,10 +83,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "([BIIB)V",
-		garbageValue = "81"
+		garbageValue = "17"
 	)
 	@Export("write")
 	void write(byte[] var1, int var2, int var3) throws IOException {
@@ -127,10 +123,10 @@ public class BufferedSink implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "179023291"
+		garbageValue = "1272257782"
 	)
 	@Export("close")
 	void close() {
@@ -206,32 +202,19 @@ public class BufferedSink implements Runnable {
 
 	}
 
-	@ObfuscatedName("be")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)I",
-		garbageValue = "-170869480"
+		descriptor = "(IIII)I",
+		garbageValue = "-1581134065"
 	)
-	public static int method10262(String var0) {
-		return var0.length() + 2;
-	}
-
-	@ObfuscatedName("of")
-	@ObfuscatedSignature(
-		descriptor = "(IIZI)V",
-		garbageValue = "963621894"
-	)
-	static final void method10263(int var0, int var1, boolean var2) {
-		if (Client.currentClanChannels[var0] != null) {
-			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method4076()) {
-				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
-				PacketBufferNode var4 = UserComparator6.getPacketBufferNode(ClientPacket.CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL, Client.packetWriter.isaacCipher);
-				var4.packetBuffer.writeByte(4 + WorldMapSection2.stringCp1252NullTerminatedByteSize(var3.username.getName()));
-				var4.packetBuffer.writeByte(var0);
-				var4.packetBuffer.writeShort(var1);
-				var4.packetBuffer.writeBoolean(var2);
-				var4.packetBuffer.writeStringCp1252NullTerminated(var3.username.getName());
-				Client.packetWriter.addNode(var4);
-			}
+	public static int method10371(int var0, int var1, int var2) {
+		var2 &= 3;
+		if (var2 == 0) {
+			return var1;
+		} else if (var2 == 1) {
+			return 7 - var0;
+		} else {
+			return var2 == 2 ? 7 - var1 : var0;
 		}
 	}
 }

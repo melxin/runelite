@@ -1,96 +1,64 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gn")
-public class class159 extends class167 {
-	@ObfuscatedName("ae")
-	static int[][] field1828;
-	@ObfuscatedName("kp")
+@ObfuscatedName("gb")
+public class class159 extends class150 {
+	@ObfuscatedName("ao")
+	@Export("ByteArrayPool_altSizeArrayCounts")
+	static int[] ByteArrayPool_altSizeArrayCounts;
+	@ObfuscatedName("gp")
 	@ObfuscatedSignature(
-		descriptor = "Lpw;"
+		descriptor = "Lcs;"
 	)
-	static Archive field1830;
-	@ObfuscatedName("ur")
-	@Export("ClanChat_inClanChat")
-	static boolean ClanChat_inClanChat;
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = 1743477743
-	)
-	int field1827;
+	@Export("localPlayer")
+	static Player localPlayer;
+	@ObfuscatedName("ab")
+	String field1831;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lga;"
+		descriptor = "Lfh;"
 	)
-	final class168 this$0;
+	final class153 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lga;)V"
+		descriptor = "(Lfh;)V"
 	)
-	class159(class168 var1) {
+	class159(class153 var1) {
 		this.this$0 = var1;
-		this.field1827 = -1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "1665789280"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "1804820754"
 	)
-	void vmethod4108(Buffer var1) {
-		this.field1827 = var1.readUnsignedShort();
-		var1.readUnsignedByte();
-		if (var1.readUnsignedByte() != 255) {
-			var1.offset -= -290410379;
-			var1.readLong();
-		}
-
-	}
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(Lgm;I)V",
-		garbageValue = "-358275379"
-	)
-	void vmethod4104(ClanChannel var1) {
-		var1.removeMember(this.field1827);
+	void vmethod4162(Buffer var1) {
+		this.field1831 = var1.readStringCp1252NullTerminated();
+		var1.method11575();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-106"
+		descriptor = "(Lgh;I)V",
+		garbageValue = "1850606911"
 	)
-	public static void method3885() {
-		WorldMapElement.HitSplatDefinition_cached.clear();
+	void vmethod4163(ClanSettings var1) {
+		var1.name = this.field1831;
 	}
 
-	@ObfuscatedName("al")
+	@ObfuscatedName("ot")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1961994213"
+		descriptor = "(Ljava/lang/String;I)V",
+		garbageValue = "-1447881216"
 	)
-	public static void method3892() {
-		class339.field3889.clear();
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(Lti;I)J",
-		garbageValue = "725603009"
-	)
-	public static long method3891(DynamicArray var0) {
-		class328.method7046(var0, class574.field5820);
-		int[] var1 = var0.method10318();
-		int var2 = var0.method10322();
-		long var3 = 0L;
-
-		for (int var5 = 0; var5 < var2; ++var5) {
-			var3 += (long)var1[var5];
+	@Export("clanKickUser")
+	static final void clanKickUser(String var0) {
+		if (class445.friendsChat != null) {
+			PacketBufferNode var1 = HorizontalAlignment.getPacketBufferNode(ClientPacket.CLAN_KICKUSER, Client.packetWriter.isaacCipher);
+			var1.packetBuffer.writeByte(WorldMapArea.stringCp1252NullTerminatedByteSize(var0));
+			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
+			Client.packetWriter.addNode(var1);
 		}
-
-		return var3;
 	}
 }

@@ -4,59 +4,60 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ic")
+@ObfuscatedName("iu")
 @Implements("AABB")
 public class AABB {
-	@ObfuscatedName("iz")
+	@ObfuscatedName("cj")
 	@ObfuscatedGetter(
-		intValue = 1893703015
+		intValue = 1836746501
 	)
-	static int field2800;
-	@ObfuscatedName("af")
+	@Export("otpMedium")
+	static int otpMedium;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1337717187
+		intValue = 1532191657
 	)
 	@Export("orientation")
 	final int orientation;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1389386173
+		intValue = -1499831733
 	)
 	@Export("xMid")
 	int xMid;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1982909743
+		intValue = -1697834177
 	)
 	@Export("yMid")
 	int yMid;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1528866355
+		intValue = 1450421863
 	)
 	@Export("zMid")
 	int zMid;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -1315156917
+		intValue = -331204281
 	)
 	@Export("xMidOffset")
 	int xMidOffset;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -65913531
+		intValue = 81692539
 	)
 	@Export("yMidOffset")
 	int yMidOffset;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1529153599
+		intValue = 257748505
 	)
 	@Export("zMidOffset")
 	int zMidOffset;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lic;"
+		descriptor = "Liu;"
 	)
 	@Export("aabb")
 	AABB aabb;
@@ -71,96 +72,40 @@ public class AABB {
 		this.zMidOffset = var7;
 	}
 
-	@ObfuscatedName("hd")
+	@ObfuscatedName("be")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lvi;",
-		garbageValue = "47121015"
+		descriptor = "(I)[Ljava/lang/Object;",
+		garbageValue = "492600461"
 	)
-	@Export("getWorldMap")
-	static WorldMap getWorldMap() {
-		return DynamicObject.worldMap;
+	static Object[] method5432() {
+		String var0 = (String)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+		Object[] var1 = new Object[var0.length()];
+
+		for (int var2 = var0.length() - 1; var2 >= 0; --var2) {
+			if (var0.charAt(var2) == 'i') {
+				var1[var2] = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+			} else {
+				var1[var2] = Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
+			}
+		}
+
+		return var1;
 	}
 
-	@ObfuscatedName("ll")
+	@ObfuscatedName("ok")
 	@ObfuscatedSignature(
-		descriptor = "(Ldr;Lwf;B)V",
-		garbageValue = "1"
+		descriptor = "(Lok;IIII)V",
+		garbageValue = "1864335336"
 	)
-	static void method5360(WorldView var0, PacketBuffer var1) {
-		WorldView var2 = HttpHeaders.worldView;
-		var2.baseX = var1.readUnsignedShort();
-		var2.baseY = var1.readUnsignedShort();
-		int var3 = var2.sizeX / 8;
-		int var4 = var2.sizeY / 8;
-		int var5 = var1.readUnsignedShort();
-		var1.importIndex();
-
-		int var6;
-		int var7;
-		int var8;
-		int var9;
-		for (var6 = 0; var6 < 4; ++var6) {
-			for (var7 = 0; var7 < var3; ++var7) {
-				for (var8 = 0; var8 < var4; ++var8) {
-					var9 = var1.readBits(1);
-					if (var9 == 1) {
-						Client.field423[var6][var7][var8] = var1.readBits(26);
-					} else {
-						Client.field423[var6][var7][var8] = -1;
-					}
-				}
+	static final void method5431(Widget var0, int var1, int var2, int var3) {
+		SpriteMask var4 = var0.method8091(class35.widgetDefinition, false);
+		if (var4 != null) {
+			if (Client.minimapState < 3) {
+				ItemComposition.compass.method11882(var1, var2, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var1, var2, var4.xStarts, var4.xWidths);
+			} else {
+				Rasterizer2D.Rasterizer2D_fillMaskedRectangle(var1, var2, 0, var4.xStarts, var4.xWidths);
 			}
+
 		}
-
-		var1.exportIndex();
-		class87.field1235 = new int[var5][4];
-
-		for (var6 = 0; var6 < var5; ++var6) {
-			for (var7 = 0; var7 < 4; ++var7) {
-				class87.field1235[var6][var7] = var1.method1958();
-			}
-		}
-
-		Frames.field2811 = new int[var5];
-		Messages.field1281 = new int[var5];
-		SoundCache.field1377 = new int[var5];
-		class166.field1890 = new byte[var5][];
-		SequenceDefinition.field2494 = new byte[var5][];
-		var5 = 0;
-
-		for (var6 = 0; var6 < 4; ++var6) {
-			for (var7 = 0; var7 < var3; ++var7) {
-				for (var8 = 0; var8 < var4; ++var8) {
-					var9 = Client.field423[var6][var7][var8];
-					if (var9 != -1) {
-						int var10 = GameObject.method5796(var9);
-						int var11 = GameEngine.method689(var9);
-						int var12 = (var10 / 8 << 8) + var11 / 8;
-
-						int var13;
-						for (var13 = 0; var13 < var5; ++var13) {
-							if (Frames.field2811[var13] == var12) {
-								var12 = -1;
-								break;
-							}
-						}
-
-						if (var12 != -1) {
-							Frames.field2811[var5] = var12;
-							var13 = var12 >> 8 & 255;
-							int var14 = var12 & 255;
-							Messages.field1281[var5] = LoginPacket.archive9.getGroupId("m" + var13 + "_" + var14);
-							SoundCache.field1377[var5] = LoginPacket.archive9.getGroupId("l" + var13 + "_" + var14);
-							++var5;
-						}
-					}
-				}
-			}
-		}
-
-		UrlRequest.updateGameState(25);
-		Client.field453 = true;
-		VertexNormal.field2978 = var2;
-		GrandExchangeOfferUnitPriceComparator.method8537(var2);
 	}
 }

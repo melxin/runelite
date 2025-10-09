@@ -1,55 +1,81 @@
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hq")
+@ObfuscatedName("hk")
 @Implements("NpcOverrides")
 public class NpcOverrides {
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		longValue = 7439184828842411303L
+	@ObfuscatedName("jn")
+	@ObfuscatedSignature(
+		descriptor = "Loh;"
 	)
-	public long field2093;
-	@ObfuscatedName("aw")
+	static StudioGame field2082;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		longValue = -4798029916765434187L
+	)
+	public long field2078;
+	@ObfuscatedName("at")
 	@Export("modelIds")
 	int[] modelIds;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@Export("recolorTo")
 	short[] recolorTo;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@Export("retextureTo")
 	short[] retextureTo;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@Export("useLocalPlayer")
 	public boolean useLocalPlayer;
 
 	public NpcOverrides(long var1, int[] var3, short[] var4, short[] var5, boolean var6) {
 		this.useLocalPlayer = false;
-		this.field2093 = var1;
+		this.field2078 = var1;
 		this.modelIds = var3;
 		this.recolorTo = var4;
 		this.retextureTo = var5;
 		this.useLocalPlayer = var6;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "81"
+		descriptor = "(I)V",
+		garbageValue = "-172821925"
 	)
-	static boolean method4322(int var0, int var1) {
-		return var0 != 4 || var1 < 8;
+	static void method4378() {
+		Tiles.Tiles_minPlane = 99;
+		Tiles.Tiles_underlays = new short[4][104][104];
+		Tiles.Tiles_overlays = new short[4][104][104];
+		Frames.Tiles_shapes = new byte[4][104][104];
+		GrandExchangeEvents.field5045 = new byte[4][104][104];
+		MusicPatch.field3967 = new int[4][105][105];
+		Tiles.Tiles_underlays2 = new byte[4][105][105];
+		SpriteBufferProperties.field24 = new int[105][105];
+		class1.Tiles_hue = new int[104];
+		ClanChannel.Tiles_saturation = new int[104];
+		class165.Tiles_lightness = new int[104];
+		class450.Tiles_hueMultiplier = new int[104];
+		Language.field5129 = new int[104];
 	}
 
-	@ObfuscatedName("ay")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)I",
-		garbageValue = "-56"
+		descriptor = "(I)V",
+		garbageValue = "1984868359"
 	)
-	static final int method4321(int var0, int var1, int var2, int var3) {
-		int var4 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var2 * 1024 / var3] >> 1;
-		return ((65536 - var4) * var0 >> 16) + (var4 * var1 >> 16);
+	static void method4379() {
+		Iterator var0 = Client.worldViewManager.iterator();
+
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
+
+			for (ObjectSound var2 = (ObjectSound)var1.method2741().last(); var2 != null; var2 = (ObjectSound)var1.method2741().previous()) {
+				var2.method2286();
+			}
+		}
+
 	}
 }

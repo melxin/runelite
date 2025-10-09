@@ -5,217 +5,226 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("qy")
+@ObfuscatedName("qq")
 @Implements("ModeWhere")
 public enum ModeWhere implements Enum {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lqy;"
+		descriptor = "Lqq;"
 	)
-	field5120("", 0, new class429[]{class429.field5087, class429.field5088}),
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lqy;"
-	)
-	field5106("", 1, new class429[]{class429.field5086, class429.field5087, class429.field5088}),
+	field5134("", 0, new class427[]{class427.field5116, class427.field5115}),
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lqy;"
+		descriptor = "Lqq;"
 	)
-	field5118("", 2, new class429[]{class429.field5086, class429.field5085, class429.field5087}),
-	@ObfuscatedName("ac")
+	field5136("", 1, new class427[]{class427.field5117, class427.field5116, class427.field5115}),
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lqy;"
+		descriptor = "Lqq;"
 	)
-	field5107("", 3, new class429[]{class429.field5086}),
-	@ObfuscatedName("ap")
+	field5135("", 2, new class427[]{class427.field5117, class427.field5118, class427.field5116}),
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "Lqy;"
+		descriptor = "Lqq;"
 	)
-	field5108("", 4),
+	field5133("", 3, new class427[]{class427.field5117}),
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "Lqq;"
+	)
+	field5137("", 4),
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lqq;"
+	)
+	field5138("", 5, new class427[]{class427.field5117, class427.field5116}),
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lqq;"
+	)
+	field5139("", 6, new class427[]{class427.field5116}),
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lqy;"
+		descriptor = "Lqq;"
 	)
-	field5110("", 5, new class429[]{class429.field5086, class429.field5087}),
-	@ObfuscatedName("ao")
+	field5140("", 8, new class427[]{class427.field5117, class427.field5116}),
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lqy;"
+		descriptor = "Lqq;"
 	)
-	field5111("", 6, new class429[]{class429.field5087}),
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lqy;"
-	)
-	field5112("", 8, new class429[]{class429.field5086, class429.field5087}),
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "Lqy;"
-	)
-	field5113("", 9, new class429[]{class429.field5086, class429.field5085}),
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "Lqy;"
-	)
-	field5114("", 10, new class429[]{class429.field5086}),
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "Lqy;"
-	)
-	field5115("", 11, new class429[]{class429.field5086}),
+	field5141("", 9, new class427[]{class427.field5117, class427.field5118}),
 	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "Lqy;"
+		descriptor = "Lqq;"
 	)
-	field5109("", 12, new class429[]{class429.field5086, class429.field5087}),
-	@ObfuscatedName("am")
+	field5142("", 10, new class427[]{class427.field5117}),
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lqy;"
+		descriptor = "Lqq;"
 	)
-	field5117("", 13, new class429[]{class429.field5086});
+	field5143("", 11, new class427[]{class427.field5117}),
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Lqq;"
+	)
+	field5144("", 12, new class427[]{class427.field5117, class427.field5116}),
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lqq;"
+	)
+	field5145("", 13, new class427[]{class427.field5117});
 
-	@ObfuscatedName("sd")
-	@ObfuscatedGetter(
-		intValue = 785422869
+	@ObfuscatedName("fy")
+	static boolean field5150;
+	@ObfuscatedName("hh")
+	@ObfuscatedSignature(
+		descriptor = "Ldh;"
 	)
-	@Export("selectedSpellWidget")
-	static int selectedSpellWidget;
-	@ObfuscatedName("an")
+	@Export("varcs")
+	static Varcs varcs;
+	@ObfuscatedName("as")
 	@ObfuscatedGetter(
-		intValue = -1423102717
+		intValue = -2140155215
 	)
 	@Export("id")
 	final int id;
 	@ObfuscatedName("ar")
-	final Set field5119;
+	final Set field5147;
 
 	static {
-		method8668();
+		method8725();
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I[Lqj;)V"
+		descriptor = "(Ljava/lang/String;I[Lqn;)V"
 	)
-	ModeWhere(String var3, int var4, class429[] var5) {
-		this.field5119 = new HashSet();
+	ModeWhere(String var3, int var4, class427[] var5) {
+		this.field5147 = new HashSet();
 		this.id = var4;
-		class429[] var6 = var5;
+		class427[] var6 = var5;
 
 		for (int var7 = 0; var7 < var6.length; ++var7) {
-			class429 var8 = var6[var7];
-			this.field5119.add(var8);
+			class427 var8 = var6[var7];
+			this.field5147.add(var8);
 		}
 
 	}
 
 	ModeWhere(String var3, int var4) {
-		this.field5119 = new HashSet();
+		this.field5147 = new HashSet();
 		this.id = var4;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1935172756"
+		garbageValue = "-1012656358"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lib;",
-		garbageValue = "1"
+		descriptor = "(B)Lrx;",
+		garbageValue = "-28"
 	)
-	@Export("getObjectDefinition")
-	public static ObjectComposition getObjectDefinition(int var0) {
-		ObjectComposition var1 = (ObjectComposition)ObjectComposition.ObjectDefinition_cached.get((long)var0);
-		if (var1 != null) {
+	public static class446 method8730() {
+		synchronized(class446.field5191) {
+			if (class446.field5195 == 0) {
+				return new class446();
+			} else {
+				class446.field5191[--class446.field5195].method9007();
+				return class446.field5191[class446.field5195];
+			}
+		}
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(I)[Lqq;",
+		garbageValue = "2050963986"
+	)
+	static ModeWhere[] method8725() {
+		return new ModeWhere[]{field5133, field5138, field5134, field5135, field5144, field5145, field5140, field5143, field5136, field5142, field5141, field5139, field5137};
+	}
+
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "(IIB)I",
+		garbageValue = "57"
+	)
+	static final int method8731(int var0, int var1) {
+		if (var0 == -2) {
+			return 12345678;
+		} else if (var0 == -1) {
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
+			}
+
 			return var1;
 		} else {
-			byte[] var2 = ObjectComposition.ObjectDefinition_archive.takeFile(6, var0);
-			var1 = new ObjectComposition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+			var1 = (var0 & 127) * var1 / 128;
+			if (var1 < 2) {
+				var1 = 2;
+			} else if (var1 > 126) {
+				var1 = 126;
 			}
 
-			var1.postDecode();
-			if (var1.isSolid) {
-				var1.interactType = 0;
-				var1.boolean1 = false;
-			}
-
-			ObjectComposition.ObjectDefinition_cached.put(var1, (long)var0);
-			return var1;
+			return (var0 & 65408) + var1;
 		}
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("bw")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lhn;",
-		garbageValue = "-125"
+		descriptor = "(ILcj;ZB)I",
+		garbageValue = "-1"
 	)
-	@Export("SpotAnimationDefinition_get")
-	public static SpotAnimationDefinition SpotAnimationDefinition_get(int var0) {
-		SpotAnimationDefinition var1 = (SpotAnimationDefinition)SpotAnimationDefinition.SpotAnimationDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
+	static int method8727(int var0, Script var1, boolean var2) {
+		int var3;
+		if (var0 == ScriptOpcodes.CAM_FORCEANGLE) {
+			UrlRequest.Interpreter_intStackSize -= 2;
+			var3 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize];
+			int var4 = Interpreter.Interpreter_intStack[UrlRequest.Interpreter_intStackSize + 1];
+			if (!Client.isCameraLocked) {
+				Client.camAngleX = var3;
+				Client.camAngleY = var4;
+			}
+
+			return 1;
+		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_XA) {
+			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = Client.camAngleX;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CAM_GETANGLE_YA) {
+			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = Client.camAngleY;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CAM_SETFOLLOWHEIGHT) {
+			var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
+			if (var3 < 0) {
+				var3 = 0;
+			}
+
+			Client.camFollowHeight = var3;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CAM_GETFOLLOWHEIGHT) {
+			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = Client.camFollowHeight;
+			return 1;
 		} else {
-			byte[] var2 = SpotAnimationDefinition.field2203.takeFile(13, var0);
-			var1 = new SpotAnimationDefinition();
-			var1.id = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			SpotAnimationDefinition.SpotAnimationDefinition_cached.put(var1, (long)var0);
-			return var1;
+			return 2;
 		}
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("jx")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lqy;",
-		garbageValue = "1391760667"
+		descriptor = "(I)Z",
+		garbageValue = "-1170404574"
 	)
-	static ModeWhere[] method8668() {
-		return new ModeWhere[]{field5114, field5120, field5112, field5118, field5110, field5107, field5117, field5108, field5115, field5113, field5109, field5106, field5111};
-	}
-
-	@ObfuscatedName("ji")
-	@ObfuscatedSignature(
-		descriptor = "(Ldr;Lhw;I)V",
-		garbageValue = "-860845225"
-	)
-	@Export("addNpcsToScene")
-	static final void addNpcsToScene(WorldView var0, class197 var1) {
-		for (int var2 = 0; var2 < var0.field1161.method9790(); ++var2) {
-			NPC var3 = (NPC)var0.npcs.get((long)var0.field1161.method9787(var2));
-			if (var3 != null && var3.isVisible() && var3.definition.field2154 == var1 && var3.definition.transformIsVisible()) {
-				int var4 = var0.plane;
-				int var5 = var3.x >> 7;
-				int var6 = var3.y >> 7;
-				if (var5 >= 0 && var5 < var0.sizeX && var6 >= 0 && var6 < var0.sizeY) {
-					if (var3.size * -1542062016 == 1 && (var3.x & 127) == 64 && (var3.y & 127) == 64) {
-						if (var0.tileLastDrawnActor[var5][var6] == Client.viewportDrawCount) {
-							continue;
-						}
-
-						var0.tileLastDrawnActor[var5][var6] = Client.viewportDrawCount;
-					}
-
-					long var7 = UserComparator8.calculateTag(0, 0, 0, 1, !var3.definition.isInteractable, var3.index, var0.id);
-					var3.playerCycle = Client.cycle;
-					int var9 = class255.method5812(var0, var3.x, var3.y, var4, var3.vmethod2763());
-					var9 -= var3.method2417();
-					int var10 = var3.size * 92278784 - 64 + 60;
-					var0.scene.drawEntity(var4, var3.x, var3.y, var9, var10, var3, var3.rotation, var7, var3.isWalking);
-				}
-			}
-		}
-
+	static boolean method8721() {
+		return (Client.drawPlayerNames & 2) != 0;
 	}
 }

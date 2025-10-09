@@ -3,116 +3,57 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pd")
+@ObfuscatedName("pu")
 public enum class394 implements Enum {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpd;"
+		descriptor = "Lpu;"
 	)
-	field4796(0, 0),
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "Lpd;"
-	)
-	field4801(1, 1),
+	field4857(0),
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lpd;"
+		descriptor = "Lpu;"
 	)
-	@Export("TOKEN")
-	TOKEN(2, 2);
+	field4854(1),
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lpu;"
+	)
+	field4856(2),
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lpu;"
+	)
+	field4858(3);
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = 1406474017
+		intValue = 1974962229
 	)
-	final int field4798;
-	@ObfuscatedName("ap")
-	@ObfuscatedGetter(
-		intValue = 391018745
-	)
-	final int field4795;
+	public final int field4855;
 
-	class394(int var3, int var4) {
-		this.field4798 = var3;
-		this.field4795 = var4;
+	class394(int var3) {
+		this.field4855 = var3;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1935172756"
+		garbageValue = "-1012656358"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field4795;
+		return this.field4855;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("no")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIII)I",
-		garbageValue = "-8682948"
+		descriptor = "(IB)V",
+		garbageValue = "95"
 	)
-	public static int method8225(int var0, int var1, int var2, int var3, int var4, int var5) {
-		int var6 = 0;
-		if (var0 < var2) {
-			var6 += var2 - var0;
-		} else if (var0 > var4) {
-			var6 += var0 - var4;
-		}
-
-		if (var1 < var3) {
-			var6 += var3 - var1;
-		} else if (var1 > var5) {
-			var6 += var1 - var5;
-		}
-
-		return var6;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)Lti;",
-		garbageValue = "-888133188"
-	)
-	public static DynamicArray method8223(Buffer var0) {
-		int var1 = var0.readUnsignedShort();
-		if (var1 >= 0 && var1 <= 5000) {
-			int var2 = var0.readUnsignedByte();
-			int var4;
-			if (var2 == 0) {
-				int[] var8 = new int[var1];
-
-				for (var4 = 0; var4 < var1; ++var4) {
-					var8[var4] = var0.method1958();
-				}
-
-				DynamicArray var5 = new DynamicArray(class574.field5820, false);
-				var5.array = var8;
-				var5.size = var8.length * -698619497;
-				var5.field5503 = var8.length;
-				return var5;
-			} else if (var2 == 1) {
-				long[] var7 = new long[var1];
-
-				for (var4 = 0; var4 < var1; ++var4) {
-					var7[var4] = var0.readLong();
-				}
-
-				return class108.method3371(var7);
-			} else if (var2 != 2) {
-				throw new RuntimeException();
-			} else {
-				String[] var3 = new String[var1];
-
-				for (var4 = 0; var4 < var1; ++var4) {
-					var3[var4] = var0.readStringCp1252NullTerminated();
-				}
-
-				return WorldMapSection1.method6858(var3);
-			}
-		} else {
-			throw new RuntimeException();
+	static final void method8274(int var0) {
+		if (class35.widgetDefinition.loadInterface(var0)) {
+			UserComparator9.drawModelComponents(class35.widgetDefinition.Widget_interfaceComponents[var0], 0, class35.widgetDefinition.Widget_interfaceComponents[var0].length - 1, -1, -1);
 		}
 	}
 }

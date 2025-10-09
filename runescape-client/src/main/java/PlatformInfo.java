@@ -1,136 +1,137 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("vj")
+@ObfuscatedName("ud")
 @Implements("PlatformInfo")
-public class PlatformInfo extends Node implements class118 {
-	@ObfuscatedName("be")
+public class PlatformInfo extends Node implements class117 {
+	@ObfuscatedName("bh")
 	@ObfuscatedGetter(
-		intValue = 1524586385
+		intValue = -1151563825
 	)
 	@Export("os")
 	public int os;
-	@ObfuscatedName("bh")
+	@ObfuscatedName("bc")
 	@Export("arch64")
 	boolean arch64;
-	@ObfuscatedName("bk")
+	@ObfuscatedName("bv")
 	@ObfuscatedGetter(
-		intValue = -1387405423
+		intValue = 2142372007
 	)
 	@Export("osVersion")
 	int osVersion;
-	@ObfuscatedName("bp")
+	@ObfuscatedName("bi")
 	@ObfuscatedGetter(
-		intValue = -1498585167
+		intValue = -36834971
 	)
 	@Export("vendor")
 	int vendor;
-	@ObfuscatedName("br")
+	@ObfuscatedName("bw")
 	@ObfuscatedGetter(
-		intValue = 1021463221
+		intValue = 1380604157
 	)
 	@Export("javaMajor")
 	int javaMajor;
-	@ObfuscatedName("bv")
+	@ObfuscatedName("br")
 	@ObfuscatedGetter(
-		intValue = -109020011
+		intValue = 505311211
 	)
 	@Export("javaMinor")
 	int javaMinor;
-	@ObfuscatedName("bj")
+	@ObfuscatedName("bf")
 	@ObfuscatedGetter(
-		intValue = -459953697
+		intValue = 642559705
 	)
 	@Export("javaPatch")
 	int javaPatch;
-	@ObfuscatedName("bm")
+	@ObfuscatedName("bl")
 	@Export("field4524")
 	boolean field4524;
-	@ObfuscatedName("bf")
+	@ObfuscatedName("bd")
 	@ObfuscatedGetter(
-		intValue = 145813101
+		intValue = 1925548391
 	)
 	@Export("maxMemory")
 	int maxMemory;
-	@ObfuscatedName("bw")
+	@ObfuscatedName("bt")
 	@ObfuscatedGetter(
-		intValue = -539507735
+		intValue = 885517979
 	)
 	@Export("cpuCores")
 	int cpuCores;
-	@ObfuscatedName("bc")
+	@ObfuscatedName("bk")
 	@ObfuscatedGetter(
-		intValue = -1721208821
+		intValue = 1132444261
 	)
 	@Export("field5105")
 	int field5105;
-	@ObfuscatedName("cw")
+	@ObfuscatedName("ca")
 	@ObfuscatedGetter(
-		intValue = -747966881
+		intValue = -516027745
 	)
 	@Export("clockSpeed")
 	int clockSpeed;
-	@ObfuscatedName("cz")
+	@ObfuscatedName("cy")
 	@Export("field4536")
 	String field4536;
-	@ObfuscatedName("cf")
+	@ObfuscatedName("cj")
 	@Export("field4541")
 	String field4541;
-	@ObfuscatedName("cg")
+	@ObfuscatedName("ce")
 	@Export("field5103")
 	String field5103;
-	@ObfuscatedName("ci")
+	@ObfuscatedName("cl")
 	@Export("field5110")
 	String field5110;
-	@ObfuscatedName("cp")
+	@ObfuscatedName("ci")
 	@ObfuscatedGetter(
-		intValue = 1443667205
+		intValue = -1251107093
 	)
 	@Export("field4512")
 	int field4512;
-	@ObfuscatedName("cm")
+	@ObfuscatedName("cq")
 	@ObfuscatedGetter(
-		intValue = 580651873
+		intValue = -1553783883
 	)
 	@Export("field5112")
 	int field5112;
-	@ObfuscatedName("cc")
+	@ObfuscatedName("cp")
 	@ObfuscatedGetter(
-		intValue = -986889351
+		intValue = -1617691713
 	)
 	@Export("field5089")
 	int field5089;
-	@ObfuscatedName("cj")
+	@ObfuscatedName("cw")
 	@ObfuscatedGetter(
-		intValue = 847732193
+		intValue = -1806215271
 	)
 	@Export("field5114")
 	int field5114;
-	@ObfuscatedName("ce")
+	@ObfuscatedName("cn")
 	@Export("field4537")
 	String field4537;
-	@ObfuscatedName("cr")
+	@ObfuscatedName("ck")
 	@Export("field5116")
 	String field5116;
-	@ObfuscatedName("cb")
+	@ObfuscatedName("cx")
 	@Export("field4539")
 	int[] field4539;
-	@ObfuscatedName("cu")
+	@ObfuscatedName("cb")
 	@ObfuscatedGetter(
-		intValue = 638903767
+		intValue = -333883657
 	)
 	@Export("field4540")
 	int field4540;
-	@ObfuscatedName("cq")
+	@ObfuscatedName("ct")
 	@Export("field5119")
 	String field5119;
-	@ObfuscatedName("cn")
+	@ObfuscatedName("cf")
 	@Export("field5120")
 	String field5120;
 
@@ -164,10 +165,10 @@ public class PlatformInfo extends Node implements class118 {
 		this.field5120 = var26;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-1260997885"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "-1007791874"
 	)
 	@Export("write")
 	public void write(Buffer var1) {
@@ -204,37 +205,45 @@ public class PlatformInfo extends Node implements class118 {
 		var1.writeStringCp1252NullCircumfixed(this.field5120);
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "50500278"
+		descriptor = "(B)I",
+		garbageValue = "32"
 	)
 	@Export("size")
 	public int size() {
 		byte var1 = 39;
 		String var4 = this.field4536;
 		int var3 = var4.length() + 2;
-		int var14 = var3 + var1;
-		var14 += BufferedSink.method10262(this.field4541);
-		String var7 = this.field5103;
+		int var26 = var1 + var3;
+		String var7 = this.field4541;
 		int var6 = var7.length() + 2;
-		var14 += var6;
-		String var10 = this.field5110;
+		var26 += var6;
+		String var10 = this.field5103;
 		int var9 = var10.length() + 2;
-		var14 += var9;
-		var14 += BufferedSink.method10262(this.field4537);
-		var14 += BufferedSink.method10262(this.field5116);
-		var14 += BufferedSink.method10262(this.field5119);
-		String var13 = this.field5120;
+		var26 += var9;
+		String var13 = this.field5110;
 		int var12 = var13.length() + 2;
-		var14 += var12;
-		return var14;
+		var26 += var12;
+		String var16 = this.field4537;
+		int var15 = var16.length() + 2;
+		var26 += var15;
+		String var19 = this.field5116;
+		int var18 = var19.length() + 2;
+		var26 += var18;
+		String var22 = this.field5119;
+		int var21 = var22.length() + 2;
+		var26 += var21;
+		String var25 = this.field5120;
+		int var24 = var25.length() + 2;
+		var26 += var24;
+		return var26;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Ljava/lang/String;",
-		garbageValue = "0"
+		descriptor = "(II)Ljava/lang/String;",
+		garbageValue = "1145805215"
 	)
 	@Export("getDeviceId")
 	public String getDeviceId(int var1) {
@@ -300,19 +309,153 @@ public class PlatformInfo extends Node implements class118 {
 		return var3;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-1272774764"
+		descriptor = "(IB)I",
+		garbageValue = "-10"
 	)
-	static void method10584(String var0) {
-		String var1;
-		if (var0 != null && !var0.isEmpty() && var0.charAt(0) != '#') {
-			var1 = var0;
-		} else {
-			var1 = "";
+	public static int method10712(int var0) {
+		return (var0 & class578.field5910) - 1;
+	}
+
+	@ObfuscatedName("km")
+	@ObfuscatedSignature(
+		descriptor = "(Ldm;B)V",
+		garbageValue = "40"
+	)
+	static void method10717(WorldView var0) {
+		int var1 = var0.sizeX / 8;
+		int var2 = var0.sizeY / 8;
+		boolean var3 = false;
+		Player.method2271(false);
+		var3 = true;
+
+		int var4;
+		for (var4 = 0; var4 < class196.field2145.length; ++var4) {
+			if (class331.field3831[var4] != -1 && class196.field2145[var4] == null) {
+				class196.field2145[var4] = ItemContainer.archive9.takeFile(class331.field3831[var4], 0);
+				if (class196.field2145[var4] == null) {
+					var3 = false;
+				}
+			}
+
+			if (class140.field1710[var4] != -1 && class204.field2245[var4] == null) {
+				class204.field2245[var4] = ItemContainer.archive9.takeFileEncrypted(class140.field1710[var4], 0, class135.field1642[var4]);
+				if (class204.field2245[var4] == null) {
+					var3 = false;
+				}
+			}
 		}
 
-		Login.displayName = var1;
+		if (var3) {
+			Player.method2271(false);
+			var3 = true;
+
+			for (var4 = 0; var4 < class196.field2145.length; ++var4) {
+				byte[] var17 = class204.field2245[var4];
+				if (var17 != null) {
+					byte var6 = 10;
+					byte var7 = 10;
+					var3 &= class533.method10661(var17, var6, var7);
+				}
+			}
+
+			if (var3) {
+				int var5;
+				for (var4 = 0; var4 < 4; ++var4) {
+					for (var5 = 0; var5 < var0.tileSettings[var4].length; ++var5) {
+						Arrays.fill(var0.tileSettings[var4][var5], (byte)0);
+					}
+				}
+
+				StudioGame.method8201();
+				NpcOverrides.method4378();
+				var0.method2747();
+				Player.method2271(true);
+
+				int var8;
+				int var9;
+				int var10;
+				int var11;
+				int var12;
+				int var13;
+				int var18;
+				for (var4 = 0; var4 < 4; ++var4) {
+					StudioGame.method8201();
+
+					for (var5 = 0; var5 < var1; ++var5) {
+						for (var18 = 0; var18 < var2; ++var18) {
+							boolean var19 = false;
+							var8 = Client.field445[var4][var5][var18];
+							if (var8 != -1) {
+								var9 = SpotAnimationDefinition.method4496(var8);
+								var10 = WorldMapEvent.method6973(var8);
+								var11 = class210.method4671(var8);
+								var12 = class138.method3798(var8);
+								var13 = (var11 / 8 << 8) + var12 / 8;
+
+								for (int var14 = 0; var14 < class62.field864.length; ++var14) {
+									if (class62.field864[var14] == var13 && class196.field2145[var14] != null) {
+										int var15 = (var11 - var5) * 8;
+										int var16 = (var12 - var18) * 8;
+										AttackOption.method2881(var0, class196.field2145[var14], var4, var5 * 8, var18 * 8, var9, (var11 & 7) * 8, (var12 & 7) * 8, var10, var15, var16);
+										var19 = true;
+										break;
+									}
+								}
+							}
+
+							if (!var19) {
+								MusicPatchNode2.method7120(var0.tileHeights, var4, var5 * 8, var18 * 8);
+							}
+						}
+					}
+				}
+
+				for (var4 = 0; var4 < 13; ++var4) {
+					for (var5 = 0; var5 < 13; ++var5) {
+						var18 = Client.field445[0][var4][var5];
+						if (var18 == -1) {
+							ChatChannel.method2057(var0, var4 * 8, var5 * 8, 8, 8);
+						}
+					}
+				}
+
+				Player.method2271(true);
+
+				for (var4 = 0; var4 < 4; ++var4) {
+					StudioGame.method8201();
+
+					for (var5 = 0; var5 < var1; ++var5) {
+						for (var18 = 0; var18 < var2; ++var18) {
+							int var20 = Client.field445[var4][var5][var18];
+							if (var20 != -1) {
+								var8 = SpotAnimationDefinition.method4496(var20);
+								var9 = WorldMapEvent.method6973(var20);
+								var10 = class210.method4671(var20);
+								var11 = class138.method3798(var20);
+								var12 = (var10 / 8 << 8) + var11 / 8;
+
+								for (var13 = 0; var13 < class62.field864.length; ++var13) {
+									if (class62.field864[var13] == var12 && class204.field2245[var13] != null) {
+										Tiles.method2110(var0, class204.field2245[var13], var4, var5 * 8, var18 * 8, var8, (var10 & 7) * 8, (var11 & 7) * 8, var9);
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				Player.method2271(true);
+				StudioGame.method8201();
+				Skills.method8168(var0);
+				Player.method2271(true);
+				ObjectComposition.ObjectDefinition_cachedModelData.clear();
+				StudioGame.method8201();
+				HealthBarDefinition.method4316();
+				Client.field433 = false;
+			}
+		}
 	}
 }

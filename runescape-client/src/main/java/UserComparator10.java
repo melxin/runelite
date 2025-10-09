@@ -1,13 +1,18 @@
-import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eh")
+@ObfuscatedName("en")
 @Implements("UserComparator10")
 public class UserComparator10 extends AbstractUserComparator {
-	@ObfuscatedName("af")
+	@ObfuscatedName("um")
+	@ObfuscatedGetter(
+		intValue = 803893595
+	)
+	static int field1585;
+	@ObfuscatedName("ab")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -15,10 +20,10 @@ public class UserComparator10 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lty;Lty;I)I",
-		garbageValue = "-1448458370"
+		descriptor = "(Ltu;Ltu;I)I",
+		garbageValue = "1349921059"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -31,41 +36,5 @@ public class UserComparator10 extends AbstractUserComparator {
 
 	public int compare(Object var1, Object var2) {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/Date;I)Z",
-		garbageValue = "1402147443"
-	)
-	static boolean method3580(Date var0) {
-		java.util.Calendar var2 = java.util.Calendar.getInstance();
-		var2.set(2, 0);
-		var2.set(5, 1);
-		var2.set(1, 1900);
-		Date var1 = var2.getTime();
-		return var0.after(var1);
-	}
-
-	@ObfuscatedName("mw")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Loi;I)Ljava/lang/String;",
-		garbageValue = "-521110050"
-	)
-	static String method3581(String var0, Widget var1) {
-		if (var0.indexOf("%") != -1) {
-			for (int var2 = 1; var2 <= 5; ++var2) {
-				while (true) {
-					int var3 = var0.indexOf("%" + var2);
-					if (var3 == -1) {
-						break;
-					}
-
-					var0 = var0.substring(0, var3) + AbstractSocket.method10167(GameEngine.method637(var1, var2 - 1)) + var0.substring(var3 + 2);
-				}
-			}
-		}
-
-		return var0;
 	}
 }

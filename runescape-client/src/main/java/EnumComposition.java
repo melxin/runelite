@@ -1,67 +1,69 @@
+import java.awt.image.BufferedImage;
+import java.awt.image.PixelGrabber;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hy")
+@ObfuscatedName("hd")
 @Implements("EnumComposition")
 public class EnumComposition extends DualNode {
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "Lpx;"
+		descriptor = "Lpe;"
 	)
 	@Export("EnumDefinition_archive")
 	static AbstractArchive EnumDefinition_archive;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lmu;"
+		descriptor = "Lme;"
 	)
 	@Export("EnumDefinition_cached")
-	public static EvictingDualNodeHashTable EnumDefinition_cached;
-	@ObfuscatedName("ah")
-	@Export("fontHelvetica13")
-	static java.awt.Font fontHelvetica13;
-	@ObfuscatedName("at")
+	static EvictingDualNodeHashTable EnumDefinition_cached;
+	@ObfuscatedName("ag")
 	@Export("inputType")
 	public char inputType;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@Export("outputType")
 	public char outputType;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@Export("defaultStr")
 	public String defaultStr;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = -1626468919
+		intValue = -232799901
 	)
 	@Export("defaultInt")
 	public int defaultInt;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -598220801
+		intValue = 224222619
 	)
 	@Export("outputCount")
 	public int outputCount;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@Export("keys")
 	public int[] keys;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@Export("intVals")
 	public int[] intVals;
-	@ObfuscatedName("au")
+	@ObfuscatedName("aa")
 	@Export("strVals")
 	public String[] strVals;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lti;"
+		descriptor = "Ltl;"
 	)
-	DynamicArray field2065;
-	@ObfuscatedName("aa")
+	DynamicArray field2064;
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lti;"
+		descriptor = "Ltl;"
 	)
-	DynamicArray field2076;
+	DynamicArray field2056;
 
 	static {
 		EnumDefinition_cached = new EvictingDualNodeHashTable(64);
@@ -72,10 +74,10 @@ public class EnumComposition extends DualNode {
 		this.outputCount = 0;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-1136687181"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "313082121"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -89,10 +91,10 @@ public class EnumComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;II)V",
-		garbageValue = "1773897561"
+		descriptor = "(Lwj;II)V",
+		garbageValue = "-1051106566"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -103,7 +105,7 @@ public class EnumComposition extends DualNode {
 		} else if (var2 == 3) {
 			this.defaultStr = var1.readStringCp1252NullTerminated();
 		} else if (var2 == 4) {
-			this.defaultInt = var1.method1958();
+			this.defaultInt = var1.method11575();
 		} else {
 			int var3;
 			if (var2 == 5) {
@@ -112,7 +114,7 @@ public class EnumComposition extends DualNode {
 				this.strVals = new String[this.outputCount];
 
 				for (var3 = 0; var3 < this.outputCount; ++var3) {
-					this.keys[var3] = var1.method1958();
+					this.keys[var3] = var1.method11575();
 					this.strVals[var3] = var1.readStringCp1252NullTerminated();
 				}
 			} else if (var2 == 6) {
@@ -121,139 +123,90 @@ public class EnumComposition extends DualNode {
 				this.intVals = new int[this.outputCount];
 
 				for (var3 = 0; var3 < this.outputCount; ++var3) {
-					this.keys[var3] = var1.method1958();
-					this.intVals[var3] = var1.method1958();
+					this.keys[var3] = var1.method11575();
+					this.intVals[var3] = var1.method11575();
 				}
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1961250368"
+		descriptor = "(B)I",
+		garbageValue = "18"
 	)
 	@Export("size")
 	public int size() {
 		return this.outputCount;
 	}
 
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "(S)Ltl;",
+		garbageValue = "-23304"
+	)
+	public DynamicArray method4339() {
+		if (this.field2064 == null) {
+			this.field2064 = class151.method3914(this.keys);
+		}
+
+		return this.field2064;
+	}
+
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lti;",
-		garbageValue = "2075308221"
+		descriptor = "(I)Ltl;",
+		garbageValue = "2043665788"
 	)
-	public DynamicArray method4290() {
-		if (this.field2065 == null) {
-			int[] var2 = this.keys;
-			DynamicArray var3 = new DynamicArray(class574.field5820, false);
-			var3.array = var2;
-			var3.size = var2.length * -698619497;
-			var3.field5503 = var2.length;
-			this.field2065 = var3;
-		}
-
-		return this.field2065;
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lti;",
-		garbageValue = "657796052"
-	)
-	public DynamicArray method4287() {
-		if (this.field2076 == null) {
+	public DynamicArray method4351() {
+		if (this.field2056 == null) {
 			if (this.outputType == 's') {
-				this.field2076 = WorldMapSection1.method6858(this.strVals);
+				this.field2056 = class393.method8268(this.strVals);
 			} else {
-				int[] var2 = this.intVals;
-				DynamicArray var3 = new DynamicArray(class574.field5820, false);
-				var3.array = var2;
-				var3.size = var2.length * -698619497;
-				var3.field5503 = var2.length;
-				this.field2076 = var3;
+				this.field2056 = class151.method3914(this.intVals);
 			}
 		}
 
-		return this.field2076;
+		return this.field2056;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)I",
-		garbageValue = "134409544"
+		descriptor = "([BB)Lxl;",
+		garbageValue = "-114"
 	)
-	public static int method4308(CharSequence var0) {
-		return StudioGame.method8195(var0, 10, true);
-	}
+	@Export("readSpritePixelsFromBytes")
+	public static final SpritePixels readSpritePixelsFromBytes(byte[] var0) {
+		BufferedImage var1 = null;
 
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(Lwb;S)V",
-		garbageValue = "-16659"
-	)
-	static void method4307(Buffer var0) {
-		while (true) {
-			int var1 = var0.readUnsignedShort();
-			if (var1 != 0) {
-				if (var1 != 1) {
-					if (var1 <= 49) {
-						var0.readShort();
-					}
-					continue;
-				}
-
-				var0.readUnsignedByte();
+		try {
+			Class var2 = ImageIO.class;
+			synchronized(ImageIO.class) {
+				var1 = ImageIO.read(new ByteArrayInputStream(var0));
 			}
 
-			return;
+			if (var1 != null) {
+				int var6 = var1.getWidth();
+				int var7 = var1.getHeight();
+				int[] var4 = new int[var6 * var7];
+				PixelGrabber var5 = new PixelGrabber(var1, 0, 0, var6, var7, var4, 0, var6);
+				var5.grabPixels();
+				return new SpritePixels(var4, var6, var7);
+			}
+		} catch (IOException var9) {
+		} catch (InterruptedException var10) {
 		}
+
+		return null;
 	}
 
-	@ObfuscatedName("ai")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(FFFFIIIB)V",
-		garbageValue = "-22"
+		descriptor = "(II)Z",
+		garbageValue = "1990362405"
 	)
-	static final void method4304(float var0, float var1, float var2, float var3, int var4, int var5, int var6) {
-		if (!ViewportMouse.ViewportMouse_false0) {
-			float var11 = 50.0F;
-			float var12 = (float)AbstractRasterizer.method5050();
-			float var13 = var11 * (float)(ViewportMouse.ViewportMouse_x - var4) / (float)var6;
-			float var14 = (float)(ViewportMouse.ViewportMouse_y - var5) * var11 / (float)var6;
-			float var15 = (float)(ViewportMouse.ViewportMouse_x - var4) * var12 / (float)var6;
-			float var16 = (float)(ViewportMouse.ViewportMouse_y - var5) * var12 / (float)var6;
-			float var18 = var11 * var0 + var1 * var14;
-			var11 = class265.method5963(var14, var11, var1, var0);
-			float var19 = var1 * var16 + var12 * var0;
-			var12 = class265.method5963(var16, var12, var1, var0);
-			float var17 = SoundCache.method3130(var13, var11, var3, var2);
-			float var20 = var2 * var13 + var3 * var11;
-			var13 = var17;
-			var17 = SoundCache.method3130(var15, var12, var3, var2);
-			float var21 = var15 * var2 + var12 * var3;
-			class405.method8273((int)var13, (int)var18, (int)var20, (int)var17, (int)var19, (int)var21);
-		}
-	}
-
-	@ObfuscatedName("lf")
-	@ObfuscatedSignature(
-		descriptor = "(IIII)V",
-		garbageValue = "1650531523"
-	)
-	@Export("updateItemPile")
-	static final void updateItemPile(int var0, int var1, int var2) {
-		ObjectSound.updateItemPile2(HttpHeaders.worldView, var0, var1, var2);
-	}
-
-	@ObfuscatedName("nx")
-	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1739685858"
-	)
-	static final int method4305() {
-		float var0 = 200.0F * ((float)class36.clientPreferences.getBrightness() - 0.5F);
-		return 100 - Math.round(var0);
+	public static boolean method4360(int var0) {
+		return (var0 >> 20 & 1) != 0;
 	}
 }

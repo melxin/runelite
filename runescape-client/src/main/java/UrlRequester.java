@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 import net.runelite.mapping.Export;
@@ -12,30 +11,21 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("el")
+@ObfuscatedName("eu")
 @Implements("UrlRequester")
 public abstract class UrlRequester implements Runnable {
-	@ObfuscatedName("fu")
-	@ObfuscatedSignature(
-		descriptor = "Lns;"
-	)
-	@Export("widgetDefinition")
-	static WidgetDefinition widgetDefinition;
-	@ObfuscatedName("pi")
-	@Export("regionLandArchives")
-	static byte[][] regionLandArchives;
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@Export("requestThread")
 	final Thread requestThread;
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@Export("isClosed")
 	volatile boolean isClosed;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@Export("requests")
 	Queue requests;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1423151599
+		intValue = -327261475
 	)
 	@Export("clientRevision")
 	int clientRevision;
@@ -48,21 +38,21 @@ public abstract class UrlRequester implements Runnable {
 		this.clientRevision = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lea;I)V",
-		garbageValue = "20500778"
+		descriptor = "(Lez;I)V",
+		garbageValue = "-2003495708"
 	)
 	@Export("openConnection")
 	abstract void openConnection(UrlRequest var1) throws IOException;
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/net/URLConnection;B)I",
-		garbageValue = "58"
+		garbageValue = "62"
 	)
-	int method3500(URLConnection var1) {
-		int var2 = UrlRequest.field1558;
+	int method3566(URLConnection var1) {
+		int var2 = UrlRequest.field1554;
 		if (var1 != null) {
 			try {
 				if (var1 instanceof HttpURLConnection) {
@@ -75,10 +65,10 @@ public abstract class UrlRequester implements Runnable {
 		return var2;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/net/URLConnection;I)V",
-		garbageValue = "1572386255"
+		garbageValue = "613793787"
 	)
 	@Export("setDefaultRequestProperties")
 	void setDefaultRequestProperties(URLConnection var1) {
@@ -89,12 +79,12 @@ public abstract class UrlRequester implements Runnable {
 		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.clientRevision);
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;Lea;I)V",
-		garbageValue = "101863613"
+		descriptor = "(Ljava/net/URLConnection;Lez;I)V",
+		garbageValue = "16711935"
 	)
-	void method3488(URLConnection var1, UrlRequest var2) {
+	void method3556(URLConnection var1, UrlRequest var2) {
 		DataInputStream var3 = null;
 
 		try {
@@ -106,38 +96,39 @@ public abstract class UrlRequester implements Runnable {
 				var3.readFully(var4);
 			} else {
 				var4 = new byte[0];
-				byte[] var6 = class137.method3661(5000);
+				byte[] var6 = GrandExchangeOffer.ByteArrayPool_getArrayBool(5000, false);
+				byte[] var7 = var6;
 
-				for (int var7 = var3.read(var6); var7 > -1; var7 = var3.read(var6)) {
-					byte[] var8 = new byte[var4.length + var7];
-					System.arraycopy(var4, 0, var8, 0, var4.length);
-					System.arraycopy(var6, 0, var8, var4.length, var7);
-					var4 = var8;
+				for (int var8 = var3.read(var6); var8 > -1; var8 = var3.read(var7)) {
+					byte[] var9 = new byte[var4.length + var8];
+					System.arraycopy(var4, 0, var9, 0, var4.length);
+					System.arraycopy(var7, 0, var9, var4.length, var8);
+					var4 = var9;
 				}
 
-				WorldMapSection1.ByteArrayPool_release(var6);
+				WorldMapID.ByteArrayPool_release(var7);
 			}
 
 			var2.response0 = var4;
-		} catch (IOException var14) {
+		} catch (IOException var15) {
 			var2.response0 = null;
 		} finally {
-			var2.field1557 = this.method3500(var1);
+			var2.field1559 = this.method3566(var1);
 		}
 
 		if (var3 != null) {
 			try {
 				var3.close();
-			} catch (IOException var13) {
+			} catch (IOException var14) {
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;S)Lea;",
-		garbageValue = "-5373"
+		descriptor = "(Ljava/net/URL;I)Lez;",
+		garbageValue = "-1750629389"
 	)
 	@Export("request")
 	public UrlRequest request(URL var1) {
@@ -149,10 +140,10 @@ public abstract class UrlRequester implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-9205"
+		descriptor = "(I)V",
+		garbageValue = "1060901814"
 	)
 	@Export("close")
 	public void close() {
@@ -186,44 +177,7 @@ public abstract class UrlRequester implements Runnable {
 
 				this.openConnection(var1);
 			} catch (Exception var7) {
-				class508.RunException_sendStackTrace((String)null, var7);
-			}
-		}
-
-	}
-
-	@ObfuscatedName("iy")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "353452298"
-	)
-	static final void method3491() {
-		int[] var0 = Client.playerUpdateManager.playerIndices;
-		Iterator var1 = Client.worldViewManager.iterator();
-
-		while (var1.hasNext()) {
-			WorldView var2 = (WorldView)var1.next();
-
-			for (int var3 = 0; var3 < Client.playerUpdateManager.playerCount; ++var3) {
-				Player var4 = (Player)var2.players.get((long)var0[var3]);
-				if (var4 != null && var4.overheadTextCyclesRemaining > 0) {
-					--var4.overheadTextCyclesRemaining;
-					if (var4.overheadTextCyclesRemaining == 0) {
-						var4.overheadText = null;
-					}
-				}
-			}
-
-			Iterator var5 = var2.npcs.iterator();
-
-			while (var5.hasNext()) {
-				NPC var6 = (NPC)var5.next();
-				if (var6 != null && var6.overheadTextCyclesRemaining > 0) {
-					--var6.overheadTextCyclesRemaining;
-					if (var6.overheadTextCyclesRemaining == 0) {
-						var6.overheadText = null;
-					}
-				}
+				ArchiveDiskActionHandler.RunException_sendStackTrace((String)null, var7);
 			}
 		}
 

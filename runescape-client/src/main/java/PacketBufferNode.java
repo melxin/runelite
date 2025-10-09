@@ -1,46 +1,48 @@
-import java.util.Iterator;
+import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("my")
+@ObfuscatedName("mr")
 @Implements("PacketBufferNode")
 public class PacketBufferNode extends Node {
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "[Lmy;"
+		descriptor = "[Lmr;"
 	)
 	@Export("PacketBufferNode_packetBufferNodes")
-	public static PacketBufferNode[] PacketBufferNode_packetBufferNodes;
-	@ObfuscatedName("ap")
+	static PacketBufferNode[] PacketBufferNode_packetBufferNodes;
+	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
-		intValue = -970155801
+		intValue = -1672811809
 	)
 	@Export("PacketBufferNode_packetBufferNodeCount")
-	public static int PacketBufferNode_packetBufferNodeCount;
-	@ObfuscatedName("aq")
+	static int PacketBufferNode_packetBufferNodeCount;
+	@ObfuscatedName("io")
+	static List field3673;
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lmn;"
+		descriptor = "Lmk;"
 	)
 	@Export("clientPacket")
-	public ClientPacket clientPacket;
-	@ObfuscatedName("ao")
+	ClientPacket clientPacket;
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 877204477
+		intValue = 385361227
 	)
 	@Export("clientPacketLength")
-	public int clientPacketLength;
-	@ObfuscatedName("as")
+	int clientPacketLength;
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "Lwf;"
+		descriptor = "Lwn;"
 	)
 	@Export("packetBuffer")
 	public PacketBuffer packetBuffer;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedGetter(
-		intValue = 408172313
+		intValue = -2078554335
 	)
 	@Export("index")
 	public int index;
@@ -50,10 +52,13 @@ public class PacketBufferNode extends Node {
 		PacketBufferNode_packetBufferNodeCount = 0;
 	}
 
-	@ObfuscatedName("aw")
+	PacketBufferNode() {
+	}
+
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1371602599"
+		descriptor = "(B)V",
+		garbageValue = "91"
 	)
 	@Export("release")
 	public void release() {
@@ -62,54 +67,37 @@ public class PacketBufferNode extends Node {
 		}
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(Lcq;B)V",
-		garbageValue = "-21"
+		descriptor = "(IIII)I",
+		garbageValue = "-1343870187"
 	)
-	@Export("runScriptEvent")
-	public static void runScriptEvent(ScriptEvent var0) {
-		class137.runScript(var0, 500000, 475000);
+	static final int method7043(int var0, int var1, int var2) {
+		int var3 = var0 / var2;
+		int var4 = var0 & var2 - 1;
+		int var5 = var1 / var2;
+		int var6 = var1 & var2 - 1;
+		int var7 = class487.method9908(var3, var5);
+		int var8 = class487.method9908(var3 + 1, var5);
+		int var9 = class487.method9908(var3, var5 + 1);
+		int var10 = class487.method9908(var3 + 1, var5 + 1);
+		int var11 = class40.method778(var7, var8, var4, var2);
+		int var12 = class40.method778(var9, var10, var4, var2);
+		return class40.method778(var11, var12, var6, var2);
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "1901978652"
+		descriptor = "(Ltl;Lwe;ZI)V",
+		garbageValue = "-2135859443"
 	)
-	public static int method7048(int var0, int var1) {
-		return (-3 - var0 << 8) + var1;
-	}
-
-	@ObfuscatedName("oi")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "1"
-	)
-	static final void method7052() {
-		Iterator var0 = Client.worldViewManager.iterator();
-
-		while (var0.hasNext()) {
-			WorldView var1 = (WorldView)var0.next();
-
-			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
-				Player var3 = (Player)var1.players.get((long)Client.playerUpdateManager.playerIndices[var2]);
-				if (var3 != null) {
-					var3.clearIsFriend();
-				}
-			}
+	static void method7052(DynamicArray var0, class572 var1, boolean var2) {
+		if (var0 == null) {
+			throw new RuntimeException();
+		} else if (var1 != null && var0.field5571 != var1) {
+			throw new RuntimeException();
+		} else if (var2 && !var0.field5570) {
+			throw new RuntimeException();
 		}
-
-		var0 = Messages.Messages_hashTable.iterator();
-
-		while (var0.hasNext()) {
-			Message var4 = (Message)var0.next();
-			var4.clearIsFromFriend();
-		}
-
-		if (DevicePcmPlayerProvider.friendsChat != null) {
-			DevicePcmPlayerProvider.friendsChat.clearFriends();
-		}
-
 	}
 }

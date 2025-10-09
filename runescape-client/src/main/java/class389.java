@@ -1,33 +1,34 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ol")
+@ObfuscatedName("oj")
 public class class389 {
-	@ObfuscatedName("aw")
+	@ObfuscatedName("hd")
 	@ObfuscatedSignature(
-		descriptor = "(DDIB)[D",
-		garbageValue = "113"
+		descriptor = "Luk;"
 	)
-	public static double[] method8216(double var0, double var2, int var4) {
-		int var5 = var4 * 2 + 1;
-		double[] var6 = new double[var5];
-		int var7 = -var4;
+	static class523 field4498;
 
-		for (int var8 = 0; var7 <= var4; ++var8) {
-			double var11 = SpriteMask.method7393(((double)var7 - var0) / var2) / var2;
-			var6[var8] = var11;
-			++var7;
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(Ltl;IB)I",
+		garbageValue = "12"
+	)
+	public static int method8214(DynamicArray var0, int var1) {
+		DefaultsGroup.method10548(var0, class572.field5879);
+		if (var1 >= 0) {
+			int[] var2 = var0.method10430();
+			int var3 = var0.method10433();
+
+			for (int var4 = 0; var4 < var3; ++var4) {
+				if (var1 < var2[var4]) {
+					return var4;
+				}
+
+				var1 -= var2[var4];
+			}
 		}
 
-		return var6;
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(B)[Lfe;",
-		garbageValue = "-34"
-	)
-	static class139[] method8215() {
-		return new class139[]{class139.field1685, class139.field1682, class139.field1684, class139.field1683, class139.field1687, class139.field1692};
+		return -1;
 	}
 }

@@ -1,5 +1,7 @@
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("ml")
-public interface class316 extends Iterable {
+@ObfuscatedName("mg")
+public interface class316 {
+	@ObfuscatedName("ab")
+	void method6976(Object var1);
 }

@@ -4,101 +4,66 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cc")
+@ObfuscatedName("cq")
 @Implements("Tiles")
 public final class Tiles {
-	@ObfuscatedName("ac")
-	static final int[] field839;
-	@ObfuscatedName("ap")
-	static final int[] field840;
+	@ObfuscatedName("aj")
+	static final int[] field817;
+	@ObfuscatedName("ah")
+	static final int[] field818;
+	@ObfuscatedName("af")
+	static final int[] field823;
+	@ObfuscatedName("ae")
+	static final int[] field820;
 	@ObfuscatedName("aq")
-	static final int[] field841;
-	@ObfuscatedName("ao")
-	static final int[] field843;
-	@ObfuscatedName("as")
-	static final int[] field851;
-	@ObfuscatedName("al")
-	static final int[] field838;
-	@ObfuscatedName("au")
+	static final int[] field821;
+	@ObfuscatedName("ac")
+	static final int[] field822;
+	@ObfuscatedName("aa")
 	@ObfuscatedGetter(
-		intValue = -1996777565
+		intValue = -1030822155
 	)
 	@Export("Tiles_minPlane")
 	static int Tiles_minPlane;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ap")
+	@Export("Tiles_underlays")
+	static short[][][] Tiles_underlays;
+	@ObfuscatedName("ad")
 	@Export("Tiles_overlays")
 	static short[][][] Tiles_overlays;
-	@ObfuscatedName("am")
-	@Export("Tiles_shapes")
-	static byte[][][] Tiles_shapes;
-	@ObfuscatedName("an")
-	static byte[][][] field848;
 	@ObfuscatedName("ar")
 	@Export("Tiles_underlays2")
 	static byte[][][] Tiles_underlays2;
-	@ObfuscatedName("ag")
-	@Export("Tiles_lightness")
-	static int[] Tiles_lightness;
-	@ObfuscatedName("av")
-	@Export("Tiles_hueMultiplier")
-	static int[] Tiles_hueMultiplier;
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ai")
 	@ObfuscatedGetter(
-		intValue = 1767658815
+		intValue = 418949937
 	)
 	@Export("rndHue")
 	static int rndHue;
-	@ObfuscatedName("ak")
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 2134811767
+		intValue = -1357477415
 	)
 	@Export("rndLightness")
 	static int rndLightness;
 
 	static {
-		field839 = new int[]{1, 2, 4, 8};
-		field840 = new int[]{16, 32, 64, 128};
-		field841 = new int[]{1, 0, -1, 0};
-		field843 = new int[]{0, -1, 0, 1};
-		field851 = new int[]{1, -1, -1, 1};
-		field838 = new int[]{-1, -1, 1, 1};
+		field817 = new int[]{1, 2, 4, 8};
+		field818 = new int[]{16, 32, 64, 128};
+		field823 = new int[]{1, 0, -1, 0};
+		field820 = new int[]{0, -1, 0, 1};
+		field821 = new int[]{1, -1, -1, 1};
+		field822 = new int[]{-1, -1, 1, 1};
 		Tiles_minPlane = 99;
 		rndHue = (int)(Math.random() * 17.0D) - 8;
 		rndLightness = (int)(Math.random() * 33.0D) - 16;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("aa")
 	@ObfuscatedSignature(
-		descriptor = "(Loi;IZLcg;I)V",
-		garbageValue = "-851479729"
+		descriptor = "(Ldm;[BIIIIIII)V"
 	)
-	static void method2081(Widget var0, int var1, boolean var2, Script var3) {
-		if (var0.children == null) {
-			var0.children = new Widget[var1 + 1];
-		}
-
-		if (var0.children.length <= var1) {
-			Widget[] var4 = new Widget[var1 + 1];
-			System.arraycopy(var0.children, 0, var4, 0, var0.children.length);
-			var0.children = var4;
-		} else {
-			Widget var5 = var0.children[var1];
-			if (var5 != null) {
-				if (var2) {
-					throw new RuntimeException("");
-				}
-
-				WorldMapSection0.method6771(var5, var0);
-			}
-		}
-
-	}
-
-	@ObfuscatedName("ai")
-	@ObfuscatedSignature(
-		descriptor = "(Ldr;[BIIIIIII)V"
-	)
-	static final void method2034(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+	static final void method2110(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		Buffer var9 = new Buffer(var1);
 		int var10 = -1;
 
@@ -125,7 +90,7 @@ public final class Tiles {
 				int var18 = var17 >> 2;
 				int var19 = var17 & 3;
 				if (var5 == var16 && var15 >= var6 && var15 < var6 + 8 && var14 >= var7 && var14 < var7 + 8) {
-					ObjectComposition var20 = ModeWhere.getObjectDefinition(var10);
+					ObjectComposition var20 = TileItem.getObjectDefinition(var10);
 					int var23 = var15 & 7;
 					int var24 = var14 & 7;
 					int var26 = var20.sizeX;
@@ -150,62 +115,22 @@ public final class Tiles {
 					}
 
 					var28 = var22 + var3;
-					int var31 = var15 & 7;
-					int var32 = var14 & 7;
-					int var34 = var20.sizeX;
-					int var35 = var20.sizeY;
-					int var36;
-					if ((var19 & 1) == 1) {
-						var36 = var34;
-						var34 = var35;
-						var35 = var36;
-					}
-
-					int var33 = var8 & 3;
-					int var30;
-					if (var33 == 0) {
-						var30 = var32;
-					} else if (var33 == 1) {
-						var30 = 7 - var31 - (var34 - 1);
-					} else if (var33 == 2) {
-						var30 = 7 - var32 - (var35 - 1);
-					} else {
-						var30 = var31;
-					}
-
-					var36 = var4 + var30;
-					if (var28 > 0 && var36 > 0 && var28 < var0.sizeX - 1 && var36 < var0.sizeY - 1) {
-						int var37 = var2;
-						if ((var0.tileSettings[1][var28][var36] & 2) == 2) {
-							var37 = var2 - 1;
+					int var29 = var4 + SoundCache.method3204(var15 & 7, var14 & 7, var8, var20.sizeX, var20.sizeY, var19);
+					if (var28 > 0 && var29 > 0 && var28 < var0.sizeX - 1 && var29 < var0.sizeY - 1) {
+						int var30 = var2;
+						if ((var0.tileSettings[1][var28][var29] & 2) == 2) {
+							var30 = var2 - 1;
 						}
 
-						CollisionMap var38 = null;
-						if (var37 >= 0 && var0.collisionMaps != null) {
-							var38 = var0.collisionMaps[var37];
+						CollisionMap var31 = null;
+						if (var30 >= 0 && var0.collisionMaps != null) {
+							var31 = var0.collisionMaps[var30];
 						}
 
-						InvDefinition.addObjects(var0, var2, var28, var36, var10, var19 + var8 & 3, var18, var38);
+						Projectile.addObjects(var0, var2, var28, var29, var10, var19 + var8 & 3, var18, var31);
 					}
 				}
 			}
 		}
-	}
-
-	@ObfuscatedName("kl")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1842616526"
-	)
-	static final void method2066() {
-		for (PendingSpawn var0 = (PendingSpawn)class333.topLevelWorldView.pendingSpawns.last(); var0 != null; var0 = (PendingSpawn)class333.topLevelWorldView.pendingSpawns.previous()) {
-			if (var0.hitpoints == -1) {
-				var0.delay = 0;
-				class108.method3388(class333.topLevelWorldView, var0);
-			} else {
-				var0.remove();
-			}
-		}
-
 	}
 }

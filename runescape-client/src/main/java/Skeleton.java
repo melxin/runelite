@@ -4,26 +4,26 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("in")
+@ObfuscatedName("ip")
 @Implements("Skeleton")
 public class Skeleton extends Node {
-	@ObfuscatedName("aq")
+	@ObfuscatedName("af")
 	@ObfuscatedGetter(
-		intValue = 242744719
+		intValue = 857920721
 	)
 	@Export("count")
 	int count;
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ae")
 	@Export("transformTypes")
 	int[] transformTypes;
-	@ObfuscatedName("as")
+	@ObfuscatedName("aq")
 	@Export("labels")
 	int[][] labels;
-	@ObfuscatedName("al")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Lig;"
+		descriptor = "Lii;"
 	)
-	class227 field2674;
+	class226 field2679;
 
 	public Skeleton(int var1, byte[] var2) {
 		Buffer var3 = new Buffer(var2);
@@ -46,30 +46,46 @@ public class Skeleton extends Node {
 			}
 		}
 
-		if (var3.offset * 1216585693 < var3.array.length) {
+		if (var3.offset < var3.array.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
-				this.field2674 = new class227(var3, var4);
+				this.field2679 = new class226(var3, var4);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-54"
+		descriptor = "(I)I",
+		garbageValue = "-1225850290"
 	)
-	public int method5094() {
+	public int method5152() {
 		return this.count;
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lig;",
-		garbageValue = "1507591030"
+		descriptor = "(B)Lii;",
+		garbageValue = "7"
 	)
-	public class227 method5095() {
-		return this.field2674;
+	public class226 method5147() {
+		return this.field2679;
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(FFFFLfu;I)V",
+		garbageValue = "-920807804"
+	)
+	static void method5146(float var0, float var1, float var2, float var3, class137 var4) {
+		float var5 = var1 - var0;
+		float var6 = var2 - var1;
+		float var7 = var3 - var2;
+		float var8 = var6 - var5;
+		var4.field1662 = var7 - var6 - var8;
+		var4.field1667 = var8 + var8 + var8;
+		var4.field1657 = var5 + var5 + var5;
+		var4.field1664 = var0;
 	}
 }

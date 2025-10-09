@@ -3,180 +3,195 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gb")
-public class class156 extends class151 {
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = 2143805559
+@ObfuscatedName("gn")
+public class class156 extends class166 {
+	@ObfuscatedName("cx")
+	@ObfuscatedSignature(
+		descriptor = "Lxl;"
 	)
-	int field1809;
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = 45856019
+	@Export("rightTitleSprite")
+	static SpritePixels rightTitleSprite;
+	@ObfuscatedName("kj")
+	@ObfuscatedSignature(
+		descriptor = "Lpg;"
 	)
-	int field1808;
+	static Archive field1814;
+	@ObfuscatedName("ab")
+	@ObfuscatedGetter(
+		intValue = 224245923
+	)
+	int field1812;
 	@ObfuscatedName("at")
+	byte field1809;
+	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -995894843
-	)
-	int field1807;
-	@ObfuscatedName("ac")
-	@ObfuscatedGetter(
-		intValue = 951351033
+		intValue = -846642853
 	)
 	int field1810;
+	@ObfuscatedName("aj")
+	String field1811;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "Lgc;"
 	)
-	final class154 this$0;
+	final class167 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfz;)V"
+		descriptor = "(Lgc;)V"
 	)
-	class156(class154 var1) {
+	class156(class167 var1) {
 		this.this$0 = var1;
+		this.field1812 = -1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Lwb;I)V",
-		garbageValue = "-2943315"
+		descriptor = "(Lwj;I)V",
+		garbageValue = "2073998337"
 	)
-	void vmethod4111(Buffer var1) {
-		this.field1809 = var1.method1958();
-		this.field1810 = var1.method1958();
-		this.field1808 = var1.readUnsignedByte();
-		this.field1807 = var1.readUnsignedByte();
+	void vmethod4154(Buffer var1) {
+		this.field1812 = var1.readUnsignedShort();
+		this.field1809 = var1.readByte();
+		this.field1810 = var1.readUnsignedShort();
+		var1.readLong();
+		this.field1811 = var1.readStringCp1252NullTerminated();
 	}
 
-	@ObfuscatedName("aw")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lgs;I)V",
-		garbageValue = "2108880901"
+		descriptor = "(Lgr;I)V",
+		garbageValue = "2002767604"
 	)
-	void vmethod4112(ClanSettings var1) {
-		var1.method3931(this.field1809, this.field1810, this.field1808, this.field1807);
+	void vmethod4151(ClanChannel var1) {
+		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1812);
+		var2.rank = this.field1809;
+		var2.world = this.field1810;
+		var2.username = new Username(this.field1811);
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
-		descriptor = "(Ldr;Lwf;II)V",
-		garbageValue = "624706055"
+		descriptor = "(Lpe;B)V",
+		garbageValue = "44"
 	)
-	@Export("updateWorldEntitiesFromPacketBuffer")
-	static void updateWorldEntitiesFromPacketBuffer(WorldView var0, PacketBuffer var1, int var2) {
-		int var3 = var1.readUnsignedByte();
+	public static void method3950(AbstractArchive var0) {
+		class142.field1721 = var0;
+	}
+
+	@ObfuscatedName("kr")
+	@ObfuscatedSignature(
+		descriptor = "(ZLwn;B)V",
+		garbageValue = "-48"
+	)
+	@Export("loadRegions")
+	static final void loadRegions(boolean var0, PacketBuffer var1) {
+		Client.isInInstance = var0;
+		int var3;
+		int var4;
 		int var5;
+		int var6;
 		int var7;
-		int var8;
-		if (var3 < var0.field1176.method9790()) {
-			for (int var4 = var3; var4 < var0.field1176.method9790(); ++var4) {
-				var5 = var0.field1176.method9787(var4);
-				WorldView var26 = Client.worldViewManager.getWorldView(var5);
-				if (var26 != null) {
-					for (var7 = 0; var7 < Client.playerUpdateManager.playerCount; ++var7) {
-						var8 = Client.playerUpdateManager.playerIndices[var7];
-						Client.playerUpdateManager.method2851((Player)var26.players.get((long)var8));
-					}
+		if (!Client.isInInstance) {
+			var1.readInt();
+			var3 = var1.readUnsignedShort();
+			int var2 = var1.readUnsignedShort();
+			var4 = var1.readUnsignedShort();
+			PlayerComposition.xteaKeys = new int[var4][4];
 
-					Client.worldViewManager.removeWorldViewById(var5);
-				}
-
-				WorldEntity var29 = (WorldEntity)var0.worldEntities.get((long)var5);
-				if (var29 != null) {
-					var29.remove();
+			for (var5 = 0; var5 < var4; ++var5) {
+				for (var6 = 0; var6 < 4; ++var6) {
+					PlayerComposition.xteaKeys[var5][var6] = var1.method11575();
 				}
 			}
-		}
 
-		if (var3 > var0.field1176.method9790()) {
-			throw new RuntimeException("");
+			class29.regions = new int[var4];
+			AsyncRestClient.regionMapArchiveIds = new int[var4];
+			WorldViewManager.regionLandArchiveIds = new int[var4];
+			AbstractUserComparator.regionLandArchives = new byte[var4][];
+			GrandExchangeOffer.regionMapArchives = new byte[var4][];
+			var4 = 0;
+
+			for (var5 = (var2 - 6) / 8; var5 <= (var2 + 6) / 8; ++var5) {
+				for (var6 = (var3 - 6) / 8; var6 <= (var3 + 6) / 8; ++var6) {
+					var7 = var6 + (var5 << 8);
+					class29.regions[var4] = var7;
+					AsyncRestClient.regionMapArchiveIds[var4] = ItemContainer.archive9.getGroupId("m" + var5 + "_" + var6);
+					WorldViewManager.regionLandArchiveIds[var4] = ItemContainer.archive9.getGroupId("l" + var5 + "_" + var6);
+					++var4;
+				}
+			}
+
+			class455.method9284(var2, var3, true);
 		} else {
-			var0.field1176.method9793();
-			WorldEntityCoord var18 = new WorldEntityCoord();
+			boolean var15 = var1.readUnsignedByte() == 1;
+			var3 = var1.readUnsignedShortAdd();
+			var4 = var1.readUnsignedShort();
+			var5 = var1.readUnsignedShort();
+			var1.importIndex();
 
-			int var6;
-			for (var5 = 0; var5 < var3; ++var5) {
-				var6 = var0.field1176.method9787(var5);
-				WorldEntity var21 = (WorldEntity)var0.worldEntities.get((long)var6);
-				var8 = var1.readUnsignedByte();
-				int var22;
-				int var23;
-				if (var8 != 0) {
-					var0.field1176.method9798(var6);
-					if (var8 != 1) {
-						var18.method6282(var21.method10090());
-						byte var9 = var1.readByte();
-						if (var9 != 0) {
-							var22 = class363.method7521(var1, var9, 0);
-							var23 = class363.method7521(var1, var9, 2);
-							int var24 = class363.method7521(var1, var9, 4);
-							int var13 = class363.method7521(var1, var9, 6);
-							var18.method6301(var22, var23, var24, var13);
-						}
-
-						if (var8 == 2) {
-							var21.method10078(var18);
+			int var8;
+			int var9;
+			for (var6 = 0; var6 < 4; ++var6) {
+				for (var7 = 0; var7 < 13; ++var7) {
+					for (var8 = 0; var8 < 13; ++var8) {
+						var9 = var1.readBits(1);
+						if (var9 == 1) {
+							Client.instanceChunkTemplates[var6][var7][var8] = var1.readBits(26);
 						} else {
-							var21.method10129(var18);
+							Client.instanceChunkTemplates[var6][var7][var8] = -1;
 						}
-					}
-
-					if (var2 >= 6) {
-						class364.method7523(var21, var1);
-					}
-				} else {
-					WorldView var25 = Client.worldViewManager.getWorldView(var6);
-					if (var25 != null) {
-						for (var22 = 0; var22 < Client.playerUpdateManager.playerCount; ++var22) {
-							var23 = Client.playerUpdateManager.playerIndices[var22];
-							Client.playerUpdateManager.method2851((Player)var25.players.get((long)var23));
-						}
-
-						Client.worldViewManager.removeWorldViewById(var6);
-					}
-
-					if (var21 != null) {
-						var21.remove();
 					}
 				}
 			}
 
-			while (var1.method11149(Client.packetWriter.serverPacketLength) > 0) {
-				var5 = var1.readUnsignedShort();
-				var0.field1176.method9798(var5);
-				var6 = var1.readUnsignedByte();
-				var7 = var1.readUnsignedByte();
-				var8 = var6 * 8;
-				int var27 = var7 * 8;
-				WorldView var10 = Interpreter.method1773(var5, var8, var27);
-				WorldEntity var11 = new WorldEntity(var5, var10);
-				var0.worldEntities.put(var11, (long)var5);
-				var11.plane = var5;
-				var11.field5431 = var0.id;
-				var11.method10071(class157.method3872(var1.readShort()));
-				WorldEntityCoord var12 = var11.worldEntityCoord;
-				var12.method6275(Coord.method7417(0), Coord.method7417(0));
-				var12.setZ(0);
-				var12.setCurrentRotationAngle(0);
-				byte var28 = var1.readByte();
-				if (var28 != 0) {
-					int var14 = class363.method7521(var1, var28, 0);
-					int var15 = class363.method7521(var1, var28, 2);
-					int var16 = class363.method7521(var1, var28, 4);
-					int var17 = class363.method7521(var1, var28, 6);
-					var12.method6301(var14, var15, var16, var17);
-				}
+			var1.exportIndex();
+			PlayerComposition.xteaKeys = new int[var5][4];
 
-				var11.method10078(var11.worldEntityCoord);
-				class394[] var20 = new class394[]{class394.field4796, class394.field4801, class394.TOKEN};
-				var11.method10074((class394)class173.findEnumerated(var20, var1.readUnsignedByte()));
-				if (var2 >= 6) {
-					class364.method7523(var11, var1);
+			for (var6 = 0; var6 < var5; ++var6) {
+				for (var7 = 0; var7 < 4; ++var7) {
+					PlayerComposition.xteaKeys[var6][var7] = var1.method11575();
 				}
 			}
 
+			class29.regions = new int[var5];
+			AsyncRestClient.regionMapArchiveIds = new int[var5];
+			WorldViewManager.regionLandArchiveIds = new int[var5];
+			AbstractUserComparator.regionLandArchives = new byte[var5][];
+			GrandExchangeOffer.regionMapArchives = new byte[var5][];
+			var5 = 0;
+
+			for (var6 = 0; var6 < 4; ++var6) {
+				for (var7 = 0; var7 < 13; ++var7) {
+					for (var8 = 0; var8 < 13; ++var8) {
+						var9 = Client.instanceChunkTemplates[var6][var7][var8];
+						if (var9 != -1) {
+							int var10 = class210.method4671(var9);
+							int var11 = class138.method3798(var9);
+							int var12 = (var10 / 8 << 8) + var11 / 8;
+
+							int var13;
+							for (var13 = 0; var13 < var5; ++var13) {
+								if (class29.regions[var13] == var12) {
+									var12 = -1;
+									break;
+								}
+							}
+
+							if (var12 != -1) {
+								class29.regions[var5] = var12;
+								var13 = var12 >> 8 & 255;
+								int var14 = var12 & 255;
+								AsyncRestClient.regionMapArchiveIds[var5] = ItemContainer.archive9.getGroupId("m" + var13 + "_" + var14);
+								WorldViewManager.regionLandArchiveIds[var5] = ItemContainer.archive9.getGroupId("l" + var13 + "_" + var14);
+								++var5;
+							}
+						}
+					}
+				}
+			}
+
+			class455.method9284(var3, var4, !var15);
 		}
+
 	}
 }

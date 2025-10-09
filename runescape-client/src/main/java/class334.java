@@ -1,42 +1,48 @@
-import java.util.List;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ms")
-public final class class334 {
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		longValue = 8593797756653973077L
-	)
-	static long field3839;
-	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		longValue = 1862171730385611819L
-	)
-	static long field3838;
-	@ObfuscatedName("ir")
-	static List field3837;
-	@ObfuscatedName("kq")
+@ObfuscatedName("md")
+public class class334 {
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "Lpw;"
+		descriptor = "(Lpe;Ljava/lang/String;Ljava/lang/String;B)Lxc;",
+		garbageValue = "1"
 	)
-	@Export("archive12")
-	static Archive archive12;
-
-	@ObfuscatedName("aw")
-	@ObfuscatedSignature(
-		descriptor = "(Lre;I)Lre;",
-		garbageValue = "-2123776403"
-	)
-	public static class452 method7060(class452 var0) {
-		synchronized(class452.field5171) {
-			if (class452.field5173 == 0) {
-				return new class452(var0);
+	@Export("SpriteBuffer_getIndexedSpriteByName")
+	public static IndexedSprite SpriteBuffer_getIndexedSpriteByName(AbstractArchive var0, String var1, String var2) {
+		if (!var0.isValidFileName(var1, var2)) {
+			return null;
+		} else {
+			int var3 = var0.getGroupId(var1);
+			int var4 = var0.getFileId(var3, var2);
+			IndexedSprite var5;
+			if (!Friend.method10009(var0, var3, var4)) {
+				var5 = null;
 			} else {
-				class452.field5171[--class452.field5173].method9018(var0);
-				return class452.field5171[class452.field5173];
+				var5 = class598.method11717();
+			}
+
+			return var5;
+		}
+	}
+
+	@ObfuscatedName("jc")
+	@ObfuscatedSignature(
+		descriptor = "(I)I",
+		garbageValue = "-697000366"
+	)
+	static final int method7081() {
+		if (class154.clientPreferences.isRoofsHidden()) {
+			return class547.topLevelWorldView.plane;
+		} else {
+			int var0 = Huffman.cameraX >> 7;
+			int var1 = ChatChannel.cameraZ >> 7;
+			if (var0 >= 0 && 104 > var0 && var1 >= 0 && 104 > var1) {
+				int var2 = class280.getTileHeight(class547.topLevelWorldView, Huffman.cameraX, ChatChannel.cameraZ, class547.topLevelWorldView.plane);
+				return var2 - class514.cameraY < 800 && (class547.topLevelWorldView.tileSettings[class547.topLevelWorldView.plane][var0][var1] & 4) != 0 ? class547.topLevelWorldView.plane : 3;
+			} else {
+				return class547.topLevelWorldView.plane;
 			}
 		}
 	}
