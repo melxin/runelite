@@ -108,7 +108,7 @@ public class Sound extends class150 {
 				int var19 = var15 - var17 / 2;
 				int var20 = var6.subWidth / 2;
 				int var21 = var6.subHeight / 2;
-				var6.method11882(var18, var19, var16, var17, var20, var21, var5, var8 * 256, var0, var1, var7.xStarts, var7.xWidths);
+				var6.drawRotatedMaskedCenteredAround(var18, var19, var16, var17, var20, var21, var5, var8 * 256, var0, var1, var7.xStarts, var7.xWidths);
 			}
 		}
 	}

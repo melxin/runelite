@@ -55,8 +55,8 @@ public class MidiFileReader {
 		int var3;
 		int var5;
 		for (var3 = 0; var3 < var2; var10000.offset += var5) {
-			int var4 = this.buffer.method11575();
-			var5 = this.buffer.method11575();
+			int var4 = this.buffer.readInt();
+			var5 = this.buffer.readInt();
 			if (var4 == 1297379947) {
 				this.trackStarts[var3] = this.buffer.offset;
 				++var3;

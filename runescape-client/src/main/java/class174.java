@@ -34,7 +34,7 @@ public class class174 extends class150 {
 		garbageValue = "1804820754"
 	)
 	void vmethod4162(Buffer var1) {
-		this.field1938 = var1.method11575();
+		this.field1938 = var1.readInt();
 		this.field1936 = var1.readLong();
 	}
 

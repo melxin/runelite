@@ -140,7 +140,8 @@ public class NPCComposition extends DualNode {
 	@Export("retextureFrom")
 	short[] retextureFrom;
 	@ObfuscatedName("cm")
-	public short[] field2117;
+	@Export("retextureTo")
+	public short[] retextureTo;
 	@ObfuscatedName("co")
 	@Export("actions")
 	public String[] actions;
@@ -175,7 +176,8 @@ public class NPCComposition extends DualNode {
 	@ObfuscatedGetter(
 		intValue = -937508631
 	)
-	int field2125;
+	@Export("contrast")
+	int contrast;
 	@ObfuscatedName("da")
 	@ObfuscatedGetter(
 		intValue = 1882008991
@@ -270,7 +272,7 @@ public class NPCComposition extends DualNode {
 		this.widthScale = 128;
 		this.heightScale = 128;
 		this.ambient = 0;
-		this.field2125 = 0;
+		this.contrast = 0;
 		this.rotation = 32;
 		this.transformVarbit = -1;
 		this.transformVarp = -1;
@@ -387,11 +389,11 @@ public class NPCComposition extends DualNode {
 		case 41:
 			var3 = var1.readUnsignedByte();
 			this.retextureFrom = new short[var3];
-			this.field2117 = new short[var3];
+			this.retextureTo = new short[var3];
 
 			for (var4 = 0; var4 < var3; ++var4) {
 				this.retextureFrom[var4] = (short)var1.readUnsignedShort();
-				this.field2117[var4] = (short)var1.readUnsignedShort();
+				this.retextureTo[var4] = (short)var1.readUnsignedShort();
 			}
 
 			return;
@@ -441,7 +443,7 @@ public class NPCComposition extends DualNode {
 			this.ambient = var1.readByte();
 			break;
 		case 101:
-			this.field2125 = var1.readByte();
+			this.contrast = var1.readByte();
 			break;
 		case 102:
 			var3 = var1.readUnsignedByte();
@@ -568,7 +570,7 @@ public class NPCComposition extends DualNode {
 					return null;
 				}
 
-				var8 = var9.toModel(this.ambient + 64, this.field2125 * 5 + 850, -30, -50, -30);
+				var8 = var9.toModel(this.ambient + 64, this.contrast * 5 + 850, -30, -50, -30);
 				NpcDefinition_cachedModels.put(var8, var6);
 			}
 
@@ -661,7 +663,7 @@ public class NPCComposition extends DualNode {
 				}
 
 				if (this.retextureFrom != null) {
-					var7 = this.field2117;
+					var7 = this.retextureTo;
 					if (var2 != null && var2.retextureTo != null) {
 						var7 = var2.retextureTo;
 					}

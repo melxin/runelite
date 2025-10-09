@@ -186,7 +186,7 @@ public class SecureUrlRequester extends UrlRequester {
 			var3 = var1.field5482.method4539();
 		} else {
 			WorldEntity var4 = Client.worldViewManager.method2396();
-			WorldView var5 = var4.field5483;
+			WorldView var5 = var4.worldView;
 			if (var5.plane == var4.field5482.method4539()) {
 				if (var0 == -1) {
 					var3 = var4.getX();
@@ -219,7 +219,7 @@ public class SecureUrlRequester extends UrlRequester {
 		descriptor = "([BIB)V",
 		garbageValue = "60"
 	)
-	static void method3586(byte[] var0, int var1) {
+	static void method4843(byte[] var0, int var1) {
 		if (Client.randomDatData == null) {
 			Client.randomDatData = new byte[24];
 		}

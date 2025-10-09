@@ -272,7 +272,7 @@ public enum class135 implements Enum {
 
 		if (var0.isIf3) {
 			if (Client.isSpellSelected) {
-				if (class367.method7918(MouseRecorder.method2181(var0)) && (class266.selectedSpellFlags & 32) == 32) {
+				if (class367.method7918(MouseRecorder.getWidgetFlags(var0)) && (class266.selectedSpellFlags & 32) == 32) {
 					LoginScreenAnimation.method2587(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + var0.dataText, 58, 0, var0.childIndex * -2066937045, var0.id, var0.itemId);
 				}
 			} else {
@@ -310,7 +310,7 @@ public enum class135 implements Enum {
 					}
 				}
 
-				if (ItemContainer.method2154(MouseRecorder.method2181(var0))) {
+				if (ItemContainer.method2154(MouseRecorder.getWidgetFlags(var0))) {
 					FileSystem.insertMenuItemNoShift("Continue", "", 30, 0, var0.childIndex * -2066937045, var0.id);
 				}
 			}

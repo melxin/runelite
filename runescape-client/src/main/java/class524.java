@@ -47,7 +47,7 @@ public abstract class class524 extends class313 implements class597 {
 		class598 var4 = new class598(var2);
 		Class var5 = var3.field5622.field5885;
 		if (var5 == Integer.class) {
-			var4.field6046 = var1.method11575();
+			var4.field6046 = var1.readInt();
 		} else if (var5 == Long.class) {
 			var4.field6046 = var1.readLong();
 		} else if (var5 == String.class) {

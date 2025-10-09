@@ -145,7 +145,7 @@ public abstract class AbstractArchive {
 		var5 = var19.readUnsignedByte();
 		if (var5 >= 5 && var5 <= 7) {
 			if (var5 >= 6) {
-				var19.method11575();
+				var19.readInt();
 			}
 
 			var6 = var19.readUnsignedByte();
@@ -196,14 +196,14 @@ public abstract class AbstractArchive {
 					Arrays.fill(this.groupNameHashes, -1);
 
 					for (var13 = 0; var13 < this.groupCount; ++var13) {
-						this.groupNameHashes[this.groupIds[var13]] = var19.method11575();
+						this.groupNameHashes[this.groupIds[var13]] = var19.readInt();
 					}
 
 					this.groupNameHashTable = new IntHashTable(this.groupNameHashes);
 				}
 
 				for (var13 = 0; var13 < this.groupCount; ++var13) {
-					this.groupCrcs[this.groupIds[var13]] = var19.method11575();
+					this.groupCrcs[this.groupIds[var13]] = var19.readInt();
 				}
 
 				if (var9) {
@@ -211,13 +211,13 @@ public abstract class AbstractArchive {
 					this.field5000 = new int[this.field4990];
 
 					for (var13 = 0; var13 < this.groupCount; ++var13) {
-						this.field5005[this.groupIds[var13]] = var19.method11575();
-						this.field5000[this.groupIds[var13]] = var19.method11575();
+						this.field5005[this.groupIds[var13]] = var19.readInt();
+						this.field5000[this.groupIds[var13]] = var19.readInt();
 					}
 				}
 
 				for (var13 = 0; var13 < this.groupCount; ++var13) {
-					this.groupVersions[this.groupIds[var13]] = var19.method11575();
+					this.groupVersions[this.groupIds[var13]] = var19.readInt();
 				}
 
 				int var14;
@@ -281,7 +281,7 @@ public abstract class AbstractArchive {
 
 						for (var16 = 0; var16 < var15; ++var16) {
 							var17 = this.fileIds[var14] != null ? this.fileIds[var14][var16] : var16;
-							this.fileNameHashes[var14][var17] = var19.method11575();
+							this.fileNameHashes[var14][var17] = var19.readInt();
 						}
 
 						this.fileNameHashTables[var14] = new IntHashTable(this.fileNameHashes[var14]);
@@ -592,7 +592,7 @@ public abstract class AbstractArchive {
 						var14 = 0;
 
 						for (var15 = 0; var15 < var3; ++var15) {
-							var14 += var11.method11575();
+							var14 += var11.readInt();
 							var12[var15] += var14;
 						}
 					}
@@ -611,7 +611,7 @@ public abstract class AbstractArchive {
 						int var16 = 0;
 
 						for (int var17 = 0; var17 < var3; ++var17) {
-							var16 += var11.method11575();
+							var16 += var11.readInt();
 							System.arraycopy(var20, var14, var19[var17], var12[var17], var16);
 							var12[var17] += var16;
 							var14 += var16;

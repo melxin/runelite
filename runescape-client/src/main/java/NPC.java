@@ -398,7 +398,7 @@ public final class NPC extends Actor {
 	public static int method2823(Buffer var0, byte var1, int var2) {
 		int var3 = var1 >> var2 & 3;
 		if (var3 == 3) {
-			return var0.method11575();
+			return var0.readInt();
 		} else if (var3 == 2) {
 			return var0.readShort();
 		} else {

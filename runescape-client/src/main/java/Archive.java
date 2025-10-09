@@ -276,7 +276,7 @@ public class Archive extends AbstractArchive {
 					} else {
 						int var8 = 0;
 						if (var7 >= 6) {
-							var8 = var9.method11575();
+							var8 = var9.readInt();
 						}
 
 						if (var8 != this.indexVersion) {

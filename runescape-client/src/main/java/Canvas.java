@@ -55,7 +55,7 @@ public final class Canvas extends java.awt.Canvas {
 			if (var4) {
 				var6 = new ObjectNode(var0.readStringCp1252NullTerminated());
 			} else {
-				var6 = new IntegerNode(var0.method11575());
+				var6 = new IntegerNode(var0.readInt());
 			}
 
 			var1.put((Node)var6, (long)var5);

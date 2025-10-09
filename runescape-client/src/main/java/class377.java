@@ -25,7 +25,7 @@ public enum class377 implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Lot;"
 	)
-	field4392 = field4395;
+	field4392(3, 3, true, true); // ??
 
 	@ObfuscatedName("ht")
 	@ObfuscatedSignature(

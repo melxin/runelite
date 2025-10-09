@@ -105,7 +105,7 @@ public class EnumComposition extends DualNode {
 		} else if (var2 == 3) {
 			this.defaultStr = var1.readStringCp1252NullTerminated();
 		} else if (var2 == 4) {
-			this.defaultInt = var1.method11575();
+			this.defaultInt = var1.readInt();
 		} else {
 			int var3;
 			if (var2 == 5) {
@@ -114,7 +114,7 @@ public class EnumComposition extends DualNode {
 				this.strVals = new String[this.outputCount];
 
 				for (var3 = 0; var3 < this.outputCount; ++var3) {
-					this.keys[var3] = var1.method11575();
+					this.keys[var3] = var1.readInt();
 					this.strVals[var3] = var1.readStringCp1252NullTerminated();
 				}
 			} else if (var2 == 6) {
@@ -123,8 +123,8 @@ public class EnumComposition extends DualNode {
 				this.intVals = new int[this.outputCount];
 
 				for (var3 = 0; var3 < this.outputCount; ++var3) {
-					this.keys[var3] = var1.method11575();
-					this.intVals[var3] = var1.method11575();
+					this.keys[var3] = var1.readInt();
+					this.intVals[var3] = var1.readInt();
 				}
 			}
 		}

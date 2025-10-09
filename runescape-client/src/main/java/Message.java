@@ -187,7 +187,7 @@ public class Message extends DualNode {
 			} else if (class204.World_request.isDone()) {
 				byte[] var0 = class204.World_request.getResponse();
 				Buffer var1 = new Buffer(var0);
-				var1.method11575();
+				var1.readInt();
 				World.World_count = var1.readUnsignedShort();
 				World.World_worlds = new World[World.World_count];
 
@@ -195,7 +195,7 @@ public class Message extends DualNode {
 				for (int var2 = 0; var2 < World.World_count; var3.index = var2++) {
 					var3 = World.World_worlds[var2] = new World();
 					var3.id = var1.readUnsignedShort();
-					var3.properties = var1.method11575();
+					var3.properties = var1.readInt();
 					var3.host = var1.readStringCp1252NullTerminated();
 					var3.activity = var1.readStringCp1252NullTerminated();
 					var3.location = var1.readUnsignedByte();

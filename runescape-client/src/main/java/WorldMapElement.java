@@ -205,13 +205,13 @@ public class WorldMapElement extends DualNode {
 					this.field1997[var4] = var1.readShort();
 				}
 
-				var1.method11575();
+				var1.readInt();
 				var4 = var1.readUnsignedByte();
 				this.field2004 = new int[var4];
 
 				int var5;
 				for (var5 = 0; var5 < this.field2004.length; ++var5) {
-					this.field2004[var5] = var1.method11575();
+					this.field2004[var5] = var1.readInt();
 				}
 
 				this.field2005 = new byte[var3];
@@ -227,9 +227,9 @@ public class WorldMapElement extends DualNode {
 				} else if (var2 == 19) {
 					this.category = var1.readUnsignedShort();
 				} else if (var2 == 21) {
-					var1.method11575();
+					var1.readInt();
 				} else if (var2 == 22) {
-					var1.method11575();
+					var1.readInt();
 				} else if (var2 == 23) {
 					var1.readUnsignedByte();
 					var1.readUnsignedByte();
@@ -325,9 +325,10 @@ public class WorldMapElement extends DualNode {
 		descriptor = "(B)V",
 		garbageValue = "-110"
 	)
-	static final void method4252() {
+	@Export("logOut")
+	static final void logOut() {
 		Client.packetWriter.close();
-		class562.logOut();
+		class562.clear();
 		Client.worldViewManager.clear();
 		Client.projectiles.clear();
 		Client.playerUpdateManager.clear();

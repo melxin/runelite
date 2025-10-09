@@ -38,8 +38,8 @@ public class class168 extends class150 {
 		garbageValue = "1804820754"
 	)
 	void vmethod4162(Buffer var1) {
-		this.field1905 = var1.method11575();
-		this.field1903 = var1.method11575();
+		this.field1905 = var1.readInt();
+		this.field1903 = var1.readInt();
 	}
 
 	@ObfuscatedName("at")

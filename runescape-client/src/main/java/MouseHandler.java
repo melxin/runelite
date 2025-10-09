@@ -318,7 +318,7 @@ public class MouseHandler implements MouseListener, MouseMotionListener, FocusLi
 
 		for (int var3 = 0; var3 < var0.field1170.method9887(); ++var3) {
 			WorldEntity var4 = (WorldEntity)var0.worldEntities.get((long)var0.field1170.method9886(var3));
-			if (var4 != null && var4.field5483.id != Client.currentWorldViewId && var4.method10185() == var1) {
+			if (var4 != null && var4.worldView.id != Client.currentWorldViewId && var4.method10185() == var1) {
 				boolean var5 = var2 < Client.field364;
 				if (var5) {
 					++var2;
@@ -345,7 +345,7 @@ public class MouseHandler implements MouseListener, MouseMotionListener, FocusLi
 								if (var9 >= var0.field1169.method9887()) {
 									for (var9 = 0; var9 < var0.field1170.method9887(); ++var9) {
 										WorldEntity var14 = (WorldEntity)var0.worldEntities.get((long)var0.field1170.method9886(var9));
-										if (var14 != null && var14 != var4 && var14.field5483.scene.cycle == Client.cycle) {
+										if (var14 != null && var14 != var4 && var14.worldView.scene.cycle == Client.cycle) {
 											Bounds var11 = class182.method4229(var14.worldEntityCoord, var14.field5482.method4516());
 											if (var8.method9025(var11)) {
 												var8.method9032();

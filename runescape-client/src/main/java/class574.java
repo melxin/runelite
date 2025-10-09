@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Random;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,7 +16,8 @@ public final class class574 {
 		descriptor = "(JLjava/lang/String;I)I",
 		garbageValue = "211932648"
 	)
-	static final int method11215(long var0, String var2) {
+	@Export("performLoginRequest")
+	static final int performLoginRequest(long var0, String var2) {
 		Random var3 = new Random();
 		Buffer var4 = new Buffer(128);
 		Buffer var5 = new Buffer(128);
@@ -144,7 +146,7 @@ public final class class574 {
 						}
 
 						if (var18) {
-							class114.method3540(var23);
+							class114.openURL(var23);
 							return 2;
 						} else {
 							return 5;

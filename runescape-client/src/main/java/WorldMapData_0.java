@@ -176,7 +176,7 @@ public class WorldMapData_0 extends AbstractWorldMapData {
 					} else if (var0 == ScriptOpcodes.OPENURL) {
 						var7 = (String)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
 						--UrlRequest.Interpreter_intStackSize;
-						class114.method3540(var7);
+						class114.openURL(var7);
 						return 1;
 					} else if (var0 == ScriptOpcodes.RESUME_OBJDIALOG) {
 						var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];

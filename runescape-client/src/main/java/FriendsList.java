@@ -90,7 +90,7 @@ public class FriendsList extends UserList {
 				if (var6 > 0) {
 					var1.readStringCp1252NullTerminated();
 					var1.readUnsignedByte();
-					var1.method11575();
+					var1.readInt();
 				}
 
 				var1.readStringCp1252NullTerminated();

@@ -296,7 +296,7 @@ public class World {
 	static int method1550(int var0, Script var1, boolean var2) {
 		Widget var3 = class35.widgetDefinition.method7496(Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize]);
 		if (var0 == ScriptOpcodes.IF_GETTARGETMASK) {
-			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.method2181(var3));
+			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.getWidgetFlags(var3));
 			return 1;
 		} else if (var0 != ScriptOpcodes.IF_GETOP) {
 			if (var0 == ScriptOpcodes.IF_GETOPBASE) {

@@ -167,16 +167,16 @@ public class VarbitComposition extends DualNode {
 					} else if (var0 == 4) {
 						var9 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
 						var9.packetBuffer.writeByte(0);
-						var9.packetBuffer.writeShortAddLE(var3[var7]);
+						var9.packetBuffer.writeShortAdd(var3[var7]);
 						Client.packetWriter.addNode(var9);
 					} else if (var0 == 6) {
 						var9 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeShortAddLE(var3[var7]);
-						var9.packetBuffer.writeByteNeg(0);
+						var9.packetBuffer.writeShortAdd(var3[var7]);
+						var9.packetBuffer.writeByteAdd(0);
 						Client.packetWriter.addNode(var9);
 					} else if (var0 == 7) {
 						var9 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeByteNeg(0);
+						var9.packetBuffer.writeByteAdd(0);
 						var9.packetBuffer.writeShort(var3[var7]);
 						Client.packetWriter.addNode(var9);
 					}

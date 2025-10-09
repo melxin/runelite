@@ -152,6 +152,7 @@ import net.runelite.rs.api.RSFloorOverlayDefinition;
 import net.runelite.rs.api.RSFont;
 import net.runelite.rs.api.RSFriendSystem;
 import net.runelite.rs.api.RSGameEngine;
+import net.runelite.rs.api.RSHintArrow;
 import net.runelite.rs.api.RSIndexedObjectSet;
 import net.runelite.rs.api.RSIndexedSprite;
 import net.runelite.rs.api.RSInterfaceParent;
@@ -1596,18 +1597,6 @@ public abstract class RSClientMixin implements RSClient
 		client.getCallbacks().post(CanvasSizeChanged.INSTANCE);
 	}
 
-	@FieldHook("hintArrowPlayerIndex")
-	@Inject
-	public static void hintPlayerChanged(int ignored)
-	{
-		// Setting the localInteractingIndex (aka player target index, it only applies to players)
-		// causes that player to get priority over others when rendering/menus are added
-		if (client.getVar(VarPlayer.ATTACKING_PLAYER) == -1)
-		{
-			client.setLocalInteractingIndex(client.getHintArrowPlayerTargetIdx() & 2047);
-		}
-	}
-
 	@FieldHook("combatTargetPlayerIndex")
 	@Inject
 	public static void combatPlayerTargetChanged(int ignored)
@@ -1626,14 +1615,14 @@ public abstract class RSClientMixin implements RSClient
 	@Override
 	public boolean hasHintArrow()
 	{
-		return client.getHintArrowTargetType() != HintArrowType.NONE;
+		return client.getHintArrow().getTargetType() != HintArrowType.NONE;
 	}
 
 	@Inject
 	@Override
 	public int getHintArrowType()
 	{
-		int type = client.getHintArrowTargetType();
+		int type = client.getHintArrow().getTargetType();
 		if (type == HintArrowType.NPC)
 		{
 			return HintArrowType.NPC;
@@ -1656,48 +1645,58 @@ public abstract class RSClientMixin implements RSClient
 	@Override
 	public void clearHintArrow()
 	{
-		client.setHintArrowTargetType(HintArrowType.NONE);
+		client.getHintArrow().setTargetType(HintArrowType.NONE);
 	}
 
 	@Inject
 	@Override
 	public void setHintArrow(NPC npc)
 	{
-		client.setHintArrowTargetType(HintArrowType.NPC);
-		client.setHintArrowNpcTargetIdx(npc.getIndex());
+		final RSHintArrow hintArrow = client.getHintArrow();
+		hintArrow.setTargetType(HintArrowType.NPC);
+		hintArrow.setTargetIndex(npc.getIndex());
 	}
 
 	@Inject
 	@Override
 	public void setHintArrow(Player player)
 	{
-		client.setHintArrowTargetType(HintArrowType.PLAYER);
-		client.setHintArrowPlayerTargetIdx(((RSPlayer) player).getId());
-		hintPlayerChanged(-1);
+		final RSHintArrow hintArrow = client.getHintArrow();
+		hintArrow.setTargetType(HintArrowType.PLAYER);
+		hintArrow.setTargetIndex(((RSPlayer) player).getId());
+
+		// Setting the localInteractingIndex (aka player target index, it only applies to players)
+		// causes that player to get priority over others when rendering/menus are added
+		if (client.getVar(VarPlayer.ATTACKING_PLAYER) == -1)
+		{
+			client.setLocalInteractingIndex(hintArrow.getTargetIndex() & 2047);
+		}
 	}
 
 	@Inject
 	@Override
 	public void setHintArrow(WorldPoint point)
 	{
-		client.setHintArrowTargetType(HintArrowType.COORDINATE);
-		client.setHintArrowX(point.getX());
-		client.setHintArrowY(point.getY());
+		final RSHintArrow hintArrow = client.getHintArrow();
+		hintArrow.setTargetType(HintArrowType.COORDINATE);
+		hintArrow.setX(point.getX());
+		hintArrow.setY(point.getY());
 		// position the arrow in center of the tile
-		client.setHintArrowOffsetX(LOCAL_TILE_SIZE / 2);
-		client.setHintArrowOffsetY(LOCAL_TILE_SIZE / 2);
+		hintArrow.setOffsetX(LOCAL_TILE_SIZE / 2);
+		hintArrow.setOffsetY(LOCAL_TILE_SIZE / 2);
 	}
 
 	@Inject
 	@Override
 	public void setHintArrow(LocalPoint point)
 	{
-		client.setHintArrowTargetType(HintArrowType.COORDINATE);
-		client.setHintArrowX(point.getX());
-		client.setHintArrowY(point.getY());
+		final RSHintArrow hintArrow = client.getHintArrow();
+		hintArrow.setTargetType(HintArrowType.COORDINATE);
+		hintArrow.setX(point.getX());
+		hintArrow.setY(point.getY());
 		// position the arrow in center of the tile
-		client.setHintArrowOffsetX(LOCAL_TILE_SIZE / 2);
-		client.setHintArrowOffsetY(LOCAL_TILE_SIZE / 2);
+		hintArrow.setOffsetX(LOCAL_TILE_SIZE / 2);
+		hintArrow.setOffsetY(LOCAL_TILE_SIZE / 2);
 	}
 
 	@Inject
@@ -1706,8 +1705,9 @@ public abstract class RSClientMixin implements RSClient
 	{
 		if (getHintArrowType() == HintArrowType.COORDINATE)
 		{
-			int x = client.getHintArrowX();
-			int y = client.getHintArrowY();
+			final RSHintArrow hintArrow = client.getHintArrow();
+			int x = hintArrow.getX();
+			int y = hintArrow.getY();
 			return new WorldPoint(x, y, client.getPlane());
 		}
 
@@ -1719,7 +1719,7 @@ public abstract class RSClientMixin implements RSClient
 	public Player getHintArrowPlayer()
 	{
 		return this.getHintArrowType() == HintArrowType.PLAYER
-			? (Player) client.getTopLevelWorldView().getRSPlayers().get(client.getHintArrowPlayerTargetIdx())
+			? (Player) client.getTopLevelWorldView().getRSPlayers().get(client.getHintArrow().getTargetIndex())
 			: null;
 	}
 
@@ -1728,7 +1728,7 @@ public abstract class RSClientMixin implements RSClient
 	public NPC getHintArrowNpc()
 	{
 		return this.getHintArrowType() == HintArrowType.NPC
-			? (NPC) client.getTopLevelWorldView().getRSNpcs().get(client.getHintArrowNpcTargetIdx())
+			? (NPC) client.getTopLevelWorldView().getRSNpcs().get(client.getHintArrow().getTargetIndex())
 			: null;
 	}
 
@@ -3535,7 +3535,7 @@ public abstract class RSClientMixin implements RSClient
 
 	@Copy("openURL")
 	@Replace("openURL")
-	public static void copy$openURL(String url, boolean var1, boolean var2)
+	public static void copy$openURL(String url)
 	{
 		try
 		{

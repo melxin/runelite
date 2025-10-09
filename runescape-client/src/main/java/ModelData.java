@@ -730,7 +730,7 @@ public class ModelData extends Renderable {
 			var2.readUnsignedShort();
 			var2.readUnsignedShort();
 			var2.readUnsignedShort();
-			var2.method11575();
+			var2.readInt();
 		}
 
 		boolean var60 = var2.readUnsignedByte() == 1;
@@ -1350,7 +1350,7 @@ public class ModelData extends Renderable {
 			var2.readUnsignedShort();
 			var2.readUnsignedShort();
 			var2.readUnsignedShort();
-			var2.method11575();
+			var2.readInt();
 		}
 
 	}

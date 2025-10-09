@@ -33,7 +33,8 @@ public class Scene extends Renderable {
 	@Export("tileRotation2D")
 	static final int[][] tileRotation2D;
 	@ObfuscatedName("ax")
-	final int field2700;
+	@Export("worldViewId")
+	final int worldViewId;
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "Ljs;"
@@ -50,8 +51,7 @@ public class Scene extends Renderable {
 	@ObfuscatedName("am")
 	final int field2758;
 	@ObfuscatedName("al")
-	@Export("worldViewId")
-	final int worldViewId;
+	final int field2752;
 	@ObfuscatedName("ay")
 	final int field2706;
 	@ObfuscatedName("be")
@@ -331,13 +331,13 @@ public class Scene extends Renderable {
 		this.tileHeights = var7;
 		this.Scene_offsetOccluder = var5;
 		this.field2772 = var6;
-		this.field2700 = var1;
+		this.worldViewId = var1;
 		if (var1 != -1) {
 			this.field2747 = 0;
 			this.field2780 = null;
 			this.field2781 = null;
 			this.field2758 = 0;
-			this.worldViewId = 0;
+			this.field2752 = 0;
 			this.field2706 = 0;
 			this.field2707 = 0;
 			this.field2742 = null;
@@ -350,7 +350,7 @@ public class Scene extends Renderable {
 			this.field2780 = new BitSet(this.field2747);
 			this.field2781 = new BitSet(this.field2747);
 			this.field2758 = 1048352;
-			this.worldViewId = 32761;
+			this.field2752 = 32761;
 			this.field2706 = 181;
 			this.field2707 = 9644832;
 			this.field2742 = new BitSet(this.field2707);
@@ -1219,12 +1219,12 @@ public class Scene extends Renderable {
 
 	@ObfuscatedName("bt")
 	boolean method5197(BitSet var1, int var2, int var3, int var4, int var5) {
-		return var1.get(var5 + var4 * this.field2706 + var2 * this.field2758 + var3 * this.worldViewId);
+		return var1.get(var5 + var4 * this.field2706 + var2 * this.field2758 + var3 * this.field2752);
 	}
 
 	@ObfuscatedName("bk")
 	boolean method5198(BitSet var1, int var2, int var3, int var4, int var5, boolean var6) {
-		var1.set(var5 + var4 * this.field2706 + var2 * this.field2758 + var3 * this.worldViewId, var6);
+		var1.set(var5 + var4 * this.field2706 + var2 * this.field2758 + var3 * this.field2752, var6);
 		return var6;
 	}
 
@@ -1488,7 +1488,7 @@ public class Scene extends Renderable {
 		++this.Scene_drawnCount;
 		this.field2702.method5737(Rasterizer3D.clips.field3001);
 		Rasterizer3D.clips.field3001.method5737(this.modelColorOverride);
-		boolean var4 = this.field2700 == -1;
+		boolean var4 = this.worldViewId == -1;
 		if (var3) {
 			this.Scene_baseX = -1;
 			this.Scene_baseY = -1;

@@ -28,7 +28,8 @@ public final class class4 {
 		descriptor = "(I)V",
 		garbageValue = "-1881896873"
 	)
-	static void method20() {
+	@Export("focusPasswordWhenUsernameFilled")
+	static void focusPasswordWhenUsernameFilled() {
 		if (Client.Login_isUsernameRemembered && Login.Login_username != null && !Login.Login_username.isEmpty()) {
 			Login.currentLoginField = 1;
 		} else {
@@ -42,7 +43,8 @@ public final class class4 {
 		descriptor = "(IIIII)V",
 		garbageValue = "1492301028"
 	)
-	static void method19(int var0, int var1, int var2, int var3) {
+	@Export("worldToScreen")
+	static void worldToScreen(int var0, int var1, int var2, int var3) {
 		if (var0 >= 128 && 13056 >= var0 && var1 >= 128 && 13056 >= var1) {
 			var0 -= Huffman.cameraX;
 			var2 -= class514.cameraY;

@@ -30,7 +30,7 @@ public class RuneLiteObject extends Renderable {
 			if (active) {
 				this.frame = 0;
 				this.frameCycle = 0;
-				HttpHeaders.worldView.graphicsObjects.addFirst(this);
+				class32.worldView.graphicsObjects.addFirst(this);
 			} else {
 				remove();
 			}

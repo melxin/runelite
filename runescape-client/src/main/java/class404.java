@@ -39,7 +39,7 @@ public class class404 {
 	static void method8319(WorldView var0, WorldEntity var1, boolean var2) {
 		boolean var3 = var1.field5482.field2215 && !var2;
 		long var4 = 0L;
-		boolean var6 = var1.field5483.id == Client.currentWorldViewId;
+		boolean var6 = var1.worldView.id == Client.currentWorldViewId;
 		class396 var7 = var1.method10206(var6);
 		boolean var8;
 		int var14;
@@ -56,22 +56,22 @@ public class class404 {
 		}
 
 		var1.worldEntityCoord.setZ(class280.getTileHeight(var0, var1.getY(), var1.getPlane(), var0.plane));
-		var1.field5483.scene.cycle = Client.cycle;
+		var1.worldView.scene.cycle = Client.cycle;
 		var1.initScenePlane(var2);
-		var8 = var0.scene.drawEntity(var0.plane, var1.getY(), var1.getPlane(), var1.getZ(), 60, var1.field5483.scene, var1.method10204(), var4, false);
+		var8 = var0.scene.drawEntity(var0.plane, var1.getY(), var1.getPlane(), var1.getZ(), 60, var1.worldView.scene, var1.method10204(), var4, false);
 		if (var8 && !var2) {
-			WorldView var15 = var1.field5483;
+			WorldView var15 = var1.worldView;
 			if (Client.renderSelf) {
 				class46.addPlayerToScene(var15, Client.localPlayerIndex, false);
 			}
 
-			WorldView var16 = var1.field5483;
+			WorldView var16 = var1.worldView;
 			if (Client.combatTargetPlayerIndex >= 0 && var16.players.get((long)Client.combatTargetPlayerIndex) != null) {
 				class46.addPlayerToScene(var16, Client.combatTargetPlayerIndex, false);
 			}
 
-			PlayerUpdateManager.addNpcsToScene(var1.field5483, class196.field2146);
-			WorldView var17 = var1.field5483;
+			PlayerUpdateManager.addNpcsToScene(var1.worldView, class196.field2146);
+			WorldView var17 = var1.worldView;
 			int var12 = Client.playerUpdateManager.playerCount;
 			int[] var18 = Client.playerUpdateManager.playerIndices;
 
@@ -81,9 +81,9 @@ public class class404 {
 				}
 			}
 
-			PlayerUpdateManager.addNpcsToScene(var1.field5483, class196.field2147);
-			PlayerUpdateManager.addNpcsToScene(var1.field5483, class196.field2151);
-			CollisionMap.method6235(var1.field5483);
+			PlayerUpdateManager.addNpcsToScene(var1.worldView, class196.field2147);
+			PlayerUpdateManager.addNpcsToScene(var1.worldView, class196.field2151);
+			CollisionMap.method6235(var1.worldView);
 		}
 
 	}
@@ -260,22 +260,22 @@ public class class404 {
 				}
 
 				if ((var24 & 65536) != 0) {
-					var16 = var2.readUnsignedIntME();
+					var16 = var2.readUnsignedIntIME();
 					var15.turnLeftSequence = (var16 & 1) != 0 ? var2.readUnsignedShort() : var15.definition.turnLeftSequence;
 					var15.turnRightSequence = (var16 & 2) != 0 ? var2.readUnsignedShort() : var15.definition.turnRightSequence;
 					var15.walkSequence = (var16 & 4) != 0 ? var2.readUnsignedShort() : var15.definition.walkSequence;
 					var15.walkBackSequence = (var16 & 8) != 0 ? var2.readUnsignedShort() : var15.definition.walkBackSequence;
 					var15.walkLeftSequence = (var16 & 16) != 0 ? var2.readUnsignedShortAdd() : var15.definition.walkLeftSequence;
-					var15.walkRightSequence = (var16 & 32) != 0 ? var2.readUnsignedIntIME() : var15.definition.walkRightSequence;
+					var15.walkRightSequence = (var16 & 32) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.walkRightSequence;
 					var15.runSequence = (var16 & 64) != 0 ? var2.readUnsignedShort() : var15.definition.field2106;
 					var15.field1079 = (var16 & 128) != 0 ? var2.readUnsignedShortAdd() : var15.definition.field2107;
 					var15.field1058 = (var16 & 256) != 0 ? var2.readUnsignedShortAdd() : var15.definition.field2108;
-					var15.field1059 = (var16 & 512) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.field2138;
-					var15.field1060 = (var16 & 1024) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.field2110;
+					var15.field1059 = (var16 & 512) != 0 ? var2.readUnsignedShortLE() : var15.definition.field2138;
+					var15.field1060 = (var16 & 1024) != 0 ? var2.readUnsignedShortLE() : var15.definition.field2110;
 					var15.field1046 = (var16 & 2048) != 0 ? var2.readUnsignedShort() : var15.definition.field2111;
-					var15.field1062 = (var16 & 4096) != 0 ? var2.readUnsignedIntIME() : var15.definition.field2112;
-					var15.field1047 = (var16 & 8192) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.field2104;
-					var15.idleSequence = (var16 & 16384) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.idleSequence;
+					var15.field1062 = (var16 & 4096) != 0 ? var2.readUnsignedShortAddLE() : var15.definition.field2112;
+					var15.field1047 = (var16 & 8192) != 0 ? var2.readUnsignedShortLE() : var15.definition.field2104;
+					var15.idleSequence = (var16 & 16384) != 0 ? var2.readUnsignedShortLE() : var15.definition.idleSequence;
 				}
 
 				int[] var17;
@@ -284,7 +284,7 @@ public class class404 {
 				long var20;
 				boolean var27;
 				if ((var24 & 512) != 0) {
-					var16 = var2.readUnsignedIntLE();
+					var16 = var2.readUnsignedByteAdd();
 					if ((var16 & 1) == 1) {
 						var15.method2795();
 					} else {
@@ -294,7 +294,7 @@ public class class404 {
 							var17 = new int[var9];
 
 							for (var10 = 0; var10 < var9; ++var10) {
-								var11 = var2.readUnsignedIntIME();
+								var11 = var2.readUnsignedShortAddLE();
 								var11 = var11 == 65535 ? -1 : var11;
 								var17[var10] = var11;
 							}
@@ -310,27 +310,27 @@ public class class404 {
 							var18 = new short[var10];
 
 							for (var11 = 0; var11 < var10; ++var11) {
-								var18[var11] = (short)var2.readUnsignedIntIME();
+								var18[var11] = (short)var2.readUnsignedShortAddLE();
 							}
 						}
 
 						var19 = null;
 						if ((var16 & 8) == 8) {
 							var11 = 0;
-							if (var15.definition.field2117 != null) {
-								var11 = var15.definition.field2117.length;
+							if (var15.definition.retextureTo != null) {
+								var11 = var15.definition.retextureTo.length;
 							}
 
 							var19 = new short[var11];
 
 							for (var12 = 0; var12 < var11; ++var12) {
-								var19[var12] = (short)var2.readUnsignedIntIME();
+								var19[var12] = (short)var2.readUnsignedShortAddLE();
 							}
 						}
 
 						var27 = false;
 						if ((var16 & 16) != 0) {
-							var27 = var2.readUnsignedShortLE() == 1;
+							var27 = var2.readUnsignedByteSub() == 1;
 						}
 
 						var20 = (long)(++NPC.field1181 - 1);
@@ -341,11 +341,11 @@ public class class404 {
 				if ((var24 & 64) != 0) {
 					var2.readUnsignedShortAdd();
 					var2.readUnsignedShortAdd();
-					var2.readUnsignedIntLE();
+					var2.readUnsignedByteAdd();
 				}
 
 				if ((var24 & 8) != 0) {
-					var16 = var2.readUnsignedShortLE();
+					var16 = var2.readUnsignedByteSub();
 					int var26;
 					if (var16 > 0) {
 						for (var8 = 0; var8 < var16; ++var8) {
@@ -376,7 +376,7 @@ public class class404 {
 							var11 = var2.readUShortSmart();
 							if (var11 != 32767) {
 								var12 = var2.readUShortSmart();
-								var26 = var2.readUnsignedShortLE();
+								var26 = var2.readUnsignedByteSub();
 								int var14 = var11 > 0 ? var2.readUnsignedByteNeg() : var26;
 								var15.addHealthBar(var10, Client.cycle, var11, var12, var26, var14);
 							} else {
@@ -397,7 +397,7 @@ public class class404 {
 					} else {
 						var17 = null;
 						if ((var16 & 2) == 2) {
-							var9 = var2.readUnsignedShortLE();
+							var9 = var2.readUnsignedByteSub();
 							var17 = new int[var9];
 
 							for (var10 = 0; var10 < var9; ++var10) {
@@ -417,15 +417,15 @@ public class class404 {
 							var18 = new short[var10];
 
 							for (var11 = 0; var11 < var10; ++var11) {
-								var18[var11] = (short)var2.readUnsignedShortAddLE();
+								var18[var11] = (short)var2.readUnsignedShortLE();
 							}
 						}
 
 						var19 = null;
 						if ((var16 & 8) == 8) {
 							var11 = 0;
-							if (var15.definition.field2117 != null) {
-								var11 = var15.definition.field2117.length;
+							if (var15.definition.retextureTo != null) {
+								var11 = var15.definition.retextureTo.length;
 							}
 
 							var19 = new short[var11];
@@ -461,15 +461,15 @@ public class class404 {
 
 				if ((var24 & 32) != 0) {
 					var2.readUnsignedShortAdd();
-					var2.readUnsignedIntME();
+					var2.readUnsignedIntIME();
 				}
 
 				if ((var24 & 2048) != 0) {
 					var15.npcCycle = Client.cycle + var2.readUnsignedShort();
 					var15.field1041 = Client.cycle + var2.readUnsignedShortAdd();
-					byte var30 = var2.readByteSub();
+					byte var30 = var2.readByteNeg();
 					byte var25 = var2.readByte();
-					byte var28 = var2.readByteSub();
+					byte var28 = var2.readByteNeg();
 					byte var29 = (byte)var2.readUnsignedByte();
 					var15.field1071.method5729(var30, var25, var28, var29);
 				}
@@ -480,7 +480,7 @@ public class class404 {
 						var16 = -1;
 					}
 
-					var8 = var2.readUnsignedIntLE();
+					var8 = var2.readUnsignedByteAdd();
 					SequenceDefinition var31 = var15.animationSequence.getSequenceDefinition();
 					if (var16 == var15.method2445() && var16 != -1) {
 						var10 = var31.restartMode;
@@ -501,7 +501,7 @@ public class class404 {
 				}
 
 				if ((var24 & 128) != 0) {
-					var15.definition = class81.getNpcDefinition(var2.readUnsignedShortAddLE());
+					var15.definition = class81.getNpcDefinition(var2.readUnsignedShortLE());
 					class562.method11051(var15);
 				}
 
@@ -511,7 +511,7 @@ public class class404 {
 					var15.field1061 = var2.readByte();
 					var15.field1055 = var2.readByte();
 					var15.spotAnimation = var2.readUnsignedShortAdd() + Client.cycle;
-					var15.field1083 = var2.readUnsignedIntIME() + Client.cycle;
+					var15.field1083 = var2.readUnsignedShortAddLE() + Client.cycle;
 					var15.field1084 = var2.readUnsignedShortAdd();
 					var15.pathLength = 0;
 					var15.field1094 = 0;
@@ -553,13 +553,13 @@ public class class404 {
 					for (var8 = 0; var8 < var16; ++var8) {
 						var9 = var2.readUnsignedByte();
 						var10 = var2.readUnsignedShort();
-						var11 = var2.readUnsignedIntME();
+						var11 = var2.readUnsignedIntIME();
 						var15.updateSpotAnimation(var9, var10, var11 >> 16, var11 & 65535);
 					}
 				}
 
 				if ((var24 & 4096) != 0) {
-					var15.field1057 = var2.method11535();
+					var15.field1057 = var2.readUnsignedIntME();
 				}
 			}
 
@@ -643,7 +643,7 @@ public class class404 {
 		for (int var4 = 0; var4 < Client.mapIconCount; ++var4) {
 			int var5 = Client.mapIconXs[var4] * 4 + 2 - Client.field484 / 32;
 			int var6 = Client.mapIconYs[var4] * 4 + 2 - Client.field377 / 32;
-			class445.method8994(var0, var1, var5, var6, var2, Client.mapIcons[var4], var3);
+			class445.drawSpriteOnMinimap(var0, var1, var5, var6, var2, Client.mapIcons[var4], var3);
 		}
 
 	}

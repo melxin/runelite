@@ -252,7 +252,7 @@ public class JagNetThread {
 								var8 = this.field5010.readUnsignedByte();
 								var9 = this.field5010.readUnsignedShort();
 								int var10 = this.field5010.readUnsignedByte();
-								int var11 = this.field5010.method11575();
+								int var11 = this.field5010.readInt();
 								long var12 = (long)(var9 + (var8 << 16));
 								class409 var14 = (class409)this.field5021.get(var12);
 								this.field5028 = true;
@@ -503,8 +503,8 @@ public class JagNetThread {
 		int var5 = 0;
 		if (var3 <= this.field5034.array.length - 8) {
 			this.field5034.offset = var3;
-			var4 = this.field5034.method11575();
-			var5 = this.field5034.method11575();
+			var4 = this.field5034.readInt();
+			var5 = this.field5034.readInt();
 		}
 
 		if (var4 == 0 && var5 == 0) {

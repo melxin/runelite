@@ -42,7 +42,7 @@ public class class363 {
 	static int method7534(int var0, Script var1, boolean var2) {
 		Widget var3 = var2 ? class359.scriptDotWidget : GameEngine.scriptActiveWidget;
 		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
-			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.method2181(var3));
+			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.getWidgetFlags(var3));
 			return 1;
 		} else if (var0 != ScriptOpcodes.CC_GETOP) {
 			if (var0 == ScriptOpcodes.CC_GETOPBASE) {

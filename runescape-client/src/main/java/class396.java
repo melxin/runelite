@@ -29,7 +29,7 @@ public enum class396 implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Lph;"
 	)
-	field4885 = field4883;
+	field4885(4, 4); // ??
 
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(

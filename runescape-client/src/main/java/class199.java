@@ -338,7 +338,7 @@ public class class199 {
 	)
 	static final void method4473() {
 		if (Client.logoutTimer > 0) {
-			WorldMapElement.method4252();
+			WorldMapElement.logOut();
 		} else {
 			Client.timer.method8292();
 			class135.updateGameState(40);

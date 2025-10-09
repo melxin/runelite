@@ -29,7 +29,7 @@ public final class class443 {
 	static final void updateInterface(Widget[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
 		for (int var11 = var1; var11 <= var2; ++var11) {
 			Widget var12 = var0[var11];
-			if (var12 != null && var3 == var12.parentId && var4 == var12.field4173 && (var12.method7939() || MouseRecorder.method2181(var12) != 0 || class338.getWidgetFlags2(var12) != 0 || var12 == Client.clickedWidgetParent)) {
+			if (var12 != null && var3 == var12.parentId && var4 == var12.field4173 && (var12.method7939() || MouseRecorder.getWidgetFlags(var12) != 0 || class338.getWidgetFlags2(var12) != 0 || var12 == Client.clickedWidgetParent)) {
 				if (var12.isIf3) {
 					if (class30.isComponentHidden(var12)) {
 						continue;
@@ -213,7 +213,7 @@ public final class class443 {
 										class179.widgetDefaultMenuAction(var23 + 1, var12.id, var12.childIndex * -2066937045, var12.itemId, "");
 									} else if (var23 == 10) {
 										class30.method470();
-										class572.method11201(var12.id, var12.childIndex * -2066937045, AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.method2181(var12)), var12.itemId);
+										class572.method11201(var12.id, var12.childIndex * -2066937045, AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.getWidgetFlags(var12)), var12.itemId);
 										Client.selectedSpellActionName = ClientPreferences.Widget_getSpellActionName(var12);
 										if (Client.selectedSpellActionName == null) {
 											Client.selectedSpellActionName = "null";
@@ -283,7 +283,7 @@ public final class class443 {
 								class50.worldMap.method10786(var20, var21, var38 & var39, var38 & var24);
 							}
 
-							if (Client.clickedWidget != null && var12 != Client.clickedWidget && var38 && EnumComposition.method4360(MouseRecorder.method2181(var12))) {
+							if (Client.clickedWidget != null && var12 != Client.clickedWidget && var38 && EnumComposition.method4360(MouseRecorder.getWidgetFlags(var12))) {
 								Client.draggedOnWidget = var12;
 							}
 

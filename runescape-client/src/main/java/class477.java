@@ -106,7 +106,7 @@ public class class477 extends SongTask {
 	public static void readReflectionCheck(Buffer var0, int var1) {
 		ReflectionCheck var2 = new ReflectionCheck();
 		var2.size = var0.readUnsignedByte();
-		var2.id = var0.method11575();
+		var2.id = var0.readInt();
 		var2.operations = new int[var2.size];
 		var2.creationErrors = new int[var2.size];
 		var2.fields = new Field[var2.size];
@@ -136,7 +136,7 @@ public class class477 extends SongTask {
 						int var12;
 						if (var4 == 3) {
 							for (int var11 = 0; var11 < var7; ++var11) {
-								var12 = var0.method11575();
+								var12 = var0.readInt();
 								var10[var11] = new byte[var12];
 								var0.readBytes(var10[var11], 0, var12);
 							}
@@ -185,7 +185,7 @@ public class class477 extends SongTask {
 					var6 = var0.readStringCp1252NullTerminated();
 					var7 = 0;
 					if (var4 == 1) {
-						var7 = var0.method11575();
+						var7 = var0.readInt();
 					}
 
 					var2.operations[var3] = var4;
@@ -259,7 +259,7 @@ public class class477 extends SongTask {
 			if (var1 == 0L) {
 				var0 = 5;
 			} else {
-				var0 = class574.method11215(var1, Login.Login_username);
+				var0 = class574.performLoginRequest(var1, Login.Login_username);
 			}
 
 			switch(var0) {

@@ -29,7 +29,7 @@ public class class203 extends DualNode {
 		int var3 = var2.readUnsignedShort();
 		int var4 = var2.array.length - 2 - var3 - 12;
 		var2.offset = var4;
-		int var5 = var2.method11575();
+		int var5 = var2.readInt();
 		var1.localIntCount = var2.readUnsignedShort();
 		var1.localStringCount = var2.readUnsignedShort();
 		var1.intArgumentCount = var2.readUnsignedShort();
@@ -46,8 +46,8 @@ public class class203 extends DualNode {
 				var1.switches[var7] = var9;
 
 				while (var8-- > 0) {
-					int var10 = var2.method11575();
-					int var11 = var2.method11575();
+					int var10 = var2.readInt();
+					int var11 = var2.readInt();
 					var9.put(new IntegerNode(var11), (long)var10);
 				}
 			}
@@ -73,7 +73,7 @@ public class class203 extends DualNode {
 				break;
 			default:
 				if (var8 <= 99) {
-					var1.intOperands[var7] = var2.method11575();
+					var1.intOperands[var7] = var2.readInt();
 				} else {
 					var1.intOperands[var7] = var2.readUnsignedByte();
 				}
@@ -140,6 +140,6 @@ public class class203 extends DualNode {
 			}
 		}
 
-		class4.method19(var5, var6, var7, var4);
+		class4.worldToScreen(var5, var6, var7, var4);
 	}
 }

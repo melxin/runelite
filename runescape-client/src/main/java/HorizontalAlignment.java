@@ -127,7 +127,8 @@ public enum HorizontalAlignment implements Enum {
 		descriptor = "(Ldm;IIIIILxl;Lnt;I)V",
 		garbageValue = "2000304466"
 	)
-	static final void method4377(WorldView var0, int var1, int var2, int var3, int var4, int var5, SpritePixels var6, SpriteMask var7) {
+	@Export("worldToMinimap")
+	static final void worldToMinimap(WorldView var0, int var1, int var2, int var3, int var4, int var5, SpritePixels var6, SpriteMask var7) {
 		class450 var8 = Varcs.method3022(var0, var1, var2);
 		var1 = (int)var8.field5216;
 		var2 = (int)var8.field5219;
@@ -147,7 +148,7 @@ public enum HorizontalAlignment implements Enum {
 			byte var21 = 20;
 			class445.redHintArrowSprite.method11965(var19 + (var3 + var7.width / 2 - var21 / 2), var7.height / 2 + var4 - var21 / 2 - var20 - 10, var21, var21, 15, 15, var16, 256);
 		} else {
-			class445.method8994(var3, var4, var9, var10, var5, var6, var7);
+			class445.drawSpriteOnMinimap(var3, var4, var9, var10, var5, var6, var7);
 		}
 
 	}

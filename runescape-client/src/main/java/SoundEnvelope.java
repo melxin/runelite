@@ -57,8 +57,8 @@ public class SoundEnvelope {
 	@Export("decode")
 	final void decode(Buffer var1) {
 		this.form = var1.readUnsignedByte();
-		this.start = var1.method11575();
-		this.end = var1.method11575();
+		this.start = var1.readInt();
+		this.end = var1.readInt();
 		this.decodeSegments(var1);
 	}
 

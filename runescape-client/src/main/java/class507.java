@@ -23,8 +23,8 @@ public class class507 {
 	@Export("resumePauseWidget")
 	static void resumePauseWidget(int var0, int var1) {
 		PacketBufferNode var2 = HorizontalAlignment.getPacketBufferNode(ClientPacket.RESUME_PAUSEBUTTON, Client.packetWriter.isaacCipher);
-		var2.packetBuffer.writeShortAdd(var1);
-		var2.packetBuffer.writeIntLE(var0);
+		var2.packetBuffer.writeShortLE(var1);
+		var2.packetBuffer.writeIntIME(var0);
 		Client.packetWriter.addNode(var2);
 	}
 }

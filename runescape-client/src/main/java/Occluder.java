@@ -153,7 +153,7 @@ public final class Occluder {
 		}
 
 		GameEngine.taskHandler = null;
-		class562.logOut();
+		class562.clear();
 		NPCComposition.method4448();
 		Client.worldViewManager.clear();
 		Client.projectiles.clear();

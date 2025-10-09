@@ -74,7 +74,7 @@ public class WorldMapAreaData extends WorldMapArea {
 
 		for (int var4 = 0; var4 < var3; ++var4) {
 			int var5 = var1.readNullableLargeSmart();
-			Coord var6 = new Coord(var1.method11575());
+			Coord var6 = new Coord(var1.readInt());
 			boolean var7 = var1.readUnsignedByte() == 1;
 			if (var2 || !var7) {
 				this.iconList.add(new WorldMapIcon_0((Coord)null, var6, var5, (WorldMapLabel)null));

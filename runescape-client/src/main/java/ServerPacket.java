@@ -341,7 +341,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmw;"
 	)
-	public static final ServerPacket field3742;
+	public static final ServerPacket DYNAMICOBJECT_SPAWN;
 	@ObfuscatedName("ch")
 	@ObfuscatedSignature(
 		descriptor = "Lmw;"
@@ -511,7 +511,7 @@ public class ServerPacket {
 	@ObfuscatedSignature(
 		descriptor = "Lmw;"
 	)
-	public static final ServerPacket IF_SETPOSITION;
+	public static final ServerPacket IF_SETSCROLLPOS;
 	@ObfuscatedName("dj")
 	@ObfuscatedSignature(
 		descriptor = "Lmw;"
@@ -767,7 +767,7 @@ public class ServerPacket {
 		UPDATE_INV_CLEAR = new ServerPacket(63, 4);
 		CAM_SETANGLE = new ServerPacket(64, 6);
 		field3741 = new ServerPacket(65, -2);
-		field3742 = new ServerPacket(66, 6);
+		DYNAMICOBJECT_SPAWN = new ServerPacket(66, 6);
 		MAP_ANIM = new ServerPacket(67, 6);
 		field3676 = new ServerPacket(68, 10);
 		SET_PRIVCHATMODE = new ServerPacket(69, 1);
@@ -801,7 +801,7 @@ public class ServerPacket {
 		UPDATE_FRIENDLIST = new ServerPacket(97, -2);
 		CAM_LOOKAT_EASED_ANGLE_RELATIVE = new ServerPacket(98, 7);
 		CAM_LOOKAT = new ServerPacket(99, 7);
-		IF_SETPOSITION = new ServerPacket(100, 8);
+		IF_SETSCROLLPOS = new ServerPacket(100, 8);
 		SET_ACTIVE_WORLD = new ServerPacket(101, 3);
 		IF_SETHIDE = new ServerPacket(102, 5);
 		MESSAGE_GAME = new ServerPacket(103, -1);

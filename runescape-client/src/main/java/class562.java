@@ -9,8 +9,8 @@ public class class562 extends class519 {
 		descriptor = "(B)V",
 		garbageValue = "2"
 	)
-	@Export("logOut")
-	static final void logOut() {
+	@Export("clear")
+	static final void clear() {
 		class1.method8();
 		class365.method7886();
 		class136.method3754();

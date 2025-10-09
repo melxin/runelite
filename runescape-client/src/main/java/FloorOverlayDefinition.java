@@ -243,7 +243,7 @@ public class FloorOverlayDefinition extends DualNode {
 	static void method4795(WorldView var0, int var1, int var2, int var3, SpriteMask var4, int var5) {
 		int var13;
 		if (var5 == 1) {
-			var13 = Client.field576.method8231();
+			var13 = Client.hintArrow.method8231();
 			WorldViewManager var14 = Client.worldViewManager;
 			Iterator var9 = var14.iterator();
 
@@ -263,23 +263,23 @@ public class FloorOverlayDefinition extends DualNode {
 			}
 
 			if (var12 != null) {
-				HorizontalAlignment.method4377(var12.method2466(), var12.x, var12.y, var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
+				HorizontalAlignment.worldToMinimap(var12.getWorldView(), var12.x, var12.y, var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
 			}
 		} else if (var5 == 2) {
-			WorldView var15 = Client.worldViewManager.method2368(Client.field576.method8250(), Client.field576.method8235());
-			var13 = Coord.method7440(Client.field576.method8250() - var15.baseX) + Client.field576.method8232();
-			int var8 = Coord.method7440(Client.field576.method8235() - var15.baseY) + Client.field576.method8234();
-			HorizontalAlignment.method4377(var15, var13, var8, var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
+			WorldView var15 = Client.worldViewManager.method2368(Client.hintArrow.method8250(), Client.hintArrow.method8235());
+			var13 = Coord.method7440(Client.hintArrow.method8250() - var15.baseX) + Client.hintArrow.method8232();
+			int var8 = Coord.method7440(Client.hintArrow.method8235() - var15.baseY) + Client.hintArrow.method8234();
+			HorizontalAlignment.worldToMinimap(var15, var13, var8, var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
 		} else if (var5 == 3) {
-			Player var16 = VerticalAlignment.method4463(Client.field576.method8231(), Client.worldViewManager);
+			Player var16 = VerticalAlignment.method4463(Client.hintArrow.method8231(), Client.worldViewManager);
 			if (var16 != null) {
-				HorizontalAlignment.method4377(var16.method2466(), var16.x, var16.y, var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
+				HorizontalAlignment.worldToMinimap(var16.getWorldView(), var16.x, var16.y, var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
 			}
 		} else if (var5 == 4) {
-			int var6 = Client.field576.method8231();
+			int var6 = Client.hintArrow.method8231();
 			WorldEntity var7 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var6);
 			if (var7 != null) {
-				HorizontalAlignment.method4377(class547.topLevelWorldView, var7.getY(), var7.getPlane(), var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
+				HorizontalAlignment.worldToMinimap(class547.topLevelWorldView, var7.getY(), var7.getPlane(), var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
 			}
 		}
 
@@ -292,10 +292,10 @@ public class FloorOverlayDefinition extends DualNode {
 	)
 	public static void method4817(int var0, int var1, int var2, boolean var3) {
 		PacketBufferNode var4 = HorizontalAlignment.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
-		var4.packetBuffer.writeShortAdd(var1);
-		var4.packetBuffer.writeShortAdd(var0);
-		var4.packetBuffer.writeIntIME(var3 ? Client.field459 : 0);
-		var4.packetBuffer.writeByteNeg(var2);
+		var4.packetBuffer.writeShortLE(var1);
+		var4.packetBuffer.writeShortLE(var0);
+		var4.packetBuffer.writeIntME(var3 ? Client.field459 : 0);
+		var4.packetBuffer.writeByteAdd(var2);
 		Client.packetWriter.addNode(var4);
 	}
 }

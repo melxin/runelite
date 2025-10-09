@@ -546,28 +546,28 @@ public class MusicPatch extends Node {
 		garbageValue = "-78"
 	)
 	static void method7346(PacketBufferNode var0) {
-		var0.packetBuffer.writeIntIME(GrandExchangeOffer.archive6.hash);
-		var0.packetBuffer.writeIntME(BoundaryObject.archive8.hash);
+		var0.packetBuffer.writeIntME(GrandExchangeOffer.archive6.hash);
+		var0.packetBuffer.writeIntLE(BoundaryObject.archive8.hash);
 		var0.packetBuffer.writeInt(Canvas.archive13.hash);
 		var0.packetBuffer.writeInt(UserComparator4.field1562.hash);
-		var0.packetBuffer.writeIntLE(RestClientThreadFactory.field67.hash);
-		var0.packetBuffer.writeIntME(WorldMapSprite.field3462.hash);
+		var0.packetBuffer.writeIntIME(RestClientThreadFactory.field67.hash);
+		var0.packetBuffer.writeIntLE(WorldMapSprite.field3462.hash);
 		var0.packetBuffer.writeInt(PacketWriter.field1291.hash);
-		var0.packetBuffer.writeIntIME(Client.field376.hash);
-		var0.packetBuffer.writeIntIME(0);
-		var0.packetBuffer.writeIntME(class113.field1508.hash);
-		var0.packetBuffer.writeIntLE(class206.archive2.hash);
-		var0.packetBuffer.writeIntIME(ItemContainer.archive9.hash);
+		var0.packetBuffer.writeIntME(Client.field376.hash);
+		var0.packetBuffer.writeIntME(0);
+		var0.packetBuffer.writeIntLE(class113.field1508.hash);
+		var0.packetBuffer.writeIntIME(class206.archive2.hash);
+		var0.packetBuffer.writeIntME(ItemContainer.archive9.hash);
 		var0.packetBuffer.writeInt(PendingSpawn.field1023.hash);
 		var0.packetBuffer.writeInt(class322.field3540.hash);
-		var0.packetBuffer.writeIntME(class156.field1814.hash);
+		var0.packetBuffer.writeIntLE(class156.field1814.hash);
 		var0.packetBuffer.writeInt(WorldMapArea.field3339.hash);
-		var0.packetBuffer.writeIntME(WorldMapDecoration.field3459.hash);
-		var0.packetBuffer.writeIntLE(Projection.archive10.hash);
-		var0.packetBuffer.writeIntIME(FriendSystem.field621.hash);
-		var0.packetBuffer.writeIntLE(WorldViewManager.field1001.hash);
-		var0.packetBuffer.writeIntIME(class142.archive12.hash);
-		var0.packetBuffer.writeIntLE(class416.archive4.hash);
-		var0.packetBuffer.writeIntME(class443.field5180.hash);
+		var0.packetBuffer.writeIntLE(WorldMapDecoration.field3459.hash);
+		var0.packetBuffer.writeIntIME(Projection.archive10.hash);
+		var0.packetBuffer.writeIntME(FriendSystem.field621.hash);
+		var0.packetBuffer.writeIntIME(WorldViewManager.field1001.hash);
+		var0.packetBuffer.writeIntME(class142.archive12.hash);
+		var0.packetBuffer.writeIntIME(class416.archive4.hash);
+		var0.packetBuffer.writeIntLE(class443.field5180.hash);
 	}
 }

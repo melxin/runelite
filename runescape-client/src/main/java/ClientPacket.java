@@ -161,7 +161,7 @@ public class ClientPacket implements class325 {
 	@ObfuscatedSignature(
 		descriptor = "Lmk;"
 	)
-	public static final ClientPacket field3578;
+	public static final ClientPacket DETECT_MODIFIED_CLIENT;
 	@ObfuscatedName("by")
 	@ObfuscatedSignature(
 		descriptor = "Lmk;"
@@ -211,7 +211,7 @@ public class ClientPacket implements class325 {
 	@ObfuscatedSignature(
 		descriptor = "Lmk;"
 	)
-	public static final ClientPacket field3601;
+	public static final ClientPacket EVENT_MOUSE_CLICK;
 	@ObfuscatedName("bh")
 	@ObfuscatedSignature(
 		descriptor = "Lmk;"
@@ -486,7 +486,7 @@ public class ClientPacket implements class325 {
 	@ObfuscatedSignature(
 		descriptor = "Lmk;"
 	)
-	public static final ClientPacket field3630;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("dx")
 	@ObfuscatedSignature(
 		descriptor = "Lmk;"
@@ -561,7 +561,7 @@ public class ClientPacket implements class325 {
 		LOGIN_TIMINGS = new ClientPacket(27, -1);
 		CLICK_WORLD_MAP = new ClientPacket(28, 4);
 		DOCHEAT = new ClientPacket(29, -1);
-		field3578 = new ClientPacket(30, 4);
+		DETECT_MODIFIED_CLIENT = new ClientPacket(30, 4);
 		CHAT_SENDABUSEREPORT = new ClientPacket(31, -1);
 		OPOBJ5 = new ClientPacket(32, 7);
 		field3612 = new ClientPacket(33, -1);
@@ -571,7 +571,7 @@ public class ClientPacket implements class325 {
 		TELEPORT = new ClientPacket(37, 9);
 		OPOBJE = new ClientPacket(38, 6);
 		CLAN_SETTINGS_SET_MUTED_FROM_CHANNEL = new ClientPacket(39, -1);
-		field3601 = new ClientPacket(40, 7);
+		EVENT_MOUSE_CLICK = new ClientPacket(40, 7);
 		OPOBJU = new ClientPacket(41, 15);
 		OPWORLDENTITY5 = new ClientPacket(42, 3);
 		RESUME_COUNTDIALOG = new ClientPacket(43, 4);
@@ -626,7 +626,7 @@ public class ClientPacket implements class325 {
 		PING_STATISTICS = new ClientPacket(92, 10);
 		OPPLAYER6 = new ClientPacket(93, 3);
 		OPNPC3 = new ClientPacket(94, 3);
-		field3630 = new ClientPacket(95, 0);
+		FREECAM_EXIT = new ClientPacket(95, 0);
 		IF_CRMVIEW = new ClientPacket(96, 22);
 		CHAT_SETFILTER = new ClientPacket(97, 3);
 		MOVE_GAMECLICK = new ClientPacket(98, -1);

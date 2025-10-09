@@ -101,7 +101,7 @@ public class AABB {
 		SpriteMask var4 = var0.method8091(class35.widgetDefinition, false);
 		if (var4 != null) {
 			if (Client.minimapState < 3) {
-				ItemComposition.compass.method11882(var1, var2, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var1, var2, var4.xStarts, var4.xWidths);
+				ItemComposition.compass.drawRotatedMaskedCenteredAround(var1, var2, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var1, var2, var4.xStarts, var4.xWidths);
 			} else {
 				Rasterizer2D.Rasterizer2D_fillMaskedRectangle(var1, var2, 0, var4.xStarts, var4.xWidths);
 			}

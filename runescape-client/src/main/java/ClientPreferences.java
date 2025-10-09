@@ -130,8 +130,8 @@ public class ClientPreferences {
 					int var3 = var1.readUnsignedByte();
 
 					for (int var4 = 0; var4 < var3; ++var4) {
-						int var5 = var1.method11575();
-						int var6 = var1.method11575();
+						int var5 = var1.readInt();
+						int var6 = var1.readInt();
 						this.parameters.put(var5, var6);
 					}
 				}
@@ -160,7 +160,7 @@ public class ClientPreferences {
 				}
 
 				if (var2 > 9) {
-					this.field1136 = var1.method11575();
+					this.field1136 = var1.readInt();
 				}
 
 				if (var2 > 10) {
@@ -644,7 +644,7 @@ public class ClientPreferences {
 	)
 	@Export("Widget_getSpellActionName")
 	static String Widget_getSpellActionName(Widget var0) {
-		if (AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.method2181(var0)) == 0) {
+		if (AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.getWidgetFlags(var0)) == 0) {
 			return null;
 		} else {
 			return var0.spellActionName != null && !var0.spellActionName.trim().isEmpty() ? var0.spellActionName : null;

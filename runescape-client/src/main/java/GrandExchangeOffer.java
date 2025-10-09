@@ -66,10 +66,10 @@ public class GrandExchangeOffer {
 	public GrandExchangeOffer(Buffer var1, boolean var2) {
 		this.state = var1.readByte();
 		this.id = var1.readUnsignedShort();
-		this.unitPrice = var1.method11575();
-		this.totalQuantity = var1.method11575();
-		this.currentQuantity = var1.method11575();
-		this.currentPrice = var1.method11575();
+		this.unitPrice = var1.readInt();
+		this.totalQuantity = var1.readInt();
+		this.currentQuantity = var1.readInt();
+		this.currentPrice = var1.readInt();
 	}
 
 	@ObfuscatedName("at")

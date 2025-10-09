@@ -103,7 +103,7 @@ public abstract class AbstractUserComparator implements Comparator {
 							break label512;
 						}
 
-						var22 = var21.field5483;
+						var22 = var21.worldView;
 					} else if (var20 == -1) {
 						var21 = null;
 						var22 = class547.topLevelWorldView;

@@ -902,7 +902,8 @@ public abstract class Actor extends Renderable implements Entity {
 		descriptor = "(I)Ldm;",
 		garbageValue = "1514187661"
 	)
-	WorldView method2466() {
+	@Export("getWorldView")
+	WorldView getWorldView() {
 		return this.worldViewId != -1 ? Client.worldViewManager.getWorldView(this.worldViewId) : class547.topLevelWorldView;
 	}
 

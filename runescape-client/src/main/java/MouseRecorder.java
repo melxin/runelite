@@ -127,7 +127,8 @@ public class MouseRecorder implements Runnable {
 		descriptor = "(Lok;I)I",
 		garbageValue = "2138577218"
 	)
-	static int method2181(Widget var0) {
+	@Export("getWidgetFlags")
+	static int getWidgetFlags(Widget var0) {
 		WidgetConfigNode var1 = (WidgetConfigNode)Client.widgetFlags.get((long)var0.id);
 		int var3 = var0.childIndex * -2066937045;
 		WidgetConfigNode var4 = var1;

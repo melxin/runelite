@@ -46,7 +46,7 @@ public class class70 {
 	)
 	@Export("forceDisconnect")
 	static final void forceDisconnect(int var0) {
-		WorldMapElement.method4252();
+		WorldMapElement.logOut();
 		switch(var0) {
 		case 1:
 			class146.method3876(24);

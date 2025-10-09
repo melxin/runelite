@@ -203,7 +203,7 @@ public class SoundEffect {
 					return null;
 				}
 
-				int var6 = var5.method11575();
+				int var6 = var5.readInt();
 				var3.method3461(var4, 4);
 				var5.offset = var6 + 4;
 			} else {

@@ -148,12 +148,11 @@ public abstract class RSSpritePixelsMixin implements RSSpritePixels
 
 	@Copy("drawRotatedMaskedCenteredAround")
 	@Replace("drawRotatedMaskedCenteredAround")
-	public void copy$drawAlphaMapped(int x, int y, int width, int height, int xOffset, int yOffset, int rotation,
-																int zoom, int[] xOffsets, int[] yOffsets)
+	public void copy$drawAlphaMapped(int x, int y, int width, int height, int xOffset, int yOffset, int rotation, int zoom, int clipXOffset, int clipYOffset, int[] xOffsets, int[] yOffsets)
 	{
 		if (!hdMinimapEnabled)
 		{
-			copy$drawAlphaMapped(x, y, width, height, xOffset, yOffset, rotation, zoom, xOffsets, yOffsets);
+			copy$drawAlphaMapped(x, y, width, height, xOffset, yOffset, rotation, zoom, clipXOffset, clipYOffset, xOffsets, yOffsets);
 			return;
 		}
 		try

@@ -488,7 +488,7 @@ public class WorldMap {
 
 					if (var9) {
 						PacketBufferNode var12 = HorizontalAlignment.getPacketBufferNode(ClientPacket.CLICK_WORLD_MAP, Client.packetWriter.isaacCipher);
-						var12.packetBuffer.writeIntME(this.mouseCoord.packed());
+						var12.packetBuffer.writeIntLE(this.mouseCoord.packed());
 						Client.packetWriter.addNode(var12);
 						this.field5788 = 0L;
 					}

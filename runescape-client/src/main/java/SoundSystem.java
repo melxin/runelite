@@ -8,7 +8,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("SoundSystem")
 public class SoundSystem implements Runnable {
 	@ObfuscatedName("lc")
-	static String field1371;
+	@Export("gameSessionServiceBaseUrl")
+	static String gameSessionServiceBaseUrl;
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "[Ldx;"

@@ -680,15 +680,15 @@ public class class281 {
 				int var12 = var10 / 32 - Client.field484 / 32;
 				int var13 = var11 / 32 - Client.field377 / 32;
 				if (var8.isFriend()) {
-					class445.method8994(var1, var2, var12, var13, var3, class199.field2176[3], var4);
+					class445.drawSpriteOnMinimap(var1, var2, var12, var13, var3, class199.field2176[3], var4);
 				} else if (class159.localPlayer.team != 0 && var8.team != 0 && var8.team == class159.localPlayer.team) {
-					class445.method8994(var1, var2, var12, var13, var3, class199.field2176[4], var4);
+					class445.drawSpriteOnMinimap(var1, var2, var12, var13, var3, class199.field2176[4], var4);
 				} else if (var8.isFriendsChatMember()) {
-					class445.method8994(var1, var2, var12, var13, var3, class199.field2176[5], var4);
+					class445.drawSpriteOnMinimap(var1, var2, var12, var13, var3, class199.field2176[5], var4);
 				} else if (var8.isClanMember()) {
-					class445.method8994(var1, var2, var12, var13, var3, class199.field2176[6], var4);
+					class445.drawSpriteOnMinimap(var1, var2, var12, var13, var3, class199.field2176[6], var4);
 				} else {
-					class445.method8994(var1, var2, var12, var13, var3, class199.field2176[2], var4);
+					class445.drawSpriteOnMinimap(var1, var2, var12, var13, var3, class199.field2176[2], var4);
 				}
 			}
 		}

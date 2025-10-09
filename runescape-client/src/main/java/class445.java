@@ -46,7 +46,8 @@ public final class class445 {
 		descriptor = "(IIIIILxl;Lnt;I)V",
 		garbageValue = "-296793548"
 	)
-	static final void method8994(int var0, int var1, int var2, int var3, int var4, SpritePixels var5, SpriteMask var6) {
+	@Export("drawSpriteOnMinimap")
+	static final void drawSpriteOnMinimap(int var0, int var1, int var2, int var3, int var4, SpritePixels var5, SpriteMask var6) {
 		if (var5 != null) {
 			int var7 = var3 * var3 + var2 * var2;
 			if (var7 <= 6400) {

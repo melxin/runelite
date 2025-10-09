@@ -117,7 +117,7 @@ public class WidgetConfigNode extends Node {
 
 		for (var6 = 0; var6 < var5; ++var6) {
 			for (var7 = 0; var7 < 4; ++var7) {
-				class135.field1642[var6][var7] = var1.method11575();
+				class135.field1642[var6][var7] = var1.readInt();
 			}
 		}
 

@@ -278,7 +278,7 @@ public class Varcs {
 
 							for (var7 = 0; var7 < var16; ++var7) {
 								var8 = var14.readUnsignedShort();
-								var9 = var14.method11575();
+								var9 = var14.readInt();
 								if (var8 >= 0 && var8 < this.intsPersistence.length && this.intsPersistence[var8]) {
 									this.map.put(var8, var9);
 								}

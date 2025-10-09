@@ -30,7 +30,7 @@ public class class160 extends class150 {
 		garbageValue = "1804820754"
 	)
 	void vmethod4162(Buffer var1) {
-		this.field1836 = var1.method11575();
+		this.field1836 = var1.readInt();
 		this.field1837 = var1.readStringCp1252NullTerminated();
 	}
 
@@ -57,7 +57,7 @@ public class class160 extends class150 {
 					if (var0.method2736()) {
 						int var13 = var5 * 4 + 2 - Client.field484 / 32;
 						var9 = var6 * 4 + 2 - Client.field377 / 32;
-						class445.method8994(var1, var2, var13, var9, var3, class199.field2176[0], var4);
+						class445.drawSpriteOnMinimap(var1, var2, var13, var9, var3, class199.field2176[0], var4);
 					} else {
 						class450 var8 = Varcs.method3022(var0, Coord.method7440(var5), Coord.method7440(var6));
 						var9 = (int)var8.field5216;
@@ -65,7 +65,7 @@ public class class160 extends class150 {
 						var8.method9065();
 						int var11 = var9 / 32 - Client.field484 / 32;
 						int var12 = var10 / 32 - Client.field377 / 32;
-						class445.method8994(var1, var2, var11, var12, var3, class199.field2176[0], var4);
+						class445.drawSpriteOnMinimap(var1, var2, var11, var12, var3, class199.field2176[0], var4);
 					}
 				}
 			}

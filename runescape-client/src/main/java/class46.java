@@ -203,7 +203,7 @@ public class class46 {
 	void method1830(MoveSpeed var1) {
 		for (int var2 = 0; var2 < this.field652.size(); ++var2) {
 			Player var3 = (Player)this.field652.get(var2);
-			WorldView var4 = var3.method2466();
+			WorldView var4 = var3.getWorldView();
 			int var5 = this.coord.x - var4.baseX;
 			int var6 = this.coord.y - var4.baseY;
 			MoveSpeed var7 = var1;
@@ -429,7 +429,7 @@ public class class46 {
 	void method1835(int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
 		for (int var8 = 0; var8 < this.field652.size(); ++var8) {
 			Player var9 = (Player)this.field652.get(var8);
-			WorldView var10 = var9.method2466();
+			WorldView var10 = var9.getWorldView();
 			int var11 = this.coord.x - var10.baseX;
 			int var12 = this.coord.y - var10.baseY;
 			var9.field1032 = var11 + var1;

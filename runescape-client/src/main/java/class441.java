@@ -27,7 +27,7 @@ public class class441 {
 				int var5 = Client.camAngleY & 2047;
 				int var6 = Client.field484 / 32 + 48;
 				int var7 = 464 - Client.field377 / 32;
-				class135.sceneMinimapSprite.method11882(var1, var2, var4.width, var4.height, var6, var7, var5, 256, var1, var2, var4.xStarts, var4.xWidths);
+				class135.sceneMinimapSprite.drawRotatedMaskedCenteredAround(var1, var2, var4.width, var4.height, var6, var7, var5, 256, var1, var2, var4.xStarts, var4.xWidths);
 				class404.method8318(var1, var2, var5, var4);
 				class160.method3974(class547.topLevelWorldView, var1, var2, var5, var4);
 				AttackOption.method2882(class547.topLevelWorldView, var1, var2, var5, var4);
@@ -43,15 +43,15 @@ public class class441 {
 						SpritePixels var13 = var15.field5482.method4514();
 						byte var14 = 1;
 						Sound.method3958(var1, var2, var11, var12, var5, 2047 - var15.method10204() + 1024, var13, var4, var14);
-						class160.method3974(var15.field5483, var1, var2, var5, var4);
-						AttackOption.method2882(var15.field5483, var1, var2, var5, var4);
-						class281.method6364(var15.field5483, var1, var2, var5, var4);
+						class160.method3974(var15.worldView, var1, var2, var5, var4);
+						AttackOption.method2882(var15.worldView, var1, var2, var5, var4);
+						class281.method6364(var15.worldView, var1, var2, var5, var4);
 					}
 				}
 
 				class281.method6364(class547.topLevelWorldView, var1, var2, var5, var4);
-				if (Client.field576.method8229() && Client.cycle % 20 < 10) {
-					var9 = Client.field576.method8230();
+				if (Client.hintArrow.method8229() && Client.cycle % 20 < 10) {
+					var9 = Client.hintArrow.method8230();
 					FloorOverlayDefinition.method4795(class547.topLevelWorldView, var1, var2, var5, var4, var9);
 				}
 
@@ -59,7 +59,7 @@ public class class441 {
 				if (Client.destinationX != 0) {
 					var9 = Client.destinationX * 4 + 2 - Client.field484 / 32;
 					var10 = Client.destinationY * 4 + 2 - Client.field377 / 32;
-					class445.method8994(var1, var2, var9, var10, var5, AsyncHttpResponse.mapDotSprites[0], var4);
+					class445.drawSpriteOnMinimap(var1, var2, var9, var10, var5, AsyncHttpResponse.mapDotSprites[0], var4);
 				}
 
 				if (Client.worldViewManager.method2376(-1) == class516.field5564 && AsyncHttpResponse.mapDotSprites.length >= 4) {

@@ -23,7 +23,8 @@ public class WorldEntity extends Node implements Entity {
 	@ObfuscatedSignature(
 		descriptor = "Ldm;"
 	)
-	public WorldView field5483;
+	@Export("worldView")
+	public WorldView worldView;
 	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "Lhz;"
@@ -94,7 +95,7 @@ public class WorldEntity extends Node implements Entity {
 		this.field5493 = new AnimationSequence();
 		this.field5494 = 0;
 		this.plane = var1;
-		this.field5483 = var2;
+		this.worldView = var2;
 		this.field5475 = 0;
 
 		for (int var3 = 0; var3 < 10; ++var3) {
@@ -138,27 +139,27 @@ public class WorldEntity extends Node implements Entity {
 	public void initScenePlane(boolean var1) {
 		AnimationSequence var2 = this.method10175();
 		AnimationSequence var3 = var2 != null ? var2 : this.field5492;
-		this.field5483.scene.field2690.method9175();
+		this.worldView.scene.field2690.method9175();
 		if (var3 != null && var3.getId() != -1 && var3.method9635() && var3.getSequenceDefinition().isCachedModelIdSet()) {
 			class145 var4 = var3.getSequenceDefinition().method4881();
 			class226 var5 = var4.field1731.method5147();
 			class134 var6 = var5.method5090(0);
 			if (var6 != null) {
 				var5.method5103(var4, var3.getFrame());
-				this.field5483.scene.field2690.method9187(var6.method3694());
-				this.field5483.scene.field2690.field5229[13] = -this.field5483.scene.field2690.field5229[13];
+				this.worldView.scene.field2690.method9187(var6.method3694());
+				this.worldView.scene.field2690.field5229[13] = -this.worldView.scene.field2690.field5229[13];
 			}
 		}
 
-		this.field5483.scene.Scene_plane = this.field5483.plane;
+		this.worldView.scene.Scene_plane = this.worldView.plane;
 		if (var1) {
-			this.field5483.scene.field2716 = -1200;
-			this.field5483.scene.field2718 = 0.01F;
-			this.field5483.scene.modelColorOverride.method5729((byte)38, (byte)2, (byte)20, (byte)127);
+			this.worldView.scene.field2716 = -1200;
+			this.worldView.scene.field2718 = 0.01F;
+			this.worldView.scene.modelColorOverride.method5729((byte)38, (byte)2, (byte)20, (byte)127);
 		} else {
-			this.field5483.scene.field2716 = 0;
-			this.field5483.scene.field2718 = 1.0F;
-			this.field5483.scene.modelColorOverride.method5728();
+			this.worldView.scene.field2716 = 0;
+			this.worldView.scene.field2718 = 1.0F;
+			this.worldView.scene.modelColorOverride.method5728();
 		}
 
 	}
@@ -169,7 +170,7 @@ public class WorldEntity extends Node implements Entity {
 		garbageValue = "-18801"
 	)
 	public boolean method10243() {
-		return 0.01F == this.field5483.scene.field2718;
+		return 0.01F == this.worldView.scene.field2718;
 	}
 
 	@ObfuscatedName("ah")
@@ -207,8 +208,8 @@ public class WorldEntity extends Node implements Entity {
 	)
 	public void method10184(class202 var1) {
 		this.field5482 = var1;
-		this.field5483.scene.field2715 = var1.method4520();
-		this.field5483.scene.field2717 = var1.method4521();
+		this.worldView.scene.field2715 = var1.method4520();
+		this.worldView.scene.field2717 = var1.method4521();
 		this.method10192(var1.method4522());
 	}
 
@@ -267,7 +268,7 @@ public class WorldEntity extends Node implements Entity {
 		garbageValue = "10"
 	)
 	public int method10190() {
-		return this.field5483.sizeX * 64 + this.field5482.method4520();
+		return this.worldView.sizeX * 64 + this.field5482.method4520();
 	}
 
 	@ObfuscatedName("ar")
@@ -276,7 +277,7 @@ public class WorldEntity extends Node implements Entity {
 		garbageValue = "0"
 	)
 	public int method10191() {
-		return this.field5483.sizeY * 64 + this.field5482.method4521();
+		return this.worldView.sizeY * 64 + this.field5482.method4521();
 	}
 
 	@ObfuscatedName("az")

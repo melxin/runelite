@@ -92,7 +92,8 @@ public class class114 {
 		descriptor = "(Ljava/lang/String;B)V",
 		garbageValue = "27"
 	)
-	public static void method3540(String var0) {
+	@Export("openURL")
+	public static void openURL(String var0) {
 		if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
 			try {
 				Desktop.getDesktop().browse(new URI(var0));

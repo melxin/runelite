@@ -55,7 +55,7 @@ public class class147 extends class150 {
 	)
 	void vmethod4162(Buffer var1) {
 		this.field1761 = var1.readUnsignedShort();
-		this.field1755 = var1.method11575();
+		this.field1755 = var1.readInt();
 		this.field1759 = var1.readUnsignedByte();
 		this.field1757 = var1.readUnsignedByte();
 	}

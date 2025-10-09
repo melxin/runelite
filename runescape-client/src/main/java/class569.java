@@ -27,7 +27,7 @@ final class class569 implements class567 {
 				int[] var5 = new int[var3];
 
 				for (var6 = 0; var6 < var3; ++var6) {
-					var5[var6] = var1.method11575();
+					var5[var6] = var1.readInt();
 				}
 
 				var2 = class151.method3914(var5);

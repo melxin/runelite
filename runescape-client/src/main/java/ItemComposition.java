@@ -435,7 +435,7 @@ public class ItemComposition extends DualNode {
 		} else if (var2 == 11) {
 			this.isStackable = 1;
 		} else if (var2 == 12) {
-			this.price = var1.method11575();
+			this.price = var1.readInt();
 		} else if (var2 == 13) {
 			this.maleModel = var1.readUnsignedByte();
 		} else if (var2 == 14) {

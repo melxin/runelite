@@ -35,7 +35,7 @@ public class class159 extends class150 {
 	)
 	void vmethod4162(Buffer var1) {
 		this.field1831 = var1.readStringCp1252NullTerminated();
-		var1.method11575();
+		var1.readInt();
 	}
 
 	@ObfuscatedName("at")

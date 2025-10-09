@@ -72,7 +72,7 @@ public class class362 {
 		PacketBufferNode var2 = HorizontalAlignment.getPacketBufferNode(ClientPacket.FRIEND_CHAT_SETRANK, Client.packetWriter.isaacCipher);
 		var2.packetBuffer.writeByte(WorldMapArea.stringCp1252NullTerminatedByteSize(var0) + 1);
 		var2.packetBuffer.writeStringCp1252NullTerminated(var0);
-		var2.packetBuffer.writeByteAdd(var1);
+		var2.packetBuffer.writeByteSub(var1);
 		Client.packetWriter.addNode(var2);
 	}
 }

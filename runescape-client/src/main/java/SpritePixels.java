@@ -729,7 +729,8 @@ public final class SpritePixels extends Rasterizer2D {
 	}
 
 	@ObfuscatedName("bb")
-	public void method11882(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int[] var11, int[] var12) {
+	@Export("drawRotatedMaskedCenteredAround")
+	public void drawRotatedMaskedCenteredAround(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int[] var11, int[] var12) {
 		try {
 			int var13 = -var3 / 2;
 			int var14 = -var4 / 2;

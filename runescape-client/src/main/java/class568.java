@@ -19,7 +19,7 @@ final class class568 implements class567 {
 		garbageValue = "2047"
 	)
 	public Object vmethod11209(Buffer var1) {
-		return var1.method11575();
+		return var1.readInt();
 	}
 
 	@ObfuscatedName("ae")

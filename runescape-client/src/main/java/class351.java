@@ -1,4 +1,5 @@
 import java.util.BitSet;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -43,8 +44,9 @@ public class class351 extends Node {
 		descriptor = "(Lwj;II)V",
 		garbageValue = "-1322771007"
 	)
-	static void method7402(Buffer var0, int var1) {
-		SecureUrlRequester.method3586(var0.array, var1);
+	@Export("randomDatData2")
+	static void randomDatData2(Buffer var0, int var1) {
+		SecureUrlRequester.method4843(var0.array, var1);
 		if (JagexCache.JagexCache_randomDat != null) {
 			try {
 				JagexCache.JagexCache_randomDat.seek(0L);

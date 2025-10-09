@@ -79,7 +79,7 @@ public class ParamComposition extends DualNode {
 		if (var2 == 1) {
 			this.type = Message.method767(var1.readByte());
 		} else if (var2 == 2) {
-			this.defaultInt = var1.method11575();
+			this.defaultInt = var1.readInt();
 		} else if (var2 == 4) {
 			this.autoDisable = false;
 		} else if (var2 == 5) {

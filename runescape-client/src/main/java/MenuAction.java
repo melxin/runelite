@@ -120,7 +120,7 @@ public class MenuAction {
 		if (Client.clickedWidget == null && !Client.isMenuOpen) {
 			if (var0 != null) {
 				Widget var5 = var0;
-				int var7 = MouseRecorder.method2181(var0);
+				int var7 = MouseRecorder.getWidgetFlags(var0);
 				int var6 = var7 >> 17 & 7;
 				int var8 = var6;
 				Widget var4;
@@ -154,7 +154,7 @@ public class MenuAction {
 				if (var10 != null) {
 					Client.clickedWidget = var0;
 					var5 = var0;
-					var7 = MouseRecorder.method2181(var0);
+					var7 = MouseRecorder.getWidgetFlags(var0);
 					var6 = var7 >> 17 & 7;
 					var8 = var6;
 					if (var6 == 0) {

@@ -581,14 +581,14 @@ public class Skills {
 		boolean var5 = false;
 		Widget var6 = class35.widgetDefinition.getWidgetChild(var0, var1);
 		if (var5 || var6 != null) {
-			if (var5 || AbstractWorldMapIcon.method6904(MouseRecorder.method2181(var6))) {
+			if (var5 || AbstractWorldMapIcon.method6904(MouseRecorder.getWidgetFlags(var6))) {
 				PacketBufferNode var7 = HorizontalAlignment.getPacketBufferNode(ClientPacket.IF_RUNSCRIPT, Client.packetWriter.isaacCipher);
 				var7.packetBuffer.writeShort(0);
 				int var8 = var7.packetBuffer.offset;
-				var7.packetBuffer.writeShortLE(var1);
+				var7.packetBuffer.writeShortAddLE(var1);
 				var7.packetBuffer.writeShort(var2);
 				var7.packetBuffer.writeInt(var3);
-				var7.packetBuffer.writeIntIME(var0);
+				var7.packetBuffer.writeIntME(var0);
 				Object[] var9 = var4;
 
 				for (int var10 = 0; var10 < var9.length; ++var10) {

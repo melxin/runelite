@@ -252,11 +252,11 @@ public class HealthBarConfig extends Node {
 		garbageValue = "1096829814"
 	)
 	static final void method2774(int var0, int var1) {
-		if (Client.field576.method8230() == 2) {
-			WorldView var2 = Client.worldViewManager.method2368(Client.field576.method8250(), Client.field576.method8235());
-			int var3 = (Client.field576.method8250() - var2.baseX << 7) + Client.field576.method8232();
-			int var4 = (Client.field576.method8235() - var2.baseY << 7) + Client.field576.method8234();
-			int var5 = Client.field576.method8246() * 2;
+		if (Client.hintArrow.method8230() == 2) {
+			WorldView var2 = Client.worldViewManager.method2368(Client.hintArrow.method8250(), Client.hintArrow.method8235());
+			int var3 = (Client.hintArrow.method8250() - var2.baseX << 7) + Client.hintArrow.method8232();
+			int var4 = (Client.hintArrow.method8235() - var2.baseY << 7) + Client.hintArrow.method8234();
+			int var5 = Client.hintArrow.method8246() * 2;
 			class203.method4563(var2, var3, var4, var5, 0);
 			if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
 				ArchiveDisk.headIconHintSprites[0].drawTransBgAt(var0 + Client.viewportTempX - 12, Client.viewportTempY + var1 - 28);

@@ -92,7 +92,7 @@ public class class156 extends class166 {
 		int var6;
 		int var7;
 		if (!Client.isInInstance) {
-			var1.readInt();
+			var1.readShortLE();
 			var3 = var1.readUnsignedShort();
 			int var2 = var1.readUnsignedShort();
 			var4 = var1.readUnsignedShort();
@@ -100,7 +100,7 @@ public class class156 extends class166 {
 
 			for (var5 = 0; var5 < var4; ++var5) {
 				for (var6 = 0; var6 < 4; ++var6) {
-					PlayerComposition.xteaKeys[var5][var6] = var1.method11575();
+					PlayerComposition.xteaKeys[var5][var6] = var1.readInt();
 				}
 			}
 
@@ -149,7 +149,7 @@ public class class156 extends class166 {
 
 			for (var6 = 0; var6 < var5; ++var6) {
 				for (var7 = 0; var7 < 4; ++var7) {
-					PlayerComposition.xteaKeys[var6][var7] = var1.method11575();
+					PlayerComposition.xteaKeys[var6][var7] = var1.readInt();
 				}
 			}
 

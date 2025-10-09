@@ -227,7 +227,7 @@ public class ArchiveLoader {
 					}
 				}
 
-				if (var2 >= 0 && Client.field576.method8230() == 3 && Client.field576.method8231() == var8[var2]) {
+				if (var2 >= 0 && Client.hintArrow.method8230() == 3 && Client.hintArrow.method8231() == var8[var2]) {
 					class134.method3733(var0, var1, 15 + var1.defaultHeight + var1.method2444());
 					if (Client.viewportTempX > -1) {
 						var10 += ArchiveDisk.headIconHintSprites[1].subHeight;
@@ -261,7 +261,7 @@ public class ArchiveLoader {
 					}
 				}
 
-				if (Client.field576.method8230() == 1 && Client.field576.method8231() == var0.field1169.method9886(var2 - var76) && Client.cycle % 20 < 10) {
+				if (Client.hintArrow.method8230() == 1 && Client.hintArrow.method8231() == var0.field1169.method9886(var2 - var76) && Client.cycle % 20 < 10) {
 					class134.method3733(var0, var1, var1.vmethod2797() + 15 + var1.method2444());
 					if (Client.viewportTempX > -1) {
 						ArchiveDisk.headIconHintSprites[0].drawTransBgAt(var3 + Client.viewportTempX - 12, var4 + Client.viewportTempY - 28);

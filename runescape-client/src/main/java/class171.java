@@ -173,13 +173,13 @@ public class class171 {
 						var33 = ReflectionCheck.loginBoxCenter - 80;
 						var32 = 291;
 						if (var19 == 1 && var29 >= var33 - 75 && var29 <= var33 + 75 && var30 >= var32 - 20 && var30 <= var32 + 20) {
-							class114.method3540(class174.method4161("secure", true) + "m=account-creation/g=oldscape/create_account_funnel.ws");
+							class114.openURL(class174.method4161("secure", true) + "m=account-creation/g=oldscape/create_account_funnel.ws");
 						}
 
 						var33 = ReflectionCheck.loginBoxCenter + 80;
 						if (var19 == 1 && var29 >= var33 - 75 && var29 <= var33 + 75 && var30 >= var32 - 20 && var30 <= var32 + 20 || var37) {
 							if (class29.method465()) {
-								class4.method20();
+								class4.focusPasswordWhenUsernameFilled();
 							} else {
 								class146.Login_promptCredentials(false);
 							}
@@ -244,10 +244,10 @@ public class class171 {
 								if (var19 == 1 && var29 >= class164.field1882.lowX - var33 && var29 <= var33 + class164.field1882.lowX && var30 >= var31 - 15 && var30 < var31) {
 									switch(Login.field712) {
 									case 1:
-										class114.method3540("https://support.runescape.com/hc/en-gb/articles/360001552065");
+										class114.openURL("https://support.runescape.com/hc/en-gb/articles/360001552065");
 										return;
 									case 2:
-										class114.method3540("https://support.runescape.com/hc/en-gb");
+										class114.openURL("https://support.runescape.com/hc/en-gb");
 									}
 								}
 							}
@@ -391,7 +391,7 @@ public class class171 {
 								var11 = 241;
 								var21 = var1.method9545(25, "need to log in using the <u=ffd200><col=ffd200>Jagex Launcher</col></u> instead.".length() - 34, "need to log in using the <u=ffd200><col=ffd200>Jagex Launcher</col></u> instead.", var10, var11);
 								if (var19 == 1 && var21.method9035(var29, var30)) {
-									class114.method3540("https://oldschool.runescape.com/launcher");
+									class114.openURL("https://oldschool.runescape.com/launcher");
 								}
 
 								var10 = Login.loginBoxX + 180;
@@ -403,7 +403,7 @@ public class class171 {
 								var10 = Login.loginBoxX + 180;
 								var11 = 326;
 								if (var19 == 1 && var29 >= var10 - 75 && var29 <= var10 + 75 && var30 >= var11 - 20 && var30 <= var11 + 20) {
-									class114.method3540("https://support.runescape.com/hc/en-gb/articles/360001552065");
+									class114.openURL("https://support.runescape.com/hc/en-gb/articles/360001552065");
 									return;
 								}
 							} else {
@@ -418,7 +418,7 @@ public class class171 {
 										} else {
 											AABB.otpMedium = Integer.parseInt(class572.otp);
 											class572.otp = "";
-											Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.field1597 : AuthenticationScheme.field1599;
+											Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
 											class203.setLoginResponseString("", "Connecting to server...", "");
 											class135.updateGameState(20);
 										}
@@ -431,7 +431,7 @@ public class class171 {
 									}
 
 									if (var19 == 1 && var29 >= Login.loginBoxX + 180 - 34 && var29 <= Login.loginBoxX + 34 + 180 && var30 >= 351 && var30 <= 363) {
-										class114.method3540("https://support.runescape.com/hc/en-gb/articles/360001552065");
+										class114.openURL("https://support.runescape.com/hc/en-gb/articles/360001552065");
 									}
 
 									var10 = Login.loginBoxX + 180 + 80;
@@ -471,7 +471,7 @@ public class class171 {
 												} else {
 													AABB.otpMedium = Integer.parseInt(class572.otp);
 													class572.otp = "";
-													Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.field1597 : AuthenticationScheme.field1599;
+													Client.authenticationScheme = Login.rememberUsername ? AuthenticationScheme.USERNAME_PASSWORD_REMEMBER : AuthenticationScheme.USERNAME_PASSWORD;
 													class203.setLoginResponseString("", "Connecting to server...", "");
 													class135.updateGameState(20);
 												}
@@ -503,7 +503,7 @@ public class class171 {
 										if (LoginState.field266 != null) {
 											var22 = LoginState.field266.highX / 2;
 											if (var19 == 1 && var29 >= LoginState.field266.lowX - var22 && var29 <= var22 + LoginState.field266.lowX && var30 >= var32 - 15 && var30 < var32) {
-												class114.method3540(class174.method4161("secure", true) + "m=weblogin/g=oldscape/cant_log_in");
+												class114.openURL(class174.method4161("secure", true) + "m=weblogin/g=oldscape/cant_log_in");
 											}
 										}
 
@@ -614,7 +614,7 @@ public class class171 {
 												var10 = Login.loginBoxX + 180 - 80;
 												var11 = 321;
 												if (var19 == 1 && var29 >= var10 - 75 && var29 <= var10 + 75 && var30 >= var11 - 20 && var30 <= var11 + 20) {
-													class114.method3540(class174.method4161("secure", true) + "m=dob/set_dob.ws");
+													class114.openURL(class174.method4161("secure", true) + "m=dob/set_dob.ws");
 													class203.setLoginResponseString("", "Page has opened in the browser.", "");
 													class146.method3876(6);
 													return;
@@ -629,7 +629,7 @@ public class class171 {
 											var10 = Login.loginBoxX + 180 - 80;
 											var11 = 321;
 											if (var19 == 1 && var29 >= var10 - 75 && var29 <= var10 + 75 && var30 >= var11 - 20 && var30 <= var11 + 20) {
-												class114.method3540("https://www.jagex.com/terms/privacy");
+												class114.openURL("https://www.jagex.com/terms/privacy");
 												class203.setLoginResponseString("", "Page has opened in the browser.", "");
 												class146.method3876(6);
 												return;
@@ -665,11 +665,11 @@ public class class171 {
 											Bounds var25 = var2.method9545(0, 34, "<col=ffd200>agreement (EULA)</col>.", var10, var33);
 											if (var19 == 1) {
 												if (var21.method9035(var29, var30)) {
-													class114.method3540("https://www.jagex.com/terms");
+													class114.openURL("https://www.jagex.com/terms");
 												} else if (var13.method9035(var29, var30)) {
-													class114.method3540("https://www.jagex.com/terms/privacy");
+													class114.openURL("https://www.jagex.com/terms/privacy");
 												} else if (var14.method9035(var29, var30) || var25.method9035(var29, var30)) {
-													class114.method3540("https://www.jagex.com/en-GB/legal/eula-runescape-oldschool");
+													class114.openURL("https://www.jagex.com/en-GB/legal/eula-runescape-oldschool");
 												}
 											}
 
@@ -709,7 +709,7 @@ public class class171 {
 											var33 = Login.loginBoxX + 180;
 											var32 = 276;
 											if (var19 == 1 && var29 >= var33 - 75 && var29 <= var33 + 75 && var30 >= var32 - 20 && var30 <= var32 + 20) {
-												class114.method3540(var26);
+												class114.openURL(var26);
 												class203.setLoginResponseString("", "Page has opened in the browser.", "");
 												class146.method3876(6);
 												return;
@@ -730,7 +730,7 @@ public class class171 {
 											var10 = Login.loginBoxX + 180 - 80;
 											var11 = 321;
 											if (var19 == 1 && var29 >= var10 - 75 && var29 <= var10 + 75 && var30 >= var11 - 20 && var30 <= var11 + 20) {
-												class114.method3540(class174.method4161("secure", true) + "m=dob/set_dob.ws");
+												class114.openURL(class174.method4161("secure", true) + "m=dob/set_dob.ws");
 												class203.setLoginResponseString("", "Page has opened in the browser.", "");
 												class146.method3876(6);
 												return;
@@ -744,7 +744,7 @@ public class class171 {
 											var10 = Login.loginBoxX + 180;
 											var11 = 276;
 											if (var19 == 1 && var29 >= var10 - 75 && var29 <= var10 + 75 && var30 >= var11 - 20 && var30 <= var11 + 20) {
-												class114.method3540("https://oldschool.runescape.com/launcher");
+												class114.openURL("https://oldschool.runescape.com/launcher");
 											}
 
 											var10 = Login.loginBoxX + 180;

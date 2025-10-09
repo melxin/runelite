@@ -189,7 +189,7 @@ public class AsyncRestClient {
 		Client.packetWriter.field1294 = 0;
 		Client.rebootTimer = 0;
 		Client.logoutTimer = 0;
-		Client.field576.method8228();
+		Client.hintArrow.method8228();
 		AbstractUserComparator.method10062();
 		class40.method771(0);
 		Messages.Messages_channels.clear();

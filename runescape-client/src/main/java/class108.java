@@ -141,16 +141,16 @@ public class class108 {
 		garbageValue = "502822611"
 	)
 	void method3444(Buffer var1) {
-		this.field1433 = var1.method11575();
-		this.field1446 = var1.method11575();
-		this.field1428 = var1.method11575();
-		this.field1430 = var1.method11575();
+		this.field1433 = var1.readInt();
+		this.field1446 = var1.readInt();
+		this.field1428 = var1.readInt();
+		this.field1430 = var1.readInt();
 		if (this.field1430 < 0) {
 			this.field1430 = ~this.field1430;
 			this.field1453 = true;
 		}
 
-		int var2 = var1.method11575();
+		int var2 = var1.readInt();
 		this.field1444 = new byte[var2][];
 
 		for (int var3 = 0; var3 < var2; ++var3) {
@@ -636,7 +636,7 @@ public class class108 {
 		garbageValue = "0"
 	)
 	static Widget method3454(Widget var0) {
-		int var2 = MouseRecorder.method2181(var0);
+		int var2 = MouseRecorder.getWidgetFlags(var0);
 		int var1 = var2 >> 17 & 7;
 		int var3 = var1;
 		if (var1 == 0) {

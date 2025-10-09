@@ -52,9 +52,9 @@ public class HttpRequestTask implements Callable {
 	static void method285(int var0, int var1, int var2, int var3) {
 		PacketBufferNode var4 = HorizontalAlignment.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(18);
-		var4.packetBuffer.writeShortAddLE(var1 + class547.topLevelWorldView.baseY);
+		var4.packetBuffer.writeShortAdd(var1 + class547.topLevelWorldView.baseY);
 		var4.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
-		var4.packetBuffer.writeShortLE(var0 + class547.topLevelWorldView.baseX);
+		var4.packetBuffer.writeShortAddLE(var0 + class547.topLevelWorldView.baseX);
 		var4.packetBuffer.writeByte(var2);
 		var4.packetBuffer.writeByte(var3);
 		var4.packetBuffer.writeShort(Client.camAngleY);
@@ -107,13 +107,13 @@ public class HttpRequestTask implements Callable {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPLOCU, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeShortAdd(ChatChannel.field803);
-				var15.packetBuffer.writeIntME(HealthBarUpdate.field1098);
+				var15.packetBuffer.writeShortLE(ChatChannel.field803);
+				var15.packetBuffer.writeIntLE(HealthBarUpdate.field1098);
 				var15.packetBuffer.writeShort(var0 + var11);
-				var15.packetBuffer.writeShortLE(class204.Players_count);
+				var15.packetBuffer.writeShortAddLE(class204.Players_count);
 				var15.packetBuffer.writeShort(var3);
 				var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-				var15.packetBuffer.writeShortLE(var12 + var1);
+				var15.packetBuffer.writeShortAddLE(var12 + var1);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 2) {
 				Client.mouseCrossX = var8;
@@ -123,13 +123,13 @@ public class HttpRequestTask implements Callable {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPLOCT, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeShortAddLE(var3);
-				var15.packetBuffer.writeShortLE(var0 + var11);
+				var15.packetBuffer.writeShortAdd(var3);
+				var15.packetBuffer.writeShortAddLE(var0 + var11);
 				var15.packetBuffer.writeShort(Client.selectedSpellChildIndex);
-				var15.packetBuffer.writeShortAddLE(var12 + var1);
-				var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-				var15.packetBuffer.writeIntME(class142.selectedSpellWidget);
-				var15.packetBuffer.writeShortLE(Client.selectedSpellItemId);
+				var15.packetBuffer.writeShortAdd(var12 + var1);
+				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeIntLE(class142.selectedSpellWidget);
+				var15.packetBuffer.writeShortAddLE(Client.selectedSpellItemId);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 3) {
 				Client.mouseCrossX = var8;
@@ -139,9 +139,9 @@ public class HttpRequestTask implements Callable {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPLOC1, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeShortLE(var0 + var11);
-				var15.packetBuffer.writeShortLE(var3);
-				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeShortAddLE(var0 + var11);
+				var15.packetBuffer.writeShortAddLE(var3);
+				var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 				var15.packetBuffer.writeShort(var12 + var1);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 4) {
@@ -152,9 +152,9 @@ public class HttpRequestTask implements Callable {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPLOC2, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeShortAdd(var3);
+				var15.packetBuffer.writeShortLE(var3);
 				var15.packetBuffer.writeShort(var12 + var1);
-				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 				var15.packetBuffer.writeShort(var0 + var11);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 5) {
@@ -165,10 +165,10 @@ public class HttpRequestTask implements Callable {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPLOC3, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeShortAddLE(var0 + var11);
-				var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-				var15.packetBuffer.writeShortAddLE(var3);
-				var15.packetBuffer.writeShortLE(var12 + var1);
+				var15.packetBuffer.writeShortAdd(var0 + var11);
+				var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeShortAdd(var3);
+				var15.packetBuffer.writeShortAddLE(var12 + var1);
 				Client.packetWriter.addNode(var15);
 			} else if (var2 == 6) {
 				Client.mouseCrossX = var8;
@@ -178,10 +178,10 @@ public class HttpRequestTask implements Callable {
 				Client.destinationX = var0;
 				Client.destinationY = var1;
 				var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPLOC4, Client.packetWriter.isaacCipher);
-				var15.packetBuffer.writeShortLE(var3);
-				var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-				var15.packetBuffer.writeShortAdd(var0 + var11);
-				var15.packetBuffer.writeShortAdd(var12 + var1);
+				var15.packetBuffer.writeShortAddLE(var3);
+				var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+				var15.packetBuffer.writeShortLE(var0 + var11);
+				var15.packetBuffer.writeShortLE(var12 + var1);
 				Client.packetWriter.addNode(var15);
 			} else {
 				PacketBufferNode var18;
@@ -196,11 +196,11 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPNPCU, Client.packetWriter.isaacCipher);
-						var18.packetBuffer.writeShortLE(class204.Players_count);
-						var18.packetBuffer.writeShortAddLE(var3);
-						var18.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var18.packetBuffer.writeShortAddLE(class204.Players_count);
+						var18.packetBuffer.writeShortAdd(var3);
+						var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var18.packetBuffer.writeInt(HealthBarUpdate.field1098);
-						var18.packetBuffer.writeShortAddLE(ChatChannel.field803);
+						var18.packetBuffer.writeShortAdd(ChatChannel.field803);
 						Client.packetWriter.addNode(var18);
 					}
 				} else if (var2 == 8) {
@@ -213,9 +213,9 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPNPCT, Client.packetWriter.isaacCipher);
-						var18.packetBuffer.writeIntLE(class142.selectedSpellWidget);
-						var18.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
-						var18.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var18.packetBuffer.writeIntIME(class142.selectedSpellWidget);
+						var18.packetBuffer.writeShortLE(Client.selectedSpellChildIndex);
+						var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var18.packetBuffer.writeShort(var3);
 						var18.packetBuffer.writeShort(Client.selectedSpellItemId);
 						Client.packetWriter.addNode(var18);
@@ -231,7 +231,7 @@ public class HttpRequestTask implements Callable {
 						Client.destinationY = var1;
 						var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPNPC1, Client.packetWriter.isaacCipher);
 						var18.packetBuffer.writeShort(var3);
-						var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var18.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						Client.packetWriter.addNode(var18);
 					}
 				} else if (var2 == 10) {
@@ -245,7 +245,7 @@ public class HttpRequestTask implements Callable {
 						Client.destinationY = var1;
 						var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPNPC2, Client.packetWriter.isaacCipher);
 						var18.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var18.packetBuffer.writeShortLE(var3);
+						var18.packetBuffer.writeShortAddLE(var3);
 						Client.packetWriter.addNode(var18);
 					}
 				} else if (var2 == 11) {
@@ -258,8 +258,8 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPNPC3, Client.packetWriter.isaacCipher);
-						var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var18.packetBuffer.writeShortAdd(var3);
+						var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var18.packetBuffer.writeShortLE(var3);
 						Client.packetWriter.addNode(var18);
 					}
 				} else if (var2 == 12) {
@@ -272,8 +272,8 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPNPC4, Client.packetWriter.isaacCipher);
-						var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var18.packetBuffer.writeShortAddLE(var3);
+						var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var18.packetBuffer.writeShortAdd(var3);
 						Client.packetWriter.addNode(var18);
 					}
 				} else if (var2 == 13) {
@@ -286,8 +286,8 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPNPC5, Client.packetWriter.isaacCipher);
-						var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var18.packetBuffer.writeShortAdd(var3);
+						var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var18.packetBuffer.writeShortLE(var3);
 						Client.packetWriter.addNode(var18);
 					}
 				} else {
@@ -306,7 +306,7 @@ public class HttpRequestTask implements Callable {
 							var18.packetBuffer.writeShort(class204.Players_count);
 							var18.packetBuffer.writeShort(var3);
 							var18.packetBuffer.writeShort(ChatChannel.field803);
-							var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+							var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 							Client.packetWriter.addNode(var18);
 						}
 					} else if (var2 == 15) {
@@ -319,9 +319,9 @@ public class HttpRequestTask implements Callable {
 							Client.destinationX = var0;
 							Client.destinationY = var1;
 							var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYERT, Client.packetWriter.isaacCipher);
-							var18.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-							var18.packetBuffer.writeShortAdd(Client.selectedSpellItemId);
-							var18.packetBuffer.writeShortAddLE(var3);
+							var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+							var18.packetBuffer.writeShortLE(Client.selectedSpellItemId);
+							var18.packetBuffer.writeShortAdd(var3);
 							var18.packetBuffer.writeInt(class142.selectedSpellWidget);
 							var18.packetBuffer.writeShort(Client.selectedSpellChildIndex);
 							Client.packetWriter.addNode(var18);
@@ -335,12 +335,12 @@ public class HttpRequestTask implements Callable {
 						Client.destinationY = var1;
 						var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPOBJU, Client.packetWriter.isaacCipher);
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeIntLE(HealthBarUpdate.field1098);
-						var15.packetBuffer.writeShortLE(ChatChannel.field803);
-						var15.packetBuffer.writeShortAdd(class204.Players_count);
+						var15.packetBuffer.writeIntIME(HealthBarUpdate.field1098);
+						var15.packetBuffer.writeShortAddLE(ChatChannel.field803);
+						var15.packetBuffer.writeShortLE(class204.Players_count);
 						var15.packetBuffer.writeShort(var0 + var11);
-						var15.packetBuffer.writeShortLE(var3);
-						var15.packetBuffer.writeShortAdd(var12 + var1);
+						var15.packetBuffer.writeShortAddLE(var3);
+						var15.packetBuffer.writeShortLE(var12 + var1);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 17) {
 						Client.mouseCrossX = var8;
@@ -350,13 +350,13 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPOBJT, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
-						var15.packetBuffer.writeShortAdd(var3);
-						var15.packetBuffer.writeIntME(class142.selectedSpellWidget);
+						var15.packetBuffer.writeShortLE(Client.selectedSpellChildIndex);
+						var15.packetBuffer.writeShortLE(var3);
+						var15.packetBuffer.writeIntLE(class142.selectedSpellWidget);
 						var15.packetBuffer.writeShort(var12 + var1);
-						var15.packetBuffer.writeShortLE(Client.selectedSpellItemId);
-						var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeShortAdd(var0 + var11);
+						var15.packetBuffer.writeShortAddLE(Client.selectedSpellItemId);
+						var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortLE(var0 + var11);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 18) {
 						Client.mouseCrossX = var8;
@@ -366,9 +366,9 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPOBJ1, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeShortAddLE(var12 + var1);
-						var15.packetBuffer.writeShortAdd(var0 + var11);
+						var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortAdd(var12 + var1);
+						var15.packetBuffer.writeShortLE(var0 + var11);
 						var15.packetBuffer.writeShort(var3);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 19) {
@@ -379,10 +379,10 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPOBJ2, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeShortAdd(var12 + var1);
+						var15.packetBuffer.writeShortLE(var12 + var1);
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 						var15.packetBuffer.writeShort(var3);
-						var15.packetBuffer.writeShortAdd(var0 + var11);
+						var15.packetBuffer.writeShortLE(var0 + var11);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 20) {
 						Client.mouseCrossX = var8;
@@ -393,8 +393,8 @@ public class HttpRequestTask implements Callable {
 						Client.destinationY = var1;
 						var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPOBJ3, Client.packetWriter.isaacCipher);
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeShortAddLE(var12 + var1);
-						var15.packetBuffer.writeShortAdd(var3);
+						var15.packetBuffer.writeShortAdd(var12 + var1);
+						var15.packetBuffer.writeShortLE(var3);
 						var15.packetBuffer.writeShort(var0 + var11);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 21) {
@@ -405,9 +405,9 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPOBJ4, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeShortAddLE(var12 + var1);
-						var15.packetBuffer.writeShortAddLE(var3);
+						var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+						var15.packetBuffer.writeShortAdd(var12 + var1);
+						var15.packetBuffer.writeShortAdd(var3);
 						var15.packetBuffer.writeShort(var0 + var11);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 22) {
@@ -418,10 +418,10 @@ public class HttpRequestTask implements Callable {
 						Client.destinationX = var0;
 						Client.destinationY = var1;
 						var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPOBJ5, Client.packetWriter.isaacCipher);
-						var15.packetBuffer.writeShortAddLE(var0 + var11);
+						var15.packetBuffer.writeShortAdd(var0 + var11);
 						var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-						var15.packetBuffer.writeShortAddLE(var3);
-						var15.packetBuffer.writeShortAddLE(var12 + var1);
+						var15.packetBuffer.writeShortAdd(var3);
+						var15.packetBuffer.writeShortAdd(var12 + var1);
 						Client.packetWriter.addNode(var15);
 					} else if (var2 == 23) {
 						if (Client.isMenuOpen) {
@@ -451,7 +451,7 @@ public class HttpRequestTask implements Callable {
 								var23 = class35.widgetDefinition.getWidgetChild(var1, var0);
 								if (var23 != null) {
 									class30.method470();
-									class572.method11201(var1, var0, AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.method2181(var23)), var4);
+									class572.method11201(var1, var0, AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.getWidgetFlags(var23)), var4);
 									Client.isItemSelected = 0;
 									Client.selectedSpellActionName = ClientPreferences.Widget_getSpellActionName(var23);
 									if (Client.selectedSpellActionName == null) {
@@ -526,7 +526,7 @@ public class HttpRequestTask implements Callable {
 										Client.destinationY = var1;
 										var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER2, Client.packetWriter.isaacCipher);
 										var18.packetBuffer.writeShort(var3);
-										var18.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var18);
 									}
 								} else if (var2 == 46) {
@@ -539,7 +539,7 @@ public class HttpRequestTask implements Callable {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER3, Client.packetWriter.isaacCipher);
-										var18.packetBuffer.writeShortAdd(var3);
+										var18.packetBuffer.writeShortLE(var3);
 										var18.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var18);
 									}
@@ -554,7 +554,7 @@ public class HttpRequestTask implements Callable {
 										Client.destinationY = var1;
 										var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
 										var18.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-										var18.packetBuffer.writeShortAddLE(var3);
+										var18.packetBuffer.writeShortAdd(var3);
 										Client.packetWriter.addNode(var18);
 									}
 								} else if (var2 == 48) {
@@ -581,8 +581,8 @@ public class HttpRequestTask implements Callable {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
-										var18.packetBuffer.writeShortAddLE(var3);
-										var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var18.packetBuffer.writeShortAdd(var3);
+										var18.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var18);
 									}
 								} else if (var2 == 50) {
@@ -595,7 +595,7 @@ public class HttpRequestTask implements Callable {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
-										var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var18.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										var18.packetBuffer.writeShort(var3);
 										Client.packetWriter.addNode(var18);
 									}
@@ -609,8 +609,8 @@ public class HttpRequestTask implements Callable {
 										Client.destinationX = var0;
 										Client.destinationY = var1;
 										var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER8, Client.packetWriter.isaacCipher);
-										var18.packetBuffer.writeShortAddLE(var3);
-										var18.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+										var18.packetBuffer.writeShortAdd(var3);
+										var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 										Client.packetWriter.addNode(var18);
 									}
 								} else {
@@ -629,12 +629,12 @@ public class HttpRequestTask implements Callable {
 													}
 
 													var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.IF_BUTTONT, Client.packetWriter.isaacCipher);
-													var18.packetBuffer.writeShortAdd(var0);
+													var18.packetBuffer.writeShortLE(var0);
 													var18.packetBuffer.writeShort(Client.selectedSpellChildIndex);
 													var18.packetBuffer.writeInt(class142.selectedSpellWidget);
-													var18.packetBuffer.writeIntME(var1);
-													var18.packetBuffer.writeShortAddLE(Client.selectedSpellItemId);
-													var18.packetBuffer.writeShortLE(var4);
+													var18.packetBuffer.writeIntLE(var1);
+													var18.packetBuffer.writeShortAdd(Client.selectedSpellItemId);
+													var18.packetBuffer.writeShortAddLE(var4);
 													Client.packetWriter.addNode(var18);
 												}
 												break label666;
@@ -665,7 +665,7 @@ public class HttpRequestTask implements Callable {
 													Client.destinationY = var1;
 													var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPWORLDENTITYU, Client.packetWriter.isaacCipher);
 													var18.packetBuffer.writeShort(var3);
-													var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+													var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 													var18.packetBuffer.writeShort(class204.Players_count);
 													var18.packetBuffer.writeShort(ChatChannel.field803);
 													var18.packetBuffer.writeInt(HealthBarUpdate.field1098);
@@ -684,11 +684,11 @@ public class HttpRequestTask implements Callable {
 													Client.destinationX = var0;
 													Client.destinationY = var1;
 													var18 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPWORLDENTITYT, Client.packetWriter.isaacCipher);
-													var18.packetBuffer.writeShortAddLE(Client.selectedSpellItemId);
-													var18.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-													var18.packetBuffer.writeShortAdd(Client.selectedSpellChildIndex);
-													var18.packetBuffer.writeShortAdd(var3);
-													var18.packetBuffer.writeIntME(class142.selectedSpellWidget);
+													var18.packetBuffer.writeShortAdd(Client.selectedSpellItemId);
+													var18.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+													var18.packetBuffer.writeShortLE(Client.selectedSpellChildIndex);
+													var18.packetBuffer.writeShortLE(var3);
+													var18.packetBuffer.writeIntLE(class142.selectedSpellWidget);
 													Client.packetWriter.addNode(var18);
 												}
 												break label666;
@@ -703,7 +703,7 @@ public class HttpRequestTask implements Callable {
 												Client.destinationY = var1;
 												var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPWORLDENTITY1, Client.packetWriter.isaacCipher);
 												var15.packetBuffer.writeByte(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
-												var15.packetBuffer.writeShortAdd(var3);
+												var15.packetBuffer.writeShortLE(var3);
 												Client.packetWriter.addNode(var15);
 												break label666;
 											}
@@ -717,7 +717,7 @@ public class HttpRequestTask implements Callable {
 												Client.destinationY = var1;
 												var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPWORLDENTITY2, Client.packetWriter.isaacCipher);
 												var15.packetBuffer.writeShort(var3);
-												var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label666;
 											}
@@ -730,8 +730,8 @@ public class HttpRequestTask implements Callable {
 												Client.destinationX = var0;
 												Client.destinationY = var1;
 												var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPWORLDENTITY3, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeShortLE(var3);
-												var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeShortAddLE(var3);
+												var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label666;
 											}
@@ -744,8 +744,8 @@ public class HttpRequestTask implements Callable {
 												Client.destinationX = var0;
 												Client.destinationY = var1;
 												var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPWORLDENTITY4, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeShortLE(var3);
-												var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeShortAddLE(var3);
+												var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label666;
 											}
@@ -759,7 +759,7 @@ public class HttpRequestTask implements Callable {
 												Client.destinationY = var1;
 												var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPWORLDENTITY5, Client.packetWriter.isaacCipher);
 												var15.packetBuffer.writeShort(var3);
-												var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label666;
 											}
@@ -772,10 +772,10 @@ public class HttpRequestTask implements Callable {
 												Client.destinationX = var0;
 												Client.destinationY = var1;
 												var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPLOC5, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeShortAdd(var3);
-												var15.packetBuffer.writeShortAddLE(var12 + var1);
-												var15.packetBuffer.writeShortAdd(var0 + var11);
-												var15.packetBuffer.writeByteNeg(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
+												var15.packetBuffer.writeShortLE(var3);
+												var15.packetBuffer.writeShortAdd(var12 + var1);
+												var15.packetBuffer.writeShortLE(var0 + var11);
+												var15.packetBuffer.writeByteAdd(Client.indexCheck.isValidIndexInRange(82) ? 1 : 0);
 												Client.packetWriter.addNode(var15);
 												break label666;
 											}
@@ -786,7 +786,7 @@ public class HttpRequestTask implements Callable {
 												Client.mouseCrossColor = 2;
 												Client.mouseCrossState = 0;
 												var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPLOCE, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeShortAdd(var3);
+												var15.packetBuffer.writeShortLE(var3);
 												Client.packetWriter.addNode(var15);
 												break label666;
 											}
@@ -805,7 +805,7 @@ public class HttpRequestTask implements Callable {
 
 													if (var24 != null) {
 														var17 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPNPCE, Client.packetWriter.isaacCipher);
-														var17.packetBuffer.writeShortAddLE(var24.id);
+														var17.packetBuffer.writeShortAdd(var24.id);
 														Client.packetWriter.addNode(var17);
 													}
 												}
@@ -818,8 +818,8 @@ public class HttpRequestTask implements Callable {
 												Client.mouseCrossColor = 2;
 												Client.mouseCrossState = 0;
 												var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPOBJE, Client.packetWriter.isaacCipher);
-												var15.packetBuffer.writeShortAddLE(var0 + var11);
-												var15.packetBuffer.writeShortAdd(var12 + var1);
+												var15.packetBuffer.writeShortAdd(var0 + var11);
+												var15.packetBuffer.writeShortLE(var12 + var1);
 												var15.packetBuffer.writeShort(var3);
 												Client.packetWriter.addNode(var15);
 												break label666;
@@ -833,7 +833,7 @@ public class HttpRequestTask implements Callable {
 														Client.mouseCrossColor = 2;
 														Client.mouseCrossState = 0;
 														var15 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPWORLDENTITYE, Client.packetWriter.isaacCipher);
-														var15.packetBuffer.writeShortAddLE(var3);
+														var15.packetBuffer.writeShortAdd(var3);
 														Client.packetWriter.addNode(var15);
 													}
 												} else {

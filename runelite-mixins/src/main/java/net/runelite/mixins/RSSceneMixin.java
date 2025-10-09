@@ -120,7 +120,53 @@ public abstract class RSSceneMixin implements RSScene
 	@Inject
 	private static byte[][][] rl$tileShapes;
 
+	@Copy("draw")
 	@Replace("draw")
+	void copy$drawScene(int cameraX, int cameraY, int cameraZ, int cameraPitch, int cameraYaw, int plane, int entityX, int entityY, boolean isCameraLocked)
+	{
+		final boolean isGpu = client.isGpu();
+		final boolean checkClick = this.isCheckClick();
+		final boolean menuOpen = client.isMenuOpen();
+
+		if (!menuOpen && !checkClick)
+		{
+			this.menuOpen(false);
+		}
+
+		final DrawCallbacks drawCallbacks = client.getDrawCallbacks();
+		if (drawCallbacks != null)
+		{
+			viewportColor = 0;
+			drawCallbacks.drawScene(cameraX, cameraY, cameraZ, cameraPitch, cameraYaw, plane);
+		}
+
+		if (!isGpu && skyboxColor != 0)
+		{
+			client.rasterizerFillRectangle(
+				client.getViewportXOffset(),
+				client.getViewportYOffset(),
+				client.getViewportWidth(),
+				client.getViewportHeight(),
+				skyboxColor
+			);
+		}
+
+		copy$drawScene(cameraX, cameraY, cameraZ, cameraPitch, cameraYaw, plane, entityX, entityY, isCameraLocked);
+
+		if (!isGpu && (client.getOculusOrbState() != 0 && !client.getComplianceValue("orbInteraction")))
+		{
+			client.setEntitiesAtMouseCount(0);
+		}
+
+		//this.processWalkClick();
+		client.getCallbacks().drawScene();
+		if (client.getDrawCallbacks() != null)
+		{
+			client.getDrawCallbacks().postDrawScene();
+		}
+	}
+
+	//@Replace("draw")
 	void drawScene(int cameraX, int cameraY, int cameraZ, int cameraPitch, int cameraYaw, int plane, int entityX, int entityY, boolean isCameraLocked)
 	{
 		int maxX = getMaxX();
@@ -179,8 +225,8 @@ public abstract class RSSceneMixin implements RSScene
 		this.updateVisibleTilesAndOccluders((RSProjection) projection, isCameraLocked);
 	}
 
-	@Replace("updateVisibleTilesAndOccluders")
-	@Inject
+	//@Replace("updateVisibleTilesAndOccluders")
+	//@Inject
 	void updateVisibleTilesAndOccluders(RSProjection intProjection, boolean isCameraLocked)
 	{
 		final boolean isGpu = client.isGpu();

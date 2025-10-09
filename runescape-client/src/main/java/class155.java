@@ -48,8 +48,8 @@ public class class155 extends class150 {
 		garbageValue = "1804820754"
 	)
 	void vmethod4162(Buffer var1) {
-		this.field1807 = var1.method11575();
-		this.field1806 = var1.method11575();
+		this.field1807 = var1.readInt();
+		this.field1806 = var1.readInt();
 		this.field1808 = var1.readUnsignedByte();
 		this.field1805 = var1.readUnsignedByte();
 	}

@@ -1235,7 +1235,7 @@ public class WorldMapRegion {
 		for (var20 = 0; var20 < class547.topLevelWorldView.field1170.method9887(); ++var20) {
 			WorldEntity var30 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)class547.topLevelWorldView.field1170.method9886(var20));
 			if (var30 != null) {
-				AbstractWorldMapData.method6806(var30.field5483, var26, var5, var6, var7);
+				AbstractWorldMapData.method6806(var30.worldView, var26, var5, var6, var7);
 			}
 		}
 
@@ -1276,7 +1276,7 @@ public class WorldMapRegion {
 		for (var8 = 0; var8 < class547.topLevelWorldView.field1170.method9887(); ++var8) {
 			WorldEntity var31 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)class547.topLevelWorldView.field1170.method9886(var8));
 			if (var31 != null) {
-				var31.field5483.scene.setViewportWalking();
+				var31.worldView.scene.setViewportWalking();
 			}
 		}
 

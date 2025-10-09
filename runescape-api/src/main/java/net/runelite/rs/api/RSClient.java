@@ -798,41 +798,44 @@ public interface RSClient extends RSGameEngine, Client
 	@Import("runScriptLogic")
 	void runScriptLogic(RSScriptEvent ev, RSScript s, int ex, int var2);
 
-	@Import("hintArrowType")
-	void setHintArrowTargetType(int value);
+	@Import("hintArrow")
+	RSHintArrow getHintArrow();
 
-	@Import("hintArrowType")
-	int getHintArrowTargetType();
+	//@Import("hintArrowType")
+	//void setHintArrowTargetType(int value);
 
-	@Import("hintArrowX")
-	void setHintArrowX(int value);
+	//@Import("hintArrowType")
+	//int getHintArrowTargetType();
 
-	@Import("hintArrowX")
-	int getHintArrowX();
+	//@Import("hintArrowX")
+	//void setHintArrowX(int value);
 
-	@Import("hintArrowY")
-	void setHintArrowY(int value);
+	//@Import("hintArrowX")
+	//int getHintArrowX();
 
-	@Import("hintArrowY")
-	int getHintArrowY();
+	//@Import("hintArrowY")
+	//void setHintArrowY(int value);
 
-	@Import("hintArrowSubX")
-	void setHintArrowOffsetX(int value);
+	//@Import("hintArrowY")
+	//int getHintArrowY();
 
-	@Import("hintArrowSubY")
-	void setHintArrowOffsetY(int value);
+	//@Import("hintArrowSubX")
+	//void setHintArrowOffsetX(int value);
 
-	@Import("hintArrowNpcIndex")
-	void setHintArrowNpcTargetIdx(int value);
+	//@Import("hintArrowSubY")
+	//void setHintArrowOffsetY(int value);
 
-	@Import("hintArrowNpcIndex")
-	int getHintArrowNpcTargetIdx();
+	//@Import("hintArrowNpcIndex")
+	//void setHintArrowNpcTargetIdx(int value);
 
-	@Import("hintArrowPlayerIndex")
-	void setHintArrowPlayerTargetIdx(int value);
+	//@Import("hintArrowNpcIndex")
+	//int getHintArrowNpcTargetIdx();
 
-	@Import("hintArrowPlayerIndex")
-	int getHintArrowPlayerTargetIdx();
+	//@Import("hintArrowPlayerIndex")
+	//void setHintArrowPlayerTargetIdx(int value);
+
+	//@Import("hintArrowPlayerIndex")
+	//int getHintArrowPlayerTargetIdx();
 
 	@Import("isInInstance")
 	@Override

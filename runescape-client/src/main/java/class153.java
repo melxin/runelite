@@ -42,7 +42,7 @@ public class class153 {
 	)
 	void method3923(Buffer var1) {
 		this.field1781 = var1.readLong();
-		this.field1790 = var1.method11575();
+		this.field1790 = var1.readInt();
 
 		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
 			Object var3;

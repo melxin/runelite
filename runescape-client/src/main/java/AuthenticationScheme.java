@@ -18,7 +18,8 @@ public enum AuthenticationScheme implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Lfp;"
 	)
-	field1597(1, 1),
+	@Export("USERNAME_PASSWORD_REMEMBER")
+	USERNAME_PASSWORD_REMEMBER(1, 1),
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "Lfp;"
@@ -29,7 +30,8 @@ public enum AuthenticationScheme implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Lfp;"
 	)
-	field1599(0, 3),
+	@Export("USERNAME_PASSWORD")
+	USERNAME_PASSWORD(0, 3),
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "Lfp;"

@@ -53,12 +53,12 @@ public class class158 extends class166 {
 		garbageValue = "-441146242"
 	)
 	static final void method3965(int var0, int var1) {
-		if (Client.field576.method8230() == 4) {
-			WorldEntity var2 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)Client.field576.method8231());
+		if (Client.hintArrow.method8230() == 4) {
+			WorldEntity var2 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)Client.hintArrow.method8231());
 			if (var2 != null) {
-				int var3 = var2.field5483.sizeX * 64;
-				int var4 = var2.field5483.sizeY * 64;
-				class203.method4563(var2.field5483, var3, var4, Client.field576.method8246() * 2, 0);
+				int var3 = var2.worldView.sizeX * 64;
+				int var4 = var2.worldView.sizeY * 64;
+				class203.method4563(var2.worldView, var3, var4, Client.hintArrow.method8246() * 2, 0);
 				if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
 					ArchiveDisk.headIconHintSprites[0].drawTransBgAt(var0 + Client.viewportTempX - 12, Client.viewportTempY + var1 - 28);
 				}
