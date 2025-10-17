@@ -2852,4 +2852,19 @@ public interface Client extends OAuthApi, GameEngine
 	 * @return the newly created SceneTilePaint
 	 */
 	SceneTilePaint createSceneTilePaint(int swColor, int seColor, int neColor, int nwColor, int texture, int minimapRgb, boolean flatShade);
+
+	/**
+	 * Get the entity that the camera is focused on
+	 *
+	 * @return
+	 */
+	CameraFocusableEntity getCameraFocusEntity();
+
+	/**
+	 * Find the worldview a given worldpoint belongs in
+	 * @param point
+	 * @return
+	 */
+	@Nonnull
+	WorldView findWorldViewFromWorldPoint(WorldPoint point);
 }

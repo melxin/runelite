@@ -41,6 +41,7 @@ import net.runelite.api.Scene;
 import net.runelite.api.Tile;
 import net.runelite.api.TileObject;
 import net.runelite.api.WallObject;
+import net.runelite.api.WorldView;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.events.InteractingChanged;
@@ -149,10 +150,11 @@ public class InteractHighlightPlugin extends Plugin
 			case GAME_OBJECT_FOURTH_OPTION:
 			case GAME_OBJECT_FIFTH_OPTION:
 			{
+				int worldId = menuOptionClicked.getMenuEntry().getWorldViewId();
 				int x = menuOptionClicked.getParam0();
 				int y = menuOptionClicked.getParam1();
 				int id = menuOptionClicked.getId();
-				interactedObject = findTileObject(x, y, id);
+				interactedObject = findTileObject(worldId, x, y, id);
 				interactedNpc = null;
 				clickTick = client.getTickCount();
 				gameCycle = client.getGameCycle();
@@ -197,11 +199,12 @@ public class InteractHighlightPlugin extends Plugin
 		}
 	}
 
-	TileObject findTileObject(int x, int y, int id)
+	TileObject findTileObject(int worldId, int x, int y, int id)
 	{
-		Scene scene = client.getScene();
+		WorldView wv = client.getWorldView(worldId);
+		Scene scene = wv.getScene();
 		Tile[][][] tiles = scene.getTiles();
-		Tile tile = tiles[client.getPlane()][x][y];
+		Tile tile = tiles[wv.getPlane()][x][y];
 		if (tile != null)
 		{
 			for (GameObject gameObject : tile.getGameObjects())
