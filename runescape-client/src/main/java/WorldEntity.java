@@ -154,11 +154,11 @@ public class WorldEntity extends Node implements CameraFocusableEntity {
 		this.worldView.scene.Scene_plane = this.worldView.plane;
 		if (var1) {
 			this.worldView.scene.field2716 = -1200;
-			this.worldView.scene.field2718 = 0.01F;
+			this.worldView.scene.Scene_scale = 0.01F;
 			this.worldView.scene.modelColorOverride.method5729((byte)38, (byte)2, (byte)20, (byte)127);
 		} else {
 			this.worldView.scene.field2716 = 0;
-			this.worldView.scene.field2718 = 1.0F;
+			this.worldView.scene.Scene_scale = 1.0F;
 			this.worldView.scene.modelColorOverride.method5728();
 		}
 
@@ -170,7 +170,7 @@ public class WorldEntity extends Node implements CameraFocusableEntity {
 		garbageValue = "-18801"
 	)
 	public boolean method10243() {
-		return 0.01F == this.worldView.scene.field2718;
+		return 0.01F == this.worldView.scene.Scene_scale;
 	}
 
 	@ObfuscatedName("ah")

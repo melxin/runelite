@@ -92,6 +92,9 @@ public interface RSScene extends Scene
 	byte[][][] getTileShapes();
 	void setTileShapes(byte[][][] tileShapes);
 
+	@Import("Scene_scale")
+	float getSceneScale();
+
 	@Import("baseX")
 	@Override
 	int getBaseX();

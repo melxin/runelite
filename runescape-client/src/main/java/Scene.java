@@ -89,7 +89,8 @@ public class Scene extends Renderable {
 	@ObfuscatedName("bq")
 	public int field2717;
 	@ObfuscatedName("bo")
-	public float field2718;
+	@Export("Scene_scale")
+	public float Scene_scale;
 	@ObfuscatedName("bx")
 	@Export("Scene_baseX")
 	int Scene_baseX;
@@ -300,7 +301,7 @@ public class Scene extends Renderable {
 		this.field2715 = 0;
 		this.field2716 = 0;
 		this.field2717 = 0;
-		this.field2718 = 1.0F;
+		this.Scene_scale = 1.0F;
 		this.Scene_baseX = -1;
 		this.Scene_baseY = -1;
 		this.field2714 = -1.0F;
@@ -2789,7 +2790,7 @@ public class Scene extends Renderable {
 		TransformationMatrix var21 = AbstractArchive.method8450();
 		var21.method9182(var20);
 		var21.method9181(this.field2690);
-		var15.method9211(1.0F, this.field2718, 1.0F, 1.0F);
+		var15.method9211(1.0F, this.Scene_scale, 1.0F, 1.0F);
 		var21.method9181(var15);
 		var15.method9182(var16);
 		var21.method9181(var15);

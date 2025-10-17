@@ -78,4 +78,24 @@ public abstract class RSWorldEntityMixin implements RSWorldEntity
 			return lp;
 		}
 	}
+
+	@Inject
+	@Override
+	public boolean isHiddenForOverlap()
+	{
+		return isDefaultScale((short) -18801);
+	}
+
+	@Inject
+	public boolean isDefaultScale(short var1)
+	{
+		if (0.01F == this.getWorldView().getScene().getSceneScale())
+		{
+			if (var1 >= 196)
+			{
+			}
+			return true;
+		}
+		return false;
+	}
 }
