@@ -11,7 +11,6 @@ public enum CameraViewMode implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Los;"
 	)
-	@Export("local")
 	field4430(0, 0),
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
