@@ -1,14 +1,17 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("os")
-public enum class381 implements Enum {
+@Implements("CameraViewMode")
+public enum CameraViewMode implements Enum {
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "Los;"
 	)
+	@Export("local")
 	field4430(0, 0),
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
@@ -25,15 +28,16 @@ public enum class381 implements Enum {
 	@ObfuscatedGetter(
 		intValue = 834976349
 	)
-	public final int field4428;
+	@Export("mode")
+	public final int mode;
 	@ObfuscatedName("ah")
 	@ObfuscatedGetter(
 		intValue = 1247562781
 	)
 	int field4429;
 
-	class381(int var3, int var4) {
-		this.field4428 = var3;
+	CameraViewMode(int var3, int var4) {
+		this.mode = var3;
 		this.field4429 = var4;
 	}
 

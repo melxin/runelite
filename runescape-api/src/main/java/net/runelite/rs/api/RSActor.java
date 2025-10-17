@@ -30,7 +30,7 @@ import net.runelite.api.WorldView;
 import net.runelite.mapping.Construct;
 import net.runelite.mapping.Import;
 
-public interface RSActor extends RSRenderable, Actor
+public interface RSActor extends RSRenderable, Actor, RSCameraFocusableEntity
 {
 	@Import("index")
 	int getId();

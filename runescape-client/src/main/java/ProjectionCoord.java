@@ -1,35 +1,37 @@
 import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("re")
-public class class450 {
+@Implements("ProjectionCoord")
+public class ProjectionCoord {
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "Lre;"
 	)
-	public static final class450 field5220;
+	public static final ProjectionCoord field5220;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "Lre;"
 	)
-	public static final class450 field5212;
+	public static final ProjectionCoord field5212;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "Lre;"
 	)
-	public static final class450 field5211;
+	public static final ProjectionCoord field5211;
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "Lre;"
 	)
-	public static final class450 field5213;
+	public static final ProjectionCoord field5213;
 	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "[Lre;"
 	)
-	static final class450[] field5214;
+	static final ProjectionCoord[] field5214;
 	@ObfuscatedName("af")
 	@ObfuscatedGetter(
 		intValue = -122179541
@@ -50,45 +52,48 @@ public class class450 {
 	@Export("scrollBarSprites")
 	static IndexedSprite[] scrollBarSprites;
 	@ObfuscatedName("aq")
-	public float field5216;
+	@Export("x")
+	public float x;
 	@ObfuscatedName("ac")
-	public float field5218;
+	@Export("z")
+	public float z;
 	@ObfuscatedName("aa")
-	public float field5219;
+	@Export("y")
+	public float y;
 
 	static {
-		field5220 = new class450(0.0F, 0.0F, 0.0F);
-		new class450(1.0F, 1.0F, 1.0F);
-		new class450(1.0F, 0.0F, 0.0F);
-		field5212 = new class450(0.0F, 1.0F, 0.0F);
-		new class450(0.0F, 0.0F, 1.0F);
-		new class450(1.0F, 0.0F, 0.0F);
-		new class450(-1.0F, 0.0F, 0.0F);
-		new class450(0.0F, 0.0F, 1.0F);
-		field5211 = new class450(0.0F, 0.0F, -1.0F);
-		new class450(0.0F, 1.0F, 0.0F);
-		field5213 = new class450(0.0F, -1.0F, 0.0F);
+		field5220 = new ProjectionCoord(0.0F, 0.0F, 0.0F);
+		new ProjectionCoord(1.0F, 1.0F, 1.0F);
+		new ProjectionCoord(1.0F, 0.0F, 0.0F);
+		field5212 = new ProjectionCoord(0.0F, 1.0F, 0.0F);
+		new ProjectionCoord(0.0F, 0.0F, 1.0F);
+		new ProjectionCoord(1.0F, 0.0F, 0.0F);
+		new ProjectionCoord(-1.0F, 0.0F, 0.0F);
+		new ProjectionCoord(0.0F, 0.0F, 1.0F);
+		field5211 = new ProjectionCoord(0.0F, 0.0F, -1.0F);
+		new ProjectionCoord(0.0F, 1.0F, 0.0F);
+		field5213 = new ProjectionCoord(0.0F, -1.0F, 0.0F);
 		field5210 = 0;
 		field5215 = 16;
-		field5214 = new class450[field5215];
+		field5214 = new ProjectionCoord[field5215];
 	}
 
-	public class450() {
+	public ProjectionCoord() {
 	}
 
-	class450(float var1, float var2, float var3) {
-		this.field5216 = var1;
-		this.field5218 = var2;
-		this.field5219 = var3;
+	ProjectionCoord(float var1, float var2, float var3) {
+		this.x = var1;
+		this.z = var2;
+		this.y = var3;
 	}
 
 	@ObfuscatedSignature(
 		descriptor = "(Lre;)V"
 	)
-	class450(class450 var1) {
-		this.field5216 = var1.field5216;
-		this.field5218 = var1.field5218;
-		this.field5219 = var1.field5219;
+	ProjectionCoord(ProjectionCoord var1) {
+		this.x = var1.x;
+		this.z = var1.z;
+		this.y = var1.y;
 	}
 
 	@ObfuscatedName("af")
@@ -96,7 +101,8 @@ public class class450 {
 		descriptor = "(I)V",
 		garbageValue = "-947600722"
 	)
-	public void method9065() {
+	@Export("release")
+	public void release() {
 		synchronized(field5214) {
 			if (field5210 < field5215) {
 				field5214[++field5210 - 1] = this;
@@ -111,9 +117,9 @@ public class class450 {
 		garbageValue = "-471208602"
 	)
 	public void method9066(float var1, float var2, float var3) {
-		this.field5216 = var1;
-		this.field5218 = var2;
-		this.field5219 = var3;
+		this.x = var1;
+		this.z = var2;
+		this.y = var3;
 	}
 
 	@ObfuscatedName("aq")
@@ -121,8 +127,8 @@ public class class450 {
 		descriptor = "(Lre;I)V",
 		garbageValue = "-1731222272"
 	)
-	void method9067(class450 var1) {
-		this.method9066(var1.field5216, var1.field5218, var1.field5219);
+	void method9067(ProjectionCoord var1) {
+		this.method9066(var1.x, var1.z, var1.y);
 	}
 
 	@ObfuscatedName("ac")
@@ -131,9 +137,9 @@ public class class450 {
 		garbageValue = "-3"
 	)
 	final void method9068() {
-		this.field5219 = 0.0F;
-		this.field5218 = 0.0F;
-		this.field5216 = 0.0F;
+		this.y = 0.0F;
+		this.z = 0.0F;
+		this.x = 0.0F;
 	}
 
 	@ObfuscatedName("aa")
@@ -141,8 +147,8 @@ public class class450 {
 		descriptor = "(Lre;B)Z",
 		garbageValue = "83"
 	)
-	boolean method9085(class450 var1) {
-		return var1.field5216 == this.field5216 && this.field5218 == var1.field5218 && var1.field5219 == this.field5219;
+	boolean method9085(ProjectionCoord var1) {
+		return var1.x == this.x && this.z == var1.z && var1.y == this.y;
 	}
 
 	@ObfuscatedName("ap")
@@ -152,9 +158,9 @@ public class class450 {
 	)
 	public final void method9070() {
 		float var1 = 1.0F / this.method9076();
-		this.field5216 *= var1;
-		this.field5218 *= var1;
-		this.field5219 *= var1;
+		this.x *= var1;
+		this.z *= var1;
+		this.y *= var1;
 	}
 
 	@ObfuscatedName("ad")
@@ -162,10 +168,10 @@ public class class450 {
 		descriptor = "(Lre;I)V",
 		garbageValue = "-2041581085"
 	)
-	final void method9064(class450 var1) {
-		this.field5216 += var1.field5216;
-		this.field5218 += var1.field5218;
-		this.field5219 += var1.field5219;
+	final void method9064(ProjectionCoord var1) {
+		this.x += var1.x;
+		this.z += var1.z;
+		this.y += var1.y;
 	}
 
 	@ObfuscatedName("av")
@@ -174,9 +180,9 @@ public class class450 {
 		garbageValue = "-712492383"
 	)
 	public final void method9072(float var1, float var2, float var3) {
-		this.field5216 += var1;
-		this.field5218 += var2;
-		this.field5219 += var3;
+		this.x += var1;
+		this.z += var2;
+		this.y += var3;
 	}
 
 	@ObfuscatedName("as")
@@ -184,10 +190,10 @@ public class class450 {
 		descriptor = "(Lre;I)V",
 		garbageValue = "1197334661"
 	)
-	public final void method9073(class450 var1) {
-		this.field5216 -= var1.field5216;
-		this.field5218 -= var1.field5218;
-		this.field5219 -= var1.field5219;
+	public final void method9073(ProjectionCoord var1) {
+		this.x -= var1.x;
+		this.z -= var1.z;
+		this.y -= var1.y;
 	}
 
 	@ObfuscatedName("ar")
@@ -195,8 +201,8 @@ public class class450 {
 		descriptor = "(Lre;I)F",
 		garbageValue = "478068504"
 	)
-	public final float method9074(class450 var1) {
-		return this.field5219 * var1.field5219 + this.field5216 * var1.field5216 + this.field5218 * var1.field5218;
+	public final float method9074(ProjectionCoord var1) {
+		return this.y * var1.y + this.x * var1.x + this.z * var1.z;
 	}
 
 	@ObfuscatedName("az")
@@ -204,8 +210,8 @@ public class class450 {
 		descriptor = "(Lre;S)V",
 		garbageValue = "-688"
 	)
-	final void method9075(class450 var1) {
-		this.method9066(this.field5218 * var1.field5219 - this.field5219 * var1.field5218, this.field5219 * var1.field5216 - var1.field5219 * this.field5216, var1.field5218 * this.field5216 - var1.field5216 * this.field5218);
+	final void method9075(ProjectionCoord var1) {
+		this.method9066(this.z * var1.y - this.y * var1.z, this.y * var1.x - var1.y * this.x, var1.z * this.x - var1.x * this.z);
 	}
 
 	@ObfuscatedName("au")
@@ -214,7 +220,7 @@ public class class450 {
 		garbageValue = "1667350538"
 	)
 	public final float method9076() {
-		return (float)Math.sqrt((double)(this.field5218 * this.field5218 + this.field5216 * this.field5216 + this.field5219 * this.field5219));
+		return (float)Math.sqrt((double)(this.z * this.z + this.x * this.x + this.y * this.y));
 	}
 
 	@ObfuscatedName("ak")
@@ -223,9 +229,9 @@ public class class450 {
 		garbageValue = "-97"
 	)
 	public final void method9096(float var1) {
-		this.field5216 *= var1;
-		this.field5218 *= var1;
-		this.field5219 *= var1;
+		this.x *= var1;
+		this.z *= var1;
+		this.y *= var1;
 	}
 
 	@ObfuscatedName("ao")
@@ -234,9 +240,9 @@ public class class450 {
 		garbageValue = "988704457"
 	)
 	public final void method9110(class451 var1) {
-		float var3 = this.field5216;
-		float var4 = this.field5218;
-		float var5 = this.field5219;
+		float var3 = this.x;
+		float var4 = this.z;
+		float var5 = this.y;
 		class451 var2;
 		synchronized(class451.field5228) {
 			if (class451.field5224 == 0) {
@@ -267,6 +273,6 @@ public class class450 {
 	}
 
 	public String toString() {
-		return this.field5216 + ", " + this.field5218 + ", " + this.field5219;
+		return this.x + ", " + this.z + ", " + this.y;
 	}
 }

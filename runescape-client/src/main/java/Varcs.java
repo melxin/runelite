@@ -384,7 +384,7 @@ public class Varcs {
 		descriptor = "(Ldm;III)Lre;",
 		garbageValue = "1079492693"
 	)
-	static class450 method3022(WorldView var0, int var1, int var2) {
+	static ProjectionCoord method3022(WorldView var0, int var1, int var2) {
 		if (var0 != null && class547.topLevelWorldView != var0) {
 			WorldEntity var3 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var0.id);
 			return var3 == null ? IndexCheck.method6169((float)var1, 0.0F, (float)var2) : var3.method10213(var1, var2);

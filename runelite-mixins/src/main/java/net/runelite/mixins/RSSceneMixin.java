@@ -120,6 +120,13 @@ public abstract class RSSceneMixin implements RSScene
 	@Inject
 	private static byte[][][] rl$tileShapes;
 
+	@MethodHook("projectScene")
+	@Inject
+	public void onProjectScene(RSProjection projection, boolean var2, boolean var3)
+	{
+		client.getWorldView().setCanvasProjection(projection);
+	}
+
 	@Copy("draw")
 	@Replace("draw")
 	void copy$drawScene(int cameraX, int cameraY, int cameraZ, int cameraPitch, int cameraYaw, int plane, int entityX, int entityY, boolean isCameraLocked)

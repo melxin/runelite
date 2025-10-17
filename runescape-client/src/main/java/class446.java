@@ -28,12 +28,12 @@ public class class446 {
 	@ObfuscatedSignature(
 		descriptor = "Lre;"
 	)
-	public class450 field5193;
+	public ProjectionCoord field5193;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "Lre;"
 	)
-	public class450 field5192;
+	public ProjectionCoord field5192;
 
 	static {
 		field5195 = 0;
@@ -43,8 +43,8 @@ public class class446 {
 
 	class446() {
 		this.field5197 = new class451();
-		this.field5193 = new class450();
-		this.field5192 = new class450(1.0F, 1.0F, 1.0F);
+		this.field5193 = new ProjectionCoord();
+		this.field5192 = new ProjectionCoord(1.0F, 1.0F, 1.0F);
 	}
 
 	@ObfuscatedName("at")
@@ -69,9 +69,9 @@ public class class446 {
 	void method9007() {
 		this.field5197.method9144();
 		this.field5193.method9068();
-		this.field5192.field5216 = 1.0F;
-		this.field5192.field5218 = 1.0F;
-		this.field5192.field5219 = 1.0F;
+		this.field5192.x = 1.0F;
+		this.field5192.z = 1.0F;
+		this.field5192.y = 1.0F;
 	}
 
 	public String toString() {

@@ -333,33 +333,33 @@ public class class477 extends SongTask {
 					float var18 = 1.0E-5F;
 					class173.method4158();
 					DelayFadeTask.method9712(var13.field2749, var13.field2711, var13.field2751, var13.field2703, var9, var10, var11);
-					class450 var19 = IndexCheck.method6169(0.0F, 1.0F, 0.0F);
-					class450 var21 = ViewportMouse.field2955;
+					ProjectionCoord var19 = IndexCheck.method6169(0.0F, 1.0F, 0.0F);
+					ProjectionCoord var21 = ViewportMouse.field2955;
 					float var20 = var19.method9074(var21);
-					class450 var12;
-					class450 var24;
+					ProjectionCoord var12;
+					ProjectionCoord var24;
 					float var26;
 					if (Math.abs(var20) < 1.0E-5F) {
-						var19.method9065();
+						var19.release();
 						var12 = null;
 					} else {
-						class450 var23 = IndexCheck.method6169((float)var15, (float)var16, (float)var17);
-						var24 = IndexCheck.method6169(var23.field5216, var23.field5218 - (float)var14, var23.field5219);
+						ProjectionCoord var23 = IndexCheck.method6169((float)var15, (float)var16, (float)var17);
+						var24 = IndexCheck.method6169(var23.x, var23.z - (float)var14, var23.y);
 						float var25 = var19.method9074(var24);
 						var26 = -var25 / var20;
-						var19.method9065();
+						var19.release();
 						if (var26 < 0.0F) {
-							var24.method9065();
-							var23.method9065();
+							var24.release();
+							var23.release();
 							var12 = null;
 						} else {
-							class450 var28 = ViewportMouse.field2955;
-							class450 var29 = NPC.method2793(var28);
+							ProjectionCoord var28 = ViewportMouse.field2955;
+							ProjectionCoord var29 = NPC.method2793(var28);
 							var29.method9096(var26);
-							class450 var30 = class302.method6840(var23, var29);
-							var29.method9065();
-							var24.method9065();
-							var23.method9065();
+							ProjectionCoord var30 = class302.method6840(var23, var29);
+							var29.release();
+							var24.release();
+							var23.release();
 							var12 = var30;
 						}
 					}
@@ -368,20 +368,20 @@ public class class477 extends SongTask {
 						var19 = IndexCheck.method6169((float)Client.field484, (float)Client.field572, (float)Client.field377);
 						var21 = NPC.method2793(var12);
 						var21.method9073(var19);
-						class450 var35 = NPC.method2851(class450.field5211, var21);
-						var24 = class450.field5212;
+						ProjectionCoord var35 = NPC.method2851(ProjectionCoord.field5211, var21);
+						var24 = ProjectionCoord.field5212;
 						float var36 = var35.method9074(var24);
-						class450 var27 = class450.field5211;
+						ProjectionCoord var27 = ProjectionCoord.field5211;
 						var26 = var27.method9074(var21);
 						float var37 = (float)Math.atan2((double)var36, (double)var26);
 						int var38 = (int)((double)var37 / 6.283185307179586D * 2048.0D) & 2047;
 						int var32 = var38 + 64;
 						int var31 = (var32 & 2047) / 128;
 						class162.insertMenuItem("Set heading", "", 60, var31, 0, 0, 0, false, var6);
-						var19.method9065();
-						var21.method9065();
-						var35.method9065();
-						var12.method9065();
+						var19.release();
+						var21.release();
+						var35.release();
+						var12.release();
 					}
 				}
 			}

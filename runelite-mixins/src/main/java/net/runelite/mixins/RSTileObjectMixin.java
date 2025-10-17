@@ -123,11 +123,22 @@ public abstract class RSTileObjectMixin implements TileObject
 		return Perspective.localToMinimap(client, getLocalLocation());
 	}
 
-	@Inject
+	/*@Inject
 	public int getWorldViewId()
 	{
 		int id = (int) (this.getHash() >> 49) & 2047;
 		if (id == 2047)
+		{
+			id = -1;
+		}
+		return id;
+	}*/
+
+	@Inject
+	public int getWorldViewId()
+	{
+		int id = (int) (this.getHash() >> 52 & 4095L);
+		if (id == 4095L)
 		{
 			id = -1;
 		}

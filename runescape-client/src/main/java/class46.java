@@ -209,7 +209,7 @@ public class class46 {
 			MoveSpeed var7 = var1;
 			boolean var8 = true;
 			boolean var9 = true;
-			if (var4.id == -1 && this.field651 == Client.field328 && class381.field4430 == GrandExchangeOffer.USERNAME_PASSWORD && (var3.x < 1536 || var3.y < 1536 || var3.x >= 11776 || var3.y >= 11776)) {
+			if (var4.id == -1 && this.field651 == Client.cameraTargetIndex && CameraViewMode.field4430 == GrandExchangeOffer.cameraViewMode && (var3.x < 1536 || var3.y < 1536 || var3.x >= 11776 || var3.y >= 11776)) {
 				var7 = MoveSpeed.field3278;
 			}
 

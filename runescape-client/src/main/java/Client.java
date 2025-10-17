@@ -171,12 +171,14 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedGetter(
 		intValue = 996243437
 	)
-	static int field327;
+	@Export("cameraWorldViewId")
+	static int cameraWorldViewId;
 	@ObfuscatedName("gw")
 	@ObfuscatedGetter(
 		intValue = 1573794335
 	)
-	static int field328;
+	@Export("cameraTargetIndex")
+	static int cameraTargetIndex;
 	@ObfuscatedName("gm")
 	@Export("renderSelf")
 	static boolean renderSelf;
@@ -1402,8 +1404,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		field463 = 0;
 		field325 = "";
 		currentWorldViewId = -1;
-		field327 = -1;
-		field328 = -1;
+		cameraWorldViewId = -1;
+		cameraTargetIndex = -1;
 		renderSelf = true;
 		drawPlayerNames = 0;
 		currentLevels = new int[25];
@@ -2778,9 +2780,9 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 						timer.method8296();
 						AsyncRestClient.method174();
 						playerUpdateManager.updatePlayer(var2);
-						field328 = localPlayerIndex;
-						GrandExchangeOffer.USERNAME_PASSWORD = class381.field4430;
-						field327 = -1;
+						cameraTargetIndex = localPlayerIndex;
+						GrandExchangeOffer.cameraViewMode = CameraViewMode.field4430;
+						cameraWorldViewId = -1;
 						WorldMapIcon_1.field3312 = -1;
 						class156.loadRegions(false, var2);
 						packetWriter.serverPacket = null;
@@ -3313,16 +3315,16 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 									var6 = class57.soundLocations[var32] >> 8 & 255;
 									var7 = class57.soundEffectIds[var32];
 									WorldView var37 = worldViewManager.getWorldView(var7);
-									class450 var38 = Varcs.method3022(var37, Coord.method7440(var5), Coord.method7440(var6));
-									var11 = (int)var38.field5216;
+									ProjectionCoord var38 = Varcs.method3022(var37, Coord.method7440(var5), Coord.method7440(var6));
+									var11 = (int)var38.x;
 									var10 = var11 >> 7;
-									var14 = (int)var38.field5219;
+									var14 = (int)var38.y;
 									var39 = var14 >> 7;
-									var38.method9065();
-									class450 var16 = worldViewManager.method2371();
-									int var17 = Math.abs(Coord.method7425(var10) - (int)var16.field5216);
-									int var18 = Math.abs(Coord.method7425(var39) - (int)var16.field5219);
-									var16.method9065();
+									var38.release();
+									ProjectionCoord var16 = worldViewManager.method2371();
+									int var17 = Math.abs(Coord.method7425(var10) - (int)var16.x);
+									int var18 = Math.abs(Coord.method7425(var39) - (int)var16.y);
+									var16.release();
 									int var19 = Math.max(var18 + var17 - 128, 0);
 									int var20 = Math.max(Coord.method7440((class57.field813[var32] & 31) - 1), 0);
 									WorldEntity var21 = worldViewManager.method2396();
@@ -3543,37 +3545,37 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 																	}
 
 																	if (oculusOrbState == 0) {
-																		WorldView var63 = worldViewManager.getWorldView(field327);
+																		WorldView var63 = worldViewManager.getWorldView(cameraWorldViewId);
 																		if (var63 == null) {
 																			var63 = class547.topLevelWorldView;
 																		}
 
 																		Object var78 = null;
-																		switch(GrandExchangeOffer.USERNAME_PASSWORD.field4428) {
+																		switch(GrandExchangeOffer.cameraViewMode.mode) {
 																		case 0:
-																			var78 = (Entity)var63.players.get((long)field328);
+																			var78 = (CameraFocusableEntity)var63.players.get((long) cameraTargetIndex);
 																			break;
 																		case 1:
-																			var78 = (Entity)var63.npcs.get((long)field328);
+																			var78 = (CameraFocusableEntity)var63.npcs.get((long) cameraTargetIndex);
 																			break;
 																		case 2:
-																			var78 = (Entity)var63.worldEntities.get((long)field328);
+																			var78 = (CameraFocusableEntity)var63.worldEntities.get((long) cameraTargetIndex);
 																		}
 
 																		if (var78 == null) {
 																			var78 = class159.localPlayer;
 																		}
 
-																		field484 = ((Entity)var78).getY();
-																		field377 = ((Entity)var78).getPlane();
+																		field484 = ((CameraFocusableEntity)var78).getY();
+																		field377 = ((CameraFocusableEntity)var78).getPlane();
 																		if (var63 != class547.topLevelWorldView) {
-																			class450 var75 = Varcs.method3022(var63, ((Entity)var78).getY(), ((Entity)var78).getPlane());
-																			field484 = (int)var75.field5216;
-																			field377 = (int)var75.field5219;
-																			var75.method9065();
+																			ProjectionCoord var75 = Varcs.method3022(var63, ((CameraFocusableEntity)var78).getY(), ((CameraFocusableEntity)var78).getPlane());
+																			field484 = (int)var75.x;
+																			field377 = (int)var75.y;
+																			var75.release();
 																		}
 
-																		var6 = ((Entity)var78).getX();
+																		var6 = ((CameraFocusableEntity)var78).getX();
 																		if (class454.oculusOrbFocalPointX - field484 >= -500 && class454.oculusOrbFocalPointX - field484 <= 500 && WorldMapElement.oculusOrbFocalPointY - field377 >= -500 && WorldMapElement.oculusOrbFocalPointY - field377 <= 500) {
 																			if (field484 != class454.oculusOrbFocalPointX) {
 																				class454.oculusOrbFocalPointX += (field484 - class454.oculusOrbFocalPointX) / 16;
@@ -3622,8 +3624,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 																			field516 += (var11 - field516) / 80;
 																		}
 
-																		var39 = ((Entity)var78).getY();
-																		var14 = ((Entity)var78).getPlane();
+																		var39 = ((CameraFocusableEntity)var78).getY();
+																		var14 = ((CameraFocusableEntity)var78).getPlane();
 																		int var15 = class280.getTileHeight(var63, var39, var14, var6);
 																		WorldEntity var53 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var63.id);
 																		if (var53 != null) {
@@ -4052,11 +4054,11 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		garbageValue = "-449362927"
 	)
 	void method822() {
-		class450 var1 = worldViewManager.method2371();
+		ProjectionCoord var1 = worldViewManager.method2371();
 		WorldEntity var2 = worldViewManager.method2396();
-		int var3 = (int)var1.field5218;
-		int var4 = (int)var1.field5216;
-		int var5 = (int)var1.field5219;
+		int var3 = (int)var1.z;
+		int var4 = (int)var1.x;
+		int var5 = (int)var1.y;
 		int var6 = graphicsCycle;
 		Iterator var7 = worldViewManager.iterator();
 
@@ -4068,7 +4070,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 			}
 		}
 
-		var1.method9065();
+		var1.release();
 		graphicsCycle = 0;
 	}
 
@@ -4298,7 +4300,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var7 = Coord.method7460(var6);
 					var8 = Coord.method7421(var6);
 					var9 = Coord.method7469(var6);
-					var10 = worldViewManager.method2368(var8, var9);
+					var10 = worldViewManager.getWorldViewFromWorldPoint(var8, var9);
 					var11 = var8 - var10.baseX;
 					var12 = var9 - var10.baseY;
 					if (var11 >= 0 && var12 >= 0 && var11 < var10.sizeX && var12 < var10.sizeY) {
@@ -4362,7 +4364,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var12 = Coord.method7460(var7);
 					var13 = Coord.method7421(var7);
 					var14 = Coord.method7469(var7);
-					var15 = worldViewManager.method2368(var13, var14);
+					var15 = worldViewManager.getWorldViewFromWorldPoint(var13, var14);
 					var16 = var13 - var15.baseX;
 					var17 = var14 - var15.baseY;
 					if (var16 >= 0 && var17 >= 0 && var16 < var15.sizeX && var17 < var15.sizeY) {
@@ -4723,7 +4725,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var8 = Coord.method7460(var6);
 					var9 = Coord.method7421(var6);
 					var25 = Coord.method7469(var6);
-					WorldView var105 = worldViewManager.method2368(var9, var25);
+					WorldView var105 = worldViewManager.getWorldViewFromWorldPoint(var9, var25);
 					var12 = var9 - var105.baseX;
 					var13 = var25 - var105.baseY;
 					if (var12 >= 0 && var13 >= 0 && var12 < var105.sizeX && var13 < var105.sizeY) {
@@ -5519,9 +5521,9 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 				}
 
 				if (ServerPacket.CAM_TARGET == var1.serverPacket) {
-					GrandExchangeOffer.USERNAME_PASSWORD = (class381)ScriptFrame.findEnumerated(class151.method3910(), var3.readUnsignedByte());
-					field327 = var3.readShort();
-					field328 = var3.readUnsignedShort();
+					GrandExchangeOffer.cameraViewMode = (CameraViewMode)ScriptFrame.findEnumerated(class151.method3910(), var3.readUnsignedByte());
+					cameraWorldViewId = var3.readShort();
+					cameraTargetIndex = var3.readUnsignedShort();
 					var1.serverPacket = null;
 					return true;
 				}
@@ -5805,7 +5807,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var7 = Coord.method7460(var6);
 					var8 = Coord.method7421(var6);
 					var9 = Coord.method7469(var6);
-					var10 = worldViewManager.method2368(var8, var9);
+					var10 = worldViewManager.getWorldViewFromWorldPoint(var8, var9);
 					var11 = var8 - var10.baseX;
 					var12 = var9 - var10.baseY;
 					if (0 <= var11 && var11 < var10.sizeX && 0 <= var12 && var12 < var10.sizeY) {
@@ -5840,7 +5842,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var12 = Coord.method7460(var7);
 					var13 = Coord.method7421(var7);
 					var14 = Coord.method7469(var7);
-					var15 = worldViewManager.method2368(var13, var14);
+					var15 = worldViewManager.getWorldViewFromWorldPoint(var13, var14);
 					var16 = var13 - var15.baseX;
 					var17 = var14 - var15.baseY;
 					if (var16 >= 0 && var17 >= 0 && var16 < var15.sizeX && var17 < var15.sizeY) {
@@ -6040,7 +6042,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var7 = Coord.method7460(var5);
 					var8 = Coord.method7421(var5);
 					var9 = Coord.method7469(var5);
-					var10 = worldViewManager.method2368(var8, var9);
+					var10 = worldViewManager.getWorldViewFromWorldPoint(var8, var9);
 					var11 = var8 - var10.baseX;
 					var12 = var9 - var10.baseY;
 					if (var11 >= 0 && var12 >= 0 && var11 < var10.sizeX && var12 < var10.sizeY) {

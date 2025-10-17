@@ -189,45 +189,45 @@ public class class263 extends class269 {
 
 				int var12 = var2 * 128;
 				int var13 = var3 * 128;
-				class450 var14 = IndexCheck.method6169((float)var12, (float)var0.tileHeights[var1][var2][var3], (float)var13);
-				class450 var15 = IndexCheck.method6169((float)(var12 + 128), (float)var0.tileHeights[var1][var2 + 1][var3], (float)var13);
-				class450 var16 = IndexCheck.method6169((float)(var12 + 128), (float)var0.tileHeights[var1][var2 + 1][var3 + 1], (float)(var13 + 128));
-				class450 var17 = IndexCheck.method6169((float)var12, (float)var0.tileHeights[var1][var2][var3 + 1], (float)(var13 + 128));
-				class450 var11;
-				if (var15.field5218 == var14.field5218 && var16.field5218 == var14.field5218 && var14.field5218 == var17.field5218) {
-					var14.method9065();
-					var15.method9065();
-					var16.method9065();
-					var17.method9065();
-					var11 = class450.field5220;
+				ProjectionCoord var14 = IndexCheck.method6169((float)var12, (float)var0.tileHeights[var1][var2][var3], (float)var13);
+				ProjectionCoord var15 = IndexCheck.method6169((float)(var12 + 128), (float)var0.tileHeights[var1][var2 + 1][var3], (float)var13);
+				ProjectionCoord var16 = IndexCheck.method6169((float)(var12 + 128), (float)var0.tileHeights[var1][var2 + 1][var3 + 1], (float)(var13 + 128));
+				ProjectionCoord var17 = IndexCheck.method6169((float)var12, (float)var0.tileHeights[var1][var2][var3 + 1], (float)(var13 + 128));
+				ProjectionCoord var11;
+				if (var15.z == var14.z && var16.z == var14.z && var14.z == var17.z) {
+					var14.release();
+					var15.release();
+					var16.release();
+					var17.release();
+					var11 = ProjectionCoord.field5220;
 				} else {
-					class450 var19 = NPC.method2793(var15);
+					ProjectionCoord var19 = NPC.method2793(var15);
 					var19.method9073(var14);
-					class450 var21 = NPC.method2793(var17);
+					ProjectionCoord var21 = NPC.method2793(var17);
 					var21.method9073(var14);
-					class450 var22 = NPC.method2851(var19, var21);
-					var19.method9065();
-					var21.method9065();
-					class450 var24 = NPC.method2793(var15);
+					ProjectionCoord var22 = NPC.method2851(var19, var21);
+					var19.release();
+					var21.release();
+					ProjectionCoord var24 = NPC.method2793(var15);
 					var24.method9073(var16);
-					class450 var26 = NPC.method2793(var17);
+					ProjectionCoord var26 = NPC.method2793(var17);
 					var26.method9073(var16);
-					class450 var27 = NPC.method2851(var26, var24);
-					var24.method9065();
-					var26.method9065();
-					var14.method9065();
-					var15.method9065();
-					var16.method9065();
-					var17.method9065();
-					class450 var28 = class302.method6840(var22, var27);
-					var22.method9065();
-					var27.method9065();
-					class450 var30 = class147.method3882();
+					ProjectionCoord var27 = NPC.method2851(var26, var24);
+					var24.release();
+					var26.release();
+					var14.release();
+					var15.release();
+					var16.release();
+					var17.release();
+					ProjectionCoord var28 = class302.method6840(var22, var27);
+					var22.release();
+					var27.release();
+					ProjectionCoord var30 = class147.method3882();
 					float var31 = 1.0F / var28.method9076();
-					var30.field5216 = var28.field5216 * var31;
-					var30.field5218 = var31 * var28.field5218;
-					var30.field5219 = var31 * var28.field5219;
-					var28.method9065();
+					var30.x = var28.x * var31;
+					var30.z = var31 * var28.z;
+					var30.y = var31 * var28.y;
+					var28.release();
 					var11 = var30;
 				}
 

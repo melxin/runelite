@@ -231,7 +231,7 @@ public class HealthBarDefinition extends DualNode {
 		class1.Tiles_hue = null;
 		ClanChannel.Tiles_saturation = null;
 		class165.Tiles_lightness = null;
-		class450.Tiles_hueMultiplier = null;
+		ProjectionCoord.Tiles_hueMultiplier = null;
 		Language.field5129 = null;
 	}
 

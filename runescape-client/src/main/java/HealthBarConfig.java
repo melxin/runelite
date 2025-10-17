@@ -253,7 +253,7 @@ public class HealthBarConfig extends Node {
 	)
 	static final void method2774(int var0, int var1) {
 		if (Client.hintArrow.method8230() == 2) {
-			WorldView var2 = Client.worldViewManager.method2368(Client.hintArrow.method8250(), Client.hintArrow.method8235());
+			WorldView var2 = Client.worldViewManager.getWorldViewFromWorldPoint(Client.hintArrow.method8250(), Client.hintArrow.method8235());
 			int var3 = (Client.hintArrow.method8250() - var2.baseX << 7) + Client.hintArrow.method8232();
 			int var4 = (Client.hintArrow.method8235() - var2.baseY << 7) + Client.hintArrow.method8234();
 			int var5 = Client.hintArrow.method8246() * 2;

@@ -104,7 +104,7 @@ public class class62 {
 				int var7 = var1.readUnsignedByte();
 				var8 = var6 * 8;
 				var23 = var7 * 8;
-				WorldView var10 = Client.worldViewManager.createWorldView2(var5, var8, var23, class154.clientPreferences.getDrawDistance(), class216.field2512);
+				WorldView var10 = Client.worldViewManager.createWorldView2(var5, var8, var23, class154.clientPreferences.getDrawDistance(), TileRenderMode.field2512);
 				WorldEntity var12 = new WorldEntity(var5, var10);
 				var0.worldEntities.put(var12, (long)var5);
 				var12.plane = var5;

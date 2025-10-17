@@ -266,7 +266,7 @@ public class FloorOverlayDefinition extends DualNode {
 				HorizontalAlignment.worldToMinimap(var12.getWorldView(), var12.x, var12.y, var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);
 			}
 		} else if (var5 == 2) {
-			WorldView var15 = Client.worldViewManager.method2368(Client.hintArrow.method8250(), Client.hintArrow.method8235());
+			WorldView var15 = Client.worldViewManager.getWorldViewFromWorldPoint(Client.hintArrow.method8250(), Client.hintArrow.method8235());
 			var13 = Coord.method7440(Client.hintArrow.method8250() - var15.baseX) + Client.hintArrow.method8232();
 			int var8 = Coord.method7440(Client.hintArrow.method8235() - var15.baseY) + Client.hintArrow.method8234();
 			HorizontalAlignment.worldToMinimap(var15, var13, var8, var1, var2, var3, AsyncHttpResponse.mapDotSprites[1], var4);

@@ -248,7 +248,7 @@ public class Scene extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "Lir;"
 	)
-	class216 field2772;
+	TileRenderMode field2772;
 	@ObfuscatedName("dv")
 	int field2773;
 	@ObfuscatedName("dz")
@@ -292,7 +292,7 @@ public class Scene extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "(IIIIILir;[[[I)V"
 	)
-	public Scene(int var1, int var2, int var3, int var4, int var5, class216 var6, int[][][] var7) {
+	public Scene(int var1, int var2, int var3, int var4, int var5, TileRenderMode var6, int[][][] var7) {
 		this.modelColorOverride = new ModelColorOverride();
 		this.field2702 = new ModelColorOverride();
 		this.Scene_plane = 0;
@@ -319,7 +319,7 @@ public class Scene extends Renderable {
 		this.Scene_tilesDeque = new NodeDeque();
 		this.tempGameObjects = new GameObject[32];
 		this.Scene_offsetOccluder = 0;
-		this.field2772 = class216.field2511;
+		this.field2772 = TileRenderMode.field2511;
 		this.field2773 = 0;
 		this.field2723 = 0;
 		this.field2774 = new int[9];
@@ -1209,7 +1209,7 @@ public class Scene extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "(Lir;)V"
 	)
-	public void method5171(class216 var1) {
+	public void method5171(TileRenderMode var1) {
 		if (var1 != this.field2772) {
 			this.field2772 = var1;
 			this.method5405(this.field2774, this.field2776, this.field2777, this.field2778, this.field2779);
@@ -1469,13 +1469,13 @@ public class Scene extends Renderable {
 		IntProjection var10 = new IntProjection(var1, var2, var3, var4, var5, var7, var8);
 		if (Rasterizer3D.method5002()) {
 			Rasterizer3D.clips.field2999 = 0;
-			this.method5230(var10, var9, true);
+			this.projectScene(var10, var9, true);
 			Rasterizer3D.clips.field2999 = 1;
-			this.method5230(var10, var9, false);
+			this.projectScene(var10, var9, false);
 			Rasterizer3D.clips.field2999 = 2;
 		} else {
 			Rasterizer3D.clips.field2999 = 2;
-			this.method5230(var10, var9, true);
+			this.projectScene(var10, var9, true);
 		}
 
 	}
@@ -1484,7 +1484,8 @@ public class Scene extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "(Ljf;ZZ)V"
 	)
-	void method5230(Projection var1, boolean var2, boolean var3) {
+	@Export("projectScene")
+	void projectScene(Projection var1, boolean var2, boolean var3) {
 		++this.Scene_drawnCount;
 		this.field2702.method5737(Rasterizer3D.clips.field3001);
 		Rasterizer3D.clips.field3001.method5737(this.modelColorOverride);
@@ -1493,8 +1494,8 @@ public class Scene extends Renderable {
 			this.Scene_baseX = -1;
 			this.Scene_baseY = -1;
 			this.field2714 = -1.0F;
-			this.field2705 = !var2 && this.field2772 != class216.field2511 ? this.Scene_entityX : this.Scene_cameraXTile;
-			this.field2748 = !var2 && this.field2772 != class216.field2511 ? this.Scene_entityY : this.Scene_cameraYTile;
+			this.field2705 = !var2 && this.field2772 != TileRenderMode.field2511 ? this.Scene_entityX : this.Scene_cameraXTile;
+			this.field2748 = !var2 && this.field2772 != TileRenderMode.field2511 ? this.Scene_entityY : this.Scene_cameraYTile;
 			if (var4) {
 				this.Scene_cameraXTileMin = this.field2705 - this.Scene_offsetOccluder;
 				if (this.Scene_cameraXTileMin < 0) {
@@ -2821,7 +2822,7 @@ public class Scene extends Renderable {
 		FloatProjection var30 = new FloatProjection(var21);
 		var30.method5416(var10);
 		class173.method4158();
-		this.method5230(var30, var14, Rasterizer3D.clips.field2999 != 1);
+		this.projectScene(var30, var14, Rasterizer3D.clips.field2999 != 1);
 		class173.method4158();
 		var23.method9171();
 		var21.method9171();

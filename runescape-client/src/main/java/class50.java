@@ -492,7 +492,7 @@ public class class50 {
 								++var0;
 							}
 
-							if (class450.scrollBarSprites == null) {
+							if (ProjectionCoord.scrollBarSprites == null) {
 								var2 = BoundaryObject.archive8;
 								var23 = class155.field1804.field5608;
 								if (!Friend.method10009(var2, var23, 0)) {
@@ -501,7 +501,7 @@ public class class50 {
 									var1 = class313.method6975();
 								}
 
-								class450.scrollBarSprites = var1;
+								ProjectionCoord.scrollBarSprites = var1;
 							} else {
 								++var0;
 							}

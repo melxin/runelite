@@ -411,13 +411,13 @@ public final class NPC extends Actor {
 		descriptor = "(Lre;I)Lre;",
 		garbageValue = "591003887"
 	)
-	public static class450 method2793(class450 var0) {
-		synchronized(class450.field5214) {
-			if (class450.field5210 == 0) {
-				return new class450(var0);
+	public static ProjectionCoord method2793(ProjectionCoord var0) {
+		synchronized(ProjectionCoord.field5214) {
+			if (ProjectionCoord.field5210 == 0) {
+				return new ProjectionCoord(var0);
 			} else {
-				class450.field5214[--class450.field5210].method9067(var0);
-				return class450.field5214[class450.field5210];
+				ProjectionCoord.field5214[--ProjectionCoord.field5210].method9067(var0);
+				return ProjectionCoord.field5214[ProjectionCoord.field5210];
 			}
 		}
 	}
@@ -427,8 +427,8 @@ public final class NPC extends Actor {
 		descriptor = "(Lre;Lre;B)Lre;",
 		garbageValue = "-9"
 	)
-	public static final class450 method2851(class450 var0, class450 var1) {
-		class450 var2 = method2793(var0);
+	public static final ProjectionCoord method2851(ProjectionCoord var0, ProjectionCoord var1) {
+		ProjectionCoord var2 = method2793(var0);
 		var2.method9075(var1);
 		return var2;
 	}

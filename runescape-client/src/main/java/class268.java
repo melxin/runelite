@@ -235,8 +235,8 @@ public class class268 {
 			}
 
 			if (var3 != null) {
-				class450 var23 = IndexCheck.method6169((float)var1.x, 0.0F, (float)var1.y);
-				class450 var18;
+				ProjectionCoord var23 = IndexCheck.method6169((float)var1.x, 0.0F, (float)var1.y);
+				ProjectionCoord var18;
 				if (var0.id != var2.id) {
 					WorldEntity var19;
 					if (var0.id == -1) {
@@ -244,26 +244,26 @@ public class class268 {
 						var18 = var19.method10213(var3.x, var3.y);
 					} else if (var2.id == -1) {
 						var19 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var0.id);
-						var18 = var19.method10199(var3.x, var3.y);
+						var18 = var19.getProjectionCoord(var3.x, var3.y);
 					} else {
 						var19 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var2.id);
 						WorldEntity var20 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var0.id);
-						class450 var21 = var19.method10213(var3.x, var3.y);
-						var18 = var20.method10199((int)var21.field5216, (int)var21.field5219);
-						var21.method9065();
+						ProjectionCoord var21 = var19.method10213(var3.x, var3.y);
+						var18 = var20.getProjectionCoord((int)var21.x, (int)var21.y);
+						var21.release();
 					}
 				} else {
 					var18 = IndexCheck.method6169((float)var3.x, 0.0F, (float)var3.y);
 				}
 
-				int var13 = (int)(var23.field5216 - var18.field5216);
-				int var14 = (int)(var23.field5219 - var18.field5219);
+				int var13 = (int)(var23.x - var18.x);
+				int var14 = (int)(var23.y - var18.y);
 				if (var13 != 0 || var14 != 0) {
 					var1.orientation = FontName.method11001(var13, var14);
 				}
 
-				var23.method9065();
-				var18.method9065();
+				var23.release();
+				var18.release();
 			} else if (var1.false0) {
 				var1.targetIndex = -1;
 				var1.false0 = false;

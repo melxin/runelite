@@ -308,9 +308,9 @@ public final class TransformationMatrix {
 		this.field5229[11] = 0.0F;
 		var13[7] = 0.0F;
 		var12[3] = 0.0F;
-		this.field5229[12] = var1.field5193.field5216;
-		this.field5229[13] = var1.field5193.field5218;
-		this.field5229[14] = var1.field5193.field5219;
+		this.field5229[12] = var1.field5193.x;
+		this.field5229[13] = var1.field5193.z;
+		this.field5229[14] = var1.field5193.y;
 		this.field5229[15] = 1.0F;
 	}
 
@@ -460,7 +460,7 @@ public final class TransformationMatrix {
 		descriptor = "(FFFB)Lre;",
 		garbageValue = "-62"
 	)
-	public class450 method9201(float var1, float var2, float var3) {
+	public ProjectionCoord method9201(float var1, float var2, float var3) {
 		float var4 = 1.0F / (this.field5229[15] + this.field5229[3] * var1 + var2 * this.field5229[7] + this.field5229[11] * var3);
 		return IndexCheck.method6169((var3 * this.field5229[8] + this.field5229[0] * var1 + this.field5229[4] * var2 + this.field5229[12]) * var4, var4 * (var3 * this.field5229[9] + var1 * this.field5229[1] + var2 * this.field5229[5] + this.field5229[13]), (this.field5229[14] + this.field5229[10] * var3 + this.field5229[6] * var2 + this.field5229[2] * var1) * var4);
 	}
@@ -499,9 +499,9 @@ public final class TransformationMatrix {
 	)
 	public float[] method9193() {
 		float[] var1 = new float[3];
-		class450 var2 = new class450(this.field5229[0], this.field5229[1], this.field5229[2]);
-		class450 var3 = new class450(this.field5229[4], this.field5229[5], this.field5229[6]);
-		class450 var4 = new class450(this.field5229[8], this.field5229[9], this.field5229[10]);
+		ProjectionCoord var2 = new ProjectionCoord(this.field5229[0], this.field5229[1], this.field5229[2]);
+		ProjectionCoord var3 = new ProjectionCoord(this.field5229[4], this.field5229[5], this.field5229[6]);
+		ProjectionCoord var4 = new ProjectionCoord(this.field5229[8], this.field5229[9], this.field5229[10]);
 		var1[0] = var2.method9076();
 		var1[1] = var3.method9076();
 		var1[2] = var4.method9076();

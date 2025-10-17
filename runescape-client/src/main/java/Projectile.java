@@ -208,20 +208,20 @@ public final class Projectile extends Renderable {
 	@Export("setDestination")
 	void setDestination(WorldViewManager var1, int var2, int var3) {
 		if (var2 >= this.cycleStart) {
-			class450 var4 = TileItem.method2915(this.targetIndex, this.targetX, this.targetY, this.targetLevel, var1);
-			int var5 = (int)var4.field5216;
-			int var6 = (int)var4.field5219;
-			int var7 = (int)var4.field5218 - this.endHeight;
-			var4.method9065();
+			ProjectionCoord var4 = TileItem.method2915(this.targetIndex, this.targetX, this.targetY, this.targetLevel, var1);
+			int var5 = (int)var4.x;
+			int var6 = (int)var4.y;
+			int var7 = (int)var4.z - this.endHeight;
+			var4.release();
 			double var12;
 			double var14;
 			double var16;
 			if (!this.isMoving) {
-				class450 var8 = TileItem.method2915(this.sourceIndex, this.sourceX, this.sourceY, this.sourceLevel, var1);
-				int var9 = (int)var8.field5216;
-				int var10 = (int)var8.field5219;
-				int var11 = (int)var8.field5218 - this.startHeight;
-				var8.method9065();
+				ProjectionCoord var8 = TileItem.method2915(this.sourceIndex, this.sourceX, this.sourceY, this.sourceLevel, var1);
+				int var9 = (int)var8.x;
+				int var10 = (int)var8.y;
+				int var11 = (int)var8.z - this.startHeight;
+				var8.release();
 				var12 = (double)(var5 - var9);
 				var14 = (double)(var6 - var10);
 				var16 = Math.sqrt(var12 * var12 + var14 * var14);

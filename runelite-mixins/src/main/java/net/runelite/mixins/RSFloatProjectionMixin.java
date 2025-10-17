@@ -35,11 +35,4 @@ public abstract class RSFloatProjectionMixin implements RSFloatProjection
 			client.getDrawCallbacks().drawSceneTileModel(scene, sceneTileModel, x, z);
 		}
 	}
-
-	@Inject
-	@Override
-	public float[] getProjection()
-	{
-		throw new UnsupportedOperationException("Not implemented yet");
-	}
 }

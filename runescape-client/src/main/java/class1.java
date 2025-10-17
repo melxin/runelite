@@ -69,8 +69,8 @@ public class class1 implements Callable {
 	)
 	@Export("drawScrollBar")
 	static final void drawScrollBar(int var0, int var1, int var2, int var3, int var4) {
-		class450.scrollBarSprites[0].drawAt(var0, var1);
-		class450.scrollBarSprites[1].drawAt(var0, var3 + var1 - 16);
+		ProjectionCoord.scrollBarSprites[0].drawAt(var0, var1);
+		ProjectionCoord.scrollBarSprites[1].drawAt(var0, var3 + var1 - 16);
 		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1 + 16, 16, var3 - 32, Client.field450);
 		int var5 = var3 * (var3 - 32) / var4;
 		if (var5 < 8) {

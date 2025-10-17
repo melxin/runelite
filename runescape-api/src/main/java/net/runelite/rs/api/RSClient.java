@@ -1398,6 +1398,15 @@ public interface RSClient extends RSGameEngine, Client
 
 	void posToCameraAngle(int var0, int var1);
 
+	@Import("cameraViewMode")
+	RSCameraViewMode getCameraViewMode();
+
+	@Import("cameraWorldViewId")
+	int getCameraWorldViewId();
+
+	@Import("cameraTargetIndex")
+	int getCameraTargetIndex();
+
 	@Override
 	default RSNodeDeque getAmbientSoundEffects()
 	{

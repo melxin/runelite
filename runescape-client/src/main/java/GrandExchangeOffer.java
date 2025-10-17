@@ -11,8 +11,8 @@ public class GrandExchangeOffer {
 	@ObfuscatedSignature(
 		descriptor = "Los;"
 	)
-	@Export("USERNAME_PASSWORD")
-	static class381 USERNAME_PASSWORD;
+	@Export("cameraViewMode")
+	static CameraViewMode cameraViewMode;
 	@ObfuscatedName("ke")
 	@ObfuscatedSignature(
 		descriptor = "Lpg;"

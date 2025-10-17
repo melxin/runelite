@@ -673,10 +673,10 @@ public class class281 {
 		for (int var7 = 0; var7 < var5; ++var7) {
 			Player var8 = (Player)var0.players.get((long)var6[var7]);
 			if (var8 != null && var8.isVisible() && !var8.isHidden && var8 != class159.localPlayer) {
-				class450 var9 = Varcs.method3022(var0, var8.x, var8.y);
-				int var10 = (int)var9.field5216;
-				int var11 = (int)var9.field5219;
-				var9.method9065();
+				ProjectionCoord var9 = Varcs.method3022(var0, var8.x, var8.y);
+				int var10 = (int)var9.x;
+				int var11 = (int)var9.y;
+				var9.release();
 				int var12 = var10 / 32 - Client.field484 / 32;
 				int var13 = var11 / 32 - Client.field377 / 32;
 				if (var8.isFriend()) {

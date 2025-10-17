@@ -74,13 +74,13 @@ public class class147 extends class150 {
 		descriptor = "(I)Lre;",
 		garbageValue = "1558611674"
 	)
-	public static class450 method3882() {
-		synchronized(class450.field5214) {
-			if (class450.field5210 == 0) {
-				return new class450();
+	public static ProjectionCoord method3882() {
+		synchronized(ProjectionCoord.field5214) {
+			if (ProjectionCoord.field5210 == 0) {
+				return new ProjectionCoord();
 			} else {
-				class450.field5214[--class450.field5210].method9068();
-				return class450.field5214[class450.field5210];
+				ProjectionCoord.field5214[--ProjectionCoord.field5210].method9068();
+				return ProjectionCoord.field5214[ProjectionCoord.field5210];
 			}
 		}
 	}

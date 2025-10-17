@@ -4,8 +4,8 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ww")
-@Implements("Entity")
-public interface Entity {
+@Implements("CameraFocusableEntity")
+public interface CameraFocusableEntity {
 	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",

@@ -185,10 +185,10 @@ public enum AttackOption implements Enum {
 				}
 
 				if (var7 != null && var7.drawMapDot && var7.isInteractable) {
-					class450 var8 = Varcs.method3022(var0, var6.x, var6.y);
-					int var9 = (int)var8.field5216;
-					int var10 = (int)var8.field5219;
-					var8.method9065();
+					ProjectionCoord var8 = Varcs.method3022(var0, var6.x, var6.y);
+					int var9 = (int)var8.x;
+					int var10 = (int)var8.y;
+					var8.release();
 					int var11 = var9 / 32 - Client.field484 / 32;
 					int var12 = var10 / 32 - Client.field377 / 32;
 					class445.drawSpriteOnMinimap(var1, var2, var11, var12, var3, class199.field2176[1], var4);

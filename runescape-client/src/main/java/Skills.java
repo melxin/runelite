@@ -307,7 +307,7 @@ public class Skills {
 				class1.Tiles_hue[var16] = 0;
 				ClanChannel.Tiles_saturation[var16] = 0;
 				class165.Tiles_lightness[var16] = 0;
-				class450.Tiles_hueMultiplier[var16] = 0;
+				ProjectionCoord.Tiles_hueMultiplier[var16] = 0;
 				Language.field5129[var16] = 0;
 			}
 
@@ -343,7 +343,7 @@ public class Skills {
 							var10000[var17] += var52.saturation;
 							var10000 = class165.Tiles_lightness;
 							var10000[var17] += var52.lightness;
-							var10000 = class450.Tiles_hueMultiplier;
+							var10000 = ProjectionCoord.Tiles_hueMultiplier;
 							var10000[var17] += var52.hueMultiplier;
 							var10002 = Language.field5129[var17]++;
 						}
@@ -377,7 +377,7 @@ public class Skills {
 							var10000[var17] -= var54.saturation;
 							var10000 = class165.Tiles_lightness;
 							var10000[var17] -= var54.lightness;
-							var10000 = class450.Tiles_hueMultiplier;
+							var10000 = ProjectionCoord.Tiles_hueMultiplier;
 							var10000[var17] -= var54.hueMultiplier;
 							var10002 = Language.field5129[var17]--;
 						}
@@ -397,7 +397,7 @@ public class Skills {
 							var17 += class1.Tiles_hue[var23];
 							var49 += ClanChannel.Tiles_saturation[var23];
 							var19 += class165.Tiles_lightness[var23];
-							var20 += class450.Tiles_hueMultiplier[var23];
+							var20 += ProjectionCoord.Tiles_hueMultiplier[var23];
 							var21 += Language.field5129[var23];
 						}
 
@@ -406,7 +406,7 @@ public class Skills {
 							var17 -= class1.Tiles_hue[var24];
 							var49 -= ClanChannel.Tiles_saturation[var24];
 							var19 -= class165.Tiles_lightness[var24];
-							var20 -= class450.Tiles_hueMultiplier[var24];
+							var20 -= ProjectionCoord.Tiles_hueMultiplier[var24];
 							var21 -= Language.field5129[var24];
 						}
 

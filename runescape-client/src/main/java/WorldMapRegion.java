@@ -1209,7 +1209,7 @@ public class WorldMapRegion {
 		var18 = Rasterizer3D.get3dZoom();
 		Rasterizer3D.method4988(class32.client.field172);
 		Rasterizer3D.clips.zoom = Client.viewportZoom;
-		class216 var32 = Client.currentWorldViewId == -1 ? class216.field2511 : class216.field2512;
+		TileRenderMode var32 = Client.currentWorldViewId == -1 ? TileRenderMode.field2511 : TileRenderMode.field2512;
 		class547.topLevelWorldView.scene.method5171(var32);
 		class547.topLevelWorldView.scene.draw(Huffman.cameraX, class514.cameraY, ChatChannel.cameraZ, class386.cameraPitch, SpriteBufferProperties.cameraYaw, var10, Client.field484, Client.field377, Client.isCameraLocked);
 		Projection.method5512(ViewportMouse.field2958, ViewportMouse.ViewportMouse_entityTags, 0, ViewportMouse.ViewportMouse_entityCount);

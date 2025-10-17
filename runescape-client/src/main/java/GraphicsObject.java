@@ -11,7 +11,8 @@ public class GraphicsObject extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "Ldm;"
 	)
-	WorldView field659;
+	@Export("worldView")
+	WorldView worldView;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
 		intValue = -778085129
@@ -60,7 +61,7 @@ public class GraphicsObject extends Renderable {
 	)
 	GraphicsObject(WorldView var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		this.animationSequence = new AnimationSequence();
-		this.field659 = var1;
+		this.worldView = var1;
 		this.id = var2;
 		this.plane = var3;
 		this.x = var4;
@@ -87,7 +88,7 @@ public class GraphicsObject extends Renderable {
 	@Export("advance")
 	final void advance(int var1) {
 		if (!this.method1896()) {
-			Client.field472.method11014(this.field659, this.x, this.y, false);
+			Client.field472.method11014(this.worldView, this.x, this.y, false);
 			int var2 = CollisionMap.method6234(this.animationSequence, var1, Client.field472);
 			Client.field472.method11013();
 			if ((var2 & 1) != 0) {

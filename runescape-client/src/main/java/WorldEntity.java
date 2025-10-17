@@ -6,7 +6,7 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("tg")
 @Implements("WorldEntity")
-public class WorldEntity extends Node implements Entity {
+public class WorldEntity extends Node implements CameraFocusableEntity {
 	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
 		descriptor = "Lkg;"
@@ -390,7 +390,7 @@ public class WorldEntity extends Node implements Entity {
 		descriptor = "(III)Lre;",
 		garbageValue = "1857034742"
 	)
-	public class450 method10213(int var1, int var2) {
+	public ProjectionCoord method10213(int var1, int var2) {
 		class446 var3 = ModeWhere.method8730();
 		TransformationMatrix var4 = AbstractArchive.method8450();
 		class451 var5 = var3.field5197;
@@ -403,7 +403,7 @@ public class WorldEntity extends Node implements Entity {
 		var2 -= this.method10191();
 		var4.method9182(var3);
 		var3.method9005();
-		class450 var8 = var4.method9201((float)var1, 0.0F, (float)var2);
+		ProjectionCoord var8 = var4.method9201((float)var1, 0.0F, (float)var2);
 		var4.method9171();
 		return var8;
 	}
@@ -413,7 +413,8 @@ public class WorldEntity extends Node implements Entity {
 		descriptor = "(III)Lre;",
 		garbageValue = "-2128921582"
 	)
-	public class450 method10199(int var1, int var2) {
+	@Export("getProjectionCoord")
+	public ProjectionCoord getProjectionCoord(int var1, int var2) {
 		class446 var3 = ModeWhere.method8730();
 		TransformationMatrix var4 = AbstractArchive.method8450();
 		class451 var5 = var3.field5197;
@@ -425,7 +426,7 @@ public class WorldEntity extends Node implements Entity {
 		var4.method9182(var3);
 		var4.method9174();
 		var3.method9005();
-		class450 var8 = var4.method9201((float)var1, 0.0F, (float)var2);
+		ProjectionCoord var8 = var4.method9201((float)var1, 0.0F, (float)var2);
 		var8.method9072((float)this.method10190(), 0.0F, (float)this.method10191());
 		var4.method9171();
 		return var8;

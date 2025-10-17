@@ -129,10 +129,10 @@ public enum HorizontalAlignment implements Enum {
 	)
 	@Export("worldToMinimap")
 	static final void worldToMinimap(WorldView var0, int var1, int var2, int var3, int var4, int var5, SpritePixels var6, SpriteMask var7) {
-		class450 var8 = Varcs.method3022(var0, var1, var2);
-		var1 = (int)var8.field5216;
-		var2 = (int)var8.field5219;
-		var8.method9065();
+		ProjectionCoord var8 = Varcs.method3022(var0, var1, var2);
+		var1 = (int)var8.x;
+		var2 = (int)var8.y;
+		var8.release();
 		int var9 = var1 / 32 - Client.field484 / 32;
 		int var10 = var2 / 32 - Client.field377 / 32;
 		int var11 = var9 * var9 + var10 * var10;

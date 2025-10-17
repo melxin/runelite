@@ -132,11 +132,11 @@ public class class203 extends DualNode {
 		if (!var0.method2736()) {
 			WorldEntity var8 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var0.id);
 			if (var8 != null) {
-				class450 var9 = Varcs.method3022(var0, var1, var2);
-				var5 = (int)var9.field5216;
-				var6 = (int)var9.field5219;
+				ProjectionCoord var9 = Varcs.method3022(var0, var1, var2);
+				var5 = (int)var9.x;
+				var6 = (int)var9.y;
 				var7 += class280.getTileHeight(class547.topLevelWorldView, var8.getY(), var8.getPlane(), class547.topLevelWorldView.plane);
-				var9.method9065();
+				var9.release();
 			}
 		}
 

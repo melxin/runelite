@@ -57,7 +57,7 @@ public class NpcOverrides {
 		class1.Tiles_hue = new int[104];
 		ClanChannel.Tiles_saturation = new int[104];
 		class165.Tiles_lightness = new int[104];
-		class450.Tiles_hueMultiplier = new int[104];
+		ProjectionCoord.Tiles_hueMultiplier = new int[104];
 		Language.field5129 = new int[104];
 	}
 

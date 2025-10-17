@@ -6,7 +6,7 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("cd")
 @Implements("Actor")
-public abstract class Actor extends Renderable implements Entity {
+public abstract class Actor extends Renderable implements CameraFocusableEntity {
 	@ObfuscatedName("tp")
 	@ObfuscatedGetter(
 		intValue = 287422131

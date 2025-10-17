@@ -50,6 +50,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import net.runelite.api.Actor;
 import net.runelite.api.Animation;
+import net.runelite.api.CameraFocusableEntity;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.EnumComposition;
 import net.runelite.api.FriendContainer;
@@ -138,6 +139,7 @@ import net.runelite.api.widgets.WidgetUtil;
 import net.runelite.rs.api.RSAbstractArchive;
 import net.runelite.rs.api.RSArchive;
 import net.runelite.rs.api.RSBuffer;
+import net.runelite.rs.api.RSCameraFocusableEntity;
 import net.runelite.rs.api.RSChatChannel;
 import net.runelite.rs.api.RSClanChannel;
 import net.runelite.rs.api.RSClient;
@@ -3689,5 +3691,43 @@ public abstract class RSClientMixin implements RSClient
 				.collect(Collectors.toList());
 		}
 		return cachedNpcs;
+	}
+
+	@Inject
+	@Override
+	public CameraFocusableEntity getCameraFocusEntity()
+	{
+		RSWorldView wv = getWorldViewManager().getWorldView(client.getCameraWorldViewId());
+		if (wv == null)
+		{
+			wv = getTopLevelWorldView();
+		}
+
+		Object cameraFocusableEntity = null;
+		switch (client.getCameraViewMode().getMode())
+		{
+			case 0:
+				cameraFocusableEntity = (RSCameraFocusableEntity) wv.getRSPlayers().get((long) client.getCameraTargetIndex());
+				break;
+			case 1:
+				cameraFocusableEntity = (RSCameraFocusableEntity) wv.getRSNpcs().get((long) client.getCameraTargetIndex());
+				break;
+			case 2:
+				cameraFocusableEntity = (RSCameraFocusableEntity) wv.getRSWorldEntities().get((long) client.getCameraTargetIndex());
+		}
+
+		if (cameraFocusableEntity == null)
+		{
+			cameraFocusableEntity = getLocalPlayer();
+		}
+
+		return (RSCameraFocusableEntity) cameraFocusableEntity;
+	}
+
+	@Inject
+	@Override
+	public WorldView findWorldViewFromWorldPoint(WorldPoint point)
+	{
+		return client.getWorldViewManager().getWorldViewFromWorldPoint(point.getX(), point.getY());
 	}
 }

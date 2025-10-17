@@ -829,7 +829,7 @@ public class NPCComposition extends DualNode {
 		AsyncHttpResponse.mapDotSprites = null;
 		class198.crossSprites = null;
 		class199.field2176 = null;
-		class450.scrollBarSprites = null;
+		ProjectionCoord.scrollBarSprites = null;
 		ViewportMouse.field2951 = null;
 	}
 }

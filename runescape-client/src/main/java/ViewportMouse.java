@@ -11,7 +11,7 @@ public class ViewportMouse {
 	@ObfuscatedSignature(
 		descriptor = "Lre;"
 	)
-	public static final class450 field2955;
+	public static final ProjectionCoord field2955;
 	@ObfuscatedName("bb")
 	@Export("ViewportMouse_isInViewport")
 	static boolean ViewportMouse_isInViewport;
@@ -54,7 +54,7 @@ public class ViewportMouse {
 	static IndexedSprite[] field2951;
 
 	static {
-		field2955 = new class450();
+		field2955 = new ProjectionCoord();
 		ViewportMouse_isInViewport = false;
 		ViewportMouse_x = 0;
 		ViewportMouse_y = 0;

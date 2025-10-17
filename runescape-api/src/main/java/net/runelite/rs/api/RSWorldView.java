@@ -2,6 +2,7 @@ package net.runelite.rs.api;
 
 import net.runelite.api.CollisionData;
 import net.runelite.api.WorldView;
+import net.runelite.mapping.Construct;
 import net.runelite.mapping.Import;
 
 public interface RSWorldView extends WorldView
@@ -81,4 +82,9 @@ public interface RSWorldView extends WorldView
 	@Import("instanceChunkTemplates")
 	@Override
 	int[][][] getInstanceTemplateChunks();
+
+	void setCanvasProjection(RSProjection projection);
+
+	@Construct
+	RSRuneLiteWorldView createRuneLiteWorldView(RSWorldView worldView);
 }

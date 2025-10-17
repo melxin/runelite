@@ -59,10 +59,10 @@ public class class160 extends class150 {
 						var9 = var6 * 4 + 2 - Client.field377 / 32;
 						class445.drawSpriteOnMinimap(var1, var2, var13, var9, var3, class199.field2176[0], var4);
 					} else {
-						class450 var8 = Varcs.method3022(var0, Coord.method7440(var5), Coord.method7440(var6));
-						var9 = (int)var8.field5216;
-						int var10 = (int)var8.field5219;
-						var8.method9065();
+						ProjectionCoord var8 = Varcs.method3022(var0, Coord.method7440(var5), Coord.method7440(var6));
+						var9 = (int)var8.x;
+						int var10 = (int)var8.y;
+						var8.release();
 						int var11 = var9 / 32 - Client.field484 / 32;
 						int var12 = var10 / 32 - Client.field377 / 32;
 						class445.drawSpriteOnMinimap(var1, var2, var11, var12, var3, class199.field2176[0], var4);

@@ -70,7 +70,7 @@ public class WorldViewManager implements Iterable {
 	)
 	@Export("createWorldView")
 	WorldView createWorldView(int var1, int var2, int var3) {
-		this.worldView = this.createWorldView2(-1, var1, var2, var3, class216.field2511);
+		this.worldView = this.createWorldView2(-1, var1, var2, var3, TileRenderMode.field2511);
 		return this.worldView;
 	}
 
@@ -80,7 +80,7 @@ public class WorldViewManager implements Iterable {
 		garbageValue = "-1538458793"
 	)
 	@Export("createWorldView2")
-	WorldView createWorldView2(int var1, int var2, int var3, int var4, class216 var5) {
+	WorldView createWorldView2(int var1, int var2, int var3, int var4, TileRenderMode var5) {
 		WorldView var6 = new WorldView(var1, var2, var3, var4, var5);
 		this.worldViews.put(var6, (long)var1);
 		++this.field999;
@@ -149,7 +149,8 @@ public class WorldViewManager implements Iterable {
 		descriptor = "(III)Ldm;",
 		garbageValue = "-1552023333"
 	)
-	WorldView method2368(int var1, int var2) {
+	@Export("getWorldViewFromWorldPoint")
+	WorldView getWorldViewFromWorldPoint(int var1, int var2) {
 		Iterator var3 = this.iterator();
 
 		while (var3.hasNext()) {
@@ -191,11 +192,11 @@ public class WorldViewManager implements Iterable {
 		descriptor = "(I)Lre;",
 		garbageValue = "211440506"
 	)
-	class450 method2371() {
+	ProjectionCoord method2371() {
 		WorldView var1 = this.getWorldView();
 		Player var2 = var1.method2745(Client.localPlayerIndex);
-		class450 var3 = Varcs.method3022(var1, var2.getY(), var2.getPlane());
-		var3.field5218 = (float)var2.getX();
+		ProjectionCoord var3 = Varcs.method3022(var1, var2.getY(), var2.getPlane());
+		var3.z = (float)var2.getX();
 		return var3;
 	}
 

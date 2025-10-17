@@ -5,6 +5,10 @@ import net.runelite.mapping.Import;
 
 public interface RSGraphicsObject extends GraphicsObject, RSRenderable
 {
+	@Import("worldView")
+	@Override
+	RSWorldView getWorldView();
+
 	@Import("id")
 	@Override
 	int getId();

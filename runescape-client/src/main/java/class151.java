@@ -58,8 +58,8 @@ public class class151 extends class150 {
 		descriptor = "(I)[Los;",
 		garbageValue = "-1429370694"
 	)
-	public static class381[] method3910() {
-		return new class381[]{class381.field4430, class381.field4427, class381.field4426};
+	public static CameraViewMode[] method3910() {
+		return new CameraViewMode[]{CameraViewMode.field4430, CameraViewMode.field4427, CameraViewMode.field4426};
 	}
 
 	@ObfuscatedName("av")

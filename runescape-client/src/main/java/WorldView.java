@@ -121,7 +121,7 @@ public class WorldView extends Node {
 	@ObfuscatedSignature(
 		descriptor = "(IIIILir;)V"
 	)
-	WorldView(int var1, int var2, int var3, int var4, class216 var5) {
+	WorldView(int var1, int var2, int var3, int var4, TileRenderMode var5) {
 		this.objectSounds = new NodeDeque();
 		this.collisionMaps = new CollisionMap[4];
 		this.pendingSpawns = new NodeDeque();

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2025, Melxin <https://github.com/melxin>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -24,35 +24,58 @@
  */
 package net.runelite.mixins;
 
-import net.runelite.api.WorldEntity;
-import net.runelite.api.events.WorldEntityDespawned;
+import net.runelite.api.coords.LocalPoint;
+import net.runelite.api.events.WorldEntitySpawned;
 import net.runelite.api.mixins.Inject;
 import net.runelite.api.mixins.MethodHook;
 import net.runelite.api.mixins.Mixin;
 import net.runelite.api.mixins.Shadow;
 import net.runelite.rs.api.RSClient;
-import net.runelite.rs.api.RSNode;
+import net.runelite.rs.api.RSProjectionCoord;
 import net.runelite.rs.api.RSWorldEntity;
+import net.runelite.rs.api.RSWorldView;
 
-@Mixin(RSNode.class)
-public abstract class RSNodeMixin implements RSNode
+@Mixin(RSWorldEntity.class)
+public abstract class RSWorldEntityMixin implements RSWorldEntity
 {
 	@Shadow("client")
 	private static RSClient client;
 
+	@MethodHook(value = "<init>", end = true)
 	@Inject
-	public void onUnlink()
+	public void rl$init(int var1, RSWorldView worldView)
 	{
-		if (this instanceof RSWorldEntity)
-		{
-			client.getCallbacks().post(new WorldEntityDespawned((WorldEntity) this));
-		}
+		client.getCallbacks().post(new WorldEntitySpawned(this));
 	}
 
 	@Inject
-	@MethodHook("remove")
-	public void rl$unlink()
+	@Override
+	public LocalPoint getCameraFocus()
 	{
-		onUnlink();
+		return getLocalLocation();
+	}
+
+	@Inject
+	@Override
+	public LocalPoint getLocalLocation()
+	{
+		return new LocalPoint(this.getWorldEntityCoord().getX(), this.getWorldEntityCoord().getY(), -1);
+	}
+
+	@Inject
+	@Override
+	public LocalPoint transformToMainWorld(LocalPoint var1)
+	{
+		if (var1.getWorldView() != this.getPlane())
+		{
+			throw new IllegalArgumentException("LocalPoint doesn't belong to this WorldEntity");
+		}
+		else
+		{
+			final RSProjectionCoord pc = this.getProjectionCoord(var1.getX(), var1.getY());
+			LocalPoint lp = new LocalPoint((int) pc.getX(), (int) pc.getY(), -1);
+			pc.release();
+			return lp;
+		}
 	}
 }

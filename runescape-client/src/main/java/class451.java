@@ -93,8 +93,8 @@ public final class class451 {
 		descriptor = "(Lre;FI)V",
 		garbageValue = "1576887687"
 	)
-	void method9162(class450 var1, float var2) {
-		this.method9123(var1.field5216, var1.field5218, var1.field5219, var2);
+	void method9162(ProjectionCoord var1, float var2) {
+		this.method9123(var1.x, var1.z, var1.y, var2);
 	}
 
 	@ObfuscatedName("ac")
@@ -131,13 +131,13 @@ public final class class451 {
 		descriptor = "(Lre;Lre;I)V",
 		garbageValue = "-722988358"
 	)
-	public void method9153(class450 var1, class450 var2) {
-		class450 var3 = NPC.method2851(var1, var2);
+	public void method9153(ProjectionCoord var1, ProjectionCoord var2) {
+		ProjectionCoord var3 = NPC.method2851(var1, var2);
 		float var4 = var1.method9074(var2);
 		float var6 = (float)Math.acos((double)var4);
 		var3.method9070();
 		this.method9162(var3, var6);
-		var3.method9065();
+		var3.release();
 	}
 
 	@ObfuscatedName("ad")

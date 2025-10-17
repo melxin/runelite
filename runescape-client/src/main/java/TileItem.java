@@ -56,11 +56,11 @@ public final class TileItem extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "Lre;"
 	)
-	class450 field1226;
+	ProjectionCoord field1226;
 
 	TileItem() {
 		this.flag = 31;
-		this.field1226 = class450.field5220;
+		this.field1226 = ProjectionCoord.field5220;
 	}
 
 	@ObfuscatedName("ab")
@@ -99,9 +99,9 @@ public final class TileItem extends Renderable {
 			return null;
 		} else {
 			Model var3 = null;
-			if (this.field1226 != class450.field5220) {
+			if (this.field1226 != ProjectionCoord.field5220) {
 				class451 var4 = class135.method3746();
-				var4.method9153(class450.field5213, this.field1226);
+				var4.method9153(ProjectionCoord.field5213, this.field1226);
 				var4.method9128();
 				var3 = var2.toSharedSequenceModel(false);
 				var3.method5549(var4);
@@ -155,7 +155,7 @@ public final class TileItem extends Renderable {
 		descriptor = "(Lre;I)V",
 		garbageValue = "1424941640"
 	)
-	void method2891(class450 var1) {
+	void method2891(ProjectionCoord var1) {
 		this.field1226 = var1;
 	}
 
@@ -193,8 +193,8 @@ public final class TileItem extends Renderable {
 		descriptor = "(IIIILcr;I)Lre;",
 		garbageValue = "-1640047933"
 	)
-	static class450 method2915(int var0, int var1, int var2, int var3, WorldViewManager var4) {
-		class450 var5 = null;
+	static ProjectionCoord method2915(int var0, int var1, int var2, int var3, WorldViewManager var4) {
+		ProjectionCoord var5 = null;
 		WorldView var6 = null;
 		boolean var7 = var0 != 0;
 		int var10;
@@ -252,13 +252,13 @@ public final class TileItem extends Renderable {
 			if (var8 != null) {
 				Coord var15 = ((Actor)var8).method2463(var6);
 				var5 = class147.method3882();
-				var5.field5216 = (float)var15.x;
-				var5.field5219 = (float)var15.y;
+				var5.x = (float)var15.x;
+				var5.y = (float)var15.y;
 			}
 		}
 
 		if (var5 == null) {
-			var6 = var4.method2368(var1, var2);
+			var6 = var4.getWorldViewFromWorldPoint(var1, var2);
 			int var16 = var1 - var6.baseX;
 			int var19 = var2 - var6.baseY;
 			WorldEntity var21 = (WorldEntity)var4.method2366().worldEntities.get((long)var6.id);
@@ -269,15 +269,15 @@ public final class TileItem extends Renderable {
 			}
 		}
 
-		var10 = (int)var5.field5216;
-		int var17 = (int)var5.field5219;
+		var10 = (int)var5.x;
+		int var17 = (int)var5.y;
 		int var18 = class280.getTileHeight(var6, var10, var17, var3);
 		WorldEntity var20 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var6.id);
 		if (var20 != null) {
 			var18 += class280.getTileHeight(class547.topLevelWorldView, var20.getY(), var20.getPlane(), var20.getX());
 		}
 
-		var5.field5218 = (float)var18;
+		var5.z = (float)var18;
 		return var5;
 	}
 
@@ -366,7 +366,7 @@ public final class TileItem extends Renderable {
 
 			try {
 				var2 = Integer.parseInt(var3[1]);
-				class547.topLevelWorldView.scene.method5171(class216.method4889()[var2]);
+				class547.topLevelWorldView.scene.method5171(TileRenderMode.method4889()[var2]);
 			} catch (NumberFormatException var6) {
 				class292.addGameMessage(99, "", String.format("Error setting tile render mode. settilerendermode should be in the format \"::settilerendermode X\" where X is a valid number from 0-1. 0=camera 1=target Value provided: %s", var3[1]));
 			}

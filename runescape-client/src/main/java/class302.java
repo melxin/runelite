@@ -77,8 +77,8 @@ public class class302 {
 		descriptor = "(Lre;Lre;I)Lre;",
 		garbageValue = "-1084477567"
 	)
-	public static final class450 method6840(class450 var0, class450 var1) {
-		class450 var2 = NPC.method2793(var0);
+	public static final ProjectionCoord method6840(ProjectionCoord var0, ProjectionCoord var1) {
+		ProjectionCoord var2 = NPC.method2793(var0);
 		var2.method9064(var1);
 		return var2;
 	}

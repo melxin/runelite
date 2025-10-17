@@ -104,7 +104,7 @@ class Lootbeam
 
 	int getWorldView()
 	{
-		return runeLiteObject.getWorldView();
+		return runeLiteObject.getWorldView().getId();
 	}
 
 	public void setColor(Color color)

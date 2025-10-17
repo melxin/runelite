@@ -126,14 +126,14 @@ public class HttpResponse {
 	)
 	static int method302(int var0, int var1, ObjectSound var2) {
 		WorldView var3 = Client.worldViewManager.getWorldView(var2.plane);
-		class450 var4 = Varcs.method3022(var3, var2.y, var2.maxX);
-		class450 var5 = Varcs.method3022(var3, var2.maxY, var2.field973);
-		int var6 = (int)var4.field5216;
-		int var7 = (int)var4.field5219;
-		int var8 = (int)var5.field5216;
-		int var9 = (int)var5.field5219;
-		var4.method9065();
-		var5.method9065();
+		ProjectionCoord var4 = Varcs.method3022(var3, var2.y, var2.maxX);
+		ProjectionCoord var5 = Varcs.method3022(var3, var2.maxY, var2.field973);
+		int var6 = (int)var4.x;
+		int var7 = (int)var4.y;
+		int var8 = (int)var5.x;
+		int var9 = (int)var5.y;
+		var4.release();
+		var5.release();
 		int var11 = 0;
 		if (var0 < var6) {
 			var11 += var6 - var0;

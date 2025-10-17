@@ -245,13 +245,13 @@ public class IndexCheck implements class28 {
 		descriptor = "(FFFI)Lre;",
 		garbageValue = "1519481429"
 	)
-	public static class450 method6169(float var0, float var1, float var2) {
-		synchronized(class450.field5214) {
-			if (class450.field5210 == 0) {
-				return new class450(var0, var1, var2);
+	public static ProjectionCoord method6169(float var0, float var1, float var2) {
+		synchronized(ProjectionCoord.field5214) {
+			if (ProjectionCoord.field5210 == 0) {
+				return new ProjectionCoord(var0, var1, var2);
 			} else {
-				class450.field5214[--class450.field5210].method9066(var0, var1, var2);
-				return class450.field5214[class450.field5210];
+				ProjectionCoord.field5214[--ProjectionCoord.field5210].method9066(var0, var1, var2);
+				return ProjectionCoord.field5214[ProjectionCoord.field5210];
 			}
 		}
 	}

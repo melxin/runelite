@@ -1199,17 +1199,17 @@ public class Model extends Renderable {
 		descriptor = "(Lrt;)V"
 	)
 	public void method5549(class451 var1) {
-		class450 var2 = class147.method3882();
+		ProjectionCoord var2 = class147.method3882();
 
 		for (int var3 = 0; var3 < this.verticesCount; ++var3) {
 			var2.method9066((float)this.verticesX[var3], (float)this.verticesY[var3], (float)this.verticesZ[var3]);
 			var2.method9110(var1);
-			this.verticesX[var3] = (int)var2.field5216;
-			this.verticesY[var3] = (int)var2.field5218;
-			this.verticesZ[var3] = (int)var2.field5219;
+			this.verticesX[var3] = (int)var2.x;
+			this.verticesY[var3] = (int)var2.z;
+			this.verticesZ[var3] = (int)var2.y;
 		}
 
-		var2.method9065();
+		var2.release();
 		this.resetBounds();
 	}
 
