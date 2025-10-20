@@ -290,6 +290,22 @@ public interface RSWidget extends Widget
 	@Override
 	void setBorderType(int type);
 
+	@Import("spriteFlipV")
+	@Override
+	boolean isFlippedVertically();
+
+	@Import("spriteFlipV")
+	@Override
+	void setFlippedVertically(boolean flip);
+
+	@Import("spriteFlipH")
+	@Override
+	boolean isFlippedHorizontally();
+
+	@Import("spriteFlipH")
+	@Override
+	void setFlippedHorizontally(boolean flip);
+
 	@Import("itemId")
 	@Override
 	int getItemId();
