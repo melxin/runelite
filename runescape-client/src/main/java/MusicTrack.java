@@ -3,24 +3,24 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("no")
+@ObfuscatedName("nq")
 @Implements("MusicTrack")
 public class MusicTrack extends Node {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lqp;"
+		descriptor = "Lqi;"
 	)
-	NodeHashTable field3984;
+	NodeHashTable field4014;
 	@ObfuscatedName("at")
 	@Export("midi")
 	byte[] midi;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;)V"
+		descriptor = "(Lxa;)V"
 	)
 	MusicTrack(Buffer var1) {
-		this.field3984 = new NodeHashTable(16);
-		var1.offset = var1.array.length - 3;
+		this.field4014 = new NodeHashTable(16);
+		var1.offset = (var1.array.length - 3) * 1741769013;
 		int var2 = var1.readUnsignedByte();
 		int var3 = var1.readUnsignedShort();
 		int var4 = var2 * 10 + 14;
@@ -78,15 +78,15 @@ public class MusicTrack extends Node {
 		var4 += var5 * 5;
 		var4 += (var7 + var8 + var6 + var9 + var11) * 2;
 		var4 = var4 + var10 + var12;
-		var13 = var1.offset;
+		var13 = var1.offset * 2108391709;
 		var14 = var2 + var5 + var6 + var7 + var8 + var9 + var10 + var11 + var12;
 
 		for (var15 = 0; var15 < var14; ++var15) {
 			var1.readVarInt();
 		}
 
-		var4 += var1.offset - var13;
-		var15 = var1.offset;
+		var4 += var1.offset * 2108391709 - var13;
+		var15 = var1.offset * 2108391709;
 		int var16 = 0;
 		int var17 = 0;
 		int var18 = 0;
@@ -136,48 +136,48 @@ public class MusicTrack extends Node {
 		}
 
 		var29 = 0;
-		int var30 = var1.offset;
-		var1.offset += var26;
-		int var31 = var1.offset;
-		var1.offset += var11;
-		int var32 = var1.offset;
-		var1.offset += var10;
-		int var33 = var1.offset;
-		var1.offset += var9;
-		int var34 = var1.offset;
-		var1.offset += var16;
-		int var35 = var1.offset;
-		var1.offset += var18;
-		int var36 = var1.offset;
-		var1.offset += var20;
-		int var37 = var1.offset;
-		var1.offset += var7 + var8 + var11;
-		int var38 = var1.offset;
-		var1.offset += var7;
-		int var39 = var1.offset;
-		var1.offset += var27;
-		int var40 = var1.offset;
-		var1.offset += var8;
-		int var41 = var1.offset;
-		var1.offset += var17;
-		int var42 = var1.offset;
-		var1.offset += var19;
-		int var43 = var1.offset;
-		var1.offset += var21;
-		int var44 = var1.offset;
-		var1.offset += var12;
-		int var45 = var1.offset;
-		var1.offset += var9;
-		int var46 = var1.offset;
-		var1.offset += var22;
-		int var47 = var1.offset;
-		var1.offset += var23;
-		int var48 = var1.offset;
-		var1.offset += var24;
-		int var49 = var1.offset;
-		var1.offset += var25;
-		int var50 = var1.offset;
-		var1.offset += var5 * 3;
+		int var30 = var1.offset * 2108391709;
+		var1.offset += var26 * 1741769013;
+		int var31 = var1.offset * 2108391709;
+		var1.offset += var11 * 1741769013;
+		int var32 = var1.offset * 2108391709;
+		var1.offset += var10 * 1741769013;
+		int var33 = var1.offset * 2108391709;
+		var1.offset += var9 * 1741769013;
+		int var34 = var1.offset * 2108391709;
+		var1.offset += var16 * 1741769013;
+		int var35 = var1.offset * 2108391709;
+		var1.offset += var18 * 1741769013;
+		int var36 = var1.offset * 2108391709;
+		var1.offset += var20 * 1741769013;
+		int var37 = var1.offset * 2108391709;
+		var1.offset += (var7 + var8 + var11) * 1741769013;
+		int var38 = var1.offset * 2108391709;
+		var1.offset += var7 * 1741769013;
+		int var39 = var1.offset * 2108391709;
+		var1.offset += var27 * 1741769013;
+		int var40 = var1.offset * 2108391709;
+		var1.offset += var8 * 1741769013;
+		int var41 = var1.offset * 2108391709;
+		var1.offset += var17 * 1741769013;
+		int var42 = var1.offset * 2108391709;
+		var1.offset += var19 * 1741769013;
+		int var43 = var1.offset * 2108391709;
+		var1.offset += var21 * 1741769013;
+		int var44 = var1.offset * 2108391709;
+		var1.offset += var12 * 1741769013;
+		int var45 = var1.offset * 2108391709;
+		var1.offset += var9 * 1741769013;
+		int var46 = var1.offset * 2108391709;
+		var1.offset += var22 * 1741769013;
+		int var47 = var1.offset * 2108391709;
+		var1.offset += var23 * 1741769013;
+		int var48 = var1.offset * 2108391709;
+		var1.offset += var24 * 1741769013;
+		int var49 = var1.offset * 2108391709;
+		var1.offset += var25 * 1741769013;
+		int var50 = var1.offset * 2108391709;
+		var1.offset += var5 * 930339743;
 		this.midi = new byte[var4];
 		Buffer var51 = new Buffer(this.midi);
 		var51.writeInt(1297377380);
@@ -185,7 +185,7 @@ public class MusicTrack extends Node {
 		var51.writeShort(var2 > 1 ? 1 : 0);
 		var51.writeShort(var2);
 		var51.writeShort(var3);
-		var1.offset = var13;
+		var1.offset = var13 * 1741769013;
 		int var52 = 0;
 		int var53 = 0;
 		int var54 = 0;
@@ -203,8 +203,8 @@ public class MusicTrack extends Node {
 		label277:
 		for (int var63 = 0; var63 < var2; ++var63) {
 			var51.writeInt(1297379947);
-			var51.offset += 4;
-			int var64 = var51.offset;
+			var51.offset += -1622858540;
+			int var64 = var51.offset * 2108391709;
 			int var65 = var64;
 			int var66 = -1;
 
@@ -223,7 +223,7 @@ public class MusicTrack extends Node {
 
 						var51.writeByte(47);
 						var51.writeByte(0);
-						var51.writeLengthInt(var51.offset - var64);
+						var51.writeLengthInt(var51.offset * 2108391709 - var64);
 						continue label277;
 					}
 
@@ -254,13 +254,13 @@ public class MusicTrack extends Node {
 							var51.writeByte(var71);
 							if (var71 > 0) {
 								int var72 = var61[var52];
-								class351 var73 = (class351)this.field3984.get((long)var72);
+								class358 var73 = (class358)this.field4014.get((long)var72);
 								if (var73 == null) {
-									var73 = new class351(var65);
-									this.field3984.put(var73, (long)var72);
+									var73 = new class358(var65);
+									this.field4014.put(var73, (long)var72);
 								}
 
-								var73.field4031.set(var74);
+								var73.field4060.set(var74);
 							}
 						} else if (var66 == 1) {
 							if (var69) {
@@ -367,9 +367,9 @@ public class MusicTrack extends Node {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;II)Lno;"
+		descriptor = "(Lqm;II)Lnq;"
 	)
 	@Export("readTrack")
 	public static MusicTrack readTrack(AbstractArchive var0, int var1, int var2) {

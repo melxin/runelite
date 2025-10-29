@@ -5,111 +5,111 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("np")
+@ObfuscatedName("oc")
 @Implements("WidgetDefinition")
 public class WidgetDefinition {
-	@ObfuscatedName("ab")
-	static boolean[] field4048;
+	@ObfuscatedName("av")
+	static boolean[] field4109;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lqm;"
 	)
 	@Export("widgetArchive")
 	AbstractArchive widgetArchive;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lqm;"
 	)
-	AbstractArchive field4055;
-	@ObfuscatedName("aj")
+	AbstractArchive field4102;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lqm;"
 	)
-	AbstractArchive field4049;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lpe;"
-	)
-	AbstractArchive field4050;
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lpe;"
-	)
-	AbstractArchive field4051;
+	AbstractArchive field4113;
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "[[Lok;"
+		descriptor = "Lqm;"
+	)
+	AbstractArchive field4104;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lqm;"
+	)
+	AbstractArchive field4105;
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "[[Lof;"
 	)
 	@Export("Widget_interfaceComponents")
 	public Widget[][] Widget_interfaceComponents;
-	@ObfuscatedName("aq")
-	Map field4053;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aw")
+	Map field4107;
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("Widget_cachedSprites")
 	EvictingDualNodeHashTable Widget_cachedSprites;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("Widget_cachedModels")
 	EvictingDualNodeHashTable Widget_cachedModels;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("Widget_cachedFonts")
 	EvictingDualNodeHashTable Widget_cachedFonts;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("Widget_cachedSpriteMasks")
 	EvictingDualNodeHashTable Widget_cachedSpriteMasks;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "Lsf;"
+		descriptor = "Lth;"
 	)
-	class488 field4046;
-	@ObfuscatedName("as")
+	class498 field4103;
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "Lsf;"
+		descriptor = "Lth;"
 	)
-	class488 field4059;
+	class498 field4106;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;Lpe;Lpe;Lpe;)V"
+		descriptor = "(Lqm;Lqm;Lqm;Lqm;Lqm;)V"
 	)
 	public WidgetDefinition(AbstractArchive var1, AbstractArchive var2, AbstractArchive var3, AbstractArchive var4, AbstractArchive var5) {
-		this.field4053 = new HashMap();
+		this.field4107 = new HashMap();
 		this.Widget_cachedSprites = new EvictingDualNodeHashTable(200);
 		this.Widget_cachedModels = new EvictingDualNodeHashTable(50);
 		this.Widget_cachedFonts = new EvictingDualNodeHashTable(20);
 		this.Widget_cachedSpriteMasks = new EvictingDualNodeHashTable(8);
-		this.field4046 = new class488(10, class486.field5404);
-		this.field4059 = new class488(10, class486.field5404);
+		this.field4103 = new class498(10, class496.field5433);
+		this.field4106 = new class498(10, class496.field5433);
 		int var6 = 0;
 		if (var1 != null) {
 			this.widgetArchive = var1;
-			this.field4049 = var2;
-			this.field4050 = var3;
-			this.field4051 = var4;
-			this.field4055 = var5;
+			this.field4113 = var2;
+			this.field4104 = var3;
+			this.field4105 = var4;
+			this.field4102 = var5;
 			var6 = this.widgetArchive.getGroupCount();
 		}
 
 		this.Widget_interfaceComponents = new Widget[var6][];
-		field4048 = new boolean[var6];
+		field4109 = new boolean[var6];
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lok;",
-		garbageValue = "-1884609767"
+		descriptor = "(II)Lof;",
+		garbageValue = "-552401114"
 	)
-	public Widget method7496(int var1) {
+	public Widget method7728(int var1) {
 		int var2 = var1 >> 16;
 		int var3 = var1 & 65535;
 		if (this.Widget_interfaceComponents[var2] == null || this.Widget_interfaceComponents[var2][var3] == null) {
@@ -124,12 +124,12 @@ public class WidgetDefinition {
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Lok;",
-		garbageValue = "-78"
+		descriptor = "(III)Lof;",
+		garbageValue = "-639367068"
 	)
 	@Export("getWidgetChild")
 	public Widget getWidgetChild(int var1, int var2) {
-		Widget var3 = this.method7496(var1);
+		Widget var3 = this.method7728(var1);
 		if (var2 == -1) {
 			return var3;
 		} else {
@@ -140,18 +140,18 @@ public class WidgetDefinition {
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "1763132277"
+		garbageValue = "-1746356712"
 	)
 	@Export("loadInterface")
 	public boolean loadInterface(int var1) {
-		if (field4048[var1]) {
+		if (field4109[var1]) {
 			return true;
 		} else if (!this.widgetArchive.tryLoadGroup(var1)) {
 			return false;
 		} else {
 			int var2 = this.widgetArchive.getGroupFileCount(var1);
 			if (var2 == 0) {
-				field4048[var1] = true;
+				field4109[var1] = true;
 				return true;
 			} else {
 				if (this.Widget_interfaceComponents[var1] == null) {
@@ -173,11 +173,11 @@ public class WidgetDefinition {
 								var5.decodeLegacy(new Buffer(var4));
 							}
 
-							if (this.field4055 != null) {
-								byte[] var6 = this.field4055.takeFile(var1, var3);
+							if (this.field4102 != null) {
+								byte[] var6 = this.field4102.takeFile(var1, var3);
 								if (var6 != null && var6.length > 0) {
-									var5.method8089(new Buffer(var6));
-									this.field4053.put(var5.field4249, var1);
+									var5.method8158(new Buffer(var6));
+									this.field4107.put(var5.field4215, var1);
 								}
 							}
 						}
@@ -188,30 +188,30 @@ public class WidgetDefinition {
 					Widget var7 = this.Widget_interfaceComponents[var1][var3];
 					if (var7 != null && var7.parentId != -1) {
 						var5 = this.Widget_interfaceComponents[var1][var7.parentId & 65535];
-						if (var3 > var5.field4195) {
-							var5.field4195 = var3;
+						if (var3 > var5.field4241) {
+							var5.field4241 = var3;
 						}
 
-						if (var3 < var5.field4228) {
-							var5.field4228 = var3;
+						if (var3 < var5.field4236) {
+							var5.field4236 = var3;
 						}
 					}
 				}
 
-				field4048[var1] = true;
+				field4109[var1] = true;
 				return true;
 			}
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "708044614"
+		garbageValue = "-77027406"
 	)
-	public void method7485(int var1) {
+	public void method7731(int var1) {
 		if (var1 != -1) {
-			if (field4048[var1]) {
+			if (field4109[var1]) {
 				this.widgetArchive.clearFilesGroup(var1);
 				if (this.Widget_interfaceComponents[var1] != null) {
 					for (int var2 = 0; var2 < this.Widget_interfaceComponents[var1].length; ++var2) {
@@ -221,39 +221,21 @@ public class WidgetDefinition {
 					}
 
 					this.Widget_interfaceComponents[var1] = null;
-					field4048[var1] = false;
+					field4109[var1] = false;
 				}
 			}
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "20"
+		descriptor = "(I)V",
+		garbageValue = "1258831648"
 	)
-	public void method7488() {
+	public void method7732() {
 		this.Widget_cachedSprites.clear();
 		this.Widget_cachedModels.clear();
 		this.Widget_cachedFonts.clear();
 		this.Widget_cachedSpriteMasks.clear();
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "818785204"
-	)
-	public static void method7492() {
-		WorldMapElement.HitSplatDefinition_cached.clear();
-	}
-
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "1"
-	)
-	public static void method7504() {
-		ItemComposition.ItemDefinition_cachedSprites.clear();
 	}
 }

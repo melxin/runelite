@@ -1,12 +1,23 @@
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ry")
-public interface class466 {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(Lit;IS)V",
-		garbageValue = "255"
+@ObfuscatedName("rz")
+public final class class466 {
+	@ObfuscatedName("an")
+	@ObfuscatedGetter(
+		intValue = -1048563111
 	)
-	void vmethod11011(SequenceDefinition var1, int var2);
+	public static int field5285;
+	@ObfuscatedName("av")
+	final Object field5286;
+	@ObfuscatedName("at")
+	@ObfuscatedGetter(
+		intValue = -191678187
+	)
+	int field5287;
+
+	class466(Object var1, int var2) {
+		this.field5286 = var1;
+		this.field5287 = var2;
+	}
 }

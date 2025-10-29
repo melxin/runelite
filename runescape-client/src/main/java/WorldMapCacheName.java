@@ -3,94 +3,56 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ll")
+@ObfuscatedName("mf")
 @Implements("WorldMapCacheName")
 public class WorldMapCacheName {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lll;"
+		descriptor = "Lmf;"
 	)
-	public static final WorldMapCacheName field3505;
+	public static final WorldMapCacheName field3532;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lll;"
+		descriptor = "Lmf;"
 	)
-	public static final WorldMapCacheName field3501;
+	public static final WorldMapCacheName field3535;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lll;"
+		descriptor = "Lmf;"
 	)
-	public static final WorldMapCacheName field3502;
+	public static final WorldMapCacheName field3531;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lmf;"
+	)
+	static final WorldMapCacheName field3533;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lmf;"
+	)
+	public static final WorldMapCacheName field3534;
 	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Lll;"
-	)
-	static final WorldMapCacheName field3503;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Lll;"
-	)
-	public static final WorldMapCacheName field3504;
-	@ObfuscatedName("jb")
-	@ObfuscatedSignature(
-		descriptor = "Ltf;"
-	)
-	@Export("js5Socket")
-	static AbstractSocket js5Socket;
-	@ObfuscatedName("af")
 	@Export("name")
 	public final String name;
 
 	static {
-		field3505 = new WorldMapCacheName("details");
-		field3501 = new WorldMapCacheName("compositemap");
-		field3502 = new WorldMapCacheName("compositetexture");
-		field3503 = new WorldMapCacheName("area");
-		field3504 = new WorldMapCacheName("labels");
+		field3532 = new WorldMapCacheName("details");
+		field3535 = new WorldMapCacheName("compositemap");
+		field3531 = new WorldMapCacheName("compositetexture");
+		field3533 = new WorldMapCacheName("area");
+		field3534 = new WorldMapCacheName("labels");
 	}
 
 	WorldMapCacheName(String var1) {
 		this.name = var1;
 	}
 
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;[SB)V",
-		garbageValue = "126"
-	)
-	public static void method6908(String[] var0, short[] var1) {
-		class324.sortItemsByName(var0, var1, 0, var0.length - 1);
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-28"
-	)
-	public static void method6906() {
-		EnumComposition.EnumDefinition_cached.clear();
-	}
-
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ltl;Ltl;II)V",
-		garbageValue = "-2112733223"
+		descriptor = "(II)Z",
+		garbageValue = "-604505976"
 	)
-	public static void method6907(DynamicArray var0, DynamicArray var1, int var2) {
-		PacketBufferNode.method7052(var0, (class572)null, true);
-		DefaultsGroup.method10548(var1, var0.field5571);
-		if (var2 >= 0 && var2 <= var0.size * 479682119) {
-			if (var1.size * 479682119 != 0) {
-				var0.method10437(var1.size * 479682119 + var0.size * 479682119);
-				if (var2 < var0.size * 479682119) {
-					class167.method4091(var0, var2, var0, var1.size * 479682119 + var2, var0.size * 479682119 - var2);
-				}
-
-				class167.method4091(var1, 0, var0, var2, var1.size * 479682119);
-				var0.size += var1.size;
-			}
-		} else {
-			throw new RuntimeException();
-		}
+	public static boolean method7092(int var0) {
+		return (var0 >> 22 & 1) != 0;
 	}
 }

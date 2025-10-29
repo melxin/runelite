@@ -4,24 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("il")
+@ObfuscatedName("jy")
 @Implements("FaceNormal")
 public class FaceNormal {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("as")
+	@Export("PcmPlayer_stereo")
+	public static boolean PcmPlayer_stereo;
+	@ObfuscatedName("oo")
+	@Export("regionMapArchiveIds")
+	static int[] regionMapArchiveIds;
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 1418999345
+		intValue = -1027021233
 	)
 	@Export("x")
 	int x;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 460667375
+		intValue = -976363093
 	)
 	@Export("y")
 	int y;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -459371687
+		intValue = 1358705711
 	)
 	@Export("z")
 	int z;
@@ -29,34 +35,19 @@ public class FaceNormal {
 	FaceNormal() {
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lhh;",
-		garbageValue = "1902005361"
+		descriptor = "(FFFI)Lrx;",
+		garbageValue = "-244409807"
 	)
-	public static HealthBarDefinition method5454(int var0) {
-		HealthBarDefinition var1 = (HealthBarDefinition)HealthBarDefinition.HealthBarDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = HealthBarDefinition.HealthBarDefinition_archive.takeFile(33, var0);
-			var1 = new HealthBarDefinition();
-			var1.field2034 = var0;
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
+	public static ProjectionCoord method5848(float var0, float var1, float var2) {
+		synchronized(ProjectionCoord.field5238) {
+			if (ProjectionCoord.field5236 == 0) {
+				return new ProjectionCoord(var0, var1, var2);
+			} else {
+				ProjectionCoord.field5238[--ProjectionCoord.field5236].method9296(var0, var1, var2);
+				return ProjectionCoord.field5238[ProjectionCoord.field5236];
 			}
-
-			HealthBarDefinition.HealthBarDefinition_cached.put(var1, (long)var0);
-			return var1;
 		}
-	}
-
-	@ObfuscatedName("py")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "65"
-	)
-	static void method5453(int var0) {
-		Client.oculusOrbState = var0;
 	}
 }

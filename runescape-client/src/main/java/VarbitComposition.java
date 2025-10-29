@@ -1,73 +1,69 @@
-import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hb")
+@ObfuscatedName("ii")
 @Implements("VarbitComposition")
 public class VarbitComposition extends DualNode {
-	@ObfuscatedName("ab")
-	static final int[] field2251;
+	@ObfuscatedName("av")
+	static final int[] field2273;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lqm;"
 	)
 	@Export("VarbitDefinition_archive")
-	static AbstractArchive VarbitDefinition_archive;
+	public static AbstractArchive VarbitDefinition_archive;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("VarbitDefinition_cached")
-	static EvictingDualNodeHashTable VarbitDefinition_cached;
-	@ObfuscatedName("dm")
-	@ObfuscatedGetter(
-		intValue = -424286569
+	public static EvictingDualNodeHashTable VarbitDefinition_cached;
+	@ObfuscatedName("vm")
+	@ObfuscatedSignature(
+		descriptor = "Lqy;"
 	)
-	static int field2252;
-	@ObfuscatedName("aj")
+	static JagNetThread field2279;
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 83079267
+		intValue = 1051846737
 	)
 	@Export("baseVar")
 	public int baseVar;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 214779061
+		intValue = 1628144867
 	)
 	@Export("startBit")
 	public int startBit;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 1044356817
+		intValue = -1525413401
 	)
 	@Export("endBit")
 	public int endBit;
 
 	static {
-		field2251 = new int[32];
+		field2273 = new int[32];
 		VarbitDefinition_cached = new EvictingDualNodeHashTable(64);
 		int var0 = 2;
 
 		for (int var1 = 0; var1 < 32; ++var1) {
-			field2251[var1] = var0 - 1;
+			field2273[var1] = var0 - 1;
 			var0 += var0;
 		}
 
 	}
 
-	VarbitComposition() {
-	}
-
-	@ObfuscatedName("aj")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "-646659546"
+		descriptor = "(Lxa;B)V",
+		garbageValue = "64"
 	)
 	@Export("decode")
-	void decode(Buffer var1) {
+	public void decode(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
@@ -78,10 +74,10 @@ public class VarbitComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;II)V",
-		garbageValue = "-347454728"
+		descriptor = "(Lxa;IB)V",
+		garbageValue = "101"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -93,103 +89,86 @@ public class VarbitComposition extends DualNode {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;Lpe;Ljava/util/ArrayList;I)Z",
-		garbageValue = "-392973640"
+		descriptor = "(Ljava/lang/CharSequence;I)J",
+		garbageValue = "16711680"
 	)
-	public static boolean method4589(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2, ArrayList var3) {
-		WorldMapEvent.field3518 = var0;
-		AsyncHttpResponse.field76 = var1;
-		class338.field3895 = var2;
-		class338.field3900 = var3;
-		return true;
-	}
+	public static long method4681(CharSequence var0) {
+		long var1 = 0L;
+		int var3 = var0.length();
 
-	@ObfuscatedName("ci")
-	@ObfuscatedSignature(
-		descriptor = "(ILcj;ZB)I",
-		garbageValue = "1"
-	)
-	static int method4588(int var0, Script var1, boolean var2) {
-		if (var0 == 7463) {
-			boolean var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize] == 1;
-			class137.method3793(var3);
-			return 1;
-		} else {
-			return 2;
-		}
-	}
-
-	@ObfuscatedName("ct")
-	@ObfuscatedSignature(
-		descriptor = "(Lwe;I)Ljava/lang/Object;",
-		garbageValue = "1871787849"
-	)
-	static Object method4590(class572 var0) {
-		if (var0 == null) {
-			throw new IllegalStateException("popValueOfType() failure - null baseVarType");
-		} else {
-			switch(var0.field5881) {
-			case 1:
-				return Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
-			case 2:
-				return Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
-			default:
-				throw new IllegalStateException("popValueOfType() failure - unsupported type");
-			}
-		}
-	}
-
-	@ObfuscatedName("ls")
-	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;B)V",
-		garbageValue = "-23"
-	)
-	static void method4587(int var0, String var1) {
-		int var2 = Client.playerUpdateManager.playerCount;
-		int[] var3 = Client.playerUpdateManager.playerIndices;
-		boolean var4 = false;
-		Username var5 = new Username(var1, class147.loginType);
-		WorldView var6 = Client.worldViewManager.getWorldView();
-		if (var6 == null) {
-			class292.addGameMessage(4, "", "Unable to find " + var1 + ", current world null.");
-		} else {
-			for (int var7 = 0; var7 < var2; ++var7) {
-				Player var8 = (Player)var6.players.get((long)var3[var7]);
-				if (var8 != null && var8 != class159.localPlayer && var8.username != null && var8.username.equals(var5)) {
-					PacketBufferNode var9;
-					if (var0 == 1) {
-						var9 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeByte(0);
-						var9.packetBuffer.writeShort(var3[var7]);
-						Client.packetWriter.addNode(var9);
-					} else if (var0 == 4) {
-						var9 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeByte(0);
-						var9.packetBuffer.writeShortAdd(var3[var7]);
-						Client.packetWriter.addNode(var9);
-					} else if (var0 == 6) {
-						var9 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeShortAdd(var3[var7]);
-						var9.packetBuffer.writeByteAdd(0);
-						Client.packetWriter.addNode(var9);
-					} else if (var0 == 7) {
-						var9 = HorizontalAlignment.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeByteAdd(0);
-						var9.packetBuffer.writeShort(var3[var7]);
-						Client.packetWriter.addNode(var9);
-					}
-
-					var4 = true;
-					break;
-				}
+		for (int var4 = 0; var4 < var3; ++var4) {
+			var1 *= 37L;
+			char var5 = var0.charAt(var4);
+			if (var5 >= 'A' && var5 <= 'Z') {
+				var1 += (long)(var5 + 1 - 65);
+			} else if (var5 >= 'a' && var5 <= 'z') {
+				var1 += (long)(var5 + 1 - 97);
+			} else if (var5 >= '0' && var5 <= '9') {
+				var1 += (long)(var5 + 27 - 48);
 			}
 
-			if (!var4) {
-				class292.addGameMessage(4, "", "Unable to find " + var1);
+			if (var1 >= 177917621779460413L) {
+				break;
+			}
+		}
+
+		while (0L == var1 % 37L && var1 != 0L) {
+			var1 /= 37L;
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(III)V",
+		garbageValue = "-1953320624"
+	)
+	public static void method4678(int var0, int var1) {
+		VarbitComposition var3 = (VarbitComposition)VarbitDefinition_cached.get((long)var0);
+		VarbitComposition var2;
+		if (var3 != null) {
+			var2 = var3;
+		} else {
+			byte[] var4 = VarbitDefinition_archive.takeFile(14, var0);
+			var3 = new VarbitComposition();
+			if (var4 != null) {
+				var3.decode(new Buffer(var4));
 			}
 
+			VarbitDefinition_cached.put(var3, (long)var0);
+			var2 = var3;
 		}
+
+		int var8 = var2.baseVar;
+		int var5 = var2.startBit;
+		int var6 = var2.endBit;
+		int var7 = Varps.Varps_masks[var6 - var5];
+		if (var1 < 0 || var1 > var7) {
+			var1 = 0;
+		}
+
+		var7 <<= var5;
+		Varps.Varps_main[var8] = Varps.Varps_main[var8] & ~var7 | var1 << var5 & var7;
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(IB)I",
+		garbageValue = "110"
+	)
+	public static int method4673(int var0) {
+		return var0 >> 1 & 3;
+	}
+
+	@ObfuscatedName("pj")
+	@ObfuscatedSignature(
+		descriptor = "(ZB)V",
+		garbageValue = "-62"
+	)
+	static void method4668(boolean var0) {
+		Client.leftClickOpensMenu = var0;
 	}
 }

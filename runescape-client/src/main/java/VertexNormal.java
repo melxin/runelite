@@ -4,30 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jj")
+@ObfuscatedName("ke")
 @Implements("VertexNormal")
 public class VertexNormal {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 945087929
+		intValue = 97383685
 	)
 	@Export("x")
 	int x;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 44300847
+		intValue = 1754978191
 	)
 	@Export("y")
 	int y;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1101225631
+		intValue = 1294340687
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 713480281
+		intValue = 802759063
 	)
 	@Export("magnitude")
 	int magnitude;
@@ -36,7 +36,7 @@ public class VertexNormal {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljj;)V"
+		descriptor = "(Lke;)V"
 	)
 	VertexNormal(VertexNormal var1) {
 		this.x = var1.x;
@@ -45,60 +45,52 @@ public class VertexNormal {
 		this.magnitude = var1.magnitude;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("nr")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "2013294913"
+		descriptor = "([Lof;II)V",
+		garbageValue = "-697477978"
 	)
-	static void method5725() {
-		class586.field5967[0] = 0;
+	@Export("runComponentCloseListeners")
+	static final void runComponentCloseListeners(Widget[] var0, int var1) {
+		for (int var2 = 0; var2 < var0.length; ++var2) {
+			Widget var3 = var0[var2];
+			if (var3 != null) {
+				if (var3.type == 0) {
+					if (var3.children != null) {
+						runComponentCloseListeners(var3.children, var1);
+					}
 
-		for (int var0 = 0; var0 < 2048; var0 += 128) {
-			int var1 = (var0 >> 7) + 1;
-			int var3 = 0;
-			if (var0 > 0 && var0 < 1024) {
-				var3 |= 272;
+					if (var3.childIndex * 2077538819 == -1) {
+						InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
+						if (var4 != null) {
+							class520.runIntfCloseListeners(var4.group, var1);
+						}
+					}
+				}
+
+				ScriptEvent var5;
+				if (var1 == 0 && var3.onDialogAbort != null) {
+					var5 = new ScriptEvent();
+					var5.widget = var3;
+					var5.args = var3.onDialogAbort;
+					class141.runScriptEvent(var5);
+				}
+
+				if (var1 == 1 && var3.onSubChange != null) {
+					if (var3.childIndex * 2077538819 >= 0) {
+						Widget var6 = class226.widgetDefinition.method7728(var3.id);
+						if (var6 == null || var6.children == null || var3.childIndex * 2077538819 >= var6.children.length || var3 != var6.children[var3.childIndex * 2077538819]) {
+							continue;
+						}
+					}
+
+					var5 = new ScriptEvent();
+					var5.widget = var3;
+					var5.args = var3.onSubChange;
+					class141.runScriptEvent(var5);
+				}
 			}
-
-			if (var0 > 512 && var0 < 1536) {
-				var3 |= 1088;
-			}
-
-			if (var0 > 1024) {
-				var3 |= 544;
-			}
-
-			if (var0 > 1536 || var0 < 512) {
-				var3 |= 2176;
-			}
-
-			if (var0 == 0 || var0 == 1024) {
-				var3 |= 48;
-			}
-
-			if (var0 == 512 || var0 == 1536) {
-				var3 |= 1152;
-			}
-
-			class586.field5967[var1] = var3;
 		}
 
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1944780185"
-	)
-	@Export("clearItemContainer")
-	static void clearItemContainer(int var0) {
-		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
-		if (var1 != null) {
-			for (int var2 = 0; var2 < var1.ids.length; ++var2) {
-				var1.ids[var2] = -1;
-				var1.quantities[var2] = 0;
-			}
-
-		}
 	}
 }

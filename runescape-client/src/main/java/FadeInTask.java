@@ -1,110 +1,109 @@
+import java.util.Iterator;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sd")
+@ObfuscatedName("sp")
 @Implements("FadeInTask")
 public class FadeInTask extends SongTask {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("oi")
 	@ObfuscatedSignature(
-		descriptor = "Lnh;"
+		descriptor = "Ltd;"
 	)
-	MidiRequest field5348;
+	static AbstractSocket field5377;
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lnf;"
+	)
+	MidiRequest field5375;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1875606157
+		intValue = 1112736735
 	)
-	int field5349;
+	int field5376;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lsw;IZI)V"
+		descriptor = "(Lsz;IZI)V"
 	)
 	public FadeInTask(SongTask var1, int var2, boolean var3, int var4) {
 		super(var1);
-		this.field5348 = null;
-		this.field5349 = 0;
-		super.field5350 = "FadeInTask";
+		this.field5375 = null;
+		this.field5376 = 0;
+		super.field5378 = "FadeInTask";
 		if (var2 >= 0) {
-			if (var3 && var2 < class338.field3893.size()) {
-				this.field5348 = (MidiRequest)class338.field3893.get(var2);
-			} else if (!var3 && var2 < class338.midiRequests.size()) {
-				this.field5348 = (MidiRequest)class338.midiRequests.get(var2);
+			if (var3 && var2 < class345.field3933.size()) {
+				this.field5375 = (MidiRequest)class345.field3933.get(var2);
+			} else if (!var3 && var2 < class345.midiRequests.size()) {
+				this.field5375 = (MidiRequest)class345.midiRequests.get(var2);
 			}
 
-			this.field5349 = var4;
+			this.field5376 = var4;
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1369867803"
+		descriptor = "(B)Z",
+		garbageValue = "111"
 	)
-	public boolean vmethod9763() {
-		if (this.field5348 != null && this.field5348.midiPcmStream != null) {
-			this.field5348.field4023 = true;
+	public boolean vmethod9974() {
+		if (this.field5375 != null && this.field5375.midiPcmStream != null) {
+			this.field5375.field4050 = true;
 
 			try {
-				if (this.field5348.field4019 < (float)this.field5348.musicTrackVolume && this.field5348.midiPcmStream.isReady()) {
-					float var1 = this.field5349 == 0 ? (float)this.field5349 : (float)this.field5348.musicTrackVolume / (float)this.field5349;
-					MidiRequest var10000 = this.field5348;
-					var10000.field4019 += var1 == 0.0F ? (float)this.field5348.musicTrackVolume : var1;
-					if (this.field5348.field4019 > (float)this.field5348.musicTrackVolume) {
-						this.field5348.field4019 = (float)this.field5348.musicTrackVolume;
+				if (this.field5375.field4046 < (float)this.field5375.musicTrackVolume && this.field5375.midiPcmStream.isReady()) {
+					float var1 = this.field5376 == 0 ? (float)this.field5376 : (float)this.field5375.musicTrackVolume / (float)this.field5376;
+					MidiRequest var10000 = this.field5375;
+					var10000.field4046 += var1 == 0.0F ? (float)this.field5375.musicTrackVolume : var1;
+					if (this.field5375.field4046 > (float)this.field5375.musicTrackVolume) {
+						this.field5375.field4046 = (float)this.field5375.musicTrackVolume;
 					}
 
-					this.field5348.midiPcmStream.setPcmStreamVolume((int)this.field5348.field4019);
+					this.field5375.midiPcmStream.setPcmStreamVolume((int)this.field5375.field4046);
 					return false;
 				}
 			} catch (Exception var3) {
-				this.method9741(var3.getMessage());
+				this.method9950(var3.getMessage());
 				return true;
 			}
 
-			this.field5348.field4023 = false;
+			this.field5375.field4050 = false;
 			return true;
 		} else {
 			return true;
 		}
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("om")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)Ljava/lang/String;",
-		garbageValue = "1990543198"
+		descriptor = "(I)V",
+		garbageValue = "-826368912"
 	)
-	public static String method9723(CharSequence var0) {
-		int var1 = var0.length();
-		StringBuilder var2 = new StringBuilder(var1);
+	static final void method9940() {
+		Iterator var0 = Client.worldViewManager.iterator();
 
-		for (int var3 = 0; var3 < var1; ++var3) {
-			char var4 = var0.charAt(var3);
-			if ((var4 < 'a' || var4 > 'z') && (var4 < 'A' || var4 > 'Z') && (var4 < '0' || var4 > '9') && var4 != '.' && var4 != '-' && var4 != '*' && var4 != '_') {
-				if (var4 == ' ') {
-					var2.append('+');
-				} else {
-					byte var5 = Projectile.charToByteCp1252(var4);
-					var2.append('%');
-					int var6 = var5 >> 4 & 15;
-					if (var6 >= 10) {
-						var2.append((char)(var6 + 55));
-					} else {
-						var2.append((char)(var6 + 48));
-					}
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
 
-					var6 = var5 & 15;
-					if (var6 >= 10) {
-						var2.append((char)(var6 + 55));
-					} else {
-						var2.append((char)(var6 + 48));
-					}
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				Player var3 = (Player)var1.players.get((long)Client.playerUpdateManager.playerIndices[var2]);
+				if (var3 != null) {
+					var3.clearIsFriend();
 				}
-			} else {
-				var2.append(var4);
 			}
 		}
 
-		return var2.toString();
+		var0 = Messages.Messages_hashTable.iterator();
+
+		while (var0.hasNext()) {
+			Message var4 = (Message)var0.next();
+			var4.clearIsFromFriend();
+		}
+
+		if (BuddyRankComparator.friendsChat != null) {
+			BuddyRankComparator.friendsChat.clearFriends();
+		}
+
 	}
 }

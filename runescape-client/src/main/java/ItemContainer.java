@@ -6,24 +6,14 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("cn")
 @Implements("ItemContainer")
 public class ItemContainer extends Node {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lqp;"
+		descriptor = "Lqi;"
 	)
 	@Export("itemContainers")
 	static NodeHashTable itemContainers;
-	@ObfuscatedName("ae")
-	@Export("SpriteBuffer_spriteHeights")
-	static int[] SpriteBuffer_spriteHeights;
-	@ObfuscatedName("az")
-	@Export("userHomeDirectory")
-	static String userHomeDirectory;
-	@ObfuscatedName("kk")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	@Export("archive9")
-	static Archive archive9;
+	@ObfuscatedName("an")
+	public static short[][] field826;
 	@ObfuscatedName("at")
 	@Export("ids")
 	int[] ids;
@@ -40,22 +30,12 @@ public class ItemContainer extends Node {
 		this.quantities = new int[]{0};
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "121"
+		descriptor = "(Lqm;I)V",
+		garbageValue = "1912333612"
 	)
-	public static boolean method2154(int var0) {
-		return (var0 & 1) != 0;
-	}
-
-	@ObfuscatedName("ha")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lvo;",
-		garbageValue = "-1662751921"
-	)
-	@Export("getWorldMap")
-	static WorldMap getWorldMap() {
-		return class50.worldMap;
+	public static void method2163(AbstractArchive var0) {
+		FloorUnderlayDefinition.FloorUnderlayDefinition_archive = var0;
 	}
 }

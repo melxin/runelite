@@ -4,100 +4,106 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ke")
+@ObfuscatedName("kk")
 @Implements("CollisionMap")
 public class CollisionMap {
-	@ObfuscatedName("bq")
+	@ObfuscatedName("cq")
 	@ObfuscatedGetter(
-		intValue = -855602183
+		intValue = -1998333989
+	)
+	@Export("loginBoxCenter")
+	static int loginBoxCenter;
+	@ObfuscatedName("bt")
+	@ObfuscatedGetter(
+		intValue = 504755687
 	)
 	@Export("xInset")
 	int xInset;
-	@ObfuscatedName("bo")
+	@ObfuscatedName("bu")
 	@ObfuscatedGetter(
-		intValue = 2067336551
+		intValue = -1751058007
 	)
 	@Export("yInset")
 	int yInset;
-	@ObfuscatedName("bx")
+	@ObfuscatedName("ba")
 	@ObfuscatedGetter(
-		intValue = 987821365
+		intValue = -1640107663
 	)
 	@Export("xSize")
 	int xSize;
-	@ObfuscatedName("bp")
+	@ObfuscatedName("bi")
 	@ObfuscatedGetter(
-		intValue = -1255104823
+		intValue = -67399471
 	)
 	@Export("ySize")
 	int ySize;
-	@ObfuscatedName("bz")
+	@ObfuscatedName("by")
 	@Export("flags")
 	final int[][] flags;
 
 	public CollisionMap(int var1, int var2, boolean var3) {
 		if (var3) {
-			this.method6208(-1, -1, var1 + 6, var2 + 6);
+			this.method6337(-1, -1, var1 + 6, var2 + 6);
 		} else {
-			this.method6208(0, 0, var1, var2);
+			this.method6337(0, 0, var1, var2);
 		}
 
 		this.flags = new int[this.xSize][this.ySize];
 		this.clear();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-857877385"
+		garbageValue = "1713094960"
 	)
-	int method6172() {
+	int method6363() {
 		return this.xInset;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "2"
+		descriptor = "(S)I",
+		garbageValue = "7957"
 	)
-	int method6173() {
+	int method6329() {
 		return this.yInset;
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-319604879"
+		garbageValue = "-920691729"
 	)
-	public int method6174() {
+	public int method6330() {
 		return this.xSize;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "495473470"
+		garbageValue = "-1618689043"
 	)
-	public int method6175() {
+	public int method6331() {
 		return this.ySize;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(IIIIB)V",
-		garbageValue = "-122"
+		garbageValue = "-10"
 	)
-	final void method6208(int var1, int var2, int var3, int var4) {
+	final void method6337(int var1, int var2, int var3, int var4) {
 		this.xInset = var1;
 		this.yInset = var2;
 		this.xSize = var3;
 		this.ySize = var4;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1739367362"
+		garbageValue = "-1769108229"
 	)
 	@Export("clear")
 	public void clear() {
@@ -113,19 +119,19 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)Z",
-		garbageValue = "-2144547801"
+		garbageValue = "660108619"
 	)
-	boolean method6217(int var1, int var2, int var3) {
+	boolean method6334(int var1, int var2, int var3) {
 		return (this.flags[var1][var2] & var3) != 0;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)V",
-		garbageValue = "1886877397"
+		garbageValue = "1177297832"
 	)
 	@Export("setFlagOff")
 	void setFlagOff(int var1, int var2, int var3) {
@@ -133,10 +139,10 @@ public class CollisionMap {
 		var10000[var2] |= var3;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(IIII)V",
-		garbageValue = "-497471665"
+		garbageValue = "-493127550"
 	)
 	@Export("setFlag")
 	void setFlag(int var1, int var2, int var3) {
@@ -144,39 +150,39 @@ public class CollisionMap {
 		var10000[var2] &= ~var3;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)V",
-		garbageValue = "-72"
+		descriptor = "(IIII)V",
+		garbageValue = "651999802"
 	)
-	public void method6216(int var1, int var2, int var3) {
+	public void method6355(int var1, int var2, int var3) {
 		this.setFlag(var1 - this.xInset, var2 - this.yInset, var3);
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(III)Z",
-		garbageValue = "-736623405"
+		garbageValue = "-365810060"
 	)
-	public boolean method6182(int var1, int var2) {
-		return this.method6193(var1 - this.xInset, var2 - this.yInset);
+	public boolean method6338(int var1, int var2) {
+		return this.method6332(var1 - this.xInset, var2 - this.yInset);
+	}
+
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "(III)Z",
+		garbageValue = "554339037"
+	)
+	boolean method6332(int var1, int var2) {
+		return var1 >= 1 && var1 < this.xSize - 5 && var2 >= 1 && var2 < this.ySize - 5;
 	}
 
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(III)Z",
-		garbageValue = "2139478559"
-	)
-	boolean method6193(int var1, int var2) {
-		return var1 >= 1 && var1 < this.xSize - 5 && var2 >= 1 && var2 < this.ySize - 5;
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
 		descriptor = "(IIIIZI)V",
-		garbageValue = "-931217384"
+		garbageValue = "1809198866"
 	)
-	public void method6228(int var1, int var2, int var3, int var4, boolean var5) {
+	public void method6340(int var1, int var2, int var3, int var4, boolean var5) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
 		if (var3 == 0) {
@@ -323,12 +329,12 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIZI)V",
-		garbageValue = "-1511877361"
+		descriptor = "(IIIIIZB)V",
+		garbageValue = "55"
 	)
-	void method6197(int var1, int var2, int var3, int var4, int var5, boolean var6) {
+	void method6370(int var1, int var2, int var3, int var4, int var5, boolean var6) {
 		int var7 = 256;
 		if (var6) {
 			var7 += 131072;
@@ -355,20 +361,20 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "(IIIIZI)V",
-		garbageValue = "1894106380"
+		garbageValue = "497115708"
 	)
 	@Export("addGameObject")
 	public void addGameObject(int var1, int var2, int var3, int var4, boolean var5) {
-		this.method6197(var1, var2, var3, var4, 0, var5);
+		this.method6370(var1, var2, var3, var4, 0, var5);
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "1694045504"
+		descriptor = "(IIB)V",
+		garbageValue = "-113"
 	)
 	@Export("setBlockedByFloor")
 	public void setBlockedByFloor(int var1, int var2) {
@@ -378,10 +384,10 @@ public class CollisionMap {
 		var10000[var2] |= 2097152;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(IIB)V",
-		garbageValue = "69"
+		garbageValue = "11"
 	)
 	@Export("setBlockedByFloorDec")
 	public void setBlockedByFloorDec(int var1, int var2) {
@@ -391,12 +397,12 @@ public class CollisionMap {
 		var10000[var2] |= 262144;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIZB)V",
-		garbageValue = "-29"
+		descriptor = "(IIIIZI)V",
+		garbageValue = "-127415640"
 	)
-	public void method6189(int var1, int var2, int var3, int var4, boolean var5) {
+	public void method6345(int var1, int var2, int var3, int var4, boolean var5) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
 		if (var3 == 0) {
@@ -543,10 +549,10 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
 		descriptor = "(IIIIIZB)V",
-		garbageValue = "25"
+		garbageValue = "88"
 	)
 	@Export("setFlagOffNonSquare")
 	public void setFlagOffNonSquare(int var1, int var2, int var3, int var4, int var5, boolean var6) {
@@ -576,165 +582,80 @@ public class CollisionMap {
 
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
 		descriptor = "(IIB)V",
-		garbageValue = "-54"
+		garbageValue = "-100"
 	)
-	public void method6190(int var1, int var2) {
+	public void method6347(int var1, int var2) {
 		var1 -= this.xInset;
 		var2 -= this.yInset;
 		int[] var10000 = this.flags[var1];
 		var10000[var2] &= -262145;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(Lrl;ILry;B)I",
-		garbageValue = "0"
+		descriptor = "(Ljava/lang/CharSequence;IZI)I",
+		garbageValue = "-869919856"
 	)
-	public static int method6234(AnimationSequence var0, int var1, class466 var2) {
-		int var3 = 0;
-		if (!var0.isActive()) {
-			var0.method9633(0);
-			return var3;
+	static int method6397(CharSequence var0, int var1, boolean var2) {
+		if (var1 >= 2 && var1 <= 36) {
+			boolean var3 = false;
+			boolean var4 = false;
+			int var5 = 0;
+			int var6 = var0.length();
+
+			for (int var7 = 0; var7 < var6; ++var7) {
+				char var8 = var0.charAt(var7);
+				if (var7 == 0) {
+					if (var8 == '-') {
+						var3 = true;
+						continue;
+					}
+
+					if (var8 == '+') {
+						continue;
+					}
+				}
+
+				int var10;
+				if (var8 >= '0' && var8 <= '9') {
+					var10 = var8 - '0';
+				} else if (var8 >= 'A' && var8 <= 'Z') {
+					var10 = var8 - '7';
+				} else {
+					if (var8 < 'a' || var8 > 'z') {
+						throw new NumberFormatException();
+					}
+
+					var10 = var8 - 'W';
+				}
+
+				if (var10 >= var1) {
+					throw new NumberFormatException();
+				}
+
+				if (var3) {
+					var10 = -var10;
+				}
+
+				int var9 = var5 * var1 + var10;
+				if (var9 / var1 != var5) {
+					throw new NumberFormatException();
+				}
+
+				var5 = var9;
+				var4 = true;
+			}
+
+			if (!var4) {
+				throw new NumberFormatException();
+			} else {
+				return var5;
+			}
 		} else {
-			SequenceDefinition var4 = var0.getSequenceDefinition();
-			if (var4.frameCount == -1) {
-				var3 |= 8;
-			}
-
-			if (var4.method4856()) {
-				var0.method9633(0);
-			} else {
-				var0.method9633(var0.method9666() + var1);
-			}
-
-			int var7;
-			int var8;
-			SequenceDefinition var9;
-			int var10;
-			int var11;
-			int var12;
-			if (!var4.isCachedModelIdSet()) {
-				var7 = var1;
-				var8 = 0;
-				var9 = var0.getSequenceDefinition();
-				if (var9.frameCount > 0 && var9.field2479 > 0) {
-					var7 = var1 % var9.field2479;
-				}
-
-				var10 = var0.getFrame();
-				var11 = var0.getFrameCycle();
-				var12 = var0.method9629();
-				if (var10 >= var9.frameIds.length) {
-					var10 = 0;
-					var11 = 0;
-				}
-
-				var11 += var7;
-
-				while (true) {
-					do {
-						if (var11 <= var9.frameLengths[var10]) {
-							var0.method9636(var10, var11, var12);
-							var3 |= var8;
-							return var3;
-						}
-
-						var11 -= var9.frameLengths[var10];
-						++var10;
-						var8 |= 4;
-						if ((var8 & 2) == 0 && var2 != null) {
-							var2.vmethod11011(var9, var10);
-						}
-					} while(var10 < var9.frameIds.length);
-
-					++var12;
-					var8 |= 1;
-					var10 -= var9.frameCount;
-					if (var12 >= var9.field2488) {
-						var8 |= 2;
-					}
-
-					if (var10 < 0 || var10 >= var9.frameIds.length) {
-						var8 |= 2;
-						var10 = 0;
-					}
-
-					if ((var8 & 2) == 0 && var2 != null) {
-						var2.vmethod11011(var9, var10);
-					}
-				}
-			} else {
-				var7 = var1;
-				var8 = 0;
-				var9 = var0.getSequenceDefinition();
-				if (var9.frameCount > 0 && var1 > 0) {
-					var7 = var1 - (var1 - 1) / var9.frameCount * var9.frameCount;
-				}
-
-				var10 = var0.getFrame();
-				var11 = var0.method9629();
-
-				while (true) {
-					do {
-						if (var7 <= 0) {
-							var0.method9637(var10, var11);
-							var3 |= var8;
-							return var3;
-						}
-
-						--var7;
-						++var10;
-						var8 |= 4;
-						if ((var8 & 2) == 0 && var2 != null) {
-							var2.vmethod11011(var9, var10);
-						}
-
-						var12 = var9.getMayaAnimFrame();
-					} while(var10 < var12);
-
-					++var11;
-					var8 |= 1;
-					var10 -= var9.frameCount;
-					if (var11 >= var9.field2488) {
-						var8 |= 2;
-					}
-
-					if (var10 < 0 || var10 >= var12) {
-						var8 |= 2;
-						var10 = 0;
-					}
-
-					if ((var8 & 2) == 0 && var2 != null) {
-						var2.vmethod11011(var9, var10);
-					}
-				}
-			}
+			throw new IllegalArgumentException("" + var1);
 		}
-	}
-
-	@ObfuscatedName("jg")
-	@ObfuscatedSignature(
-		descriptor = "(Ldm;B)V",
-		garbageValue = "-34"
-	)
-	static final void method6235(WorldView var0) {
-		for (GraphicsObject var1 = (GraphicsObject)var0.graphicsObjects.last(); var1 != null; var1 = (GraphicsObject)var0.graphicsObjects.previous()) {
-			if (var0.plane == var1.plane && !var1.method1896()) {
-				if (Client.cycle >= var1.cycleStart) {
-					var1.advance(Client.graphicsCycle);
-					if (var1.method1896()) {
-						var1.remove();
-					} else {
-						var0.scene.drawEntity(var1.plane, var1.x, var1.y, var1.z, 60, var1, 0, -1L, false);
-					}
-				}
-			} else {
-				var1.remove();
-			}
-		}
-
 	}
 }

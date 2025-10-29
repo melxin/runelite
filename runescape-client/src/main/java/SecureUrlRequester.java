@@ -4,13 +4,25 @@ import java.net.URLConnection;
 import javax.net.ssl.HttpsURLConnection;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ex")
+@ObfuscatedName("eu")
 @Implements("SecureUrlRequester")
 public class SecureUrlRequester extends UrlRequester {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("bj")
+	@ObfuscatedGetter(
+		intValue = -1015152063
+	)
+	static int field1536;
+	@ObfuscatedName("ff")
+	@Export("client")
+	@ObfuscatedSignature(
+		descriptor = "Lclient;"
+	)
+	public static Client client;
+	@ObfuscatedName("ae")
 	@Export("secureHttps")
 	final boolean secureHttps;
 
@@ -19,10 +31,10 @@ public class SecureUrlRequester extends UrlRequester {
 		this.secureHttps = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lez;I)V",
-		garbageValue = "-2003495708"
+		descriptor = "(Ley;B)V",
+		garbageValue = "-44"
 	)
 	@Export("openConnection")
 	void openConnection(UrlRequest var1) throws IOException {
@@ -30,32 +42,32 @@ public class SecureUrlRequester extends UrlRequester {
 		boolean var9 = false;
 
 		HttpURLConnection var12;
-		label131: {
-			label125: {
+		label139: {
+			label131: {
 				try {
-					label115: {
+					label134: {
 						var9 = true;
-						String var3 = var1.field1555.getProtocol();
+						String var3 = var1.field1546.getProtocol();
 						if (var3.equals("http")) {
 							var2 = this.openHttpConnection(var1);
 						} else {
 							if (!var3.equals("https")) {
-								var1.field1559 = UrlRequest.field1554;
+								var1.field1543 = UrlRequest.field1541;
 								var9 = false;
-								break label115;
+								break label134;
 							}
 
 							var2 = this.openHttpsConnection(var1);
 						}
 
-						this.method3556(var2, var1);
+						this.method3634(var2, var1);
 						var9 = false;
-						break label131;
+						break label139;
 					}
 				} catch (IOException var10) {
-					var1.field1559 = UrlRequest.field1554;
+					var1.field1543 = UrlRequest.field1541;
 					var9 = false;
-					break label125;
+					break label131;
 				} finally {
 					if (var9) {
 						if (var2 != null && var2 instanceof HttpURLConnection) {
@@ -89,141 +101,47 @@ public class SecureUrlRequester extends UrlRequester {
 
 	}
 
-	@ObfuscatedName("ax")
+	@ObfuscatedName("al")
 	@ObfuscatedSignature(
-		descriptor = "(Lez;I)Ljava/net/URLConnection;",
-		garbageValue = "1523536342"
+		descriptor = "(Ley;B)Ljava/net/URLConnection;",
+		garbageValue = "100"
 	)
 	@Export("openHttpConnection")
 	URLConnection openHttpConnection(UrlRequest var1) throws IOException {
-		URLConnection var2 = var1.field1555.openConnection();
+		URLConnection var2 = var1.field1546.openConnection();
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("an")
+	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "(Lez;I)Ljava/net/URLConnection;",
-		garbageValue = "402611853"
+		descriptor = "(Ley;B)Ljava/net/URLConnection;",
+		garbageValue = "120"
 	)
 	@Export("openHttpsConnection")
 	URLConnection openHttpsConnection(UrlRequest var1) throws IOException {
-		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1555.openConnection();
+		HttpsURLConnection var2 = (HttpsURLConnection)var1.field1546.openConnection();
 		if (!this.secureHttps) {
-			if (SecureRandomSSLSocketFactory.INSTANCE == null) {
-				SecureRandomSSLSocketFactory.INSTANCE = new SecureRandomSSLSocketFactory();
-			}
-
-			SecureRandomSSLSocketFactory var4 = SecureRandomSSLSocketFactory.INSTANCE;
-			var2.setSSLSocketFactory(var4);
+			var2.setSSLSocketFactory(SecureRandomSSLSocketFactory.method194());
 		}
 
 		this.setDefaultRequestProperties(var2);
 		return var2;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "([BZB)Ljava/lang/Object;",
-		garbageValue = "22"
+		descriptor = "(I)Lry;",
+		garbageValue = "2046726516"
 	)
-	public static Object method3587(byte[] var0, boolean var1) {
-		if (var0 == null) {
-			return null;
-		} else if (var0.length > 136) {
-			DirectByteArrayCopier var2 = new DirectByteArrayCopier();
-			var2.set(var0);
-			return var2;
-		} else {
-			return var0;
-		}
-	}
-
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(III)Lcj;",
-		garbageValue = "76333634"
-	)
-	@Export("getScript")
-	static Script getScript(int var0, int var1) {
-		Script var2 = (Script)Script.Script_cached.get((long)(var0 << 16));
-		if (var2 != null) {
-			return var2;
-		} else {
-			String var3 = String.valueOf(var0);
-			int var4 = class142.archive12.getGroupId(var3);
-			if (var4 == -1) {
-				return null;
+	public static TransformationMatrix method3659() {
+		synchronized(TransformationMatrix.field5257) {
+			if (TransformationMatrix.field5255 == 0) {
+				return new TransformationMatrix();
 			} else {
-				byte[] var5 = class142.archive12.takeFileFlat(var4);
-				if (var5 != null) {
-					if (var5.length <= 1) {
-						return null;
-					}
-
-					var2 = class203.newScript(var5);
-					if (var2 != null) {
-						Script.Script_cached.put(var2, (long)(var0 << 16));
-						return var2;
-					}
-				}
-
-				return null;
+				TransformationMatrix.field5257[--TransformationMatrix.field5255].method9421();
+				return TransformationMatrix.field5257[TransformationMatrix.field5255];
 			}
 		}
-	}
-
-	@ObfuscatedName("my")
-	@ObfuscatedSignature(
-		descriptor = "(ILtg;Ldm;B)I",
-		garbageValue = "122"
-	)
-	static int method3585(int var0, WorldEntity var1, WorldView var2) {
-		int var3 = -1;
-		if (var0 == Client.currentWorldViewId) {
-			var3 = var2.plane;
-		} else if (Client.currentWorldViewId == -1) {
-			var3 = var1.field5482.method4539();
-		} else {
-			WorldEntity var4 = Client.worldViewManager.method2396();
-			WorldView var5 = var4.worldView;
-			if (var5.plane == var4.field5482.method4539()) {
-				if (var0 == -1) {
-					var3 = var4.getX();
-				} else {
-					var3 = var1.field5482.method4539();
-				}
-			}
-		}
-
-		return var3;
-	}
-
-	@ObfuscatedName("nj")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-404392602"
-	)
-	static boolean method3583(int var0) {
-		for (int var1 = 0; var1 < Client.field434; ++var1) {
-			if (Client.field568[var1] == var0) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	@ObfuscatedName("pp")
-	@ObfuscatedSignature(
-		descriptor = "([BIB)V",
-		garbageValue = "60"
-	)
-	static void method4843(byte[] var0, int var1) {
-		if (Client.randomDatData == null) {
-			Client.randomDatData = new byte[24];
-		}
-
-		class478.writeRandomDat(var0, var1, Client.randomDatData, 0, 24);
 	}
 }

@@ -7,121 +7,131 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("aq")
+@ObfuscatedName("aw")
 @Implements("SpriteBufferProperties")
 public class SpriteBufferProperties {
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "Lpe;"
-	)
-	@Export("ItemDefinition_modelArchive")
-	public static AbstractArchive ItemDefinition_modelArchive;
-	@ObfuscatedName("az")
-	static int[][] field24;
-	@ObfuscatedName("mb")
+	@ObfuscatedName("lq")
 	@ObfuscatedGetter(
-		intValue = -948425081
+		intValue = -201184013
 	)
-	@Export("cameraYaw")
-	static int cameraYaw;
-	@ObfuscatedName("ab")
+	@Export("cameraX")
+	static int cameraX;
+	@ObfuscatedName("og")
+	@Export("xteaKeys")
+	static int[][] xteaKeys;
+	@ObfuscatedName("pe")
+	@ObfuscatedGetter(
+		intValue = 989003393
+	)
+	static int field23;
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lwj;"
+		descriptor = "Lxa;"
 	)
-	final Buffer field28;
+	final Buffer field21;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Laj;"
+		descriptor = "Lan;"
 	)
-	final class3 field26;
+	final class3 field22;
 	@ObfuscatedName("ag")
 	ExecutorService field19;
-	@ObfuscatedName("aj")
-	Future field20;
+	@ObfuscatedName("an")
+	Future field17;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;Laj;)V"
+		descriptor = "(Lxa;Lan;)V"
 	)
 	public SpriteBufferProperties(Buffer var1, class3 var2) {
 		this.field19 = Executors.newSingleThreadExecutor();
-		this.field28 = var1;
-		this.field26 = var2;
-		this.method41();
+		this.field21 = var1;
+		this.field22 = var2;
+		this.method48();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "88"
+		descriptor = "(I)Z",
+		garbageValue = "-1881629513"
 	)
-	public boolean method42() {
-		return this.field20.isDone();
+	public boolean method50() {
+		return this.field17.isDone();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1687695813"
+		garbageValue = "1612475570"
 	)
-	public void method40() {
+	public void method46() {
 		this.field19.shutdown();
 		this.field19 = null;
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lwj;",
-		garbageValue = "1251241349"
+		descriptor = "(I)Lxa;",
+		garbageValue = "1137813296"
 	)
-	public Buffer method43() {
+	public Buffer method52() {
 		try {
-			return (Buffer)this.field20.get();
+			return (Buffer)this.field17.get();
 		} catch (Exception var2) {
 			return null;
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "0"
+		descriptor = "(I)V",
+		garbageValue = "817077716"
 	)
-	void method41() {
-		this.field20 = this.field19.submit(new class1(this, this.field28, this.field26));
+	void method48() {
+		this.field17 = this.field19.submit(new class1(this, this.field21, this.field22));
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("lp")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;J)V"
+		descriptor = "(Ldd;I)V",
+		garbageValue = "192429840"
 	)
-	static void method51(Buffer var0, long var1) {
-		var1 /= 10L;
-		if (var1 < 0L) {
-			var1 = 0L;
-		} else if (var1 > 65535L) {
-			var1 = 65535L;
+	static final void method45(WorldView var0) {
+		for (PendingSpawn var1 = (PendingSpawn)var0.pendingSpawns.last(); var1 != null; var1 = (PendingSpawn)var0.pendingSpawns.previous()) {
+			if (var1.hitpoints > 0) {
+				--var1.hitpoints;
+			}
+
+			if (var1.hitpoints == 0) {
+				if (var1.objectId < 0 || class480.method9927(var1.objectId, var1.field992)) {
+					class150.addPendingSpawnToScene(var0, var1.plane, var1.type, var1.x, var1.y, var1.objectId, var1.field1007, var1.field992, var1.field1001);
+					var1.remove();
+				}
+			} else {
+				if (var1.delay > 0) {
+					--var1.delay;
+				}
+
+				if (var1.delay == 0 && var1.x >= 1 && var1.y >= 1 && var1.x <= 102 && var1.y <= 102 && (var1.field998 < 0 || class480.method9927(var1.field998, var1.field1000))) {
+					class150.addPendingSpawnToScene(var0, var1.plane, var1.type, var1.x, var1.y, var1.field998, var1.field999, var1.field1000, var1.field1001);
+					var1.delay = -1;
+					if (var1.field998 == var1.objectId && var1.objectId == -1) {
+						var1.remove();
+					} else if (var1.objectId == var1.field998 && var1.field1007 == var1.field999 && var1.field992 == var1.field1000) {
+						var1.remove();
+					}
+				}
+			}
 		}
 
-		var0.writeShort((int)var1);
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("nz")
 	@ObfuscatedSignature(
-		descriptor = "(Lrt;I)Lrt;",
-		garbageValue = "-600444548"
+		descriptor = "(III)V",
+		garbageValue = "-1615040760"
 	)
-	static final class451 method54(class451 var0) {
-		class451 var1 = class226.method5106(var0);
-		var1.method9127();
-		return var1;
-	}
-
-	@ObfuscatedName("hl")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lky;",
-		garbageValue = "-1479716944"
-	)
-	public static IndexCheck method52() {
-		return Client.indexCheck;
+	static void method58(int var0, int var1) {
+		class146.method3937(WorldMapSection2.tempMenuAction, var0, var1);
+		WorldMapSection2.tempMenuAction = null;
 	}
 }

@@ -2,34 +2,37 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hq")
+@ObfuscatedName("hn")
 public class class191 extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
-	@Export("field2026")
-	public static EvictingDualNodeHashTable field2026;
+	@Export("field2007")
+	static EvictingDualNodeHashTable field2007;
 
 	static {
-		field2026 = new EvictingDualNodeHashTable(64);
+		field2007 = new EvictingDualNodeHashTable(64);
 	}
 
-	@ObfuscatedName("nu")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1431099627"
+		descriptor = "(B)Lmj;",
+		garbageValue = "0"
 	)
-	static void method4365(int var0) {
-		World.tempMenuAction = new MenuAction();
-		World.tempMenuAction.param0 = Client.menu.menuArguments1[var0];
-		World.tempMenuAction.param1 = Client.menu.menuArguments2[var0];
-		World.tempMenuAction.opcode = Client.menu.menuOpcodes[var0];
-		World.tempMenuAction.identifier = Client.menu.menuIdentifiers[var0];
-		World.tempMenuAction.itemId = Client.menu.menuItemIds[var0];
-		World.tempMenuAction.action = Client.menu.menuActions[var0];
-		World.tempMenuAction.target = Client.menu.menuTargets[var0];
-		World.tempMenuAction.worldViewId = Client.menu.menuWorldViewIds[var0];
-		World.tempMenuAction.field685 = Client.menu.menuShiftClick[var0];
+	public static PacketBufferNode method4420() {
+		return PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0 ? new PacketBufferNode() : PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
+	}
+
+	@ObfuscatedName("on")
+	@ObfuscatedSignature(
+		descriptor = "(Lof;B)I",
+		garbageValue = "75"
+	)
+	@Export("getWidgetFlags")
+	static int getWidgetFlags(Widget var0) {
+		WidgetConfigNode var1 = (WidgetConfigNode)Client.widgetFlags.get((long)var0.id);
+		WidgetConfigNode var2 = WorldMapIcon_0.method6921(var1, var0.childIndex * 2077538819);
+		return var2 != null ? var2.method7744() : var0.flags;
 	}
 }

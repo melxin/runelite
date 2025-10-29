@@ -1,260 +1,167 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fa")
+@ObfuscatedName("fl")
 public class class134 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ar")
 	@ObfuscatedGetter(
-		intValue = 1296861777
+		intValue = -808607155
 	)
-	public final int field1628;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "[Lrz;"
-	)
-	final TransformationMatrix[] field1619;
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Lfa;"
-	)
-	public class134 field1622;
-	@ObfuscatedName("aj")
-	float[][] field1621;
-	@ObfuscatedName("ah")
-	boolean field1632;
-	@ObfuscatedName("af")
-	boolean field1623;
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "[Lrz;"
-	)
-	TransformationMatrix[] field1624;
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "[Lrz;"
-	)
-	TransformationMatrix[] field1625;
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Lrz;"
-	)
-	TransformationMatrix field1626;
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "Lrz;"
-	)
-	TransformationMatrix field1630;
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Lrz;"
-	)
-	TransformationMatrix field1620;
-	@ObfuscatedName("ad")
-	float[][] field1629;
+	static int field1596;
+	@ObfuscatedName("ft")
+	static boolean field1592;
 	@ObfuscatedName("av")
-	float[][] field1633;
-	@ObfuscatedName("as")
-	float[][] field1631;
-
-	@ObfuscatedSignature(
-		descriptor = "(ILwj;Z)V"
+	@ObfuscatedGetter(
+		intValue = 1994604433
 	)
-	public class134(int var1, Buffer var2, boolean var3) {
-		this.field1632 = true;
-		this.field1623 = true;
-		this.field1626 = new TransformationMatrix();
-		this.field1630 = new TransformationMatrix();
-		this.field1620 = new TransformationMatrix();
-		this.field1628 = var2.readShort();
-		this.field1619 = new TransformationMatrix[var1];
-		this.field1624 = new TransformationMatrix[this.field1619.length];
-		this.field1625 = new TransformationMatrix[this.field1619.length];
-		this.field1621 = new float[this.field1619.length][3];
-
-		for (int var4 = 0; var4 < this.field1619.length; ++var4) {
-			this.field1619[var4] = new TransformationMatrix(var2, var3);
-			this.field1621[var4][0] = var2.method11385();
-			this.field1621[var4][1] = var2.method11385();
-			this.field1621[var4][2] = var2.method11385();
-		}
-
-		this.method3690();
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "296394169"
-	)
-	void method3690() {
-		this.field1629 = new float[this.field1619.length][3];
-		this.field1633 = new float[this.field1619.length][3];
-		this.field1631 = new float[this.field1619.length][3];
-		TransformationMatrix var1 = AbstractArchive.method8450();
-
-		for (int var2 = 0; var2 < this.field1619.length; ++var2) {
-			TransformationMatrix var3 = this.method3691(var2);
-			var1.method9187(var3);
-			var1.method9174();
-			this.field1629[var2] = var1.method9240();
-			this.field1633[var2][0] = var3.field5229[12];
-			this.field1633[var2][1] = var3.field5229[13];
-			this.field1633[var2][2] = var3.field5229[14];
-			this.field1631[var2] = var3.method9193();
-		}
-
-		var1.method9171();
-	}
-
+	int field1593;
 	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lrz;",
-		garbageValue = "533459329"
-	)
-	TransformationMatrix method3691(int var1) {
-		return this.field1619[var1];
-	}
-
+	float field1597;
 	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lrz;",
-		garbageValue = "-2124872662"
-	)
-	TransformationMatrix method3692(int var1) {
-		if (this.field1624[var1] == null) {
-			this.field1624[var1] = new TransformationMatrix(this.method3691(var1));
-			if (this.field1622 != null) {
-				this.field1624[var1].method9181(this.field1622.method3692(var1));
-			} else {
-				this.field1624[var1].method9181(TransformationMatrix.field5234);
-			}
-		}
-
-		return this.field1624[var1];
-	}
-
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lrz;",
-		garbageValue = "-1820535316"
-	)
-	TransformationMatrix method3720(int var1) {
-		if (this.field1625[var1] == null) {
-			this.field1625[var1] = new TransformationMatrix(this.method3692(var1));
-			this.field1625[var1].method9174();
-		}
-
-		return this.field1625[var1];
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(I)Lrz;",
-		garbageValue = "909299242"
-	)
-	public TransformationMatrix method3694() {
-		return this.field1626;
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Lrz;B)V",
-		garbageValue = "83"
-	)
-	void method3695(TransformationMatrix var1) {
-		this.field1626.method9187(var1);
-		this.field1632 = true;
-		this.field1623 = true;
-	}
-
+	float field1594;
+	@ObfuscatedName("an")
+	float field1595;
 	@ObfuscatedName("ae")
+	float field1599;
+	@ObfuscatedName("aj")
+	float field1600;
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lrz;",
-		garbageValue = "0"
+		descriptor = "Lfl;"
 	)
-	TransformationMatrix method3696() {
-		if (this.field1632) {
-			this.field1630.method9187(this.method3694());
-			if (this.field1622 != null) {
-				this.field1630.method9181(this.field1622.method3696());
+	class134 field1598;
+
+	class134() {
+		this.field1594 = Float.MAX_VALUE;
+		this.field1595 = Float.MAX_VALUE;
+		this.field1599 = Float.MAX_VALUE;
+		this.field1600 = Float.MAX_VALUE;
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(Lxa;II)V",
+		garbageValue = "-1793120611"
+	)
+	void method3755(Buffer var1, int var2) {
+		this.field1593 = var1.readShort();
+		this.field1597 = var1.method11642();
+		this.field1594 = var1.method11642();
+		this.field1595 = var1.method11642();
+		this.field1599 = var1.method11642();
+		this.field1600 = var1.method11642();
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(B)[Lmz;",
+		garbageValue = "1"
+	)
+	@Export("ServerPacket_values")
+	public static ServerPacket[] ServerPacket_values() {
+		return new ServerPacket[]{ServerPacket.SERVER_TICK_END, ServerPacket.SET_PLAYER_OP, ServerPacket.UPDATE_REBOOT_TIMER, ServerPacket.REFLECTION_CHECKER, ServerPacket.URL_OPEN, ServerPacket.SET_PRIVCHATMODE, ServerPacket.LOC_DEL, ServerPacket.UPDATE_INV_CLEAR, ServerPacket.IF_OPENSUB, ServerPacket.MESSAGE_PRIVATE, ServerPacket.CAM_LOOKAT, ServerPacket.CAM_TARGET, ServerPacket.CAM_SETANGLE, ServerPacket.IF_SETCOLOUR, ServerPacket.UPDATE_IGNORELIST, ServerPacket.MIDI_SONG, ServerPacket.NPC_INFO_SMALL_VIEWPORT, ServerPacket.NPC_SET_SEQUENCE, ServerPacket.VARP_SMALL, ServerPacket.CAM_LOOKAT_EASED_COORD, ServerPacket.SYNTH_SOUND, ServerPacket.GRAPHICSOBJECT_SPAWN, ServerPacket.CAM_LOOKAT_EASED_ANGLE_RELATIVE, ServerPacket.MINIMAP_TOGGLE, ServerPacket.UPDATE_INV_STOP_TRANSIT, ServerPacket.MIDI_JINGLE, ServerPacket.PLAYER_SPOTANIM, ServerPacket.IF_SET_PLAYERMODEL_BASECOLOUR, ServerPacket.UPDATE_STAT, ServerPacket.IF_SETANIM, ServerPacket.MESSAGE_GAME, ServerPacket.LOGOUT, ServerPacket.MESSAGE_CLAN_CHANNEL_SYSTEM, ServerPacket.IF_RESYNC, ServerPacket.FRIENDS_LIST_LOADED, ServerPacket.TRIGGER_ONDIALOG_ABORT, ServerPacket.IF_SETPOSITION, ServerPacket.CAM_MODE, ServerPacket.IF_OPENTOP, ServerPacket.IF_SETSCROLLPOS, ServerPacket.MIDI_SWAP, ServerPacket.UPDATE_ZONE_PARTIAL_FOLLOWS_LEVEL, ServerPacket.IF_SETHIDE, ServerPacket.IF_MOVESUB, ServerPacket.HINT_ARROW, ServerPacket.UPDATE_FRIENDLIST, ServerPacket.LOC_ADD_CHANGE, ServerPacket.UPDATE_TRADING_POST, ServerPacket.NPC_INFO_LARGE_VIEWPORT, ServerPacket.IF_CLOSESUB, ServerPacket.UPDATE_STOCKMARKET_SLOT, ServerPacket.IF_SETMODEL, ServerPacket.RESET_INTERACTION_MODE, ServerPacket.IF_SET_ROTATE_SPEED, ServerPacket.UNKNOWN_STRING, ServerPacket.UPDATE_RUN_ENERGY, ServerPacket.CLAN_CHANNEL_DELTA, ServerPacket.IF_SETNPCHEAD_ACTIVE, ServerPacket.LOGOUT_FULL, ServerPacket.PROJECTILE_SPAWN, ServerPacket.CLAN_CHANNEL_FULL, ServerPacket.UPDATE_SITE_SETTINGS, ServerPacket.MINIMAP_FLAG_SET, ServerPacket.MESSAGE_FRIENDS_CHAT, ServerPacket.VAR_CLAN_ENABLE, ServerPacket.CLAN_SETTINGS_FULL, ServerPacket.SYNC_CLIENT_VARCACHE, ServerPacket.PLAYER_ANIM_SPECIFIC, ServerPacket.RESET_ANIMS, ServerPacket.NPC_SPOTANIM, ServerPacket.UPDATE_UID192, ServerPacket.REBUILD_NORMAL, ServerPacket.MESSAGE_PRIVATE_ECHO, ServerPacket.RESET_CLIENT_VARCACHE, ServerPacket.IF_SET_TEXT, ServerPacket.MIDI_SONG_WITH_SECONDARY, ServerPacket.SET_ACTIVE_WORLD, ServerPacket.IF_SETOBJECT, ServerPacket.LOC_ANIM, ServerPacket.IF_SET_PLAYERMODEL_SELF, ServerPacket.REBUILD_WORLDENTITY, ServerPacket.VAR_CLAN_DISABLE, ServerPacket.DYNAMICOBJECT_SPAWN, ServerPacket.HEAT_MAP, ServerPacket.UPDATE_INV_FULL, ServerPacket.UPDATE_ZONE_FULL_FOLLOWS, ServerPacket.CAM_SMOOTH_RESET, ServerPacket.CAM_SHAKE, ServerPacket.PLAYER_INFO, ServerPacket.CAM_RESET, ServerPacket.NPC_HEADICON_SPECIFIC, ServerPacket.SET_NPC_UPDATE_ORIGIN, ServerPacket.UPDATE_FRIEND_CHAT_CHANNEL_FULL_V1, ServerPacket.MESSAGE_FRIEND_PRIVATE, ServerPacket.CLAN_SETTINGS_DELTA, ServerPacket.REBUILD_REGION, ServerPacket.UPDATE_FRIEND_CHAT_CHANNEL_SINGLE_USER, ServerPacket.CAM_MOVETO, ServerPacket.EVENT_WORLDHOP, ServerPacket.CAM_MOVETO_EASED_CIRCULAR, ServerPacket.UPDATE_ZONE_PARTIAL_ENCLOSED, ServerPacket.IF_SET_PLAYERMODEL_OBJ, ServerPacket.CAM_MOVE_TO, ServerPacket.UPDATE_RUN_WEIGHT, ServerPacket.PING_STATISTICS_REQUEST, ServerPacket.IF_SETPLAYERHEAD, ServerPacket.IF_SETANGLE, ServerPacket.VAR_CLAN, ServerPacket.MIDI_SONG_STOP, ServerPacket.IF_SET_PLAYERMODEL_BODYTYPE, ServerPacket.MAP_ANIM, ServerPacket.IF_SETNPCHEAD, ServerPacket.OCULUS_SYNC, ServerPacket.UPDATE_INV_PARTIAL, ServerPacket.CHAT_FILTER_SETTINGS, ServerPacket.LOC_MERGEPLAYER, ServerPacket.RUNCLIENTSCRIPT, ServerPacket.VARP_LARGE, ServerPacket.WORLDENTITY_INFO, ServerPacket.IF_SET_EVENTS, ServerPacket.field3778, ServerPacket.field3832, ServerPacket.field3833, ServerPacket.field3834, ServerPacket.field3835, ServerPacket.field3836, ServerPacket.field3837, ServerPacket.field3757, ServerPacket.field3839, ServerPacket.field3773, ServerPacket.field3804, ServerPacket.field3842, ServerPacket.field3843, ServerPacket.field3844, ServerPacket.field3768};
+	}
+
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "([I[IIII)V",
+		garbageValue = "-817675254"
+	)
+	public static void method3758(int[] var0, int[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var4 = (var3 + var2) / 2;
+			int var5 = var2;
+			int var6 = var0[var4];
+			var0[var4] = var0[var3];
+			var0[var3] = var6;
+			int var7 = var1[var4];
+			var1[var4] = var1[var3];
+			var1[var3] = var7;
+			int var8 = var6 == Integer.MAX_VALUE ? 0 : 1;
+
+			for (int var9 = var2; var9 < var3; ++var9) {
+				if (var0[var9] < (var9 & var8) + var6) {
+					int var10 = var0[var9];
+					var0[var9] = var0[var5];
+					var0[var5] = var10;
+					int var11 = var1[var9];
+					var1[var9] = var1[var5];
+					var1[var5++] = var11;
+				}
 			}
 
-			this.field1632 = false;
+			var0[var3] = var0[var5];
+			var0[var5] = var6;
+			var1[var3] = var1[var5];
+			var1[var5] = var7;
+			method3758(var0, var1, var2, var5 - 1);
+			method3758(var0, var1, var5 + 1, var3);
 		}
 
-		return this.field1630;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ih")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lrz;",
-		garbageValue = "1955074009"
+		descriptor = "(Ldd;Lcr;I)V",
+		garbageValue = "1878721480"
 	)
-	public TransformationMatrix method3697(int var1) {
-		if (this.field1623) {
-			this.field1620.method9187(this.method3720(var1));
-			this.field1620.method9181(this.method3696());
-			this.field1623 = false;
+	static final void method3760(WorldView var0, Actor var1) {
+		Client.field315.method11277(var0, var1.x, var1.y, var1 == class330.localPlayer);
+		int var2 = GrandExchangeOfferUnitPriceComparator.method8811(var1.poseAnimationSequence, 1, Client.field315);
+		if ((var2 & 2) != 0) {
+			var1.poseAnimationSequence.method9872();
 		}
 
-		return this.field1620;
-	}
+		var1.field1015.setSequence(var1.idleSequence);
+		if (var1.poseAnimationSequence.method9874() > 0 && var1.field1015.method9874() < 30) {
+			if (var1.poseAnimationSequence.getId() == var1.field1015.getId()) {
+				var1.field1015.setSequence(var1.poseAnimationSequence);
+			} else {
+				int var3 = GrandExchangeOfferUnitPriceComparator.method8811(var1.field1015, 1, (class476)null);
+				if ((var3 & 2) != 0) {
+					var1.field1015.method9872();
+				}
+			}
+		}
 
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(II)[F",
-		garbageValue = "364425918"
-	)
-	float[] method3698(int var1) {
-		return this.field1629[var1];
-	}
+		IterableNodeHashTableIterator var7 = new IterableNodeHashTableIterator(var1.method2532());
 
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(II)[F",
-		garbageValue = "199729367"
-	)
-	float[] method3700(int var1) {
-		return this.field1633[var1];
-	}
+		for (ActorSpotAnim var4 = (ActorSpotAnim)var7.method8854(); var4 != null; var4 = (ActorSpotAnim)var7.next()) {
+			if (var4.id != -1 && Client.cycle >= var4.field5559) {
+				AnimationSequence var5 = var4.animationSequence;
+				if (!var5.isActive()) {
+					var4.remove();
+					--var1.graphicsCount;
+				} else {
+					int var6 = GrandExchangeOfferUnitPriceComparator.method8811(var5, 1, Client.field315);
+					if ((var6 & 1) != 0) {
+						var4.remove();
+						--var1.graphicsCount;
+					}
+				}
+			}
+		}
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(IB)[F",
-		garbageValue = "73"
-	)
-	float[] method3730(int var1) {
-		return this.field1631[var1];
-	}
+		if (var1.animationSequence.isActive() && var1.field1017 <= 1) {
+			SequenceDefinition var9 = var1.animationSequence.getSequenceDefinition();
+			if (var9.field2498 == 1 && var1.field1075 > 0 && var1.spotAnimation <= Client.cycle && var1.field1057 < Client.cycle) {
+				var1.field1017 = 1;
+				return;
+			}
+		}
 
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;I)V",
-		garbageValue = "1392726867"
-	)
-	public static void method3734(AbstractArchive var0, AbstractArchive var1) {
-		HealthBarDefinition.HealthBarDefinition_archive = var0;
-		HealthBarDefinition.field2031 = var1;
-	}
+		if (var1.field1017 > 0) {
+			--var1.field1017;
+		} else {
+			int var8 = GrandExchangeOfferUnitPriceComparator.method8811(var1.animationSequence, 1, Client.field315);
+			if ((var8 & 2) != 0) {
+				var1.animationSequence.reset();
+			}
+		}
 
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-529714556"
-	)
-	public static void method3732() {
-		ItemComposition.ItemDefinition_cached.clear();
-		ItemComposition.ItemDefinition_cachedModels.clear();
-		ItemComposition.ItemDefinition_cachedSprites.clear();
-	}
-
-	@ObfuscatedName("jz")
-	@ObfuscatedSignature(
-		descriptor = "(Ldm;Lcd;II)V",
-		garbageValue = "-1632409451"
-	)
-	static void method3733(WorldView var0, Actor var1, int var2) {
-		class203.method4563(var0, var1.x, var1.y, var2, var1.vmethod2813());
+		var1.isWalking = var1.animationSequence.isActive() && var1.animationSequence.getSequenceDefinition().field2486;
+		Client.field315.method11278();
 	}
 }

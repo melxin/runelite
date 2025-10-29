@@ -1,49 +1,94 @@
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("md")
+@ObfuscatedName("mm")
 public class class334 {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Ljava/lang/String;Ljava/lang/String;B)Lxc;",
-		garbageValue = "1"
+		descriptor = "Lmm;"
 	)
-	@Export("SpriteBuffer_getIndexedSpriteByName")
-	public static IndexedSprite SpriteBuffer_getIndexedSpriteByName(AbstractArchive var0, String var1, String var2) {
-		if (!var0.isValidFileName(var1, var2)) {
-			return null;
-		} else {
-			int var3 = var0.getGroupId(var1);
-			int var4 = var0.getFileId(var3, var2);
-			IndexedSprite var5;
-			if (!Friend.method10009(var0, var3, var4)) {
-				var5 = null;
-			} else {
-				var5 = class598.method11717();
-			}
+	public static final class334 field3687;
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3686;
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3698;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3688;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3689;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3690;
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3699;
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3692;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3693;
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3694;
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3695;
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3696;
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Lmm;"
+	)
+	public static final class334 field3697;
 
-			return var5;
-		}
+	static {
+		field3687 = new class334(7);
+		field3686 = new class334(11);
+		field3698 = new class334(14);
+		field3688 = new class334(-2);
+		field3689 = new class334(4);
+		field3690 = new class334(6);
+		field3699 = new class334(7);
+		field3692 = new class334(4);
+		field3693 = new class334(17);
+		field3694 = new class334(2);
+		field3695 = new class334(7);
+		field3696 = new class334(24);
+		field3697 = new class334(14);
 	}
 
-	@ObfuscatedName("jc")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-697000366"
+		descriptor = "(I)V",
+		garbageValue = "7"
 	)
-	static final int method7081() {
-		if (class154.clientPreferences.isRoofsHidden()) {
-			return class547.topLevelWorldView.plane;
-		} else {
-			int var0 = Huffman.cameraX >> 7;
-			int var1 = ChatChannel.cameraZ >> 7;
-			if (var0 >= 0 && 104 > var0 && var1 >= 0 && 104 > var1) {
-				int var2 = class280.getTileHeight(class547.topLevelWorldView, Huffman.cameraX, ChatChannel.cameraZ, class547.topLevelWorldView.plane);
-				return var2 - class514.cameraY < 800 && (class547.topLevelWorldView.tileSettings[class547.topLevelWorldView.plane][var0][var1] & 4) != 0 ? class547.topLevelWorldView.plane : 3;
-			} else {
-				return class547.topLevelWorldView.plane;
-			}
-		}
+	class334(int var1) {
 	}
 }

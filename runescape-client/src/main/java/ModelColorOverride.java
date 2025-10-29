@@ -3,19 +3,19 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("js")
+@ObfuscatedName("ko")
 @Implements("ModelColorOverride")
 public class ModelColorOverride {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("at")
 	@Export("overrideHue")
 	byte overrideHue;
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@Export("overrideSaturation")
 	byte overrideSaturation;
-	@ObfuscatedName("ag")
+	@ObfuscatedName("an")
 	@Export("overrideLuminance")
 	byte overrideLuminance;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ae")
 	@Export("overrideAmount")
 	byte overrideAmount;
 
@@ -26,11 +26,22 @@ public class ModelColorOverride {
 		this.overrideAmount = 0;
 	}
 
-	@ObfuscatedName("ab")
+	public ModelColorOverride(byte var1, byte var2, byte var3, byte var4) {
+		this.overrideHue = -1;
+		this.overrideSaturation = -1;
+		this.overrideLuminance = -1;
+		this.overrideAmount = 0;
+		this.overrideHue = var1;
+		this.overrideSaturation = var2;
+		this.overrideLuminance = var3;
+		this.overrideAmount = var4;
+	}
+
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljs;)V"
+		descriptor = "(Lko;)V"
 	)
-	void method5737(ModelColorOverride var1) {
+	void method6119(ModelColorOverride var1) {
 		this.overrideHue = var1.overrideHue;
 		this.overrideSaturation = var1.overrideSaturation;
 		this.overrideLuminance = var1.overrideLuminance;
@@ -38,7 +49,7 @@ public class ModelColorOverride {
 	}
 
 	@ObfuscatedName("at")
-	public void method5729(byte var1, byte var2, byte var3, byte var4) {
+	public void method6123(byte var1, byte var2, byte var3, byte var4) {
 		this.overrideHue = var1;
 		this.overrideSaturation = var2;
 		this.overrideLuminance = var3;
@@ -46,15 +57,15 @@ public class ModelColorOverride {
 	}
 
 	@ObfuscatedName("ag")
-	public void method5728() {
+	public void method6118() {
 		this.overrideHue = -1;
 		this.overrideSaturation = -1;
 		this.overrideLuminance = -1;
 		this.overrideAmount = 0;
 	}
 
-	@ObfuscatedName("aj")
-	public boolean method5733() {
+	@ObfuscatedName("an")
+	public boolean method6121() {
 		return this.overrideAmount > 0;
 	}
 }

@@ -5,66 +5,62 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ez")
+@ObfuscatedName("ey")
 @Implements("UrlRequest")
 public class UrlRequest {
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -263871951
-	)
-	static int field1556;
-	@ObfuscatedName("at")
-	@ObfuscatedGetter(
-		intValue = -1414257503
-	)
-	static int field1554;
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lpe;"
-	)
-	@Export("HitSplatDefinition_archive")
-	static AbstractArchive HitSplatDefinition_archive;
 	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -154508597
+		intValue = -1574906825
 	)
-	@Export("Interpreter_intStackSize")
-	static int Interpreter_intStackSize;
-	@ObfuscatedName("ag")
-	final URL field1555;
-	@ObfuscatedName("aj")
+	static int field1544;
+	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -422555101
+		intValue = 1859359931
 	)
-	volatile int field1559;
-	@ObfuscatedName("ah")
+	static int field1541;
+	@ObfuscatedName("js")
+	@Export("mouseCam")
+	static boolean mouseCam;
+	@ObfuscatedName("lg")
+	@ObfuscatedSignature(
+		descriptor = "[Lxm;"
+	)
+	static IndexedSprite[] field1542;
+	@ObfuscatedName("ag")
+	final URL field1546;
+	@ObfuscatedName("an")
+	@ObfuscatedGetter(
+		intValue = -546326971
+	)
+	volatile int field1543;
+	@ObfuscatedName("ae")
 	@Export("response0")
 	volatile byte[] response0;
 
 	static {
-		field1556 = -1;
-		field1554 = -2;
+		field1544 = -1;
+		field1541 = -2;
 	}
 
 	UrlRequest(URL var1) {
-		this.field1559 = field1556;
-		this.field1555 = var1;
+		this.field1543 = field1544;
+		this.field1546 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1685533273"
+		garbageValue = "1741769013"
 	)
 	@Export("isDone")
 	public boolean isDone() {
-		return this.field1559 != field1556;
+		return this.field1543 != field1544;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)[B",
-		garbageValue = "514983085"
+		descriptor = "(B)[B",
+		garbageValue = "125"
 	)
 	@Export("getResponse")
 	public byte[] getResponse() {
@@ -73,35 +69,62 @@ public class UrlRequest {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "39"
+		descriptor = "(I)Ljava/lang/String;",
+		garbageValue = "-218505900"
 	)
-	public String method3590() {
-		return this.field1555.toString();
+	public String method3660() {
+		return this.field1546.toString();
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "2"
+		descriptor = "(II)Ljt;",
+		garbageValue = "1219846436"
 	)
-	@Export("Messages_getLastChatID")
-	static int Messages_getLastChatID(int var0) {
-		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
-		if (var1 == null) {
-			return -1;
+	@Export("getFrames")
+	static Frames getFrames(int var0) {
+		Frames var1 = (Frames)SequenceDefinition.SequenceDefinition_cachedFrames.get((long)var0);
+		if (var1 != null) {
+			return var1;
 		} else {
-			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count;
+			var1 = class142.method3884(class152.SequenceDefinition_animationsArchive, WorldMapIcon_0.SpotAnimationDefinition_archive, var0);
+			if (var1 != null) {
+				SequenceDefinition.SequenceDefinition_cachedFrames.put(var1, (long)var0);
+			}
+
+			return var1;
 		}
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "168195709"
+		descriptor = "(IB)Lfi;",
+		garbageValue = "2"
 	)
-	public static final void method3597() {
-		ViewportMouse.ViewportMouse_isInViewport = false;
-		ViewportMouse.ViewportMouse_entityCount = 0;
+	static class137 method3673(int var0) {
+		class137 var1 = (class137)GrandExchangeOffer.findEnumerated(PlayerUpdateManager.method2982(), var0);
+		if (var1 == null) {
+			var1 = class137.field1637;
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("aq")
+	@ObfuscatedSignature(
+		descriptor = "(Ldn;I)V",
+		garbageValue = "-4718732"
+	)
+	@Export("PcmStream_disable")
+	static final void PcmStream_disable(PcmStream var0) {
+		var0.active = false;
+		if (var0.sound != null) {
+			var0.sound.position = 0;
+		}
+
+		for (PcmStream var1 = var0.firstSubStream(); var1 != null; var1 = var0.nextSubStream()) {
+			PcmStream_disable(var1);
+		}
+
 	}
 }

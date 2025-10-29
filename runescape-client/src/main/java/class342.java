@@ -1,72 +1,48 @@
-import java.util.Iterator;
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nb")
+@ObfuscatedName("nj")
 public class class342 {
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -1028516851
-	)
-	int field3960;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Ley;"
-	)
-	class107 field3959;
+	@ObfuscatedName("av")
+	static int[] field3880;
 
-	@ObfuscatedSignature(
-		descriptor = "(ILey;)V"
-	)
-	class342(int var1, class107 var2) {
-		this.field3960 = var1;
-		this.field3959 = var2;
-	}
+	static {
+		new Object();
+		field3880 = new int[33];
+		field3880[0] = 0;
+		int var0 = 2;
 
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "(B)[Lxz;",
-		garbageValue = "-50"
-	)
-	static PrivateChatMode[] method7334() {
-		return new PrivateChatMode[]{PrivateChatMode.field6138, PrivateChatMode.field6140, PrivateChatMode.field6137};
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1398196261"
-	)
-	static void method7336() {
-		Iterator var0 = Client.worldViewManager.iterator();
-
-		while (var0.hasNext()) {
-			WorldView var1 = (WorldView)var0.next();
-
-			for (ObjectSound var2 = (ObjectSound)var1.method2741().last(); var2 != null; var2 = (ObjectSound)var1.method2741().previous()) {
-				if (var2.obj != null) {
-					var2.set();
-				}
-			}
+		for (int var1 = 1; var1 < 33; ++var1) {
+			field3880[var1] = var0 - 1;
+			var0 += var0;
 		}
 
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(CB)Z",
-		garbageValue = "-49"
+		descriptor = "(Lqm;I)V",
+		garbageValue = "-833282750"
 	)
-	@Export("isCharPrintable")
-	public static boolean isCharPrintable(char var0) {
-		if (var0 >= ' ' && var0 <= '~') {
-			return true;
-		} else if (var0 >= 160 && var0 <= 255) {
-			return true;
+	public static void method7324(AbstractArchive var0) {
+		VarcInt.VarcInt_archive = var0;
+	}
+
+	@ObfuscatedName("cs")
+	@ObfuscatedSignature(
+		descriptor = "(ILcu;ZB)I",
+		garbageValue = "-91"
+	)
+	static int method7323(int var0, Script var1, boolean var2) {
+		if (var0 == 7900) {
+			int var3 = Interpreter.Interpreter_intStack[--class408.Interpreter_intStackSize];
+			Client.field348 = Math.max(var3, 0);
+			return 1;
+		} else if (var0 == 7901) {
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = Client.field348;
+			return 1;
 		} else {
-			return var0 == 8364 || var0 == 338 || var0 == 8212 || var0 == 339 || var0 == 376;
+			return 2;
 		}
 	}
 }

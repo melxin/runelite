@@ -2,10 +2,10 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 
-@ObfuscatedName("uu")
+@ObfuscatedName("vf")
 @Implements("ObjectNode")
 public class ObjectNode extends Node {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@Export("obj")
 	public final Object obj;
 

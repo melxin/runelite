@@ -1,74 +1,55 @@
+import java.util.Calendar;
+import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ah")
+@ObfuscatedName("ae")
 public final class class4 {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("hw")
+	@ObfuscatedSignature(
+		descriptor = "Lul;"
+	)
+	static class533 field4;
+	@ObfuscatedName("pb")
 	@ObfuscatedGetter(
-		intValue = 1978602545
+		intValue = -1781017119
 	)
-	@Export("canvasWidth")
-	public static int canvasWidth;
-	@ObfuscatedName("cw")
-	@ObfuscatedSignature(
-		descriptor = "Lxc;"
-	)
-	static IndexedSprite field10;
-	@ObfuscatedName("nw")
-	@ObfuscatedSignature(
-		descriptor = "Ldv;"
-	)
-	@Export("pcmStreamMixer")
-	static PcmStreamMixer pcmStreamMixer;
+	@Export("oculusOrbFocalPointY")
+	static int oculusOrbFocalPointY;
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1881896873"
+		descriptor = "(Ljava/util/Date;I)Z",
+		garbageValue = "-848273070"
 	)
-	@Export("focusPasswordWhenUsernameFilled")
-	static void focusPasswordWhenUsernameFilled() {
-		if (Client.Login_isUsernameRemembered && Login.Login_username != null && !Login.Login_username.isEmpty()) {
-			Login.currentLoginField = 1;
-		} else {
-			Login.currentLoginField = 0;
-		}
-
+	static boolean method17(Date var0) {
+		Calendar var2 = Calendar.getInstance();
+		var2.set(2, 0);
+		var2.set(5, 1);
+		var2.set(1, 1900);
+		Date var1 = var2.getTime();
+		return var0.after(var1);
 	}
 
-	@ObfuscatedName("jt")
+	@ObfuscatedName("mp")
 	@ObfuscatedSignature(
-		descriptor = "(IIIII)V",
-		garbageValue = "1492301028"
+		descriptor = "(IB)Ljava/lang/String;",
+		garbageValue = "-61"
 	)
-	@Export("worldToScreen")
-	static void worldToScreen(int var0, int var1, int var2, int var3) {
-		if (var0 >= 128 && 13056 >= var0 && var1 >= 128 && 13056 >= var1) {
-			var0 -= Huffman.cameraX;
-			var2 -= class514.cameraY;
-			var1 -= ChatChannel.cameraZ;
-			int var4 = Rasterizer3D.Rasterizer3D_sine[class386.cameraPitch];
-			int var5 = Rasterizer3D.Rasterizer3D_cosine[class386.cameraPitch];
-			int var6 = Rasterizer3D.Rasterizer3D_sine[SpriteBufferProperties.cameraYaw];
-			int var7 = Rasterizer3D.Rasterizer3D_cosine[SpriteBufferProperties.cameraYaw];
-			int var8 = var6 * var1 + var0 * var7 >> 16;
-			var1 = var7 * var1 - var0 * var6 >> 16;
-			var0 = var8;
-			var8 = var5 * var2 - var4 * var1 >> 16;
-			var1 = var4 * var2 + var5 * var1 >> 16;
-			if (var1 >= 50) {
-				Client.viewportTempX = var0 * Client.viewportZoom / var1 + Client.viewportWidth / 2;
-				Client.viewportTempY = Client.viewportHeight / 2 + var8 * Client.viewportZoom / var1;
-			} else {
-				Client.viewportTempX = -1;
-				Client.viewportTempY = -1;
-			}
+	@Export("formatItemStacks")
+	static final String formatItemStacks(int var0) {
+		String var1 = Integer.toString(var0);
 
+		for (int var2 = var1.length() - 3; var2 > 0; var2 -= 3) {
+			var1 = var1.substring(0, var2) + "," + var1.substring(var2);
+		}
+
+		if (var1.length() > 9) {
+			return " " + class144.colorStartTag(65408) + var1.substring(0, var1.length() - 8) + "M" + " " + " (" + var1 + ")" + "</col>";
 		} else {
-			Client.viewportTempX = -1;
-			Client.viewportTempY = -1;
+			return var1.length() > 6 ? " " + class144.colorStartTag(16777215) + var1.substring(0, var1.length() - 4) + "K" + " " + " (" + var1 + ")" + "</col>" : " " + class144.colorStartTag(16776960) + var1 + "</col>";
 		}
 	}
 }

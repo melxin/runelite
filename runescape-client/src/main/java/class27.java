@@ -1,210 +1,107 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ba")
+@ObfuscatedName("bo")
 public class class27 {
-	@ObfuscatedName("ae")
-	int[] field129;
-	@ObfuscatedName("aq")
-	int[] field128;
+	@ObfuscatedName("dh")
+	@Export("KeyHandler_keyCodes")
+	static int[] KeyHandler_keyCodes;
 
-	public class27() {
-		this.field129 = new int[112];
-		this.field128 = new int[192];
-		Arrays.fill(this.field129, 3);
-		Arrays.fill(this.field128, 3);
+	static {
+		KeyHandler_keyCodes = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, 85, 80, 84, -1, 91, -1, -1, -1, 81, 82, 86, -1, -1, -1, -1, -1, -1, -1, -1, 13, -1, -1, -1, -1, 83, 104, 105, 103, 102, 96, 98, 97, 99, -1, -1, -1, -1, -1, -1, -1, 25, 16, 17, 18, 19, 20, 21, 22, 23, 24, -1, -1, -1, -1, -1, -1, -1, 48, 68, 66, 50, 34, 51, 52, 53, 39, 54, 55, 56, 70, 69, 40, 41, 32, 35, 49, 36, 38, 67, 33, 65, 37, 64, -1, -1, -1, -1, -1, 228, 231, 227, 233, 224, 219, 225, 230, 226, 232, 89, 87, -1, 88, 229, 90, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, -1, -1, -1, 101, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 100, -1, 87, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IIS)V",
-		garbageValue = "-19639"
+		descriptor = "(B)V",
+		garbageValue = "7"
 	)
-	public void method406(int var1, int var2) {
-		if (this.method414(var1) && this.method416(var2)) {
-			this.field129[var1] = var2;
-		}
-
+	public static void method414() {
+		class117.reflectionChecks = new IterableNodeDeque();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(CIB)V",
-		garbageValue = "127"
+		descriptor = "(II)I",
+		garbageValue = "-275627793"
 	)
-	public void method407(char var1, int var2) {
-		if (this.method415(var1) && this.method416(var2)) {
-			this.field128[var1] = var2;
+	static int method417(int var0) {
+		return -var0 - 1;
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(IIII)V",
+		garbageValue = "-1645689313"
+	)
+	@Export("queueSoundEffect")
+	static void queueSoundEffect(int var0, int var1, int var2) {
+		if (class468.clientPreferences.getSoundEffectsVolume() != 0 && var1 != 0 && class57.soundEffectCount < 50) {
+			GrandExchangeOffer.method8796(-1, var0, 0, 0, 0, 0, var1, var2, false);
 		}
 
 	}
 
 	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-1306234141"
-	)
-	public int method408(int var1) {
-		return this.method414(var1) ? this.field129[var1] : 0;
-	}
+	@Export("base37DecodeLong")
+	public static String base37DecodeLong(long var0) {
+		if (var0 > 0L && var0 < 6582952005840035281L) {
+			if (var0 % 37L == 0L) {
+				return null;
+			} else {
+				int var2 = 0;
 
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(CB)I",
-		garbageValue = "-11"
-	)
-	public int method426(char var1) {
-		return this.method415(var1) ? this.field128[var1] : 0;
-	}
+				for (long var3 = var0; var3 != 0L; var3 /= 37L) {
+					++var2;
+				}
 
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-1918199008"
-	)
-	public boolean method410(int var1) {
-		return this.method414(var1) && (this.field129[var1] == 1 || this.field129[var1] == 3);
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "2071506574"
-	)
-	public boolean method409(char var1) {
-		return this.method415(var1) && (this.field128[var1] == 1 || this.field128[var1] == 3);
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "14"
-	)
-	public boolean method412(int var1) {
-		return this.method414(var1) && (this.field129[var1] == 2 || this.field129[var1] == 3);
-	}
-
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-975053530"
-	)
-	public boolean method430(char var1) {
-		return this.method415(var1) && (this.field128[var1] == 2 || this.field128[var1] == 3);
-	}
-
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1064429288"
-	)
-	boolean method414(int var1) {
-		if (var1 >= 0 && var1 < 112) {
-			return true;
-		} else {
-			System.out.println("Invalid keycode: " + var1);
-			return false;
-		}
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(CB)Z",
-		garbageValue = "3"
-	)
-	boolean method415(char var1) {
-		if (var1 >= 0 && var1 < 192) {
-			return true;
-		} else {
-			System.out.println("Invalid keychar: " + var1);
-			return false;
-		}
-	}
-
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "-1"
-	)
-	boolean method416(int var1) {
-		if (var1 >= 0 && var1 < 4) {
-			return true;
-		} else {
-			System.out.println("Invalid mode: " + var1);
-			return false;
-		}
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(CS)Z",
-		garbageValue = "-18095"
-	)
-	public static boolean method405(char var0) {
-		if ((var0 <= 0 || var0 >= 128) && (var0 < 160 || var0 > 255)) {
-			if (var0 != 0) {
-				char[] var1 = class441.cp1252AsciiExtension;
-
-				for (int var2 = 0; var2 < var1.length; ++var2) {
-					char var3 = var1[var2];
-					if (var0 == var3) {
-						return true;
+				StringBuilder var5;
+				char var8;
+				for (var5 = new StringBuilder(var2); 0L != var0; var5.append(var8)) {
+					long var6 = var0;
+					var0 /= 37L;
+					var8 = class455.base37Table[(int)(var6 - var0 * 37L)];
+					if (var8 == '_') {
+						int var9 = var5.length() - 1;
+						var5.setCharAt(var9, Character.toUpperCase(var5.charAt(var9)));
+						var8 = 160;
 					}
 				}
-			}
 
-			return false;
+				var5.reverse();
+				var5.setCharAt(0, Character.toUpperCase(var5.charAt(0)));
+				return var5.toString();
+			}
 		} else {
-			return true;
+			return null;
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;[IIIB)V",
-		garbageValue = "0"
+		descriptor = "(Ljava/util/ArrayList;ZI)V",
+		garbageValue = "1123954122"
 	)
-	@Export("quicksortStringsWithCorrespondingIntegers")
-	public static void quicksortStringsWithCorrespondingIntegers(String[] var0, int[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			String var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			int var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
+	static void method423(ArrayList var0, boolean var1) {
+		if (!var1) {
+			class345.field3928.clear();
+		}
 
-			for (int var8 = var2; var8 < var3; ++var8) {
-				if (var6 == null || var0[var8] != null && var0[var8].compareTo(var6) < (var8 & 1)) {
-					String var9 = var0[var8];
-					var0[var8] = var0[var5];
-					var0[var5] = var9;
-					int var10 = var1[var8];
-					var1[var8] = var1[var5];
-					var1[var5++] = var10;
+		Iterator var2 = var0.iterator();
+
+		while (var2.hasNext()) {
+			MidiRequest var3 = (MidiRequest)var2.next();
+			if (var3.musicTrackGroupId != -1 && var3.musicTrackFileId != -1) {
+				if (!var1) {
+					class345.field3928.add(var3);
 				}
-			}
 
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			quicksortStringsWithCorrespondingIntegers(var0, var1, var2, var5 - 1);
-			quicksortStringsWithCorrespondingIntegers(var0, var1, var5 + 1, var3);
+				class345.field3933.add(var3);
+			}
 		}
 
-	}
-
-	@ObfuscatedName("ke")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIISISIII)V",
-		garbageValue = "120681303"
-	)
-	static void method441(int var0, int var1, int var2, int var3, int var4, short var5, int var6, short var7, int var8, int var9) {
-		Player.method2203(class32.worldView, var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
 	}
 }

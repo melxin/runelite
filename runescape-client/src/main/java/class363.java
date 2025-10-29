@@ -1,88 +1,36 @@
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("na")
+@ObfuscatedName("ns")
 public class class363 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("hu")
 	@ObfuscatedSignature(
-		descriptor = "Lom;"
+		descriptor = "(Lmj;I)V",
+		garbageValue = "1588887468"
 	)
-	public class365 field4093;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Lnd;"
-	)
-	class359 field4089;
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Lba;"
-	)
-	class27 field4090;
-	@ObfuscatedName("aj")
-	public Object[] field4091;
-	@ObfuscatedName("ah")
-	public Object[] field4092;
-	@ObfuscatedName("af")
-	public Object[] field4088;
-	@ObfuscatedName("ae")
-	public Object[] field4094;
-
-	class363() {
-		this.field4093 = new class365();
-		this.field4089 = new class359();
-		this.field4090 = new class27();
-	}
-
-	@ObfuscatedName("al")
-	@ObfuscatedSignature(
-		descriptor = "(ILcj;ZB)I",
-		garbageValue = "126"
-	)
-	static int method7534(int var0, Script var1, boolean var2) {
-		Widget var3 = var2 ? class359.scriptDotWidget : GameEngine.scriptActiveWidget;
-		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
-			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = AsyncRestClient.Widget_unpackTargetMask(MouseRecorder.getWidgetFlags(var3));
-			return 1;
-		} else if (var0 != ScriptOpcodes.CC_GETOP) {
-			if (var0 == ScriptOpcodes.CC_GETOPBASE) {
-				if (var3.dataText == null) {
-					Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = "";
-				} else {
-					Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var3.dataText;
-				}
-
-				return 1;
-			} else {
-				return 2;
-			}
-		} else {
-			int var4 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
-			--var4;
-			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
-				Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var3.actions[var4];
-			} else {
-				Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = "";
-			}
-
-			return 1;
-		}
-	}
-
-	@ObfuscatedName("ia")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "636250229"
-	)
-	static final void method7535() {
-		if (ClientPreferences.ClanChat_inClanChat) {
-			if (class445.friendsChat != null) {
-				class445.friendsChat.sort();
-			}
-
-			LoginState.method794();
-			ClientPreferences.ClanChat_inClanChat = false;
-		}
-
+	static void method7636(PacketBufferNode var0) {
+		var0.packetBuffer.writeIntIME(class226.field2558.hash);
+		var0.packetBuffer.writeIntIME(HttpRequestTask.archive10.hash);
+		var0.packetBuffer.writeInt(ActorSpotAnim.archive13.hash);
+		var0.packetBuffer.method11727(AbstractWorldMapIcon.field3529.hash);
+		var0.packetBuffer.method11727(class160.field1815.hash);
+		var0.packetBuffer.method11727(AsyncHttpResponse.field67.hash);
+		var0.packetBuffer.writeIntIME(Varps.field4092.hash);
+		var0.packetBuffer.writeIntIME(class147.archive8.hash);
+		var0.packetBuffer.method11727(WorldMapRectangle.archive12.hash);
+		var0.packetBuffer.method11727(class138.field1642.hash);
+		var0.packetBuffer.writeIntIME(0);
+		var0.packetBuffer.writeIntIME(class175.field1928.hash);
+		var0.packetBuffer.method11690(Tile.archive9.hash);
+		var0.packetBuffer.writeInt(UserComparator4.archive6.hash);
+		var0.packetBuffer.method11727(class136.field1619.hash);
+		var0.packetBuffer.method11690(VarcInt.field2017.hash);
+		var0.packetBuffer.method11727(ParamComposition.field2290.hash);
+		var0.packetBuffer.writeIntIME(PcmPlayer.field1328.hash);
+		var0.packetBuffer.writeIntIME(StructComposition.archive2.hash);
+		var0.packetBuffer.method11690(class474.field5353.hash);
+		var0.packetBuffer.writeIntIME(class189.archive4.hash);
+		var0.packetBuffer.method11690(GrandExchangeOfferOwnWorldComparator.field248.hash);
+		var0.packetBuffer.method11727(Skeleton.field2836.hash);
 	}
 }

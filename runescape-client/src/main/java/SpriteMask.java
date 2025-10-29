@@ -4,25 +4,30 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("nt")
+@ObfuscatedName("oz")
 @Implements("SpriteMask")
 public class SpriteMask extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("uf")
 	@ObfuscatedGetter(
-		intValue = 1385837663
+		intValue = 824582895
+	)
+	static int field4089;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = 915756381
 	)
 	@Export("width")
 	public final int width;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1078307221
+		intValue = 1668058793
 	)
 	@Export("height")
 	public final int height;
 	@ObfuscatedName("ag")
 	@Export("xWidths")
 	public final int[] xWidths;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@Export("xStarts")
 	public final int[] xStarts;
 
@@ -33,10 +38,10 @@ public class SpriteMask extends DualNode {
 		this.xStarts = var4;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "34"
+		descriptor = "(III)Z",
+		garbageValue = "-729119930"
 	)
 	@Export("contains")
 	public boolean contains(int var1, int var2) {
@@ -50,36 +55,23 @@ public class SpriteMask extends DualNode {
 		return false;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("kg")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;I)V",
-		garbageValue = "1840789530"
+		descriptor = "(Ldd;IIIIIII)V",
+		garbageValue = "957069650"
 	)
-	public static void method7407(AbstractArchive var0) {
-		ParamComposition.ParamDefinition_archive = var0;
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(IIIB)Lcj;",
-		garbageValue = "30"
-	)
-	@Export("getWorldMapScript")
-	static Script getWorldMapScript(int var0, int var1, int var2) {
-		int var3 = ArchiveLoader.method2140(var1, var0);
-		Script var4 = SecureUrlRequester.getScript(var3, var0);
-		if (var4 != null) {
-			return var4;
-		} else {
-			int var5 = (-3 - var2 << 8) + var0;
-			var4 = SecureUrlRequester.getScript(var5, var0);
-			if (var4 != null) {
-				return var4;
-			} else {
-				var3 = AbstractWorldMapData.method6829(var0);
-				var4 = SecureUrlRequester.getScript(var3, var0);
-				return var4 != null ? var4 : null;
+	static void method7659(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6) {
+		NodeDeque var7 = var0.groundItems[var1][var2][var3];
+		if (var7 != null) {
+			for (TileItem var8 = (TileItem)var7.last(); var8 != null; var8 = (TileItem)var7.previous()) {
+				if (var4 == var8.id && var5 == var8.quantity) {
+					var8.quantity = var6;
+					break;
+				}
 			}
+
+			class157.updateItemPile(var1, var2, var3);
 		}
+
 	}
 }

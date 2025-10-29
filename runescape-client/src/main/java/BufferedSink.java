@@ -1,19 +1,15 @@
 import java.io.IOException;
 import java.io.OutputStream;
-import java.lang.management.GarbageCollectorMXBean;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tv")
+@ObfuscatedName("tw")
 @Implements("BufferedSink")
 public class BufferedSink implements Runnable {
-	@ObfuscatedName("ay")
-	@Export("garbageCollector")
-	static GarbageCollectorMXBean garbageCollector;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@Export("thread")
 	Thread thread;
 	@ObfuscatedName("at")
@@ -21,29 +17,29 @@ public class BufferedSink implements Runnable {
 	OutputStream outputStream;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1368632429
+		intValue = -685250285
 	)
 	@Export("capacity")
 	int capacity;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@Export("buffer")
 	byte[] buffer;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1405650747
+		intValue = -672455267
 	)
 	@Export("position")
 	int position;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 2073959049
+		intValue = 1826271221
 	)
 	@Export("limit")
 	int limit;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@Export("exception")
 	IOException exception;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@Export("closed")
 	boolean closed;
 
@@ -58,10 +54,10 @@ public class BufferedSink implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-201806137"
+		garbageValue = "-497541902"
 	)
 	@Export("isClosed")
 	boolean isClosed() {
@@ -86,7 +82,7 @@ public class BufferedSink implements Runnable {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "([BIIB)V",
-		garbageValue = "17"
+		garbageValue = "-12"
 	)
 	@Export("write")
 	void write(byte[] var1, int var2, int var3) throws IOException {
@@ -126,7 +122,7 @@ public class BufferedSink implements Runnable {
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1272257782"
+		garbageValue = "-1473789438"
 	)
 	@Export("close")
 	void close() {
@@ -204,17 +200,57 @@ public class BufferedSink implements Runnable {
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "-1581134065"
+		descriptor = "(Lut;Ljava/lang/Object;III)I",
+		garbageValue = "1261331872"
 	)
-	public static int method10371(int var0, int var1, int var2) {
-		var2 &= 3;
-		if (var2 == 0) {
-			return var1;
-		} else if (var2 == 1) {
-			return 7 - var0;
-		} else {
-			return var2 == 2 ? 7 - var1 : var0;
+	public static int method10466(DynamicArray var0, Object var1, int var2, int var3) {
+		if (var2 < 0) {
+			var2 = 0;
 		}
+
+		if (var3 < 0 || var3 > var0.method10652()) {
+			var3 = var0.method10652();
+		}
+
+		int var5;
+		if (var0.field5584 == class586.field5937) {
+			int[] var11 = var0.method10650();
+			var5 = (Integer)var1;
+
+			for (int var6 = var2; var6 < var3; ++var6) {
+				if (var5 == var11[var6]) {
+					return var6;
+				}
+			}
+		} else if (var0.field5584 == class586.field5942) {
+			long[] var10 = var0.method10651();
+			long var8 = (Long)var1;
+
+			for (int var7 = var2; var7 < var3; ++var7) {
+				if (var8 == var10[var7]) {
+					return var7;
+				}
+			}
+		} else {
+			Object[] var4 = var0.method10681();
+
+			for (var5 = var2; var5 < var3; ++var5) {
+				if (var4[var5] == var1 || var4[var5] != null && var4[var5].equals(var1)) {
+					return var5;
+				}
+			}
+		}
+
+		return -1;
+	}
+
+	@ObfuscatedName("hy")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-2011097614"
+	)
+	static final void method10460() {
+		Scene.Scene_isLowDetail = false;
+		Client.isLowDetail = false;
 	}
 }

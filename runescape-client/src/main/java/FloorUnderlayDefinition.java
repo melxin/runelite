@@ -4,48 +4,53 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hj")
+@ObfuscatedName("hf")
 @Implements("FloorUnderlayDefinition")
 public class FloorUnderlayDefinition extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lqm;"
 	)
 	@Export("FloorUnderlayDefinition_archive")
 	public static AbstractArchive FloorUnderlayDefinition_archive;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("FloorUnderlayDefinition_cached")
 	public static EvictingDualNodeHashTable FloorUnderlayDefinition_cached;
+	@ObfuscatedName("bm")
+	@ObfuscatedGetter(
+		intValue = 2038044067
+	)
+	static int field2216;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -938424203
+		intValue = 805645933
 	)
 	@Export("rgb")
 	int rgb;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 588425523
+		intValue = 124413169
 	)
 	@Export("hue")
 	public int hue;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 950473497
+		intValue = -1731148931
 	)
 	@Export("saturation")
 	public int saturation;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 242991345
+		intValue = -1928632847
 	)
 	@Export("lightness")
 	public int lightness;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 1449789169
+		intValue = -1636648267
 	)
 	@Export("hueMultiplier")
 	public int hueMultiplier;
@@ -58,20 +63,20 @@ public class FloorUnderlayDefinition extends DualNode {
 		this.rgb = 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-2019181373"
+		garbageValue = "-1181210910"
 	)
 	@Export("postDecode")
 	public void postDecode() {
 		this.setHsl(this.rgb);
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;IB)V",
-		garbageValue = "-36"
+		descriptor = "(Lxa;II)V",
+		garbageValue = "-320814010"
 	)
 	@Export("decode")
 	public void decode(Buffer var1, int var2) {
@@ -85,10 +90,10 @@ public class FloorUnderlayDefinition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;IIS)V",
-		garbageValue = "-7511"
+		descriptor = "(Lxa;III)V",
+		garbageValue = "1734701964"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2, int var3) {
@@ -100,8 +105,8 @@ public class FloorUnderlayDefinition extends DualNode {
 
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "46"
+		descriptor = "(II)V",
+		garbageValue = "1891725815"
 	)
 	@Export("setHsl")
 	void setHsl(int var1) {
@@ -140,16 +145,16 @@ public class FloorUnderlayDefinition extends DualNode {
 
 			if (var10 == var2) {
 				var12 = (var4 - var6) / (var10 - var8);
-			} else if (var4 == var10) {
-				var12 = 2.0D + (var6 - var2) / (var10 - var8);
-			} else if (var6 == var10) {
-				var12 = (var2 - var4) / (var10 - var8) + 4.0D;
+			} else if (var10 == var4) {
+				var12 = (var6 - var2) / (var10 - var8) + 2.0D;
+			} else if (var10 == var6) {
+				var12 = 4.0D + (var2 - var4) / (var10 - var8);
 			}
 		}
 
 		var12 /= 6.0D;
-		this.saturation = (int)(var14 * 256.0D);
-		this.lightness = (int)(var16 * 256.0D);
+		this.saturation = (int)(256.0D * var14);
+		this.lightness = (int)(256.0D * var16);
 		if (this.saturation < 0) {
 			this.saturation = 0;
 		} else if (this.saturation > 255) {
@@ -163,49 +168,86 @@ public class FloorUnderlayDefinition extends DualNode {
 		}
 
 		if (var16 > 0.5D) {
-			this.hueMultiplier = (int)(512.0D * (1.0D - var16) * var14);
+			this.hueMultiplier = (int)((1.0D - var16) * var14 * 512.0D);
 		} else {
-			this.hueMultiplier = (int)(512.0D * var16 * var14);
+			this.hueMultiplier = (int)(var16 * var14 * 512.0D);
 		}
 
 		if (this.hueMultiplier < 1) {
 			this.hueMultiplier = 1;
 		}
 
-		this.hue = (int)(var12 * (double)this.hueMultiplier);
+		this.hue = (int)((double)this.hueMultiplier * var12);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;B)V",
-		garbageValue = "49"
+		descriptor = "(Lut;B)I",
+		garbageValue = "100"
 	)
-	public static void method4511(AbstractArchive var0) {
-		VarbitComposition.VarbitDefinition_archive = var0;
-	}
+	public static int method4584(DynamicArray var0) {
+		class585.method11429(var0);
+		byte var1 = 0;
+		int var2 = var0.method10652();
+		int var3 = -1;
+		int var8;
+		if (var0.field5584 == class586.field5937) {
+			int[] var4 = var0.method10650();
 
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "(JII)V",
-		garbageValue = "1206313092"
-	)
-	static final void method4509(long var0, int var2) {
-		if (ViewportMouse.field2958[ViewportMouse.ViewportMouse_entityCount] != Integer.MAX_VALUE && ViewportMouse.ViewportMouse_entityTags[ViewportMouse.ViewportMouse_entityCount] != var0) {
-			++ViewportMouse.ViewportMouse_entityCount;
-			ViewportMouse.field2958[ViewportMouse.ViewportMouse_entityCount] = Integer.MAX_VALUE;
+			for (var8 = var1; var8 < var2; ++var8) {
+				if (var3 == -1 || var4[var8] < var4[var3]) {
+					var3 = var8;
+				}
+			}
+		} else if (var0.field5584 == class586.field5942) {
+			long[] var9 = var0.method10651();
+
+			for (var8 = var1; var8 < var2; ++var8) {
+				if (var3 == -1 || var9[var8] < var9[var3]) {
+					var3 = var8;
+				}
+			}
+		} else if (var0.field5584 == class586.field5939) {
+			String var10 = null;
+			Object[] var5 = var0.method10681();
+
+			for (int var6 = var1; var6 < var2; ++var6) {
+				String var7 = (String)var5[var6];
+				if (var3 == -1 || var7 != null && var7.compareTo(var10) < 0) {
+					var3 = var6;
+					var10 = var7;
+				}
+			}
 		}
 
-		ViewportMouse.ViewportMouse_entityTags[ViewportMouse.ViewportMouse_entityCount] = var0;
-		ViewportMouse.field2958[ViewportMouse.ViewportMouse_entityCount] = Math.min(ViewportMouse.field2958[ViewportMouse.ViewportMouse_entityCount], var2);
+		return var3;
 	}
 
-	@ObfuscatedName("hm")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lud;",
-		garbageValue = "115"
+		descriptor = "(Ljava/lang/String;S)V",
+		garbageValue = "-19453"
 	)
-	@Export("getPlatformInfo")
-	static PlatformInfo getPlatformInfo() {
-		return class151.platformInfo;
+	static final void method4608(String var0) {
+		SwapSongTask.method9921("Please remove " + var0 + " from your friend list first");
+	}
+
+	@ObfuscatedName("hn")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "76"
+	)
+	static void method4606() {
+		class472.compass = null;
+		class39.redHintArrowSprite = null;
+		class499.mapSceneSprites = null;
+		class66.headIconPkSprites = null;
+		class279.headIconPrayerSprites = null;
+		SceneTilePaint.headIconHintSprites = null;
+		class217.mapDotSprites = null;
+		class137.crossSprites = null;
+		class579.field5923 = null;
+		WorldMapArchiveLoader.scrollBarSprites = null;
+		UrlRequest.field1542 = null;
 	}
 }

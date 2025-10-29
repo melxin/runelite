@@ -4,26 +4,31 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ip")
+@ObfuscatedName("jc")
 @Implements("Skeleton")
 public class Skeleton extends Node {
-	@ObfuscatedName("af")
+	@ObfuscatedName("kw")
+	@ObfuscatedSignature(
+		descriptor = "Lqn;"
+	)
+	static Archive field2836;
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 857920721
+		intValue = 1593543125
 	)
 	@Export("count")
 	int count;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@Export("transformTypes")
 	int[] transformTypes;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@Export("labels")
 	int[][] labels;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lii;"
+		descriptor = "Ljq;"
 	)
-	class226 field2679;
+	class251 field2831;
 
 	public Skeleton(int var1, byte[] var2) {
 		Buffer var3 = new Buffer(var2);
@@ -46,46 +51,30 @@ public class Skeleton extends Node {
 			}
 		}
 
-		if (var3.offset < var3.array.length) {
+		if (var3.offset * 2108391709 < var3.array.length) {
 			var4 = var3.readUnsignedShort();
 			if (var4 > 0) {
-				this.field2679 = new class226(var3, var4);
+				this.field2831 = new class251(var3, var4);
 			}
 		}
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1225850290"
+		descriptor = "(B)I",
+		garbageValue = "-10"
 	)
-	public int method5152() {
+	public int method5544() {
 		return this.count;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lii;",
-		garbageValue = "7"
+		descriptor = "(I)Ljq;",
+		garbageValue = "-510419997"
 	)
-	public class226 method5147() {
-		return this.field2679;
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(FFFFLfu;I)V",
-		garbageValue = "-920807804"
-	)
-	static void method5146(float var0, float var1, float var2, float var3, class137 var4) {
-		float var5 = var1 - var0;
-		float var6 = var2 - var1;
-		float var7 = var3 - var2;
-		float var8 = var6 - var5;
-		var4.field1662 = var7 - var6 - var8;
-		var4.field1667 = var8 + var8 + var8;
-		var4.field1657 = var5 + var5 + var5;
-		var4.field1664 = var0;
+	public class251 method5545() {
+		return this.field2831;
 	}
 }

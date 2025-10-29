@@ -3,113 +3,159 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gi")
+@ObfuscatedName("gm")
 @Implements("Sound")
-public class Sound extends class150 {
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Lpe;"
-	)
-	@Export("KitDefinition_modelsArchive")
-	static AbstractArchive KitDefinition_modelsArchive;
-	@ObfuscatedName("ch")
-	@ObfuscatedSignature(
-		descriptor = "Lxc;"
-	)
-	static IndexedSprite field1826;
-	@ObfuscatedName("ab")
-	boolean field1816;
+public class Sound extends class151 {
+	@ObfuscatedName("ow")
+	static int[][] field1803;
+	@ObfuscatedName("av")
+	boolean field1804;
 	@ObfuscatedName("at")
-	byte field1824;
+	byte field1802;
 	@ObfuscatedName("ag")
-	byte field1817;
-	@ObfuscatedName("aj")
-	byte field1818;
-	@ObfuscatedName("ah")
-	byte field1819;
+	byte field1801;
+	@ObfuscatedName("an")
+	byte field1806;
+	@ObfuscatedName("ae")
+	byte field1805;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfh;"
+		descriptor = "Lfc;"
 	)
-	final class153 this$0;
+	final class154 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfh;)V"
+		descriptor = "(Lfc;)V"
 	)
-	Sound(class153 var1) {
+	Sound(class154 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "1804820754"
+		descriptor = "(Lxa;B)V",
+		garbageValue = "-11"
 	)
-	void vmethod4162(Buffer var1) {
-		this.field1816 = var1.readUnsignedByte() == 1;
-		this.field1824 = var1.readByte();
-		this.field1817 = var1.readByte();
-		this.field1818 = var1.readByte();
-		this.field1819 = var1.readByte();
+	void vmethod4235(Buffer var1) {
+		this.field1804 = var1.readUnsignedByte() == 1;
+		this.field1802 = var1.readByte();
+		this.field1801 = var1.readByte();
+		this.field1806 = var1.readByte();
+		this.field1805 = var1.readByte();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lgh;I)V",
-		garbageValue = "1850606911"
+		descriptor = "(Lgs;B)V",
+		garbageValue = "-98"
 	)
-	void vmethod4163(ClanSettings var1) {
-		var1.allowGuests = this.field1816;
-		var1.field1846 = this.field1824;
-		var1.field1857 = this.field1817;
-		var1.field1858 = this.field1818;
-		var1.field1849 = this.field1819;
+	void vmethod4241(ClanSettings var1) {
+		var1.allowGuests = this.field1804;
+		var1.field1831 = this.field1802;
+		var1.field1835 = this.field1801;
+		var1.field1833 = this.field1806;
+		var1.field1834 = this.field1805;
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "27527"
+		descriptor = "(CB)B",
+		garbageValue = "20"
 	)
-	public static void method3957() {
-		class335.KitDefinition_archive = null;
-		KitDefinition_modelsArchive = null;
-		KitDefinition.KitDefinition_fileCount = 0;
+	@Export("charToByteCp1252")
+	public static byte charToByteCp1252(char var0) {
+		byte var1;
+		if ((var0 <= 0 || var0 >= 128) && (var0 < 160 || var0 > 255)) {
+			if (var0 == 8364) {
+				var1 = -128;
+			} else if (var0 == 8218) {
+				var1 = -126;
+			} else if (var0 == 402) {
+				var1 = -125;
+			} else if (var0 == 8222) {
+				var1 = -124;
+			} else if (var0 == 8230) {
+				var1 = -123;
+			} else if (var0 == 8224) {
+				var1 = -122;
+			} else if (var0 == 8225) {
+				var1 = -121;
+			} else if (var0 == 710) {
+				var1 = -120;
+			} else if (var0 == 8240) {
+				var1 = -119;
+			} else if (var0 == 352) {
+				var1 = -118;
+			} else if (var0 == 8249) {
+				var1 = -117;
+			} else if (var0 == 338) {
+				var1 = -116;
+			} else if (var0 == 381) {
+				var1 = -114;
+			} else if (var0 == 8216) {
+				var1 = -111;
+			} else if (var0 == 8217) {
+				var1 = -110;
+			} else if (var0 == 8220) {
+				var1 = -109;
+			} else if (var0 == 8221) {
+				var1 = -108;
+			} else if (var0 == 8226) {
+				var1 = -107;
+			} else if (var0 == 8211) {
+				var1 = -106;
+			} else if (var0 == 8212) {
+				var1 = -105;
+			} else if (var0 == 732) {
+				var1 = -104;
+			} else if (var0 == 8482) {
+				var1 = -103;
+			} else if (var0 == 353) {
+				var1 = -102;
+			} else if (var0 == 8250) {
+				var1 = -101;
+			} else if (var0 == 339) {
+				var1 = -100;
+			} else if (var0 == 382) {
+				var1 = -98;
+			} else if (var0 == 376) {
+				var1 = -97;
+			} else {
+				var1 = 63;
+			}
+		} else {
+			var1 = (byte)var0;
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "370508977"
+	)
+	@Export("isWorldMapEvent")
+	public static boolean isWorldMapEvent(int var0) {
+		return var0 == 10 || var0 == 11 || var0 == 12 || var0 == 13 || var0 == 14 || var0 == 15 || var0 == 16 || var0 == 17;
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-7439"
+		descriptor = "(CI)C",
+		garbageValue = "-2129166637"
 	)
-	public static void method3956() {
-		VarbitComposition.VarbitDefinition_cached.clear();
-	}
-
-	@ObfuscatedName("oe")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIILxl;Lnt;II)V",
-		garbageValue = "191926"
-	)
-	static final void method3958(int var0, int var1, int var2, int var3, int var4, int var5, SpritePixels var6, SpriteMask var7, int var8) {
-		if (var6 != null) {
-			int var9 = var3 * var3 + var2 * var2;
-			if (var9 <= 6400) {
-				int var10 = Rasterizer3D.Rasterizer3D_sine[var4];
-				int var11 = Rasterizer3D.Rasterizer3D_cosine[var4];
-				int var12 = var11 * var2 + var3 * var10 >> 16;
-				int var13 = var3 * var11 - var10 * var2 >> 16;
-				var5 = var4 - var5 & 2047;
-				int var14 = var7.width / 2 + var0 + var12;
-				int var15 = var7.height / 2 + var1 - var13;
-				int var16 = var6.width * var8;
-				int var17 = var6.height * var8;
-				int var18 = var14 - var16 / 2;
-				int var19 = var15 - var17 / 2;
-				int var20 = var6.subWidth / 2;
-				int var21 = var6.subHeight / 2;
-				var6.drawRotatedMaskedCenteredAround(var18, var19, var16, var17, var20, var21, var5, var8 * 256, var0, var1, var7.xStarts, var7.xWidths);
-			}
+	static char method4019(char var0) {
+		if (var0 == 198) {
+			return 'E';
+		} else if (var0 == 230) {
+			return 'e';
+		} else if (var0 == 223) {
+			return 's';
+		} else if (var0 == 338) {
+			return 'E';
+		} else {
+			return (char)(var0 == 339 ? 'e' : '\u0000');
 		}
 	}
 }

@@ -1,24 +1,15 @@
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InvalidClassException;
-import java.io.ObjectInputStream;
-import java.io.OptionalDataException;
-import java.io.StreamCorruptedException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Locale;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.Reflection;
+import net.runelite.rs.ScriptOpcodes;
 
 @ObfuscatedName("qd")
 @Implements("Language")
 public class Language implements Enum {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "Lqd;"
 	)
@@ -36,59 +27,63 @@ public class Language implements Enum {
 	)
 	@Export("Language_FR")
 	public static final Language Language_FR;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "Lqd;"
 	)
 	@Export("Language_PT")
 	static final Language Language_PT;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "Lqd;"
 	)
 	@Export("Language_NL")
 	static final Language Language_NL;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "Lqd;"
 	)
 	@Export("Language_ES")
 	public static final Language Language_ES;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "Lqd;"
 	)
 	@Export("Language_ES_MX")
 	static final Language Language_ES_MX;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "[Lqd;"
 	)
 	@Export("Language_valuesOrdered")
-	static final Language[] Language_valuesOrdered;
-	@ObfuscatedName("an")
-	static int[] field5129;
-	@ObfuscatedName("aq")
-	final String field5130;
-	@ObfuscatedName("aa")
+	public static final Language[] Language_valuesOrdered;
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Lqm;"
+	)
+	@Export("ItemDefinition_modelArchive")
+	public static AbstractArchive ItemDefinition_modelArchive;
+	@ObfuscatedName("aw")
+	final String field5149;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 1262118747
+		intValue = 1526259553
 	)
 	@Export("id")
 	final int id;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@Export("language")
 	final String language;
 
 	static {
-		Language_EN = new Language("EN", "en", "English", ModeWhere.field5134, 0, "GB");
-		Language_DE = new Language("DE", "de", "German", ModeWhere.field5134, 1, "DE");
-		Language_FR = new Language("FR", "fr", "French", ModeWhere.field5134, 2, "FR");
-		Language_PT = new Language("PT", "pt", "Portuguese", ModeWhere.field5134, 3, "BR");
-		Language_NL = new Language("NL", "nl", "Dutch", ModeWhere.field5133, 4, "NL");
-		Language_ES = new Language("ES", "es", "Spanish", ModeWhere.field5133, 5, "ES");
-		Language_ES_MX = new Language("ES_MX", "es-mx", "Spanish (Latin American)", ModeWhere.field5134, 6, "MX");
-		Language[] var0 = method8712();
+		Language_EN = new Language("EN", "en", "English", ModeWhere.field5178, 0, "GB");
+		Language_DE = new Language("DE", "de", "German", ModeWhere.field5178, 1, "DE");
+		Language_FR = new Language("FR", "fr", "French", ModeWhere.field5178, 2, "FR");
+		Language_PT = new Language("PT", "pt", "Portuguese", ModeWhere.field5178, 3, "BR");
+		Language_NL = new Language("NL", "nl", "Dutch", ModeWhere.field5166, 4, "NL");
+		Language_ES = new Language("ES", "es", "Spanish", ModeWhere.field5166, 5, "ES");
+		Language_ES_MX = new Language("ES_MX", "es-mx", "Spanish (Latin American)", ModeWhere.field5178, 6, "MX");
+		Language[] var0 = method8934();
 		Language_valuesOrdered = new Language[var0.length];
 		Language[] var1 = var0;
 
@@ -104,10 +99,10 @@ public class Language implements Enum {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lqq;ILjava/lang/String;)V"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lqa;ILjava/lang/String;)V"
 	)
 	Language(String var1, String var2, String var3, ModeWhere var4, int var5, String var6) {
-		this.field5130 = var1;
+		this.field5149 = var1;
 		this.language = var2;
 		this.id = var5;
 		if (var6 != null) {
@@ -118,20 +113,20 @@ public class Language implements Enum {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1012656358"
+		descriptor = "(B)I",
+		garbageValue = "20"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
 		return this.id;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-1635636140"
+		garbageValue = "1737140580"
 	)
 	@Export("getLanguage")
 	String getLanguage() {
@@ -142,121 +137,66 @@ public class Language implements Enum {
 		return this.getLanguage().toLowerCase(Locale.ENGLISH);
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Lwn;B)V",
-		garbageValue = "-1"
+		descriptor = "(I)[Lqd;",
+		garbageValue = "694448490"
 	)
-	@Export("performReflectionCheck")
-	public static void performReflectionCheck(PacketBuffer var0) {
-		ReflectionCheck var1 = (ReflectionCheck)class35.reflectionChecks.last();
-		if (var1 != null) {
-			int var2 = var0.offset;
-			var0.writeInt(var1.id);
+	static Language[] method8934() {
+		return new Language[]{Language_ES, Language_NL, Language_ES_MX, Language_FR, Language_PT, Language_DE, Language_EN};
+	}
 
-			for (int var3 = 0; var3 < var1.size; ++var3) {
-				if (var1.creationErrors[var3] != 0) {
-					var0.writeByte(var1.creationErrors[var3]);
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(ILcu;ZI)I",
+		garbageValue = "-857343037"
+	)
+	static int method8940(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? UserComparator3.scriptDotWidget : class222.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETTARGETMASK) {
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = LoginPacket.Widget_unpackTargetMask(class191.getWidgetFlags(var3));
+			return 1;
+		} else if (var0 != ScriptOpcodes.CC_GETOP) {
+			if (var0 == ScriptOpcodes.CC_GETOPBASE) {
+				if (var3.dataText == null) {
+					Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = "";
 				} else {
-					try {
-						int var4 = var1.operations[var3];
-						Field var5;
-						int var6;
-						if (var4 == 0) {
-							var5 = var1.fields[var3];
-							var6 = Reflection.getInt(var5, (Object)null);
-							var0.writeByte(0);
-							var0.writeInt(var6);
-						} else if (var4 == 1) {
-							var5 = var1.fields[var3];
-							Reflection.setInt(var5, (Object)null, var1.intReplaceValues[var3]);
-							var0.writeByte(0);
-						} else if (var4 == 2) {
-							var5 = var1.fields[var3];
-							var6 = var5.getModifiers();
-							var0.writeByte(0);
-							var0.writeInt(var6);
-						}
-
-						Method var25;
-						if (var4 != 3) {
-							if (var4 == 4) {
-								var25 = var1.methods[var3];
-								var6 = var25.getModifiers();
-								var0.writeByte(0);
-								var0.writeInt(var6);
-							}
-						} else {
-							var25 = var1.methods[var3];
-							byte[][] var10 = var1.arguments[var3];
-							Object[] var7 = new Object[var10.length];
-
-							for (int var8 = 0; var8 < var10.length; ++var8) {
-								ObjectInputStream var9 = new ObjectInputStream(new ByteArrayInputStream(var10[var8]));
-								var7[var8] = var9.readObject();
-							}
-
-							Object var11 = Reflection.invoke(var25, (Object)null, var7);
-							if (var11 == null) {
-								var0.writeByte(0);
-							} else if (var11 instanceof Number) {
-								var0.writeByte(1);
-								var0.writeLong(((Number)var11).longValue());
-							} else if (var11 instanceof String) {
-								var0.writeByte(2);
-								var0.writeStringCp1252NullTerminated((String)var11);
-							} else {
-								var0.writeByte(4);
-							}
-						}
-					} catch (ClassNotFoundException var13) {
-						var0.writeByte(-10);
-					} catch (InvalidClassException var14) {
-						var0.writeByte(-11);
-					} catch (StreamCorruptedException var15) {
-						var0.writeByte(-12);
-					} catch (OptionalDataException var16) {
-						var0.writeByte(-13);
-					} catch (IllegalAccessException var17) {
-						var0.writeByte(-14);
-					} catch (IllegalArgumentException var18) {
-						var0.writeByte(-15);
-					} catch (InvocationTargetException var19) {
-						var0.writeByte(-16);
-					} catch (SecurityException var20) {
-						var0.writeByte(-17);
-					} catch (IOException var21) {
-						var0.writeByte(-18);
-					} catch (NullPointerException var22) {
-						var0.writeByte(-19);
-					} catch (Exception var23) {
-						var0.writeByte(-20);
-					} catch (Throwable var24) {
-						var0.writeByte(-21);
-					}
+					Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = var3.dataText;
 				}
+
+				return 1;
+			} else {
+				return 2;
+			}
+		} else {
+			int var4 = Interpreter.Interpreter_intStack[--class408.Interpreter_intStackSize];
+			--var4;
+			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
+				Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = var3.actions[var4];
+			} else {
+				Interpreter.Interpreter_objectStack[++SecureRandomFuture.Interpreter_objectStackSize - 1] = "";
 			}
 
-			var0.writeCrc(var2);
-			var1.remove();
+			return 1;
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("mk")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lqd;",
-		garbageValue = "-495424354"
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;IIIIIII)V",
+		garbageValue = "1976279533"
 	)
-	static Language[] method8712() {
-		return new Language[]{Language_ES, Language_FR, Language_NL, Language_EN, Language_ES_MX, Language_DE, Language_PT};
-	}
+	static final void method8932(int var0, String var1, String var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		if (!Client.isMenuOpen) {
+			if (HttpRequestTask.method288(var8, var3)) {
+				if (var0 >= 0 && var0 < Client.menu.subMenus.length) {
+					if (Client.menu.subMenus[var0] == null) {
+						Client.menu.subMenus[var0] = new Menu(false);
+					}
 
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lqd;",
-		garbageValue = "1"
-	)
-	public static Language method8701(int var0) {
-		return var0 >= 0 && var0 < Language_valuesOrdered.length ? Language_valuesOrdered[var0] : null;
+					Client.menu.subMenus[var0].insertMenuItem(var1, var2, var3, var4, var5, var6, var7, false, var8);
+				}
+			}
+		}
 	}
 }

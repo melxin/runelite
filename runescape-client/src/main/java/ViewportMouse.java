@@ -4,63 +4,73 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jq")
+@ObfuscatedName("kv")
 @Implements("ViewportMouse")
 public class ViewportMouse {
-	@ObfuscatedName("bj")
+	@ObfuscatedName("bg")
 	@ObfuscatedSignature(
-		descriptor = "Lre;"
+		descriptor = "Lrx;"
 	)
-	public static final ProjectionCoord field2955;
-	@ObfuscatedName("bb")
+	static final ProjectionCoord field3109;
+	@ObfuscatedName("bs")
 	@Export("ViewportMouse_isInViewport")
-	static boolean ViewportMouse_isInViewport;
-	@ObfuscatedName("bn")
+	public static boolean ViewportMouse_isInViewport;
+	@ObfuscatedName("bz")
 	@ObfuscatedGetter(
-		intValue = -1995247465
+		intValue = 770621097
 	)
 	@Export("ViewportMouse_x")
-	static int ViewportMouse_x;
-	@ObfuscatedName("by")
+	public static int ViewportMouse_x;
+	@ObfuscatedName("bk")
 	@ObfuscatedGetter(
-		intValue = 1034591313
+		intValue = -459009589
 	)
 	@Export("ViewportMouse_y")
-	static int ViewportMouse_y;
-	@ObfuscatedName("bm")
+	public static int ViewportMouse_y;
+	@ObfuscatedName("bb")
 	@Export("ViewportMouse_false0")
-	static boolean ViewportMouse_false0;
-	@ObfuscatedName("bc")
+	public static boolean ViewportMouse_false0;
+	@ObfuscatedName("bf")
 	@ObfuscatedGetter(
-		intValue = 851039837
+		intValue = -1556503267
 	)
 	@Export("ViewportMouse_entityCount")
 	public static int ViewportMouse_entityCount;
-	@ObfuscatedName("bv")
+	@ObfuscatedName("bn")
 	@Export("ViewportMouse_entityTags")
 	public static long[] ViewportMouse_entityTags;
-	@ObfuscatedName("bi")
-	public static int[] field2958;
-	@ObfuscatedName("kp")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	@Export("soundEffectsArchive")
-	static Archive soundEffectsArchive;
-	@ObfuscatedName("lw")
-	@ObfuscatedSignature(
-		descriptor = "[Lxc;"
-	)
-	static IndexedSprite[] field2951;
+	@ObfuscatedName("bd")
+	public static int[] field3116;
 
 	static {
-		field2955 = new ProjectionCoord();
+		field3109 = new ProjectionCoord();
 		ViewportMouse_isInViewport = false;
 		ViewportMouse_x = 0;
 		ViewportMouse_y = 0;
 		ViewportMouse_false0 = false;
 		ViewportMouse_entityCount = 0;
 		ViewportMouse_entityTags = new long[1000];
-		field2958 = new int[1000];
+		field3116 = new int[1000];
+	}
+
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/CharSequence;I)Z",
+		garbageValue = "-605717746"
+	)
+	@Export("isNumber")
+	public static boolean isNumber(CharSequence var0) {
+		return class114.method3585(var0, 10, true);
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(Lrx;FI)Lrx;",
+		garbageValue = "-197067365"
+	)
+	public static final ProjectionCoord method6107(ProjectionCoord var0, float var1) {
+		ProjectionCoord var2 = class30.method486(var0);
+		var2.method9334(var1);
+		return var2;
 	}
 }

@@ -1,12 +1,15 @@
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("wb")
-public interface class597 {
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Ljava/lang/Object;",
-		garbageValue = "-89"
+@ObfuscatedName("ww")
+public class class597 {
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = 248825663
 	)
-	Object vmethod11708(int var1);
+	public static int field6010;
+
+	static {
+		field6010 = Integer.MAX_VALUE;
+	}
 }

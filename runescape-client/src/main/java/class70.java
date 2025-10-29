@@ -1,59 +1,76 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cz")
+@ObfuscatedName("cy")
 public class class70 {
-	@ObfuscatedName("ft")
+	@ObfuscatedName("ar")
+	@Export("ByteArrayPool_altSizeArrayCounts")
+	public static int[] ByteArrayPool_altSizeArrayCounts;
+	@ObfuscatedName("dl")
 	@ObfuscatedSignature(
-		descriptor = "Lri;"
+		descriptor = "Lxm;"
 	)
-	@Export("fontBold12")
-	public static Font fontBold12;
-	@ObfuscatedName("vt")
-	@ObfuscatedGetter(
-		intValue = 108051455
-	)
-	static int field966;
+	@Export("worldSelectLeftSprite")
+	static IndexedSprite worldSelectLeftSprite;
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lgk;",
-		garbageValue = "89"
+		descriptor = "(IIB)Lbu;",
+		garbageValue = "1"
 	)
-	@Export("VarpDefinition_get")
-	public static VarpDefinition VarpDefinition_get(int var0) {
-		VarpDefinition var1 = (VarpDefinition)VarpDefinition.VarpDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = VarpDefinition.VarpDefinition_archive.takeFile(16, var0);
-			var1 = new VarpDefinition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			VarpDefinition.VarpDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
+	@Export("Messages_getByChannelAndID")
+	static Message Messages_getByChannelAndID(int var0, int var1) {
+		ChatChannel var2 = (ChatChannel)Messages.Messages_channels.get(var0);
+		return var2.getMessage(var1);
 	}
 
-	@ObfuscatedName("he")
+	@ObfuscatedName("mz")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1328734565"
+		descriptor = "(Lof;IIZI)V",
+		garbageValue = "1910838794"
 	)
-	@Export("forceDisconnect")
-	static final void forceDisconnect(int var0) {
-		WorldMapElement.logOut();
-		switch(var0) {
-		case 1:
-			class146.method3876(24);
-			class203.setLoginResponseString("", "You were disconnected from the server.", "");
-			break;
-		case 2:
-			Frames.method5460();
+	@Export("alignWidgetSize")
+	static void alignWidgetSize(Widget var0, int var1, int var2, boolean var3) {
+		int var4 = var0.width * -1946208531;
+		int var5 = var0.height * -905446999;
+		if (var0.widthAlignment == 0) {
+			var0.width = var0.rawWidth * 1190762213;
+		} else if (var0.widthAlignment == 1) {
+			var0.width = (var1 - var0.rawWidth) * 1190762213;
+		} else if (var0.widthAlignment == 2) {
+			var0.width = (var0.rawWidth * var1 >> 14) * 1190762213;
+		}
+
+		if (var0.heightAlignment == 0) {
+			var0.height = var0.rawHeight * -1551910247;
+		} else if (var0.heightAlignment == 1) {
+			var0.height = (var2 - var0.rawHeight) * -1551910247;
+		} else if (var0.heightAlignment == 2) {
+			var0.height = (var2 * var0.rawHeight >> 14) * -1551910247;
+		}
+
+		if (var0.widthAlignment == 4) {
+			var0.width = var0.height * var0.field4231 * -905446999 / var0.field4232 * 1190762213;
+		}
+
+		if (var0.heightAlignment == 4) {
+			var0.height = var0.field4232 * var0.width * -1946208531 / var0.field4231 * -1551910247;
+		}
+
+		if (var0.contentType == 1337) {
+			Client.viewportWidget = var0;
+		}
+
+		if (var0.type == 12) {
+			var0.method8194().method7880(var0.width * -1946208531, var0.height * -905446999);
+		}
+
+		if (var3 && var0.onResize != null && (var4 != var0.width * -1946208531 || var5 != var0.height * -905446999)) {
+			ScriptEvent var6 = new ScriptEvent();
+			var6.widget = var0;
+			var6.args = var0.onResize;
+			Client.scriptEvents.addFirst(var6);
 		}
 
 	}

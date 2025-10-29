@@ -4,89 +4,79 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lo")
+@ObfuscatedName("lf")
 @Implements("WorldMapID")
 public class WorldMapID {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Llo;"
+		descriptor = "Llf;"
 	)
-	static final WorldMapID field3478;
+	static final WorldMapID field3508;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Llo;"
+		descriptor = "Llf;"
 	)
-	static final WorldMapID field3481;
+	static final WorldMapID field3503;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 992813529
+		intValue = 1166744947
 	)
 	@Export("value")
 	final int value;
 
 	static {
-		field3478 = new WorldMapID(0);
-		field3481 = new WorldMapID(1);
+		field3508 = new WorldMapID(0);
+		field3503 = new WorldMapID(1);
 	}
 
 	WorldMapID(int var1) {
 		this.value = var1;
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "([BI)V",
-		garbageValue = "-932312060"
+		descriptor = "([Ljava/lang/String;[IIII)V",
+		garbageValue = "1060942896"
 	)
-	@Export("ByteArrayPool_release")
-	public static void ByteArrayPool_release(byte[] var0) {
-		synchronized(ByteArrayPool.field5369) {
-			if (var0.length == 100 && ByteArrayPool.ByteArrayPool_smallCount < ByteArrayPool.field5374) {
-				ByteArrayPool.ByteArrayPool_small[++ByteArrayPool.ByteArrayPool_smallCount - 1] = var0;
-			} else if (var0.length == 5000 && ByteArrayPool.ByteArrayPool_mediumCount < ByteArrayPool.field5373) {
-				ByteArrayPool.ByteArrayPool_medium[++ByteArrayPool.ByteArrayPool_mediumCount - 1] = var0;
-			} else if (var0.length == 10000 && ByteArrayPool.ByteArrayPool_largeCount < ByteArrayPool.field5376) {
-				ByteArrayPool.ByteArrayPool_large[++ByteArrayPool.ByteArrayPool_largeCount - 1] = var0;
-			} else if (var0.length == 30000 && ByteArrayPool.field5383 < ByteArrayPool.field5377) {
-				ByteArrayPool.field5381[++ByteArrayPool.field5383 - 1] = var0;
-			} else {
-				if (AbstractWorldMapData.ByteArrayPool_arrays != null) {
-					for (int var2 = 0; var2 < WorldMapDecoration.ByteArrayPool_alternativeSizes.length; ++var2) {
-						if (var0.length == WorldMapDecoration.ByteArrayPool_alternativeSizes[var2] && class159.ByteArrayPool_altSizeArrayCounts[var2] < AbstractWorldMapData.ByteArrayPool_arrays[var2].length) {
-							AbstractWorldMapData.ByteArrayPool_arrays[var2][class159.ByteArrayPool_altSizeArrayCounts[var2]++] = var0;
-							return;
-						}
-					}
-				}
+	@Export("quicksortStringsWithCorrespondingIntegers")
+	public static void quicksortStringsWithCorrespondingIntegers(String[] var0, int[] var1, int var2, int var3) {
+		if (var2 < var3) {
+			int var4 = (var3 + var2) / 2;
+			int var5 = var2;
+			String var6 = var0[var4];
+			var0[var4] = var0[var3];
+			var0[var3] = var6;
+			int var7 = var1[var4];
+			var1[var4] = var1[var3];
+			var1[var3] = var7;
 
+			for (int var8 = var2; var8 < var3; ++var8) {
+				if (var6 == null || var0[var8] != null && var0[var8].compareTo(var6) < (var8 & 1)) {
+					String var9 = var0[var8];
+					var0[var8] = var0[var5];
+					var0[var5] = var9;
+					int var10 = var1[var8];
+					var1[var8] = var1[var5];
+					var1[var5++] = var10;
+				}
 			}
+
+			var0[var3] = var0[var5];
+			var0[var5] = var6;
+			var1[var3] = var1[var5];
+			var1[var5] = var7;
+			quicksortStringsWithCorrespondingIntegers(var0, var1, var2, var5 - 1);
+			quicksortStringsWithCorrespondingIntegers(var0, var1, var5 + 1, var3);
 		}
+
 	}
 
 	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "92"
+		descriptor = "(I)[Lfu;",
+		garbageValue = "-1895878343"
 	)
-	public static int method6845(int var0, int var1) {
-		int var2 = var0 >>> 31;
-		return (var0 + var2) / var1 - var2;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "1914951288"
-	)
-	static final int method6843(int var0, int var1) {
-		int var2 = PacketBufferNode.method7043(45365 + var0, var1 + 91923, 4) - 128 + (PacketBufferNode.method7043(var0 + 10294, var1 + 37821, 2) - 128 >> 1) + (PacketBufferNode.method7043(var0, var1, 1) - 128 >> 2);
-		var2 = (int)((double)var2 * 0.3D) + 35;
-		if (var2 < 10) {
-			var2 = 10;
-		} else if (var2 > 60) {
-			var2 = 60;
-		}
-
-		return var2;
+	static class147[] method7020() {
+		return new class147[]{class147.field1730, class147.field1728, class147.field1729, class147.field1734, class147.field1731, class147.field1732, class147.field1727, class147.field1735, class147.field1733};
 	}
 }

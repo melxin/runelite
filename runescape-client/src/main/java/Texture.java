@@ -3,36 +3,36 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("id")
+@ObfuscatedName("jf")
 @Implements("Texture")
 public class Texture extends Node {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@Export("Texture_animatedPixels")
 	static int[] Texture_animatedPixels;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@Export("fileId")
 	int fileId;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@Export("averageRGB")
 	int averageRGB;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@Export("isLowDetail")
 	boolean isLowDetail;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@Export("animationDirection")
 	int animationDirection;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@Export("animationSpeed")
 	int animationSpeed;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@Export("pixels")
 	int[] pixels;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("az")
 	@Export("isLoaded")
 	boolean isLoaded;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;)V"
+		descriptor = "(Lxa;)V"
 	)
 	Texture(Buffer var1) {
 		this.isLoaded = false;
@@ -44,9 +44,9 @@ public class Texture extends Node {
 		this.pixels = null;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(DILpe;)Z"
+		descriptor = "(DILqm;)Z"
 	)
 	@Export("load")
 	boolean load(double var1, int var3, AbstractArchive var4) {
@@ -55,7 +55,7 @@ public class Texture extends Node {
 		} else {
 			int var5 = var3 * var3;
 			this.pixels = new int[var5];
-			IndexedSprite var6 = PacketBuffer.method11355(var4, this.fileId);
+			IndexedSprite var6 = class204.method4557(var4, this.fileId);
 			var6.normalize();
 			int[] var7 = var6.palette;
 

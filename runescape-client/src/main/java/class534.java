@@ -1,31 +1,71 @@
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uh")
-public class class534 {
-	@ObfuscatedName("au")
-	static final int[] field5642;
-	@ObfuscatedName("ak")
-	public static final int[] field5650;
-	@ObfuscatedName("ao")
-	static final int[][] field5651;
+@ObfuscatedName("um")
+public abstract class class534 extends class320 implements class608 {
+	@ObfuscatedSignature(
+		descriptor = "(Lpm;Lqd;I)V"
+	)
+	protected class534(StudioGame var1, Language var2, int var3) {
+		super(var1, var2, var3);
+	}
 
-	static {
-		field5642 = new int[2048];
-		field5650 = new int[2048];
-		field5651 = new int[512][512];
-		double var0 = 0.0030679615757712823D;
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(II)Lue;",
+		garbageValue = "-535565336"
+	)
+	protected abstract class536 vmethod11384(int var1);
 
-		int var2;
-		for (var2 = 0; var2 < 2048; ++var2) {
-			field5642[var2] = (int)(65536.0D * Math.sin(var0 * (double)var2));
-			field5650[var2] = (int)(65536.0D * Math.cos((double)var2 * var0));
-		}
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "(B)I",
+		garbageValue = "-30"
+	)
+	public int method10790() {
+		return super.field3553;
+	}
 
-		for (var2 = -256; var2 < 256; ++var2) {
-			for (int var3 = -256; var3 < 256; ++var3) {
-				field5651[var2 + 256][var3 + 256] = (int)Math.round(Math.atan2((double)var2, (double)var3) * 325.94932345220167D) - 512 & 2047;
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(II)Ljava/lang/Object;",
+		garbageValue = "-1807762460"
+	)
+	public Object vmethod11988(int var1) {
+		class536 var2 = this.vmethod11384(var1);
+		return var2 != null && var2.method10811() ? var2.method10809() : null;
+	}
+
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "(Lxa;S)Lxx;",
+		garbageValue = "17804"
+	)
+	public class609 method10794(Buffer var1) {
+		int var2 = var1.readUnsignedShort();
+		class536 var3 = this.vmethod11384(var2);
+		class609 var4 = new class609(var2);
+		Class var5 = var3.field5640.field5943;
+		if (var5 == Integer.class) {
+			var4.field6085 = var1.readInt();
+		} else if (var5 == Long.class) {
+			var4.field6085 = var1.readLong();
+		} else if (var5 == String.class) {
+			var4.field6085 = var1.readStringCp1252NullCircumfixed();
+		} else {
+			if (!class603.class.isAssignableFrom(var5)) {
+				throw new IllegalStateException();
+			}
+
+			try {
+				class603 var6 = (class603)var5.newInstance();
+				var6.method11945(var1);
+				var4.field6085 = var6;
+			} catch (InstantiationException var7) {
+			} catch (IllegalAccessException var8) {
 			}
 		}
 
+		return var4;
 	}
 }

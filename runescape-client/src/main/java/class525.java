@@ -1,17 +1,18 @@
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("uf")
-public class class525 extends class526 {
-	public class525(int var1) {
-		super(var1);
-	}
-
-	@ObfuscatedName("ab")
+@ObfuscatedName("ui")
+public class class525 {
+	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;II)V",
-		garbageValue = "496057084"
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;B)V",
+		garbageValue = "1"
 	)
-	void vmethod10587(Buffer var1, int var2) {
+	@Export("setLoginResponseString")
+	static void setLoginResponseString(String var0, String var1, String var2) {
+		Login.Login_response1 = var0;
+		Login.Login_response2 = var1;
+		Login.Login_response3 = var2;
 	}
 }

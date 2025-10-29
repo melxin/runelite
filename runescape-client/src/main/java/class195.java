@@ -1,107 +1,62 @@
+import java.util.concurrent.ThreadFactory;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hp")
-public class class195 extends DualNode {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lme;"
+@ObfuscatedName("hh")
+class class195 implements ThreadFactory {
+	@ObfuscatedName("ui")
+	@ObfuscatedGetter(
+		intValue = -82823117
 	)
-	@Export("field2100")
-	public static EvictingDualNodeHashTable field2100;
+	static int field2078;
+	// $FF: synthetic field
+	@ObfuscatedSignature(
+		descriptor = "Liw;"
+	)
+	final SequenceDefinition this$0;
 
-	static {
-		field2100 = new EvictingDualNodeHashTable(64);
+	@ObfuscatedSignature(
+		descriptor = "(Liw;)V"
+	)
+	class195(SequenceDefinition var1) {
+		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Lhd;",
-		garbageValue = "-42"
-	)
-	@Export("getEnum")
-	public static EnumComposition getEnum(int var0) {
-		EnumComposition var1 = (EnumComposition)EnumComposition.EnumDefinition_cached.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = EnumComposition.EnumDefinition_archive.takeFile(8, var0);
-			var1 = new EnumComposition();
-			if (var2 != null) {
-				var1.decode(new Buffer(var2));
-			}
-
-			EnumComposition.EnumDefinition_cached.put(var1, (long)var0);
-			return var1;
-		}
+	public Thread newThread(Runnable var1) {
+		return new Thread(var1, "OSRS Maya Anim Load");
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("be")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "27"
+		descriptor = "(I)[Ljava/lang/Object;",
+		garbageValue = "658814083"
 	)
-	public static void method4451() {
-		while (true) {
-			ArchiveDiskAction var0;
-			synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
-				var0 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_responseQueue.removeLast();
-			}
+	static Object[] method4454() {
+		String var0 = (String)Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
+		Object[] var1 = new Object[var0.length()];
 
-			if (var0 == null) {
-				return;
-			}
-
-			var0.archive.load(var0.archiveDisk, (int)var0.key, var0.data, false);
-		}
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Lbv;Lbv;IZI)I",
-		garbageValue = "-1926827270"
-	)
-	@Export("compareWorlds")
-	static int compareWorlds(World var0, World var1, int var2, boolean var3) {
-		if (var2 == 1) {
-			int var4 = var0.population;
-			int var5 = var1.population;
-			if (!var3) {
-				if (var4 == -1) {
-					var4 = 2001;
-				}
-
-				if (var5 == -1) {
-					var5 = 2001;
-				}
-			}
-
-			return var4 - var5;
-		} else if (var2 == 2) {
-			return var0.location - var1.location;
-		} else if (var2 == 3) {
-			if (var0.activity.equals("-")) {
-				if (var1.activity.equals("-")) {
-					return 0;
-				} else {
-					return var3 ? -1 : 1;
-				}
-			} else if (var1.activity.equals("-")) {
-				return var3 ? 1 : -1;
+		for (int var2 = var0.length() - 1; var2 >= 0; --var2) {
+			if (var0.charAt(var2) == 'i') {
+				var1[var2] = Interpreter.Interpreter_intStack[--class408.Interpreter_intStackSize];
 			} else {
-				return var0.activity.compareTo(var1.activity);
+				var1[var2] = Interpreter.Interpreter_objectStack[--SecureRandomFuture.Interpreter_objectStackSize];
 			}
-		} else if (var2 == 4) {
-			return var0.method1507() ? (var1.method1507() ? 0 : 1) : (var1.method1507() ? -1 : 0);
-		} else if (var2 == 5) {
-			return var0.method1505() ? (var1.method1505() ? 0 : 1) : (var1.method1505() ? -1 : 0);
-		} else if (var2 == 6) {
-			return var0.isPvp() ? (var1.isPvp() ? 0 : 1) : (var1.isPvp() ? -1 : 0);
-		} else if (var2 == 7) {
-			return var0.isMembersOnly() ? (var1.isMembersOnly() ? 0 : 1) : (var1.isMembersOnly() ? -1 : 0);
-		} else {
-			return var0.id - var1.id;
 		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("oo")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "2089018130"
+	)
+	@Export("Clan_leaveChat")
+	static final void Clan_leaveChat() {
+		PacketBufferNode var0 = ReflectionCheck.getPacketBufferNode(ClientPacket.FRIEND_CHAT_JOIN_LEAVE, Client.packetWriter.isaacCipher);
+		var0.packetBuffer.writeByte(0);
+		Client.packetWriter.addNode(var0);
 	}
 }

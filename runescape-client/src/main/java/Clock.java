@@ -1,83 +1,58 @@
-import java.util.ArrayList;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("kv")
+@ObfuscatedName("jx")
 @Implements("Clock")
 public abstract class Clock {
 	Clock() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "1"
+		descriptor = "(I)V",
+		garbageValue = "796597613"
 	)
 	@Export("mark")
 	public abstract void mark();
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "125"
+		descriptor = "(III)I",
+		garbageValue = "205232251"
 	)
 	@Export("wait")
 	public abstract int wait(int var1, int var2);
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "1"
+		descriptor = "(Ljava/lang/String;II)V",
+		garbageValue = "852811176"
 	)
-	public static void method6092(int var0, int var1) {
-		class338.musicPlayerStatus = var0;
-		class338.field3899 = var1;
-		class338.field3896 = 0;
-		class338.field3901 = 0;
-		class338.field3891.clear();
-		class338.field3897.clear();
-		if (class338.midiRequests.isEmpty() || var0 == 0 && var1 == 0) {
-			Iterator var2 = class338.midiRequests.iterator();
+	static final void method5247(String var0, int var1) {
+		PacketBufferNode var2 = ReflectionCheck.getPacketBufferNode(ClientPacket.FRIEND_CHAT_SETRANK, Client.packetWriter.isaacCipher);
+		var2.packetBuffer.writeByte(AccessFile.stringCp1252NullTerminatedByteSize(var0) + 1);
+		var2.packetBuffer.writeShortLE(var1);
+		var2.packetBuffer.writeStringCp1252NullTerminated(var0);
+		Client.packetWriter.addNode(var2);
+	}
 
-			while (true) {
-				MidiRequest var10;
-				do {
-					if (!var2.hasNext()) {
-						class338.midiRequests.clear();
-						return;
-					}
-
-					var10 = (MidiRequest)var2.next();
-				} while(var10 == null);
-
-				var10.midiPcmStream.clear();
-				var10.midiPcmStream.method7225();
-				var10.midiPcmStream.setPcmStreamVolume(0);
-				var10.midiPcmStream.field3910 = 0;
-				int var4 = var10.musicTrackGroupId;
-				int var5 = var10.musicTrackFileId;
-				Iterator var6 = class338.field3892.iterator();
-
-				while (var6.hasNext()) {
-					class344 var7 = (class344)var6.next();
-					var7.vmethod7348(var4, var5);
-				}
-			}
-		} else {
-			class338.field3897.add(new DelayFadeTask((SongTask)null, class338.musicPlayerStatus));
-			class338.field3897.add(new FadeOutTask((SongTask)null, 0, false, class338.field3899));
-			ArrayList var3 = new ArrayList();
-			Iterator var8 = class338.midiRequests.iterator();
-
-			while (var8.hasNext()) {
-				MidiRequest var9 = (MidiRequest)var8.next();
-				var3.add(var9);
-			}
-
-			class338.field3897.add(new class470((SongTask)null, var3));
-		}
+	@ObfuscatedName("jn")
+	@ObfuscatedSignature(
+		descriptor = "(Ldd;ILky;B)V",
+		garbageValue = "13"
+	)
+	static void method5250(WorldView var0, int var1, Model var2) {
+		boolean var3 = true;
+		float var4 = (float)Client.viewportHeight / 334.0F;
+		float var5 = 4.0F * (float)Client.viewportZoom / var4;
+		int var6 = Math.max(512, (int)(1400.0F - var5));
+		int var7 = Client.field468;
+		double var8 = (double)class66.method2206(var1) / 65536.0D;
+		int var10 = var7 - (int)(var8 * (double)var6);
+		int var11 = Client.field512 - (int)(DevicePcmPlayerProvider.method332(var1) * (double)var6);
+		long var12 = class236.calculateTag(var0.plane, Coord.method7692(var10), Coord.method7692(var11), 5, false, -1, var0.id);
+		var0.scene.drawEntity(var0.plane, var10, var11, Client.field469, 60, var2, var1, var12, false);
 	}
 }

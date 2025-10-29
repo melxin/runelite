@@ -1,23 +1,19 @@
-import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dk")
+@ObfuscatedName("dg")
 @Implements("SoundSystem")
 public class SoundSystem implements Runnable {
-	@ObfuscatedName("lc")
-	@Export("gameSessionServiceBaseUrl")
-	static String gameSessionServiceBaseUrl;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "[Ldx;"
+		descriptor = "[Ldm;"
 	)
 	@Export("players")
-	public volatile PcmPlayer[] players;
+	volatile PcmPlayer[] players;
 
-	public SoundSystem() {
+	SoundSystem() {
 		this.players = new PcmPlayer[2];
 	}
 
@@ -30,41 +26,38 @@ public class SoundSystem implements Runnable {
 				}
 			}
 		} catch (Exception var4) {
-			ArchiveDiskActionHandler.RunException_sendStackTrace((String)null, var4);
+			PlayerType.RunException_sendStackTrace((String)null, var4);
 		}
 
 	}
 
-	@ObfuscatedName("cw")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(ILcj;ZB)I",
-		garbageValue = "35"
+		descriptor = "(II)Ljava/lang/String;",
+		garbageValue = "2127187032"
 	)
-	static int method3200(int var0, Script var1, boolean var2) {
-		if (var0 == 7900) {
-			int var3 = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
-			Client.field364 = Math.max(var3, 0);
-			return 1;
-		} else if (var0 == 7901) {
-			Interpreter.Interpreter_intStack[++UrlRequest.Interpreter_intStackSize - 1] = Client.field364;
-			return 1;
-		} else {
-			return 2;
-		}
+	static String method3226(int var0) {
+		return "<img=" + var0 + ">";
 	}
 
-	@ObfuscatedName("iv")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "-71"
+		descriptor = "(I)V",
+		garbageValue = "-1151648316"
 	)
-	static void method3199(int var0, int var1) {
-		if (class154.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
-			ArrayList var2 = new ArrayList();
-			var2.add(new MidiRequest(GrandExchangeOffer.archive6, var0, 0, class154.clientPreferences.getMusicVolume(), false));
-			TextureProvider.method5489(var2, 0, 0, 0, 0, true);
-			Client.playingJingle = true;
-		}
-
+	static void method3227() {
+		Tiles.Tiles_minPlane = 99;
+		class33.Tiles_underlays = new short[4][104][104];
+		class623.Tiles_overlays = new short[4][104][104];
+		class200.Tiles_shapes = new byte[4][104][104];
+		HttpRequest.field49 = new byte[4][104][104];
+		class148.field1747 = new int[4][105][105];
+		Tiles.Tiles_underlays2 = new byte[4][105][105];
+		MouseRecorder.field868 = new int[105][105];
+		WorldMapSectionType.Tiles_hue = new int[104];
+		class565.Tiles_saturation = new int[104];
+		class67.Tiles_lightness = new int[104];
+		class161.Tiles_hueMultiplier = new int[104];
+		class154.field1785 = new int[104];
 	}
 }

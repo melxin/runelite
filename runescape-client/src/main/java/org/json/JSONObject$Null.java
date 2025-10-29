@@ -8,11 +8,11 @@ final class JSONObject$Null {
 		return this;
 	}
 
-	public boolean equals(Object var1) {
-		return var1 == null || this == var1;
-	}
-
 	public String toString() {
 		return "null";
+	}
+
+	public boolean equals(Object var1) {
+		return var1 == null || this == var1;
 	}
 }

@@ -3,35 +3,32 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jt")
+@ObfuscatedName("in")
 @Implements("JagexCache")
 public class JagexCache {
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Lvy;"
+		descriptor = "Lws;"
 	)
 	@Export("JagexCache_dat2File")
 	public static BufferedFile JagexCache_dat2File;
-	@ObfuscatedName("ad")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Lvy;"
+		descriptor = "Lws;"
 	)
 	@Export("JagexCache_idx255File")
 	public static BufferedFile JagexCache_idx255File;
-	@ObfuscatedName("av")
+	@ObfuscatedName("ac")
+	@Export("userHomeDirectory")
+	static String userHomeDirectory;
+	@ObfuscatedName("ah")
 	@ObfuscatedSignature(
-		descriptor = "[Lvy;"
-	)
-	@Export("JagexCache_idxFiles")
-	public static BufferedFile[] JagexCache_idxFiles;
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "Lvy;"
+		descriptor = "Lws;"
 	)
 	@Export("JagexCache_randomDat")
 	public static BufferedFile JagexCache_randomDat;
-	@ObfuscatedName("ai")
-	static String[] field3115;
+	@ObfuscatedName("oh")
+	static byte[][] field2586;
 
 	static {
 		JagexCache_dat2File = null;
@@ -39,13 +36,23 @@ public class JagexCache {
 		JagexCache_randomDat = null;
 	}
 
-	@ObfuscatedName("ma")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1461365294"
+		descriptor = "(Lxa;[II)[Ljava/lang/Object;",
+		garbageValue = "-983926347"
 	)
-	@Export("getTapToDrop")
-	static boolean getTapToDrop() {
-		return Client.tapToDrop;
+	static Object[] method5102(Buffer var0, int[] var1) {
+		int var2 = var0.readUShortSmart();
+		Object[] var3 = new Object[var1.length * var2];
+
+		for (int var4 = 0; var4 < var2; ++var4) {
+			for (int var5 = 0; var5 < var1.length; ++var5) {
+				int var6 = var1.length * var4 + var5;
+				class586 var7 = class251.method5495(var1[var5]);
+				var3[var6] = var7.method11436(var0);
+			}
+		}
+
+		return var3;
 	}
 }

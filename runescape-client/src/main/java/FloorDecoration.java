@@ -4,51 +4,55 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("in")
+@ObfuscatedName("jv")
 @Implements("FloorDecoration")
 public final class FloorDecoration {
-	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = 238066481
-	)
-	public static int field2576;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Liy;"
+		descriptor = "Ljz;"
 	)
 	@Export("renderable")
 	public Renderable renderable;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		longValue = -1653388810263335849L
+		longValue = -8859526887717711125L
 	)
 	@Export("tag")
 	public long tag;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1894200033
+		intValue = -495673633
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1575855251
+		intValue = 1266171817
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1647343275
+		intValue = -190028295
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 23098573
+		intValue = 633706255
 	)
 	@Export("flags")
 	int flags;
 
 	FloorDecoration() {
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(IB)Z",
+		garbageValue = "-75"
+	)
+	static boolean method5346(int var0) {
+		return (var0 & 128) != 0;
 	}
 }

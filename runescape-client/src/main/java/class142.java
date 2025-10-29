@@ -1,90 +1,94 @@
-import java.util.Iterator;
-import java.util.concurrent.Callable;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("fy")
-class class142 implements Callable {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Lpe;"
-	)
-	static AbstractArchive field1721;
-	@ObfuscatedName("kd")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	@Export("archive12")
-	static Archive archive12;
-	@ObfuscatedName("sd")
+@ObfuscatedName("fk")
+public class class142 implements class133 {
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 379518741
+		intValue = -1683466465
 	)
-	@Export("selectedSpellWidget")
-	static int selectedSpellWidget;
-	// $FF: synthetic field
+	public static int field1705;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = -1250506995
+	)
+	@Export("gameCyclesToDo")
+	static int gameCyclesToDo;
+	@ObfuscatedName("bt")
+	@ObfuscatedGetter(
+		intValue = 510143033
+	)
+	static int field1704;
+
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lfz;"
+		descriptor = "(Lqm;Lqm;IB)Ljt;",
+		garbageValue = "104"
 	)
-	final class145 this$0;
-	// $FF: synthetic field
-	@ObfuscatedSignature(
-		descriptor = "Lwj;"
-	)
-	final Buffer val$p;
-	// $FF: synthetic field
-	final int val$version;
+	public static Frames method3884(AbstractArchive var0, AbstractArchive var1, int var2) {
+		boolean var3 = true;
+		int var4 = -1;
+		int[] var5 = var0.getGroupFileIds(var2);
 
-	@ObfuscatedSignature(
-		descriptor = "(Lfz;Lwj;I)V"
-	)
-	class142(class145 var1, Buffer var2, int var3) {
-		this.this$0 = var1;
-		this.val$p = var2;
-		this.val$version = var3;
-	}
-
-	public Object call() {
-		this.this$0.method3836(this.val$p, this.val$version);
-		return null;
-	}
-
-	@ObfuscatedName("ij")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1361660674"
-	)
-	static final void method3825() {
-		int[] var0 = Client.playerUpdateManager.playerIndices;
-		Iterator var1 = Client.worldViewManager.iterator();
-
-		while (var1.hasNext()) {
-			WorldView var2 = (WorldView)var1.next();
-
-			for (int var3 = 0; var3 < Client.playerUpdateManager.playerCount; ++var3) {
-				Player var4 = (Player)var2.players.get((long)var0[var3]);
-				if (var4 != null && var4.overheadTextCyclesRemaining > 0) {
-					--var4.overheadTextCyclesRemaining;
-					if (var4.overheadTextCyclesRemaining == 0) {
-						var4.overheadText = null;
-					}
-				}
-			}
-
-			Iterator var5 = var2.npcs.iterator();
-
-			while (var5.hasNext()) {
-				NPC var6 = (NPC)var5.next();
-				if (var6 != null && var6.overheadTextCyclesRemaining > 0) {
-					--var6.overheadTextCyclesRemaining;
-					if (var6.overheadTextCyclesRemaining == 0) {
-						var6.overheadText = null;
-					}
-				}
+		for (int var6 = 0; var6 < var5.length; ++var6) {
+			byte[] var7 = var0.getFile(var2, var5[var6]);
+			if (var7 == null) {
+				var3 = false;
+			} else if (var4 == -1) {
+				var4 = (var7[0] & 255) << 8 | var7[1] & 255;
 			}
 		}
 
+		if (var4 != -1) {
+			byte[] var8 = var1.getFile(var4, 0);
+			if (var8 == null) {
+				var3 = false;
+			}
+		} else {
+			var3 = false;
+		}
+
+		if (!var3) {
+			return null;
+		} else {
+			try {
+				return new Frames(var0, var1, var2);
+			} catch (Exception var9) {
+				return null;
+			}
+		}
+	}
+
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "(FFFFLft;I)V",
+		garbageValue = "1961066754"
+	)
+	static void method3886(float var0, float var1, float var2, float var3, class139 var4) {
+		float var5 = var1 - var0;
+		float var6 = var2 - var1;
+		float var7 = var3 - var2;
+		float var8 = var6 - var5;
+		var4.field1659 = var7 - var6 - var8;
+		var4.field1658 = var8 + var8 + var8;
+		var4.field1657 = var5 + var5 + var5;
+		var4.field1655 = var0;
+	}
+
+	@ObfuscatedName("na")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "-240032281"
+	)
+	static boolean method3885(int var0) {
+		for (int var1 = 0; var1 < Client.field405; ++var1) {
+			if (Client.field407[var1] == var0) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

@@ -1,145 +1,104 @@
-import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("hi")
+@ObfuscatedName("ho")
 public class class203 extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
-	@Export("field2136")
-	static EvictingDualNodeHashTable field2136;
+	@Export("field2022")
+	static EvictingDualNodeHashTable field2022;
+	@ObfuscatedName("jq")
+	@ObfuscatedSignature(
+		descriptor = "Ljp;"
+	)
+	@Export("js5SocketTask")
+	static Task js5SocketTask;
 
 	static {
-		field2136 = new EvictingDualNodeHashTable(64);
+		field2022 = new EvictingDualNodeHashTable(64);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("nx")
 	@ObfuscatedSignature(
-		descriptor = "([BI)Lcj;",
-		garbageValue = "1706000418"
+		descriptor = "([Lof;IIIII)V",
+		garbageValue = "789799005"
 	)
-	@Export("newScript")
-	static Script newScript(byte[] var0) {
-		Script var1 = new Script();
-		Buffer var2 = new Buffer(var0);
-		var2.offset = var2.array.length - 2;
-		int var3 = var2.readUnsignedShort();
-		int var4 = var2.array.length - 2 - var3 - 12;
-		var2.offset = var4;
-		int var5 = var2.readInt();
-		var1.localIntCount = var2.readUnsignedShort();
-		var1.localStringCount = var2.readUnsignedShort();
-		var1.intArgumentCount = var2.readUnsignedShort();
-		var1.stringArgumentCount = var2.readUnsignedShort();
-		int var6 = var2.readUnsignedByte();
-		int var7;
-		int var8;
-		if (var6 > 0) {
-			var1.switches = var1.newIterableNodeHashTable(var6);
+	@Export("drawModelComponents")
+	static final void drawModelComponents(Widget[] var0, int var1, int var2, int var3, int var4) {
+		for (int var5 = var1; var5 <= var2; ++var5) {
+			Widget var6 = var0[var5];
+			if (var6 != null && var3 == var6.parentId && var4 == var6.field4234 && (!var6.isIf3 || !class330.isComponentHidden(var6))) {
+				if (var6.type == 0) {
+					if (!var6.isIf3 && class330.isComponentHidden(var6) && var6 != class330.mousedOverWidgetIf1) {
+						continue;
+					}
 
-			for (var7 = 0; var7 < var6; ++var7) {
-				var8 = var2.readUnsignedShort();
-				IterableNodeHashTable var9 = new IterableNodeHashTable(var8 > 0 ? ConcurrentMidiTask.method9757(var8) : 1);
-				var1.switches[var7] = var9;
+					drawModelComponents(var0, var6.field4236, var6.field4241, var6.id, var6.childIndex * 2077538819);
+					if (var6.children != null) {
+						drawModelComponents(var6.children, 0, var6.children.length - 1, var6.id, -1);
+					}
 
-				while (var8-- > 0) {
-					int var10 = var2.readInt();
-					int var11 = var2.readInt();
-					var9.put(new IntegerNode(var11), (long)var10);
+					if (var6.childIndex * 2077538819 == -1) {
+						InterfaceParent var7 = (InterfaceParent)Client.interfaceParents.get((long)var6.id);
+						if (var7 != null) {
+							class497.method10123(var7.group);
+						}
+					}
+				}
+
+				if (var6.type == 6) {
+					int var8;
+					if (var6.sequenceId != -1 || var6.sequenceId2 != -1) {
+						boolean var11 = class556.runCs1(var6);
+						if (var11) {
+							var8 = var6.sequenceId2;
+						} else {
+							var8 = var6.sequenceId;
+						}
+
+						if (var8 != -1) {
+							SequenceDefinition var9 = ClientPacket.SequenceDefinition_get(var8);
+							if (!var9.isCachedModelIdSet()) {
+								for (var6.modelFrameCycle += Client.graphicsCycle; var6.modelFrameCycle > var9.frameLengths[var6.modelFrame]; class376.invalidateWidget(var6)) {
+									var6.modelFrameCycle -= var9.frameLengths[var6.modelFrame];
+									++var6.modelFrame;
+									if (var6.modelFrame >= var9.frameIds.length) {
+										var6.modelFrame -= var9.frameCount;
+										if (var6.modelFrame < 0 || var6.modelFrame >= var9.frameIds.length) {
+											var6.modelFrame = 0;
+										}
+									}
+								}
+							} else {
+								var6.modelFrame += Client.graphicsCycle;
+								int var10 = var9.getMayaAnimFrame();
+								if (var6.modelFrame >= var10) {
+									var6.modelFrame -= var9.frameCount;
+									if (var6.modelFrame < 0 || var6.modelFrame >= var10) {
+										var6.modelFrame = 0;
+									}
+								}
+
+								class376.invalidateWidget(var6);
+							}
+						}
+					}
+
+					if (var6.field4274 != 0 && !var6.isIf3) {
+						int var12 = var6.field4274 >> 16;
+						var8 = var6.field4274 << 16 >> 16;
+						var12 *= Client.graphicsCycle;
+						var8 *= Client.graphicsCycle;
+						var6.modelAngleX = var12 + var6.modelAngleX & 2047;
+						var6.modelAngleY = var8 + var6.modelAngleY & 2047;
+						class376.invalidateWidget(var6);
+					}
 				}
 			}
 		}
 
-		var2.offset = 0;
-		var1.field769 = var2.readStringCp1252NullTerminatedOrNull();
-		var1.opcodes = new int[var5];
-		var1.intOperands = new int[var5];
-		var1.stringOperands = new String[var5];
-
-		for (var7 = 0; var2.offset < var4; var1.opcodes[var7++] = var8) {
-			var8 = var2.readUnsignedShort();
-			switch(var8) {
-			case 3:
-				var1.stringOperands[var7] = var2.readStringCp1252NullTerminated();
-				break;
-			case 21:
-			case 38:
-			case 39:
-			case 63:
-				var1.intOperands[var7] = var2.readUnsignedByte();
-				break;
-			default:
-				if (var8 <= 99) {
-					var1.intOperands[var7] = var2.readInt();
-				} else {
-					var1.intOperands[var7] = var2.readUnsignedByte();
-				}
-			}
-		}
-
-		return var1;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-300411601"
-	)
-	static void method4568() {
-		setLoginResponseString("", "Connecting to server...", "");
-		Client.field310 = class593.field6034;
-		class379.method8181(false);
-		class135.updateGameState(20);
-	}
-
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/util/Date;",
-		garbageValue = "47"
-	)
-	static Date method4567() {
-		java.util.Calendar var0 = java.util.Calendar.getInstance();
-		var0.set(2, 0);
-		var0.set(5, 1);
-		var0.set(1, 1900);
-		return var0.getTime();
-	}
-
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;B)V",
-		garbageValue = "-52"
-	)
-	@Export("setLoginResponseString")
-	static void setLoginResponseString(String var0, String var1, String var2) {
-		Login.Login_response1 = var0;
-		Login.Login_response2 = var1;
-		Login.Login_response3 = var2;
-	}
-
-	@ObfuscatedName("jb")
-	@ObfuscatedSignature(
-		descriptor = "(Ldm;IIIIS)V",
-		garbageValue = "28041"
-	)
-	static void method4563(WorldView var0, int var1, int var2, int var3, int var4) {
-		int var5 = var1;
-		int var6 = var2;
-		int var7 = VerticalAlignment.method4455(var0, var1, var2, var0.plane, var4) - var3;
-		if (!var0.method2736()) {
-			WorldEntity var8 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var0.id);
-			if (var8 != null) {
-				ProjectionCoord var9 = Varcs.method3022(var0, var1, var2);
-				var5 = (int)var9.x;
-				var6 = (int)var9.y;
-				var7 += class280.getTileHeight(class547.topLevelWorldView, var8.getY(), var8.getPlane(), class547.topLevelWorldView.plane);
-				var9.release();
-			}
-		}
-
-		class4.worldToScreen(var5, var6, var7, var4);
 	}
 }

@@ -4,72 +4,72 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cb")
+@ObfuscatedName("cg")
 @Implements("ScriptEvent")
 public class ScriptEvent extends Node {
-	@ObfuscatedName("ab")
-	boolean field875;
+	@ObfuscatedName("av")
+	boolean field862;
 	@ObfuscatedName("at")
 	@Export("args")
 	Object[] args;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Lof;"
 	)
 	@Export("widget")
 	Widget widget;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 147879895
+		intValue = -1567081689
 	)
 	@Export("mouseX")
 	int mouseX;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 1481451189
+		intValue = -1332622121
 	)
 	@Export("mouseY")
 	int mouseY;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1003661435
+		intValue = 2029362027
 	)
 	@Export("opIndex")
 	int opIndex;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 1675152925
+		intValue = 715272521
 	)
-	int field876;
-	@ObfuscatedName("aq")
+	int field852;
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Lok;"
+		descriptor = "Lof;"
 	)
 	@Export("dragTarget")
 	Widget dragTarget;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1666913007
+		intValue = 1798396775
 	)
 	@Export("keyTyped")
 	int keyTyped;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -1259045377
+		intValue = 837595959
 	)
 	@Export("keyPressed")
 	int keyPressed;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@Export("targetName")
 	String targetName;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = -1784233687
+	)
+	int field857;
 	@ObfuscatedName("ad")
 	@ObfuscatedGetter(
-		intValue = -2033458985
-	)
-	int field871;
-	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		intValue = -775355841
+		intValue = -1166617615
 	)
 	@Export("type")
 	int type;
@@ -78,10 +78,10 @@ public class ScriptEvent extends Node {
 		this.type = 76;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "([Ljava/lang/Object;I)V",
-		garbageValue = "1548564794"
+		garbageValue = "-1276808227"
 	)
 	@Export("setArgs")
 	public void setArgs(Object[] var1) {
@@ -91,7 +91,7 @@ public class ScriptEvent extends Node {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(IB)V",
-		garbageValue = "-13"
+		garbageValue = "-83"
 	)
 	@Export("setType")
 	public void setType(int var1) {
@@ -100,10 +100,10 @@ public class ScriptEvent extends Node {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lok;I)V",
-		garbageValue = "-1628583094"
+		descriptor = "(Lof;S)V",
+		garbageValue = "5200"
 	)
-	public void method2172(Widget var1) {
+	public void method2184(Widget var1) {
 		this.widget = var1;
 	}
 }

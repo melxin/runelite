@@ -1,18 +1,12 @@
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("en")
+@ObfuscatedName("eb")
 @Implements("UserComparator10")
 public class UserComparator10 extends AbstractUserComparator {
-	@ObfuscatedName("um")
-	@ObfuscatedGetter(
-		intValue = 803893595
-	)
-	static int field1585;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -20,10 +14,10 @@ public class UserComparator10 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ltu;Ltu;I)I",
-		garbageValue = "1349921059"
+		descriptor = "(Ltm;Ltm;I)I",
+		garbageValue = "-1161103436"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -36,5 +30,55 @@ public class UserComparator10 extends AbstractUserComparator {
 
 	public int compare(Object var1, Object var2) {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
+	}
+
+	@ObfuscatedName("ir")
+	@ObfuscatedSignature(
+		descriptor = "(IIII)V",
+		garbageValue = "1572178650"
+	)
+	static final void method3733(int var0, int var1, int var2) {
+		if (SpriteBufferProperties.cameraX < var0) {
+			SpriteBufferProperties.cameraX = (var0 - SpriteBufferProperties.cameraX) * class487.field5389 / 1000 + SpriteBufferProperties.cameraX + FloatProjection.field2946;
+			if (SpriteBufferProperties.cameraX > var0) {
+				SpriteBufferProperties.cameraX = var0;
+			}
+		}
+
+		if (SpriteBufferProperties.cameraX > var0) {
+			SpriteBufferProperties.cameraX -= (SpriteBufferProperties.cameraX - var0) * class487.field5389 / 1000 + FloatProjection.field2946;
+			if (SpriteBufferProperties.cameraX < var0) {
+				SpriteBufferProperties.cameraX = var0;
+			}
+		}
+
+		if (ScriptFrame.cameraY < var1) {
+			ScriptFrame.cameraY = (var1 - ScriptFrame.cameraY) * class487.field5389 / 1000 + ScriptFrame.cameraY + FloatProjection.field2946;
+			if (ScriptFrame.cameraY > var1) {
+				ScriptFrame.cameraY = var1;
+			}
+		}
+
+		if (ScriptFrame.cameraY > var1) {
+			ScriptFrame.cameraY -= (ScriptFrame.cameraY - var1) * class487.field5389 / 1000 + FloatProjection.field2946;
+			if (ScriptFrame.cameraY < var1) {
+				ScriptFrame.cameraY = var1;
+			}
+		}
+
+		if (class528.cameraZ < var2) {
+			class528.cameraZ = (var2 - class528.cameraZ) * class487.field5389 / 1000 + class528.cameraZ + FloatProjection.field2946;
+			if (class528.cameraZ > var2) {
+				class528.cameraZ = var2;
+			}
+		}
+
+		if (class528.cameraZ > var2) {
+			class528.cameraZ -= (class528.cameraZ - var2) * class487.field5389 / 1000 + FloatProjection.field2946;
+			if (class528.cameraZ < var2) {
+				class528.cameraZ = var2;
+			}
+		}
+
 	}
 }

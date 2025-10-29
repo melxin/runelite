@@ -4,66 +4,71 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cq")
+@ObfuscatedName("ck")
 @Implements("Tiles")
 public final class Tiles {
-	@ObfuscatedName("aj")
-	static final int[] field817;
-	@ObfuscatedName("ah")
-	static final int[] field818;
-	@ObfuscatedName("af")
-	static final int[] field823;
+	@ObfuscatedName("an")
+	static final int[] field800;
 	@ObfuscatedName("ae")
-	static final int[] field820;
-	@ObfuscatedName("aq")
-	static final int[] field821;
-	@ObfuscatedName("ac")
-	static final int[] field822;
-	@ObfuscatedName("aa")
+	static final int[] field804;
+	@ObfuscatedName("aj")
+	static final int[] field802;
+	@ObfuscatedName("ak")
+	static final int[] field798;
+	@ObfuscatedName("aw")
+	static final int[] field803;
+	@ObfuscatedName("ap")
+	static final int[] field805;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -1030822155
+		intValue = -957711027
 	)
 	@Export("Tiles_minPlane")
 	static int Tiles_minPlane;
-	@ObfuscatedName("ap")
-	@Export("Tiles_underlays")
-	static short[][][] Tiles_underlays;
-	@ObfuscatedName("ad")
-	@Export("Tiles_overlays")
-	static short[][][] Tiles_overlays;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("as")
 	@Export("Tiles_underlays2")
 	static byte[][][] Tiles_underlays2;
-	@ObfuscatedName("ai")
+	@ObfuscatedName("af")
+	@ObfuscatedSignature(
+		descriptor = "Lqm;"
+	)
+	@Export("SequenceDefinition_archive")
+	static AbstractArchive SequenceDefinition_archive;
+	@ObfuscatedName("am")
 	@ObfuscatedGetter(
-		intValue = 418949937
+		intValue = 1001072297
 	)
 	@Export("rndHue")
 	static int rndHue;
-	@ObfuscatedName("am")
+	@ObfuscatedName("ao")
 	@ObfuscatedGetter(
-		intValue = -1357477415
+		intValue = -1076351093
 	)
 	@Export("rndLightness")
 	static int rndLightness;
 
 	static {
-		field817 = new int[]{1, 2, 4, 8};
-		field818 = new int[]{16, 32, 64, 128};
-		field823 = new int[]{1, 0, -1, 0};
-		field820 = new int[]{0, -1, 0, 1};
-		field821 = new int[]{1, -1, -1, 1};
-		field822 = new int[]{-1, -1, 1, 1};
+		field800 = new int[]{1, 2, 4, 8};
+		field804 = new int[]{16, 32, 64, 128};
+		field802 = new int[]{1, 0, -1, 0};
+		field798 = new int[]{0, -1, 0, 1};
+		field803 = new int[]{1, -1, -1, 1};
+		field805 = new int[]{-1, -1, 1, 1};
 		Tiles_minPlane = 99;
 		rndHue = (int)(Math.random() * 17.0D) - 8;
 		rndLightness = (int)(Math.random() * 33.0D) - 16;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ag")
+	public static int method2117(long var0) {
+		return (int)(var0 >>> 0 & 127L);
+	}
+
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Ldm;[BIIIIIII)V"
+		descriptor = "(Ldd;[BIIIIIII)V"
 	)
-	static final void method2110(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+	static final void method2092(WorldView var0, byte[] var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		Buffer var9 = new Buffer(var1);
 		int var10 = -1;
 
@@ -90,7 +95,7 @@ public final class Tiles {
 				int var18 = var17 >> 2;
 				int var19 = var17 & 3;
 				if (var5 == var16 && var15 >= var6 && var15 < var6 + 8 && var14 >= var7 && var14 < var7 + 8) {
-					ObjectComposition var20 = TileItem.getObjectDefinition(var10);
+					ObjectComposition var20 = AsyncHttpResponse.getObjectDefinition(var10);
 					int var23 = var15 & 7;
 					int var24 = var14 & 7;
 					int var26 = var20.sizeX;
@@ -115,7 +120,7 @@ public final class Tiles {
 					}
 
 					var28 = var22 + var3;
-					int var29 = var4 + SoundCache.method3204(var15 & 7, var14 & 7, var8, var20.sizeX, var20.sizeY, var19);
+					int var29 = var4 + class69.method2286(var15 & 7, var14 & 7, var8, var20.sizeX, var20.sizeY, var19);
 					if (var28 > 0 && var29 > 0 && var28 < var0.sizeX - 1 && var29 < var0.sizeY - 1) {
 						int var30 = var2;
 						if ((var0.tileSettings[1][var28][var29] & 2) == 2) {
@@ -127,7 +132,7 @@ public final class Tiles {
 							var31 = var0.collisionMaps[var30];
 						}
 
-						Projectile.addObjects(var0, var2, var28, var29, var10, var19 + var8 & 3, var18, var31);
+						FriendSystem.addObjects(var0, var2, var28, var29, var10, var19 + var8 & 3, var18, var31);
 					}
 				}
 			}

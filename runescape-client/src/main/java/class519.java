@@ -1,96 +1,43 @@
-import java.awt.Component;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tz")
+@ObfuscatedName("to")
 public class class519 {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/awt/Component;I)V",
-		garbageValue = "-205876201"
+		descriptor = "Lkb;"
 	)
-	static void method10546(Component var0) {
-		var0.addMouseListener(MouseHandler.MouseHandler_instance);
-		var0.addMouseMotionListener(MouseHandler.MouseHandler_instance);
-		var0.addFocusListener(MouseHandler.MouseHandler_instance);
+	final WorldEntityCoord field5545;
+	@ObfuscatedName("at")
+	@ObfuscatedGetter(
+		intValue = 631746927
+	)
+	int field5542;
+
+	class519() {
+		this.field5545 = new WorldEntityCoord();
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("km")
 	@ObfuscatedSignature(
-		descriptor = "(CS)C",
-		garbageValue = "445"
+		descriptor = "(Ldd;IIIIIIIIIZI)V",
+		garbageValue = "-806668510"
 	)
-	static char method10547(char var0) {
-		switch(var0) {
-		case ' ':
-		case '-':
-		case '_':
-		case ' ':
-			return '_';
-		case '#':
-		case '[':
-		case ']':
-			return var0;
-		case 'À':
-		case 'Á':
-		case 'Â':
-		case 'Ã':
-		case 'Ä':
-		case 'à':
-		case 'á':
-		case 'â':
-		case 'ã':
-		case 'ä':
-			return 'a';
-		case 'Ç':
-		case 'ç':
-			return 'c';
-		case 'È':
-		case 'É':
-		case 'Ê':
-		case 'Ë':
-		case 'è':
-		case 'é':
-		case 'ê':
-		case 'ë':
-			return 'e';
-		case 'Í':
-		case 'Î':
-		case 'Ï':
-		case 'í':
-		case 'î':
-		case 'ï':
-			return 'i';
-		case 'Ñ':
-		case 'ñ':
-			return 'n';
-		case 'Ò':
-		case 'Ó':
-		case 'Ô':
-		case 'Õ':
-		case 'Ö':
-		case 'ò':
-		case 'ó':
-		case 'ô':
-		case 'õ':
-		case 'ö':
-			return 'o';
-		case 'Ù':
-		case 'Ú':
-		case 'Û':
-		case 'Ü':
-		case 'ù':
-		case 'ú':
-		case 'û':
-		case 'ü':
-			return 'u';
-		case 'ß':
-			return 'b';
-		case 'ÿ':
-		case 'Ÿ':
-			return 'y';
-		default:
-			return Character.toLowerCase(var0);
+	static void method10567(WorldView var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, boolean var10) {
+		TileItem var11 = new TileItem();
+		var11.id = var4;
+		var11.quantity = var5;
+		var11.setFlag(var6);
+		var11.visibleTime = var7 + Client.serverCycle;
+		var11.despawnTime = var8 + Client.serverCycle;
+		var11.ownership = var9;
+		var11.isPrivate = var10;
+		if (var0.groundItems[var1][var2][var3] == null) {
+			var0.groundItems[var1][var2][var3] = new NodeDeque();
 		}
+
+		var0.groundItems[var1][var2][var3].addFirst(var11);
+		class348.updateItemPile2(var0, var1, var2, var3);
 	}
 }

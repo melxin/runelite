@@ -1,4 +1,3 @@
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,29 +6,29 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lw")
+@ObfuscatedName("ma")
 @Implements("WorldMapAreaData")
 public class WorldMapAreaData extends WorldMapArea {
+	@ObfuscatedName("ai")
+	HashSet field3539;
 	@ObfuscatedName("as")
-	HashSet field3512;
-	@ObfuscatedName("ar")
-	HashSet field3510;
-	@ObfuscatedName("az")
+	HashSet field3537;
+	@ObfuscatedName("ac")
 	@Export("iconList")
 	List iconList;
 
 	WorldMapAreaData() {
 	}
 
-	@ObfuscatedName("dm")
+	@ObfuscatedName("cj")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;Lwj;IZI)V",
-		garbageValue = "154569671"
+		descriptor = "(Lxa;Lxa;IZI)V",
+		garbageValue = "1229241049"
 	)
-	void method6928(Buffer var1, Buffer var2, int var3, boolean var4) {
-		this.method6483(var1, var3);
+	void method7116(Buffer var1, Buffer var2, int var3, boolean var4) {
+		this.method6621(var1, var3);
 		int var5 = var2.readUnsignedShort();
-		this.field3512 = new HashSet(var5);
+		this.field3539 = new HashSet(var5);
 
 		int var6;
 		for (var6 = 0; var6 < var5; ++var6) {
@@ -41,11 +40,11 @@ public class WorldMapAreaData extends WorldMapArea {
 				continue;
 			}
 
-			this.field3512.add(var7);
+			this.field3539.add(var7);
 		}
 
 		var6 = var2.readUnsignedShort();
-		this.field3510 = new HashSet(var6);
+		this.field3537 = new HashSet(var6);
 
 		for (int var10 = 0; var10 < var6; ++var10) {
 			WorldMapData_1 var8 = new WorldMapData_1();
@@ -56,16 +55,16 @@ public class WorldMapAreaData extends WorldMapArea {
 				continue;
 			}
 
-			this.field3510.add(var8);
+			this.field3537.add(var8);
 		}
 
 		this.initIconsList(var2, var4);
 	}
 
-	@ObfuscatedName("dd")
+	@ObfuscatedName("ca")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;ZI)V",
-		garbageValue = "379518741"
+		descriptor = "(Lxa;ZI)V",
+		garbageValue = "-715824821"
 	)
 	@Export("initIconsList")
 	void initIconsList(Buffer var1, boolean var2) {
@@ -83,41 +82,12 @@ public class WorldMapAreaData extends WorldMapArea {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("pl")
 	@ObfuscatedSignature(
-		descriptor = "([I[II)V",
-		garbageValue = "-539465048"
+		descriptor = "(I)V",
+		garbageValue = "-1419623560"
 	)
-	public static void method6927(int[] var0, int[] var1) {
-		if (var0 != null && var1 != null) {
-			WorldMapDecoration.ByteArrayPool_alternativeSizes = var0;
-			class159.ByteArrayPool_altSizeArrayCounts = new int[var0.length];
-			AbstractWorldMapData.ByteArrayPool_arrays = new byte[var0.length][][];
-
-			for (int var2 = 0; var2 < WorldMapDecoration.ByteArrayPool_alternativeSizes.length; ++var2) {
-				AbstractWorldMapData.ByteArrayPool_arrays[var2] = new byte[var1[var2]][];
-				ByteArrayPool.field5382.add(var0[var2]);
-			}
-
-			Collections.sort(ByteArrayPool.field5382);
-		} else {
-			WorldMapDecoration.ByteArrayPool_alternativeSizes = null;
-			class159.ByteArrayPool_altSizeArrayCounts = null;
-			AbstractWorldMapData.ByteArrayPool_arrays = null;
-			ByteArrayPool.field5382.clear();
-			ByteArrayPool.field5382.add(100);
-			ByteArrayPool.field5382.add(5000);
-			ByteArrayPool.field5382.add(10000);
-			ByteArrayPool.field5382.add(30000);
-		}
-	}
-
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "1"
-	)
-	public static boolean method6932() {
-		return !class338.field3891.isEmpty();
+	static void method7117() {
+		class468.clientPreferences.method2662(Client.field330);
 	}
 }

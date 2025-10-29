@@ -3,10 +3,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ew")
+@ObfuscatedName("ez")
 @Implements("UserComparator8")
 public class UserComparator8 extends AbstractUserComparator {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -14,10 +14,10 @@ public class UserComparator8 extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ltu;Ltu;I)I",
-		garbageValue = "1677368969"
+		descriptor = "(Ltm;Ltm;I)I",
+		garbageValue = "614914088"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -36,12 +36,12 @@ public class UserComparator8 extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lcf;",
-		garbageValue = "1949325251"
+		descriptor = "(I)I",
+		garbageValue = "826934782"
 	)
-	static class66[] method3610() {
-		return new class66[]{class66.field893, class66.field896, class66.field900, class66.field899, class66.field895};
+	static final int method3685() {
+		return ViewportMouse.ViewportMouse_x;
 	}
 }

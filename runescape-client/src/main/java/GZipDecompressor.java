@@ -4,10 +4,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("xg")
+@ObfuscatedName("xc")
 @Implements("GZipDecompressor")
 public class GZipDecompressor {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@Export("inflater")
 	Inflater inflater;
 
@@ -22,20 +22,20 @@ public class GZipDecompressor {
 		this(-1, 1000000, 1000000);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;[BI)V",
-		garbageValue = "1789134316"
+		descriptor = "(Lxa;[BI)V",
+		garbageValue = "-535278753"
 	)
 	@Export("decompress")
 	public void decompress(Buffer var1, byte[] var2) {
-		if (var1.array[var1.offset] == 31 && var1.array[var1.offset + 1] == -117) {
+		if (var1.array[var1.offset * 2108391709] == 31 && var1.array[var1.offset * 2108391709 + 1] == -117) {
 			if (this.inflater == null) {
 				this.inflater = new Inflater(true);
 			}
 
 			try {
-				this.inflater.setInput(var1.array, var1.offset + 10, var1.array.length - (var1.offset + 8 + 10));
+				this.inflater.setInput(var1.array, var1.offset * 2108391709 + 10, var1.array.length - (var1.offset * 2108391709 + 8 + 10));
 				this.inflater.inflate(var2);
 			} catch (Exception var4) {
 				this.inflater.reset();

@@ -3,37 +3,37 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("xz")
+@ObfuscatedName("xy")
 @Implements("PrivateChatMode")
 public class PrivateChatMode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lxz;"
+		descriptor = "Lxy;"
 	)
-	static final PrivateChatMode field6137;
+	static final PrivateChatMode field6173;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lxz;"
+		descriptor = "Lxy;"
 	)
-	public static final PrivateChatMode field6138;
+	public static final PrivateChatMode field6174;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lxz;"
+		descriptor = "Lxy;"
 	)
-	static final PrivateChatMode field6140;
-	@ObfuscatedName("aj")
+	static final PrivateChatMode field6175;
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1513779367
+		intValue = -1408231813
 	)
-	public final int field6139;
+	public final int field6176;
 
 	static {
-		field6137 = new PrivateChatMode(0);
-		field6138 = new PrivateChatMode(1);
-		field6140 = new PrivateChatMode(2);
+		field6173 = new PrivateChatMode(0);
+		field6174 = new PrivateChatMode(1);
+		field6175 = new PrivateChatMode(2);
 	}
 
 	PrivateChatMode(int var1) {
-		this.field6139 = var1;
+		this.field6176 = var1;
 	}
 }

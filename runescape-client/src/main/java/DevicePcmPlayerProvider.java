@@ -4,76 +4,111 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ai")
+@ObfuscatedName("am")
 @Implements("DevicePcmPlayerProvider")
 public class DevicePcmPlayerProvider implements class105 {
-	@ObfuscatedName("ok")
-	@Export("refreshToken")
-	static String refreshToken;
-	@ObfuscatedName("ot")
+	@ObfuscatedName("ou")
+	static int[] field86;
+	@ObfuscatedName("sz")
 	@ObfuscatedGetter(
-		longValue = -6615141330785227133L
+		intValue = -134930549
 	)
-	static long field92;
+	static int field88;
 
 	DevicePcmPlayerProvider() {
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldx;",
-		garbageValue = "1873731449"
+		descriptor = "(S)Ldm;",
+		garbageValue = "339"
 	)
 	@Export("player")
 	public PcmPlayer player() {
 		return new DevicePcmPlayer();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1402642411"
+		descriptor = "(I)V",
+		garbageValue = "938449093"
 	)
-	static final boolean method319(int var0) {
-		return var0 == 14 || var0 == 15 || var0 >= 44 && var0 <= 51;
+	public static void method328() {
+		EnumComposition.EnumDefinition_cached.clear();
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "1642587538"
+		descriptor = "(II)D",
+		garbageValue = "192801641"
 	)
-	@Export("updateLoginStatusUsernameRemembered")
-	static void updateLoginStatusUsernameRemembered(boolean var0) {
-		byte var1 = 0;
-		if (!RouteStrategy.method6247()) {
-			var1 = 12;
-		} else if (class32.client.containsAccessAndRefreshToken() || class32.client.otlTokenRequesterInitialized() || class32.client.containsSessionAndCharacterId()) {
-			var1 = 10;
-		}
+	public static double method332(int var0) {
+		int var1 = class544.field5668[var0 & 2047];
+		return (double)var1 / 65536.0D;
+	}
 
-		class146.method3876(var1);
-		if (var0) {
-			Login.Login_username = "";
-			Login.Login_password = "";
-			AABB.otpMedium = 0;
-			class572.otp = "";
-		}
-
-		if (Login.Login_username == null || Login.Login_username.isEmpty()) {
-			if (class154.clientPreferences.getRememberedUsername() != null) {
-				Login.Login_username = class154.clientPreferences.getRememberedUsername();
-				Client.Login_isUsernameRemembered = true;
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "(IIIILcv;B)Lrx;",
+		garbageValue = "127"
+	)
+	static ProjectionCoord method327(int var0, int var1, int var2, int var3, WorldViewManager var4) {
+		ProjectionCoord var5 = null;
+		WorldView var6 = null;
+		boolean var7 = var0 != 0;
+		int var10;
+		if (var7) {
+			boolean var9 = var0 > 0;
+			Object var8;
+			if (var9) {
+				var10 = class48.method1938(var0);
+				var6 = WallDecoration.method6261(var10, var4);
+				var8 = (Actor)var6.npcs.get((long)var10);
 			} else {
-				Client.Login_isUsernameRemembered = false;
+				var10 = class27.method417(var0);
+				var6 = class300.method6916(var10, var4);
+				var8 = var6.method2769(var10);
+			}
+
+			if (var8 != null) {
+				Coord var14 = ((Actor)var8).method2519(var6);
+				ProjectionCoord var11;
+				synchronized(ProjectionCoord.field5238) {
+					if (ProjectionCoord.field5236 == 0) {
+						var11 = new ProjectionCoord();
+					} else {
+						ProjectionCoord.field5238[--ProjectionCoord.field5236].method9349();
+						var11 = ProjectionCoord.field5238[ProjectionCoord.field5236];
+					}
+				}
+
+				var5 = var11;
+				var11.x = (float)var14.x;
+				var11.y = (float)var14.y;
 			}
 		}
 
-		if (Client.Login_isUsernameRemembered && Login.Login_username != null && !Login.Login_username.isEmpty()) {
-			Login.currentLoginField = 1;
-		} else {
-			Login.currentLoginField = 0;
+		if (var5 == null) {
+			var6 = var4.getWorldViewFromWorldPoint(var1, var2);
+			int var15 = var1 - var6.baseX;
+			int var19 = var2 - var6.baseY;
+			WorldEntity var20 = (WorldEntity)var4.method2394().worldEntities.get((long)var6.id);
+			if (var20 != null) {
+				var5 = var20.method10509(Coord.method7679(var15), Coord.method7679(var19));
+			} else {
+				var5 = FaceNormal.method5848((float)Coord.method7679(var15), 0.0F, (float)Coord.method7679(var19));
+			}
 		}
 
+		var10 = (int)var5.x;
+		int var16 = (int)var5.y;
+		int var17 = NPCComposition.getTileHeight(var6, var10, var16, var3);
+		WorldEntity var13 = (WorldEntity)Occluder.topLevelWorldView.worldEntities.get((long)var6.id);
+		if (var13 != null) {
+			var17 += NPCComposition.getTileHeight(Occluder.topLevelWorldView, var13.getY(), var13.getPlane(), var13.getX());
+		}
+
+		var5.z = (float)var17;
+		return var5;
 	}
 }

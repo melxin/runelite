@@ -3,10 +3,16 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("er")
+@ObfuscatedName("ff")
 @Implements("BuddyRankComparator")
 public class BuddyRankComparator extends AbstractUserComparator {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("hq")
+	@ObfuscatedSignature(
+		descriptor = "Lta;"
+	)
+	@Export("friendsChat")
+	static FriendsChat friendsChat;
+	@ObfuscatedName("av")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -14,10 +20,10 @@ public class BuddyRankComparator extends AbstractUserComparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ltu;Ltu;I)I",
-		garbageValue = "1492295797"
+		descriptor = "(Ltm;Ltm;B)I",
+		garbageValue = "116"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
@@ -32,19 +38,45 @@ public class BuddyRankComparator extends AbstractUserComparator {
 		return this.compareBuddy((Buddy)var1, (Buddy)var2);
 	}
 
-	@ObfuscatedName("aj")
-	@Export("Entity_unpackID")
-	public static int Entity_unpackID(long var0) {
-		return (int)(var0 >>> 20 & 4294967295L);
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(I)Lrf;",
+		garbageValue = "-814754263"
+	)
+	public static class456 method3741() {
+		synchronized(class456.field5217) {
+			if (class456.field5222 == 0) {
+				return new class456();
+			} else {
+				class456.field5217[--class456.field5222].method9217();
+				return class456.field5217[class456.field5222];
+			}
+		}
 	}
 
-	@ObfuscatedName("bj")
+	@ObfuscatedName("ij")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;I)V",
-		garbageValue = "-1924237607"
+		descriptor = "(IIIIB)V",
+		garbageValue = "2"
 	)
-	static void method3651(int var0, String var1) {
-		Login.Login_loadingText = var1;
-		Login.Login_loadingPercent = var0;
+	static void method3734(int var0, int var1, int var2, int var3) {
+		PacketBufferNode var4 = ReflectionCheck.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
+		var4.packetBuffer.writeByte(18);
+		var4.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
+		var4.packetBuffer.writeIntLE(var1 + Occluder.topLevelWorldView.baseY);
+		var4.packetBuffer.writeIntLE(var0 + Occluder.topLevelWorldView.baseX);
+		var4.packetBuffer.writeByte(var2);
+		var4.packetBuffer.writeByte(var3);
+		var4.packetBuffer.writeShort(Client.camAngleY);
+		var4.packetBuffer.writeByte(57);
+		var4.packetBuffer.writeByte(0);
+		var4.packetBuffer.writeByte(0);
+		var4.packetBuffer.writeByte(89);
+		var4.packetBuffer.writeShort(class330.localPlayer.x);
+		var4.packetBuffer.writeShort(class330.localPlayer.y);
+		var4.packetBuffer.writeByte(63);
+		Client.packetWriter.addNode(var4);
+		Client.destinationX = var0;
+		Client.destinationY = var1;
 	}
 }

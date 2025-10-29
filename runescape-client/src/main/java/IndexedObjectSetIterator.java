@@ -3,76 +3,76 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qa")
+@ObfuscatedName("qo")
 @Implements("IndexedObjectSetIterator")
 public class IndexedObjectSetIterator implements Iterator {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lqi;"
+		descriptor = "Lqu;"
 	)
-	IndexedObjectSet field5106;
+	IndexedObjectSet field5132;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lug;"
+		descriptor = "Lvc;"
 	)
-	IndexedObjectNode field5107;
+	IndexedObjectNode field5131;
 	@ObfuscatedName("ag")
-	int field5108;
-	@ObfuscatedName("aj")
+	int field5133;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lug;"
+		descriptor = "Lvc;"
 	)
-	IndexedObjectNode field5109;
+	IndexedObjectNode field5134;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lqi;)V"
+		descriptor = "(Lqu;)V"
 	)
 	IndexedObjectSetIterator(IndexedObjectSet var1) {
-		this.field5109 = null;
-		this.field5106 = var1;
-		this.method8670();
+		this.field5134 = null;
+		this.field5132 = var1;
+		this.method8891();
 	}
 
-	@ObfuscatedName("ab")
-	void method8670() {
-		this.field5107 = this.field5106.nodes[0].nextNode;
-		this.field5108 = 1;
-		this.field5109 = null;
+	@ObfuscatedName("av")
+	void method8891() {
+		this.field5131 = this.field5132.nodes[0].nextNode;
+		this.field5133 = 1;
+		this.field5134 = null;
 	}
 
 	public Object next() {
 		IndexedObjectNode var1;
-		if (this.field5106.nodes[this.field5108 - 1] != this.field5107) {
-			var1 = this.field5107;
-			this.field5107 = var1.nextNode;
-			this.field5109 = var1;
+		if (this.field5132.nodes[this.field5133 - 1] != this.field5131) {
+			var1 = this.field5131;
+			this.field5131 = var1.nextNode;
+			this.field5134 = var1;
 			return var1;
 		} else {
 			do {
-				if (this.field5108 >= this.field5106.size) {
+				if (this.field5133 >= this.field5132.size) {
 					return null;
 				}
 
-				var1 = this.field5106.nodes[this.field5108++].nextNode;
-			} while(var1 == this.field5106.nodes[this.field5108 - 1]);
+				var1 = this.field5132.nodes[this.field5133++].nextNode;
+			} while(var1 == this.field5132.nodes[this.field5133 - 1]);
 
-			this.field5107 = var1.nextNode;
-			this.field5109 = var1;
+			this.field5131 = var1.nextNode;
+			this.field5134 = var1;
 			return var1;
 		}
 	}
 
 	public boolean hasNext() {
-		if (this.field5106.nodes[this.field5108 - 1] != this.field5107) {
+		if (this.field5132.nodes[this.field5133 - 1] != this.field5131) {
 			return true;
 		} else {
-			while (this.field5108 < this.field5106.size) {
-				if (this.field5106.nodes[this.field5108++].nextNode != this.field5106.nodes[this.field5108 - 1]) {
-					this.field5107 = this.field5106.nodes[this.field5108 - 1].nextNode;
+			while (this.field5133 < this.field5132.size) {
+				if (this.field5132.nodes[this.field5133++].nextNode != this.field5132.nodes[this.field5133 - 1]) {
+					this.field5131 = this.field5132.nodes[this.field5133 - 1].nextNode;
 					return true;
 				}
 
-				this.field5107 = this.field5106.nodes[this.field5108 - 1];
+				this.field5131 = this.field5132.nodes[this.field5133 - 1];
 			}
 
 			return false;
@@ -80,11 +80,11 @@ public class IndexedObjectSetIterator implements Iterator {
 	}
 
 	public void remove() {
-		if (this.field5109 == null) {
+		if (this.field5134 == null) {
 			throw new IllegalStateException();
 		} else {
-			this.field5109.detach();
-			this.field5109 = null;
+			this.field5134.detach();
+			this.field5134 = null;
 		}
 	}
 }

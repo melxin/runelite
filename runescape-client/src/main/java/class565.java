@@ -1,39 +1,59 @@
-import java.util.Iterator;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
-import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("va")
-class class565 implements Iterator {
-	@ObfuscatedName("ab")
+@ObfuscatedName("vh")
+public class class565 {
+	@ObfuscatedName("ax")
+	@Export("Tiles_saturation")
+	static int[] Tiles_saturation;
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1376411013
+		intValue = -382859955
 	)
-	int field5865;
-	// $FF: synthetic field
-	@ObfuscatedSignature(
-		descriptor = "Lvv;"
+	final int field5849;
+	@ObfuscatedName("ap")
+	@ObfuscatedGetter(
+		intValue = -477863467
 	)
-	final class566 this$0;
+	final int field5845;
+	@ObfuscatedName("ay")
+	@ObfuscatedGetter(
+		intValue = 299509079
+	)
+	final int field5851;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -1524422205
+	)
+	final int field5847;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = 809239137
+	)
+	final int field5848;
+	@ObfuscatedName("ad")
+	@ObfuscatedGetter(
+		intValue = 978893637
+	)
+	final int field5844;
+	@ObfuscatedName("ai")
+	@ObfuscatedGetter(
+		intValue = 1015642731
+	)
+	final int field5850;
 
-	@ObfuscatedSignature(
-		descriptor = "(Lvv;)V"
-	)
-	class565(class566 var1) {
-		this.this$0 = var1;
+	class565(int var1, int var2, int var3, int var4, int var5, int var6) {
+		this.field5849 = var1;
+		this.field5845 = var2;
+		this.field5848 = var3;
+		this.field5844 = var4;
+		this.field5851 = var1 / 2;
+		this.field5847 = var2 / 2;
+		this.field5850 = this.field5847 * this.field5847 + this.field5851 * this.field5851;
 	}
 
-	public boolean hasNext() {
-		return this.field5865 < this.this$0.method10564();
-	}
-
-	public void remove() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Object next() {
-		int var1 = ++this.field5865 - 1;
-		class525 var2 = (class525)this.this$0.field5869.get((long)var1);
-		return var2 != null ? var2 : this.this$0.method11128(var1);
+	public String toString() {
+		return String.format("%dx%d (offset %d,%d)", this.field5849, this.field5845, this.field5848, this.field5844);
 	}
 }

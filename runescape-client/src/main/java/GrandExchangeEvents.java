@@ -7,10 +7,10 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("pd")
+@ObfuscatedName("qq")
 @Implements("GrandExchangeEvents")
 public class GrandExchangeEvents {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@Export("GrandExchangeEvents_ageComparator")
 	public static Comparator GrandExchangeEvents_ageComparator;
 	@ObfuscatedName("at")
@@ -19,12 +19,10 @@ public class GrandExchangeEvents {
 	@ObfuscatedName("ag")
 	@Export("GrandExchangeEvents_nameComparator")
 	public static Comparator GrandExchangeEvents_nameComparator;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@Export("GrandExchangeEvents_quantityComparator")
 	public static Comparator GrandExchangeEvents_quantityComparator;
-	@ObfuscatedName("as")
-	static byte[][][] field5045;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@Export("events")
 	public final List events;
 
@@ -37,7 +35,7 @@ public class GrandExchangeEvents {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;Z)V",
+		descriptor = "(Lxa;Z)V",
 		garbageValue = "1"
 	)
 	public GrandExchangeEvents(Buffer var1, boolean var2) {
@@ -59,10 +57,10 @@ public class GrandExchangeEvents {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/util/Comparator;ZB)V",
-		garbageValue = "-42"
+		garbageValue = "-1"
 	)
 	@Export("sort")
 	public void sort(Comparator var1, boolean var2) {
@@ -74,15 +72,12 @@ public class GrandExchangeEvents {
 
 	}
 
-	@ObfuscatedName("nh")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "0"
+		descriptor = "(I)[Lcd;",
+		garbageValue = "1838945979"
 	)
-	static final void method8528(int var0) {
-		var0 = Math.max(Math.min(var0, 100), 0);
-		var0 = 100 - var0;
-		float var1 = (float)var0 / 200.0F + 0.5F;
-		class323.method7032((double)var1);
+	static class66[] method8723() {
+		return new class66[]{class66.field883, class66.field874, class66.field875, class66.field881, class66.field873};
 	}
 }

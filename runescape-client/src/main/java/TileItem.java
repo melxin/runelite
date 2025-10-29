@@ -1,72 +1,79 @@
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dg")
+@ObfuscatedName("db")
 @Implements("TileItem")
 public final class TileItem extends Renderable {
+	@ObfuscatedName("as")
+	@Export("ItemDefinition_inMembersWorld")
+	public static boolean ItemDefinition_inMembersWorld;
+	@ObfuscatedName("by")
+	@ObfuscatedGetter(
+		intValue = -1012313495
+	)
+	static int field1203;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -902100307
+		intValue = 782226465
 	)
 	@Export("id")
 	int id;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -537901135
+		intValue = -1247866467
 	)
 	@Export("quantity")
 	int quantity;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 423478139
+		intValue = 1285003875
 	)
 	@Export("visibleTime")
 	int visibleTime;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -45367871
+		intValue = -1748897679
 	)
 	@Export("despawnTime")
 	int despawnTime;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1682482499
+		intValue = -1140757547
 	)
 	@Export("ownership")
 	int ownership;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@Export("isPrivate")
 	boolean isPrivate;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1199726375
+		intValue = 1939050291
 	)
 	@Export("flag")
 	int flag;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "Lgv;"
+		descriptor = "Lgx;"
 	)
-	PlayerCompositionColorTextureOverride field1225;
-	@ObfuscatedName("aa")
+	PlayerCompositionColorTextureOverride field1202;
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "Lre;"
+		descriptor = "Lrx;"
 	)
-	ProjectionCoord field1226;
+	ProjectionCoord field1196;
 
 	TileItem() {
 		this.flag = 31;
-		this.field1226 = ProjectionCoord.field5220;
+		this.field1196 = ProjectionCoord.field5242;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-891792479"
+		descriptor = "(IB)V",
+		garbageValue = "15"
 	)
 	@Export("setFlag")
 	void setFlag(int var1) {
@@ -76,9 +83,9 @@ public final class TileItem extends Renderable {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "1983291362"
+		garbageValue = "244325165"
 	)
-	boolean method2886(int var1) {
+	boolean method2902(int var1) {
 		if (var1 >= 0 && var1 <= 4) {
 			return (this.flag & 1 << var1) != 0;
 		} else {
@@ -88,345 +95,96 @@ public final class TileItem extends Renderable {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljd;",
-		garbageValue = "-461042632"
+		descriptor = "(I)Lky;",
+		garbageValue = "566725961"
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		ItemComposition var1 = WorldMapIcon_1.ItemDefinition_get(this.id);
-		Model var2 = this.field1225 == null ? var1.getModel(this.quantity) : var1.method4731(this.field1225);
+		ItemComposition var1 = class150.ItemDefinition_get(this.id);
+		Model var2 = this.field1202 == null ? var1.getModel(this.quantity) : var1.method4833(this.field1202);
 		if (var2 == null) {
 			return null;
 		} else {
 			Model var3 = null;
-			if (this.field1226 != ProjectionCoord.field5220) {
-				class451 var4 = class135.method3746();
-				var4.method9153(ProjectionCoord.field5213, this.field1226);
-				var4.method9128();
+			if (this.field1196 != ProjectionCoord.field5242) {
+				class461 var4 = class151.method3974();
+				var4.method9368(ProjectionCoord.field5237, this.field1196);
+				var4.method9371();
 				var3 = var2.toSharedSequenceModel(false);
-				var3.method5549(var4);
-				var4.method9120();
+				var3.method6034(var4);
+				var4.method9362();
 			}
 
 			return var3 == null ? var2 : var3;
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "16"
+		descriptor = "(I)Z",
+		garbageValue = "-1841545705"
 	)
-	protected boolean vmethod5447() {
-		ItemComposition var1 = WorldMapIcon_1.ItemDefinition_get(this.id);
-		Model var2 = this.field1225 == null ? var1.getModel(this.quantity) : var1.method4731(this.field1225);
+	protected boolean vmethod5839() {
+		ItemComposition var1 = class150.ItemDefinition_get(this.id);
+		Model var2 = this.field1202 == null ? var1.getModel(this.quantity) : var1.method4833(this.field1202);
 		return var2 != null && var2.faceAlphas != null;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lgv;",
-		garbageValue = "-90"
+		descriptor = "(I)Lgx;",
+		garbageValue = "1883102579"
 	)
-	PlayerCompositionColorTextureOverride method2910() {
-		return this.field1225;
+	PlayerCompositionColorTextureOverride method2905() {
+		return this.field1202;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(Lgv;B)V",
-		garbageValue = "44"
+		descriptor = "(Lgx;B)V",
+		garbageValue = "0"
 	)
-	void method2889(PlayerCompositionColorTextureOverride var1) {
-		this.field1225 = var1;
+	void method2906(PlayerCompositionColorTextureOverride var1) {
+		this.field1202 = var1;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1073802202"
+		garbageValue = "-1990983405"
 	)
-	void method2884() {
-		this.field1225 = null;
+	void method2907() {
+		this.field1202 = null;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(Lre;I)V",
-		garbageValue = "1424941640"
+		descriptor = "(Lrx;B)V",
+		garbageValue = "76"
 	)
-	void method2891(ProjectionCoord var1) {
-		this.field1226 = var1;
+	void method2908(ProjectionCoord var1) {
+		this.field1196 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lia;",
-		garbageValue = "1"
+		descriptor = "(II)Lhw;",
+		garbageValue = "982962312"
 	)
-	@Export("getObjectDefinition")
-	public static ObjectComposition getObjectDefinition(int var0) {
-		ObjectComposition var1 = (ObjectComposition)ObjectComposition.ObjectDefinition_cached.get((long)var0);
+	@Export("VarpDefinition_get")
+	public static VarpDefinition VarpDefinition_get(int var0) {
+		VarpDefinition var1 = (VarpDefinition)VarpDefinition.VarpDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = class266.ObjectDefinition_archive.takeFile(6, var0);
-			var1 = new ObjectComposition();
-			var1.id = var0;
+			byte[] var2 = VarpDefinition.VarpDefinition_archive.takeFile(16, var0);
+			var1 = new VarpDefinition();
 			if (var2 != null) {
 				var1.decode(new Buffer(var2));
 			}
 
-			var1.postDecode();
-			if (var1.isSolid) {
-				var1.interactType = 0;
-				var1.boolean1 = false;
-			}
-
-			ObjectComposition.ObjectDefinition_cached.put(var1, (long)var0);
+			VarpDefinition.VarpDefinition_cached.put(var1, (long)var0);
 			return var1;
 		}
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(IIIILcr;I)Lre;",
-		garbageValue = "-1640047933"
-	)
-	static ProjectionCoord method2915(int var0, int var1, int var2, int var3, WorldViewManager var4) {
-		ProjectionCoord var5 = null;
-		WorldView var6 = null;
-		boolean var7 = var0 != 0;
-		int var10;
-		if (var7) {
-			boolean var9 = var0 > 0;
-			Object var8;
-			WorldView var11;
-			Iterator var12;
-			WorldView var13;
-			if (var9) {
-				var10 = Widget.method7962(var0);
-				var12 = var4.iterator();
-
-				while (true) {
-					if (var12.hasNext()) {
-						var13 = (WorldView)var12.next();
-						if (var13.npcs.get((long)var10) == null) {
-							continue;
-						}
-
-						var11 = var13;
-						break;
-					}
-
-					var11 = var4.method2366();
-					break;
-				}
-
-				var6 = var11;
-				var8 = (Actor)var11.npcs.get((long)var10);
-			} else {
-				var10 = class263.method5980(var0);
-				var12 = var4.iterator();
-
-				while (true) {
-					if (var12.hasNext()) {
-						var13 = (WorldView)var12.next();
-						Player var14 = (Player)var13.players.get((long)var10);
-						if (var14 == null || var13.id == -1) {
-							continue;
-						}
-
-						var11 = var13;
-						break;
-					}
-
-					var11 = var4.method2366();
-					break;
-				}
-
-				var6 = var11;
-				var8 = var11.method2745(var10);
-			}
-
-			if (var8 != null) {
-				Coord var15 = ((Actor)var8).method2463(var6);
-				var5 = class147.method3882();
-				var5.x = (float)var15.x;
-				var5.y = (float)var15.y;
-			}
-		}
-
-		if (var5 == null) {
-			var6 = var4.getWorldViewFromWorldPoint(var1, var2);
-			int var16 = var1 - var6.baseX;
-			int var19 = var2 - var6.baseY;
-			WorldEntity var21 = (WorldEntity)var4.method2366().worldEntities.get((long)var6.id);
-			if (var21 != null) {
-				var5 = var21.method10213(Coord.method7425(var16), Coord.method7425(var19));
-			} else {
-				var5 = IndexCheck.method6169((float)Coord.method7425(var16), 0.0F, (float)Coord.method7425(var19));
-			}
-		}
-
-		var10 = (int)var5.x;
-		int var17 = (int)var5.y;
-		int var18 = class280.getTileHeight(var6, var10, var17, var3);
-		WorldEntity var20 = (WorldEntity)class547.topLevelWorldView.worldEntities.get((long)var6.id);
-		if (var20 != null) {
-			var18 += class280.getTileHeight(class547.topLevelWorldView, var20.getY(), var20.getPlane(), var20.getX());
-		}
-
-		var5.z = (float)var18;
-		return var5;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "([BIII)Ljava/lang/String;",
-		garbageValue = "67340847"
-	)
-	@Export("decodeStringCp1252")
-	public static String decodeStringCp1252(byte[] var0, int var1, int var2) {
-		char[] var3 = new char[var2];
-		int var4 = 0;
-
-		for (int var5 = 0; var5 < var2; ++var5) {
-			int var6 = var0[var5 + var1] & 255;
-			if (var6 != 0) {
-				if (var6 >= 128 && var6 < 160) {
-					char var7 = class441.cp1252AsciiExtension[var6 - 128];
-					if (var7 == 0) {
-						var7 = '?';
-					}
-
-					var6 = var7;
-				}
-
-				var3[var4++] = (char)var6;
-			}
-		}
-
-		return new String(var3, 0, var4);
-	}
-
-	@ObfuscatedName("ir")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-291621225"
-	)
-	@Export("doCheat")
-	static final void doCheat(String var0) {
-		if (var0.equalsIgnoreCase("toggleroof")) {
-			class154.clientPreferences.updateRoofsHidden(!class154.clientPreferences.isRoofsHidden());
-			if (class154.clientPreferences.isRoofsHidden()) {
-				class292.addGameMessage(99, "", "Roofs are now all hidden");
-			} else {
-				class292.addGameMessage(99, "", "Roofs will only be removed selectively");
-			}
-		}
-
-		if (var0.startsWith("zbuf")) {
-			boolean var1 = class349.method7392(var0.substring(5).trim()) == 1;
-			class32.client.method516(var1);
-			Rasterizer3D.method4988(var1);
-		}
-
-		if (var0.equalsIgnoreCase("z")) {
-			Client.z = !Client.z;
-		}
-
-		if (var0.equalsIgnoreCase("displayfps")) {
-			class154.clientPreferences.toggleDisplayFps();
-		}
-
-		if (var0.equalsIgnoreCase("renderself")) {
-			Client.renderSelf = !Client.renderSelf;
-		}
-
-		if (var0.equalsIgnoreCase("mouseovertext")) {
-			Client.showMouseOverText = !Client.showMouseOverText;
-		}
-
-		int var2;
-		String[] var3;
-		if (var0.startsWith("setdrawdistance")) {
-			var3 = var0.split(" ");
-
-			try {
-				var2 = Integer.parseInt(var3[1]);
-				class154.clientPreferences.setDrawDistance(var2);
-			} catch (NumberFormatException var7) {
-				class292.addGameMessage(99, "", String.format("Error setting draw distance. setdrawdistance should be in the format \"::setdrawdistance X\" where X is a valid number. Value provided: %s", var3[1]));
-			}
-		}
-
-		if (var0.startsWith("settilerendermode")) {
-			var3 = var0.split(" ");
-
-			try {
-				var2 = Integer.parseInt(var3[1]);
-				class547.topLevelWorldView.scene.method5171(TileRenderMode.method4889()[var2]);
-			} catch (NumberFormatException var6) {
-				class292.addGameMessage(99, "", String.format("Error setting tile render mode. settilerendermode should be in the format \"::settilerendermode X\" where X is a valid number from 0-1. 0=camera 1=target Value provided: %s", var3[1]));
-			}
-		}
-
-		if (var0.equalsIgnoreCase("getdrawdistance")) {
-			class292.addGameMessage(99, "", String.format("%d", class154.clientPreferences.getDrawDistance()));
-		}
-
-		if (Client.staffModLevel >= 2) {
-			if (var0.equalsIgnoreCase("errortest")) {
-				throw new RuntimeException();
-			}
-
-			if (var0.equalsIgnoreCase("showcoord")) {
-				class50.worldMap.showCoord = !class50.worldMap.showCoord;
-			}
-
-			if (var0.equalsIgnoreCase("fpson")) {
-				class154.clientPreferences.updateDisplayFps(true);
-			}
-
-			if (var0.equalsIgnoreCase("fpsoff")) {
-				class154.clientPreferences.updateDisplayFps(false);
-			}
-
-			if (var0.equalsIgnoreCase("gc")) {
-				System.gc();
-			}
-
-			if (var0.equalsIgnoreCase("clientdrop")) {
-				class199.method4473();
-			}
-
-			if (var0.equalsIgnoreCase("clientreload")) {
-				Occluder.method5462();
-			} else if (var0.equalsIgnoreCase("sfx8bit")) {
-				class154.clientPreferences.method2631(true);
-			} else if (var0.equalsIgnoreCase("sfx16bit")) {
-				class154.clientPreferences.method2631(false);
-			} else if (var0.startsWith("playsong ")) {
-				String var8 = var0.substring("playsong ".length());
-
-				try {
-					if (class154.clientPreferences.getMusicVolume() == 0) {
-						Clock.method6092(0, 0);
-					} else {
-						TriBool.method10172(var8, class154.clientPreferences.getMusicVolume());
-					}
-				} catch (Exception var5) {
-					class292.addGameMessage(99, "", "Can't play the midi named " + var8);
-				}
-			} else if (var0.equalsIgnoreCase("stopsong")) {
-				Clock.method6092(0, 0);
-			}
-		}
-
-		PacketBufferNode var9 = HorizontalAlignment.getPacketBufferNode(ClientPacket.DOCHEAT, Client.packetWriter.isaacCipher);
-		var9.packetBuffer.writeByte(var0.length() + 1);
-		var9.packetBuffer.writeStringCp1252NullTerminated(var0);
-		Client.packetWriter.addNode(var9);
 	}
 }

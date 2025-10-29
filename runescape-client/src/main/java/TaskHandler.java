@@ -4,31 +4,37 @@ import java.net.Socket;
 import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jz")
+@ObfuscatedName("ic")
 @Implements("TaskHandler")
 public class TaskHandler implements Runnable {
+	@ObfuscatedName("ae")
+	@Export("javaVersion")
+	public static String javaVersion;
+	@ObfuscatedName("dw")
+	@ObfuscatedGetter(
+		intValue = 222768869
+	)
+	static int field2564;
 	@ObfuscatedName("aj")
-	@Export("javaVendor")
-	public static String javaVendor;
-	@ObfuscatedName("af")
 	@ObfuscatedSignature(
-		descriptor = "Lkx;"
+		descriptor = "Ljp;"
 	)
 	@Export("current")
 	Task current;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "Lkx;"
+		descriptor = "Ljp;"
 	)
 	@Export("task")
 	Task task;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@Export("thread")
 	Thread thread;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@Export("isClosed")
 	boolean isClosed;
 
@@ -36,12 +42,12 @@ public class TaskHandler implements Runnable {
 		this.current = null;
 		this.task = null;
 		this.isClosed = false;
-		javaVendor = "Unknown";
-		class107.javaVersion = "1.6";
+		class373.javaVendor = "Unknown";
+		javaVersion = "1.6";
 
 		try {
-			javaVendor = System.getProperty("java.vendor");
-			class107.javaVersion = System.getProperty("java.version");
+			class373.javaVendor = System.getProperty("java.vendor");
+			javaVersion = System.getProperty("java.version");
 		} catch (Exception var2) {
 		}
 
@@ -52,10 +58,10 @@ public class TaskHandler implements Runnable {
 		this.thread.start();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-655864944"
+		garbageValue = "1890245710"
 	)
 	@Export("close")
 	public final void close() {
@@ -73,8 +79,8 @@ public class TaskHandler implements Runnable {
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIILjava/lang/Object;I)Lkx;",
-		garbageValue = "-687730798"
+		descriptor = "(IIILjava/lang/Object;I)Ljp;",
+		garbageValue = "-1787793451"
 	)
 	@Export("newTask")
 	final Task newTask(int var1, int var2, int var3, Object var4) {
@@ -97,18 +103,18 @@ public class TaskHandler implements Runnable {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;IB)Lkx;",
-		garbageValue = "-104"
+		descriptor = "(Ljava/lang/String;II)Ljp;",
+		garbageValue = "1401024770"
 	)
 	@Export("newSocketTask")
 	public final Task newSocketTask(String var1, int var2) {
 		return this.newTask(1, var2, 0, var1);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Runnable;II)Lkx;",
-		garbageValue = "-1128485977"
+		descriptor = "(Ljava/lang/Runnable;II)Ljp;",
+		garbageValue = "1902318196"
 	)
 	@Export("newThreadTask")
 	public final Task newThreadTask(Runnable var1, int var2) {
@@ -159,35 +165,6 @@ public class TaskHandler implements Runnable {
 				throw var6;
 			} catch (Throwable var7) {
 				var1.status = 2;
-			}
-		}
-	}
-
-	@ObfuscatedName("lx")
-	@ObfuscatedSignature(
-		descriptor = "(Ldm;Lcs;IILkj;I)V",
-		garbageValue = "766335465"
-	)
-	static final void method5936(WorldView var0, Player var1, int var2, int var3, MoveSpeed var4) {
-		int var5 = var1.pathX[0];
-		int var6 = var1.pathY[0];
-		int var7 = var1.size;
-		CollisionMap var8 = var0.collisionMaps[var0.plane];
-		if (var5 >= var7 && var5 < var8.method6174() - var7 && var6 >= var7 && var6 < var8.method6175() - var7) {
-			if (var2 >= var7 && var2 < var8.method6174() - var7 && var3 >= var7 && var3 < var8.method6175() - var7) {
-				class281 var9 = Client.field297;
-				Client.field303.approxDestinationX = var2;
-				Client.field303.approxDestinationY = var3;
-				Client.field303.approxDestinationSizeX = 1;
-				Client.field303.approxDestinationSizeY = 1;
-				ApproximateRouteStrategy var13 = Client.field303;
-				int var14 = var9.method6348(var5, var6, var7, var13, var8, true, Client.field578, Client.field579);
-				if (var14 >= 1) {
-					for (int var15 = 0; var15 < var14 - 1; ++var15) {
-						var1.method2527(Client.field578[var15], Client.field579[var15], var4);
-					}
-
-				}
 			}
 		}
 	}

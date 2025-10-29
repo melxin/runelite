@@ -4,54 +4,39 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("qe")
+@ObfuscatedName("qg")
 @Implements("GrandExchangeOffer")
 public class GrandExchangeOffer {
-	@ObfuscatedName("go")
-	@ObfuscatedSignature(
-		descriptor = "Los;"
-	)
-	@Export("cameraViewMode")
-	static CameraViewMode cameraViewMode;
-	@ObfuscatedName("ke")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	@Export("archive6")
-	static Archive archive6;
-	@ObfuscatedName("ol")
-	@Export("regionMapArchives")
-	static byte[][] regionMapArchives;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@Export("state")
 	byte state;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1703342093
+		intValue = -840737413
 	)
 	@Export("id")
 	public int id;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 173530249
+		intValue = 270012189
 	)
 	@Export("unitPrice")
 	public int unitPrice;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1735180909
+		intValue = 966823731
 	)
 	@Export("totalQuantity")
 	public int totalQuantity;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1967616203
+		intValue = -634712805
 	)
 	@Export("currentQuantity")
 	public int currentQuantity;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -2114010975
+		intValue = 993851531
 	)
 	@Export("currentPrice")
 	public int currentPrice;
@@ -60,7 +45,7 @@ public class GrandExchangeOffer {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;Z)V",
+		descriptor = "(Lxa;Z)V",
 		garbageValue = "0"
 	)
 	public GrandExchangeOffer(Buffer var1, boolean var2) {
@@ -75,7 +60,7 @@ public class GrandExchangeOffer {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1260221455"
+		garbageValue = "-887756991"
 	)
 	@Export("status")
 	public int status() {
@@ -84,30 +69,30 @@ public class GrandExchangeOffer {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "412940218"
+		descriptor = "(IB)V",
+		garbageValue = "99"
 	)
-	void method8584(int var1) {
+	void method8778(int var1) {
 		this.state &= -8;
 		this.state = (byte)(this.state | var1 & 7);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "964862542"
+		garbageValue = "417836213"
 	)
 	@Export("type")
 	public int type() {
 		return (this.state & 8) == 8 ? 1 : 0;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "-1808823396"
+		garbageValue = "-1367739041"
 	)
-	void method8585(int var1) {
+	void method8780(int var1) {
 		this.state &= -9;
 		if (var1 == 1) {
 			this.state = (byte)(this.state | 8);
@@ -115,59 +100,84 @@ public class GrandExchangeOffer {
 
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IZB)[B",
-		garbageValue = "121"
+		descriptor = "([Lqr;IB)Lqr;",
+		garbageValue = "1"
 	)
-	@Export("ByteArrayPool_getArrayBool")
-	public static byte[] ByteArrayPool_getArrayBool(int var0, boolean var1) {
-		synchronized(ByteArrayPool.field5369) {
-			byte[] var3;
-			if ((var0 == 100 || var0 < 100 && var1) && ByteArrayPool.ByteArrayPool_smallCount > 0) {
-				var3 = ByteArrayPool.ByteArrayPool_small[--ByteArrayPool.ByteArrayPool_smallCount];
-				ByteArrayPool.ByteArrayPool_small[ByteArrayPool.ByteArrayPool_smallCount] = null;
-				return var3;
-			}
+	@Export("findEnumerated")
+	public static Enum findEnumerated(Enum[] var0, int var1) {
+		Enum[] var2 = var0;
 
-			if ((var0 == 5000 || var0 < 5000 && var1) && ByteArrayPool.ByteArrayPool_mediumCount > 0) {
-				var3 = ByteArrayPool.ByteArrayPool_medium[--ByteArrayPool.ByteArrayPool_mediumCount];
-				ByteArrayPool.ByteArrayPool_medium[ByteArrayPool.ByteArrayPool_mediumCount] = null;
-				return var3;
-			}
-
-			if ((var0 == 10000 || var0 < 10000 && var1) && ByteArrayPool.ByteArrayPool_largeCount > 0) {
-				var3 = ByteArrayPool.ByteArrayPool_large[--ByteArrayPool.ByteArrayPool_largeCount];
-				ByteArrayPool.ByteArrayPool_large[ByteArrayPool.ByteArrayPool_largeCount] = null;
-				return var3;
-			}
-
-			if ((var0 == 30000 || var0 < 30000 && var1) && ByteArrayPool.field5383 > 0) {
-				var3 = ByteArrayPool.field5381[--ByteArrayPool.field5383];
-				ByteArrayPool.field5381[ByteArrayPool.field5383] = null;
-				return var3;
-			}
-
-			int var6;
-			if (AbstractWorldMapData.ByteArrayPool_arrays != null) {
-				for (var6 = 0; var6 < WorldMapDecoration.ByteArrayPool_alternativeSizes.length; ++var6) {
-					if ((WorldMapDecoration.ByteArrayPool_alternativeSizes[var6] == var0 || var0 < WorldMapDecoration.ByteArrayPool_alternativeSizes[var6] && var1) && class159.ByteArrayPool_altSizeArrayCounts[var6] > 0) {
-						byte[] var4 = AbstractWorldMapData.ByteArrayPool_arrays[var6][--class159.ByteArrayPool_altSizeArrayCounts[var6]];
-						AbstractWorldMapData.ByteArrayPool_arrays[var6][class159.ByteArrayPool_altSizeArrayCounts[var6]] = null;
-						return var4;
-					}
-				}
-			}
-
-			if (var1 && WorldMapDecoration.ByteArrayPool_alternativeSizes != null) {
-				for (var6 = 0; var6 < WorldMapDecoration.ByteArrayPool_alternativeSizes.length; ++var6) {
-					if (var0 <= WorldMapDecoration.ByteArrayPool_alternativeSizes[var6] && class159.ByteArrayPool_altSizeArrayCounts[var6] < AbstractWorldMapData.ByteArrayPool_arrays[var6].length) {
-						return new byte[WorldMapDecoration.ByteArrayPool_alternativeSizes[var6]];
-					}
-				}
+		for (int var3 = 0; var3 < var2.length; ++var3) {
+			Enum var4 = var2[var3];
+			if (var1 == var4.rsOrdinal()) {
+				return var4;
 			}
 		}
 
-		return new byte[var0];
+		return null;
+	}
+
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIIIZI)V",
+		garbageValue = "-1235362860"
+	)
+	public static void method8796(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8) {
+		class57.soundEffectIds[class57.soundEffectCount] = var0;
+		class57.soundEffects[class57.soundEffectCount] = null;
+		class57.soundLocations[class57.soundEffectCount] = var4 + (var3 << 8) + (var2 << 16);
+		class57.field792[class57.soundEffectCount] = var1;
+		class57.queuedSoundEffectLoops[class57.soundEffectCount] = var6;
+		class57.queuedSoundEffectDelays[class57.soundEffectCount] = var7;
+		class57.field787[class57.soundEffectCount] = var5;
+		class57.field793[class57.soundEffectCount] = var8;
+		++class57.soundEffectCount;
+	}
+
+	@ObfuscatedName("mt")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIB)V",
+		garbageValue = "3"
+	)
+	static final void method8779(int var0, int var1, int var2, int var3, int var4, int var5) {
+		int var6 = var2 - var0;
+		int var7 = var3 - var1;
+		int var8 = var6 >= 0 ? var6 : -var6;
+		int var9 = var7 >= 0 ? var7 : -var7;
+		int var10 = var8;
+		if (var8 < var9) {
+			var10 = var9;
+		}
+
+		if (var10 != 0) {
+			int var11 = (var6 << 16) / var10;
+			int var12 = (var7 << 16) / var10;
+			if (var12 <= var11) {
+				var11 = -var11;
+			} else {
+				var12 = -var12;
+			}
+
+			int var13 = var5 * var12 >> 17;
+			int var14 = var5 * var12 + 1 >> 17;
+			int var15 = var5 * var11 >> 17;
+			int var16 = var5 * var11 + 1 >> 17;
+			var0 -= Rasterizer2D.Rasterizer2D_xClipStart;
+			var1 -= Rasterizer2D.Rasterizer2D_yClipStart;
+			int var17 = var0 + var13;
+			int var18 = var0 - var14;
+			int var19 = var0 + var6 - var14;
+			int var20 = var0 + var6 + var13;
+			int var21 = var15 + var1;
+			int var22 = var1 - var16;
+			int var23 = var7 + var1 - var16;
+			int var24 = var7 + var15 + var1;
+			Rasterizer3D.setClipping(var17, var18, var19);
+			Rasterizer3D.rasterFlat((float)var21, (float)var22, (float)var23, (float)var17, (float)var18, (float)var19, 0.0F, 0.0F, 0.0F, var4);
+			Rasterizer3D.setClipping(var17, var19, var20);
+			Rasterizer3D.rasterFlat((float)var21, (float)var23, (float)var24, (float)var17, (float)var19, (float)var20, 0.0F, 0.0F, 0.0F, var4);
+		}
 	}
 }

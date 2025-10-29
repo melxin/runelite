@@ -1,52 +1,113 @@
-import java.util.Comparator;
+import java.util.Iterator;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sv")
-class class487 implements Comparator {
-	// $FF: synthetic field
-	@ObfuscatedSignature(
-		descriptor = "Lsf;"
+@ObfuscatedName("sx")
+public class class487 extends SongTask {
+	@ObfuscatedName("ut")
+	@ObfuscatedGetter(
+		intValue = 1021621853
 	)
-	final class488 this$0;
+	static int field5389;
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lqm;"
+	)
+	AbstractArchive field5387;
+	@ObfuscatedName("at")
+	@ObfuscatedSignature(
+		descriptor = "Lqm;"
+	)
+	AbstractArchive field5386;
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "Lqm;"
+	)
+	AbstractArchive field5388;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lsf;)V"
+		descriptor = "(Lsz;Lqm;Lqm;Lqm;)V"
 	)
-	class487(class488 var1) {
-		this.this$0 = var1;
+	public class487(SongTask var1, AbstractArchive var2, AbstractArchive var3, AbstractArchive var4) {
+		super(var1);
+		this.field5387 = var2;
+		this.field5386 = var3;
+		this.field5388 = var4;
+		super.field5378 = "LoadSongTask";
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lsc;Lsc;S)I",
-		garbageValue = "-27185"
+		descriptor = "(B)Z",
+		garbageValue = "111"
 	)
-	int method9904(class489 var1, class489 var2) {
-		if (var1.field5418 > var2.field5418) {
-			return 1;
-		} else {
-			return var1.field5418 < var2.field5418 ? -1 : 0;
+	public boolean vmethod9974() {
+		int var1 = 0;
+		Iterator var2 = class345.midiRequests.iterator();
+
+		while (true) {
+			while (var2.hasNext()) {
+				MidiRequest var3 = (MidiRequest)var2.next();
+				if (var3 != null && var3.midiPcmStream.field3948 > 1 && var3.midiPcmStream.method7442()) {
+					this.method9950("Attempted to load patches of already loading midiplayer!");
+					return true;
+				}
+
+				if (var3 != null && !var3.field4044) {
+					try {
+						if (var3.musicTrackArchive != null && var3.musicTrackGroupId != -1 && var3.musicTrackFileId != -1) {
+							if (var3.field4054 == null) {
+								var3.field4054 = MusicTrack.readTrack(var3.musicTrackArchive, var3.musicTrackGroupId, var3.musicTrackFileId);
+								if (var3.field4054 == null) {
+									continue;
+								}
+							}
+
+							if (var3.field4053 == null) {
+								var3.field4053 = new SoundCache(this.field5388, this.field5386);
+							}
+
+							if (var3.midiPcmStream.updateExternalPlayer(var3.field4054, this.field5387, var3.field4053)) {
+								++var1;
+								var3.field4044 = true;
+								var3.midiPcmStream.method7367();
+							}
+						} else {
+							++var1;
+						}
+					} catch (Exception var5) {
+						PlayerType.RunException_sendStackTrace((String)null, var5);
+						this.method9950(var5.getMessage());
+						return true;
+					}
+				} else {
+					++var1;
+				}
+			}
+
+			if (var1 == class345.midiRequests.size()) {
+				return true;
+			}
+
+			return false;
 		}
 	}
 
-	public int compare(Object var1, Object var2) {
-		return this.method9904((class489)var1, (class489)var2);
-	}
-
-	public boolean equals(Object var1) {
-		return super.equals(var1);
-	}
-
-	@ObfuscatedName("au")
+	@ObfuscatedName("am")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "2"
+		descriptor = "(B)V",
+		garbageValue = "0"
 	)
-	static final int method9908(int var0, int var1) {
-		int var2 = class377.method8177(var0 - 1, var1 - 1) + class377.method8177(1 + var0, var1 - 1) + class377.method8177(var0 - 1, 1 + var1) + class377.method8177(1 + var0, 1 + var1);
-		int var3 = class377.method8177(var0 - 1, var1) + class377.method8177(1 + var0, var1) + class377.method8177(var0, var1 - 1) + class377.method8177(var0, 1 + var1);
-		int var4 = class377.method8177(var0, var1);
-		return var2 / 16 + var3 / 8 + var4 / 4;
+	static void method9976() {
+		if (Login.loginIndex == 34) {
+			SpotAnimationDefinition.Login_promptCredentials(false);
+		}
+
+		Login.worldSelectOpen = false;
+		Rasterizer2D.Rasterizer2D_fillRectangle(0, 0, Rasterizer2D.Rasterizer2D_width, Rasterizer2D.Rasterizer2D_height, 0);
+		class560.leftTitleSprite.drawAt(Login.xPadding, 0);
+		WorldMapData_1.rightTitleSprite.drawAt(Login.xPadding + 382, 0);
+		class50.logoSprite.drawAt(Login.xPadding + 382 - class50.logoSprite.subWidth / 2, 18);
 	}
 }

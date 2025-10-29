@@ -1,43 +1,74 @@
-import java.util.concurrent.ThreadPoolExecutor;
+import javax.imageio.ImageIO;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("bn")
+@ObfuscatedName("bz")
 public class class30 {
+	static {
+		ImageIO.setUseCache(false);
+	}
+
 	@ObfuscatedName("at")
-	static ThreadPoolExecutor field134;
-	@ObfuscatedName("fz")
-	static boolean field135;
-
-	@ObfuscatedName("ln")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "7"
+		descriptor = "(Lrx;I)Lrx;",
+		garbageValue = "742787141"
 	)
-	static void method470() {
-		if (Client.isSpellSelected) {
-			Widget var0 = class35.widgetDefinition.getWidgetChild(class142.selectedSpellWidget, Client.selectedSpellChildIndex);
-			if (var0 != null && var0.onTargetLeave != null) {
-				ScriptEvent var1 = new ScriptEvent();
-				var1.widget = var0;
-				var1.args = var0.onTargetLeave;
-				class332.runScriptEvent(var1);
+	public static ProjectionCoord method486(ProjectionCoord var0) {
+		synchronized(ProjectionCoord.field5238) {
+			if (ProjectionCoord.field5236 == 0) {
+				return new ProjectionCoord(var0);
+			} else {
+				ProjectionCoord.field5238[--ProjectionCoord.field5236].method9342(var0);
+				return ProjectionCoord.field5238[ProjectionCoord.field5236];
 			}
-
-			Client.selectedSpellItemId = -1;
-			Client.isSpellSelected = false;
-			class154.invalidateWidget(var0);
 		}
 	}
 
-	@ObfuscatedName("ob")
+	@ObfuscatedName("aq")
 	@ObfuscatedSignature(
-		descriptor = "(Lok;I)Z",
-		garbageValue = "851295557"
+		descriptor = "(II)V",
+		garbageValue = "-1923316222"
 	)
-	@Export("isComponentHidden")
-	static boolean isComponentHidden(Widget var0) {
-		return var0.isHidden;
+	static void method484(int var0) {
+		if (var0 != Login.loginIndex) {
+			Login.loginIndex = var0;
+		}
+	}
+
+	@ObfuscatedName("hs")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "32"
+	)
+	@Export("logOut")
+	static final void logOut() {
+		Client.packetWriter.close();
+		WorldMapElement.clear();
+		Client.worldViewManager.clear();
+		Client.projectiles.clear();
+		Client.playerUpdateManager.clear();
+		Client.field442.method6268();
+		System.gc();
+		class167.method4167(0, 0);
+		class179.method4284();
+		Client.playingJingle = false;
+		class356.method7610();
+		WorldMapSectionType.updateGameState(10);
+		Client.serverCycle = 0;
+		WorldMapArea.method6664().method5131();
+		WorldMapArea.method6664().method5132();
+	}
+
+	@ObfuscatedName("jh")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "102"
+	)
+	static void method483() {
+		for (class279 var0 = (class279)Client.field400.last(); var0 != null; var0 = (class279)Client.field400.previous()) {
+			var0.remove();
+		}
+
 	}
 }

@@ -3,19 +3,19 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("wd")
+@ObfuscatedName("we")
 @Implements("DbTableType")
 public class DbTableType extends DualNode {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("DBTableType_cache")
-	static EvictingDualNodeHashTable DBTableType_cache;
+	public static EvictingDualNodeHashTable DBTableType_cache;
 	@ObfuscatedName("ag")
 	@Export("types")
 	public int[][] types;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@Export("defaultValues")
 	public Object[][] defaultValues;
 
@@ -26,28 +26,28 @@ public class DbTableType extends DualNode {
 	DbTableType() {
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "-669181137"
+		descriptor = "(Lxa;B)V",
+		garbageValue = "2"
 	)
-	void method11217(Buffer var1) {
+	void method11469(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
 				return;
 			}
 
-			this.method11218(var1, var2);
+			this.method11470(var1, var2);
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;IB)V",
-		garbageValue = "54"
+		descriptor = "(Lxa;II)V",
+		garbageValue = "-378597077"
 	)
-	void method11218(Buffer var1, int var2) {
+	void method11470(Buffer var1, int var2) {
 		if (var2 == 1) {
 			int var3 = var1.readUnsignedByte();
 			if (this.types == null) {
@@ -69,18 +69,18 @@ public class DbTableType extends DualNode {
 						this.defaultValues = new Object[this.types.length][];
 					}
 
-					this.defaultValues[var5] = class154.method3933(var1, var7);
+					this.defaultValues[var5] = JagexCache.method5102(var1, var7);
 				}
 			}
 		}
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-2134226478"
+		garbageValue = "279571430"
 	)
-	void method11219() {
+	void method11471() {
 	}
 }

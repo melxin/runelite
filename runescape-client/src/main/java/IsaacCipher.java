@@ -7,33 +7,33 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("xo")
 @Implements("IsaacCipher")
 public final class IsaacCipher {
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1043512879
+		intValue = -807539921
 	)
 	@Export("valuesRemaining")
 	int valuesRemaining;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@Export("results")
 	int[] results;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@Export("mm")
 	int[] mm;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 755275329
+		intValue = -1557960353
 	)
 	@Export("aa")
 	int aa;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1097391811
+		intValue = 1700841103
 	)
 	@Export("bb")
 	int bb;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 1048538945
+		intValue = 1678414135
 	)
 	@Export("cc")
 	int cc;
@@ -46,13 +46,13 @@ public final class IsaacCipher {
 			this.results[var2] = var1[var2];
 		}
 
-		this.method12007();
+		this.method12273();
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1629881310"
+		descriptor = "(B)I",
+		garbageValue = "-110"
 	)
 	@Export("nextInt")
 	public final int nextInt() {
@@ -67,9 +67,9 @@ public final class IsaacCipher {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1173594855"
+		garbageValue = "327716789"
 	)
-	public final int method12001() {
+	public final int method12263() {
 		if (this.valuesRemaining == 0) {
 			this.generateMoreResults();
 			this.valuesRemaining = 256;
@@ -80,8 +80,8 @@ public final class IsaacCipher {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "31"
+		descriptor = "(I)V",
+		garbageValue = "-19979937"
 	)
 	@Export("generateMoreResults")
 	final void generateMoreResults() {
@@ -109,12 +109,12 @@ public final class IsaacCipher {
 
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "92"
+		descriptor = "(I)V",
+		garbageValue = "-1730737568"
 	)
-	final void method12007() {
+	final void method12273() {
 		int var9 = -1640531527;
 		int var8 = -1640531527;
 		int var7 = -1640531527;

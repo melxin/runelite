@@ -3,161 +3,159 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("dn")
+@ObfuscatedName("di")
 public class class88 {
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1268;
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1257;
-	@ObfuscatedName("ag")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1258;
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1262;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1260;
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1256;
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1259;
-	@ObfuscatedName("aq")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1263;
-	@ObfuscatedName("ac")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1264;
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1265;
-	@ObfuscatedName("ap")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1266;
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "Ldn;"
-	)
-	static final class88 field1267;
 	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Ldn;"
+		descriptor = "Ldi;"
 	)
-	static final class88 field1271;
-	@ObfuscatedName("as")
+	static final class88 field1235;
+	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Ldn;"
+		descriptor = "Ldi;"
+	)
+	static final class88 field1232;
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1233;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1246;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1247;
+	@ObfuscatedName("aj")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1236;
+	@ObfuscatedName("ak")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1237;
+	@ObfuscatedName("aw")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1238;
+	@ObfuscatedName("ap")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1243;
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1240;
+	@ObfuscatedName("au")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1241;
+	@ObfuscatedName("az")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1242;
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
+	)
+	static final class88 field1239;
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "Ldi;"
 	)
 	@Export("field1390")
 	static final class88 field1390;
-	@ObfuscatedName("ar")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "Ldn;"
+		descriptor = "Ldi;"
 	)
-	static final class88 field1270;
-	@ObfuscatedName("az")
+	static final class88 field1245;
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "Ldn;"
+		descriptor = "Ldi;"
 	)
-	static final class88 field1261;
-	@ObfuscatedName("au")
+	static final class88 field1234;
+	@ObfuscatedName("ab")
 	@ObfuscatedGetter(
-		intValue = -1715866995
+		intValue = 142977173
 	)
-	int field1272;
+	int field1231;
 
 	static {
-		field1268 = new class88(0);
-		field1257 = new class88(1);
-		field1258 = new class88(2);
-		field1262 = new class88(3);
-		field1260 = new class88(4);
-		field1256 = new class88(5);
-		field1259 = new class88(6);
-		field1263 = new class88(7);
-		field1264 = new class88(8);
-		field1265 = new class88(9);
-		field1266 = new class88(10);
-		field1267 = new class88(11);
-		field1271 = new class88(12);
+		field1235 = new class88(0);
+		field1232 = new class88(1);
+		field1233 = new class88(2);
+		field1246 = new class88(3);
+		field1247 = new class88(4);
+		field1236 = new class88(5);
+		field1237 = new class88(6);
+		field1238 = new class88(7);
+		field1243 = new class88(8);
+		field1240 = new class88(9);
+		field1241 = new class88(10);
+		field1242 = new class88(11);
+		field1239 = new class88(12);
 		field1390 = new class88(13);
-		field1270 = new class88(14);
-		field1261 = new class88(15);
+		field1245 = new class88(14);
+		field1234 = new class88(15);
 	}
 
 	class88(int var1) {
-		this.field1272 = var1;
+		this.field1231 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("oz")
 	@ObfuscatedSignature(
-		descriptor = "(Lpe;Lpe;I)V",
-		garbageValue = "1309410288"
+		descriptor = "(Lof;I)V",
+		garbageValue = "-1166894490"
 	)
-	public static void method2983(AbstractArchive var0, AbstractArchive var1) {
-		GrandExchangeOfferNameComparator.NpcDefinition_archive = var0;
-		NPCComposition.field2140 = var1;
-	}
-
-	@ObfuscatedName("jp")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZB)V",
-		garbageValue = "1"
-	)
-	@Export("drawLoadingMessage")
-	static final void drawLoadingMessage(String var0, boolean var1) {
-		if (Client.showLoadingMessages) {
-			byte var2 = 4;
-			int var3 = var2 + 6;
-			int var4 = var2 + 6;
-			int var5 = Message.fontPlain12.lineWidth(var0, 250);
-			int var6 = Message.fontPlain12.lineCount(var0, 250) * 13;
-			Rasterizer2D.Rasterizer2D_fillRectangle(var3 - var2, var4 - var2, var5 + var2 + var2, var2 + var6 + var2, 0);
-			Rasterizer2D.Rasterizer2D_drawRectangle(var3 - var2, var4 - var2, var2 + var5 + var2, var2 + var6 + var2, 16777215);
-			Message.fontPlain12.drawLines(var0, var3, var4, var5, var6, 16777215, -1, 1, 1, 0);
-			int var7 = var3 - var2;
-			int var8 = var4 - var2;
-			int var9 = var2 + var2 + var5;
-			int var10 = var2 + var6 + var2;
-
-			for (int var11 = 0; var11 < Client.rootWidgetCount; ++var11) {
-				if (Client.rootWidgetWidths[var11] + Client.rootWidgetXs[var11] > var7 && Client.rootWidgetXs[var11] < var7 + var9 && Client.rootWidgetYs[var11] + Client.rootWidgetHeights[var11] > var8 && Client.rootWidgetYs[var11] < var10 + var8) {
-					Client.validRootWidgets[var11] = true;
-				}
+	static final void method2983(Widget var0) {
+		int var1 = var0.contentType;
+		if (var1 == 324) {
+			if (Client.field548 == -1) {
+				Client.field548 = var0.spriteId2;
+				Client.field385 = var0.spriteId;
 			}
 
-			if (var1) {
-				class409.rasterProvider.drawFull(0, 0);
+			if (Client.playerAppearance.gender == 1) {
+				var0.spriteId2 = Client.field548;
 			} else {
-				ScriptFrame.method738(var3, var4, var5, var6);
+				var0.spriteId2 = Client.field385;
 			}
 
+		} else if (var1 == 325) {
+			if (Client.field548 == -1) {
+				Client.field548 = var0.spriteId2;
+				Client.field385 = var0.spriteId;
+			}
+
+			if (Client.playerAppearance.gender == 1) {
+				var0.spriteId2 = Client.field385;
+			} else {
+				var0.spriteId2 = Client.field548;
+			}
+
+		} else if (var1 == 327) {
+			var0.modelAngleX = 150;
+			var0.modelAngleY = (int)(Math.sin((double)Client.cycle / 40.0D) * 256.0D) & 2047;
+			var0.modelType = 5;
+			var0.modelId = 0;
+		} else if (var1 == 328) {
+			var0.modelAngleX = 150;
+			var0.modelAngleY = (int)(Math.sin((double)Client.cycle / 40.0D) * 256.0D) & 2047;
+			var0.modelType = 5;
+			var0.modelId = 1;
 		}
 	}
 }

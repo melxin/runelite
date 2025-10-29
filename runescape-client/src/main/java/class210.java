@@ -1,84 +1,87 @@
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("iw")
+@ObfuscatedName("ig")
 public class class210 {
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -2093062933
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Lig;"
 	)
-	public int field2294;
+	static final class210 field2264;
 	@ObfuscatedName("at")
-	@ObfuscatedGetter(
-		intValue = 1850449181
+	@ObfuscatedSignature(
+		descriptor = "Lig;"
 	)
-	public int field2299;
+	static final class210 field2263;
 	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = 1285080315
+	@ObfuscatedSignature(
+		descriptor = "Lig;"
 	)
-	public int field2296;
-	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = -322782025
+	static final class210 field2262;
+	@ObfuscatedName("an")
+	@ObfuscatedSignature(
+		descriptor = "Lig;"
 	)
-	public int field2295;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = -798752939
+	static final class210 field2265;
+	@ObfuscatedName("ae")
+	@ObfuscatedSignature(
+		descriptor = "Lig;"
 	)
-	public int field2298;
+	static final class210 field2266;
+	@ObfuscatedName("od")
+	@Export("regionLandArchiveIds")
+	static int[] regionLandArchiveIds;
 
-	class210(int var1, int var2, int var3, int var4, int var5) {
-		this.field2294 = 0;
-		this.field2299 = 1;
-		this.field2296 = 0;
-		this.field2295 = 0;
-		this.field2298 = 0;
-		this.field2294 = var1;
-		this.field2299 = var2;
-		this.field2296 = var3;
-		this.field2295 = var4;
-		this.field2298 = var5;
+	static {
+		field2264 = new class210(0);
+		field2263 = new class210(1);
+		field2262 = new class210(2);
+		field2265 = new class210(3);
+		field2266 = new class210(4);
 	}
 
-	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "76"
+		descriptor = "(I)V",
+		garbageValue = "0"
 	)
-	public static int method4671(int var0) {
-		return var0 >> 14 & 1023;
+	class210(int var1) {
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)V",
-		garbageValue = "27"
+		descriptor = "(Ljh;IIIIIIII)Lrx;",
+		garbageValue = "-317748003"
 	)
-	@Export("queueSoundEffect")
-	static void queueSoundEffect(int var0, int var1, int var2) {
-		if (class154.clientPreferences.getSoundEffectsVolume() != 0 && var1 != 0 && class57.soundEffectCount < 50) {
-			class421.method8618(-1, var0, 0, 0, 0, 0, var1, var2, false);
-		}
-
-	}
-
-	@ObfuscatedName("am")
-	@ObfuscatedSignature(
-		descriptor = "(Lok;B)I",
-		garbageValue = "4"
-	)
-	static int method4670(Widget var0) {
-		if (var0.type != 11) {
-			Interpreter.Interpreter_objectStack[Message.Interpreter_objectStackSize - 1] = "";
-			return 1;
+	public static final ProjectionCoord method4667(Scene var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+		float var8 = 1.0E-5F;
+		ModelData0.method6245();
+		WorldMapEvent.method7176(var0.field2905, var0.field2876, var0.field2907, var0.field2846, var5, var6, var7);
+		ProjectionCoord var9 = FaceNormal.method5848(0.0F, 1.0F, 0.0F);
+		ProjectionCoord var11 = ViewportMouse.field3109;
+		float var10 = var9.method9303(var11);
+		if (Math.abs(var10) < 1.0E-5F) {
+			var9.release();
+			return null;
 		} else {
-			String var1 = (String)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
-			Interpreter.Interpreter_objectStack[++Message.Interpreter_objectStackSize - 1] = var0.method7953(var1);
-			return 1;
+			ProjectionCoord var13 = FaceNormal.method5848((float)var2, (float)var3, (float)var4);
+			ProjectionCoord var14 = FaceNormal.method5848(var13.x, var13.z - (float)var1, var13.y);
+			float var15 = var9.method9303(var14);
+			float var16 = -var15 / var10;
+			var9.release();
+			if (var16 < 0.0F) {
+				var14.release();
+				var13.release();
+				return null;
+			} else {
+				ProjectionCoord var17 = ViewportMouse.method6107(ViewportMouse.field3109, var16);
+				ProjectionCoord var19 = class30.method486(var13);
+				var19.method9294(var17);
+				var17.release();
+				var14.release();
+				var13.release();
+				return var19;
+			}
 		}
 	}
 }

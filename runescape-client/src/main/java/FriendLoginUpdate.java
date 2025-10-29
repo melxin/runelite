@@ -4,17 +4,17 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("tm")
+@ObfuscatedName("tj")
 @Implements("FriendLoginUpdate")
 public class FriendLoginUpdate extends Link {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -1158084829
+		intValue = -1064653935
 	)
-	public int field5444;
+	public int field5468;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lxp;"
+		descriptor = "Lxv;"
 	)
 	@Export("username")
 	public Username username;
@@ -23,11 +23,25 @@ public class FriendLoginUpdate extends Link {
 	public short world;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lxp;I)V"
+		descriptor = "(Lxv;I)V"
 	)
 	FriendLoginUpdate(Username var1, int var2) {
-		this.field5444 = (int)(class281.method6373() / 1000L);
+		this.field5468 = (int)(ParamComposition.method4708() / 1000L);
 		this.username = var1;
 		this.world = (short)var2;
+	}
+
+	@ObfuscatedName("oi")
+	@ObfuscatedSignature(
+		descriptor = "(S)V",
+		garbageValue = "-19044"
+	)
+	@Export("FriendSystem_invalidateIgnoreds")
+	static final void FriendSystem_invalidateIgnoreds() {
+		class300.method6919();
+		if (BuddyRankComparator.friendsChat != null) {
+			BuddyRankComparator.friendsChat.invalidateIgnoreds();
+		}
+
 	}
 }

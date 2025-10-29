@@ -11,10 +11,10 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eu")
+@ObfuscatedName("ei")
 @Implements("UrlRequester")
 public abstract class UrlRequester implements Runnable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@Export("requestThread")
 	final Thread requestThread;
 	@ObfuscatedName("at")
@@ -23,9 +23,9 @@ public abstract class UrlRequester implements Runnable {
 	@ObfuscatedName("ag")
 	@Export("requests")
 	Queue requests;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -327261475
+		intValue = -244944127
 	)
 	@Export("clientRevision")
 	int clientRevision;
@@ -38,21 +38,21 @@ public abstract class UrlRequester implements Runnable {
 		this.clientRevision = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lez;I)V",
-		garbageValue = "-2003495708"
+		descriptor = "(Ley;B)V",
+		garbageValue = "-44"
 	)
 	@Export("openConnection")
 	abstract void openConnection(UrlRequest var1) throws IOException;
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;B)I",
-		garbageValue = "62"
+		descriptor = "(Ljava/net/URLConnection;I)I",
+		garbageValue = "-2038020110"
 	)
-	int method3566(URLConnection var1) {
-		int var2 = UrlRequest.field1554;
+	int method3633(URLConnection var1) {
+		int var2 = UrlRequest.field1541;
 		if (var1 != null) {
 			try {
 				if (var1 instanceof HttpURLConnection) {
@@ -68,7 +68,7 @@ public abstract class UrlRequester implements Runnable {
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/net/URLConnection;I)V",
-		garbageValue = "613793787"
+		garbageValue = "2146753197"
 	)
 	@Export("setDefaultRequestProperties")
 	void setDefaultRequestProperties(URLConnection var1) {
@@ -79,12 +79,12 @@ public abstract class UrlRequester implements Runnable {
 		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.clientRevision);
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;Lez;I)V",
-		garbageValue = "16711935"
+		descriptor = "(Ljava/net/URLConnection;Ley;I)V",
+		garbageValue = "-948222317"
 	)
-	void method3556(URLConnection var1, UrlRequest var2) {
+	void method3634(URLConnection var1, UrlRequest var2) {
 		DataInputStream var3 = null;
 
 		try {
@@ -96,7 +96,7 @@ public abstract class UrlRequester implements Runnable {
 				var3.readFully(var4);
 			} else {
 				var4 = new byte[0];
-				byte[] var6 = GrandExchangeOffer.ByteArrayPool_getArrayBool(5000, false);
+				byte[] var6 = WorldEntityCoord.ByteArrayPool_getArrayBool(5000, false);
 				byte[] var7 = var6;
 
 				for (int var8 = var3.read(var6); var8 > -1; var8 = var3.read(var7)) {
@@ -106,14 +106,14 @@ public abstract class UrlRequester implements Runnable {
 					var4 = var9;
 				}
 
-				WorldMapID.ByteArrayPool_release(var7);
+				class372.ByteArrayPool_release(var7);
 			}
 
 			var2.response0 = var4;
 		} catch (IOException var15) {
 			var2.response0 = null;
 		} finally {
-			var2.field1559 = this.method3566(var1);
+			var2.field1543 = this.method3633(var1);
 		}
 
 		if (var3 != null) {
@@ -125,10 +125,10 @@ public abstract class UrlRequester implements Runnable {
 
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;I)Lez;",
-		garbageValue = "-1750629389"
+		descriptor = "(Ljava/net/URL;I)Ley;",
+		garbageValue = "-726881254"
 	)
 	@Export("request")
 	public UrlRequest request(URL var1) {
@@ -140,10 +140,10 @@ public abstract class UrlRequester implements Runnable {
 		}
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1060901814"
+		garbageValue = "-1481714301"
 	)
 	@Export("close")
 	public void close() {
@@ -177,7 +177,7 @@ public abstract class UrlRequester implements Runnable {
 
 				this.openConnection(var1);
 			} catch (Exception var7) {
-				ArchiveDiskActionHandler.RunException_sendStackTrace((String)null, var7);
+				PlayerType.RunException_sendStackTrace((String)null, var7);
 			}
 		}
 

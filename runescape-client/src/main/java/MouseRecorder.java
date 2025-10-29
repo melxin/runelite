@@ -1,13 +1,17 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ct")
+@ObfuscatedName("cp")
 @Implements("MouseRecorder")
 public class MouseRecorder implements Runnable {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ac")
+	static int[][] field868;
+	@ObfuscatedName("av")
 	@Export("isRunning")
 	boolean isRunning;
 	@ObfuscatedName("at")
@@ -15,17 +19,17 @@ public class MouseRecorder implements Runnable {
 	Object lock;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 68614331
+		intValue = 847414097
 	)
 	@Export("index")
 	int index;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@Export("xs")
 	int[] xs;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@Export("ys")
 	int[] ys;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@Export("millis")
 	long[] millis;
 
@@ -39,7 +43,7 @@ public class MouseRecorder implements Runnable {
 	}
 
 	public void run() {
-		for (; this.isRunning; GrandExchangeOfferOwnWorldComparator.method789(50L)) {
+		for (; this.isRunning; LoginState.method841(50L)) {
 			synchronized(this.lock) {
 				if (this.index < 500) {
 					this.xs[this.index] = MouseHandler.MouseHandler_x;
@@ -52,102 +56,94 @@ public class MouseRecorder implements Runnable {
 
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "656865036"
+		descriptor = "(I)[Ldc;",
+		garbageValue = "1642043640"
 	)
-	static int method2180(int var0, int var1) {
-		FloorOverlayDefinition var2 = ClientPreferences.method2731(var0);
-		if (var2 == null) {
-			return var1;
-		} else {
-			int var4;
-			int var5;
-			int var6;
-			int var7;
-			int var8;
-			if (var2.secondaryRgb >= 0) {
-				var4 = var2.secondaryHue;
-				var5 = var2.secondarySaturation;
-				var6 = var2.secondaryLightness;
-				if (var6 > 179) {
-					var5 /= 2;
-				}
-
-				if (var6 > 192) {
-					var5 /= 2;
-				}
-
-				if (var6 > 217) {
-					var5 /= 2;
-				}
-
-				if (var6 > 243) {
-					var5 /= 2;
-				}
-
-				var7 = (var5 / 32 << 7) + var6 / 2 + (var4 / 4 << 10);
-				var8 = Skills.method8167(var7, 96);
-				return Rasterizer3D.Rasterizer3D_colorPalette[var8] | -16777216;
-			} else if (var2.texture >= 0) {
-				int var3 = Skills.method8167(Rasterizer3D.clips.Rasterizer3D_textureLoader.getAverageTextureRGB(var2.texture), 96);
-				return Rasterizer3D.Rasterizer3D_colorPalette[var3] | -16777216;
-			} else if (var2.primaryRgb == 16711935) {
-				return var1;
-			} else {
-				var4 = var2.hue;
-				var5 = var2.saturation;
-				var6 = var2.lightness;
-				if (var6 > 179) {
-					var5 /= 2;
-				}
-
-				if (var6 > 192) {
-					var5 /= 2;
-				}
-
-				if (var6 > 217) {
-					var5 /= 2;
-				}
-
-				if (var6 > 243) {
-					var5 /= 2;
-				}
-
-				var7 = (var5 / 32 << 7) + var6 / 2 + (var4 / 4 << 10);
-				var8 = Skills.method8167(var7, 96);
-				return Rasterizer3D.Rasterizer3D_colorPalette[var8] | -16777216;
-			}
-		}
+	static AttackOption[] method2193() {
+		return new AttackOption[]{AttackOption.AttackOption_alwaysRightClick, AttackOption.field1186, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.field1188, AttackOption.AttackOption_hidden};
 	}
 
-	@ObfuscatedName("oh")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(Lok;I)I",
-		garbageValue = "2138577218"
+		descriptor = "(Ljava/lang/String;I)Ljava/lang/String;",
+		garbageValue = "1286111589"
 	)
-	@Export("getWidgetFlags")
-	static int getWidgetFlags(Widget var0) {
-		WidgetConfigNode var1 = (WidgetConfigNode)Client.widgetFlags.get((long)var0.id);
-		int var3 = var0.childIndex * -2066937045;
-		WidgetConfigNode var4 = var1;
+	public static String method2195(String var0) {
+		StringBuilder var1 = new StringBuilder(var0.length());
+		int var2 = 0;
+		int var3 = -1;
 
-		WidgetConfigNode var2;
-		while (true) {
-			if (var4 == null) {
-				var2 = null;
-				break;
+		for (int var4 = 0; var4 < var0.length(); ++var4) {
+			char var5 = var0.charAt(var4);
+			if (var5 == '<') {
+				var1.append(var0.substring(var2, var4));
+				var3 = var4;
+			} else if (var5 == '>' && var3 != -1) {
+				String var6 = var0.substring(var3 + 1, var4);
+				var3 = -1;
+				if (var6.equals("lt")) {
+					var1.append("<");
+				} else if (var6.equals("gt")) {
+					var1.append(">");
+				} else if (var6.equals("br")) {
+					var1.append("\n");
+				}
+
+				var2 = var4 + 1;
 			}
-
-			if (var3 >= var4.start && var3 <= var4.end) {
-				var2 = var4;
-				break;
-			}
-
-			var4 = var4.nextWidgetConfigNode;
 		}
 
-		return var2 != null ? var2.method7506() : var0.flags;
+		if (var2 < var0.length()) {
+			var1.append(var0.substring(var2, var0.length()));
+		}
+
+		return var1.toString();
+	}
+
+	@ObfuscatedName("io")
+	@ObfuscatedSignature(
+		descriptor = "(III)V",
+		garbageValue = "-2084071294"
+	)
+	static void method2194(int var0, int var1) {
+		if (class468.clientPreferences.getMusicVolume() != 0 && var0 != -1) {
+			ArrayList var2 = new ArrayList();
+			var2.add(new MidiRequest(UserComparator4.archive6, var0, 0, class468.clientPreferences.getMusicVolume(), false));
+			class113.method3574(var2, 0, 0, 0, 0, true);
+			Client.playingJingle = true;
+		}
+
+	}
+
+	@ObfuscatedName("ob")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "994891367"
+	)
+	static final void method2189() {
+		Iterator var0 = Client.worldViewManager.iterator();
+
+		while (var0.hasNext()) {
+			WorldView var1 = (WorldView)var0.next();
+
+			for (int var2 = 0; var2 < Client.playerUpdateManager.playerCount; ++var2) {
+				Player var3 = (Player)Occluder.topLevelWorldView.players.get((long)Client.playerUpdateManager.playerIndices[var2]);
+				if (var3 != null) {
+					var3.clearIsInFriendsChat();
+				}
+			}
+		}
+
+	}
+
+	@ObfuscatedName("pr")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "-204048001"
+	)
+	static void method2196(int var0) {
+		Client.oculusOrbState = var0;
 	}
 }

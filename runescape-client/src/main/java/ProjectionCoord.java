@@ -4,78 +4,69 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("re")
+@ObfuscatedName("rx")
 @Implements("ProjectionCoord")
 public class ProjectionCoord {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lre;"
+		descriptor = "Lrx;"
 	)
-	public static final ProjectionCoord field5220;
+	public static final ProjectionCoord field5242;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lre;"
+		descriptor = "Lrx;"
 	)
-	public static final ProjectionCoord field5212;
+	public static final ProjectionCoord field5240;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lre;"
+		descriptor = "Lrx;"
 	)
-	public static final ProjectionCoord field5211;
-	@ObfuscatedName("aj")
+	public static final ProjectionCoord field5234;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lre;"
+		descriptor = "Lrx;"
 	)
-	public static final ProjectionCoord field5213;
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "[Lre;"
-	)
-	static final ProjectionCoord[] field5214;
-	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = -122179541
-	)
-	static final int field5215;
+	public static final ProjectionCoord field5237;
 	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = -1136280245
-	)
-	static int field5210;
-	@ObfuscatedName("ax")
-	@Export("Tiles_hueMultiplier")
-	static int[] Tiles_hueMultiplier;
-	@ObfuscatedName("pa")
 	@ObfuscatedSignature(
-		descriptor = "[Lxc;"
+		descriptor = "[Lrx;"
 	)
-	@Export("scrollBarSprites")
-	static IndexedSprite[] scrollBarSprites;
-	@ObfuscatedName("aq")
+	public static final ProjectionCoord[] field5238;
+	@ObfuscatedName("aj")
+	@ObfuscatedGetter(
+		intValue = 2018536245
+	)
+	static final int field5239;
+	@ObfuscatedName("ak")
+	@ObfuscatedGetter(
+		intValue = 1970955523
+	)
+	public static int field5236;
+	@ObfuscatedName("aw")
 	@Export("x")
 	public float x;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@Export("z")
 	public float z;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@Export("y")
 	public float y;
 
 	static {
-		field5220 = new ProjectionCoord(0.0F, 0.0F, 0.0F);
+		field5242 = new ProjectionCoord(0.0F, 0.0F, 0.0F);
 		new ProjectionCoord(1.0F, 1.0F, 1.0F);
 		new ProjectionCoord(1.0F, 0.0F, 0.0F);
-		field5212 = new ProjectionCoord(0.0F, 1.0F, 0.0F);
+		field5240 = new ProjectionCoord(0.0F, 1.0F, 0.0F);
 		new ProjectionCoord(0.0F, 0.0F, 1.0F);
 		new ProjectionCoord(1.0F, 0.0F, 0.0F);
 		new ProjectionCoord(-1.0F, 0.0F, 0.0F);
 		new ProjectionCoord(0.0F, 0.0F, 1.0F);
-		field5211 = new ProjectionCoord(0.0F, 0.0F, -1.0F);
+		field5234 = new ProjectionCoord(0.0F, 0.0F, -1.0F);
 		new ProjectionCoord(0.0F, 1.0F, 0.0F);
-		field5213 = new ProjectionCoord(0.0F, -1.0F, 0.0F);
-		field5210 = 0;
-		field5215 = 16;
-		field5214 = new ProjectionCoord[field5215];
+		field5237 = new ProjectionCoord(0.0F, -1.0F, 0.0F);
+		field5236 = 0;
+		field5239 = 16;
+		field5238 = new ProjectionCoord[field5239];
 	}
 
 	public ProjectionCoord() {
@@ -88,7 +79,7 @@ public class ProjectionCoord {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lre;)V"
+		descriptor = "(Lrx;)V"
 	)
 	ProjectionCoord(ProjectionCoord var1) {
 		this.x = var1.x;
@@ -96,183 +87,200 @@ public class ProjectionCoord {
 		this.y = var1.y;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-947600722"
+		garbageValue = "-804947546"
 	)
 	@Export("release")
 	public void release() {
-		synchronized(field5214) {
-			if (field5210 < field5215) {
-				field5214[++field5210 - 1] = this;
+		synchronized(field5238) {
+			if (field5236 < field5239) {
+				field5238[++field5236 - 1] = this;
 			}
 
 		}
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "(FFFI)V",
-		garbageValue = "-471208602"
+		garbageValue = "1146629800"
 	)
-	public void method9066(float var1, float var2, float var3) {
+	public void method9296(float var1, float var2, float var3) {
 		this.x = var1;
 		this.z = var2;
 		this.y = var3;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(Lre;I)V",
-		garbageValue = "-1731222272"
+		descriptor = "(Lrx;B)V",
+		garbageValue = "8"
 	)
-	void method9067(ProjectionCoord var1) {
-		this.method9066(var1.x, var1.z, var1.y);
+	void method9342(ProjectionCoord var1) {
+		this.method9296(var1.x, var1.z, var1.y);
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-3"
+		descriptor = "(I)V",
+		garbageValue = "1701153650"
 	)
-	final void method9068() {
+	public final void method9349() {
 		this.y = 0.0F;
 		this.z = 0.0F;
 		this.x = 0.0F;
 	}
 
-	@ObfuscatedName("aa")
-	@ObfuscatedSignature(
-		descriptor = "(Lre;B)Z",
-		garbageValue = "83"
-	)
-	boolean method9085(ProjectionCoord var1) {
-		return var1.x == this.x && this.z == var1.z && var1.y == this.y;
-	}
-
 	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "59"
+		descriptor = "(Lrx;I)Z",
+		garbageValue = "2137113714"
 	)
-	public final void method9070() {
-		float var1 = 1.0F / this.method9076();
+	boolean method9298(ProjectionCoord var1) {
+		return this.x == var1.x && this.z == var1.z && this.y == var1.y;
+	}
+
+	@ObfuscatedName("ay")
+	@ObfuscatedSignature(
+		descriptor = "(S)V",
+		garbageValue = "3141"
+	)
+	public final void method9299() {
+		float var1 = 1.0F / this.method9306();
 		this.x *= var1;
 		this.z *= var1;
 		this.y *= var1;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(Lre;I)V",
-		garbageValue = "-2041581085"
+		descriptor = "(Lrx;B)V",
+		garbageValue = "-3"
 	)
-	final void method9064(ProjectionCoord var1) {
+	public final void method9294(ProjectionCoord var1) {
 		this.x += var1.x;
 		this.z += var1.z;
 		this.y += var1.y;
 	}
 
-	@ObfuscatedName("av")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
 		descriptor = "(FFFI)V",
-		garbageValue = "-712492383"
+		garbageValue = "1519953141"
 	)
-	public final void method9072(float var1, float var2, float var3) {
+	public final void method9301(float var1, float var2, float var3) {
 		this.x += var1;
 		this.z += var2;
 		this.y += var3;
 	}
 
-	@ObfuscatedName("as")
+	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(Lre;I)V",
-		garbageValue = "1197334661"
+		descriptor = "(Lrx;I)V",
+		garbageValue = "1902119957"
 	)
-	public final void method9073(ProjectionCoord var1) {
+	public final void method9293(ProjectionCoord var1) {
 		this.x -= var1.x;
 		this.z -= var1.z;
 		this.y -= var1.y;
 	}
 
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ai")
 	@ObfuscatedSignature(
-		descriptor = "(Lre;I)F",
-		garbageValue = "478068504"
+		descriptor = "(Lrx;I)F",
+		garbageValue = "1524499395"
 	)
-	public final float method9074(ProjectionCoord var1) {
-		return this.y * var1.y + this.x * var1.x + this.z * var1.z;
+	public final float method9303(ProjectionCoord var1) {
+		return this.z * var1.z + this.x * var1.x + var1.y * this.y;
 	}
 
-	@ObfuscatedName("az")
+	@ObfuscatedName("as")
 	@ObfuscatedSignature(
-		descriptor = "(Lre;S)V",
-		garbageValue = "-688"
+		descriptor = "(Lrx;I)V",
+		garbageValue = "-296521489"
 	)
-	final void method9075(ProjectionCoord var1) {
-		this.method9066(this.z * var1.y - this.y * var1.z, this.y * var1.x - var1.y * this.x, var1.z * this.x - var1.x * this.z);
+	final void method9304(ProjectionCoord var1) {
+		this.method9296(var1.y * this.z - this.y * var1.z, var1.x * this.y - this.x * var1.y, var1.z * this.x - var1.x * this.z);
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ac")
 	@ObfuscatedSignature(
-		descriptor = "(I)F",
-		garbageValue = "1667350538"
+		descriptor = "(B)F",
+		garbageValue = "-8"
 	)
-	public final float method9076() {
-		return (float)Math.sqrt((double)(this.z * this.z + this.x * this.x + this.y * this.y));
+	public final float method9306() {
+		return (float)Math.sqrt((double)(this.y * this.y + this.z * this.z + this.x * this.x));
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(FB)V",
-		garbageValue = "-97"
+		garbageValue = "-65"
 	)
-	public final void method9096(float var1) {
+	final void method9334(float var1) {
 		this.x *= var1;
 		this.z *= var1;
 		this.y *= var1;
 	}
 
-	@ObfuscatedName("ao")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(Lrt;I)V",
-		garbageValue = "988704457"
+		descriptor = "(Lra;I)V",
+		garbageValue = "1314896004"
 	)
-	public final void method9110(class451 var1) {
-		float var3 = this.x;
-		float var4 = this.z;
-		float var5 = this.y;
-		class451 var2;
-		synchronized(class451.field5228) {
-			if (class451.field5224 == 0) {
-				var2 = new class451(var3, var4, var5, 0.0F);
+	public final void method9307(class461 var1) {
+		class461 var2 = class139.method3857(this.x, this.z, this.y, 0.0F);
+		class461 var3 = AbstractByteArrayCopier.method7629(var1);
+		class461 var5;
+		synchronized(class461.field5251) {
+			if (class461.field5245 == 0) {
+				var5 = new class461(var3);
 			} else {
-				class451.field5228[--class451.field5224].method9126(var3, var4, var5, 0.0F);
-				var2 = class451.field5228[class451.field5224];
+				class461.field5251[--class461.field5245].method9364(var3);
+				var5 = class461.field5251[class461.field5245];
 			}
 		}
 
-		class451 var7 = SpriteBufferProperties.method54(var1);
-		class451 var9;
-		synchronized(class451.field5228) {
-			if (class451.field5224 == 0) {
-				var9 = new class451(var7);
-			} else {
-				class451.field5228[--class451.field5224].method9145(var7);
-				var9 = class451.field5228[class451.field5224];
-			}
-		}
-
-		var9.method9129(var2);
-		var9.method9129(var1);
-		this.method9066(var9.field5222, var9.field5226, var9.field5227);
-		var2.method9120();
-		var7.method9120();
-		var9.method9120();
+		var5.method9373(var2);
+		var5.method9373(var1);
+		this.method9296(var5.field5254, var5.field5249, var5.field5250);
+		var2.method9362();
+		var3.method9362();
+		var5.method9362();
 	}
 
 	public String toString() {
 		return this.x + ", " + this.z + ", " + this.y;
+	}
+
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "(Lut;ILjava/lang/Object;I)V",
+		garbageValue = "1789263116"
+	)
+	public static void method9358(DynamicArray var0, int var1, Object var2) {
+		class461.method9375(var0, (class586)null, true);
+		if (var1 >= 0 && var1 <= var0.size * 1583568339) {
+			var0.method10656(var0.size * 1583568339 + 1);
+			if (var1 < var0.size * 1583568339) {
+				HttpResponse.method296(var0, var1, var0, var1 + 1, var0.size * 1583568339 - var1);
+			}
+
+			var0.method10663(var1, var2);
+			var0.size += -1205286309;
+		} else {
+			throw new RuntimeException();
+		}
+	}
+
+	@ObfuscatedName("aa")
+	@ObfuscatedSignature(
+		descriptor = "(Lut;Lwh;I)V",
+		garbageValue = "283306842"
+	)
+	static void method9359(DynamicArray var0, class586 var1) {
+		class461.method9375(var0, var1, false);
 	}
 }

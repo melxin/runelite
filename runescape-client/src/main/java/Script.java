@@ -1,56 +1,63 @@
+import java.util.concurrent.ScheduledExecutorService;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("cj")
+@ObfuscatedName("cu")
 @Implements("Script")
 public class Script extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("Script_cached")
 	static EvictingDualNodeHashTable Script_cached;
+	@ObfuscatedName("ac")
+	@Export("soundSystemExecutor")
+	static ScheduledExecutorService soundSystemExecutor;
+	@ObfuscatedName("oa")
+	@Export("regions")
+	static int[] regions;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "[Lqw;"
+		descriptor = "[Lql;"
 	)
 	@Export("switches")
 	IterableNodeHashTable[] switches;
 	@ObfuscatedName("ag")
-	String field769;
-	@ObfuscatedName("aj")
+	String field754;
+	@ObfuscatedName("an")
 	@Export("opcodes")
 	int[] opcodes;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@Export("intOperands")
 	int[] intOperands;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@Export("stringOperands")
 	String[] stringOperands;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = -163957189
+		intValue = -58237571
 	)
 	@Export("localIntCount")
 	int localIntCount;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 675819761
+		intValue = -14880459
 	)
 	@Export("localStringCount")
 	int localStringCount;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = 283905223
+		intValue = -968069229
 	)
 	@Export("intArgumentCount")
 	int intArgumentCount;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = 2050695233
+		intValue = -1480905639
 	)
 	@Export("stringArgumentCount")
 	int stringArgumentCount;
@@ -62,13 +69,22 @@ public class Script extends DualNode {
 	Script() {
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lqw;",
-		garbageValue = "-879548067"
+		descriptor = "(II)[Lql;",
+		garbageValue = "-1702266709"
 	)
 	@Export("newIterableNodeHashTable")
 	IterableNodeHashTable[] newIterableNodeHashTable(int var1) {
 		return new IterableNodeHashTable[var1];
+	}
+
+	@ObfuscatedName("pn")
+	@ObfuscatedSignature(
+		descriptor = "(S)Lqy;",
+		garbageValue = "-2262"
+	)
+	static JagNetThread method2043() {
+		return VarbitComposition.field2279;
 	}
 }

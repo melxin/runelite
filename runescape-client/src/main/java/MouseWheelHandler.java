@@ -7,12 +7,12 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("aw")
+@ObfuscatedName("af")
 @Implements("MouseWheelHandler")
 public final class MouseWheelHandler implements MouseWheel, MouseWheelListener {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -567992075
+		intValue = -106898749
 	)
 	@Export("rotation")
 	int rotation;
@@ -21,10 +21,10 @@ public final class MouseWheelHandler implements MouseWheel, MouseWheelListener {
 		this.rotation = 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/awt/Component;I)V",
-		garbageValue = "1969817255"
+		descriptor = "(Ljava/awt/Component;B)V",
+		garbageValue = "-119"
 	)
 	@Export("addTo")
 	void addTo(Component var1) {
@@ -34,16 +34,16 @@ public final class MouseWheelHandler implements MouseWheel, MouseWheelListener {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(Ljava/awt/Component;I)V",
-		garbageValue = "-1055480717"
+		garbageValue = "416625921"
 	)
-	void method309(Component var1) {
+	void method319(Component var1) {
 		var1.removeMouseWheelListener(this);
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-2053456169"
+		descriptor = "(B)I",
+		garbageValue = "47"
 	)
 	@Export("useRotation")
 	public synchronized int useRotation() {

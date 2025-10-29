@@ -4,60 +4,54 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("iu")
+@ObfuscatedName("je")
 @Implements("AABB")
 public class AABB {
-	@ObfuscatedName("cj")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 1836746501
-	)
-	@Export("otpMedium")
-	static int otpMedium;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = 1532191657
+		intValue = -1506356863
 	)
 	@Export("orientation")
 	final int orientation;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1499831733
+		intValue = -1721312265
 	)
 	@Export("xMid")
 	int xMid;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -1697834177
+		intValue = 1267849313
 	)
 	@Export("yMid")
 	int yMid;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = 1450421863
+		intValue = 266507379
 	)
 	@Export("zMid")
 	int zMid;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -331204281
+		intValue = 984504841
 	)
 	@Export("xMidOffset")
 	int xMidOffset;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 81692539
+		intValue = -157622439
 	)
 	@Export("yMidOffset")
 	int yMidOffset;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 257748505
+		intValue = 528344083
 	)
 	@Export("zMidOffset")
 	int zMidOffset;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "Liu;"
+		descriptor = "Lje;"
 	)
 	@Export("aabb")
 	AABB aabb;
@@ -70,42 +64,5 @@ public class AABB {
 		this.xMidOffset = var5;
 		this.yMidOffset = var6;
 		this.zMidOffset = var7;
-	}
-
-	@ObfuscatedName("be")
-	@ObfuscatedSignature(
-		descriptor = "(I)[Ljava/lang/Object;",
-		garbageValue = "492600461"
-	)
-	static Object[] method5432() {
-		String var0 = (String)Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
-		Object[] var1 = new Object[var0.length()];
-
-		for (int var2 = var0.length() - 1; var2 >= 0; --var2) {
-			if (var0.charAt(var2) == 'i') {
-				var1[var2] = Interpreter.Interpreter_intStack[--UrlRequest.Interpreter_intStackSize];
-			} else {
-				var1[var2] = Interpreter.Interpreter_objectStack[--Message.Interpreter_objectStackSize];
-			}
-		}
-
-		return var1;
-	}
-
-	@ObfuscatedName("ok")
-	@ObfuscatedSignature(
-		descriptor = "(Lok;IIII)V",
-		garbageValue = "1864335336"
-	)
-	static final void method5431(Widget var0, int var1, int var2, int var3) {
-		SpriteMask var4 = var0.method8091(class35.widgetDefinition, false);
-		if (var4 != null) {
-			if (Client.minimapState < 3) {
-				ItemComposition.compass.drawRotatedMaskedCenteredAround(var1, var2, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var1, var2, var4.xStarts, var4.xWidths);
-			} else {
-				Rasterizer2D.Rasterizer2D_fillMaskedRectangle(var1, var2, 0, var4.xStarts, var4.xWidths);
-			}
-
-		}
 	}
 }

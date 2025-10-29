@@ -3,67 +3,62 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.Reflection;
 
-@ObfuscatedName("ji")
+@ObfuscatedName("ku")
 @Implements("BoundaryObject")
 public final class BoundaryObject {
-	@ObfuscatedName("ko")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	@Export("archive8")
-	static Archive archive8;
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "Liy;"
+		descriptor = "Ljz;"
 	)
 	@Export("renderable1")
 	public Renderable renderable1;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Liy;"
+		descriptor = "Ljz;"
 	)
 	@Export("renderable2")
 	public Renderable renderable2;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		longValue = 3402815881984803951L
+		longValue = -4972732868916429537L
 	)
 	@Export("tag")
 	public long tag;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1650497165
+		intValue = -1912869971
 	)
 	@Export("z")
 	int z;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 495595975
+		intValue = -1937046859
 	)
 	@Export("x")
 	int x;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -1023439509
+		intValue = 546730723
 	)
 	@Export("y")
 	int y;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 1746131451
+		intValue = -666272519
 	)
 	@Export("orientationA")
 	int orientationA;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@ObfuscatedGetter(
-		intValue = 1953156409
+		intValue = -211200105
 	)
 	@Export("orientationB")
 	int orientationB;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedGetter(
-		intValue = -432336851
+		intValue = -1044451971
 	)
 	@Export("flags")
 	int flags;
@@ -73,14 +68,31 @@ public final class BoundaryObject {
 		this.flags = 0;
 	}
 
-	@ObfuscatedName("ag")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "-2084962977"
+		descriptor = "(Ljava/lang/String;I)Ljava/lang/Class;",
+		garbageValue = "1401900348"
 	)
-	public static int method5835(int var0, int var1, int var2) {
-		int var3 = class172.method4149(var2 - var1 + 1);
-		var3 <<= var1;
-		return var0 & ~var3;
+	@Export("loadClassFromDescriptor")
+	static Class loadClassFromDescriptor(String var0) throws ClassNotFoundException {
+		if (var0.equals("B")) {
+			return Byte.TYPE;
+		} else if (var0.equals("I")) {
+			return Integer.TYPE;
+		} else if (var0.equals("S")) {
+			return Short.TYPE;
+		} else if (var0.equals("J")) {
+			return Long.TYPE;
+		} else if (var0.equals("Z")) {
+			return Boolean.TYPE;
+		} else if (var0.equals("F")) {
+			return Float.TYPE;
+		} else if (var0.equals("D")) {
+			return Double.TYPE;
+		} else if (var0.equals("C")) {
+			return Character.TYPE;
+		} else {
+			return var0.equals("void") ? Void.TYPE : Reflection.findClass(var0);
+		}
 	}
 }

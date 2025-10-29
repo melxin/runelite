@@ -4,42 +4,42 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("rl")
+@ObfuscatedName("sj")
 @Implements("AnimationSequence")
 public class AnimationSequence {
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 677279171
+		intValue = 1870316967
 	)
 	@Export("id")
 	int id;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lit;"
+		descriptor = "Liw;"
 	)
 	@Export("sequenceDefinition")
 	SequenceDefinition sequenceDefinition;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1104781551
+		intValue = -1148754599
 	)
 	@Export("frameCycle")
 	int frameCycle;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 2122494283
+		intValue = 1756992279
 	)
 	@Export("frame")
 	int frame;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = 413280109
+		intValue = 2012240059
 	)
 	@Export("frameCount")
 	int frameCount;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 1629924213
+		intValue = -862834637
 	)
 	@Export("loopCount")
 	int loopCount;
@@ -52,10 +52,10 @@ public class AnimationSequence {
 		this.loopCount = 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lrl;I)V",
-		garbageValue = "1758418506"
+		descriptor = "(Lsj;I)V",
+		garbageValue = "2052308201"
 	)
 	@Export("setSequence")
 	public void setSequence(AnimationSequence var1) {
@@ -70,7 +70,7 @@ public class AnimationSequence {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-825469743"
+		garbageValue = "1429364861"
 	)
 	@Export("reset")
 	public void reset() {
@@ -80,14 +80,14 @@ public class AnimationSequence {
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "(II)V",
-		garbageValue = "171550454"
+		garbageValue = "-1053133018"
 	)
 	@Export("setSequence")
 	public void setSequence(int var1) {
 		if (var1 >= 0) {
 			if (this.id != var1) {
 				this.id = var1;
-				this.sequenceDefinition = class171.SequenceDefinition_get(var1);
+				this.sequenceDefinition = ClientPacket.SequenceDefinition_get(var1);
 				this.loopCount = 0;
 				if (this.frame == -1) {
 					this.frame = 0;
@@ -101,148 +101,148 @@ public class AnimationSequence {
 
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-893318477"
+		garbageValue = "-831296794"
 	)
 	@Export("isActive")
 	public boolean isActive() {
 		return this.sequenceDefinition != null;
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lit;",
-		garbageValue = "-90648260"
+		descriptor = "(I)Liw;",
+		garbageValue = "-1406073841"
 	)
 	@Export("getSequenceDefinition")
 	public SequenceDefinition getSequenceDefinition() {
 		return this.sequenceDefinition;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-2"
+		descriptor = "(I)I",
+		garbageValue = "101022773"
 	)
 	@Export("getId")
 	public int getId() {
 		return this.id;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-53645754"
+		garbageValue = "-609025707"
 	)
 	@Export("getFrame")
 	public int getFrame() {
 		return this.frame;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1217755275"
+		garbageValue = "859206463"
 	)
 	@Export("getFrameCycle")
 	public int getFrameCycle() {
 		return this.frameCycle;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
-		descriptor = "(S)I",
-		garbageValue = "26651"
+		descriptor = "(I)I",
+		garbageValue = "45053939"
 	)
-	int method9629() {
+	int method9871() {
 		return this.frameCount;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "622597995"
+		descriptor = "(B)V",
+		garbageValue = "10"
 	)
-	public void method9630() {
+	public void method9872() {
 		this.frame = 0;
 		this.frameCycle = 0;
 		this.frameCount = 0;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "676952571"
+		descriptor = "(B)V",
+		garbageValue = "111"
 	)
-	public void method9678() {
+	public void method9890() {
 		this.frameCount = 0;
-	}
-
-	@ObfuscatedName("ad")
-	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "114"
-	)
-	public int method9666() {
-		return this.loopCount;
-	}
-
-	@ObfuscatedName("av")
-	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "86"
-	)
-	void method9633(int var1) {
-		this.loopCount = var1;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-1839407032"
-	)
-	public boolean method9634(int var1) {
-		return this.isActive() && this.loopCount > 0 && this.loopCount < var1;
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "0"
-	)
-	public boolean method9635() {
-		return this.sequenceDefinition == null || this.sequenceDefinition.method4856();
 	}
 
 	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)V",
-		garbageValue = "-429269582"
+		descriptor = "(I)I",
+		garbageValue = "1958668357"
 	)
-	void method9636(int var1, int var2, int var3) {
+	public int method9874() {
+		return this.loopCount;
+	}
+
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "-174161386"
+	)
+	void method9902(int var1) {
+		this.loopCount = var1;
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "-1002405506"
+	)
+	public boolean method9876(int var1) {
+		return this.isActive() && this.loopCount > 0 && this.loopCount < var1;
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(I)Z",
+		garbageValue = "803258749"
+	)
+	public boolean method9905() {
+		return this.sequenceDefinition == null || this.sequenceDefinition.method4925();
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(IIIB)V",
+		garbageValue = "53"
+	)
+	void method9883(int var1, int var2, int var3) {
 		this.frame = var1;
 		this.frameCycle = var2;
 		this.frameCount = var3;
 	}
 
-	@ObfuscatedName("au")
+	@ObfuscatedName("ab")
 	@ObfuscatedSignature(
 		descriptor = "(IIB)V",
-		garbageValue = "-38"
+		garbageValue = "125"
 	)
-	void method9637(int var1, int var2) {
+	void method9879(int var1, int var2) {
 		this.frame = var1;
 		this.frameCount = var2;
 	}
 
-	@ObfuscatedName("ak")
+	@ObfuscatedName("ax")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1961194554"
+		descriptor = "(S)V",
+		garbageValue = "-15167"
 	)
-	public void method9638() {
+	public void method9880() {
 		if (this.sequenceDefinition != null) {
 			if (!this.sequenceDefinition.isCachedModelIdSet()) {
 				this.frame = (int)(Math.random() * (double)this.sequenceDefinition.frameIds.length);
@@ -252,34 +252,5 @@ public class AnimationSequence {
 			}
 		}
 
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(Lpe;Ljava/lang/String;Ljava/lang/String;I)[Lxl;",
-		garbageValue = "-1520553667"
-	)
-	public static SpritePixels[] method9685(AbstractArchive var0, String var1, String var2) {
-		if (!var0.isValidFileName(var1, var2)) {
-			return null;
-		} else {
-			int var3 = var0.getGroupId(var1);
-			int var4 = var0.getFileId(var3, var2);
-			return HttpJsonRequestBody.method10636(var0, var3, var4);
-		}
-	}
-
-	@ObfuscatedName("cb")
-	@ObfuscatedSignature(
-		descriptor = "(ILny;ZB)V",
-		garbageValue = "85"
-	)
-	static void method9649(int var0, Coord var1, boolean var2) {
-		WorldMapArea var3 = ItemContainer.getWorldMap().getMapArea(var0);
-		int var4 = class159.localPlayer.plane;
-		int var5 = (class159.localPlayer.x >> 7) + class547.topLevelWorldView.baseX;
-		int var6 = (class159.localPlayer.y >> 7) + class547.topLevelWorldView.baseY;
-		Coord var7 = new Coord(var4, var5, var6);
-		ItemContainer.getWorldMap().method10800(var3, var7, var1, var2);
 	}
 }

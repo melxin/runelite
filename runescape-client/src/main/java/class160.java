@@ -1,75 +1,57 @@
-import net.runelite.mapping.ObfuscatedGetter;
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ge")
-public class class160 extends class150 {
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -2086058735
+@ObfuscatedName("gd")
+public class class160 extends class151 {
+	@ObfuscatedName("kv")
+	@ObfuscatedSignature(
+		descriptor = "Lqn;"
 	)
-	int field1836;
-	@ObfuscatedName("at")
-	String field1837;
+	static Archive field1815;
+	@ObfuscatedName("of")
+	@Export("regionLandArchives")
+	static byte[][] regionLandArchives;
+	@ObfuscatedName("av")
+	String field1811;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lfh;"
+		descriptor = "Lfc;"
 	)
-	final class153 this$0;
+	final class154 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lfh;)V"
+		descriptor = "(Lfc;)V"
 	)
-	class160(class153 var1) {
+	class160(class154 var1) {
 		this.this$0 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "1804820754"
+		descriptor = "(Lxa;B)V",
+		garbageValue = "-11"
 	)
-	void vmethod4162(Buffer var1) {
-		this.field1836 = var1.readInt();
-		this.field1837 = var1.readStringCp1252NullTerminated();
+	void vmethod4235(Buffer var1) {
+		this.field1811 = var1.readStringCp1252NullTerminated();
+		var1.readInt();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lgh;I)V",
-		garbageValue = "1850606911"
+		descriptor = "(Lgs;B)V",
+		garbageValue = "-98"
 	)
-	void vmethod4163(ClanSettings var1) {
-		var1.method4022(this.field1836, this.field1837);
+	void vmethod4241(ClanSettings var1) {
+		var1.name = this.field1811;
 	}
 
-	@ObfuscatedName("na")
+	@ObfuscatedName("bc")
 	@ObfuscatedSignature(
-		descriptor = "(Ldm;IIILnt;B)V",
-		garbageValue = "0"
+		descriptor = "(II)I",
+		garbageValue = "579418713"
 	)
-	static void method3974(WorldView var0, int var1, int var2, int var3, SpriteMask var4) {
-		for (int var5 = 0; var5 < var0.sizeX; ++var5) {
-			for (int var6 = 0; var6 < var0.sizeY; ++var6) {
-				NodeDeque var7 = var0.groundItems[var0.plane][var5][var6];
-				if (var7 != null) {
-					int var9;
-					if (var0.method2736()) {
-						int var13 = var5 * 4 + 2 - Client.field484 / 32;
-						var9 = var6 * 4 + 2 - Client.field377 / 32;
-						class445.drawSpriteOnMinimap(var1, var2, var13, var9, var3, class199.field2176[0], var4);
-					} else {
-						ProjectionCoord var8 = Varcs.method3022(var0, Coord.method7440(var5), Coord.method7440(var6));
-						var9 = (int)var8.x;
-						int var10 = (int)var8.y;
-						var8.release();
-						int var11 = var9 / 32 - Client.field484 / 32;
-						int var12 = var10 / 32 - Client.field377 / 32;
-						class445.drawSpriteOnMinimap(var1, var2, var11, var12, var3, class199.field2176[0], var4);
-					}
-				}
-			}
-		}
-
+	static int method4034(int var0) {
+		return (int)((Math.log((double)var0) / Interpreter.field609 - 7.0D) * 256.0D);
 	}
 }

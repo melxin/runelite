@@ -1,66 +1,63 @@
-import java.awt.datatransfer.Clipboard;
+import java.io.File;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ey")
+@ObfuscatedName("eq")
 public class class107 extends Node {
-	@ObfuscatedName("ah")
-	@Export("javaVersion")
-	public static String javaVersion;
-	@ObfuscatedName("bh")
-	@ObfuscatedGetter(
-		intValue = -1964791523
-	)
-	static int field1425;
-	@ObfuscatedName("ab")
+	@ObfuscatedName("dz")
 	@ObfuscatedSignature(
-		descriptor = "Ldj;"
+		descriptor = "[Lxm;"
 	)
-	class101 field1426;
+	@Export("worldSelectFlagSprites")
+	static IndexedSprite[] worldSelectFlagSprites;
+	@ObfuscatedName("av")
+	@ObfuscatedSignature(
+		descriptor = "Ldo;"
+	)
+	class101 field1398;
 
 	public class107() {
-		this.field1426 = null;
+		this.field1398 = null;
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Leh;)V"
+		descriptor = "(Ler;)V"
 	)
 	class107(VorbisSample var1) {
 		if (var1 != null) {
-			this.field1426 = new class101(var1, (RawSound)null);
+			this.field1398 = new class101(var1, (RawSound)null);
 		}
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Ldi;)V"
+		descriptor = "(Ldq;)V"
 	)
 	public class107(RawSound var1) {
-		this.field1426 = new class101((VorbisSample)null, var1);
+		this.field1398 = new class101((VorbisSample)null, var1);
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)Z",
-		garbageValue = "-1994394270"
+		garbageValue = "-2011319333"
 	)
-	public boolean method3422() {
-		return this.field1426 == null;
+	public boolean method3479() {
+		return this.field1398 == null;
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldi;",
-		garbageValue = "774403992"
+		descriptor = "(I)Ldq;",
+		garbageValue = "-2146256813"
 	)
-	public RawSound method3423() {
-		if (this.field1426 != null && this.field1426.field1386.tryLock()) {
+	public RawSound method3478() {
+		if (this.field1398 != null && this.field1398.field1361.tryLock()) {
 			RawSound var1;
 			try {
-				var1 = this.method3425();
+				var1 = this.method3489();
 			} finally {
-				this.field1426.field1386.unlock();
+				this.field1398.field1361.unlock();
 			}
 
 			return var1;
@@ -71,18 +68,18 @@ public class class107 extends Node {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldi;",
-		garbageValue = "20232852"
+		descriptor = "(S)Ldq;",
+		garbageValue = "1621"
 	)
-	public RawSound method3424() {
-		if (this.field1426 != null) {
-			this.field1426.field1386.lock();
+	public RawSound method3484() {
+		if (this.field1398 != null) {
+			this.field1398.field1361.lock();
 
 			RawSound var1;
 			try {
-				var1 = this.method3425();
+				var1 = this.method3489();
 			} finally {
-				this.field1426.field1386.unlock();
+				this.field1398.field1361.unlock();
 			}
 
 			return var1;
@@ -91,124 +88,79 @@ public class class107 extends Node {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ldi;",
-		garbageValue = "1446277706"
+		descriptor = "(I)Ldq;",
+		garbageValue = "-226875568"
 	)
-	RawSound method3425() {
-		if (this.field1426.field1385 == null) {
-			this.field1426.field1385 = this.field1426.field1384.toRawSound((int[])null);
-			this.field1426.field1384 = null;
+	RawSound method3489() {
+		if (this.field1398.field1360 == null) {
+			this.field1398.field1360 = this.field1398.field1359.toRawSound((int[])null);
+			this.field1398.field1359 = null;
 		}
 
-		return this.field1426.field1385;
+		return this.field1398.field1360;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;II)I",
-		garbageValue = "1197139194"
+		descriptor = "(Ljava/io/File;I)V",
+		garbageValue = "989955989"
 	)
-	public static int method3434(CharSequence var0, int var1) {
-		return AsyncRestClient.method178(var0, var1, true);
-	}
-
-	@ObfuscatedName("ah")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "92635524"
-	)
-	public static boolean method3441(int var0) {
-		return var0 == WorldMapDecorationType.field4375.id;
-	}
-
-	@ObfuscatedName("af")
-	@ObfuscatedSignature(
-		descriptor = "(FFFFLfu;I)V",
-		garbageValue = "1943505267"
-	)
-	static void method3440(float var0, float var1, float var2, float var3, class137 var4) {
-		float var5 = var1 - var0;
-		float var6 = var2 - var1;
-		float var7 = var3 - var2;
-		float var8 = var6 - var5;
-		var4.field1666 = var7 - var6 - var8;
-		var4.field1665 = var8 + var8 + var8;
-		var4.field1659 = var5 + var5 + var5;
-		var4.field1663 = var0;
-	}
-
-	@ObfuscatedName("ae")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-984031098"
-	)
-	static void method3438() {
-		ItemContainer.itemContainers = new NodeHashTable(32);
-	}
-
-	@ObfuscatedName("kg")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIIIIIILcs;I)V",
-		garbageValue = "-771064881"
-	)
-	static void method3442(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10, int var11, int var12, Player var13) {
-		ObjectComposition var14 = TileItem.getObjectDefinition(var6);
-		int var15;
-		int var16;
-		if (var4 != 1 && var4 != 3) {
-			var15 = var14.sizeX;
-			var16 = var14.sizeY;
+	static void method3490(File var0) {
+		FileSystem.FileSystem_cacheDir = var0;
+		if (!FileSystem.FileSystem_cacheDir.exists()) {
+			throw new RuntimeException("");
 		} else {
-			var15 = var14.sizeY;
-			var16 = var14.sizeX;
+			FileSystem.FileSystem_hasPermissions = true;
 		}
-
-		int var17 = (var15 >> 1) + var1;
-		int var18 = (var15 + 1 >> 1) + var1;
-		int var19 = (var16 >> 1) + var2;
-		int var20 = var2 + (var16 + 1 >> 1);
-		int[][] var21 = class32.worldView.tileHeights[var0];
-		int var22 = var21[var18][var20] + var21[var17][var20] + var21[var18][var19] + var21[var17][var19] >> 2;
-		int var23 = (var1 << 7) + (var15 << 6);
-		int var24 = (var2 << 7) + (var16 << 6);
-		Model var25 = var14.getModel(var3, var4, var21, var23, var22, var24);
-		if (var25 != null) {
-			WorldEntity.method10263(class32.worldView, var0, var1, var2, var5, -1, 0, 0, 31, (String[])null, var7 + 1, var8 + 1);
-			var13.animationCycleStart = var7 + Client.cycle;
-			var13.animationCycleEnd = var8 + Client.cycle;
-			var13.model0 = var25;
-			var13.field923 = var1 * 128 + var15 * 64;
-			var13.field925 = var2 * 128 + var16 * 64;
-			var13.tileHeight2 = var22;
-			int var26;
-			if (var9 > var11) {
-				var26 = var9;
-				var9 = var11;
-				var11 = var26;
-			}
-
-			if (var10 > var12) {
-				var26 = var10;
-				var10 = var12;
-				var12 = var26;
-			}
-
-			var13.minX = var9 + var1;
-			var13.maxX = var11 + var1;
-			var13.minY = var10 + var2;
-			var13.maxY = var2 + var12;
-		}
-
 	}
 
-	@ObfuscatedName("pg")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/awt/datatransfer/Clipboard;",
-		garbageValue = "-2035776463"
+		descriptor = "(Lbn;Lbn;IZI)I",
+		garbageValue = "991765083"
 	)
-	public static Clipboard method3433() {
-		return class32.client.method505();
+	@Export("compareWorlds")
+	static int compareWorlds(World var0, World var1, int var2, boolean var3) {
+		if (var2 == 1) {
+			int var4 = var0.population;
+			int var5 = var1.population;
+			if (!var3) {
+				if (var4 == -1) {
+					var4 = 2001;
+				}
+
+				if (var5 == -1) {
+					var5 = 2001;
+				}
+			}
+
+			return var4 - var5;
+		} else if (var2 == 2) {
+			return var0.location - var1.location;
+		} else if (var2 == 3) {
+			if (var0.activity.equals("-")) {
+				if (var1.activity.equals("-")) {
+					return 0;
+				} else {
+					return var3 ? -1 : 1;
+				}
+			} else if (var1.activity.equals("-")) {
+				return var3 ? 1 : -1;
+			} else {
+				return var0.activity.compareTo(var1.activity);
+			}
+		} else if (var2 == 4) {
+			return var0.method1562() ? (var1.method1562() ? 0 : 1) : (var1.method1562() ? -1 : 0);
+		} else if (var2 == 5) {
+			return var0.method1535() ? (var1.method1535() ? 0 : 1) : (var1.method1535() ? -1 : 0);
+		} else if (var2 == 6) {
+			return var0.isPvp() ? (var1.isPvp() ? 0 : 1) : (var1.isPvp() ? -1 : 0);
+		} else if (var2 == 7) {
+			return var0.isMembersOnly() ? (var1.isMembersOnly() ? 0 : 1) : (var1.isMembersOnly() ? -1 : 0);
+		} else {
+			return var0.id - var1.id;
+		}
 	}
 }

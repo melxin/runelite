@@ -1,15 +1,16 @@
+import java.util.Arrays;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lp")
+@ObfuscatedName("mr")
 @Implements("WorldMapScaleHandler")
 public class WorldMapScaleHandler {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = -205085461
+		intValue = 1993728879
 	)
 	@Export("pixelsPerTile")
 	int pixelsPerTile;
@@ -21,25 +22,25 @@ public class WorldMapScaleHandler {
 		this.pixelsPerTile = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIB)V",
-		garbageValue = "49"
+		descriptor = "(IIIIIIIII)V",
+		garbageValue = "1970613875"
 	)
-	void method6965(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+	void method7129(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		if (var7 != 0 && this.pixelsPerTile != 0 && this.tileTemplates != null) {
-			var8 = this.method6958(var8, var7);
-			var7 = this.method6933(var7);
+			var8 = this.method7130(var8, var7);
+			var7 = this.method7163(var7);
 			Rasterizer2D.Rasterizer2D_drawGradientPixels(var1, var2, var5, var6, var3, var4, this.tileTemplates[var7 - 1][var8], this.pixelsPerTile);
 		}
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "-17"
+		descriptor = "(III)I",
+		garbageValue = "-2137378658"
 	)
-	int method6958(int var1, int var2) {
+	int method7130(int var1, int var2) {
 		if (var2 == 9) {
 			var1 = var1 + 1 & 3;
 		}
@@ -57,10 +58,10 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1966631283"
+		descriptor = "(IB)I",
+		garbageValue = "-70"
 	)
-	int method6933(int var1) {
+	int method7163(int var1) {
 		if (var1 != 9 && var1 != 10) {
 			return var1 == 11 ? 8 : var1;
 		} else {
@@ -68,10 +69,10 @@ public class WorldMapScaleHandler {
 		}
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "74"
+		descriptor = "(I)V",
+		garbageValue = "1504875667"
 	)
 	@Export("init")
 	void init() {
@@ -88,10 +89,10 @@ public class WorldMapScaleHandler {
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-414937417"
+		descriptor = "(B)V",
+		garbageValue = "84"
 	)
 	@Export("init0")
 	void init0() {
@@ -155,10 +156,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[0][3] = var1;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-105"
+		descriptor = "(I)V",
+		garbageValue = "94118847"
 	)
 	@Export("init1")
 	void init1() {
@@ -226,10 +227,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[1][3] = var1;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "2115677669"
+		descriptor = "(B)V",
+		garbageValue = "-114"
 	)
 	@Export("init2")
 	void init2() {
@@ -293,10 +294,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[2][3] = var1;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "95"
+		descriptor = "(I)V",
+		garbageValue = "-1655335364"
 	)
 	@Export("init3")
 	void init3() {
@@ -360,10 +361,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[3][3] = var1;
 	}
 
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "1932179559"
+		garbageValue = "-1522121513"
 	)
 	@Export("init4")
 	void init4() {
@@ -427,10 +428,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[4][3] = var1;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "491317626"
+		garbageValue = "-1826504378"
 	)
 	@Export("init5")
 	void init5() {
@@ -496,10 +497,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[5][3] = var1;
 	}
 
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
 		descriptor = "(I)V",
-		garbageValue = "-1137388040"
+		garbageValue = "-261967643"
 	)
 	@Export("init6")
 	void init6() {
@@ -565,10 +566,10 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[6][3] = var1;
 	}
 
-	@ObfuscatedName("ad")
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1095188513"
+		descriptor = "(B)V",
+		garbageValue = "101"
 	)
 	@Export("init7")
 	void init7() {
@@ -634,113 +635,128 @@ public class WorldMapScaleHandler {
 		this.tileTemplates[7][3] = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Lqd;II)Lmr;",
-		garbageValue = "-1112119785"
+		descriptor = "(B)V",
+		garbageValue = "74"
 	)
-	public static PacketBufferNode method6972(int var0, String var1, Language var2, int var3) {
-		PacketBufferNode var4 = HorizontalAlignment.getPacketBufferNode(ClientPacket.MESSAGE_PUBLIC, Client.packetWriter.isaacCipher);
-		var4.packetBuffer.writeByte(0);
-		int var5 = var4.packetBuffer.offset;
-		var4.packetBuffer.writeByte(var0);
-		String var6 = var1.toLowerCase();
-		int var7 = 0;
-		byte[] var8 = null;
-		if (var6.startsWith("yellow:")) {
-			var7 = 0;
-			var1 = var1.substring("yellow:".length());
-		} else if (var6.startsWith("red:")) {
-			var7 = 1;
-			var1 = var1.substring("red:".length());
-		} else if (var6.startsWith("green:")) {
-			var7 = 2;
-			var1 = var1.substring("green:".length());
-		} else if (var6.startsWith("cyan:")) {
-			var7 = 3;
-			var1 = var1.substring("cyan:".length());
-		} else if (var6.startsWith("purple:")) {
-			var7 = 4;
-			var1 = var1.substring("purple:".length());
-		} else if (var6.startsWith("white:")) {
-			var7 = 5;
-			var1 = var1.substring("white:".length());
-		} else if (var6.startsWith("flash1:")) {
-			var7 = 6;
-			var1 = var1.substring("flash1:".length());
-		} else if (var6.startsWith("flash2:")) {
-			var7 = 7;
-			var1 = var1.substring("flash2:".length());
-		} else if (var6.startsWith("flash3:")) {
-			var7 = 8;
-			var1 = var1.substring("flash3:".length());
-		} else if (var6.startsWith("glow1:")) {
-			var7 = 9;
-			var1 = var1.substring("glow1:".length());
-		} else if (var6.startsWith("glow2:")) {
-			var7 = 10;
-			var1 = var1.substring("glow2:".length());
-		} else if (var6.startsWith("glow3:")) {
-			var7 = 11;
-			var1 = var1.substring("glow3:".length());
-		} else if (var6.startsWith("rainbow:")) {
-			var7 = 12;
-			var1 = var1.substring("rainbow:".length());
-		} else if (var6.startsWith("pattern")) {
-			var8 = class167.method4105(var6);
-			if (var8 != null) {
-				var7 = var8.length + 12;
-				var1 = var1.substring("pattern".length() + var8.length + 1);
-			}
-		}
-
-		var6 = var1.toLowerCase();
-		byte var9 = 0;
-		if (var6.startsWith("wave:")) {
-			var9 = 1;
-			var1 = var1.substring("wave:".length());
-		} else if (var6.startsWith("wave2:")) {
-			var9 = 2;
-			var1 = var1.substring("wave2:".length());
-		} else if (var6.startsWith("shake:")) {
-			var9 = 3;
-			var1 = var1.substring("shake:".length());
-		} else if (var6.startsWith("scroll:")) {
-			var9 = 4;
-			var1 = var1.substring("scroll:".length());
-		} else if (var6.startsWith("slide:")) {
-			var9 = 5;
-			var1 = var1.substring("slide:".length());
-		}
-
-		var4.packetBuffer.writeByte(var7);
-		var4.packetBuffer.writeByte(var9);
-		if (var8 != null) {
-			for (int var10 = 0; var10 < var8.length; ++var10) {
-				var4.packetBuffer.writeByte(var8[var10]);
-			}
-		}
-
-		KitDefinition.method4297(var4.packetBuffer, var1);
-		if (var0 == class374.field4348.rsOrdinal()) {
-			var4.packetBuffer.writeByte(var3);
-		}
-
-		var4.packetBuffer.writeLengthByte(var4.packetBuffer.offset - var5);
-		return var4;
+	public static void method7134() {
+		Arrays.fill(Varps.Varps_temp, 0);
+		Arrays.fill(Varps.Varps_main, 0);
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ny")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "170962516"
+		descriptor = "(IIIIII)V",
+		garbageValue = "946944204"
 	)
-	public static int method6971(int var0) {
-		var0 = (var0 & 1431655765) + (var0 >>> 1 & 1431655765);
-		var0 = (var0 >>> 2 & 858993459) + (var0 & 858993459);
-		var0 = var0 + (var0 >>> 4) & 252645135;
-		var0 += var0 >>> 8;
-		var0 += var0 >>> 16;
-		return var0 & 255;
+	@Export("drawScrollBar")
+	static final void drawScrollBar(int var0, int var1, int var2, int var3, int var4) {
+		WorldMapArchiveLoader.scrollBarSprites[0].drawAt(var0, var1);
+		WorldMapArchiveLoader.scrollBarSprites[1].drawAt(var0, var3 + var1 - 16);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1 + 16, 16, var3 - 32, Client.field381);
+		int var5 = var3 * (var3 - 32) / var4;
+		if (var5 < 8) {
+			var5 = 8;
+		}
+
+		int var6 = (var3 - 32 - var5) * var2 / (var4 - var3);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var6 + var1 + 16, 16, var5, Client.field435);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0, var6 + var1 + 16, var5, Client.field437);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 1, var6 + var1 + 16, var5, Client.field437);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 16, 16, Client.field437);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var6 + var1 + 17, 16, Client.field437);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 15, var6 + var1 + 16, var5, Client.field436);
+		Rasterizer2D.Rasterizer2D_drawVerticalLine(var0 + 14, var6 + var1 + 17, var5 - 1, Client.field436);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0, var5 + var6 + var1 + 15, 16, Client.field436);
+		Rasterizer2D.Rasterizer2D_drawHorizontalLine(var0 + 1, var5 + var6 + var1 + 14, 15, Client.field436);
+	}
+
+	@ObfuscatedName("nj")
+	@ObfuscatedSignature(
+		descriptor = "(Lof;I)V",
+		garbageValue = "-1553701375"
+	)
+	@Export("Widget_addToMenu")
+	static final void Widget_addToMenu(Widget var0) {
+		if (var0.buttonType == 1) {
+			VerticalAlignment.method4546(var0.buttonText, "", 24, 0, 0, var0.id, var0.itemId);
+		}
+
+		if (var0.buttonType == 2 && !Client.isSpellSelected) {
+			String var1 = ItemComposition.Widget_getSpellActionName(var0);
+			if (var1 != null) {
+				VerticalAlignment.method4546(var1, class144.colorStartTag(65280) + var0.field4259, 25, 0, -1, var0.id, var0.itemId);
+			}
+		}
+
+		if (var0.buttonType == 3) {
+			Client.insertMenuItemNoShift("Close", "", 26, 0, 0, var0.id);
+		}
+
+		if (var0.buttonType == 4) {
+			Client.insertMenuItemNoShift(var0.buttonText, "", 28, 0, 0, var0.id);
+		}
+
+		if (var0.buttonType == 5) {
+			Client.insertMenuItemNoShift(var0.buttonText, "", 29, 0, 0, var0.id);
+		}
+
+		if (var0.buttonType == 6 && Client.meslayerContinueWidget == null) {
+			Client.insertMenuItemNoShift(var0.buttonText, "", 30, 0, -1, var0.id);
+		}
+
+		if (var0.isIf3) {
+			int var2;
+			boolean var8;
+			if (Client.isSpellSelected) {
+				var2 = class191.getWidgetFlags(var0);
+				var8 = (var2 >> 21 & 1) != 0;
+				if (var8 && (DesktopPlatformInfoProvider.selectedSpellFlags & 32) == 32) {
+					VerticalAlignment.method4546(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + var0.dataText, 58, 0, var0.childIndex * 2077538819, var0.id, var0.itemId);
+				}
+			} else {
+				for (int var10 = 31; var10 >= 0; --var10) {
+					String var9;
+					if (var10 == var0.targetPriority * 530396407) {
+						var9 = ItemComposition.Widget_getSpellActionName(var0);
+						if (var9 != null) {
+							VerticalAlignment.method4546(var9, var0.dataText, 25, 0, var0.childIndex * 2077538819, var0.id, var0.itemId);
+						}
+					}
+
+					var9 = GrandExchangeOfferNameComparator.method8748(var0, var10);
+					if (var9 != null) {
+						int var3;
+						short var4;
+						if (var10 > var0.targetPriority * 530396407) {
+							var4 = 1007;
+							var3 = VerticalAlignment.method4546(var9, var0.dataText, var4, var10 + 1, var0.childIndex * 2077538819, var0.id, var0.itemId);
+						} else {
+							var4 = 57;
+							var3 = ClanChannel.insertMenuItem(var9, var0.dataText, var4, var10 + 1, var0.childIndex * 2077538819, var0.id, var0.itemId, var0.prioritizeMenuEntry, -1);
+						}
+
+						if (var0.field4298 != null && var10 < var0.field4298.length && var0.field4298[var10] != null) {
+							String[] var5 = var0.field4298[var10];
+
+							for (int var6 = var5.length - 1; var6 >= 0; --var6) {
+								int var7 = var6 + 1 << 16 | var10 + 1;
+								if (var5[var6] != null && !var5[var6].isEmpty()) {
+									Language.method8932(var3, var5[var6], "", var4, var7, var0.childIndex * 2077538819, var0.id, var0.itemId, -1);
+								}
+							}
+						}
+					}
+				}
+
+				var2 = class191.getWidgetFlags(var0);
+				var8 = (var2 & 1) != 0;
+				if (var8) {
+					Client.insertMenuItemNoShift("Continue", "", 30, 0, var0.childIndex * 2077538819, var0.id);
+				}
+			}
+		}
+
 	}
 }

@@ -4,21 +4,16 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("eo")
+@ObfuscatedName("ev")
 @Implements("UserComparator4")
 public class UserComparator4 implements Comparator {
-	@ObfuscatedName("ar")
+	@ObfuscatedName("ko")
 	@ObfuscatedSignature(
-		descriptor = "Lkv;"
+		descriptor = "Lqn;"
 	)
-	@Export("clock")
-	static Clock clock;
-	@ObfuscatedName("kg")
-	@ObfuscatedSignature(
-		descriptor = "Lpg;"
-	)
-	static Archive field1562;
-	@ObfuscatedName("ab")
+	@Export("archive6")
+	static Archive archive6;
+	@ObfuscatedName("av")
 	@Export("reversed")
 	final boolean reversed;
 
@@ -26,21 +21,21 @@ public class UserComparator4 implements Comparator {
 		this.reversed = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ltu;Ltu;I)I",
-		garbageValue = "-1230751739"
+		descriptor = "(Ltm;Ltm;B)I",
+		garbageValue = "38"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(Buddy var1, Buddy var2) {
 		return this.reversed ? var1.int2 - var2.int2 : var2.int2 - var1.int2;
 	}
 
-	public boolean equals(Object var1) {
-		return super.equals(var1);
-	}
-
 	public int compare(Object var1, Object var2) {
 		return this.compare_bridged((Buddy)var1, (Buddy)var2);
+	}
+
+	public boolean equals(Object var1) {
+		return super.equals(var1);
 	}
 }

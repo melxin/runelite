@@ -1,50 +1,42 @@
-import java.lang.management.GarbageCollectorMXBean;
-import java.lang.management.ManagementFactory;
-import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("op")
+@ObfuscatedName("pv")
 @Implements("GameBuild")
 public class GameBuild {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lop;"
+		descriptor = "Lpv;"
 	)
 	@Export("LIVE")
 	static final GameBuild LIVE;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lop;"
+		descriptor = "Lpv;"
 	)
 	@Export("BUILDLIVE")
 	static final GameBuild BUILDLIVE;
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "Lop;"
+		descriptor = "Lpv;"
 	)
 	@Export("RC")
 	static final GameBuild RC;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lop;"
+		descriptor = "Lpv;"
 	)
 	@Export("WIP")
 	static final GameBuild WIP;
-	@ObfuscatedName("gj")
-	@ObfuscatedGetter(
-		intValue = 1633296427
-	)
-	static int field4437;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@Export("name")
 	public final String name;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -2084306011
+		intValue = -1357192003
 	)
 	@Export("buildId")
 	public final int buildId;
@@ -61,92 +53,35 @@ public class GameBuild {
 		this.buildId = var2;
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ia")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1180647087"
+		descriptor = "(Lcr;B)V",
+		garbageValue = "111"
 	)
-	@Export("getGcDuration")
-	protected static int getGcDuration() {
-		int var0 = 0;
-		if (BufferedSink.garbageCollector == null || !BufferedSink.garbageCollector.isValid()) {
-			try {
-				Iterator var1 = ManagementFactory.getGarbageCollectorMXBeans().iterator();
-
-				while (var1.hasNext()) {
-					GarbageCollectorMXBean var2 = (GarbageCollectorMXBean)var1.next();
-					if (var2.isValid()) {
-						BufferedSink.garbageCollector = var2;
-						GameEngine.garbageCollectorLastCheckTimeMs = -1L;
-						GameEngine.garbageCollectorLastCollectionTime = -1L;
-					}
-				}
-			} catch (Throwable var11) {
+	static final void method8376(Actor var0) {
+		boolean var1 = var0.field1057 == Client.cycle || !var0.method2484();
+		if (!var1) {
+			SequenceDefinition var2 = var0.animationSequence.getSequenceDefinition();
+			if (var2 != null && !var2.isCachedModelIdSet()) {
+				var1 = var0.animationSequence.getFrameCycle() + 1 > var2.frameLengths[var0.animationSequence.getFrame()];
+			} else {
+				var1 = true;
 			}
 		}
 
-		if (BufferedSink.garbageCollector != null) {
-			long var9 = class281.method6373();
-			long var3 = BufferedSink.garbageCollector.getCollectionTime();
-			if (GameEngine.garbageCollectorLastCollectionTime != -1L) {
-				long var5 = var3 - GameEngine.garbageCollectorLastCollectionTime;
-				long var7 = var9 - GameEngine.garbageCollectorLastCheckTimeMs;
-				if (0L != var7) {
-					var0 = (int)(100L * var5 / var7);
-				}
-			}
-
-			GameEngine.garbageCollectorLastCollectionTime = var3;
-			GameEngine.garbageCollectorLastCheckTimeMs = var9;
+		if (var1) {
+			int var8 = var0.field1057 - var0.spotAnimation;
+			int var3 = Client.cycle - var0.spotAnimation;
+			int var4 = var0.size * -767295488 + var0.field1059 * 128;
+			int var5 = var0.size * -767295488 + var0.field1061 * 128;
+			int var6 = var0.size * -767295488 + var0.field1060 * 128;
+			int var7 = var0.size * -767295488 + var0.field1062 * 128;
+			var0.x = (var6 * var3 + var4 * (var8 - var3)) / var8;
+			var0.y = (var7 * var3 + var5 * (var8 - var3)) / var8;
 		}
 
-		return var0;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "([I[Ljava/lang/Object;III)V",
-		garbageValue = "912938172"
-	)
-	public static void method8194(int[] var0, Object[] var1, int var2, int var3) {
-		if (var2 < var3) {
-			int var4 = (var3 + var2) / 2;
-			int var5 = var2;
-			int var6 = var0[var4];
-			var0[var4] = var0[var3];
-			var0[var3] = var6;
-			Object var7 = var1[var4];
-			var1[var4] = var1[var3];
-			var1[var3] = var7;
-			int var8 = var6 == Integer.MAX_VALUE ? 0 : 1;
-
-			for (int var9 = var2; var9 < var3; ++var9) {
-				if (var0[var9] < (var9 & var8) + var6) {
-					int var10 = var0[var9];
-					var0[var9] = var0[var5];
-					var0[var5] = var10;
-					Object var11 = var1[var9];
-					var1[var9] = var1[var5];
-					var1[var5++] = var11;
-				}
-			}
-
-			var0[var3] = var0[var5];
-			var0[var5] = var6;
-			var1[var3] = var1[var5];
-			var1[var5] = var7;
-			method8194(var0, var1, var2, var5 - 1);
-			method8194(var0, var1, var5 + 1, var3);
-		}
-
-	}
-
-	@ObfuscatedName("kl")
-	@ObfuscatedSignature(
-		descriptor = "(IIIIIIB)Z",
-		garbageValue = "-127"
-	)
-	static boolean method8193(int var0, int var1, int var2, int var3, int var4, int var5) {
-		return UserComparator6.method3659(class32.worldView.plane, var0, var1, var2, var3, var4, var5);
+		var0.field1074 = 0;
+		var0.orientation = var0.field1021;
+		var0.rotation = var0.orientation;
 	}
 }

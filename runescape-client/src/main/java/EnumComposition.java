@@ -1,69 +1,70 @@
-import java.awt.image.BufferedImage;
-import java.awt.image.PixelGrabber;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.ScriptOpcodes;
 
-@ObfuscatedName("hd")
+@ObfuscatedName("hb")
 @Implements("EnumComposition")
 public class EnumComposition extends DualNode {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "Lpe;"
+		descriptor = "Lqm;"
 	)
 	@Export("EnumDefinition_archive")
-	static AbstractArchive EnumDefinition_archive;
+	public static AbstractArchive EnumDefinition_archive;
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "Lme;"
+		descriptor = "Lmc;"
 	)
 	@Export("EnumDefinition_cached")
 	static EvictingDualNodeHashTable EnumDefinition_cached;
+	@ObfuscatedName("ai")
+	public static int field2063;
+	@ObfuscatedName("as")
+	@Export("osName")
+	static String osName;
 	@ObfuscatedName("ag")
 	@Export("inputType")
 	public char inputType;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@Export("outputType")
 	public char outputType;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@Export("defaultStr")
 	public String defaultStr;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@ObfuscatedGetter(
-		intValue = -232799901
+		intValue = 1780171489
 	)
 	@Export("defaultInt")
 	public int defaultInt;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 224222619
+		intValue = -132553189
 	)
 	@Export("outputCount")
 	public int outputCount;
-	@ObfuscatedName("aq")
+	@ObfuscatedName("aw")
 	@Export("keys")
 	public int[] keys;
-	@ObfuscatedName("ac")
+	@ObfuscatedName("ap")
 	@Export("intVals")
 	public int[] intVals;
-	@ObfuscatedName("aa")
+	@ObfuscatedName("ay")
 	@Export("strVals")
 	public String[] strVals;
-	@ObfuscatedName("ap")
+	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "Ltl;"
+		descriptor = "Lut;"
 	)
-	DynamicArray field2064;
-	@ObfuscatedName("ad")
+	DynamicArray field2069;
+	@ObfuscatedName("az")
 	@ObfuscatedSignature(
-		descriptor = "Ltl;"
+		descriptor = "Lut;"
 	)
-	DynamicArray field2056;
+	DynamicArray field2073;
 
 	static {
 		EnumDefinition_cached = new EvictingDualNodeHashTable(64);
@@ -74,10 +75,10 @@ public class EnumComposition extends DualNode {
 		this.outputCount = 0;
 	}
 
-	@ObfuscatedName("aj")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "313082121"
+		descriptor = "(Lxa;B)V",
+		garbageValue = "85"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -91,10 +92,10 @@ public class EnumComposition extends DualNode {
 		}
 	}
 
-	@ObfuscatedName("ah")
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;II)V",
-		garbageValue = "-1051106566"
+		descriptor = "(Lxa;IB)V",
+		garbageValue = "46"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -131,82 +132,201 @@ public class EnumComposition extends DualNode {
 
 	}
 
-	@ObfuscatedName("af")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "18"
+		descriptor = "(I)I",
+		garbageValue = "89055037"
 	)
 	@Export("size")
 	public int size() {
 		return this.outputCount;
 	}
 
-	@ObfuscatedName("ae")
+	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
-		descriptor = "(S)Ltl;",
-		garbageValue = "-23304"
+		descriptor = "(I)Lut;",
+		garbageValue = "1579342349"
 	)
-	public DynamicArray method4339() {
-		if (this.field2064 == null) {
-			this.field2064 = class151.method3914(this.keys);
+	public DynamicArray method4427() {
+		if (this.field2069 == null) {
+			int[] var2 = this.keys;
+			DynamicArray var3 = new DynamicArray(class586.field5937, false);
+			var3.array = var2;
+			var3.size = var2.length * -1205286309;
+			var3.field5587 = var2.length;
+			this.field2069 = var3;
 		}
 
-		return this.field2064;
+		return this.field2069;
 	}
 
-	@ObfuscatedName("aq")
+	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltl;",
-		garbageValue = "2043665788"
+		descriptor = "(I)Lut;",
+		garbageValue = "-1693502457"
 	)
-	public DynamicArray method4351() {
-		if (this.field2056 == null) {
+	public DynamicArray method4428() {
+		if (this.field2073 == null) {
+			DynamicArray var3;
 			if (this.outputType == 's') {
-				this.field2056 = class393.method8268(this.strVals);
+				String[] var2 = this.strVals;
+				var3 = new DynamicArray(class586.field5939, false);
+				var3.field5586 = var2;
+				var3.size = var2.length * -1205286309;
+				var3.field5587 = var2.length;
+				this.field2073 = var3;
 			} else {
-				this.field2056 = class151.method3914(this.intVals);
+				int[] var4 = this.intVals;
+				var3 = new DynamicArray(class586.field5937, false);
+				var3.array = var4;
+				var3.size = var4.length * -1205286309;
+				var3.field5587 = var4.length;
+				this.field2073 = var3;
 			}
 		}
 
-		return this.field2056;
-	}
-
-	@ObfuscatedName("ab")
-	@ObfuscatedSignature(
-		descriptor = "([BB)Lxl;",
-		garbageValue = "-114"
-	)
-	@Export("readSpritePixelsFromBytes")
-	public static final SpritePixels readSpritePixelsFromBytes(byte[] var0) {
-		BufferedImage var1 = null;
-
-		try {
-			Class var2 = ImageIO.class;
-			synchronized(ImageIO.class) {
-				var1 = ImageIO.read(new ByteArrayInputStream(var0));
-			}
-
-			if (var1 != null) {
-				int var6 = var1.getWidth();
-				int var7 = var1.getHeight();
-				int[] var4 = new int[var6 * var7];
-				PixelGrabber var5 = new PixelGrabber(var1, 0, 0, var6, var7, var4, 0, var6);
-				var5.grabPixels();
-				return new SpritePixels(var4, var6, var7);
-			}
-		} catch (IOException var9) {
-		} catch (InterruptedException var10) {
-		}
-
-		return null;
+		return this.field2073;
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1990362405"
+		descriptor = "(III)Lcu;",
+		garbageValue = "1410068873"
 	)
-	public static boolean method4360(int var0) {
-		return (var0 >> 20 & 1) != 0;
+	@Export("getScript")
+	static Script getScript(int var0, int var1) {
+		Script var2 = (Script)Script.Script_cached.get((long)(var0 << 16));
+		if (var2 != null) {
+			return var2;
+		} else {
+			String var3 = String.valueOf(var0);
+			int var4 = WorldMapRectangle.archive12.getGroupId(var3);
+			if (var4 == -1) {
+				return null;
+			} else {
+				byte[] var5 = WorldMapRectangle.archive12.takeFileFlat(var4);
+				if (var5 != null) {
+					if (var5.length <= 1) {
+						return null;
+					}
+
+					var2 = UserComparator3.newScript(var5);
+					if (var2 != null) {
+						Script.Script_cached.put(var2, (long)(var0 << 16));
+						return var2;
+					}
+				}
+
+				return null;
+			}
+		}
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(ILcu;ZB)I",
+		garbageValue = "0"
+	)
+	static int method4440(int var0, Script var1, boolean var2) {
+		Widget var3 = var2 ? UserComparator3.scriptDotWidget : class222.scriptActiveWidget;
+		if (var0 == ScriptOpcodes.CC_GETX) {
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = var3.x;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETY) {
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = var3.y;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETWIDTH) {
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = var3.width * -1946208531;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETHEIGHT) {
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = var3.height * -905446999;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETHIDE) {
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = var3.isHidden ? 1 : 0;
+			return 1;
+		} else if (var0 == ScriptOpcodes.CC_GETLAYER) {
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = var3.parentId;
+			return 1;
+		} else if (var0 != 1506) {
+			return 2;
+		} else {
+			int var4 = var3.parentId;
+			if (var4 == -1) {
+				for (InterfaceParent var5 = (InterfaceParent)Client.interfaceParents.first(); var5 != null; var5 = (InterfaceParent)Client.interfaceParents.next()) {
+					if (var3.id >> 16 == var5.group) {
+						var4 = (int)var5.key;
+						break;
+					}
+				}
+			}
+
+			Interpreter.Interpreter_intStack[++class408.Interpreter_intStackSize - 1] = var4;
+			return 1;
+		}
+	}
+
+	@ObfuscatedName("al")
+	@ObfuscatedSignature(
+		descriptor = "(Lbn;I)V",
+		garbageValue = "-1579678277"
+	)
+	@Export("changeWorld")
+	static void changeWorld(World var0) {
+		if (var0.isMembersOnly() != Client.isMembersWorld) {
+			Client.isMembersWorld = var0.isMembersOnly();
+			class189.method4412(var0.isMembersOnly());
+		}
+
+		if (var0.properties != Client.worldProperties) {
+			Archive var1 = class147.archive8;
+			int var2 = var0.properties;
+			if ((var2 & class594.field5995.rsOrdinal()) != 0) {
+				class50.logoSprite = HttpRequestTask.SpriteBuffer_getIndexedSpriteByName(var1, "logo_deadman_mode", "");
+			} else if ((var2 & class594.field5996.rsOrdinal()) != 0) {
+				class50.logoSprite = HttpRequestTask.SpriteBuffer_getIndexedSpriteByName(var1, "logo_seasonal_mode", "");
+			} else if ((var2 & class594.field5986.rsOrdinal()) != 0) {
+				class50.logoSprite = HttpRequestTask.SpriteBuffer_getIndexedSpriteByName(var1, "logo_speedrunning", "");
+			} else if ((var2 & class594.field5976.rsOrdinal()) != 0) {
+				class50.logoSprite = HttpRequestTask.SpriteBuffer_getIndexedSpriteByName(var1, "logo_ugc_world", "");
+			} else {
+				class50.logoSprite = HttpRequestTask.SpriteBuffer_getIndexedSpriteByName(var1, "logo", "");
+			}
+		}
+
+		DynamicArray.worldHost = var0.host;
+		Client.worldId = var0.id;
+		Client.worldProperties = var0.properties;
+		class365.field4083 = var0.field590;
+		WorldMapLabel.worldPort = Client.gameBuild == 0 ? 43594 : var0.id + 40000;
+		class532.js5Port = Client.gameBuild == 0 ? 443 : var0.id + 50000;
+		class46.currentPort = WorldMapLabel.worldPort;
+	}
+
+	@ObfuscatedName("ox")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/String;ZI)Ljava/lang/String;",
+		garbageValue = "712653874"
+	)
+	static String method4451(String var0, boolean var1) {
+		String var2 = var1 ? "https://" : "http://";
+		if (Client.gameBuild == 1) {
+			var0 = var0 + "-wtrc";
+		} else if (Client.gameBuild == 2) {
+			var0 = var0 + "-wtqa";
+		} else if (Client.gameBuild == 3) {
+			var0 = var0 + "-wtwip";
+		} else if (Client.gameBuild == 5) {
+			var0 = var0 + "-wti";
+		} else if (Client.gameBuild == 4) {
+			var0 = "local";
+		}
+
+		String var3 = "";
+		if (class39.field241 != null) {
+			var3 = "/p=" + class39.field241;
+		}
+
+		String var4 = "runescape.com";
+		return var2 + var0 + "." + var4 + "/l=" + class352.clientLanguage + "/a=" + class570.field5884 + var3 + "/";
 	}
 }

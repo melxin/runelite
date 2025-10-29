@@ -1,102 +1,135 @@
-import java.util.Iterator;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("gl")
-public class class163 extends class166 {
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = 95984119
-	)
-	int field1877;
+@ObfuscatedName("gg")
+public class class163 extends class167 {
+	@ObfuscatedName("av")
+	String field1852;
 	@ObfuscatedName("at")
-	byte field1878;
-	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -197328297
+		intValue = 761278577
 	)
-	int field1879;
-	@ObfuscatedName("aj")
-	String field1880;
+	int field1855;
+	@ObfuscatedName("ag")
+	byte field1854;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
-		descriptor = "Lgc;"
+		descriptor = "Lgt;"
 	)
-	final class167 this$0;
+	final class168 this$0;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lgc;)V"
+		descriptor = "(Lgt;)V"
 	)
-	class163(class167 var1) {
+	class163(class168 var1) {
 		this.this$0 = var1;
-		this.field1877 = -1;
+		this.field1852 = null;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;I)V",
-		garbageValue = "2073998337"
+		descriptor = "(Lxa;B)V",
+		garbageValue = "23"
 	)
-	void vmethod4154(Buffer var1) {
-		var1.readUnsignedByte();
-		this.field1877 = var1.readUnsignedShort();
-		this.field1878 = var1.readByte();
-		this.field1879 = var1.readUnsignedShort();
+	void vmethod4228(Buffer var1) {
+		if (var1.readUnsignedByte() != 255) {
+			var1.offset -= 1741769013;
+			var1.readLong();
+		}
+
+		this.field1852 = var1.readStringCp1252NullTerminatedOrNull();
+		this.field1855 = var1.readUnsignedShort();
+		this.field1854 = var1.readByte();
 		var1.readLong();
-		this.field1880 = var1.readStringCp1252NullTerminated();
-		var1.readUnsignedByte();
 	}
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(Lgr;I)V",
-		garbageValue = "2002767604"
+		descriptor = "(Lgz;B)V",
+		garbageValue = "-24"
 	)
-	void vmethod4151(ClanChannel var1) {
-		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1877);
-		var2.rank = this.field1878;
-		var2.world = this.field1879;
-		var2.username = new Username(this.field1880);
+	void vmethod4229(ClanChannel var1) {
+		ClanChannelMember var2 = new ClanChannelMember();
+		var2.username = new Username(this.field1852);
+		var2.world = this.field1855;
+		var2.rank = this.field1854;
+		var1.addMember(var2);
 	}
 
-	@ObfuscatedName("at")
+	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lcb;III)V",
-		garbageValue = "-1977714884"
+		descriptor = "(Loe;IIIII)Loe;",
+		garbageValue = "49319"
 	)
-	@Export("runScript")
-	static void runScript(ScriptEvent var0, int var1, int var2) {
-		Object[] var3 = var0.args;
-		Script var4;
-		if (DirectByteArrayCopier.isWorldMapEvent(var0.type)) {
-			class199.worldMapEvent = (WorldMapEvent)var3[0];
-			WorldMapElement var6 = LoginState.WorldMapElement_get(class199.worldMapEvent.mapElement);
-			var4 = SpriteMask.getWorldMapScript(var0.type, var6.objectId, var6.category);
+	public static WidgetConfigNode method4132(WidgetConfigNode var0, int var1, int var2, int var3, int var4) {
+		WidgetConfigNode var5 = var0;
+
+		WidgetConfigNode var6;
+		for (var6 = null; var5 != null; var5 = var5.nextWidgetConfigNode) {
+			if (var5.end >= var1 && var5.start <= var2) {
+				if (var6 != null) {
+					var6.nextWidgetConfigNode = var5.nextWidgetConfigNode;
+				} else {
+					var0 = var5.nextWidgetConfigNode;
+				}
+
+				WidgetConfigNode var7;
+				if (var5.start < var1) {
+					var7 = new WidgetConfigNode(var5.start, var1 - 1, var5.clickMask, var5.opMask);
+					if (var6 != null) {
+						var7.nextWidgetConfigNode = var6.nextWidgetConfigNode;
+					} else {
+						var7.nextWidgetConfigNode = var0;
+					}
+
+					if (var6 != null) {
+						var6.nextWidgetConfigNode = var7;
+					} else {
+						var0 = var7;
+					}
+
+					var6 = var7;
+				}
+
+				if (var5.end > var2) {
+					var7 = new WidgetConfigNode(var2 + 1, var5.end, var5.clickMask, var5.opMask);
+					if (var6 != null) {
+						var7.nextWidgetConfigNode = var6.nextWidgetConfigNode;
+					} else {
+						var7.nextWidgetConfigNode = var0;
+					}
+
+					if (var6 != null) {
+						var6.nextWidgetConfigNode = var7;
+					} else {
+						var0 = var7;
+					}
+				}
+			}
+
+			var6 = var5;
+		}
+
+		var5 = null;
+
+		for (var6 = var0; var6 != null && var6.start <= var1; var6 = var6.nextWidgetConfigNode) {
+			var5 = var6;
+		}
+
+		var6 = new WidgetConfigNode(var1, var2, var3, var4);
+		if (var5 != null) {
+			var6.nextWidgetConfigNode = var5.nextWidgetConfigNode;
 		} else {
-			int var5 = (Integer)var3[0];
-			var4 = class456.getScript(var5);
+			var6.nextWidgetConfigNode = var0;
 		}
 
-		if (var4 != null) {
-			ModelData0.runScriptLogic(var0, var4, var1, var2);
+		if (var5 != null) {
+			var5.nextWidgetConfigNode = var6;
+		} else {
+			var0 = var6;
 		}
 
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-689943485"
-	)
-	public static void method4069(int var0, int var1) {
-		Iterator var2 = class338.field3892.iterator();
-
-		while (var2.hasNext()) {
-			class344 var3 = (class344)var2.next();
-			var3.vmethod7348(var0, var1);
-		}
-
+		return var0;
 	}
 }

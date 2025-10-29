@@ -3,27 +3,27 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("sp")
+@ObfuscatedName("tk")
 @Implements("IgnoreList")
 public class IgnoreList extends UserList {
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedSignature(
-		descriptor = "Lvt;"
+		descriptor = "Lwc;"
 	)
-	final LoginType field5425;
+	final LoginType field5449;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lvt;)V"
+		descriptor = "(Lwc;)V"
 	)
 	public IgnoreList(LoginType var1) {
 		super(400);
-		this.field5425 = var1;
+		this.field5449 = var1;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ltk;",
-		garbageValue = "1771695542"
+		descriptor = "(I)Ltz;",
+		garbageValue = "2051919340"
 	)
 	@Export("newInstance")
 	User newInstance() {
@@ -32,8 +32,8 @@ public class IgnoreList extends UserList {
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IB)[Ltk;",
-		garbageValue = "-78"
+		descriptor = "(II)[Ltz;",
+		garbageValue = "-1205369208"
 	)
 	@Export("newTypedArray")
 	User[] newTypedArray(int var1) {
@@ -42,25 +42,25 @@ public class IgnoreList extends UserList {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(Lwj;IB)V",
-		garbageValue = "17"
+		descriptor = "(Lxa;II)V",
+		garbageValue = "2127008537"
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
-		while (var1.offset < var2) {
+		while (var1.offset * 2108391709 < var2) {
 			int var3 = var1.readUnsignedByte();
 			if (var3 == 4) {
-				Username var10 = new Username(var1.readStringCp1252NullTerminated(), this.field5425);
+				Username var10 = new Username(var1.readStringCp1252NullTerminated(), this.field5449);
 				if (!var10.hasCleanName()) {
 					throw new IllegalStateException();
 				}
 
 				boolean var11 = false;
-				KitDefinition.friendSystem.removeIgnore(var10.getName(), var11);
+				class320.friendSystem.removeIgnore(var10.getName(), var11);
 			} else {
 				boolean var4 = (var3 & 1) != 0;
-				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.field5425);
-				Username var6 = new Username(var1.readStringCp1252NullTerminated(), this.field5425);
+				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.field5449);
+				Username var6 = new Username(var1.readStringCp1252NullTerminated(), this.field5449);
 				var1.readStringCp1252NullTerminated();
 				if (!var5.hasCleanName()) {
 					throw new IllegalStateException();
@@ -69,7 +69,7 @@ public class IgnoreList extends UserList {
 				Ignored var7 = (Ignored)this.getByCurrentUsername(var5);
 				if (var4) {
 					Ignored var8 = (Ignored)this.getByCurrentUsername(var6);
-					if (var8 != null && var7 != var8) {
+					if (var8 != null && var8 != var7) {
 						if (var7 != null) {
 							this.remove(var8);
 						} else {
@@ -88,22 +88,5 @@ public class IgnoreList extends UserList {
 			}
 		}
 
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Throwable;Ljava/lang/String;)Lxv;"
-	)
-	@Export("newRunException")
-	public static RunException newRunException(Throwable var0, String var1) {
-		RunException var2;
-		if (var0 instanceof RunException) {
-			var2 = (RunException)var0;
-			var2.message = var2.message + ' ' + var1;
-		} else {
-			var2 = new RunException(var0, var1);
-		}
-
-		return var2;
 	}
 }

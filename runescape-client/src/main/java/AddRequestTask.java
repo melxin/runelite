@@ -1,41 +1,33 @@
 import java.util.Iterator;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("st")
 @Implements("AddRequestTask")
 public class AddRequestTask extends SongTask {
-	@ObfuscatedName("uv")
-	@ObfuscatedGetter(
-		intValue = -312656337
-	)
-	static int field5334;
-
 	@ObfuscatedSignature(
-		descriptor = "(Lsw;)V"
+		descriptor = "(Lsz;)V"
 	)
 	public AddRequestTask(SongTask var1) {
 		super(var1);
-		super.field5350 = "AddRequestTask";
+		super.field5378 = "AddRequestTask";
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1369867803"
+		descriptor = "(B)Z",
+		garbageValue = "111"
 	)
-	public boolean vmethod9763() {
-		while (!class338.field3893.isEmpty()) {
-			MidiRequest var1 = (MidiRequest)class338.field3893.peek();
+	public boolean vmethod9974() {
+		while (!class345.field3933.isEmpty()) {
+			MidiRequest var1 = (MidiRequest)class345.field3933.peek();
 			if (var1 == null) {
-				class338.field3893.pop();
+				class345.field3933.pop();
 			} else {
-				var1.midiPcmStream = this.method9688();
-				class338.midiRequests.add(var1);
-				class338.field3893.pop();
+				var1.midiPcmStream = this.method9916();
+				class345.midiRequests.add(var1);
+				class345.field3933.pop();
 			}
 		}
 
@@ -44,12 +36,12 @@ public class AddRequestTask extends SongTask {
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lnj;",
-		garbageValue = "306415952"
+		descriptor = "(I)Lnc;",
+		garbageValue = "2147411660"
 	)
-	MidiPcmStream method9688() {
+	MidiPcmStream method9916() {
 		MidiPcmStream var1 = null;
-		Iterator var2 = class338.field3900.iterator();
+		Iterator var2 = class345.field3924.iterator();
 
 		while (true) {
 			MidiPcmStream var3;
@@ -57,10 +49,10 @@ public class AddRequestTask extends SongTask {
 				do {
 					if (!var2.hasNext()) {
 						if (var1 != null) {
-							++var1.field3910;
-							if (var1.method7150() == 0 && var1.isReady()) {
+							++var1.field3948;
+							if (var1.method7366() == 0 && var1.isReady()) {
 								var1.clear();
-								var1.method7225();
+								var1.method7462();
 								var1.setPcmStreamVolume(0);
 							}
 						}
@@ -70,32 +62,9 @@ public class AddRequestTask extends SongTask {
 
 					var3 = (MidiPcmStream)var2.next();
 				} while(var3 == null);
-			} while(var1 != null && var1.field3910 <= var3.field3910 && (var3.method7150() != 0 || !var3.isReady()));
+			} while(var1 != null && var1.field3948 <= var3.field3948 && (var3.method7366() != 0 || !var3.isReady()));
 
 			var1 = var3;
-		}
-	}
-
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(II)Lwm;",
-		garbageValue = "-1696582180"
-	)
-	@Export("getDbRowType")
-	public static DbRowType getDbRowType(int var0) {
-		DbRowType var1 = (DbRowType)DbRowType.DBRowType_cache.get((long)var0);
-		if (var1 != null) {
-			return var1;
-		} else {
-			byte[] var2 = class443.field5181.takeFile(38, var0);
-			var1 = new DbRowType();
-			if (var2 != null) {
-				var1.method11245(new Buffer(var2));
-			}
-
-			var1.method11242();
-			DbRowType.DBRowType_cache.put(var1, (long)var0);
-			return var1;
 		}
 	}
 }

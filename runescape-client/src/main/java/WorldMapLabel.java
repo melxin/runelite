@@ -4,33 +4,41 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("lb")
+@ObfuscatedName("lv")
 @Implements("WorldMapLabel")
 public class WorldMapLabel {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("bh")
+	static String field3495;
+	@ObfuscatedName("km")
+	@ObfuscatedGetter(
+		intValue = -31361431
+	)
+	@Export("worldPort")
+	static int worldPort;
+	@ObfuscatedName("av")
 	@Export("text")
-	String text;
+	final String text;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1623083813
+		intValue = -1322204423
 	)
 	@Export("width")
-	int width;
+	final int width;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1183141771
+		intValue = -1989742749
 	)
 	@Export("height")
-	int height;
-	@ObfuscatedName("aj")
+	final int height;
+	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "Lka;"
+		descriptor = "Llp;"
 	)
 	@Export("size")
-	WorldMapLabelSize size;
+	final WorldMapLabelSize size;
 
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;IILka;)V"
+		descriptor = "(Ljava/lang/String;IILlp;)V"
 	)
 	WorldMapLabel(String var1, int var2, int var3, WorldMapLabelSize var4) {
 		this.text = var1;
@@ -39,13 +47,12 @@ public class WorldMapLabel {
 		this.size = var4;
 	}
 
-	@ObfuscatedName("aa")
+	@ObfuscatedName("kk")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-121089648"
+		descriptor = "(IIIIIB)V",
+		garbageValue = "104"
 	)
-	@Export("isCharAlphabetic")
-	public static boolean isCharAlphabetic(char var0) {
-		return var0 >= 'A' && var0 <= 'Z' || var0 >= 'a' && var0 <= 'z';
+	static void method7017(int var0, int var1, int var2, int var3, int var4) {
+		class179.method4283(AsyncHttpResponse.worldView, var0, var1, var2, var3, var4);
 	}
 }

@@ -2,46 +2,58 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
+import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("jw")
+@ObfuscatedName("kz")
 @Implements("SceneTilePaint")
 public final class SceneTilePaint {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("gt")
 	@ObfuscatedGetter(
-		intValue = 977029191
+		intValue = 1362339427
+	)
+	static int field3136;
+	@ObfuscatedName("pl")
+	@ObfuscatedSignature(
+		descriptor = "[Lxt;"
+	)
+	@Export("headIconHintSprites")
+	static SpritePixels[] headIconHintSprites;
+	@ObfuscatedName("av")
+	@ObfuscatedGetter(
+		intValue = -1705968521
 	)
 	@Export("swColor")
 	int swColor;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = 1343097663
+		intValue = -1789756031
 	)
 	@Export("seColor")
 	int seColor;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = 1226403731
+		intValue = -120051743
 	)
 	@Export("neColor")
 	int neColor;
-	@ObfuscatedName("aj")
+	@ObfuscatedName("an")
 	@ObfuscatedGetter(
-		intValue = -1394093475
+		intValue = 94297073
 	)
 	@Export("nwColor")
 	int nwColor;
-	@ObfuscatedName("ah")
+	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = 950732569
+		intValue = -699583661
 	)
 	@Export("texture")
 	int texture;
-	@ObfuscatedName("af")
+	@ObfuscatedName("aj")
 	@Export("isFlat")
 	boolean isFlat;
-	@ObfuscatedName("ae")
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = 162588445
+		intValue = -453092939
 	)
 	@Export("rgb")
 	int rgb;
@@ -55,5 +67,15 @@ public final class SceneTilePaint {
 		this.texture = var5;
 		this.rgb = var6;
 		this.isFlat = var7;
+	}
+
+	@ObfuscatedName("be")
+	@ObfuscatedSignature(
+		descriptor = "(ILjava/lang/String;I)V",
+		garbageValue = "-442259464"
+	)
+	static void method6128(int var0, String var1) {
+		Login.Login_loadingText = var1;
+		Login.Login_loadingPercent = var0;
 	}
 }

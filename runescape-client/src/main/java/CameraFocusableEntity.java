@@ -3,29 +3,29 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ww")
+@ObfuscatedName("xb")
 @Implements("CameraFocusableEntity")
 public interface CameraFocusableEntity {
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-565244070"
+		garbageValue = "446304328"
 	)
 	@Export("getX")
 	int getX();
 
-	@ObfuscatedName("ds")
+	@ObfuscatedName("dl")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "-1225897704"
+		garbageValue = "-1790262579"
 	)
 	@Export("getY")
 	int getY();
 
-	@ObfuscatedName("dv")
+	@ObfuscatedName("dr")
 	@ObfuscatedSignature(
 		descriptor = "(I)I",
-		garbageValue = "1777919612"
+		garbageValue = "-727737924"
 	)
 	@Export("getPlane")
 	int getPlane();

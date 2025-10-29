@@ -5,83 +5,83 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ky")
+@ObfuscatedName("kn")
 @Implements("IndexCheck")
-public class IndexCheck implements class28 {
+public class IndexCheck implements class29 {
 	@ObfuscatedName("at")
-	public int[] field3208;
+	public int[] field3247;
 	@ObfuscatedName("ag")
 	@ObfuscatedGetter(
-		intValue = -606893143
+		intValue = -1355266525
 	)
-	public int field3217;
-	@ObfuscatedName("aj")
-	int[] field3210;
-	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = 1302990029
-	)
-	int field3211;
-	@ObfuscatedName("af")
-	public char field3207;
+	public int field3234;
+	@ObfuscatedName("an")
+	int[] field3235;
 	@ObfuscatedName("ae")
 	@ObfuscatedGetter(
-		intValue = -1488579175
+		intValue = 689848607
 	)
-	public int field3213;
-	@ObfuscatedName("aq")
-	char[] field3214;
-	@ObfuscatedName("ac")
-	int[] field3216;
-	@ObfuscatedName("aa")
+	int field3236;
+	@ObfuscatedName("aj")
+	public char field3248;
+	@ObfuscatedName("ak")
 	@ObfuscatedGetter(
-		intValue = -294733959
+		intValue = 2044709447
 	)
-	int field3221;
+	public int field3233;
+	@ObfuscatedName("aw")
+	char[] field3239;
 	@ObfuscatedName("ap")
+	int[] field3240;
+	@ObfuscatedName("ay")
 	@ObfuscatedGetter(
-		intValue = -468702289
+		intValue = 729836485
 	)
-	int field3215;
+	int field3241;
+	@ObfuscatedName("au")
+	@ObfuscatedGetter(
+		intValue = -822332839
+	)
+	int field3237;
+	@ObfuscatedName("az")
+	@ObfuscatedGetter(
+		intValue = -436309025
+	)
+	int field3243;
 	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = 853108111
-	)
-	int field3218;
-	@ObfuscatedName("av")
-	boolean[] field3219;
+	boolean[] field3244;
+	@ObfuscatedName("ai")
+	boolean[] field3245;
 	@ObfuscatedName("as")
-	boolean[] field3220;
-	@ObfuscatedName("ar")
-	boolean[] field3209;
+	boolean[] field3246;
 
 	public IndexCheck() {
-		this.field3208 = new int[128];
-		this.field3217 = 0;
-		this.field3210 = new int[128];
-		this.field3211 = 0;
-		this.field3214 = new char[128];
-		this.field3216 = new int[128];
-		this.field3221 = 0;
-		this.field3215 = 0;
-		this.field3218 = 0;
-		this.field3219 = new boolean[112];
-		this.field3220 = new boolean[112];
-		this.field3209 = new boolean[112];
+		this.field3247 = new int[128];
+		this.field3234 = 0;
+		this.field3235 = new int[128];
+		this.field3236 = 0;
+		this.field3239 = new char[128];
+		this.field3240 = new int[128];
+		this.field3241 = 0;
+		this.field3237 = 0;
+		this.field3243 = 0;
+		this.field3244 = new boolean[112];
+		this.field3245 = new boolean[112];
+		this.field3246 = new boolean[112];
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
 		descriptor = "(II)Z",
-		garbageValue = "-2126195099"
+		garbageValue = "-1696349320"
 	)
-	public boolean vmethod6166(int var1) {
-		this.method6128(var1);
-		this.field3219[var1] = true;
-		this.field3220[var1] = true;
-		this.field3209[var1] = false;
-		if (this.field3217 < 128) {
-			this.field3208[++this.field3217 - 1] = var1;
+	public boolean vmethod6295(int var1) {
+		this.method6298(var1);
+		this.field3244[var1] = true;
+		this.field3245[var1] = true;
+		this.field3246[var1] = false;
+		if (this.field3234 < 128) {
+			this.field3247[++this.field3234 - 1] = var1;
 		}
 
 		return true;
@@ -90,14 +90,14 @@ public class IndexCheck implements class28 {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(IB)Z",
-		garbageValue = "-124"
+		garbageValue = "63"
 	)
-	public boolean vmethod6127(int var1) {
-		this.field3219[var1] = false;
-		this.field3220[var1] = false;
-		this.field3209[var1] = true;
-		if (this.field3211 < 128) {
-			this.field3210[++this.field3211 - 1] = var1;
+	public boolean vmethod6326(int var1) {
+		this.field3244[var1] = false;
+		this.field3245[var1] = false;
+		this.field3246[var1] = true;
+		if (this.field3236 < 128) {
+			this.field3235[++this.field3236 - 1] = var1;
 		}
 
 		return true;
@@ -105,127 +105,127 @@ public class IndexCheck implements class28 {
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "951729544"
+		descriptor = "(CB)Z",
+		garbageValue = "-128"
 	)
-	public boolean vmethod6156(char var1) {
-		int var2 = this.field3215 + 1 & 127;
-		if (var2 != this.field3221) {
-			this.field3216[this.field3215] = -1;
-			this.field3214[this.field3215] = var1;
-			this.field3215 = var2;
+	public boolean vmethod6297(char var1) {
+		int var2 = this.field3237 + 1 & 127;
+		if (var2 != this.field3241) {
+			this.field3240[this.field3237] = -1;
+			this.field3239[this.field3237] = var1;
+			this.field3237 = var2;
 		}
 
 		return false;
-	}
-
-	@ObfuscatedName("aj")
-	@ObfuscatedSignature(
-		descriptor = "(ZI)Z",
-		garbageValue = "-1474092400"
-	)
-	public boolean vmethod6138(boolean var1) {
-		return false;
-	}
-
-	@ObfuscatedName("as")
-	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-218152458"
-	)
-	void method6128(int var1) {
-		int var2 = this.field3215 + 1 & 127;
-		if (var2 != this.field3221) {
-			this.field3216[this.field3215] = var1;
-			this.field3214[this.field3215] = 0;
-			this.field3215 = var2;
-		}
-
-	}
-
-	@ObfuscatedName("ar")
-	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-686058641"
-	)
-	public void method6125() {
-		this.field3221 = this.field3218;
-		this.field3218 = this.field3215;
-		this.field3217 = 0;
-		this.field3211 = 0;
-		Arrays.fill(this.field3220, false);
-		Arrays.fill(this.field3209, false);
-	}
-
-	@ObfuscatedName("az")
-	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-604183241"
-	)
-	public final boolean method6130() {
-		if (this.field3218 == this.field3221) {
-			return false;
-		} else {
-			this.field3213 = this.field3216[this.field3221];
-			this.field3207 = this.field3214[this.field3221];
-			this.field3221 = this.field3221 + 1 & 127;
-			return true;
-		}
-	}
-
-	@ObfuscatedName("au")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "-22"
-	)
-	public boolean method6131(int var1) {
-		return var1 >= 0 && var1 < 112 ? this.field3220[var1] : false;
-	}
-
-	@ObfuscatedName("ak")
-	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "-84"
-	)
-	@Export("isValidIndexInRange")
-	public boolean isValidIndexInRange(int var1) {
-		return var1 >= 0 && var1 < 112 ? this.field3219[var1] : false;
-	}
-
-	@ObfuscatedName("ao")
-	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1886744891"
-	)
-	public boolean method6157(int var1) {
-		return var1 >= 0 && var1 < 112 ? this.field3209[var1] : false;
-	}
-
-	@ObfuscatedName("ax")
-	@ObfuscatedSignature(
-		descriptor = "(I)[I",
-		garbageValue = "-835711903"
-	)
-	public int[] method6129() {
-		int[] var1 = new int[this.field3217];
-
-		for (int var2 = 0; var2 < this.field3217; ++var2) {
-			var1[var2] = this.field3208[var2];
-		}
-
-		return var1;
 	}
 
 	@ObfuscatedName("an")
 	@ObfuscatedSignature(
-		descriptor = "(I)[I",
-		garbageValue = "135496316"
+		descriptor = "(ZI)Z",
+		garbageValue = "-885160198"
 	)
-	public int[] method6135() {
-		int[] var1 = new int[this.field3211];
+	public boolean vmethod6294(boolean var1) {
+		return false;
+	}
 
-		for (int var2 = 0; var2 < this.field3211; ++var2) {
-			var1[var2] = this.field3210[var2];
+	@ObfuscatedName("ad")
+	@ObfuscatedSignature(
+		descriptor = "(II)V",
+		garbageValue = "-320593924"
+	)
+	void method6298(int var1) {
+		int var2 = this.field3237 + 1 & 127;
+		if (var2 != this.field3241) {
+			this.field3240[this.field3237] = var1;
+			this.field3239[this.field3237] = 0;
+			this.field3237 = var2;
+		}
+
+	}
+
+	@ObfuscatedName("ai")
+	@ObfuscatedSignature(
+		descriptor = "(B)V",
+		garbageValue = "20"
+	)
+	public void method6300() {
+		this.field3241 = this.field3243;
+		this.field3243 = this.field3237;
+		this.field3234 = 0;
+		this.field3236 = 0;
+		Arrays.fill(this.field3245, false);
+		Arrays.fill(this.field3246, false);
+	}
+
+	@ObfuscatedName("as")
+	@ObfuscatedSignature(
+		descriptor = "(B)Z",
+		garbageValue = "-45"
+	)
+	public final boolean method6301() {
+		if (this.field3243 == this.field3241) {
+			return false;
+		} else {
+			this.field3233 = this.field3240[this.field3241];
+			this.field3248 = this.field3239[this.field3241];
+			this.field3241 = this.field3241 + 1 & 127;
+			return true;
+		}
+	}
+
+	@ObfuscatedName("ac")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "504064209"
+	)
+	public boolean method6311(int var1) {
+		return var1 >= 0 && var1 < 112 ? this.field3245[var1] : false;
+	}
+
+	@ObfuscatedName("ab")
+	@ObfuscatedSignature(
+		descriptor = "(IS)Z",
+		garbageValue = "1337"
+	)
+	@Export("isValidIndexInRange")
+	public boolean isValidIndexInRange(int var1) {
+		return var1 >= 0 && var1 < 112 ? this.field3244[var1] : false;
+	}
+
+	@ObfuscatedName("ax")
+	@ObfuscatedSignature(
+		descriptor = "(II)Z",
+		garbageValue = "-1677082177"
+	)
+	public boolean method6299(int var1) {
+		return var1 >= 0 && var1 < 112 ? this.field3246[var1] : false;
+	}
+
+	@ObfuscatedName("ar")
+	@ObfuscatedSignature(
+		descriptor = "(I)[I",
+		garbageValue = "1169373205"
+	)
+	public int[] method6305() {
+		int[] var1 = new int[this.field3234];
+
+		for (int var2 = 0; var2 < this.field3234; ++var2) {
+			var1[var2] = this.field3247[var2];
+		}
+
+		return var1;
+	}
+
+	@ObfuscatedName("ah")
+	@ObfuscatedSignature(
+		descriptor = "(I)[I",
+		garbageValue = "-1631973653"
+	)
+	public int[] method6320() {
+		int[] var1 = new int[this.field3236];
+
+		for (int var2 = 0; var2 < this.field3236; ++var2) {
+			var1[var2] = this.field3235[var2];
 		}
 
 		return var1;
@@ -233,26 +233,24 @@ public class IndexCheck implements class28 {
 
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "100"
+		descriptor = "(Liv;B)Z",
+		garbageValue = "43"
 	)
-	static int method6170(int var0) {
-		return class26.KeyHandler_keyCodes[var0];
-	}
+	static boolean method6308(ObjectComposition var0) {
+		if (var0.transforms != null) {
+			int[] var1 = var0.transforms;
 
-	@ObfuscatedName("at")
-	@ObfuscatedSignature(
-		descriptor = "(FFFI)Lre;",
-		garbageValue = "1519481429"
-	)
-	public static ProjectionCoord method6169(float var0, float var1, float var2) {
-		synchronized(ProjectionCoord.field5214) {
-			if (ProjectionCoord.field5210 == 0) {
-				return new ProjectionCoord(var0, var1, var2);
-			} else {
-				ProjectionCoord.field5214[--ProjectionCoord.field5210].method9066(var0, var1, var2);
-				return ProjectionCoord.field5214[ProjectionCoord.field5210];
+			for (int var2 = 0; var2 < var1.length; ++var2) {
+				int var3 = var1[var2];
+				ObjectComposition var4 = AsyncHttpResponse.getObjectDefinition(var3);
+				if (var4.mapIconId != -1) {
+					return true;
+				}
 			}
+		} else if (var0.mapIconId != -1) {
+			return true;
 		}
+
+		return false;
 	}
 }

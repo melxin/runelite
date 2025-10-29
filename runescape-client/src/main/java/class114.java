@@ -1,63 +1,51 @@
-import java.awt.Desktop;
-import java.awt.Desktop.Action;
-import java.net.URI;
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-@ObfuscatedName("ef")
+@ObfuscatedName("em")
 public class class114 {
-	@ObfuscatedName("bs")
+	@ObfuscatedName("av")
 	@ObfuscatedGetter(
-		intValue = 1289571099
+		intValue = 398144779
 	)
-	static int field1517;
-	@ObfuscatedName("ie")
-	@Export("foundItemIds")
-	static short[] foundItemIds;
-	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -1713076229
-	)
-	int field1514;
+	int field1484;
 	@ObfuscatedName("at")
 	@ObfuscatedGetter(
-		intValue = -1988170621
+		intValue = -1807232209
 	)
-	int field1515;
+	int field1485;
 	@ObfuscatedName("ag")
-	byte[] field1518;
+	byte[] field1488;
 
 	class114() {
-		this.field1514 = 0;
-		this.field1515 = 0;
-		this.field1518 = null;
+		this.field1484 = 0;
+		this.field1485 = 0;
+		this.field1488 = null;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "17"
+		descriptor = "(II)I",
+		garbageValue = "-1477683223"
 	)
-	int method3529(int var1) {
+	int method3588(int var1) {
 		int var2 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = 0; var1 >= 8 - this.field1515; var1 -= var4) {
-			var4 = 8 - this.field1515;
+		for (var3 = 0; var1 >= 8 - this.field1485; var1 -= var4) {
+			var4 = 8 - this.field1485;
 			int var5 = (1 << var4) - 1;
-			var2 += (this.field1518[this.field1514] >> this.field1515 & var5) << var3;
-			this.field1515 = 0;
-			++this.field1514;
+			var2 += (this.field1488[this.field1484] >> this.field1485 & var5) << var3;
+			this.field1485 = 0;
+			++this.field1484;
 			var3 += var4;
 		}
 
 		if (var1 > 0) {
 			var4 = (1 << var1) - 1;
-			var2 += (this.field1518[this.field1514] >> this.field1515 & var4) << var3;
-			this.field1515 += var1;
+			var2 += (this.field1488[this.field1484] >> this.field1485 & var4) << var3;
+			this.field1485 += var1;
 		}
 
 		return var2;
@@ -66,40 +54,129 @@ public class class114 {
 	@ObfuscatedName("at")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",
-		garbageValue = "57"
+		garbageValue = "4"
 	)
-	int method3531() {
-		int var1 = this.field1518[this.field1514] >> this.field1515 & 1;
-		++this.field1515;
-		this.field1514 += this.field1515 >> 3;
-		this.field1515 &= 7;
+	int method3586() {
+		int var1 = this.field1488[this.field1484] >> this.field1485 & 1;
+		++this.field1485;
+		this.field1484 += this.field1485 >> 3;
+		this.field1485 &= 7;
 		return var1;
 	}
 
 	@ObfuscatedName("ag")
 	@ObfuscatedSignature(
 		descriptor = "([BII)V",
-		garbageValue = "-1052187310"
+		garbageValue = "-1793120611"
 	)
-	void method3532(byte[] var1, int var2) {
-		this.field1518 = var1;
-		this.field1514 = var2;
-		this.field1515 = 0;
+	void method3590(byte[] var1, int var2) {
+		this.field1488 = var1;
+		this.field1484 = var2;
+		this.field1485 = 0;
 	}
 
-	@ObfuscatedName("ab")
+	@ObfuscatedName("av")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "27"
+		descriptor = "(I)V",
+		garbageValue = "-1975991322"
 	)
-	@Export("openURL")
-	public static void openURL(String var0) {
-		if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
-			try {
-				Desktop.getDesktop().browse(new URI(var0));
-			} catch (Exception var2) {
+	public static void method3597() {
+		class184.field1864.clear();
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(Ljava/lang/CharSequence;IZI)Z",
+		garbageValue = "1412810971"
+	)
+	static boolean method3585(CharSequence var0, int var1, boolean var2) {
+		if (var1 >= 2 && var1 <= 36) {
+			boolean var3 = false;
+			boolean var4 = false;
+			int var5 = 0;
+			int var6 = var0.length();
+
+			for (int var7 = 0; var7 < var6; ++var7) {
+				char var8 = var0.charAt(var7);
+				if (var7 == 0) {
+					if (var8 == '-') {
+						var3 = true;
+						continue;
+					}
+
+					if (var8 == '+') {
+						continue;
+					}
+				}
+
+				int var10;
+				if (var8 >= '0' && var8 <= '9') {
+					var10 = var8 - '0';
+				} else if (var8 >= 'A' && var8 <= 'Z') {
+					var10 = var8 - '7';
+				} else {
+					if (var8 < 'a' || var8 > 'z') {
+						return false;
+					}
+
+					var10 = var8 - 'W';
+				}
+
+				if (var10 >= var1) {
+					return false;
+				}
+
+				if (var3) {
+					var10 = -var10;
+				}
+
+				int var9 = var5 * var1 + var10;
+				if (var9 / var1 != var5) {
+					return false;
+				}
+
+				var5 = var9;
+				var4 = true;
 			}
+
+			return var4;
+		} else {
+			throw new IllegalArgumentException("" + var1);
+		}
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(IIIIIIIIB)V",
+		garbageValue = "77"
+	)
+	static void method3596(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+		if (class468.clientPreferences.getAreaSoundEffectsVolume() != 0 && var6 > 0 && class57.soundEffectCount < 50) {
+			GrandExchangeOffer.method8796(AsyncHttpResponse.worldView.id, var1, var2, var3, var4, var5, var6, var7, false);
 		}
 
+	}
+
+	@ObfuscatedName("ag")
+	@ObfuscatedSignature(
+		descriptor = "(I)V",
+		garbageValue = "-809726831"
+	)
+	public static void method3599() {
+		StructComposition.StructDefinition_cached.clear();
+	}
+
+	@ObfuscatedName("pm")
+	@ObfuscatedSignature(
+		descriptor = "(IIIZI)V",
+		garbageValue = "-1318049126"
+	)
+	public static void method3598(int var0, int var1, int var2, boolean var3) {
+		PacketBufferNode var4 = ReflectionCheck.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
+		var4.packetBuffer.writeIntLE(var0);
+		var4.packetBuffer.writeShortAdd(var1);
+		var4.packetBuffer.method11690(var3 ? Client.field443 : 0);
+		var4.packetBuffer.writeByteNeg(var2);
+		Client.packetWriter.addNode(var4);
 	}
 }
