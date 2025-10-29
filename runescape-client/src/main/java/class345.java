@@ -68,11 +68,11 @@ public class class345 {
 	)
 	static void method7363(PacketBufferNode var0) {
 		var0.packetBuffer.writeInt(class147.archive8.hash);
-		var0.packetBuffer.method11690(ActorSpotAnim.archive13.hash);
-		var0.packetBuffer.writeIntIME(class474.field5353.hash);
-		var0.packetBuffer.method11727(class175.field1928.hash);
+		var0.packetBuffer.writeIntME(ActorSpotAnim.archive13.hash);
+		var0.packetBuffer.writeIntLE(class474.field5353.hash);
+		var0.packetBuffer.writeIntIME(class175.field1928.hash);
 		var0.packetBuffer.writeInt(class226.field2558.hash);
-		var0.packetBuffer.method11690(GrandExchangeOfferOwnWorldComparator.field248.hash);
+		var0.packetBuffer.writeIntME(GrandExchangeOfferOwnWorldComparator.field248.hash);
 		var0.packetBuffer.writeInt(HttpRequestTask.archive10.hash);
 	}
 }

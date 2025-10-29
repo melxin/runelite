@@ -62,9 +62,9 @@ public class BuddyRankComparator extends AbstractUserComparator {
 	static void method3734(int var0, int var1, int var2, int var3) {
 		PacketBufferNode var4 = ReflectionCheck.getPacketBufferNode(ClientPacket.MINIMAP_CLICK, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(18);
-		var4.packetBuffer.writeShortLE(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
-		var4.packetBuffer.writeIntLE(var1 + Occluder.topLevelWorldView.baseY);
-		var4.packetBuffer.writeIntLE(var0 + Occluder.topLevelWorldView.baseX);
+		var4.packetBuffer.writeByteSub(Client.indexCheck.isValidIndexInRange(82) ? (Client.indexCheck.isValidIndexInRange(81) ? 2 : 1) : 0);
+		var4.packetBuffer.writeShortAdd(var1 + Occluder.topLevelWorldView.baseY);
+		var4.packetBuffer.writeShortAdd(var0 + Occluder.topLevelWorldView.baseX);
 		var4.packetBuffer.writeByte(var2);
 		var4.packetBuffer.writeByte(var3);
 		var4.packetBuffer.writeShort(Client.camAngleY);

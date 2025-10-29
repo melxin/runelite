@@ -208,7 +208,7 @@ public class class418 {
 		if (!Client.isInInstance) {
 			var2 = var1.readUnsignedShort();
 			int var3 = var1.readUnsignedShortAddLE();
-			var1.readUnsignedIntLE();
+			var1.method11682();
 			var4 = var1.readUnsignedShort();
 			SpriteBufferProperties.xteaKeys = new int[var4][4];
 

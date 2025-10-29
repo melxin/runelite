@@ -24,7 +24,7 @@ public enum class386 implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Low;"
 	)
-	field4427 = field4422;
+	field4427(3, 3, true, true); // ??
 
 	@ObfuscatedName("an")
 	@ObfuscatedGetter(

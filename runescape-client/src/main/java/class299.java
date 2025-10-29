@@ -179,8 +179,8 @@ public class class299 implements WorldMapSection {
 		garbageValue = "-1859449601"
 	)
 	@Export("FillMode_values")
-	public static class612[] FillMode_values() {
-		return new class612[]{class612.field6100, class612.field6102, class612.SOLID};
+	public static FillMode[] FillMode_values() {
+		return new FillMode[]{FillMode.field6100, FillMode.field6102, FillMode.SOLID};
 	}
 
 	@ObfuscatedName("ab")

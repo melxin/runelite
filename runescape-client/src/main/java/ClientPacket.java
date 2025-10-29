@@ -76,7 +76,7 @@ public class ClientPacket implements class332 {
 	@ObfuscatedSignature(
 		descriptor = "Lml;"
 	)
-	public static final ClientPacket field3589;
+	public static final ClientPacket FREECAM_EXIT;
 	@ObfuscatedName("as")
 	@ObfuscatedSignature(
 		descriptor = "Lml;"
@@ -111,7 +111,7 @@ public class ClientPacket implements class332 {
 	@ObfuscatedSignature(
 		descriptor = "Lml;"
 	)
-	public static final ClientPacket field3600;
+	public static final ClientPacket DETECT_MODIFIED_CLIENT;
 	@ObfuscatedName("af")
 	@ObfuscatedSignature(
 		descriptor = "Lml;"
@@ -550,14 +550,14 @@ public class ClientPacket implements class332 {
 		CHAT_SENDABUSEREPORT = new ClientPacket(10, -1);
 		OPPLAYER4 = new ClientPacket(11, 3);
 		CLICK_WORLD_MAP = new ClientPacket(12, 4);
-		field3589 = new ClientPacket(13, 0);
+		FREECAM_EXIT = new ClientPacket(13, 0);
 		OPPLAYER1 = new ClientPacket(14, 3);
 		OPWORLDENTITY2 = new ClientPacket(15, 3);
 		OPWORLDENTITYU = new ClientPacket(16, 11);
 		OPLOC3 = new ClientPacket(17, 7);
 		field3598 = new ClientPacket(18, 6);
 		OPWORLDENTITY5 = new ClientPacket(19, 3);
-		field3600 = new ClientPacket(20, 4);
+		DETECT_MODIFIED_CLIENT = new ClientPacket(20, 4);
 		RESUME_NAMEDIALOG = new ClientPacket(21, -1);
 		CLOSE_MODAL = new ClientPacket(22, 0);
 		OPNPC1 = new ClientPacket(23, 3);

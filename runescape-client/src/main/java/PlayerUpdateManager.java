@@ -818,7 +818,7 @@ public class PlayerUpdateManager {
 			for (var15 = 0; var15 < var6; ++var15) {
 				var26 = var1.readUnsignedByte();
 				var21 = var1.readUnsignedShortAddLE();
-				var24 = var1.method11858();
+				var24 = var1.readUnsignedIntME();
 				var4.method1860(var26, var21, var24 >> 16, var24 & 65535);
 			}
 		}

@@ -84,12 +84,12 @@ public class class179 extends DualNode {
 							int[] var4 = var0.field3227.method8189();
 							if (var4 != null) {
 								PacketBufferNode var2 = ReflectionCheck.getPacketBufferNode(ClientPacket.IF_CRMVIEW, Client.packetWriter.isaacCipher);
-								var2.packetBuffer.writeIntIME(var0.field3227.method8225());
-								var2.packetBuffer.writeShortAddLE(var0.field3227.childIndex * 2077538819);
-								var2.packetBuffer.method11727(var4[2]);
-								var2.packetBuffer.writeIntIME(var4[1]);
-								var2.packetBuffer.method11727(var4[0]);
-								var2.packetBuffer.writeIntIME(var0.field3227.id);
+								var2.packetBuffer.writeIntLE(var0.field3227.method8225());
+								var2.packetBuffer.writeShortLE(var0.field3227.childIndex * 2077538819);
+								var2.packetBuffer.writeIntIME(var4[2]);
+								var2.packetBuffer.writeIntLE(var4[1]);
+								var2.packetBuffer.writeIntIME(var4[0]);
+								var2.packetBuffer.writeIntLE(var0.field3227.id);
 								Client.packetWriter.addNode(var2);
 							}
 						}

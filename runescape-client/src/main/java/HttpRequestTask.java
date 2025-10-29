@@ -160,16 +160,16 @@ public class HttpRequestTask implements Callable {
 				PacketBufferNode var7 = ReflectionCheck.getPacketBufferNode(ClientPacket.IF_RUNSCRIPT, Client.packetWriter.isaacCipher);
 				var7.packetBuffer.writeShort(0);
 				int var8 = var7.packetBuffer.offset * 2108391709;
-				var7.packetBuffer.writeIntIME(var3);
-				var7.packetBuffer.writeShortAddLE(var1);
-				var7.packetBuffer.writeIntIME(var0);
-				var7.packetBuffer.writeShortAddLE(var2);
+				var7.packetBuffer.writeIntLE(var3);
+				var7.packetBuffer.writeShortLE(var1);
+				var7.packetBuffer.writeIntLE(var0);
+				var7.packetBuffer.writeShortLE(var2);
 				Object[] var9 = var4;
 
 				for (int var10 = 0; var10 < var9.length; ++var10) {
 					Object var11 = var9[var10];
 					if (var11 instanceof Integer) {
-						var7.packetBuffer.writeByteAdd((Integer)var11);
+						var7.packetBuffer.method11623((Integer)var11);
 					} else if (var11 instanceof String) {
 						var7.packetBuffer.writeStringCp1252NullTerminated((String)var11);
 					} else if (var11 instanceof DynamicArray) {
@@ -181,7 +181,7 @@ public class HttpRequestTask implements Callable {
 							int[] var16 = var12.method10650();
 
 							for (var15 = 0; var15 < var13; ++var15) {
-								var7.packetBuffer.writeByteAdd(var16[var15]);
+								var7.packetBuffer.method11623(var16[var15]);
 							}
 						} else {
 							Object[] var14 = var12.method10681();

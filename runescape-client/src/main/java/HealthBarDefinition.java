@@ -389,8 +389,8 @@ public class HealthBarDefinition extends DualNode {
 	@Export("resumePauseWidget")
 	static void resumePauseWidget(int var0, int var1) {
 		PacketBufferNode var2 = ReflectionCheck.getPacketBufferNode(ClientPacket.RESUME_PAUSEBUTTON, Client.packetWriter.isaacCipher);
-		var2.packetBuffer.writeShortAddLE(var1);
-		var2.packetBuffer.writeIntIME(var0);
+		var2.packetBuffer.writeShortLE(var1);
+		var2.packetBuffer.writeIntLE(var0);
 		Client.packetWriter.addNode(var2);
 	}
 }

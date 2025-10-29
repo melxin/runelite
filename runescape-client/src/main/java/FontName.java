@@ -180,7 +180,7 @@ public class FontName {
 		} else if (var0 < 3800) {
 			return class138.method3831(var0, var1, var2);
 		} else if (var0 < 3900) {
-			return class612.method12096(var0, var1, var2);
+			return FillMode.method12096(var0, var1, var2);
 		} else if (var0 < 4000) {
 			return AbstractByteArrayCopier.method7620(var0, var1, var2);
 		} else if (var0 < 4100) {

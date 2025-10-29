@@ -30,7 +30,7 @@ public enum class406 implements Enum {
 	@ObfuscatedSignature(
 		descriptor = "Lpn;"
 	)
-	field4908 = field4904;
+	field4908(4, 4); // ??
 
 	@ObfuscatedName("ae")
 	@ObfuscatedGetter(

@@ -235,19 +235,19 @@ public class class468 extends AbstractQueue {
 	static void method9561(PacketBufferNode var0) {
 		var0.packetBuffer.writeInt(Varps.field4092.hash);
 		var0.packetBuffer.writeInt(class189.archive4.hash);
-		var0.packetBuffer.method11727(AsyncHttpResponse.field67.hash);
+		var0.packetBuffer.writeIntIME(AsyncHttpResponse.field67.hash);
 		var0.packetBuffer.writeInt(ParamComposition.field2290.hash);
 		var0.packetBuffer.writeInt(0);
 		var0.packetBuffer.writeInt(class160.field1815.hash);
-		var0.packetBuffer.method11727(Skeleton.field2836.hash);
+		var0.packetBuffer.writeIntIME(Skeleton.field2836.hash);
 		var0.packetBuffer.writeInt(Tile.archive9.hash);
-		var0.packetBuffer.writeIntIME(UserComparator4.archive6.hash);
+		var0.packetBuffer.writeIntLE(UserComparator4.archive6.hash);
 		var0.packetBuffer.writeInt(PcmPlayer.field1328.hash);
-		var0.packetBuffer.method11727(class138.field1642.hash);
-		var0.packetBuffer.method11727(AbstractWorldMapIcon.field3529.hash);
-		var0.packetBuffer.method11727(VarcInt.field2017.hash);
-		var0.packetBuffer.method11690(class136.field1619.hash);
-		var0.packetBuffer.writeIntIME(StructComposition.archive2.hash);
-		var0.packetBuffer.method11727(WorldMapRectangle.archive12.hash);
+		var0.packetBuffer.writeIntIME(class138.field1642.hash);
+		var0.packetBuffer.writeIntIME(AbstractWorldMapIcon.field3529.hash);
+		var0.packetBuffer.writeIntIME(VarcInt.field2017.hash);
+		var0.packetBuffer.writeIntME(class136.field1619.hash);
+		var0.packetBuffer.writeIntLE(StructComposition.archive2.hash);
+		var0.packetBuffer.writeIntIME(WorldMapRectangle.archive12.hash);
 	}
 }

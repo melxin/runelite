@@ -249,11 +249,11 @@ public class FloatProjection extends Projection {
 
 			if ((var5 & 1) != 0) {
 				var1.readUnsignedShortAdd();
-				var1.method11804();
+				var1.readUnsignedIntIME();
 			}
 
 			if ((var5 & 524288) != 0) {
-				var6 = var1.method11858();
+				var6 = var1.readUnsignedIntME();
 				var4.turnLeftSequence = (var6 & 1) != 0 ? var1.readUnsignedShortLE() : var4.definition.turnLeftSequence;
 				var4.turnRightSequence = (var6 & 2) != 0 ? var1.readUnsignedShort() : var4.definition.turnRightSequence;
 				var4.walkSequence = (var6 & 4) != 0 ? var1.readUnsignedShortLE() : var4.definition.walkSequence;
@@ -398,7 +398,7 @@ public class FloatProjection extends Projection {
 				for (var14 = 0; var14 < var6; ++var14) {
 					var15 = var1.readUnsignedByteNeg();
 					var9 = var1.readUnsignedShortLE();
-					var10 = var1.method11867();
+					var10 = var1.readUnsignedIntLE();
 					var4.updateSpotAnimation(var15, var9, var10 >> 16, var10 & 65535);
 				}
 			}

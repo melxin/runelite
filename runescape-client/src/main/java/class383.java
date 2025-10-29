@@ -332,7 +332,7 @@ public enum class383 implements Enum {
 				ObjectComposition.ObjectDefinition_cachedModelData.clear();
 				PacketBufferNode var19;
 				if (SecureUrlRequester.client.hasFrame()) {
-					var19 = ReflectionCheck.getPacketBufferNode(ClientPacket.field3600, Client.packetWriter.isaacCipher);
+					var19 = ReflectionCheck.getPacketBufferNode(ClientPacket.DETECT_MODIFIED_CLIENT, Client.packetWriter.isaacCipher);
 					var19.packetBuffer.writeInt(1057001181);
 					Client.packetWriter.addNode(var19);
 				}

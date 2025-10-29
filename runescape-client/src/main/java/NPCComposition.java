@@ -162,14 +162,14 @@ public class NPCComposition extends DualNode {
 	@ObfuscatedGetter(
 		intValue = 1710335081
 	)
-	@Export("contrast")
-	int contrast;
+	@Export("ambient")
+	int ambient;
 	@ObfuscatedName("db")
 	@ObfuscatedGetter(
 		intValue = 641405031
 	)
-	@Export("ambient")
-	int ambient;
+	@Export("contrast")
+	int contrast;
 	@ObfuscatedName("dt")
 	@ObfuscatedGetter(
 		intValue = 1078048253
@@ -270,8 +270,8 @@ public class NPCComposition extends DualNode {
 		this.combatLevel = -1;
 		this.widthScale = 128;
 		this.heightScale = 128;
-		this.contrast = 0;
 		this.ambient = 0;
+		this.contrast = 0;
 		this.rotation = 32;
 		this.transformVarbit = -1;
 		this.transformVarp = -1;
@@ -441,10 +441,10 @@ public class NPCComposition extends DualNode {
 			this.field2158 = class201.field2172;
 			break;
 		case 100:
-			this.contrast = var1.readByte();
+			this.ambient = var1.readByte();
 			break;
 		case 101:
-			this.ambient = var1.readByte();
+			this.contrast = var1.readByte();
 			break;
 		case 102:
 			var3 = var1.readUnsignedByte();
@@ -577,7 +577,7 @@ public class NPCComposition extends DualNode {
 					return null;
 				}
 
-				var8 = var9.toModel(this.contrast + 64, this.ambient * 5 + 850, -30, -50, -30);
+				var8 = var9.toModel(this.ambient + 64, this.contrast * 5 + 850, -30, -50, -30);
 				NpcDefinition_cachedModels.put(var8, var6);
 			}
 

@@ -483,7 +483,7 @@ public class WorldMap {
 
 					if (var10) {
 						PacketBufferNode var13 = ReflectionCheck.getPacketBufferNode(ClientPacket.CLICK_WORLD_MAP, Client.packetWriter.isaacCipher);
-						var13.packetBuffer.method11727(this.mouseCoord.packed());
+						var13.packetBuffer.writeIntIME(this.mouseCoord.packed());
 						Client.packetWriter.addNode(var13);
 						this.field5811 = 0L;
 					}

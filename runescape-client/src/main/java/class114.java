@@ -173,10 +173,10 @@ public class class114 {
 	)
 	public static void method3598(int var0, int var1, int var2, boolean var3) {
 		PacketBufferNode var4 = ReflectionCheck.getPacketBufferNode(ClientPacket.TELEPORT, Client.packetWriter.isaacCipher);
-		var4.packetBuffer.writeIntLE(var0);
-		var4.packetBuffer.writeShortAdd(var1);
-		var4.packetBuffer.method11690(var3 ? Client.field443 : 0);
-		var4.packetBuffer.writeByteNeg(var2);
+		var4.packetBuffer.writeShortAdd(var0);
+		var4.packetBuffer.writeShortAddLE(var1);
+		var4.packetBuffer.writeIntME(var3 ? Client.field443 : 0);
+		var4.packetBuffer.writeByteAdd(var2);
 		Client.packetWriter.addNode(var4);
 	}
 }

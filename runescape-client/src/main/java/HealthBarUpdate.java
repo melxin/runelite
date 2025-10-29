@@ -981,7 +981,7 @@ public class HealthBarUpdate extends Node {
 	)
 	static void method2590(int var0) {
 		PacketBufferNode var1 = ReflectionCheck.getPacketBufferNode(ClientPacket.SET_HEADING, Client.packetWriter.isaacCipher);
-		var1.packetBuffer.writeByteNeg(var0);
+		var1.packetBuffer.writeByteAdd(var0);
 		Client.packetWriter.addNode(var1);
 	}
 
@@ -1020,7 +1020,7 @@ public class HealthBarUpdate extends Node {
 			var11 = var1.readUnsignedShort();
 			var12 = var1.readUnsignedShortLE();
 			var13 = var1.readUnsignedShortAddLE();
-			var14 = var1.method11858();
+			var14 = var1.readUnsignedIntME();
 			var15 = Coord.method7673(var14);
 			int var34 = Coord.method7674(var14);
 			int var26 = Coord.method7675(var14);
@@ -1092,8 +1092,8 @@ public class HealthBarUpdate extends Node {
 
 		} else if (class334.field3686 == var0) {
 			var2 = var1.readUnsignedShortAddLE();
-			var3 = var1.method11858();
-			var4 = var1.method11867();
+			var3 = var1.readUnsignedIntME();
+			var4 = var1.readUnsignedIntLE();
 			var5 = var1.readUnsignedByteNeg();
 			var6 = (var5 >> 4 & 7) + SpriteBufferProperties.field23;
 			var7 = (var5 & 7) + class482.field5369;
@@ -1150,8 +1150,8 @@ public class HealthBarUpdate extends Node {
 			var2 = var1.readUnsignedByteSub();
 			var3 = (var2 >> 4 & 7) + SpriteBufferProperties.field23;
 			var4 = (var2 & 7) + class482.field5369;
-			var5 = var1.readUnsignedIntLE();
-			var6 = var1.method11867();
+			var5 = var1.method11682();
+			var6 = var1.readUnsignedIntLE();
 			var7 = var1.readUnsignedShortAddLE();
 			var21 = var1.readShortLE();
 			var35 = var1.readUnsignedShortAddLE();
@@ -1195,7 +1195,7 @@ public class HealthBarUpdate extends Node {
 				var3 = var1.readUnsignedByteAdd();
 				var4 = (var3 >> 4 & 7) + SpriteBufferProperties.field23;
 				var5 = (var3 & 7) + class482.field5369;
-				var6 = var1.method11867();
+				var6 = var1.readUnsignedIntLE();
 				var7 = AsyncHttpResponse.worldView.plane;
 				if (0 <= var4 && var4 < 104 && 0 <= var5 && var5 < 104) {
 					var21 = Client.overheadTextLimit == -1 ? var7 : Client.overheadTextLimit;
@@ -1241,7 +1241,7 @@ public class HealthBarUpdate extends Node {
 					var7 = var1.readUnsignedByteSub();
 					var21 = var1.readUnsignedByteAdd();
 					var35 = var1.readUnsignedShortLE();
-					var30 = var1.method11867();
+					var30 = var1.readUnsignedIntLE();
 					var11 = var1.readUnsignedShort();
 					if (var4 >= 0 && var5 >= 0 && var4 < AsyncHttpResponse.worldView.sizeX && var5 < AsyncHttpResponse.worldView.sizeY) {
 						var12 = Client.overheadTextLimit == -1 ? AsyncHttpResponse.worldView.plane : Client.overheadTextLimit;
@@ -1252,7 +1252,7 @@ public class HealthBarUpdate extends Node {
 					var2 = var1.readUnsignedByte();
 					var3 = (var2 >> 4 & 7) + SpriteBufferProperties.field23;
 					var4 = (var2 & 7) + class482.field5369;
-					var5 = var1.method11858();
+					var5 = var1.readUnsignedIntME();
 					var6 = var1.readUnsignedShortAddLE();
 					if (var3 >= 0 && var4 >= 0 && var3 < 104 && var4 < 104) {
 						var7 = Client.overheadTextLimit == -1 ? AsyncHttpResponse.worldView.plane : Client.overheadTextLimit;

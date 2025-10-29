@@ -218,7 +218,7 @@ public class class575 {
 					return 1;
 				} else if (var0 == 1125) {
 					var4 = Interpreter.Interpreter_intStack[--class408.Interpreter_intStackSize];
-					class612 var19 = (class612)GrandExchangeOffer.findEnumerated(class299.FillMode_values(), var4);
+					FillMode var19 = (FillMode)GrandExchangeOffer.findEnumerated(class299.FillMode_values(), var4);
 					if (var19 != null) {
 						var3.fillMode = var19;
 						class376.invalidateWidget(var3);

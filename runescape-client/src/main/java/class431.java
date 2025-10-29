@@ -337,7 +337,7 @@ public class class431 {
 							PacketBufferNode var6 = ReflectionCheck.getPacketBufferNode(ClientPacket.BUG_REPORT, Client.packetWriter.isaacCipher);
 							var6.packetBuffer.writeShort(1 + AccessFile.stringCp1252NullTerminatedByteSize(var4) + AccessFile.stringCp1252NullTerminatedByteSize(var5));
 							var6.packetBuffer.writeStringCp1252NullTerminated(var4);
-							var6.packetBuffer.writeShortLE(var3);
+							var6.packetBuffer.writeByteSub(var3);
 							var6.packetBuffer.writeStringCp1252NullTerminated(var5);
 							Client.packetWriter.addNode(var6);
 							return 1;

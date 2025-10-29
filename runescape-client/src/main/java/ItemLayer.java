@@ -123,23 +123,23 @@ public final class ItemLayer {
 					PacketBufferNode var9;
 					if (var0 == 1) {
 						var9 = ReflectionCheck.getPacketBufferNode(ClientPacket.OPPLAYER1, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeShortLE(0);
+						var9.packetBuffer.writeByteSub(0);
 						var9.packetBuffer.writeShort(var3[var7]);
 						Client.packetWriter.addNode(var9);
 					} else if (var0 == 4) {
 						var9 = ReflectionCheck.getPacketBufferNode(ClientPacket.OPPLAYER4, Client.packetWriter.isaacCipher);
 						var9.packetBuffer.writeShort(var3[var7]);
-						var9.packetBuffer.writeByteSub(0);
+						var9.packetBuffer.writeByteNeg(0);
 						Client.packetWriter.addNode(var9);
 					} else if (var0 == 6) {
 						var9 = ReflectionCheck.getPacketBufferNode(ClientPacket.OPPLAYER6, Client.packetWriter.isaacCipher);
 						var9.packetBuffer.writeShort(var3[var7]);
-						var9.packetBuffer.writeByteSub(0);
+						var9.packetBuffer.writeByteNeg(0);
 						Client.packetWriter.addNode(var9);
 					} else if (var0 == 7) {
 						var9 = ReflectionCheck.getPacketBufferNode(ClientPacket.OPPLAYER7, Client.packetWriter.isaacCipher);
-						var9.packetBuffer.writeShortAdd(var3[var7]);
-						var9.packetBuffer.writeShortLE(0);
+						var9.packetBuffer.writeShortAddLE(var3[var7]);
+						var9.packetBuffer.writeByteSub(0);
 						Client.packetWriter.addNode(var9);
 					}
 
