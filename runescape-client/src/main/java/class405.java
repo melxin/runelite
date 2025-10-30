@@ -120,7 +120,7 @@ public enum class405 implements Enum {
 					var4 = class474.field5353;
 					Archive var41 = class175.field1928;
 					class345.field3927 = var28;
-					class278.field3220 = var4;
+					WidgetFocusInputManager.field3220 = var4;
 					class173.field1921 = var41;
 					class345.field3924 = var37;
 					SceneTilePaint.method6128(60, "Prepared sound engine");

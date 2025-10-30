@@ -1,10 +1,13 @@
 import java.awt.datatransfer.Clipboard;
+import net.runelite.mapping.Export;
+import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("kh")
-public class class278 implements class29 {
+@Implements("WidgetFocusInputManager")
+public class WidgetFocusInputManager implements class29 {
 	@ObfuscatedName("aj")
 	@ObfuscatedSignature(
 		descriptor = "Lqm;"
@@ -19,14 +22,15 @@ public class class278 implements class29 {
 	@ObfuscatedSignature(
 		descriptor = "Lof;"
 	)
-	Widget field3218;
+	@Export("inputField")
+	Widget inputField;
 	@ObfuscatedName("at")
 	boolean field3217;
 	@ObfuscatedName("ag")
 	boolean field3219;
 
-	public class278() {
-		this.field3218 = null;
+	public WidgetFocusInputManager() {
+		this.inputField = null;
 		this.field3217 = false;
 		this.field3219 = false;
 	}
@@ -37,10 +41,10 @@ public class class278 implements class29 {
 		garbageValue = "-1696349320"
 	)
 	public boolean vmethod6295(int var1) {
-		if (this.field3218 == null) {
+		if (this.inputField == null) {
 			return false;
 		} else {
-			class28 var2 = this.field3218.method8280();
+			class28 var2 = this.inputField.method8280();
 			if (var2 == null) {
 				return false;
 			} else {
@@ -54,7 +58,7 @@ public class class278 implements class29 {
 						break;
 					default:
 						if (this.method6273(var1)) {
-							class376.invalidateWidget(this.field3218);
+							class376.invalidateWidget(this.inputField);
 						}
 					}
 				}
@@ -88,19 +92,19 @@ public class class278 implements class29 {
 		garbageValue = "-128"
 	)
 	public boolean vmethod6297(char var1) {
-		if (this.field3218 == null) {
+		if (this.inputField == null) {
 			return false;
 		} else if (!AbstractWorldMapData.method6974(var1)) {
 			return false;
 		} else {
-			class378 var2 = this.field3218.method8194();
+			class378 var2 = this.inputField.method8194();
 			if (var2 != null && var2.method8105()) {
-				class28 var3 = this.field3218.method8280();
+				class28 var3 = this.inputField.method8280();
 				if (var3 == null) {
 					return false;
 				} else {
 					if (var3.method436(var1) && var2.method7854(var1)) {
-						class376.invalidateWidget(this.field3218);
+						class376.invalidateWidget(this.inputField);
 					}
 
 					return var3.method431(var1);
@@ -126,7 +130,7 @@ public class class278 implements class29 {
 		garbageValue = "-813486657"
 	)
 	public Widget method6266() {
-		return this.field3218;
+		return this.inputField;
 	}
 
 	@ObfuscatedName("ai")
@@ -136,9 +140,9 @@ public class class278 implements class29 {
 	)
 	public void method6267(Widget var1) {
 		if (var1 != null) {
-			if (var1 != this.field3218) {
+			if (var1 != this.inputField) {
 				this.method6268();
-				this.field3218 = var1;
+				this.inputField = var1;
 			}
 
 			class376 var2 = var1.method8197();
@@ -164,10 +168,10 @@ public class class278 implements class29 {
 		garbageValue = "1148946001"
 	)
 	public void method6268() {
-		if (this.field3218 != null) {
-			class376 var1 = this.field3218.method8197();
-			Widget var2 = this.field3218;
-			this.field3218 = null;
+		if (this.inputField != null) {
+			class376 var1 = this.inputField.method8197();
+			Widget var2 = this.inputField;
+			this.inputField = null;
 			if (var1 != null) {
 				if (var1.field4141.method7888() && var1.field4139 != null) {
 					ScriptEvent var3 = new ScriptEvent();
@@ -187,10 +191,10 @@ public class class278 implements class29 {
 		garbageValue = "36"
 	)
 	boolean method6273(int var1) {
-		if (this.field3218 == null) {
+		if (this.inputField == null) {
 			return false;
 		} else {
-			class378 var2 = this.field3218.method8194();
+			class378 var2 = this.inputField.method8194();
 			if (var2 != null && var2.method8105()) {
 				Clipboard var5;
 				switch(var1) {
@@ -230,9 +234,9 @@ public class class278 implements class29 {
 					} else if (this.field3219 && var2.method7906()) {
 						var2.method7854(10);
 					} else {
-						class376 var3 = this.field3218.method8197();
+						class376 var3 = this.inputField.method8197();
 						ScriptEvent var4 = new ScriptEvent();
-						var4.method2184(this.field3218);
+						var4.method2184(this.inputField);
 						var4.setArgs(var3.field4137);
 						HttpQueryParams.method10865().addFirst(var4);
 						this.method6268();

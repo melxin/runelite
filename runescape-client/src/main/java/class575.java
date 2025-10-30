@@ -312,11 +312,11 @@ public class class575 {
 							return 1;
 						} else if (var0 == 1140) {
 							var14 = Interpreter.Interpreter_intStack[--class408.Interpreter_intStackSize] == 1;
-							Client.field442.method6268();
+							Client.widgetFocusInputManager.method6268();
 							var18 = var3.method8194();
 							if (var18 != null && var18.method7840(var14)) {
 								if (var14) {
-									Client.field442.method6267(var3);
+									Client.widgetFocusInputManager.method6267(var3);
 								}
 
 								class376.invalidateWidget(var3);
@@ -325,8 +325,8 @@ public class class575 {
 							return 1;
 						} else if (var0 == 1141) {
 							var14 = Interpreter.Interpreter_intStack[--class408.Interpreter_intStackSize] == 1;
-							if (!var14 && Client.field442.method6266() == var3) {
-								Client.field442.method6268();
+							if (!var14 && Client.widgetFocusInputManager.method6266() == var3) {
+								Client.widgetFocusInputManager.method6268();
 								class376.invalidateWidget(var3);
 							}
 

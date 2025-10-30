@@ -193,7 +193,7 @@ public class class113 {
 			if (!class345.field3933.isEmpty()) {
 				ItemLayer.method5256(var1, var2, var3, var4);
 				class345.field3929.add(new AddRequestTask((SongTask)null));
-				class345.field3929.add(new class487((SongTask)null, class345.field3927, class278.field3220, class173.field1921));
+				class345.field3929.add(new class487((SongTask)null, class345.field3927, WidgetFocusInputManager.field3220, class173.field1921));
 				ArrayList var9 = new ArrayList();
 				var9.add(new class482(new FadeInTask((SongTask)null, 0, true, class345.field3926)));
 				if (!class345.midiRequests.isEmpty()) {

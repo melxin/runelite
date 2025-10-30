@@ -1111,6 +1111,9 @@ public interface RSClient extends RSGameEngine, Client
 	@Override
 	void setSelectedSpellWidget(int widgetID);
 
+	@Import("widgetFocusInputManager")
+	RSWidgetFocusInputManager getWidgetFocusedInputManager();
+
 	@Import("Sprite_drawScaled")
 	@Override
 	void scaleSprite(int[] canvas, int[] pixels, int color, int pixelX, int pixelY, int canvasIdx, int canvasOffset, int newWidth, int newHeight, int pixelWidth, int pixelHeight, int oldWidth);

@@ -100,7 +100,7 @@ public class class179 extends DualNode {
 				if (var3 != null && var3.method7889()) {
 					switch(var0.field3231) {
 					case 0:
-						Client.field442.method6267(var0.field3227);
+						Client.widgetFocusInputManager.method6267(var0.field3227);
 						var3.method7840(true);
 						var3.method8075(var0.field3225, var0.field3226, Client.indexCheck.isValidIndexInRange(82), Client.indexCheck.isValidIndexInRange(81));
 						break;

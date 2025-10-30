@@ -128,7 +128,7 @@ public enum WorldMapSectionType implements Enum {
 	static void updateGameState(int var0) {
 		if (var0 != Client.gameState) {
 			if (Client.gameState == 30) {
-				Client.field442.method6268();
+				Client.widgetFocusInputManager.method6268();
 			}
 
 			if (Client.gameState == 0) {

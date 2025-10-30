@@ -48,7 +48,7 @@ public class class30 {
 		Client.worldViewManager.clear();
 		Client.projectiles.clear();
 		Client.playerUpdateManager.clear();
-		Client.field442.method6268();
+		Client.widgetFocusInputManager.method6268();
 		System.gc();
 		class167.method4167(0, 0);
 		class179.method4284();

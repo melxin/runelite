@@ -248,7 +248,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 	@ObfuscatedSignature(
 		descriptor = "Lkh;"
 	)
-	static class278 field442;
+	@Export("widgetFocusInputManager")
+	static WidgetFocusInputManager widgetFocusInputManager;
 	@ObfuscatedName("hz")
 	@ObfuscatedSignature(
 		descriptor = "[Lgs;"
@@ -1427,7 +1428,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		field415 = 600;
 		revision = field415 / GameEngine.cycleDurationMillis;
 		indexCheck = new IndexCheck();
-		field442 = new class278();
+		widgetFocusInputManager = new WidgetFocusInputManager();
 		currentClanSettings = new ClanSettings[4];
 		currentClanChannels = new ClanChannel[4];
 		field331 = 256;
@@ -1719,7 +1720,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 		this.setUpKeyboard();
 		this.setUpMouse();
 		UserComparator6.mouseWheel = this.mouseWheel();
-		this.method634(field442, 0);
+		this.method634(widgetFocusInputManager, 0);
 		this.method634(indexCheck, 1);
 		this.setUpClipboard();
 		InterfaceParent.masterDisk = new ArchiveDisk(255, JagexCache.JagexCache_dat2File, JagexCache.JagexCache_idx255File, 750000);
@@ -3452,7 +3453,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 																class279 var63 = (class279)field400.removeLast();
 																if (var63 == null) {
 																	if (!var43 && MouseHandler.MouseHandler_lastButton == 1) {
-																		field442.method6268();
+																		widgetFocusInputManager.method6268();
 																	}
 
 																	this.menu();
@@ -3748,7 +3749,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 																			WorldView.field1142 = 0;
 																			class487.field5389 = 0;
 																			FloatProjection.field2946 = 0;
-																			class278.field3221 = 0;
+																			WidgetFocusInputManager.field3221 = 0;
 																			SpriteMask.field4089 = 0;
 																			class195.field2078 = 0;
 																			field540 = null;
@@ -3757,7 +3758,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 																		}
 																	} else if (isCameraLocked) {
 																		if (!field494) {
-																			var5 = Coord.method7679(class278.field3221);
+																			var5 = Coord.method7679(WidgetFocusInputManager.field3221);
 																			var6 = Coord.method7679(SpriteMask.field4089);
 																			var7 = NPCComposition.getTileHeight(Occluder.topLevelWorldView, var5, var6, Occluder.topLevelWorldView.plane) - class195.field2078;
 																			UserComparator10.method3733(var5, var7, var6);
@@ -4733,7 +4734,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					isCameraLocked = true;
 					field412 = false;
 					field494 = true;
-					class278.field3221 = var3.readUnsignedByte();
+					WidgetFocusInputManager.field3221 = var3.readUnsignedByte();
 					SpriteMask.field4089 = var3.readUnsignedByte();
 					var22 = var3.readUnsignedShort();
 					var5 = Coord.method7679(var3.readUnsignedByte());
@@ -4741,7 +4742,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					var24 = var3.readUnsignedShort();
 					field425 = var3.readBoolean();
 					var27 = var3.readUnsignedByte();
-					var9 = Coord.method7679(class278.field3221);
+					var9 = Coord.method7679(WidgetFocusInputManager.field3221);
 					var10 = Coord.method7679(SpriteMask.field4089);
 					var70 = false;
 					var69 = false;
@@ -5515,13 +5516,13 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					isCameraLocked = true;
 					field412 = false;
 					field494 = false;
-					class278.field3221 = var3.readUnsignedByte();
+					WidgetFocusInputManager.field3221 = var3.readUnsignedByte();
 					SpriteMask.field4089 = var3.readUnsignedByte();
 					class195.field2078 = var3.readUnsignedShort();
 					FloatProjection.field2946 = var3.readUnsignedByte();
 					class487.field5389 = var3.readUnsignedByte();
 					if (class487.field5389 >= 100) {
-						SpriteBufferProperties.cameraX = Coord.method7679(class278.field3221);
+						SpriteBufferProperties.cameraX = Coord.method7679(WidgetFocusInputManager.field3221);
 						class528.cameraZ = Coord.method7679(SpriteMask.field4089);
 						ScriptFrame.cameraY = NPCComposition.getTileHeight(Occluder.topLevelWorldView, SpriteBufferProperties.cameraX, class528.cameraZ, Occluder.topLevelWorldView.plane) - class195.field2078;
 					}
@@ -5782,7 +5783,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					WorldView.field1142 = 0;
 					class487.field5389 = 0;
 					FloatProjection.field2946 = 0;
-					class278.field3221 = 0;
+					WidgetFocusInputManager.field3221 = 0;
 					SpriteMask.field4089 = 0;
 					class195.field2078 = 0;
 					field540 = null;
@@ -5935,13 +5936,13 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi, cla
 					isCameraLocked = true;
 					field412 = false;
 					field494 = true;
-					class278.field3221 = var3.readUnsignedByte();
+					WidgetFocusInputManager.field3221 = var3.readUnsignedByte();
 					SpriteMask.field4089 = var3.readUnsignedByte();
 					var22 = var3.readUnsignedShort();
 					var5 = var3.readUnsignedShort();
 					field425 = var3.readBoolean();
 					var6 = var3.readUnsignedByte();
-					var24 = Coord.method7679(class278.field3221);
+					var24 = Coord.method7679(WidgetFocusInputManager.field3221);
 					var27 = Coord.method7679(SpriteMask.field4089);
 					boolean var62 = false;
 					boolean var65 = false;

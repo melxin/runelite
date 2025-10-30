@@ -3196,6 +3196,13 @@ public abstract class RSClientMixin implements RSClient
 
 	@Inject
 	@Override
+	public Widget getFocusedInputFieldWidget()
+	{
+		return getWidgetFocusedInputManager().getInputField();
+	}
+
+	@Inject
+	@Override
 	public int addClientScript(byte[] script)
 	{
 		assert this.isClientThread() : "addClientScript must be called on client thread";
