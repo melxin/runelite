@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2025, Adam <Adam@sigterm.info>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,26 +22,50 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+package net.runelite.client.callback;
 
-/*
- * Convert a vertex to screen space
- */
-vec3 toScreen(ivec3 vertex, int cameraYaw, int cameraPitch, int centerX, int centerY, int zoom) {
-  float yawSin = sin(cameraYaw * UNIT);
-  float yawCos = cos(cameraYaw * UNIT);
+import net.runelite.api.Renderable;
+import net.runelite.api.Scene;
+import net.runelite.api.Tile;
+import net.runelite.api.TileObject;
 
-  float pitchSin = sin(cameraPitch * UNIT);
-  float pitchCos = cos(cameraPitch * UNIT);
+public interface RenderCallback
+{
+	/**
+	 * Tests if an entity should be rendered.
+	 * This is called multiple times per frame from the client thread.
+	 * Entities are temporary entities (players, npcs, projectiles, spotanims, etc).
+	 * @param renderable the entity
+	 * @param ui true if this test is for drawing the ui (hitbars etc)
+	 * @return
+	 */
+	default boolean drawEntity(Renderable renderable, boolean ui)
+	{
+		return true;
+	}
 
-  float rotatedX = (vertex.z * yawSin) + (vertex.x * yawCos);
-  float rotatedZ = (vertex.z * yawCos) - (vertex.x * yawSin);
+	/**
+	 * Test if a tile should be drawn.
+	 * This is called on scene upload, by the maploader thread.
+	 * @param scene
+	 * @param tile
+	 * @return
+	 */
+	default boolean drawTile(Scene scene, Tile tile)
+	{
+		return true;
+	}
 
-  float var13 = (vertex.y * pitchCos) - (rotatedZ * pitchSin);
-  float var12 = (vertex.y * pitchSin) + (rotatedZ * pitchCos);
-
-  float x = rotatedX * zoom / var12 + centerX;
-  float y = var13 * zoom / var12 + centerY;
-  float z = -var12;  // in OpenGL depth is negative
-
-  return vec3(x, y, z);
+	/**
+	 * Test if a tileobject should be drawn.
+	 * This is called on scene upload, by the maploader thread, as well as
+	 * each frame by the client thread for dynamic objects (animated objects)
+	 * @param scene
+	 * @param object
+	 * @return
+	 */
+	default boolean drawObject(Scene scene, TileObject object)
+	{
+		return true;
+	}
 }

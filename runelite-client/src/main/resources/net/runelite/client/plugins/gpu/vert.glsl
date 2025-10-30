@@ -25,39 +25,41 @@
 
 #version 330
 
-#define TILE_SIZE 128
+#define TILE_SIZE 128.f
 
-#define FOG_SCENE_EDGE_MIN TILE_SIZE
-#define FOG_SCENE_EDGE_MAX (103 * TILE_SIZE)
+#define FOG_SCENE_EDGE_MIN ((-expandedMapLoadingChunks * 8 + 1) * TILE_SIZE)
+#define FOG_SCENE_EDGE_MAX ((104 + expandedMapLoadingChunks * 8 - 1) * TILE_SIZE)
 #define FOG_CORNER_ROUNDING 1.5
 #define FOG_CORNER_ROUNDING_SQUARED (FOG_CORNER_ROUNDING * FOG_CORNER_ROUNDING)
 
-layout(location = 0) in ivec4 VertexPosition;
-layout(location = 1) in vec4 uv;
+layout(location = 0) in vec3 vertf;
+layout(location = 1) in int abhsl;
+layout(location = 2) in ivec4 tex;
 
 layout(std140) uniform uniforms {
-  int cameraYaw;
-  int cameraPitch;
-  int centerX;
-  int centerY;
-  int zoom;
-  int cameraX;
-  int cameraY;
-  int cameraZ;
-  ivec2 sinCosTable[2048];
+  float cameraYaw;
+  float cameraPitch;
+  float cameraX;
+  float cameraY;
+  float cameraZ;
 };
 
+uniform mat4 entityProj;
+uniform ivec4 entityTint;
 uniform float brightness;
 uniform int useFog;
 uniform int fogDepth;
 uniform int drawDistance;
+uniform int expandedMapLoadingChunks;
+uniform ivec3 base;
 
-out ivec3 gVertex;
+out vec4 gVertex;
 out vec4 gColor;
 out float gHsl;
 out int gTextureId;
-out vec3 gTexPos;
+out vec4 gTexPos;
 out float gFogAmount;
+out int gBias;
 
 #include "hsl_to_rgb.glsl"
 
@@ -66,28 +68,28 @@ float fogFactorLinear(const float dist, const float start, const float end) {
 }
 
 void main() {
-  ivec3 vertex = VertexPosition.xyz;
-  int ahsl = VertexPosition.w;
-  int hsl = ahsl & 0xffff;
-  float a = float(ahsl >> 24 & 0xff) / 255.f;
+  vec4 vert = vec4(vertf + base, 1);
+  float a = float(abhsl >> 24 & 0xff) / 255.f;
 
+  vec3 hsl = vec3(abhsl >> 10 & 63, abhsl >> 7 & 7, abhsl & 127);
+  hsl += ((entityTint.xyz - hsl) * entityTint.w) / 128;
   vec3 rgb = hslToRgb(hsl);
 
-  gVertex = vertex;
+  gVertex = entityProj * vert;
   gColor = vec4(rgb, 1.f - a);
-  gHsl = float(hsl);
+  gHsl = abhsl & 0xffff;  // only used for texture lighting, which isn't affected by tint
 
-  gTextureId = int(uv.x);  // the texture id + 1;
-  gTexPos = uv.yzw;
+  gTextureId = tex.x;  // the texture id + 1
+  gTexPos = entityProj * (trunc(vert) + vec4(tex.yzw, 0));
 
-  int fogWest = max(FOG_SCENE_EDGE_MIN, cameraX - drawDistance);
-  int fogEast = min(FOG_SCENE_EDGE_MAX, cameraX + drawDistance - TILE_SIZE);
-  int fogSouth = max(FOG_SCENE_EDGE_MIN, cameraZ - drawDistance);
-  int fogNorth = min(FOG_SCENE_EDGE_MAX, cameraZ + drawDistance - TILE_SIZE);
+  float fogWest = max(FOG_SCENE_EDGE_MIN, cameraX - drawDistance);
+  float fogEast = min(FOG_SCENE_EDGE_MAX, cameraX + drawDistance);
+  float fogSouth = max(FOG_SCENE_EDGE_MIN, cameraZ - drawDistance);
+  float fogNorth = min(FOG_SCENE_EDGE_MAX, cameraZ + drawDistance);
 
   // Calculate distance from the scene edge
-  int xDist = min(vertex.x - fogWest, fogEast - vertex.x);
-  int zDist = min(vertex.z - fogSouth, fogNorth - vertex.z);
+  float xDist = min(gVertex.x - fogWest, fogEast - gVertex.x);
+  float zDist = min(gVertex.z - fogSouth, fogNorth - gVertex.z);
   float nearestEdgeDistance = min(xDist, zDist);
   float secondNearestEdgeDistance = max(xDist, zDist);
   float fogDistance =
@@ -95,4 +97,6 @@ void main() {
                                 max(0.f, (nearestEdgeDistance + FOG_CORNER_ROUNDING_SQUARED) / (secondNearestEdgeDistance + FOG_CORNER_ROUNDING_SQUARED));
 
   gFogAmount = fogFactorLinear(fogDistance, 0, fogDepth * TILE_SIZE) * useFog;
+
+  gBias = (abhsl >> 16) & 0xff;
 }

@@ -54,14 +54,28 @@ public interface GpuPluginConfig extends Config
 	}
 
 	@ConfigItem(
-		keyName = "smoothBanding",
-		name = "Remove color banding",
-		description = "Smooths out the color banding that is present in the CPU renderer.",
+		keyName = "hideUnrelatedMaps",
+		name = "Hide unrelated maps",
+		description = "Hide unrelated map areas you shouldn't see.",
 		position = 2
 	)
-	default boolean smoothBanding()
+	default boolean hideUnrelatedMaps()
 	{
 		return true;
+	}
+
+	@Range(
+		max = 5
+	)
+	@ConfigItem(
+		keyName = "expandedMapLoadingChunks",
+		name = "Extended map loading",
+		description = "Extra map area to load, in 8 tile chunks.",
+		position = 1
+	)
+	default int expandedMapLoadingZones()
+	{
+		return 3;
 	}
 
 	@ConfigItem(
@@ -83,7 +97,7 @@ public interface GpuPluginConfig extends Config
 	)
 	default UIScalingMode uiScalingMode()
 	{
-		return UIScalingMode.LINEAR;
+		return UIScalingMode.HYBRID;
 	}
 
 	@Range(
@@ -98,18 +112,6 @@ public interface GpuPluginConfig extends Config
 	default int fogDepth()
 	{
 		return 0;
-	}
-
-	@ConfigItem(
-		keyName = "useComputeShaders",
-		name = "Compute shaders",
-		description = "Offloads face sorting to GPU. Requires plugin restart.",
-		warning = "This feature requires OpenGL 4.3 to use. Please check that your GPU supports this.\nRestart the plugin for changes to take effect.",
-		position = 6
-	)
-	default boolean useComputeShaders()
-	{
-		return true;
 	}
 
 	@Range(
@@ -191,5 +193,16 @@ public interface GpuPluginConfig extends Config
 	default int fpsTarget()
 	{
 		return 60;
+	}
+
+	@ConfigItem(
+		keyName = "removeVertexSnapping",
+		name = "Remove vertex snapping",
+		description = "Removes vertex snapping from most animations.",
+		position = 13
+	)
+	default boolean removeVertexSnapping()
+	{
+		return true;
 	}
 }

@@ -27,7 +27,8 @@
 
 #include texture_config
 
-//#define ZBUF
+//#define ZBUF_DEBUG
+//#define BIAS_DEBUG
 
 // smallest unit of the texture which can be moved per tick. textures are all
 // 128x128px - so this is equivalent to +1px
@@ -37,43 +38,43 @@ layout(triangles) in;
 layout(triangle_strip, max_vertices = 3) out;
 
 layout(std140) uniform uniforms {
-  int cameraYaw;
-  int cameraPitch;
-  int centerX;
-  int centerY;
-  int zoom;
-  int cameraX;
-  int cameraY;
-  int cameraZ;
-  ivec2 sinCosTable[2048];
+  float cameraYaw;
+  float cameraPitch;
+  float cameraX;
+  float cameraY;
+  float cameraZ;
 };
 
 #include "uv.glsl"
 
 uniform vec2 textureAnimations[TEXTURE_COUNT];
 uniform int tick;
-uniform mat4 projectionMatrix;
+uniform mat4 worldProj;
 
-in ivec3 gVertex[3];
+in vec4 gVertex[3];
 in vec4 gColor[3];
 in float gHsl[3];
 in int gTextureId[3];
-in vec3 gTexPos[3];
+in vec4 gTexPos[3];
 in float gFogAmount[3];
+in int gBias[3];
 
 out vec4 fColor;
 noperspective centroid out float fHsl;
 flat out int fTextureId;
 out vec2 fUv;
 out float fFogAmount;
+#ifdef ZBUF_DEBUG
+out float fDepth;
+#endif
 
 void main() {
   int textureId = gTextureId[0];
   vec2 uv[3];
 
   if (textureId > 0) {
-    ivec3 cameraPos = ivec3(cameraX, cameraY, cameraZ);
-    compute_uv(cameraPos, gVertex[0], gVertex[1], gVertex[2], gTexPos[0], gTexPos[1], gTexPos[2], uv[0], uv[1], uv[2]);
+    vec3 cameraPos = vec3(cameraX, cameraY, cameraZ);
+    compute_uv(cameraPos, gVertex[0].xyz, gVertex[1].xyz, gVertex[2].xyz, gTexPos[0].xyz, gTexPos[1].xyz, gTexPos[2].xyz, uv[0], uv[1], uv[2]);
 
     vec2 textureAnim = textureAnimations[min(textureId - 1, TEXTURE_COUNT - 1)];
     for (int i = 0; i < 3; ++i) {
@@ -86,12 +87,23 @@ void main() {
   }
 
   for (int i = 0; i < 3; ++i) {
+#ifdef BIAS_DEBUG
+    fColor = vec4(clamp(gBias[i], 0, 12) / 12.0, 0.0, 0.0, 1.0);
+#else
     fColor = gColor[i];
+#endif
     fHsl = gHsl[i];
     fTextureId = gTextureId[i];
     fUv = uv[i];
     fFogAmount = gFogAmount[i];
-    gl_Position = projectionMatrix * vec4(gVertex[i], 1);
+
+    vec4 pos = worldProj * gVertex[i];
+#ifdef ZBUF_DEBUG
+    fDepth = pos.z / pos.w;
+#endif
+    pos.z += gBias[i] / 128.0;
+    gl_Position = pos;
+
     EmitVertex();
   }
 

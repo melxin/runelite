@@ -38,7 +38,6 @@ import java.awt.image.BufferedImage;
 import java.awt.image.VolatileImage;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -116,6 +115,7 @@ public class Hooks implements Callbacks
 	@Nullable
 	private final RuntimeConfig runtimeConfig;
 	private final boolean developerMode;
+	private final RenderCallbackManager renderCallbackManager;
 
 	private Dimension lastStretchedDimensions;
 	private VolatileImage stretchedImage;
@@ -132,13 +132,21 @@ public class Hooks implements Callbacks
 	private boolean rateLimitedError;
 	private int errorBackoff = 1;
 
+	/**
+	 * use {@link RenderCallbackManager} instead
+	 */
 	@FunctionalInterface
-	public interface RenderableDrawListener
+	@Deprecated
+	public interface RenderableDrawListener extends RenderCallback
 	{
 		boolean draw(Renderable renderable, boolean ui);
-	}
 
-	private final List<RenderableDrawListener> renderableDrawListeners = new ArrayList<>();
+		@Override
+		default boolean drawEntity(Renderable renderable, boolean ui)
+		{
+			return draw(renderable, ui);
+		}
+	}
 
 	/**
 	 * Get the Graphics2D for the MainBufferProvider image
@@ -180,7 +188,8 @@ public class Hooks implements Callbacks
 		ClientUI clientUi,
 		@Nullable TelemetryClient telemetryClient,
 		@Nullable RuntimeConfig runtimeConfig,
-		@Named("developerMode") final boolean developerMode
+		@Named("developerMode") final boolean developerMode,
+		RenderCallbackManager renderCallbackManager
 	)
 	{
 		this.client = client;
@@ -199,6 +208,7 @@ public class Hooks implements Callbacks
 		this.telemetryClient = telemetryClient;
 		this.runtimeConfig = runtimeConfig;
 		this.developerMode = developerMode;
+		this.renderCallbackManager = renderCallbackManager;
 		eventBus.register(this);
 	}
 
@@ -616,14 +626,22 @@ public class Hooks implements Callbacks
 		eventBus.post(fakeXpDrop);
 	}
 
+	/**
+	 * use {@link RenderCallbackManager#register(RenderCallback)} instead
+	 */
+	@Deprecated
 	public void registerRenderableDrawListener(RenderableDrawListener listener)
 	{
-		renderableDrawListeners.add(listener);
+		renderCallbackManager.register(listener);
 	}
 
+	/**
+	 * use {@link RenderCallbackManager#unregister(RenderCallback)} instead
+	 */
+	@Deprecated
 	public void unregisterRenderableDrawListener(RenderableDrawListener listener)
 	{
-		renderableDrawListeners.remove(listener);
+		renderCallbackManager.unregister(listener);
 	}
 
 	@Override
@@ -631,17 +649,11 @@ public class Hooks implements Callbacks
 	{
 		try
 		{
-			for (RenderableDrawListener renderableDrawListener : renderableDrawListeners)
-			{
-				if (!renderableDrawListener.draw(renderable, drawingUi))
-				{
-					return false;
-				}
-			}
+			return renderCallbackManager.drawEntity(renderable, drawingUi);
 		}
 		catch (Exception ex)
 		{
-			log.error("exception from renderable draw listener", ex);
+			log.error("exception from render callback", ex);
 		}
 		return true;
 	}
